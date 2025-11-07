@@ -1,7 +1,7 @@
 import type React from "react"
 
-import { cn } from "@/lib/utils"
 import type { PolymorphicComponentProps } from "@/registry/new-york-v4/lib/polymorphic"
+import { cn } from "@/registry/new-york-v4/lib/utils"
 
 export type TypographyVariant =
   | "h1"

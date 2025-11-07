@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "flex-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "flex"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/flex-demo.tsx",
+      "content": "import Flex from \"@/registry/new-york-v4/ui/flex\"\n\nexport default function FlexDemo() {\n  return (\n    <Flex direction=\"col\" gap=\"md\">\n      <Flex\n        justify=\"between\"\n        align=\"center\"\n        className=\"bg-muted rounded-lg p-4\"\n      >\n        <span className=\"font-semibold\">Start</span>\n        <span className=\"font-semibold\">End</span>\n      </Flex>\n      <Flex justify=\"center\" gap=\"sm\" className=\"bg-muted rounded-lg p-4\">\n        <div className=\"bg-primary size-8 rounded\" />\n        <div className=\"bg-primary size-8 rounded\" />\n        <div className=\"bg-primary size-8 rounded\" />\n      </Flex>\n    </Flex>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

@@ -202,9 +202,7 @@ describe("configWithDefaults", () => {
     const result = configWithDefaults(config)
 
     // User's @pitsi should override the built-in one
-    expect(result.registries?.["@pitsi"]).toBe(
-      "http://custom-pitsi.com/{name}"
-    )
+    expect(result.registries?.["@pitsi"]).toBe("http://custom-pitsi.com/{name}")
   })
 
   it("should validate the final config with configSchema", () => {

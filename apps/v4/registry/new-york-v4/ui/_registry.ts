@@ -214,6 +214,16 @@ export const ui: Registry["items"] = [
     ],
   },
   {
+    name: "container",
+    type: "registry:ui",
+    files: [
+      {
+        path: "ui/container.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "dialog",
     type: "registry:ui",
     dependencies: ["@radix-ui/react-dialog"],
@@ -268,6 +278,18 @@ export const ui: Registry["items"] = [
     ],
   },
   {
+    name: "flex",
+    type: "registry:ui",
+    dependencies: ["class-variance-authority"],
+    registryDependencies: ["polymorphic", "use-mobile"],
+    files: [
+      {
+        path: "ui/flex.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "form",
     type: "registry:ui",
     dependencies: [
@@ -281,6 +303,18 @@ export const ui: Registry["items"] = [
     files: [
       {
         path: "ui/form.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "grid",
+    type: "registry:ui",
+    dependencies: ["class-variance-authority"],
+    registryDependencies: ["polymorphic", "use-mobile"],
+    files: [
+      {
+        path: "ui/grid.tsx",
         type: "registry:ui",
       },
     ],
@@ -439,12 +473,44 @@ export const ui: Registry["items"] = [
     ],
   },
   {
+    name: "segmented-control",
+    type: "registry:ui",
+    dependencies: [
+      "@radix-ui/react-slot",
+      "@radix-ui/react-tabs",
+      "merge-refs",
+    ],
+    registryDependencies: ["use-tab-observer"],
+    files: [
+      {
+        path: "ui/segmented-control.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "select",
     type: "registry:ui",
     dependencies: ["@radix-ui/react-select"],
     files: [
       {
         path: "ui/select.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "segmented-control",
+    type: "registry:ui",
+    dependencies: [
+      "@radix-ui/react-tabs",
+      "@radix-ui/react-slot",
+      "merge-refs",
+    ],
+    registryDependencies: ["use-tab-observer"],
+    files: [
+      {
+        path: "ui/segmented-control.tsx",
         type: "registry:ui",
       },
     ],
@@ -581,6 +647,28 @@ export const ui: Registry["items"] = [
     ],
   },
   {
+    name: "spacer",
+    type: "registry:ui",
+    dependencies: ["class-variance-authority", "@radix-ui/react-slot"],
+    files: [
+      {
+        path: "ui/spacer.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "squircle",
+    type: "registry:ui",
+    dependencies: ["framer-motion"],
+    files: [
+      {
+        path: "ui/squircle.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "switch",
     type: "registry:ui",
     dependencies: ["@radix-ui/react-switch"],
@@ -618,6 +706,28 @@ export const ui: Registry["items"] = [
     files: [
       {
         path: "ui/textarea.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "theme",
+    type: "registry:ui",
+    dependencies: ["next-themes"],
+    files: [
+      {
+        path: "ui/theme.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "theme-toggle",
+    type: "registry:ui",
+    dependencies: ["next-themes", "@remixicon/react"],
+    files: [
+      {
+        path: "ui/theme-toggle.tsx",
         type: "registry:ui",
       },
     ],
@@ -682,6 +792,17 @@ export const ui: Registry["items"] = [
     files: [
       {
         path: "ui/typography.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "unicorn-wrapper",
+    type: "registry:ui",
+    dependencies: ["unicornstudio-react"],
+    files: [
+      {
+        path: "ui/unicorn-wrapper.tsx",
         type: "registry:ui",
       },
     ],

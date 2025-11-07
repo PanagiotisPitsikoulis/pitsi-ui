@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "grid-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "grid"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/grid-demo.tsx",
+      "content": "import Grid from \"@/registry/new-york-v4/ui/grid\"\n\nexport default function GridDemo() {\n  return (\n    <Grid cols={3} gap=\"md\" colsMobile={1}>\n      <div className=\"bg-muted flex h-24 items-center justify-center rounded-lg\">\n        1\n      </div>\n      <div className=\"bg-muted flex h-24 items-center justify-center rounded-lg\">\n        2\n      </div>\n      <div className=\"bg-muted flex h-24 items-center justify-center rounded-lg\">\n        3\n      </div>\n      <div className=\"bg-muted flex h-24 items-center justify-center rounded-lg\">\n        4\n      </div>\n      <div className=\"bg-muted flex h-24 items-center justify-center rounded-lg\">\n        5\n      </div>\n      <div className=\"bg-muted flex h-24 items-center justify-center rounded-lg\">\n        6\n      </div>\n    </Grid>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

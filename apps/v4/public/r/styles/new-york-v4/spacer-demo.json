@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "spacer-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "spacer"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/spacer-demo.tsx",
+      "content": "import { Spacer } from \"@/registry/new-york-v4/ui/spacer\"\n\nexport default function SpacerDemo() {\n  return (\n    <div className=\"flex flex-col\">\n      <div className=\"bg-primary h-8 w-full rounded\" />\n      <Spacer size=\"md\" />\n      <div className=\"bg-primary h-8 w-full rounded\" />\n      <Spacer size=\"lg\" />\n      <div className=\"bg-primary h-8 w-full rounded\" />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

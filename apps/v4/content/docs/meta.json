@@ -6,7 +6,6 @@
     "components",
     "forms",
     "installation",
-    "dark-mode",
-    "registry"
+    "dark-mode"
   ]
 }

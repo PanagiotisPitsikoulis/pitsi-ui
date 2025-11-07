@@ -706,6 +706,17 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "container-demo",
+    type: "registry:example",
+    registryDependencies: ["container"],
+    files: [
+      {
+        path: "examples/container-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "data-table-demo",
     type: "registry:example",
     registryDependencies: ["data-table"],
@@ -1002,6 +1013,17 @@ export const examples: Registry["items"] = [
     files: [
       {
         path: "examples/field-responsive.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "flex-demo",
+    type: "registry:example",
+    registryDependencies: ["flex"],
+    files: [
+      {
+        path: "examples/flex-demo.tsx",
         type: "registry:example",
       },
     ],
@@ -1313,6 +1335,17 @@ export const examples: Registry["items"] = [
     files: [
       {
         path: "examples/dropdown-menu-dialog.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "grid-demo",
+    type: "registry:example",
+    registryDependencies: ["grid"],
+    files: [
+      {
+        path: "examples/grid-demo.tsx",
         type: "registry:example",
       },
     ],
@@ -1951,6 +1984,28 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "segmented-control-demo",
+    type: "registry:example",
+    registryDependencies: ["segmented-control"],
+    files: [
+      {
+        path: "examples/segmented-control-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "segmented-control-custom",
+    type: "registry:example",
+    registryDependencies: ["segmented-control"],
+    files: [
+      {
+        path: "examples/segmented-control-custom.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "select-demo",
     type: "registry:example",
     registryDependencies: ["select"],
@@ -2177,6 +2232,39 @@ export const examples: Registry["items"] = [
     files: [
       {
         path: "examples/spinner-item.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "spacer-demo",
+    type: "registry:example",
+    registryDependencies: ["spacer"],
+    files: [
+      {
+        path: "examples/spacer-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "spacer-sizes",
+    type: "registry:example",
+    registryDependencies: ["spacer"],
+    files: [
+      {
+        path: "examples/spacer-sizes.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "squircle-demo",
+    type: "registry:example",
+    registryDependencies: ["squircle"],
+    files: [
+      {
+        path: "examples/squircle-demo.tsx",
         type: "registry:example",
       },
     ],
@@ -2702,6 +2790,50 @@ export const examples: Registry["items"] = [
     files: [
       {
         path: "examples/typography-variants-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "theme-demo",
+    type: "registry:example",
+    registryDependencies: ["theme"],
+    files: [
+      {
+        path: "examples/theme-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "theme-toggle-demo",
+    type: "registry:example",
+    registryDependencies: ["theme-toggle"],
+    files: [
+      {
+        path: "examples/theme-toggle-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "unicorn-wrapper-demo",
+    type: "registry:example",
+    registryDependencies: ["unicorn-wrapper"],
+    files: [
+      {
+        path: "examples/unicorn-wrapper-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "use-tab-observer-demo",
+    type: "registry:example",
+    registryDependencies: ["use-tab-observer", "tabs"],
+    files: [
+      {
+        path: "examples/use-tab-observer-demo.tsx",
         type: "registry:example",
       },
     ],

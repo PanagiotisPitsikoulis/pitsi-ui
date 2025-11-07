@@ -2,6 +2,8 @@
 
 This guide documents everything learned about adding components, examples, hooks, and other items to the pitsi-ui registry system. It includes step-by-step instructions, hard parts, and gotchas discovered during real implementation.
 
+## Do all the imports like this inside the registry: @/registry/new-york-v4/lib/polymorphic NOT @/lib for example. You DONT have to do this for examples.
+
 ## Overview
 
 The registry system is how pitsi-ui distributes components via CLI. When users run `pitsi add button`, the CLI:

@@ -9,7 +9,7 @@ import {
 import { DayButton, getDefaultClassNames } from "react-day-picker"
 import { DayPicker } from "react-day-picker/persian"
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/registry/new-york-v4/lib/utils"
 import { Button, buttonVariants } from "@/registry/new-york-v4/ui/button"
 
 export default function CalendarHijri() {

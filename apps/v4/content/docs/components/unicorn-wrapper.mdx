@@ -1,0 +1,145 @@
+---
+title: Unicorn Wrapper
+description: A wrapper component for Unicorn Studio scenes with optimized performance and error handling.
+component: true
+links:
+  doc: https://unicorn.studio/docs
+  api: https://unicorn.studio/api
+---
+
+<ComponentPreview
+  name="unicorn-wrapper-demo"
+  description="A basic Unicorn Studio scene wrapped with performance optimizations"
+/>
+
+## Installation
+
+<CodeTabs items={["CLI", "Manual"]}>
+
+```bash tab="CLI"
+npx pitsi@latest add unicorn-wrapper
+```
+
+<div tab="Manual">
+
+<Steps>
+
+<Step>Install the Unicorn Studio React package:</Step>
+
+```bash
+npm install unicornstudio-react
+```
+
+<Step>Copy and paste the following code into your project:</Step>
+
+```tsx file="<registry>/ui/unicorn-wrapper.tsx"
+
+```
+
+</Steps>
+
+</div>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { UnicornWrapper } from "@/components/ui/unicorn-wrapper"
+```
+
+```tsx
+<UnicornWrapper
+  className="h-[400px] w-full"
+  sceneName="your-scene-name"
+  sceneId="your-scene-id"
+/>
+```
+
+## About Unicorn Studio
+
+[Unicorn Studio](https://unicorn.studio) is a tool for creating interactive 3D and motion graphics that can be embedded in React applications. The `UnicornWrapper` component provides an optimized way to integrate Unicorn Studio scenes into your pitsi/ui projects.
+
+## Features
+
+- **Performance Optimized**: Uses Intersection Observer to only render scenes when visible in viewport
+- **Error Handling**: Gracefully handles errors and prevents crashes
+- **Lazy Loading**: Scenes load only when they enter the viewport (with 50px margin)
+- **Production Ready**: Automatically enables production mode for better performance
+- **Automatic Cleanup**: Properly cleans up observers on unmount
+- **Ref Support**: Fully supports React refs for advanced use cases
+
+## Examples
+
+### Basic Scene
+
+```tsx
+<UnicornWrapper
+  sceneName="hero-animation"
+  sceneId="abc123"
+  className="h-[500px] w-full"
+/>
+```
+
+### Responsive Scene
+
+```tsx
+<div className="container mx-auto">
+  <UnicornWrapper
+    sceneName="product-showcase"
+    sceneId="xyz789"
+    className="aspect-video w-full"
+  />
+</div>
+```
+
+### Scene with Custom Styling
+
+```tsx
+<UnicornWrapper
+  sceneName="interactive-demo"
+  sceneId="def456"
+  className="h-96 rounded-lg border shadow-lg"
+/>
+```
+
+## Props
+
+The component accepts all props from `UnicornSceneProps` from the `unicornstudio-react` package, plus:
+
+| Prop         | Type         | Default | Description                                             |
+| ------------ | ------------ | ------- | ------------------------------------------------------- |
+| `sceneName`  | `string`     | -       | The name of your Unicorn Studio scene                   |
+| `sceneId`    | `string`     | -       | The unique ID of your scene from Unicorn Studio         |
+| `className`  | `string`     | -       | Additional CSS classes to apply to the wrapper          |
+| `production` | `boolean`    | `true`  | Whether to enable production mode (optimized rendering) |
+| `onError`    | `() => void` | -       | Callback when an error occurs (automatically handled)   |
+
+For the complete list of available props, see the [Unicorn Studio React documentation](https://unicorn.studio/docs).
+
+## How It Works
+
+The wrapper enhances the base `UnicornScene` component with:
+
+1. **Intersection Observer**: Monitors when the component enters/exits the viewport
+2. **Conditional Rendering**: Only renders the scene when visible (with 50px margin)
+3. **Error Boundary**: Catches errors and unmounts the component to prevent crashes
+4. **Ref Forwarding**: Supports both callback and object refs
+
+This approach significantly improves performance when you have multiple scenes on a page or scenes that are initially offscreen.
+
+## Getting Your Scene ID
+
+To use this component, you'll need:
+
+1. Create a scene at [unicorn.studio](https://unicorn.studio)
+2. Get your scene ID from the Unicorn Studio dashboard
+3. Use the scene name and ID in the component props
+
+## Notes
+
+- The component requires `unicornstudio-react` to be installed
+- Scenes only load when they're within 50px of entering the viewport
+- Production mode is enabled by default for better performance
+- If a scene errors, it will automatically unmount to prevent app crashes
+- The wrapper has a 10% intersection threshold for triggering visibility

@@ -16,8 +16,8 @@ import {
   Tablet,
   Terminal,
 } from "lucide-react"
-import { ImperativePanelHandle } from "react-resizable-panels"
 import { registryItemFileSchema, registryItemSchema } from "pitsi/schema"
+import { ImperativePanelHandle } from "react-resizable-panels"
 import { z } from "zod"
 
 import { trackEvent } from "@/lib/events"

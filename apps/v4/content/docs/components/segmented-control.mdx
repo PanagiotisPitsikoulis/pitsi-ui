@@ -1,0 +1,205 @@
+---
+title: Segmented Control
+description: A tab-based segmented control component with animated transitions built on Radix UI Tabs.
+component: true
+links:
+  doc: https://www.radix-ui.com/docs/primitives/components/tabs
+  api: https://www.radix-ui.com/docs/primitives/components/tabs#api-reference
+---
+
+<ComponentPreview
+  name="segmented-control-demo"
+  description="A segmented control component."
+/>
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx pitsi@latest add segmented-control
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @radix-ui/react-tabs @radix-ui/react-slot merge-refs
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  name="segmented-control"
+  title="components/ui/segmented-control.tsx"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx showLineNumbers
+import {
+  SegmentedControl,
+  SegmentedControlContent,
+  SegmentedControlList,
+  SegmentedControlTrigger,
+} from "@/components/ui/segmented-control"
+```
+
+```tsx showLineNumbers
+<SegmentedControl defaultValue="tab1">
+  <SegmentedControlList>
+    <SegmentedControlTrigger value="tab1">Tab 1</SegmentedControlTrigger>
+    <SegmentedControlTrigger value="tab2">Tab 2</SegmentedControlTrigger>
+    <SegmentedControlTrigger value="tab3">Tab 3</SegmentedControlTrigger>
+  </SegmentedControlList>
+  <SegmentedControlContent value="tab1">
+    Content for tab 1
+  </SegmentedControlContent>
+  <SegmentedControlContent value="tab2">
+    Content for tab 2
+  </SegmentedControlContent>
+  <SegmentedControlContent value="tab3">
+    Content for tab 3
+  </SegmentedControlContent>
+</SegmentedControl>
+```
+
+## Examples
+
+### Basic Segmented Control
+
+<ComponentPreview
+  name="segmented-control-demo"
+  description="A basic segmented control with three tabs."
+/>
+
+### Custom Styling
+
+<ComponentPreview
+  name="segmented-control-custom"
+  description="A segmented control with custom styling."
+/>
+
+### With Icons
+
+```tsx showLineNumbers
+import { Bell, Settings, User } from "lucide-react"
+
+;<SegmentedControl defaultValue="account">
+  <SegmentedControlList>
+    <SegmentedControlTrigger value="account">
+      <User className="h-4 w-4" />
+      Account
+    </SegmentedControlTrigger>
+    <SegmentedControlTrigger value="settings">
+      <Settings className="h-4 w-4" />
+      Settings
+    </SegmentedControlTrigger>
+    <SegmentedControlTrigger value="notifications">
+      <Bell className="h-4 w-4" />
+      Notifications
+    </SegmentedControlTrigger>
+  </SegmentedControlList>
+</SegmentedControl>
+```
+
+### Controlled
+
+```tsx showLineNumbers
+const [value, setValue] = React.useState("tab1")
+
+<SegmentedControl value={value} onValueChange={setValue}>
+  <SegmentedControlList>
+    <SegmentedControlTrigger value="tab1">Tab 1</SegmentedControlTrigger>
+    <SegmentedControlTrigger value="tab2">Tab 2</SegmentedControlTrigger>
+  </SegmentedControlList>
+  <SegmentedControlContent value="tab1">
+    Content 1
+  </SegmentedControlContent>
+  <SegmentedControlContent value="tab2">
+    Content 2
+  </SegmentedControlContent>
+</SegmentedControl>
+```
+
+## Components
+
+### SegmentedControl
+
+The root component that manages the state of the segmented control.
+
+### SegmentedControlList
+
+The container for the segmented control triggers. Features an animated floating background that slides to the active tab.
+
+### SegmentedControlTrigger
+
+An individual tab trigger that users can click to switch between content.
+
+### SegmentedControlContent
+
+The content area that displays when its corresponding trigger is active.
+
+## Props
+
+### SegmentedControl
+
+Extends all props from [Radix UI Tabs Root](https://www.radix-ui.com/docs/primitives/components/tabs#root).
+
+| Prop            | Type                      | Default | Description                          |
+| --------------- | ------------------------- | ------- | ------------------------------------ |
+| `defaultValue`  | `string`                  | -       | The default active tab               |
+| `value`         | `string`                  | -       | The controlled active tab value      |
+| `onValueChange` | `(value: string) => void` | -       | Callback when the active tab changes |
+
+### SegmentedControlList
+
+Extends all props from [Radix UI Tabs List](https://www.radix-ui.com/docs/primitives/components/tabs#list).
+
+| Prop                  | Type     | Default | Description                                |
+| --------------------- | -------- | ------- | ------------------------------------------ |
+| `floatingBgClassName` | `string` | -       | Custom classes for the floating background |
+
+### SegmentedControlTrigger
+
+Extends all props from [Radix UI Tabs Trigger](https://www.radix-ui.com/docs/primitives/components/tabs#trigger).
+
+| Prop    | Type     | Default | Description                       |
+| ------- | -------- | ------- | --------------------------------- |
+| `value` | `string` | -       | The value that activates this tab |
+
+### SegmentedControlContent
+
+Extends all props from [Radix UI Tabs Content](https://www.radix-ui.com/docs/primitives/components/tabs#content).
+
+| Prop    | Type     | Default | Description                       |
+| ------- | -------- | ------- | --------------------------------- |
+| `value` | `string` | -       | The value that shows this content |
+
+## Features
+
+- Smooth animated transitions between tabs
+- Floating background indicator that slides to active tab
+- Built on Radix UI Tabs for full accessibility
+- Keyboard navigation support
+- Flexible styling with custom classes
+- Supports icons and text content
