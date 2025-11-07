@@ -2,7 +2,10 @@
   "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "dialog-close-button",
   "type": "registry:example",
-  "registryDependencies": ["dialog", "button"],
+  "registryDependencies": [
+    "dialog",
+    "button"
+  ],
   "files": [
     {
       "path": "registry/new-york-v4/examples/dialog-close-button.tsx",

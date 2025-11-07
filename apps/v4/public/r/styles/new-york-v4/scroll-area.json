@@ -2,7 +2,9 @@
   "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "scroll-area",
   "type": "registry:ui",
-  "dependencies": ["@radix-ui/react-scroll-area"],
+  "dependencies": [
+    "@radix-ui/react-scroll-area"
+  ],
   "files": [
     {
       "path": "registry/new-york-v4/ui/scroll-area.tsx",

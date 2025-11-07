@@ -2,7 +2,9 @@
   "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "hover-card-demo",
   "type": "registry:example",
-  "registryDependencies": ["hover-card"],
+  "registryDependencies": [
+    "hover-card"
+  ],
   "files": [
     {
       "path": "registry/new-york-v4/examples/hover-card-demo.tsx",

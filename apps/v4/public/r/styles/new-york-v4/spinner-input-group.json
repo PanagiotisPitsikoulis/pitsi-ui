@@ -2,7 +2,11 @@
   "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "spinner-input-group",
   "type": "registry:example",
-  "registryDependencies": ["spinner", "button", "input"],
+  "registryDependencies": [
+    "spinner",
+    "button",
+    "input"
+  ],
   "files": [
     {
       "path": "registry/new-york-v4/examples/spinner-input-group.tsx",

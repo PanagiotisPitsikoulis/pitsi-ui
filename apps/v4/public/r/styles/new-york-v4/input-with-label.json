@@ -2,7 +2,11 @@
   "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "input-with-label",
   "type": "registry:example",
-  "registryDependencies": ["input", "button", "label"],
+  "registryDependencies": [
+    "input",
+    "button",
+    "label"
+  ],
   "files": [
     {
       "path": "registry/new-york-v4/examples/input-with-label.tsx",

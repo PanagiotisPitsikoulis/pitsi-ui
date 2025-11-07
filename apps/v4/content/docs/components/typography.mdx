@@ -1,66 +1,71 @@
 ---
 title: Typography
-description: Styles for headings, paragraphs, lists...etc
+description: A flexible typography component with variant-based styling powered by CSS custom properties.
 component: true
 ---
 
-We do not ship any typography styles by default. This page is an example of how you can use utility classes to style your text.
+<ComponentPreview name="typography-component-demo" description="A typography component with multiple variants." />
 
-<ComponentPreview
-  name="typography-demo"
-  description="A collection of typographic elements."
-  className="[&_.preview]:!h-auto"
-  hideCode
-/>
+## Installation
 
-## h1
+<CodeTabs>
 
-<ComponentPreview name="typography-h1" />
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
 
-## h2
+```bash
+npx pitsi@latest add typography
+```
 
-<ComponentPreview name="typography-h2" />
+</TabsContent>
 
-## h3
+<TabsContent value="manual">
 
-<ComponentPreview name="typography-h3" />
+<Steps>
 
-## h4
+<Step>This component has no external dependencies.</Step>
 
-<ComponentPreview name="typography-h4" />
+<Step>Copy and paste the following code into your project.</Step>
 
-## p
+<ComponentSource name="typography" title="components/ui/typography.tsx" />
 
-<ComponentPreview name="typography-p" />
+<Step>Update the import paths to match your project setup.</Step>
 
-## blockquote
+</Steps>
 
-<ComponentPreview name="typography-blockquote" />
+</TabsContent>
 
-## table
+</CodeTabs>
 
-<ComponentPreview name="typography-table" />
+## Usage
 
-## list
+```tsx showLineNumbers
+import Typography from "@/components/ui/typography"
+```
 
-<ComponentPreview name="typography-list" />
+```tsx showLineNumbers
+<Typography variant="h1">
+  Welcome to our platform
+</Typography>
+```
 
-## Inline code
+## Examples
 
-<ComponentPreview name="typography-inline-code" />
+### Headings
 
-## Lead
+<ComponentPreview name="typography-headings" />
 
-<ComponentPreview name="typography-lead" />
+### Paragraphs
 
-## Large
+<ComponentPreview name="typography-paragraphs" />
 
-<ComponentPreview name="typography-large" />
+### Labels
 
-## Small
+<ComponentPreview name="typography-labels" />
 
-<ComponentPreview name="typography-small" />
+### Polymorphic
 
-## Muted
-
-<ComponentPreview name="typography-muted" />
+<ComponentPreview name="typography-polymorphic" />

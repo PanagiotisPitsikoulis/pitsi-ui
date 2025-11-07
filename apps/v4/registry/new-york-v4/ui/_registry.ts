@@ -676,6 +676,17 @@ export const ui: Registry["items"] = [
     ],
   },
   {
+    name: "typography",
+    type: "registry:ui",
+    registryDependencies: ["polymorphic"],
+    files: [
+      {
+        path: "ui/typography.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "kbd",
     type: "registry:ui",
     files: [

@@ -2,7 +2,9 @@
   "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "menubar-demo",
   "type": "registry:example",
-  "registryDependencies": ["menubar"],
+  "registryDependencies": [
+    "menubar"
+  ],
   "files": [
     {
       "path": "registry/new-york-v4/examples/menubar-demo.tsx",

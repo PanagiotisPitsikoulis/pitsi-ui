@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "typography-card-example",
+  "type": "registry:example",
+  "registryDependencies": [
+    "typography",
+    "card"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/typography-card-example.tsx",
+      "content": "import Typography from \"@/registry/new-york-v4/ui/typography\"\nimport {\n  Card,\n  CardContent,\n  CardHeader,\n} from \"@/registry/new-york-v4/ui/card\"\n\nexport default function TypographyCardExample() {\n  return (\n    <Card className=\"max-w-md\">\n      <CardHeader>\n        <Typography variant=\"subheading-sm\" className=\"uppercase\">\n          New Feature\n        </Typography>\n        <Typography variant=\"h4\">Advanced Analytics</Typography>\n        <Typography variant=\"paragraph-md\" className=\"text-muted-foreground\">\n          Track your performance with detailed insights and metrics.\n        </Typography>\n      </CardHeader>\n      <CardContent>\n        <div className=\"space-y-2\">\n          <div className=\"flex items-center justify-between\">\n            <Typography variant=\"label-md\">Total Users</Typography>\n            <Typography variant=\"label-md\">12,345</Typography>\n          </div>\n          <div className=\"flex items-center justify-between\">\n            <Typography variant=\"label-md\">Growth</Typography>\n            <Typography variant=\"label-md\" className=\"text-green-600\">\n              +23%\n            </Typography>\n          </div>\n        </div>\n      </CardContent>\n    </Card>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

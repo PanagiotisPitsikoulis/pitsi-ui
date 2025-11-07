@@ -2,7 +2,9 @@
   "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "tabs",
   "type": "registry:ui",
-  "dependencies": ["@radix-ui/react-tabs"],
+  "dependencies": [
+    "@radix-ui/react-tabs"
+  ],
   "files": [
     {
       "path": "registry/new-york-v4/ui/tabs.tsx",

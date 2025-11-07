@@ -5,5 +5,10 @@
       "Bash(npm run typecheck:*)"
     ],
     "deny": []
-  }
+  },
+  "enableAllProjectMcpServers": false,
+  "enabledMcpjsonServers": [
+    "next-devtools",
+    "shadcn"
+  ]
 }

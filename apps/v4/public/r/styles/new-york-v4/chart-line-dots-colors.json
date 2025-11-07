@@ -2,7 +2,10 @@
   "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "chart-line-dots-colors",
   "type": "registry:block",
-  "registryDependencies": ["card", "chart"],
+  "registryDependencies": [
+    "card",
+    "chart"
+  ],
   "files": [
     {
       "path": "registry/new-york-v4/charts/chart-line-dots-colors.tsx",
@@ -10,5 +13,8 @@
       "type": "registry:block"
     }
   ],
-  "categories": ["charts", "charts-line"]
+  "categories": [
+    "charts",
+    "charts-line"
+  ]
 }

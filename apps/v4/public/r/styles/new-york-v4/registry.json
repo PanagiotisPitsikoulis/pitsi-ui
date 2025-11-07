@@ -777,6 +777,19 @@
       ]
     },
     {
+      "name": "typography",
+      "type": "registry:ui",
+      "registryDependencies": [
+        "polymorphic"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/typography.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "kbd",
       "type": "registry:ui",
       "files": [
@@ -3937,6 +3950,7 @@
     {
       "name": "utils",
       "type": "registry:lib",
+      "description": "Utility function for merging class names with Tailwind CSS conflict resolution.",
       "dependencies": [
         "clsx",
         "tailwind-merge"
@@ -3944,6 +3958,51 @@
       "files": [
         {
           "path": "registry/new-york-v4/lib/utils.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "dynamic-icon",
+      "type": "registry:lib",
+      "description": "Dynamically load and render Lucide icons by name with automatic format transformation.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "devDependencies": [
+        "@types/react"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/lib/dynamic-icon.tsx",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "polymorphic",
+      "type": "registry:lib",
+      "description": "TypeScript utilities for building polymorphic components with the 'as' prop pattern.",
+      "devDependencies": [
+        "@types/react"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/lib/polymorphic.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "recursive-clone-children",
+      "type": "registry:lib",
+      "description": "Recursively clone React children and inject props into components by display name.",
+      "devDependencies": [
+        "@types/react"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/lib/recursive-clone-children.tsx",
           "type": "registry:lib"
         }
       ]
@@ -7526,6 +7585,85 @@
       "files": [
         {
           "path": "registry/new-york-v4/examples/typography-table.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "typography-component-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "typography"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/typography-component-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "typography-headings",
+      "type": "registry:example",
+      "registryDependencies": [
+        "typography"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/typography-headings.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "typography-paragraphs",
+      "type": "registry:example",
+      "registryDependencies": [
+        "typography"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/typography-paragraphs.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "typography-labels",
+      "type": "registry:example",
+      "registryDependencies": [
+        "typography"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/typography-labels.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "typography-polymorphic",
+      "type": "registry:example",
+      "registryDependencies": [
+        "typography"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/typography-polymorphic.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "typography-variants-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "typography",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/typography-variants-demo.tsx",
           "type": "registry:example"
         }
       ]

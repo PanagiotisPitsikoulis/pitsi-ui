@@ -2,7 +2,9 @@
   "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "dropdown-menu-demo",
   "type": "registry:example",
-  "registryDependencies": ["dropdown-menu"],
+  "registryDependencies": [
+    "dropdown-menu"
+  ],
   "files": [
     {
       "path": "registry/new-york-v4/examples/dropdown-menu-demo.tsx",

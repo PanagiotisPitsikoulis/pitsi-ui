@@ -2641,6 +2641,72 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "typography-component-demo",
+    type: "registry:example",
+    registryDependencies: ["typography"],
+    files: [
+      {
+        path: "examples/typography-component-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "typography-headings",
+    type: "registry:example",
+    registryDependencies: ["typography"],
+    files: [
+      {
+        path: "examples/typography-headings.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "typography-paragraphs",
+    type: "registry:example",
+    registryDependencies: ["typography"],
+    files: [
+      {
+        path: "examples/typography-paragraphs.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "typography-labels",
+    type: "registry:example",
+    registryDependencies: ["typography"],
+    files: [
+      {
+        path: "examples/typography-labels.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "typography-polymorphic",
+    type: "registry:example",
+    registryDependencies: ["typography"],
+    files: [
+      {
+        path: "examples/typography-polymorphic.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "typography-variants-demo",
+    type: "registry:example",
+    registryDependencies: ["typography", "card"],
+    files: [
+      {
+        path: "examples/typography-variants-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "mode-toggle",
     type: "registry:example",
     files: [

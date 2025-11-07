@@ -2,7 +2,9 @@
   "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "avatar",
   "type": "registry:ui",
-  "dependencies": ["@radix-ui/react-avatar"],
+  "dependencies": [
+    "@radix-ui/react-avatar"
+  ],
   "files": [
     {
       "path": "registry/new-york-v4/ui/avatar.tsx",

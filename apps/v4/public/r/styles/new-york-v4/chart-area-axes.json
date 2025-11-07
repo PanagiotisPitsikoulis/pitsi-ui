@@ -2,7 +2,10 @@
   "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "chart-area-axes",
   "type": "registry:block",
-  "registryDependencies": ["card", "chart"],
+  "registryDependencies": [
+    "card",
+    "chart"
+  ],
   "files": [
     {
       "path": "registry/new-york-v4/charts/chart-area-axes.tsx",
@@ -10,5 +13,8 @@
       "type": "registry:block"
     }
   ],
-  "categories": ["charts", "charts-area"]
+  "categories": [
+    "charts",
+    "charts-area"
+  ]
 }

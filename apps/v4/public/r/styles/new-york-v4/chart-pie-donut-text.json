@@ -2,7 +2,10 @@
   "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "chart-pie-donut-text",
   "type": "registry:block",
-  "registryDependencies": ["card", "chart"],
+  "registryDependencies": [
+    "card",
+    "chart"
+  ],
   "files": [
     {
       "path": "registry/new-york-v4/charts/chart-pie-donut-text.tsx",
@@ -10,5 +13,8 @@
       "type": "registry:block"
     }
   ],
-  "categories": ["charts", "charts-pie"]
+  "categories": [
+    "charts",
+    "charts-pie"
+  ]
 }
