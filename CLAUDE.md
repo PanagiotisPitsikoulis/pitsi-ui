@@ -2,6 +2,11 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Handle Long Tasks
+
+If you have to work on many files, or perform a long task, create an md file in @.claude/_todo.
+Make a list of tasks to complete, then delete it after you finish the tasks.
+
 ## Project Overview
 
 pitsi/ui is a component library system that allows developers to copy and customize beautifully designed components. It's an open-source alternative to traditional npm packages, where components are added directly to your project's source code for full customization.
