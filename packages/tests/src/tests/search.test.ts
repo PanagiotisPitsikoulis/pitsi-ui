@@ -1,9 +1,9 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest"
 
-import { createFixtureTestDirectory, npxShadcn } from "../utils/helpers"
+import { createFixtureTestDirectory, npxpitsi } from "../utils/helpers"
 import { configureRegistries, createRegistryServer } from "../utils/registry"
 
-const registryShadcn = await createRegistryServer(
+const registrypitsi = await createRegistryServer(
   [
     {
       name: "button",
@@ -167,26 +167,26 @@ const registryTwo = await createRegistryServer(
 )
 
 beforeAll(async () => {
-  await registryShadcn.start()
+  await registrypitsi.start()
   await registryOne.start()
   await registryTwo.start()
   await registryLarge.start()
 })
 
 afterAll(async () => {
-  await registryShadcn.stop()
+  await registrypitsi.stop()
   await registryOne.stop()
   await registryTwo.stop()
   await registryLarge.stop()
 })
 
-describe("shadcn search", () => {
-  it("should search items from shadcn registry", async () => {
+describe("pitsi search", () => {
+  it("should search items from pitsi registry", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
     await configureRegistries(fixturePath, {
-      "@shadcn": "http://localhost:9180/r/{name}",
+      "@pitsi": "http://localhost:9180/r/{name}",
     })
-    const output = await npxShadcn(fixturePath, ["search", "@shadcn"])
+    const output = await npxpitsi(fixturePath, ["search", "@pitsi"])
 
     const parsed = JSON.parse(output.stdout)
     expect(parsed).toHaveProperty("items")
@@ -196,22 +196,22 @@ describe("shadcn search", () => {
           name: "button",
           type: "registry:ui",
           description: "A button component",
-          registry: "@shadcn",
-          addCommandArgument: "@shadcn/button",
+          registry: "@pitsi",
+          addCommandArgument: "@pitsi/button",
         },
         {
           name: "card",
           type: "registry:ui",
           description: "A card component",
-          registry: "@shadcn",
-          addCommandArgument: "@shadcn/card",
+          registry: "@pitsi",
+          addCommandArgument: "@pitsi/card",
         },
         {
           name: "alert-dialog",
           type: "registry:ui",
           description: undefined,
-          registry: "@shadcn",
-          addCommandArgument: "@shadcn/alert-dialog",
+          registry: "@pitsi",
+          addCommandArgument: "@pitsi/alert-dialog",
         },
       ])
     )
@@ -220,14 +220,14 @@ describe("shadcn search", () => {
   it("should list items from multiple registries", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
     await configureRegistries(fixturePath, {
-      "@shadcn": "http://localhost:9180/r/{name}",
+      "@pitsi": "http://localhost:9180/r/{name}",
       "@one": "http://localhost:9181/r/{name}",
       "@two": "http://localhost:9182/registry/{name}",
     })
 
-    const output = await npxShadcn(fixturePath, [
+    const output = await npxpitsi(fixturePath, [
       "search",
-      "@shadcn",
+      "@pitsi",
       "@one",
       "@two",
     ])
@@ -238,7 +238,7 @@ describe("shadcn search", () => {
 
     // Check that items from all three registries are present
     const registries = parsed.items.map((item: any) => item.registry)
-    expect(registries).toContain("@shadcn")
+    expect(registries).toContain("@pitsi")
     expect(registries).toContain("@one")
     expect(registries).toContain("@two")
   })
@@ -249,7 +249,7 @@ describe("shadcn search", () => {
       "@one": "http://localhost:9181/r/{name}",
     })
 
-    const output = await npxShadcn(fixturePath, ["search", "@one"])
+    const output = await npxpitsi(fixturePath, ["search", "@one"])
 
     const parsed = JSON.parse(output.stdout)
     expect(parsed).toHaveProperty("items")
@@ -274,7 +274,7 @@ describe("shadcn search", () => {
 
   it("should handle non-existent registry gracefully", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
-    const output = await npxShadcn(fixturePath, ["search", "@unknown"])
+    const output = await npxpitsi(fixturePath, ["search", "@unknown"])
 
     expect(output.stdout).toContain('Unknown registry "@unknown"')
   })
@@ -290,7 +290,7 @@ describe("shadcn search", () => {
       },
     })
 
-    const output = await npxShadcn(fixturePath, ["search", "@two"])
+    const output = await npxpitsi(fixturePath, ["search", "@two"])
 
     const parsed = JSON.parse(output.stdout)
     expect(parsed).toHaveProperty("items")
@@ -318,7 +318,7 @@ describe("shadcn search", () => {
       "@two": "http://localhost:9182/registry/bearer/{name}",
     })
 
-    const output = await npxShadcn(fixturePath, ["search", "@two"])
+    const output = await npxpitsi(fixturePath, ["search", "@two"])
     expect(output.stdout).toContain("Unauthorized")
   })
 
@@ -337,7 +337,7 @@ describe("shadcn search", () => {
     try {
       process.env.BEARER_TOKEN = "EXAMPLE_BEARER_TOKEN"
 
-      const output = await npxShadcn(fixturePath, ["search", "@two"])
+      const output = await npxpitsi(fixturePath, ["search", "@two"])
 
       const parsed = JSON.parse(output.stdout)
       expect(parsed).toHaveProperty("items")
@@ -369,17 +369,17 @@ describe("shadcn search", () => {
       },
     })
 
-    const output = await npxShadcn(fixturePath, ["search", "@auth"])
+    const output = await npxpitsi(fixturePath, ["search", "@auth"])
 
     expect(output.stdout).toContain("MISSING_ENV_VAR")
   })
 
-  it("should work with @shadcn namespace", async () => {
+  it("should work with @pitsi namespace", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
     await configureRegistries(fixturePath, {
-      "@shadcn": "http://localhost:9180/r/{name}",
+      "@pitsi": "http://localhost:9180/r/{name}",
     })
-    const output = await npxShadcn(fixturePath, ["search", "@shadcn"])
+    const output = await npxpitsi(fixturePath, ["search", "@pitsi"])
 
     const parsed = JSON.parse(output.stdout)
     expect(parsed).toHaveProperty("items")
@@ -387,11 +387,11 @@ describe("shadcn search", () => {
       expect.arrayContaining([
         expect.objectContaining({
           name: "button",
-          registry: "@shadcn",
+          registry: "@pitsi",
         }),
         expect.objectContaining({
           name: "card",
-          registry: "@shadcn",
+          registry: "@pitsi",
         }),
       ])
     )
@@ -399,21 +399,21 @@ describe("shadcn search", () => {
 
   it("should handle namespace with special characters", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
-    const output = await npxShadcn(fixturePath, ["search", "@test-123"])
+    const output = await npxpitsi(fixturePath, ["search", "@test-123"])
 
     expect(output.stdout).toContain('Unknown registry "@test-123"')
   })
 
   it("should handle empty registry name", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
-    const output = await npxShadcn(fixturePath, ["search", "@"])
+    const output = await npxpitsi(fixturePath, ["search", "@"])
 
     expect(output.stdout).toContain("The item at @/registry was not found.")
   })
 
   it("should handle namespace without @ prefix", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
-    const output = await npxShadcn(fixturePath, ["search", "one"])
+    const output = await npxpitsi(fixturePath, ["search", "one"])
 
     // Without @ prefix, it should show an error
     expect(output.stdout).toContain('Invalid registry namespace: "one".')
@@ -426,7 +426,7 @@ describe("shadcn search", () => {
       "@one": "http://localhost:9181/r/{name}",
     })
 
-    const output = await npxShadcn(fixturePath, ["search", "@one"])
+    const output = await npxpitsi(fixturePath, ["search", "@one"])
 
     const parsed = JSON.parse(output.stdout)
     expect(parsed).toHaveProperty("items")
@@ -450,7 +450,7 @@ describe("shadcn search", () => {
       "@one": "http://localhost:9181/r/{name}",
     })
 
-    const output = await npxShadcn(fixturePath, ["search", "@two"])
+    const output = await npxpitsi(fixturePath, ["search", "@two"])
 
     expect(output.stdout).toContain('Unknown registry "@two"')
   })
@@ -484,7 +484,7 @@ describe("shadcn search", () => {
       "@bad": "http://localhost:9183/bad/{name}",
     })
 
-    const output = await npxShadcn(fixturePath, ["search", "@bad"])
+    const output = await npxpitsi(fixturePath, ["search", "@bad"])
 
     // Should handle validation error
     expect(output.stdout.toLowerCase()).toContain("failed to parse")
@@ -498,7 +498,7 @@ describe("shadcn search", () => {
       "@timeout": "http://localhost:9999/timeout/{name}", // Non-existent server
     })
 
-    const output = await npxShadcn(fixturePath, ["search", "@timeout"])
+    const output = await npxpitsi(fixturePath, ["search", "@timeout"])
 
     // Check for connection error in the output
     expect(output.stdout.toLowerCase()).toContain("failed, reason:")
@@ -510,7 +510,7 @@ describe("shadcn search", () => {
       "@one": "http://localhost:9181/r/{name}",
     })
 
-    const output = await npxShadcn(fixturePath, [
+    const output = await npxpitsi(fixturePath, [
       "search",
       "@one",
       "@non-existent",
@@ -529,7 +529,7 @@ describe("shadcn search", () => {
       "@two": "http://localhost:9182/registry/{name}",
     })
 
-    const output = await npxShadcn(fixturePath, ["search", "@one", "@two"])
+    const output = await npxpitsi(fixturePath, ["search", "@one", "@two"])
 
     const parsed = JSON.parse(output.stdout)
     expect(parsed).toHaveProperty("items")
@@ -556,7 +556,7 @@ describe("shadcn search", () => {
     })
 
     // List from both registries
-    const output = await npxShadcn(fixturePath, ["search", "@one", "@two"])
+    const output = await npxpitsi(fixturePath, ["search", "@one", "@two"])
 
     const parsed = JSON.parse(output.stdout)
     expect(parsed).toHaveProperty("items")
@@ -580,13 +580,13 @@ describe("shadcn search", () => {
   it("should handle search with pagination", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
     await configureRegistries(fixturePath, {
-      "@shadcn": "http://localhost:9180/r/{name}",
+      "@pitsi": "http://localhost:9180/r/{name}",
     })
 
     // Search for "button" with pagination
-    const output = await npxShadcn(fixturePath, [
+    const output = await npxpitsi(fixturePath, [
       "search",
-      "@shadcn",
+      "@pitsi",
       "--query",
       "button",
       "--limit",
@@ -609,12 +609,12 @@ describe("shadcn search", () => {
   it("should handle empty search results with pagination", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
     await configureRegistries(fixturePath, {
-      "@shadcn": "http://localhost:9180/r/{name}",
+      "@pitsi": "http://localhost:9180/r/{name}",
     })
 
-    const output = await npxShadcn(fixturePath, [
+    const output = await npxpitsi(fixturePath, [
       "search",
-      "@shadcn",
+      "@pitsi",
       "--query",
       "nonexistent",
       "--limit",
@@ -636,7 +636,7 @@ describe("shadcn search", () => {
   it("should handle typos in search (fuzzy matching)", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
     await configureRegistries(fixturePath, {
-      "@shadcn": "http://localhost:9180/r/{name}",
+      "@pitsi": "http://localhost:9180/r/{name}",
     })
 
     // Test various typos that should still match "button"
@@ -651,9 +651,9 @@ describe("shadcn search", () => {
 
     // Test button typos
     for (const typo of typos.slice(0, 4)) {
-      const output = await npxShadcn(fixturePath, [
+      const output = await npxpitsi(fixturePath, [
         "search",
-        "@shadcn",
+        "@pitsi",
         "--query",
         typo,
       ])
@@ -665,9 +665,9 @@ describe("shadcn search", () => {
     }
 
     // Test dialog typo
-    const dialogOutput = await npxShadcn(fixturePath, [
+    const dialogOutput = await npxpitsi(fixturePath, [
       "search",
-      "@shadcn",
+      "@pitsi",
       "--query",
       "dialg",
     ])
@@ -678,9 +678,9 @@ describe("shadcn search", () => {
     ).toBe(true)
 
     // Test alert typo
-    const alertOutput = await npxShadcn(fixturePath, [
+    const alertOutput = await npxpitsi(fixturePath, [
       "search",
-      "@shadcn",
+      "@pitsi",
       "--query",
       "alrt",
     ])
@@ -694,7 +694,7 @@ describe("shadcn search", () => {
   it("should handle partial word matching", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
     await configureRegistries(fixturePath, {
-      "@shadcn": "http://localhost:9180/r/{name}",
+      "@pitsi": "http://localhost:9180/r/{name}",
     })
 
     // Test partial matches
@@ -706,9 +706,9 @@ describe("shadcn search", () => {
     ]
 
     for (const { query, expected } of partialQueries) {
-      const output = await npxShadcn(fixturePath, [
+      const output = await npxpitsi(fixturePath, [
         "search",
-        "@shadcn",
+        "@pitsi",
         "--query",
         query,
       ])
@@ -723,25 +723,25 @@ describe("shadcn search", () => {
   it("should handle case-insensitive search", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
     await configureRegistries(fixturePath, {
-      "@shadcn": "http://localhost:9180/r/{name}",
+      "@pitsi": "http://localhost:9180/r/{name}",
     })
 
     // Search with different cases
-    const output1 = await npxShadcn(fixturePath, [
+    const output1 = await npxpitsi(fixturePath, [
       "search",
-      "@shadcn",
+      "@pitsi",
       "--query",
       "BUTTON",
     ])
-    const output2 = await npxShadcn(fixturePath, [
+    const output2 = await npxpitsi(fixturePath, [
       "search",
-      "@shadcn",
+      "@pitsi",
       "--query",
       "button",
     ])
-    const output3 = await npxShadcn(fixturePath, [
+    const output3 = await npxpitsi(fixturePath, [
       "search",
-      "@shadcn",
+      "@pitsi",
       "--query",
       "BuTtOn",
     ])
@@ -760,13 +760,13 @@ describe("shadcn search", () => {
   it("should handle special characters in search", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
     await configureRegistries(fixturePath, {
-      "@shadcn": "http://localhost:9180/r/{name}",
+      "@pitsi": "http://localhost:9180/r/{name}",
     })
 
     // Test searching for components with hyphens
-    const output1 = await npxShadcn(fixturePath, [
+    const output1 = await npxpitsi(fixturePath, [
       "search",
-      "@shadcn",
+      "@pitsi",
       "--query",
       "alert-dialog",
     ])
@@ -776,9 +776,9 @@ describe("shadcn search", () => {
     ).toBe(true)
 
     // Test searching with just the hyphen part
-    const output2 = await npxShadcn(fixturePath, [
+    const output2 = await npxpitsi(fixturePath, [
       "search",
-      "@shadcn",
+      "@pitsi",
       "--query",
       "-dialog",
     ])
@@ -788,9 +788,9 @@ describe("shadcn search", () => {
     ).toBe(true)
 
     // Test with spaces (should still work)
-    const output3 = await npxShadcn(fixturePath, [
+    const output3 = await npxpitsi(fixturePath, [
       "search",
-      "@shadcn",
+      "@pitsi",
       "--query",
       "alert dialog",
     ])
@@ -807,7 +807,7 @@ describe("shadcn search", () => {
     })
 
     // Search for "bar" which should match "bar" exactly
-    const output = await npxShadcn(fixturePath, [
+    const output = await npxpitsi(fixturePath, [
       "search",
       "@one",
       "--query",
@@ -824,13 +824,13 @@ describe("shadcn search", () => {
   it("should work with 'search' command alias", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
     await configureRegistries(fixturePath, {
-      "@shadcn": "http://localhost:9180/r/{name}",
+      "@pitsi": "http://localhost:9180/r/{name}",
     })
 
     // Use 'search' instead of 'list'
-    const output = await npxShadcn(fixturePath, [
+    const output = await npxpitsi(fixturePath, [
       "search",
-      "@shadcn",
+      "@pitsi",
       "--query",
       "button",
     ])
@@ -840,7 +840,7 @@ describe("shadcn search", () => {
       expect.arrayContaining([
         expect.objectContaining({
           name: "button",
-          registry: "@shadcn",
+          registry: "@pitsi",
         }),
       ])
     )
@@ -849,13 +849,13 @@ describe("shadcn search", () => {
   it("should handle limit edge cases", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
     await configureRegistries(fixturePath, {
-      "@shadcn": "http://localhost:9180/r/{name}",
+      "@pitsi": "http://localhost:9180/r/{name}",
     })
 
     // Test with limit 0 - should return all items
-    const output1 = await npxShadcn(fixturePath, [
+    const output1 = await npxpitsi(fixturePath, [
       "search",
-      "@shadcn",
+      "@pitsi",
       "--limit",
       "0",
     ])
@@ -863,9 +863,9 @@ describe("shadcn search", () => {
     expect(parsed1.items.length).toBeGreaterThan(0)
 
     // Test with very large limit
-    const output2 = await npxShadcn(fixturePath, [
+    const output2 = await npxpitsi(fixturePath, [
       "search",
-      "@shadcn",
+      "@pitsi",
       "--limit",
       "9999",
     ])
@@ -877,14 +877,14 @@ describe("shadcn search", () => {
   it("should handle pagination across registries with search", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
     await configureRegistries(fixturePath, {
-      "@shadcn": "http://localhost:9180/r/{name}",
+      "@pitsi": "http://localhost:9180/r/{name}",
       "@one": "http://localhost:9181/r/{name}",
     })
 
     // Search across multiple registries with pagination
-    const output = await npxShadcn(fixturePath, [
+    const output = await npxpitsi(fixturePath, [
       "search",
-      "@shadcn",
+      "@pitsi",
       "@one",
       "--query",
       "o", // Should match "button", "foo", etc.
@@ -907,7 +907,7 @@ describe("shadcn search", () => {
     })
 
     // First page
-    const output1 = await npxShadcn(fixturePath, [
+    const output1 = await npxpitsi(fixturePath, [
       "search",
       "@large",
       "--limit",
@@ -927,7 +927,7 @@ describe("shadcn search", () => {
     })
 
     // Middle page
-    const output2 = await npxShadcn(fixturePath, [
+    const output2 = await npxpitsi(fixturePath, [
       "search",
       "@large",
       "--limit",
@@ -942,7 +942,7 @@ describe("shadcn search", () => {
     expect(parsed2.pagination.hasMore).toBe(true)
 
     // Last page (partial)
-    const output3 = await npxShadcn(fixturePath, [
+    const output3 = await npxpitsi(fixturePath, [
       "search",
       "@large",
       "--limit",
@@ -964,7 +964,7 @@ describe("shadcn search", () => {
       "@one": "http://localhost:9181/r/{name}",
     })
 
-    const output = await npxShadcn(fixturePath, ["search", "@one"])
+    const output = await npxpitsi(fixturePath, ["search", "@one"])
     const parsed = JSON.parse(output.stdout)
 
     // Check that we only get name, type, description, registry, and addCommand fields
@@ -993,7 +993,7 @@ describe("shadcn search", () => {
       "@two": "http://localhost:9182/registry/{name}",
     })
 
-    const output = await npxShadcn(fixturePath, ["search", "@one", "@two"])
+    const output = await npxpitsi(fixturePath, ["search", "@one", "@two"])
     const parsed = JSON.parse(output.stdout)
 
     // Check @one registry items have correct addCommand

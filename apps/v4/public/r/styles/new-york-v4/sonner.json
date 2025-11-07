@@ -1,11 +1,8 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "sonner",
   "type": "registry:ui",
-  "dependencies": [
-    "sonner",
-    "next-themes"
-  ],
+  "dependencies": ["sonner", "next-themes"],
   "files": [
     {
       "path": "registry/new-york-v4/ui/sonner.tsx",

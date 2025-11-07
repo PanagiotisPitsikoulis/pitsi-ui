@@ -1,11 +1,9 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "input-otp-controlled",
   "type": "registry:example",
-  "author": "shadcn (https://ui.shadcn.com)",
-  "registryDependencies": [
-    "input-otp"
-  ],
+  "author": "pitsi (https://ui.pitsi.com)",
+  "registryDependencies": ["input-otp"],
   "files": [
     {
       "path": "examples/input-otp-controlled.tsx",

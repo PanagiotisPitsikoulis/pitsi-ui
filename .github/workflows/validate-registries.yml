@@ -48,7 +48,7 @@ jobs:
         run: pnpm install
 
       - name: Build packages
-        run: pnpm build --filter=shadcn
+        run: pnpm build --filter=pitsi
 
       - name: Validate registries
         run: pnpm --filter=v4 validate:registries

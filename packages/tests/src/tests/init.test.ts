@@ -5,17 +5,17 @@ import { describe, expect, it } from "vitest"
 import {
   createFixtureTestDirectory,
   cssHasProperties,
-  npxShadcn,
+  npxpitsi,
 } from "../utils/helpers"
 import { createRegistryServer } from "../utils/registry"
 
-describe("shadcn init - next-app", () => {
+describe("pitsi init - next-app", () => {
   it("should init with default configuration", async () => {
     // Sleep for 1 second to avoid race condition with the registry server.
     await new Promise((resolve) => setTimeout(resolve, 2000))
 
     const fixturePath = await createFixtureTestDirectory("next-app")
-    await npxShadcn(fixturePath, ["init", "--base-color=neutral"])
+    await npxpitsi(fixturePath, ["init", "--base-color=neutral"])
 
     const componentsJsonPath = path.join(fixturePath, "components.json")
     expect(await fs.pathExists(componentsJsonPath)).toBe(true)
@@ -56,7 +56,7 @@ describe("shadcn init - next-app", () => {
 
   it("should init with custom base color", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app")
-    await npxShadcn(fixturePath, ["init", "--base-color=zinc"])
+    await npxpitsi(fixturePath, ["init", "--base-color=zinc"])
 
     const componentsJson = await fs.readJson(
       path.join(fixturePath, "components.json")
@@ -67,7 +67,7 @@ describe("shadcn init - next-app", () => {
 
   it("should init without CSS variables", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app")
-    await npxShadcn(fixturePath, [
+    await npxpitsi(fixturePath, [
       "init",
       "--base-color=stone",
       "--no-css-variables",
@@ -86,7 +86,7 @@ describe("shadcn init - next-app", () => {
 
   it("should init with components", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app")
-    await npxShadcn(fixturePath, ["init", "--base-color=neutral", "button"])
+    await npxpitsi(fixturePath, ["init", "--base-color=neutral", "button"])
 
     expect(
       await fs.pathExists(path.join(fixturePath, "components/ui/button.tsx"))
@@ -94,10 +94,10 @@ describe("shadcn init - next-app", () => {
   })
 })
 
-describe("shadcn init - vite-app", () => {
+describe("pitsi init - vite-app", () => {
   it("should init with custom alias and src", async () => {
     const fixturePath = await createFixtureTestDirectory("vite-app")
-    await npxShadcn(fixturePath, ["init", "--base-color=gray", "alert-dialog"])
+    await npxpitsi(fixturePath, ["init", "--base-color=gray", "alert-dialog"])
 
     const componentsJson = await fs.readJson(
       path.join(fixturePath, "components.json")
@@ -137,7 +137,7 @@ describe("shadcn init - vite-app", () => {
   })
 })
 
-describe("shadcn init - custom style", async () => {
+describe("pitsi init - custom style", async () => {
   const customRegistry = await createRegistryServer(
     [
       {
@@ -229,9 +229,9 @@ describe("shadcn init - custom style", async () => {
     await customRegistry.stop()
   })
 
-  it("should init with style that extends shadcn", async () => {
+  it("should init with style that extends pitsi", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app")
-    await npxShadcn(fixturePath, ["init", "http://localhost:4445/r/style.json"])
+    await npxpitsi(fixturePath, ["init", "http://localhost:4445/r/style.json"])
 
     const componentsJson = await fs.readJson(
       path.join(fixturePath, "components.json")
@@ -239,7 +239,7 @@ describe("shadcn init - custom style", async () => {
     expect(componentsJson.style).toBe("new-york")
     expect(componentsJson.tailwind.baseColor).toBe("neutral")
 
-    // Install utils from shadcn.
+    // Install utils from pitsi.
     expect(await fs.pathExists(path.join(fixturePath, "lib/utils.ts"))).toBe(
       true
     )
@@ -292,7 +292,7 @@ describe("shadcn init - custom style", async () => {
 
   it("should init with style that extends another style", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app")
-    await npxShadcn(fixturePath, [
+    await npxpitsi(fixturePath, [
       "init",
       "http://localhost:4445/r/style-extended.json",
     ])
@@ -303,7 +303,7 @@ describe("shadcn init - custom style", async () => {
     expect(componentsJson.style).toBe("new-york")
     expect(componentsJson.tailwind.baseColor).toBe("neutral")
 
-    // Install utils from shadcn.
+    // Install utils from pitsi.
     expect(await fs.pathExists(path.join(fixturePath, "lib/utils.ts"))).toBe(
       true
     )
@@ -360,7 +360,7 @@ describe("shadcn init - custom style", async () => {
 
   it("should init with --no-base-style", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app")
-    await npxShadcn(fixturePath, ["init", "--no-base-style"])
+    await npxpitsi(fixturePath, ["init", "--no-base-style"])
 
     // We still expect components.json to be created.
     // With some defaults.
@@ -386,7 +386,7 @@ describe("shadcn init - custom style", async () => {
 
   it("should init with custom style and --no-base-style", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app")
-    await npxShadcn(fixturePath, [
+    await npxpitsi(fixturePath, [
       "init",
       "http://localhost:4445/r/style-extended.json",
       "--no-base-style",
@@ -442,7 +442,7 @@ describe("shadcn init - custom style", async () => {
 
   it("should init with custom style extended none", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app")
-    await npxShadcn(fixturePath, [
+    await npxpitsi(fixturePath, [
       "init",
       "http://localhost:4445/r/style-extend-none.json",
     ])
@@ -496,12 +496,12 @@ describe("shadcn init - custom style", async () => {
   })
 })
 
-describe("shadcn init - existing components.json", () => {
+describe("pitsi init - existing components.json", () => {
   it("should override existing components.json when using --force", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app")
 
     // Run init with default configuration.
-    await npxShadcn(fixturePath, ["init", "--base-color=neutral"])
+    await npxpitsi(fixturePath, ["init", "--base-color=neutral"])
 
     // Override style in components.json.
     const componentsJsonPath = path.join(fixturePath, "components.json")
@@ -510,7 +510,7 @@ describe("shadcn init - existing components.json", () => {
     await fs.writeJson(componentsJsonPath, config)
 
     // Reinit with --force and different base color.
-    await npxShadcn(fixturePath, ["init", "--force", "--base-color=zinc"])
+    await npxpitsi(fixturePath, ["init", "--force", "--base-color=zinc"])
 
     const newConfig = await fs.readJson(componentsJsonPath)
     expect(newConfig.style).toBe("new-york")
@@ -522,7 +522,7 @@ describe("shadcn init - existing components.json", () => {
     const fixturePath = await createFixtureTestDirectory("next-app")
 
     const existingConfig = {
-      $schema: "https://ui.shadcn.com/schema.json",
+      $schema: "https://ui.pitsi.com/schema.json",
       style: "default",
       tailwind: {
         css: "app/globals.css",
@@ -540,7 +540,7 @@ describe("shadcn init - existing components.json", () => {
     await fs.writeJson(componentsJsonPath, existingConfig)
 
     // Run init with an invalid component - this should fail and restore
-    await npxShadcn(fixturePath, [
+    await npxpitsi(fixturePath, [
       "init",
       "invalid-component-that-does-not-exist",
     ])

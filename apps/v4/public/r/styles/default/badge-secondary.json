@@ -1,11 +1,9 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "badge-secondary",
   "type": "registry:example",
-  "author": "shadcn (https://ui.shadcn.com)",
-  "registryDependencies": [
-    "badge"
-  ],
+  "author": "pitsi (https://ui.pitsi.com)",
+  "registryDependencies": ["badge"],
   "files": [
     {
       "path": "examples/badge-secondary.tsx",

@@ -1,13 +1,9 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "combobox-responsive",
   "type": "registry:example",
-  "author": "shadcn (https://ui.shadcn.com)",
-  "registryDependencies": [
-    "combobox",
-    "popover",
-    "drawer"
-  ],
+  "author": "pitsi (https://ui.pitsi.com)",
+  "registryDependencies": ["combobox", "popover", "drawer"],
   "files": [
     {
       "path": "examples/combobox-responsive.tsx",

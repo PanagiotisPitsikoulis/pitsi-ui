@@ -1,12 +1,9 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "command-dialog",
   "type": "registry:example",
-  "author": "shadcn (https://ui.shadcn.com)",
-  "registryDependencies": [
-    "command",
-    "dialog"
-  ],
+  "author": "pitsi (https://ui.pitsi.com)",
+  "registryDependencies": ["command", "dialog"],
   "files": [
     {
       "path": "examples/command-dialog.tsx",

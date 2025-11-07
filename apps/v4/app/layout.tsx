@@ -17,16 +17,18 @@ export const metadata: Metadata = {
     default: siteConfig.name,
     template: `%s - ${siteConfig.name}`,
   },
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:4000"
+  ),
   description: siteConfig.description,
-  keywords: ["Next.js", "React", "Tailwind CSS", "Components", "shadcn"],
+  keywords: ["Next.js", "React", "Tailwind CSS", "Components", "pitsi"],
   authors: [
     {
-      name: "shadcn",
-      url: "https://shadcn.com",
+      name: "pitsi",
+      url: "https://pitsi.com",
     },
   ],
-  creator: "shadcn",
+  creator: "pitsi",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -48,7 +50,7 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [`${process.env.NEXT_PUBLIC_APP_URL}/opengraph-image.png`],
-    creator: "@shadcn",
+    creator: "@pitsi",
   },
   icons: {
     icon: "/favicon.ico",

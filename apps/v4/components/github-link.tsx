@@ -20,7 +20,7 @@ export function GitHubLink() {
 }
 
 export async function StarsCount() {
-  const data = await fetch("https://api.github.com/repos/shadcn-ui/ui", {
+  const data = await fetch("https://api.github.com/repos/pitsi-ui", {
     next: { revalidate: 86400 },
   })
   const json = await data.json()
@@ -30,11 +30,11 @@ export async function StarsCount() {
       ? json.stargazers_count % 1000 === 0
         ? `${Math.floor(json.stargazers_count / 1000)}k`
         : `${(json.stargazers_count / 1000).toFixed(1)}k`
-      : json.stargazers_count.toLocaleString()
+      : json.stargazers_count?.toLocaleString()
 
   return (
     <span className="text-muted-foreground w-fit text-xs tabular-nums">
-      {formattedCount.replace(".0k", "k")}
+      {formattedCount?.replace(".0k", "k")}
     </span>
   )
 }

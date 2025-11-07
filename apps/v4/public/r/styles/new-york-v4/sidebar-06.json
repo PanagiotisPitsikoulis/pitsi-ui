@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "sidebar-06",
   "type": "registry:block",
   "description": "A sidebar with submenus as dropdowns.",
@@ -33,8 +33,5 @@
       "type": "registry:component"
     }
   ],
-  "categories": [
-    "sidebar",
-    "dashboard"
-  ]
+  "categories": ["sidebar", "dashboard"]
 }

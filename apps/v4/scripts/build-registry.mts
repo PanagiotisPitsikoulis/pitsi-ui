@@ -2,7 +2,7 @@ import { exec, execFile } from "child_process"
 import { existsSync, promises as fs } from "fs"
 import path from "path"
 import { rimraf } from "rimraf"
-import { registrySchema } from "shadcn/schema"
+import { registrySchema } from "pitsi/schema"
 
 import { getAllBlocks } from "@/lib/blocks"
 import { STYLES, type Style } from "@/registry/styles"
@@ -150,22 +150,22 @@ async function buildRegistryJsonFile(styleName: string) {
     });
   })
 
-  // 5. Write temporary registry file needed by shadcn build.
+  // 5. Write temporary registry file needed by pitsi build.
   const tempRegistryPath = path.join(process.cwd(), `registry-${styleName}.json`)
   await fs.writeFile(tempRegistryPath, JSON.stringify(fixedRegistry, null, 2))
 }
 
 async function buildRegistry(styleName: string) {
   return new Promise((resolve, reject) => {
-    // Use local shadcn copy.
+    // Use local pitsi copy.
     const outputPath =
       styleName === "new-york-v4" ? `public/r/styles/${styleName}` : `public/r/${styleName}`
     const process = exec(
-      `node ../../packages/shadcn/dist/index.js build registry-${styleName}.json --output ${outputPath}`
+      `node ../../packages/pitsi/dist/index.js build registry-${styleName}.json --output ${outputPath}`
     )
 
     // exec(
-    //   `pnpm dlx shadcn build registry-${styleName}.json --output public/r/styles/${styleName}`
+    //   `pnpm dlx pitsi build registry-${styleName}.json --output public/r/styles/${styleName}`
     // )
 
     process.on("exit", (code) => {

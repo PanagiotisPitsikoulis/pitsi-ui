@@ -1,12 +1,9 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "textarea-with-label",
   "type": "registry:example",
-  "author": "shadcn (https://ui.shadcn.com)",
-  "registryDependencies": [
-    "textarea",
-    "label"
-  ],
+  "author": "pitsi (https://ui.pitsi.com)",
+  "registryDependencies": ["textarea", "label"],
   "files": [
     {
       "path": "examples/textarea-with-label.tsx",

@@ -3,7 +3,7 @@ title: MCP Server
 description: MCP support for registry developers
 ---
 
-The [shadcn MCP server](/docs/mcp) works out of the box with any shadcn-compatible registry. You do not need to do anything special to enable MCP support for your registry.
+The [pitsi MCP server](/docs/mcp) works out of the box with any pitsi-compatible registry. You do not need to do anything special to enable MCP support for your registry.
 
 ---
 
@@ -19,7 +19,7 @@ This file must be a valid JSON file that conforms to the [registry schema](/docs
 
 ## Configuring MCP
 
-Ask your registry consumers to configure your registry in their `components.json` file and install the shadcn MCP server:
+Ask your registry consumers to configure your registry in their `components.json` file and install the pitsi MCP server:
 
 <Tabs defaultValue="claude">
   <TabsList>
@@ -42,7 +42,7 @@ Ask your registry consumers to configure your registry in their `components.json
     **Run the following command** in your project:
 
     ```bash
-    npx shadcn@latest mcp init --client claude
+    npx pitsi@latest mcp init --client claude
     ```
 
     **Restart Claude Code** and try the following prompts:
@@ -65,10 +65,10 @@ Ask your registry consumers to configure your registry in their `components.json
     ```
     **Run the following command** in your project:
        ```bash
-       npx shadcn@latest mcp init --client cursor
+       npx pitsi@latest mcp init --client cursor
        ```
 
-    Open **Cursor Settings** and **Enable the MCP server** for shadcn. Then try the following prompts:
+    Open **Cursor Settings** and **Enable the MCP server** for pitsi. Then try the following prompts:
        - Show me the components in the acme registry
        - Create a landing page using items from the acme registry
 
@@ -86,10 +86,10 @@ Ask your registry consumers to configure your registry in their `components.json
     ```
     **Run the following command** in your project:
        ```bash
-       npx shadcn@latest mcp init --client vscode
+       npx pitsi@latest mcp init --client vscode
        ```
 
-    Open `.vscode/mcp.json` and click **Start** next to the shadcn server. Then try the following prompts with GitHub Copilot:
+    Open `.vscode/mcp.json` and click **Start** next to the pitsi server. Then try the following prompts with GitHub Copilot:
        - Show me the components in the acme registry
        - Create a landing page using items from the acme registry
 
@@ -108,9 +108,9 @@ Ask your registry consumers to configure your registry in their `components.json
 
     **Add the following configuration** to `~/.codex/config.toml`:
        ```toml
-       [mcp_servers.shadcn]
+       [mcp_servers.pitsi]
        command = "npx"
-       args = ["shadcn@latest", "mcp"]
+       args = ["pitsi@latest", "mcp"]
        ```
 
     **Restart Codex** and try the following prompts:

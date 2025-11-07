@@ -1,12 +1,8 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "empty-input-group",
   "type": "registry:example",
-  "registryDependencies": [
-    "empty",
-    "button",
-    "input"
-  ],
+  "registryDependencies": ["empty", "button", "input"],
   "files": [
     {
       "path": "registry/new-york-v4/examples/empty-input-group.tsx",

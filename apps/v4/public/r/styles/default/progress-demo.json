@@ -1,11 +1,9 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "progress-demo",
   "type": "registry:example",
-  "author": "shadcn (https://ui.shadcn.com)",
-  "registryDependencies": [
-    "progress"
-  ],
+  "author": "pitsi (https://ui.pitsi.com)",
+  "registryDependencies": ["progress"],
   "files": [
     {
       "path": "examples/progress-demo.tsx",

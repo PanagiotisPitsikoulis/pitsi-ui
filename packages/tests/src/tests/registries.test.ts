@@ -6,11 +6,11 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest"
 import {
   createFixtureTestDirectory,
   cssHasProperties,
-  npxShadcn,
+  npxpitsi,
 } from "../utils/helpers"
 import { configureRegistries, createRegistryServer } from "../utils/registry"
 
-const registryShadcn = await createRegistryServer(
+const registrypitsi = await createRegistryServer(
   [
     {
       name: "utils",
@@ -31,13 +31,13 @@ const registryShadcn = await createRegistryServer(
         {
           path: "components/ui/alert-dialog.tsx",
           content:
-            "export function AlertDialog() {\n  return <div>AlertDialog Component from Registry Shadcn</div>\n}",
+            "export function AlertDialog() {\n  return <div>AlertDialog Component from Registry pitsi</div>\n}",
           type: "registry:ui",
         },
         {
           path: "components/ui/button.tsx",
           content:
-            "export function Button() {\n  return <div>Button Component from Registry Shadcn</div>\n}",
+            "export function Button() {\n  return <div>Button Component from Registry pitsi</div>\n}",
           type: "registry:ui",
         },
       ],
@@ -49,7 +49,7 @@ const registryShadcn = await createRegistryServer(
         {
           path: "components/ui/button.tsx",
           content:
-            "export function Button() {\n  return <div>Button Component from Registry Shadcn</div>\n}",
+            "export function Button() {\n  return <div>Button Component from Registry pitsi</div>\n}",
           type: "registry:ui",
         },
       ],
@@ -57,12 +57,12 @@ const registryShadcn = await createRegistryServer(
     {
       name: "example-button",
       type: "registry:component",
-      registryDependencies: ["@shadcn/button"],
+      registryDependencies: ["@pitsi/button"],
       files: [
         {
           path: "components/example-button.tsx",
           content:
-            "export function ExampleButton() {\n  return <div>Example Button Component from Registry Shadcn</div>\n}",
+            "export function ExampleButton() {\n  return <div>Example Button Component from Registry pitsi</div>\n}",
           type: "registry:component",
         },
       ],
@@ -270,15 +270,15 @@ const registryTwo = await createRegistryServer(
 )
 
 beforeAll(async () => {
-  // This sets the shadcn registry to our mock registry.
+  // This sets the pitsi registry to our mock registry.
   process.env.REGISTRY_URL = "http://localhost:4040/r"
-  await registryShadcn.start()
+  await registrypitsi.start()
   await registryOne.start()
   await registryTwo.start()
 })
 
 afterAll(async () => {
-  await registryShadcn.stop()
+  await registrypitsi.stop()
   await registryOne.stop()
   await registryTwo.stop()
 })
@@ -286,7 +286,7 @@ afterAll(async () => {
 describe("registries", () => {
   it("should add from registry using url", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
-    await npxShadcn(fixturePath, ["add", "http://localhost:4444/r/foo"])
+    await npxpitsi(fixturePath, ["add", "http://localhost:4444/r/foo"])
 
     expect(
       await fs.pathExists(path.join(fixturePath, "components/foo.tsx"))
@@ -295,7 +295,7 @@ describe("registries", () => {
 
   it("should add multiple items from registry using urls", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
-    await npxShadcn(fixturePath, [
+    await npxpitsi(fixturePath, [
       "add",
       "http://localhost:4444/r/foo",
       "http://localhost:4444/r/bar",
@@ -311,7 +311,7 @@ describe("registries", () => {
 
   it("should add multiple items from multiple registries using urls", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
-    await npxShadcn(fixturePath, [
+    await npxpitsi(fixturePath, [
       "add",
       "http://localhost:4444/r/foo",
       "http://localhost:5555/registry/one",
@@ -327,7 +327,7 @@ describe("registries", () => {
 
   it("should add item using name and from registry url", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
-    await npxShadcn(fixturePath, [
+    await npxpitsi(fixturePath, [
       "add",
       "alert-dialog",
       "http://localhost:4444/r/foo",
@@ -349,7 +349,7 @@ describe("registries", () => {
   it("should add item from name, local path and registry url", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
 
-    await npxShadcn(fixturePath, [
+    await npxpitsi(fixturePath, [
       "add",
       "alert-dialog",
       "../../fixtures/registry/example-item.json",
@@ -374,10 +374,10 @@ describe("registries", () => {
 
   it("should show only built-in registries when not configured", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
-    const output = await npxShadcn(fixturePath, ["info"])
-    // Should show registries since @shadcn is built-in
+    const output = await npxpitsi(fixturePath, ["info"])
+    // Should show registries since @pitsi is built-in
     expect(output.stdout).toContain("registries:")
-    expect(output.stdout).toContain("@shadcn")
+    expect(output.stdout).toContain("@pitsi")
     // Should not show user-defined registries
     expect(output.stdout).not.toContain("@one")
     expect(output.stdout).not.toContain("@two")
@@ -385,7 +385,7 @@ describe("registries", () => {
 
   it("should show an error when adding from a non-existent registry", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
-    const output = await npxShadcn(fixturePath, [
+    const output = await npxpitsi(fixturePath, [
       "add",
       "@non-existent/component",
     ])
@@ -404,10 +404,10 @@ describe("registries", () => {
       "@one": "http://localhost:4444/r/{name}",
     })
 
-    const output = await npxShadcn(fixturePath, ["info"])
+    const output = await npxpitsi(fixturePath, ["info"])
     // Should contain both built-in and user registries
     expect(output.stdout).toContain("registries:")
-    expect(output.stdout).toContain("@shadcn")
+    expect(output.stdout).toContain("@pitsi")
     expect(output.stdout).toContain("@one")
     expect(output.stdout).toContain("http://localhost:4444/r/{name}")
   })
@@ -425,10 +425,10 @@ describe("registries", () => {
       },
     })
 
-    const output = await npxShadcn(fixturePath, ["info"])
+    const output = await npxpitsi(fixturePath, ["info"])
     // Should contain built-in and both user registries
     expect(output.stdout).toContain("registries:")
-    expect(output.stdout).toContain("@shadcn")
+    expect(output.stdout).toContain("@pitsi")
     expect(output.stdout).toContain("@one")
     expect(output.stdout).toContain("@two")
     expect(output.stdout).toContain("http://localhost:4444/r/{name}")
@@ -442,7 +442,7 @@ describe("registries", () => {
       "@one": "http://localhost:4444/r/{name}",
     })
 
-    const output = await npxShadcn(fixturePath, ["add", "@acme/component"])
+    const output = await npxpitsi(fixturePath, ["add", "@acme/component"])
     expect(output.stdout).toContain('Unknown registry "@acme"')
     expect(output.stdout).toContain(
       '"registries": {\n' + '    "@acme": "[URL_TO_REGISTRY]"\n' + "  }\n"
@@ -455,7 +455,7 @@ describe("registries", () => {
       "@one": "http://localhost:4444/r/{name}",
     })
 
-    const output = await npxShadcn(fixturePath, ["add", "@one/foo"])
+    const output = await npxpitsi(fixturePath, ["add", "@one/foo"])
 
     if (!(await fs.pathExists(path.join(fixturePath, "components/foo.tsx")))) {
       console.log("Test failed. Command output:", output.stdout)
@@ -473,7 +473,7 @@ describe("registries", () => {
       "@one": "http://localhost:4444/r/{name}",
     })
 
-    await npxShadcn(fixturePath, ["add", "@one/foo", "@one/bar"])
+    await npxpitsi(fixturePath, ["add", "@one/foo", "@one/bar"])
 
     expect(
       await fs.pathExists(path.join(fixturePath, "components/foo.tsx"))
@@ -489,7 +489,7 @@ describe("registries", () => {
       "@one": "http://localhost:4444/r/{name}",
     })
 
-    await npxShadcn(fixturePath, ["add", "@one/baz"])
+    await npxpitsi(fixturePath, ["add", "@one/baz"])
 
     expect(
       await fs.pathExists(path.join(fixturePath, "components/baz.tsx"))
@@ -505,7 +505,7 @@ describe("registries", () => {
       "@one": "http://localhost:4444/r/{name}",
     })
 
-    await npxShadcn(fixturePath, ["add", "@one/qux"])
+    await npxpitsi(fixturePath, ["add", "@one/qux"])
 
     expect(
       await fs.pathExists(path.join(fixturePath, "components/qux.tsx"))
@@ -520,7 +520,7 @@ describe("registries", () => {
 
   it("should show an error when adding url with namespaced dependency", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
-    const output = await npxShadcn(fixturePath, [
+    const output = await npxpitsi(fixturePath, [
       "add",
       "http://localhost:4444/r/baz",
     ])
@@ -530,7 +530,7 @@ describe("registries", () => {
 
   it("should show an error when adding url with unconfigured registry", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
-    const output = await npxShadcn(fixturePath, [
+    const output = await npxpitsi(fixturePath, [
       "add",
       "http://localhost:5555/registry/two",
     ])
@@ -545,7 +545,7 @@ describe("registries", () => {
       "@two": "http://localhost:5555/registry/{name}",
     })
 
-    const output = await npxShadcn(fixturePath, ["add", "@two/two"])
+    const output = await npxpitsi(fixturePath, ["add", "@two/two"])
     expect(output.stdout).toContain('Unknown registry "@one"')
   })
 
@@ -556,7 +556,7 @@ describe("registries", () => {
       "@two": "http://localhost:5555/registry/{name}",
     })
 
-    const output = await npxShadcn(fixturePath, [
+    const output = await npxpitsi(fixturePath, [
       "add",
       "@two/one",
       "@foobar/foo",
@@ -570,7 +570,7 @@ describe("registries", () => {
     await configureRegistries(fixturePath, {
       "@two": "http://localhost:5555/registry/bearer/{name}",
     })
-    const output = await npxShadcn(fixturePath, ["add", "@two/one"])
+    const output = await npxpitsi(fixturePath, ["add", "@two/one"])
     expect(output.stdout).toContain("Unauthorized")
   })
 
@@ -585,7 +585,7 @@ describe("registries", () => {
       },
     })
 
-    await npxShadcn(fixturePath, ["add", "@two/one"])
+    await npxpitsi(fixturePath, ["add", "@two/one"])
 
     expect(await fs.pathExists(path.join(fixturePath, "example/one.txt"))).toBe(
       true
@@ -598,7 +598,7 @@ describe("registries", () => {
       "@one": "http://localhost:4444/r/{name}",
       "@two": "http://localhost:5555/registry/bearer/{name}",
     })
-    const output = await npxShadcn(fixturePath, ["add", "@one/quux"])
+    const output = await npxpitsi(fixturePath, ["add", "@one/quux"])
     expect(output.stdout).toContain("Unauthorized")
   })
 
@@ -613,7 +613,7 @@ describe("registries", () => {
         },
       },
     })
-    await npxShadcn(fixturePath, ["add", "@one/quux"])
+    await npxpitsi(fixturePath, ["add", "@one/quux"])
 
     expect(
       await fs.pathExists(path.join(fixturePath, "app/quux/page.tsx"))
@@ -643,7 +643,7 @@ describe("registries", () => {
     await configureRegistries(fixturePath, {
       "@two": "http://localhost:5555/registry/api-key/{name}",
     })
-    const output = await npxShadcn(fixturePath, ["add", "@two/one"])
+    const output = await npxpitsi(fixturePath, ["add", "@two/one"])
     expect(output.stdout).toContain("Unauthorized")
   })
 
@@ -657,7 +657,7 @@ describe("registries", () => {
         },
       },
     })
-    await npxShadcn(fixturePath, ["add", "@two/one"])
+    await npxpitsi(fixturePath, ["add", "@two/one"])
     expect(await fs.pathExists(path.join(fixturePath, "example/one.txt"))).toBe(
       true
     )
@@ -670,7 +670,7 @@ describe("registries", () => {
         url: "http://localhost:5555/registry/client-secret/{name}",
       },
     })
-    const output = await npxShadcn(fixturePath, ["add", "@two/one"])
+    const output = await npxpitsi(fixturePath, ["add", "@two/one"])
     expect(output.stdout).toContain("Unauthorized")
   })
 
@@ -685,7 +685,7 @@ describe("registries", () => {
         },
       },
     })
-    await npxShadcn(fixturePath, ["add", "@two/one"])
+    await npxpitsi(fixturePath, ["add", "@two/one"])
     expect(await fs.pathExists(path.join(fixturePath, "example/one.txt"))).toBe(
       true
     )
@@ -698,7 +698,7 @@ describe("registries", () => {
     })
 
     process.env.NEXT_PUBLIC_REGISTRY_URL = "http://localhost:4444/r"
-    await npxShadcn(fixturePath, ["add", "@one/foo"])
+    await npxpitsi(fixturePath, ["add", "@one/foo"])
     expect(
       await fs.pathExists(path.join(fixturePath, "components/foo.tsx"))
     ).toBe(true)
@@ -726,7 +726,7 @@ describe("registries", () => {
     process.env.NEXT_PUBLIC_REGISTRY_URL = "http://localhost:4444/r"
     process.env.REGISTRY_TOKEN = "EXAMPLE_REGISTRY_TOKEN"
     process.env.REGISTRY_API_KEY = "EXAMPLE_API_KEY"
-    await npxShadcn(fixturePath, ["add", "@one/foo", "@three/baz", "@two/two"])
+    await npxpitsi(fixturePath, ["add", "@one/foo", "@three/baz", "@two/two"])
 
     expect(
       await fs.pathExists(path.join(fixturePath, "components/foo.tsx"))
@@ -766,7 +766,7 @@ describe("registries", () => {
       })
 
       // Test that components can be added without pre-resolution
-      await npxShadcn(fixturePath, ["add", "@one/foo", "@two/two"])
+      await npxpitsi(fixturePath, ["add", "@one/foo", "@two/two"])
 
       // Verify all files were created including dependencies
       expect(
@@ -800,7 +800,7 @@ describe("registries", () => {
       })
 
       // Mix of namespaced and non-namespaced components
-      await npxShadcn(fixturePath, ["add", "@one/foo", "button"])
+      await npxpitsi(fixturePath, ["add", "@one/foo", "button"])
 
       expect(
         await fs.pathExists(path.join(fixturePath, "components/foo.tsx"))
@@ -856,7 +856,7 @@ describe("registries", () => {
       })
 
       // Should handle circular dependency without infinite loop
-      await npxShadcn(fixturePath, ["add", "@circular/comp-a"])
+      await npxpitsi(fixturePath, ["add", "@circular/comp-a"])
 
       // Both components should be added once
       expect(
@@ -931,7 +931,7 @@ describe("registries", () => {
       })
 
       // Add parent which should trigger requests for dependencies
-      await npxShadcn(fixturePath, ["add", "@auth/parent"])
+      await npxpitsi(fixturePath, ["add", "@auth/parent"])
 
       // All components should be added
       expect(
@@ -949,23 +949,23 @@ describe("registries", () => {
   })
 
   describe("built-in registries", () => {
-    it("should error when trying to override @shadcn in config", async () => {
+    it("should error when trying to override @pitsi in config", async () => {
       const fixturePath = await createFixtureTestDirectory("next-app-init")
 
       // Read the existing components.json
       const configPath = path.join(fixturePath, "components.json")
       const config = await fs.readJson(configPath)
 
-      // Add @shadcn as a registry
+      // Add @pitsi as a registry
       config.registries = {
-        "@shadcn": "https://my-custom-registry.com/{name}",
+        "@pitsi": "https://my-custom-registry.com/{name}",
       }
 
       // Write the updated config
       await fs.writeJson(configPath, config, { spaces: 2 })
 
       // Try to run a command that loads the config
-      const output = await npxShadcn(fixturePath, ["info"])
+      const output = await npxpitsi(fixturePath, ["info"])
 
       // Check either stdout or stderr for the error message
       const combinedOutput = output.stdout + output.stderr
@@ -976,11 +976,11 @@ describe("registries", () => {
       )
     })
 
-    it("should work with @shadcn namespace without configuration", async () => {
+    it("should work with @pitsi namespace without configuration", async () => {
       const fixturePath = await createFixtureTestDirectory("next-app-init")
 
-      // Don't configure any registries - @shadcn should be built-in
-      const output = await npxShadcn(fixturePath, ["add", "@shadcn/button"])
+      // Don't configure any registries - @pitsi should be built-in
+      const output = await npxpitsi(fixturePath, ["add", "@pitsi/button"])
 
       if (
         !(await fs.pathExists(
@@ -1001,25 +1001,25 @@ describe("registries", () => {
       const fixturePath = await createFixtureTestDirectory("next-app-init")
 
       await configureRegistries(fixturePath, {
-        "@shadcn-ui": "http://localhost:4444/r/{name}",
-        "@myshadcn": "http://localhost:4444/r/{name}",
-        "@shadcntest": "http://localhost:4444/r/{name}",
+        "@pitsi-ui": "http://localhost:4444/r/{name}",
+        "@mypitsi": "http://localhost:4444/r/{name}",
+        "@pitsitest": "http://localhost:4444/r/{name}",
       })
 
       // Try to run a command that loads the config
-      const output = await npxShadcn(fixturePath, ["info"])
+      const output = await npxpitsi(fixturePath, ["info"])
 
       // Should not error - check that registries are shown
-      expect(output.stdout).toContain("@shadcn-ui")
-      expect(output.stdout).toContain("@myshadcn")
-      expect(output.stdout).toContain("@shadcntest")
+      expect(output.stdout).toContain("@pitsi-ui")
+      expect(output.stdout).toContain("@mypitsi")
+      expect(output.stdout).toContain("@pitsitest")
       expect(output.stdout).not.toContain("built-in registry")
     })
   })
 
   it("should add registry:item with no framework", async () => {
     const fixturePath = await createFixtureTestDirectory("no-framework")
-    await npxShadcn(fixturePath, ["add", "no-framework-item"])
+    await npxpitsi(fixturePath, ["add", "no-framework-item"])
 
     expect(await fs.pathExists(path.join(fixturePath, "path/to/foo.txt"))).toBe(
       true
@@ -1036,7 +1036,7 @@ describe("registries", () => {
       "@one": "http://localhost:4444/r/{name}",
     })
 
-    const output = await npxShadcn(fixturePath, [
+    const output = await npxpitsi(fixturePath, [
       "add",
       "@one/foo-theme",
       "--yes",
@@ -1084,7 +1084,7 @@ describe("registries", () => {
 
     process.env.BEARER_TOKEN = "1234567890"
 
-    await npxShadcn(fixturePath, [
+    await npxpitsi(fixturePath, [
       "add",
       "@one/foo-theme",
       "@two/theme",
@@ -1113,7 +1113,7 @@ describe("registries", () => {
       )
     ).toBe(true)
 
-    await npxShadcn(fixturePath, [
+    await npxpitsi(fixturePath, [
       "add",
       "@two/theme",
       "@one/foo-theme",
@@ -1143,20 +1143,20 @@ describe("registries", () => {
     ).toBe(true)
   })
 
-  it("should add named item from shadcn registry", async () => {
+  it("should add named item from pitsi registry", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
-    await npxShadcn(fixturePath, ["add", "button"])
+    await npxpitsi(fixturePath, ["add", "button"])
     expect(
       await fs.pathExists(path.join(fixturePath, "components/ui/button.tsx"))
     ).toBe(true)
   })
 
-  it("should add namespaced items from the shadcn registry", async () => {
+  it("should add namespaced items from the pitsi registry", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
-    await npxShadcn(fixturePath, [
+    await npxpitsi(fixturePath, [
       "add",
-      "@shadcn/example-button",
-      "@shadcn/no-framework-item",
+      "@pitsi/example-button",
+      "@pitsi/no-framework-item",
     ])
     expect(
       await fs.pathExists(
@@ -1174,9 +1174,9 @@ describe("registries", () => {
     ).toBe("Foo Bar")
   })
 
-  it("should add namespaced items from shadcn registry with no-framework", async () => {
+  it("should add namespaced items from pitsi registry with no-framework", async () => {
     const fixturePath = await createFixtureTestDirectory("no-framework")
-    await npxShadcn(fixturePath, ["add", "@shadcn/no-framework-item"])
+    await npxpitsi(fixturePath, ["add", "@pitsi/no-framework-item"])
     expect(await fs.pathExists(path.join(fixturePath, "path/to/foo.txt"))).toBe(
       true
     )
@@ -1193,7 +1193,7 @@ describe("registries:init", () => {
 
   it("should error when init with unconfigured registries", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app")
-    const output = await npxShadcn(fixturePath, ["init", "@two/style"])
+    const output = await npxpitsi(fixturePath, ["init", "@two/style"])
     expect(output.stdout).toContain('Unknown registry "@two"')
   })
 
@@ -1204,7 +1204,7 @@ describe("registries:init", () => {
       "@one": "http://localhost:4444/r/{name}",
     })
 
-    await npxShadcn(fixturePath, ["init", "@one/style"])
+    await npxpitsi(fixturePath, ["init", "@one/style"])
 
     const componentsJson = await fs.readJson(
       path.join(fixturePath, "components.json")
@@ -1217,7 +1217,7 @@ describe("registries:init", () => {
       }
     `)
 
-    // Install utils from shadcn.
+    // Install utils from pitsi.
     expect(await fs.pathExists(path.join(fixturePath, "lib/utils.ts"))).toBe(
       true
     )
@@ -1272,7 +1272,7 @@ describe("registries:init", () => {
 
     process.env.BEARER_TOKEN = "EXAMPLE_BEARER_TOKEN"
 
-    await npxShadcn(fixturePath, ["init", "@two/style"])
+    await npxpitsi(fixturePath, ["init", "@two/style"])
 
     const componentsJson = await fs.readJson(
       path.join(fixturePath, "components.json")
@@ -1290,7 +1290,7 @@ describe("registries:init", () => {
       }
     `)
 
-    // Install utils from shadcn.
+    // Install utils from pitsi.
     expect(await fs.pathExists(path.join(fixturePath, "lib/utils.ts"))).toBe(
       true
     )

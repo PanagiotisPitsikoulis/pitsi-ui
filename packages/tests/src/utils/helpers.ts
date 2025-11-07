@@ -8,7 +8,7 @@ import { TEMP_DIR } from "./setup"
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const FIXTURES_DIR = path.join(__dirname, "../../fixtures")
-const SHADCN_CLI_PATH = path.join(__dirname, "../../../shadcn/dist/index.js")
+const pitsi_CLI_PATH = path.join(__dirname, "../../../pitsi/dist/index.js")
 
 export function getRegistryUrl() {
   return process.env.REGISTRY_URL || "http://localhost:4000/r"
@@ -35,7 +35,7 @@ export async function runCommand(
   }
 ) {
   try {
-    const childProcess = execa("node", [SHADCN_CLI_PATH, ...args], {
+    const childProcess = execa("node", [pitsi_CLI_PATH, ...args], {
       cwd,
       env: {
         ...process.env,
@@ -64,7 +64,7 @@ export async function runCommand(
   }
 }
 
-export async function npxShadcn(
+export async function npxpitsi(
   cwd: string,
   args: string[],
   {

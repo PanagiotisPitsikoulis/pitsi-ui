@@ -1,11 +1,9 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "context-menu-demo",
   "type": "registry:example",
-  "author": "shadcn (https://ui.shadcn.com)",
-  "registryDependencies": [
-    "context-menu"
-  ],
+  "author": "pitsi (https://ui.pitsi.com)",
+  "registryDependencies": ["context-menu"],
   "files": [
     {
       "path": "examples/context-menu-demo.tsx",

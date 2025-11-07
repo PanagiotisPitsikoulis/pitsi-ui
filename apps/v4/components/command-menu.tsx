@@ -112,7 +112,7 @@ export function CommandMenu({
         const componentName = item.url.split("/").pop()
         setSelectedType("component")
         setCopyPayload(
-          `${packageManager} dlx shadcn@latest add ${componentName}`
+          `${packageManager} dlx pitsi@latest add ${componentName}`
         )
       } else {
         setSelectedType("page")
@@ -133,7 +133,7 @@ export function CommandMenu({
   const handleBlockHighlight = React.useCallback(
     (block: { name: string; description: string; categories: string[] }) => {
       setSelectedType("block")
-      setCopyPayload(`${packageManager} dlx shadcn@latest add ${block.name}`)
+      setCopyPayload(`${packageManager} dlx pitsi@latest add ${block.name}`)
     },
     [setSelectedType, setCopyPayload, packageManager]
   )

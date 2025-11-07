@@ -1,11 +1,9 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "select-demo",
   "type": "registry:example",
-  "author": "shadcn (https://ui.shadcn.com)",
-  "registryDependencies": [
-    "select"
-  ],
+  "author": "pitsi (https://ui.pitsi.com)",
+  "registryDependencies": ["select"],
   "files": [
     {
       "path": "examples/select-demo.tsx",

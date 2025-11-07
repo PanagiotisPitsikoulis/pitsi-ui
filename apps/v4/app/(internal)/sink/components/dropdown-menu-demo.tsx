@@ -203,13 +203,16 @@ function DropdownMenuWithAvatar() {
           className="h-12 justify-start px-2 md:max-w-[200px]"
         >
           <Avatar>
-            <AvatarImage src="https://github.com/shadcn.png" alt="Shadcn" />
+            <AvatarImage
+              src="https://github.com/PanagiotisPitsikoulis.png"
+              alt="pitsi"
+            />
             <AvatarFallback className="rounded-lg">CN</AvatarFallback>
           </Avatar>
           <div className="grid flex-1 text-left text-sm leading-tight">
-            <span className="truncate font-semibold">shadcn</span>
+            <span className="truncate font-semibold">pitsi</span>
             <span className="text-muted-foreground truncate text-xs">
-              shadcn@example.com
+              pitsi@example.com
             </span>
           </div>
           <ChevronsUpDownIcon className="text-muted-foreground ml-auto" />
@@ -222,13 +225,16 @@ function DropdownMenuWithAvatar() {
         <DropdownMenuLabel className="p-0 font-normal">
           <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
             <Avatar>
-              <AvatarImage src="https://github.com/shadcn.png" alt="Shadcn" />
+              <AvatarImage
+                src="https://github.com/PanagiotisPitsikoulis.png"
+                alt="pitsi"
+              />
               <AvatarFallback className="rounded-lg">CN</AvatarFallback>
             </Avatar>
             <div className="grid flex-1 text-left text-sm leading-tight">
-              <span className="truncate font-semibold">shadcn</span>
+              <span className="truncate font-semibold">pitsi</span>
               <span className="text-muted-foreground truncate text-xs">
-                shadcn@example.com
+                pitsi@example.com
               </span>
             </div>
           </div>

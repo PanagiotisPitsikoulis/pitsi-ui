@@ -1,12 +1,12 @@
 export const siteConfig = {
-  name: "shadcn/ui",
-  url: "https://ui.shadcn.com",
-  ogImage: "https://ui.shadcn.com/og.jpg",
+  name: "pitsi/ui",
+  url: "https://ui.pitsi.com",
+  ogImage: "https://ui.pitsi.com/og.jpg",
   description:
     "A set of beautifully designed components that you can customize, extend, and build on. Start here then make it your own. Open Source. Open Code.",
   links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn-ui/ui",
+    twitter: "https://twitter.com/pitsi",
+    github: "https://github.com/PanagiotisPitsikoulis/pitsi-ui",
   },
   navItems: [
     {

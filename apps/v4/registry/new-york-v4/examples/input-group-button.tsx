@@ -28,14 +28,14 @@ export default function InputGroupButtonExample() {
   return (
     <div className="grid w-full max-w-sm gap-6">
       <InputGroup>
-        <InputGroupInput placeholder="https://x.com/shadcn" readOnly />
+        <InputGroupInput placeholder="https://x.com/pitsi" readOnly />
         <InputGroupAddon align="inline-end">
           <InputGroupButton
             aria-label="Copy"
             title="Copy"
             size="icon-xs"
             onClick={() => {
-              copyToClipboard("https://x.com/shadcn")
+              copyToClipboard("https://x.com/pitsi")
             }}
           >
             {isCopied ? <IconCheck /> : <IconCopy />}

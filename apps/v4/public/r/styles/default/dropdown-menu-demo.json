@@ -1,11 +1,9 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "dropdown-menu-demo",
   "type": "registry:example",
-  "author": "shadcn (https://ui.shadcn.com)",
-  "registryDependencies": [
-    "dropdown-menu"
-  ],
+  "author": "pitsi (https://ui.pitsi.com)",
+  "registryDependencies": ["dropdown-menu"],
   "files": [
     {
       "path": "examples/dropdown-menu-demo.tsx",

@@ -1,10 +1,8 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "tabs-demo",
   "type": "registry:example",
-  "registryDependencies": [
-    "tabs"
-  ],
+  "registryDependencies": ["tabs"],
   "files": [
     {
       "path": "registry/new-york-v4/examples/tabs-demo.tsx",

@@ -1,12 +1,9 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "button-group",
   "type": "registry:ui",
-  "author": "shadcn (https://ui.shadcn.com)",
-  "registryDependencies": [
-    "button",
-    "separator"
-  ],
+  "author": "pitsi (https://ui.pitsi.com)",
+  "registryDependencies": ["button", "separator"],
   "files": [
     {
       "path": "ui/button-group.tsx",

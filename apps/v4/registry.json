@@ -1,6 +1,6 @@
 {
-  "name": "shadcn/ui",
-  "homepage": "https://ui.shadcn.com",
+  "name": "pitsi/ui",
+  "homepage": "https://ui.pitsi.com",
   "items": [
     {
       "name": "index",

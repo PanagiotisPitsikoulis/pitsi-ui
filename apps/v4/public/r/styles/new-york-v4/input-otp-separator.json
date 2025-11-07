@@ -1,10 +1,8 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "input-otp-separator",
   "type": "registry:example",
-  "registryDependencies": [
-    "input-otp"
-  ],
+  "registryDependencies": ["input-otp"],
   "files": [
     {
       "path": "registry/new-york-v4/examples/input-otp-separator.tsx",

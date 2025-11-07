@@ -1,12 +1,9 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "input-otp-form",
   "type": "registry:example",
-  "author": "shadcn (https://ui.shadcn.com)",
-  "registryDependencies": [
-    "input-otp",
-    "form"
-  ],
+  "author": "pitsi (https://ui.pitsi.com)",
+  "registryDependencies": ["input-otp", "form"],
   "files": [
     {
       "path": "examples/input-otp-form.tsx",

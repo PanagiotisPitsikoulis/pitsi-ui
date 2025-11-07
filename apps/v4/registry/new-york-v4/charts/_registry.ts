@@ -1,4 +1,4 @@
-import { type Registry } from "shadcn/schema"
+import { type Registry } from "pitsi/schema"
 
 export const charts: Registry["items"] = [
   // Area Charts

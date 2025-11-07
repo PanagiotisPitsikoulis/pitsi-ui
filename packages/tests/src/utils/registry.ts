@@ -115,7 +115,7 @@ export async function createRegistryServer(
                 path: "components/ui/alert-dialog.tsx",
                 type: "registry:ui",
                 content:
-                  "export function AlertDialog() { return <div>AlertDialog Component from Registry Shadcn</div> }",
+                  "export function AlertDialog() { return <div>AlertDialog Component from Registry pitsi</div> }",
               },
             ],
           },
@@ -127,7 +127,7 @@ export async function createRegistryServer(
                 path: "components/ui/button.tsx",
                 type: "registry:ui",
                 content:
-                  "export function Button() { return <div>Button Component from Registry Shadcn</div> }",
+                  "export function Button() { return <div>Button Component from Registry pitsi</div> }",
               },
             ],
           },

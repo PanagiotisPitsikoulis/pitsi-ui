@@ -331,9 +331,9 @@ importers:
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
-      shadcn:
+      pitsi:
         specifier: 3.5.0
-        version: link:../../packages/shadcn
+        version: link:../../packages/pitsi
       shiki:
         specifier: ^1.10.1
         version: 1.29.2
@@ -402,7 +402,7 @@ importers:
         specifier: ^4.1.2
         version: 4.1.2
 
-  packages/shadcn:
+  packages/pitsi:
     dependencies:
       '@antfu/ni':
         specifier: ^25.0.0
@@ -522,9 +522,9 @@ importers:
 
   packages/tests:
     dependencies:
-      shadcn:
+      pitsi:
         specifier: workspace:*
-        version: link:../shadcn
+        version: link:../pitsi
     devDependencies:
       '@types/fs-extra':
         specifier: ^11.0.1

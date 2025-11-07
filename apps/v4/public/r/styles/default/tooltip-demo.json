@@ -1,11 +1,9 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "tooltip-demo",
   "type": "registry:example",
-  "author": "shadcn (https://ui.shadcn.com)",
-  "registryDependencies": [
-    "tooltip"
-  ],
+  "author": "pitsi (https://ui.pitsi.com)",
+  "registryDependencies": ["tooltip"],
   "files": [
     {
       "path": "examples/tooltip-demo.tsx",

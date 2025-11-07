@@ -1,4 +1,4 @@
-import { type Registry } from "shadcn/schema"
+import { type Registry } from "pitsi/schema"
 
 import { baseColorsV4 } from "@/registry/base-colors"
 

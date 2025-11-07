@@ -1,9 +1,9 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest"
 
-import { createFixtureTestDirectory, npxShadcn } from "../utils/helpers"
+import { createFixtureTestDirectory, npxpitsi } from "../utils/helpers"
 import { configureRegistries, createRegistryServer } from "../utils/registry"
 
-const registryShadcn = await createRegistryServer(
+const registrypitsi = await createRegistryServer(
   [
     {
       name: "button",
@@ -158,24 +158,24 @@ const registryTwo = await createRegistryServer(
 )
 
 beforeAll(async () => {
-  await registryShadcn.start()
+  await registrypitsi.start()
   await registryOne.start()
   await registryTwo.start()
 })
 
 afterAll(async () => {
-  await registryShadcn.stop()
+  await registrypitsi.stop()
   await registryOne.stop()
   await registryTwo.stop()
 })
 
-describe("shadcn view", () => {
-  it("should view a single component from shadcn registry", async () => {
+describe("pitsi view", () => {
+  it("should view a single component from pitsi registry", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
     await configureRegistries(fixturePath, {
-      "@shadcn": "http://localhost:9080/r/{name}",
+      "@pitsi": "http://localhost:9080/r/{name}",
     })
-    const output = await npxShadcn(fixturePath, ["view", "button"])
+    const output = await npxpitsi(fixturePath, ["view", "button"])
 
     const parsed = JSON.parse(output.stdout)
 
@@ -192,9 +192,9 @@ describe("shadcn view", () => {
     })
   })
 
-  it("should view multiple components from shadcn registry", async () => {
+  it("should view multiple components from pitsi registry", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
-    const output = await npxShadcn(fixturePath, ["view", "button", "card"])
+    const output = await npxpitsi(fixturePath, ["view", "button", "card"])
 
     const parsed = JSON.parse(output.stdout)
     expect(parsed).toHaveLength(2)
@@ -203,7 +203,7 @@ describe("shadcn view", () => {
 
   it("should view component with registry dependencies", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
-    const output = await npxShadcn(fixturePath, ["view", "alert-dialog"])
+    const output = await npxpitsi(fixturePath, ["view", "alert-dialog"])
 
     expect(JSON.parse(output.stdout)).toMatchObject([
       {
@@ -223,7 +223,7 @@ describe("shadcn view", () => {
 
   it("should view component from URL without needing config", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app")
-    const output = await npxShadcn(fixturePath, [
+    const output = await npxpitsi(fixturePath, [
       "view",
       "http://localhost:9081/r/foo.json",
     ])
@@ -273,7 +273,7 @@ describe("shadcn view", () => {
 
   it("should view multiple URLs without needing config", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app")
-    const output = await npxShadcn(fixturePath, [
+    const output = await npxpitsi(fixturePath, [
       "view",
       "http://localhost:9081/r/foo.json",
       "http://localhost:9082/registry/item.json",
@@ -290,7 +290,7 @@ describe("shadcn view", () => {
       "@one": "http://localhost:9081/r/{name}",
     })
 
-    const output = await npxShadcn(fixturePath, ["view", "@one/foo"])
+    const output = await npxpitsi(fixturePath, ["view", "@one/foo"])
 
     expect(JSON.parse(output.stdout)).toMatchObject([
       {
@@ -320,7 +320,7 @@ describe("shadcn view", () => {
       "@two": "http://localhost:9082/registry/{name}",
     })
 
-    const output = await npxShadcn(fixturePath, [
+    const output = await npxpitsi(fixturePath, [
       "view",
       "@one/foo",
       "@two/item",
@@ -338,7 +338,7 @@ describe("shadcn view", () => {
       "@one": "http://localhost:9081/r/{name}",
     })
 
-    const output = await npxShadcn(fixturePath, ["view", "@one/bar"])
+    const output = await npxpitsi(fixturePath, ["view", "@one/bar"])
 
     expect(JSON.parse(output.stdout)).toMatchObject([
       {
@@ -362,7 +362,7 @@ describe("shadcn view", () => {
       "@two": "http://localhost:9082/registry/{name}",
     })
 
-    const output = await npxShadcn(fixturePath, ["view", "@one/complex"])
+    const output = await npxpitsi(fixturePath, ["view", "@one/complex"])
 
     expect(JSON.parse(output.stdout)).toMatchObject([
       {
@@ -390,7 +390,7 @@ describe("shadcn view", () => {
       },
     })
 
-    const output = await npxShadcn(fixturePath, ["view", "@two/secure-item"])
+    const output = await npxpitsi(fixturePath, ["view", "@two/secure-item"])
 
     expect(JSON.parse(output.stdout)).toMatchObject([
       {
@@ -413,7 +413,7 @@ describe("shadcn view", () => {
       "@two": "http://localhost:9082/registry/bearer/{name}",
     })
 
-    const output = await npxShadcn(fixturePath, ["view", "@two/secure-item"])
+    const output = await npxpitsi(fixturePath, ["view", "@two/secure-item"])
     expect(output.stdout).toContain("Unauthorized")
   })
 
@@ -431,7 +431,7 @@ describe("shadcn view", () => {
 
     process.env.BEARER_TOKEN = "EXAMPLE_BEARER_TOKEN"
 
-    const output = await npxShadcn(fixturePath, [
+    const output = await npxpitsi(fixturePath, [
       "view",
       "@two/secure-item",
       "@one/foo",
@@ -459,7 +459,7 @@ describe("shadcn view", () => {
       "@one": "http://localhost:9081/r/{name}",
     })
 
-    const output = await npxShadcn(fixturePath, [
+    const output = await npxpitsi(fixturePath, [
       "view",
       "http://localhost:9082/registry/item.json",
       "@one/foo",
@@ -473,24 +473,24 @@ describe("shadcn view", () => {
 
   it("should handle non-existent component gracefully", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
-    const output = await npxShadcn(fixturePath, ["view", "non-existent"])
+    const output = await npxpitsi(fixturePath, ["view", "non-existent"])
 
     expect(output.stdout).toContain("not found")
   })
 
   it("should handle non-existent registry gracefully", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
-    const output = await npxShadcn(fixturePath, ["view", "@unknown/component"])
+    const output = await npxpitsi(fixturePath, ["view", "@unknown/component"])
 
     expect(output.stdout).toContain('Unknown registry "@unknown"')
   })
 
-  it("should work with @shadcn namespace", async () => {
+  it("should work with @pitsi namespace", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
-    const output = await npxShadcn(fixturePath, [
+    const output = await npxpitsi(fixturePath, [
       "view",
-      "@shadcn/button",
-      "@shadcn/card",
+      "@pitsi/button",
+      "@pitsi/card",
     ])
 
     const parsed = JSON.parse(output.stdout)
@@ -500,7 +500,7 @@ describe("shadcn view", () => {
 
   it("should handle 404 for non-existent URL", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app")
-    const output = await npxShadcn(fixturePath, [
+    const output = await npxpitsi(fixturePath, [
       "view",
       "http://localhost:9081/r/does-not-exist.json",
     ])
@@ -514,7 +514,7 @@ describe("shadcn view", () => {
       "@one": "http://localhost:9081/r/{name}",
     })
 
-    const output = await npxShadcn(fixturePath, [
+    const output = await npxpitsi(fixturePath, [
       "view",
       "non-existent",
       "@one/does-not-exist",
@@ -526,7 +526,7 @@ describe("shadcn view", () => {
 
   it("should handle invalid URL format", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app")
-    const output = await npxShadcn(fixturePath, ["view", "not-a-valid-url"])
+    const output = await npxpitsi(fixturePath, ["view", "not-a-valid-url"])
 
     // With defaults in place, it will try to fetch as a component and fail
     expect(output.stdout.toLowerCase()).toContain("not found")
@@ -534,7 +534,7 @@ describe("shadcn view", () => {
 
   it("should handle network timeouts gracefully", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app")
-    const output = await npxShadcn(fixturePath, [
+    const output = await npxpitsi(fixturePath, [
       "view",
       "http://localhost:9999/timeout.json", // Non-existent server
     ])
@@ -545,7 +545,7 @@ describe("shadcn view", () => {
 
   it("should handle mixed success and failure", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
-    const output = await npxShadcn(fixturePath, [
+    const output = await npxpitsi(fixturePath, [
       "view",
       "button",
       "non-existent-component",
@@ -567,7 +567,7 @@ describe("shadcn view", () => {
       },
     })
 
-    const output = await npxShadcn(fixturePath, ["view", "@auth/secure-item"])
+    const output = await npxpitsi(fixturePath, ["view", "@auth/secure-item"])
 
     expect(output.stdout).toContain("MISSING_ENV_VAR")
   })
@@ -597,7 +597,7 @@ describe("shadcn view", () => {
     await badServer.start()
 
     const fixturePath = await createFixtureTestDirectory("next-app")
-    const output = await npxShadcn(fixturePath, [
+    const output = await npxpitsi(fixturePath, [
       "view",
       "http://localhost:9083/bad/invalid-schema.json",
     ])
@@ -623,7 +623,7 @@ describe("shadcn view", () => {
     })
 
     // complex depends on @two/item which requires auth
-    const output = await npxShadcn(fixturePath, ["view", "@one/complex"])
+    const output = await npxpitsi(fixturePath, ["view", "@one/complex"])
 
     // Should just show the component metadata, not fail on auth
     expect(JSON.parse(output.stdout)).toMatchObject([
@@ -652,7 +652,7 @@ describe("shadcn view", () => {
 
     // Try to view complex which depends on @two/item (requires auth)
     // Note: This should succeed for view command as it just shows metadata
-    const output = await npxShadcn(fixturePath, ["view", "@one/complex"])
+    const output = await npxpitsi(fixturePath, ["view", "@one/complex"])
 
     expect(JSON.parse(output.stdout)).toMatchObject([
       {
@@ -677,7 +677,7 @@ describe("shadcn view", () => {
     })
 
     // Directly view the authenticated item
-    const output = await npxShadcn(fixturePath, ["view", "@two/item"])
+    const output = await npxpitsi(fixturePath, ["view", "@two/item"])
 
     expect(JSON.parse(output.stdout)).toMatchObject([
       {
@@ -701,7 +701,7 @@ describe("shadcn view", () => {
       "@one": "http://localhost:9081/r/{name}",
     })
 
-    const output = await npxShadcn(fixturePath, ["view", "@one/foo"])
+    const output = await npxpitsi(fixturePath, ["view", "@one/foo"])
     const parsed = JSON.parse(output.stdout)
 
     expect(parsed[0]).toMatchObject({
@@ -739,21 +739,21 @@ describe("shadcn view", () => {
 
   it("should handle namespace with special characters", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
-    const output = await npxShadcn(fixturePath, ["view", "@test-123/component"])
+    const output = await npxpitsi(fixturePath, ["view", "@test-123/component"])
 
     expect(output.stdout).toContain('Unknown registry "@test-123"')
   })
 
   it("should handle empty component name in namespace", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
-    const output = await npxShadcn(fixturePath, ["view", "@shadcn/"])
+    const output = await npxpitsi(fixturePath, ["view", "@pitsi/"])
 
     expect(output.stdout).toContain("not found")
   })
 
   it("should handle namespace without @ prefix", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
-    const output = await npxShadcn(fixturePath, ["view", "one/foo"])
+    const output = await npxpitsi(fixturePath, ["view", "one/foo"])
 
     // Without @ prefix, it's treated as a regular component name
     expect(output.stdout).toContain("not found")
@@ -761,23 +761,23 @@ describe("shadcn view", () => {
 
   it("should handle double namespace", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
-    const output = await npxShadcn(fixturePath, ["view", "@@test/component"])
+    const output = await npxpitsi(fixturePath, ["view", "@@test/component"])
 
     expect(output.stdout).toContain("not found")
   })
 
   it("should two error for unknown registry", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
-    const output = await npxShadcn(fixturePath, ["view", "@test/component"])
+    const output = await npxpitsi(fixturePath, ["view", "@test/component"])
 
     expect(output.stdout).toContain('Unknown registry "@test"')
   })
 
   it("should two error for unknown registry not in first position", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
-    const output = await npxShadcn(fixturePath, [
+    const output = await npxpitsi(fixturePath, [
       "view",
-      "@shadcn/component",
+      "@pitsi/component",
       "@does-not-exist/component",
     ])
 
@@ -786,7 +786,7 @@ describe("shadcn view", () => {
 
   it("should handle namespace with multiple slashes", async () => {
     const fixturePath = await createFixtureTestDirectory("next-app-init")
-    const output = await npxShadcn(fixturePath, [
+    const output = await npxpitsi(fixturePath, [
       "view",
       "@test/path/to/component",
     ])
@@ -801,7 +801,7 @@ describe("shadcn view", () => {
       "@one": "http://localhost:9081/r/{name}",
     })
 
-    const output = await npxShadcn(fixturePath, ["view", "@one/foo"])
+    const output = await npxpitsi(fixturePath, ["view", "@one/foo"])
 
     expect(output.stdout).toContain("Foo component from registry one")
   })
@@ -814,7 +814,7 @@ describe("shadcn view", () => {
       "@one": "http://localhost:9081/r/{name}",
     })
 
-    const output = await npxShadcn(fixturePath, ["view", "@two/item"])
+    const output = await npxpitsi(fixturePath, ["view", "@two/item"])
 
     expect(output.stdout).toContain('Unknown registry "@two"')
   })
@@ -828,7 +828,7 @@ describe("shadcn view", () => {
     })
 
     // Try to view an item that doesn't exist in @one registry
-    const output = await npxShadcn(fixturePath, ["view", "@one/does-not-exist"])
+    const output = await npxpitsi(fixturePath, ["view", "@one/does-not-exist"])
 
     expect(output.stdout).toContain("not found")
   })

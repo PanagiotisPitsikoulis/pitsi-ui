@@ -1,12 +1,9 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "chart-pie-legend",
   "type": "registry:block",
-  "author": "shadcn (https://ui.shadcn.com)",
-  "registryDependencies": [
-    "card",
-    "chart"
-  ],
+  "author": "pitsi (https://ui.pitsi.com)",
+  "registryDependencies": ["card", "chart"],
   "files": [
     {
       "path": "charts/chart-pie-legend.tsx",
@@ -15,8 +12,5 @@
       "target": ""
     }
   ],
-  "categories": [
-    "charts",
-    "charts-pie"
-  ]
+  "categories": ["charts", "charts-pie"]
 }

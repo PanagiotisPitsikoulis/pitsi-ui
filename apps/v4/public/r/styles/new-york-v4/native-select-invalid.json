@@ -1,10 +1,8 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "native-select-invalid",
   "type": "registry:example",
-  "registryDependencies": [
-    "native-select"
-  ],
+  "registryDependencies": ["native-select"],
   "files": [
     {
       "path": "registry/new-york-v4/examples/native-select-invalid.tsx",

@@ -1,13 +1,9 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "calendar-form",
   "type": "registry:example",
-  "author": "shadcn (https://ui.shadcn.com)",
-  "registryDependencies": [
-    "calendar",
-    "form",
-    "popover"
-  ],
+  "author": "pitsi (https://ui.pitsi.com)",
+  "registryDependencies": ["calendar", "form", "popover"],
   "files": [
     {
       "path": "examples/calendar-form.tsx",

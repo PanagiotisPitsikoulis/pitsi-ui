@@ -1,11 +1,9 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "breadcrumb-demo",
   "type": "registry:example",
-  "author": "shadcn (https://ui.shadcn.com)",
-  "registryDependencies": [
-    "breadcrumb"
-  ],
+  "author": "pitsi (https://ui.pitsi.com)",
+  "registryDependencies": ["breadcrumb"],
   "files": [
     {
       "path": "examples/breadcrumb-demo.tsx",

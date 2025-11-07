@@ -33,8 +33,8 @@ import { Spinner } from "@/registry/new-york-v4/ui/spinner"
 
 const people = [
   {
-    username: "shadcn",
-    avatar: "https://github.com/shadcn.png",
+    username: "pitsi",
+    avatar: "https://github.com/PanagiotisPitsikoulis.png",
     message: "Just shipped a component that fixes itself",
   },
   {
@@ -267,8 +267,8 @@ export function ItemDemo() {
               <div className="*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:grayscale">
                 <Avatar>
                   <AvatarImage
-                    src="https://github.com/shadcn.png"
-                    alt="@shadcn"
+                    src="https://github.com/PanagiotisPitsikoulis.png"
+                    alt="@pitsi"
                   />
                   <AvatarFallback>CN</AvatarFallback>
                 </Avatar>

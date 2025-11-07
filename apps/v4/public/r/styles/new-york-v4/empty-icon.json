@@ -1,10 +1,8 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "empty-icon",
   "type": "registry:example",
-  "registryDependencies": [
-    "empty"
-  ],
+  "registryDependencies": ["empty"],
   "files": [
     {
       "path": "registry/new-york-v4/examples/empty-icon.tsx",
