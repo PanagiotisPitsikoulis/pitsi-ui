@@ -52,11 +52,6 @@ export const metadata: Metadata = {
     images: [`${process.env.NEXT_PUBLIC_APP_URL}/opengraph-image.png`],
     creator: "@pitsi",
   },
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
-  },
   manifest: `${siteConfig.url}/site.webmanifest`,
 }
 
