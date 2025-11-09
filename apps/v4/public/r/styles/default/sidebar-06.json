@@ -32,13 +32,10 @@
     },
     {
       "path": "blocks/sidebar-06/components/sidebar-opt-in-form.tsx",
-      "content": "import { Button } from \"@/registry/default/ui/button\"\nimport {\n  Card,\n  CardContent,\n  CardDescription,\n  CardHeader,\n  CardTitle,\n} from \"@/registry/default/ui/card\"\nimport { SidebarInput } from \"@/registry/default/ui/sidebar\"\n\nexport function SidebarOptInForm() {\n  return (\n    <Card className=\"shadow-none\">\n      <form>\n        <CardHeader className=\"p-4 pb-0\">\n          <CardTitle className=\"text-sm\">Subscribe to our newsletter</CardTitle>\n          <CardDescription>\n            Opt-in to receive updates and news about the sidebar.\n          </CardDescription>\n        </CardHeader>\n        <CardContent className=\"grid gap-2.5 p-4\">\n          <SidebarInput type=\"email\" placeholder=\"Email\" />\n          <Button\n            className=\"w-full bg-sidebar-primary text-sidebar-primary-foreground shadow-none\"\n            size=\"sm\"\n          >\n            Subscribe\n          </Button>\n        </CardContent>\n      </form>\n    </Card>\n  )\n}\n",
+      "content": "import { Button } from \"@/registry/default/ui/button\"\nimport {\n  Card,\n  CardContent,\n  CardDescription,\n  CardHeader,\n  CardTitle,\n} from \"@/registry/default/ui/card\"\nimport { SidebarInput } from \"@/registry/default/ui/sidebar\"\n\nexport function SidebarOptInForm() {\n  return (\n    <Card className=\"shadow-none\">\n      <form>\n        <CardHeader className=\"p-4 pb-0\">\n          <CardTitle className=\"text-sm\">Subscribe to our newsletter</CardTitle>\n          <CardDescription>\n            Opt-in to receive updates and news about the sidebar.\n          </CardDescription>\n        </CardHeader>\n        <CardContent className=\"grid gap-2.5 p-4\">\n          <SidebarInput type=\"email\" placeholder=\"Email\" />\n          <Button\n            className=\"w-full bg-sidebar-primary text-sidebar-primary-foreground\"\n            size=\"sm\"\n          >\n            Subscribe\n          </Button>\n        </CardContent>\n      </form>\n    </Card>\n  )\n}\n",
       "type": "registry:component",
       "target": ""
     }
   ],
-  "categories": [
-    "sidebar",
-    "dashboard"
-  ]
+  "categories": ["sidebar", "dashboard"]
 }

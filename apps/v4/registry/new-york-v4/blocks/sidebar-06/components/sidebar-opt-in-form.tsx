@@ -10,7 +10,7 @@ import { SidebarInput } from "@/registry/new-york-v4/ui/sidebar"
 
 export function SidebarOptInForm() {
   return (
-    <Card className="gap-2 py-4 shadow-none">
+    <Card className="gap-2 py-4">
       <CardHeader className="px-4">
         <CardTitle className="text-sm">Subscribe to our newsletter</CardTitle>
         <CardDescription>
@@ -22,7 +22,7 @@ export function SidebarOptInForm() {
           <div className="grid gap-2.5">
             <SidebarInput type="email" placeholder="Email" />
             <Button
-              className="bg-sidebar-primary text-sidebar-primary-foreground w-full shadow-none"
+              className="bg-sidebar-primary text-sidebar-primary-foreground w-full"
               size="sm"
             >
               Subscribe

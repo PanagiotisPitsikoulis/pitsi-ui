@@ -117,7 +117,7 @@ export default async function Page(props: {
                     <Button
                       variant="secondary"
                       size="icon"
-                      className="extend-touch-target ml-auto size-8 shadow-none md:size-7"
+                      className="extend-touch-target ml-auto size-8 md:size-7"
                       asChild
                     >
                       <Link href={neighbours.previous.url}>
@@ -130,7 +130,7 @@ export default async function Page(props: {
                     <Button
                       variant="secondary"
                       size="icon"
-                      className="extend-touch-target size-8 shadow-none md:size-7"
+                      className="extend-touch-target size-8 md:size-7"
                       asChild
                     >
                       <Link href={neighbours.next.url}>
@@ -184,12 +184,7 @@ export default async function Page(props: {
             </Button>
           )}
           {neighbours.next && (
-            <Button
-              variant="secondary"
-              size="sm"
-              className="ml-auto shadow-none"
-              asChild
-            >
+            <Button variant="secondary" size="sm" className="ml-auto" asChild>
               <Link href={neighbours.next.url}>
                 {neighbours.next.name} <IconArrowRight />
               </Link>

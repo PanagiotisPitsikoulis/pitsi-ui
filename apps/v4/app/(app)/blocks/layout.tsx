@@ -66,7 +66,7 @@ export default function BlocksLayout({
           asChild
           variant="secondary"
           size="sm"
-          className="mr-7 hidden shadow-none lg:flex"
+          className="mr-7 hidden lg:flex"
         >
           <Link href="/blocks/sidebar">Browse all blocks</Link>
         </Button>

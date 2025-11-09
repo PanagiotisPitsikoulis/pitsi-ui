@@ -161,7 +161,7 @@ function BlockViewerToolbar({ styleName }: { styleName: Style["name"] }) {
         {item.description?.replace(/\.$/, "")}
       </a>
       <div className="ml-auto flex items-center gap-2">
-        <div className="h-8 items-center gap-1.5 rounded-md border p-1 shadow-none">
+        <div className="h-8 items-center gap-1.5 rounded-md border p-1">
           <ToggleGroup
             type="single"
             defaultValue="100"
@@ -215,7 +215,7 @@ function BlockViewerToolbar({ styleName }: { styleName: Style["name"] }) {
         <Separator orientation="vertical" className="mx-1 !h-4" />
         <Button
           variant="outline"
-          className="w-fit gap-1 px-2 shadow-none"
+          className="w-fit gap-1 px-2"
           size="sm"
           onClick={() => {
             copyToClipboard(`npx pitsi@latest add ${item.name}`)

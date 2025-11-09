@@ -99,11 +99,7 @@ export function CardsTeamMembers() {
             <ItemActions>
               <Popover>
                 <PopoverTrigger asChild>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="ml-auto shadow-none"
-                  >
+                  <Button variant="outline" size="sm" className="ml-auto">
                     {member.role} <ChevronDown />
                   </Button>
                 </PopoverTrigger>

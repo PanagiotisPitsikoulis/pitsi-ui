@@ -318,7 +318,7 @@ export default function ImageWithHeading() {
                     type="text"
                     name="email"
                     placeholder="Enter email to get started"
-                    className="text-base rounded-full text-gray-900 flex-1 py-4 px-6 w-full md:w-fit bg-gray-100 md:bg-transparent shadow-none placeholder:text-gray-400 focus:outline-none mb-5 md:mb-0"
+                    className="text-base rounded-full text-gray-900 flex-1 py-4 px-6 w-full md:w-fit bg-gray-100 md:bg-transparent placeholder:text-gray-400 focus:outline-none mb-5 md:mb-0"
                   />
                   <button className="bg-indigo-600 rounded-full py-3 px-5 text-base font-semibold text-white hover:bg-indigo-700 cursor-pointer transition-all duration-500 w-full md:w-fit">
                     Try 14 days free
@@ -339,5 +339,5 @@ export default function ImageWithHeading() {
         </div>
       </section>
     </div>
-  );
+  )
 }

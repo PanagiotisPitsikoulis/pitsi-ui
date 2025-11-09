@@ -55,7 +55,7 @@ export default function Calendar20() {
                 key={time}
                 variant={selectedTime === time ? "default" : "outline"}
                 onClick={() => setSelectedTime(time)}
-                className="w-full shadow-none"
+                className="w-full"
               >
                 {time}
               </Button>

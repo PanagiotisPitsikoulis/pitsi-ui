@@ -32,7 +32,7 @@ export function ColorFormatSelector({
       <SelectTrigger
         size="sm"
         className={cn(
-          "bg-secondary text-secondary-foreground border-secondary shadow-none",
+          "bg-secondary text-secondary-foreground border-secondary",
           className
         )}
         {...props}

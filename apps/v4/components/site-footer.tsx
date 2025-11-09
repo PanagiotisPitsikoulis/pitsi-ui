@@ -13,9 +13,9 @@ export function SiteFooter() {
               rel="noreferrer"
               className="font-medium underline underline-offset-4"
             >
-              pitsi
+              Panos Pitsi
             </a>{" "}
-            at{" "}
+            {/*at{" "}
             <a
               href="https://vercel.com/new?utm_source=pitsi_site&utm_medium=web&utm_campaign=docs_cta_deploy_now_callout"
               target="_blank"
@@ -33,7 +33,7 @@ export function SiteFooter() {
             >
               GitHub
             </a>
-            .
+            .*/}
           </div>
         </div>
       </div>

@@ -289,7 +289,7 @@ export default function BackgroundCoverImageWithSearch() {
                 type="text"
                 name="email"
                 placeholder="Search solution.."
-                className="rounded-full text-gray-900 font-medium leading-6 flex-1 py-1.5 px-3 bg-transparent shadow-none placeholder:text-gray-400 focus:outline-none lg:px-7 text-lg"
+                className="rounded-full text-gray-900 font-medium leading-6 flex-1 py-1.5 px-3 bg-transparent placeholder:text-gray-400 focus:outline-none lg:px-7 text-lg"
               />
               <button className="bg-indigo-600 rounded-full py-2 px-6 leading-none flex items-center text-sm font-medium text-white h-10 hover:bg-indigo-700 cursor-pointer transition-all duration-500">
                 Search now
@@ -299,5 +299,5 @@ export default function BackgroundCoverImageWithSearch() {
         </div>
       </section>
     </div>
-  );
+  )
 }

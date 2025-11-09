@@ -202,7 +202,7 @@ export function NotionPromptForm() {
         <FieldLabel htmlFor="notion-prompt" className="sr-only">
           Prompt
         </FieldLabel>
-        <InputGroup className="bg-background dark:bg-background shadow-none">
+        <InputGroup className="bg-background dark:bg-background">
           <InputGroupTextarea
             id="notion-prompt"
             placeholder="Ask, search, or make anything..."

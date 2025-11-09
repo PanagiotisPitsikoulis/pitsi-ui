@@ -82,7 +82,7 @@ export function ThemeCustomizer({ className }: React.ComponentProps<"div">) {
           <SelectTrigger
             id="theme-selector"
             size="sm"
-            className="justify-start capitalize shadow-none *:data-[slot=select-value]:w-12 *:data-[slot=select-value]:capitalize"
+            className="justify-start capitalize *:data-[slot=select-value]:w-12 *:data-[slot=select-value]:capitalize"
           >
             <span className="font-medium">Theme:</span>
             <SelectValue placeholder="Select a theme" />
@@ -210,7 +210,7 @@ function CustomizerCode({ themeName }: { themeName: string }) {
                 data-slot="copy-button"
                 size="icon"
                 variant="ghost"
-                className="bg-code text-code-foreground absolute top-3 right-2 z-10 size-7 shadow-none hover:opacity-100 focus-visible:opacity-100"
+                className="bg-code text-code-foreground absolute top-3 right-2 z-10 size-7 hover:opacity-100 focus-visible:opacity-100"
                 onClick={() => {
                   copyToClipboardWithMeta(
                     getThemeCodeOKLCH(activeThemeOKLCH, 0.65),
@@ -290,7 +290,7 @@ function CustomizerCode({ themeName }: { themeName: string }) {
                 data-slot="copy-button"
                 size="icon"
                 variant="ghost"
-                className="bg-code text-code-foreground absolute top-3 right-2 z-10 size-7 shadow-none hover:opacity-100 focus-visible:opacity-100"
+                className="bg-code text-code-foreground absolute top-3 right-2 z-10 size-7 hover:opacity-100 focus-visible:opacity-100"
                 onClick={() => {
                   copyToClipboardWithMeta(
                     getThemeCodeHSLV4(activeTheme, 0.65),
@@ -374,7 +374,7 @@ function CustomizerCode({ themeName }: { themeName: string }) {
                 data-slot="copy-button"
                 size="icon"
                 variant="ghost"
-                className="bg-code text-code-foreground absolute top-3 right-2 z-10 size-7 shadow-none hover:opacity-100 focus-visible:opacity-100"
+                className="bg-code text-code-foreground absolute top-3 right-2 z-10 size-7 hover:opacity-100 focus-visible:opacity-100"
                 onClick={() => {
                   copyToClipboardWithMeta(getThemeCode(activeTheme, 0.5), {
                     name: "copy_theme_code",

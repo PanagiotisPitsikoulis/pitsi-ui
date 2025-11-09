@@ -32,7 +32,7 @@ const options = [
 
 export function FieldHear() {
   return (
-    <Card className="py-4 shadow-none">
+    <Card className="py-4">
       <CardContent className="px-4">
         <form>
           <FieldGroup>
