@@ -280,6 +280,12 @@
     box-shadow: none !important;
   }
 
+  /* Remove all shadows from command elements and their children */
+  [data-slot="command"],
+  [data-slot="command"] * {
+    box-shadow: none !important;
+  }
+
   /* Remove shadows from unselected tabs */
   [role="tab"][aria-selected="false"] {
     box-shadow: none !important;
