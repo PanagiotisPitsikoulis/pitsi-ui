@@ -24,6 +24,7 @@ export function ComponentPreview({
   chromeLessOnMobile?: boolean
 }) {
   const Component = Index[styleName]?.[name]?.component
+  const registryItem = Index[styleName]?.[name]
 
   if (!Component) {
     return (
@@ -37,7 +38,18 @@ export function ComponentPreview({
     )
   }
 
-  if (type === "block") {
+  // Auto-detect type from registry if not provided
+  const itemType = type || registryItem?.type
+  const isBlock = itemType === "registry:block"
+
+  // Check if this is an animation by looking at registryDependencies
+  const isAnimation =
+    registryItem?.registryDependencies?.some((dep: string) => {
+      const depItem = Index[styleName]?.[dep]
+      return depItem?.categories?.includes("animations")
+    })
+
+  if (isBlock) {
     return (
       <div className="relative aspect-[4/2.5] w-full overflow-hidden rounded-md border md:-mx-1">
         <Image
@@ -58,6 +70,47 @@ export function ComponentPreview({
           <iframe src={`/view/${styleName}/${name}`} className="size-full" />
         </div>
       </div>
+    )
+  }
+
+  if (isAnimation) {
+    return (
+      <ComponentPreviewTabs
+        className={className}
+        align={align}
+        hideCode={hideCode}
+        component={
+          <div className="relative h-[600px] w-full overflow-hidden rounded-md">
+            <Image
+              src={`/r/styles/new-york-v4/${name}-light.png`}
+              alt={name}
+              width={1440}
+              height={900}
+              className="bg-background absolute top-0 left-0 z-20 w-full object-cover object-top md:hidden dark:hidden"
+            />
+            <Image
+              src={`/r/styles/new-york-v4/${name}-dark.png`}
+              alt={name}
+              width={1440}
+              height={900}
+              className="bg-background absolute top-0 left-0 z-20 hidden w-full object-cover object-top md:hidden dark:block"
+            />
+            <iframe
+              src={`/view/${styleName}/${name}`}
+              className="hidden size-full md:block"
+            />
+          </div>
+        }
+        source={
+          <ComponentSource
+            name={name}
+            collapsible={false}
+            styleName={styleName}
+          />
+        }
+        chromeLessOnMobile={chromeLessOnMobile}
+        {...props}
+      />
     )
   }
 

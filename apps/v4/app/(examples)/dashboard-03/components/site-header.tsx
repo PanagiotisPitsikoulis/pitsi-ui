@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation"
 import { SidebarIcon } from "lucide-react"
 
 import { ThemeSelector } from "@/components/theme-selector"
-import { SearchForm } from "@/registry/new-york-v4/blocks/sidebar-16/components/search-form"
+import { SearchForm } from "@/registry/new-york-v4/blocks/application/sidebar-16/components/search-form"
 import {
   Breadcrumb,
   BreadcrumbItem,

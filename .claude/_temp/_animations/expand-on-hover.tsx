@@ -1,12 +1,13 @@
-"use client";
+"use client"
 
-import { AnimatePresence, motion } from "framer-motion";
-import React, { useState } from "react";
-import "swiper/css";
-import "swiper/css/effect-creative";
-import "swiper/css/pagination";
-import "swiper/css/autoplay";
-import { cn } from "@/lib/ui/cn";
+import React, { useState } from "react"
+import { AnimatePresence, motion } from "motion/react"
+
+import "swiper/css"
+import "swiper/css/effect-creative"
+import "swiper/css/pagination"
+import "swiper/css/autoplay"
+import { cn } from "@/lib/ui/cn"
 
 const Skiper52 = () => {
   const images = [
@@ -55,25 +56,25 @@ const Skiper52 = () => {
       alt: "Illustrations by my fav AarzooAly",
       code: "# 23",
     },
-  ];
+  ]
 
   return (
     <div className="flex h-full w-full items-center justify-center overflow-hidden bg-[#f5f4f3]">
       <HoverExpand_001 className="" images={images} />{" "}
     </div>
-  );
-};
+  )
+}
 
-export { Skiper52 };
+export { Skiper52 }
 
 const HoverExpand_001 = ({
   images,
   className,
 }: {
-  images: { src: string; alt: string; code: string }[];
-  className?: string;
+  images: { src: string; alt: string; code: string }[]
+  className?: string
 }) => {
-  const [activeImage, setActiveImage] = useState<number | null>(1);
+  const [activeImage, setActiveImage] = useState<number | null>(1)
 
   return (
     <motion.div
@@ -139,7 +140,7 @@ const HoverExpand_001 = ({
         </div>
       </motion.div>
     </motion.div>
-  );
-};
+  )
+}
 
-export { HoverExpand_001 };
+export { HoverExpand_001 }

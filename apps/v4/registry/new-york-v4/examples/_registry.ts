@@ -2927,4 +2927,214 @@ export const examples: Registry["items"] = [
       mobile: "component",
     },
   },
+
+  {
+    name: "background-image-parallax-demo",
+    type: "registry:example",
+    registryDependencies: ["background-image-parallax"],
+    files: [
+      {
+        path: "examples/background-image-parallax-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "card-swipe-carousel-demo",
+    type: "registry:example",
+    registryDependencies: ["card-swipe-carousel"],
+    files: [
+      {
+        path: "examples/card-swipe-carousel-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "cards-parallax-demo",
+    type: "registry:example",
+    registryDependencies: ["cards-parallax"],
+    files: [
+      {
+        path: "examples/cards-parallax-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "parallax-scroll-demo",
+    type: "registry:example",
+    registryDependencies: ["parallax-scroll"],
+    files: [
+      {
+        path: "examples/parallax-scroll-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "perspective-carousel-demo",
+    type: "registry:example",
+    registryDependencies: ["perspective-carousel"],
+    files: [
+      {
+        path: "examples/perspective-carousel-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "perspective-section-transition-demo",
+    type: "registry:example",
+    registryDependencies: ["perspective-section-transition"],
+    files: [
+      {
+        path: "examples/perspective-section-transition-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "scroll-expand-demo",
+    type: "registry:example",
+    registryDependencies: ["scroll-expand"],
+    files: [
+      {
+        path: "examples/scroll-expand-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "scroll-fade-demo",
+    type: "registry:example",
+    registryDependencies: ["scroll-fade"],
+    files: [
+      {
+        path: "examples/scroll-fade-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "scroll-scale-demo",
+    type: "registry:example",
+    registryDependencies: ["scroll-scale"],
+    files: [
+      {
+        path: "examples/scroll-scale-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "slide-down-demo",
+    type: "registry:example",
+    registryDependencies: ["slide-down"],
+    files: [
+      {
+        path: "examples/slide-down-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "slide-up-demo",
+    type: "registry:example",
+    registryDependencies: ["slide-up"],
+    files: [
+      {
+        path: "examples/slide-up-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "smooth-parallax-scroll-demo",
+    type: "registry:example",
+    registryDependencies: ["smooth-parallax-scroll"],
+    files: [
+      {
+        path: "examples/smooth-parallax-scroll-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "smooth-scroll-demo",
+    type: "registry:example",
+    registryDependencies: ["smooth-scroll"],
+    files: [
+      {
+        path: "examples/smooth-scroll-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "sticky-footer-demo",
+    type: "registry:example",
+    registryDependencies: ["sticky-footer"],
+    files: [
+      {
+        path: "examples/sticky-footer-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "text-along-path-demo",
+    type: "registry:example",
+    registryDependencies: ["text-along-path"],
+    files: [
+      {
+        path: "examples/text-along-path-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "text-gradient-opacity-demo",
+    type: "registry:example",
+    registryDependencies: ["text-gradient-opacity"],
+    files: [
+      {
+        path: "examples/text-gradient-opacity-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "text-parallax-demo",
+    type: "registry:example",
+    registryDependencies: ["text-parallax"],
+    files: [
+      {
+        path: "examples/text-parallax-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "transforms-3d-demo",
+    type: "registry:example",
+    registryDependencies: ["transforms-3d"],
+    files: [
+      {
+        path: "examples/transforms-3d-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "zoom-parallax-demo",
+    type: "registry:example",
+    registryDependencies: ["zoom-parallax"],
+    files: [
+      {
+        path: "examples/zoom-parallax-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

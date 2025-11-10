@@ -660,7 +660,7 @@ export const ui: Registry["items"] = [
   {
     name: "squircle",
     type: "registry:ui",
-    dependencies: ["framer-motion"],
+    dependencies: ["motion/react"],
     files: [
       {
         path: "ui/squircle.tsx",

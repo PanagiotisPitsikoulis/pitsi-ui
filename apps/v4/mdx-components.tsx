@@ -3,6 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { cn } from "@/lib/utils"
+import { AnimationsList } from "@/components/animations-list"
 import { Callout } from "@/components/callout"
 import { CodeBlockCommand } from "@/components/code-block-command"
 import { CodeCollapsibleWrapper } from "@/components/code-collapsible-wrapper"
@@ -344,6 +345,7 @@ export const mdxComponents = {
   ComponentSource,
   CodeCollapsibleWrapper,
   ComponentsList,
+  AnimationsList,
   DirectoryList,
   Link: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
     <Link

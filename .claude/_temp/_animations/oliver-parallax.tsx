@@ -1,8 +1,8 @@
-"use client";
+"use client"
 
-import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
-import Lenis from "lenis";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react"
+import Lenis from "lenis"
+import { MotionValue, motion, useScroll, useTransform } from "motion/react"
 
 const images = [
   "/images/lummi/img15.png",
@@ -18,43 +18,43 @@ const images = [
   "/images/lummi/img11.png",
   "/images/lummi/img12.png",
   "/images/lummi/img13.png",
-];
+]
 
 const Skiper30 = () => {
-  const gallery = useRef<HTMLDivElement>(null);
-  const [dimension, setDimension] = useState({ width: 0, height: 0 });
+  const gallery = useRef<HTMLDivElement>(null)
+  const [dimension, setDimension] = useState({ width: 0, height: 0 })
 
   const { scrollYProgress } = useScroll({
     target: gallery,
     offset: ["start end", "end start"],
-  });
+  })
 
-  const { height } = dimension;
-  const y = useTransform(scrollYProgress, [0, 1], [0, height * 2]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 3.3]);
-  const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.25]);
-  const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 3]);
+  const { height } = dimension
+  const y = useTransform(scrollYProgress, [0, 1], [0, height * 2])
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 3.3])
+  const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.25])
+  const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 3])
 
   useEffect(() => {
-    const lenis = new Lenis();
+    const lenis = new Lenis()
 
     const raf = (time: number) => {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    };
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
 
     const resize = () => {
-      setDimension({ width: window.innerWidth, height: window.innerHeight });
-    };
+      setDimension({ width: window.innerWidth, height: window.innerHeight })
+    }
 
-    window.addEventListener("resize", resize);
-    requestAnimationFrame(raf);
-    resize();
+    window.addEventListener("resize", resize)
+    requestAnimationFrame(raf)
+    resize()
 
     return () => {
-      window.removeEventListener("resize", resize);
-    };
-  }, []);
+      window.removeEventListener("resize", resize)
+    }
+  }, [])
 
   return (
     <main className="w-full bg-[#eee] text-black">
@@ -83,13 +83,13 @@ const Skiper30 = () => {
         </div>
       </div>
     </main>
-  );
-};
+  )
+}
 
 type ColumnProps = {
-  images: string[];
-  y: MotionValue<number>;
-};
+  images: string[]
+  y: MotionValue<number>
+}
 
 const Column = ({ images, y }: ColumnProps) => {
   return (
@@ -107,7 +107,7 @@ const Column = ({ images, y }: ColumnProps) => {
         </div>
       ))}
     </motion.div>
-  );
-};
+  )
+}
 
-export { Skiper30 };
+export { Skiper30 }

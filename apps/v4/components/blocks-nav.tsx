@@ -13,15 +13,14 @@ export function BlocksNav() {
     <div className="relative overflow-hidden">
       <ScrollArea className="max-w-none">
         <div className="flex items-center">
-          <BlocksNavLink
-            category={{ name: "Featured", slug: "", hidden: false }}
-            isActive={pathname === "/blocks"}
-          />
           {registryCategories.map((category) => (
             <BlocksNavLink
               key={category.slug}
               category={category}
-              isActive={pathname === `/blocks/${category.slug}`}
+              isActive={
+                pathname === `/blocks/${category.slug}` ||
+                (pathname === "/blocks" && category.slug === "marketing")
+              }
             />
           ))}
         </div>

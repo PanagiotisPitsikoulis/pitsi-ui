@@ -18,6 +18,10 @@ export const siteConfig = {
       label: "Components",
     },
     {
+      href: "/docs/animations",
+      label: "Animations",
+    },
+    {
       href: "/blocks",
       label: "Blocks",
     },

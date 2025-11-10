@@ -1,0 +1,24 @@
+{
+  "title": "Animations",
+  "pages": [
+    "background-image-parallax",
+    "card-swipe-carousel",
+    "cards-parallax",
+    "parallax-scroll",
+    "perspective-carousel",
+    "perspective-section-transition",
+    "scroll-expand",
+    "scroll-fade",
+    "scroll-scale",
+    "slide-down",
+    "slide-up",
+    "smooth-parallax-scroll",
+    "smooth-scroll",
+    "sticky-footer",
+    "text-along-path",
+    "text-gradient-opacity",
+    "text-parallax",
+    "transforms-3d",
+    "zoom-parallax"
+  ]
+}

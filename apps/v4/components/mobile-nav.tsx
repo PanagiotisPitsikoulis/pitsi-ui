@@ -21,7 +21,10 @@ const TOP_LEVEL_SECTIONS = [
     name: "Components",
     href: "/docs/components",
   },
-
+  {
+    name: "Animations",
+    href: "/docs/animations",
+  },
   {
     name: "MCP Server",
     href: "/docs/mcp",

@@ -122,6 +122,7 @@ function BlockViewerProvider({
             "--height": item.meta?.iframeHeight ?? "930px",
           } as React.CSSProperties
         }
+        suppressHydrationWarning
       >
         {children}
       </div>
@@ -147,10 +148,15 @@ function BlockViewerToolbar({ styleName }: { styleName: Style["name"] }) {
       <Tabs
         value={view}
         onValueChange={(value) => setView(value as "preview" | "code")}
+        suppressHydrationWarning
       >
         <TabsList className="grid h-8 grid-cols-2 items-center rounded-md p-1 *:data-[slot=tabs-trigger]:h-6 *:data-[slot=tabs-trigger]:rounded-sm *:data-[slot=tabs-trigger]:px-2 *:data-[slot=tabs-trigger]:text-xs">
-          <TabsTrigger value="preview">Preview</TabsTrigger>
-          <TabsTrigger value="code">Code</TabsTrigger>
+          <TabsTrigger value="preview" suppressHydrationWarning>
+            Preview
+          </TabsTrigger>
+          <TabsTrigger value="code" suppressHydrationWarning>
+            Code
+          </TabsTrigger>
         </TabsList>
       </Tabs>
       <Separator orientation="vertical" className="mx-2 !h-4" />
@@ -255,26 +261,38 @@ function BlockViewerIframe({
 }
 
 function BlockViewerView({ styleName }: { styleName: Style["name"] }) {
-  const { resizablePanelRef } = useBlockViewer()
+  const { resizablePanelRef, item } = useBlockViewer()
 
   return (
     <div className="hidden group-data-[view=code]/block-view-wrapper:hidden md:h-(--height) lg:flex">
       <div className="relative grid w-full gap-4">
         <div className="absolute inset-0 right-4 [background-image:radial-gradient(#d4d4d4_1px,transparent_1px)] [background-size:20px_20px] dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]"></div>
         <ResizablePanelGroup
+          id={`block-viewer-${item.name}`}
           direction="horizontal"
           className="after:bg-surface/50 relative z-10 after:absolute after:inset-0 after:right-3 after:z-0 after:rounded-xl"
+          suppressHydrationWarning
         >
           <ResizablePanel
+            id={`block-viewer-panel-${item.name}`}
             ref={resizablePanelRef}
             className="bg-background relative aspect-[4/2.5] overflow-hidden rounded-lg border md:aspect-auto md:rounded-xl"
             defaultSize={100}
             minSize={30}
+            suppressHydrationWarning
           >
             <BlockViewerIframe styleName={styleName} />
           </ResizablePanel>
-          <ResizableHandle className="after:bg-border relative hidden w-3 bg-transparent p-0 after:absolute after:top-1/2 after:right-0 after:h-8 after:w-[6px] after:translate-x-[-1px] after:-translate-y-1/2 after:rounded-full after:transition-all after:hover:h-10 md:block" />
-          <ResizablePanel defaultSize={0} minSize={0} />
+          <ResizableHandle
+            id={`block-viewer-handle-${item.name}`}
+            className="after:bg-border relative hidden w-3 bg-transparent p-0 after:absolute after:top-1/2 after:right-0 after:h-8 after:w-[6px] after:translate-x-[-1px] after:-translate-y-1/2 after:rounded-full after:transition-all after:hover:h-10 md:block"
+          />
+          <ResizablePanel
+            id={`block-viewer-panel-empty-${item.name}`}
+            defaultSize={0}
+            minSize={0}
+            suppressHydrationWarning
+          />
         </ResizablePanelGroup>
       </div>
     </div>
@@ -419,6 +437,7 @@ function Tree({ item, index }: { item: FileTree; index: number }) {
       <Collapsible
         className="group/collapsible [&[data-state=open]>button>svg:first-child]:rotate-90"
         defaultOpen
+        suppressHydrationWarning
       >
         <CollapsibleTrigger asChild>
           <SidebarMenuButton
@@ -434,7 +453,7 @@ function Tree({ item, index }: { item: FileTree; index: number }) {
             {item.name}
           </SidebarMenuButton>
         </CollapsibleTrigger>
-        <CollapsibleContent>
+        <CollapsibleContent suppressHydrationWarning>
           <SidebarMenuSub className="m-0 w-full translate-x-0 border-none p-0">
             {item.children.map((subItem, key) => (
               <Tree key={key} item={subItem} index={index + 1} />

@@ -1,6 +1,7 @@
 import { getAllBlockIds } from "@/lib/blocks"
 import { registryCategories } from "@/lib/categories"
 import { BlockDisplay } from "@/components/block-display"
+import { BlocksPaginated } from "@/components/blocks-paginated"
 import { getActiveStyle } from "@/registry/styles"
 
 export const revalidate = false
@@ -25,10 +26,10 @@ export default async function BlocksPage({
   const blocks = await getAllBlockIds(["registry:block"], categories)
 
   return (
-    <div className="flex flex-col gap-12 md:gap-24">
+    <BlocksPaginated blocks={blocks}>
       {blocks.map((name) => (
         <BlockDisplay name={name} key={name} styleName={activeStyle.name} />
       ))}
-    </div>
+    </BlocksPaginated>
   )
 }

@@ -2,6 +2,7 @@ import { registryItemSchema, type Registry } from "pitsi/schema"
 import { z } from "zod"
 
 import { themes } from "../themes"
+import { animations } from "./animations/_registry"
 import { blocks } from "./blocks/_registry"
 import { charts } from "./charts/_registry"
 import { examples } from "./examples/_registry"
@@ -43,6 +44,7 @@ export const registry = {
         ...NEW_YORK_V4_STYLE,
       },
       ...ui,
+      ...animations,
       ...blocks,
       ...charts,
       ...lib,

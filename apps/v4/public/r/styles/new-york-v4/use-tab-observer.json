@@ -2,6 +2,7 @@
   "$schema": "https://ui.pitsi.com/schema/registry-item.json",
   "name": "use-tab-observer",
   "type": "registry:hook",
+  "description": "Hook for observing active tab changes in tab components.",
   "files": [
     {
       "path": "registry/new-york-v4/hooks/use-tab-observer.ts",

@@ -108,7 +108,7 @@ export function ThemeToggle({
       >
         <SegmentedControlList
           className="border-border-elevation-1 bg-background-elevation-1 w-fit rounded-full border"
-          floatingBgClassName="rounded-full bg-background-elevation-2 shadow-0 border-border-elevation-2 border"
+          floatingBgClassName="rounded-full bg-background-elevation-2 border-border-elevation-2 border"
         >
           {themes.map(([key, Icon]) => (
             <SegmentedControlTrigger

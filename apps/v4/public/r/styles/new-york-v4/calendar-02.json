@@ -8,7 +8,7 @@
   ],
   "files": [
     {
-      "path": "registry/new-york-v4/blocks/calendar-02.tsx",
+      "path": "registry/new-york-v4/blocks/application/calendar-02/page.tsx",
       "content": "\"use client\"\n\nimport * as React from \"react\"\n\nimport { Calendar } from \"@/registry/new-york-v4/ui/calendar\"\n\nexport default function Calendar02() {\n  const [date, setDate] = React.useState<Date | undefined>(\n    new Date(2025, 5, 12)\n  )\n\n  return (\n    <Calendar\n      mode=\"single\"\n      defaultMonth={date}\n      numberOfMonths={2}\n      selected={date}\n      onSelect={setDate}\n      className=\"rounded-lg border shadow-sm\"\n    />\n  )\n}\n",
       "type": "registry:component"
     }
@@ -19,7 +19,7 @@
     "mobile": "component"
   },
   "categories": [
-    "calendar",
+    "application",
     "date"
   ]
 }

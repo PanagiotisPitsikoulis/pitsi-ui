@@ -1,13 +1,13 @@
-"use client";
+"use client"
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import React, { useRef } from "react";
+import React, { useRef } from "react"
+import { motion, useScroll, useTransform } from "motion/react"
 
 const Skiper19 = () => {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: ref,
-  });
+  })
 
   return (
     <section
@@ -54,19 +54,19 @@ const Skiper19 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export { Skiper19 };
+export { Skiper19 }
 
 const LinePath = ({
   className,
   scrollYProgress,
 }: {
-  className: string;
-  scrollYProgress: any;
+  className: string
+  scrollYProgress: any
 }) => {
-  const pathLength = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
+  const pathLength = useTransform(scrollYProgress, [0, 1], [0.5, 1])
 
   return (
     <svg
@@ -88,5 +88,5 @@ const LinePath = ({
         }}
       />
     </svg>
-  );
-};
+  )
+}

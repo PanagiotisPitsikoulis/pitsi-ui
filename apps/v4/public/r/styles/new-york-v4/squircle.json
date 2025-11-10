@@ -3,7 +3,7 @@
   "name": "squircle",
   "type": "registry:ui",
   "dependencies": [
-    "framer-motion"
+    "motion/react"
   ],
   "files": [
     {

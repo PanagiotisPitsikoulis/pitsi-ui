@@ -2,7 +2,7 @@ export const registryCategories = [
   {
     name: "Sidebar",
     slug: "sidebar",
-    hidden: false,
+    hidden: true,
   },
   {
     name: "Dashboard",
@@ -17,21 +17,51 @@ export const registryCategories = [
   {
     name: "Login",
     slug: "login",
-    hidden: false,
+    hidden: true,
   },
   {
     name: "Signup",
     slug: "signup",
-    hidden: false,
+    hidden: true,
   },
   {
     name: "OTP",
     slug: "otp",
-    hidden: false,
+    hidden: true,
   },
   {
     name: "Calendar",
     slug: "calendar",
+    hidden: true,
+  },
+  {
+    name: "Date",
+    slug: "date",
+    hidden: true,
+  },
+  {
+    name: "Application",
+    slug: "application",
     hidden: false,
+  },
+  {
+    name: "Marketing",
+    slug: "marketing",
+    hidden: false,
+  },
+  {
+    name: "E-Commerce",
+    slug: "e-commerce",
+    hidden: false,
+  },
+  {
+    name: "Full Pages",
+    slug: "full-pages",
+    hidden: false,
+  },
+  {
+    name: "Animations",
+    slug: "animations",
+    hidden: true,
   },
 ]
