@@ -1,11 +1,28 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalEnv": ["NODE_ENV"],
+  "globalEnv": [
+    "NODE_ENV",
+    "NEXT_PUBLIC_APP_URL",
+    "DATABASE_URL"
+  ],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
       "env": [
         "NEXT_PUBLIC_APP_URL",
+        "DATABASE_URL",
+        "BETTER_AUTH_SECRET",
+        "BETTER_AUTH_URL",
+        "GITHUB_CLIENT_ID",
+        "GITHUB_CLIENT_SECRET",
+        "GOOGLE_CLIENT_ID",
+        "GOOGLE_CLIENT_SECRET",
+        "STRIPE_PUBLISHABLE_KEY",
+        "STRIPE_PRIVATE_KEY",
+        "STRIPE_WEBHOOK_SECRET",
+        "NEXT_PUBLIC_LOGO_DEV_TOKEN",
+        "NEXT_SECRET_LOGO_DEV_TOKEN",
+        "PLAYWRIGHT_MCP_EXTENSION_TOKEN",
         "UPSTASH_REDIS_REST_URL",
         "UPSTASH_REDIS_REST_TOKEN",
         "COMPONENTS_REGISTRY_URL",
@@ -19,7 +36,12 @@
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
     "preview": {
-      "env": ["NEXT_PUBLIC_APP_URL"],
+      "env": [
+        "NEXT_PUBLIC_APP_URL",
+        "DATABASE_URL",
+        "BETTER_AUTH_SECRET",
+        "BETTER_AUTH_URL"
+      ],
       "outputs": ["dist/**", ".next/**"]
     },
     "start": {
@@ -49,7 +71,24 @@
     },
     "dev": {
       "cache": false,
-      "persistent": true
+      "persistent": true,
+      "env": [
+        "NEXT_PUBLIC_APP_URL",
+        "DATABASE_URL",
+        "BETTER_AUTH_SECRET",
+        "BETTER_AUTH_URL",
+        "GITHUB_CLIENT_ID",
+        "GITHUB_CLIENT_SECRET",
+        "GOOGLE_CLIENT_ID",
+        "GOOGLE_CLIENT_SECRET",
+        "STRIPE_PUBLISHABLE_KEY",
+        "STRIPE_PRIVATE_KEY",
+        "STRIPE_WEBHOOK_SECRET",
+        "NEXT_PUBLIC_LOGO_DEV_TOKEN",
+        "NEXT_SECRET_LOGO_DEV_TOKEN",
+        "PLAYWRIGHT_MCP_EXTENSION_TOKEN",
+        "REGISTRY_URL"
+      ]
     },
     "check": {
       "cache": true
