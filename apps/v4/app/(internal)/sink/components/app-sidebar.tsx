@@ -16,8 +16,8 @@ import {
 } from "lucide-react"
 
 import { Index } from "@/registry/__index__"
-import { NavUser } from "@/registry/new-york-v4/blocks/application/sidebar-07/components/nav-user"
-import { TeamSwitcher } from "@/registry/new-york-v4/blocks/application/sidebar-07/components/team-switcher"
+import { NavUser } from "@/app/(internal)/sink/components/nav-user"
+import { TeamSwitcher } from "@/app/(internal)/sink/components/team-switcher"
 import {
   Collapsible,
   CollapsibleContent,

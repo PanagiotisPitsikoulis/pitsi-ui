@@ -1525,52 +1525,52 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["sidebar","breadcrumb","separator","label","chart","card","select","tabs","table","toggle-group","badge","button","checkbox","dropdown-menu","drawer","input","avatar","sheet","sonner"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/dashboard-01/page.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/dashboard-01/page.tsx",
         type: "registry:page",
         target: "app/dashboard/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/application/dashboard-01/data.json",
+        path: "registry/new-york-v4/blocks/application/dashboard/dashboard-01/data.json",
         type: "registry:file",
         target: "app/dashboard/data.json"
       },{
-        path: "registry/new-york-v4/blocks/application/dashboard-01/components/app-sidebar.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/dashboard-01/components/app-sidebar.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/dashboard-01/components/chart-area-interactive.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/dashboard-01/components/chart-area-interactive.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/dashboard-01/components/data-table.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/dashboard-01/components/data-table.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/dashboard-01/components/nav-documents.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/dashboard-01/components/nav-documents.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/dashboard-01/components/nav-main.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/dashboard-01/components/nav-main.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/dashboard-01/components/nav-secondary.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/dashboard-01/components/nav-secondary.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/dashboard-01/components/nav-user.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/dashboard-01/components/nav-user.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/dashboard-01/components/section-cards.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/dashboard-01/components/section-cards.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/dashboard-01/components/site-header.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/dashboard-01/components/site-header.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/dashboard-01/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/dashboard/dashboard-01/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -1583,24 +1583,24 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["sidebar","breadcrumb","separator","label","dropdown-menu"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/sidebar-01/page.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-01/page.tsx",
         type: "registry:page",
         target: "app/dashboard/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-01/components/app-sidebar.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-01/components/app-sidebar.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-01/components/search-form.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-01/components/search-form.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-01/components/version-switcher.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-01/components/version-switcher.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/sidebar-01/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/dashboard/sidebar-01/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -1613,24 +1613,24 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["sidebar","breadcrumb","separator","label","dropdown-menu"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/sidebar-02/page.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-02/page.tsx",
         type: "registry:page",
         target: "app/dashboard/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-02/components/app-sidebar.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-02/components/app-sidebar.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-02/components/search-form.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-02/components/search-form.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-02/components/version-switcher.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-02/components/version-switcher.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/sidebar-02/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/dashboard/sidebar-02/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -1643,16 +1643,16 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["sidebar","breadcrumb"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/sidebar-03/page.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-03/page.tsx",
         type: "registry:page",
         target: "app/dashboard/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-03/components/app-sidebar.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-03/components/app-sidebar.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/sidebar-03/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/dashboard/sidebar-03/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -1665,16 +1665,16 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["sidebar","breadcrumb","separator"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/sidebar-04/page.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-04/page.tsx",
         type: "registry:page",
         target: "app/dashboard/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-04/components/app-sidebar.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-04/components/app-sidebar.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/sidebar-04/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/dashboard/sidebar-04/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -1687,20 +1687,20 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["sidebar","breadcrumb","separator","label","collapsible"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/sidebar-05/page.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-05/page.tsx",
         type: "registry:page",
         target: "app/dashboard/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-05/components/app-sidebar.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-05/components/app-sidebar.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-05/components/search-form.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-05/components/search-form.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/sidebar-05/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/dashboard/sidebar-05/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -1713,24 +1713,24 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["sidebar","breadcrumb","separator","card","dropdown-menu"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/sidebar-06/page.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-06/page.tsx",
         type: "registry:page",
         target: "app/dashboard/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-06/components/app-sidebar.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-06/components/app-sidebar.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-06/components/nav-main.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-06/components/nav-main.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-06/components/sidebar-opt-in-form.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-06/components/sidebar-opt-in-form.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/sidebar-06/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/dashboard/sidebar-06/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -1743,32 +1743,32 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["sidebar","breadcrumb","separator","collapsible","dropdown-menu","avatar"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/sidebar-07/page.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-07/page.tsx",
         type: "registry:page",
         target: "app/dashboard/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-07/components/app-sidebar.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-07/components/app-sidebar.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-07/components/nav-main.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-07/components/nav-main.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-07/components/nav-projects.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-07/components/nav-projects.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-07/components/nav-user.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-07/components/nav-user.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-07/components/team-switcher.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-07/components/team-switcher.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/sidebar-07/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/dashboard/sidebar-07/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -1781,32 +1781,32 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["sidebar","breadcrumb","separator","collapsible","dropdown-menu","avatar"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/sidebar-08/page.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-08/page.tsx",
         type: "registry:page",
         target: "app/dashboard/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-08/components/app-sidebar.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-08/components/app-sidebar.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-08/components/nav-main.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-08/components/nav-main.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-08/components/nav-projects.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-08/components/nav-projects.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-08/components/nav-secondary.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-08/components/nav-secondary.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-08/components/nav-user.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-08/components/nav-user.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/sidebar-08/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/dashboard/sidebar-08/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -1819,20 +1819,20 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["sidebar","breadcrumb","separator","collapsible","dropdown-menu","avatar","switch","label"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/sidebar-09/page.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-09/page.tsx",
         type: "registry:page",
         target: "app/dashboard/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-09/components/app-sidebar.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-09/components/app-sidebar.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-09/components/nav-user.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-09/components/nav-user.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/sidebar-09/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/dashboard/sidebar-09/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -1845,40 +1845,40 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["sidebar","breadcrumb","separator","popover","collapsible","dropdown-menu"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/sidebar-10/page.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-10/page.tsx",
         type: "registry:page",
         target: "app/dashboard/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-10/components/app-sidebar.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-10/components/app-sidebar.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-10/components/nav-actions.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-10/components/nav-actions.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-10/components/nav-favorites.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-10/components/nav-favorites.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-10/components/nav-main.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-10/components/nav-main.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-10/components/nav-secondary.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-10/components/nav-secondary.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-10/components/nav-workspaces.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-10/components/nav-workspaces.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-10/components/team-switcher.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-10/components/team-switcher.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/sidebar-10/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/dashboard/sidebar-10/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -1891,16 +1891,16 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["sidebar","breadcrumb","separator","collapsible"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/sidebar-11/page.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-11/page.tsx",
         type: "registry:page",
         target: "app/dashboard/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-11/components/app-sidebar.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-11/components/app-sidebar.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/sidebar-11/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/dashboard/sidebar-11/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -1913,28 +1913,28 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["sidebar","breadcrumb","separator","collapsible","calendar","dropdown-menu","avatar"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/sidebar-12/page.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-12/page.tsx",
         type: "registry:page",
         target: "app/dashboard/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-12/components/app-sidebar.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-12/components/app-sidebar.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-12/components/calendars.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-12/components/calendars.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-12/components/date-picker.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-12/components/date-picker.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-12/components/nav-user.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-12/components/nav-user.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/sidebar-12/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/dashboard/sidebar-12/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -1947,16 +1947,16 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["sidebar","breadcrumb","button","dialog"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/sidebar-13/page.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-13/page.tsx",
         type: "registry:page",
         target: "app/dashboard/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-13/components/settings-dialog.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-13/components/settings-dialog.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/sidebar-13/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/dashboard/sidebar-13/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -1969,16 +1969,16 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["sidebar","breadcrumb"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/sidebar-14/page.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-14/page.tsx",
         type: "registry:page",
         target: "app/dashboard/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-14/components/app-sidebar.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-14/components/app-sidebar.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/sidebar-14/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/dashboard/sidebar-14/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -1991,52 +1991,52 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["sidebar","breadcrumb","separator","popover","collapsible","dropdown-menu","calendar","avatar"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/sidebar-15/page.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-15/page.tsx",
         type: "registry:page",
         target: "app/dashboard/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-15/components/calendars.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-15/components/calendars.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-15/components/date-picker.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-15/components/date-picker.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-15/components/nav-favorites.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-15/components/nav-favorites.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-15/components/nav-main.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-15/components/nav-main.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-15/components/nav-secondary.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-15/components/nav-secondary.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-15/components/nav-user.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-15/components/nav-user.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-15/components/nav-workspaces.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-15/components/nav-workspaces.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-15/components/sidebar-left.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-15/components/sidebar-left.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-15/components/sidebar-right.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-15/components/sidebar-right.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-15/components/team-switcher.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-15/components/team-switcher.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/sidebar-15/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/dashboard/sidebar-15/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2049,40 +2049,40 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["sidebar","breadcrumb","separator","collapsible","dropdown-menu","avatar","button","label"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/sidebar-16/page.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-16/page.tsx",
         type: "registry:page",
         target: "app/dashboard/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-16/components/app-sidebar.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-16/components/app-sidebar.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-16/components/nav-main.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-16/components/nav-main.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-16/components/nav-projects.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-16/components/nav-projects.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-16/components/nav-secondary.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-16/components/nav-secondary.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-16/components/nav-user.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-16/components/nav-user.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-16/components/search-form.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-16/components/search-form.tsx",
         type: "registry:component",
         target: ""
       },{
-        path: "registry/new-york-v4/blocks/application/sidebar-16/components/site-header.tsx",
+        path: "registry/new-york-v4/blocks/application/dashboard/sidebar-16/components/site-header.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/sidebar-16/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/dashboard/sidebar-16/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2095,16 +2095,16 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["button","card","input","label","field"],
       files: [{
-        path: "registry/new-york-v4/blocks/full-pages/login-01/page.tsx",
+        path: "registry/new-york-v4/blocks/full-pages/login-page/login-01/page.tsx",
         type: "registry:page",
         target: "app/login/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/full-pages/login-01/components/login-form.tsx",
+        path: "registry/new-york-v4/blocks/full-pages/login-page/login-01/components/login-form.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/full-pages/login-01/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/full-pages/login-page/login-01/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2117,16 +2117,16 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["button","input","label","field"],
       files: [{
-        path: "registry/new-york-v4/blocks/full-pages/login-02/page.tsx",
+        path: "registry/new-york-v4/blocks/full-pages/login-page/login-02/page.tsx",
         type: "registry:page",
         target: "app/login/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/full-pages/login-02/components/login-form.tsx",
+        path: "registry/new-york-v4/blocks/full-pages/login-page/login-02/components/login-form.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/full-pages/login-02/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/full-pages/login-page/login-02/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2139,16 +2139,16 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["button","card","input","label","field"],
       files: [{
-        path: "registry/new-york-v4/blocks/full-pages/login-03/page.tsx",
+        path: "registry/new-york-v4/blocks/full-pages/login-page/login-03/page.tsx",
         type: "registry:page",
         target: "app/login/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/full-pages/login-03/components/login-form.tsx",
+        path: "registry/new-york-v4/blocks/full-pages/login-page/login-03/components/login-form.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/full-pages/login-03/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/full-pages/login-page/login-03/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2161,16 +2161,16 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["button","card","input","label","field"],
       files: [{
-        path: "registry/new-york-v4/blocks/full-pages/login-04/page.tsx",
+        path: "registry/new-york-v4/blocks/full-pages/login-page/login-04/page.tsx",
         type: "registry:page",
         target: "app/login/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/full-pages/login-04/components/login-form.tsx",
+        path: "registry/new-york-v4/blocks/full-pages/login-page/login-04/components/login-form.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/full-pages/login-04/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/full-pages/login-page/login-04/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2183,39 +2183,21 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["button","input","label","field"],
       files: [{
-        path: "registry/new-york-v4/blocks/full-pages/login-05/page.tsx",
+        path: "registry/new-york-v4/blocks/full-pages/login-page/login-05/page.tsx",
         type: "registry:page",
         target: "app/login/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/full-pages/login-05/components/login-form.tsx",
+        path: "registry/new-york-v4/blocks/full-pages/login-page/login-05/components/login-form.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/full-pages/login-05/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/full-pages/login-page/login-05/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
       categories: ["full-pages","login"],
       meta: undefined,
-    },
-    "calendar-01": {
-      name: "calendar-01",
-      description: "A simple calendar.",
-      type: "registry:block",
-      registryDependencies: ["calendar"],
-      files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-01/page.tsx",
-        type: "registry:component",
-        target: ""
-      }],
-      component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-01/page.tsx")
-        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
-        return { default: mod.default || mod[exportName] }
-      }),
-      categories: ["application","date"],
-      meta: {"iframeHeight":"600px","container":"w-full bg-surface min-h-svh flex px-4 py-12 items-start md:py-20 justify-center min-w-0","mobile":"component"},
     },
     "calendar-02": {
       name: "calendar-02",
@@ -2223,12 +2205,12 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["calendar"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-02/page.tsx",
+        path: "registry/new-york-v4/blocks/application/calendar/calendar-02/page.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-02/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/calendar/calendar-02/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2241,12 +2223,12 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["calendar"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-03/page.tsx",
+        path: "registry/new-york-v4/blocks/application/calendar/calendar-03/page.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-03/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/calendar/calendar-03/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2259,12 +2241,12 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["calendar"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-04/page.tsx",
+        path: "registry/new-york-v4/blocks/application/calendar/calendar-04/page.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-04/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/calendar/calendar-04/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2277,12 +2259,12 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["calendar"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-05/page.tsx",
+        path: "registry/new-york-v4/blocks/application/calendar/calendar-05/page.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-05/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/calendar/calendar-05/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2295,12 +2277,12 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["calendar"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-06/page.tsx",
+        path: "registry/new-york-v4/blocks/application/calendar/calendar-06/page.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-06/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/calendar/calendar-06/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2313,12 +2295,12 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["calendar"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-07/page.tsx",
+        path: "registry/new-york-v4/blocks/application/calendar/calendar-07/page.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-07/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/calendar/calendar-07/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2331,12 +2313,12 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["calendar"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-08/page.tsx",
+        path: "registry/new-york-v4/blocks/application/calendar/calendar-08/page.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-08/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/calendar/calendar-08/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2349,12 +2331,12 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["calendar"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-09/page.tsx",
+        path: "registry/new-york-v4/blocks/application/calendar/calendar-09/page.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-09/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/calendar/calendar-09/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2367,12 +2349,12 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["calendar","card","button"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-10/page.tsx",
+        path: "registry/new-york-v4/blocks/application/calendar/calendar-10/page.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-10/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/calendar/calendar-10/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2385,12 +2367,12 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["calendar"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-11/page.tsx",
+        path: "registry/new-york-v4/blocks/application/calendar/calendar-11/page.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-11/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/calendar/calendar-11/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2403,12 +2385,12 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["calendar","card","select"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-12/page.tsx",
+        path: "registry/new-york-v4/blocks/application/calendar/calendar-12/page.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-12/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/calendar/calendar-12/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2421,12 +2403,12 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["calendar","label","select"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-13/page.tsx",
+        path: "registry/new-york-v4/blocks/application/calendar/calendar-13/page.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-13/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/calendar/calendar-13/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2439,12 +2421,12 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["calendar"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-14/page.tsx",
+        path: "registry/new-york-v4/blocks/application/calendar/calendar-14/page.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-14/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/calendar/calendar-14/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2457,12 +2439,12 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["calendar"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-15/page.tsx",
+        path: "registry/new-york-v4/blocks/application/calendar/calendar-15/page.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-15/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/calendar/calendar-15/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2475,12 +2457,12 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["calendar","card","input","label"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-16/page.tsx",
+        path: "registry/new-york-v4/blocks/application/calendar/calendar-16/page.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-16/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/calendar/calendar-16/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2493,12 +2475,12 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["calendar","card","input","label"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-17/page.tsx",
+        path: "registry/new-york-v4/blocks/application/calendar/calendar-17/page.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-17/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/calendar/calendar-17/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2511,12 +2493,12 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["calendar"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-18/page.tsx",
+        path: "registry/new-york-v4/blocks/application/calendar/calendar-18/page.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-18/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/calendar/calendar-18/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2529,12 +2511,12 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["calendar","card","input","label"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-19/page.tsx",
+        path: "registry/new-york-v4/blocks/application/calendar/calendar-19/page.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-19/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/calendar/calendar-19/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2547,12 +2529,12 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["calendar","card","button"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-20/page.tsx",
+        path: "registry/new-york-v4/blocks/application/calendar/calendar-20/page.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-20/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/calendar/calendar-20/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2565,12 +2547,12 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["calendar"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-21/page.tsx",
+        path: "registry/new-york-v4/blocks/application/calendar/calendar-21/page.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-21/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/calendar/calendar-21/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2583,12 +2565,12 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["calendar","popover","button","label"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-22/page.tsx",
+        path: "registry/new-york-v4/blocks/application/calendar/calendar-22/page.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-22/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/calendar/calendar-22/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2601,12 +2583,12 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["calendar","popover","button","label"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-23/page.tsx",
+        path: "registry/new-york-v4/blocks/application/calendar/calendar-23/page.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-23/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/calendar/calendar-23/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2619,12 +2601,12 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["calendar","popover","button","label"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-24/page.tsx",
+        path: "registry/new-york-v4/blocks/application/calendar/calendar-24/page.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-24/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/calendar/calendar-24/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2637,12 +2619,12 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["calendar","popover","button","label"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-25/page.tsx",
+        path: "registry/new-york-v4/blocks/application/calendar/calendar-25/page.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-25/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/calendar/calendar-25/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2655,12 +2637,12 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["calendar","popover","button","input","label"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-26/page.tsx",
+        path: "registry/new-york-v4/blocks/application/calendar/calendar-26/page.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-26/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/calendar/calendar-26/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2673,12 +2655,12 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["calendar","chart","card","popover","button"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-27/page.tsx",
+        path: "registry/new-york-v4/blocks/application/calendar/calendar-27/page.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-27/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/calendar/calendar-27/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2691,12 +2673,12 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["calendar","input","label","popover","button"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-28/page.tsx",
+        path: "registry/new-york-v4/blocks/application/calendar/calendar-28/page.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-28/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/calendar/calendar-28/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2709,12 +2691,12 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["calendar","input","label","popover","button"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-29/page.tsx",
+        path: "registry/new-york-v4/blocks/application/calendar/calendar-29/page.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-29/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/calendar/calendar-29/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2727,12 +2709,12 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["calendar","input","label","popover","button"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-30/page.tsx",
+        path: "registry/new-york-v4/blocks/application/calendar/calendar-30/page.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-30/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/calendar/calendar-30/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2745,12 +2727,12 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["calendar","card","button"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-31/page.tsx",
+        path: "registry/new-york-v4/blocks/application/calendar/calendar-31/page.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-31/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/calendar/calendar-31/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2763,12 +2745,12 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["calendar","button","drawer"],
       files: [{
-        path: "registry/new-york-v4/blocks/application/calendar-32/page.tsx",
+        path: "registry/new-york-v4/blocks/application/calendar/calendar-32/page.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/calendar-32/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/application/calendar/calendar-32/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2781,16 +2763,16 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["button","card","input","label"],
       files: [{
-        path: "registry/new-york-v4/blocks/full-pages/signup-01/page.tsx",
+        path: "registry/new-york-v4/blocks/full-pages/login-page/signup-01/page.tsx",
         type: "registry:page",
         target: "app/signup/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/full-pages/signup-01/components/signup-form.tsx",
+        path: "registry/new-york-v4/blocks/full-pages/login-page/signup-01/components/signup-form.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/full-pages/signup-01/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/full-pages/login-page/signup-01/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2803,16 +2785,16 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["button","input","label","field"],
       files: [{
-        path: "registry/new-york-v4/blocks/full-pages/signup-02/page.tsx",
+        path: "registry/new-york-v4/blocks/full-pages/login-page/signup-02/page.tsx",
         type: "registry:page",
         target: "app/signup/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/full-pages/signup-02/components/signup-form.tsx",
+        path: "registry/new-york-v4/blocks/full-pages/login-page/signup-02/components/signup-form.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/full-pages/signup-02/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/full-pages/login-page/signup-02/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2825,16 +2807,16 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["button","card","input","label","field"],
       files: [{
-        path: "registry/new-york-v4/blocks/full-pages/signup-03/page.tsx",
+        path: "registry/new-york-v4/blocks/full-pages/login-page/signup-03/page.tsx",
         type: "registry:page",
         target: "app/signup/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/full-pages/signup-03/components/signup-form.tsx",
+        path: "registry/new-york-v4/blocks/full-pages/login-page/signup-03/components/signup-form.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/full-pages/signup-03/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/full-pages/login-page/signup-03/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2847,16 +2829,16 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["button","card","input","label","field"],
       files: [{
-        path: "registry/new-york-v4/blocks/full-pages/signup-04/page.tsx",
+        path: "registry/new-york-v4/blocks/full-pages/login-page/signup-04/page.tsx",
         type: "registry:page",
         target: "app/signup/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/full-pages/signup-04/components/signup-form.tsx",
+        path: "registry/new-york-v4/blocks/full-pages/login-page/signup-04/components/signup-form.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/full-pages/signup-04/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/full-pages/login-page/signup-04/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2869,16 +2851,16 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["button","input","label"],
       files: [{
-        path: "registry/new-york-v4/blocks/full-pages/signup-05/page.tsx",
+        path: "registry/new-york-v4/blocks/full-pages/login-page/signup-05/page.tsx",
         type: "registry:page",
         target: "app/signup/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/full-pages/signup-05/components/signup-form.tsx",
+        path: "registry/new-york-v4/blocks/full-pages/login-page/signup-05/components/signup-form.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/full-pages/signup-05/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/full-pages/login-page/signup-05/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2891,16 +2873,16 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["button","card","input-otp","label","field"],
       files: [{
-        path: "registry/new-york-v4/blocks/full-pages/otp-01/page.tsx",
+        path: "registry/new-york-v4/blocks/full-pages/otp/otp-01/page.tsx",
         type: "registry:page",
         target: "app/otp/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/full-pages/otp-01/components/otp-form.tsx",
+        path: "registry/new-york-v4/blocks/full-pages/otp/otp-01/components/otp-form.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/full-pages/otp-01/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/full-pages/otp/otp-01/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2913,16 +2895,16 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["button","input-otp","label","field"],
       files: [{
-        path: "registry/new-york-v4/blocks/full-pages/otp-02/page.tsx",
+        path: "registry/new-york-v4/blocks/full-pages/otp/otp-02/page.tsx",
         type: "registry:page",
         target: "app/otp/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/full-pages/otp-02/components/otp-form.tsx",
+        path: "registry/new-york-v4/blocks/full-pages/otp/otp-02/components/otp-form.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/full-pages/otp-02/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/full-pages/otp/otp-02/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2935,16 +2917,16 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["button","card","input-otp","label","field"],
       files: [{
-        path: "registry/new-york-v4/blocks/full-pages/otp-03/page.tsx",
+        path: "registry/new-york-v4/blocks/full-pages/otp/otp-03/page.tsx",
         type: "registry:page",
         target: "app/otp/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/full-pages/otp-03/components/otp-form.tsx",
+        path: "registry/new-york-v4/blocks/full-pages/otp/otp-03/components/otp-form.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/full-pages/otp-03/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/full-pages/otp/otp-03/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2957,16 +2939,16 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["button","card","input-otp","label","field"],
       files: [{
-        path: "registry/new-york-v4/blocks/full-pages/otp-04/page.tsx",
+        path: "registry/new-york-v4/blocks/full-pages/otp/otp-04/page.tsx",
         type: "registry:page",
         target: "app/otp/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/full-pages/otp-04/components/otp-form.tsx",
+        path: "registry/new-york-v4/blocks/full-pages/otp/otp-04/components/otp-form.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/full-pages/otp-04/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/full-pages/otp/otp-04/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
@@ -2979,16 +2961,16 @@ export const Index: Record<string, Record<string, any>> = {
       type: "registry:block",
       registryDependencies: ["button","input-otp","label","field"],
       files: [{
-        path: "registry/new-york-v4/blocks/full-pages/otp-05/page.tsx",
+        path: "registry/new-york-v4/blocks/full-pages/otp/otp-05/page.tsx",
         type: "registry:page",
         target: "app/otp/page.tsx"
       },{
-        path: "registry/new-york-v4/blocks/full-pages/otp-05/components/otp-form.tsx",
+        path: "registry/new-york-v4/blocks/full-pages/otp/otp-05/components/otp-form.tsx",
         type: "registry:component",
         target: ""
       }],
       component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/full-pages/otp-05/page.tsx")
+        const mod = await import("@/registry/new-york-v4/blocks/full-pages/otp/otp-05/page.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),

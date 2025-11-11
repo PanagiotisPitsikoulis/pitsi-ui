@@ -1,5 +1,3 @@
-import Image from "next/image"
-
 import { ComponentPreviewTabs } from "@/components/component-preview-tabs"
 import { ComponentSource } from "@/components/component-source"
 import { Index } from "@/registry/__index__"
@@ -53,21 +51,7 @@ export function ComponentPreview({
   if (isBlock) {
     return (
       <div className="relative aspect-[4/2.5] w-full overflow-hidden rounded-md border md:-mx-1">
-        <Image
-          src={`/r/styles/new-york-v4/${name}-light.png`}
-          alt={name}
-          width={1440}
-          height={900}
-          className="bg-background absolute top-0 left-0 z-20 w-[970px] max-w-none sm:w-[1280px] md:hidden dark:hidden md:dark:hidden"
-        />
-        <Image
-          src={`/r/styles/new-york-v4/${name}-dark.png`}
-          alt={name}
-          width={1440}
-          height={900}
-          className="bg-background absolute top-0 left-0 z-20 hidden w-[970px] max-w-none sm:w-[1280px] md:hidden dark:block md:dark:hidden"
-        />
-        <div className="bg-background absolute inset-0 hidden w-[1600px] md:block">
+        <div className="bg-background absolute inset-0 w-full md:w-[1600px]">
           <iframe src={`/view/${styleName}/${name}`} className="size-full" />
         </div>
       </div>
@@ -83,23 +67,9 @@ export function ComponentPreview({
         hideCode={hideCode}
         component={
           <div className="relative aspect-video w-full overflow-y-auto rounded-md">
-            <Image
-              src={`/r/styles/new-york-v4/${name}-light.png`}
-              alt={name}
-              width={1440}
-              height={900}
-              className="bg-background w-full object-cover object-top md:hidden dark:hidden"
-            />
-            <Image
-              src={`/r/styles/new-york-v4/${name}-dark.png`}
-              alt={name}
-              width={1440}
-              height={900}
-              className="bg-background hidden w-full object-cover object-top md:hidden dark:block"
-            />
             <iframe
               src={`/view/${styleName}/${name}`}
-              className="hidden h-full w-full md:block"
+              className="h-full w-full"
             />
           </div>
         }

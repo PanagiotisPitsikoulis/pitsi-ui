@@ -1,5 +1,4 @@
 import { Metadata } from "next"
-import Image from "next/image"
 import Link from "next/link"
 
 import { Announcement } from "@/components/announcement"
@@ -66,22 +65,10 @@ export default function IndexPage() {
       </PageNav>
       <div className="container-wrapper section-soft flex-1 pb-6">
         <div className="container overflow-hidden">
-          <section className="border-border/50 -mx-4 w-[160vw] overflow-hidden rounded-lg border md:hidden md:w-[150vw]">
-            <Image
-              src="/r/styles/new-york-v4/dashboard-01-light.png"
-              width={1400}
-              height={875}
-              alt="Dashboard"
-              className="block dark:hidden"
-              priority
-            />
-            <Image
-              src="/r/styles/new-york-v4/dashboard-01-dark.png"
-              width={1400}
-              height={875}
-              alt="Dashboard"
-              className="hidden dark:block"
-              priority
+          <section className="border-border/50 -mx-4 aspect-[1400/875] w-[160vw] overflow-hidden rounded-lg border md:hidden md:w-[150vw]">
+            <iframe
+              src="/view/new-york-v4/dashboard-01"
+              className="size-full"
             />
           </section>
           <section className="theme-container hidden md:block">

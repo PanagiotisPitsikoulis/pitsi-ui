@@ -110,11 +110,6 @@
     "categories": ["full-pages", "login"]
   },
   {
-    "name": "calendar-01",
-    "description": "A simple calendar.",
-    "categories": ["application", "date"]
-  },
-  {
     "name": "calendar-02",
     "description": "Multiple months with single selection.",
     "categories": ["application", "date"]
