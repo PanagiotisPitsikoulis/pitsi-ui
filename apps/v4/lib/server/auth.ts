@@ -1,9 +1,11 @@
-import { betterAuth } from "better-auth";
-import { drizzleAdapter } from "better-auth/adapters/drizzle";
-import { db } from "./db";
-import * as schema from "./db/schema";
+import { betterAuth } from "better-auth"
+import { drizzleAdapter } from "better-auth/adapters/drizzle"
+
+import { db } from "./db"
+import * as schema from "./db/schema"
 
 export const auth = betterAuth({
+  baseURL: process.env.NEXT_PUBLIC_APP_URL || "http://localhost:4000",
   database: drizzleAdapter(db, {
     provider: "pg",
     schema: {
@@ -48,4 +50,4 @@ export const auth = betterAuth({
   //     clientSecret: process.env.GITHUB_CLIENT_SECRET!,
   //   },
   // },
-});
+})

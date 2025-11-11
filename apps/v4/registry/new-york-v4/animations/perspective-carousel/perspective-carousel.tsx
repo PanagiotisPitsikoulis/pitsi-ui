@@ -48,7 +48,7 @@ const Skiper47 = () => {
   ]
 
   return (
-    <div className="flex h-full w-full items-center justify-center overflow-hidden bg-background">
+    <div className="bg-background flex h-full w-full items-center justify-center overflow-hidden">
       <Carousel_001 className="" images={images} showPagination loop />
     </div>
   )
@@ -142,10 +142,10 @@ const Carousel_001 = ({
         {showNavigation && (
           <div>
             <div className="swiper-button-next after:hidden">
-              <ChevronRightIcon className="h-6 w-6 text-foreground" />
+              <ChevronRightIcon className="text-foreground h-6 w-6" />
             </div>
             <div className="swiper-button-prev after:hidden">
-              <ChevronLeftIcon className="h-6 w-6 text-foreground" />
+              <ChevronLeftIcon className="text-foreground h-6 w-6" />
             </div>
           </div>
         )}

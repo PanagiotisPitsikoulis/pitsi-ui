@@ -1,11 +1,12 @@
-"use client";
+"use client"
 
-import { useRouter, useSearchParams } from "next/navigation";
-import { Suspense, useState } from "react";
-import { useSession } from "@/lib/client/auth";
-import Flex from "@/registry/components/flex/flex";
-import { Spacer } from "@/registry/components/spacer/spacer";
-import Typography from "@/registry/components/typography/typography";
+import { useRouter, useSearchParams } from "next/navigation"
+import { Suspense, useState } from "react"
+
+import { useSession } from "@/lib/client/auth"
+import Flex from "@/registry/new-york-v4/ui/flex"
+import { Spacer } from "@/registry/new-york-v4/ui/spacer"
+import Typography from "@/registry/new-york-v4/ui/typography"
 
 function PricingContent() {
   const { data: session, isPending } = useSession();

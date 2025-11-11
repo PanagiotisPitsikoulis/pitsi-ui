@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils"
 export function ComponentPreviewTabs({
   className,
   align = "center",
+  justify = "center",
   hideCode = false,
   chromeLessOnMobile = false,
   isScrollable = false,
@@ -15,6 +16,7 @@ export function ComponentPreviewTabs({
   ...props
 }: React.ComponentProps<"div"> & {
   align?: "center" | "start" | "end"
+  justify?: "center" | "start" | "end"
   hideCode?: boolean
   chromeLessOnMobile?: boolean
   isScrollable?: boolean
@@ -32,8 +34,9 @@ export function ComponentPreviewTabs({
       <div data-slot="preview">
         <div
           data-align={align}
+          data-justify={justify}
           className={cn(
-            "preview flex w-full justify-center data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start",
+            "preview flex w-full data-[justify=center]:justify-center data-[justify=start]:justify-start data-[justify=end]:justify-end data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start",
             chromeLessOnMobile ? "sm:p-10" : "h-[450px] p-10"
           )}
         >
