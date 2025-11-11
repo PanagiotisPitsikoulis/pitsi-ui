@@ -1,0 +1,51 @@
+import { betterAuth } from "better-auth";
+import { drizzleAdapter } from "better-auth/adapters/drizzle";
+import { db } from "./db";
+import * as schema from "./db/schema";
+
+export const auth = betterAuth({
+  database: drizzleAdapter(db, {
+    provider: "pg",
+    schema: {
+      user: schema.user,
+      session: schema.session,
+      account: schema.account,
+      verification: schema.verification,
+    },
+  }),
+  emailAndPassword: {
+    enabled: true,
+  },
+  user: {
+    additionalFields: {
+      isPro: {
+        type: "boolean",
+        defaultValue: false,
+        required: false,
+      },
+      stripeCustomerId: {
+        type: "string",
+        required: false,
+      },
+      stripePaymentId: {
+        type: "string",
+        required: false,
+      },
+      proUpgradedAt: {
+        type: "date",
+        required: false,
+      },
+    },
+  },
+  // Add your auth providers here
+  // socialProviders: {
+  //   google: {
+  //     clientId: process.env.GOOGLE_CLIENT_ID!,
+  //     clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+  //   },
+  //   github: {
+  //     clientId: process.env.GITHUB_CLIENT_ID!,
+  //     clientSecret: process.env.GITHUB_CLIENT_SECRET!,
+  //   },
+  // },
+});

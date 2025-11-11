@@ -9,6 +9,7 @@ export function ComponentPreviewTabs({
   align = "center",
   hideCode = false,
   chromeLessOnMobile = false,
+  isScrollable = false,
   component,
   source,
   ...props
@@ -16,6 +17,7 @@ export function ComponentPreviewTabs({
   align?: "center" | "start" | "end"
   hideCode?: boolean
   chromeLessOnMobile?: boolean
+  isScrollable?: boolean
   component: React.ReactNode
   source: React.ReactNode
 }) {

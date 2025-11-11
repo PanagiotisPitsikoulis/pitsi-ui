@@ -12,6 +12,7 @@ import z from "zod"
 
 import { source } from "@/lib/source"
 import { absoluteUrl } from "@/lib/utils"
+import { ComponentsList } from "@/components/components-list"
 import { DocsCopyPage } from "@/components/docs-copy-page"
 import { DocsTableOfContents } from "@/components/docs-toc"
 import { OpenInV0Cta } from "@/components/open-in-v0-cta"
@@ -100,11 +101,72 @@ export default async function Page(props: {
     })
     .parse(attributes)
 
+  // Fetch all available component data
+  const componentsFolder = source.pageTree.children.find(
+    (p) => p.$id === "components"
+  )
+  const animationsFolder = source.pageTree.children.find(
+    (p) => p.$id === "animations"
+  )
+
+  const componentsData =
+    componentsFolder?.type === "folder"
+      ? componentsFolder.children
+          .filter((c) => c.type === "page")
+          .map((c) => {
+            // Extract registry name from URL: /docs/components/button -> button
+            const urlParts = c.url.split("/").filter(Boolean)
+            const registryName = urlParts[urlParts.length - 1] || ""
+            return {
+              $id: registryName,
+              url: c.url,
+              name: c.name,
+              registryName,
+            }
+          })
+      : []
+
+  const animationsData =
+    animationsFolder?.type === "folder"
+      ? animationsFolder.children
+          .filter((a) => a.type === "page")
+          .map((a) => {
+            // Extract registry name from URL: /docs/animations/parallax-scroll -> parallax-scroll
+            const urlParts = a.url.split("/").filter(Boolean)
+            const registryName = urlParts[urlParts.length - 1] || ""
+            return {
+              $id: registryName,
+              url: a.url,
+              name: a.name,
+              registryName,
+            }
+          })
+      : []
+
+  // Filter items based on current page
+  const isComponentsPage = page.url.includes("/docs/components")
+  const isAnimationsPage = page.url.includes("/docs/animations")
+
+  const allComponents = isComponentsPage
+    ? componentsData
+    : isAnimationsPage
+      ? animationsData
+      : [...componentsData, ...animationsData]
+
+  // Check if this is an index page (components or animations index)
+  const isIndexPage =
+    page.url === "/docs/components" || page.url === "/docs/animations"
+
+  // Hide TOC for index pages, show for others
+  const hasToc = !isIndexPage && doc.toc?.length
+
   return (
     <div className="flex items-stretch text-[1.05rem] sm:text-[15px] xl:w-full">
       <div className="flex min-w-0 flex-1 flex-col">
         <div className="h-(--top-spacing) shrink-0" />
-        <div className="mx-auto flex w-full max-w-2xl min-w-0 flex-1 flex-col gap-8 px-4 py-6 text-neutral-800 md:px-0 lg:py-8 dark:text-neutral-300">
+        <div
+          className={`mx-auto flex w-full min-w-0 flex-1 flex-col gap-8 px-4 py-6 text-neutral-800 md:px-0 lg:py-8 dark:text-neutral-300 ${hasToc ? "max-w-2xl" : "max-w-6xl"}`}
+        >
           <div className="flex flex-col gap-2">
             <div className="flex flex-col gap-2">
               <div className="flex items-start justify-between">
@@ -142,7 +204,7 @@ export default async function Page(props: {
                 </div>
               </div>
               {doc.description && (
-                <p className="text-muted-foreground text-[1.05rem] text-balance sm:text-base">
+                <p className="text-muted-foreground max-w-lg text-[1.05rem] text-balance sm:text-base">
                   {doc.description}
                 </p>
               )}
@@ -167,10 +229,17 @@ export default async function Page(props: {
             ) : null}
           </div>
           <div className="w-full flex-1 *:data-[slot=alert]:first:mt-0">
-            <MDX components={mdxComponents} />
+            <MDX
+              components={{
+                ...mdxComponents,
+                ComponentsList: () => <ComponentsList items={allComponents} />,
+              }}
+            />
           </div>
         </div>
-        <div className="mx-auto hidden h-16 w-full max-w-2xl items-center gap-2 px-4 sm:flex md:px-0">
+        <div
+          className={`mx-auto hidden h-16 w-full items-center gap-2 px-4 sm:flex md:px-0 ${hasToc ? "max-w-2xl" : "max-w-6xl"}`}
+        >
           {neighbours.previous && (
             <Button
               variant="secondary"
@@ -192,18 +261,20 @@ export default async function Page(props: {
           )}
         </div>
       </div>
-      <div className="sticky top-[calc(var(--header-height)+1px)] z-30 ml-auto hidden h-[calc(100svh-var(--footer-height)+2rem)] w-72 flex-col gap-4 overflow-hidden overscroll-none pb-8 xl:flex">
-        <div className="h-(--top-spacing) shrink-0" />
-        {doc.toc?.length ? (
-          <div className="no-scrollbar overflow-y-auto px-8">
-            <DocsTableOfContents toc={doc.toc} />
-            <div className="h-12" />
+      {hasToc && (
+        <div className="sticky top-[calc(var(--header-height)+1px)] z-30 ml-auto hidden h-[calc(100svh-var(--footer-height)+2rem)] w-72 flex-col gap-4 overflow-hidden overscroll-none pb-8 xl:flex">
+          <div className="h-(--top-spacing) shrink-0" />
+          {doc.toc?.length ? (
+            <div className="no-scrollbar overflow-y-auto px-8">
+              <DocsTableOfContents toc={doc.toc} />
+              <div className="h-12" />
+            </div>
+          ) : null}
+          <div className="flex flex-1 flex-col gap-12 px-6">
+            <OpenInV0Cta />
           </div>
-        ) : null}
-        <div className="flex flex-1 flex-col gap-12 px-6">
-          <OpenInV0Cta />
         </div>
-      </div>
+      )}
     </div>
   )
 }

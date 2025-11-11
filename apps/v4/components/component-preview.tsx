@@ -43,11 +43,12 @@ export function ComponentPreview({
   const isBlock = itemType === "registry:block"
 
   // Check if this is an animation by looking at registryDependencies
-  const isAnimation =
-    registryItem?.registryDependencies?.some((dep: string) => {
+  const isAnimation = registryItem?.registryDependencies?.some(
+    (dep: string) => {
       const depItem = Index[styleName]?.[dep]
       return depItem?.categories?.includes("animations")
-    })
+    }
+  )
 
   if (isBlock) {
     return (
@@ -76,28 +77,29 @@ export function ComponentPreview({
   if (isAnimation) {
     return (
       <ComponentPreviewTabs
+        isScrollable={true}
         className={className}
         align={align}
         hideCode={hideCode}
         component={
-          <div className="relative h-[600px] w-full overflow-hidden rounded-md">
+          <div className="relative aspect-video w-full overflow-y-auto rounded-md">
             <Image
               src={`/r/styles/new-york-v4/${name}-light.png`}
               alt={name}
               width={1440}
               height={900}
-              className="bg-background absolute top-0 left-0 z-20 w-full object-cover object-top md:hidden dark:hidden"
+              className="bg-background w-full object-cover object-top md:hidden dark:hidden"
             />
             <Image
               src={`/r/styles/new-york-v4/${name}-dark.png`}
               alt={name}
               width={1440}
               height={900}
-              className="bg-background absolute top-0 left-0 z-20 hidden w-full object-cover object-top md:hidden dark:block"
+              className="bg-background hidden w-full object-cover object-top md:hidden dark:block"
             />
             <iframe
               src={`/view/${styleName}/${name}`}
-              className="hidden size-full md:block"
+              className="hidden h-full w-full md:block"
             />
           </div>
         }

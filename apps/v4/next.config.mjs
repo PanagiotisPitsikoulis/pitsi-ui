@@ -4,7 +4,7 @@ import { createMDX } from "fumadocs-mdx/next"
 const nextConfig = {
   devIndicators: false,
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
   outputFileTracingIncludes: {
     "/*": ["./registry/**/*"],
@@ -27,6 +27,25 @@ const nextConfig = {
   },
   experimental: {
     turbopackFileSystemCacheForDev: true,
+    optimizePackageImports: [
+      "@radix-ui/react-icons",
+      "@tabler/icons-react",
+      "lucide-react",
+      "@remixicon/react",
+    ],
+    optimizeCss: true,
+    optimizeServerReact: true,
+  },
+  webpack: (config, { dev, isServer }) => {
+    if (dev && !isServer) {
+      config.optimization = {
+        ...config.optimization,
+        removeAvailableModules: false,
+        removeEmptyChunks: false,
+        splitChunks: false,
+      }
+    }
+    return config
   },
   redirects() {
     return [

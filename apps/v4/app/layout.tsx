@@ -6,7 +6,6 @@ import { cn } from "@/lib/utils"
 import { LayoutProvider } from "@/hooks/use-layout"
 import { ActiveThemeProvider } from "@/components/active-theme"
 import { Analytics } from "@/components/analytics"
-import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/registry/new-york-v4/ui/sonner"
 
@@ -89,7 +88,6 @@ export default function RootLayout({
           <LayoutProvider>
             <ActiveThemeProvider>
               {children}
-              <TailwindIndicator />
               <Toaster position="top-center" />
               <Analytics />
             </ActiveThemeProvider>

@@ -10,8 +10,8 @@ export const contentType = "image/png"
 // Image generation
 export default function Icon() {
   return new ImageResponse(
-    // ImageResponse JSX element
     (
+      // ImageResponse JSX element
       <div
         style={{
           background: "white",

@@ -83,6 +83,7 @@ export async function generateStaticParams() {
       const item = styleIndex[itemName]
       if (
         [
+          "registry:ui",
           "registry:block",
           "registry:component",
           "registry:example",
@@ -124,7 +125,10 @@ export default async function BlockPage({
 
   return (
     <>
-      <div className={cn("bg-background", item.meta?.container)}>
+      <div className={cn(
+        "bg-background",
+        item.meta?.container || "flex min-h-screen items-center justify-center p-10"
+      )}>
         <Component />
       </div>
     </>
