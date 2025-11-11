@@ -3,8 +3,6 @@ import { notFound } from "next/navigation"
 
 import { componentRegistry } from "@/app/(internal)/sink/component-registry"
 
-export const dynamic = "force-static"
-export const revalidate = false
 
 export async function generateStaticParams() {
   return Object.keys(componentRegistry).map((name) => ({

@@ -8,10 +8,6 @@ import { getRegistryComponent, getRegistryItem } from "@/lib/registry"
 import { absoluteUrl, cn } from "@/lib/utils"
 import { getStyle, STYLES, type Style } from "@/registry/styles"
 
-export const revalidate = false
-export const dynamic = "force-static"
-export const dynamicParams = false
-
 const getCachedRegistryItem = React.cache(
   async (name: string, styleName: Style["name"]) => {
     return await getRegistryItem(name, styleName)

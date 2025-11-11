@@ -10,6 +10,7 @@ import { MainNav } from "@/components/main-nav"
 import { MobileNav } from "@/components/mobile-nav"
 import { ModeSwitcher } from "@/components/mode-switcher"
 import { SiteConfig } from "@/components/site-config"
+import { UserNavServer } from "@/components/user-nav-server"
 // import blocks from "@/registry/__blocks__.json"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Separator } from "@/registry/new-york-v4/ui/separator"
@@ -56,6 +57,8 @@ export function SiteHeader() {
             <SiteConfig className="3xl:flex hidden" />
             <Separator orientation="vertical" />
             <ModeSwitcher />
+            <Separator orientation="vertical" />
+            <UserNavServer />
           </div>
         </div>
       </div>

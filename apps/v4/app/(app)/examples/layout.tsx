@@ -13,8 +13,6 @@ import { PageNav } from "@/components/page-nav"
 import { ThemeSelector } from "@/components/theme-selector"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
-export const dynamic = "force-static"
-export const revalidate = false
 
 const title = "The Foundation for your Design System"
 const description =

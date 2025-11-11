@@ -1,4 +1,4 @@
-import { BookOpen } from "lucide-react"
+import { RiBox1Fill } from "@remixicon/react"
 
 import { SignupForm } from "../components/signup-form"
 
@@ -9,7 +9,7 @@ export default function SignUpPage() {
         <div className="flex justify-center gap-2 md:justify-start">
           <a href="/" className="flex items-center gap-2 font-medium">
             <div className="bg-primary text-primary-foreground flex size-6 items-center justify-center rounded-md">
-              <BookOpen className="size-4" />
+              <RiBox1Fill className="size-4" />
             </div>
             Pitsi UI
           </a>

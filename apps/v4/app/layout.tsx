@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { Suspense } from "react"
 
 import { META_THEME_COLORS, siteConfig } from "@/lib/config"
 import { fontVariables } from "@/lib/fonts"
@@ -87,7 +88,7 @@ export default function RootLayout({
         <ThemeProvider>
           <LayoutProvider>
             <ActiveThemeProvider>
-              {children}
+              <Suspense fallback={null}>{children}</Suspense>
               <Toaster position="top-center" />
               <Analytics />
             </ActiveThemeProvider>

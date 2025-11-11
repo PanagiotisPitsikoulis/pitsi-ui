@@ -5,8 +5,6 @@ import { processMdxForLLMs } from "@/lib/llm"
 import { source } from "@/lib/source"
 import { getActiveStyle } from "@/registry/styles"
 
-export const revalidate = false
-
 export async function GET(
   _req: NextRequest,
   { params }: { params: Promise<{ slug?: string[] }> }

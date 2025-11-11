@@ -3,8 +3,6 @@ import { BlockDisplay } from "@/components/block-display"
 import { BlocksPaginated } from "@/components/blocks-paginated"
 import { getActiveStyle } from "@/registry/styles"
 
-export const revalidate = false
-export const dynamic = "force-static"
 
 export default async function BlocksPage() {
   const activeStyle = await getActiveStyle()

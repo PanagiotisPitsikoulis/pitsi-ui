@@ -4,10 +4,6 @@ import { BlockDisplay } from "@/components/block-display"
 import { BlocksPaginated } from "@/components/blocks-paginated"
 import { getActiveStyle } from "@/registry/styles"
 
-export const revalidate = false
-export const dynamic = "force-static"
-export const dynamicParams = false
-
 export async function generateStaticParams() {
   return registryCategories.map((category) => ({
     categories: [category.slug],

@@ -6,10 +6,6 @@ import { ChartDisplay } from "@/components/chart-display"
 import { getActiveStyle } from "@/registry/styles"
 import { charts } from "@/app/(app)/charts/charts"
 
-export const revalidate = false
-export const dynamic = "force-static"
-export const dynamicParams = false
-
 interface ChartPageProps {
   params: Promise<{
     type: string

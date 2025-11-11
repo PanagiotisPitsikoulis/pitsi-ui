@@ -1,8 +1,6 @@
 import { getColors } from "@/lib/colors"
 import { ColorPalette } from "@/components/color-palette"
 
-export const dynamic = "force-static"
-export const revalidate = false
 
 export default function ColorsPage() {
   const colors = getColors()

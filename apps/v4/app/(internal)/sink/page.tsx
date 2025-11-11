@@ -3,8 +3,6 @@ import { Metadata } from "next"
 import { componentRegistry } from "@/app/(internal)/sink/component-registry"
 import { ComponentWrapper } from "@/app/(internal)/sink/components/component-wrapper"
 
-export const dynamic = "force-static"
-export const revalidate = false
 
 export const metadata: Metadata = {
   title: "Kitchen Sink",

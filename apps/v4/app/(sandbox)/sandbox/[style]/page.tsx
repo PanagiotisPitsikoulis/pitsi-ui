@@ -6,10 +6,6 @@ import { getRegistryComponent, getRegistryItems } from "@/lib/registry"
 import { absoluteUrl, cn } from "@/lib/utils"
 import { getStyle, STYLES } from "@/registry/styles"
 
-export const revalidate = false
-export const dynamic = "force-static"
-export const dynamicParams = false
-
 const allowedTypes = ["registry:example"]
 
 export async function generateMetadata({
