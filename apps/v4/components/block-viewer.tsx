@@ -161,7 +161,7 @@ function BlockViewerToolbar({ styleName }: { styleName: Style["name"] }) {
       <Separator orientation="vertical" className="mx-2 !h-4" />
       <a
         href={`#${item.name}`}
-        className="flex-1 text-center text-sm font-medium underline-offset-2 hover:underline md:flex-auto md:text-left"
+        className="line-clamp-1 flex-1 text-center text-sm font-medium underline-offset-2 hover:underline md:flex-auto md:text-left"
       >
         {item.description?.replace(/\.$/, "")}
       </a>
@@ -227,7 +227,7 @@ function BlockViewerToolbar({ styleName }: { styleName: Style["name"] }) {
           }}
         >
           {isCopied ? <Check /> : <Terminal />}
-          <span>npx pitsi add {item.name}</span>
+          <span className="line-clamp-1 max-w-[300px]">npx pitsi add {item.name}</span>
         </Button>
         <Separator orientation="vertical" className="mx-1 !h-4" />
         <OpenInV0Button name={item.name} />
@@ -311,7 +311,12 @@ function BlockViewerMobile({ children }: { children: React.ReactNode }) {
           {item.name}
         </div>
       </div>
-      {children}
+      <div className="relative">
+        <div className="absolute inset-0 [background-image:radial-gradient(#d4d4d4_1px,transparent_1px)] [background-size:20px_20px] dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]"></div>
+        <div className="after:bg-surface/50 relative after:absolute after:inset-0 after:z-0 after:rounded-xl">
+          {children}
+        </div>
+      </div>
     </div>
   )
 }

@@ -6,6 +6,7 @@ import {
   getSubcategories,
   getSubcategoryBlockCounts,
 } from "@/lib/blocks"
+import { BlockDisplay } from "@/components/block-display"
 import { BlocksListPaginated } from "@/components/blocks-list-paginated"
 import { BlocksSubcategoryNav } from "@/components/blocks-subcategory-nav"
 import { getActiveStyle } from "@/registry/styles"
@@ -112,7 +113,11 @@ export default async function BlocksPage({
           subcategoryCounts={subcategoryCounts}
           currentSubcategory={subcategory}
         />
-        <BlocksListPaginated blocks={blocks} styleName={activeStyle.name} />
+        <BlocksListPaginated>
+          {blocks.map((name) => (
+            <BlockDisplay key={name} name={name} styleName={activeStyle.name} />
+          ))}
+        </BlocksListPaginated>
       </>
     )
   }
