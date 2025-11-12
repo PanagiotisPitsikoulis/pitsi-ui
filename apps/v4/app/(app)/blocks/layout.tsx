@@ -1,12 +1,6 @@
 import { Metadata } from "next"
 
-import { Announcement } from "@/components/announcement"
 import { BlocksNav } from "@/components/blocks-nav"
-import {
-  PageHeader,
-  PageHeaderDescription,
-  PageHeaderHeading,
-} from "@/components/page-header"
 import { PageNav } from "@/components/page-nav"
 
 const title = "Building Blocks for the Web"
@@ -44,11 +38,6 @@ export default function BlocksLayout({
 }) {
   return (
     <>
-      <PageHeader>
-        <Announcement />
-        <PageHeaderHeading>{title}</PageHeaderHeading>
-        <PageHeaderDescription>{description}</PageHeaderDescription>
-      </PageHeader>
       <PageNav id="blocks">
         <BlocksNav />
       </PageNav>

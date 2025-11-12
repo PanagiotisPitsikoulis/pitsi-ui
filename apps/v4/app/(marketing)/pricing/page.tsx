@@ -1,48 +1,49 @@
 "use client"
 
-import { useRouter, useSearchParams } from "next/navigation"
 import { Suspense, useState } from "react"
+import { useRouter, useSearchParams } from "next/navigation"
 
 import { useSession } from "@/lib/client/auth"
 import Flex from "@/registry/new-york-v4/ui/flex"
+import { Skeleton } from "@/registry/new-york-v4/ui/skeleton"
 import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 import Typography from "@/registry/new-york-v4/ui/typography"
 
 function PricingContent() {
-  const { data: session, isPending } = useSession();
-  const [loading, setLoading] = useState(false);
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const success = searchParams.get("success");
-  const canceled = searchParams.get("canceled");
+  const { data: session, isPending } = useSession()
+  const [loading, setLoading] = useState(false)
+  const router = useRouter()
+  const searchParams = useSearchParams()
+  const success = searchParams.get("success")
+  const canceled = searchParams.get("canceled")
 
   const handleUpgrade = async () => {
     if (!session) {
-      router.push("/signin");
-      return;
+      router.push("/signin")
+      return
     }
 
-    setLoading(true);
+    setLoading(true)
 
     try {
       const response = await fetch("/api/stripe/checkout", {
         method: "POST",
-      });
+      })
 
-      const data = await response.json();
+      const data = await response.json()
 
       if (response.ok && data.url) {
-        window.location.href = data.url;
+        window.location.href = data.url
       } else {
-        alert(data.error || "Failed to create checkout session");
-        setLoading(false);
+        alert(data.error || "Failed to create checkout session")
+        setLoading(false)
       }
     } catch (error) {
-      console.error("Error:", error);
-      alert("Something went wrong. Please try again.");
-      setLoading(false);
+      console.error("Error:", error)
+      alert("Something went wrong. Please try again.")
+      setLoading(false)
     }
-  };
+  }
 
   if (isPending) {
     return (
@@ -52,14 +53,20 @@ function PricingContent() {
         justify="center"
         className="min-h-screen"
       >
-        <Typography variant="paragraph-lg">Loading...</Typography>
+        <div className="flex flex-col space-y-3">
+          <Skeleton className="h-[200px] w-[400px] rounded-xl" />
+          <div className="space-y-2">
+            <Skeleton className="h-4 w-[400px]" />
+            <Skeleton className="h-4 w-[350px]" />
+          </div>
+        </div>
       </Flex>
-    );
+    )
   }
 
   return (
-    <Flex direction="col" align="center" className="min-h-screen py-20 px-4">
-      <Flex direction="col" align="center" className="max-w-4xl w-full">
+    <Flex direction="col" align="center" className="min-h-screen px-4 py-20">
+      <Flex direction="col" align="center" className="w-full max-w-4xl">
         <Typography variant="h1" as="h1" className="text-center">
           Upgrade to Pro
         </Typography>
@@ -76,12 +83,12 @@ function PricingContent() {
         {success && (
           <Flex
             direction="col"
-            className="w-full max-w-md p-6 bg-green-50 border border-green-200 rounded-lg mb-8"
+            className="mb-8 w-full max-w-md rounded-lg border border-green-200 bg-green-50 p-6"
           >
             <Typography variant="label-lg" className="text-green-800">
               Payment successful! 🎉
             </Typography>
-            <Typography variant="paragraph-sm" className="text-green-700 mt-2">
+            <Typography variant="paragraph-sm" className="mt-2 text-green-700">
               Welcome to Pro! Your account has been upgraded.
             </Typography>
           </Flex>
@@ -90,13 +97,13 @@ function PricingContent() {
         {canceled && (
           <Flex
             direction="col"
-            className="w-full max-w-md p-6 bg-yellow-50 border border-yellow-200 rounded-lg mb-8"
+            className="mb-8 w-full max-w-md rounded-lg border border-yellow-200 bg-yellow-50 p-6"
           >
             <Typography variant="label-lg" className="text-yellow-800">
               Payment canceled
             </Typography>
-            <Typography variant="paragraph-sm" className="text-yellow-700 mt-2">
-              You can try again when you're ready.
+            <Typography variant="paragraph-sm" className="mt-2 text-yellow-700">
+              You can try again when you{"'"}re ready.
             </Typography>
           </Flex>
         )}
@@ -104,7 +111,7 @@ function PricingContent() {
         {/* Pricing Card */}
         <Flex
           direction="col"
-          className="w-full max-w-md p-8 bg-white border-2 border-border-strength-200 rounded-xl shadow-lg"
+          className="border-border-strength-200 w-full max-w-md rounded-xl border-2 bg-white p-8 shadow-lg"
         >
           <Flex direction="col" align="center">
             <Typography variant="label-xl" className="text-text-strength-900">
@@ -143,7 +150,7 @@ function PricingContent() {
             <Flex align="start" gap="sm">
               <Typography variant="paragraph-lg">✓</Typography>
               <Typography variant="paragraph-md">
-                Access to new blocks as they're released
+                Access to new blocks as they{"'"}re released
               </Typography>
             </Flex>
             <Flex align="start" gap="sm">
@@ -163,7 +170,7 @@ function PricingContent() {
           {(session?.user as any)?.isPro ? (
             <button
               disabled
-              className="w-full py-3 px-6 bg-gray-200 text-gray-600 rounded-lg font-semibold cursor-not-allowed"
+              className="w-full cursor-not-allowed rounded-lg bg-gray-200 px-6 py-3 font-semibold text-gray-600"
             >
               Already Pro ✓
             </button>
@@ -171,7 +178,7 @@ function PricingContent() {
             <button
               onClick={handleUpgrade}
               disabled={loading}
-              className="w-full py-3 px-6 bg-text-strength-900 text-white rounded-lg font-semibold hover:bg-text-strength-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="bg-text-strength-900 hover:bg-text-strength-800 w-full rounded-lg px-6 py-3 font-semibold text-white transition-colors disabled:cursor-not-allowed disabled:opacity-50"
             >
               {loading ? "Processing..." : "Upgrade to Pro"}
             </button>
@@ -188,7 +195,7 @@ function PricingContent() {
         </Typography>
       </Flex>
     </Flex>
-  );
+  )
 }
 
 export default function PricingPage() {
@@ -201,11 +208,17 @@ export default function PricingPage() {
           justify="center"
           className="min-h-screen"
         >
-          <Typography variant="paragraph-lg">Loading...</Typography>
+          <div className="flex flex-col space-y-3">
+            <Skeleton className="h-[200px] w-[400px] rounded-xl" />
+            <div className="space-y-2">
+              <Skeleton className="h-4 w-[400px]" />
+              <Skeleton className="h-4 w-[350px]" />
+            </div>
+          </div>
         </Flex>
       }
     >
       <PricingContent />
     </Suspense>
-  );
+  )
 }

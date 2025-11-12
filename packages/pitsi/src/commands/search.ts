@@ -17,6 +17,7 @@ const searchOptionsSchema = z.object({
   query: z.string().optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
+  type: z.string().optional(),
 })
 
 // TODO: We're duplicating logic for shadowConfig here.
@@ -37,6 +38,10 @@ export const search = new Command()
   )
   .option("-q, --query <query>", "query string")
   .option(
+    "-t, --type <type>",
+    "filter by registry type (e.g., registry:ui, registry:block, registry:example)"
+  )
+  .option(
     "-l, --limit <number>",
     "maximum number of items to display per registry",
     "100"
@@ -49,6 +54,7 @@ export const search = new Command()
         query: opts.query,
         limit: opts.limit ? parseInt(opts.limit, 10) : undefined,
         offset: opts.offset ? parseInt(opts.offset, 10) : undefined,
+        type: opts.type,
       })
 
       await loadEnvFiles(options.cwd)
@@ -106,6 +112,7 @@ export const search = new Command()
         query: options.query,
         limit: options.limit,
         offset: options.offset,
+        type: options.type,
         config,
       })
 

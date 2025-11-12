@@ -9,6 +9,8 @@ import {
   useState,
 } from "react"
 
+import { Skeleton } from "@/registry/new-york-v4/ui/skeleton"
+
 const DEFAULT_THEME = "default"
 
 type ThemeContextType = {
@@ -26,7 +28,17 @@ export function ActiveThemeProvider({
   initialTheme?: string
 }) {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense
+      fallback={
+        <div className="flex flex-col space-y-3 p-4">
+          <Skeleton className="h-[200px] w-full rounded-xl" />
+          <div className="space-y-2">
+            <Skeleton className="h-4 w-full" />
+            <Skeleton className="h-4 w-3/4" />
+          </div>
+        </div>
+      }
+    >
       <ActiveThemeProviderInternal initialTheme={initialTheme}>
         {children}
       </ActiveThemeProviderInternal>

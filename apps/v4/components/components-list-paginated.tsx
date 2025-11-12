@@ -152,14 +152,6 @@ export function ComponentsListPaginated({
           </div>
         </div>
       )}
-
-      {!hasMore && items.length > 0 && (
-        <div className="flex items-center justify-center py-8">
-          <div className="text-muted-foreground text-sm">
-            All {totalCount} loaded
-          </div>
-        </div>
-      )}
     </>
   )
 }

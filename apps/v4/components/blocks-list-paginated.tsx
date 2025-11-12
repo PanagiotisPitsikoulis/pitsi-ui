@@ -35,14 +35,6 @@ export function BlocksListPaginated({ children }: BlocksListPaginatedProps) {
           </div>
         </div>
       )}
-
-      {!hasMore && childrenArray.length > 0 && (
-        <div className="flex items-center justify-center py-8">
-          <div className="text-muted-foreground text-sm">
-            All {totalCount} blocks loaded
-          </div>
-        </div>
-      )}
     </>
   )
 }

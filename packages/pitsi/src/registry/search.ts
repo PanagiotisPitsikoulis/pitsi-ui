@@ -11,18 +11,26 @@ export async function searchRegistries(
     query?: string
     limit?: number
     offset?: number
+    type?: string
     config?: Partial<Config>
     useCache?: boolean
   }
 ) {
-  const { query, limit, offset, config, useCache } = options || {}
+  const { query, limit, offset, type, config, useCache } = options || {}
 
   let allItems: z.infer<typeof searchResultItemSchema>[] = []
 
   for (const registry of registries) {
     const registryData = await getRegistry(registry, { config, useCache })
 
-    const itemsWithRegistry = (registryData.items || []).map((item) => ({
+    let items = registryData.items || []
+
+    // Filter by type if specified
+    if (type) {
+      items = items.filter((item) => item.type === type)
+    }
+
+    const itemsWithRegistry = items.map((item) => ({
       name: item.name,
       type: item.type,
       description: item.description,

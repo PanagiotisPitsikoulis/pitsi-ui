@@ -8,6 +8,7 @@ import { notFound } from "next/navigation"
 import { siteConfig } from "@/lib/config"
 import { getRegistryComponent, getRegistryItem } from "@/lib/registry"
 import { absoluteUrl, cn } from "@/lib/utils"
+import { Skeleton } from "@/registry/new-york-v4/ui/skeleton"
 import { getStyle, STYLES, type Style } from "@/registry/styles"
 
 const getCachedRegistryItem = React.cache(
@@ -133,7 +134,13 @@ export default async function BlockPage({
         <Suspense
           fallback={
             <div className="flex min-h-screen items-center justify-center">
-              Loading...
+              <div className="flex flex-col space-y-3">
+                <Skeleton className="h-[200px] w-[400px] rounded-xl" />
+                <div className="space-y-2">
+                  <Skeleton className="h-4 w-[400px]" />
+                  <Skeleton className="h-4 w-[350px]" />
+                </div>
+              </div>
             </div>
           }
         >
