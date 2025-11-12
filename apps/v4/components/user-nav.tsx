@@ -33,7 +33,13 @@ export function UserNav({ user }: { user: User }) {
   const initials = getUserInitials(user.name)
 
   const handleSignOut = async () => {
-    await signOut()
+    await signOut({
+      fetchOptions: {
+        onSuccess: () => {
+          window.location.href = "/"
+        },
+      },
+    })
   }
 
   return (
@@ -41,10 +47,10 @@ export function UserNav({ user }: { user: User }) {
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"
-          className="relative size-8 rounded-full p-0"
+          className="relative size-6 rounded-full p-0"
           aria-label="User menu"
         >
-          <Avatar className="size-8">
+          <Avatar className="size-6">
             <AvatarImage src={user.image ?? undefined} alt={user.name} />
             <AvatarFallback>{initials}</AvatarFallback>
           </Avatar>
