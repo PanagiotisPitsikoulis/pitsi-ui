@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { toast } from "sonner"
@@ -81,12 +82,12 @@ export function LoginForm({
         <Field>
           <div className="flex items-center">
             <FieldLabel htmlFor="password">Password</FieldLabel>
-            <a
+            <Link
               href="/forgot-password"
               className="ml-auto text-sm underline-offset-4 hover:underline"
             >
               Forgot your password?
-            </a>
+            </Link>
           </div>
           <Input
             id="password"
@@ -184,9 +185,9 @@ export function LoginForm({
 
           <FieldDescription className="text-center">
             Don&apos;t have an account?{" "}
-            <a href="/signup" className="underline underline-offset-4">
+            <Link href="/signup" className="underline underline-offset-4">
               Sign up
-            </a>
+            </Link>
           </FieldDescription>
         </Field>
       </FieldGroup>

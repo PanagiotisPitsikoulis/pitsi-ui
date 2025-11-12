@@ -24,6 +24,7 @@ import { createFileTreeForRegistryItemFiles, FileTree } from "@/lib/registry"
 import { cn } from "@/lib/utils"
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard"
 import { getIconForLanguageExtension } from "@/components/icons"
+import { LazyIframe } from "@/components/lazy-iframe"
 import { OpenInV0Button } from "@/components/open-in-v0-button"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
@@ -246,11 +247,10 @@ function BlockViewerIframe({
   const { item, iframeKey } = useBlockViewer()
 
   return (
-    <iframe
+    <LazyIframe
       key={iframeKey}
       src={`/view/${styleName}/${item.name}`}
       height={item.meta?.iframeHeight ?? 930}
-      loading="lazy"
       className={cn(
         "bg-background no-scrollbar relative z-20 w-full",
         className

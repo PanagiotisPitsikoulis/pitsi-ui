@@ -1,3 +1,4 @@
+import { Suspense } from "react"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 
@@ -78,24 +79,26 @@ export default async function BlockPage({
 
   return (
     <>
-      <div className={cn("grid gap-6")}>
-        {items
-          .filter((item) => item !== null)
-          .map((item) => {
-            const Component = getRegistryComponent(item.name, style.name)
-            if (!Component) {
-              return null
-            }
-            return (
-              <div
-                key={item.name}
-                className={cn("bg-background", item.meta?.container)}
-              >
-                <Component />
-              </div>
-            )
-          })}
-      </div>
+      <Suspense fallback={<div className="grid gap-6 animate-pulse"><div className="h-96 rounded-lg bg-muted" /></div>}>
+        <div className={cn("grid gap-6")}>
+          {items
+            .filter((item) => item !== null)
+            .map((item) => {
+              const Component = getRegistryComponent(item.name, style.name)
+              if (!Component) {
+                return null
+              }
+              return (
+                <div
+                  key={item.name}
+                  className={cn("bg-background", item.meta?.container)}
+                >
+                  <Component />
+                </div>
+              )
+            })}
+        </div>
+      </Suspense>
     </>
   )
 }

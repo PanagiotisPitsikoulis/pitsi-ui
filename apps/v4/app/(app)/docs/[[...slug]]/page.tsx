@@ -1,3 +1,4 @@
+import { cacheLife } from "next/cache"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { mdxComponents } from "@/mdx-components"
@@ -74,6 +75,8 @@ export async function generateMetadata(props: {
 export default async function Page(props: {
   params: Promise<{ slug: string[] }>
 }) {
+  "use cache"
+
   const params = await props.params
   const page = source.getPage(params.slug)
   if (!page) {

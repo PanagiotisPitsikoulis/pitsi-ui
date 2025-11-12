@@ -1,6 +1,8 @@
 /* eslint-disable react-hooks/static-components */
 import * as React from "react"
+import { Suspense } from "react"
 import { Metadata } from "next"
+import { cacheLife } from "next/cache"
 import { notFound } from "next/navigation"
 
 import { siteConfig } from "@/lib/config"
@@ -22,6 +24,8 @@ export async function generateMetadata({
     name: string
   }>
 }): Promise<Metadata> {
+  "use cache"
+
   const { style: styleName, name } = await params
   const style = getStyle(styleName)
 
@@ -78,13 +82,9 @@ export async function generateStaticParams() {
     for (const itemName in styleIndex) {
       const item = styleIndex[itemName]
       if (
-        [
-          "registry:ui",
-          "registry:block",
-          "registry:component",
-          "registry:example",
-          "registry:internal",
-        ].includes(item.type)
+        ["registry:block", "registry:component", "registry:example"].includes(
+          item.type
+        )
       ) {
         params.push({
           style: style.name,
@@ -105,6 +105,8 @@ export default async function BlockPage({
     name: string
   }>
 }) {
+  "use cache"
+
   const { style: styleName, name } = await params
   const style = getStyle(styleName)
 
@@ -121,11 +123,22 @@ export default async function BlockPage({
 
   return (
     <>
-      <div className={cn(
-        "bg-background",
-        item.meta?.container || "flex min-h-screen items-center justify-center p-10"
-      )}>
-        <Component />
+      <div
+        className={cn(
+          "bg-background",
+          item.meta?.container ||
+            "flex min-h-screen items-center justify-center p-10"
+        )}
+      >
+        <Suspense
+          fallback={
+            <div className="flex min-h-screen items-center justify-center">
+              Loading...
+            </div>
+          }
+        >
+          <Component />
+        </Suspense>
       </div>
     </>
   )

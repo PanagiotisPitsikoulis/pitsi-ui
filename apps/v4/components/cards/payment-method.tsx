@@ -38,6 +38,9 @@ const plans = [
   },
 ] as const
 
+// Calculate current year at module load time for static generation
+const currentYear = 2025
+
 export function CardsPaymentMethod() {
   return (
     <Card>
@@ -113,8 +116,8 @@ export function CardsPaymentMethod() {
               </SelectTrigger>
               <SelectContent>
                 {Array.from({ length: 10 }, (_, i) => (
-                  <SelectItem key={i} value={`${new Date().getFullYear() + i}`}>
-                    {new Date().getFullYear() + i}
+                  <SelectItem key={i} value={`${currentYear + i}`}>
+                    {currentYear + i}
                   </SelectItem>
                 ))}
               </SelectContent>

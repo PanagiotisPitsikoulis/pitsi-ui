@@ -1,3 +1,4 @@
+import { Suspense } from "react"
 import { cookies } from "next/headers"
 
 import {
@@ -9,11 +10,7 @@ import { SiteHeader } from "@/app/(examples)/dashboard/components/site-header"
 
 import "@/app/(examples)/dashboard/theme.css"
 
-export default async function DashboardLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+async function DashboardContent({ children }: { children: React.ReactNode }) {
   const cookieStore = await cookies()
   const defaultOpen = cookieStore.get("sidebar_state")?.value === "true"
 
@@ -32,5 +29,17 @@ export default async function DashboardLayout({
         <div className="flex flex-1 flex-col">{children}</div>
       </SidebarInset>
     </SidebarProvider>
+  )
+}
+
+export default function DashboardLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <Suspense fallback={<div className="flex min-h-screen items-center justify-center">Loading...</div>}>
+      <DashboardContent>{children}</DashboardContent>
+    </Suspense>
   )
 }

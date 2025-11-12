@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { toast } from "sonner"
@@ -190,9 +191,9 @@ export function SignupForm({
 
           <FieldDescription className="text-center">
             Already have an account?{" "}
-            <a href="/signin" className="underline underline-offset-4">
+            <Link href="/signin" className="underline underline-offset-4">
               Sign in
-            </a>
+            </Link>
           </FieldDescription>
         </Field>
       </FieldGroup>

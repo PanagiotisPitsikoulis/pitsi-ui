@@ -3,6 +3,7 @@
 import {
   createContext,
   ReactNode,
+  Suspense,
   useContext,
   useEffect,
   useState,
@@ -24,10 +25,28 @@ export function ActiveThemeProvider({
   children: ReactNode
   initialTheme?: string
 }) {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ActiveThemeProviderInternal initialTheme={initialTheme}>
+        {children}
+      </ActiveThemeProviderInternal>
+    </Suspense>
+  )
+}
+
+function ActiveThemeProviderInternal({
+  children,
+  initialTheme,
+}: {
+  children: ReactNode
+  initialTheme?: string
+}) {
+  // Initialize with initial theme or default
   const [activeTheme, setActiveTheme] = useState<string>(
-    () => initialTheme || DEFAULT_THEME
+    initialTheme || DEFAULT_THEME
   )
 
+  // Apply theme classes to body whenever theme changes
   useEffect(() => {
     Array.from(document.body.classList)
       .filter((className) => className.startsWith("theme-"))

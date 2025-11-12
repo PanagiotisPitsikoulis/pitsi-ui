@@ -13,6 +13,7 @@ import {
 } from "lucide-react"
 
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard"
+import { LazyIframe } from "@/components/lazy-iframe"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Separator } from "@/registry/new-york-v4/ui/separator"
 import {
@@ -121,11 +122,10 @@ export function BlockDisplay({ name, styleName }: BlockDisplayProps) {
           <div className="line-clamp-1 text-sm font-medium">{name}</div>
         </div>
         <div className="relative aspect-[4/2.5] w-full overflow-hidden rounded-md border">
-          <iframe
+          <LazyIframe
             key={iframeKey}
             src={`/view/${styleName}/${name}`}
             className="size-full"
-            loading="lazy"
           />
         </div>
       </div>
@@ -139,11 +139,10 @@ export function BlockDisplay({ name, styleName }: BlockDisplayProps) {
               className="bg-background relative aspect-[4/2.5] overflow-hidden rounded-lg border transition-all duration-300 md:aspect-auto md:rounded-xl"
               style={{ width: getViewportWidth() }}
             >
-              <iframe
+              <LazyIframe
                 key={iframeKey}
                 src={`/view/${styleName}/${name}`}
                 height={930}
-                loading="lazy"
                 className="bg-background no-scrollbar relative z-20 w-full"
               />
             </div>

@@ -14,13 +14,21 @@ links:
 
 ## Installation
 
-<CodeTabs items={["CLI", "Manual"]}>
+<CodeTabs>
 
-```bash tab="CLI"
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
 npx pitsi@latest add unicorn-wrapper
 ```
 
-<div tab="Manual">
+</TabsContent>
+
+<TabsContent value="manual">
 
 <Steps>
 
@@ -30,15 +38,15 @@ npx pitsi@latest add unicorn-wrapper
 npm install unicornstudio-react
 ```
 
-<Step>Copy and paste the following code into your project:</Step>
+<Step>Copy and paste the following code into your project.</Step>
 
-```tsx file="<registry>/ui/unicorn-wrapper.tsx"
+<ComponentSource name="unicorn-wrapper" />
 
-```
+<Step>Update the import paths to match your project setup.</Step>
 
 </Steps>
 
-</div>
+</TabsContent>
 
 </CodeTabs>
 

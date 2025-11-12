@@ -328,6 +328,7 @@ export const mdxComponents = {
   Tab: ({ className, ...props }: React.ComponentProps<"div">) => (
     <div className={cn(className)} {...props} />
   ),
+  CodeBlockTab: TabsContent,
   Button,
   Callout,
   Accordion,

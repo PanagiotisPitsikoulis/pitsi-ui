@@ -1,5 +1,6 @@
 import { ComponentPreviewTabs } from "@/components/component-preview-tabs"
 import { ComponentSource } from "@/components/component-source"
+import { LazyIframe } from "@/components/lazy-iframe"
 import { Index } from "@/registry/__index__"
 import { type Style } from "@/registry/styles"
 
@@ -52,7 +53,7 @@ export function ComponentPreview({
     return (
       <div className="relative aspect-[4/2.5] w-full overflow-hidden rounded-md border md:-mx-1">
         <div className="bg-background absolute inset-0 w-full md:w-[1600px]">
-          <iframe src={`/view/${styleName}/${name}`} className="size-full" />
+          <LazyIframe src={`/view/${styleName}/${name}`} className="size-full" />
         </div>
       </div>
     )
@@ -67,7 +68,7 @@ export function ComponentPreview({
         hideCode={hideCode}
         component={
           <div className="relative aspect-video w-full overflow-y-auto rounded-md">
-            <iframe
+            <LazyIframe
               src={`/view/${styleName}/${name}`}
               className="h-full w-full"
             />

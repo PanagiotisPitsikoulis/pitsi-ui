@@ -1,8 +1,10 @@
 import { Metadata } from "next"
+import { cacheLife } from "next/cache"
 import Link from "next/link"
 
 import { Announcement } from "@/components/announcement"
 import { ExamplesNav } from "@/components/examples-nav"
+import { LazyIframe } from "@/components/lazy-iframe"
 import {
   PageActions,
   PageHeader,
@@ -43,7 +45,9 @@ export const metadata: Metadata = {
   },
 }
 
-export default function IndexPage() {
+export default async function IndexPage() {
+  "use cache"
+
   return (
     <div className="flex flex-1 flex-col">
       <PageHeader>
@@ -66,7 +70,7 @@ export default function IndexPage() {
       <div className="container-wrapper section-soft flex-1 pb-6">
         <div className="container overflow-hidden">
           <section className="border-border/50 -mx-4 aspect-[1400/875] w-[160vw] overflow-hidden rounded-lg border md:hidden md:w-[150vw]">
-            <iframe
+            <LazyIframe
               src="/view/new-york-v4/dashboard-01"
               className="size-full"
             />

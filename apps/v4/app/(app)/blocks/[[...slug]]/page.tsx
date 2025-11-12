@@ -1,3 +1,4 @@
+import { cacheLife } from "next/cache"
 import { redirect } from "next/navigation"
 
 import {
@@ -38,6 +39,8 @@ export default async function BlocksPage({
 }: {
   params: Promise<{ slug?: string[] }>
 }) {
+  "use cache"
+
   const { slug = [] } = await params
 
   // Case 1: /blocks → redirect to first marketing subcategory
@@ -69,7 +72,11 @@ export default async function BlocksPage({
   }
 
   // Case 3: /blocks/category/[category]/subcategory/[subcategory] → show blocks
-  if (slug.length === 4 && slug[0] === "category" && slug[2] === "subcategory") {
+  if (
+    slug.length === 4 &&
+    slug[0] === "category" &&
+    slug[2] === "subcategory"
+  ) {
     const category = slug[1]
     const subcategory = slug[3]
 
