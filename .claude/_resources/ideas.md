@@ -5,7 +5,10 @@ Unicorn
 Payload compiler
 Vibe coder
 Graph database
-Aceternity UI 
+Aceternity UI
+Blog
+Theme studio
+
 
 ## General Projects
 Repost to socials + ai replies
