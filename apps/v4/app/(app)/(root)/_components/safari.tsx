@@ -40,12 +40,12 @@ export function Safari({
     >
       {/*Overlay*/}
       {!isSkewed && (
-        <div className="sr-hidden from-background-elevation-0 absolute inset-0 z-40 h-full w-full bg-gradient-to-t via-transparent to-transparent"></div>
+        <div className="pointer-events-none absolute inset-0 z-40 h-full w-full bg-gradient-to-t from-background via-background/50 to-transparent"></div>
       )}
 
       <div
         className={cn(
-          "border-border-elevation-1 bg-background-elevation-1 relative w-full overflow-hidden rounded-3xl border",
+          "bg-background relative w-full overflow-hidden rounded-3xl border shadow-lg",
           isSkewed && "transform-gpu transition-transform duration-500",
           className
         )}
@@ -61,7 +61,7 @@ export function Safari({
         {...props}
       >
         {/* Safari Chrome Header */}
-        <div className="bg-background-elevation-1 flex items-center justify-between gap-3 px-6 py-3">
+        <div className="bg-background flex items-center justify-between gap-3 px-6 py-3">
           {/* Left: Traffic Lights */}
           <div className="flex items-center gap-2">
             <div className="size-3.5 rounded-full bg-[#FF5F57]" />
@@ -71,22 +71,22 @@ export function Safari({
 
           {/* Center: URL Bar */}
           <div className="mx-4 flex max-w-md flex-1 flex-row items-center justify-center gap-2">
-            <RiLock2Line className="text-text-strength-300 size-4 shrink-0" />
-            <span className="text-md text-text-strength-300 truncate">
+            <RiLock2Line className="text-muted-foreground size-4 shrink-0" />
+            <span className="text-md text-muted-foreground truncate">
               {url}
             </span>
           </div>
 
           {/* Right: Share and Tabs */}
           <div className="flex items-center gap-1">
-            <button className="hover:bg-background-elevation-1 rounded-md p-1.5 transition-colors">
-              <RiShare2Line className="text-text-strength-300 size-5" />
+            <button className="hover:bg-secondary rounded-md p-1.5 transition-colors">
+              <RiShare2Line className="text-muted-foreground size-5" />
             </button>
-            <button className="hover:bg-background-elevation-1 rounded-md p-1.5 transition-colors">
-              <RiAddLine className="text-text-strength-300 size-6" />
+            <button className="hover:bg-secondary rounded-md p-1.5 transition-colors">
+              <RiAddLine className="text-muted-foreground size-6" />
             </button>
-            <button className="hover:bg-background-elevation-1 rounded-md p-1.5 transition-colors">
-              <RiCheckboxMultipleBlankLine className="text-text-strength-300 size-5" />
+            <button className="hover:bg-secondary rounded-md p-1.5 transition-colors">
+              <RiCheckboxMultipleBlankLine className="text-muted-foreground size-5" />
             </button>
           </div>
         </div>

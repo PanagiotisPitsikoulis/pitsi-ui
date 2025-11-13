@@ -14,6 +14,7 @@ import { PageNav } from "@/components/page-nav"
 import { ThemeSelector } from "@/components/theme-selector"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
+import { HeroLines } from "./_blocks/hero"
 import { RootComponents } from "./components"
 
 const title = "The Foundation for your Design System"
@@ -50,7 +51,8 @@ export default async function IndexPage() {
   return (
     <div className="bg-page flex flex-1 flex-col">
       <PageHeader>
-        <Announcement />
+        <HeroLines />
+        {/*<Announcement />
         <PageHeaderHeading className="max-w-4xl">{title}</PageHeaderHeading>
         <PageHeaderDescription>{description}</PageHeaderDescription>
         <PageActions>
@@ -60,18 +62,15 @@ export default async function IndexPage() {
           <Button asChild size="sm" variant="ghost">
             <Link href="/docs/components">View Components</Link>
           </Button>
-        </PageActions>
+        </PageActions>*/}
       </PageHeader>
       <PageNav className="hidden md:flex">
         <ExamplesNav className="[&>a:first-child]:text-primary flex-1 overflow-hidden" />
         <ThemeSelector className="mr-4 hidden md:flex" />
       </PageNav>
-      <div className="container bg-page flex-1 pb-6 overflow-hidden">
+      <div className="bg-page container flex-1 overflow-hidden pb-6">
         <section className="border-border/50 -mx-4 aspect-[1400/875] w-[160vw] overflow-hidden rounded-lg border md:hidden md:w-[150vw]">
-          <iframe
-            src="/view/new-york-v4/dashboard-01"
-            className="size-full"
-          />
+          <iframe src="/view/new-york-v4/dashboard-01" className="size-full" />
         </section>
         <section className="theme-container bg-page hidden md:block">
           <RootComponents />
