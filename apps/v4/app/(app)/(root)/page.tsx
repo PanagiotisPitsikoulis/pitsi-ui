@@ -4,7 +4,6 @@ import Link from "next/link"
 
 import { Announcement } from "@/components/announcement"
 import { ExamplesNav } from "@/components/examples-nav"
-import { LazyIframe } from "@/components/lazy-iframe"
 import {
   PageActions,
   PageHeader,
@@ -49,7 +48,7 @@ export default async function IndexPage() {
   "use cache"
 
   return (
-    <div className="flex flex-1 flex-col">
+    <div className="bg-page flex flex-1 flex-col">
       <PageHeader>
         <Announcement />
         <PageHeaderHeading className="max-w-4xl">{title}</PageHeaderHeading>
@@ -67,15 +66,15 @@ export default async function IndexPage() {
         <ExamplesNav className="[&>a:first-child]:text-primary flex-1 overflow-hidden" />
         <ThemeSelector className="mr-4 hidden md:flex" />
       </PageNav>
-      <div className="container-wrapper section-soft flex-1 pb-6">
-        <div className="container overflow-hidden">
+      <div className="container-wrapper bg-page flex-1 pb-6">
+        <div className="bg-page container overflow-hidden">
           <section className="border-border/50 -mx-4 aspect-[1400/875] w-[160vw] overflow-hidden rounded-lg border md:hidden md:w-[150vw]">
-            <LazyIframe
+            <iframe
               src="/view/new-york-v4/dashboard-01"
               className="size-full"
             />
           </section>
-          <section className="theme-container hidden md:block">
+          <section className="theme-container bg-page hidden md:block">
             <RootComponents />
           </section>
         </div>

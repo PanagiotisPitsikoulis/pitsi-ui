@@ -21,7 +21,7 @@ import { Textarea } from "@/registry/new-york-v4/ui/textarea"
 
 export function FieldDemo() {
   return (
-    <div className="w-full max-w-md rounded-lg border p-6">
+    <div className="bg-card w-full max-w-md rounded-xl border p-6 shadow-sm">
       <form>
         <FieldGroup>
           <FieldSet>

@@ -6,7 +6,6 @@ import { IconArrowRight } from "@tabler/icons-react"
 
 import { PAGES_NEW } from "@/lib/docs"
 import { useContentPagination } from "@/hooks/use-content-pagination"
-import { LazyIframe } from "@/components/lazy-iframe"
 import { Index } from "@/registry/__index__"
 
 interface ComponentItem {
@@ -74,7 +73,7 @@ function ComponentPreview({
 
   // Render iframe preview - animations are scrollable, components are not
   return (
-    <LazyIframe
+    <iframe
       src={`/view/${styleName}/${previewName}`}
       className={`h-full w-full border-0 ${isAnimation ? "" : "overflow-hidden"}`}
       title={itemName}
