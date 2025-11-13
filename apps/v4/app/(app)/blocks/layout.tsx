@@ -41,8 +41,8 @@ export default function BlocksLayout({
       <PageNav id="blocks">
         <BlocksNav />
       </PageNav>
-      <div className="container-wrapper section-soft flex-1 md:py-12">
-        <div className="container">{children}</div>
+      <div className="container section-soft flex-1 md:py-12">
+        {children}
       </div>
     </>
   )

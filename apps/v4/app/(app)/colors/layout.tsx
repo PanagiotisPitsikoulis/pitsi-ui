@@ -60,18 +60,14 @@ export default function ColorsLayout({
         </PageActions>
       </PageHeader>
       <div className="hidden">
-        <div className="container-wrapper">
-          <div className="container flex items-center justify-between gap-8 py-4">
-            <ColorsNav className="[&>a:first-child]:text-primary flex-1 overflow-hidden" />
-          </div>
+        <div className="container flex items-center justify-between gap-8 py-4">
+          <ColorsNav className="[&>a:first-child]:text-primary flex-1 overflow-hidden" />
         </div>
       </div>
-      <div className="container-wrapper">
-        <div className="container py-6">
-          <section id="colors" className="scroll-mt-20">
-            {children}
-          </section>
-        </div>
+      <div className="container py-6">
+        <section id="colors" className="scroll-mt-20">
+          {children}
+        </section>
       </div>
     </div>
   )

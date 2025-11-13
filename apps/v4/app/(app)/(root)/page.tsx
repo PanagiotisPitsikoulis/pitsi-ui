@@ -66,18 +66,16 @@ export default async function IndexPage() {
         <ExamplesNav className="[&>a:first-child]:text-primary flex-1 overflow-hidden" />
         <ThemeSelector className="mr-4 hidden md:flex" />
       </PageNav>
-      <div className="container-wrapper bg-page flex-1 pb-6">
-        <div className="bg-page container overflow-hidden">
-          <section className="border-border/50 -mx-4 aspect-[1400/875] w-[160vw] overflow-hidden rounded-lg border md:hidden md:w-[150vw]">
-            <iframe
-              src="/view/new-york-v4/dashboard-01"
-              className="size-full"
-            />
-          </section>
-          <section className="theme-container bg-page hidden md:block">
-            <RootComponents />
-          </section>
-        </div>
+      <div className="container bg-page flex-1 pb-6 overflow-hidden">
+        <section className="border-border/50 -mx-4 aspect-[1400/875] w-[160vw] overflow-hidden rounded-lg border md:hidden md:w-[150vw]">
+          <iframe
+            src="/view/new-york-v4/dashboard-01"
+            className="size-full"
+          />
+        </section>
+        <section className="theme-container bg-page hidden md:block">
+          <RootComponents />
+        </section>
       </div>
     </div>
   )
