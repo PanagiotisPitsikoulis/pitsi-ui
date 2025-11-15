@@ -1,4 +1,4 @@
-import { ChevronRight, MoreHorizontal, Plus } from "lucide-react"
+import { RiArrowRightSLine, RiMore2Line, RiAddLine } from '@remixicon/react'
 
 import {
   Collapsible,
@@ -49,11 +49,11 @@ export function NavWorkspaces({
                     className="bg-sidebar-accent text-sidebar-accent-foreground left-2 data-[state=open]:rotate-90"
                     showOnHover
                   >
-                    <ChevronRight />
+                    <RiArrowRightSLine />
                   </SidebarMenuAction>
                 </CollapsibleTrigger>
                 <SidebarMenuAction showOnHover>
-                  <Plus />
+                  <RiAddLine />
                 </SidebarMenuAction>
                 <CollapsibleContent>
                   <SidebarMenuSub>
@@ -74,7 +74,7 @@ export function NavWorkspaces({
           ))}
           <SidebarMenuItem>
             <SidebarMenuButton className="text-sidebar-foreground/70">
-              <MoreHorizontal />
+              <RiMore2Line />
               <span>More</span>
             </SidebarMenuButton>
           </SidebarMenuItem>

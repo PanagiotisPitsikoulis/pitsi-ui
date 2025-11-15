@@ -1,4 +1,4 @@
-import { ArrowUpIcon } from "lucide-react"
+import { RiArrowUpLine } from '@remixicon/react'
 
 import {
   InputGroup,
@@ -23,7 +23,7 @@ export default function SpinnerInputGroup() {
         <InputGroupAddon align="block-end">
           <Spinner /> Validating...
           <InputGroupButton className="ml-auto" variant="default">
-            <ArrowUpIcon />
+            <RiArrowUpLine />
             <span className="sr-only">Send</span>
           </InputGroupButton>
         </InputGroupAddon>

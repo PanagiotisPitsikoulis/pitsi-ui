@@ -1,5 +1,6 @@
-import { SiteFooter } from "@/components/site-footer"
-import { SiteHeader } from "@/components/site-header"
+import { SiteFooter } from "@/components/layout/site-footer"
+import { SiteHeader } from "@/components/layout/site-header"
+import { Container } from "@/registry/new-york-v4/ui/container"
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (

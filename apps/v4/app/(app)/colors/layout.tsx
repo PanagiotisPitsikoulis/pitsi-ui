@@ -1,14 +1,14 @@
 import { Metadata } from "next"
 import Link from "next/link"
 
-import { Announcement } from "@/components/announcement"
-import { ColorsNav } from "@/components/colors-nav"
+import { Announcement } from "@/components/ui/announcement"
+import { ColorsNav } from "@/components/navigation/colors-nav"
 import {
   PageActions,
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
-} from "@/components/page-header"
+} from "@/components/layout/page-header"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 const title = "Tailwind Colors in Every Format"

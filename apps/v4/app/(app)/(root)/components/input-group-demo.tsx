@@ -1,5 +1,5 @@
 import { IconCheck, IconInfoCircle, IconPlus } from "@tabler/icons-react"
-import { ArrowUpIcon, Search } from "lucide-react"
+import { RiEyeOffLine,RiEyeOffLine } from '@remixicon/react'
 
 import {
   DropdownMenu,

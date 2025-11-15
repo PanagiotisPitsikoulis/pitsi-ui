@@ -25,18 +25,6 @@ export const siteConfig = {
       href: "/blocks",
       label: "Blocks",
     },
-    {
-      href: "/charts/area",
-      label: "Charts",
-    },
-    {
-      href: "/themes",
-      label: "Themes",
-    },
-    {
-      href: "/colors",
-      label: "Colors",
-    },
   ],
 }
 

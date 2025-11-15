@@ -1,5 +1,5 @@
 import * as React from "react"
-import { ChevronRight } from "lucide-react"
+import { RiArrowRightSLine } from '@remixicon/react'
 
 import { SearchForm } from "@/registry/new-york-v4/blocks/application/dashboard/sidebar-02/components/search-form"
 import { VersionSwitcher } from "@/registry/new-york-v4/blocks/application/dashboard/sidebar-02/components/version-switcher"
@@ -189,7 +189,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               >
                 <CollapsibleTrigger>
                   {item.title}{" "}
-                  <ChevronRight className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-90" />
+                  <RiArrowRightSLine className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-90" />
                 </CollapsibleTrigger>
               </SidebarGroupLabel>
               <CollapsibleContent>

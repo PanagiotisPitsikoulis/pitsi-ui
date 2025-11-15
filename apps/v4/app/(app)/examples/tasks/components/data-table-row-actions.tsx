@@ -1,7 +1,7 @@
 "use client"
 
 import { Row } from "@tanstack/react-table"
-import { MoreHorizontal } from "lucide-react"
+import { RiEyeOffLine } from '@remixicon/react'
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {

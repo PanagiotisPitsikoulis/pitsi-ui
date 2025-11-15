@@ -1,7 +1,7 @@
 import { Metadata } from "next"
 
-import { BlocksNav } from "@/components/blocks-nav"
-import { PageNav } from "@/components/page-nav"
+import { BlocksNav } from "@/components/navigation/blocks-nav"
+import { PageNav } from "@/components/layout/page-nav"
 
 const title = "Building Blocks for the Web"
 const description =

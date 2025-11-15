@@ -1,5 +1,5 @@
 import { Column } from "@tanstack/react-table"
-import { ArrowDown, ArrowUp, ChevronsUpDown, EyeOff } from "lucide-react"
+import { RiEyeOffLine,RiEyeOffLine,RiEyeOffLine,RiEyeOffLine } from '@remixicon/react'
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"

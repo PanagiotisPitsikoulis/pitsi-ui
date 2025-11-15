@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { formatDateRange } from "little-date"
-import { PlusIcon } from "lucide-react"
+import { RiAddLine } from '@remixicon/react'
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Calendar } from "@/registry/new-york-v4/ui/calendar"
@@ -57,7 +57,7 @@ export default function Calendar31() {
             className="size-6"
             title="Add Event"
           >
-            <PlusIcon />
+            <RiAddLine />
             <span className="sr-only">Add Event</span>
           </Button>
         </div>

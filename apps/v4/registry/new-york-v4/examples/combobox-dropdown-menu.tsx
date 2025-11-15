@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { MoreHorizontal } from "lucide-react"
+import { RiMore2Line } from '@remixicon/react'
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
@@ -51,7 +51,7 @@ export default function ComboboxDropdownMenu() {
       <DropdownMenu open={open} onOpenChange={setOpen}>
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" size="sm">
-            <MoreHorizontal />
+            <RiMore2Line />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-[200px]">

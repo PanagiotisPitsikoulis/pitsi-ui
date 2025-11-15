@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { MinusIcon, PlusIcon } from "lucide-react"
+import { RiSubtractLine, RiAddLine } from '@remixicon/react'
 import { Bar, BarChart } from "recharts"
 
 import { Button } from "@/registry/new-york-v4/ui/button"
@@ -86,7 +86,7 @@ export function CardsActivityGoal() {
             onClick={() => onClick(-10)}
             disabled={goal <= 200}
           >
-            <MinusIcon />
+            <RiSubtractLine />
             <span className="sr-only">Decrease</span>
           </Button>
           <div className="text-center">
@@ -104,7 +104,7 @@ export function CardsActivityGoal() {
             onClick={() => onClick(10)}
             disabled={goal >= 400}
           >
-            <PlusIcon />
+            <RiAddLine />
             <span className="sr-only">Increase</span>
           </Button>
         </div>

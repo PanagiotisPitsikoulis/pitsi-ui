@@ -1,11 +1,11 @@
 export function DesktopHeroPreview() {
   return (
-    <div className="w-full mt-8 relative">
+    <div className="relative mt-8 w-full">
       {/*Overlay*/}
-      <div className="sr-hidden bg-gradient-to-t from-background-elevation-0 to-transparent absolute inset-0 h-full w-full z-10"></div>
-      <div className="relative w-full rounded-3xl p-3 border border-border-elevation-1 bg-background-elevation-1">
-        <div className="w-full rounded-xl aspect-video bg-background-elevation-2 overflow-hidden border border-border-elevation-2"></div>
+      <div className="sr-hidden from-background-elevation-0 absolute inset-0 z-10 h-full w-full bg-gradient-to-t to-transparent"></div>
+      <div className="border-border-elevation-1 bg-background-elevation-1 relative w-full rounded-3xl border p-3">
+        <div className="bg-background-elevation-2 border-border-elevation-2 aspect-video w-full overflow-hidden rounded-xl border"></div>
       </div>
     </div>
-  );
+  )
 }

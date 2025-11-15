@@ -1,5 +1,5 @@
 import * as React from "react"
-import { PlusIcon } from "lucide-react"
+import { RiAddLine } from '@remixicon/react'
 
 import {
   Avatar,
@@ -55,7 +55,7 @@ export default function ItemGroupExample() {
               </ItemContent>
               <ItemActions>
                 <Button variant="ghost" size="icon" className="rounded-full">
-                  <PlusIcon />
+                  <RiAddLine />
                 </Button>
               </ItemActions>
             </Item>

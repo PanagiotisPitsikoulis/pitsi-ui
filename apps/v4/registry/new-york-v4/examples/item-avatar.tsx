@@ -1,4 +1,4 @@
-import { Plus } from "lucide-react"
+import { RiAddLine } from '@remixicon/react'
 
 import {
   Avatar,
@@ -36,7 +36,7 @@ export default function ItemAvatar() {
             className="rounded-full"
             aria-label="Invite"
           >
-            <Plus />
+            <RiAddLine />
           </Button>
         </ItemActions>
       </Item>

@@ -13,7 +13,7 @@ import {
   useReactTable,
   VisibilityState,
 } from "@tanstack/react-table"
-import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react"
+import { RiArrowDownSLine, RiMore2Line } from '@remixicon/react'
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Checkbox } from "@/registry/new-york-v4/ui/checkbox"
@@ -147,7 +147,7 @@ export const columns: ColumnDef<Payment>[] = [
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="h-8 w-8 p-0">
               <span className="sr-only">Open menu</span>
-              <MoreHorizontal />
+              <RiMore2Line />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
@@ -209,7 +209,7 @@ export default function DataTableDemo() {
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto">
-              Columns <ChevronDown />
+              Columns <RiArrowDownSLine />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">

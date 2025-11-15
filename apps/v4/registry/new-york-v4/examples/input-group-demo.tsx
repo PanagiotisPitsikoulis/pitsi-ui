@@ -1,5 +1,5 @@
 import { IconCheck, IconInfoCircle, IconPlus } from "@tabler/icons-react"
-import { ArrowUpIcon, Search } from "lucide-react"
+import { RiArrowUpLine, RiSearchLine } from '@remixicon/react'
 
 import {
   DropdownMenu,
@@ -28,7 +28,7 @@ export default function InputGroupDemo() {
       <InputGroup>
         <InputGroupInput placeholder="Search..." />
         <InputGroupAddon>
-          <Search />
+          <RiSearchLine />
         </InputGroupAddon>
         <InputGroupAddon align="inline-end">12 results</InputGroupAddon>
       </InputGroup>
@@ -80,7 +80,7 @@ export default function InputGroupDemo() {
             size="icon-xs"
             disabled
           >
-            <ArrowUpIcon />
+            <RiArrowUpLine />
             <span className="sr-only">Send</span>
           </InputGroupButton>
         </InputGroupAddon>

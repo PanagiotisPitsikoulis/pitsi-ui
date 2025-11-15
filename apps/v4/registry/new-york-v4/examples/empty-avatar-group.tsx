@@ -1,4 +1,4 @@
-import { PlusIcon } from "lucide-react"
+import { RiAddLine } from '@remixicon/react'
 
 import {
   Avatar,
@@ -51,7 +51,7 @@ export default function EmptyAvatarGroup() {
       </EmptyHeader>
       <EmptyContent>
         <Button size="sm">
-          <PlusIcon />
+          <RiAddLine />
           Invite Members
         </Button>
       </EmptyContent>

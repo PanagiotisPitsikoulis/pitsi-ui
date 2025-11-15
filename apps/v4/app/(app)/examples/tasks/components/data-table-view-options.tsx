@@ -2,7 +2,7 @@
 
 import { DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu"
 import { Table } from "@tanstack/react-table"
-import { Settings2 } from "lucide-react"
+import { RiEyeOffLine } from '@remixicon/react'
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {

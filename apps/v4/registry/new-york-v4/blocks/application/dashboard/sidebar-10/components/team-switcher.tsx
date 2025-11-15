@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { ChevronDown, Plus } from "lucide-react"
+import { RiArrowDownSLine, RiAddLine } from '@remixicon/react'
 
 import {
   DropdownMenu,
@@ -43,7 +43,7 @@ export function TeamSwitcher({
                 <activeTeam.logo className="size-3" />
               </div>
               <span className="truncate font-medium">{activeTeam.name}</span>
-              <ChevronDown className="opacity-50" />
+              <RiArrowDownSLine className="opacity-50" />
             </SidebarMenuButton>
           </DropdownMenuTrigger>
           <DropdownMenuContent
@@ -71,7 +71,7 @@ export function TeamSwitcher({
             <DropdownMenuSeparator />
             <DropdownMenuItem className="gap-2 p-2">
               <div className="bg-background flex size-6 items-center justify-center rounded-md border">
-                <Plus className="size-4" />
+                <RiAddLine className="size-4" />
               </div>
               <div className="text-muted-foreground font-medium">Add team</div>
             </DropdownMenuItem>

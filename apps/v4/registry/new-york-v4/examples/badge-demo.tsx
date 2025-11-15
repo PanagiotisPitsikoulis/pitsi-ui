@@ -1,4 +1,4 @@
-import { AlertCircleIcon, BadgeCheckIcon, CheckIcon } from "lucide-react"
+import { RiCheckLine } from '@remixicon/react'
 
 import { Badge } from "@/registry/new-york-v4/ui/badge"
 

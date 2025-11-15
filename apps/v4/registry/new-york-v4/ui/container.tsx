@@ -29,7 +29,7 @@ export function Container({
   return (
     <div
       className={cn(
-        "relative max-w-screen max-lg:overflow-x-hidden",
+        "max-lg:overflow-x-hidden",
         gutterWidthClassName,
         paddingMobileClassName,
         classNames.wrapper,

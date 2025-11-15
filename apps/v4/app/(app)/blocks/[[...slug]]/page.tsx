@@ -7,9 +7,9 @@ import {
   getSubcategories,
   getSubcategoryBlockCounts,
 } from "@/lib/blocks"
-import { BlockDisplay } from "@/components/block-display"
-import { BlocksListPaginated } from "@/components/blocks-list-paginated"
-import { BlocksSubcategoryNav } from "@/components/blocks-subcategory-nav"
+import { BlockDisplay } from "@/components/documentation/blocks/block-display"
+import { BlocksListPaginated } from "@/components/documentation/blocks/blocks-list-paginated"
+import { BlocksSubcategoryNav } from "@/components/navigation/blocks-subcategory-nav"
 import { getActiveStyle } from "@/registry/styles"
 
 export async function generateStaticParams() {

@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Column } from "@tanstack/react-table"
-import { Check, PlusCircle } from "lucide-react"
+import { RiEyeOffLine,RiEyeOffLine } from '@remixicon/react'
 
 import { cn } from "@/lib/utils"
 import { Badge } from "@/registry/new-york-v4/ui/badge"

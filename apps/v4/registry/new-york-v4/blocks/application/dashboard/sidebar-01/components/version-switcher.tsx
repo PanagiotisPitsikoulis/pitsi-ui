@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Check, ChevronsUpDown, GalleryVerticalEnd } from "lucide-react"
+import { RiCheckLine } from '@remixicon/react'
 
 import {
   DropdownMenu,
@@ -53,7 +53,7 @@ export function VersionSwitcher({
                 onSelect={() => setSelectedVersion(version)}
               >
                 v{version}{" "}
-                {version === selectedVersion && <Check className="ml-auto" />}
+                {version === selectedVersion && <RiCheckLine className="ml-auto" />}
               </DropdownMenuItem>
             ))}
           </DropdownMenuContent>

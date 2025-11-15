@@ -1,4 +1,4 @@
-import { SearchIcon } from "lucide-react"
+import { RiEyeOffLine } from '@remixicon/react'
 
 import {
   Empty,

@@ -1,6 +1,6 @@
 "use client"
 
-import { BadgeCheck, Bell, CreditCard, LogOut, Sparkles } from "lucide-react"
+import { RiNotificationLine, RiLogoutBoxLine, RiSparklingLine } from '@remixicon/react'
 
 import {
   Avatar,
@@ -60,7 +60,7 @@ export function NavUser({
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>
-            <Sparkles />
+            <RiSparklingLine />
             Upgrade to Pro
           </DropdownMenuItem>
         </DropdownMenuGroup>
@@ -75,13 +75,13 @@ export function NavUser({
             Billing
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <Bell />
+            <RiNotificationLine />
             Notifications
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <LogOut />
+          <RiLogoutBoxLine />
           Log out
         </DropdownMenuItem>
       </DropdownMenuContent>

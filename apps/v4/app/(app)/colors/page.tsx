@@ -1,7 +1,7 @@
 import { cacheLife } from "next/cache"
 
 import { getColors } from "@/lib/colors"
-import { ColorPalette } from "@/components/color-palette"
+import { ColorPalette } from "@/components/colors/color-palette"
 
 export default async function ColorsPage() {
   "use cache"

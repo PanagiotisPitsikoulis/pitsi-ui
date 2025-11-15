@@ -1,7 +1,7 @@
 import { Suspense } from "react"
 
-import { CardsDemo } from "@/components/cards"
-import { ThemeCustomizer } from "@/components/theme-customizer"
+import { CardsDemo } from "@/components/cards/index"
+import { ThemeCustomizer } from "@/components/theme/theme-customizer"
 
 export default function ThemesPage() {
   return (

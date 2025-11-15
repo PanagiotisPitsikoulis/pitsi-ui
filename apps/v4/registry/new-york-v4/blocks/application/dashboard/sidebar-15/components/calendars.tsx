@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Check, ChevronRight } from "lucide-react"
+import { RiCheckLine, RiArrowRightSLine } from '@remixicon/react'
 
 import {
   Collapsible,
@@ -39,7 +39,7 @@ export function Calendars({
               >
                 <CollapsibleTrigger>
                   {calendar.name}{" "}
-                  <ChevronRight className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-90" />
+                  <RiArrowRightSLine className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-90" />
                 </CollapsibleTrigger>
               </SidebarGroupLabel>
               <CollapsibleContent>
@@ -52,7 +52,7 @@ export function Calendars({
                             data-active={index < 2}
                             className="group/calendar-item border-sidebar-border text-sidebar-primary-foreground data-[active=true]:border-sidebar-primary data-[active=true]:bg-sidebar-primary flex aspect-square size-4 shrink-0 items-center justify-center rounded-xs border"
                           >
-                            <Check className="hidden size-3 group-data-[active=true]/calendar-item:block" />
+                            <RiCheckLine className="hidden size-3 group-data-[active=true]/calendar-item:block" />
                           </div>
                           {item}
                         </SidebarMenuButton>

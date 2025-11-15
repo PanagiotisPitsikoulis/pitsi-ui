@@ -1,5 +1,5 @@
 import * as React from "react"
-import { ChevronRight, File, Folder } from "lucide-react"
+import { RiArrowRightSLine, RiFileLine, RiFolderLine } from '@remixicon/react'
 
 import {
   Collapsible,
@@ -75,7 +75,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               {data.changes.map((item, index) => (
                 <SidebarMenuItem key={index}>
                   <SidebarMenuButton>
-                    <File />
+                    <RiFileLine />
                     {item.file}
                   </SidebarMenuButton>
                   <SidebarMenuBadge>{item.state}</SidebarMenuBadge>
@@ -111,7 +111,7 @@ function Tree({ item }: { item: TreeItem }) {
         isActive={name === "button.tsx"}
         className="data-[active=true]:bg-transparent"
       >
-        <File />
+        <RiFileLine />
         {name}
       </SidebarMenuButton>
     )
@@ -125,8 +125,8 @@ function Tree({ item }: { item: TreeItem }) {
       >
         <CollapsibleTrigger asChild>
           <SidebarMenuButton>
-            <ChevronRight className="transition-transform" />
-            <Folder />
+            <RiArrowRightSLine className="transition-transform" />
+            <RiFolderLine />
             {name}
           </SidebarMenuButton>
         </CollapsibleTrigger>

@@ -1,5 +1,5 @@
 import * as React from "react"
-import { GalleryVerticalEnd, Minus, Plus } from "lucide-react"
+import { RiSubtractLine, RiAddLine } from '@remixicon/react'
 
 import { SearchForm } from "@/registry/new-york-v4/blocks/application/dashboard/sidebar-05/components/search-form"
 import {
@@ -196,8 +196,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   <CollapsibleTrigger asChild>
                     <SidebarMenuButton>
                       {item.title}{" "}
-                      <Plus className="ml-auto group-data-[state=open]/collapsible:hidden" />
-                      <Minus className="ml-auto group-data-[state=closed]/collapsible:hidden" />
+                      <RiAddLine className="ml-auto group-data-[state=open]/collapsible:hidden" />
+                      <RiSubtractLine className="ml-auto group-data-[state=closed]/collapsible:hidden" />
                     </SidebarMenuButton>
                   </CollapsibleTrigger>
                   {item.items?.length ? (

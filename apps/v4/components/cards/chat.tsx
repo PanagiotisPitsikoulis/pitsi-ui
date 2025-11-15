@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { ArrowUpIcon, CheckIcon, PlusIcon } from "lucide-react"
+import { RiArrowUpLine, RiCheckLine, RiAddLine } from '@remixicon/react'
 
 import { cn } from "@/lib/utils"
 import {
@@ -123,7 +123,7 @@ export function CardsChat() {
                   className="ml-auto size-8 rounded-full"
                   onClick={() => setOpen(true)}
                 >
-                  <PlusIcon />
+                  <RiAddLine />
                   <span className="sr-only">New message</span>
                 </Button>
               </TooltipTrigger>
@@ -178,7 +178,7 @@ export function CardsChat() {
                   size="icon-xs"
                   className="rounded-full"
                 >
-                  <ArrowUpIcon />
+                  <RiArrowUpLine />
                   <span className="sr-only">Send</span>
                 </InputGroupButton>
               </InputGroupAddon>
@@ -234,7 +234,7 @@ export function CardsChat() {
                       </p>
                     </div>
                     {selectedUsers.includes(user) ? (
-                      <CheckIcon className="text-primary ml-auto flex size-4" />
+                      <RiCheckLine className="text-primary ml-auto flex size-4" />
                     ) : null}
                   </CommandItem>
                 ))}

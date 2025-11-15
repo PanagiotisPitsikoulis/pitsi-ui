@@ -1,6 +1,6 @@
 "use client"
 
-import { FrameIcon, MapIcon, PieChartIcon, PlusIcon } from "lucide-react"
+import { RiAddLine } from '@remixicon/react'
 import { toast, Toaster } from "sonner"
 
 import {
@@ -33,7 +33,7 @@ export default function AppSidebar() {
               title="Add Project"
               onClick={() => toast("You clicked the group action!")}
             >
-              <PlusIcon /> <span className="sr-only">Add Project</span>
+              <RiAddLine /> <span className="sr-only">Add Project</span>
             </SidebarGroupAction>
             <SidebarGroupContent>
               <SidebarMenu>

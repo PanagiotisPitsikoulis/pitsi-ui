@@ -1,12 +1,12 @@
 import Link from "next/link"
 import { RiArrowRightLine, RiGithubFill } from "@remixicon/react"
 
-import { Announcement } from "@/components/announcement"
+import { Announcement } from "@/components/ui/announcement"
 import {
   PageActions,
   PageHeaderDescription,
   PageHeaderHeading,
-} from "@/components/page-header"
+} from "@/components/layout/page-header"
 import { Badge } from "@/registry/new-york-v4/ui/badge"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import Flex from "@/registry/new-york-v4/ui/flex"
@@ -18,8 +18,8 @@ import { Safari } from "../_components/safari"
 
 export function HeroLines() {
   return (
-    <section className="relative h-[120svh] w-full overflow-y-clip">
-      {/*Overlay*/}
+    <section className="relative h-[120svh] w-full overflow-clip">
+      {/* Overlays */}
       <div className="from-page via-page/50 pointer-events-none absolute inset-x-0 bottom-0 z-10 h-1/5 w-full bg-gradient-to-t to-transparent lg:h-2/5"></div>
       <div className="from-page via-page/50 pointer-events-none absolute inset-y-0 right-0 z-10 h-full w-1/5 bg-gradient-to-l to-transparent lg:w-2/5"></div>
 

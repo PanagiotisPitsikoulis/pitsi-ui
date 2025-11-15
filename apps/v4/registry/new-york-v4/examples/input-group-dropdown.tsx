@@ -1,4 +1,4 @@
-import { ChevronDownIcon, MoreHorizontal } from "lucide-react"
+import { RiMore2Line } from '@remixicon/react'
 
 import {
   DropdownMenu,
@@ -26,7 +26,7 @@ export default function InputGroupDropdown() {
                 aria-label="More"
                 size="icon-xs"
               >
-                <MoreHorizontal />
+                <RiMore2Line />
               </InputGroupButton>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">

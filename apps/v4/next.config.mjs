@@ -23,6 +23,14 @@ const nextConfig = {
         protocol: "https",
         hostname: "avatar.vercel.sh",
       },
+      {
+        protocol: "https",
+        hostname: "tailark.com",
+      },
+      {
+        protocol: "https",
+        hostname: "html.tailus.io",
+      },
     ],
   },
   cacheComponents: true,

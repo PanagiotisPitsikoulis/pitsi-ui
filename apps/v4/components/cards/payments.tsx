@@ -13,7 +13,7 @@ import {
   useReactTable,
   VisibilityState,
 } from "@tanstack/react-table"
-import { MoreHorizontalIcon } from "lucide-react"
+import { RiMore2Line } from '@remixicon/react'
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
@@ -149,7 +149,7 @@ export const columns: ColumnDef<Payment>[] = [
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="size-8 p-0">
               <span className="sr-only">Open menu</span>
-              <MoreHorizontalIcon />
+              <RiMore2Line />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">

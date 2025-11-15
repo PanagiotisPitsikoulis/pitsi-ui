@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { MoreHorizontalIcon } from "lucide-react"
+import { RiMore2Line } from '@remixicon/react'
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
@@ -35,7 +35,7 @@ export default function DropdownMenuDialog() {
       <DropdownMenu modal={false}>
         <DropdownMenuTrigger asChild>
           <Button variant="outline" aria-label="Open menu" size="icon-sm">
-            <MoreHorizontalIcon />
+            <RiMore2Line />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-40" align="end">

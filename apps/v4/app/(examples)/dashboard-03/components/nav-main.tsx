@@ -1,7 +1,7 @@
 "use client"
 
 import { usePathname } from "next/navigation"
-import { ChevronRight, type LucideIcon } from "lucide-react"
+import { RiArrowRightSLine } from '@remixicon/react'
 
 import {
   Collapsible,
@@ -63,7 +63,7 @@ export function NavMain({
                 <>
                   <CollapsibleTrigger asChild>
                     <SidebarMenuAction className="data-[state=open]:rotate-90">
-                      <ChevronRight />
+                      <RiArrowRightSLine />
                       <span className="sr-only">Toggle</span>
                     </SidebarMenuAction>
                   </CollapsibleTrigger>

@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Minus, Plus } from "lucide-react"
+import { RiSubtractLine, RiAddLine } from '@remixicon/react'
 import { Bar, BarChart, ResponsiveContainer } from "recharts"
 
 import { Button } from "@/registry/new-york-v4/ui/button"
@@ -85,7 +85,7 @@ export default function DrawerDemo() {
                 onClick={() => onClick(-10)}
                 disabled={goal <= 200}
               >
-                <Minus />
+                <RiSubtractLine />
                 <span className="sr-only">Decrease</span>
               </Button>
               <div className="flex-1 text-center">
@@ -103,7 +103,7 @@ export default function DrawerDemo() {
                 onClick={() => onClick(10)}
                 disabled={goal >= 400}
               >
-                <Plus />
+                <RiAddLine />
                 <span className="sr-only">Increase</span>
               </Button>
             </div>

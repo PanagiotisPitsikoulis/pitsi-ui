@@ -4,7 +4,7 @@ import { Fragment, useMemo } from "react"
 import { usePathname } from "next/navigation"
 import { SidebarIcon } from "lucide-react"
 
-import { ThemeSelector } from "@/components/theme-selector"
+import { ThemeSelector } from "@/components/theme/theme-selector"
 import { SearchForm } from "@/app/(examples)/dashboard-03/components/search-form"
 import {
   Breadcrumb,

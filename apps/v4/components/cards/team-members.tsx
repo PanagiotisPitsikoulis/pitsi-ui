@@ -1,6 +1,6 @@
 "use client"
 
-import { ChevronDown } from "lucide-react"
+import { RiArrowDownSLine } from '@remixicon/react'
 
 import {
   Avatar,
@@ -100,7 +100,7 @@ export function CardsTeamMembers() {
               <Popover>
                 <PopoverTrigger asChild>
                   <Button variant="outline" size="sm" className="ml-auto">
-                    {member.role} <ChevronDown />
+                    {member.role} <RiArrowDownSLine />
                   </Button>
                 </PopoverTrigger>
                 <PopoverContent className="p-0" align="end">

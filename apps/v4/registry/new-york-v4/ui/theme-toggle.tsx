@@ -68,14 +68,15 @@ export function ThemeToggle({
       <div className={cn("w-full max-w-sm", className)} {...props}>
         <SegmentedControl
           value={value}
+          className="bg-sufrace"
           onValueChange={(newTheme) => {
             const nextTheme = value === "light" ? "dark" : "light"
             handleThemeChange(nextTheme)
           }}
         >
           <SegmentedControlList
-            className="w-fit rounded-full"
-            floatingBgClassName="rounded-full"
+            className="border-border bg-sufrace w-fit rounded-full border shadow-sm"
+            floatingBgClassName="rounded-full border border-border bg-sufrace shadow-md"
           >
             {themes.map(([key, Icon]) => {
               if (key === "system") return null
@@ -84,7 +85,7 @@ export function ThemeToggle({
                 <SegmentedControlTrigger
                   key={key}
                   value={key}
-                  className="aspect-square h-9"
+                  className="aspect-square h-9 data-[state=inactive]:text-muted-foreground data-[state=inactive]:opacity-60"
                 >
                   <Icon className="size-5 shrink-0" />
                 </SegmentedControlTrigger>
@@ -103,18 +104,19 @@ export function ThemeToggle({
     <div className={cn("w-full max-w-sm", className)} {...props}>
       <SegmentedControl
         value={value}
+        className="bg-sufrace"
         onValueChange={handleThemeChange}
         defaultValue="system"
       >
         <SegmentedControlList
-          className="border-border-elevation-1 bg-background-elevation-1 w-fit rounded-full border"
-          floatingBgClassName="rounded-full bg-background-elevation-2 border-border-elevation-2 border"
+          className="border-border bg-sufrace w-fit rounded-full border shadow-sm"
+          floatingBgClassName="rounded-full border border-border bg-sufrace shadow-md"
         >
           {themes.map(([key, Icon]) => (
             <SegmentedControlTrigger
               key={key}
               value={key}
-              className="aspect-square h-6"
+              className="aspect-square h-6 data-[state=inactive]:text-muted-foreground data-[state=inactive]:opacity-60"
             >
               <Icon className="size-4 shrink-0" />
             </SegmentedControlTrigger>

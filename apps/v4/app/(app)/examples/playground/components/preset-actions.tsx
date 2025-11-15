@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { Dialog } from "@radix-ui/react-dialog"
-import { MoreHorizontal } from "lucide-react"
+import { RiEyeOffLine } from '@remixicon/react'
 import { toast } from "sonner"
 
 import {

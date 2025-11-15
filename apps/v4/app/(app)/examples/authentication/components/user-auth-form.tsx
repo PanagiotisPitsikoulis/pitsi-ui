@@ -3,7 +3,7 @@
 import * as React from "react"
 
 import { cn } from "@/lib/utils"
-import { Icons } from "@/components/icons"
+import { Icons } from "@/components/shared/icons"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Field,

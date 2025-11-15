@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react"
+import { RiArrowLeftLine, RiArrowRightLine } from '@remixicon/react'
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { ButtonGroup } from "@/registry/new-york-v4/ui/button-group"
@@ -27,10 +27,10 @@ export default function ButtonGroupNested() {
       </ButtonGroup>
       <ButtonGroup>
         <Button variant="outline" size="icon-sm" aria-label="Previous">
-          <ArrowLeftIcon />
+          <RiArrowLeftLine />
         </Button>
         <Button variant="outline" size="icon-sm" aria-label="Next">
-          <ArrowRightIcon />
+          <RiArrowRightLine />
         </Button>
       </ButtonGroup>
     </ButtonGroup>

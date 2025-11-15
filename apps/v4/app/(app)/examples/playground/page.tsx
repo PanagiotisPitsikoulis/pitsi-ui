@@ -1,6 +1,6 @@
 import { Metadata } from "next"
 import Image from "next/image"
-import { RotateCcw } from "lucide-react"
+import { RiEyeOffLine } from '@remixicon/react'
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {

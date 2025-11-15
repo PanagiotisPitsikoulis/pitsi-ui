@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { ArrowRightIcon } from "lucide-react"
+import { RiArrowRightLine } from '@remixicon/react'
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { ButtonGroup } from "@/registry/new-york-v4/ui/button-group"
@@ -49,7 +49,7 @@ export default function ButtonGroupSelect() {
       </ButtonGroup>
       <ButtonGroup>
         <Button aria-label="Send" size="icon" variant="outline">
-          <ArrowRightIcon />
+          <RiArrowRightLine />
         </Button>
       </ButtonGroup>
     </ButtonGroup>

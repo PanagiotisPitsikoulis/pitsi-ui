@@ -1,6 +1,6 @@
 "use client"
 
-import { MoreHorizontal, type LucideIcon } from "lucide-react"
+import { RiMore2Line } from '@remixicon/react'
 
 import {
   DropdownMenu,
@@ -40,7 +40,7 @@ export function NavMain({
             <SidebarMenuItem>
               <DropdownMenuTrigger asChild>
                 <SidebarMenuButton className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground">
-                  {item.title} <MoreHorizontal className="ml-auto" />
+                  {item.title} <RiMore2Line className="ml-auto" />
                 </SidebarMenuButton>
               </DropdownMenuTrigger>
               {item.items?.length ? (

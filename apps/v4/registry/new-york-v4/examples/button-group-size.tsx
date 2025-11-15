@@ -1,4 +1,4 @@
-import { PlusIcon } from "lucide-react"
+import { RiAddLine } from '@remixicon/react'
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { ButtonGroup } from "@/registry/new-york-v4/ui/button-group"
@@ -17,7 +17,7 @@ export default function ButtonGroupSize() {
           Group
         </Button>
         <Button variant="outline" size="icon-sm">
-          <PlusIcon />
+          <RiAddLine />
         </Button>
       </ButtonGroup>
       <ButtonGroup>
@@ -25,7 +25,7 @@ export default function ButtonGroupSize() {
         <Button variant="outline">Button</Button>
         <Button variant="outline">Group</Button>
         <Button variant="outline" size="icon">
-          <PlusIcon />
+          <RiAddLine />
         </Button>
       </ButtonGroup>
       <ButtonGroup>
@@ -39,7 +39,7 @@ export default function ButtonGroupSize() {
           Group
         </Button>
         <Button variant="outline" size="icon-lg">
-          <PlusIcon />
+          <RiAddLine />
         </Button>
       </ButtonGroup>
     </div>

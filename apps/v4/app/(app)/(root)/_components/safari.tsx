@@ -38,11 +38,6 @@ export function Safari({
       className="relative w-full overflow-x-clip"
       style={isSkewed ? { perspective: "2000px" } : undefined}
     >
-      {/*Overlay*/}
-      {!isSkewed && (
-        <div className="pointer-events-none absolute inset-0 z-40 h-full w-full bg-gradient-to-t from-background via-background/50 to-transparent"></div>
-      )}
-
       <div
         className={cn(
           "bg-background relative w-full overflow-hidden rounded-3xl border shadow-lg",

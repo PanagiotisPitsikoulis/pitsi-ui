@@ -1,4 +1,4 @@
-import { MinusIcon, PlusIcon } from "lucide-react"
+import { RiSubtractLine, RiAddLine } from '@remixicon/react'
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { ButtonGroup } from "@/registry/new-york-v4/ui/button-group"
@@ -11,10 +11,10 @@ export default function ButtonGroupOrientation() {
       className="h-fit"
     >
       <Button variant="outline" size="icon">
-        <PlusIcon />
+        <RiAddLine />
       </Button>
       <Button variant="outline" size="icon">
-        <MinusIcon />
+        <RiSubtractLine />
       </Button>
     </ButtonGroup>
   )

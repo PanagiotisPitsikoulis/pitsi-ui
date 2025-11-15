@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Plus } from "lucide-react"
+import { RiAddLine } from '@remixicon/react'
 
 import { Calendars } from "@/registry/new-york-v4/blocks/application/dashboard/sidebar-15/components/calendars"
 import { DatePicker } from "@/registry/new-york-v4/blocks/application/dashboard/sidebar-15/components/date-picker"
@@ -60,7 +60,7 @@ export function SidebarRight({
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton>
-              <Plus />
+              <RiAddLine />
               <span>New Calendar</span>
             </SidebarMenuButton>
           </SidebarMenuItem>

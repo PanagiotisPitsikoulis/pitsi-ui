@@ -1,4 +1,4 @@
-import { Search } from "lucide-react"
+import { RiEyeOffLine } from '@remixicon/react'
 
 import { Label } from "@/registry/new-york-v4/ui/label"
 import { SidebarInput } from "@/registry/new-york-v4/ui/sidebar"
