@@ -855,7 +855,7 @@ export const ui: Registry["items"] = [
   {
     name: "theme-toggle",
     type: "registry:ui",
-    dependencies: ["next-themes", "@remixicon/react"],
+    dependencies: ["next-themes", "lucide-react"],
     files: [
       {
         path: "ui/theme-toggle.tsx",
