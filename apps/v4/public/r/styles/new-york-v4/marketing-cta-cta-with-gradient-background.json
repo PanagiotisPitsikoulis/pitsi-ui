@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-cta-cta-with-gradient-background",
+  "type": "registry:block",
+  "description": "A cta with gradient background block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/cta/cta-with-gradient-background.tsx",
+      "content": "export default function CtaWithGradientBackground() {\n  return (\n    <section className=\"py-16\">\n      <div className=\"mx-auto max-w-7xl px-4 sm:px-6 lg:px-8\">\n        <div className=\"flex flex-col items-center justify-between rounded-2xl bg-gradient-to-r from-indigo-600 to-violet-600 p-10 lg:flex-row lg:px-20 lg:py-14\">\n          <div className=\"mb-5 block text-center lg:mb-0 lg:text-left\">\n            <h2 className=\"font-manrope mb-5 text-4xl font-semibold text-white lg:mb-2\">\n              Connect with us\n            </h2>\n            <p className=\"text-xl text-indigo-100\">\n              Contact us with any query or any idea.\n            </p>\n          </div>\n          <a\n            href=\"#\"\n            className=\"flex items-center gap-2 rounded-full bg-white px-8 py-4 text-lg font-semibold text-indigo-600 shadow-sm transition-all duration-500\"\n          >\n            Get In Touch\n            {/* SVG removed */}\n          </a>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "pro",
+  "readiness": "alpha"
+}

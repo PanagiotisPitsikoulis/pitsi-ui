@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "slide-down-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "slide-down"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/slide-down-demo.tsx",
+      "content": "import SlideDown from \"@/registry/new-york-v4/animations/slide-down/slide-down\"\n\nexport default function SlideDownDemo() {\n  return (\n    <div className=\"flex min-h-[400px] w-full items-center justify-center p-8\">\n      <SlideDown>\n        <div className=\"bg-card rounded-lg border p-8 text-center\">\n          <h3 className=\"text-2xl font-bold\">Animation Demo</h3>\n          <p className=\"text-muted-foreground mt-2\">\n            Scroll or interact to see the animation effect\n          </p>\n        </div>\n      </SlideDown>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "primitives"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

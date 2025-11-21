@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-cta-tailwind-cta-section-with-professional-guidance",
+  "type": "registry:block",
+  "description": "A tailwind cta section with professional guidance block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/cta/tailwind-cta-section-with-professional-guidance.tsx",
+      "content": "export default function TailwindCtaSectionWithProfessionalGuidance() {\n  return (\n    <section className=\"py-20\">\n      <div className=\"mx-auto w-full max-w-7xl rounded-3xl px-4 sm:px-6 lg:px-8\">\n        <div className=\"grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-36\">\n          <div>\n            <h2 className=\"font-manrope text-center text-4xl font-semibold text-black lg:text-left\">\n              Maximize Your Portfolio Growth with Professional Guidance\n            </h2>\n            <p className=\"font-inter mt-4 text-center text-sm leading-5 font-normal text-gray-600 lg:text-left\">\n              Ready to boost your productivity? Download Pagedone and streamline\n              your project management process. From task organization to team\n              communication,\n            </p>\n            <div className=\"pt-8\">\n              <button className=\"font-inter mx-auto flex w-36 items-center justify-center rounded-xl bg-indigo-600 px-5 py-2.5 text-base leading-7 font-semibold text-white transition-all duration-500 hover:bg-indigo-700 lg:mx-0\">\n                Get In Touch\n              </button>\n            </div>\n          </div>\n          <div className=\"grid grid-cols-2 gap-6\">\n            <img\n              src=\"https://pagedone.io/asset/uploads/1759489321.png\"\n              alt=\"image\"\n              className=\"h-full w-full\"\n            />\n            <div className=\"flex flex-col gap-6\">\n              <img\n                src=\"https://pagedone.io/asset/uploads/1759489333.png\"\n                alt=\"image\"\n                className=\"h-full w-full\"\n              />\n              <img\n                src=\"https://pagedone.io/asset/uploads/1759489413.png\"\n                alt=\"image\"\n                className=\"h-full w-full\"\n              />\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "pro",
+  "readiness": "alpha"
+}

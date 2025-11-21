@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "container-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "container"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/container-demo.tsx",
+      "content": "import { Container } from \"@/registry/new-york-v4/ui/container\"\n\nexport default function ContainerDemo() {\n  return (\n    <div className=\"w-full\">\n      <Container className=\"py-8\">\n        <div className=\"bg-card border-border text-card-foreground space-y-4 rounded-lg border p-8 shadow-sm\">\n          <h2 className=\"text-2xl font-bold\">Container Component</h2>\n          <p className=\"text-muted-foreground\">\n            This content is automatically centered with responsive max-width and\n            padding.\n          </p>\n          <div className=\"border-border bg-muted/50 mt-4 flex items-center gap-2 rounded-md border p-4\">\n            <div className=\"bg-muted size-10 rounded-full\" />\n            <div className=\"flex-1\">\n              <div className=\"bg-muted mb-2 h-3 w-3/4 rounded\" />\n              <div className=\"bg-muted/70 h-2 w-1/2 rounded\" />\n            </div>\n          </div>\n        </div>\n      </Container>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "primitives"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "theme-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "theme"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/theme-demo.tsx",
+      "content": "\"use client\"\n\nimport Theme from \"@/registry/new-york-v4/ui/theme\"\n\nconst customTheme = `\n:root {\n  --custom-bg: #f0f9ff;\n  --custom-text: #0c4a6e;\n}\n\n.dark {\n  --custom-bg: #0c4a6e;\n  --custom-text: #f0f9ff;\n}\n`\n\nexport default function ThemeDemo() {\n  return (\n    <Theme theme={customTheme}>\n      <div\n        className=\"rounded-lg p-6\"\n        style={{\n          backgroundColor: \"var(--custom-bg)\",\n          color: \"var(--custom-text)\",\n        }}\n      >\n        <h3 className=\"text-lg font-semibold\">Custom Theme</h3>\n        <p className=\"mt-2\">\n          This component uses custom CSS variables that adapt to light/dark\n          mode.\n        </p>\n      </div>\n    </Theme>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "primitives"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

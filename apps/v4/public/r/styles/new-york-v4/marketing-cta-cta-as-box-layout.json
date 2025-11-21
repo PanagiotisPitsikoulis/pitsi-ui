@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-cta-cta-as-box-layout",
+  "type": "registry:block",
+  "description": "A cta as box layout block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/cta/cta-as-box-layout.tsx",
+      "content": "export default function CtaAsBoxLayout() {\n  return (\n    <section className=\"py-20\">\n      <div className=\"mx-auto max-w-7xl px-4 sm:px-6 lg:px-8\">\n        <div className=\"rounded-2xl bg-indigo-600 p-8 text-center lg:p-11\">\n          <h2 className=\"font-manrope mb-4 text-center text-4xl font-bold text-white\">\n            Get 10% discount for subscribe\n          </h2>\n          <p className=\"mb-11 text-indigo-200\">\n            Join our community of subscribers and receive regular updates\n            delivered straight to your inbox. It's quick, easy, and free\n          </p>\n          <div className=\"flex flex-col items-center justify-center gap-4 md:flex-row\">\n            <input\n              type=\"text\"\n              name=\"email\"\n              className=\"h-14 w-full rounded-full border border-white bg-transparent px-5 py-2.5 text-lg text-white shadow-sm placeholder:text-indigo-200 focus:outline-none md:max-w-md\"\n              placeholder=\"Your mail id..\"\n            />\n            <button className=\"h-14 rounded-full bg-white px-7 py-3.5 font-semibold text-indigo-600 shadow-sm\">\n              Subscribe\n            </button>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "free",
+  "readiness": "alpha"
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Get Started",
+  "pages": [
+    "index",
+    "[Installation](/docs/installation)",
+    "[CLI](/docs/cli)",
+    "typography",
+    "v0",
+    "figma",
+    "[llms.txt](/llms.txt)",
+    "legacy"
+  ]
+}

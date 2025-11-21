@@ -1,0 +1,139 @@
+---
+title: Unicorn Wrapper
+description: A wrapper component for Unicorn Studio projects with optimized performance and error handling.
+component: true
+links:
+  doc: https://unicorn.studio/docs
+  api: https://unicorn.studio/api
+---
+
+<ComponentPreview
+  name="unicorn-wrapper-demo"
+  description="A basic Unicorn Studio project wrapped with performance optimizations"
+/>
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx pitsi@latest add unicorn-wrapper
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the Unicorn Studio React package:</Step>
+
+```bash
+npm install unicornstudio-react
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="unicorn-wrapper" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { UnicornWrapper } from "@/components/ui/unicorn-wrapper"
+```
+
+```tsx
+<UnicornWrapper className="h-[400px] w-full" projectId="your-project-id" />
+```
+
+## About Unicorn Studio
+
+[Unicorn Studio](https://unicorn.studio) is a tool for creating interactive 3D and motion graphics that can be embedded in React applications. The `UnicornWrapper` component provides an optimized way to integrate Unicorn Studio projects into your pitsi/ui applications.
+
+## Features
+
+- **Performance Optimized**: Uses Intersection Observer to only render projects when visible in viewport
+- **Error Handling**: Gracefully handles errors and prevents crashes
+- **Lazy Loading**: Projects load only when they enter the viewport (with 50px margin)
+- **Production Ready**: Automatically enables production mode for better performance
+- **Automatic Cleanup**: Properly cleans up observers on unmount
+- **Ref Support**: Fully supports React refs for advanced use cases
+
+## Examples
+
+### Basic Project
+
+```tsx
+<UnicornWrapper projectId="abc123xyz" className="h-[500px] w-full" />
+```
+
+### Responsive Project
+
+```tsx
+<div className="container mx-auto">
+  <UnicornWrapper projectId="def456uvw" className="aspect-video w-full" />
+</div>
+```
+
+### Project with Custom Styling
+
+```tsx
+<UnicornWrapper
+  projectId="ghi789rst"
+  className="h-96 rounded-lg border shadow-lg"
+/>
+```
+
+## Props
+
+The component accepts all props from `UnicornSceneProps` from the `unicornstudio-react` package, plus:
+
+| Prop         | Type         | Default | Description                                             |
+| ------------ | ------------ | ------- | ------------------------------------------------------- |
+| `projectId`  | `string`     | -       | The unique project ID from Unicorn Studio               |
+| `className`  | `string`     | -       | Additional CSS classes to apply to the wrapper          |
+| `production` | `boolean`    | `true`  | Whether to enable production mode (optimized rendering) |
+| `onError`    | `() => void` | -       | Callback when an error occurs (automatically handled)   |
+
+For the complete list of available props, see the [Unicorn Studio React documentation](https://unicorn.studio/docs).
+
+## How It Works
+
+The wrapper enhances the base `UnicornScene` component with:
+
+1. **Intersection Observer**: Monitors when the component enters/exits the viewport
+2. **Conditional Rendering**: Only renders the project when visible (with 50px margin)
+3. **Error Boundary**: Catches errors and unmounts the component to prevent crashes
+4. **Ref Forwarding**: Supports both callback and object refs
+
+This approach significantly improves performance when you have multiple projects on a page or projects that are initially offscreen.
+
+## Getting Your Project ID
+
+To use this component, you'll need:
+
+1. Create a project at [unicorn.studio](https://unicorn.studio)
+2. Get your project ID from the Unicorn Studio dashboard
+3. Use the project ID in the component props
+
+## Notes
+
+- The component requires `unicornstudio-react` to be installed
+- Projects only load when they're within 50px of entering the viewport
+- Production mode is enabled by default for better performance
+- If a project errors, it will automatically unmount to prevent app crashes
+- The wrapper has a 10% intersection threshold for triggering visibility

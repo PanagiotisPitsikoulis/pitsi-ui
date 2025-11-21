@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "scroll-expand",
+  "type": "registry:ui",
+  "description": "Animation component: scroll expand",
+  "files": [
+    {
+      "path": "registry/new-york-v4/animations/scroll-expand/scroll-expand.tsx",
+      "content": "\"use client\"\n\nimport type { ReactNode } from \"react\"\nimport { memo, useMemo, useRef } from \"react\"\nimport { motion, useScroll, useTransform } from \"motion/react\"\n\nimport { useAnimationState } from \"@/hooks/use-animation-state\"\nimport { useIsMobile } from \"@/hooks/use-mobile\"\n\nexport type ScrollExpandProps = {\n  children: ReactNode\n  className?: string\n  marginX?: string\n  borderRadius?: string\n  scrollBased?: boolean\n  noMobile?: boolean\n}\n\nexport const ScrollExpand = memo<ScrollExpandProps>(\n  ({\n    children,\n    className,\n    marginX = \"3rem\",\n    borderRadius = \"3rem\",\n    scrollBased = true,\n    noMobile = false,\n  }) => {\n    const isMobile = useIsMobile()\n    const ref = useRef<HTMLDivElement>(null)\n    const { shouldDisableAnimation, shouldUseScroll } = useAnimationState(\n      scrollBased,\n      noMobile\n    )\n\n    const marginXAdjusted = useMemo(\n      () => (isMobile ? \"0.5rem\" : marginX),\n      [isMobile, marginX]\n    )\n    const borderRadiusAdjusted = useMemo(\n      () => (isMobile ? \"1rem\" : borderRadius),\n      [isMobile, borderRadius]\n    )\n\n    const { scrollYProgress } = useScroll({\n      target: shouldUseScroll ? ref : undefined,\n      offset: [\"start 80%\", \"start 30%\"],\n    })\n\n    const marginLeft = useTransform(\n      scrollYProgress,\n      [0, 1],\n      [marginXAdjusted, \"0rem\"]\n    )\n    const marginRight = useTransform(\n      scrollYProgress,\n      [0, 1],\n      [marginXAdjusted, \"0rem\"]\n    )\n    const borderRadiusValue = useTransform(\n      scrollYProgress,\n      [0, 1],\n      [borderRadiusAdjusted, \"0rem\"]\n    )\n\n    const style = useMemo(\n      () => ({\n        overflow: \"hidden\" as const,\n      }),\n      []\n    )\n\n    const triggerStyle = useMemo(\n      () => ({\n        overflow: \"hidden\" as const,\n        borderRadius,\n      }),\n      [borderRadius]\n    )\n\n    if (shouldDisableAnimation) {\n      return <div className={className}>{children}</div>\n    }\n\n    if (scrollBased) {\n      return (\n        <motion.div\n          ref={ref}\n          style={{\n            marginLeft,\n            marginRight,\n            borderRadius: borderRadiusValue,\n            ...style,\n          }}\n          className={className}\n        >\n          {children}\n        </motion.div>\n      )\n    }\n\n    return (\n      <motion.div\n        initial={{ opacity: 0, scale: 0.95 }}\n        whileInView={{ opacity: 1, scale: 1 }}\n        viewport={{ once: false, margin: \"-100px\" }}\n        transition={{ duration: 0.9, delay: 0.3, ease: [0.25, 0.4, 0.25, 1] }}\n        className={className}\n        style={triggerStyle}\n      >\n        {children}\n      </motion.div>\n    )\n  }\n)\n\nScrollExpand.displayName = \"ScrollExpand\"\n\nexport default ScrollExpand\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "beta"
+}

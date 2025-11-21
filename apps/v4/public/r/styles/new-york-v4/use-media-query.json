@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "use-media-query",
+  "type": "registry:hook",
+  "description": "Hook for detecting media query matches.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/hooks/use-media-query.tsx",
+      "content": "import * as React from \"react\"\n\nexport function useMediaQuery(query: string) {\n  const [value, setValue] = React.useState(false)\n\n  React.useEffect(() => {\n    function onChange(event: MediaQueryListEvent) {\n      setValue(event.matches)\n    }\n\n    const result = matchMedia(query)\n    result.addEventListener(\"change\", onChange)\n    setValue(result.matches)\n\n    return () => result.removeEventListener(\"change\", onChange)\n  }, [query])\n\n  return value\n}\n",
+      "type": "registry:hook"
+    }
+  ],
+  "readiness": "production"
+}

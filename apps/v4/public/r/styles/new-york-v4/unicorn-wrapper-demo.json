@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "unicorn-wrapper-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "unicorn-wrapper"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/unicorn-wrapper-demo.tsx",
+      "content": "\"use client\"\n\nimport { UnicornWrapper } from \"@/registry/new-york-v4/ui/unicorn-wrapper\"\n\nexport default function UnicornWrapperDemo() {\n  return (\n    <div className=\"flex size-[400px] items-center justify-center overflow-hidden rounded-2xl\">\n      <UnicornWrapper\n        className=\"h-full w-full\"\n        projectId=\"OpSYWgbtD97AYWlhMu2W\"\n        production\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "primitives"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

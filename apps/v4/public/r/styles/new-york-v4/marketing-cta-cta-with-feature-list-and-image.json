@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-cta-cta-with-feature-list-and-image",
+  "type": "registry:block",
+  "description": "A cta with feature list and image block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/cta/cta-with-feature-list-and-image.tsx",
+      "content": "export default function CtaWithFeatureListAndImage() {\n  return (\n    <section className=\"py-20\">\n      <div className=\"mx-auto max-w-7xl px-4 sm:px-6 lg:px-8\">\n        <div className=\"flex flex-col items-center justify-between gap-14 max-lg:mx-auto max-lg:max-w-xl lg:flex-row\">\n          <div className=\"w-full lg:w-3/5\">\n            <h2 className=\"font-manrope mb-9 text-center text-4xl leading-[3.5rem] font-bold text-gray-900 lg:text-left\">\n              Are you ready to start your investment\n            </h2>\n            <div className=\"flex flex-col gap-5 lg:flex-row lg:gap-24\">\n              <ul className=\"grid gap-5\">\n                <li className=\"flex items-center gap-3 text-gray-600\">\n                  {/* SVG removed */}\n                  Unlimited update and project\n                </li>\n                <li className=\"flex items-center gap-3 text-gray-600\">\n                  {/* SVG removed */}\n                  24*7 service\n                </li>\n                <li className=\"flex items-center gap-3 text-gray-600\">\n                  {/* SVG removed */}\n                  Chat support\n                </li>\n                <li className=\"flex items-center gap-3 text-gray-600\">\n                  {/* SVG removed */}\n                  Analytic and chart\n                </li>\n              </ul>\n              <ul className=\"grid gap-5\">\n                <li className=\"flex items-center gap-3 text-gray-600\">\n                  {/* SVG removed */}\n                  Darks light mode\n                </li>\n                <li className=\"flex items-center gap-3 text-gray-600\">\n                  {/* SVG removed */}\n                  Library of our specialist\n                </li>\n                <li className=\"flex items-center gap-3 text-gray-600\">\n                  {/* SVG removed */}\n                  Own analytic platform\n                </li>\n                <li className=\"flex items-center gap-3 text-gray-600\">\n                  {/* SVG removed */}\n                  Unlimited advice\n                </li>\n              </ul>\n            </div>\n            <div className=\"mt-14 flex flex-col gap-5 lg:flex-row\">\n              <button className=\"rounded-full bg-indigo-600 px-7 py-3.5 font-semibold text-white transition-all duration-500 hover:bg-indigo-700\">\n                Download App\n              </button>\n              <button className=\"rounded-full border border-gray-300 px-7 py-3.5 font-semibold text-gray-900 shadow-sm transition-all duration-500 hover:bg-gray-50\">\n                View Demo\n              </button>\n            </div>\n          </div>\n          <div className=\"w-full lg:w-2/5\">\n            <div className=\"relative\">\n              <img\n                src=\"https://pagedone.io/asset/uploads/1696243046.png\"\n                alt=\"CTA tailwind section\"\n                className=\"w-full rounded-3xl object-cover\"\n              />\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "pro",
+  "readiness": "alpha"
+}

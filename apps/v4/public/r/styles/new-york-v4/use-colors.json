@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "use-colors",
+  "type": "registry:hook",
+  "description": "Hook for managing color format preferences and last copied color.",
+  "dependencies": [
+    "jotai"
+  ],
+  "registryDependencies": [
+    "use-mounted"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/hooks/use-colors.ts",
+      "content": "import { useAtom } from \"jotai\"\nimport { atomWithStorage } from \"jotai/utils\"\n\nimport { useMounted } from \"@/hooks/use-mounted\"\n\nexport type ColorFormat = \"className\" | \"hex\" | \"rgb\" | \"hsl\" | \"oklch\" | \"var\"\n\ntype Config = {\n  format: ColorFormat\n  lastCopied: string\n}\n\nconst colorsAtom = atomWithStorage<Config>(\"colors\", {\n  format: \"hsl\",\n  lastCopied: \"\",\n})\n\nexport function useColors() {\n  const [colors, setColors] = useAtom(colorsAtom)\n  const mounted = useMounted()\n\n  return {\n    isLoading: !mounted,\n    format: colors.format,\n    lastCopied: colors.lastCopied,\n    setFormat: (format: ColorFormat) => setColors({ ...colors, format }),\n    setLastCopied: (lastCopied: string) => setColors({ ...colors, lastCopied }),\n  }\n}\n",
+      "type": "registry:hook"
+    }
+  ],
+  "readiness": "production"
+}

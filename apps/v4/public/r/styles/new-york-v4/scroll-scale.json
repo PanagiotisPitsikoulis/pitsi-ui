@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "scroll-scale",
+  "type": "registry:ui",
+  "description": "Animation component: scroll scale",
+  "files": [
+    {
+      "path": "registry/new-york-v4/animations/scroll-scale/scroll-scale.tsx",
+      "content": "\"use client\"\n\nimport type { ReactNode } from \"react\"\nimport { memo, useRef } from \"react\"\nimport { motion, useScroll, useTransform } from \"motion/react\"\n\nimport { useAnimationState } from \"@/hooks/use-animation-state\"\n\nexport type ScrollScaleProps = {\n  children: ReactNode\n  className?: string\n  delay?: number\n  duration?: number\n  startScale?: number\n  endScale?: number\n  scrollBased?: boolean\n  noMobile?: boolean\n}\n\nexport const ScrollScale = memo<ScrollScaleProps>(\n  ({\n    children,\n    className,\n    delay = 0,\n    duration = 0.6,\n    startScale = 0.8,\n    endScale = 1,\n    scrollBased = true,\n    noMobile = false,\n  }) => {\n    const ref = useRef<HTMLDivElement>(null)\n    const { shouldDisableAnimation, shouldUseScroll } = useAnimationState(\n      scrollBased,\n      noMobile\n    )\n\n    const { scrollYProgress } = useScroll({\n      target: shouldUseScroll ? ref : undefined,\n      offset: [\"start end\", \"start center\"],\n    })\n\n    const scale = useTransform(scrollYProgress, [0, 1], [startScale, endScale])\n    const opacity = useTransform(scrollYProgress, [0, 1], [0, 1])\n\n    if (shouldDisableAnimation) {\n      return <div className={className}>{children}</div>\n    }\n\n    if (scrollBased) {\n      return (\n        <motion.div ref={ref} style={{ scale, opacity }} className={className}>\n          {children}\n        </motion.div>\n      )\n    }\n\n    return (\n      <motion.div\n        initial={{ opacity: 0, scale: startScale }}\n        whileInView={{ opacity: 1, scale: endScale }}\n        viewport={{ once: false, margin: \"-100px\" }}\n        transition={{ duration, delay, ease: [0.25, 0.4, 0.25, 1] }}\n        className={className}\n      >\n        {children}\n      </motion.div>\n    )\n  }\n)\n\nScrollScale.displayName = \"ScrollScale\"\n\nexport default ScrollScale\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "beta"
+}

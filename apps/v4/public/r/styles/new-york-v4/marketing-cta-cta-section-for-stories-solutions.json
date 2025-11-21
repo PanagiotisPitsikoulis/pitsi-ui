@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-cta-cta-section-for-stories-solutions",
+  "type": "registry:block",
+  "description": "A cta section for stories solutions block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/cta/cta-section-for-stories-solutions.tsx",
+      "content": "export default function CtaSectionForStoriesSolutions() {\n  return (\n    <section className=\"bg-gradient-to-l from-indigo-700 to-indigo-500 py-20\">\n      <div className=\"mx-auto w-full max-w-7xl rounded-2xl px-4 sm:px-6 lg:px-8\">\n        <div className=\"grid gap-8 md:grid-cols-2 lg:gap-28\">\n          <div className=\"flex flex-col gap-8\">\n            <h2 className=\"font-manrope mb-3 text-center text-4xl leading-[52px] font-bold text-white md:text-start\">\n              Engaging Stories That Captivate Audiences Convert.\n            </h2>\n            <div className=\"flex items-center justify-center gap-5 md:justify-start\">\n              <img\n                src=\"https://pagedone.io/asset/uploads/1759489946.png\"\n                alt=\"img\"\n              />\n              <a className=\"font-inter text-base leading-6 font-medium text-white\">\n                People have joined\n              </a>\n            </div>\n          </div>\n          <div className=\"flex flex-col gap-6\">\n            <p className=\"font-inter text-center text-base leading-6 font-normal text-white md:text-start\">\n              Craft stories that do more than just tell—they captivate your\n              audience and drive action. Our storytelling approach.\n            </p>\n            <ul className=\"mb-2 flex flex-col items-center justify-center gap-4 md:items-start md:justify-start\">\n              <li className=\"flex items-center gap-3 text-white\">\n                {/* SVG removed */}\n                Premium Support\n              </li>\n              <li className=\"flex items-center gap-3 text-white\">\n                {/* SVG removed */}\n                Fast Delivery\n              </li>\n              <li className=\"flex items-center gap-3 text-white\">\n                {/* SVG removed */}\n                Library of Our Specialist Team\n              </li>\n            </ul>\n            <button className=\"shadow-xs_shadow font-inter mx-auto w-fit rounded-xl bg-white px-6 py-2.5 text-base leading-7 font-semibold text-indigo-600 transition-all duration-500 hover:bg-gray-300 md:m-0\">\n              Get In Touch\n            </button>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "free",
+  "readiness": "alpha"
+}

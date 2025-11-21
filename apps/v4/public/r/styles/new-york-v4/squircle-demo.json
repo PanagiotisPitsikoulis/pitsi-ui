@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "squircle-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "squircle"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/squircle-demo.tsx",
+      "content": "import { SquiCircleFilterStatic } from \"@/registry/new-york-v4/ui/squircle\"\n\nexport default function SquircleDemo() {\n  return (\n    <div className=\"relative flex items-center justify-center p-8\">\n      <SquiCircleFilterStatic />\n      <div\n        className=\"bg-primary h-32 w-32 rounded-2xl\"\n        style={{ filter: \"url(#SkiperSquiCircleFilterLayout)\" }}\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "primitives"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

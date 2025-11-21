@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "use-tab-observer-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "use-tab-observer",
+    "tabs"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/use-tab-observer-demo.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { useTabObserver } from \"@/registry/new-york-v4/hooks/use-tab-observer\"\nimport {\n  Tabs,\n  TabsContent,\n  TabsList,\n  TabsTrigger,\n} from \"@/registry/new-york-v4/ui/tabs\"\n\nexport default function UseTabObserverDemo() {\n  const [activeTab, setActiveTab] = useState<number>(0)\n  const { listRef, mounted } = useTabObserver({\n    onActiveTabChange: (index) => {\n      setActiveTab(index)\n    },\n  })\n\n  return (\n    <div className=\"space-y-4\">\n      <Tabs defaultValue=\"account\">\n        <TabsList ref={listRef}>\n          <TabsTrigger value=\"account\">Account</TabsTrigger>\n          <TabsTrigger value=\"password\">Password</TabsTrigger>\n          <TabsTrigger value=\"settings\">Settings</TabsTrigger>\n        </TabsList>\n        <TabsContent value=\"account\">\n          <p className=\"text-muted-foreground text-sm\">\n            Make changes to your account here.\n          </p>\n        </TabsContent>\n        <TabsContent value=\"password\">\n          <p className=\"text-muted-foreground text-sm\">\n            Change your password here.\n          </p>\n        </TabsContent>\n        <TabsContent value=\"settings\">\n          <p className=\"text-muted-foreground text-sm\">\n            Manage your settings here.\n          </p>\n        </TabsContent>\n      </Tabs>\n\n      {mounted && (\n        <div className=\"bg-muted rounded-lg p-4\">\n          <p className=\"text-sm\">\n            <span className=\"font-semibold\">Active tab index:</span> {activeTab}\n          </p>\n        </div>\n      )}\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "primitives"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

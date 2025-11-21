@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-stats-split-stats-with-heading",
+  "type": "registry:block",
+  "description": "A split stats with heading block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/stats/split-stats-with-heading.tsx",
+      "content": "export default function SplitStatsWithHeading() {\n  return (\n    <section className=\"font-inter py-20\">\n      <div className=\"mx-auto w-full max-w-7xl bg-gray-50 px-4 sm:px-6 lg:px-8\">\n        <div className=\"grid grid-cols-1 gap-14 overflow-hidden rounded-2xl lg:grid-cols-2\">\n          <div className=\"bg-blue-600 px-6 py-8 pr-5 text-center sm:pl-16 lg:text-start\">\n            <h2 className=\"font-manrope text-4xl leading-[52px] font-bold text-white\">\n              Tracking Our <br />\n              Achievements\n            </h2>\n            <p className=\"pt-5 text-xl leading-8 font-normal text-gray-200\">\n              Total Our Company Growth\n            </p>\n            <h3 className=\"pt-2.5 text-3xl font-bold text-white\">98%</h3>\n          </div>\n          <div className=\"mx-auto flex w-full flex-col gap-8 sm:w-9/12 lg:w-full lg:items-stretch\">\n            <div className=\"grid grid-cols-2 gap-8 border-b border-gray-200 pb-8\">\n              <div className=\"flex flex-col gap-1.5 border-r border-gray-200\">\n                <a href=\"#\"></a>\n                <h3 className=\"font-manrope pt-2.5 text-2xl leading-9 font-bold text-gray-900\">\n                  99+\n                </h3>\n                <p className=\"text-base leading-7 font-normal text-gray-500\">\n                  Expert Consultants{\" \"}\n                </p>\n              </div>\n              <div className=\"flex flex-col gap-1.5\">\n                <a href=\"#\"></a>\n                <h3 className=\"font-manrope pt-2.5 text-2xl leading-9 font-bold text-gray-900\">\n                  130+\n                </h3>\n                <p className=\"text-base leading-7 font-normal text-gray-500\">\n                  Active Clients\n                </p>\n              </div>\n            </div>\n            <div className=\"grid grid-cols-2 gap-8\">\n              <div className=\"flex flex-col gap-1.5 border-r border-gray-200\">\n                <a href=\"#\"></a>\n                <h3 className=\"font-manrope pt-2.5 text-2xl leading-9 font-bold text-gray-900\">\n                  80+\n                </h3>\n                <p className=\"text-base leading-7 font-normal text-gray-500\">\n                  Project Finalized\n                </p>\n              </div>\n              <div className=\"flex flex-col gap-1.5\">\n                <a href=\"#\"></a>\n                <h3 className=\"font-manrope pt-2.5 text-2xl leading-9 font-bold text-gray-900\">\n                  87+\n                </h3>\n                <p className=\"text-base leading-7 font-normal text-gray-500\">\n                  Orders in Queue\n                </p>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "pro",
+  "readiness": "alpha"
+}

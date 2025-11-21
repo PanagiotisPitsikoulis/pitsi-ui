@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-stats-stats-with-background",
+  "type": "registry:block",
+  "description": "A stats with background block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/stats/stats-with-background.tsx",
+      "content": "export default function StatsWithBackground() {\n  return (\n    <section className=\"py-20\">\n      <div className=\"mx-auto max-w-7xl px-4 sm:px-6 lg:px-8\">\n        <div className=\"flex flex-1 flex-col justify-center gap-10 lg:flex-row lg:justify-between\">\n          <div className=\"mx-auto w-full rounded-xl bg-indigo-50 p-12 lg:w-1/4\">\n            <div className=\"font-manrope mb-3 text-center text-5xl font-semibold text-indigo-600\">\n              260+\n            </div>\n            <span className=\"block text-center text-lg text-gray-900\">\n              Expert Consultants\n            </span>\n          </div>\n          <div className=\"mx-auto w-full rounded-xl bg-indigo-50 p-12 lg:w-1/4\">\n            <div className=\"font-manrope mb-3 text-center text-5xl font-semibold text-indigo-600\">\n              975+\n            </div>\n            <span className=\"block text-center text-lg text-gray-900\">\n              Active Clients\n            </span>\n          </div>\n          <div className=\"mx-auto w-full rounded-xl bg-indigo-50 p-12 lg:w-1/4\">\n            <div className=\"font-manrope mb-3 text-center text-5xl font-semibold text-indigo-600\">\n              724+\n            </div>\n            <span className=\"block text-center text-lg text-gray-900\">\n              Projects Delivered\n            </span>\n          </div>\n          <div className=\"mx-auto w-full rounded-xl bg-indigo-50 p-12 lg:w-1/4\">\n            <div className=\"font-manrope mb-3 text-center text-5xl font-semibold text-indigo-600\">\n              89+\n            </div>\n            <span className=\"block text-center text-lg text-gray-900\">\n              Orders in Queue\n            </span>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "pro",
+  "readiness": "alpha"
+}

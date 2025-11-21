@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "use-content-pagination",
+  "type": "registry:hook",
+  "description": "Hook for infinite scroll pagination of content items with automatic loading on scroll.",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/hooks/use-content-pagination.tsx",
+      "content": "\"use client\"\n\nimport { useEffect, useMemo, useRef, useState } from \"react\"\nimport { useInView } from \"motion/react\"\n\nexport interface ContentPaginationOptions {\n  initialLoad: number\n  loadMore: number\n}\n\n/**\n * Hook for infinite scroll pagination of content items\n */\nexport function useContentPagination<T>(\n  items: T[],\n  options: ContentPaginationOptions = {\n    initialLoad: 40,\n    loadMore: 40,\n  }\n) {\n  const [displayCount, setDisplayCount] = useState(options.initialLoad)\n  const loadMoreRef = useRef<HTMLDivElement>(null)\n  const [shouldLoadMore, setShouldLoadMore] = useState(false)\n\n  const isInView = useInView(loadMoreRef, {\n    margin: \"200px\",\n    once: false,\n  })\n\n  // Reset display count when items change (filter change)\n  const [prevItemsLength, setPrevItemsLength] = useState(items.length)\n  if (items.length !== prevItemsLength) {\n    setDisplayCount(options.initialLoad)\n    setPrevItemsLength(items.length)\n  }\n\n  // Trigger load more when coming into view\n  // This avoids setState in the isInView effect\n  if (isInView && displayCount < items.length && !shouldLoadMore) {\n    setShouldLoadMore(true)\n  }\n\n  // Reset load more trigger when going out of view\n  if (!isInView && shouldLoadMore) {\n    setShouldLoadMore(false)\n  }\n\n  // Separate effect to handle the actual pagination\n  useEffect(() => {\n    if (shouldLoadMore) {\n      //@ts-ignore\n      setDisplayCount((prev) => {\n        if (prev < items.length) {\n          return Math.min(prev + options.loadMore, items.length)\n        }\n        return prev\n      })\n      setShouldLoadMore(false)\n    }\n  }, [shouldLoadMore, items.length, options.loadMore])\n\n  const displayedItems = useMemo(() => {\n    return items.slice(0, displayCount)\n  }, [items, displayCount])\n\n  const hasMore = displayCount < items.length\n\n  return {\n    displayedItems,\n    displayCount,\n    hasMore,\n    loadMoreRef,\n    totalCount: items.length,\n  }\n}\n",
+      "type": "registry:hook"
+    }
+  ],
+  "readiness": "production"
+}

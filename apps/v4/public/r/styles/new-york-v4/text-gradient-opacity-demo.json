@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "text-gradient-opacity-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "text-gradient-opacity"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/text-gradient-opacity-demo.tsx",
+      "content": "import TextGradientOpacity from \"@/registry/new-york-v4/animations/text-gradient-opacity/text-gradient-opacity\"\n\nexport default function TextGradientOpacityDemo() {\n  return (\n    <div className=\"flex min-h-[800px] w-full items-center justify-center p-8\">\n      <TextGradientOpacity\n        text=\"Scroll down to see this text reveal word by word with a beautiful gradient opacity effect\"\n        className=\"max-w-4xl\"\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "primitives"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

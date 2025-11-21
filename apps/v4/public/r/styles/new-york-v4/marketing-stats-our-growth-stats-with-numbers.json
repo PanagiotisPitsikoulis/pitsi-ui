@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-stats-our-growth-stats-with-numbers",
+  "type": "registry:block",
+  "description": "A our growth stats with numbers block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/stats/our-growth-stats-with-numbers.tsx",
+      "content": "export default function OurGrowthStatsWithNumbers() {\n  return (\n    <section className=\"font-inter py-20\">\n      <div className=\"mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8\">\n        <div className=\"flex flex-col gap-4 text-center\">\n          <h2 className=\"font-manrope text-4xl font-bold\">\n            Our Growth in Numbers\n          </h2>\n          <p className=\"text-base font-normal text-gray-600\">\n            Our growth is more than just words—it’s in the numbers. Discover how\n            we’ve scaled our operations, improved results\n          </p>\n        </div>\n        <div className=\"mt-14 border-t-2 border-gray-100 pt-14\">\n          <div className=\"mx-auto grid w-10/12 grid-cols-1 gap-8 md:w-full md:grid-cols-3\">\n            <div className=\"flex flex-col gap-4 text-center\">\n              <h3 className=\"font-manrope text-5xl font-bold\">13M</h3>\n              <p className=\"text-lg font-normal text-gray-600\">\n                We have reach more than 13 millions user in around the world\n              </p>\n            </div>\n            <div className=\"flex flex-col gap-4 text-center\">\n              <h3 className=\"font-manrope text-5xl font-bold\">50M</h3>\n              <p className=\"text-lg font-normal text-gray-600\">\n                Pagedone is one of most downloaded on google play\n              </p>\n            </div>\n            <div className=\"flex flex-col gap-4 text-center\">\n              <h3 className=\"font-manrope text-5xl font-bold\">98%</h3>\n              <p className=\"text-lg font-normal text-gray-600\">\n                Our user are satisfied using our services in their daily site\n              </p>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "pro",
+  "readiness": "alpha"
+}

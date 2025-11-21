@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "typography-paragraphs",
+  "type": "registry:example",
+  "registryDependencies": [
+    "typography"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/typography-paragraphs.tsx",
+      "content": "import Typography from \"@/registry/new-york-v4/ui/typography\"\n\nexport default function TypographyParagraphs() {\n  return (\n    <div className=\"space-y-4\">\n      <Typography variant=\"paragraph-xl\">\n        Paragraph XL - Large introductory text that draws attention.\n      </Typography>\n      <Typography variant=\"paragraph-lg\">\n        Paragraph LG - Default body text for articles and main content.\n      </Typography>\n      <Typography variant=\"paragraph-md\">\n        Paragraph MD - Component descriptions for cards and dialogs.\n      </Typography>\n      <Typography variant=\"paragraph-sm\">\n        Paragraph SM - Small text for captions.\n      </Typography>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "primitives"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

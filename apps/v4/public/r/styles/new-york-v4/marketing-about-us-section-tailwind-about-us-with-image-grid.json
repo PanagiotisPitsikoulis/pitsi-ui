@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-about-us-section-tailwind-about-us-with-image-grid",
+  "type": "registry:block",
+  "description": "A tailwind about us with image grid block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/about-us-section/tailwind-about-us-with-image-grid.tsx",
+      "content": "export default function TailwindAboutUsWithImageGrid() {\n  return (\n    <section className=\"relative py-24\">\n      <div className=\"mx-auto w-full max-w-7xl px-4 md:px-5 lg:px-5\">\n        <div className=\"inline-flex w-full flex-col items-start justify-start gap-9 lg:gap-12\">\n          <div className=\"flex w-full flex-col items-start justify-start gap-3\">\n            <span className=\"w-full text-center text-base leading-relaxed font-normal text-gray-400\">\n              About Us\n            </span>\n            <h2 className=\"font-manrope w-full text-center text-4xl leading-normal font-bold text-gray-900\">\n              Discover Our Story\n            </h2>\n          </div>\n          <div className=\"flex w-full flex-col items-start justify-start gap-5\">\n            <p className=\"text-center text-base leading-relaxed font-normal text-gray-500\">\n              Welcome to Nature's Bliss Retreats, where tranquility meets\n              adventure. Established in 2010, our mission is to provide\n              immersive experiences that rejuvenate the mind, body, and soul.\n              Nestled amidst nature's embrace, our retreats offer a sanctuary\n              for relaxation and exploration. Whether you seek solace in serene\n              landscapes or crave the thrill of outdoor activities, our diverse\n              range of offerings caters to every traveler. With a commitment to\n              sustainability and mindful living, we strive to create\n              unforgettable moments that foster connection with both oneself and\n              the natural world. Join us on a journey of discovery and find your\n              bliss amidst the beauty of nature.\n            </p>\n          </div>\n          <div className=\"grid w-full grid-cols-1 items-start justify-start gap-8 md:grid-cols-2\">\n            <img\n              className=\"h-auto w-full rounded-xl object-cover md:h-full\"\n              src=\"https://pagedone.io/asset/uploads/1717830207.png\"\n              alt=\"about Us iamge\"\n            />\n            <img\n              className=\"h-auto w-full rounded-xl object-cover md:h-full\"\n              src=\"https://pagedone.io/asset/uploads/1717830217.png\"\n              alt=\"about Us iamge\"\n            />\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "pro",
+  "readiness": "alpha"
+}

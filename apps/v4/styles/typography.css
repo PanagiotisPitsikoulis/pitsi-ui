@@ -1,0 +1,197 @@
+/*Pitsi UI - Typography System*/
+@theme {
+  /* ========================================
+     TITLE STYLES - Page & Component Headings
+     ======================================== */
+
+  /* H1 (text-4xl) - Hero sections, main page titles
+     Example: Typography demo hero, landing page titles */
+  --text-title-h1: 2.25rem; /* 36px */
+  --text-title-h1--line-height: 2.5rem; /* 40px */
+  --text-title-h1--letter-spacing: -0.025em;
+  --text-title-h1--font-weight: 800; /* extrabold */
+
+  /* H2 (text-3xl) - Major section headings
+     Used in: Typography demo section headers, bordered section dividers */
+  --text-title-h2: 1.875rem; /* 30px */
+  --text-title-h2--line-height: 2.25rem; /* 36px */
+  --text-title-h2--letter-spacing: -0.025em;
+  --text-title-h2--font-weight: 600; /* semibold */
+
+  /* H3 (text-2xl) - Subsection headings
+     Used in: Typography demo subsections, article subsections */
+  --text-title-h3: 1.5rem; /* 24px */
+  --text-title-h3--line-height: 2rem; /* 32px */
+  --text-title-h3--letter-spacing: -0.025em;
+  --text-title-h3--font-weight: 600; /* semibold */
+
+  /* H4 (text-lg) - Component titles
+     Used in: Dialog title, AlertDialog title, Sheet title */
+  --text-title-h4: 1.125rem; /* 18px */
+  --text-title-h4--line-height: 1.75rem; /* 28px */
+  --text-title-h4--letter-spacing: -0.01em;
+  --text-title-h4--font-weight: 600; /* semibold */
+
+  /* H5 (text-base) - Small component headings
+     Used in: Field legends, smaller modal titles */
+  --text-title-h5: 1rem; /* 16px */
+  --text-title-h5--line-height: 1.5rem; /* 24px */
+  --text-title-h5--letter-spacing: -0.01em;
+  --text-title-h5--font-weight: 600; /* semibold */
+
+  /* H6 (text-sm) - Smallest headings
+     Used in: Card title, Alert title (when font-medium/semibold applied) */
+  --text-title-h6: 0.875rem; /* 14px */
+  --text-title-h6--line-height: 1.25rem; /* 20px */
+  --text-title-h6--letter-spacing: -0.005em;
+  --text-title-h6--font-weight: 500; /* medium */
+
+  /* ========================================
+     LABEL STYLES - Form labels, UI labels
+     ======================================== */
+
+  /* Label XL (text-xl) - Lead text, intro paragraphs
+     Used in: Typography demo lead paragraph, feature introductions */
+  --text-label-xl: 1.25rem; /* 20px */
+  --text-label-xl--line-height: 1.75rem; /* 28px */
+  --text-label-xl--letter-spacing: -0.015em;
+  --text-label-xl--font-weight: 500; /* medium */
+
+  /* Label LG (text-base) - Larger labels
+     Used in: Important form labels, emphasis labels */
+  --text-label-lg: 1rem; /* 16px */
+  --text-label-lg--line-height: 1.5rem; /* 24px */
+  --text-label-lg--letter-spacing: -0.01em;
+  --text-label-lg--font-weight: 500; /* medium */
+
+  /* Label MD (text-sm) - Standard form labels
+     Used in: Label component, Field label, form inputs, most UI labels */
+  --text-label-md: 0.875rem; /* 14px */
+  --text-label-md--line-height: 1.25rem; /* 20px */
+  --text-label-md--letter-spacing: -0.006em;
+  --text-label-md--font-weight: 500; /* medium */
+
+  /* Label SM (text-xs) - Small labels, metadata
+     Used in: Badge, Kbd, table headers, small UI indicators */
+  --text-label-sm: 0.75rem; /* 12px */
+  --text-label-sm--line-height: 1rem; /* 16px */
+  --text-label-sm--letter-spacing: 0em;
+  --text-label-sm--font-weight: 500; /* medium */
+
+  /* Label XS - Extra small labels (rarely used)
+     Used in: Tiny indicators, micro copy */
+  --text-label-xs: 0.6875rem; /* 11px */
+  --text-label-xs--line-height: 0.875rem; /* 14px */
+  --text-label-xs--letter-spacing: 0.01em;
+  --text-label-xs--font-weight: 500; /* medium */
+
+  /* ========================================
+     PARAGRAPH STYLES - Body text, descriptions
+     ======================================== */
+
+  /* Paragraph XL (text-xl) - Lead/intro paragraphs
+     Used in: Typography demo intro, feature descriptions */
+  --text-paragraph-xl: 1.25rem; /* 20px */
+  --text-paragraph-xl--line-height: 1.75rem; /* 28px (leading-7) */
+  --text-paragraph-xl--letter-spacing: -0.015em;
+  --text-paragraph-xl--font-weight: 400; /* regular */
+
+  /* Paragraph LG (text-base) - Default body text
+     Used in: Typography demo body, article content, default paragraph */
+  --text-paragraph-lg: 1rem; /* 16px */
+  --text-paragraph-lg--line-height: 1.75rem; /* 28px (leading-7) */
+  --text-paragraph-lg--letter-spacing: -0.011em;
+  --text-paragraph-lg--font-weight: 400; /* regular */
+
+  /* Paragraph MD (text-sm) - Component descriptions
+     Used in: Card description, Dialog description, Alert description, Field description */
+  --text-paragraph-md: 0.875rem; /* 14px */
+  --text-paragraph-md--line-height: 1.25rem; /* 20px */
+  --text-paragraph-md--letter-spacing: -0.006em;
+  --text-paragraph-md--font-weight: 400; /* regular */
+
+  /* Paragraph SM (text-xs) - Small body text
+     Used in: Table captions, helper text, footnotes */
+  --text-paragraph-sm: 0.75rem; /* 12px */
+  --text-paragraph-sm--line-height: 1rem; /* 16px */
+  --text-paragraph-sm--letter-spacing: 0em;
+  --text-paragraph-sm--font-weight: 400; /* regular */
+
+  /* Paragraph XS - Extra small text (rarely used)
+     Used in: Legal text, micro copy */
+  --text-paragraph-xs: 0.6875rem; /* 11px */
+  --text-paragraph-xs--line-height: 0.875rem; /* 14px */
+  --text-paragraph-xs--letter-spacing: 0em;
+  --text-paragraph-xs--font-weight: 400; /* regular */
+
+  /* ========================================
+     SUBHEADING STYLES - Uppercase section labels
+     ======================================== */
+
+  /* Subheading MD - Medium section labels
+     Used in: Navigation sections, form sections (uppercase, tracked) */
+  --text-subheading-md: 0.875rem; /* 14px */
+  --text-subheading-md--line-height: 1.25rem; /* 20px */
+  --text-subheading-md--letter-spacing: 0.06em; /* wide tracking */
+  --text-subheading-md--font-weight: 600; /* semibold */
+
+  /* Subheading SM - Small section labels
+     Used in: Sidebar sections, small navigation groups */
+  --text-subheading-sm: 0.75rem; /* 12px */
+  --text-subheading-sm--line-height: 1rem; /* 16px */
+  --text-subheading-sm--letter-spacing: 0.06em; /* wide tracking */
+  --text-subheading-sm--font-weight: 600; /* semibold */
+
+  /* Subheading XS - Extra small section labels
+     Used in: Dense UI, compact lists */
+  --text-subheading-xs: 0.6875rem; /* 11px */
+  --text-subheading-xs--line-height: 0.875rem; /* 14px */
+  --text-subheading-xs--letter-spacing: 0.04em;
+  --text-subheading-xs--font-weight: 600; /* semibold */
+
+  /* Subheading 2XS - Smallest section labels
+     Used in: Very dense layouts, tags */
+  --text-subheading-2xs: 0.625rem; /* 10px */
+  --text-subheading-2xs--line-height: 0.75rem; /* 12px */
+  --text-subheading-2xs--letter-spacing: 0.02em;
+  --text-subheading-2xs--font-weight: 600; /* semibold */
+
+  /* ========================================
+     COMPONENT-SPECIFIC STYLES
+     ======================================== */
+
+  /* Button text (text-sm font-medium)
+     Used in: Button, Toggle, navigation items */
+  --text-button: 0.875rem; /* 14px */
+  --text-button--line-height: 1.25rem; /* 20px */
+  --text-button--letter-spacing: -0.006em;
+  --text-button--font-weight: 500; /* medium */
+
+  /* Badge text (text-xs font-medium)
+     Used in: Badge, status indicators */
+  --text-badge: 0.75rem; /* 12px */
+  --text-badge--line-height: 1rem; /* 16px */
+  --text-badge--letter-spacing: 0em;
+  --text-badge--font-weight: 500; /* medium */
+
+  /* Kbd text (text-xs font-medium)
+     Used in: Keyboard shortcuts display */
+  --text-kbd: 0.75rem; /* 12px */
+  --text-kbd--line-height: 1rem; /* 16px */
+  --text-kbd--letter-spacing: 0em;
+  --text-kbd--font-weight: 500; /* medium */
+
+  /* Table text (text-sm)
+     Used in: Table cells, data display */
+  --text-table: 0.875rem; /* 14px */
+  --text-table--line-height: 1.25rem; /* 20px */
+  --text-table--letter-spacing: -0.006em;
+  --text-table--font-weight: 400; /* regular */
+
+  /* Table header (text-sm font-medium)
+     Used in: Table headers */
+  --text-table-header: 0.875rem; /* 14px */
+  --text-table-header--line-height: 1.25rem; /* 20px */
+  --text-table-header--letter-spacing: -0.006em;
+  --text-table-header--font-weight: 500; /* medium */
+}

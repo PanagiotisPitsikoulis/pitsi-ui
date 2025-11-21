@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "flex-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "flex"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/flex-demo.tsx",
+      "content": "\"use client\"\n\nimport Flex from \"@/registry/new-york-v4/ui/flex\"\n\nexport default function FlexDemo() {\n  return (\n    <Flex justify=\"center\" align=\"center\" gap=\"lg\" className=\"w-full p-8\">\n      <div className=\"bg-card border-border text-foreground flex size-16 items-center justify-center rounded-full border shadow-md\">\n        <span className=\"text-xl font-semibold\">1</span>\n      </div>\n      <div className=\"bg-card border-border text-foreground flex size-16 items-center justify-center rounded-full border shadow-md\">\n        <span className=\"text-xl font-semibold\">2</span>\n      </div>\n      <div className=\"bg-card border-border text-foreground flex size-16 items-center justify-center rounded-full border shadow-md\">\n        <span className=\"text-xl font-semibold\">3</span>\n      </div>\n    </Flex>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "primitives"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

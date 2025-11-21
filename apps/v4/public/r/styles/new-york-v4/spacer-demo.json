@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "spacer-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "spacer"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/spacer-demo.tsx",
+      "content": "import { Spacer } from \"@/registry/new-york-v4/ui/spacer\"\n\nexport default function SpacerDemo() {\n  return (\n    <div className=\"flex w-full max-w-md flex-col\">\n      <div className=\"bg-card border-border text-foreground flex h-12 w-full items-center justify-center rounded-md border font-medium shadow-sm\">\n        Box 1\n      </div>\n      <Spacer size=\"md\" />\n      <div className=\"bg-card border-border text-foreground flex h-12 w-full items-center justify-center rounded-md border font-medium shadow-sm\">\n        Box 2\n      </div>\n      <Spacer size=\"lg\" />\n      <div className=\"bg-card border-border text-foreground flex h-12 w-full items-center justify-center rounded-md border font-medium shadow-sm\">\n        Box 3\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "primitives"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

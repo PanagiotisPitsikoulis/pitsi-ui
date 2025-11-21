@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "full-pages-login-page-login-form-with-gradient-background",
+  "type": "registry:block",
+  "description": "A login form with gradient background block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/full-pages/login-page/login-form-with-gradient-background.tsx",
+      "content": "export default function LoginFormWithGradientBackground() {\n  return (\n    <section className=\"relative flex justify-center\">\n      <img\n        src=\"https://pagedone.io/asset/uploads/1702362010.png\"\n        alt=\"gradient background image\"\n        className=\"fixed h-full w-full object-cover\"\n      />\n      <div className=\"absolute mx-auto max-w-lg px-6 py-20 lg:px-8\">\n        <img\n          src=\"https://pagedone.io/asset/uploads/1702362108.png\"\n          alt=\"pagedone logo\"\n          className=\"mx-auto mb-8 object-cover lg:mb-11\"\n        />\n        <div className=\"rounded-2xl bg-white shadow-xl\">\n          <form className=\"mx-auto p-7 lg:p-11\">\n            <div className=\"mb-11\">\n              <h1 className=\"font-manrope mb-2 text-center text-3xl leading-10 font-bold text-gray-900\">\n                Welcome Back\n              </h1>\n              <p className=\"text-center text-base leading-6 font-medium text-gray-500\">\n                Let’s get started with your 30 days free trail\n              </p>\n            </div>\n            <input\n              type=\"text\"\n              className=\"mb-6 h-12 w-full rounded-full border border-gray-300 px-4 text-lg leading-7 font-normal text-gray-900 shadow-sm placeholder:text-gray-400 focus:outline-none\"\n              placeholder=\"Username\"\n            />\n            <input\n              type=\"text\"\n              className=\"mb-1 h-12 w-full rounded-full border border-gray-300 px-4 text-lg leading-7 font-normal text-gray-900 shadow-sm placeholder:text-gray-400 focus:outline-none\"\n              placeholder=\"Password\"\n            />\n            <a href=\"javascript:;\" className=\"mb-6 flex justify-end\">\n              <span className=\"text-right text-base leading-6 font-normal text-indigo-600\">\n                Forgot Password?\n              </span>\n            </a>\n            <button className=\"mb-11 h-12 w-full rounded-full bg-indigo-600 text-center text-base leading-6 font-semibold text-white shadow-sm transition-all duration-700 hover:bg-indigo-800\">\n              Login\n            </button>\n            <a\n              href=\"javascript:;\"\n              className=\"flex justify-center text-base leading-6 font-medium text-gray-900\"\n            >\n              {\" \"}\n              Don’t have an account?{\" \"}\n              <span className=\"pl-3 font-semibold text-indigo-600\">\n                {\" \"}\n                Sign Up\n              </span>\n            </a>\n          </form>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "full-pages"
+  ],
+  "tier": "free",
+  "readiness": "alpha"
+}

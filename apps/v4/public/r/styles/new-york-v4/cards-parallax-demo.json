@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "cards-parallax-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "cards-parallax"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/cards-parallax-demo.tsx",
+      "content": "import { IconArrowDown } from \"@tabler/icons-react\"\n\nimport CardsParallax from \"@/registry/new-york-v4/animations/cards-parallax/cards-parallax\"\n\nexport default function CardsParallaxDemo() {\n  const cards = [\n    { title: \"First Card\", description: \"This is the first card in the stack\" },\n    {\n      title: \"Second Card\",\n      description: \"This is the second card in the stack\",\n    },\n    { title: \"Third Card\", description: \"This is the third card in the stack\" },\n    {\n      title: \"Fourth Card\",\n      description: \"This is the fourth card in the stack\",\n    },\n  ]\n\n  return (\n    <div className=\"relative\">\n      {/* Scroll indicator */}\n      <div className=\"absolute top-12 left-1/2 z-10 flex -translate-x-1/2 animate-bounce flex-col items-center justify-center gap-2\">\n        <p className=\"text-muted-foreground text-sm\">Scroll down</p>\n        <IconArrowDown className=\"text-muted-foreground size-5\" />\n      </div>\n\n      <CardsParallax className=\"min-h-[400vh]\">\n        {cards.map((card, index) => (\n          <div\n            key={index}\n            className=\"bg-card max-w-md rounded-lg border p-12 text-center shadow-lg\"\n          >\n            <h3 className=\"mb-4 text-3xl font-bold\">{card.title}</h3>\n            <p className=\"text-muted-foreground text-lg\">{card.description}</p>\n          </div>\n        ))}\n      </CardsParallax>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "core-components"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

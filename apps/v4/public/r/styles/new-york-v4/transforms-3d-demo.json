@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "transforms-3d-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "transforms-3d"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/transforms-3d-demo.tsx",
+      "content": "import { Transforms3d } from \"@/registry/new-york-v4/animations/transforms-3d/transforms-3d\"\n\nexport default function Transforms3dDemo() {\n  return (\n    <div className=\"flex min-h-[400px] w-full items-center justify-center p-8\">\n      <Transforms3d\n        src=\"https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe\"\n        alt=\"Abstract 3D shapes\"\n        rotateX={30}\n        rotateY={-5}\n        rotateZ={15}\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "primitives"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

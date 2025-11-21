@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "use-tab-observer",
+  "type": "registry:hook",
+  "description": "Hook for observing active tab changes in tab components.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/hooks/use-tab-observer.ts",
+      "content": "import * as React from \"react\"\n\ninterface TabObserverOptions {\n  onActiveTabChange?: (index: number, element: HTMLElement) => void\n}\n\nexport function useTabObserver({ onActiveTabChange }: TabObserverOptions = {}) {\n  const [mounted, setMounted] = React.useState(false)\n  const listRef = React.useRef<HTMLDivElement>(null)\n  const onActiveTabChangeRef = React.useRef(onActiveTabChange)\n\n  React.useEffect(() => {\n    onActiveTabChangeRef.current = onActiveTabChange\n  }, [onActiveTabChange])\n\n  const handleUpdate = React.useCallback(() => {\n    if (listRef.current) {\n      const tabs = listRef.current.querySelectorAll('[role=\"tab\"]')\n      tabs.forEach((el, i) => {\n        if (el.getAttribute(\"data-state\") === \"active\") {\n          onActiveTabChangeRef.current?.(i, el as HTMLElement)\n        }\n      })\n    }\n  }, [])\n\n  React.useEffect(() => {\n    setMounted(true)\n\n    const resizeObserver = new ResizeObserver(handleUpdate)\n    const mutationObserver = new MutationObserver(handleUpdate)\n\n    if (listRef.current) {\n      resizeObserver.observe(listRef.current)\n      mutationObserver.observe(listRef.current, {\n        childList: true,\n        subtree: true,\n        attributes: true,\n      })\n    }\n\n    handleUpdate()\n\n    return () => {\n      resizeObserver.disconnect()\n      mutationObserver.disconnect()\n    }\n  }, [])\n\n  return { mounted, listRef }\n}\n",
+      "type": "registry:hook"
+    }
+  ],
+  "readiness": "production"
+}

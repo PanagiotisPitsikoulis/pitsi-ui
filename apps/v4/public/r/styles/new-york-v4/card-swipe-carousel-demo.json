@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "card-swipe-carousel-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "card-swipe-carousel"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/card-swipe-carousel-demo.tsx",
+      "content": "import { Skiper48 } from \"@/registry/new-york-v4/animations/card-swipe-carousel/card-swipe-carousel\"\n\nexport default function CardSwipeCarouselDemo() {\n  return (\n    <div className=\"flex min-h-[400px] w-full items-center justify-center p-8\">\n      <Skiper48 />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "core-components"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

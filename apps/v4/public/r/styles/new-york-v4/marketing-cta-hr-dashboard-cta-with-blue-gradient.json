@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-cta-hr-dashboard-cta-with-blue-gradient",
+  "type": "registry:block",
+  "description": "A hr dashboard cta with blue gradient block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/cta/hr-dashboard-cta-with-blue-gradient.tsx",
+      "content": "export default function HrDashboardCtaWithBlueGradient() {\n  return (\n    <section className=\"font-inter relative overflow-hidden bg-gradient-to-b from-blue-500 to-blue-400 py-12\">\n      <div className=\"absolute inset-0 flex items-center justify-center\">\n        <img\n          src=\"https://pagedone.io/asset/uploads/1759492135.png\"\n          alt=\"Ctarounded\"\n          className=\"rotate-slow\"\n        />\n      </div>\n      <div className=\"relative mx-auto w-full max-w-6xl px-4\">\n        <div className=\"relative z-10 mx-auto flex flex-col gap-3.5\">\n          <div className=\"mx-auto flex max-w-max items-center justify-center gap-2 rounded-full border px-4 py-2\">\n            {/* SVG removed */}\n            <span className=\"text-center text-xs leading-5 font-medium text-white\">\n              Contact us\n            </span>\n          </div>\n          <h2 className=\"font-manrope pt-5 text-center text-4xl font-semibold text-white sm:text-5xl\">\n            Let’s Try Our Dashboard Now!\n          </h2>\n          <p className=\"mx-auto w-full max-w-2xl text-center text-base leading-6 font-normal wrap-break-word text-white\">\n            Explore our comprehensive HR solutions designed to streamline your\n            processes and empower your workforce. Join now to experience the\n            difference!\n          </p>\n          <div className=\"mx-auto pt-8\">\n            <button className=\"flex w-36 items-center justify-center rounded-full bg-white px-5 py-2.5 text-base leading-7 font-semibold text-black shadow-sm transition-all duration-500 hover:bg-gray-200\">\n              Contact Us\n            </button>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "pro",
+  "readiness": "alpha"
+}

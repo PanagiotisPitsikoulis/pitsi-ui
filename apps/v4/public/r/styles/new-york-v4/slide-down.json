@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "slide-down",
+  "type": "registry:ui",
+  "description": "Animation component: slide down",
+  "files": [
+    {
+      "path": "registry/new-york-v4/animations/slide-down/slide-down.tsx",
+      "content": "\"use client\"\n\nimport type { ReactNode } from \"react\"\nimport { memo, useRef } from \"react\"\nimport { motion, useScroll, useTransform } from \"motion/react\"\n\nimport { useAnimationState } from \"@/hooks/use-animation-state\"\n\nexport type SlideDownProps = {\n  children: ReactNode\n  delay?: number\n  duration?: number\n  distance?: number\n  className?: string\n  scrollBased?: boolean\n  noMobile?: boolean\n}\n\nexport const SlideDown = memo<SlideDownProps>(\n  ({\n    children,\n    delay = 0.2,\n    duration = 0.9,\n    distance = 20,\n    className,\n    scrollBased = true,\n    noMobile = false,\n  }) => {\n    const ref = useRef<HTMLDivElement>(null)\n    const { shouldDisableAnimation, shouldUseScroll } = useAnimationState(\n      scrollBased,\n      noMobile\n    )\n\n    const { scrollYProgress } = useScroll({\n      target: shouldUseScroll ? ref : undefined,\n      offset: [\"start end\", \"start center\"],\n    })\n\n    const opacity = useTransform(scrollYProgress, [0, 1], [0, 1])\n    const y = useTransform(scrollYProgress, [0, 1], [-distance, 0])\n\n    if (shouldDisableAnimation) {\n      return <div className={className}>{children}</div>\n    }\n\n    if (scrollBased) {\n      return (\n        <motion.div ref={ref} style={{ opacity, y }} className={className}>\n          {children}\n        </motion.div>\n      )\n    }\n\n    return (\n      <motion.div\n        initial={{ opacity: 0, y: -distance }}\n        whileInView={{ opacity: 1, y: 0 }}\n        viewport={{ once: false, margin: \"-100px\" }}\n        transition={{ duration, delay, ease: [0.25, 0.4, 0.25, 1] }}\n        className={className}\n      >\n        {children}\n      </motion.div>\n    )\n  }\n)\n\nSlideDown.displayName = \"SlideDown\"\n\nexport default SlideDown\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "beta"
+}

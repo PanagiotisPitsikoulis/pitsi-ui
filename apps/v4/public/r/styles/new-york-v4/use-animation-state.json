@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "use-animation-state",
+  "type": "registry:hook",
+  "description": "Hook for managing animation state with mobile detection and scroll-based animations.",
+  "registryDependencies": [
+    "use-mobile"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/hooks/use-animation-state.tsx",
+      "content": "\"use client\"\n\nimport { useSyncExternalStore } from \"react\"\n\nimport { useIsMobile } from \"@/hooks/use-mobile\"\n\n// Subscribe function that never updates (we only care about initial mount)\nconst subscribe = () => () => {}\n\n// Common hook for handling mounted state and animation conditions\nexport function useAnimationState(scrollBased: boolean, noMobile: boolean) {\n  const isMobile = useIsMobile()\n\n  // Use useSyncExternalStore for mount detection (recommended by React)\n  const mounted = useSyncExternalStore(\n    subscribe,\n    () => true, // Client\n    () => false // Server\n  )\n\n  const shouldDisableAnimation = !mounted || (isMobile && noMobile)\n  const shouldUseScroll = scrollBased && mounted && !(isMobile && noMobile)\n\n  return { mounted, shouldDisableAnimation, shouldUseScroll, isMobile }\n}\n",
+      "type": "registry:hook"
+    }
+  ],
+  "readiness": "production"
+}

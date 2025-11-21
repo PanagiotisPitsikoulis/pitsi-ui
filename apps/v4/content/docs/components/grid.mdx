@@ -1,0 +1,143 @@
+---
+title: Grid
+description: A CSS Grid layout component with responsive configuration and variant-based styling.
+component: true
+---
+
+<ComponentPreview
+  name="grid-demo"
+  description="A responsive grid layout component."
+/>
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx pitsi@latest add grid
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install class-variance-authority
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="grid" title="components/ui/grid.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx showLineNumbers
+import Grid from "@/components/ui/grid"
+```
+
+```tsx showLineNumbers
+<Grid cols={3} gap="md">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+</Grid>
+```
+
+## Examples
+
+### Basic Grid
+
+<ComponentPreview
+  name="grid-demo"
+  description="A 3-column grid that collapses to 1 column on mobile."
+/>
+
+### Two Column Layout
+
+```tsx showLineNumbers
+<Grid cols={2} gap="lg">
+  <div>Left Column</div>
+  <div>Right Column</div>
+</Grid>
+```
+
+### Responsive Grid
+
+```tsx showLineNumbers
+<Grid cols={4} colsMobile={2} gap="md" gapMobile="sm">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+  <div>Item 4</div>
+</Grid>
+```
+
+### Custom Gap Spacing
+
+```tsx showLineNumbers
+<Grid cols={3} gapX="lg" gapY="sm">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+</Grid>
+```
+
+### Centered Grid Items
+
+```tsx showLineNumbers
+<Grid cols={3} align="center" justify="center">
+  <div>Centered Item 1</div>
+  <div>Centered Item 2</div>
+  <div>Centered Item 3</div>
+</Grid>
+```
+
+## Props
+
+### Grid
+
+| Prop            | Type                                                                                                                    | Default   | Description              |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------- | --------- | ------------------------ |
+| `as`            | `React.ElementType`                                                                                                     | `"div"`   | The element to render as |
+| `cols`          | `1 \| 2 \| 3 \| 4 \| 5 \| 6 \| 7 \| 8 \| 9 \| 10 \| 11 \| 12`                                                           | -         | Number of columns        |
+| `rows`          | `1 \| 2 \| 3 \| 4 \| 5 \| 6`                                                                                            | -         | Number of rows           |
+| `flow`          | `"row" \| "col" \| "dense" \| "row-dense" \| "col-dense"`                                                               | `"row"`   | Grid auto flow           |
+| `gap`           | `"xxs" \| "xs" \| "sm" \| "md" \| "lg" \| "xl" \| "2xl" \| "3xl" \| "4xl" \| "5xl" \| "6xl" \| "7xl" \| "8xl" \| "9xl"` | -         | Gap between items        |
+| `gapX`          | `gap`                                                                                                                   | -         | Horizontal gap           |
+| `gapY`          | `gap`                                                                                                                   | -         | Vertical gap             |
+| `align`         | `"start" \| "center" \| "end" \| "stretch" \| "baseline"`                                                               | `"start"` | Align items              |
+| `justify`       | `"start" \| "center" \| "end" \| "between" \| "around" \| "evenly"`                                                     | `"start"` | Justify content          |
+| `colsMobile`    | `cols`                                                                                                                  | -         | Columns on mobile        |
+| `rowsMobile`    | `rows`                                                                                                                  | -         | Rows on mobile           |
+| `flowMobile`    | `flow`                                                                                                                  | -         | Flow on mobile           |
+| `gapMobile`     | `gap`                                                                                                                   | -         | Gap on mobile            |
+| `gapXMobile`    | `gapX`                                                                                                                  | -         | Horizontal gap on mobile |
+| `gapYMobile`    | `gapY`                                                                                                                  | -         | Vertical gap on mobile   |
+| `alignMobile`   | `align`                                                                                                                 | -         | Align on mobile          |
+| `justifyMobile` | `justify`                                                                                                               | -         | Justify on mobile        |
+| `className`     | `string`                                                                                                                | -         | Additional classes       |
+
+## Notes
+
+- The component uses the `use-mobile` hook to detect mobile screens and apply mobile-specific props.
+- All responsive props (ending with `Mobile`) will only apply when the viewport is considered mobile.
+- The component is polymorphic and can be rendered as any HTML element using the `as` prop.
+- You can combine `gap` with `gapX` or `gapY` for more granular control over spacing.

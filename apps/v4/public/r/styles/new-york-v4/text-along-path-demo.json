@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "text-along-path-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "text-along-path"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/text-along-path-demo.tsx",
+      "content": "import CurvedText from \"@/registry/new-york-v4/animations/text-along-path/text-along-path\"\n\nexport default function TextAlongPathDemo() {\n  return (\n    <div className=\"flex min-h-[400px] w-full items-center justify-center p-8\">\n      <div className=\"space-y-12\">\n        <CurvedText\n          text=\"Text Following an Arc Path\"\n          curve=\"arc\"\n          className=\"w-full\"\n        />\n        <CurvedText\n          text=\"Text Following a Wave Path\"\n          curve=\"wave\"\n          className=\"w-full\"\n        />\n        <CurvedText text=\"Text in a Circle\" curve=\"circle\" className=\"w-full\" />\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "primitives"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

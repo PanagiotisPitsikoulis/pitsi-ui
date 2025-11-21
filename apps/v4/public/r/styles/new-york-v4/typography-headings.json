@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "typography-headings",
+  "type": "registry:example",
+  "registryDependencies": [
+    "typography"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/typography-headings.tsx",
+      "content": "import Typography from \"@/registry/new-york-v4/ui/typography\"\n\nexport default function TypographyHeadings() {\n  return (\n    <div className=\"space-y-3\">\n      <Typography variant=\"h1\">Heading 1</Typography>\n      <Typography variant=\"h2\">Heading 2</Typography>\n      <Typography variant=\"h3\">Heading 3</Typography>\n      <Typography variant=\"h4\">Heading 4</Typography>\n      <Typography variant=\"h5\">Heading 5</Typography>\n      <Typography variant=\"h6\">Heading 6</Typography>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "primitives"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

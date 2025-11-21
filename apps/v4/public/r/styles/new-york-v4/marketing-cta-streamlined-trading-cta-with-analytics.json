@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-cta-streamlined-trading-cta-with-analytics",
+  "type": "registry:block",
+  "description": "A streamlined trading cta with analytics block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/cta/streamlined-trading-cta-with-analytics.tsx",
+      "content": "export default function StreamlinedTradingCtaWithAnalytics() {\n  return (\n    <section className=\"font-inter py-24\">\n      <div className=\"mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8\">\n        <div className=\"grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-4\">\n          <img\n            src=\"https://pagedone.io/asset/uploads/1759491451.png\"\n            alt=\"img\"\n            className=\"order-2 mx-auto lg:order-1\"\n          />\n          <div className=\"order-1 flex flex-col gap-1.5 lg:order-2 lg:my-auto\">\n            <h3 className=\"text-center text-sm leading-5 font-normal text-gray-500 lg:text-left\">\n              Get Started Today\n            </h3>\n            <h2 className=\"font-manrope text-center text-4xl font-bold text-gray-900 sm:leading-[52px] lg:text-left\">\n              Streamline Your Trading Process with Confidence.\n            </h2>\n            <p className=\"mb-6 pt-3.5 text-center text-base leading-6 font-normal text-gray-500 lg:text-left\">\n              Streamline your trading process with confidence and take advantage\n              of advanced tools designed for success. Simplify your operations\n              and achieve better results—get started now!\n            </p>\n            <button className=\"w mx-auto rounded-xl bg-emerald-600 px-5 py-2.5 text-base leading-7 font-semibold text-white shadow-sm transition-all duration-500 hover:bg-emerald-700 sm:w-fit lg:mx-0\">\n              Start Trading\n            </button>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "pro",
+  "readiness": "alpha"
+}

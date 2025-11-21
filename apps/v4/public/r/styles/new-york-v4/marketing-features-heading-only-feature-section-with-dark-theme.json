@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-features-heading-only-feature-section-with-dark-theme",
+  "type": "registry:block",
+  "description": "A heading only feature section with dark theme block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/features/heading-only-feature-section-with-dark-theme.tsx",
+      "content": "export default function HeadingOnlyFeatureSectionWithDarkTheme() {\n  return (\n    <section className=\"bg-gray-900 py-24\">\n      <div className=\"mx-auto max-w-7xl px-4 sm:px-6 lg:px-8\">\n        <div className=\"mb-16 text-center\">\n          <span className=\"mb-5 block text-center text-base font-medium text-white\">\n            OUR FEATURES\n          </span>\n          <h2 className=\"mb-7 text-center text-4xl font-bold text-white\">\n            {\" \"}\n            Many options that you can use in all configuration\n          </h2>\n          <p className=\"mx-auto text-center text-base font-normal text-gray-400 lg:max-w-2xl\">\n            We provide all the advantages that can simplify all your financial\n            transactions without any further requirements{\" \"}\n          </p>\n        </div>\n        <div className=\"grid grid-cols-1 gap-8 min-[500px]:grid-cols-2 sm:grid-cols-6 md:grid-cols-5\">\n          <div className=\"relative w-full text-center sm:col-span-2 md:col-span-1\">\n            <div className=\"mx-auto mb-8 flex h-16 w-16 items-center justify-center rounded-lg bg-indigo-600\">\n              {/* SVG removed */}\n            </div>\n            <h4 className=\"text-center text-lg font-medium text-white xl:text-xl\">\n              Lifetime Access\n            </h4>\n          </div>\n          <div className=\"relative w-full text-center sm:col-span-2 md:col-span-1\">\n            <div className=\"mx-auto mb-8 flex h-16 w-16 items-center justify-center rounded-lg bg-indigo-600\">\n              {/* SVG removed */}\n            </div>\n            <h4 className=\"text-center text-lg font-medium text-white xl:text-xl\">\n              Schedule Tracking\n            </h4>\n          </div>\n          <div className=\"relative w-full text-center sm:col-span-2 md:col-span-1\">\n            <div className=\"mx-auto mb-8 flex h-16 w-16 items-center justify-center rounded-lg bg-indigo-600\">\n              {/* SVG removed */}\n            </div>\n            <h4 className=\"text-center text-lg font-medium text-white xl:text-xl\">\n              Realtime Notification\n            </h4>\n          </div>\n          <div className=\"relative w-full text-center sm:col-span-2 sm:col-start-2 md:col-span-1 md:col-start-4\">\n            <div className=\"mx-auto mb-8 flex h-16 w-16 items-center justify-center rounded-lg bg-indigo-600\">\n              {/* SVG removed */}\n            </div>\n            <h4 className=\"text-center text-lg font-medium text-white xl:text-xl\">\n              Advisor Requests\n            </h4>\n          </div>\n          <div className=\"relative w-full text-center min-[500px]:col-span-2 sm:col-span-2 md:col-span-1\">\n            <div className=\"mx-auto mb-8 flex h-16 w-16 items-center justify-center rounded-lg bg-indigo-600\">\n              {/* SVG removed */}\n            </div>\n            <h4 className=\"text-center text-lg font-medium text-white xl:text-xl\">\n              Certification\n            </h4>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "pro",
+  "readiness": "alpha"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "scroll-expand-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "scroll-expand"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/scroll-expand-demo.tsx",
+      "content": "import { IconArrowDown } from \"@tabler/icons-react\"\n\nimport ScrollExpand from \"@/registry/new-york-v4/animations/scroll-expand/scroll-expand\"\n\nexport default function ScrollExpandDemo() {\n  return (\n    <div className=\"flex min-h-[1200px] w-full flex-col p-8\">\n      {/* Scroll indicator */}\n      <div className=\"flex animate-bounce flex-col items-center justify-center gap-2 py-12\">\n        <p className=\"text-muted-foreground text-sm\">Scroll down</p>\n        <IconArrowDown className=\"text-muted-foreground size-5\" />\n      </div>\n\n      {/* Empty space to enable scrolling */}\n      <div className=\"flex-1\" />\n\n      {/* Animation demo */}\n      <div className=\"flex min-h-[400px] w-full items-center justify-center\">\n        <ScrollExpand>\n          <div className=\"bg-card rounded-lg border p-8 text-center\">\n            <h3 className=\"text-2xl font-bold\">Scroll Expand Animation</h3>\n            <p className=\"text-muted-foreground mt-2\">\n              This element expands as you scroll\n            </p>\n          </div>\n        </ScrollExpand>\n      </div>\n\n      {/* Bottom space */}\n      <div className=\"h-96\" />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "primitives"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

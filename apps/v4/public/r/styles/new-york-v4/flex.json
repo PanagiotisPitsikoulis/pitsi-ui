@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "flex",
+  "type": "registry:ui",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "polymorphic",
+    "use-mobile"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/ui/flex.tsx",
+      "content": "\"use client\"\n\nimport React from \"react\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\n\nimport { useIsMobile } from \"@/registry/new-york-v4/hooks/use-mobile\"\nimport { cn } from \"@/registry/new-york-v4/lib/utils\"\n\nimport type {\n  PolymorphicComponent,\n  PolymorphicComponentProps,\n  PolymorphicRef,\n} from \"../lib/polymorphic\"\n\nexport const flexVariants = cva(\"flex\", {\n  variants: {\n    direction: {\n      row: \"flex-row\",\n      \"row-reverse\": \"flex-row-reverse\",\n      col: \"flex-col\",\n      \"col-reverse\": \"flex-col-reverse\",\n    },\n    align: {\n      start: \"items-start\",\n      center: \"items-center\",\n      end: \"items-end\",\n      stretch: \"items-stretch\",\n      baseline: \"items-baseline\",\n    },\n    justify: {\n      start: \"justify-start\",\n      center: \"justify-center\",\n      end: \"justify-end\",\n      between: \"justify-between\",\n      around: \"justify-around\",\n      evenly: \"justify-evenly\",\n    },\n    wrap: {\n      wrap: \"flex-wrap\",\n      nowrap: \"flex-nowrap\",\n      \"wrap-reverse\": \"flex-wrap-reverse\",\n    },\n    gap: {\n      xxs: \"gap-1\",\n      xs: \"gap-2\",\n      sm: \"gap-3\",\n      md: \"gap-4\",\n      lg: \"gap-6\",\n      xl: \"gap-8\",\n      \"2xl\": \"gap-10\",\n      \"3xl\": \"gap-12\",\n      \"4xl\": \"gap-16\",\n      \"5xl\": \"gap-20\",\n      \"6xl\": \"gap-24\",\n      \"7xl\": \"gap-32\",\n      \"8xl\": \"gap-40\",\n      \"9xl\": \"gap-48\",\n    },\n  },\n  defaultVariants: {\n    direction: \"row\",\n    align: \"start\",\n    justify: \"start\",\n    wrap: \"nowrap\",\n  },\n})\n\nexport type FlexOwnProps = VariantProps<typeof flexVariants> & {\n  directionMobile?: VariantProps<typeof flexVariants>[\"direction\"]\n  alignMobile?: VariantProps<typeof flexVariants>[\"align\"]\n  justifyMobile?: VariantProps<typeof flexVariants>[\"justify\"]\n  wrapMobile?: VariantProps<typeof flexVariants>[\"wrap\"]\n  gapMobile?: VariantProps<typeof flexVariants>[\"gap\"]\n}\n\nconst FlexInner = function Flex<T extends React.ElementType = \"div\">(\n  {\n    as,\n    className,\n    direction,\n    align,\n    justify,\n    wrap,\n    gap,\n    directionMobile,\n    alignMobile,\n    justifyMobile,\n    wrapMobile,\n    gapMobile,\n    ...props\n  }: PolymorphicComponentProps<T, FlexOwnProps>,\n  ref?: PolymorphicRef<T>\n) {\n  const isMobile = useIsMobile()\n  const Component = as || \"div\"\n\n  const activeDirection =\n    isMobile && directionMobile !== undefined ? directionMobile : direction\n  const activeAlign =\n    isMobile && alignMobile !== undefined ? alignMobile : align\n  const activeJustify =\n    isMobile && justifyMobile !== undefined ? justifyMobile : justify\n  const activeWrap = isMobile && wrapMobile !== undefined ? wrapMobile : wrap\n  const activeGap = isMobile && gapMobile !== undefined ? gapMobile : gap\n\n  return (\n    <Component\n      ref={ref}\n      className={cn(\n        flexVariants({\n          direction: activeDirection,\n          align: activeAlign,\n          justify: activeJustify,\n          wrap: activeWrap,\n          gap: activeGap,\n        }),\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nconst Flex = React.forwardRef(\n  FlexInner as any\n) as unknown as PolymorphicComponent<FlexOwnProps>\n\nexport default Flex\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "primitives"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "theme",
+  "type": "registry:ui",
+  "dependencies": [
+    "next-themes"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/ui/theme.tsx",
+      "content": "\"use client\"\n\nimport { useTheme } from \"next-themes\"\n\ndeclare module \"react\" {\n  interface CSSProperties {\n    [key: `--${string}`]: string | number\n  }\n}\n\nfunction generateJsxStylesFromCssThemeString(themeString: string): {\n  light: Record<string, string>\n  dark: Record<string, string>\n} {\n  const lightStyles: Record<string, string> = {}\n  const darkStyles: Record<string, string> = {}\n\n  // Helper function to parse CSS properties\n  const parseProperties = (cssBlock: string): Record<string, string> => {\n    const properties: Record<string, string> = {}\n    const lines = cssBlock.split(\";\")\n\n    for (const line of lines) {\n      const trimmed = line.trim()\n      if (!trimmed || trimmed.startsWith(\"/*\")) continue\n\n      const colonIndex = trimmed.indexOf(\":\")\n      if (colonIndex === -1) continue\n\n      const property = trimmed.substring(0, colonIndex).trim()\n      const value = trimmed.substring(colonIndex + 1).trim()\n\n      if (property.startsWith(\"--\")) {\n        properties[property] = value\n      }\n    }\n\n    return properties\n  }\n\n  // Find all :root blocks using global regex\n  const rootRegex = /:root\\s*\\{([^}]+)\\}/gs\n  let rootMatch\n  while ((rootMatch = rootRegex.exec(themeString)) !== null) {\n    Object.assign(lightStyles, parseProperties(rootMatch[1]))\n  }\n\n  // Find all .dark blocks using global regex\n  const darkRegex = /\\.dark\\s*\\{([^}]+)\\}/gs\n  let darkMatch\n  while ((darkMatch = darkRegex.exec(themeString)) !== null) {\n    Object.assign(darkStyles, parseProperties(darkMatch[1]))\n  }\n\n  return { light: lightStyles, dark: darkStyles }\n}\n\nexport type ThemeProps = {\n  className?: string\n  style?: React.CSSProperties\n  children?: React.ReactNode\n} & {\n  theme: string\n  forceMode?: \"light\" | \"dark\"\n}\n\nexport default function Theme({\n  children,\n  theme,\n  style,\n  forceMode,\n  ...props\n}: ThemeProps) {\n  const { resolvedTheme } = useTheme()\n\n  if (!theme) {\n    console.warn(\"Theme component requires a theme prop\")\n    return children\n  }\n\n  const deviceTheme = forceMode ? forceMode : resolvedTheme\n  const themeStyles = generateJsxStylesFromCssThemeString(theme)\n\n  return (\n    <div\n      style={{\n        ...(deviceTheme === \"light\" ? themeStyles.light : themeStyles.dark),\n        ...style,\n      }}\n      {...props}\n    >\n      {children}\n    </div>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "primitives"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

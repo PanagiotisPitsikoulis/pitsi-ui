@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "typography-labels",
+  "type": "registry:example",
+  "registryDependencies": [
+    "typography"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/typography-labels.tsx",
+      "content": "import Typography from \"@/registry/new-york-v4/ui/typography\"\n\nexport default function TypographyLabels() {\n  return (\n    <div className=\"space-y-4\">\n      <Typography variant=\"label-xl\">\n        Label XL - Lead text and feature introductions\n      </Typography>\n      <Typography variant=\"label-lg\">\n        Label LG - Important form labels and emphasis\n      </Typography>\n      <Typography variant=\"label-md\">\n        Label MD - Standard form labels and UI labels\n      </Typography>\n      <Typography variant=\"label-sm\">\n        Label SM - Small labels, badges, and metadata\n      </Typography>\n      <Typography variant=\"label-xs\">\n        Label XS - Tiny indicators and micro copy\n      </Typography>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "primitives"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

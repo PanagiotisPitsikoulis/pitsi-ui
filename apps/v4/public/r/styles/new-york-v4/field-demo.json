@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "field-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "field",
+    "select"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/field-demo.tsx",
+      "content": "import { Button } from \"@/registry/new-york-v4/ui/button\"\nimport {\n  Field,\n  FieldDescription,\n  FieldGroup,\n  FieldLabel,\n  FieldLegend,\n  FieldSet,\n} from \"@/registry/new-york-v4/ui/field\"\nimport { Input } from \"@/registry/new-york-v4/ui/input\"\n\nexport default function FieldDemo() {\n  return (\n    <div className=\"w-full max-w-md\">\n      <form>\n        <FieldGroup>\n          <FieldSet>\n            <FieldLegend>Payment Method</FieldLegend>\n            <FieldDescription>\n              All transactions are secure and encrypted\n            </FieldDescription>\n            <FieldGroup>\n              <Field>\n                <FieldLabel htmlFor=\"checkout-7j9-card-name-43j\">\n                  Name on Card\n                </FieldLabel>\n                <Input\n                  id=\"checkout-7j9-card-name-43j\"\n                  placeholder=\"Evil Rabbit\"\n                  required\n                />\n              </Field>\n              <Field>\n                <FieldLabel htmlFor=\"checkout-7j9-card-number-uw1\">\n                  Card Number\n                </FieldLabel>\n                <Input\n                  id=\"checkout-7j9-card-number-uw1\"\n                  placeholder=\"1234 5678 9012 3456\"\n                  required\n                />\n                <FieldDescription>\n                  Enter your 16-digit card number\n                </FieldDescription>\n              </Field>\n            </FieldGroup>\n          </FieldSet>\n          <Field orientation=\"horizontal\">\n            <Button type=\"submit\">Submit</Button>\n            <Button variant=\"outline\" type=\"button\">\n              Cancel\n            </Button>\n          </Field>\n        </FieldGroup>\n      </form>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "core-components"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

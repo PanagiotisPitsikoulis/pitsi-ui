@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "sticky-footer",
+  "type": "registry:ui",
+  "description": "Animation component: sticky footer",
+  "files": [
+    {
+      "path": "registry/new-york-v4/animations/sticky-footer/sticky-footer.tsx",
+      "content": "\"use client\"\n\nimport type { ReactNode } from \"react\"\nimport { memo, useCallback, useEffect, useState } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { useIsMobile } from \"@/hooks/use-mobile\"\n\nexport type StickyFooterProps = {\n  /** Footer content */\n  children: ReactNode\n  /** Additional CSS classes */\n  className?: string\n  /** Height from bottom (in px) to trigger sticky behavior. Default: 100 */\n  triggerHeight?: number\n  /** Disable sticky behavior on mobile. Default: false */\n  disableOnMobile?: boolean\n}\n\n/**\n * Footer that becomes fixed when scrolling up near the bottom of the page.\n * Creates a smooth reveal effect for call-to-action footers.\n *\n * Best used for promotional footers or CTA sections at the bottom of long pages.\n */\nexport const StickyFooter = memo<StickyFooterProps>(\n  ({ children, className, triggerHeight = 100, disableOnMobile = false }) => {\n    const isMobile = useIsMobile()\n    const [isSticky, setIsSticky] = useState(false)\n    const [lastScrollY, setLastScrollY] = useState(0)\n\n    const shouldDisable = disableOnMobile && isMobile\n\n    const handleScroll = useCallback(() => {\n      if (shouldDisable) return\n\n      const currentScrollY = window.scrollY\n      const scrollHeight = document.documentElement.scrollHeight\n      const clientHeight = document.documentElement.clientHeight\n      const distanceFromBottom = scrollHeight - (currentScrollY + clientHeight)\n\n      // Check if scrolling up and near bottom\n      if (currentScrollY < lastScrollY && distanceFromBottom < triggerHeight) {\n        setIsSticky(true)\n      } else if (currentScrollY > lastScrollY) {\n        setIsSticky(false)\n      }\n\n      setLastScrollY(currentScrollY)\n    }, [lastScrollY, triggerHeight, shouldDisable])\n\n    useEffect(() => {\n      if (shouldDisable) {\n        setIsSticky(false)\n        return\n      }\n\n      window.addEventListener(\"scroll\", handleScroll, { passive: true })\n      return () => window.removeEventListener(\"scroll\", handleScroll)\n    }, [handleScroll, shouldDisable])\n\n    return (\n      <footer\n        className={cn(\n          \"w-full transition-all duration-300\",\n          isSticky && !shouldDisable\n            ? \"fixed right-0 bottom-0 left-0 z-50\"\n            : \"relative\",\n          className\n        )}\n      >\n        {children}\n      </footer>\n    )\n  }\n)\n\nStickyFooter.displayName = \"StickyFooter\"\n\nexport default StickyFooter\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "beta"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "segmented-control-custom",
+  "type": "registry:example",
+  "registryDependencies": [
+    "segmented-control"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/segmented-control-custom.tsx",
+      "content": "\"use client\"\n\nimport {\n  SegmentedControl,\n  SegmentedControlList,\n  SegmentedControlTrigger,\n} from \"@/registry/new-york-v4/ui/segmented-control\"\n\nexport default function SegmentedControlCustom() {\n  return (\n    <SegmentedControl defaultValue=\"week\">\n      <SegmentedControlList\n        className=\"w-fit rounded-full\"\n        floatingBgClassName=\"rounded-full\"\n      >\n        <SegmentedControlTrigger value=\"day\">Day</SegmentedControlTrigger>\n        <SegmentedControlTrigger value=\"week\">Week</SegmentedControlTrigger>\n        <SegmentedControlTrigger value=\"month\">Month</SegmentedControlTrigger>\n        <SegmentedControlTrigger value=\"year\">Year</SegmentedControlTrigger>\n      </SegmentedControlList>\n    </SegmentedControl>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "primitives"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

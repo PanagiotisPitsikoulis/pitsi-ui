@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "e-commerce-incentives-incentive-page-with-four-column-grid",
+  "type": "registry:block",
+  "description": "A incentive page with four column grid block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/e-commerce/incentives/incentive-page-with-four-column-grid.tsx",
+      "content": "export default function IncentivePageWithFourColumnGrid() {\n  return (\n    <section className=\"relative py-24\">\n      <div className=\"mx-auto w-full max-w-7xl px-4 md:px-8\">\n        <div className=\"grid grid-cols-1 gap-8 min-[500px]:grid-cols-2 lg:grid-cols-4\">\n          <div className=\"group flex cursor-grab items-center gap-5 max-sm:flex-col\">\n            <span className=\"h-11 w-11 rounded-full bg-indigo-50 p-3 transition-all duration-500 group-hover:bg-indigo-100\"></span>\n            <div className=\"data\">\n              <p className=\"mb-1 py-[1px] text-xs font-normal text-gray-500 max-sm:text-center\">\n                The shipping is on your place\n              </p>\n              <p className=\"text-sm leading-6 font-medium text-black max-sm:text-center\">\n                Free Delivery Is Available\n              </p>\n            </div>\n          </div>\n          <div className=\"group flex cursor-grab items-center gap-5 max-sm:flex-col\">\n            <span className=\"h-11 w-11 rounded-full bg-indigo-50 p-3 transition-all duration-500 group-hover:bg-indigo-100\"></span>\n            <div className=\"data\">\n              <p className=\"mb-1 py-[1px] text-xs font-normal text-gray-500 max-sm:text-center\">\n                Buy and get free gift\n              </p>\n              <p className=\"text-sm leading-6 font-medium text-black max-sm:text-center\">\n                Free Gift On $1100 Up Shopping\n              </p>\n            </div>\n          </div>\n          <div className=\"group flex cursor-grab items-center gap-5 max-sm:flex-col\">\n            <span className=\"h-11 w-11 rounded-full bg-indigo-50 p-3 transition-all duration-500 group-hover:bg-indigo-100\"></span>\n            <div className=\"data\">\n              <p className=\"mb-1 py-[1px] text-xs font-normal text-gray-500 max-sm:text-center\">\n                Shop is available in city\n              </p>\n              <p className=\"text-sm leading-6 font-medium text-black max-sm:text-center\">\n                All Item Is Available In Shop\n              </p>\n            </div>\n          </div>\n          <div className=\"group flex cursor-grab items-center gap-5 max-sm:flex-col\">\n            <span className=\"h-11 w-11 rounded-full bg-indigo-50 p-3 transition-all duration-500 group-hover:bg-indigo-100\"></span>\n            <div className=\"data\">\n              <p className=\"mb-1 py-[1px] text-xs font-normal text-gray-500 max-sm:text-center\">\n                Plz get your discount\n              </p>\n              <p className=\"text-sm leading-6 font-medium text-black max-sm:text-center\">\n                Get 100% Discount\n              </p>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "e-commerce"
+  ],
+  "tier": "pro",
+  "readiness": "alpha"
+}

@@ -1,0 +1,50 @@
+import * as React from "react"
+
+import { ComponentsListPaginated } from "@/components/documentation/components/components-list-paginated"
+
+interface ComponentItem {
+  $id: string
+  url: string
+  name: string | React.ReactNode
+  registryName?: string
+  categories?: string[]
+  description?: string
+}
+
+interface ComponentsListProps {
+  items?: ComponentItem[]
+  styleName?: string
+  label?: string
+  category?: string
+}
+
+export function ComponentsList({
+  items = [],
+  styleName = "new-york-v4",
+  label,
+  category,
+}: ComponentsListProps) {
+  if (!items.length) {
+    return null
+  }
+
+  // If category is specified, filter items where this is their primary (first) category
+  const filteredItems = category
+    ? items.filter((item) => {
+        const primaryCategory = item.categories?.[0]
+        return primaryCategory === category
+      })
+    : items
+
+  if (!filteredItems.length) {
+    return null
+  }
+
+  return (
+    <ComponentsListPaginated
+      label={label}
+      items={filteredItems}
+      styleName={styleName}
+    />
+  )
+}

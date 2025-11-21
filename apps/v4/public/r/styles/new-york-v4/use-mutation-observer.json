@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "use-mutation-observer",
+  "type": "registry:hook",
+  "description": "Hook for observing DOM mutations using MutationObserver API.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/hooks/use-mutation-observer.ts",
+      "content": "import * as React from \"react\"\n\nexport const useMutationObserver = (\n  ref: React.RefObject<HTMLElement | null>,\n  callback: MutationCallback,\n  options: MutationObserverInit = {\n    attributes: true,\n    characterData: true,\n    childList: true,\n    subtree: true,\n  }\n) => {\n  React.useEffect(() => {\n    if (ref.current) {\n      const observer = new MutationObserver(callback)\n      observer.observe(ref.current, options)\n      return () => observer.disconnect()\n    }\n  }, [ref, callback, options])\n}\n",
+      "type": "registry:hook"
+    }
+  ],
+  "readiness": "production"
+}

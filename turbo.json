@@ -1,0 +1,105 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalEnv": [
+    "NODE_ENV",
+    "NEXT_PUBLIC_APP_URL",
+    "DATABASE_URL"
+  ],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "env": [
+        "NEXT_PUBLIC_APP_URL",
+        "DATABASE_URL",
+        "BETTER_AUTH_SECRET",
+        "BETTER_AUTH_URL",
+        "GITHUB_CLIENT_ID",
+        "GITHUB_CLIENT_SECRET",
+        "GOOGLE_CLIENT_ID",
+        "GOOGLE_CLIENT_SECRET",
+        "STRIPE_PUBLISHABLE_KEY",
+        "STRIPE_PRIVATE_KEY",
+        "STRIPE_WEBHOOK_SECRET",
+        "NEXT_PUBLIC_LOGO_DEV_TOKEN",
+        "NEXT_SECRET_LOGO_DEV_TOKEN",
+        "PLAYWRIGHT_MCP_EXTENSION_TOKEN",
+        "UPSTASH_REDIS_REST_URL",
+        "UPSTASH_REDIS_REST_TOKEN",
+        "COMPONENTS_REGISTRY_URL",
+        "REGISTRY_URL",
+        "npm_config_user_agent",
+        "https_proxy",
+        "V0_URL",
+        "V0_EDIT_SECRET",
+        "DEPLOYMENT_PROTECTION_BYPASS"
+      ],
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
+    },
+    "preview": {
+      "env": [
+        "NEXT_PUBLIC_APP_URL",
+        "DATABASE_URL",
+        "BETTER_AUTH_SECRET",
+        "BETTER_AUTH_URL"
+      ],
+      "outputs": ["dist/**", ".next/**"]
+    },
+    "start": {
+      "dependsOn": ["^build"]
+    },
+    "lint": {
+      "dependsOn": ["^build"],
+      "cache": true,
+      "outputs": []
+    },
+    "lint:fix": {
+      "dependsOn": ["^build"],
+      "cache": true,
+      "outputs": []
+    },
+    "format:check": {
+      "cache": true,
+      "outputs": []
+    },
+    "format:write": {
+      "cache": true,
+      "outputs": []
+    },
+    "typecheck": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true,
+      "env": [
+        "NEXT_PUBLIC_APP_URL",
+        "DATABASE_URL",
+        "BETTER_AUTH_SECRET",
+        "BETTER_AUTH_URL",
+        "GITHUB_CLIENT_ID",
+        "GITHUB_CLIENT_SECRET",
+        "GOOGLE_CLIENT_ID",
+        "GOOGLE_CLIENT_SECRET",
+        "STRIPE_PUBLISHABLE_KEY",
+        "STRIPE_PRIVATE_KEY",
+        "STRIPE_WEBHOOK_SECRET",
+        "NEXT_PUBLIC_LOGO_DEV_TOKEN",
+        "NEXT_SECRET_LOGO_DEV_TOKEN",
+        "PLAYWRIGHT_MCP_EXTENSION_TOKEN",
+        "REGISTRY_URL"
+      ]
+    },
+    "check": {
+      "cache": true
+    },
+    "test": {
+      "cache": true,
+      "outputs": []
+    },
+    "registry:build": {
+      "cache": true,
+      "outputs": ["registry/**/*.json", "registry/**/__index__.tsx"]
+    }
+  }
+}

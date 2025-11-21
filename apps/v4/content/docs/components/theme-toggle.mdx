@@ -1,0 +1,118 @@
+---
+title: Theme Toggle
+description: A compact toggle component for switching between light, dark, and system themes.
+component: true
+links:
+  doc: https://github.com/pacocoursey/next-themes
+---
+
+<ComponentPreview
+  name="theme-toggle-demo"
+  description="A theme toggle component with smooth transitions."
+/>
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx pitsi@latest add theme-toggle
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install next-themes @remixicon/react
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  name="theme-toggle"
+  title="components/ui/theme-toggle.tsx"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+<Step>Set up next-themes in your app:</Step>
+
+```tsx showLineNumbers title="app/layout.tsx"
+import { ThemeProvider } from "next-themes"
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
+    </html>
+  )
+}
+```
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx showLineNumbers
+import { ThemeToggle } from "@/components/ui/theme-toggle"
+```
+
+```tsx showLineNumbers
+<ThemeToggle />
+```
+
+## Examples
+
+### Default (Light, Dark, System)
+
+<ComponentPreview
+  name="theme-toggle-demo"
+  description="The default theme toggle with light, dark, and system options."
+/>
+
+### Light-Dark Only
+
+Use the `mode` prop to show only light and dark options without system.
+
+```tsx showLineNumbers
+<ThemeToggle mode="light-dark" />
+```
+
+## Props
+
+### ThemeToggle
+
+Extends all props from `HTMLDivElement`.
+
+| Prop    | Type                            | Default                | Description                                      |
+| ------- | ------------------------------- | ---------------------- | ------------------------------------------------ |
+| `mode`  | `"light-dark"` \| `"light-dark-system"` | `"light-dark-system"` | Whether to show system option or just light/dark |
+
+## Features
+
+- Smooth animated transitions between theme changes
+- Compact design with icon-only buttons
+- Built on next-themes for theme management
+- Supports light, dark, and system preferences
+- Accessible keyboard navigation
+- Hydration-safe with proper mounting checks
+- Customizable with className prop

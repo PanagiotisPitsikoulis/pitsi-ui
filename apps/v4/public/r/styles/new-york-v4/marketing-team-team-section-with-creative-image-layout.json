@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-team-team-section-with-creative-image-layout",
+  "type": "registry:block",
+  "description": "A team section with creative image layout block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/team/team-section-with-creative-image-layout.tsx",
+      "content": "export default function TeamSectionWithCreativeImageLayout() {\n  return (\n    <section className=\"bg-gray-50 py-24\">\n      <div className=\"mx-auto max-w-7xl px-4 sm:px-6 lg:px-8\">\n        <div className=\"flex flex-col items-center justify-between md:mt-20 lg:flex-row\">\n          <div className=\"w-full lg:w-1/2\">\n            <h2 className=\"font-manrope mb-7 text-center text-5xl leading-[4rem] font-bold text-gray-900 lg:text-left\">\n              Our leading, strong &amp; creative team\n            </h2>\n            <p className=\"mb-16 text-center text-lg text-gray-500 lg:text-left\">\n              These people work on making our product best.\n            </p>\n            <button className=\"mx-auto block w-60 cursor-pointer rounded-full bg-indigo-600 px-8 py-3 text-center text-base font-semibold text-white transition-all duration-500 hover:bg-indigo-700 lg:mx-0\">\n              Join our team\n            </button>\n          </div>\n          <div className=\"mt-16 w-full max-lg:max-w-2xl md:mt-40 lg:mt-0 lg:w-1/2\">\n            <div className=\"grid grid-cols-1 gap-8 min-[450px]:grid-cols-2 md:grid-cols-3\">\n              <img\n                src=\"https://pagedone.io/asset/uploads/1696238644.png\"\n                alt=\"Team tailwind section\"\n                className=\"mx-auto h-56 w-44 rounded-2xl object-cover min-[450px]:mr-0 md:mt-20\"\n              />\n              <img\n                src=\"https://pagedone.io/asset/uploads/1696238665.png\"\n                alt=\"Team tailwind section\"\n                className=\"mx-auto h-56 w-44 rounded-2xl object-cover min-[450px]:ml-0 md:mx-auto\"\n              />\n              <img\n                src=\"https://pagedone.io/asset/uploads/1696238684.png\"\n                alt=\"Team tailwind section\"\n                className=\"mx-auto h-56 w-44 rounded-2xl object-cover min-[450px]:mr-0 md:mt-20 md:ml-0\"\n              />\n              <img\n                src=\"https://pagedone.io/asset/uploads/1696238702.png\"\n                alt=\"Team tailwind section\"\n                className=\"mx-auto h-56 w-44 rounded-2xl object-cover min-[450px]:ml-0 md:mr-0 md:ml-auto\"\n              />\n              <img\n                src=\"https://pagedone.io/asset/uploads/1696238720.png\"\n                alt=\"Team tailwind section\"\n                className=\"mx-auto h-56 w-44 rounded-2xl object-cover min-[450px]:mr-0 md:mx-auto md:-mt-20\"\n              />\n              <img\n                src=\"https://pagedone.io/asset/uploads/1696238737.png\"\n                alt=\"Team tailwind section\"\n                className=\"mx-auto h-56 w-44 rounded-2xl object-cover min-[450px]:ml-0 md:mr-0\"\n              />\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "pro",
+  "readiness": "alpha"
+}

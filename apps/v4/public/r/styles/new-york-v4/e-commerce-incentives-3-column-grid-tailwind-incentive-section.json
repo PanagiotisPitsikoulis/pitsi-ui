@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "e-commerce-incentives-3-column-grid-tailwind-incentive-section",
+  "type": "registry:block",
+  "description": "A 3 column grid tailwind incentive section block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/e-commerce/incentives/3-column-grid-tailwind-incentive-section.tsx",
+      "content": "export default function ThreeColumnGridTailwindIncentiveSection() {\n  return (\n    <section className=\"relative py-24\">\n      <div className=\"mx-auto w-full max-w-7xl px-4 md:px-8\">\n        <div className=\"grid grid-cols-1 gap-5 lg:grid-cols-3 lg:gap-8\">\n          <div className=\"group flex gap-6 max-lg:mx-auto max-lg:max-w-xl\">\n            <span className=\"flex h-16 w-16 cursor-pointer items-center justify-center rounded-[50px] bg-indigo-50 p-4 transition-all duration-500 group-hover:bg-indigo-100\"></span>\n            <div className=\"data flex flex-col justify-between\">\n              <h6 className=\"mb-1 text-lg leading-8 font-semibold text-black\">\n                Available in the word\n              </h6>\n              <p className=\"mb-4 text-sm font-normal text-gray-500\">\n                Introducing our latest product, crafted to perfection and now\n                available worldwide!\n              </p>\n              <a\n                href=\"javascript:;\"\n                className=\"text-xs leading-5 font-semibold text-indigo-600\"\n              >\n                Learn More\n              </a>\n            </div>\n          </div>\n          <div className=\"group flex gap-6 max-lg:mx-auto max-lg:max-w-xl\">\n            <span className=\"flex h-16 w-16 cursor-pointer items-center justify-center rounded-[50px] bg-indigo-50 p-4 transition-all duration-500 group-hover:bg-indigo-100\"></span>\n            <div className=\"data flex flex-col justify-between\">\n              <h6 className=\"mb-1 text-lg leading-8 font-semibold text-black\">\n                Available in shop\n              </h6>\n              <p className=\"mb-4 text-sm font-normal text-gray-500\">\n                Discover the convenience of shopping close to home with our\n                exclusive Product.\n              </p>\n              <a\n                href=\"javascript:;\"\n                className=\"text-xs leading-5 font-semibold text-indigo-600\"\n              >\n                Learn More\n              </a>\n            </div>\n          </div>\n          <div className=\"group flex gap-6 max-lg:mx-auto max-lg:max-w-xl\">\n            <span className=\"flex h-16 w-16 cursor-pointer items-center justify-center rounded-[50px] bg-indigo-50 p-4 transition-all duration-500 group-hover:bg-indigo-100\"></span>\n            <div className=\"data flex flex-col justify-between\">\n              <h6 className=\"mb-1 text-lg leading-8 font-semibold text-black\">\n                All category is available\n              </h6>\n              <p className=\"mb-4 text-sm font-normal text-gray-500\">\n                Introducing our latest collection, where every category is a\n                world of possibilities!\n              </p>\n              <a\n                href=\"javascript:;\"\n                className=\"text-xs leading-5 font-semibold text-indigo-600\"\n              >\n                Learn More\n              </a>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "e-commerce"
+  ],
+  "tier": "free",
+  "readiness": "alpha"
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-stats-measuring-our-success",
+  "type": "registry:block",
+  "description": "A measuring our success block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/stats/measuring-our-success.tsx",
+      "content": "export default function MeasuringOurSuccess() {\n  return (\n    <section className=\"font-inter py-20\">\n      <div className=\"mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8\">\n        <div className=\"flex flex-col gap-3\">\n          <h2 className=\"font-manrope text-center text-4xl font-bold text-gray-900\">\n            Measuring Our Success\n          </h2>\n          <p className=\"text-center text-xl leading-8 font-normal text-gray-500\">\n            Discover the metrics that highlight our success.\n          </p>\n        </div>\n        <div className=\"mx-auto grid w-3/4 grid-cols-1 gap-8 pt-14 sm:grid-cols-2 lg:w-full lg:grid-cols-4\">\n          <div className=\"flex flex-col gap-2.5 p-6\">\n            <h3 className=\"font-manrope text-3xl font-bold text-indigo-700\">\n              99+\n            </h3>\n            <div className=\"border-t border-gray-600 pt-2.5\">\n              <p className=\"text-base leading-7 font-normal text-gray-500\">\n                Skilled consultants providing effective, results-driven\n                solutions.\n              </p>\n            </div>\n          </div>\n          <div className=\"flex flex-col gap-2.5 p-6\">\n            <h3 className=\"font-manrope text-3xl font-bold text-indigo-700\">\n              84+\n            </h3>\n            <div className=\"border-t border-gray-600 pt-2.5\">\n              <p className=\"text-base leading-7 font-normal text-gray-500\">\n                Successfully delivered projects that drive lasting impact.\n              </p>\n            </div>\n          </div>\n          <div className=\"flex flex-col gap-2.5 p-6\">\n            <h3 className=\"font-manrope text-3xl font-bold text-indigo-700\">\n              126+\n            </h3>\n            <div className=\"border-t border-gray-600 pt-2.5\">\n              <p className=\"text-base leading-7 font-normal text-gray-500\">\n                Providing ongoing support to an expanding global network of\n                active clients.\n              </p>\n            </div>\n          </div>\n          <div className=\"flex flex-col gap-2.5 p-6\">\n            <h3 className=\"font-manrope text-3xl font-bold text-indigo-700\">\n              57+\n            </h3>\n            <div className=\"border-t border-gray-600 pt-2.5\">\n              <p className=\"text-base leading-7 font-normal text-gray-500\">\n                Active orders in the queue, prepared for immediate delivery.\n              </p>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "free",
+  "readiness": "alpha"
+}

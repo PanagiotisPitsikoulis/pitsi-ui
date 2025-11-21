@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "e-commerce-incentives-split-image-incentive-section",
+  "type": "registry:block",
+  "description": "A split image incentive section block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/e-commerce/incentives/split-image-incentive-section.tsx",
+      "content": "export default function SplitImageIncentiveSection() {\n  return (\n    <section className=\"relative py-24\">\n      <div className=\"mx-auto w-full max-w-7xl px-4 md:px-8\">\n        <div className=\"grid grid-cols-12 gap-y-11\">\n          <div className=\"col-span-12 flex flex-col justify-between bg-gray-50 px-4 py-12 max-lg:mx-auto max-lg:max-w-lg max-lg:rounded-2xl lg:col-span-7 lg:rounded-l-2xl lg:px-11\">\n            <h2 className=\"font-manrope mb-9 text-2xl leading-10 font-bold text-black sm:text-4xl\">\n              Lowest Prices Best Quality Shoppings\n            </h2>\n            <div className=\"mb-14 flex w-full flex-col bg-white py-4 pr-3 pl-3 max-[550px]:gap-4 min-[550px]:flex-row min-[550px]:items-center lg:pr-10 lg:pl-6 xl:w-[calc(100%-45px)]\">\n              <div className=\"flex items-center gap-4 border-gray-200 pr-6 max-[550px]:pl-6 min-[550px]:border-r\">\n                <button className=\"rounded-full bg-indigo-50 p-3 transition-all duration-500 hover:bg-indigo-100\"></button>\n                <p className=\"text-sm font-medium text-black\">Free delivery</p>\n              </div>\n              <div className=\"flex items-center gap-4 border-gray-200 px-6 min-[550px]:border-r\">\n                <button className=\"rounded-full bg-indigo-50 p-3 transition-all duration-500 hover:bg-indigo-100\"></button>\n                <p className=\"text-sm font-medium text-black\">\n                  Cash on delivery\n                </p>\n              </div>\n              <div className=\"flex items-center gap-4 pl-6\">\n                <button className=\"rounded-full bg-indigo-50 p-3 transition-all duration-500 hover:bg-indigo-100\"></button>\n                <p className=\"text-sm font-medium text-black\">Best discount</p>\n              </div>\n            </div>\n            <a\n              href=\"javascript:;\"\n              className=\"flex w-full items-center justify-center rounded-full bg-indigo-600 px-5 py-3 shadow-sm shadow-transparent transition-all duration-500 hover:bg-indigo-700 hover:shadow-indigo-400 min-[550px]:w-max\"\n            >\n              <span className=\"px-2 text-base font-semibold text-white\">\n                Download the app\n              </span>\n            </a>\n          </div>\n          <div className=\"col-span-12 max-lg:mx-auto lg:col-span-5 lg:max-w-md\">\n            <img\n              src=\"https://pagedone.io/asset/uploads/1701234779.png\"\n              alt=\"Warehouse image\"\n              className=\"h-full w-full object-cover max-lg:rounded-3xl lg:rounded-r-2xl\"\n            />\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "e-commerce"
+  ],
+  "tier": "pro",
+  "readiness": "alpha"
+}

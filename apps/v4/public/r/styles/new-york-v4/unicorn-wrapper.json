@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "unicorn-wrapper",
+  "type": "registry:ui",
+  "dependencies": [
+    "unicornstudio-react"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/ui/unicorn-wrapper.tsx",
+      "content": "\"use client\"\n\nimport { forwardRef, useEffect, useRef, useState } from \"react\"\nimport UnicornScene, { type UnicornSceneProps } from \"unicornstudio-react\"\n\nimport { cn } from \"@/registry/new-york-v4/lib/utils\"\n\nexport type UnicornWrapperProps = UnicornSceneProps & {\n  className?: string\n}\n\nexport const UnicornWrapper = forwardRef<HTMLDivElement, UnicornWrapperProps>(\n  ({ className, ...props }, ref) => {\n    const [shouldRender, setShouldRender] = useState(true)\n    const [isInView, setIsInView] = useState(false)\n    const containerRef = useRef<HTMLDivElement>(null)\n\n    useEffect(() => {\n      const element = containerRef.current\n      if (!element) return\n\n      const observer = new IntersectionObserver(\n        (entries) => {\n          entries.forEach((entry) => {\n            setIsInView(entry.isIntersecting)\n          })\n        },\n        {\n          threshold: 0.1,\n          rootMargin: \"50px\",\n        }\n      )\n\n      observer.observe(element)\n\n      return () => {\n        observer.disconnect()\n      }\n    }, [])\n\n    const handleError = () => {\n      console.error(\"UnicornScene error - unmounting component\")\n      setShouldRender(false)\n    }\n\n    return (\n      <div\n        ref={(node) => {\n          containerRef.current = node\n          if (typeof ref === \"function\") {\n            ref(node)\n          } else if (ref) {\n            ref.current = node\n          }\n        }}\n        className={cn(\"relative h-full w-full\", className)}\n      >\n        {shouldRender && isInView && (\n          <UnicornScene\n            className=\"h-full w-full\"\n            {...props}\n            onError={handleError}\n            production={props.production ?? true}\n          />\n        )}\n      </div>\n    )\n  }\n)\n\nUnicornWrapper.displayName = \"UnicornWrapper\"\n\nexport default UnicornWrapper\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "sectorial"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

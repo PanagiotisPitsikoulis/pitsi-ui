@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "typography-component-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "typography"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/typography-component-demo.tsx",
+      "content": "import Typography from \"@/registry/new-york-v4/ui/typography\"\n\nexport default function TypographyComponentDemo() {\n  return (\n    <div className=\"space-y-6\">\n      <Typography variant=\"h1\">Heading 1</Typography>\n      <Typography variant=\"h2\">Heading 2</Typography>\n      <Typography variant=\"h3\">Heading 3</Typography>\n      <Typography variant=\"paragraph-lg\">\n        This is a paragraph with the paragraph-lg variant. It uses CSS custom\n        properties for consistent typography across your application.\n      </Typography>\n      <Typography variant=\"label-md\">\n        This is a label with label-md variant\n      </Typography>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "primitives"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

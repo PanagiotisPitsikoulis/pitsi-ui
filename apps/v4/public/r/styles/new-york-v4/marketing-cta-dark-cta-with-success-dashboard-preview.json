@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-cta-dark-cta-with-success-dashboard-preview",
+  "type": "registry:block",
+  "description": "A dark cta with success dashboard preview block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/cta/dark-cta-with-success-dashboard-preview.tsx",
+      "content": "export default function DarkCtaWithSuccessDashboardPreview() {\n  return (\n    <section className=\"font-inter bg-gray-900 px-4 py-24\">\n      <div className=\"mx-auto w-full max-w-7xl rounded-2xl border border-gray-700 pl-4 sm:pl-6 lg:pl-8\">\n        <div className=\"grid grid-cols-1 gap-10 pt-4 lg:grid-cols-2 lg:pt-10 lg:pl-10\">\n          <div className=\"pb-4\">\n            <a href=\"#\"> </a>\n            <h3 className=\"mb-2 pt-1 text-sm leading-5 font-normal text-gray-400\">\n              Claim Your Spot\n            </h3>\n            <h2 className=\"font-manrope mb-4 text-4xl font-bold text-white\">\n              Start Achieving Your Goals Today.\n            </h2>\n            <p className=\"text-base leading-7 font-normal text-gray-300\">\n              Ready to reach new heights? Start achieving your goals today—click\n              below to get started!\n            </p>\n            <div className=\"mt-8 flex items-center justify-start gap-5\">\n              <img\n                src=\"https://pagedone.io/asset/uploads/1759489946.png\"\n                alt=\"img\"\n              />\n              <a className=\"text-base leading-6 font-normal text-gray-300\">\n                1K+ Reviews\n              </a>\n            </div>\n            <button className=\"mt-8 flex items-center gap-2 rounded-xl border border-gray-300 px-5 py-2.5 text-base leading-7 font-semibold text-white shadow-sm transition-all duration-500 hover:bg-black\">\n              Contact Us {/* SVG removed */}\n            </button>\n          </div>\n          <img\n            src=\"https://pagedone.io/asset/uploads/1759490685.png\"\n            alt=\"img\"\n            className=\"h-full w-full\"\n          />\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "pro",
+  "readiness": "alpha"
+}

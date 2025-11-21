@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "segmented-control-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "segmented-control"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/segmented-control-demo.tsx",
+      "content": "import {\n  SegmentedControl,\n  SegmentedControlContent,\n  SegmentedControlList,\n  SegmentedControlTrigger,\n} from \"@/registry/new-york-v4/ui/segmented-control\"\n\nexport default function SegmentedControlDemo() {\n  return (\n    <SegmentedControl defaultValue=\"account\" className=\"w-[400px]\">\n      <SegmentedControlList>\n        <SegmentedControlTrigger value=\"account\">\n          Account\n        </SegmentedControlTrigger>\n        <SegmentedControlTrigger value=\"password\">\n          Password\n        </SegmentedControlTrigger>\n        <SegmentedControlTrigger value=\"settings\">\n          Settings\n        </SegmentedControlTrigger>\n      </SegmentedControlList>\n      <SegmentedControlContent value=\"account\" className=\"mt-4\">\n        Make changes to your account here.\n      </SegmentedControlContent>\n      <SegmentedControlContent value=\"password\" className=\"mt-4\">\n        Change your password here.\n      </SegmentedControlContent>\n      <SegmentedControlContent value=\"settings\" className=\"mt-4\">\n        Update your settings here.\n      </SegmentedControlContent>\n    </SegmentedControl>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "primitives"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

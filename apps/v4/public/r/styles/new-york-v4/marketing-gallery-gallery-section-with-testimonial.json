@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-gallery-gallery-section-with-testimonial",
+  "type": "registry:block",
+  "description": "A gallery section with testimonial block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/gallery/gallery-section-with-testimonial.tsx",
+      "content": "export default function GallerySectionWithTestimonial() {\n  return (\n    <section className=\"py-24\">\n      <div className=\"mx-auto max-w-7xl px-4 sm:px-6 lg:px-8\">\n        <div className=\"grid gap-2.5\">\n          <h2 className=\"font-manrope w-full text-center text-4xl leading-normal font-bold text-gray-900\">\n            Portraits of Play\n          </h2>\n          <p className=\"w-full text-center text-lg leading-8 font-normal text-gray-600\">\n            Discover the essence of gaming characters in our unique gallery,{\" \"}\n            <br />\n            where every pixel holds a story.\n          </p>\n        </div>\n      </div>\n      <div className=\"swiper-container my-16 h-fit\">\n        <div className=\"swiper-wrapper\">\n          <div className=\"swiper-slide\">\n            <img\n              src=\"https://pagedone.io/asset/uploads/1714128368.png\"\n              className=\"w-full rounded-2xl object-cover\"\n            />\n          </div>\n          <div className=\"swiper-slide\">\n            <img\n              src=\"https://pagedone.io/asset/uploads/1714128378.png\"\n              className=\"w-full rounded-2xl object-cover\"\n            />\n          </div>\n          <div className=\"swiper-slide\">\n            <img\n              src=\"https://pagedone.io/asset/uploads/1714128387.png\"\n              className=\"w-full rounded-2xl object-cover\"\n            />\n          </div>\n          <div className=\"swiper-slide\">\n            <img\n              src=\"https://pagedone.io/asset/uploads/1714128368.png\"\n              className=\"w-full rounded-2xl object-cover\"\n            />\n          </div>\n          <div className=\"swiper-slide\">\n            <img\n              src=\"https://pagedone.io/asset/uploads/1714128378.png\"\n              className=\"w-full rounded-2xl object-cover\"\n            />\n          </div>\n        </div>\n      </div>\n      <button\n        id=\"slider-button-right\"\n        className=\"swiper-button-next group relative mx-auto inline-flex w-full items-center justify-center gap-2\"\n      >\n        <h5 className=\"text-lg leading-8 font-normal whitespace-nowrap text-gray-400 transition-all duration-700 ease-in-out group-hover:text-gray-900\">\n          Scroll to Explore\n        </h5>\n        {/* SVG removed */}\n      </button>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "pro",
+  "readiness": "alpha"
+}

@@ -1,0 +1,215 @@
+---
+title: Typography
+description: A flexible typography component with variant-based styling powered by CSS custom properties.
+component: true
+---
+
+<ComponentPreview
+  name="typography-component-demo"
+  description="A typography component with multiple variants."
+/>
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx pitsi@latest add typography
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>This component has no external dependencies.</Step>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="typography" title="components/ui/typography.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx showLineNumbers
+import Typography from "@/components/ui/typography"
+```
+
+```tsx showLineNumbers
+<Typography variant="h1">Welcome to our platform</Typography>
+```
+
+## Examples
+
+### Headings
+
+<ComponentPreview name="typography-headings" />
+
+### Paragraphs
+
+<ComponentPreview name="typography-paragraphs" />
+
+### Labels
+
+<ComponentPreview name="typography-labels" />
+
+### Polymorphic
+
+<ComponentPreview name="typography-polymorphic" />
+
+## Variants
+
+The Typography component supports the following variants:
+
+### Headings
+
+- `h1` - Main page heading
+- `h2` - Section heading
+- `h3` - Subsection heading
+- `h4` - Minor heading
+- `h5` - Smaller heading
+- `h6` - Smallest heading
+
+### Labels
+
+- `label-xl` - Extra large label
+- `label-lg` - Large label
+- `label-md` - Medium label (default)
+- `label-sm` - Small label
+- `label-xs` - Extra small label
+
+### Paragraphs
+
+- `paragraph-xl` - Extra large paragraph
+- `paragraph-lg` - Large paragraph
+- `paragraph-md` - Medium paragraph (default)
+- `paragraph-sm` - Small paragraph
+- `paragraph-xs` - Extra small paragraph
+
+### Subheadings
+
+- `subheading-md` - Medium subheading (uppercase)
+- `subheading-sm` - Small subheading (uppercase)
+- `subheading-xs` - Extra small subheading (uppercase)
+- `subheading-2xs` - Tiny subheading (uppercase)
+
+### Documentation
+
+- `doc-label` - Documentation label text
+- `doc-paragraph` - Documentation paragraph text
+
+## Props
+
+| Prop        | Type                  | Default           | Description                   |
+| ----------- | --------------------- | ----------------- | ----------------------------- |
+| `as`        | `React.ElementType`   | varies by variant | The element to render as      |
+| `variant`   | `TypographyVariant`   | `"paragraph-md"`  | The typography style to apply |
+| `className` | `string`              | -                 | Additional classes            |
+| `style`     | `React.CSSProperties` | -                 | Additional inline styles      |
+
+## Polymorphic Rendering
+
+The Typography component is polymorphic and can be rendered as any HTML element:
+
+```tsx showLineNumbers
+// Render as a different element
+<Typography variant="h1" as="div">
+  This is a div with h1 styling
+</Typography>
+
+// Use with semantic HTML
+<Typography variant="label-md" as="label" htmlFor="input">
+  Form Label
+</Typography>
+
+// Render as a link
+<Typography variant="paragraph-md" as="a" href="/about">
+  Learn more
+</Typography>
+```
+
+## CSS Custom Properties
+
+The Typography component uses CSS custom properties (CSS variables) for all typography styles. This allows for easy theming and customization across your entire application.
+
+Each variant uses the following CSS variables:
+
+- `--text-{variant}` - Font size
+- `--text-{variant}--line-height` - Line height
+- `--text-{variant}--letter-spacing` - Letter spacing
+- `--text-{variant}--font-weight` - Font weight
+
+## Examples
+
+### Hero Section
+
+```tsx showLineNumbers
+<Typography variant="h1">
+  Build faster with our design system
+</Typography>
+<Typography variant="paragraph-lg">
+  A comprehensive collection of components built with React and Tailwind CSS.
+</Typography>
+```
+
+### Card Component
+
+```tsx showLineNumbers
+<div className="card">
+  <Typography variant="subheading-xs">Features</Typography>
+  <Typography variant="h3">Everything you need</Typography>
+  <Typography variant="paragraph-md">
+    All the tools you need to build modern web applications.
+  </Typography>
+</div>
+```
+
+### Form Label
+
+```tsx showLineNumbers
+<Typography variant="label-sm" as="label" htmlFor="email">
+  Email Address
+</Typography>
+<input id="email" type="email" />
+```
+
+### Pricing Card
+
+```tsx showLineNumbers
+<div className="pricing-card">
+  <Typography variant="subheading-sm">Pro Plan</Typography>
+  <Typography variant="h2">
+    $29
+    <Typography variant="paragraph-sm" as="span">
+      /month
+    </Typography>
+  </Typography>
+  <Typography variant="paragraph-sm">Perfect for growing teams</Typography>
+</div>
+```
+
+## Default Elements
+
+Each variant has a default HTML element it renders as:
+
+- Heading variants (`h1`-`h6`) → corresponding heading tags
+- Label variants → `<span>`
+- Paragraph variants → `<p>`
+- Subheading variants → `<span>`
+- Doc variants → `<span>` or `<p>`
+
+You can override these with the `as` prop for semantic flexibility while maintaining consistent styling.

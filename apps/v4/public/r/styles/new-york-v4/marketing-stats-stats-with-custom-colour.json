@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-stats-stats-with-custom-colour",
+  "type": "registry:block",
+  "description": "A stats with custom colour block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/stats/stats-with-custom-colour.tsx",
+      "content": "export default function StatsWithCustomColour() {\n  return (\n    <section className=\"py-20\">\n      <div className=\"mx-auto max-w-7xl px-4 sm:px-6 lg:px-8\">\n        <div className=\"flex flex-col gap-10 lg:flex-row lg:justify-between xl:gap-14\">\n          <div className=\"w-full lg:w-1/3\">\n            <div className=\"font-manrope mb-6 text-center text-5xl font-bold text-indigo-600\">\n              13M+\n            </div>\n            <p className=\"text-center text-lg leading-7 text-gray-500\">\n              We have reach more than 13 millions user in around the world\n            </p>\n          </div>\n          <div className=\"w-full lg:w-1/3\">\n            <div className=\"font-manrope mb-6 text-center text-5xl font-bold text-indigo-600\">\n              50M+\n            </div>\n            <p className=\"text-center text-lg leading-7 text-gray-500\">\n              Pagedone is one of most downloaded on google play store &amp;\n              apple store\n            </p>\n          </div>\n          <div className=\"w-full lg:w-1/3\">\n            <div className=\"font-manrope mb-6 text-center text-5xl font-bold text-indigo-600\">\n              98%\n            </div>\n            <p className=\"text-center text-lg leading-7 text-gray-500\">\n              Our user are satisfied using our services in their daily site\n            </p>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "pro",
+  "readiness": "alpha"
+}

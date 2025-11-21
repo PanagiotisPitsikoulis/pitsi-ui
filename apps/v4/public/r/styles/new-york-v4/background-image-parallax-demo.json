@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "background-image-parallax-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "background-image-parallax"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/background-image-parallax-demo.tsx",
+      "content": "import { IconArrowDown } from \"@tabler/icons-react\"\n\nimport BackgroundImageParallax from \"@/registry/new-york-v4/animations/background-image-parallax/background-image-parallax\"\n\nexport default function BackgroundImageParallaxDemo() {\n  return (\n    <div className=\"relative min-h-[1400px]\">\n      {/* Scroll indicator */}\n      <div className=\"absolute top-12 left-1/2 z-10 flex -translate-x-1/2 animate-bounce flex-col items-center justify-center gap-2\">\n        <p className=\"text-sm text-white drop-shadow-lg\">Scroll down</p>\n        <IconArrowDown className=\"size-5 text-white drop-shadow-lg\" />\n      </div>\n\n      {/* Empty space to enable scrolling */}\n      <div className=\"h-96\" />\n\n      <BackgroundImageParallax\n        src=\"https://images.unsplash.com/photo-1506905925346-21bda4d32df4\"\n        alt=\"Mountain landscape\"\n        className=\"min-h-[600px]\"\n      >\n        <div className=\"flex min-h-[600px] items-center justify-center p-8\">\n          <div className=\"bg-card/90 rounded-lg border p-8 text-center shadow-lg backdrop-blur-sm\">\n            <h3 className=\"text-2xl font-bold\">Parallax Background</h3>\n            <p className=\"text-muted-foreground mt-2\">\n              Scroll to see the background move at a different speed\n            </p>\n          </div>\n        </div>\n      </BackgroundImageParallax>\n\n      {/* Bottom space */}\n      <div className=\"h-96\" />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "primitives"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

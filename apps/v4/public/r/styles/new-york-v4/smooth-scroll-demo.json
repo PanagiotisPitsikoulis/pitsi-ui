@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "smooth-scroll-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "smooth-scroll"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/smooth-scroll-demo.tsx",
+      "content": "import SmoothScroll from \"@/registry/new-york-v4/animations/smooth-scroll/smooth-scroll\"\n\nexport default function SmoothScrollDemo() {\n  return (\n    <div className=\"flex min-h-[400px] w-full items-center justify-center p-8\">\n      <SmoothScroll>\n        <div className=\"bg-card rounded-lg border p-8 text-center\">\n          <h3 className=\"text-2xl font-bold\">Animation Demo</h3>\n          <p className=\"text-muted-foreground mt-2\">\n            Scroll or interact to see the animation effect\n          </p>\n        </div>\n      </SmoothScroll>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "primitives"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

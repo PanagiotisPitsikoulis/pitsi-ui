@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "dynamic-icon",
+  "type": "registry:lib",
+  "description": "Dynamically load and render Lucide icons by name with automatic format transformation.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "devDependencies": [
+    "@types/react"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/lib/dynamic-icon.tsx",
+      "content": "import { memo, type FC } from \"react\"\nimport dynamic from \"next/dynamic\"\nimport dynamicIconImports from \"lucide-react/dynamicIconImports\"\n\n/**\n * Valid icon names from lucide-react's dynamic icon imports.\n */\ntype IconName = keyof typeof dynamicIconImports\n\n/**\n * Array of all available icon names from lucide-react.\n */\nconst icons = Object.keys(dynamicIconImports) as IconName[]\n\n/**\n * Basic React component type for icon components.\n */\ntype ReactComponent = FC<{ className?: string }>\n\n/**\n * Cache of dynamically loaded icon components.\n */\nconst icons_components = {} as Record<IconName, ReactComponent>\n\n/**\n * Pre-load all lucide-react icons as dynamically imported components.\n * This allows for tree-shaking while maintaining SSR support.\n */\nfor (const name of icons) {\n  const NewIcon = dynamic(dynamicIconImports[name], {\n    ssr: true,\n  }) as ReactComponent\n  icons_components[name] = NewIcon\n}\n\n/**\n * Props for the DynamicIcon component.\n */\ntype DynamicIconProps = {\n  /** Icon name in PascalCase or kebab-case (e.g., \"ArrowRight\" or \"arrow-right\") */\n  name: string\n  /** Optional className to apply to the icon */\n  className?: string\n}\n\n/**\n * Dynamically renders a Lucide icon by name.\n *\n * This component accepts icon names in various formats (PascalCase, kebab-case, or with numbers)\n * and automatically transforms them to the correct format for lucide-react. The icons are\n * dynamically imported for better performance and tree-shaking.\n *\n * @param props - Component props including icon name and optional className.\n *\n * @returns The requested icon component, or null if the icon is not found.\n *\n * @example\n * ```tsx\n * <DynamicIcon name=\"ArrowRight\" className=\"w-4 h-4\" />\n * <DynamicIcon name=\"arrow-right\" />\n * <DynamicIcon name=\"Settings2\" />\n * ```\n */\nconst DynamicIcon = memo(({ name, ...props }: DynamicIconProps) => {\n  const transformedName = name\n    .replace(/([a-z])([A-Z])/g, \"$1-$2\")\n    .replace(/([a-zA-Z])(\\d)/g, \"$1-$2\")\n    .toLowerCase() as IconName\n\n  const Icon = icons_components[transformedName]\n  if (!Icon)\n    console.warn(\"Icon not found:\", name, \"-> transformed:\", transformedName)\n  if (!Icon) return null\n  return <Icon {...props} />\n})\nDynamicIcon.displayName = \"DynamicIcon\"\n\nexport default DynamicIcon\n",
+      "type": "registry:lib"
+    }
+  ],
+  "readiness": "production"
+}

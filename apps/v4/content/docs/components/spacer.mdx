@@ -1,0 +1,95 @@
+---
+title: Spacer
+description: A component for adding consistent spacing between elements with size variants.
+component: true
+---
+
+<ComponentPreview name="spacer-demo" description="A simple spacer component." />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx pitsi@latest add spacer
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install class-variance-authority @radix-ui/react-slot
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="spacer" title="components/ui/spacer.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx showLineNumbers
+import { Spacer } from "@/components/ui/spacer"
+```
+
+```tsx showLineNumbers
+<div className="flex flex-col">
+  <div>First element</div>
+  <Spacer size="md" />
+  <div>Second element</div>
+</div>
+```
+
+## Examples
+
+### Vertical Spacing
+
+<ComponentPreview
+  name="spacer-demo"
+  description="Vertical spacing between elements."
+/>
+
+### Horizontal Spacing
+
+```tsx showLineNumbers
+<div className="flex flex-row">
+  <div>First</div>
+  <Spacer size="md" axis="horizontal" />
+  <div>Second</div>
+</div>
+```
+
+### Size Variants
+
+<ComponentPreview
+  name="spacer-sizes"
+  description="Different size variants for spacing."
+/>
+
+## Props
+
+### Spacer
+
+| Prop      | Type                                                                                                                    | Default      | Description                                   |
+| --------- | ----------------------------------------------------------------------------------------------------------------------- | ------------ | --------------------------------------------- |
+| `size`    | `"xxs" \| "xs" \| "sm" \| "md" \| "lg" \| "xl" \| "2xl" \| "3xl" \| "4xl" \| "5xl" \| "6xl" \| "7xl" \| "8xl" \| "9xl"` | `"md"`       | The size of the spacer                        |
+| `axis`    | `"vertical" \| "horizontal"`                                                                                            | `"vertical"` | The direction of the spacer                   |
+| `asChild` | `boolean`                                                                                                               | `false`      | Render as a child element using Radix UI Slot |

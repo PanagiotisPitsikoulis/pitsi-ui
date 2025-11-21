@@ -1,0 +1,121 @@
+---
+title: Flex
+description: A flexbox layout component with variant-based styling and responsive props.
+component: true
+---
+
+<ComponentPreview name="flex-demo" description="A flexible layout component." />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx pitsi@latest add flex
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install class-variance-authority
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="flex" title="components/ui/flex.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx showLineNumbers
+import Flex from "@/components/ui/flex"
+```
+
+```tsx showLineNumbers
+<Flex direction="row" gap="md" align="center" justify="between">
+  <div>Start</div>
+  <div>End</div>
+</Flex>
+```
+
+## Examples
+
+### Column Layout
+
+```tsx showLineNumbers
+<Flex direction="col" gap="md">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+</Flex>
+```
+
+### Centered Content
+
+```tsx showLineNumbers
+<Flex justify="center" align="center" className="h-64">
+  <div>Centered Content</div>
+</Flex>
+```
+
+### Responsive Layout
+
+```tsx showLineNumbers
+<Flex direction="row" directionMobile="col" gap="lg" gapMobile="sm">
+  <div>Responsive Item 1</div>
+  <div>Responsive Item 2</div>
+</Flex>
+```
+
+### Space Between
+
+```tsx showLineNumbers
+<Flex justify="between" align="center">
+  <span>Left</span>
+  <span>Right</span>
+</Flex>
+```
+
+## Props
+
+### Flex
+
+| Prop              | Type                                                                                                                    | Default    | Description              |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------- | ---------- | ------------------------ |
+| `as`              | `React.ElementType`                                                                                                     | `"div"`    | The element to render as |
+| `direction`       | `"row" \| "row-reverse" \| "col" \| "col-reverse"`                                                                      | `"row"`    | Flex direction           |
+| `align`           | `"start" \| "center" \| "end" \| "stretch" \| "baseline"`                                                               | `"start"`  | Align items              |
+| `justify`         | `"start" \| "center" \| "end" \| "between" \| "around" \| "evenly"`                                                     | `"start"`  | Justify content          |
+| `wrap`            | `"wrap" \| "nowrap" \| "wrap-reverse"`                                                                                  | `"nowrap"` | Flex wrap                |
+| `gap`             | `"xxs" \| "xs" \| "sm" \| "md" \| "lg" \| "xl" \| "2xl" \| "3xl" \| "4xl" \| "5xl" \| "6xl" \| "7xl" \| "8xl" \| "9xl"` | -          | Gap between items        |
+| `directionMobile` | `direction`                                                                                                             | -          | Direction on mobile      |
+| `alignMobile`     | `align`                                                                                                                 | -          | Align on mobile          |
+| `justifyMobile`   | `justify`                                                                                                               | -          | Justify on mobile        |
+| `wrapMobile`      | `wrap`                                                                                                                  | -          | Wrap on mobile           |
+| `gapMobile`       | `gap`                                                                                                                   | -          | Gap on mobile            |
+| `className`       | `string`                                                                                                                | -          | Additional classes       |
+
+## Notes
+
+- The component uses the `use-mobile` hook to detect mobile screens and apply mobile-specific props.
+- All responsive props (ending with `Mobile`) will only apply when the viewport is considered mobile.
+- The component is polymorphic and can be rendered as any HTML element using the `as` prop.

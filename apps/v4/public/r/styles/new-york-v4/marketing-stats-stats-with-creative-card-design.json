@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-stats-stats-with-creative-card-design",
+  "type": "registry:block",
+  "description": "A stats with creative card design block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/stats/stats-with-creative-card-design.tsx",
+      "content": "export default function StatsWithCreativeCardDesign() {\n  return (\n    <section className=\"font-inter py-20\">\n      <div className=\"mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8\">\n        <div className=\"grid grid-cols-1 gap-8 lg:grid-cols-2\">\n          <div className=\"relative mx-auto w-fit rounded-xl p-5 text-center lg:w-full\">\n            <div className=\"absolute top-6 left-10 z-10\">\n              <img\n                src=\"https://pagedone.io/asset/uploads/1760007817.png\"\n                alt=\"img\"\n              />\n            </div>\n            <h2 className=\"font-manrope text-3xl font-bold text-gray-900\">\n              100+\n            </h2>\n            <h4 className=\"pt-5 text-xl leading-8 font-medium text-gray-800\">\n              Active Clients\n            </h4>\n            <p className=\"pt-1 text-base font-normal text-gray-500\">\n              Supporting a growing network of active clients worldwide.\n            </p>\n            <div className=\"absolute right-0 bottom-0 z-10\">\n              <img\n                src=\"https://pagedone.io/asset/uploads/1760007831.png\"\n                alt=\"img\"\n              />\n            </div>\n          </div>\n          <div className=\"relative mx-auto w-fit rounded-xl p-5 text-center lg:w-full\">\n            <div className=\"absolute top-6 left-10 z-10\">\n              <img\n                src=\"https://pagedone.io/asset/uploads/1760007842.png\"\n                alt=\"img\"\n              />\n            </div>\n            <h2 className=\"font-manrope text-3xl font-bold text-gray-900\">\n              80+\n            </h2>\n            <h4 className=\"pt-5 text-xl leading-8 font-medium text-gray-800\">\n              Projects Delivered\n            </h4>\n            <p className=\"pt-1 text-base font-normal text-gray-500\">\n              Successfully delivered projects that drive lasting impact.\n            </p>\n            <div className=\"absolute right-0 bottom-0 z-10\">\n              <img\n                src=\"https://pagedone.io/asset/uploads/1760007852.png\"\n                alt=\"img\"\n              />\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "pro",
+  "readiness": "alpha"
+}

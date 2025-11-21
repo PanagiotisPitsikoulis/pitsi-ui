@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "utils",
+  "type": "registry:lib",
+  "description": "Utility function for merging class names with Tailwind CSS conflict resolution.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\n/**\n * Merges class names using clsx and tailwind-merge.\n *\n * This utility combines multiple class values and intelligently merges Tailwind CSS classes,\n * resolving conflicts by keeping the last conflicting class (e.g., if both 'px-2' and 'px-4'\n * are provided, only 'px-4' will be kept).\n *\n * @param inputs - Any number of class values (strings, objects, arrays, etc.) supported by clsx.\n *\n * @returns A single merged class name string with Tailwind conflicts resolved.\n *\n * @example\n * ```tsx\n * cn('px-2 py-1', 'px-4') // Returns: 'py-1 px-4'\n * cn('text-red-500', someCondition && 'text-blue-500') // Conditionally applies classes\n * ```\n */\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:lib"
+    }
+  ],
+  "readiness": "production"
+}

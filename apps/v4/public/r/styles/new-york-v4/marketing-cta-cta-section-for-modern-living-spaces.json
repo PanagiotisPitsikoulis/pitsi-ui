@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-cta-cta-section-for-modern-living-spaces",
+  "type": "registry:block",
+  "description": "A cta section for modern living spaces block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/cta/cta-section-for-modern-living-spaces.tsx",
+      "content": "export default function CtaSectionForModernLivingSpaces() {\n  return (\n    <section className=\"rounded-xl bg-cover bg-no-repeat object-cover py-24\">\n      <div className=\"mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8\">\n        <div className=\"grid grid-cols-1 gap-8 md:gap-14 lg:grid-cols-2\">\n          <div className=\"my-0 lg:my-auto\">\n            <h2 className=\"font-manrope leading-leading62 text-center text-5xl font-semibold text-white lg:text-left\">\n              Discover and Unlock Your Perfect Home Today\n            </h2>\n          </div>\n          <div className=\"flex flex-col gap-8\">\n            <p className=\"font-inter text-center text-base leading-7 font-normal text-gray-50 lg:text-left\">\n              Elevate your business to new heights with our custom creative\n              solutions. We specialize in delivering innovative approaches that\n              help you solve challenges, grow your brand, and achieve\n              sustainable success.\n            </p>\n            <div className=\"font-inter flex items-start justify-center gap-5 md:items-center lg:justify-start\">\n              <button className=\"shadow-xs_shadow flex w-40 items-center justify-center rounded-full bg-white px-5 py-2.5 text-base leading-7 font-semibold transition-all duration-500 hover:bg-gray-300\">\n                Download app\n              </button>\n              <button className=\"flex w-36 items-center justify-center rounded-full border border-gray-300 bg-transparent px-5 py-2.5 leading-7 font-semibold text-white transition-all duration-500 hover:bg-white hover:text-black\">\n                View demo\n              </button>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "free",
+  "readiness": "alpha"
+}

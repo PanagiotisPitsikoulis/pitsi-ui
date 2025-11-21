@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-stats-stats-card-with-highlight",
+  "type": "registry:block",
+  "description": "A stats card with highlight block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/stats/stats-card-with-highlight.tsx",
+      "content": "export default function StatsCardWithHighlight() {\n  return (\n    <section className=\"font-inter py-20\">\n      <div className=\"mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8\">\n        <div className=\"mx-auto grid w-10/12 grid-cols-1 gap-8 sm:w-full sm:grid-cols-2 xl:grid-cols-4\">\n          <div className=\"flex flex-col gap-16 rounded-2xl bg-amber-50 p-6 text-center\">\n            <h3 className=\"font-manrope text-center text-6xl font-bold text-gray-900\">\n              260<span className=\"text-amber-600\">+</span>\n            </h3>\n            <div className=\"flex flex-col gap-2\">\n              <h4 className=\"text-xl leading-8 font-semibold text-gray-900\">\n                Expert Consultants\n              </h4>\n              <p className=\"text-sm leading-6 font-light text-gray-900\">\n                Our expert consultants offer unparalleled industry insights and\n                hands-on experience.\n              </p>\n            </div>\n          </div>\n          <div className=\"flex flex-col gap-16 rounded-2xl bg-amber-50 p-6 text-center\">\n            <h3 className=\"font-manrope text-center text-6xl font-bold text-gray-900\">\n              975<span className=\"text-amber-600\">+</span>\n            </h3>\n            <div className=\"flex flex-col gap-2\">\n              <h4 className=\"text-xl leading-8 font-semibold text-gray-900\">\n                Active Clients\n              </h4>\n              <p className=\"text-sm leading-6 font-light text-gray-900\">\n                Our growing number of active clients reflects the trust and\n                confidence businesses.\n              </p>\n            </div>\n          </div>\n          <div className=\"flex flex-col gap-16 rounded-2xl bg-amber-50 p-6 text-center\">\n            <h3 className=\"font-manrope text-center text-6xl font-bold text-gray-900\">\n              724<span className=\"text-amber-600\">+</span>\n            </h3>\n            <div className=\"flex flex-col gap-2\">\n              <h4 className=\"text-xl leading-8 font-semibold text-gray-900\">\n                Projects Delivered\n              </h4>\n              <p className=\"text-sm leading-6 font-light text-gray-900\">\n                We take pride in the successful delivery of numerous projects,\n                each crafted with precision\n              </p>\n            </div>\n          </div>\n          <div className=\"flex flex-col gap-16 rounded-2xl bg-amber-50 p-6 text-center\">\n            <h3 className=\"font-manrope text-center text-6xl font-bold text-gray-900\">\n              175<span className=\"text-amber-600\">+</span>\n            </h3>\n            <div className=\"flex flex-col gap-2\">\n              <h4 className=\"text-xl leading-8 font-semibold text-gray-900\">\n                Orders in Queue\n              </h4>\n              <p className=\"text-sm leading-6 font-light text-gray-900\">\n                Our orders in queue reflect the trust clients place in us to\n                deliver quality results.\n              </p>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "pro",
+  "readiness": "alpha"
+}

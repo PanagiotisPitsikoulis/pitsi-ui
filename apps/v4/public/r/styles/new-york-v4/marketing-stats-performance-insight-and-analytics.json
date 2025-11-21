@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-stats-performance-insight-and-analytics",
+  "type": "registry:block",
+  "description": "A performance insight and analytics block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/stats/performance-insight-and-analytics.tsx",
+      "content": "export default function PerformanceInsightAndAnalytics() {\n  return (\n    <section className=\"font-inter py-24\">\n      <div className=\"mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8\">\n        <div className=\"grid grid-cols-1 gap-14 xl:grid-cols-2\">\n          <h2 className=\"font-manrope text-center text-4xl font-bold text-black xl:text-start\">\n            Performance Insight And Analytics Analysis\n          </h2>\n          <div className=\"grid gap-8 sm:grid-cols-2\">\n            <div className=\"mx-auto flex w-10/12 items-center gap-4 rounded-xl bg-indigo-50 p-5 sm:w-full\">\n              <a className=\"flex h-14 w-14 items-center justify-center rounded-xl border border-indigo-200 bg-white shadow-sm\">\n                {/* SVG removed */}\n              </a>\n              <div className=\"flex flex-col gap-1.5\">\n                <h3 className=\"font-manrope text-2xl font-bold text-gray-900\">\n                  130+\n                </h3>\n                <p className=\"text-base leading-6 font-normal text-gray-500\">\n                  Active Clients\n                </p>\n              </div>\n            </div>\n            <div className=\"mx-auto flex w-10/12 items-center gap-4 rounded-xl bg-indigo-50 p-5 sm:w-full\">\n              <a className=\"flex h-14 w-14 items-center justify-center rounded-xl border border-indigo-200 bg-white shadow-sm\">\n                {/* SVG removed */}\n              </a>\n              <div className=\"flex flex-col gap-1.5\">\n                <h3 className=\"font-manrope text-2xl font-bold text-gray-900\">\n                  80+\n                </h3>\n                <p className=\"text-base leading-6 font-normal text-gray-500\">\n                  Projects Delivered\n                </p>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "pro",
+  "readiness": "alpha"
+}

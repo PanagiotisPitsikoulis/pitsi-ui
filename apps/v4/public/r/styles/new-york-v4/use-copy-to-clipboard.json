@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "use-copy-to-clipboard",
+  "type": "registry:hook",
+  "description": "Hook for copying text to clipboard with optional timeout and callback.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/hooks/use-copy-to-clipboard.ts",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\n\nexport function useCopyToClipboard({\n  timeout = 2000,\n  onCopy,\n}: {\n  timeout?: number\n  onCopy?: () => void\n} = {}) {\n  const [isCopied, setIsCopied] = React.useState(false)\n\n  const copyToClipboard = (value: string) => {\n    if (typeof window === \"undefined\" || !navigator.clipboard.writeText) {\n      return\n    }\n\n    if (!value) return\n\n    navigator.clipboard.writeText(value).then(() => {\n      setIsCopied(true)\n\n      if (onCopy) {\n        onCopy()\n      }\n\n      if (timeout !== 0) {\n        setTimeout(() => {\n          setIsCopied(false)\n        }, timeout)\n      }\n    }, console.error)\n  }\n\n  return { isCopied, copyToClipboard }\n}\n",
+      "type": "registry:hook"
+    }
+  ],
+  "readiness": "production"
+}

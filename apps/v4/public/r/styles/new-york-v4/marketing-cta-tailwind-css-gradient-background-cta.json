@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-cta-tailwind-css-gradient-background-cta",
+  "type": "registry:block",
+  "description": "A tailwind css gradient background cta block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/cta/tailwind-css-gradient-background-cta.tsx",
+      "content": "export default function TailwindCssGradientBackgroundCta() {\n  return (\n    <section className=\"font-inter rounded-3xl bg-gradient-to-b from-indigo-600 to-indigo-400 bg-cover py-20\">\n      <div className=\"mx-auto w-full max-w-7xl rounded-2xl px-4 sm:px-6 lg:px-8\">\n        <div className=\"flex flex-col items-center justify-center xl:flex-row xl:items-start xl:justify-between\">\n          <div className=\"flex w-full max-w-3xl flex-col gap-6\">\n            <h2 className=\"font-manrope text-center text-5xl font-semibold text-white xl:text-start\">\n              Join Us Expand Your Business\n            </h2>\n            <p className=\"font-inter text-center text-lg leading-7 font-normal text-white xl:text-start\">\n              Let’s work together to explore the best opportunities, tailor\n              strategies to your needs, and map out a path to lasting financial\n              success. With our expertise.\n            </p>\n          </div>\n          <div className=\"mt-6 flex w-fit flex-row flex-wrap items-center justify-center gap-5 xl:mt-0 xl:flex-col xl:items-center\">\n            <button className=\"rounded-xl bg-white px-7 py-4 text-xl leading-8 font-semibold shadow-sm transition-all duration-500 hover:bg-gray-200\">\n              <span className=\"bg-gradient-to-b from-indigo-600 to-indigo-300 bg-clip-text text-transparent\">\n                Start Free Trial\n              </span>\n            </button>\n            <button className=\"px-7 py-4 text-xl leading-8 font-medium text-white transition-all duration-500 hover:rounded-xl hover:bg-white hover:text-black\">\n              Get Started\n            </button>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "pro",
+  "readiness": "alpha"
+}

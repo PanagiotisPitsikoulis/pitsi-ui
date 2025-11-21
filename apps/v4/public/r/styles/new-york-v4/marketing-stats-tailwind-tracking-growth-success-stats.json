@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-stats-tailwind-tracking-growth-success-stats",
+  "type": "registry:block",
+  "description": "A tailwind tracking growth success stats block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/stats/tailwind-tracking-growth-success-stats.tsx",
+      "content": "export default function TailwindTrackingGrowthSuccessStats() {\n  return (\n    <section className=\"font-inter bg-black py-20\">\n      <div className=\"mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8\">\n        <div className=\"grid grid-cols-1 gap-10 lg:grid-cols-2\">\n          <h2 className=\"font-manrope text-center text-4xl font-bold text-white lg:text-left\">\n            Tracking Growth, Impact, and Success\n          </h2>\n          <p className=\"text-center text-lg leading-8 font-normal text-gray-300 lg:text-left\">\n            Our growth, impact, and success are reflected in the numbers. We\n            continuously track key metrics to showcase our progress.\n          </p>\n        </div>\n        <div className=\"mt-14 flex flex-1 flex-col gap-10 lg:flex-row lg:justify-between lg:gap-0\">\n          <div className=\"w-full border-b border-neutral-900 pb-10 lg:w-1/4 lg:border-r lg:border-b-0 lg:pb-0\">\n            <div className=\"font-manrope text-center text-5xl font-bold text-white\">\n              280+\n            </div>\n            <span className=\"mt-5 block text-center text-xl text-gray-300\">\n              Expert Consultants\n            </span>\n          </div>\n          <div className=\"w-full border-b border-neutral-900 pb-10 lg:w-1/4 lg:border-r lg:border-b-0 lg:pb-0\">\n            <div className=\"font-manrope text-center text-5xl font-bold text-white\">\n              975+\n            </div>\n            <span className=\"mt-5 block text-center text-xl text-gray-300\">\n              Active Clients\n            </span>\n          </div>\n          <div className=\"w-full border-b border-neutral-900 pb-10 lg:w-1/4 lg:border-r lg:border-b-0 lg:pb-0\">\n            <div className=\"font-manrope text-center text-5xl font-bold text-white\">\n              724+\n            </div>\n            <span className=\"mt-5 block text-center text-xl text-gray-300\">\n              Projects Delivered\n            </span>\n          </div>\n          <div className=\"w-full lg:w-1/4\">\n            <div className=\"font-manrope text-center text-5xl font-bold text-white\">\n              89+\n            </div>\n            <span className=\"mt-5 block text-center text-xl text-gray-300\">\n              Orders in Queue\n            </span>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "pro",
+  "readiness": "alpha"
+}

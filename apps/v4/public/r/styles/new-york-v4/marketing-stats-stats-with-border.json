@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-stats-stats-with-border",
+  "type": "registry:block",
+  "description": "A stats with border block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/stats/stats-with-border.tsx",
+      "content": "export default function StatsWithBorder() {\n  return (\n    <section className=\"py-20\">\n      <div className=\"mx-auto max-w-7xl px-4 sm:px-6 lg:px-8\">\n        <div className=\"flex flex-col justify-between gap-10 lg:flex-row lg:gap-0\">\n          <div className=\"border-t-2 border-indigo-600\">\n            <div className=\"font-manrope mb-2 pt-10 text-center text-5xl font-semibold text-gray-900\">\n              260+\n            </div>\n            <span className=\"block text-center text-xl text-gray-500\">\n              Expert Consultants\n            </span>\n          </div>\n          <div className=\"border-t-2 border-red-500\">\n            <div className=\"font-manrope mb-2 pt-10 text-center text-5xl font-semibold text-gray-900\">\n              975+\n            </div>\n            <span className=\"block text-center text-xl text-gray-500\">\n              Active Clients\n            </span>\n          </div>\n          <div className=\"border-t-2 border-emerald-500\">\n            <div className=\"font-manrope mb-2 pt-10 text-center text-5xl font-semibold text-gray-900\">\n              724+\n            </div>\n            <span className=\"block text-center text-xl text-gray-500\">\n              Projects Delivered\n            </span>\n          </div>\n          <div className=\"border-t-2 border-amber-500\">\n            <div className=\"font-manrope mb-2 pt-10 text-center text-5xl font-semibold text-gray-900\">\n              89+\n            </div>\n            <span className=\"block text-center text-xl text-gray-500\">\n              Orders in Queue\n            </span>\n          </div>\n          <div className=\"border-t-2 border-sky-500\">\n            <div className=\"font-manrope mb-2 pt-10 text-center text-5xl font-semibold text-gray-900\">\n              95%\n            </div>\n            <span className=\"block text-center text-xl text-gray-500\">\n              Issue Resolved\n            </span>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "pro",
+  "readiness": "alpha"
+}

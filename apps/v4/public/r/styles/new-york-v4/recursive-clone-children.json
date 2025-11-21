@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "recursive-clone-children",
+  "type": "registry:lib",
+  "description": "Recursively clone React children and inject props into components by display name.",
+  "devDependencies": [
+    "@types/react"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/lib/recursive-clone-children.tsx",
+      "content": "import * as React from \"react\"\n\n/**\n * Recursively clones React children, adding additional props to components with matched display names.\n *\n * @param children - The node(s) to be cloned.\n * @param additionalProps - The props to add to the matched components.\n * @param displayNames - An array of display names to match components against.\n * @param uniqueId - A unique ID prefix from the parent component to generate stable keys.\n * @param asChild - Indicates whether the parent component uses the Slot component.\n *\n * @returns The cloned node(s) with the additional props applied to the matched components.\n */\nexport function recursiveCloneChildren(\n  children: React.ReactNode,\n  additionalProps: any,\n  displayNames: string[],\n  uniqueId: string,\n  asChild?: boolean\n): React.ReactNode | React.ReactNode[] {\n  const mappedChildren = React.Children.map(\n    children,\n    (child: React.ReactNode, index) => {\n      if (!React.isValidElement(child)) {\n        return child\n      }\n\n      const displayName = (child.type as React.ComponentType)?.displayName || \"\"\n      const newProps = displayNames.includes(displayName) ? additionalProps : {}\n\n      const childProps = (child as React.ReactElement<any>).props\n\n      return React.cloneElement(\n        child,\n        { ...newProps, key: `${uniqueId}-${index}` },\n        recursiveCloneChildren(\n          childProps?.children,\n          additionalProps,\n          displayNames,\n          uniqueId,\n          childProps?.asChild\n        )\n      )\n    }\n  )\n\n  return asChild ? mappedChildren?.[0] : mappedChildren\n}\n",
+      "type": "registry:lib"
+    }
+  ],
+  "readiness": "production"
+}

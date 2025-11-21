@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "e-commerce-incentives-image-in-grid-incentive-section",
+  "type": "registry:block",
+  "description": "A image in grid incentive section block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/e-commerce/incentives/image-in-grid-incentive-section.tsx",
+      "content": "export default function ImageInGridIncentiveSection() {\n  return (\n    <section className=\"relative py-24\">\n      <div className=\"mx-auto w-full max-w-7xl px-4 md:px-8\">\n        <div className=\"grid grid-cols-1 gap-8 lg:grid-cols-2\">\n          <div className=\"box font-manrope max-w-lg text-2xl leading-9 font-semibold text-black max-lg:mx-auto max-sm:text-center md:text-3xl md:leading-10\">\n            There are the systems that offer nearby listing and competitive\n            prices &amp; offer.\n          </div>\n          <div className=\"grid gap-4 max-lg:mx-auto max-lg:max-w-lg sm:grid-cols-2 sm:gap-8 md:grid-cols-2 lg:grid-cols-3\">\n            <div className=\"group flex cursor-grab flex-col max-sm:items-center\">\n              <p className=\"h-max w-max cursor-pointer rounded-full bg-white p-2 transition-all duration-500 group-hover:bg-indigo-100 max-sm:mx-auto\"></p>\n              <p className=\"mt-3 text-sm leading-6 font-medium text-gray-500 max-sm:text-center\">\n                User who are using actually our system\n              </p>\n            </div>\n            <div className=\"group flex cursor-grab flex-col max-sm:items-center\">\n              <p className=\"h-max w-max cursor-pointer rounded-full bg-white p-2 transition-all duration-500 group-hover:bg-indigo-100\"></p>\n              <p className=\"mt-3 text-sm leading-6 font-medium text-gray-500 max-sm:text-center\">\n                Actual Data base on the our system\n              </p>\n            </div>\n            <div className=\"group flex cursor-grab flex-col max-sm:items-center\">\n              <p className=\"h-max w-max cursor-pointer rounded-full bg-white p-2 transition-all duration-500 group-hover:bg-indigo-100\"></p>\n              <p className=\"mt-3 text-sm leading-6 font-medium text-gray-500 max-sm:text-center\">\n                Withdraw your payment any where &amp; time\n              </p>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "e-commerce"
+  ],
+  "tier": "pro",
+  "readiness": "alpha"
+}

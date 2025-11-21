@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-team-center-card-highlighted-carousel",
+  "type": "registry:block",
+  "description": "A center card highlighted carousel block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/team/center-card-highlighted-carousel.tsx",
+      "content": "export default function CenterCardHighlightedCarousel() {\n  return (\n    <section className=\"py-24\">\n      <div className=\"mx-auto max-w-7xl px-4 sm:px-6 lg:px-8\">\n        <div className=\"inline-flex w-full flex-col items-start justify-start gap-12\">\n          <div className=\"flex w-full flex-col items-center justify-start gap-5\">\n            <h2 className=\"font-manrope text-center text-4xl leading-normal font-bold text-gray-900\">\n              Welcome our talented team\n            </h2>\n            <p className=\"w-full text-center text-lg leading-relaxed font-normal text-gray-500 lg:max-w-4xl\">\n              We are thrilled to introduce the newest members of our team. Each\n              individual brings a wealth of experience, creativity, and passion\n              to our organization.\n            </p>\n          </div>\n          <div className=\"grid w-full grid-cols-1 items-center justify-start gap-6 md:grid-cols-2 lg:grid-cols-4 xl:gap-8\">\n            <div className=\"bg-norepeat inline-flex h-96 w-full flex-col items-center justify-end bg-cover bg-center py-5 lg:h-[280px]\">\n              <div className=\"flex flex-col items-center justify-start\">\n                <h5 className=\"text-center text-lg leading-relaxed font-medium text-white\">\n                  Benjamin Evans\n                </h5>\n                <span className=\"text-center text-sm leading-normal font-normal text-gray-50\">\n                  Co-Founder\n                </span>\n              </div>\n            </div>\n            <div className=\"bg-norepeat inline-flex h-96 w-full flex-col items-center justify-end bg-cover bg-center py-5 lg:h-[280px]\">\n              <div className=\"flex flex-col items-center justify-start\">\n                <h5 className=\"text-center text-lg leading-relaxed font-medium text-white\">\n                  Mia Thompson\n                </h5>\n                <span className=\"text-center text-sm leading-normal font-normal text-gray-50\">\n                  Founder\n                </span>\n              </div>\n            </div>\n            <div className=\"bg-norepeat inline-flex h-96 w-full flex-col items-center justify-end bg-cover bg-center py-5 lg:h-[280px]\">\n              <div className=\"flex flex-col items-center justify-start\">\n                <h5 className=\"text-center text-lg leading-relaxed font-medium text-white\">\n                  Harshita Patel\n                </h5>\n                <span className=\"text-center text-sm leading-normal font-normal text-gray-50\">\n                  CEO\n                </span>\n              </div>\n            </div>\n            <div className=\"bg-norepeat inline-flex h-96 w-full flex-col items-center justify-end bg-cover bg-center py-5 lg:h-[280px]\">\n              <div className=\"flex flex-col items-center justify-start\">\n                <h5 className=\"text-center text-lg leading-relaxed font-medium text-white\">\n                  Amelia Clark\n                </h5>\n                <span className=\"text-center text-sm leading-normal font-normal text-gray-50\">\n                  HR\n                </span>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "free",
+  "readiness": "alpha"
+}

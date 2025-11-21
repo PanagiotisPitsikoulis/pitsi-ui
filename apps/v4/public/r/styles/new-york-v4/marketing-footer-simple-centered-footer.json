@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-footer-simple-centered-footer",
+  "type": "registry:block",
+  "description": "A simple centered footer block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/footer/simple-centered-footer.tsx",
+      "content": "export default function SimpleCenteredFooter() {\n  return (\n    <footer className=\"w-full py-14\">\n      <div className=\"mx-auto max-w-7xl px-4 sm:px-6 lg:px-8\">\n        <div className=\"mx-auto max-w-3xl\">\n          <a href=\"https://pagedone.io/\" className=\"flex justify-center\">\n            {/* SVG removed */}\n          </a>\n          <ul className=\"mb-10 flex flex-col items-center justify-center gap-7 border-b border-gray-200 py-16 text-lg transition-all duration-500 md:flex-row md:gap-12\">\n            <li>\n              <a href=\"#\" className=\"text-gray-800 hover:text-gray-900\">\n                Pagedone\n              </a>\n            </li>\n            <li>\n              <a href=\"#\" className=\"text-gray-800 hover:text-gray-900\">\n                Products\n              </a>\n            </li>\n            <li>\n              <a href=\"#\" className=\"text-gray-800 hover:text-gray-900\">\n                Resources\n              </a>\n            </li>\n            <li>\n              <a href=\"#\" className=\"text-gray-800 hover:text-gray-900\">\n                Blogs\n              </a>\n            </li>\n            <li>\n              <a href=\"#\" className=\"text-gray-800 hover:text-gray-900\">\n                Support\n              </a>\n            </li>\n          </ul>\n          <div className=\"mb-14 flex items-center justify-center space-x-10\">\n            <a\n              href=\"#\"\n              className=\"block text-gray-900 transition-all duration-500 hover:text-indigo-600\"\n            >\n              {/* SVG removed */}\n            </a>\n            <a\n              href=\"#\"\n              className=\"block text-gray-900 transition-all duration-500 hover:text-indigo-600\"\n            >\n              {/* SVG removed */}\n            </a>\n            <a\n              href=\"#\"\n              className=\"block text-gray-900 transition-all duration-500 hover:text-indigo-600\"\n            >\n              {/* SVG removed */}\n            </a>\n            <a\n              href=\"#\"\n              className=\"block text-gray-900 transition-all duration-500 hover:text-indigo-600\"\n            >\n              {/* SVG removed */}\n            </a>\n          </div>\n          <span className=\"block text-center text-lg text-gray-500\">\n            ©<a href=\"https://pagedone.io/\">pagedone</a> 2024, All rights\n            reserved.\n          </span>\n        </div>\n      </div>\n    </footer>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "pro",
+  "readiness": "alpha"
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-cta-cta-buttons-with-split-image",
+  "type": "registry:block",
+  "description": "A cta buttons with split image block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/cta/cta-buttons-with-split-image.tsx",
+      "content": "export default function CtaButtonsWithSplitImage() {\n  return (\n    <section className=\"py-20\">\n      <div className=\"mx-auto max-w-7xl px-4 sm:px-6 lg:px-8\">\n        <div className=\"flex flex-col items-center justify-between rounded-2xl bg-gray-50 max-lg:mx-auto max-lg:max-w-xl lg:flex-row\">\n          <div className=\"flex w-full flex-col items-center p-10 lg:w-1/2 xl:p-20\">\n            <h2 className=\"font-manrope mb-10 text-center text-4xl leading-[3.5rem] font-bold text-gray-900 lg:text-left\">\n              Subscribe &amp; get reward!\n            </h2>\n            <div className=\"mb-10 flex w-full flex-col gap-3 md:flex-row lg:mb-20\">\n              <input\n                type=\"text\"\n                name=\"email\"\n                className=\"h-14 w-full rounded-full border border-gray-300 px-5 py-3 text-lg text-gray-900 shadow-sm placeholder:text-gray-400 focus:outline-none\"\n                placeholder=\"Type your email\"\n              />\n              <button className=\"h-14 rounded-full bg-indigo-600 px-11 py-3.5 font-semibold text-white shadow-sm transition-all duration-500 hover:bg-indigo-700\">\n                Submit\n              </button>\n            </div>\n            <div className=\"flex flex-col items-center gap-3 md:flex-row md:gap-0 lg:items-start\">\n              <div className=\"flex items-center gap-3\">\n                <div className=\"flex items-center gap-1 text-amber-500 transition-all duration-500\">\n                  {/* SVG removed */}\n                  {/* SVG removed */}\n                  {/* SVG removed */}\n                  {/* SVG removed */}\n                  {/* SVG removed */}\n                </div>\n                <span className=\"mr-1 border-gray-600 pr-1 text-gray-600 md:border-r\">\n                  4.9 Rating\n                </span>\n              </div>\n              <div className=\"text-gray-600\">\n                163 Reviews on <span className=\"text-indigo-600\">pagedone</span>\n              </div>\n            </div>\n          </div>\n          <div className=\"w-full lg:w-1/2\">\n            <div className=\"relative\">\n              <img\n                src=\"https://pagedone.io/asset/uploads/1696243064.png\"\n                alt=\"CTA tailwind section\"\n                className=\"w-full rounded-3xl object-cover lg:rounded-l-none\"\n              />\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "free",
+  "readiness": "alpha"
+}

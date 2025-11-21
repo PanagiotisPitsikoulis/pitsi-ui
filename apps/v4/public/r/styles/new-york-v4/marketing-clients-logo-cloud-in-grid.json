@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-clients-logo-cloud-in-grid",
+  "type": "registry:block",
+  "description": "A logo cloud in grid block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/clients/logo-cloud-in-grid.tsx",
+      "content": "export default function LogoCloudInGrid() {\n  return (\n    <section className=\"py-24\">\n      <div className=\"mx-auto max-w-7xl px-4 sm:px-6 lg:px-8\">\n        <div className=\"grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4\">\n          <div className=\"grid gap-14 border-r-0 border-b border-solid border-gray-300 px-10 py-10 lg:border-r xl:border-b-0\">\n            <a href=\"#\" className=\"flex justify-center lg:justify-start\">\n              {/* SVG removed */}\n            </a>\n            <a href=\"#\" className=\"flex justify-center lg:justify-start\">\n              {/* SVG removed */}\n            </a>\n            <a href=\"#\" className=\"flex justify-center lg:justify-start\">\n              {/* SVG removed */}\n            </a>\n          </div>\n          <div className=\"grid gap-14 border-r-0 border-b border-solid border-gray-300 px-10 py-10 xl:border-r xl:border-b-0\">\n            <a href=\"#\" className=\"flex justify-center lg:justify-start\">\n              {/* SVG removed */}\n            </a>\n            <a href=\"#\" className=\"flex justify-center lg:justify-start\">\n              {/* SVG removed */}\n            </a>\n            <a href=\"#\" className=\"flex justify-center lg:justify-start\">\n              {/* SVG removed */}\n            </a>\n          </div>\n          <div className=\"grid gap-14 border-r-0 border-b border-solid border-gray-300 px-10 py-10 lg:border-r lg:border-b-0\">\n            <a href=\"#\" className=\"flex justify-center lg:justify-start\">\n              {/* SVG removed */}\n            </a>\n            <a href=\"#\" className=\"flex justify-center lg:justify-start\">\n              {/* SVG removed */}\n            </a>\n            <a href=\"#\" className=\"flex justify-center lg:justify-start\">\n              {/* SVG removed */}\n            </a>\n          </div>\n          <div className=\"grid gap-14 px-10 py-10\">\n            <a href=\"#\" className=\"flex justify-center lg:justify-start\">\n              {/* SVG removed */}\n            </a>\n            <a href=\"#\" className=\"flex justify-center lg:justify-start\">\n              {/* SVG removed */}\n            </a>\n            <a href=\"#\" className=\"flex justify-center lg:justify-start\">\n              {/* SVG removed */}\n            </a>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "pro",
+  "readiness": "alpha"
+}

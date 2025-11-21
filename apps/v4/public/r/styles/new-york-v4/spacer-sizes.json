@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "spacer-sizes",
+  "type": "registry:example",
+  "registryDependencies": [
+    "spacer"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/spacer-sizes.tsx",
+      "content": "import { Spacer } from \"@/registry/new-york-v4/ui/spacer\"\n\nexport default function SpacerSizes() {\n  const sizes = [\"xxs\", \"xs\", \"sm\", \"md\", \"lg\", \"xl\", \"2xl\", \"3xl\"] as const\n\n  return (\n    <div className=\"space-y-4\">\n      {sizes.map((size) => (\n        <div key={size} className=\"flex items-center gap-4\">\n          <span className=\"text-muted-foreground w-12 text-sm\">{size}</span>\n          <div className=\"bg-foreground h-2 w-2 rounded-full\" />\n          <Spacer size={size} axis=\"horizontal\" />\n          <div className=\"bg-foreground h-2 w-2 rounded-full\" />\n        </div>\n      ))}\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "primitives"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

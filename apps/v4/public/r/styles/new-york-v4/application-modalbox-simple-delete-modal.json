@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "application-modalbox-simple-delete-modal",
+  "type": "registry:block",
+  "description": "A simple delete modal block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/application/modalbox/simple-delete-modal.tsx",
+      "content": "export default function SimpleDeleteModal() {\n  return (\n    <section className=\"relative py-8 sm:p-8\">\n      <div className=\"relative mx-auto w-full max-w-7xl px-4 lg:px-8 xl:px-14\">\n        <div className=\"relative flex w-full justify-center\">\n          <button\n            className=\"modal-button cursor-pointer rounded-full bg-indigo-600 px-5 py-2.5 text-center text-xs font-semibold text-white shadow-xs transition-all duration-500 hover:bg-indigo-700\"\n            data-pd-overlay=\"#modalBox-41\"\n            data-modal-target=\"modalBox-41\"\n            data-modal-toggle=\"modalBox-41\"\n          >\n            Button\n          </button>\n          <div\n            id=\"modalBox-41\"\n            className=\"pd-overlay fixed top-0 left-0 z-[100000] h-full w-full overflow-x-hidden overflow-y-auto\"\n          >\n            <div className=\"modal-open:opacity-100 modal-open:duration-500 relative top-1/2 m-5 -translate-y-1/2 opacity-1 transition-all ease-out sm:mx-auto sm:w-full sm:max-w-sm\">\n              <div className=\"bg-white p-6\">\n                <div className=\"flex w-full items-center justify-end\">\n                  <button\n                    className=\"close-modal-button text-gray-500 transition-all duration-300 hover:text-gray-900\"\n                    data-pd-overlay=\"#modalBox-41\"\n                    data-modal-target=\"modalBox-41\"\n                  ></button>\n                </div>\n                <div className=\"mt-1 mb-2.5 flex items-center justify-center\"></div>\n                <h5 className=\"mb-8 text-center text-base font-medium text-gray-900\">\n                  Are you sure you want to delete this item?\n                </h5>\n                <div className=\"flex items-center justify-center gap-4\">\n                  <button\n                    className=\"close-modal-button rounded-lg border border-gray-200 px-5 py-2.5 text-center text-sm font-medium text-gray-900 transition-all duration-300 hover:border-gray-100 hover:bg-gray-100\"\n                    data-pd-overlay=\"#modalBox-41\"\n                    data-modal-target=\"modalBox-41\"\n                  >\n                    No, cancel\n                  </button>\n                  <button\n                    className=\"close-modal-button rounded-lg bg-red-600 px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:bg-red-700\"\n                    data-pd-overlay=\"#modalBox-41\"\n                    data-modal-target=\"modalBox-41\"\n                  >\n                    Yes, I’m sure\n                  </button>\n                </div>\n              </div>\n            </div>\n          </div>\n          <div\n            id=\"backdrop\"\n            className=\"fixed top-0 left-0 z-[50] h-full w-full bg-black/50\"\n          ></div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "application"
+  ],
+  "tier": "pro",
+  "readiness": "alpha"
+}

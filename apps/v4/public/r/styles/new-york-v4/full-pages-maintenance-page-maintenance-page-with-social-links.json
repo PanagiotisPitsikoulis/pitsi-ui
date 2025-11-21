@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "full-pages-maintenance-page-maintenance-page-with-social-links",
+  "type": "registry:block",
+  "description": "A maintenance page with social links block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/full-pages/maintenance-page/maintenance-page-with-social-links.tsx",
+      "content": "export default function MaintenancePageWithSocialLinks() {\n  return (\n    <section className=\"relative py-24\">\n      <div className=\"mx-auto w-full max-w-7xl px-4 md:px-5 lg:px-5\">\n        <div className=\"inline-flex w-full flex-col items-center justify-start gap-24 lg:gap-48\">\n          <a href=\"#\"></a>\n          <div className=\"flex w-full flex-col items-center justify-center gap-10 lg:gap-14\">\n            <div className=\"flex w-full flex-col items-center justify-start gap-2.5\">\n              <h2 className=\"font-manrope text-center text-3xl leading-normal font-bold text-gray-800\">\n                We're sorry! The site is under maintenance right now.\n              </h2>\n              <p className=\"text-center text-base leading-relaxed font-normal text-gray-500\">\n                Our website is currently down for scheduled maintenance. We'll\n                return shortly. We appreciate your patience. <br />\n                Contact us for further information.\n                <br />\n                <a className=\"font-medium text-gray-900\">mail@pagedone.com</a>\n              </p>\n            </div>\n            <div className=\"flex w-full flex-col items-center justify-center gap-2.5\">\n              <h6 className=\"text-center text-base leading-relaxed font-medium text-gray-900\">\n                Follow Us!\n              </h6>\n              <div className=\"inline-flex items-center justify-center gap-3.5\">\n                <a className=\"group flex items-start justify-start gap-2.5 rounded-full bg-indigo-700 p-2 transition-all duration-700 ease-in-out hover:bg-indigo-800\"></a>\n                <a className=\"group flex items-start justify-start gap-2.5 rounded-full bg-indigo-700 p-2 transition-all duration-700 ease-in-out hover:bg-indigo-800\"></a>\n                <a className=\"group flex items-start justify-start gap-2.5 rounded-full bg-indigo-700 p-2 transition-all duration-700 ease-in-out hover:bg-indigo-800\"></a>\n                <a className=\"group flex items-start justify-start gap-2.5 rounded-full bg-indigo-700 p-2 transition-all duration-700 ease-in-out hover:bg-indigo-800\"></a>\n                <a className=\"group flex items-start justify-start gap-2.5 rounded-full bg-indigo-700 p-2 transition-all duration-700 ease-in-out hover:bg-indigo-800\"></a>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "full-pages"
+  ],
+  "tier": "pro",
+  "readiness": "alpha"
+}

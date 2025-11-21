@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-stats-a-snapshot-of-our-performance",
+  "type": "registry:block",
+  "description": "A a snapshot of our performance block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/stats/a-snapshot-of-our-performance.tsx",
+      "content": "export default function ASnapshotOfOurPerformance() {\n  return (\n    <section className=\"font-inter py-20\">\n      <div className=\"mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8\">\n        <div className=\"flex flex-col items-center justify-center gap-4\">\n          <div className=\"flex items-center gap-1.5 rounded-full bg-indigo-500 px-3 py-0.5\">\n            {/* SVG removed */}\n            <span className=\"text-xs leading-5 font-medium text-white\">\n              Statistics\n            </span>\n          </div>\n          <h2 className=\"font-manrope pt-0.5 text-center text-4xl font-bold text-gray-900\">\n            A Snapshot of Our Performance\n          </h2>\n        </div>\n        <div className=\"pt-14\">\n          <div className=\"grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3\">\n            <div className=\"flex flex-col gap-3 border-b border-gray-200 p-9 text-center sm:border-r\">\n              <h3 className=\"font-manrope text-4xl font-bold text-indigo-600\">\n                240+\n              </h3>\n              <p className=\"text-xl leading-8 font-medium text-gray-900\">\n                Company growth\n              </p>\n            </div>\n            <div className=\"flex flex-col gap-3 border-b border-gray-200 p-9 text-center md:border-r\">\n              <h3 className=\"font-manrope text-4xl font-bold text-indigo-600\">\n                120%\n              </h3>\n              <p className=\"text-xl leading-8 font-medium text-gray-900\">\n                Projects Delivered\n              </p>\n            </div>\n            <div className=\"flex flex-col gap-3 border-b border-gray-200 p-9 text-center sm:border-r md:border-r-0\">\n              <h3 className=\"font-manrope text-4xl font-bold text-indigo-600\">\n                100%\n              </h3>\n              <p className=\"text-xl leading-8 font-medium text-gray-900\">\n                Orders in Queue\n              </p>\n            </div>\n            <div className=\"flex flex-col gap-3 border-b border-gray-200 p-9 text-center md:border-r md:border-b-0\">\n              <h3 className=\"font-manrope text-4xl font-bold text-indigo-600\">\n                160%\n              </h3>\n              <p className=\"text-xl leading-8 font-medium text-gray-900\">\n                Active Clients\n              </p>\n            </div>\n            <div className=\"flex flex-col gap-3 border-b border-gray-200 p-9 text-center sm:border-r sm:border-b-0\">\n              <h3 className=\"font-manrope text-4xl font-bold text-indigo-600\">\n                160%\n              </h3>\n              <p className=\"text-xl leading-8 font-medium text-gray-900\">\n                Increase in new leads\n              </p>\n            </div>\n            <div className=\"flex flex-col gap-3 p-9 text-center\">\n              <h3 className=\"font-manrope text-4xl font-bold text-indigo-600\">\n                180%\n              </h3>\n              <p className=\"text-xl leading-8 font-medium text-gray-900\">\n                Expert Consultants{\" \"}\n              </p>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "free",
+  "readiness": "alpha"
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "smooth-scroll",
+  "type": "registry:ui",
+  "description": "Animation component: smooth scroll",
+  "files": [
+    {
+      "path": "registry/new-york-v4/animations/smooth-scroll/smooth-scroll.tsx",
+      "content": "\"use client\"\n\nimport type { ReactNode } from \"react\"\nimport { memo, useEffect, useRef } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { useIsMobile } from \"@/hooks/use-mobile\"\n\nexport type SmoothScrollProps = {\n  /** Content to wrap with smooth scrolling */\n  children: ReactNode\n  /** Additional CSS classes */\n  className?: string\n  /** Interpolation speed (0-1). Lower = smoother but slower. Default: 0.1 */\n  speed?: number\n  /** Disable smooth scroll on mobile for better native performance. Default: true */\n  disableOnMobile?: boolean\n}\n\n/**\n * Smooth scroll container using requestAnimationFrame.\n * Creates a buttery smooth scrolling experience by interpolating scroll position.\n *\n * Note: This wraps your entire scrollable content and overrides native scroll behavior.\n * Consider performance implications for very long pages.\n */\nexport const SmoothScroll = memo<SmoothScrollProps>(\n  ({ children, className, speed = 0.1, disableOnMobile = true }) => {\n    const isMobile = useIsMobile()\n    const containerRef = useRef<HTMLDivElement>(null)\n    const scrollRef = useRef<HTMLDivElement>(null)\n    const currentScrollY = useRef(0)\n    const targetScrollY = useRef(0)\n\n    const shouldDisable = disableOnMobile && isMobile\n\n    useEffect(() => {\n      if (shouldDisable) return\n\n      const container = containerRef.current\n      const scrollContent = scrollRef.current\n      if (!container || !scrollContent) return\n\n      let animationFrame: number\n\n      const handleWheel = (e: WheelEvent) => {\n        e.preventDefault()\n        targetScrollY.current += e.deltaY\n        targetScrollY.current = Math.max(\n          0,\n          Math.min(\n            targetScrollY.current,\n            scrollContent.offsetHeight - window.innerHeight\n          )\n        )\n      }\n\n      const smoothScroll = () => {\n        currentScrollY.current +=\n          (targetScrollY.current - currentScrollY.current) * speed\n\n        if (Math.abs(targetScrollY.current - currentScrollY.current) < 0.5) {\n          currentScrollY.current = targetScrollY.current\n        }\n\n        scrollContent.style.transform = `translateY(-${currentScrollY.current}px)`\n        animationFrame = requestAnimationFrame(smoothScroll)\n      }\n\n      container.addEventListener(\"wheel\", handleWheel, { passive: false })\n      smoothScroll()\n\n      return () => {\n        container.removeEventListener(\"wheel\", handleWheel)\n        cancelAnimationFrame(animationFrame)\n      }\n    }, [speed, shouldDisable])\n\n    if (shouldDisable) {\n      return <div className={className}>{children}</div>\n    }\n\n    return (\n      <div\n        ref={containerRef}\n        className={cn(\"fixed inset-0 overflow-hidden\", className)}\n      >\n        <div ref={scrollRef} className=\"will-change-transform\">\n          {children}\n        </div>\n      </div>\n    )\n  }\n)\n\nSmoothScroll.displayName = \"SmoothScroll\"\n\nexport default SmoothScroll\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "beta"
+}

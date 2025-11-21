@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "spacer",
+  "type": "registry:ui",
+  "dependencies": [
+    "class-variance-authority",
+    "@radix-ui/react-slot"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/ui/spacer.tsx",
+      "content": "import React from \"react\"\nimport { Slot } from \"@radix-ui/react-slot\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\n\nimport { cn } from \"@/registry/new-york-v4/lib/utils\"\n\ntype HTMLDivProps = React.HTMLAttributes<HTMLDivElement>\n\n// Spacer variants using 4-based spacing system\nexport const spacerVariants = cva(\"shrink-0\", {\n  variants: {\n    size: {\n      xxs: \"h-1\", // 4px\n      xs: \"h-2\", // 8px\n      sm: \"h-3\", // 12px\n      md: \"h-4\", // 16px\n      lg: \"h-6\", // 24px\n      xl: \"h-8\", // 32px\n      \"2xl\": \"h-10\", // 40px\n      \"3xl\": \"h-12\", // 48px\n      \"4xl\": \"h-16\", // 64px\n      \"5xl\": \"h-20\", // 80px\n      \"6xl\": \"h-24\", // 96px\n      \"7xl\": \"h-32\", // 128px\n      \"8xl\": \"h-40\", // 160px\n      \"9xl\": \"h-48\", // 192px\n    },\n    axis: {\n      vertical: \"\",\n      horizontal: \"\",\n    },\n  },\n  compoundVariants: [\n    // Horizontal variants - set width instead of height\n    {\n      axis: \"horizontal\",\n      size: \"xxs\",\n      className: \"w-1 h-auto\",\n    },\n    {\n      axis: \"horizontal\",\n      size: \"xs\",\n      className: \"w-2 h-auto\",\n    },\n    {\n      axis: \"horizontal\",\n      size: \"sm\",\n      className: \"w-3 h-auto\",\n    },\n    {\n      axis: \"horizontal\",\n      size: \"md\",\n      className: \"w-4 h-auto\",\n    },\n    {\n      axis: \"horizontal\",\n      size: \"lg\",\n      className: \"w-6 h-auto\",\n    },\n    {\n      axis: \"horizontal\",\n      size: \"xl\",\n      className: \"w-8 h-auto\",\n    },\n    {\n      axis: \"horizontal\",\n      size: \"2xl\",\n      className: \"w-10 h-auto\",\n    },\n    {\n      axis: \"horizontal\",\n      size: \"3xl\",\n      className: \"w-12 h-auto\",\n    },\n    {\n      axis: \"horizontal\",\n      size: \"4xl\",\n      className: \"w-16 h-auto\",\n    },\n    {\n      axis: \"horizontal\",\n      size: \"5xl\",\n      className: \"w-20 h-auto\",\n    },\n    {\n      axis: \"horizontal\",\n      size: \"6xl\",\n      className: \"w-24 h-auto\",\n    },\n    {\n      axis: \"horizontal\",\n      size: \"7xl\",\n      className: \"w-32 h-auto\",\n    },\n    {\n      axis: \"horizontal\",\n      size: \"8xl\",\n      className: \"w-40 h-auto\",\n    },\n    {\n      axis: \"horizontal\",\n      size: \"9xl\",\n      className: \"w-48 h-auto\",\n    },\n  ],\n  defaultVariants: {\n    size: \"md\",\n    axis: \"vertical\",\n  },\n})\n\nexport interface SpacerProps\n  extends HTMLDivProps,\n    VariantProps<typeof spacerVariants> {\n  asChild?: boolean\n}\n\nexport const Spacer = React.forwardRef<HTMLDivElement, SpacerProps>(\n  ({ className, size, axis, asChild = false, ...props }, ref) => {\n    const Comp = asChild ? Slot : \"div\"\n    return (\n      <Comp\n        ref={ref}\n        className={cn(spacerVariants({ size, axis }), className)}\n        aria-hidden=\"true\"\n        {...props}\n      />\n    )\n  }\n)\nSpacer.displayName = \"Spacer\"\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "primitives"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "grid-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "grid"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/grid-demo.tsx",
+      "content": "\"use client\"\n\nimport Grid from \"@/registry/new-york-v4/ui/grid\"\n\nexport default function GridDemo() {\n  return (\n    <div className=\"w-full max-w-3xl p-8\">\n      <Grid cols={3} gap=\"md\" colsMobile={2}>\n        <div className=\"bg-card border-border text-foreground flex h-20 items-center justify-center rounded-lg border shadow-sm\">\n          <span className=\"text-lg font-semibold\">1</span>\n        </div>\n        <div className=\"bg-card border-border text-foreground flex h-20 items-center justify-center rounded-lg border shadow-sm\">\n          <span className=\"text-lg font-semibold\">2</span>\n        </div>\n        <div className=\"bg-card border-border text-foreground flex h-20 items-center justify-center rounded-lg border shadow-sm\">\n          <span className=\"text-lg font-semibold\">3</span>\n        </div>\n        <div className=\"bg-card border-border text-foreground flex h-20 items-center justify-center rounded-lg border shadow-sm\">\n          <span className=\"text-lg font-semibold\">4</span>\n        </div>\n        <div className=\"bg-card border-border text-foreground flex h-20 items-center justify-center rounded-lg border shadow-sm\">\n          <span className=\"text-lg font-semibold\">5</span>\n        </div>\n        <div className=\"bg-card border-border text-foreground flex h-20 items-center justify-center rounded-lg border shadow-sm\">\n          <span className=\"text-lg font-semibold\">6</span>\n        </div>\n      </Grid>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "primitives"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-stats-a-snapshot-of-our-performance-grid-stats",
+  "type": "registry:block",
+  "description": "A a snapshot of our performance grid stats block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/stats/a-snapshot-of-our-performance-grid-stats.tsx",
+      "content": "export default function ASnapshotOfOurPerformanceGridStats() {\n  return (\n    <section className=\"font-inter bg-cover bg-no-repeat py-14 lg:py-24\">\n      <div className=\"mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8\">\n        <div className=\"flex flex-col items-center gap-14 lg:gap-80\">\n          <div className=\"grid grid-cols-1 gap-4 text-center lg:grid-cols-2 lg:gap-8 lg:text-start\">\n            <h2 className=\"font-manrope my-auto text-4xl font-bold text-white\">\n              Statistics about something specific like a portfolio.\n            </h2>\n            <div className=\"flex flex-col gap-4 lg:gap-2.5\">\n              <p className=\"text-xl leading-8 font-normal text-gray-200\">\n                This report offers a detailed statistical analysis of the\n                portfolio, focusing on its performance and composition.\n              </p>\n              <button className=\"mx-auto w-fit rounded-full bg-white px-4 py-2 text-sm leading-6 font-medium text-black shadow-sm transition-all duration-500 hover:bg-gray-200 lg:mx-0\">\n                Lets get started\n              </button>\n            </div>\n          </div>\n          <div className=\"flex flex-wrap items-center justify-center gap-8 lg:flex-nowrap\">\n            <div className=\"flex flex-col items-center justify-center gap-4 text-center\">\n              <h3 className=\"font-manrope text-5xl font-bold text-white\">\n                13M\n              </h3>\n              <p className=\"text-lg leading-8 font-normal text-gray-200\">\n                We have reach more than 13 millions user in around the world\n              </p>\n            </div>\n            <div className=\"flex flex-col items-center justify-center gap-4 text-center\">\n              <h3 className=\"font-manrope text-5xl font-bold text-white\">\n                50M\n              </h3>\n              <p className=\"text-lg leading-8 font-normal text-gray-200\">\n                Pagedone is one of most downloaded on google play\n              </p>\n            </div>\n            <div className=\"flex flex-col items-center justify-center gap-4 text-center\">\n              <h3 className=\"font-manrope text-5xl font-bold text-white\">\n                98%\n              </h3>\n              <p className=\"text-lg leading-8 font-normal text-gray-200\">\n                Our user are satisfied using our services in their daily site\n              </p>\n            </div>\n            <div className=\"flex flex-col items-center justify-center gap-4 text-center\">\n              <h3 className=\"font-manrope text-5xl font-bold text-white\">\n                80%\n              </h3>\n              <p className=\"text-lg leading-8 font-normal text-gray-200\">\n                projects completed and delivered, we pride ourselves\n              </p>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "free",
+  "readiness": "alpha"
+}

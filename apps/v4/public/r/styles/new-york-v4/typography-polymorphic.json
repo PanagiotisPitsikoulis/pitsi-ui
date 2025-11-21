@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "typography-polymorphic",
+  "type": "registry:example",
+  "registryDependencies": [
+    "typography"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/typography-polymorphic.tsx",
+      "content": "import Typography from \"@/registry/new-york-v4/ui/typography\"\n\nexport default function TypographyPolymorphic() {\n  return (\n    <div className=\"space-y-4\">\n      <Typography\n        variant=\"paragraph-md\"\n        as=\"a\"\n        href=\"#\"\n        className=\"text-primary hover:underline\"\n      >\n        This is a paragraph rendered as a link\n      </Typography>\n\n      <div>\n        <Typography variant=\"label-md\" as=\"label\" htmlFor=\"email\">\n          Email Address\n        </Typography>\n        <input\n          id=\"email\"\n          type=\"email\"\n          className=\"mt-1 block w-full rounded-md border px-3 py-2\"\n          placeholder=\"you@example.com\"\n        />\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "primitives"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

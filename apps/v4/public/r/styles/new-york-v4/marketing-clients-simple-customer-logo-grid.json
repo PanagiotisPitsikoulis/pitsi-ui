@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-clients-simple-customer-logo-grid",
+  "type": "registry:block",
+  "description": "A simple customer logo grid block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/clients/simple-customer-logo-grid.tsx",
+      "content": "export default function SimpleCustomerLogoGrid() {\n  return (\n    <section className=\"py-24\">\n      <div className=\"mx-auto max-w-7xl px-4 sm:px-6 lg:px-8\">\n        <div className=\"mb-14 text-center\">\n          <h4 className=\"text-center text-xl font-medium text-gray-400\">\n            Our clients\n          </h4>\n        </div>\n        <div className=\"grid grid-cols-2 items-center justify-center gap-12 md:grid-cols-3 xl:flex xl:grid-cols-none xl:justify-between\">\n          <a href=\"#\" className=\"flex items-center justify-center\">\n            {/* SVG removed */}\n          </a>\n          <a href=\"#\" className=\"flex items-center justify-center\">\n            {/* SVG removed */}\n          </a>\n          <a href=\"#\" className=\"flex items-center justify-center\">\n            {/* SVG removed */}\n          </a>\n          <a href=\"#\" className=\"flex items-center justify-center\">\n            {/* SVG removed */}\n          </a>\n          <a href=\"#\" className=\"flex items-center justify-center\">\n            {/* SVG removed */}\n          </a>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "pro",
+  "readiness": "alpha"
+}

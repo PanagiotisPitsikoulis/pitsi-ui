@@ -1,0 +1,137 @@
+---
+title: Container
+description: A layout component with gutter and padding management for responsive content centering.
+component: true
+---
+
+<ComponentPreview
+  name="container-demo"
+  description="A container with responsive gutters."
+/>
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx pitsi@latest add container
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="container" title="components/ui/container.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx showLineNumbers
+import { Container } from "@/components/ui/container"
+```
+
+```tsx showLineNumbers
+<Container>
+  <h1>Page Content</h1>
+  <p>
+    Your content here will be automatically centered with responsive gutters.
+  </p>
+</Container>
+```
+
+## Components
+
+The Container component exports several utilities:
+
+### Container
+
+The main container component with responsive gutters and centered content.
+
+```tsx showLineNumbers
+<Container>
+  <div>Centered content with gutters</div>
+</Container>
+```
+
+### EscapeContainer
+
+Break out of the container to span the full viewport width.
+
+```tsx showLineNumbers
+<Container>
+  <div>Normal content</div>
+  <EscapeContainer>
+    <div>Full-width content</div>
+  </EscapeContainer>
+</Container>
+```
+
+### SpaceLeft
+
+Add left spacing that matches the container's gutter.
+
+```tsx showLineNumbers
+<SpaceLeft>
+  <div>Content with left spacing</div>
+</SpaceLeft>
+```
+
+### SpaceRight
+
+Add right spacing that matches the container's gutter.
+
+```tsx showLineNumbers
+<SpaceRight>
+  <div>Content with right spacing</div>
+</SpaceRight>
+```
+
+## Props
+
+### Container
+
+| Prop                     | Type              | Default                     | Description                          |
+| ------------------------ | ----------------- | --------------------------- | ------------------------------------ |
+| `children`               | `React.ReactNode` | -                           | The content to be contained          |
+| `gutterWidthClassName`   | `string`          | `"[--gutter-width:10svw]"`  | Custom gutter width CSS variable     |
+| `paddingMobileClassName` | `string`          | `"[--padding-mobile:1rem]"` | Custom mobile padding CSS variable   |
+| `className`              | `string`          | -                           | Additional classes for the wrapper   |
+| `classNames`             | `object`          | -                           | Classes for specific container parts |
+| `classNames.wrapper`     | `string`          | -                           | Classes for the outer wrapper        |
+| `classNames.grid`        | `string`          | -                           | Classes for the grid container       |
+| `classNames.leftBar`     | `string`          | -                           | Classes for the left gutter          |
+| `classNames.rightBar`    | `string`          | -                           | Classes for the right gutter         |
+| `classNames.content`     | `string`          | -                           | Classes for the content area         |
+
+### EscapeContainer
+
+| Prop        | Type              | Default | Description                    |
+| ----------- | ----------------- | ------- | ------------------------------ |
+| `children`  | `React.ReactNode` | -       | The content to span full width |
+| `className` | `string`          | -       | Additional classes             |
+
+### SpaceLeft / SpaceRight
+
+| Prop                     | Type              | Default                     | Description                        |
+| ------------------------ | ----------------- | --------------------------- | ---------------------------------- |
+| `children`               | `React.ReactNode` | -                           | The content to add spacing to      |
+| `className`              | `string`          | -                           | Additional classes                 |
+| `gutterWidthClassName`   | `string`          | `"[--gutter-width:10svw]"`  | Custom gutter width CSS variable   |
+| `paddingMobileClassName` | `string`          | `"[--padding-mobile:1rem]"` | Custom mobile padding CSS variable |

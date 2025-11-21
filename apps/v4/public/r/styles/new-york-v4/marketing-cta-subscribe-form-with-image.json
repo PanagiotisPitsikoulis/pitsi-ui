@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "name": "marketing-cta-subscribe-form-with-image",
+  "type": "registry:block",
+  "description": "A subscribe form with image block.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/marketing/cta/subscribe-form-with-image.tsx",
+      "content": "export default function SubscribeFormWithImage() {\n  return (\n    <section className=\"py-20\">\n      <div className=\"mx-auto max-w-7xl px-4 sm:px-6 lg:px-8\">\n        <div className=\"flex flex-col-reverse items-center justify-between gap-14 lg:flex-row\">\n          <div className=\"w-full flex-1 rounded-2xl bg-indigo-600 p-8 md:px-8 md:py-10 lg:-mr-14 lg:w-auto lg:rounded-l-2xl lg:rounded-r-none lg:px-16 lg:py-20\">\n            <h2 className=\"font-manrope mb-4 text-center text-4xl leading-[3.5rem] font-bold text-white lg:text-left\">\n              Subscribe and get a reward!{\" \"}\n            </h2>\n            <p className=\"text-center text-lg text-indigo-200 lg:text-left\">\n              Join our community of subscribers and receive regular updates\n              delivered straight to your inbox. It's quick, easy, and free\n            </p>\n            <div className=\"mt-14 flex flex-col items-center justify-center gap-4 md:flex-row lg:justify-start\">\n              <input\n                type=\"text\"\n                name=\"email\"\n                className=\"h-14 w-full rounded-full border border-gray-300 bg-indigo-500 px-5 py-2.5 text-lg text-white shadow-sm placeholder:text-indigo-200 focus:outline-none md:max-w-xs\"\n                placeholder=\"Your mail id..\"\n              />\n              <button className=\"h-14 w-full rounded-full bg-white px-8 py-3.5 font-semibold text-indigo-600 shadow-sm md:w-fit\">\n                Subscribe\n              </button>\n            </div>\n          </div>\n          <div className=\"w-full lg:w-auto\">\n            <div className=\"relative flex justify-center lg:block\">\n              <img\n                src=\"\thttps://pagedone.io/asset/uploads/1696242043.png\"\n                alt=\"CTA tailwind section\"\n                className=\"rounded-2xl object-cover\"\n              />\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "marketing"
+  ],
+  "tier": "pro",
+  "readiness": "alpha"
+}
