@@ -29,6 +29,10 @@ export const siteConfig = {
       href: "/blocks",
       label: "Blocks",
     },
+    {
+      href: "/templates",
+      label: "Templates",
+    },
   ],
 }
 
