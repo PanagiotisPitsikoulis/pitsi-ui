@@ -31,6 +31,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-about-us-section-about-description-cards-with-visual-image": {
       name: "marketing-about-us-section-about-description-cards-with-visual-image",
@@ -58,6 +59,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-about-us-section-about-list-with-image": {
       name: "marketing-about-us-section-about-list-with-image",
@@ -85,6 +87,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-about-us-section-about-us-as-blog-cards": {
       name: "marketing-about-us-section-about-us-as-blog-cards",
@@ -112,6 +115,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-about-us-section-about-us-component-tailwind": {
       name: "marketing-about-us-section-about-us-component-tailwind",
@@ -139,6 +143,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-about-us-section-about-us-component-tailwind-with-stats": {
       name: "marketing-about-us-section-about-us-component-tailwind-with-stats",
@@ -166,6 +171,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-about-us-section-about-us-image-gallery": {
       name: "marketing-about-us-section-about-us-image-gallery",
@@ -193,6 +199,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-about-us-section-about-us-informative-tailwind-section": {
       name: "marketing-about-us-section-about-us-informative-tailwind-section",
@@ -220,6 +227,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-about-us-section-about-us-section-tailwind": {
       name: "marketing-about-us-section-about-us-section-tailwind",
@@ -247,6 +255,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-about-us-section-about-us-section-with-number-counter": {
       name: "marketing-about-us-section-about-us-section-with-number-counter",
@@ -274,6 +283,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-about-us-section-about-us-tailwind-with-feature-list": {
       name: "marketing-about-us-section-about-us-tailwind-with-feature-list",
@@ -301,6 +311,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-about-us-section-about-us-tailwind-with-mission-and-vision": {
       name: "marketing-about-us-section-about-us-tailwind-with-mission-and-vision",
@@ -328,6 +339,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-about-us-section-about-us-tailwind-with-vertical-image": {
       name: "marketing-about-us-section-about-us-tailwind-with-vertical-image",
@@ -355,6 +367,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-about-us-section-about-us-template": {
       name: "marketing-about-us-section-about-us-template",
@@ -382,6 +395,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-about-us-section-about-us-two-column-cards": {
       name: "marketing-about-us-section-about-us-two-column-cards",
@@ -409,6 +423,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-about-us-section-about-us-with-alternate-image": {
       name: "marketing-about-us-section-about-us-with-alternate-image",
@@ -436,6 +451,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-about-us-with-descriptive-card": {
       name: "marketing-about-us-section-about-us-with-descriptive-card",
@@ -463,6 +479,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-about-us-with-feature-lists-and-graphs": {
       name: "marketing-about-us-section-about-us-with-feature-lists-and-graphs",
@@ -490,6 +507,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-about-us-with-stat-counts": {
       name: "marketing-about-us-section-about-us-with-stat-counts",
@@ -517,6 +535,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-alternate-image-with-feature-list": {
       name: "marketing-about-us-section-alternate-image-with-feature-list",
@@ -544,6 +563,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-background-image-with-overlay-description": {
       name: "marketing-about-us-section-background-image-with-overlay-description",
@@ -571,6 +591,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-background-image-with-text-overlay": {
       name: "marketing-about-us-section-background-image-with-text-overlay",
@@ -598,6 +619,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-basic-about-us-section-tailwind": {
       name: "marketing-about-us-section-basic-about-us-section-tailwind",
@@ -625,6 +647,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-content-and-image-side-by-side": {
       name: "marketing-about-us-section-content-and-image-side-by-side",
@@ -652,6 +675,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-creative-about-us-section": {
       name: "marketing-about-us-section-creative-about-us-section",
@@ -679,6 +703,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-creative-about-us-with-key-feature-list": {
       name: "marketing-about-us-section-creative-about-us-with-key-feature-list",
@@ -706,6 +731,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-creative-visual-image-with-about-info": {
       name: "marketing-about-us-section-creative-visual-image-with-about-info",
@@ -733,6 +759,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-dark-theme-about-us-section": {
       name: "marketing-about-us-section-dark-theme-about-us-section",
@@ -760,6 +787,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-full-heighted-about-us-tailwind-component": {
       name: "marketing-about-us-section-full-heighted-about-us-tailwind-component",
@@ -787,6 +815,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-image-with-feature-list": {
       name: "marketing-about-us-section-image-with-feature-list",
@@ -814,6 +843,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-image-with-mission-and-vision": {
       name: "marketing-about-us-section-image-with-mission-and-vision",
@@ -841,6 +871,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-images-with-heading-and-description": {
       name: "marketing-about-us-section-images-with-heading-and-description",
@@ -868,6 +899,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-side-by-side-about-us-tailwind": {
       name: "marketing-about-us-section-side-by-side-about-us-tailwind",
@@ -895,6 +927,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-side-by-side-image-about-us-template": {
       name: "marketing-about-us-section-side-by-side-image-about-us-template",
@@ -922,6 +955,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-side-by-side-image-with-content": {
       name: "marketing-about-us-section-side-by-side-image-with-content",
@@ -949,6 +983,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-simple-about-us-section": {
       name: "marketing-about-us-section-simple-about-us-section",
@@ -976,6 +1011,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-splitted-about-us-tailwind-template": {
       name: "marketing-about-us-section-splitted-about-us-tailwind-template",
@@ -1003,6 +1039,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-splitted-content-and-image": {
       name: "marketing-about-us-section-splitted-content-and-image",
@@ -1030,6 +1067,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-tailwind-about-us-cards": {
       name: "marketing-about-us-section-tailwind-about-us-cards",
@@ -1057,6 +1095,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-tailwind-about-us-page": {
       name: "marketing-about-us-section-tailwind-about-us-page",
@@ -1084,6 +1123,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-tailwind-about-us-page-with-dark-theme": {
       name: "marketing-about-us-section-tailwind-about-us-page-with-dark-theme",
@@ -1111,6 +1151,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-tailwind-about-us-section-with-image": {
       name: "marketing-about-us-section-tailwind-about-us-section-with-image",
@@ -1138,6 +1179,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-tailwind-about-us-section-with-video-layout": {
       name: "marketing-about-us-section-tailwind-about-us-section-with-video-layout",
@@ -1165,6 +1207,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-tailwind-about-us-template-with-image": {
       name: "marketing-about-us-section-tailwind-about-us-template-with-image",
@@ -1192,6 +1235,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-tailwind-about-us-with-image-grid": {
       name: "marketing-about-us-section-tailwind-about-us-with-image-grid",
@@ -1219,6 +1263,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-tailwind-css-about-us-with-tab": {
       name: "marketing-about-us-section-tailwind-css-about-us-with-tab",
@@ -1246,6 +1291,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-three-columns-about-section": {
       name: "marketing-about-us-section-three-columns-about-section",
@@ -1273,6 +1319,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-vertical-about-slider": {
       name: "marketing-about-us-section-vertical-about-slider",
@@ -1300,6 +1347,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-vertical-about-us-tailwind": {
       name: "marketing-about-us-section-vertical-about-us-tailwind",
@@ -1327,6 +1375,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-vertical-stat-counts-cards": {
       name: "marketing-about-us-section-vertical-stat-counts-cards",
@@ -1354,6 +1403,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-about-us-section-visual-image-with-stats": {
       name: "marketing-about-us-section-visual-image-with-stats",
@@ -1381,6 +1431,7 @@ export const IndexBlocksMarketingAboutUsSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
   },
 }

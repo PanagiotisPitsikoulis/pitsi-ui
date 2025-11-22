@@ -36,6 +36,7 @@ export const IndexBlocksApplicationCalendar: Record<
         mobile: "component",
       },
       tier: "free",
+      readiness: "beta",
     },
     "calendar-03": {
       name: "calendar-03",
@@ -68,6 +69,7 @@ export const IndexBlocksApplicationCalendar: Record<
         mobile: "component",
       },
       tier: "pro",
+      readiness: "beta",
     },
     "calendar-04": {
       name: "calendar-04",
@@ -100,6 +102,7 @@ export const IndexBlocksApplicationCalendar: Record<
         mobile: "component",
       },
       tier: "pro",
+      readiness: "beta",
     },
     "calendar-05": {
       name: "calendar-05",
@@ -132,6 +135,7 @@ export const IndexBlocksApplicationCalendar: Record<
         mobile: "component",
       },
       tier: "pro",
+      readiness: "beta",
     },
     "calendar-06": {
       name: "calendar-06",
@@ -164,6 +168,7 @@ export const IndexBlocksApplicationCalendar: Record<
         mobile: "component",
       },
       tier: "pro",
+      readiness: "beta",
     },
     "calendar-07": {
       name: "calendar-07",
@@ -196,6 +201,7 @@ export const IndexBlocksApplicationCalendar: Record<
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-08": {
       name: "calendar-08",
@@ -228,6 +234,7 @@ export const IndexBlocksApplicationCalendar: Record<
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-09": {
       name: "calendar-09",
@@ -260,6 +267,7 @@ export const IndexBlocksApplicationCalendar: Record<
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-10": {
       name: "calendar-10",
@@ -292,6 +300,7 @@ export const IndexBlocksApplicationCalendar: Record<
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-11": {
       name: "calendar-11",
@@ -324,6 +333,7 @@ export const IndexBlocksApplicationCalendar: Record<
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-12": {
       name: "calendar-12",
@@ -356,6 +366,7 @@ export const IndexBlocksApplicationCalendar: Record<
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-13": {
       name: "calendar-13",
@@ -388,6 +399,7 @@ export const IndexBlocksApplicationCalendar: Record<
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-14": {
       name: "calendar-14",
@@ -420,6 +432,7 @@ export const IndexBlocksApplicationCalendar: Record<
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-15": {
       name: "calendar-15",
@@ -452,6 +465,7 @@ export const IndexBlocksApplicationCalendar: Record<
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-16": {
       name: "calendar-16",
@@ -484,6 +498,7 @@ export const IndexBlocksApplicationCalendar: Record<
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-17": {
       name: "calendar-17",
@@ -516,6 +531,7 @@ export const IndexBlocksApplicationCalendar: Record<
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-18": {
       name: "calendar-18",
@@ -548,6 +564,7 @@ export const IndexBlocksApplicationCalendar: Record<
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-19": {
       name: "calendar-19",
@@ -580,6 +597,7 @@ export const IndexBlocksApplicationCalendar: Record<
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-20": {
       name: "calendar-20",
@@ -612,6 +630,7 @@ export const IndexBlocksApplicationCalendar: Record<
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-21": {
       name: "calendar-21",
@@ -644,6 +663,7 @@ export const IndexBlocksApplicationCalendar: Record<
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-22": {
       name: "calendar-22",
@@ -676,6 +696,7 @@ export const IndexBlocksApplicationCalendar: Record<
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-23": {
       name: "calendar-23",
@@ -708,6 +729,7 @@ export const IndexBlocksApplicationCalendar: Record<
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-24": {
       name: "calendar-24",
@@ -740,6 +762,7 @@ export const IndexBlocksApplicationCalendar: Record<
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-25": {
       name: "calendar-25",
@@ -772,6 +795,7 @@ export const IndexBlocksApplicationCalendar: Record<
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-26": {
       name: "calendar-26",
@@ -804,6 +828,7 @@ export const IndexBlocksApplicationCalendar: Record<
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-27": {
       name: "calendar-27",
@@ -836,6 +861,7 @@ export const IndexBlocksApplicationCalendar: Record<
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-28": {
       name: "calendar-28",
@@ -868,6 +894,7 @@ export const IndexBlocksApplicationCalendar: Record<
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-29": {
       name: "calendar-29",
@@ -900,6 +927,7 @@ export const IndexBlocksApplicationCalendar: Record<
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-30": {
       name: "calendar-30",
@@ -932,6 +960,7 @@ export const IndexBlocksApplicationCalendar: Record<
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-31": {
       name: "calendar-31",
@@ -964,6 +993,7 @@ export const IndexBlocksApplicationCalendar: Record<
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-32": {
       name: "calendar-32",
@@ -996,6 +1026,7 @@ export const IndexBlocksApplicationCalendar: Record<
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "application-calendar-borderless-stacked-calendar": {
       name: "application-calendar-borderless-stacked-calendar",
@@ -1023,6 +1054,7 @@ export const IndexBlocksApplicationCalendar: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-calendar-dark-calendar-view": {
       name: "application-calendar-dark-calendar-view",
@@ -1050,6 +1082,7 @@ export const IndexBlocksApplicationCalendar: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-calendar-double-horizontal-calendar": {
       name: "application-calendar-double-horizontal-calendar",
@@ -1077,6 +1110,7 @@ export const IndexBlocksApplicationCalendar: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-calendar-double-vertical-calendar": {
       name: "application-calendar-double-vertical-calendar",
@@ -1104,6 +1138,7 @@ export const IndexBlocksApplicationCalendar: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-calendar-month-view-calendar": {
       name: "application-calendar-month-view-calendar",
@@ -1131,6 +1166,7 @@ export const IndexBlocksApplicationCalendar: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-calendar-month-view-calendar-with-centered": {
       name: "application-calendar-month-view-calendar-with-centered",
@@ -1158,6 +1194,7 @@ export const IndexBlocksApplicationCalendar: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-calendar-month-view-calendar-with-cta-button": {
       name: "application-calendar-month-view-calendar-with-cta-button",
@@ -1185,6 +1222,7 @@ export const IndexBlocksApplicationCalendar: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-calendar-side-by-side-calendar-with-events": {
       name: "application-calendar-side-by-side-calendar-with-events",
@@ -1212,6 +1250,7 @@ export const IndexBlocksApplicationCalendar: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-calendar-small-calendar-with-cta-and-meeting-list": {
       name: "application-calendar-small-calendar-with-cta-and-meeting-list",
@@ -1239,6 +1278,7 @@ export const IndexBlocksApplicationCalendar: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-calendar-tailwind-calendar-with-image": {
       name: "application-calendar-tailwind-calendar-with-image",
@@ -1266,6 +1306,7 @@ export const IndexBlocksApplicationCalendar: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-calendar-week-view-calendar-with-time": {
       name: "application-calendar-week-view-calendar-with-time",
@@ -1293,6 +1334,7 @@ export const IndexBlocksApplicationCalendar: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-calendar-year-view-calendar": {
       name: "application-calendar-year-view-calendar",
@@ -1320,6 +1362,7 @@ export const IndexBlocksApplicationCalendar: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
   },
 }

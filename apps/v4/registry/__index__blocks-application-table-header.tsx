@@ -31,6 +31,7 @@ export const IndexBlocksApplicationTableHeader: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-table-header-multi-level-table-header-with-filters": {
       name: "application-table-header-multi-level-table-header-with-filters",
@@ -58,6 +59,7 @@ export const IndexBlocksApplicationTableHeader: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-table-header-table-header-with-search-input-and-cta-button": {
       name: "application-table-header-table-header-with-search-input-and-cta-button",
@@ -85,6 +87,7 @@ export const IndexBlocksApplicationTableHeader: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "application-table-header-table-header-with-tabs": {
       name: "application-table-header-table-header-with-tabs",
@@ -112,6 +115,7 @@ export const IndexBlocksApplicationTableHeader: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "application-table-header-tailwind-table-sort-header": {
       name: "application-table-header-tailwind-table-sort-header",
@@ -139,6 +143,7 @@ export const IndexBlocksApplicationTableHeader: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
   },
 }

@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "dependencies": [
     "next-themes",
-    "@remixicon/react"
+    "lucide-react"
   ],
   "files": [
     {

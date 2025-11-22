@@ -31,6 +31,7 @@ export const IndexBlocksMarketingHowItWorks: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-how-it-works-horizontal-how-it-works-steps": {
       name: "marketing-how-it-works-horizontal-how-it-works-steps",
@@ -58,6 +59,7 @@ export const IndexBlocksMarketingHowItWorks: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-how-it-works-how-it-works-cards-with-illustrations": {
       name: "marketing-how-it-works-how-it-works-cards-with-illustrations",
@@ -85,6 +87,7 @@ export const IndexBlocksMarketingHowItWorks: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-how-it-works-how-it-works-cards-with-images": {
       name: "marketing-how-it-works-how-it-works-cards-with-images",
@@ -112,6 +115,7 @@ export const IndexBlocksMarketingHowItWorks: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-how-it-works-how-it-works-in-dark-mode": {
       name: "marketing-how-it-works-how-it-works-in-dark-mode",
@@ -139,6 +143,7 @@ export const IndexBlocksMarketingHowItWorks: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-how-it-works-how-it-works-with-cards": {
       name: "marketing-how-it-works-how-it-works-with-cards",
@@ -166,6 +171,7 @@ export const IndexBlocksMarketingHowItWorks: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-how-it-works-how-it-works-with-creative-illustration": {
       name: "marketing-how-it-works-how-it-works-with-creative-illustration",
@@ -193,6 +199,7 @@ export const IndexBlocksMarketingHowItWorks: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-how-it-works-how-it-works-with-horizontal-progression": {
       name: "marketing-how-it-works-how-it-works-with-horizontal-progression",
@@ -220,6 +227,7 @@ export const IndexBlocksMarketingHowItWorks: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-how-it-works-how-it-works-with-icons": {
       name: "marketing-how-it-works-how-it-works-with-icons",
@@ -247,6 +255,7 @@ export const IndexBlocksMarketingHowItWorks: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-how-it-works-how-it-works-with-illustration": {
       name: "marketing-how-it-works-how-it-works-with-illustration",
@@ -274,6 +283,7 @@ export const IndexBlocksMarketingHowItWorks: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-how-it-works-how-it-works-with-the-cta": {
       name: "marketing-how-it-works-how-it-works-with-the-cta",
@@ -301,6 +311,7 @@ export const IndexBlocksMarketingHowItWorks: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-how-it-works-how-it-works-with-the-grid-layout": {
       name: "marketing-how-it-works-how-it-works-with-the-grid-layout",
@@ -328,6 +339,7 @@ export const IndexBlocksMarketingHowItWorks: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-how-it-works-side-by-side-how-it-works-blocks": {
       name: "marketing-how-it-works-side-by-side-how-it-works-blocks",
@@ -355,6 +367,7 @@ export const IndexBlocksMarketingHowItWorks: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-how-it-works-splitted-how-it-works-blocks": {
       name: "marketing-how-it-works-splitted-how-it-works-blocks",
@@ -382,6 +395,7 @@ export const IndexBlocksMarketingHowItWorks: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-how-it-works-vertical-how-it-works-cards": {
       name: "marketing-how-it-works-vertical-how-it-works-cards",
@@ -409,6 +423,7 @@ export const IndexBlocksMarketingHowItWorks: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
   },
 }

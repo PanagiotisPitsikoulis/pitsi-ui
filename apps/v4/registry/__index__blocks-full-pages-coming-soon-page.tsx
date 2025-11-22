@@ -31,6 +31,7 @@ export const IndexBlocksFullPagesComingSoonPage: Record<
       categories: ["full-pages"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "full-pages-coming-soon-page-circular-countdown-coming-soon-page": {
       name: "full-pages-coming-soon-page-circular-countdown-coming-soon-page",
@@ -58,6 +59,7 @@ export const IndexBlocksFullPagesComingSoonPage: Record<
       categories: ["full-pages"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "full-pages-coming-soon-page-dark-tailwinds-are-coming-soon": {
       name: "full-pages-coming-soon-page-dark-tailwinds-are-coming-soon",
@@ -85,6 +87,7 @@ export const IndexBlocksFullPagesComingSoonPage: Record<
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "full-pages-coming-soon-page-splitted-coming-soon-page": {
       name: "full-pages-coming-soon-page-splitted-coming-soon-page",
@@ -112,6 +115,7 @@ export const IndexBlocksFullPagesComingSoonPage: Record<
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "full-pages-coming-soon-page-tailwind-is-coming-soon": {
       name: "full-pages-coming-soon-page-tailwind-is-coming-soon",
@@ -139,6 +143,7 @@ export const IndexBlocksFullPagesComingSoonPage: Record<
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "full-pages-coming-soon-page-tailwind-is-coming-soon-with-a-gradient-background":
       {
@@ -168,6 +173,7 @@ export const IndexBlocksFullPagesComingSoonPage: Record<
         categories: ["full-pages"],
         meta: undefined,
         tier: "pro",
+        readiness: "alpha",
       },
   },
 }

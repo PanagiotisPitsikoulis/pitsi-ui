@@ -31,6 +31,7 @@ export const IndexBlocksECommerceCategoryFilter: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-category-filter-category-filter-on-right-side": {
       name: "e-commerce-category-filter-category-filter-on-right-side",
@@ -58,6 +59,7 @@ export const IndexBlocksECommerceCategoryFilter: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-category-filter-category-filter-with-background": {
       name: "e-commerce-category-filter-category-filter-with-background",
@@ -85,6 +87,7 @@ export const IndexBlocksECommerceCategoryFilter: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "e-commerce-category-filter-category-filter-with-separate-header": {
       name: "e-commerce-category-filter-category-filter-with-separate-header",
@@ -112,6 +115,7 @@ export const IndexBlocksECommerceCategoryFilter: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "e-commerce-category-filter-default-category-filter": {
       name: "e-commerce-category-filter-default-category-filter",
@@ -139,6 +143,7 @@ export const IndexBlocksECommerceCategoryFilter: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
   },
 }

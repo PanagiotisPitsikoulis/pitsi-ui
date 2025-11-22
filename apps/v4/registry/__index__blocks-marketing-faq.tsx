@@ -28,6 +28,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-faq-border-card-faq": {
       name: "marketing-faq-border-card-faq",
@@ -55,6 +56,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-faq-centered-two-column-faq": {
       name: "marketing-faq-centered-two-column-faq",
@@ -82,6 +84,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-faq-creative-image-with-tailwind-faq": {
       name: "marketing-faq-creative-image-with-tailwind-faq",
@@ -109,6 +112,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-faq-default-faq-section-with-image-block": {
       name: "marketing-faq-default-faq-section-with-image-block",
@@ -136,6 +140,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-faq-faq-as-testimonial": {
       name: "marketing-faq-faq-as-testimonial",
@@ -163,6 +168,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-faq-faq-cards-with-background": {
       name: "marketing-faq-faq-cards-with-background",
@@ -190,6 +196,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-faq-faq-illustration-with-questions": {
       name: "marketing-faq-faq-illustration-with-questions",
@@ -217,6 +224,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-faq-faq-inside-horizontal-tabs": {
       name: "marketing-faq-faq-inside-horizontal-tabs",
@@ -244,6 +252,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-faq-faq-inside-tabs": {
       name: "marketing-faq-faq-inside-tabs",
@@ -271,6 +280,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-faq-faq-list-with-creative-image": {
       name: "marketing-faq-faq-list-with-creative-image",
@@ -298,6 +308,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-faq-faq-list-with-image-position": {
       name: "marketing-faq-faq-list-with-image-position",
@@ -325,6 +336,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-faq-faq-section-as-a-list-block": {
       name: "marketing-faq-faq-section-as-a-list-block",
@@ -352,6 +364,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-faq-faq-section-with-arrow-background": {
       name: "marketing-faq-faq-section-with-arrow-background",
@@ -379,6 +392,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-faq-faq-section-with-arrow-style-block": {
       name: "marketing-faq-faq-section-with-arrow-style-block",
@@ -406,6 +420,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-faq-faq-section-with-background-block": {
       name: "marketing-faq-faq-section-with-background-block",
@@ -433,6 +448,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-faq-section-with-box-layout-block": {
       name: "marketing-faq-faq-section-with-box-layout-block",
@@ -460,6 +476,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-faq-section-with-cta-button": {
       name: "marketing-faq-faq-section-with-cta-button",
@@ -487,6 +504,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-faq-with-active-gradient-background": {
       name: "marketing-faq-faq-with-active-gradient-background",
@@ -514,6 +532,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-faq-with-background": {
       name: "marketing-faq-faq-with-background",
@@ -541,6 +560,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-faq-with-category": {
       name: "marketing-faq-faq-with-category",
@@ -568,6 +588,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-faq-with-cta-form": {
       name: "marketing-faq-faq-with-cta-form",
@@ -595,6 +616,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-faq-with-cta-form-and-illustration": {
       name: "marketing-faq-faq-with-cta-form-and-illustration",
@@ -622,6 +644,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-faq-with-cta-info": {
       name: "marketing-faq-faq-with-cta-info",
@@ -649,6 +672,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-faq-with-cta-section": {
       name: "marketing-faq-faq-with-cta-section",
@@ -676,6 +700,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-faq-with-gradient-background": {
       name: "marketing-faq-faq-with-gradient-background",
@@ -703,6 +728,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-faq-with-heading": {
       name: "marketing-faq-faq-with-heading",
@@ -730,6 +756,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-faq-with-horizontal-tab": {
       name: "marketing-faq-faq-with-horizontal-tab",
@@ -757,6 +784,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-faq-with-numeric-list": {
       name: "marketing-faq-faq-with-numeric-list",
@@ -784,6 +812,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-faq-with-vertical-tab": {
       name: "marketing-faq-faq-with-vertical-tab",
@@ -811,6 +840,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-faqs-as-tabs-block": {
       name: "marketing-faq-faqs-as-tabs-block",
@@ -838,6 +868,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-horizontal-aligned-faq": {
       name: "marketing-faq-horizontal-aligned-faq",
@@ -865,6 +896,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-horizontal-faq": {
       name: "marketing-faq-horizontal-faq",
@@ -892,6 +924,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-masonary-structured-faq": {
       name: "marketing-faq-masonary-structured-faq",
@@ -919,6 +952,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-nested-faq-with-category": {
       name: "marketing-faq-nested-faq-with-category",
@@ -946,6 +980,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-question-form-with-faq-list": {
       name: "marketing-faq-question-form-with-faq-list",
@@ -973,6 +1008,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-side-by-side-faq-and-image": {
       name: "marketing-faq-side-by-side-faq-and-image",
@@ -1000,6 +1036,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-tailwind-css-faq-with-cta-form": {
       name: "marketing-faq-tailwind-css-faq-with-cta-form",
@@ -1027,6 +1064,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-tailwind-faq-card": {
       name: "marketing-faq-tailwind-faq-card",
@@ -1054,6 +1092,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-tailwind-faq-component-with-banner-image": {
       name: "marketing-faq-tailwind-faq-component-with-banner-image",
@@ -1081,6 +1120,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-tailwind-faq-section-with-border-layout": {
       name: "marketing-faq-tailwind-faq-section-with-border-layout",
@@ -1108,6 +1148,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-tailwind-faq-section-with-image-and-border-layout": {
       name: "marketing-faq-tailwind-faq-section-with-image-and-border-layout",
@@ -1135,6 +1176,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-tailwind-faq-with-illustration": {
       name: "marketing-faq-tailwind-faq-with-illustration",
@@ -1162,6 +1204,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-three-column-faq-cards": {
       name: "marketing-faq-three-column-faq-cards",
@@ -1189,6 +1232,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-three-column-faq-with-icons": {
       name: "marketing-faq-three-column-faq-with-icons",
@@ -1216,6 +1260,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-three-column-tailwind-faq-section": {
       name: "marketing-faq-three-column-tailwind-faq-section",
@@ -1243,6 +1288,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-two-column-faq-with-headings": {
       name: "marketing-faq-two-column-faq-with-headings",
@@ -1270,6 +1316,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-two-column-with-icon-background": {
       name: "marketing-faq-two-column-with-icon-background",
@@ -1297,6 +1344,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-vertical-faq-list-with-heading": {
       name: "marketing-faq-vertical-faq-list-with-heading",
@@ -1324,6 +1372,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-faq-vertical-tailwind-faq-section": {
       name: "marketing-faq-vertical-tailwind-faq-section",
@@ -1351,6 +1400,7 @@ export const IndexBlocksMarketingFaq: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
   },
 }

@@ -31,6 +31,7 @@ export const IndexBlocksFullPagesAboutUsPage: Record<
       categories: ["full-pages"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "full-pages-about-us-page-about-us-with-image-tiles": {
       name: "full-pages-about-us-page-about-us-with-image-tiles",
@@ -58,6 +59,7 @@ export const IndexBlocksFullPagesAboutUsPage: Record<
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "full-pages-about-us-page-about-us-with-team-and-stats": {
       name: "full-pages-about-us-page-about-us-with-team-and-stats",
@@ -85,6 +87,7 @@ export const IndexBlocksFullPagesAboutUsPage: Record<
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "full-pages-about-us-page-about-us-with-two-column-grid-images-and-description":
       {
@@ -114,6 +117,7 @@ export const IndexBlocksFullPagesAboutUsPage: Record<
         categories: ["full-pages"],
         meta: undefined,
         tier: "pro",
+        readiness: "beta",
       },
   },
 }

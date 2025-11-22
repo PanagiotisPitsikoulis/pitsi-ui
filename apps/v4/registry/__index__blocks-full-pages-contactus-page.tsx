@@ -31,6 +31,7 @@ export const IndexBlocksFullPagesContactusPage: Record<
       categories: ["full-pages"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "full-pages-contactus-page-contact-us-with-feature-list-card-with-email-sign-up":
       {
@@ -60,6 +61,7 @@ export const IndexBlocksFullPagesContactusPage: Record<
         categories: ["full-pages"],
         meta: undefined,
         tier: "pro",
+        readiness: "beta",
       },
     "full-pages-contactus-page-contact-us-with-form-background": {
       name: "full-pages-contactus-page-contact-us-with-form-background",
@@ -87,6 +89,7 @@ export const IndexBlocksFullPagesContactusPage: Record<
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "full-pages-contactus-page-contact-us-with-gradient-background-image": {
       name: "full-pages-contactus-page-contact-us-with-gradient-background-image",
@@ -114,6 +117,7 @@ export const IndexBlocksFullPagesContactusPage: Record<
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
   },
 }

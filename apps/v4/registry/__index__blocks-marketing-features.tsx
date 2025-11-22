@@ -31,6 +31,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-features-a-feature-list-with-colorful-icons": {
       name: "marketing-features-a-feature-list-with-colorful-icons",
@@ -58,6 +59,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-features-alternate-image-with-a-dark-feature-list": {
       name: "marketing-features-alternate-image-with-a-dark-feature-list",
@@ -85,6 +87,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-features-alternate-image-with-feature-list-block": {
       name: "marketing-features-alternate-image-with-feature-list-block",
@@ -112,6 +115,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-features-application-feature-cards": {
       name: "marketing-features-application-feature-cards",
@@ -139,6 +143,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-features-center-mode-feature-card-slider": {
       name: "marketing-features-center-mode-feature-card-slider",
@@ -166,6 +171,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-features-creative-app-mockup-with-features": {
       name: "marketing-features-creative-app-mockup-with-features",
@@ -193,6 +199,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-features-default-feature-tailwind-css-block": {
       name: "marketing-features-default-feature-tailwind-css-block",
@@ -220,6 +227,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-features-description-with-feature-icons": {
       name: "marketing-features-description-with-feature-icons",
@@ -247,6 +255,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-features-feature-block-cards-with-graph-images": {
       name: "marketing-features-feature-block-cards-with-graph-images",
@@ -274,6 +283,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-features-feature-block-with-cover-image-block": {
       name: "marketing-features-feature-block-with-cover-image-block",
@@ -301,6 +311,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-features-feature-blocks-with-partial-slides": {
       name: "marketing-features-feature-blocks-with-partial-slides",
@@ -328,6 +339,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-features-feature-cards-with-background-icons": {
       name: "marketing-features-feature-cards-with-background-icons",
@@ -355,6 +367,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-features-feature-cards-with-graph-images": {
       name: "marketing-features-feature-cards-with-graph-images",
@@ -382,6 +395,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-features-feature-cards-with-overlay-images": {
       name: "marketing-features-feature-cards-with-overlay-images",
@@ -409,6 +423,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-features-feature-grid-with-gradient-icons": {
       name: "marketing-features-feature-grid-with-gradient-icons",
@@ -436,6 +451,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-features-feature-list-card-with-solid-background": {
       name: "marketing-features-feature-list-card-with-solid-background",
@@ -463,6 +479,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-features-feature-list-with-border-layout": {
       name: "marketing-features-feature-list-with-border-layout",
@@ -490,6 +507,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-features-feature-list-with-dashboard-image": {
       name: "marketing-features-feature-list-with-dashboard-image",
@@ -517,6 +535,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-feature-list-with-rounded-cards": {
       name: "marketing-features-feature-list-with-rounded-cards",
@@ -544,6 +563,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-feature-section-with-card-layout": {
       name: "marketing-features-feature-section-with-card-layout",
@@ -571,6 +591,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-feature-section-with-dark-theme-block": {
       name: "marketing-features-feature-section-with-dark-theme-block",
@@ -598,6 +619,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-feature-section-with-faq-block": {
       name: "marketing-features-feature-section-with-faq-block",
@@ -625,6 +647,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-feature-tab-blocks": {
       name: "marketing-features-feature-tab-blocks",
@@ -652,6 +675,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-feature-tab-cards-with-banners": {
       name: "marketing-features-feature-tab-cards-with-banners",
@@ -679,6 +703,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-feature-tabs-with-cta-button-block": {
       name: "marketing-features-feature-tabs-with-cta-button-block",
@@ -706,6 +731,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-features-grid-with-translated-icons": {
       name: "marketing-features-features-grid-with-translated-icons",
@@ -733,6 +759,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-features-with-a-ticker-slider": {
       name: "marketing-features-features-with-a-ticker-slider",
@@ -760,6 +787,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-features-with-auto-height-cards": {
       name: "marketing-features-features-with-auto-height-cards",
@@ -787,6 +815,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-features-with-graphs-and-the-cover-image": {
       name: "marketing-features-features-with-graphs-and-the-cover-image",
@@ -814,6 +843,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-features-with-illustration": {
       name: "marketing-features-features-with-illustration",
@@ -841,6 +871,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-features-with-illustration-image": {
       name: "marketing-features-features-with-illustration-image",
@@ -868,6 +899,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-features-with-illustrations": {
       name: "marketing-features-features-with-illustrations",
@@ -895,6 +927,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-features-with-the-app-mockup": {
       name: "marketing-features-features-with-the-app-mockup",
@@ -922,6 +955,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-grid-layout-feature-cards": {
       name: "marketing-features-grid-layout-feature-cards",
@@ -949,6 +983,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-heading-only-feature-section-with-dark-theme": {
       name: "marketing-features-heading-only-feature-section-with-dark-theme",
@@ -976,6 +1011,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-horizontal-feature-listing": {
       name: "marketing-features-horizontal-feature-listing",
@@ -1003,6 +1039,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-horizontal-feature-tabs-with-images": {
       name: "marketing-features-horizontal-feature-tabs-with-images",
@@ -1030,6 +1067,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-image-with-features": {
       name: "marketing-features-image-with-features",
@@ -1057,6 +1095,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-modern-structured-images-with-feature-lists": {
       name: "marketing-features-modern-structured-images-with-feature-lists",
@@ -1084,6 +1123,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-multicolor-background-feature-cards": {
       name: "marketing-features-multicolor-background-feature-cards",
@@ -1111,6 +1151,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-multicolor-feature-cards": {
       name: "marketing-features-multicolor-feature-cards",
@@ -1138,6 +1179,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-partial-feature-slider-with-the-dark-version": {
       name: "marketing-features-partial-feature-slider-with-the-dark-version",
@@ -1165,6 +1207,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-rounded-feature-list-tabs-with-cover-images": {
       name: "marketing-features-rounded-feature-list-tabs-with-cover-images",
@@ -1192,6 +1235,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-splitted-feature-blocks-with-image": {
       name: "marketing-features-splitted-feature-blocks-with-image",
@@ -1219,6 +1263,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-splitted-feature-section-with-image": {
       name: "marketing-features-splitted-feature-section-with-image",
@@ -1246,6 +1291,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-tailwind-css-feature-cards-with-creative-layout": {
       name: "marketing-features-tailwind-css-feature-cards-with-creative-layout",
@@ -1273,6 +1319,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-tailwind-css-features-as-tabs": {
       name: "marketing-features-tailwind-css-features-as-tabs",
@@ -1300,6 +1347,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-tailwind-css-features-with-phone-mock-up": {
       name: "marketing-features-tailwind-css-features-with-phone-mock-up",
@@ -1327,6 +1375,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-tailwind-feature-cards": {
       name: "marketing-features-tailwind-feature-cards",
@@ -1354,6 +1403,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-tailwind-features-with-cta-buttons": {
       name: "marketing-features-tailwind-features-with-cta-buttons",
@@ -1381,6 +1431,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-tailwind-features-with-custom-icons": {
       name: "marketing-features-tailwind-features-with-custom-icons",
@@ -1408,6 +1459,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-tailwind-features-with-hover-effect": {
       name: "marketing-features-tailwind-features-with-hover-effect",
@@ -1435,6 +1487,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-testimonial-layout-with-feature-card-block": {
       name: "marketing-features-testimonial-layout-with-feature-card-block",
@@ -1462,6 +1515,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-three-column-grid-feature-list": {
       name: "marketing-features-three-column-grid-feature-list",
@@ -1489,6 +1543,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-two-column-feature-grid": {
       name: "marketing-features-two-column-feature-grid",
@@ -1516,6 +1571,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-vertical-accordion-feature-list": {
       name: "marketing-features-vertical-accordion-feature-list",
@@ -1543,6 +1599,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-vertical-feature-card-with-tailwind-css": {
       name: "marketing-features-vertical-feature-card-with-tailwind-css",
@@ -1570,6 +1627,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-vertical-feature-list-with-cover-image": {
       name: "marketing-features-vertical-feature-list-with-cover-image",
@@ -1597,6 +1655,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-vertical-feature-list-with-icons": {
       name: "marketing-features-vertical-feature-list-with-icons",
@@ -1624,6 +1683,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-features-with-gradient-background-block": {
       name: "marketing-features-with-gradient-background-block",
@@ -1651,6 +1711,7 @@ export const IndexBlocksMarketingFeatures: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
   },
 }

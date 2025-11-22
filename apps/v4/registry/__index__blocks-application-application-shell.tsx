@@ -31,6 +31,7 @@ export const IndexBlocksApplicationApplicationShell: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-application-shell-advanced-layout-with-double-sidebar-layout":
       {
@@ -59,6 +60,7 @@ export const IndexBlocksApplicationApplicationShell: Record<
         categories: ["application"],
         meta: undefined,
         tier: "free",
+        readiness: "beta",
       },
     "application-application-shell-alternate-style-of-application-shell": {
       name: "application-application-shell-alternate-style-of-application-shell",
@@ -86,6 +88,7 @@ export const IndexBlocksApplicationApplicationShell: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-application-shell-application-shell-with-navbar": {
       name: "application-application-shell-application-shell-with-navbar",
@@ -113,6 +116,7 @@ export const IndexBlocksApplicationApplicationShell: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "application-application-shell-appplication-shell-with-background": {
       name: "application-application-shell-appplication-shell-with-background",
@@ -140,6 +144,7 @@ export const IndexBlocksApplicationApplicationShell: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "application-application-shell-creative-dashboard-layout-tailwind": {
       name: "application-application-shell-creative-dashboard-layout-tailwind",
@@ -167,6 +172,7 @@ export const IndexBlocksApplicationApplicationShell: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-application-shell-dashboard-layout-with-collapsable-sidebar": {
       name: "application-application-shell-dashboard-layout-with-collapsable-sidebar",
@@ -194,6 +200,7 @@ export const IndexBlocksApplicationApplicationShell: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-application-shell-dashboard-layout-with-navbar": {
       name: "application-application-shell-dashboard-layout-with-navbar",
@@ -221,6 +228,7 @@ export const IndexBlocksApplicationApplicationShell: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-application-shell-shell-layout-with-expandable-sidebar": {
       name: "application-application-shell-shell-layout-with-expandable-sidebar",
@@ -248,6 +256,7 @@ export const IndexBlocksApplicationApplicationShell: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-application-shell-stacked-layout-with-multiple-navbars": {
       name: "application-application-shell-stacked-layout-with-multiple-navbars",
@@ -275,6 +284,7 @@ export const IndexBlocksApplicationApplicationShell: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
   },
 }

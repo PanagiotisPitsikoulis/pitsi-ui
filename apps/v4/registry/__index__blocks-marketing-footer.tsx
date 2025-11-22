@@ -28,6 +28,7 @@ export const IndexBlocksMarketingFooter: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-footer-centered-footer-with-subscribe-form": {
       name: "marketing-footer-centered-footer-with-subscribe-form",
@@ -55,6 +56,7 @@ export const IndexBlocksMarketingFooter: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-footer-creative-with-cta-buttons": {
       name: "marketing-footer-creative-with-cta-buttons",
@@ -82,6 +84,7 @@ export const IndexBlocksMarketingFooter: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-footer-dark-footer-with-newsletter": {
       name: "marketing-footer-dark-footer-with-newsletter",
@@ -109,6 +112,7 @@ export const IndexBlocksMarketingFooter: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-footer-dark-footer-with-subscribe-form": {
       name: "marketing-footer-dark-footer-with-subscribe-form",
@@ -136,6 +140,7 @@ export const IndexBlocksMarketingFooter: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-footer-default-tailwind-footer": {
       name: "marketing-footer-default-tailwind-footer",
@@ -163,6 +168,7 @@ export const IndexBlocksMarketingFooter: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-footer-five-columns-with-subscribe-button": {
       name: "marketing-footer-five-columns-with-subscribe-button",
@@ -190,6 +196,7 @@ export const IndexBlocksMarketingFooter: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-footer-footer-with-app-buttons": {
       name: "marketing-footer-footer-with-app-buttons",
@@ -217,6 +224,7 @@ export const IndexBlocksMarketingFooter: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-footer-footer-with-background": {
       name: "marketing-footer-footer-with-background",
@@ -244,6 +252,7 @@ export const IndexBlocksMarketingFooter: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-footer-footer-with-gallery": {
       name: "marketing-footer-footer-with-gallery",
@@ -271,6 +280,7 @@ export const IndexBlocksMarketingFooter: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-footer-footer-with-member-info": {
       name: "marketing-footer-footer-with-member-info",
@@ -298,6 +308,7 @@ export const IndexBlocksMarketingFooter: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-footer-footer-with-social-media-icons": {
       name: "marketing-footer-footer-with-social-media-icons",
@@ -325,6 +336,7 @@ export const IndexBlocksMarketingFooter: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-footer-four-columns-with-address-location": {
       name: "marketing-footer-four-columns-with-address-location",
@@ -352,6 +364,7 @@ export const IndexBlocksMarketingFooter: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-footer-four-columns-with-subscribe-form": {
       name: "marketing-footer-four-columns-with-subscribe-form",
@@ -379,6 +392,7 @@ export const IndexBlocksMarketingFooter: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-footer-horizontal-footer": {
       name: "marketing-footer-horizontal-footer",
@@ -406,6 +420,7 @@ export const IndexBlocksMarketingFooter: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-footer-horizontal-footer-with-dark-version": {
       name: "marketing-footer-horizontal-footer-with-dark-version",
@@ -433,6 +448,7 @@ export const IndexBlocksMarketingFooter: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-footer-horizontal-footer-with-light-version": {
       name: "marketing-footer-horizontal-footer-with-light-version",
@@ -460,6 +476,7 @@ export const IndexBlocksMarketingFooter: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-footer-newsletter-form-with-pre-footer-cta": {
       name: "marketing-footer-newsletter-form-with-pre-footer-cta",
@@ -487,6 +504,7 @@ export const IndexBlocksMarketingFooter: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-footer-newsletter-with-address-location": {
       name: "marketing-footer-newsletter-with-address-location",
@@ -514,6 +532,7 @@ export const IndexBlocksMarketingFooter: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-footer-pre-footer-newsletter": {
       name: "marketing-footer-pre-footer-newsletter",
@@ -541,6 +560,7 @@ export const IndexBlocksMarketingFooter: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-footer-simple-centered-footer": {
       name: "marketing-footer-simple-centered-footer",
@@ -568,6 +588,7 @@ export const IndexBlocksMarketingFooter: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-footer-simple-footer-with-cta-button": {
       name: "marketing-footer-simple-footer-with-cta-button",
@@ -595,6 +616,7 @@ export const IndexBlocksMarketingFooter: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-footer-standard-footer": {
       name: "marketing-footer-standard-footer",
@@ -622,6 +644,7 @@ export const IndexBlocksMarketingFooter: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-footer-subscribe-form-in-footer": {
       name: "marketing-footer-subscribe-form-in-footer",
@@ -649,6 +672,7 @@ export const IndexBlocksMarketingFooter: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-footer-tailwind-footer-template": {
       name: "marketing-footer-tailwind-footer-template",
@@ -676,6 +700,7 @@ export const IndexBlocksMarketingFooter: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-footer-tailwind-footer-with-dark-version": {
       name: "marketing-footer-tailwind-footer-with-dark-version",
@@ -703,6 +728,7 @@ export const IndexBlocksMarketingFooter: Record<string, Record<string, any>> = {
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
   },
 }

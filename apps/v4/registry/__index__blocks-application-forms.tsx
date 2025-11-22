@@ -31,6 +31,7 @@ export const IndexBlocksApplicationForms: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-forms-application-layout-with-file-upload": {
       name: "application-forms-application-layout-with-file-upload",
@@ -58,6 +59,7 @@ export const IndexBlocksApplicationForms: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-forms-basic-feedback-form": {
       name: "application-forms-basic-feedback-form",
@@ -85,6 +87,7 @@ export const IndexBlocksApplicationForms: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-forms-basic-tailwind-ui-form": {
       name: "application-forms-basic-tailwind-ui-form",
@@ -112,6 +115,7 @@ export const IndexBlocksApplicationForms: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-forms-billing-information-form-with-card-info": {
       name: "application-forms-billing-information-form-with-card-info",
@@ -139,6 +143,7 @@ export const IndexBlocksApplicationForms: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-forms-booking-from": {
       name: "application-forms-booking-from",
@@ -166,6 +171,7 @@ export const IndexBlocksApplicationForms: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-forms-contact-from-tailwind": {
       name: "application-forms-contact-from-tailwind",
@@ -193,6 +199,7 @@ export const IndexBlocksApplicationForms: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-forms-custom-review-tailwind-css-from": {
       name: "application-forms-custom-review-tailwind-css-from",
@@ -220,6 +227,7 @@ export const IndexBlocksApplicationForms: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-forms-edit-profile-form": {
       name: "application-forms-edit-profile-form",
@@ -247,6 +255,7 @@ export const IndexBlocksApplicationForms: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-forms-feedback-from": {
       name: "application-forms-feedback-from",
@@ -274,6 +283,7 @@ export const IndexBlocksApplicationForms: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-forms-invoice-from-tailwind": {
       name: "application-forms-invoice-from-tailwind",
@@ -301,6 +311,7 @@ export const IndexBlocksApplicationForms: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-forms-order-billing-form": {
       name: "application-forms-order-billing-form",
@@ -328,6 +339,7 @@ export const IndexBlocksApplicationForms: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-forms-registration-form": {
       name: "application-forms-registration-form",
@@ -355,6 +367,7 @@ export const IndexBlocksApplicationForms: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-forms-registration-from": {
       name: "application-forms-registration-from",
@@ -382,6 +395,7 @@ export const IndexBlocksApplicationForms: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-forms-request-form-tailwind-css": {
       name: "application-forms-request-form-tailwind-css",
@@ -409,6 +423,7 @@ export const IndexBlocksApplicationForms: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-forms-simple-contact-from": {
       name: "application-forms-simple-contact-from",
@@ -436,6 +451,7 @@ export const IndexBlocksApplicationForms: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-forms-tailwind-form-with-progress-bar": {
       name: "application-forms-tailwind-form-with-progress-bar",
@@ -463,6 +479,7 @@ export const IndexBlocksApplicationForms: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-forms-tailwind-login-form-with-cta": {
       name: "application-forms-tailwind-login-form-with-cta",
@@ -490,6 +507,7 @@ export const IndexBlocksApplicationForms: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-forms-verification-from-tailwind-css": {
       name: "application-forms-verification-from-tailwind-css",
@@ -517,6 +535,7 @@ export const IndexBlocksApplicationForms: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
   },
 }

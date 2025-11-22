@@ -31,6 +31,7 @@ export const IndexBlocksECommerceOrderHistory: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-order-history-order-history-invoice-table": {
       name: "e-commerce-order-history-order-history-invoice-table",
@@ -58,6 +59,7 @@ export const IndexBlocksECommerceOrderHistory: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-order-history-order-history-invoice-with-card-layout": {
       name: "e-commerce-order-history-order-history-invoice-with-card-layout",
@@ -85,6 +87,7 @@ export const IndexBlocksECommerceOrderHistory: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-order-history-order-history-list-with-invoice": {
       name: "e-commerce-order-history-order-history-list-with-invoice",
@@ -112,6 +115,7 @@ export const IndexBlocksECommerceOrderHistory: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-order-history-order-history-table": {
       name: "e-commerce-order-history-order-history-table",
@@ -139,6 +143,7 @@ export const IndexBlocksECommerceOrderHistory: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-order-history-order-history-with-attribute": {
       name: "e-commerce-order-history-order-history-with-attribute",
@@ -166,6 +171,7 @@ export const IndexBlocksECommerceOrderHistory: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-history-order-history-with-banner": {
       name: "e-commerce-order-history-order-history-with-banner",
@@ -193,6 +199,7 @@ export const IndexBlocksECommerceOrderHistory: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-history-order-history-with-card-layout": {
       name: "e-commerce-order-history-order-history-with-card-layout",
@@ -220,6 +227,7 @@ export const IndexBlocksECommerceOrderHistory: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-history-order-history-with-cta-button": {
       name: "e-commerce-order-history-order-history-with-cta-button",
@@ -247,6 +255,7 @@ export const IndexBlocksECommerceOrderHistory: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-history-order-history-with-date-range-and-sort": {
       name: "e-commerce-order-history-order-history-with-date-range-and-sort",
@@ -274,6 +283,7 @@ export const IndexBlocksECommerceOrderHistory: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-history-order-history-with-date-range-and-status": {
       name: "e-commerce-order-history-order-history-with-date-range-and-status",
@@ -301,6 +311,7 @@ export const IndexBlocksECommerceOrderHistory: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-history-order-history-with-detail": {
       name: "e-commerce-order-history-order-history-with-detail",
@@ -328,6 +339,7 @@ export const IndexBlocksECommerceOrderHistory: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-history-order-history-with-pagination": {
       name: "e-commerce-order-history-order-history-with-pagination",
@@ -355,6 +367,7 @@ export const IndexBlocksECommerceOrderHistory: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-history-order-history-with-simple-details": {
       name: "e-commerce-order-history-order-history-with-simple-details",
@@ -382,6 +395,7 @@ export const IndexBlocksECommerceOrderHistory: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-history-order-history-with-sorting": {
       name: "e-commerce-order-history-order-history-with-sorting",
@@ -409,6 +423,7 @@ export const IndexBlocksECommerceOrderHistory: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-history-order-history-with-status-and-cta-button": {
       name: "e-commerce-order-history-order-history-with-status-and-cta-button",
@@ -436,6 +451,7 @@ export const IndexBlocksECommerceOrderHistory: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
   },
 }

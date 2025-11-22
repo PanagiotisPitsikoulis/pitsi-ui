@@ -26,6 +26,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     alert: {
       name: "alert",
@@ -51,6 +52,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "alert-dialog": {
       name: "alert-dialog",
@@ -76,6 +78,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "aspect-ratio": {
       name: "aspect-ratio",
@@ -101,6 +104,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     avatar: {
       name: "avatar",
@@ -126,6 +130,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     badge: {
       name: "badge",
@@ -151,6 +156,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     breadcrumb: {
       name: "breadcrumb",
@@ -176,6 +182,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     button: {
       name: "button",
@@ -201,6 +208,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "button-group": {
       name: "button-group",
@@ -226,6 +234,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     calendar: {
       name: "calendar",
@@ -251,6 +260,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     card: {
       name: "card",
@@ -276,6 +286,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     carousel: {
       name: "carousel",
@@ -301,6 +312,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     chart: {
       name: "chart",
@@ -326,6 +338,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     checkbox: {
       name: "checkbox",
@@ -351,6 +364,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     collapsible: {
       name: "collapsible",
@@ -376,6 +390,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     command: {
       name: "command",
@@ -401,6 +416,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "context-menu": {
       name: "context-menu",
@@ -426,6 +442,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     container: {
       name: "container",
@@ -451,6 +468,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     dialog: {
       name: "dialog",
@@ -476,6 +494,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     drawer: {
       name: "drawer",
@@ -501,6 +520,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "dropdown-menu": {
       name: "dropdown-menu",
@@ -526,6 +546,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     empty: {
       name: "empty",
@@ -551,6 +572,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     field: {
       name: "field",
@@ -576,6 +598,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     flex: {
       name: "flex",
@@ -601,6 +624,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     grid: {
       name: "grid",
@@ -626,6 +650,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "hover-card": {
       name: "hover-card",
@@ -651,6 +676,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     input: {
       name: "input",
@@ -676,6 +702,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "input-group": {
       name: "input-group",
@@ -701,6 +728,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "input-otp": {
       name: "input-otp",
@@ -726,6 +754,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     item: {
       name: "item",
@@ -751,6 +780,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     label: {
       name: "label",
@@ -776,6 +806,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     menubar: {
       name: "menubar",
@@ -801,6 +832,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "navigation-menu": {
       name: "navigation-menu",
@@ -828,6 +860,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     pagination: {
       name: "pagination",
@@ -853,6 +886,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     popover: {
       name: "popover",
@@ -878,6 +912,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     progress: {
       name: "progress",
@@ -903,6 +938,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "radio-group": {
       name: "radio-group",
@@ -928,6 +964,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     resizable: {
       name: "resizable",
@@ -953,6 +990,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "scroll-area": {
       name: "scroll-area",
@@ -978,6 +1016,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "segmented-control": {
       name: "segmented-control",
@@ -1005,6 +1044,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     select: {
       name: "select",
@@ -1030,6 +1070,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     separator: {
       name: "separator",
@@ -1055,6 +1096,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     sheet: {
       name: "sheet",
@@ -1080,6 +1122,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     sidebar: {
       name: "sidebar",
@@ -1113,6 +1156,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     skeleton: {
       name: "skeleton",
@@ -1138,6 +1182,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     slider: {
       name: "slider",
@@ -1163,6 +1208,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     sonner: {
       name: "sonner",
@@ -1188,6 +1234,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     spinner: {
       name: "spinner",
@@ -1213,6 +1260,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     spacer: {
       name: "spacer",
@@ -1238,6 +1286,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     squircle: {
       name: "squircle",
@@ -1263,6 +1312,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["sectorial"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     switch: {
       name: "switch",
@@ -1288,6 +1338,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     table: {
       name: "table",
@@ -1313,6 +1364,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     tabs: {
       name: "tabs",
@@ -1338,6 +1390,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     textarea: {
       name: "textarea",
@@ -1363,6 +1416,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     theme: {
       name: "theme",
@@ -1388,6 +1442,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "theme-toggle": {
       name: "theme-toggle",
@@ -1413,6 +1468,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     toggle: {
       name: "toggle",
@@ -1438,6 +1494,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "toggle-group": {
       name: "toggle-group",
@@ -1463,6 +1520,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     tooltip: {
       name: "tooltip",
@@ -1488,6 +1546,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     typography: {
       name: "typography",
@@ -1513,6 +1572,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "unicorn-wrapper": {
       name: "unicorn-wrapper",
@@ -1540,6 +1600,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["sectorial"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     kbd: {
       name: "kbd",
@@ -1565,6 +1626,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "native-select": {
       name: "native-select",
@@ -1590,6 +1652,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "background-image-parallax": {
       name: "background-image-parallax",
@@ -1617,6 +1680,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["animations"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "card-swipe-carousel": {
       name: "card-swipe-carousel",
@@ -1644,6 +1708,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["animations"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "cards-parallax": {
       name: "cards-parallax",
@@ -1671,6 +1736,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["animations"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "parallax-scroll": {
       name: "parallax-scroll",
@@ -1698,6 +1764,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["animations"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "perspective-carousel": {
       name: "perspective-carousel",
@@ -1725,6 +1792,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["animations"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "perspective-section-transition": {
       name: "perspective-section-transition",
@@ -1752,6 +1820,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["animations"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "scroll-expand": {
       name: "scroll-expand",
@@ -1779,6 +1848,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["animations"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "scroll-fade": {
       name: "scroll-fade",
@@ -1806,6 +1876,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["animations"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "scroll-scale": {
       name: "scroll-scale",
@@ -1833,6 +1904,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["animations"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "slide-down": {
       name: "slide-down",
@@ -1860,6 +1932,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["animations"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "slide-up": {
       name: "slide-up",
@@ -1887,6 +1960,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["animations"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "smooth-parallax-scroll": {
       name: "smooth-parallax-scroll",
@@ -1914,6 +1988,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["animations"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "smooth-scroll": {
       name: "smooth-scroll",
@@ -1941,6 +2016,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["animations"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "sticky-footer": {
       name: "sticky-footer",
@@ -1968,6 +2044,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["animations"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "text-along-path": {
       name: "text-along-path",
@@ -1995,6 +2072,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["animations"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "text-gradient-opacity": {
       name: "text-gradient-opacity",
@@ -2022,6 +2100,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["animations"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "text-parallax": {
       name: "text-parallax",
@@ -2049,6 +2128,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["animations"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "transforms-3d": {
       name: "transforms-3d",
@@ -2076,6 +2156,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["animations"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "zoom-parallax": {
       name: "zoom-parallax",
@@ -2103,6 +2184,7 @@ export const IndexUi: Record<string, Record<string, any>> = {
       categories: ["animations"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
   },
 }

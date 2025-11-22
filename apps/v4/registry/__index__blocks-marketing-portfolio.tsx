@@ -31,6 +31,7 @@ export const IndexBlocksMarketingPortfolio: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-portfolio-portfolio-section-with-testimonial-layout": {
       name: "marketing-portfolio-portfolio-section-with-testimonial-layout",
@@ -58,6 +59,7 @@ export const IndexBlocksMarketingPortfolio: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-portfolio-portfolio-section-with-three-column-grid": {
       name: "marketing-portfolio-portfolio-section-with-three-column-grid",
@@ -85,6 +87,7 @@ export const IndexBlocksMarketingPortfolio: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "marketing-portfolio-portfolio-with-beautiful-grid-system": {
       name: "marketing-portfolio-portfolio-with-beautiful-grid-system",
@@ -112,6 +115,7 @@ export const IndexBlocksMarketingPortfolio: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "marketing-portfolio-tailwind-css-portfolio-with-product-or-project-s-features":
       {
@@ -141,6 +145,7 @@ export const IndexBlocksMarketingPortfolio: Record<
         categories: ["marketing"],
         meta: undefined,
         tier: "pro",
+        readiness: "beta",
       },
   },
 }

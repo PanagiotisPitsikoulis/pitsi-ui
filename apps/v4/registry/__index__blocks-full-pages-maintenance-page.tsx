@@ -31,6 +31,7 @@ export const IndexBlocksFullPagesMaintenancePage: Record<
       categories: ["full-pages"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "full-pages-maintenance-page-maintenance-page-with-countdown": {
       name: "full-pages-maintenance-page-maintenance-page-with-countdown",
@@ -58,6 +59,7 @@ export const IndexBlocksFullPagesMaintenancePage: Record<
       categories: ["full-pages"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "full-pages-maintenance-page-maintenance-page-with-logo": {
       name: "full-pages-maintenance-page-maintenance-page-with-logo",
@@ -85,6 +87,7 @@ export const IndexBlocksFullPagesMaintenancePage: Record<
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "full-pages-maintenance-page-maintenance-page-with-social-links": {
       name: "full-pages-maintenance-page-maintenance-page-with-social-links",
@@ -112,6 +115,7 @@ export const IndexBlocksFullPagesMaintenancePage: Record<
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "full-pages-maintenance-page-splitted-under-maintenance-page": {
       name: "full-pages-maintenance-page-splitted-under-maintenance-page",
@@ -139,6 +143,7 @@ export const IndexBlocksFullPagesMaintenancePage: Record<
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "full-pages-maintenance-page-tailwind-maintenance-page-with-illustration": {
       name: "full-pages-maintenance-page-tailwind-maintenance-page-with-illustration",
@@ -166,6 +171,7 @@ export const IndexBlocksFullPagesMaintenancePage: Record<
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
   },
 }

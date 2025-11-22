@@ -31,6 +31,7 @@ export const IndexBlocksMarketingGallery: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-gallery-gallery-section-with-autoplay-slider": {
       name: "marketing-gallery-gallery-section-with-autoplay-slider",
@@ -58,6 +59,7 @@ export const IndexBlocksMarketingGallery: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-gallery-gallery-section-with-grid-and-overlay-effect": {
       name: "marketing-gallery-gallery-section-with-grid-and-overlay-effect",
@@ -85,6 +87,7 @@ export const IndexBlocksMarketingGallery: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-gallery-gallery-section-with-grid-layout": {
       name: "marketing-gallery-gallery-section-with-grid-layout",
@@ -112,6 +115,7 @@ export const IndexBlocksMarketingGallery: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-gallery-gallery-section-with-innovation": {
       name: "marketing-gallery-gallery-section-with-innovation",
@@ -139,6 +143,7 @@ export const IndexBlocksMarketingGallery: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-gallery-gallery-section-with-lightbox-effect": {
       name: "marketing-gallery-gallery-section-with-lightbox-effect",
@@ -166,6 +171,7 @@ export const IndexBlocksMarketingGallery: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-gallery-gallery-section-with-lightbox-image": {
       name: "marketing-gallery-gallery-section-with-lightbox-image",
@@ -193,6 +199,7 @@ export const IndexBlocksMarketingGallery: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-gallery-gallery-section-with-masonary-layout": {
       name: "marketing-gallery-gallery-section-with-masonary-layout",
@@ -220,6 +227,7 @@ export const IndexBlocksMarketingGallery: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-gallery-gallery-section-with-overlay-effect": {
       name: "marketing-gallery-gallery-section-with-overlay-effect",
@@ -247,6 +255,7 @@ export const IndexBlocksMarketingGallery: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-gallery-gallery-section-with-overlay-image": {
       name: "marketing-gallery-gallery-section-with-overlay-image",
@@ -274,6 +283,7 @@ export const IndexBlocksMarketingGallery: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-gallery-gallery-section-with-pagination": {
       name: "marketing-gallery-gallery-section-with-pagination",
@@ -301,6 +311,7 @@ export const IndexBlocksMarketingGallery: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-gallery-gallery-section-with-scale-effect": {
       name: "marketing-gallery-gallery-section-with-scale-effect",
@@ -328,6 +339,7 @@ export const IndexBlocksMarketingGallery: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-gallery-gallery-section-with-slider": {
       name: "marketing-gallery-gallery-section-with-slider",
@@ -355,6 +367,7 @@ export const IndexBlocksMarketingGallery: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-gallery-gallery-section-with-tab-content": {
       name: "marketing-gallery-gallery-section-with-tab-content",
@@ -382,6 +395,7 @@ export const IndexBlocksMarketingGallery: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-gallery-gallery-section-with-testimonial": {
       name: "marketing-gallery-gallery-section-with-testimonial",
@@ -409,6 +423,7 @@ export const IndexBlocksMarketingGallery: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-gallery-gallery-section-with-transform-image": {
       name: "marketing-gallery-gallery-section-with-transform-image",
@@ -436,6 +451,7 @@ export const IndexBlocksMarketingGallery: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-gallery-gallery-section-with-vertical-slider": {
       name: "marketing-gallery-gallery-section-with-vertical-slider",
@@ -463,6 +479,7 @@ export const IndexBlocksMarketingGallery: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
   },
 }

@@ -31,6 +31,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-blogs-news-alternate-image-horizontal-blogs": {
       name: "marketing-blogs-news-alternate-image-horizontal-blogs",
@@ -58,6 +59,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-blogs-news-blog-card-with-category-tags": {
       name: "marketing-blogs-news-blog-card-with-category-tags",
@@ -85,6 +87,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-blogs-news-blog-card-with-footer": {
       name: "marketing-blogs-news-blog-card-with-footer",
@@ -112,6 +115,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-blogs-news-blog-card-with-image-as-a-background": {
       name: "marketing-blogs-news-blog-card-with-image-as-a-background",
@@ -139,6 +143,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-blogs-news-blog-list-with-on-large-blog": {
       name: "marketing-blogs-news-blog-list-with-on-large-blog",
@@ -166,6 +171,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-blogs-news-blog-listing-with-highlighted-blog": {
       name: "marketing-blogs-news-blog-listing-with-highlighted-blog",
@@ -193,6 +199,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-blogs-news-blog-post-cards-with-bottom-image": {
       name: "marketing-blogs-news-blog-post-cards-with-bottom-image",
@@ -220,6 +227,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-blogs-news-blog-post-with-badge": {
       name: "marketing-blogs-news-blog-post-with-badge",
@@ -247,6 +255,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-blogs-news-blog-post-with-feature-list": {
       name: "marketing-blogs-news-blog-post-with-feature-list",
@@ -274,6 +283,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-blogs-news-blog-post-with-horizontal-single-column": {
       name: "marketing-blogs-news-blog-post-with-horizontal-single-column",
@@ -301,6 +311,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-blogs-news-blog-post-with-overlay-text": {
       name: "marketing-blogs-news-blog-post-with-overlay-text",
@@ -328,6 +339,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-blogs-news-blog-with-expanded-card": {
       name: "marketing-blogs-news-blog-with-expanded-card",
@@ -355,6 +367,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-blogs-news-blogs-with-card-layout-and-scale-effect": {
       name: "marketing-blogs-news-blogs-with-card-layout-and-scale-effect",
@@ -382,6 +395,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-blogs-news-centered-blog-card-slider": {
       name: "marketing-blogs-news-centered-blog-card-slider",
@@ -409,6 +423,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-blogs-news-detailed-article-blog": {
       name: "marketing-blogs-news-detailed-article-blog",
@@ -436,6 +451,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-blogs-news-detailed-blog-post-card": {
       name: "marketing-blogs-news-detailed-blog-post-card",
@@ -463,6 +479,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-blogs-news-different-grid-layout-with-opacity-effect": {
       name: "marketing-blogs-news-different-grid-layout-with-opacity-effect",
@@ -490,6 +507,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-blogs-news-different-scale-blog-cards": {
       name: "marketing-blogs-news-different-scale-blog-cards",
@@ -517,6 +535,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-filter-image-blog-post-slider": {
       name: "marketing-blogs-news-filter-image-blog-post-slider",
@@ -544,6 +563,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-full-height-blog-post": {
       name: "marketing-blogs-news-full-height-blog-post",
@@ -571,6 +591,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-highlighted-top-blog": {
       name: "marketing-blogs-news-highlighted-top-blog",
@@ -598,6 +619,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-horizontal-blog-post": {
       name: "marketing-blogs-news-horizontal-blog-post",
@@ -625,6 +647,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-informative-blog-with-colorful-cards": {
       name: "marketing-blogs-news-informative-blog-with-colorful-cards",
@@ -652,6 +675,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-large-horizontal-blog-post": {
       name: "marketing-blogs-news-large-horizontal-blog-post",
@@ -679,6 +703,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-latest-blog-with-dark-version": {
       name: "marketing-blogs-news-latest-blog-with-dark-version",
@@ -706,6 +731,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-modern-structured-blog-posts": {
       name: "marketing-blogs-news-modern-structured-blog-posts",
@@ -733,6 +759,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-newest-article-blog": {
       name: "marketing-blogs-news-newest-article-blog",
@@ -760,6 +787,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-one-large-blog-with-three-smaller-blog": {
       name: "marketing-blogs-news-one-large-blog-with-three-smaller-blog",
@@ -787,6 +815,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-partial-blog-cads-slider": {
       name: "marketing-blogs-news-partial-blog-cads-slider",
@@ -814,6 +843,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-side-by-side-blog-post-layout": {
       name: "marketing-blogs-news-side-by-side-blog-post-layout",
@@ -841,6 +871,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-simple-blog-card-with-badge": {
       name: "marketing-blogs-news-simple-blog-card-with-badge",
@@ -868,6 +899,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-simple-blog-post": {
       name: "marketing-blogs-news-simple-blog-post",
@@ -895,6 +927,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-simple-three-column-blog-component": {
       name: "marketing-blogs-news-simple-three-column-blog-component",
@@ -922,6 +955,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-single-blog-post-as-carousel": {
       name: "marketing-blogs-news-single-blog-post-as-carousel",
@@ -949,6 +983,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-tailwind-blog-card-with-two-columns-and-image": {
       name: "marketing-blogs-news-tailwind-blog-card-with-two-columns-and-image",
@@ -976,6 +1011,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-tailwind-blog-cards-with-slider": {
       name: "marketing-blogs-news-tailwind-blog-cards-with-slider",
@@ -1003,6 +1039,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-tailwind-blog-component-with-background-images": {
       name: "marketing-blogs-news-tailwind-blog-component-with-background-images",
@@ -1030,6 +1067,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-tailwind-blog-grid-layout-with-scale-effect": {
       name: "marketing-blogs-news-tailwind-blog-grid-layout-with-scale-effect",
@@ -1057,6 +1095,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-tailwind-blog-post-with-feature-list": {
       name: "marketing-blogs-news-tailwind-blog-post-with-feature-list",
@@ -1084,6 +1123,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-tailwind-blog-post-with-gradient-hover": {
       name: "marketing-blogs-news-tailwind-blog-post-with-gradient-hover",
@@ -1111,6 +1151,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-tailwind-blog-three-column-grid": {
       name: "marketing-blogs-news-tailwind-blog-three-column-grid",
@@ -1138,6 +1179,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-tailwind-blog-with-creative-image-layout": {
       name: "marketing-blogs-news-tailwind-blog-with-creative-image-layout",
@@ -1165,6 +1207,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-tailwind-blog-with-different-card-layout": {
       name: "marketing-blogs-news-tailwind-blog-with-different-card-layout",
@@ -1192,6 +1235,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-tailwind-blog-with-gradient-background": {
       name: "marketing-blogs-news-tailwind-blog-with-gradient-background",
@@ -1219,6 +1263,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-tailwind-blog-with-horizontal-cards": {
       name: "marketing-blogs-news-tailwind-blog-with-horizontal-cards",
@@ -1246,6 +1291,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-tailwind-blog-with-testimonials": {
       name: "marketing-blogs-news-tailwind-blog-with-testimonials",
@@ -1273,6 +1319,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-tailwind-blogs-with-card-layout-and-grayscale-effect":
       {
@@ -1302,6 +1349,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
         categories: ["marketing"],
         meta: undefined,
         tier: "pro",
+        readiness: "alpha",
       },
     "marketing-blogs-news-tailwind-cards-with-different-layout": {
       name: "marketing-blogs-news-tailwind-cards-with-different-layout",
@@ -1329,6 +1377,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-tailwind-css-blog-carousel": {
       name: "marketing-blogs-news-tailwind-css-blog-carousel",
@@ -1356,6 +1405,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-theree-column-with-tag-overlap": {
       name: "marketing-blogs-news-theree-column-with-tag-overlap",
@@ -1383,6 +1433,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-three-column-blog-list": {
       name: "marketing-blogs-news-three-column-blog-list",
@@ -1410,6 +1461,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-three-column-blog-with-image": {
       name: "marketing-blogs-news-three-column-blog-with-image",
@@ -1437,6 +1489,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-three-column-with-border": {
       name: "marketing-blogs-news-three-column-with-border",
@@ -1464,6 +1517,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-top-large-blog-post": {
       name: "marketing-blogs-news-top-large-blog-post",
@@ -1491,6 +1545,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-trendy-latets-blog-post": {
       name: "marketing-blogs-news-trendy-latets-blog-post",
@@ -1518,6 +1573,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-two-column-blog-post-with-name-overlap": {
       name: "marketing-blogs-news-two-column-blog-post-with-name-overlap",
@@ -1545,6 +1601,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-two-column-blog-with-image": {
       name: "marketing-blogs-news-two-column-blog-with-image",
@@ -1572,6 +1629,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-vertical-blog-post-list": {
       name: "marketing-blogs-news-vertical-blog-post-list",
@@ -1599,6 +1657,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-blogs-news-vertical-feature-blog-list": {
       name: "marketing-blogs-news-vertical-feature-blog-list",
@@ -1626,6 +1685,7 @@ export const IndexBlocksMarketingBlogsNews: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
   },
 }

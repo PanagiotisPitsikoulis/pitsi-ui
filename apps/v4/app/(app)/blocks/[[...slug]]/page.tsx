@@ -42,17 +42,36 @@ export default async function BlocksPage({
 
   const { slug = [] } = await params
 
-  // Case 1: /blocks → redirect to first marketing subcategory
+  // Case 1: /blocks → redirect to first available category/subcategory
   if (slug.length === 0) {
-    const subcategories = (await queryRegistry({
-      returnType: "subcategories",
-      mainCategory: "marketing",
+    const categories = (await queryRegistry({
+      returnType: "categories",
+      types: ["registry:block", "registry:internal"],
     })) as string[]
 
-    if (subcategories.length > 0) {
-      redirect(`/blocks/category/marketing/subcategory/${subcategories[0]}`)
+    // If no categories at all, show empty state
+    if (categories.length === 0) {
+      return (
+        <div className="flex flex-col items-center justify-center py-16 text-center">
+          <p className="text-muted-foreground">No blocks available.</p>
+        </div>
+      )
     }
-    redirect("/blocks/category/marketing")
+
+    // Try to find first category with subcategories
+    for (const category of categories) {
+      const subcategories = (await queryRegistry({
+        returnType: "subcategories",
+        mainCategory: category,
+      })) as string[]
+
+      if (subcategories.length > 0) {
+        redirect(`/blocks/category/${category}/subcategory/${subcategories[0]}`)
+      }
+    }
+
+    // Fallback to first category
+    redirect(`/blocks/category/${categories[0]}`)
   }
 
   // Case 2: /blocks/category/[category] → redirect to first subcategory
@@ -62,6 +81,15 @@ export default async function BlocksPage({
       returnType: "categories",
       types: ["registry:block", "registry:internal"],
     })) as string[]
+
+    // If no categories exist, show empty state
+    if (allCategories.length === 0) {
+      return (
+        <div className="flex flex-col items-center justify-center py-16 text-center">
+          <p className="text-muted-foreground">No blocks available.</p>
+        </div>
+      )
+    }
 
     // Validate category exists
     if (!allCategories.includes(category)) {
@@ -76,8 +104,12 @@ export default async function BlocksPage({
       redirect(`/blocks/category/${category}/subcategory/${subcategories[0]}`)
     }
 
-    // Fallback if no subcategories
-    redirect("/blocks")
+    // No subcategories - show empty state for this category
+    return (
+      <div className="flex flex-col items-center justify-center py-16 text-center">
+        <p className="text-muted-foreground">No blocks in this category.</p>
+      </div>
+    )
   }
 
   // Case 3: /blocks/category/[category]/subcategory/[subcategory] → show blocks
@@ -124,13 +156,11 @@ export default async function BlocksPage({
     })) as RegistryItem[]
 
     if (blocks.length === 0) {
-      // Redirect to first subcategory if no blocks
-      if ((subcategories as string[]).length > 0) {
-        redirect(
-          `/blocks/category/${category}/subcategory/${(subcategories as string[])[0]}`
-        )
-      }
-      redirect("/blocks")
+      return (
+        <div className="flex flex-col items-center justify-center py-16 text-center">
+          <p className="text-muted-foreground">No blocks in this subcategory.</p>
+        </div>
+      )
     }
 
     // Transform blocks into the format expected by BlocksList

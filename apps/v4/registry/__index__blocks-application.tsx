@@ -98,6 +98,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["dashboard"],
       meta: { iframeHeight: "1000px" },
       tier: "free",
+      readiness: "beta",
     },
     "sidebar-01": {
       name: "sidebar-01",
@@ -146,6 +147,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "sidebar-02": {
       name: "sidebar-02",
@@ -194,6 +196,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "sidebar-03": {
       name: "sidebar-03",
@@ -226,6 +229,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "sidebar-04": {
       name: "sidebar-04",
@@ -258,6 +262,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "sidebar-05": {
       name: "sidebar-05",
@@ -301,6 +306,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "sidebar-06": {
       name: "sidebar-06",
@@ -349,6 +355,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "sidebar-07": {
       name: "sidebar-07",
@@ -408,6 +415,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "sidebar-08": {
       name: "sidebar-08",
@@ -467,6 +475,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "sidebar-09": {
       name: "sidebar-09",
@@ -513,6 +522,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "sidebar-10": {
       name: "sidebar-10",
@@ -582,6 +592,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "sidebar-11": {
       name: "sidebar-11",
@@ -619,6 +630,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "sidebar-12": {
       name: "sidebar-12",
@@ -674,6 +686,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "sidebar-13": {
       name: "sidebar-13",
@@ -706,6 +719,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "sidebar-14": {
       name: "sidebar-14",
@@ -738,6 +752,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "sidebar-15": {
       name: "sidebar-15",
@@ -824,6 +839,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "sidebar-16": {
       name: "sidebar-16",
@@ -895,6 +911,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-02": {
       name: "calendar-02",
@@ -927,6 +944,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "free",
+      readiness: "alpha",
     },
     "calendar-03": {
       name: "calendar-03",
@@ -959,6 +977,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-04": {
       name: "calendar-04",
@@ -991,6 +1010,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-05": {
       name: "calendar-05",
@@ -1023,6 +1043,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-06": {
       name: "calendar-06",
@@ -1055,6 +1076,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-07": {
       name: "calendar-07",
@@ -1087,6 +1109,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-08": {
       name: "calendar-08",
@@ -1119,6 +1142,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-09": {
       name: "calendar-09",
@@ -1151,6 +1175,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-10": {
       name: "calendar-10",
@@ -1183,6 +1208,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-11": {
       name: "calendar-11",
@@ -1215,6 +1241,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-12": {
       name: "calendar-12",
@@ -1247,6 +1274,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-13": {
       name: "calendar-13",
@@ -1279,6 +1307,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-14": {
       name: "calendar-14",
@@ -1311,6 +1340,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-15": {
       name: "calendar-15",
@@ -1343,6 +1373,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-16": {
       name: "calendar-16",
@@ -1375,6 +1406,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-17": {
       name: "calendar-17",
@@ -1407,6 +1439,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-18": {
       name: "calendar-18",
@@ -1439,6 +1472,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-19": {
       name: "calendar-19",
@@ -1471,6 +1505,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-20": {
       name: "calendar-20",
@@ -1503,6 +1538,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-21": {
       name: "calendar-21",
@@ -1535,6 +1571,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-22": {
       name: "calendar-22",
@@ -1567,6 +1604,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-23": {
       name: "calendar-23",
@@ -1599,6 +1637,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-24": {
       name: "calendar-24",
@@ -1631,6 +1670,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-25": {
       name: "calendar-25",
@@ -1663,6 +1703,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-26": {
       name: "calendar-26",
@@ -1695,6 +1736,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-27": {
       name: "calendar-27",
@@ -1727,6 +1769,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-28": {
       name: "calendar-28",
@@ -1759,6 +1802,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-29": {
       name: "calendar-29",
@@ -1791,6 +1835,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-30": {
       name: "calendar-30",
@@ -1823,6 +1868,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-31": {
       name: "calendar-31",
@@ -1855,6 +1901,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "calendar-32": {
       name: "calendar-32",
@@ -1887,6 +1934,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "pro",
+      readiness: "alpha",
     },
     "application-application-shell-advanced-layout-with-collapsable-sidebar": {
       name: "application-application-shell-advanced-layout-with-collapsable-sidebar",
@@ -1914,6 +1962,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-application-shell-advanced-layout-with-double-sidebar-layout":
       {
@@ -1942,6 +1991,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
         categories: ["application"],
         meta: undefined,
         tier: "free",
+        readiness: "beta",
       },
     "application-application-shell-alternate-style-of-application-shell": {
       name: "application-application-shell-alternate-style-of-application-shell",
@@ -1969,6 +2019,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-application-shell-application-shell-with-navbar": {
       name: "application-application-shell-application-shell-with-navbar",
@@ -1996,6 +2047,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "application-application-shell-appplication-shell-with-background": {
       name: "application-application-shell-appplication-shell-with-background",
@@ -2023,6 +2075,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "application-application-shell-creative-dashboard-layout-tailwind": {
       name: "application-application-shell-creative-dashboard-layout-tailwind",
@@ -2050,6 +2103,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-application-shell-dashboard-layout-with-collapsable-sidebar": {
       name: "application-application-shell-dashboard-layout-with-collapsable-sidebar",
@@ -2077,6 +2131,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-application-shell-dashboard-layout-with-navbar": {
       name: "application-application-shell-dashboard-layout-with-navbar",
@@ -2104,6 +2159,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-application-shell-shell-layout-with-expandable-sidebar": {
       name: "application-application-shell-shell-layout-with-expandable-sidebar",
@@ -2131,6 +2187,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-application-shell-stacked-layout-with-multiple-navbars": {
       name: "application-application-shell-stacked-layout-with-multiple-navbars",
@@ -2158,6 +2215,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-calendar-borderless-stacked-calendar": {
       name: "application-calendar-borderless-stacked-calendar",
@@ -2185,6 +2243,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-calendar-dark-calendar-view": {
       name: "application-calendar-dark-calendar-view",
@@ -2212,6 +2271,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-calendar-double-horizontal-calendar": {
       name: "application-calendar-double-horizontal-calendar",
@@ -2239,6 +2299,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-calendar-double-vertical-calendar": {
       name: "application-calendar-double-vertical-calendar",
@@ -2266,6 +2327,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-calendar-month-view-calendar": {
       name: "application-calendar-month-view-calendar",
@@ -2293,6 +2355,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-calendar-month-view-calendar-with-centered": {
       name: "application-calendar-month-view-calendar-with-centered",
@@ -2320,6 +2383,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-calendar-month-view-calendar-with-cta-button": {
       name: "application-calendar-month-view-calendar-with-cta-button",
@@ -2347,6 +2411,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-calendar-side-by-side-calendar-with-events": {
       name: "application-calendar-side-by-side-calendar-with-events",
@@ -2374,6 +2439,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-calendar-small-calendar-with-cta-and-meeting-list": {
       name: "application-calendar-small-calendar-with-cta-and-meeting-list",
@@ -2401,6 +2467,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-calendar-tailwind-calendar-with-image": {
       name: "application-calendar-tailwind-calendar-with-image",
@@ -2428,6 +2495,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-calendar-week-view-calendar-with-time": {
       name: "application-calendar-week-view-calendar-with-time",
@@ -2455,6 +2523,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-calendar-year-view-calendar": {
       name: "application-calendar-year-view-calendar",
@@ -2482,6 +2551,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-forms-account-information-form": {
       name: "application-forms-account-information-form",
@@ -2509,6 +2579,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-forms-application-layout-with-file-upload": {
       name: "application-forms-application-layout-with-file-upload",
@@ -2536,6 +2607,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-forms-basic-feedback-form": {
       name: "application-forms-basic-feedback-form",
@@ -2563,6 +2635,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-forms-basic-tailwind-ui-form": {
       name: "application-forms-basic-tailwind-ui-form",
@@ -2590,6 +2663,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-forms-billing-information-form-with-card-info": {
       name: "application-forms-billing-information-form-with-card-info",
@@ -2617,6 +2691,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-forms-booking-from": {
       name: "application-forms-booking-from",
@@ -2644,6 +2719,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-forms-contact-from-tailwind": {
       name: "application-forms-contact-from-tailwind",
@@ -2671,6 +2747,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-forms-custom-review-tailwind-css-from": {
       name: "application-forms-custom-review-tailwind-css-from",
@@ -2698,6 +2775,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-forms-edit-profile-form": {
       name: "application-forms-edit-profile-form",
@@ -2725,6 +2803,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-forms-feedback-from": {
       name: "application-forms-feedback-from",
@@ -2752,6 +2831,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-forms-invoice-from-tailwind": {
       name: "application-forms-invoice-from-tailwind",
@@ -2779,6 +2859,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-forms-order-billing-form": {
       name: "application-forms-order-billing-form",
@@ -2806,6 +2887,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-forms-registration-form": {
       name: "application-forms-registration-form",
@@ -2833,6 +2915,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-forms-registration-from": {
       name: "application-forms-registration-from",
@@ -2860,6 +2943,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-forms-request-form-tailwind-css": {
       name: "application-forms-request-form-tailwind-css",
@@ -2887,6 +2971,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-forms-simple-contact-from": {
       name: "application-forms-simple-contact-from",
@@ -2914,6 +2999,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-forms-tailwind-form-with-progress-bar": {
       name: "application-forms-tailwind-form-with-progress-bar",
@@ -2941,6 +3027,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-forms-tailwind-login-form-with-cta": {
       name: "application-forms-tailwind-login-form-with-cta",
@@ -2968,6 +3055,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-forms-verification-from-tailwind-css": {
       name: "application-forms-verification-from-tailwind-css",
@@ -2995,6 +3083,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-card-modal-with-share-link-option": {
       name: "application-modalbox-card-modal-with-share-link-option",
@@ -3022,6 +3111,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-modalbox-create-meeting-modal": {
       name: "application-modalbox-create-meeting-modal",
@@ -3049,6 +3139,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-modalbox-create-profile-modal-with-file-upload": {
       name: "application-modalbox-create-profile-modal-with-file-upload",
@@ -3076,6 +3167,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-modalbox-create-project-modal-with-team-selection": {
       name: "application-modalbox-create-project-modal-with-team-selection",
@@ -3103,6 +3195,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-modalbox-currency-converter-modal": {
       name: "application-modalbox-currency-converter-modal",
@@ -3130,6 +3223,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-modalbox-currency-exchange-modal-with-dropdown": {
       name: "application-modalbox-currency-exchange-modal-with-dropdown",
@@ -3157,6 +3251,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-modalbox-date-input-and-toggle-button-modal": {
       name: "application-modalbox-date-input-and-toggle-button-modal",
@@ -3184,6 +3279,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-modalbox-delete-modal-with-checkbox": {
       name: "application-modalbox-delete-modal-with-checkbox",
@@ -3211,6 +3307,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-modalbox-event-modal": {
       name: "application-modalbox-event-modal",
@@ -3238,6 +3335,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-modalbox-feature-modal-with-carousel": {
       name: "application-modalbox-feature-modal-with-carousel",
@@ -3265,6 +3363,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-modalbox-feedback-modal": {
       name: "application-modalbox-feedback-modal",
@@ -3292,6 +3391,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-modalbox-file-upload-modal": {
       name: "application-modalbox-file-upload-modal",
@@ -3319,6 +3419,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-modalbox-invite-modal-with-file-input": {
       name: "application-modalbox-invite-modal-with-file-input",
@@ -3346,6 +3447,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-modalbox-manage-team-modal": {
       name: "application-modalbox-manage-team-modal",
@@ -3373,6 +3475,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-messaging-modal-with-file-upload": {
       name: "application-modalbox-messaging-modal-with-file-upload",
@@ -3400,6 +3503,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-modal-with-carousel": {
       name: "application-modalbox-modal-with-carousel",
@@ -3427,6 +3531,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-modal-with-footer": {
       name: "application-modalbox-modal-with-footer",
@@ -3454,6 +3559,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-modal-with-form-element": {
       name: "application-modalbox-modal-with-form-element",
@@ -3481,6 +3587,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-modal-with-full-width-buttons": {
       name: "application-modalbox-modal-with-full-width-buttons",
@@ -3508,6 +3615,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-modal-with-input-and-toggle-buttons": {
       name: "application-modalbox-modal-with-input-and-toggle-buttons",
@@ -3535,6 +3643,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-modal-with-link-sharing": {
       name: "application-modalbox-modal-with-link-sharing",
@@ -3562,6 +3671,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-modal-with-search": {
       name: "application-modalbox-modal-with-search",
@@ -3589,6 +3699,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-modal-with-search-and-checkbox": {
       name: "application-modalbox-modal-with-search-and-checkbox",
@@ -3616,6 +3727,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-modal-with-separator": {
       name: "application-modalbox-modal-with-separator",
@@ -3643,6 +3755,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-modal-with-single-action": {
       name: "application-modalbox-modal-with-single-action",
@@ -3670,6 +3783,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-modal-with-social-media-buttons": {
       name: "application-modalbox-modal-with-social-media-buttons",
@@ -3697,6 +3811,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-modal-with-verification-code-input": {
       name: "application-modalbox-modal-with-verification-code-input",
@@ -3724,6 +3839,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-multiple-account-handle-with-checkbox": {
       name: "application-modalbox-multiple-account-handle-with-checkbox",
@@ -3751,6 +3867,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-notification-modal": {
       name: "application-modalbox-notification-modal",
@@ -3778,6 +3895,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-payment-modal-with-input-fields": {
       name: "application-modalbox-payment-modal-with-input-fields",
@@ -3805,6 +3923,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-pricing-plan-modal-with-radio-buttons": {
       name: "application-modalbox-pricing-plan-modal-with-radio-buttons",
@@ -3832,6 +3951,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-radio-input-modal": {
       name: "application-modalbox-radio-input-modal",
@@ -3859,6 +3979,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-relogin-modal-with-password-input": {
       name: "application-modalbox-relogin-modal-with-password-input",
@@ -3886,6 +4007,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-share-modal-with-customizing-options": {
       name: "application-modalbox-share-modal-with-customizing-options",
@@ -3913,6 +4035,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-share-modal-with-input-and-checkbox": {
       name: "application-modalbox-share-modal-with-input-and-checkbox",
@@ -3940,6 +4063,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-share-with-input-search-modal": {
       name: "application-modalbox-share-with-input-search-modal",
@@ -3967,6 +4091,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-sign-in-modal-with-wide-button": {
       name: "application-modalbox-sign-in-modal-with-wide-button",
@@ -3994,6 +4119,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-simple-delete-modal": {
       name: "application-modalbox-simple-delete-modal",
@@ -4021,6 +4147,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-simple-modal-with-icon": {
       name: "application-modalbox-simple-modal-with-icon",
@@ -4048,6 +4175,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-simple-modal-with-number-input": {
       name: "application-modalbox-simple-modal-with-number-input",
@@ -4075,6 +4203,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-subscribe-modal-with-input": {
       name: "application-modalbox-subscribe-modal-with-input",
@@ -4102,6 +4231,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-success-modal-with-two-buttons": {
       name: "application-modalbox-success-modal-with-two-buttons",
@@ -4129,6 +4259,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-team-management-modal": {
       name: "application-modalbox-team-management-modal",
@@ -4156,6 +4287,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-profile-headers-profile-header-with-buttons": {
       name: "application-profile-headers-profile-header-with-buttons",
@@ -4183,6 +4315,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-profile-headers-profile-header-with-user-description": {
       name: "application-profile-headers-profile-header-with-user-description",
@@ -4210,6 +4343,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-profile-headers-profile-header-with-user-s-experiences": {
       name: "application-profile-headers-profile-header-with-user-s-experiences",
@@ -4237,6 +4371,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "application-profile-headers-profile-headers-with-background-image": {
       name: "application-profile-headers-profile-headers-with-background-image",
@@ -4264,6 +4399,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "application-profile-headers-profile-headers-with-center-image": {
       name: "application-profile-headers-profile-headers-with-center-image",
@@ -4291,6 +4427,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "application-profile-headers-profile-with-users-skills": {
       name: "application-profile-headers-profile-with-users-skills",
@@ -4318,6 +4455,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-section-headers-default-section-header": {
       name: "application-section-headers-default-section-header",
@@ -4345,6 +4483,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-section-headers-section-header-with-cta-buttons": {
       name: "application-section-headers-section-header-with-cta-buttons",
@@ -4372,6 +4511,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-section-headers-section-header-with-cta-tabs": {
       name: "application-section-headers-section-header-with-cta-tabs",
@@ -4399,6 +4539,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "application-section-headers-section-header-with-filter": {
       name: "application-section-headers-section-header-with-filter",
@@ -4426,6 +4567,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "application-section-headers-section-header-with-svg-buttons": {
       name: "application-section-headers-section-header-with-svg-buttons",
@@ -4453,6 +4595,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "application-section-headers-section-header-with-tabs": {
       name: "application-section-headers-section-header-with-tabs",
@@ -4480,6 +4623,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-table-header-default-table-header": {
       name: "application-table-header-default-table-header",
@@ -4507,6 +4651,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-table-header-multi-level-table-header-with-filters": {
       name: "application-table-header-multi-level-table-header-with-filters",
@@ -4534,6 +4679,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-table-header-table-header-with-search-input-and-cta-button": {
       name: "application-table-header-table-header-with-search-input-and-cta-button",
@@ -4561,6 +4707,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "application-table-header-table-header-with-tabs": {
       name: "application-table-header-table-header-with-tabs",
@@ -4588,6 +4735,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "application-table-header-tailwind-table-sort-header": {
       name: "application-table-header-tailwind-table-sort-header",
@@ -4615,6 +4763,7 @@ export const IndexBlocksApplication: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
   },
 }

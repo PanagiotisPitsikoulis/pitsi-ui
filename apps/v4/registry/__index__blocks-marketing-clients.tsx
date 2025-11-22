@@ -31,6 +31,7 @@ export const IndexBlocksMarketingClients: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-clients-client-logos-in-card": {
       name: "marketing-clients-client-logos-in-card",
@@ -58,6 +59,7 @@ export const IndexBlocksMarketingClients: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-clients-client-section-as-info-card": {
       name: "marketing-clients-client-section-as-info-card",
@@ -85,6 +87,7 @@ export const IndexBlocksMarketingClients: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "marketing-clients-customer-logos-as-list-view": {
       name: "marketing-clients-customer-logos-as-list-view",
@@ -112,6 +115,7 @@ export const IndexBlocksMarketingClients: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "marketing-clients-logo-cloud-in-grid": {
       name: "marketing-clients-logo-cloud-in-grid",
@@ -139,6 +143,7 @@ export const IndexBlocksMarketingClients: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "marketing-clients-partner-logo-as-carousel": {
       name: "marketing-clients-partner-logo-as-carousel",
@@ -166,6 +171,7 @@ export const IndexBlocksMarketingClients: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-clients-simple-customer-logo-grid": {
       name: "marketing-clients-simple-customer-logo-grid",
@@ -193,6 +199,7 @@ export const IndexBlocksMarketingClients: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
   },
 }

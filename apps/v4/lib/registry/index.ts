@@ -477,13 +477,19 @@ export async function getAllRegistryItems(options?: {
     }
   }
 
-  
+
   const validatedItems = allItems
     .map((item) => {
       const result = registryItemSchema.safeParse(item)
       return result.success ? result.data : null
     })
     .filter((item): item is RegistryItem => item !== null)
+
+  // Filter out alpha items if HIDE_ALPHA_ITEMS env variable is set
+  const hideAlpha = process.env.HIDE_ALPHA_ITEMS === "true"
+  if (hideAlpha) {
+    return validatedItems.filter((item) => item.readiness !== "alpha")
+  }
 
   return validatedItems
 }

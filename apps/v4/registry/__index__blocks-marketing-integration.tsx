@@ -31,6 +31,7 @@ export const IndexBlocksMarketingIntegration: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-integration-basic-integration-block": {
       name: "marketing-integration-basic-integration-block",
@@ -58,6 +59,7 @@ export const IndexBlocksMarketingIntegration: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-integration-circular-integration": {
       name: "marketing-integration-circular-integration",
@@ -85,6 +87,7 @@ export const IndexBlocksMarketingIntegration: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-integration-dark-integration-section": {
       name: "marketing-integration-dark-integration-section",
@@ -112,6 +115,7 @@ export const IndexBlocksMarketingIntegration: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-integration-four-column-integration-card": {
       name: "marketing-integration-four-column-integration-card",
@@ -139,6 +143,7 @@ export const IndexBlocksMarketingIntegration: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-integration-hexagon-integration-cards": {
       name: "marketing-integration-hexagon-integration-cards",
@@ -166,6 +171,7 @@ export const IndexBlocksMarketingIntegration: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-integration-integration-as-double-testimonial": {
       name: "marketing-integration-integration-as-double-testimonial",
@@ -193,6 +199,7 @@ export const IndexBlocksMarketingIntegration: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-integration-integration-card-with-background": {
       name: "marketing-integration-integration-card-with-background",
@@ -220,6 +227,7 @@ export const IndexBlocksMarketingIntegration: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-integration-integration-grid": {
       name: "marketing-integration-integration-grid",
@@ -247,6 +255,7 @@ export const IndexBlocksMarketingIntegration: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-integration-integration-list-with-description": {
       name: "marketing-integration-integration-list-with-description",
@@ -274,6 +283,7 @@ export const IndexBlocksMarketingIntegration: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-integration-integration-section-with-badge-and-cta": {
       name: "marketing-integration-integration-section-with-badge-and-cta",
@@ -301,6 +311,7 @@ export const IndexBlocksMarketingIntegration: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-integration-integration-with-cta-button": {
       name: "marketing-integration-integration-with-cta-button",
@@ -328,6 +339,7 @@ export const IndexBlocksMarketingIntegration: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-integration-integrations-card-with-horizontal-layout": {
       name: "marketing-integration-integrations-card-with-horizontal-layout",
@@ -355,6 +367,7 @@ export const IndexBlocksMarketingIntegration: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-integration-scattered-application-icons": {
       name: "marketing-integration-scattered-application-icons",
@@ -382,6 +395,7 @@ export const IndexBlocksMarketingIntegration: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-integration-side-by-side-integration": {
       name: "marketing-integration-side-by-side-integration",
@@ -409,6 +423,7 @@ export const IndexBlocksMarketingIntegration: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-integration-slider-app-integration": {
       name: "marketing-integration-slider-app-integration",
@@ -436,6 +451,7 @@ export const IndexBlocksMarketingIntegration: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-integration-three-column-integration-card-with-cta": {
       name: "marketing-integration-three-column-integration-card-with-cta",
@@ -463,6 +479,7 @@ export const IndexBlocksMarketingIntegration: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-integration-two-column-integration-card": {
       name: "marketing-integration-two-column-integration-card",
@@ -490,6 +507,7 @@ export const IndexBlocksMarketingIntegration: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-integration-vertical-app-integration": {
       name: "marketing-integration-vertical-app-integration",
@@ -517,6 +535,7 @@ export const IndexBlocksMarketingIntegration: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-integration-vertical-integration-carousel": {
       name: "marketing-integration-vertical-integration-carousel",
@@ -544,6 +563,7 @@ export const IndexBlocksMarketingIntegration: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-integration-vertical-integrations-list": {
       name: "marketing-integration-vertical-integrations-list",
@@ -571,6 +591,7 @@ export const IndexBlocksMarketingIntegration: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
   },
 }

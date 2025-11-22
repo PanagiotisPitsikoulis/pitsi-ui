@@ -31,6 +31,7 @@ export const IndexBlocksECommerceProductOverview: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-product-overview-3-column-grid-with-slider-and-details": {
       name: "e-commerce-product-overview-3-column-grid-with-slider-and-details",
@@ -58,6 +59,7 @@ export const IndexBlocksECommerceProductOverview: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-product-overview-description-and-vertical-slider-images": {
       name: "e-commerce-product-overview-description-and-vertical-slider-images",
@@ -85,6 +87,7 @@ export const IndexBlocksECommerceProductOverview: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-product-overview-images-and-description-in-nested-grid": {
       name: "e-commerce-product-overview-images-and-description-in-nested-grid",
@@ -112,6 +115,7 @@ export const IndexBlocksECommerceProductOverview: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "e-commerce-product-overview-masonry-image-and-description": {
       name: "e-commerce-product-overview-masonry-image-and-description",
@@ -139,6 +143,7 @@ export const IndexBlocksECommerceProductOverview: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "e-commerce-product-overview-product-image-with-expandable-details": {
       name: "e-commerce-product-overview-product-image-with-expandable-details",
@@ -166,6 +171,7 @@ export const IndexBlocksECommerceProductOverview: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-overview-split-image-slider-with-details": {
       name: "e-commerce-product-overview-split-image-slider-with-details",
@@ -193,6 +199,7 @@ export const IndexBlocksECommerceProductOverview: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-overview-split-with-image-and-description": {
       name: "e-commerce-product-overview-split-with-image-and-description",
@@ -220,6 +227,7 @@ export const IndexBlocksECommerceProductOverview: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-overview-with-image-gallery-and-description": {
       name: "e-commerce-product-overview-with-image-gallery-and-description",
@@ -247,6 +255,7 @@ export const IndexBlocksECommerceProductOverview: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
   },
 }

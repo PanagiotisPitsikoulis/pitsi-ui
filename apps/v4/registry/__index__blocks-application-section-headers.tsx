@@ -31,6 +31,7 @@ export const IndexBlocksApplicationSectionHeaders: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-section-headers-section-header-with-cta-buttons": {
       name: "application-section-headers-section-header-with-cta-buttons",
@@ -58,6 +59,7 @@ export const IndexBlocksApplicationSectionHeaders: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-section-headers-section-header-with-cta-tabs": {
       name: "application-section-headers-section-header-with-cta-tabs",
@@ -85,6 +87,7 @@ export const IndexBlocksApplicationSectionHeaders: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "application-section-headers-section-header-with-filter": {
       name: "application-section-headers-section-header-with-filter",
@@ -112,6 +115,7 @@ export const IndexBlocksApplicationSectionHeaders: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "application-section-headers-section-header-with-svg-buttons": {
       name: "application-section-headers-section-header-with-svg-buttons",
@@ -139,6 +143,7 @@ export const IndexBlocksApplicationSectionHeaders: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "application-section-headers-section-header-with-tabs": {
       name: "application-section-headers-section-header-with-tabs",
@@ -166,6 +171,7 @@ export const IndexBlocksApplicationSectionHeaders: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
   },
 }

@@ -31,6 +31,7 @@ export const IndexBlocksECommerceRefundOverview: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-refund-overview-refund-list-with-filter": {
       name: "e-commerce-refund-overview-refund-list-with-filter",
@@ -58,6 +59,7 @@ export const IndexBlocksECommerceRefundOverview: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-refund-overview-refund-list-with-personal-details": {
       name: "e-commerce-refund-overview-refund-list-with-personal-details",
@@ -85,6 +87,7 @@ export const IndexBlocksECommerceRefundOverview: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "e-commerce-refund-overview-refund-with-cta": {
       name: "e-commerce-refund-overview-refund-with-cta",
@@ -112,6 +115,7 @@ export const IndexBlocksECommerceRefundOverview: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "e-commerce-refund-overview-refund-with-table": {
       name: "e-commerce-refund-overview-refund-with-table",
@@ -139,6 +143,7 @@ export const IndexBlocksECommerceRefundOverview: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
   },
 }

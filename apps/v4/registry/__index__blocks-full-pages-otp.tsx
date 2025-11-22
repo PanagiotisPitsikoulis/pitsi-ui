@@ -33,6 +33,7 @@ export const IndexBlocksFullPagesOtp: Record<string, Record<string, any>> = {
       categories: ["full-pages", "otp"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "otp-02": {
       name: "otp-02",
@@ -65,6 +66,7 @@ export const IndexBlocksFullPagesOtp: Record<string, Record<string, any>> = {
       categories: ["full-pages", "otp"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "otp-03": {
       name: "otp-03",
@@ -97,6 +99,7 @@ export const IndexBlocksFullPagesOtp: Record<string, Record<string, any>> = {
       categories: ["full-pages", "otp"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "otp-04": {
       name: "otp-04",
@@ -129,6 +132,7 @@ export const IndexBlocksFullPagesOtp: Record<string, Record<string, any>> = {
       categories: ["full-pages", "otp"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "otp-05": {
       name: "otp-05",
@@ -161,6 +165,7 @@ export const IndexBlocksFullPagesOtp: Record<string, Record<string, any>> = {
       categories: ["full-pages", "otp"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
   },
 }

@@ -31,6 +31,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-hero-section-accommodation-hero-section-with-social-icons": {
       name: "marketing-hero-section-accommodation-hero-section-with-social-icons",
@@ -58,6 +59,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-hero-section-background-cover-image-with-search": {
       name: "marketing-hero-section-background-cover-image-with-search",
@@ -85,6 +87,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-hero-section-background-illustration-with-dark-mode": {
       name: "marketing-hero-section-background-illustration-with-dark-mode",
@@ -112,6 +115,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-hero-section-background-image-with-cta": {
       name: "marketing-hero-section-background-image-with-cta",
@@ -139,6 +143,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-hero-section-booking-hero-section-with-full-background-hero-image-tailwind":
       {
@@ -168,6 +173,7 @@ export const IndexBlocksMarketingHeroSection: Record<
         categories: ["marketing"],
         meta: undefined,
         tier: "free",
+        readiness: "alpha",
       },
     "marketing-hero-section-cover-image-with-blog-description": {
       name: "marketing-hero-section-cover-image-with-blog-description",
@@ -195,6 +201,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-hero-section-cover-image-with-cta": {
       name: "marketing-hero-section-cover-image-with-cta",
@@ -222,6 +229,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-hero-section-creative-hero-section-with-background-image": {
       name: "marketing-hero-section-creative-hero-section-with-background-image",
@@ -249,6 +257,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-hero-section-creative-hero-section-with-search": {
       name: "marketing-hero-section-creative-hero-section-with-search",
@@ -276,6 +285,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-hero-section-dark-hero-section-with-gradient-background": {
       name: "marketing-hero-section-dark-hero-section-with-gradient-background",
@@ -303,6 +313,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-hero-section-ecommerce-hero-section": {
       name: "marketing-hero-section-ecommerce-hero-section",
@@ -330,6 +341,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-hero-section-fashion-hero-section-with-multi-column": {
       name: "marketing-hero-section-fashion-hero-section-with-multi-column",
@@ -357,6 +369,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-hero-section-flight-booking-hero-section-with-information-stats":
       {
@@ -386,6 +399,7 @@ export const IndexBlocksMarketingHeroSection: Record<
         categories: ["marketing"],
         meta: undefined,
         tier: "free",
+        readiness: "alpha",
       },
     "marketing-hero-section-hero-section-with-background-and-cards": {
       name: "marketing-hero-section-hero-section-with-background-and-cards",
@@ -413,6 +427,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-hero-section-hero-section-with-carousel-slider": {
       name: "marketing-hero-section-hero-section-with-carousel-slider",
@@ -440,6 +455,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-hero-section-hero-section-with-content-blocks": {
       name: "marketing-hero-section-hero-section-with-content-blocks",
@@ -467,6 +483,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-hero-section-hero-section-with-content-card": {
       name: "marketing-hero-section-hero-section-with-content-card",
@@ -494,6 +511,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-hero-section-hero-section-with-customer-logos": {
       name: "marketing-hero-section-hero-section-with-customer-logos",
@@ -521,6 +539,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-hero-section-with-dashboard-cover-image": {
       name: "marketing-hero-section-hero-section-with-dashboard-cover-image",
@@ -548,6 +567,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-hero-section-with-data-points-carousel": {
       name: "marketing-hero-section-hero-section-with-data-points-carousel",
@@ -575,6 +595,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-hero-section-with-gradient-background": {
       name: "marketing-hero-section-hero-section-with-gradient-background",
@@ -602,6 +623,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-hero-section-with-phone-mockup": {
       name: "marketing-hero-section-hero-section-with-phone-mockup",
@@ -629,6 +651,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-hero-section-with-seperate-card-layout": {
       name: "marketing-hero-section-hero-section-with-seperate-card-layout",
@@ -656,6 +679,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-hero-section-with-stat-cards": {
       name: "marketing-hero-section-hero-section-with-stat-cards",
@@ -683,6 +707,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-hero-section-with-statistics-carousel": {
       name: "marketing-hero-section-hero-section-with-statistics-carousel",
@@ -710,6 +735,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-hero-section-with-thumbnail-carousel": {
       name: "marketing-hero-section-hero-section-with-thumbnail-carousel",
@@ -737,6 +763,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-hero-section-with-vertical-carousel": {
       name: "marketing-hero-section-hero-section-with-vertical-carousel",
@@ -764,6 +791,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-hero-section-with-vertical-content-block": {
       name: "marketing-hero-section-hero-section-with-vertical-content-block",
@@ -791,6 +819,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-hero-with-dark-theme": {
       name: "marketing-hero-section-hero-with-dark-theme",
@@ -818,6 +847,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-hero-with-grid-column-images": {
       name: "marketing-hero-section-hero-with-grid-column-images",
@@ -845,6 +875,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-horizontal-header-with-image-grid-and-social-icons":
       {
@@ -874,6 +905,7 @@ export const IndexBlocksMarketingHeroSection: Record<
         categories: ["marketing"],
         meta: undefined,
         tier: "pro",
+        readiness: "alpha",
       },
     "marketing-hero-section-horizontal-hero-section-with-video": {
       name: "marketing-hero-section-horizontal-hero-section-with-video",
@@ -901,6 +933,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-illustration-with-cta-button": {
       name: "marketing-hero-section-illustration-with-cta-button",
@@ -928,6 +961,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-image-with-heading": {
       name: "marketing-hero-section-image-with-heading",
@@ -955,6 +989,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-minimal-product-and-services-preview-hero-section":
       {
@@ -984,6 +1019,7 @@ export const IndexBlocksMarketingHeroSection: Record<
         categories: ["marketing"],
         meta: undefined,
         tier: "pro",
+        readiness: "alpha",
       },
     "marketing-hero-section-mobile-application-hero-section": {
       name: "marketing-hero-section-mobile-application-hero-section",
@@ -1011,6 +1047,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-mobile-application-hero-section-with-image": {
       name: "marketing-hero-section-mobile-application-hero-section-with-image",
@@ -1038,6 +1075,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-modern-hero-section-with-carousel": {
       name: "marketing-hero-section-modern-hero-section-with-carousel",
@@ -1065,6 +1103,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-phone-mockup-with-app-download": {
       name: "marketing-hero-section-phone-mockup-with-app-download",
@@ -1092,6 +1131,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-product-hero-section": {
       name: "marketing-hero-section-product-hero-section",
@@ -1119,6 +1159,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-product-hero-section-with-carousel": {
       name: "marketing-hero-section-product-hero-section-with-carousel",
@@ -1146,6 +1187,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-registration-form-with-cta": {
       name: "marketing-hero-section-registration-form-with-cta",
@@ -1173,6 +1215,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-saas-hero-section-with-kicker-and-dashboard-preview":
       {
@@ -1202,6 +1245,7 @@ export const IndexBlocksMarketingHeroSection: Record<
         categories: ["marketing"],
         meta: undefined,
         tier: "pro",
+        readiness: "alpha",
       },
     "marketing-hero-section-side-by-side-hero-section-with-image": {
       name: "marketing-hero-section-side-by-side-hero-section-with-image",
@@ -1229,6 +1273,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-simple-hero-section-with-creative-image": {
       name: "marketing-hero-section-simple-hero-section-with-creative-image",
@@ -1256,6 +1301,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-split-header-hero-section-with-cta-on-image": {
       name: "marketing-hero-section-split-header-hero-section-with-cta-on-image",
@@ -1283,6 +1329,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-splitted-hero-section-with-image": {
       name: "marketing-hero-section-splitted-hero-section-with-image",
@@ -1310,6 +1357,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-tailwind-hero-banner": {
       name: "marketing-hero-section-tailwind-hero-banner",
@@ -1337,6 +1385,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-tailwind-hero-block-with-app-mockup": {
       name: "marketing-hero-section-tailwind-hero-block-with-app-mockup",
@@ -1364,6 +1413,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-tailwind-hero-component-for-business-website": {
       name: "marketing-hero-section-tailwind-hero-component-for-business-website",
@@ -1391,6 +1441,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-tailwind-hero-section-with-card-layout": {
       name: "marketing-hero-section-tailwind-hero-section-with-card-layout",
@@ -1418,6 +1469,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-tailwind-hero-with-gradient-heading": {
       name: "marketing-hero-section-tailwind-hero-with-gradient-heading",
@@ -1445,6 +1497,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-tailwind-hero-with-stat-counts": {
       name: "marketing-hero-section-tailwind-hero-with-stat-counts",
@@ -1472,6 +1525,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-three-column-hero-section": {
       name: "marketing-hero-section-three-column-hero-section",
@@ -1499,6 +1553,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-travel-hero-section-with-dark-background": {
       name: "marketing-hero-section-travel-hero-section-with-dark-background",
@@ -1526,6 +1581,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-vertical-hero-section-with-images": {
       name: "marketing-hero-section-vertical-hero-section-with-images",
@@ -1553,6 +1609,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-vertical-hero-section-with-video": {
       name: "marketing-hero-section-vertical-hero-section-with-video",
@@ -1580,6 +1637,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-vertical-hero-with-cover-image": {
       name: "marketing-hero-section-vertical-hero-with-cover-image",
@@ -1607,6 +1665,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-visual-image-with-banner": {
       name: "marketing-hero-section-visual-image-with-banner",
@@ -1634,6 +1693,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-hero-section-visual-image-with-partner-logos": {
       name: "marketing-hero-section-visual-image-with-partner-logos",
@@ -1661,6 +1721,7 @@ export const IndexBlocksMarketingHeroSection: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
   },
 }

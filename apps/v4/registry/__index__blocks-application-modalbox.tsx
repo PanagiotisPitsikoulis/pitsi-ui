@@ -31,6 +31,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-modalbox-create-meeting-modal": {
       name: "application-modalbox-create-meeting-modal",
@@ -58,6 +59,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-modalbox-create-profile-modal-with-file-upload": {
       name: "application-modalbox-create-profile-modal-with-file-upload",
@@ -85,6 +87,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-modalbox-create-project-modal-with-team-selection": {
       name: "application-modalbox-create-project-modal-with-team-selection",
@@ -112,6 +115,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-modalbox-currency-converter-modal": {
       name: "application-modalbox-currency-converter-modal",
@@ -139,6 +143,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-modalbox-currency-exchange-modal-with-dropdown": {
       name: "application-modalbox-currency-exchange-modal-with-dropdown",
@@ -166,6 +171,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-modalbox-date-input-and-toggle-button-modal": {
       name: "application-modalbox-date-input-and-toggle-button-modal",
@@ -193,6 +199,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-modalbox-delete-modal-with-checkbox": {
       name: "application-modalbox-delete-modal-with-checkbox",
@@ -220,6 +227,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-modalbox-event-modal": {
       name: "application-modalbox-event-modal",
@@ -247,6 +255,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-modalbox-feature-modal-with-carousel": {
       name: "application-modalbox-feature-modal-with-carousel",
@@ -274,6 +283,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-modalbox-feedback-modal": {
       name: "application-modalbox-feedback-modal",
@@ -301,6 +311,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-modalbox-file-upload-modal": {
       name: "application-modalbox-file-upload-modal",
@@ -328,6 +339,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-modalbox-invite-modal-with-file-input": {
       name: "application-modalbox-invite-modal-with-file-input",
@@ -355,6 +367,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "application-modalbox-manage-team-modal": {
       name: "application-modalbox-manage-team-modal",
@@ -382,6 +395,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-messaging-modal-with-file-upload": {
       name: "application-modalbox-messaging-modal-with-file-upload",
@@ -409,6 +423,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-modal-with-carousel": {
       name: "application-modalbox-modal-with-carousel",
@@ -436,6 +451,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-modal-with-footer": {
       name: "application-modalbox-modal-with-footer",
@@ -463,6 +479,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-modal-with-form-element": {
       name: "application-modalbox-modal-with-form-element",
@@ -490,6 +507,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-modal-with-full-width-buttons": {
       name: "application-modalbox-modal-with-full-width-buttons",
@@ -517,6 +535,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-modal-with-input-and-toggle-buttons": {
       name: "application-modalbox-modal-with-input-and-toggle-buttons",
@@ -544,6 +563,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-modal-with-link-sharing": {
       name: "application-modalbox-modal-with-link-sharing",
@@ -571,6 +591,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-modal-with-search": {
       name: "application-modalbox-modal-with-search",
@@ -598,6 +619,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-modal-with-search-and-checkbox": {
       name: "application-modalbox-modal-with-search-and-checkbox",
@@ -625,6 +647,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-modal-with-separator": {
       name: "application-modalbox-modal-with-separator",
@@ -652,6 +675,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-modal-with-single-action": {
       name: "application-modalbox-modal-with-single-action",
@@ -679,6 +703,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-modal-with-social-media-buttons": {
       name: "application-modalbox-modal-with-social-media-buttons",
@@ -706,6 +731,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-modal-with-verification-code-input": {
       name: "application-modalbox-modal-with-verification-code-input",
@@ -733,6 +759,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-multiple-account-handle-with-checkbox": {
       name: "application-modalbox-multiple-account-handle-with-checkbox",
@@ -760,6 +787,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-notification-modal": {
       name: "application-modalbox-notification-modal",
@@ -787,6 +815,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-payment-modal-with-input-fields": {
       name: "application-modalbox-payment-modal-with-input-fields",
@@ -814,6 +843,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-pricing-plan-modal-with-radio-buttons": {
       name: "application-modalbox-pricing-plan-modal-with-radio-buttons",
@@ -841,6 +871,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-radio-input-modal": {
       name: "application-modalbox-radio-input-modal",
@@ -868,6 +899,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-relogin-modal-with-password-input": {
       name: "application-modalbox-relogin-modal-with-password-input",
@@ -895,6 +927,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-share-modal-with-customizing-options": {
       name: "application-modalbox-share-modal-with-customizing-options",
@@ -922,6 +955,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-share-modal-with-input-and-checkbox": {
       name: "application-modalbox-share-modal-with-input-and-checkbox",
@@ -949,6 +983,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-share-with-input-search-modal": {
       name: "application-modalbox-share-with-input-search-modal",
@@ -976,6 +1011,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-sign-in-modal-with-wide-button": {
       name: "application-modalbox-sign-in-modal-with-wide-button",
@@ -1003,6 +1039,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-simple-delete-modal": {
       name: "application-modalbox-simple-delete-modal",
@@ -1030,6 +1067,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-simple-modal-with-icon": {
       name: "application-modalbox-simple-modal-with-icon",
@@ -1057,6 +1095,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-simple-modal-with-number-input": {
       name: "application-modalbox-simple-modal-with-number-input",
@@ -1084,6 +1123,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-subscribe-modal-with-input": {
       name: "application-modalbox-subscribe-modal-with-input",
@@ -1111,6 +1151,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-success-modal-with-two-buttons": {
       name: "application-modalbox-success-modal-with-two-buttons",
@@ -1138,6 +1179,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "application-modalbox-team-management-modal": {
       name: "application-modalbox-team-management-modal",
@@ -1165,6 +1207,7 @@ export const IndexBlocksApplicationModalbox: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
   },
 }

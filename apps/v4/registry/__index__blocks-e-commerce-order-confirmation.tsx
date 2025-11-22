@@ -31,6 +31,7 @@ export const IndexBlocksECommerceOrderConfirmation: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-order-confirmation-order-confirmation-component-with-scanner": {
       name: "e-commerce-order-confirmation-order-confirmation-component-with-scanner",
@@ -58,6 +59,7 @@ export const IndexBlocksECommerceOrderConfirmation: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-order-confirmation-order-confirmation-with-cta": {
       name: "e-commerce-order-confirmation-order-confirmation-with-cta",
@@ -85,6 +87,7 @@ export const IndexBlocksECommerceOrderConfirmation: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-order-confirmation-order-confirmation-with-image": {
       name: "e-commerce-order-confirmation-order-confirmation-with-image",
@@ -112,6 +115,7 @@ export const IndexBlocksECommerceOrderConfirmation: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "e-commerce-order-confirmation-order-confirmation-with-message": {
       name: "e-commerce-order-confirmation-order-confirmation-with-message",
@@ -139,6 +143,7 @@ export const IndexBlocksECommerceOrderConfirmation: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "e-commerce-order-confirmation-order-confirmation-with-order-details": {
       name: "e-commerce-order-confirmation-order-confirmation-with-order-details",
@@ -166,6 +171,7 @@ export const IndexBlocksECommerceOrderConfirmation: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-confirmation-order-confirmation-with-order-status": {
       name: "e-commerce-order-confirmation-order-confirmation-with-order-status",
@@ -193,6 +199,7 @@ export const IndexBlocksECommerceOrderConfirmation: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-confirmation-order-confirmation-with-stepper": {
       name: "e-commerce-order-confirmation-order-confirmation-with-stepper",
@@ -220,6 +227,7 @@ export const IndexBlocksECommerceOrderConfirmation: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-confirmation-progress-steps-order-confirmation": {
       name: "e-commerce-order-confirmation-progress-steps-order-confirmation",
@@ -247,6 +255,7 @@ export const IndexBlocksECommerceOrderConfirmation: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-confirmation-side-by-side-order-confirmation": {
       name: "e-commerce-order-confirmation-side-by-side-order-confirmation",
@@ -274,6 +283,7 @@ export const IndexBlocksECommerceOrderConfirmation: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
   },
 }

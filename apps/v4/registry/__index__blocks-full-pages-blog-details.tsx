@@ -33,6 +33,7 @@ export const IndexBlocksFullPagesBlogDetails: Record<
         categories: ["full-pages"],
         meta: undefined,
         tier: "free",
+        readiness: "beta",
       },
     "full-pages-blog-details-blog-page-with-images-and-image-grid": {
       name: "full-pages-blog-details-blog-page-with-images-and-image-grid",
@@ -60,6 +61,7 @@ export const IndexBlocksFullPagesBlogDetails: Record<
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "full-pages-blog-details-simple-blog-details-page": {
       name: "full-pages-blog-details-simple-blog-details-page",
@@ -87,6 +89,7 @@ export const IndexBlocksFullPagesBlogDetails: Record<
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
   },
 }

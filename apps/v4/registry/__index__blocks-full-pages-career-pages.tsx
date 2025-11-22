@@ -31,6 +31,7 @@ export const IndexBlocksFullPagesCareerPages: Record<
       categories: ["full-pages"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "full-pages-career-pages-career-page-with-creative-image-layout-carousel-slider":
       {
@@ -60,6 +61,7 @@ export const IndexBlocksFullPagesCareerPages: Record<
         categories: ["full-pages"],
         meta: undefined,
         tier: "pro",
+        readiness: "beta",
       },
     "full-pages-career-pages-career-page-with-description-feature-list-icons-horizontal-stats":
       {
@@ -89,6 +91,7 @@ export const IndexBlocksFullPagesCareerPages: Record<
         categories: ["full-pages"],
         meta: undefined,
         tier: "pro",
+        readiness: "beta",
       },
     "full-pages-career-pages-career-page-with-three-column-blog-image-feature-list-with-hover":
       {
@@ -118,6 +121,7 @@ export const IndexBlocksFullPagesCareerPages: Record<
         categories: ["full-pages"],
         meta: undefined,
         tier: "pro",
+        readiness: "beta",
       },
   },
 }

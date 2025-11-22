@@ -31,6 +31,7 @@ export const IndexBlocksFullPagesPricingPage: Record<
       categories: ["full-pages"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "full-pages-pricing-page-pricing-plan-card-with-availability-table-and-faqs":
       {
@@ -60,6 +61,7 @@ export const IndexBlocksFullPagesPricingPage: Record<
         categories: ["full-pages"],
         meta: undefined,
         tier: "pro",
+        readiness: "beta",
       },
     "full-pages-pricing-page-pricing-plans-details-with-gradient-background": {
       name: "full-pages-pricing-page-pricing-plans-details-with-gradient-background",
@@ -87,6 +89,7 @@ export const IndexBlocksFullPagesPricingPage: Record<
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "full-pages-pricing-page-pricing-plans-with-tab-plan-comparison-faqs": {
       name: "full-pages-pricing-page-pricing-plans-with-tab-plan-comparison-faqs",
@@ -114,6 +117,7 @@ export const IndexBlocksFullPagesPricingPage: Record<
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
   },
 }

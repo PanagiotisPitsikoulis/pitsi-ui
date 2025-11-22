@@ -31,6 +31,7 @@ export const IndexBlocksECommerceRefundForm: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-refund-form-product-reason-selection-form": {
       name: "e-commerce-refund-form-product-reason-selection-form",
@@ -58,6 +59,7 @@ export const IndexBlocksECommerceRefundForm: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "e-commerce-refund-form-refund-request-process": {
       name: "e-commerce-refund-form-refund-request-process",
@@ -85,6 +87,7 @@ export const IndexBlocksECommerceRefundForm: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
   },
 }

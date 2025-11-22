@@ -31,6 +31,7 @@ export const IndexBlocksECommerceCommentList: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-comment-list-comment-block-with-text-editor": {
       name: "e-commerce-comment-list-comment-block-with-text-editor",
@@ -58,6 +59,7 @@ export const IndexBlocksECommerceCommentList: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-comment-list-comment-form-tailwind": {
       name: "e-commerce-comment-list-comment-form-tailwind",
@@ -85,6 +87,7 @@ export const IndexBlocksECommerceCommentList: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-comment-list-comment-list-with-text-editor": {
       name: "e-commerce-comment-list-comment-list-with-text-editor",
@@ -112,6 +115,7 @@ export const IndexBlocksECommerceCommentList: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "e-commerce-comment-list-comment-section-with-reply-field": {
       name: "e-commerce-comment-list-comment-section-with-reply-field",
@@ -139,6 +143,7 @@ export const IndexBlocksECommerceCommentList: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "e-commerce-comment-list-comments-section-with-form": {
       name: "e-commerce-comment-list-comments-section-with-form",
@@ -166,6 +171,7 @@ export const IndexBlocksECommerceCommentList: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-comment-list-comments-with-replies": {
       name: "e-commerce-comment-list-comments-with-replies",
@@ -193,6 +199,7 @@ export const IndexBlocksECommerceCommentList: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-comment-list-nested-comment-section": {
       name: "e-commerce-comment-list-nested-comment-section",
@@ -220,6 +227,7 @@ export const IndexBlocksECommerceCommentList: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-comment-list-simple-comment-block": {
       name: "e-commerce-comment-list-simple-comment-block",
@@ -247,6 +255,7 @@ export const IndexBlocksECommerceCommentList: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-comment-list-tailwind-comment-list-with-user-images": {
       name: "e-commerce-comment-list-tailwind-comment-list-with-user-images",
@@ -274,6 +283,7 @@ export const IndexBlocksECommerceCommentList: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-comment-list-tailwind-css-comment-list-with-form": {
       name: "e-commerce-comment-list-tailwind-css-comment-list-with-form",
@@ -301,6 +311,7 @@ export const IndexBlocksECommerceCommentList: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
   },
 }

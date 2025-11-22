@@ -33,6 +33,7 @@ export const IndexBlocksECommerceShoppingCart: Record<
         categories: ["e-commerce"],
         meta: undefined,
         tier: "free",
+        readiness: "beta",
       },
     "e-commerce-shopping-cart-multiple-column-shopping-cart-page": {
       name: "e-commerce-shopping-cart-multiple-column-shopping-cart-page",
@@ -60,6 +61,7 @@ export const IndexBlocksECommerceShoppingCart: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-shopping-cart-shopping-cart-with-payment-info": {
       name: "e-commerce-shopping-cart-shopping-cart-with-payment-info",
@@ -87,6 +89,7 @@ export const IndexBlocksECommerceShoppingCart: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-shopping-cart-shopping-cart-with-radio-button": {
       name: "e-commerce-shopping-cart-shopping-cart-with-radio-button",
@@ -114,6 +117,7 @@ export const IndexBlocksECommerceShoppingCart: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-shopping-cart-shopping-cart-with-receive-order-details": {
       name: "e-commerce-shopping-cart-shopping-cart-with-receive-order-details",
@@ -141,6 +145,7 @@ export const IndexBlocksECommerceShoppingCart: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-shopping-cart-shopping-cart-with-remove-button": {
       name: "e-commerce-shopping-cart-shopping-cart-with-remove-button",
@@ -168,6 +173,7 @@ export const IndexBlocksECommerceShoppingCart: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-shopping-cart-shopping-cart-with-remove-button-option": {
       name: "e-commerce-shopping-cart-shopping-cart-with-remove-button-option",
@@ -195,6 +201,7 @@ export const IndexBlocksECommerceShoppingCart: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-shopping-cart-shopping-cart-with-summary": {
       name: "e-commerce-shopping-cart-shopping-cart-with-summary",
@@ -222,6 +229,7 @@ export const IndexBlocksECommerceShoppingCart: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-shopping-cart-single-column-shopping-cart-page": {
       name: "e-commerce-shopping-cart-single-column-shopping-cart-page",
@@ -249,6 +257,7 @@ export const IndexBlocksECommerceShoppingCart: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-shopping-cart-three-columns-shopping-cart-with-card-details": {
       name: "e-commerce-shopping-cart-three-columns-shopping-cart-with-card-details",
@@ -276,6 +285,7 @@ export const IndexBlocksECommerceShoppingCart: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-shopping-cart-two-column-cart-with-summary": {
       name: "e-commerce-shopping-cart-two-column-cart-with-summary",
@@ -303,6 +313,7 @@ export const IndexBlocksECommerceShoppingCart: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-shopping-cart-two-column-shopping-cart-with-order-summary": {
       name: "e-commerce-shopping-cart-two-column-shopping-cart-with-order-summary",
@@ -330,6 +341,7 @@ export const IndexBlocksECommerceShoppingCart: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-shopping-cart-two-column-shopping-cart-with-sticky-position": {
       name: "e-commerce-shopping-cart-two-column-shopping-cart-with-sticky-position",
@@ -357,6 +369,7 @@ export const IndexBlocksECommerceShoppingCart: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-shopping-cart-two-column-shopping-cart-with-tab-content": {
       name: "e-commerce-shopping-cart-two-column-shopping-cart-with-tab-content",
@@ -384,6 +397,7 @@ export const IndexBlocksECommerceShoppingCart: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-shopping-cart-two-columns-shopping-cart-with-background-color":
       {
@@ -412,6 +426,7 @@ export const IndexBlocksECommerceShoppingCart: Record<
         categories: ["e-commerce"],
         meta: undefined,
         tier: "pro",
+        readiness: "alpha",
       },
   },
 }

@@ -101,6 +101,7 @@ export const IndexBlocksApplicationDashboard: Record<
       categories: ["dashboard"],
       meta: { iframeHeight: "1000px" },
       tier: "free",
+      readiness: "beta",
     },
     "sidebar-01": {
       name: "sidebar-01",
@@ -149,6 +150,7 @@ export const IndexBlocksApplicationDashboard: Record<
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "sidebar-02": {
       name: "sidebar-02",
@@ -197,6 +199,7 @@ export const IndexBlocksApplicationDashboard: Record<
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "sidebar-03": {
       name: "sidebar-03",
@@ -229,6 +232,7 @@ export const IndexBlocksApplicationDashboard: Record<
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "sidebar-04": {
       name: "sidebar-04",
@@ -261,6 +265,7 @@ export const IndexBlocksApplicationDashboard: Record<
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "sidebar-05": {
       name: "sidebar-05",
@@ -304,6 +309,7 @@ export const IndexBlocksApplicationDashboard: Record<
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "sidebar-06": {
       name: "sidebar-06",
@@ -352,6 +358,7 @@ export const IndexBlocksApplicationDashboard: Record<
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "sidebar-07": {
       name: "sidebar-07",
@@ -411,6 +418,7 @@ export const IndexBlocksApplicationDashboard: Record<
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "sidebar-08": {
       name: "sidebar-08",
@@ -470,6 +478,7 @@ export const IndexBlocksApplicationDashboard: Record<
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "sidebar-09": {
       name: "sidebar-09",
@@ -516,6 +525,7 @@ export const IndexBlocksApplicationDashboard: Record<
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "sidebar-10": {
       name: "sidebar-10",
@@ -585,6 +595,7 @@ export const IndexBlocksApplicationDashboard: Record<
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "sidebar-11": {
       name: "sidebar-11",
@@ -622,6 +633,7 @@ export const IndexBlocksApplicationDashboard: Record<
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "sidebar-12": {
       name: "sidebar-12",
@@ -677,6 +689,7 @@ export const IndexBlocksApplicationDashboard: Record<
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "sidebar-13": {
       name: "sidebar-13",
@@ -709,6 +722,7 @@ export const IndexBlocksApplicationDashboard: Record<
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "sidebar-14": {
       name: "sidebar-14",
@@ -741,6 +755,7 @@ export const IndexBlocksApplicationDashboard: Record<
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "sidebar-15": {
       name: "sidebar-15",
@@ -827,6 +842,7 @@ export const IndexBlocksApplicationDashboard: Record<
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "sidebar-16": {
       name: "sidebar-16",
@@ -898,6 +914,7 @@ export const IndexBlocksApplicationDashboard: Record<
       categories: ["application", "dashboard"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
   },
 }

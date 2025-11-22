@@ -36,6 +36,7 @@ export const IndexBlocksFullPagesLoginPage: Record<
       categories: ["full-pages", "login"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "login-02": {
       name: "login-02",
@@ -68,6 +69,7 @@ export const IndexBlocksFullPagesLoginPage: Record<
       categories: ["full-pages", "login"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "login-03": {
       name: "login-03",
@@ -100,6 +102,7 @@ export const IndexBlocksFullPagesLoginPage: Record<
       categories: ["full-pages", "login"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "login-04": {
       name: "login-04",
@@ -132,6 +135,7 @@ export const IndexBlocksFullPagesLoginPage: Record<
       categories: ["full-pages", "login"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "login-05": {
       name: "login-05",
@@ -164,6 +168,7 @@ export const IndexBlocksFullPagesLoginPage: Record<
       categories: ["full-pages", "login"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "signup-01": {
       name: "signup-01",
@@ -196,6 +201,7 @@ export const IndexBlocksFullPagesLoginPage: Record<
       categories: ["full-pages", "signup"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "signup-02": {
       name: "signup-02",
@@ -228,6 +234,7 @@ export const IndexBlocksFullPagesLoginPage: Record<
       categories: ["full-pages", "signup"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "signup-03": {
       name: "signup-03",
@@ -260,6 +267,7 @@ export const IndexBlocksFullPagesLoginPage: Record<
       categories: ["full-pages", "signup"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "signup-04": {
       name: "signup-04",
@@ -292,6 +300,7 @@ export const IndexBlocksFullPagesLoginPage: Record<
       categories: ["full-pages", "signup"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "signup-05": {
       name: "signup-05",
@@ -324,6 +333,7 @@ export const IndexBlocksFullPagesLoginPage: Record<
       categories: ["full-pages", "signup"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "full-pages-login-page-login-form-with-gradient-background": {
       name: "full-pages-login-page-login-form-with-gradient-background",
@@ -351,6 +361,7 @@ export const IndexBlocksFullPagesLoginPage: Record<
       categories: ["full-pages"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "full-pages-login-page-login-page-with-cta-button-illustrations": {
       name: "full-pages-login-page-login-page-with-cta-button-illustrations",
@@ -378,6 +389,7 @@ export const IndexBlocksFullPagesLoginPage: Record<
       categories: ["full-pages"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "full-pages-login-page-login-page-with-gradient-background-form": {
       name: "full-pages-login-page-login-page-with-gradient-background-form",
@@ -405,6 +417,7 @@ export const IndexBlocksFullPagesLoginPage: Record<
       categories: ["full-pages"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "full-pages-login-page-login-page-with-gradient-background-image": {
       name: "full-pages-login-page-login-page-with-gradient-background-image",
@@ -432,6 +445,7 @@ export const IndexBlocksFullPagesLoginPage: Record<
       categories: ["full-pages"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "full-pages-login-page-login-page-with-split-form": {
       name: "full-pages-login-page-login-page-with-split-form",
@@ -459,6 +473,7 @@ export const IndexBlocksFullPagesLoginPage: Record<
       categories: ["full-pages"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "full-pages-login-page-login-with-social-media-button": {
       name: "full-pages-login-page-login-with-social-media-button",
@@ -486,6 +501,7 @@ export const IndexBlocksFullPagesLoginPage: Record<
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
   },
 }

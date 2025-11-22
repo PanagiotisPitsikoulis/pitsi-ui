@@ -31,6 +31,7 @@ export const IndexBlocksECommerceProductList: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-product-list-card-with-supporting-text": {
       name: "e-commerce-product-list-card-with-supporting-text",
@@ -58,6 +59,7 @@ export const IndexBlocksECommerceProductList: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-product-list-product-list-with-details": {
       name: "e-commerce-product-list-product-list-with-details",
@@ -85,6 +87,7 @@ export const IndexBlocksECommerceProductList: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-product-list-static-product-list-with-grid": {
       name: "e-commerce-product-list-static-product-list-with-grid",
@@ -112,6 +115,7 @@ export const IndexBlocksECommerceProductList: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "e-commerce-product-list-tailwind-product-list-with-three-column-grid": {
       name: "e-commerce-product-list-tailwind-product-list-with-three-column-grid",
@@ -139,6 +143,7 @@ export const IndexBlocksECommerceProductList: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "e-commerce-product-list-with-horizontal-card": {
       name: "e-commerce-product-list-with-horizontal-card",
@@ -166,6 +171,7 @@ export const IndexBlocksECommerceProductList: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-list-with-hover-effect": {
       name: "e-commerce-product-list-with-hover-effect",
@@ -193,6 +199,7 @@ export const IndexBlocksECommerceProductList: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-list-with-image-and-description": {
       name: "e-commerce-product-list-with-image-and-description",
@@ -220,6 +227,7 @@ export const IndexBlocksECommerceProductList: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-list-with-purchase-link": {
       name: "e-commerce-product-list-with-purchase-link",
@@ -247,6 +255,7 @@ export const IndexBlocksECommerceProductList: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-list-with-user-rating": {
       name: "e-commerce-product-list-with-user-rating",
@@ -274,6 +283,7 @@ export const IndexBlocksECommerceProductList: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
   },
 }

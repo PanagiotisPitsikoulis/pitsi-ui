@@ -31,6 +31,7 @@ export const IndexBlocksECommerceIncentives: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-incentives-brand-logo-incentive-section": {
       name: "e-commerce-incentives-brand-logo-incentive-section",
@@ -58,6 +59,7 @@ export const IndexBlocksECommerceIncentives: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-incentives-form-incentive-section": {
       name: "e-commerce-incentives-form-incentive-section",
@@ -85,6 +87,7 @@ export const IndexBlocksECommerceIncentives: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-incentives-image-in-grid-incentive-section": {
       name: "e-commerce-incentives-image-in-grid-incentive-section",
@@ -112,6 +115,7 @@ export const IndexBlocksECommerceIncentives: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "e-commerce-incentives-incentive-page-with-card-view": {
       name: "e-commerce-incentives-incentive-page-with-card-view",
@@ -139,6 +143,7 @@ export const IndexBlocksECommerceIncentives: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "e-commerce-incentives-incentive-page-with-four-column-grid": {
       name: "e-commerce-incentives-incentive-page-with-four-column-grid",
@@ -166,6 +171,7 @@ export const IndexBlocksECommerceIncentives: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-incentives-incentive-page-with-heading": {
       name: "e-commerce-incentives-incentive-page-with-heading",
@@ -193,6 +199,7 @@ export const IndexBlocksECommerceIncentives: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-incentives-incentive-pages-with-description-and-comparison": {
       name: "e-commerce-incentives-incentive-pages-with-description-and-comparison",
@@ -220,6 +227,7 @@ export const IndexBlocksECommerceIncentives: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-incentives-incentives-with-icons": {
       name: "e-commerce-incentives-incentives-with-icons",
@@ -247,6 +255,7 @@ export const IndexBlocksECommerceIncentives: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-incentives-split-image-incentive-section": {
       name: "e-commerce-incentives-split-image-incentive-section",
@@ -274,6 +283,7 @@ export const IndexBlocksECommerceIncentives: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
   },
 }

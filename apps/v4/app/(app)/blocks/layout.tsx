@@ -84,11 +84,13 @@ export default async function BlocksLayout({
     })
   )
 
-  // Sort categories by count (highest first)
-  categoryLinks.sort((a, b) => b.count - a.count)
+  // Sort categories by count (highest first) and filter out empty ones
+  const filteredCategoryLinks = categoryLinks
+    .filter((cat) => cat.subcategories.length > 0)
+    .sort((a, b) => b.count - a.count)
 
   return (
-    <BlocksLayoutClient categoryLinks={categoryLinks}>
+    <BlocksLayoutClient categoryLinks={filteredCategoryLinks}>
       {children}
     </BlocksLayoutClient>
   )

@@ -31,6 +31,7 @@ export const IndexBlocksECommerceRefundStatus: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-refund-status-refund-status-with-order-summary": {
       name: "e-commerce-refund-status-refund-status-with-order-summary",
@@ -58,6 +59,7 @@ export const IndexBlocksECommerceRefundStatus: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-refund-status-refund-status-with-progress-steps": {
       name: "e-commerce-refund-status-refund-status-with-progress-steps",
@@ -85,6 +87,7 @@ export const IndexBlocksECommerceRefundStatus: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "e-commerce-refund-status-refund-track-with-detailed-steps": {
       name: "e-commerce-refund-status-refund-track-with-detailed-steps",
@@ -112,6 +115,7 @@ export const IndexBlocksECommerceRefundStatus: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "e-commerce-refund-status-side-by-side-refund-status-with-timeline": {
       name: "e-commerce-refund-status-side-by-side-refund-status-with-timeline",
@@ -139,6 +143,7 @@ export const IndexBlocksECommerceRefundStatus: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
   },
 }

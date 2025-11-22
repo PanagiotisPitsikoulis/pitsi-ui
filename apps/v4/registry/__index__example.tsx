@@ -28,6 +28,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "alert-demo": {
       name: "alert-demo",
@@ -55,6 +56,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "alert-destructive": {
       name: "alert-destructive",
@@ -82,6 +84,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "alert-dialog-demo": {
       name: "alert-dialog-demo",
@@ -109,6 +112,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "aspect-ratio-demo": {
       name: "aspect-ratio-demo",
@@ -136,6 +140,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "avatar-demo": {
       name: "avatar-demo",
@@ -163,6 +168,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "badge-demo": {
       name: "badge-demo",
@@ -190,6 +196,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "badge-destructive": {
       name: "badge-destructive",
@@ -217,6 +224,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "badge-outline": {
       name: "badge-outline",
@@ -244,6 +252,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "badge-secondary": {
       name: "badge-secondary",
@@ -271,6 +280,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "breadcrumb-demo": {
       name: "breadcrumb-demo",
@@ -298,6 +308,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "breadcrumb-separator": {
       name: "breadcrumb-separator",
@@ -325,6 +336,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "breadcrumb-dropdown": {
       name: "breadcrumb-dropdown",
@@ -352,6 +364,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "breadcrumb-ellipsis": {
       name: "breadcrumb-ellipsis",
@@ -379,6 +392,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "breadcrumb-link": {
       name: "breadcrumb-link",
@@ -406,6 +420,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "breadcrumb-responsive": {
       name: "breadcrumb-responsive",
@@ -433,6 +448,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "button-demo": {
       name: "button-demo",
@@ -460,6 +476,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "button-default": {
       name: "button-default",
@@ -487,6 +504,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "button-secondary": {
       name: "button-secondary",
@@ -514,6 +532,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "button-destructive": {
       name: "button-destructive",
@@ -541,6 +560,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "button-outline": {
       name: "button-outline",
@@ -568,6 +588,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "button-ghost": {
       name: "button-ghost",
@@ -595,6 +616,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "button-link": {
       name: "button-link",
@@ -622,6 +644,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "button-with-icon": {
       name: "button-with-icon",
@@ -649,6 +672,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "button-loading": {
       name: "button-loading",
@@ -676,6 +700,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "button-icon": {
       name: "button-icon",
@@ -703,6 +728,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "button-as-child": {
       name: "button-as-child",
@@ -730,6 +756,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "button-rounded": {
       name: "button-rounded",
@@ -757,6 +784,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "button-size": {
       name: "button-size",
@@ -784,6 +812,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "button-group-demo": {
       name: "button-group-demo",
@@ -811,6 +840,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "button-group-nested": {
       name: "button-group-nested",
@@ -838,6 +868,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "button-group-size": {
       name: "button-group-size",
@@ -865,6 +896,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "button-group-separator": {
       name: "button-group-separator",
@@ -892,6 +924,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "button-group-split": {
       name: "button-group-split",
@@ -919,6 +952,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "button-group-input": {
       name: "button-group-input",
@@ -946,6 +980,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "button-group-dropdown": {
       name: "button-group-dropdown",
@@ -973,6 +1008,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "button-group-select": {
       name: "button-group-select",
@@ -1000,6 +1036,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "button-group-popover": {
       name: "button-group-popover",
@@ -1027,6 +1064,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "button-group-input-group": {
       name: "button-group-input-group",
@@ -1054,6 +1092,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "button-group-orientation": {
       name: "button-group-orientation",
@@ -1081,6 +1120,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "calendar-demo": {
       name: "calendar-demo",
@@ -1108,6 +1148,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "calendar-form": {
       name: "calendar-form",
@@ -1135,6 +1176,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "card-demo": {
       name: "card-demo",
@@ -1162,6 +1204,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "card-with-form": {
       name: "card-with-form",
@@ -1189,6 +1232,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "carousel-demo": {
       name: "carousel-demo",
@@ -1216,6 +1260,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "carousel-size": {
       name: "carousel-size",
@@ -1243,6 +1288,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "carousel-spacing": {
       name: "carousel-spacing",
@@ -1270,6 +1316,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "carousel-orientation": {
       name: "carousel-orientation",
@@ -1297,6 +1344,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "carousel-api": {
       name: "carousel-api",
@@ -1324,6 +1372,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "carousel-plugin": {
       name: "carousel-plugin",
@@ -1351,6 +1400,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "checkbox-demo": {
       name: "checkbox-demo",
@@ -1378,6 +1428,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "checkbox-disabled": {
       name: "checkbox-disabled",
@@ -1405,6 +1456,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "checkbox-form-multiple": {
       name: "checkbox-form-multiple",
@@ -1432,6 +1484,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "checkbox-form-single": {
       name: "checkbox-form-single",
@@ -1459,6 +1512,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "checkbox-with-text": {
       name: "checkbox-with-text",
@@ -1486,6 +1540,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "collapsible-demo": {
       name: "collapsible-demo",
@@ -1513,6 +1568,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "combobox-demo": {
       name: "combobox-demo",
@@ -1540,6 +1596,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "combobox-dropdown-menu": {
       name: "combobox-dropdown-menu",
@@ -1567,6 +1624,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "combobox-form": {
       name: "combobox-form",
@@ -1594,6 +1652,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "combobox-popover": {
       name: "combobox-popover",
@@ -1621,6 +1680,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "combobox-responsive": {
       name: "combobox-responsive",
@@ -1648,6 +1708,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "command-demo": {
       name: "command-demo",
@@ -1675,6 +1736,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "command-dialog": {
       name: "command-dialog",
@@ -1702,6 +1764,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "context-menu-demo": {
       name: "context-menu-demo",
@@ -1729,6 +1792,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "container-demo": {
       name: "container-demo",
@@ -1756,6 +1820,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "data-table-demo": {
       name: "data-table-demo",
@@ -1783,6 +1848,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "date-picker-demo": {
       name: "date-picker-demo",
@@ -1810,6 +1876,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "date-picker-form": {
       name: "date-picker-form",
@@ -1837,6 +1904,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "date-picker-with-presets": {
       name: "date-picker-with-presets",
@@ -1864,6 +1932,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "date-picker-with-range": {
       name: "date-picker-with-range",
@@ -1891,6 +1960,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "dialog-demo": {
       name: "dialog-demo",
@@ -1918,6 +1988,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "dialog-close-button": {
       name: "dialog-close-button",
@@ -1945,6 +2016,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "drawer-demo": {
       name: "drawer-demo",
@@ -1972,6 +2044,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "empty-demo": {
       name: "empty-demo",
@@ -1999,6 +2072,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "empty-icon": {
       name: "empty-icon",
@@ -2026,6 +2100,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "empty-avatar": {
       name: "empty-avatar",
@@ -2053,6 +2128,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "empty-avatar-group": {
       name: "empty-avatar-group",
@@ -2080,6 +2156,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "empty-input-group": {
       name: "empty-input-group",
@@ -2107,6 +2184,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "empty-outline": {
       name: "empty-outline",
@@ -2134,6 +2212,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "empty-background": {
       name: "empty-background",
@@ -2161,6 +2240,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "field-demo": {
       name: "field-demo",
@@ -2188,6 +2268,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "field-input": {
       name: "field-input",
@@ -2215,6 +2296,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "field-textarea": {
       name: "field-textarea",
@@ -2242,6 +2324,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "field-fieldset": {
       name: "field-fieldset",
@@ -2269,6 +2352,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "field-radio": {
       name: "field-radio",
@@ -2296,6 +2380,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "field-checkbox": {
       name: "field-checkbox",
@@ -2323,6 +2408,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "field-switch": {
       name: "field-switch",
@@ -2350,6 +2436,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "field-slider": {
       name: "field-slider",
@@ -2377,6 +2464,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "field-select": {
       name: "field-select",
@@ -2404,6 +2492,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "field-choice-card": {
       name: "field-choice-card",
@@ -2431,6 +2520,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "field-group": {
       name: "field-group",
@@ -2458,6 +2548,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "field-responsive": {
       name: "field-responsive",
@@ -2485,6 +2576,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "flex-demo": {
       name: "flex-demo",
@@ -2512,6 +2604,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "drawer-dialog": {
       name: "drawer-dialog",
@@ -2539,6 +2632,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "dropdown-menu-demo": {
       name: "dropdown-menu-demo",
@@ -2566,6 +2660,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "dropdown-menu-checkboxes": {
       name: "dropdown-menu-checkboxes",
@@ -2593,6 +2688,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "dropdown-menu-radio-group": {
       name: "dropdown-menu-radio-group",
@@ -2620,6 +2716,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "dropdown-menu-dialog": {
       name: "dropdown-menu-dialog",
@@ -2653,6 +2750,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "grid-demo": {
       name: "grid-demo",
@@ -2680,6 +2778,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "hover-card-demo": {
       name: "hover-card-demo",
@@ -2707,6 +2806,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "input-demo": {
       name: "input-demo",
@@ -2734,6 +2834,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "input-disabled": {
       name: "input-disabled",
@@ -2761,6 +2862,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "input-file": {
       name: "input-file",
@@ -2788,6 +2890,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "input-form": {
       name: "input-form",
@@ -2815,6 +2918,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "input-with-button": {
       name: "input-with-button",
@@ -2842,6 +2946,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "input-with-label": {
       name: "input-with-label",
@@ -2869,6 +2974,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "input-with-text": {
       name: "input-with-text",
@@ -2896,6 +3002,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "input-group-demo": {
       name: "input-group-demo",
@@ -2923,6 +3030,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "input-group-label": {
       name: "input-group-label",
@@ -2950,6 +3058,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "input-group-text": {
       name: "input-group-text",
@@ -2977,6 +3086,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "input-group-tooltip": {
       name: "input-group-tooltip",
@@ -3004,6 +3114,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "input-group-button": {
       name: "input-group-button",
@@ -3031,6 +3142,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "input-group-button-group": {
       name: "input-group-button-group",
@@ -3058,6 +3170,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "input-group-dropdown": {
       name: "input-group-dropdown",
@@ -3085,6 +3198,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "input-group-spinner": {
       name: "input-group-spinner",
@@ -3112,6 +3226,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "input-group-textarea": {
       name: "input-group-textarea",
@@ -3139,6 +3254,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "input-group-icon": {
       name: "input-group-icon",
@@ -3166,6 +3282,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "input-group-custom": {
       name: "input-group-custom",
@@ -3199,6 +3316,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "input-otp-demo": {
       name: "input-otp-demo",
@@ -3226,6 +3344,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "input-otp-pattern": {
       name: "input-otp-pattern",
@@ -3253,6 +3372,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "input-otp-separator": {
       name: "input-otp-separator",
@@ -3280,6 +3400,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "input-otp-controlled": {
       name: "input-otp-controlled",
@@ -3307,6 +3428,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "input-otp-form": {
       name: "input-otp-form",
@@ -3334,6 +3456,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "item-demo": {
       name: "item-demo",
@@ -3361,6 +3484,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "item-size": {
       name: "item-size",
@@ -3388,6 +3512,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "item-variant": {
       name: "item-variant",
@@ -3415,6 +3540,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "item-icon": {
       name: "item-icon",
@@ -3442,6 +3568,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "item-image": {
       name: "item-image",
@@ -3469,6 +3596,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "item-avatar": {
       name: "item-avatar",
@@ -3496,6 +3624,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "item-group": {
       name: "item-group",
@@ -3523,6 +3652,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "item-header": {
       name: "item-header",
@@ -3550,6 +3680,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "item-dropdown": {
       name: "item-dropdown",
@@ -3577,6 +3708,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "item-link": {
       name: "item-link",
@@ -3604,6 +3736,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "kbd-demo": {
       name: "kbd-demo",
@@ -3629,6 +3762,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "kbd-tooltip": {
       name: "kbd-tooltip",
@@ -3656,6 +3790,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "kbd-input-group": {
       name: "kbd-input-group",
@@ -3683,6 +3818,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "kbd-button": {
       name: "kbd-button",
@@ -3710,6 +3846,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "kbd-group": {
       name: "kbd-group",
@@ -3737,6 +3874,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "label-demo": {
       name: "label-demo",
@@ -3764,6 +3902,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "menubar-demo": {
       name: "menubar-demo",
@@ -3791,6 +3930,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "navigation-menu-demo": {
       name: "navigation-menu-demo",
@@ -3818,6 +3958,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "native-select-demo": {
       name: "native-select-demo",
@@ -3845,6 +3986,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "native-select-groups": {
       name: "native-select-groups",
@@ -3872,6 +4014,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "native-select-disabled": {
       name: "native-select-disabled",
@@ -3899,6 +4042,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "native-select-invalid": {
       name: "native-select-invalid",
@@ -3926,6 +4070,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "pagination-demo": {
       name: "pagination-demo",
@@ -3953,6 +4098,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "popover-demo": {
       name: "popover-demo",
@@ -3980,6 +4126,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "progress-demo": {
       name: "progress-demo",
@@ -4007,6 +4154,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "radio-group-demo": {
       name: "radio-group-demo",
@@ -4034,6 +4182,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "radio-group-form": {
       name: "radio-group-form",
@@ -4061,6 +4210,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "resizable-demo": {
       name: "resizable-demo",
@@ -4088,6 +4238,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "resizable-demo-with-handle": {
       name: "resizable-demo-with-handle",
@@ -4115,6 +4266,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "resizable-vertical": {
       name: "resizable-vertical",
@@ -4142,6 +4294,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "resizable-handle": {
       name: "resizable-handle",
@@ -4169,6 +4322,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "scroll-area-demo": {
       name: "scroll-area-demo",
@@ -4196,6 +4350,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "scroll-area-horizontal-demo": {
       name: "scroll-area-horizontal-demo",
@@ -4223,6 +4378,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "segmented-control-demo": {
       name: "segmented-control-demo",
@@ -4250,6 +4406,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "segmented-control-custom": {
       name: "segmented-control-custom",
@@ -4277,6 +4434,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "select-demo": {
       name: "select-demo",
@@ -4304,6 +4462,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "select-scrollable": {
       name: "select-scrollable",
@@ -4331,6 +4490,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "select-form": {
       name: "select-form",
@@ -4358,6 +4518,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "separator-demo": {
       name: "separator-demo",
@@ -4385,6 +4546,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "sheet-demo": {
       name: "sheet-demo",
@@ -4412,6 +4574,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "sheet-side": {
       name: "sheet-side",
@@ -4439,6 +4602,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "skeleton-demo": {
       name: "skeleton-demo",
@@ -4466,6 +4630,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "skeleton-card": {
       name: "skeleton-card",
@@ -4493,6 +4658,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "slider-demo": {
       name: "slider-demo",
@@ -4520,6 +4686,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "sonner-demo": {
       name: "sonner-demo",
@@ -4547,6 +4714,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "sonner-types": {
       name: "sonner-types",
@@ -4574,6 +4742,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "spinner-demo": {
       name: "spinner-demo",
@@ -4601,6 +4770,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "spinner-basic": {
       name: "spinner-basic",
@@ -4628,6 +4798,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "spinner-button": {
       name: "spinner-button",
@@ -4655,6 +4826,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "spinner-badge": {
       name: "spinner-badge",
@@ -4682,6 +4854,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "spinner-input-group": {
       name: "spinner-input-group",
@@ -4709,6 +4882,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "spinner-empty": {
       name: "spinner-empty",
@@ -4736,6 +4910,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "spinner-color": {
       name: "spinner-color",
@@ -4763,6 +4938,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "spinner-custom": {
       name: "spinner-custom",
@@ -4790,6 +4966,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "spinner-size": {
       name: "spinner-size",
@@ -4817,6 +4994,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "spinner-item": {
       name: "spinner-item",
@@ -4844,6 +5022,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "spacer-demo": {
       name: "spacer-demo",
@@ -4871,6 +5050,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "spacer-sizes": {
       name: "spacer-sizes",
@@ -4898,6 +5078,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "squircle-demo": {
       name: "squircle-demo",
@@ -4925,6 +5106,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "switch-demo": {
       name: "switch-demo",
@@ -4952,6 +5134,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "switch-form": {
       name: "switch-form",
@@ -4979,6 +5162,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "table-demo": {
       name: "table-demo",
@@ -5006,6 +5190,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "tabs-demo": {
       name: "tabs-demo",
@@ -5033,6 +5218,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "textarea-demo": {
       name: "textarea-demo",
@@ -5060,6 +5246,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "textarea-disabled": {
       name: "textarea-disabled",
@@ -5087,6 +5274,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "textarea-form": {
       name: "textarea-form",
@@ -5114,6 +5302,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "textarea-with-button": {
       name: "textarea-with-button",
@@ -5141,6 +5330,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "textarea-with-label": {
       name: "textarea-with-label",
@@ -5168,6 +5358,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "textarea-with-text": {
       name: "textarea-with-text",
@@ -5195,6 +5386,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "toggle-group-demo": {
       name: "toggle-group-demo",
@@ -5222,6 +5414,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "toggle-group-disabled": {
       name: "toggle-group-disabled",
@@ -5249,6 +5442,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "toggle-group-lg": {
       name: "toggle-group-lg",
@@ -5276,6 +5470,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "toggle-group-outline": {
       name: "toggle-group-outline",
@@ -5303,6 +5498,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "toggle-group-sm": {
       name: "toggle-group-sm",
@@ -5330,6 +5526,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "toggle-group-single": {
       name: "toggle-group-single",
@@ -5357,6 +5554,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "toggle-group-spacing": {
       name: "toggle-group-spacing",
@@ -5384,6 +5582,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "toggle-demo": {
       name: "toggle-demo",
@@ -5411,6 +5610,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "toggle-disabled": {
       name: "toggle-disabled",
@@ -5438,6 +5638,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "toggle-lg": {
       name: "toggle-lg",
@@ -5465,6 +5666,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "toggle-outline": {
       name: "toggle-outline",
@@ -5492,6 +5694,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "toggle-sm": {
       name: "toggle-sm",
@@ -5519,6 +5722,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "toggle-with-text": {
       name: "toggle-with-text",
@@ -5546,6 +5750,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "tooltip-demo": {
       name: "tooltip-demo",
@@ -5573,6 +5778,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "typography-blockquote": {
       name: "typography-blockquote",
@@ -5600,6 +5806,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "typography-demo": {
       name: "typography-demo",
@@ -5627,6 +5834,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "typography-h1": {
       name: "typography-h1",
@@ -5654,6 +5862,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "typography-h2": {
       name: "typography-h2",
@@ -5681,6 +5890,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "typography-h3": {
       name: "typography-h3",
@@ -5708,6 +5918,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "typography-h4": {
       name: "typography-h4",
@@ -5735,6 +5946,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "typography-inline-code": {
       name: "typography-inline-code",
@@ -5762,6 +5974,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "typography-large": {
       name: "typography-large",
@@ -5789,6 +6002,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "typography-lead": {
       name: "typography-lead",
@@ -5816,6 +6030,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "typography-list": {
       name: "typography-list",
@@ -5843,6 +6058,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "typography-muted": {
       name: "typography-muted",
@@ -5870,6 +6086,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "typography-p": {
       name: "typography-p",
@@ -5897,6 +6114,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "typography-small": {
       name: "typography-small",
@@ -5924,6 +6142,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "typography-table": {
       name: "typography-table",
@@ -5951,6 +6170,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "typography-component-demo": {
       name: "typography-component-demo",
@@ -5978,6 +6198,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "typography-headings": {
       name: "typography-headings",
@@ -6005,6 +6226,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "typography-paragraphs": {
       name: "typography-paragraphs",
@@ -6032,6 +6254,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "typography-labels": {
       name: "typography-labels",
@@ -6059,6 +6282,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "typography-polymorphic": {
       name: "typography-polymorphic",
@@ -6086,6 +6310,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "typography-variants-demo": {
       name: "typography-variants-demo",
@@ -6113,6 +6338,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "theme-demo": {
       name: "theme-demo",
@@ -6140,6 +6366,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "theme-toggle-demo": {
       name: "theme-toggle-demo",
@@ -6167,6 +6394,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "unicorn-wrapper-demo": {
       name: "unicorn-wrapper-demo",
@@ -6194,6 +6422,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "use-tab-observer-demo": {
       name: "use-tab-observer-demo",
@@ -6221,6 +6450,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "mode-toggle": {
       name: "mode-toggle",
@@ -6248,6 +6478,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "calendar-hijri": {
       name: "calendar-hijri",
@@ -6280,6 +6511,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
         mobile: "component",
       },
       tier: "free",
+      readiness: "production",
     },
     "background-image-parallax-demo": {
       name: "background-image-parallax-demo",
@@ -6307,6 +6539,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "card-swipe-carousel-demo": {
       name: "card-swipe-carousel-demo",
@@ -6334,6 +6567,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "cards-parallax-demo": {
       name: "cards-parallax-demo",
@@ -6361,6 +6595,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["core-components"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "parallax-scroll-demo": {
       name: "parallax-scroll-demo",
@@ -6388,6 +6623,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "perspective-carousel-demo": {
       name: "perspective-carousel-demo",
@@ -6415,6 +6651,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "perspective-section-transition-demo": {
       name: "perspective-section-transition-demo",
@@ -6442,6 +6679,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "scroll-expand-demo": {
       name: "scroll-expand-demo",
@@ -6469,6 +6707,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "scroll-fade-demo": {
       name: "scroll-fade-demo",
@@ -6496,6 +6735,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "scroll-scale-demo": {
       name: "scroll-scale-demo",
@@ -6523,6 +6763,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "slide-down-demo": {
       name: "slide-down-demo",
@@ -6550,6 +6791,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "slide-up-demo": {
       name: "slide-up-demo",
@@ -6577,6 +6819,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "smooth-parallax-scroll-demo": {
       name: "smooth-parallax-scroll-demo",
@@ -6604,6 +6847,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "smooth-scroll-demo": {
       name: "smooth-scroll-demo",
@@ -6631,6 +6875,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "sticky-footer-demo": {
       name: "sticky-footer-demo",
@@ -6658,6 +6903,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "text-along-path-demo": {
       name: "text-along-path-demo",
@@ -6685,6 +6931,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "text-gradient-opacity-demo": {
       name: "text-gradient-opacity-demo",
@@ -6712,6 +6959,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "text-parallax-demo": {
       name: "text-parallax-demo",
@@ -6739,6 +6987,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "transforms-3d-demo": {
       name: "transforms-3d-demo",
@@ -6766,6 +7015,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "zoom-parallax-demo": {
       name: "zoom-parallax-demo",
@@ -6793,6 +7043,7 @@ export const IndexExample: Record<string, Record<string, any>> = {
       categories: ["primitives"],
       meta: undefined,
       tier: "free",
+      readiness: "production",
     },
     "sidebar-demo": {
       name: "sidebar-demo",

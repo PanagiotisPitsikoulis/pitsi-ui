@@ -33,6 +33,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages", "login"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "login-02": {
       name: "login-02",
@@ -65,6 +66,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages", "login"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "login-03": {
       name: "login-03",
@@ -97,6 +99,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages", "login"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "login-04": {
       name: "login-04",
@@ -129,6 +132,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages", "login"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "login-05": {
       name: "login-05",
@@ -161,6 +165,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages", "login"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "signup-01": {
       name: "signup-01",
@@ -193,6 +198,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages", "signup"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "signup-02": {
       name: "signup-02",
@@ -225,6 +231,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages", "signup"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "signup-03": {
       name: "signup-03",
@@ -257,6 +264,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages", "signup"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "signup-04": {
       name: "signup-04",
@@ -289,6 +297,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages", "signup"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "signup-05": {
       name: "signup-05",
@@ -321,6 +330,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages", "signup"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "otp-01": {
       name: "otp-01",
@@ -353,6 +363,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages", "otp"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "otp-02": {
       name: "otp-02",
@@ -385,6 +396,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages", "otp"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "otp-03": {
       name: "otp-03",
@@ -417,6 +429,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages", "otp"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "otp-04": {
       name: "otp-04",
@@ -449,6 +462,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages", "otp"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "otp-05": {
       name: "otp-05",
@@ -481,6 +495,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages", "otp"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "full-pages-404-page-404-error-page-with-illustration": {
       name: "full-pages-404-page-404-error-page-with-illustration",
@@ -508,6 +523,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "full-pages-404-page-404-page-with-cta-button": {
       name: "full-pages-404-page-404-page-with-cta-button",
@@ -535,6 +551,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "full-pages-404-page-default-404-page": {
       name: "full-pages-404-page-default-404-page",
@@ -562,6 +579,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "full-pages-404-page-side-by-side-404-tailwind-page": {
       name: "full-pages-404-page-side-by-side-404-tailwind-page",
@@ -589,6 +607,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "full-pages-404-page-svg-illustration-with-search-bar": {
       name: "full-pages-404-page-svg-illustration-with-search-bar",
@@ -616,6 +635,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "full-pages-about-us-page-about-us-with-hero-section-and-tile-view": {
       name: "full-pages-about-us-page-about-us-with-hero-section-and-tile-view",
@@ -643,6 +663,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "full-pages-about-us-page-about-us-with-image-tiles": {
       name: "full-pages-about-us-page-about-us-with-image-tiles",
@@ -670,6 +691,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "full-pages-about-us-page-about-us-with-team-and-stats": {
       name: "full-pages-about-us-page-about-us-with-team-and-stats",
@@ -697,6 +719,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "full-pages-about-us-page-about-us-with-two-column-grid-images-and-description":
       {
@@ -726,6 +749,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
         categories: ["full-pages"],
         meta: undefined,
         tier: "pro",
+        readiness: "alpha",
       },
     "full-pages-blog-details-blog-page-with-full-screen-image-and-two-column-grid":
       {
@@ -755,6 +779,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
         categories: ["full-pages"],
         meta: undefined,
         tier: "free",
+        readiness: "beta",
       },
     "full-pages-blog-details-blog-page-with-images-and-image-grid": {
       name: "full-pages-blog-details-blog-page-with-images-and-image-grid",
@@ -782,6 +807,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "full-pages-blog-details-simple-blog-details-page": {
       name: "full-pages-blog-details-simple-blog-details-page",
@@ -809,6 +835,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "full-pages-career-pages-career-list-and-card-with-hover-effect": {
       name: "full-pages-career-pages-career-list-and-card-with-hover-effect",
@@ -836,6 +863,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "full-pages-career-pages-career-page-with-creative-image-layout-carousel-slider":
       {
@@ -865,6 +893,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
         categories: ["full-pages"],
         meta: undefined,
         tier: "pro",
+        readiness: "beta",
       },
     "full-pages-career-pages-career-page-with-description-feature-list-icons-horizontal-stats":
       {
@@ -894,6 +923,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
         categories: ["full-pages"],
         meta: undefined,
         tier: "pro",
+        readiness: "alpha",
       },
     "full-pages-career-pages-career-page-with-three-column-blog-image-feature-list-with-hover":
       {
@@ -923,6 +953,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
         categories: ["full-pages"],
         meta: undefined,
         tier: "pro",
+        readiness: "alpha",
       },
     "full-pages-coming-soon-page-basic-coming-soon-page": {
       name: "full-pages-coming-soon-page-basic-coming-soon-page",
@@ -950,6 +981,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "full-pages-coming-soon-page-circular-countdown-coming-soon-page": {
       name: "full-pages-coming-soon-page-circular-countdown-coming-soon-page",
@@ -977,6 +1009,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "full-pages-coming-soon-page-dark-tailwinds-are-coming-soon": {
       name: "full-pages-coming-soon-page-dark-tailwinds-are-coming-soon",
@@ -1004,6 +1037,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "full-pages-coming-soon-page-splitted-coming-soon-page": {
       name: "full-pages-coming-soon-page-splitted-coming-soon-page",
@@ -1031,6 +1065,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "full-pages-coming-soon-page-tailwind-is-coming-soon": {
       name: "full-pages-coming-soon-page-tailwind-is-coming-soon",
@@ -1058,6 +1093,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "full-pages-coming-soon-page-tailwind-is-coming-soon-with-a-gradient-background":
       {
@@ -1087,6 +1123,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
         categories: ["full-pages"],
         meta: undefined,
         tier: "pro",
+        readiness: "alpha",
       },
     "full-pages-contactus-page-contact-us-form-with-background-and-svg-icon": {
       name: "full-pages-contactus-page-contact-us-form-with-background-and-svg-icon",
@@ -1114,6 +1151,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "full-pages-contactus-page-contact-us-with-feature-list-card-with-email-sign-up":
       {
@@ -1143,6 +1181,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
         categories: ["full-pages"],
         meta: undefined,
         tier: "pro",
+        readiness: "beta",
       },
     "full-pages-contactus-page-contact-us-with-form-background": {
       name: "full-pages-contactus-page-contact-us-with-form-background",
@@ -1170,6 +1209,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "full-pages-contactus-page-contact-us-with-gradient-background-image": {
       name: "full-pages-contactus-page-contact-us-with-gradient-background-image",
@@ -1197,6 +1237,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "full-pages-legal-pages-legal-page-with-gradient-background-heading": {
       name: "full-pages-legal-pages-legal-page-with-gradient-background-heading",
@@ -1224,6 +1265,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "full-pages-legal-pages-legal-page-with-list-background": {
       name: "full-pages-legal-pages-legal-page-with-list-background",
@@ -1251,6 +1293,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "full-pages-login-page-login-form-with-gradient-background": {
       name: "full-pages-login-page-login-form-with-gradient-background",
@@ -1278,6 +1321,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "full-pages-login-page-login-page-with-cta-button-illustrations": {
       name: "full-pages-login-page-login-page-with-cta-button-illustrations",
@@ -1305,6 +1349,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "full-pages-login-page-login-page-with-gradient-background-form": {
       name: "full-pages-login-page-login-page-with-gradient-background-form",
@@ -1332,6 +1377,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "full-pages-login-page-login-page-with-gradient-background-image": {
       name: "full-pages-login-page-login-page-with-gradient-background-image",
@@ -1359,6 +1405,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "full-pages-login-page-login-page-with-split-form": {
       name: "full-pages-login-page-login-page-with-split-form",
@@ -1386,6 +1433,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "full-pages-login-page-login-with-social-media-button": {
       name: "full-pages-login-page-login-with-social-media-button",
@@ -1413,6 +1461,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "full-pages-maintenance-page-default-maintenance-page": {
       name: "full-pages-maintenance-page-default-maintenance-page",
@@ -1440,6 +1489,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "full-pages-maintenance-page-maintenance-page-with-countdown": {
       name: "full-pages-maintenance-page-maintenance-page-with-countdown",
@@ -1467,6 +1517,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "full-pages-maintenance-page-maintenance-page-with-logo": {
       name: "full-pages-maintenance-page-maintenance-page-with-logo",
@@ -1494,6 +1545,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "full-pages-maintenance-page-maintenance-page-with-social-links": {
       name: "full-pages-maintenance-page-maintenance-page-with-social-links",
@@ -1521,6 +1573,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "full-pages-maintenance-page-splitted-under-maintenance-page": {
       name: "full-pages-maintenance-page-splitted-under-maintenance-page",
@@ -1548,6 +1601,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "full-pages-maintenance-page-tailwind-maintenance-page-with-illustration": {
       name: "full-pages-maintenance-page-tailwind-maintenance-page-with-illustration",
@@ -1575,6 +1629,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "full-pages-pricing-page-pricing-plan-card-with-availability-table": {
       name: "full-pages-pricing-page-pricing-plan-card-with-availability-table",
@@ -1602,6 +1657,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "full-pages-pricing-page-pricing-plan-card-with-availability-table-and-faqs":
       {
@@ -1631,6 +1687,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
         categories: ["full-pages"],
         meta: undefined,
         tier: "pro",
+        readiness: "beta",
       },
     "full-pages-pricing-page-pricing-plans-details-with-gradient-background": {
       name: "full-pages-pricing-page-pricing-plans-details-with-gradient-background",
@@ -1658,6 +1715,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "full-pages-pricing-page-pricing-plans-with-tab-plan-comparison-faqs": {
       name: "full-pages-pricing-page-pricing-plans-with-tab-plan-comparison-faqs",
@@ -1685,6 +1743,7 @@ export const IndexBlocksFullPages: Record<string, Record<string, any>> = {
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
   },
 }

@@ -31,6 +31,7 @@ export const IndexBlocksECommerceOrderTracking: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-order-tracking-order-tracking-with-cards": {
       name: "e-commerce-order-tracking-order-tracking-with-cards",
@@ -58,6 +59,7 @@ export const IndexBlocksECommerceOrderTracking: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-order-tracking-order-tracking-with-cta": {
       name: "e-commerce-order-tracking-order-tracking-with-cta",
@@ -85,6 +87,7 @@ export const IndexBlocksECommerceOrderTracking: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-order-tracking-order-tracking-with-horizontal-steps": {
       name: "e-commerce-order-tracking-order-tracking-with-horizontal-steps",
@@ -112,6 +115,7 @@ export const IndexBlocksECommerceOrderTracking: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "e-commerce-order-tracking-order-tracking-with-location-indication": {
       name: "e-commerce-order-tracking-order-tracking-with-location-indication",
@@ -139,6 +143,7 @@ export const IndexBlocksECommerceOrderTracking: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "e-commerce-order-tracking-order-tracking-with-map-indication": {
       name: "e-commerce-order-tracking-order-tracking-with-map-indication",
@@ -166,6 +171,7 @@ export const IndexBlocksECommerceOrderTracking: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-tracking-order-tracking-with-progress-indication": {
       name: "e-commerce-order-tracking-order-tracking-with-progress-indication",
@@ -193,6 +199,7 @@ export const IndexBlocksECommerceOrderTracking: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-tracking-order-tracking-with-vertical-timeline": {
       name: "e-commerce-order-tracking-order-tracking-with-vertical-timeline",
@@ -220,6 +227,7 @@ export const IndexBlocksECommerceOrderTracking: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-tracking-side-by-side-order-tracking": {
       name: "e-commerce-order-tracking-side-by-side-order-tracking",
@@ -247,6 +255,7 @@ export const IndexBlocksECommerceOrderTracking: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-tracking-vertical-order-tracking-timeline": {
       name: "e-commerce-order-tracking-vertical-order-tracking-timeline",
@@ -274,6 +283,7 @@ export const IndexBlocksECommerceOrderTracking: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
   },
 }

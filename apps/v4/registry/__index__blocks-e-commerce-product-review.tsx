@@ -31,6 +31,7 @@ export const IndexBlocksECommerceProductReview: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-product-review-customer-review-with-cards": {
       name: "e-commerce-product-review-customer-review-with-cards",
@@ -58,6 +59,7 @@ export const IndexBlocksECommerceProductReview: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-product-review-customer-reviews-with-average-rating": {
       name: "e-commerce-product-review-customer-reviews-with-average-rating",
@@ -85,6 +87,7 @@ export const IndexBlocksECommerceProductReview: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-product-review-product-review-with-carousel": {
       name: "e-commerce-product-review-product-review-with-carousel",
@@ -112,6 +115,7 @@ export const IndexBlocksECommerceProductReview: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-product-review-product-review-with-rating-icons": {
       name: "e-commerce-product-review-product-review-with-rating-icons",
@@ -139,6 +143,7 @@ export const IndexBlocksECommerceProductReview: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-product-review-product-review-with-slider": {
       name: "e-commerce-product-review-product-review-with-slider",
@@ -166,6 +171,7 @@ export const IndexBlocksECommerceProductReview: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-review-product-reviews-with-submit-form": {
       name: "e-commerce-product-review-product-reviews-with-submit-form",
@@ -193,6 +199,7 @@ export const IndexBlocksECommerceProductReview: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-review-ratings-and-feedback-with-slider": {
       name: "e-commerce-product-review-ratings-and-feedback-with-slider",
@@ -220,6 +227,7 @@ export const IndexBlocksECommerceProductReview: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-review-recent-feedback-with-add-review": {
       name: "e-commerce-product-review-recent-feedback-with-add-review",
@@ -247,6 +255,7 @@ export const IndexBlocksECommerceProductReview: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-review-review-form-with-detailed-user-review": {
       name: "e-commerce-product-review-review-form-with-detailed-user-review",
@@ -274,6 +283,7 @@ export const IndexBlocksECommerceProductReview: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-review-review-in-masonry-structure": {
       name: "e-commerce-product-review-review-in-masonry-structure",
@@ -301,6 +311,7 @@ export const IndexBlocksECommerceProductReview: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-review-review-page-with-filters-review-page": {
       name: "e-commerce-product-review-review-page-with-filters-review-page",
@@ -328,6 +339,7 @@ export const IndexBlocksECommerceProductReview: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-review-review-page-with-summary-chart": {
       name: "e-commerce-product-review-review-page-with-summary-chart",
@@ -355,6 +367,7 @@ export const IndexBlocksECommerceProductReview: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-review-review-page-with-testimonial": {
       name: "e-commerce-product-review-review-page-with-testimonial",
@@ -382,6 +395,7 @@ export const IndexBlocksECommerceProductReview: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-review-tailwind-css-product-review-with-avatars": {
       name: "e-commerce-product-review-tailwind-css-product-review-with-avatars",
@@ -409,6 +423,7 @@ export const IndexBlocksECommerceProductReview: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-review-user-review-with-images": {
       name: "e-commerce-product-review-user-review-with-images",
@@ -436,6 +451,7 @@ export const IndexBlocksECommerceProductReview: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-review-user-review-with-star-rating": {
       name: "e-commerce-product-review-user-review-with-star-rating",
@@ -463,6 +479,7 @@ export const IndexBlocksECommerceProductReview: Record<
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
   },
 }

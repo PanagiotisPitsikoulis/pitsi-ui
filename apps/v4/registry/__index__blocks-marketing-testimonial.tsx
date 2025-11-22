@@ -31,6 +31,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-testimonial-3-column-video-cards-testimonial": {
       name: "marketing-testimonial-3-column-video-cards-testimonial",
@@ -58,6 +59,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-testimonial-alternate-tailwind-tesimonial-cards": {
       name: "marketing-testimonial-alternate-tailwind-tesimonial-cards",
@@ -85,6 +87,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-testimonial-basic-testimonial-cards": {
       name: "marketing-testimonial-basic-testimonial-cards",
@@ -112,6 +115,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-testimonial-center-mode-slider-with-dark-version": {
       name: "marketing-testimonial-center-mode-slider-with-dark-version",
@@ -139,6 +143,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-testimonial-client-review-two-column-card": {
       name: "marketing-testimonial-client-review-two-column-card",
@@ -166,6 +171,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-testimonial-client-testimonial-partial-slider": {
       name: "marketing-testimonial-client-testimonial-partial-slider",
@@ -193,6 +199,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-testimonial-customer-review-with-product-image": {
       name: "marketing-testimonial-customer-review-with-product-image",
@@ -220,6 +227,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-testimonial-heading-and-card-slider-block": {
       name: "marketing-testimonial-heading-and-card-slider-block",
@@ -247,6 +255,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-testimonial-highlighted-testimonial-card-slider": {
       name: "marketing-testimonial-highlighted-testimonial-card-slider",
@@ -274,6 +283,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-testimonial-horizontal-cards-block": {
       name: "marketing-testimonial-horizontal-cards-block",
@@ -301,6 +311,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-testimonial-responsive-column-view": {
       name: "marketing-testimonial-responsive-column-view",
@@ -328,6 +339,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-testimonial-review-cards-with-column-grid": {
       name: "marketing-testimonial-review-cards-with-column-grid",
@@ -355,6 +367,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-testimonial-review-testimonials-with-video": {
       name: "marketing-testimonial-review-testimonials-with-video",
@@ -382,6 +395,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-testimonial-reviews-with-ratings-and-brand-logos": {
       name: "marketing-testimonial-reviews-with-ratings-and-brand-logos",
@@ -409,6 +423,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-testimonial-side-by-side-testimonial-cards": {
       name: "marketing-testimonial-side-by-side-testimonial-cards",
@@ -436,6 +451,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-testimonial-simple-testimonial-cards": {
       name: "marketing-testimonial-simple-testimonial-cards",
@@ -463,6 +479,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-testimonial-single-slide-review-with-full-description-and-background-block":
       {
@@ -492,6 +509,7 @@ export const IndexBlocksMarketingTestimonial: Record<
         categories: ["marketing"],
         meta: undefined,
         tier: "pro",
+        readiness: "alpha",
       },
     "marketing-testimonial-single-testimonial-slider": {
       name: "marketing-testimonial-single-testimonial-slider",
@@ -519,6 +537,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-testimonial-slider-with-user-comments-and-avatars": {
       name: "marketing-testimonial-slider-with-user-comments-and-avatars",
@@ -546,6 +565,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-testimonial-split-image-and-description-testimonial-section": {
       name: "marketing-testimonial-split-image-and-description-testimonial-section",
@@ -573,6 +593,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-testimonial-split-image-testimonial-tailwind": {
       name: "marketing-testimonial-split-image-testimonial-tailwind",
@@ -600,6 +621,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-testimonial-tailwind-carousel-with-arrow": {
       name: "marketing-testimonial-tailwind-carousel-with-arrow",
@@ -627,6 +649,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-testimonial-tailwind-css-customer-review-slider": {
       name: "marketing-testimonial-tailwind-css-customer-review-slider",
@@ -654,6 +677,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-testimonial-tailwind-css-testimonial-in-modern-design": {
       name: "marketing-testimonial-tailwind-css-testimonial-in-modern-design",
@@ -681,6 +705,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-testimonial-tailwind-css-vertical-testimonial-carousel-with-cards":
       {
@@ -710,6 +735,7 @@ export const IndexBlocksMarketingTestimonial: Record<
         categories: ["marketing"],
         meta: undefined,
         tier: "pro",
+        readiness: "alpha",
       },
     "marketing-testimonial-tailwind-testimonial-card-with-gradient-border": {
       name: "marketing-testimonial-tailwind-testimonial-card-with-gradient-border",
@@ -737,6 +763,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-testimonial-tailwind-testimonial-cards": {
       name: "marketing-testimonial-tailwind-testimonial-cards",
@@ -764,6 +791,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-testimonial-tailwind-testimonial-carousel-with-horizontal-card":
       {
@@ -793,6 +821,7 @@ export const IndexBlocksMarketingTestimonial: Record<
         categories: ["marketing"],
         meta: undefined,
         tier: "pro",
+        readiness: "alpha",
       },
     "marketing-testimonial-tailwind-testimonial-carousel-with-top-thumbnail-images":
       {
@@ -822,6 +851,7 @@ export const IndexBlocksMarketingTestimonial: Record<
         categories: ["marketing"],
         meta: undefined,
         tier: "pro",
+        readiness: "alpha",
       },
     "marketing-testimonial-tailwind-testimonial-slider-with-dots": {
       name: "marketing-testimonial-tailwind-testimonial-slider-with-dots",
@@ -849,6 +879,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-testimonial-tailwind-testimonial-slider-with-heading": {
       name: "marketing-testimonial-tailwind-testimonial-slider-with-heading",
@@ -876,6 +907,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-testimonial-tailwind-testimonial-with-active-user": {
       name: "marketing-testimonial-tailwind-testimonial-with-active-user",
@@ -903,6 +935,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-testimonial-tailwind-testimonial-with-user-review-and-avatars": {
       name: "marketing-testimonial-tailwind-testimonial-with-user-review-and-avatars",
@@ -930,6 +963,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-testimonial-testimonial-card-with-translated-images": {
       name: "marketing-testimonial-testimonial-card-with-translated-images",
@@ -957,6 +991,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-testimonial-testimonial-carousel-tailwind-in-slideshow": {
       name: "marketing-testimonial-testimonial-carousel-tailwind-in-slideshow",
@@ -984,6 +1019,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-testimonial-testimonial-carousel-with-memoji": {
       name: "marketing-testimonial-testimonial-carousel-with-memoji",
@@ -1011,6 +1047,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-testimonial-testimonial-dark-card-with-review": {
       name: "marketing-testimonial-testimonial-dark-card-with-review",
@@ -1038,6 +1075,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-testimonial-testimonial-grid-cards": {
       name: "marketing-testimonial-testimonial-grid-cards",
@@ -1065,6 +1103,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-testimonial-testimonial-multicolor-cards": {
       name: "marketing-testimonial-testimonial-multicolor-cards",
@@ -1092,6 +1131,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-testimonial-testimonial-slider-as-a-tab": {
       name: "marketing-testimonial-testimonial-slider-as-a-tab",
@@ -1119,6 +1159,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-testimonial-testimonial-slider-with-background-image": {
       name: "marketing-testimonial-testimonial-slider-with-background-image",
@@ -1146,6 +1187,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-testimonial-three-cards-testimonial-slider-section": {
       name: "marketing-testimonial-three-cards-testimonial-slider-section",
@@ -1173,6 +1215,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-testimonial-two-column-testimonial-card": {
       name: "marketing-testimonial-two-column-testimonial-card",
@@ -1200,6 +1243,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-testimonial-two-vertical-testimonial-sliders": {
       name: "marketing-testimonial-two-vertical-testimonial-sliders",
@@ -1227,6 +1271,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-testimonial-user-experience-testimonial-with-image": {
       name: "marketing-testimonial-user-experience-testimonial-with-image",
@@ -1254,6 +1299,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-testimonial-vertical-card-slider": {
       name: "marketing-testimonial-vertical-card-slider",
@@ -1281,6 +1327,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-testimonial-vertical-testimonial-cards": {
       name: "marketing-testimonial-vertical-testimonial-cards",
@@ -1308,6 +1355,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-testimonial-vertical-testimonial-slider": {
       name: "marketing-testimonial-vertical-testimonial-slider",
@@ -1335,6 +1383,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-testimonial-video-cover-testimonials": {
       name: "marketing-testimonial-video-cover-testimonials",
@@ -1362,6 +1411,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-testimonial-with-user-image-and-reviews-block": {
       name: "marketing-testimonial-with-user-image-and-reviews-block",
@@ -1389,6 +1439,7 @@ export const IndexBlocksMarketingTestimonial: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
   },
 }

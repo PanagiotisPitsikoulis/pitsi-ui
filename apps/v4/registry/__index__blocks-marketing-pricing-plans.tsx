@@ -31,6 +31,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-pricing-plans-dark-pricing-card": {
       name: "marketing-pricing-plans-dark-pricing-card",
@@ -58,6 +59,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-pricing-plans-feature-list-with-pricing-plan": {
       name: "marketing-pricing-plans-feature-list-with-pricing-plan",
@@ -85,6 +87,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-pricing-plans-four-tier-pricing-plan": {
       name: "marketing-pricing-plans-four-tier-pricing-plan",
@@ -112,6 +115,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-pricing-plans-header-background-pricing-card": {
       name: "marketing-pricing-plans-header-background-pricing-card",
@@ -139,6 +143,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-pricing-plans-highlight-pricing-feature": {
       name: "marketing-pricing-plans-highlight-pricing-feature",
@@ -166,6 +171,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-horizontal-card-as-testimonial": {
       name: "marketing-pricing-plans-horizontal-card-as-testimonial",
@@ -193,6 +199,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-horizontal-card-with-pricing-plans-as-testimonial":
       {
@@ -222,6 +229,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
         categories: ["marketing"],
         meta: undefined,
         tier: "free",
+        readiness: "alpha",
       },
     "marketing-pricing-plans-horizontal-pricing-plans": {
       name: "marketing-pricing-plans-horizontal-pricing-plans",
@@ -249,6 +257,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-image-as-pricing-card-background": {
       name: "marketing-pricing-plans-image-as-pricing-card-background",
@@ -276,6 +285,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-image-with-pricing-card": {
       name: "marketing-pricing-plans-image-with-pricing-card",
@@ -303,6 +313,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-multicolor-pricing-cards": {
       name: "marketing-pricing-plans-multicolor-pricing-cards",
@@ -330,6 +341,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-pricing-card-with-bordered-layout": {
       name: "marketing-pricing-plans-pricing-card-with-bordered-layout",
@@ -357,6 +369,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-pricing-card-with-cta-button": {
       name: "marketing-pricing-plans-pricing-card-with-cta-button",
@@ -384,6 +397,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-pricing-card-with-highlighted-border": {
       name: "marketing-pricing-plans-pricing-card-with-highlighted-border",
@@ -411,6 +425,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-pricing-card-with-highlighted-price": {
       name: "marketing-pricing-plans-pricing-card-with-highlighted-price",
@@ -438,6 +453,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-pricing-cards-with-colored-border": {
       name: "marketing-pricing-plans-pricing-cards-with-colored-border",
@@ -465,6 +481,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-pricing-cards-with-graph-image": {
       name: "marketing-pricing-plans-pricing-cards-with-graph-image",
@@ -492,6 +509,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-pricing-cards-with-vertical-tabs": {
       name: "marketing-pricing-plans-pricing-cards-with-vertical-tabs",
@@ -519,6 +537,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-pricing-components-with-illustration": {
       name: "marketing-pricing-plans-pricing-components-with-illustration",
@@ -546,6 +565,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-pricing-model-with-table": {
       name: "marketing-pricing-plans-pricing-model-with-table",
@@ -573,6 +593,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-pricing-plan-for-dark-theme": {
       name: "marketing-pricing-plans-pricing-plan-for-dark-theme",
@@ -600,6 +621,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-pricing-plan-for-dark-theme-with-feature-list": {
       name: "marketing-pricing-plans-pricing-plan-for-dark-theme-with-feature-list",
@@ -627,6 +649,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-pricing-plan-with-highlighted-background": {
       name: "marketing-pricing-plans-pricing-plan-with-highlighted-background",
@@ -654,6 +677,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-pricing-plan-with-highlighted-gradient-background":
       {
@@ -683,6 +707,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
         categories: ["marketing"],
         meta: undefined,
         tier: "pro",
+        readiness: "alpha",
       },
     "marketing-pricing-plans-pricing-plan-with-seperate-headers": {
       name: "marketing-pricing-plans-pricing-plan-with-seperate-headers",
@@ -710,6 +735,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-pricing-plan-with-toggle-switch": {
       name: "marketing-pricing-plans-pricing-plan-with-toggle-switch",
@@ -737,6 +763,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-pricing-plans-as-testimonials": {
       name: "marketing-pricing-plans-pricing-plans-as-testimonials",
@@ -764,6 +791,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-pricing-plans-with-gradient-background": {
       name: "marketing-pricing-plans-pricing-plans-with-gradient-background",
@@ -791,6 +819,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-pricing-plans-with-image-header": {
       name: "marketing-pricing-plans-pricing-plans-with-image-header",
@@ -818,6 +847,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-pricing-table-centrally-aligned": {
       name: "marketing-pricing-plans-pricing-table-centrally-aligned",
@@ -845,6 +875,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-pricing-table-for-dark-version": {
       name: "marketing-pricing-plans-pricing-table-for-dark-version",
@@ -872,6 +903,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-pricing-table-with-four-tiers": {
       name: "marketing-pricing-plans-pricing-table-with-four-tiers",
@@ -899,6 +931,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-pricing-with-a-toggle-switch": {
       name: "marketing-pricing-plans-pricing-with-a-toggle-switch",
@@ -926,6 +959,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-pricing-with-image-card": {
       name: "marketing-pricing-plans-pricing-with-image-card",
@@ -953,6 +987,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-pricing-with-radio-component": {
       name: "marketing-pricing-plans-pricing-with-radio-component",
@@ -980,6 +1015,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-ranking-analyzer-with-dark-theme": {
       name: "marketing-pricing-plans-ranking-analyzer-with-dark-theme",
@@ -1007,6 +1043,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-scaled-pricing-card": {
       name: "marketing-pricing-plans-scaled-pricing-card",
@@ -1034,6 +1071,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-simple-transparent-pricing-table": {
       name: "marketing-pricing-plans-simple-transparent-pricing-table",
@@ -1061,6 +1099,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-single-pricing-plan": {
       name: "marketing-pricing-plans-single-pricing-plan",
@@ -1088,6 +1127,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-tailwind-css-pricing-cards": {
       name: "marketing-pricing-plans-tailwind-css-pricing-cards",
@@ -1115,6 +1155,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-tailwind-css-pricing-cards-with-border-separation":
       {
@@ -1144,6 +1185,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
         categories: ["marketing"],
         meta: undefined,
         tier: "pro",
+        readiness: "alpha",
       },
     "marketing-pricing-plans-tailwind-css-pricing-table": {
       name: "marketing-pricing-plans-tailwind-css-pricing-table",
@@ -1171,6 +1213,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-tailwind-pricing-table-with-gradient-background": {
       name: "marketing-pricing-plans-tailwind-pricing-table-with-gradient-background",
@@ -1198,6 +1241,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-three-tiers-with-toggle": {
       name: "marketing-pricing-plans-three-tiers-with-toggle",
@@ -1225,6 +1269,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-two-column-horizontal-pricing-cards": {
       name: "marketing-pricing-plans-two-column-horizontal-pricing-cards",
@@ -1252,6 +1297,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-two-column-pricing-cards": {
       name: "marketing-pricing-plans-two-column-pricing-cards",
@@ -1279,6 +1325,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-two-column-stylish-pricing-plans": {
       name: "marketing-pricing-plans-two-column-stylish-pricing-plans",
@@ -1306,6 +1353,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-two-tier-pricing-cards": {
       name: "marketing-pricing-plans-two-tier-pricing-cards",
@@ -1333,6 +1381,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-pricing-plans-vertical-accordion-pricing-plans": {
       name: "marketing-pricing-plans-vertical-accordion-pricing-plans",
@@ -1360,6 +1409,7 @@ export const IndexBlocksMarketingPricingPlans: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
   },
 }

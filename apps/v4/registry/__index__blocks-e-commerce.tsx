@@ -28,6 +28,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-category-filter-category-filter-on-right-side": {
       name: "e-commerce-category-filter-category-filter-on-right-side",
@@ -55,6 +56,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-category-filter-category-filter-with-background": {
       name: "e-commerce-category-filter-category-filter-with-background",
@@ -82,6 +84,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "e-commerce-category-filter-category-filter-with-separate-header": {
       name: "e-commerce-category-filter-category-filter-with-separate-header",
@@ -109,6 +112,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "e-commerce-category-filter-default-category-filter": {
       name: "e-commerce-category-filter-default-category-filter",
@@ -136,6 +140,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "e-commerce-comment-list-basic-comments-list-with-like-and-cta-button": {
       name: "e-commerce-comment-list-basic-comments-list-with-like-and-cta-button",
@@ -163,6 +168,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-comment-list-comment-block-with-text-editor": {
       name: "e-commerce-comment-list-comment-block-with-text-editor",
@@ -190,6 +196,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-comment-list-comment-form-tailwind": {
       name: "e-commerce-comment-list-comment-form-tailwind",
@@ -217,6 +224,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-comment-list-comment-list-with-text-editor": {
       name: "e-commerce-comment-list-comment-list-with-text-editor",
@@ -244,6 +252,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "e-commerce-comment-list-comment-section-with-reply-field": {
       name: "e-commerce-comment-list-comment-section-with-reply-field",
@@ -271,6 +280,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "e-commerce-comment-list-comments-section-with-form": {
       name: "e-commerce-comment-list-comments-section-with-form",
@@ -298,6 +308,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "e-commerce-comment-list-comments-with-replies": {
       name: "e-commerce-comment-list-comments-with-replies",
@@ -325,6 +336,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-comment-list-nested-comment-section": {
       name: "e-commerce-comment-list-nested-comment-section",
@@ -352,6 +364,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-comment-list-simple-comment-block": {
       name: "e-commerce-comment-list-simple-comment-block",
@@ -379,6 +392,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-comment-list-tailwind-comment-list-with-user-images": {
       name: "e-commerce-comment-list-tailwind-comment-list-with-user-images",
@@ -406,6 +420,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-comment-list-tailwind-css-comment-list-with-form": {
       name: "e-commerce-comment-list-tailwind-css-comment-list-with-form",
@@ -433,6 +448,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-incentives-3-column-grid-tailwind-incentive-section": {
       name: "e-commerce-incentives-3-column-grid-tailwind-incentive-section",
@@ -460,6 +476,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-incentives-brand-logo-incentive-section": {
       name: "e-commerce-incentives-brand-logo-incentive-section",
@@ -487,6 +504,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-incentives-form-incentive-section": {
       name: "e-commerce-incentives-form-incentive-section",
@@ -514,6 +532,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-incentives-image-in-grid-incentive-section": {
       name: "e-commerce-incentives-image-in-grid-incentive-section",
@@ -541,6 +560,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-incentives-incentive-page-with-card-view": {
       name: "e-commerce-incentives-incentive-page-with-card-view",
@@ -568,6 +588,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-incentives-incentive-page-with-four-column-grid": {
       name: "e-commerce-incentives-incentive-page-with-four-column-grid",
@@ -595,6 +616,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-incentives-incentive-page-with-heading": {
       name: "e-commerce-incentives-incentive-page-with-heading",
@@ -622,6 +644,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-incentives-incentive-pages-with-description-and-comparison": {
       name: "e-commerce-incentives-incentive-pages-with-description-and-comparison",
@@ -649,6 +672,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-incentives-incentives-with-icons": {
       name: "e-commerce-incentives-incentives-with-icons",
@@ -676,6 +700,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-incentives-split-image-incentive-section": {
       name: "e-commerce-incentives-split-image-incentive-section",
@@ -703,6 +728,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-confirmation-default-order-confirmation": {
       name: "e-commerce-order-confirmation-default-order-confirmation",
@@ -730,6 +756,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-order-confirmation-order-confirmation-component-with-scanner": {
       name: "e-commerce-order-confirmation-order-confirmation-component-with-scanner",
@@ -757,6 +784,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-order-confirmation-order-confirmation-with-cta": {
       name: "e-commerce-order-confirmation-order-confirmation-with-cta",
@@ -784,6 +812,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-order-confirmation-order-confirmation-with-image": {
       name: "e-commerce-order-confirmation-order-confirmation-with-image",
@@ -811,6 +840,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-confirmation-order-confirmation-with-message": {
       name: "e-commerce-order-confirmation-order-confirmation-with-message",
@@ -838,6 +868,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-confirmation-order-confirmation-with-order-details": {
       name: "e-commerce-order-confirmation-order-confirmation-with-order-details",
@@ -865,6 +896,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-confirmation-order-confirmation-with-order-status": {
       name: "e-commerce-order-confirmation-order-confirmation-with-order-status",
@@ -892,6 +924,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-confirmation-order-confirmation-with-stepper": {
       name: "e-commerce-order-confirmation-order-confirmation-with-stepper",
@@ -919,6 +952,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-confirmation-progress-steps-order-confirmation": {
       name: "e-commerce-order-confirmation-progress-steps-order-confirmation",
@@ -946,6 +980,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-confirmation-side-by-side-order-confirmation": {
       name: "e-commerce-order-confirmation-side-by-side-order-confirmation",
@@ -973,6 +1008,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-history-order-history-in-card-layout": {
       name: "e-commerce-order-history-order-history-in-card-layout",
@@ -1000,6 +1036,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-order-history-order-history-invoice-table": {
       name: "e-commerce-order-history-order-history-invoice-table",
@@ -1027,6 +1064,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-order-history-order-history-invoice-with-card-layout": {
       name: "e-commerce-order-history-order-history-invoice-with-card-layout",
@@ -1054,6 +1092,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-order-history-order-history-list-with-invoice": {
       name: "e-commerce-order-history-order-history-list-with-invoice",
@@ -1081,6 +1120,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "e-commerce-order-history-order-history-table": {
       name: "e-commerce-order-history-order-history-table",
@@ -1108,6 +1148,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "e-commerce-order-history-order-history-with-attribute": {
       name: "e-commerce-order-history-order-history-with-attribute",
@@ -1135,6 +1176,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-history-order-history-with-banner": {
       name: "e-commerce-order-history-order-history-with-banner",
@@ -1162,6 +1204,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-history-order-history-with-card-layout": {
       name: "e-commerce-order-history-order-history-with-card-layout",
@@ -1189,6 +1232,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-history-order-history-with-cta-button": {
       name: "e-commerce-order-history-order-history-with-cta-button",
@@ -1216,6 +1260,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-history-order-history-with-date-range-and-sort": {
       name: "e-commerce-order-history-order-history-with-date-range-and-sort",
@@ -1243,6 +1288,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-history-order-history-with-date-range-and-status": {
       name: "e-commerce-order-history-order-history-with-date-range-and-status",
@@ -1270,6 +1316,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-history-order-history-with-detail": {
       name: "e-commerce-order-history-order-history-with-detail",
@@ -1297,6 +1344,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-history-order-history-with-pagination": {
       name: "e-commerce-order-history-order-history-with-pagination",
@@ -1324,6 +1372,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-history-order-history-with-simple-details": {
       name: "e-commerce-order-history-order-history-with-simple-details",
@@ -1351,6 +1400,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-history-order-history-with-sorting": {
       name: "e-commerce-order-history-order-history-with-sorting",
@@ -1378,6 +1428,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-history-order-history-with-status-and-cta-button": {
       name: "e-commerce-order-history-order-history-with-status-and-cta-button",
@@ -1405,6 +1456,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-summaries-order-details-in-card-layout": {
       name: "e-commerce-order-summaries-order-details-in-card-layout",
@@ -1432,6 +1484,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-order-summaries-order-details-with-payment-method": {
       name: "e-commerce-order-summaries-order-details-with-payment-method",
@@ -1459,6 +1512,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-order-summaries-order-summary-with-address-details": {
       name: "e-commerce-order-summaries-order-summary-with-address-details",
@@ -1486,6 +1540,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-order-summaries-order-summary-with-billing-form": {
       name: "e-commerce-order-summaries-order-summary-with-billing-form",
@@ -1513,6 +1568,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "e-commerce-order-summaries-order-summary-with-checkout": {
       name: "e-commerce-order-summaries-order-summary-with-checkout",
@@ -1540,6 +1596,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "e-commerce-order-summaries-order-summary-with-customer-information": {
       name: "e-commerce-order-summaries-order-summary-with-customer-information",
@@ -1567,6 +1624,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-summaries-order-summary-with-customer-information-and-stepper":
       {
@@ -1596,6 +1654,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
         categories: ["e-commerce"],
         meta: undefined,
         tier: "pro",
+        readiness: "alpha",
       },
     "e-commerce-order-summaries-order-summary-with-delivery-information": {
       name: "e-commerce-order-summaries-order-summary-with-delivery-information",
@@ -1623,6 +1682,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-summaries-order-summary-with-dynamic-action": {
       name: "e-commerce-order-summaries-order-summary-with-dynamic-action",
@@ -1650,6 +1710,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-summaries-order-summary-with-order-details-payment-and-address":
       {
@@ -1679,6 +1740,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
         categories: ["e-commerce"],
         meta: undefined,
         tier: "pro",
+        readiness: "alpha",
       },
     "e-commerce-order-summaries-order-summary-with-simple-details": {
       name: "e-commerce-order-summaries-order-summary-with-simple-details",
@@ -1706,6 +1768,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-summaries-order-summary-with-stepper-and-sidebar": {
       name: "e-commerce-order-summaries-order-summary-with-stepper-and-sidebar",
@@ -1733,6 +1796,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-summaries-order-summary-with-tabs": {
       name: "e-commerce-order-summaries-order-summary-with-tabs",
@@ -1760,6 +1824,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-summaries-order-summary-with-two-columns-full-order-details":
       {
@@ -1789,6 +1854,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
         categories: ["e-commerce"],
         meta: undefined,
         tier: "pro",
+        readiness: "alpha",
       },
     "e-commerce-order-summaries-splitted-order-summary": {
       name: "e-commerce-order-summaries-splitted-order-summary",
@@ -1816,6 +1882,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-summaries-tailwind-order-summary-with-details": {
       name: "e-commerce-order-summaries-tailwind-order-summary-with-details",
@@ -1843,6 +1910,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-tracking-default-order-tracking": {
       name: "e-commerce-order-tracking-default-order-tracking",
@@ -1870,6 +1938,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-order-tracking-order-tracking-with-cards": {
       name: "e-commerce-order-tracking-order-tracking-with-cards",
@@ -1897,6 +1966,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-order-tracking-order-tracking-with-cta": {
       name: "e-commerce-order-tracking-order-tracking-with-cta",
@@ -1924,6 +1994,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-order-tracking-order-tracking-with-horizontal-steps": {
       name: "e-commerce-order-tracking-order-tracking-with-horizontal-steps",
@@ -1951,6 +2022,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-tracking-order-tracking-with-location-indication": {
       name: "e-commerce-order-tracking-order-tracking-with-location-indication",
@@ -1978,6 +2050,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-tracking-order-tracking-with-map-indication": {
       name: "e-commerce-order-tracking-order-tracking-with-map-indication",
@@ -2005,6 +2078,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-tracking-order-tracking-with-progress-indication": {
       name: "e-commerce-order-tracking-order-tracking-with-progress-indication",
@@ -2032,6 +2106,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-tracking-order-tracking-with-vertical-timeline": {
       name: "e-commerce-order-tracking-order-tracking-with-vertical-timeline",
@@ -2059,6 +2134,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-tracking-side-by-side-order-tracking": {
       name: "e-commerce-order-tracking-side-by-side-order-tracking",
@@ -2086,6 +2162,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-order-tracking-vertical-order-tracking-timeline": {
       name: "e-commerce-order-tracking-vertical-order-tracking-timeline",
@@ -2113,6 +2190,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-list-card-with-full-details": {
       name: "e-commerce-product-list-card-with-full-details",
@@ -2140,6 +2218,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-product-list-card-with-supporting-text": {
       name: "e-commerce-product-list-card-with-supporting-text",
@@ -2167,6 +2246,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-product-list-product-list-with-details": {
       name: "e-commerce-product-list-product-list-with-details",
@@ -2194,6 +2274,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-product-list-static-product-list-with-grid": {
       name: "e-commerce-product-list-static-product-list-with-grid",
@@ -2221,6 +2302,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-list-tailwind-product-list-with-three-column-grid": {
       name: "e-commerce-product-list-tailwind-product-list-with-three-column-grid",
@@ -2248,6 +2330,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-list-with-horizontal-card": {
       name: "e-commerce-product-list-with-horizontal-card",
@@ -2275,6 +2358,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-list-with-hover-effect": {
       name: "e-commerce-product-list-with-hover-effect",
@@ -2302,6 +2386,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-list-with-image-and-description": {
       name: "e-commerce-product-list-with-image-and-description",
@@ -2329,6 +2414,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-list-with-purchase-link": {
       name: "e-commerce-product-list-with-purchase-link",
@@ -2356,6 +2442,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-list-with-user-rating": {
       name: "e-commerce-product-list-with-user-rating",
@@ -2383,6 +2470,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-overview-2-column-grid-images-and-description": {
       name: "e-commerce-product-overview-2-column-grid-images-and-description",
@@ -2410,6 +2498,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-product-overview-3-column-grid-with-slider-and-details": {
       name: "e-commerce-product-overview-3-column-grid-with-slider-and-details",
@@ -2437,6 +2526,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-product-overview-description-and-vertical-slider-images": {
       name: "e-commerce-product-overview-description-and-vertical-slider-images",
@@ -2464,6 +2554,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-product-overview-images-and-description-in-nested-grid": {
       name: "e-commerce-product-overview-images-and-description-in-nested-grid",
@@ -2491,6 +2582,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-overview-masonry-image-and-description": {
       name: "e-commerce-product-overview-masonry-image-and-description",
@@ -2518,6 +2610,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-overview-product-image-with-expandable-details": {
       name: "e-commerce-product-overview-product-image-with-expandable-details",
@@ -2545,6 +2638,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-overview-split-image-slider-with-details": {
       name: "e-commerce-product-overview-split-image-slider-with-details",
@@ -2572,6 +2666,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-overview-split-with-image-and-description": {
       name: "e-commerce-product-overview-split-with-image-and-description",
@@ -2599,6 +2694,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-overview-with-image-gallery-and-description": {
       name: "e-commerce-product-overview-with-image-gallery-and-description",
@@ -2626,6 +2722,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-review-customer-feedback-with-product-image": {
       name: "e-commerce-product-review-customer-feedback-with-product-image",
@@ -2653,6 +2750,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-product-review-customer-review-with-cards": {
       name: "e-commerce-product-review-customer-review-with-cards",
@@ -2680,6 +2778,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-product-review-customer-reviews-with-average-rating": {
       name: "e-commerce-product-review-customer-reviews-with-average-rating",
@@ -2707,6 +2806,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-product-review-product-review-with-carousel": {
       name: "e-commerce-product-review-product-review-with-carousel",
@@ -2734,6 +2834,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "e-commerce-product-review-product-review-with-rating-icons": {
       name: "e-commerce-product-review-product-review-with-rating-icons",
@@ -2761,6 +2862,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "e-commerce-product-review-product-review-with-slider": {
       name: "e-commerce-product-review-product-review-with-slider",
@@ -2788,6 +2890,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-review-product-reviews-with-submit-form": {
       name: "e-commerce-product-review-product-reviews-with-submit-form",
@@ -2815,6 +2918,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-review-ratings-and-feedback-with-slider": {
       name: "e-commerce-product-review-ratings-and-feedback-with-slider",
@@ -2842,6 +2946,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-review-recent-feedback-with-add-review": {
       name: "e-commerce-product-review-recent-feedback-with-add-review",
@@ -2869,6 +2974,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-review-review-form-with-detailed-user-review": {
       name: "e-commerce-product-review-review-form-with-detailed-user-review",
@@ -2896,6 +3002,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-review-review-in-masonry-structure": {
       name: "e-commerce-product-review-review-in-masonry-structure",
@@ -2923,6 +3030,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-review-review-page-with-filters-review-page": {
       name: "e-commerce-product-review-review-page-with-filters-review-page",
@@ -2950,6 +3058,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-review-review-page-with-summary-chart": {
       name: "e-commerce-product-review-review-page-with-summary-chart",
@@ -2977,6 +3086,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-review-review-page-with-testimonial": {
       name: "e-commerce-product-review-review-page-with-testimonial",
@@ -3004,6 +3114,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-review-tailwind-css-product-review-with-avatars": {
       name: "e-commerce-product-review-tailwind-css-product-review-with-avatars",
@@ -3031,6 +3142,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-review-user-review-with-images": {
       name: "e-commerce-product-review-user-review-with-images",
@@ -3058,6 +3170,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-product-review-user-review-with-star-rating": {
       name: "e-commerce-product-review-user-review-with-star-rating",
@@ -3085,6 +3198,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-refund-form-basic-refund-application-form": {
       name: "e-commerce-refund-form-basic-refund-application-form",
@@ -3112,6 +3226,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-refund-form-product-reason-selection-form": {
       name: "e-commerce-refund-form-product-reason-selection-form",
@@ -3139,6 +3254,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "e-commerce-refund-form-refund-request-process": {
       name: "e-commerce-refund-form-refund-request-process",
@@ -3166,6 +3282,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "e-commerce-refund-overview-default-refund-overview-list": {
       name: "e-commerce-refund-overview-default-refund-overview-list",
@@ -3193,6 +3310,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-refund-overview-refund-list-with-filter": {
       name: "e-commerce-refund-overview-refund-list-with-filter",
@@ -3220,6 +3338,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-refund-overview-refund-list-with-personal-details": {
       name: "e-commerce-refund-overview-refund-list-with-personal-details",
@@ -3247,6 +3366,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "e-commerce-refund-overview-refund-with-cta": {
       name: "e-commerce-refund-overview-refund-with-cta",
@@ -3274,6 +3394,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-refund-overview-refund-with-table": {
       name: "e-commerce-refund-overview-refund-with-table",
@@ -3301,6 +3422,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-refund-status-default-refund-status-section": {
       name: "e-commerce-refund-status-default-refund-status-section",
@@ -3328,6 +3450,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-refund-status-refund-status-with-order-summary": {
       name: "e-commerce-refund-status-refund-status-with-order-summary",
@@ -3355,6 +3478,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-refund-status-refund-status-with-progress-steps": {
       name: "e-commerce-refund-status-refund-status-with-progress-steps",
@@ -3382,6 +3506,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "e-commerce-refund-status-refund-track-with-detailed-steps": {
       name: "e-commerce-refund-status-refund-track-with-detailed-steps",
@@ -3409,6 +3534,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-refund-status-side-by-side-refund-status-with-timeline": {
       name: "e-commerce-refund-status-side-by-side-refund-status-with-timeline",
@@ -3436,6 +3562,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-shopping-cart-checkout-page-with-cart-summary-and-payment-option":
       {
@@ -3465,6 +3592,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
         categories: ["e-commerce"],
         meta: undefined,
         tier: "free",
+        readiness: "beta",
       },
     "e-commerce-shopping-cart-multiple-column-shopping-cart-page": {
       name: "e-commerce-shopping-cart-multiple-column-shopping-cart-page",
@@ -3492,6 +3620,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-shopping-cart-shopping-cart-with-payment-info": {
       name: "e-commerce-shopping-cart-shopping-cart-with-payment-info",
@@ -3519,6 +3648,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "e-commerce-shopping-cart-shopping-cart-with-radio-button": {
       name: "e-commerce-shopping-cart-shopping-cart-with-radio-button",
@@ -3546,6 +3676,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "e-commerce-shopping-cart-shopping-cart-with-receive-order-details": {
       name: "e-commerce-shopping-cart-shopping-cart-with-receive-order-details",
@@ -3573,6 +3704,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "e-commerce-shopping-cart-shopping-cart-with-remove-button": {
       name: "e-commerce-shopping-cart-shopping-cart-with-remove-button",
@@ -3600,6 +3732,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-shopping-cart-shopping-cart-with-remove-button-option": {
       name: "e-commerce-shopping-cart-shopping-cart-with-remove-button-option",
@@ -3627,6 +3760,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-shopping-cart-shopping-cart-with-summary": {
       name: "e-commerce-shopping-cart-shopping-cart-with-summary",
@@ -3654,6 +3788,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-shopping-cart-single-column-shopping-cart-page": {
       name: "e-commerce-shopping-cart-single-column-shopping-cart-page",
@@ -3681,6 +3816,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-shopping-cart-three-columns-shopping-cart-with-card-details": {
       name: "e-commerce-shopping-cart-three-columns-shopping-cart-with-card-details",
@@ -3708,6 +3844,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-shopping-cart-two-column-cart-with-summary": {
       name: "e-commerce-shopping-cart-two-column-cart-with-summary",
@@ -3735,6 +3872,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-shopping-cart-two-column-shopping-cart-with-order-summary": {
       name: "e-commerce-shopping-cart-two-column-shopping-cart-with-order-summary",
@@ -3762,6 +3900,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-shopping-cart-two-column-shopping-cart-with-sticky-position": {
       name: "e-commerce-shopping-cart-two-column-shopping-cart-with-sticky-position",
@@ -3789,6 +3928,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-shopping-cart-two-column-shopping-cart-with-tab-content": {
       name: "e-commerce-shopping-cart-two-column-shopping-cart-with-tab-content",
@@ -3816,6 +3956,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
       categories: ["e-commerce"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "e-commerce-shopping-cart-two-columns-shopping-cart-with-background-color":
       {
@@ -3844,6 +3985,7 @@ export const IndexBlocksECommerce: Record<string, Record<string, any>> = {
         categories: ["e-commerce"],
         meta: undefined,
         tier: "pro",
+        readiness: "alpha",
       },
   },
 }

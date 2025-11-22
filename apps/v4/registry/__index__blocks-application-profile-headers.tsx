@@ -31,6 +31,7 @@ export const IndexBlocksApplicationProfileHeaders: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-profile-headers-profile-header-with-user-description": {
       name: "application-profile-headers-profile-header-with-user-description",
@@ -58,6 +59,7 @@ export const IndexBlocksApplicationProfileHeaders: Record<
       categories: ["application"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "application-profile-headers-profile-header-with-user-s-experiences": {
       name: "application-profile-headers-profile-header-with-user-s-experiences",
@@ -85,6 +87,7 @@ export const IndexBlocksApplicationProfileHeaders: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "application-profile-headers-profile-headers-with-background-image": {
       name: "application-profile-headers-profile-headers-with-background-image",
@@ -112,6 +115,7 @@ export const IndexBlocksApplicationProfileHeaders: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "application-profile-headers-profile-headers-with-center-image": {
       name: "application-profile-headers-profile-headers-with-center-image",
@@ -139,6 +143,7 @@ export const IndexBlocksApplicationProfileHeaders: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
     "application-profile-headers-profile-with-users-skills": {
       name: "application-profile-headers-profile-with-users-skills",
@@ -166,6 +171,7 @@ export const IndexBlocksApplicationProfileHeaders: Record<
       categories: ["application"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
   },
 }

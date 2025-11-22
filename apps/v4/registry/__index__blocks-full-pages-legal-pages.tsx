@@ -31,6 +31,7 @@ export const IndexBlocksFullPagesLegalPages: Record<
       categories: ["full-pages"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "full-pages-legal-pages-legal-page-with-list-background": {
       name: "full-pages-legal-pages-legal-page-with-list-background",
@@ -58,6 +59,7 @@ export const IndexBlocksFullPagesLegalPages: Record<
       categories: ["full-pages"],
       meta: undefined,
       tier: "pro",
+      readiness: "beta",
     },
   },
 }

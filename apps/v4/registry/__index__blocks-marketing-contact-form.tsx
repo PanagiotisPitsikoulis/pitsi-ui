@@ -31,6 +31,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-contact-form-center-aligned-contact-form-with-info-card-blocks":
       {
@@ -60,6 +61,7 @@ export const IndexBlocksMarketingContactForm: Record<
         categories: ["marketing"],
         meta: undefined,
         tier: "free",
+        readiness: "beta",
       },
     "marketing-contact-form-center-aligned-with-info-card-blocks": {
       name: "marketing-contact-form-center-aligned-with-info-card-blocks",
@@ -87,6 +89,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-contact-form-clean-contact-information-with-support-form": {
       name: "marketing-contact-form-clean-contact-information-with-support-form",
@@ -114,6 +117,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-contact-form-colorful-call-to-action-contact-blocks": {
       name: "marketing-contact-form-colorful-call-to-action-contact-blocks",
@@ -141,6 +145,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "beta",
     },
     "marketing-contact-form-contact-form-tailwind-css-with-company-information":
       {
@@ -170,6 +175,7 @@ export const IndexBlocksMarketingContactForm: Record<
         categories: ["marketing"],
         meta: undefined,
         tier: "free",
+        readiness: "alpha",
       },
     "marketing-contact-form-contact-form-with-background": {
       name: "marketing-contact-form-contact-form-with-background",
@@ -197,6 +203,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-contact-form-contact-form-with-company-information": {
       name: "marketing-contact-form-contact-form-with-company-information",
@@ -224,6 +231,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-contact-form-contact-form-with-illustration": {
       name: "marketing-contact-form-contact-form-with-illustration",
@@ -251,6 +259,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-contact-form-contact-form-with-image-and-address": {
       name: "marketing-contact-form-contact-form-with-image-and-address",
@@ -278,6 +287,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-contact-form-contact-form-with-info-and-map": {
       name: "marketing-contact-form-contact-form-with-info-and-map",
@@ -305,6 +315,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-contact-form-contact-info-section-with-office-locations": {
       name: "marketing-contact-form-contact-info-section-with-office-locations",
@@ -332,6 +343,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "free",
+      readiness: "alpha",
     },
     "marketing-contact-form-contact-section-with-image-details-and-map": {
       name: "marketing-contact-form-contact-section-with-image-details-and-map",
@@ -359,6 +371,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-contact-form-creative-contact-form-design-with-background": {
       name: "marketing-contact-form-creative-contact-form-design-with-background",
@@ -386,6 +399,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-contact-form-dark-contact-form-with-green-info-cards": {
       name: "marketing-contact-form-dark-contact-form-with-green-info-cards",
@@ -413,6 +427,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-contact-form-dark-contact-section-with-social-and-info-cards": {
       name: "marketing-contact-form-dark-contact-section-with-social-and-info-cards",
@@ -440,6 +455,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-contact-form-dark-info-card-contact-section": {
       name: "marketing-contact-form-dark-info-card-contact-section",
@@ -467,6 +483,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-contact-form-dark-themed-contact-form-with-info-cards": {
       name: "marketing-contact-form-dark-themed-contact-form-with-info-cards",
@@ -494,6 +511,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-contact-form-get-in-touch-with-grid-image-contact-us-form": {
       name: "marketing-contact-form-get-in-touch-with-grid-image-contact-us-form",
@@ -521,6 +539,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-contact-form-image-contact-form-with-info-row": {
       name: "marketing-contact-form-image-contact-form-with-info-row",
@@ -548,6 +567,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-contact-form-info-card-blocks-contact-us-form": {
       name: "marketing-contact-form-info-card-blocks-contact-us-form",
@@ -575,6 +595,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-contact-form-multi-panel-contact-with-map-and-form": {
       name: "marketing-contact-form-multi-panel-contact-with-map-and-form",
@@ -602,6 +623,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-contact-form-overlapping-contact-form": {
       name: "marketing-contact-form-overlapping-contact-form",
@@ -629,6 +651,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-contact-form-side-by-side-grid-contact-us-form": {
       name: "marketing-contact-form-side-by-side-grid-contact-us-form",
@@ -656,6 +679,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-contact-form-simple-tailwind-css-contact-form-with-social-links":
       {
@@ -685,6 +709,7 @@ export const IndexBlocksMarketingContactForm: Record<
         categories: ["marketing"],
         meta: undefined,
         tier: "pro",
+        readiness: "alpha",
       },
     "marketing-contact-form-split-contact-cards-with-map-and-info-blocks": {
       name: "marketing-contact-form-split-contact-cards-with-map-and-info-blocks",
@@ -712,6 +737,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-contact-form-split-with-image-contact-us-section": {
       name: "marketing-contact-form-split-with-image-contact-us-section",
@@ -739,6 +765,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-contact-form-split-with-pattern-contact-form": {
       name: "marketing-contact-form-split-with-pattern-contact-form",
@@ -766,6 +793,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-contact-form-tailwind-contact-form-with-info-overlay": {
       name: "marketing-contact-form-tailwind-contact-form-with-info-overlay",
@@ -793,6 +821,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-contact-form-tailwind-contact-form-with-two-fields": {
       name: "marketing-contact-form-tailwind-contact-form-with-two-fields",
@@ -820,6 +849,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-contact-form-tailwind-contact-section-with-split-form-info-cards-and-map":
       {
@@ -849,6 +879,7 @@ export const IndexBlocksMarketingContactForm: Record<
         categories: ["marketing"],
         meta: undefined,
         tier: "pro",
+        readiness: "alpha",
       },
     "marketing-contact-form-tailwind-contact-with-address-location": {
       name: "marketing-contact-form-tailwind-contact-with-address-location",
@@ -876,6 +907,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-contact-form-tailwind-contact-with-color-varient": {
       name: "marketing-contact-form-tailwind-contact-with-color-varient",
@@ -903,6 +935,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-contact-form-tailwind-contact-with-gradient-background": {
       name: "marketing-contact-form-tailwind-contact-with-gradient-background",
@@ -930,6 +963,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-contact-form-tailwind-contact-with-social-icons": {
       name: "marketing-contact-form-tailwind-contact-with-social-icons",
@@ -957,6 +991,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-contact-form-tailwind-css-contact-form-with-map": {
       name: "marketing-contact-form-tailwind-css-contact-form-with-map",
@@ -984,6 +1019,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-contact-form-tailwind-css-two-column-contact-info-and-form": {
       name: "marketing-contact-form-tailwind-css-two-column-contact-info-and-form",
@@ -1011,6 +1047,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-contact-form-tailwind-modern-multi-card-contact-page": {
       name: "marketing-contact-form-tailwind-modern-multi-card-contact-page",
@@ -1038,6 +1075,7 @@ export const IndexBlocksMarketingContactForm: Record<
       categories: ["marketing"],
       meta: undefined,
       tier: "pro",
+      readiness: "alpha",
     },
     "marketing-contact-form-three-column-information-card-contact-form-tailwind":
       {
@@ -1067,6 +1105,7 @@ export const IndexBlocksMarketingContactForm: Record<
         categories: ["marketing"],
         meta: undefined,
         tier: "pro",
+        readiness: "alpha",
       },
   },
 }
