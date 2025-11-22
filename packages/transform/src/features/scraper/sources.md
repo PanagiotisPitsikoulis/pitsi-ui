@@ -22,6 +22,9 @@ https://www.wix.com/website-template/view/html/5649?originUrl=https%3A%2F%2Fwww.
 
 ## AI
 
+https://lunera.framer.ai
+https://clayai.framer.website
+https://aset.framer.website
 https://origin-template.framer.website
 https://fusionai.framer.website
 https://monoai.framer.website
@@ -45,6 +48,7 @@ https://mobit.framer.website/?via=framerbite
 
 ## Portfolio
 
+https://portavia.framer.website
 https://kanso-dark.framer.media
 https://martha-template.framer.ai
 https://galleria-art.framer.website
@@ -52,7 +56,16 @@ https://portz.framer.website
 https://jaxon-cruz-wbs.framer.website
 https://billie-duvalle.framer.website/?via=gustaveflowbert
 
+## Simple
+
+https://barktreats.framer.website/?via=framerify
+https://nutriwell.framer.website
+https://surfing-template.framer.website
+https://groomify.framer.website/?via=justyna
+https://swiftrooter.framer.website
+
 ## UI - Dev Tool
 
+https://draftr-wbs.framer.website
 https://ding.framer.website
 https://markify.framer.ai
