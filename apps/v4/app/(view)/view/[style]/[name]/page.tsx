@@ -181,15 +181,25 @@ export default async function BlockPage({
           }}
         />
       )}
-      <div className={cn("bg-background flex h-screen w-screen items-center justify-center")}>
-        <div className="flex items-center justify-center p-8">
+      {isBlock ? (
+        <div className="bg-background min-h-screen w-full">
           <LazyComponentRenderer
             name={name}
             styleName={style.name}
             isComponent={isComponent}
           />
         </div>
-      </div>
+      ) : (
+        <div className={cn("bg-background flex h-screen w-screen items-center justify-center")}>
+          <div className="flex items-center justify-center p-8">
+            <LazyComponentRenderer
+              name={name}
+              styleName={style.name}
+              isComponent={isComponent}
+            />
+          </div>
+        </div>
+      )}
     </>
   )
 }
