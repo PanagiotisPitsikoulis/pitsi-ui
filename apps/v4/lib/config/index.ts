@@ -33,6 +33,10 @@ export const siteConfig = {
       href: "/templates",
       label: "Templates",
     },
+    {
+      href: "/roadmap",
+      label: "Roadmap",
+    },
   ],
 }
 

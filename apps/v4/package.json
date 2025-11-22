@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "NODE_OPTIONS='--max-old-space-size=8192' next dev --port 4000",
+    "dev": "next dev --port 4000",
     "build": "pnpm --filter=pitsi build && next build",
     "start": "next start --port 4000",
     "lint": "eslint .",

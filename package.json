@@ -56,6 +56,7 @@
     "tests:test": "pnpm --filter=tests test",
     "tests:test:watch": "pnpm --filter=tests exec vitest",
     "tests:typecheck": "pnpm --filter=tests typecheck",
+    "transform:dev": "pnpm -C packages/transform/preview dev",
     "transform:build": "pnpm --filter=transform build",
     "transform:typecheck": "pnpm --filter=transform typecheck",
     "registry:build": "pnpm --filter=v4 registry:build && pnpm lint:fix && pnpm format:write -- --loglevel silent",

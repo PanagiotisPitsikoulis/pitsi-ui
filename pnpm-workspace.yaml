@@ -1,6 +1,7 @@
 packages:
   - "apps/*"
   - "packages/*"
+  - "packages/transform/preview"
   - "!**/test/**"
   - "!**/fixtures/**"
   - "!**/temp/**"

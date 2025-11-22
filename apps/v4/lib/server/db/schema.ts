@@ -58,3 +58,17 @@ export const verification = pgTable("verification", {
   createdAt: timestamp("createdAt"),
   updatedAt: timestamp("updatedAt"),
 })
+
+// API Keys Table
+export const apiKey = pgTable("api_key", {
+  id: text("id").primaryKey(),
+  name: text("name").notNull(),
+  key: text("key").notNull().unique(),
+  keyPrefix: text("keyPrefix").notNull(), // First 8 chars for display
+  userId: text("userId")
+    .notNull()
+    .references(() => user.id),
+  createdAt: timestamp("createdAt").notNull(),
+  lastUsedAt: timestamp("lastUsedAt"),
+  expiresAt: timestamp("expiresAt"),
+})
