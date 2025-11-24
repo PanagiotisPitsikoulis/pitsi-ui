@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-about-us-section-about-us-tailwind-with-feature-list",
   "type": "registry:block",
   "description": "A about us tailwind with feature list block.",

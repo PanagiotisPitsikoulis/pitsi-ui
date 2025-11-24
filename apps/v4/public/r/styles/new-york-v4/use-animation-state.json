@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "use-animation-state",
   "type": "registry:hook",
   "description": "Hook for managing animation state with mobile detection and scroll-based animations.",

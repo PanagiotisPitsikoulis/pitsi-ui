@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "application-application-shell-alternate-style-of-application-shell",
   "type": "registry:block",
   "description": "A alternate style of application shell block.",

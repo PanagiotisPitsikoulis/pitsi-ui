@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "full-pages-404-page-404-error-page-with-illustration",
   "type": "registry:block",
   "description": "A 404 error page with illustration block.",

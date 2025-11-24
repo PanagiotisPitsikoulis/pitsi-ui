@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-stats-key-stats-and-milestones-overview",
   "type": "registry:block",
   "description": "A key stats and milestones overview block.",

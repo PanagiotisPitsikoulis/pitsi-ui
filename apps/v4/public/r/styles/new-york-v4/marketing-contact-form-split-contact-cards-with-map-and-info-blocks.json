@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-contact-form-split-contact-cards-with-map-and-info-blocks",
   "type": "registry:block",
   "description": "A split contact cards with map and info blocks block.",

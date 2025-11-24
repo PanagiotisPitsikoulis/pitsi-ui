@@ -72,7 +72,12 @@
     "sync:templates": "./scripts/sync-templates.sh \"templates/*\"",
     "release": "changeset version",
     "pub:beta": "cd packages/pitsi && pnpm pub:beta",
-    "pub:release": "cd packages/pitsi && pnpm pub:release"
+    "pub:release": "cd packages/pitsi && pnpm pub:release",
+    "publish": "bash scripts/publish.sh",
+    "publish:beta": "bash scripts/publish.sh --beta",
+    "publish:interactive": "bash scripts/publish.sh --interactive",
+    "publish:tag": "bash scripts/publish.sh --interactive --tag",
+    "fix:urls": "bash scripts/fix-urls.sh"
   },
   "packageManager": "pnpm@9.0.6",
   "dependencies": {

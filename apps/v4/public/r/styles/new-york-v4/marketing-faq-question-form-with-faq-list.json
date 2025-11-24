@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-faq-question-form-with-faq-list",
   "type": "registry:block",
   "description": "A question form with faq list block.",

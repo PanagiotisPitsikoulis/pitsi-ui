@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "e-commerce-shopping-cart-multiple-column-shopping-cart-page",
   "type": "registry:block",
   "description": "A multiple column shopping cart page block.",

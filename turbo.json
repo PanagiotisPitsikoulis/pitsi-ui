@@ -112,6 +112,21 @@
     "generate": {
       "cache": false,
       "outputs": ["output/components/**"]
+    },
+    "publish": {
+      "cache": false,
+      "dependsOn": ["build", "test"],
+      "outputs": []
+    },
+    "pub:beta": {
+      "cache": false,
+      "dependsOn": ["build"],
+      "outputs": []
+    },
+    "pub:release": {
+      "cache": false,
+      "dependsOn": ["build", "test"],
+      "outputs": []
     }
   }
 }

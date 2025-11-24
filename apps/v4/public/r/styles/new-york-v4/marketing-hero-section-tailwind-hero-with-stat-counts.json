@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-hero-section-tailwind-hero-with-stat-counts",
   "type": "registry:block",
   "description": "A tailwind hero with stat counts block.",

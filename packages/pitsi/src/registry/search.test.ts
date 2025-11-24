@@ -16,7 +16,7 @@ describe("searchRegistries", () => {
       if (name === "@pitsi" || name === "@pitsi/registry") {
         return {
           name: "pitsi/ui",
-          homepage: "https://ui.pitsi.com",
+          homepage: "https://pitsiui.com",
           items: [
             {
               name: "button",
@@ -98,7 +98,7 @@ describe("searchRegistries", () => {
       if (name === "@pitsi" || name === "@pitsi/registry") {
         return {
           name: "pitsi/ui",
-          homepage: "https://ui.pitsi.com",
+          homepage: "https://pitsiui.com",
           items: [
             {
               name: "button",
@@ -572,7 +572,7 @@ describe("searchRegistries", () => {
       if (nameOrUrl === "@pitsi" || nameOrUrl === "@pitsi/registry") {
         return {
           name: "pitsi/ui",
-          homepage: "https://ui.pitsi.com",
+          homepage: "https://pitsiui.com",
           items: [
             {
               name: "button",

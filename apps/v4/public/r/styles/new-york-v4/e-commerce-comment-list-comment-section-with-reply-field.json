@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "e-commerce-comment-list-comment-section-with-reply-field",
   "type": "registry:block",
   "description": "A comment section with reply field block.",

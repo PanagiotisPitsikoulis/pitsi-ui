@@ -57,7 +57,7 @@ export const build = new Command()
 
         // Add the schema to the registry item.
         registryItem["$schema"] =
-          "https://ui.pitsi.com/schema/registry-item.json"
+          "https://pitsiui.com/schema/registry-item.json"
 
         // Loop through each file in the files array.
         for (const file of registryItem.files ?? []) {

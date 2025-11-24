@@ -32,7 +32,7 @@ export default function DialogCloseButton() {
             </Label>
             <Input
               id="link"
-              defaultValue="https://ui.pitsi.com/docs/installation"
+              defaultValue="https://pitsiui.com/docs/installation"
               readOnly
             />
           </div>

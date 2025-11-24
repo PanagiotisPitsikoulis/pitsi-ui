@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-cta-it-solutions-cta-with-dual-buttons",
   "type": "registry:block",
   "description": "A it solutions cta with dual buttons block.",

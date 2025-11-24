@@ -31,7 +31,7 @@ const NEW_YORK_V4_STYLE = {
 
 export const registry = {
   name: "pitsi/ui",
-  homepage: "https://ui.pitsi.com",
+  homepage: "https://pitsiui.com",
   items: z.array(registryItemSchema).parse(
     [
       {

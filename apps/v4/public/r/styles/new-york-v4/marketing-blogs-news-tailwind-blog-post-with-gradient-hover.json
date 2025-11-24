@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-blogs-news-tailwind-blog-post-with-gradient-hover",
   "type": "registry:block",
   "description": "A tailwind blog post with gradient hover block.",

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "use-mobile",
   "type": "registry:hook",
   "description": "Hook for detecting mobile devices using media query.",

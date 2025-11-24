@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "utils",
   "type": "registry:lib",
   "description": "Utility function for merging class names with Tailwind CSS conflict resolution.",

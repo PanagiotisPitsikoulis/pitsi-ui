@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "full-pages-maintenance-page-maintenance-page-with-countdown",
   "type": "registry:block",
   "description": "A maintenance page with countdown block.",

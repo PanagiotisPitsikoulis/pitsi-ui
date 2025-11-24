@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-features-feature-block-with-cover-image-block",
   "type": "registry:block",
   "description": "A feature block with cover image block block.",

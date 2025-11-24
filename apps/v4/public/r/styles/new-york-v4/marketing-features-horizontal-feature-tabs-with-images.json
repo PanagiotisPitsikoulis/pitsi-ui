@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-features-horizontal-feature-tabs-with-images",
   "type": "registry:block",
   "description": "A horizontal feature tabs with images block.",

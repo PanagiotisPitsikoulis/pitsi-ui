@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "pitsi/ui",
-  url: "https://ui.pitsi.com",
-  ogImage: "https://ui.pitsi.com/og.jpg",
+  url: "https://pitsiui.com",
+  ogImage: "https://pitsiui.com/og.jpg",
   description:
     "A set of beautifully designed components that you can customize, extend, and build on. Start here then make it your own. Open Source. Open Code.",
   links: {

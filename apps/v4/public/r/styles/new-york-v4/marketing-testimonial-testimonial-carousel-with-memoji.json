@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-testimonial-testimonial-carousel-with-memoji",
   "type": "registry:block",
   "description": "A testimonial carousel with memoji block.",

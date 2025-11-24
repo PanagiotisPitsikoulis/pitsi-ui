@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-contact-form-center-aligned-with-info-card-blocks",
   "type": "registry:block",
   "description": "A center aligned with info card blocks block.",

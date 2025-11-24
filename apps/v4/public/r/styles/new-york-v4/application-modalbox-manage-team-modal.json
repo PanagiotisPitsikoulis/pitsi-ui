@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "application-modalbox-manage-team-modal",
   "type": "registry:block",
   "description": "A manage team modal block.",

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-gallery-gallery-section-with-transform-image",
   "type": "registry:block",
   "description": "A gallery section with transform image block.",

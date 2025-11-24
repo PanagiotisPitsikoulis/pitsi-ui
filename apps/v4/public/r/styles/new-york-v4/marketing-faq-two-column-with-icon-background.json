@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-faq-two-column-with-icon-background",
   "type": "registry:block",
   "description": "A two column with icon background block.",

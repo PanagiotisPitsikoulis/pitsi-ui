@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "e-commerce-product-review-user-review-with-images",
   "type": "registry:block",
   "description": "A user review with images block.",

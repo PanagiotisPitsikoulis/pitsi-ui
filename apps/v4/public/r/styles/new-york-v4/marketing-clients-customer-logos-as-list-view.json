@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-clients-customer-logos-as-list-view",
   "type": "registry:block",
   "description": "A customer logos as list view block.",

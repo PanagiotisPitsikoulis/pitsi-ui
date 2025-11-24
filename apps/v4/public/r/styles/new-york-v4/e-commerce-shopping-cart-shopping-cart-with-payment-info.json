@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "e-commerce-shopping-cart-shopping-cart-with-payment-info",
   "type": "registry:block",
   "description": "A shopping cart with payment info block.",

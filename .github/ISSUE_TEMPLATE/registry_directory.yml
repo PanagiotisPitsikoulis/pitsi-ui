@@ -56,7 +56,7 @@ body:
       description: Verify that your registry meets the following requirements.
       options:
         - label: The registry must be open source and publicly accessible.
-        - label: The registry must be a valid JSON file that conforms to the [registry schema](https://ui.pitsi.com/docs/registry/registry-json) specification.
+        - label: The registry must be a valid JSON file that conforms to the [registry schema](https://pitsiui.com/docs/registry/registry-json) specification.
         - label: The `files` array, if present on your registry items, must NOT include a `content` property.
         - label: I've attached a square SVG logo to this issue
     validations:

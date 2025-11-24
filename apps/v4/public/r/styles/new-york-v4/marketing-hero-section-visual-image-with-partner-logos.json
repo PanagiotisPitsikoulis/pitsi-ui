@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-hero-section-visual-image-with-partner-logos",
   "type": "registry:block",
   "description": "A visual image with partner logos block.",

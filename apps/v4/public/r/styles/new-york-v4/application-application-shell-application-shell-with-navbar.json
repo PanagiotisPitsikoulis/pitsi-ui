@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "application-application-shell-application-shell-with-navbar",
   "type": "registry:block",
   "description": "A application shell with navbar block.",

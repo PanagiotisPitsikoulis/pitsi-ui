@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-integration-scattered-application-icons",
   "type": "registry:block",
   "description": "A scattered application icons block.",

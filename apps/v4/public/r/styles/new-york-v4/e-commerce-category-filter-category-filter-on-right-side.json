@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "e-commerce-category-filter-category-filter-on-right-side",
   "type": "registry:block",
   "description": "A category filter on right side block.",

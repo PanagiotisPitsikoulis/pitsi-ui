@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-stats-breaking-down-the-stats-that-matter",
   "type": "registry:block",
   "description": "A breaking down the stats that matter block.",

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-cta-expert-it-support-cta-with-demo-buttons",
   "type": "registry:block",
   "description": "A expert it support cta with demo buttons block.",

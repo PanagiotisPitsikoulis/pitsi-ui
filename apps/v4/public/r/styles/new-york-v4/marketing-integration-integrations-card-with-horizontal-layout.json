@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-integration-integrations-card-with-horizontal-layout",
   "type": "registry:block",
   "description": "A integrations card with horizontal layout block.",

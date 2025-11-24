@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-team-modern-team-cards-with-borders",
   "type": "registry:block",
   "description": "A modern team cards with borders block.",

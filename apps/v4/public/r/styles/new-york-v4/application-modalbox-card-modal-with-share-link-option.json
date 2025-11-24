@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "application-modalbox-card-modal-with-share-link-option",
   "type": "registry:block",
   "description": "A card modal with share link option block.",

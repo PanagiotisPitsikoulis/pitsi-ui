@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-blogs-news-different-grid-layout-with-opacity-effect",
   "type": "registry:block",
   "description": "A different grid layout with opacity effect block.",

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-testimonial-tailwind-testimonial-cards",
   "type": "registry:block",
   "description": "A tailwind testimonial cards block.",

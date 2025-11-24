@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-features-partial-feature-slider-with-the-dark-version",
   "type": "registry:block",
   "description": "A partial feature slider with the dark version block.",

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "application-section-headers-default-section-header",
   "type": "registry:block",
   "description": "A default section header block.",

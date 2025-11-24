@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "application-modalbox-modal-with-input-and-toggle-buttons",
   "type": "registry:block",
   "description": "A modal with input and toggle buttons block.",

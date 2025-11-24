@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-blogs-news-blogs-with-card-layout-and-scale-effect",
   "type": "registry:block",
   "description": "A blogs with card layout and scale effect block.",

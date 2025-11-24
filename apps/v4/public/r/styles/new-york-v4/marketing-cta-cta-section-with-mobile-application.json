@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-cta-cta-section-with-mobile-application",
   "type": "registry:block",
   "description": "A cta section with mobile application block.",

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-testimonial-single-slide-review-with-full-description-and-background-block",
   "type": "registry:block",
   "description": "A single slide review with full description and background block block.",

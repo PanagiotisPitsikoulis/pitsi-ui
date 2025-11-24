@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "full-pages-blog-details-blog-page-with-full-screen-image-and-two-column-grid",
   "type": "registry:block",
   "description": "A blog page with full screen image and two column grid block.",

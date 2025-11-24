@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-cta-cta-with-newsletter-background",
   "type": "registry:block",
   "description": "A cta with newsletter background block.",

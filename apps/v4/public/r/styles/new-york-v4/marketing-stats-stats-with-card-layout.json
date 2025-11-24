@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-stats-stats-with-card-layout",
   "type": "registry:block",
   "description": "A stats with card layout block.",

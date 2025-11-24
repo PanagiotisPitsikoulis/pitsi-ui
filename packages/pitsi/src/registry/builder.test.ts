@@ -34,10 +34,10 @@ describe("buildUrlFromRegistryConfig", () => {
   it("should replace style placeholder in URL", () => {
     const url = buildUrlFromRegistryConfig(
       "button",
-      "https://ui.pitsi.com/r/styles/{style}/{name}.json",
+      "https://pitsiui.com/r/styles/{style}/{name}.json",
       { style: "new-york" } as any
     )
-    expect(url).toBe("https://ui.pitsi.com/r/styles/new-york/button.json")
+    expect(url).toBe("https://pitsiui.com/r/styles/new-york/button.json")
   })
 
   it("should handle both name and style placeholders", () => {

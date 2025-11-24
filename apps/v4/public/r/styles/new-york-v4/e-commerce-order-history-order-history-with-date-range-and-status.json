@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "e-commerce-order-history-order-history-with-date-range-and-status",
   "type": "registry:block",
   "description": "A order history with date range and status block.",

@@ -6,7 +6,7 @@ A set of beautifully designed components that you can customize, extend, and bui
 
 ## Documentation
 
-Visit http://ui.pitsi.com/docs to view the documentation.
+Visit http://pitsiui.com/docs to view the documentation.
 
 ## Contributing
 

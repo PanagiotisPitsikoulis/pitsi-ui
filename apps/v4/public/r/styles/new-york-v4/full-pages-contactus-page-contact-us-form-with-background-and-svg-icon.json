@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "full-pages-contactus-page-contact-us-form-with-background-and-svg-icon",
   "type": "registry:block",
   "description": "A contact us form with background and svg icon block.",

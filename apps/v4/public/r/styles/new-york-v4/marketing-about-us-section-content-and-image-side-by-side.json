@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-about-us-section-content-and-image-side-by-side",
   "type": "registry:block",
   "description": "A content and image side by side block.",

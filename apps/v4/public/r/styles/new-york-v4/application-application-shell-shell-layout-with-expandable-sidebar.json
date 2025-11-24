@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "application-application-shell-shell-layout-with-expandable-sidebar",
   "type": "registry:block",
   "description": "A shell layout with expandable sidebar block.",

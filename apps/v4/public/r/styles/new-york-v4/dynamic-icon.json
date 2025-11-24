@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "dynamic-icon",
   "type": "registry:lib",
   "description": "Dynamically load and render Lucide icons by name with automatic format transformation.",

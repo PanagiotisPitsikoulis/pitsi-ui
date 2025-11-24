@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "use-content-pagination",
   "type": "registry:hook",
   "description": "Hook for infinite scroll pagination of content items with automatic loading on scroll.",

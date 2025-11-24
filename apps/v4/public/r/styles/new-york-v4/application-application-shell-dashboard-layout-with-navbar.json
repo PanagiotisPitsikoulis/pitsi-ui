@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "application-application-shell-dashboard-layout-with-navbar",
   "type": "registry:block",
   "description": "A dashboard layout with navbar block.",

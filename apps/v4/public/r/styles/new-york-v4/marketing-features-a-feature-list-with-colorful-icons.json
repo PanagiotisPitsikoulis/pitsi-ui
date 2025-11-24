@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-features-a-feature-list-with-colorful-icons",
   "type": "registry:block",
   "description": "A a feature list with colorful icons block.",

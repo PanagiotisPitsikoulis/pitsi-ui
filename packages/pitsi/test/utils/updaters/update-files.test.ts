@@ -1114,7 +1114,7 @@ ANOTHER_NEW_KEY=another_value`,
       await fsActual.writeFile(
         path.join(tempDir, "components.json"),
         JSON.stringify({
-          $schema: "https://ui.pitsi.com/schema.json",
+          $schema: "https://pitsiui.com/schema.json",
           style: "default",
           tailwind: {
             config: "tailwind.config.js",
@@ -1193,7 +1193,7 @@ ANOTHER_NEW_KEY=another_value
       await fsActual.writeFile(
         path.join(tempDir, "components.json"),
         JSON.stringify({
-          $schema: "https://ui.pitsi.com/schema.json",
+          $schema: "https://pitsiui.com/schema.json",
           style: "default",
           tailwind: {
             config: "tailwind.config.js",
@@ -1274,7 +1274,7 @@ NEW_API_KEY=new_api_key_value
       await fsActual.writeFile(
         path.join(tempDir, "components.json"),
         JSON.stringify({
-          $schema: "https://ui.pitsi.com/schema.json",
+          $schema: "https://pitsiui.com/schema.json",
           style: "default",
           tailwind: {
             config: "tailwind.config.js",
@@ -1348,7 +1348,7 @@ NEW_KEY=new_value
       await fsActual.writeFile(
         path.join(tempDir, "components.json"),
         JSON.stringify({
-          $schema: "https://ui.pitsi.com/schema.json",
+          $schema: "https://pitsiui.com/schema.json",
           style: "default",
           tailwind: {
             config: "tailwind.config.js",

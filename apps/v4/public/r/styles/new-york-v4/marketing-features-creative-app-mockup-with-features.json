@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-features-creative-app-mockup-with-features",
   "type": "registry:block",
   "description": "A creative app mockup with features block.",

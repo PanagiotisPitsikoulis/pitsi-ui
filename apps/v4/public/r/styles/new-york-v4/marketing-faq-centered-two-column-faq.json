@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-faq-centered-two-column-faq",
   "type": "registry:block",
   "description": "A centered two column faq block.",

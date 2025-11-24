@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "application-modalbox-create-project-modal-with-team-selection",
   "type": "registry:block",
   "description": "A create project modal with team selection block.",

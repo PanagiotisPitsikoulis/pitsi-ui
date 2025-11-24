@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-testimonial-testimonial-carousel-tailwind-in-slideshow",
   "type": "registry:block",
   "description": "A testimonial carousel tailwind in slideshow block.",

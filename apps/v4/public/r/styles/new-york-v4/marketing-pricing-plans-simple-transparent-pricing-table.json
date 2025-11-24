@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-pricing-plans-simple-transparent-pricing-table",
   "type": "registry:block",
   "description": "A simple transparent pricing table block.",

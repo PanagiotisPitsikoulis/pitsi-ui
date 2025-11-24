@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "e-commerce-product-overview-3-column-grid-with-slider-and-details",
   "type": "registry:block",
   "description": "A 3 column grid with slider and details block.",

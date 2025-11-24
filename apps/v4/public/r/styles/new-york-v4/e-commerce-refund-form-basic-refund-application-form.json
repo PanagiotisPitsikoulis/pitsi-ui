@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "e-commerce-refund-form-basic-refund-application-form",
   "type": "registry:block",
   "description": "A basic refund application form block.",

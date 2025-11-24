@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "full-pages-login-page-login-page-with-gradient-background-form",
   "type": "registry:block",
   "description": "A login page with gradient background form block.",

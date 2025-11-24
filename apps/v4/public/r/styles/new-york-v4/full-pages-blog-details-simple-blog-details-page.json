@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "full-pages-blog-details-simple-blog-details-page",
   "type": "registry:block",
   "description": "A simple blog details page block.",

@@ -110,7 +110,7 @@ const server = setupServer(
   }),
   http.get(`${REGISTRY_URL}/registries.json`, () => {
     return HttpResponse.json({
-      "@pitsi": "https://ui.pitsi.com/r/styles/{style}/{name}.json",
+      "@pitsi": "https://pitsiui.com/r/styles/{style}/{name}.json",
       "@example": "https://example.com/registry/styles/{style}/{name}.json",
       "@test": "https://test.com/registry/{name}.json",
     })
@@ -1177,14 +1177,14 @@ describe("getRegistry", () => {
   it("should distinguish between URL and registry name", async () => {
     // Test that it correctly identifies and handles a URL vs registry name
     const registryName = "@pitsi"
-    const registryUrl = "https://ui.pitsi.com/registry.json"
+    const registryUrl = "https://pitsiui.com/registry.json"
 
     // Mock for URL
     server.use(
       http.get(registryUrl, () => {
         return HttpResponse.json({
           name: "pitsi-from-url",
-          homepage: "https://ui.pitsi.com",
+          homepage: "https://pitsiui.com",
           items: [],
         })
       })
@@ -1195,7 +1195,7 @@ describe("getRegistry", () => {
       tailwind: { baseColor: "neutral", cssVariables: true },
       registries: {
         "@pitsi": {
-          url: "https://ui.pitsi.com/{name}.json",
+          url: "https://pitsiui.com/{name}.json",
         },
       },
     } as any
@@ -1390,7 +1390,7 @@ describe("getRegistriesConfig", () => {
     const config = {
       style: "new-york",
       registries: {
-        "@pitsi": "https://ui.pitsi.com/r/styles/{style}/{name}.json",
+        "@pitsi": "https://pitsiui.com/r/styles/{style}/{name}.json",
         "@acme": "https://acme.com/registry/{name}.json",
         "@private": {
           url: "https://private.registry.com/{name}.json",
@@ -1410,7 +1410,7 @@ describe("getRegistriesConfig", () => {
 
       expect(result.registries).toBeDefined()
       expect(result.registries?.["@pitsi"]).toBe(
-        "https://ui.pitsi.com/r/styles/{style}/{name}.json"
+        "https://pitsiui.com/r/styles/{style}/{name}.json"
       )
       expect(result.registries?.["@acme"]).toBe(
         "https://acme.com/registry/{name}.json"
@@ -1674,7 +1674,7 @@ describe("getRegistriesConfig", () => {
       const result = await getRegistriesIndex()
 
       expect(result).toEqual({
-        "@pitsi": "https://ui.pitsi.com/r/styles/{style}/{name}.json",
+        "@pitsi": "https://pitsiui.com/r/styles/{style}/{name}.json",
         "@example": "https://example.com/registry/styles/{style}/{name}.json",
         "@test": "https://test.com/registry/{name}.json",
       })

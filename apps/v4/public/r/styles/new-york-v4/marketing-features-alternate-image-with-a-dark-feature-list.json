@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-features-alternate-image-with-a-dark-feature-list",
   "type": "registry:block",
   "description": "A alternate image with a dark feature list block.",

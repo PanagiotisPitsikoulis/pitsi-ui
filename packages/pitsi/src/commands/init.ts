@@ -449,7 +449,7 @@ async function promptForConfig(defaultConfig: Config | null = null) {
   ])
 
   return rawConfigSchema.parse({
-    $schema: "https://ui.pitsi.com/schema.json",
+    $schema: "https://pitsiui.com/schema.json",
     style: options.style,
     tailwind: {
       config: options.tailwindConfig,

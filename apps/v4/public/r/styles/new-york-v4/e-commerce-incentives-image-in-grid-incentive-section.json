@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "e-commerce-incentives-image-in-grid-incentive-section",
   "type": "registry:block",
   "description": "A image in grid incentive section block.",

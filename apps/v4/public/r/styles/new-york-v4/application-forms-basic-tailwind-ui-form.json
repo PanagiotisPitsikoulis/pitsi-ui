@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "application-forms-basic-tailwind-ui-form",
   "type": "registry:block",
   "description": "A basic tailwind ui form block.",

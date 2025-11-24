@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "full-pages-career-pages-career-page-with-description-feature-list-icons-horizontal-stats",
   "type": "registry:block",
   "description": "A career page with description feature list icons horizontal stats block.",

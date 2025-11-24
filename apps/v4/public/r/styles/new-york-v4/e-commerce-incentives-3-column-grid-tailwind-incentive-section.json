@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "e-commerce-incentives-3-column-grid-tailwind-incentive-section",
   "type": "registry:block",
   "description": "A 3 column grid tailwind incentive section block.",

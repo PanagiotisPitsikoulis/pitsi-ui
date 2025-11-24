@@ -55,7 +55,7 @@ export async function preFlightMigrate(
     )
     logger.error(
       `Learn more at ${highlighter.info(
-        "https://ui.pitsi.com/docs/components-json"
+        "https://pitsiui.com/docs/components-json"
       )}.`
     )
     logger.break()

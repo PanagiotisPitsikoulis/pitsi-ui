@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "full-pages-404-page-svg-illustration-with-search-bar",
   "type": "registry:block",
   "description": "A svg illustration with search bar block.",

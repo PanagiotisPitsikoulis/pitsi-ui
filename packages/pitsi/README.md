@@ -36,7 +36,7 @@ npx pitsi add
 
 ## Documentation
 
-Visit https://ui.pitsi.com/docs/cli to view the documentation.
+Visit https://pitsiui.com/docs/cli to view the documentation.
 
 ## License
 

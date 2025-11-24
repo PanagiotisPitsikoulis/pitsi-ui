@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-contact-form-tailwind-contact-with-color-varient",
   "type": "registry:block",
   "description": "A tailwind contact with color varient block.",

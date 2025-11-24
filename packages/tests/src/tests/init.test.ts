@@ -522,7 +522,7 @@ describe("pitsi init - existing components.json", () => {
     const fixturePath = await createFixtureTestDirectory("next-app")
 
     const existingConfig = {
-      $schema: "https://ui.pitsi.com/schema.json",
+      $schema: "https://pitsiui.com/schema.json",
       style: "default",
       tailwind: {
         css: "app/globals.css",

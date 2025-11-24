@@ -3,7 +3,7 @@ import { describe, expect, test } from "vitest"
 import { transformTailwindContent } from "../../../src/utils/updaters/update-tailwind-content"
 
 const SHARED_CONFIG = {
-  $schema: "https://ui.pitsi.com/schema.json",
+  $schema: "https://pitsiui.com/schema.json",
   style: "new-york",
   rsc: true,
   tsx: true,

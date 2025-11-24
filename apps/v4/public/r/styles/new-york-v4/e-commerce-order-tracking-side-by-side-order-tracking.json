@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "e-commerce-order-tracking-side-by-side-order-tracking",
   "type": "registry:block",
   "description": "A side by side order tracking block.",

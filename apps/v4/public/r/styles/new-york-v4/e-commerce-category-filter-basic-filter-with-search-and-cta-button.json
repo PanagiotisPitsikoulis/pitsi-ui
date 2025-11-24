@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "e-commerce-category-filter-basic-filter-with-search-and-cta-button",
   "type": "registry:block",
   "description": "A basic filter with search and cta button block.",

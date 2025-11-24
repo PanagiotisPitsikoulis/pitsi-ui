@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-team-four-column-grid-layout-with-social-media-and-cta",
   "type": "registry:block",
   "description": "A four column grid layout with social media and cta block.",

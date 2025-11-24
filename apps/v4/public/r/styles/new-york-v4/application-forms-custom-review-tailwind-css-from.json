@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "application-forms-custom-review-tailwind-css-from",
   "type": "registry:block",
   "description": "A custom review tailwind css from block.",

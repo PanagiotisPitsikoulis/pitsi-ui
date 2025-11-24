@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "application-modalbox-multiple-account-handle-with-checkbox",
   "type": "registry:block",
   "description": "A multiple account handle with checkbox block.",

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "e-commerce-refund-overview-refund-list-with-personal-details",
   "type": "registry:block",
   "description": "A refund list with personal details block.",

@@ -371,7 +371,7 @@ export async function getProjectConfig(
   }
 
   const config: z.infer<typeof rawConfigSchema> = {
-    $schema: "https://ui.pitsi.com/schema.json",
+    $schema: "https://pitsiui.com/schema.json",
     rsc: projectInfo.isRSC,
     tsx: projectInfo.isTsx,
     style: "new-york",

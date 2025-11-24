@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-features-testimonial-layout-with-feature-card-block",
   "type": "registry:block",
   "description": "A testimonial layout with feature card block block.",

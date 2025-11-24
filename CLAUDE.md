@@ -88,7 +88,7 @@ The CLI tool allows users to add components to their projects:
 5. Dependencies are added to `package.json`
 
 **Registry Resolution**:
-- Default: `https://ui.pitsi.com/r` (production)
+- Default: `https://pitsiui.com/r` (production)
 - Local dev: `http://localhost:4000/r` (set via `REGISTRY_URL` env var)
 - Supports custom registries via `components.json`
 

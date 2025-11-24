@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-about-us-section-tailwind-about-us-section-with-video-layout",
   "type": "registry:block",
   "description": "A tailwind about us section with video layout block.",

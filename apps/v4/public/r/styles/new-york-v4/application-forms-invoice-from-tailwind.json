@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "application-forms-invoice-from-tailwind",
   "type": "registry:block",
   "description": "A invoice from tailwind block.",

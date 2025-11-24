@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "full-pages-coming-soon-page-dark-tailwinds-are-coming-soon",
   "type": "registry:block",
   "description": "A dark tailwinds are coming soon block.",

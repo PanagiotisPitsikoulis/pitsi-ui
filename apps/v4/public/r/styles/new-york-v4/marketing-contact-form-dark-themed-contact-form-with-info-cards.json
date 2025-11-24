@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-contact-form-dark-themed-contact-form-with-info-cards",
   "type": "registry:block",
   "description": "A dark themed contact form with info cards block.",

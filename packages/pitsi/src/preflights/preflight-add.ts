@@ -52,7 +52,7 @@ export async function preFlightAdd(options: z.infer<typeof addOptionsSchema>) {
     )
     logger.error(
       `Learn more at ${highlighter.info(
-        "https://ui.pitsi.com/docs/components-json"
+        "https://pitsiui.com/docs/components-json"
       )}.`
     )
     logger.break()

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-portfolio-portfolio-with-beautiful-grid-system",
   "type": "registry:block",
   "description": "A portfolio with beautiful grid system block.",

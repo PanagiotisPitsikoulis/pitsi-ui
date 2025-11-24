@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-testimonial-highlighted-testimonial-card-slider",
   "type": "registry:block",
   "description": "A highlighted testimonial card slider block.",

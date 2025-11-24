@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "e-commerce-comment-list-comment-list-with-text-editor",
   "type": "registry:block",
   "description": "A comment list with text editor block.",

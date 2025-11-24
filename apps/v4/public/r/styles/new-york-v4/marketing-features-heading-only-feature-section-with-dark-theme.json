@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-features-heading-only-feature-section-with-dark-theme",
   "type": "registry:block",
   "description": "A heading only feature section with dark theme block.",

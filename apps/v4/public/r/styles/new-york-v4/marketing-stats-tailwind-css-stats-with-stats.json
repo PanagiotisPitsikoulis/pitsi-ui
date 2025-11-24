@@ -1,5 +1,5 @@
 {
-  "$schema": "https://ui.pitsi.com/schema/registry-item.json",
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "marketing-stats-tailwind-css-stats-with-stats",
   "type": "registry:block",
   "description": "A tailwind css stats with stats block.",
