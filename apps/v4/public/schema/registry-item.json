@@ -202,6 +202,25 @@
     "extends": {
       "type": "string",
       "description": "The name of the registry item to extend. This is used to extend the base pitsi/ui style. Set to none to start fresh. This is available for registry:style items only."
+    },
+    "poweredBy": {
+      "type": "array",
+      "description": "The libraries or frameworks that power this component or animation.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the library or framework (e.g., 'Radix UI', 'Framer Motion')."
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "The URL to the library or framework's website."
+          }
+        },
+        "required": ["name"]
+      }
     }
   },
   "required": ["name", "type"],

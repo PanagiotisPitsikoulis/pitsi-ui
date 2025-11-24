@@ -1,0 +1,26 @@
+{
+  "display": {
+    "family": "Inter Display",
+    "weights": [
+      400,
+      500
+    ],
+    "styles": [
+      "normal"
+    ],
+    "source": "custom"
+  },
+  "heading": null,
+  "body": {
+    "family": "Inter",
+    "weights": [
+      400,
+      500
+    ],
+    "styles": [
+      "normal"
+    ],
+    "source": "custom"
+  },
+  "mono": null
+}

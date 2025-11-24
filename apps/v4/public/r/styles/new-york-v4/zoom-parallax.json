@@ -14,5 +14,11 @@
     "animations"
   ],
   "tier": "free",
-  "readiness": "beta"
+  "readiness": "beta",
+  "poweredBy": [
+    {
+      "name": "Motion",
+      "url": "https://motion.dev"
+    }
+  ]
 }

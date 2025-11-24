@@ -52,7 +52,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "alert",
@@ -67,7 +77,13 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        }
+      ]
     },
     {
       "name": "alert-dialog",
@@ -88,7 +104,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "aspect-ratio",
@@ -106,7 +132,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "avatar",
@@ -124,7 +160,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "badge",
@@ -142,7 +188,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "breadcrumb",
@@ -160,7 +216,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "button",
@@ -178,7 +244,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "button-group",
@@ -197,7 +273,13 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        }
+      ]
     },
     {
       "name": "calendar",
@@ -219,7 +301,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "React Day Picker",
+          "url": "https://daypicker.dev"
+        }
+      ]
     },
     {
       "name": "card",
@@ -234,7 +326,13 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        }
+      ]
     },
     {
       "name": "carousel",
@@ -255,7 +353,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Embla Carousel",
+          "url": "https://www.embla-carousel.com"
+        }
+      ]
     },
     {
       "name": "chart",
@@ -277,7 +385,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Recharts",
+          "url": "https://recharts.org"
+        }
+      ]
     },
     {
       "name": "checkbox",
@@ -295,7 +413,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "collapsible",
@@ -313,7 +441,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "command",
@@ -334,7 +472,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "cmdk",
+          "url": "https://cmdk.paco.me"
+        }
+      ]
     },
     {
       "name": "context-menu",
@@ -352,7 +500,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "container",
@@ -367,7 +525,13 @@
         "primitives"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        }
+      ]
     },
     {
       "name": "dialog",
@@ -385,7 +549,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "drawer",
@@ -404,7 +578,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Vaul",
+          "url": "https://vaul.emilkowal.ski"
+        }
+      ]
     },
     {
       "name": "dropdown-menu",
@@ -422,7 +606,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "empty",
@@ -437,7 +631,13 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        }
+      ]
     },
     {
       "name": "field",
@@ -456,7 +656,13 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        }
+      ]
     },
     {
       "name": "flex",
@@ -478,7 +684,13 @@
         "primitives"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        }
+      ]
     },
     {
       "name": "grid",
@@ -500,7 +712,13 @@
         "primitives"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        }
+      ]
     },
     {
       "name": "hover-card",
@@ -518,7 +736,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "input",
@@ -533,7 +761,13 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        }
+      ]
     },
     {
       "name": "input-group",
@@ -553,7 +787,13 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        }
+      ]
     },
     {
       "name": "input-otp",
@@ -571,7 +811,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "input-otp",
+          "url": "https://input-otp.rodz.dev"
+        }
+      ]
     },
     {
       "name": "item",
@@ -589,7 +839,13 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        }
+      ]
     },
     {
       "name": "label",
@@ -607,7 +863,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "menubar",
@@ -625,7 +891,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "navigation-menu",
@@ -643,7 +919,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "pagination",
@@ -661,7 +947,13 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        }
+      ]
     },
     {
       "name": "popover",
@@ -679,7 +971,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "progress",
@@ -697,7 +999,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "radio-group",
@@ -715,7 +1027,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "resizable",
@@ -733,7 +1055,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "react-resizable-panels",
+          "url": "https://react-resizable-panels.vercel.app"
+        }
+      ]
     },
     {
       "name": "scroll-area",
@@ -751,7 +1083,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "segmented-control",
@@ -774,7 +1116,17 @@
         "primitives"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "select",
@@ -792,7 +1144,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "separator",
@@ -810,7 +1172,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "sheet",
@@ -828,7 +1200,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "sidebar",
@@ -899,7 +1281,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "skeleton",
@@ -914,7 +1306,13 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        }
+      ]
     },
     {
       "name": "slider",
@@ -932,7 +1330,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "sonner",
@@ -951,7 +1359,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Sonner",
+          "url": "https://sonner.emilkowal.ski"
+        }
+      ]
     },
     {
       "name": "spinner",
@@ -969,7 +1387,13 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        }
+      ]
     },
     {
       "name": "spacer",
@@ -988,7 +1412,17 @@
         "primitives"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "squircle",
@@ -1006,7 +1440,13 @@
         "sectorial"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "Motion",
+          "url": "https://motion.dev"
+        }
+      ]
     },
     {
       "name": "switch",
@@ -1024,7 +1464,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "table",
@@ -1039,7 +1489,13 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        }
+      ]
     },
     {
       "name": "tabs",
@@ -1057,7 +1513,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "textarea",
@@ -1072,7 +1538,13 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        }
+      ]
     },
     {
       "name": "theme",
@@ -1090,7 +1562,13 @@
         "primitives"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        }
+      ]
     },
     {
       "name": "theme-toggle",
@@ -1109,7 +1587,13 @@
         "primitives"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        }
+      ]
     },
     {
       "name": "toggle",
@@ -1127,7 +1611,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "toggle-group",
@@ -1148,7 +1642,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "tooltip",
@@ -1166,7 +1670,17 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        },
+        {
+          "name": "Radix UI",
+          "url": "https://radix-ui.com"
+        }
+      ]
     },
     {
       "name": "typography",
@@ -1184,7 +1698,13 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        }
+      ]
     },
     {
       "name": "unicorn-wrapper",
@@ -1202,7 +1722,13 @@
         "sectorial"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        }
+      ]
     },
     {
       "name": "kbd",
@@ -1217,7 +1743,13 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        }
+      ]
     },
     {
       "name": "native-select",
@@ -1232,7 +1764,13 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "shadcn/ui",
+          "url": "https://ui.shadcn.com"
+        }
+      ]
     },
     {
       "name": "background-image-parallax",
@@ -1248,7 +1786,13 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "poweredBy": [
+        {
+          "name": "Motion",
+          "url": "https://motion.dev"
+        }
+      ]
     },
     {
       "name": "card-swipe-carousel",
@@ -1264,7 +1808,13 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "poweredBy": [
+        {
+          "name": "Motion",
+          "url": "https://motion.dev"
+        }
+      ]
     },
     {
       "name": "cards-parallax",
@@ -1280,7 +1830,13 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "poweredBy": [
+        {
+          "name": "Motion",
+          "url": "https://motion.dev"
+        }
+      ]
     },
     {
       "name": "parallax-scroll",
@@ -1296,7 +1852,13 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "poweredBy": [
+        {
+          "name": "Motion",
+          "url": "https://motion.dev"
+        }
+      ]
     },
     {
       "name": "perspective-carousel",
@@ -1312,7 +1874,13 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "poweredBy": [
+        {
+          "name": "Motion",
+          "url": "https://motion.dev"
+        }
+      ]
     },
     {
       "name": "perspective-section-transition",
@@ -1328,7 +1896,13 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "poweredBy": [
+        {
+          "name": "Motion",
+          "url": "https://motion.dev"
+        }
+      ]
     },
     {
       "name": "scroll-expand",
@@ -1344,7 +1918,13 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "poweredBy": [
+        {
+          "name": "Motion",
+          "url": "https://motion.dev"
+        }
+      ]
     },
     {
       "name": "scroll-fade",
@@ -1360,7 +1940,13 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "poweredBy": [
+        {
+          "name": "Motion",
+          "url": "https://motion.dev"
+        }
+      ]
     },
     {
       "name": "scroll-scale",
@@ -1376,7 +1962,13 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "poweredBy": [
+        {
+          "name": "Motion",
+          "url": "https://motion.dev"
+        }
+      ]
     },
     {
       "name": "slide-down",
@@ -1392,7 +1984,13 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "poweredBy": [
+        {
+          "name": "Motion",
+          "url": "https://motion.dev"
+        }
+      ]
     },
     {
       "name": "slide-up",
@@ -1408,7 +2006,13 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "poweredBy": [
+        {
+          "name": "Motion",
+          "url": "https://motion.dev"
+        }
+      ]
     },
     {
       "name": "smooth-parallax-scroll",
@@ -1472,7 +2076,13 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "poweredBy": [
+        {
+          "name": "Motion",
+          "url": "https://motion.dev"
+        }
+      ]
     },
     {
       "name": "text-gradient-opacity",
@@ -1488,7 +2098,13 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "poweredBy": [
+        {
+          "name": "Motion",
+          "url": "https://motion.dev"
+        }
+      ]
     },
     {
       "name": "text-parallax",
@@ -1504,7 +2120,13 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "poweredBy": [
+        {
+          "name": "Motion",
+          "url": "https://motion.dev"
+        }
+      ]
     },
     {
       "name": "transforms-3d",
@@ -1520,7 +2142,13 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "poweredBy": [
+        {
+          "name": "Motion",
+          "url": "https://motion.dev"
+        }
+      ]
     },
     {
       "name": "zoom-parallax",
@@ -1536,7 +2164,13 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "poweredBy": [
+        {
+          "name": "Motion",
+          "url": "https://motion.dev"
+        }
+      ]
     },
     {
       "name": "dashboard-01",

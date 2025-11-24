@@ -1,6 +1,6 @@
 import { Suspense } from "react"
 import Link from "next/link"
-import { User } from "lucide-react"
+import { LogIn } from "lucide-react"
 
 import { getCurrentUser } from "@/lib/server/user"
 import { Button } from "@/registry/new-york-v4/ui/button"
@@ -19,12 +19,12 @@ async function UserNavAsync() {
     return (
       <Button
         asChild
-        variant="ghost"
+        variant="outline"
         size="icon"
         className="relative size-8 rounded-full"
       >
         <Link href="/signin">
-          <User className="size-4" />
+          <LogIn className="size-4" />
           <span className="sr-only">Sign In</span>
         </Link>
       </Button>

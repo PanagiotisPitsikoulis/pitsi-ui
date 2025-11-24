@@ -40,3 +40,7 @@ tsconfig.tsbuildinfo
 .idea
 .fleet
 .vscode
+
+# transform package - scraped content and output
+packages/transform/scraped-html-files/
+packages/transform/output/

@@ -19,7 +19,7 @@ export default async function BillingPage() {
   const user = await getCurrentUser()
 
   if (!user) {
-    redirect("/signin")
+    redirect("/api/auth/signin")
   }
 
   return (

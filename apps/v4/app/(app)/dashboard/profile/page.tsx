@@ -19,7 +19,7 @@ export default async function ProfilePage() {
   const user = await getCurrentUser()
 
   if (!user) {
-    redirect("/signin")
+    redirect("/api/auth/signin")
   }
 
   const nameParts = user.name.split(" ")

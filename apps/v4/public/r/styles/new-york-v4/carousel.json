@@ -19,5 +19,15 @@
     "core-components"
   ],
   "tier": "free",
-  "readiness": "production"
+  "readiness": "production",
+  "poweredBy": [
+    {
+      "name": "shadcn/ui",
+      "url": "https://ui.shadcn.com"
+    },
+    {
+      "name": "Embla Carousel",
+      "url": "https://www.embla-carousel.com"
+    }
+  ]
 }

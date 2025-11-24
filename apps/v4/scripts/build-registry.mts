@@ -79,6 +79,7 @@ export const Index: Record<string, Record<string, any>> = {`
       meta: ${JSON.stringify(item.meta)},
       tier: ${JSON.stringify(item.tier)},
       readiness: ${JSON.stringify(item.readiness)},
+      poweredBy: ${JSON.stringify(item.poweredBy)},
     },`
     }
 

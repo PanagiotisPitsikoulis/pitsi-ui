@@ -16,5 +16,11 @@
     "sectorial"
   ],
   "tier": "free",
-  "readiness": "production"
+  "readiness": "production",
+  "poweredBy": [
+    {
+      "name": "Motion",
+      "url": "https://motion.dev"
+    }
+  ]
 }

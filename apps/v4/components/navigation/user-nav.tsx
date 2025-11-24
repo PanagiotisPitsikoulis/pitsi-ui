@@ -79,7 +79,7 @@ export function UserNav({ user }: { user: User }) {
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <Link href="/settings">
+            <Link href="/dashboard/profile">
               <Settings className="mr-2 size-4" />
               Settings
             </Link>

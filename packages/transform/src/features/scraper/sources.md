@@ -66,6 +66,7 @@ https://swiftrooter.framer.website
 
 ## UI - Dev Tool
 
+https://www.affinity.studio
 https://draftr-wbs.framer.website
 https://ding.framer.website
 https://markify.framer.ai

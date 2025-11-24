@@ -61,6 +61,11 @@ export const registryItemCssSchema = z.record(z.string(), cssValueSchema)
 
 export const registryItemEnvVarsSchema = z.record(z.string(), z.string())
 
+export const registryItemPoweredBySchema = z.object({
+  name: z.string(),
+  url: z.string().url().optional(),
+})
+
 export const registryItemSchema = z.object({
   $schema: z.string().optional(),
   extends: z.string().optional(),
@@ -82,6 +87,7 @@ export const registryItemSchema = z.object({
   categories: z.array(z.string()).optional(),
   tier: z.enum(["free", "pro"]).optional(),
   readiness: z.enum(["alpha", "beta", "production"]).optional().default("alpha"),
+  poweredBy: z.array(registryItemPoweredBySchema).optional(),
 })
 
 export type RegistryItem = z.infer<typeof registryItemSchema>

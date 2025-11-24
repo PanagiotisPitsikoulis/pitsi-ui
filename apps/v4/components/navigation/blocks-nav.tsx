@@ -116,7 +116,7 @@ export function BlocksSearch({
           role="combobox"
           aria-expanded={open}
           className={cn(
-            "border-input bg-background hover:bg-accent hover:text-accent-foreground flex h-9 w-full items-center justify-between rounded-md border px-3 py-2 text-sm whitespace-nowrap shadow-xs",
+            "border-input bg-background hover:text-muted-foreground flex h-9 w-full items-center justify-between rounded-md border px-3 py-2 text-sm whitespace-nowrap shadow-xs",
             className
           )}
         >
@@ -203,7 +203,6 @@ export function BlocksNav({
       collapsible="none"
     >
       <SidebarContent className="no-scrollbar overflow-x-hidden pr-2">
-        <div className="from-background via-background/80 to-background/50 sticky -top-1 z-10 h-8 shrink-0 bg-gradient-to-b blur-xs" />
         <SidebarGroup>
           <SidebarGroupLabel className="text-muted-foreground font-medium">
             Search
@@ -214,7 +213,7 @@ export function BlocksNav({
                 <button
                   role="combobox"
                   aria-expanded={open}
-                  className="border-input bg-background hover:bg-accent hover:text-accent-foreground flex h-9 w-full items-center justify-between rounded-md border px-3 py-2 text-sm whitespace-nowrap shadow-xs"
+                  className="border-input bg-background hover:text-muted-foreground flex h-9 w-full items-center justify-between rounded-md border px-3 py-2 text-sm whitespace-nowrap shadow-xs"
                 >
                   <div className="flex items-center gap-2 truncate">
                     <Search className="size-4 shrink-0 opacity-50" />

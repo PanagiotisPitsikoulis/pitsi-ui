@@ -100,6 +100,18 @@
     "registry:build": {
       "cache": true,
       "outputs": ["registry/**/*.json", "registry/**/__index__.tsx"]
+    },
+    "workflow": {
+      "cache": false,
+      "outputs": ["output/**"]
+    },
+    "capture": {
+      "cache": false,
+      "outputs": ["output/screenshots/**", "output/videos/**"]
+    },
+    "generate": {
+      "cache": false,
+      "outputs": ["output/components/**"]
     }
   }
 }

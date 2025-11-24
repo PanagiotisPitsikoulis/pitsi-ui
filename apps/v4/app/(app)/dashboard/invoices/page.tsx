@@ -86,7 +86,7 @@ export default async function InvoicesPage() {
   const currentUser = await getCurrentUser()
 
   if (!currentUser) {
-    redirect("/signin")
+    redirect("/api/auth/signin")
   }
 
   // Get full user data with stripeCustomerId

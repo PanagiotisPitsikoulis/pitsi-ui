@@ -16,15 +16,15 @@ export function ReadinessBadge({
 }: ReadinessBadgeProps) {
   const config = {
     alpha: {
-      className: "bg-destructive",
+      className: "bg-red-500",
       title: "Alpha",
     },
     beta: {
-      className: "bg-warning",
+      className: "bg-orange-400",
       title: "Beta",
     },
     production: {
-      className: "bg-success",
+      className: "bg-green-500",
       title: "Production",
     },
   }

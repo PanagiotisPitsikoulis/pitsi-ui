@@ -167,7 +167,7 @@ export default async function BlocksPage({
     const blockItems = blocks.map((block) => ({
       name: block.name,
       description: block.description,
-      href: `/blocks/category/${category}/subcategory/${subcategory}/${block.name}`,
+      href: `/block/${category}/${subcategory}/${block.name}`,
       readiness: block.readiness,
       tier: block.tier,
       iframeHeight: block.meta?.iframeHeight,

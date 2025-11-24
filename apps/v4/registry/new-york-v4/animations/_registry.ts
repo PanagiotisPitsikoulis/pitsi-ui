@@ -1,3 +1,5 @@
+const MOTION_POWERED_BY = [{ name: "Motion", url: "https://motion.dev" }]
+
 export const animations: Registry["items"] = [
   {
     name: "background-image-parallax",
@@ -12,6 +14,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
+    poweredBy: MOTION_POWERED_BY,
   },
   {
     name: "card-swipe-carousel",
@@ -26,6 +29,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
+    poweredBy: MOTION_POWERED_BY,
   },
   {
     name: "cards-parallax",
@@ -40,6 +44,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
+    poweredBy: MOTION_POWERED_BY,
   },
   {
     name: "parallax-scroll",
@@ -54,6 +59,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
+    poweredBy: MOTION_POWERED_BY,
   },
   {
     name: "perspective-carousel",
@@ -68,6 +74,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
+    poweredBy: MOTION_POWERED_BY,
   },
   {
     name: "perspective-section-transition",
@@ -82,6 +89,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
+    poweredBy: MOTION_POWERED_BY,
   },
   {
     name: "scroll-expand",
@@ -96,6 +104,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
+    poweredBy: MOTION_POWERED_BY,
   },
   {
     name: "scroll-fade",
@@ -110,6 +119,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
+    poweredBy: MOTION_POWERED_BY,
   },
   {
     name: "scroll-scale",
@@ -124,6 +134,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
+    poweredBy: MOTION_POWERED_BY,
   },
   {
     name: "slide-down",
@@ -138,6 +149,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
+    poweredBy: MOTION_POWERED_BY,
   },
   {
     name: "slide-up",
@@ -152,6 +164,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
+    poweredBy: MOTION_POWERED_BY,
   },
   {
     name: "smooth-parallax-scroll",
@@ -208,6 +221,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
+    poweredBy: MOTION_POWERED_BY,
   },
   {
     name: "text-gradient-opacity",
@@ -222,6 +236,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
+    poweredBy: MOTION_POWERED_BY,
   },
   {
     name: "text-parallax",
@@ -236,6 +251,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
+    poweredBy: MOTION_POWERED_BY,
   },
   {
     name: "transforms-3d",
@@ -250,6 +266,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
+    poweredBy: MOTION_POWERED_BY,
   },
   {
     name: "zoom-parallax",
@@ -264,5 +281,6 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
+    poweredBy: MOTION_POWERED_BY,
   },
 ]

@@ -954,6 +954,20 @@ export async function getRegistryItem(
 }
 
 /**
+ * Get all blocks in a specific subcategory
+ */
+export async function getAllBlocksInSubcategory(
+  mainCategory: string,
+  subcategory: string
+): Promise<RegistryItem[]> {
+  return (await queryRegistry({
+    types: ["registry:block", "registry:internal"],
+    mainCategory,
+    subcategory,
+  })) as RegistryItem[]
+}
+
+/**
  * File tree utilities
  */
 export type FileTree = {

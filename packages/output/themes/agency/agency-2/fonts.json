@@ -1,0 +1,77 @@
+[
+  {
+    "family": "Times",
+    "weights": [
+      400
+    ],
+    "styles": [
+      "normal"
+    ],
+    "source": "unknown"
+  },
+  {
+    "family": "sans-serif",
+    "weights": [
+      400,
+      500
+    ],
+    "styles": [
+      "normal"
+    ],
+    "source": "system"
+  },
+  {
+    "family": "Inter",
+    "weights": [
+      400,
+      500
+    ],
+    "styles": [
+      "normal"
+    ],
+    "source": "custom"
+  },
+  {
+    "family": "Inter Placeholder",
+    "weights": [
+      400,
+      500
+    ],
+    "styles": [
+      "normal"
+    ],
+    "source": "custom"
+  },
+  {
+    "family": "Inter Display",
+    "weights": [
+      400,
+      500
+    ],
+    "styles": [
+      "normal"
+    ],
+    "source": "custom"
+  },
+  {
+    "family": "Inter Display Placeholder",
+    "weights": [
+      400,
+      500
+    ],
+    "styles": [
+      "normal"
+    ],
+    "source": "custom"
+  },
+  {
+    "family": "Inter Tight Regular",
+    "weights": [
+      400
+    ],
+    "styles": [
+      "normal"
+    ],
+    "source": "custom"
+  }
+]

@@ -11,10 +11,12 @@ import { findNeighbour } from "fumadocs-core/page-tree"
 import z from "zod"
 
 import { queryRegistry, type RegistryItem } from "@/lib/registry-utils"
+import { getCurrentUser } from "@/lib/server/user"
 import { source } from "@/lib/source"
 import { absoluteUrl } from "@/lib/utils"
 import { ComponentsList } from "@/components/documentation/components/components-list"
 import { DocsCopyPage } from "@/components/documentation/docs/docs-copy-page"
+import { DocsPaywall } from "@/components/documentation/docs/docs-paywall"
 import { DocsTableOfContents } from "@/components/documentation/docs/docs-toc"
 import { OpenInV0Cta } from "@/components/documentation/integrations/open-in-v0-cta"
 import { Badge } from "@/registry/new-york-v4/ui/badge"
@@ -75,8 +77,6 @@ export async function generateMetadata(props: {
 export default async function Page(props: {
   params: Promise<{ slug: string[] }>
 }) {
-  "use cache"
-
   const params = await props.params
   const page = source.getPage(params.slug)
   if (!page) {
@@ -86,6 +86,31 @@ export default async function Page(props: {
   const doc = page.data
   const MDX = doc.body
   const neighbours = findNeighbour(source.pageTree, page.url)
+
+  // Check tier access for component/animation pages
+  const isComponentPage =
+    params.slug?.length === 2 && params.slug[0] === "components"
+  const isAnimationPage =
+    params.slug?.length === 2 && params.slug[0] === "animations"
+
+  if (isComponentPage || isAnimationPage) {
+    const itemName = params.slug[1]
+    const registryItem = (await queryRegistry({ name: itemName })) as RegistryItem | null
+
+    if (registryItem?.tier === "pro") {
+      const user = await getCurrentUser()
+      const isPro = user?.isPro ?? false
+
+      if (!isPro) {
+        return (
+          <DocsPaywall
+            title={doc.title || itemName}
+            type={isComponentPage ? "component" : "component"}
+          />
+        )
+      }
+    }
+  }
 
   const raw = await page.data.getText("raw")
   const { attributes } = fm(raw)

@@ -3,8 +3,14 @@
 import * as React from "react"
 
 import { cn } from "@/lib/utils"
+import { PoweredByBadge } from "@/components/ui/powered-by-badge"
 import { ReadinessBadge } from "@/components/ui/readiness-badge"
 import { TierBadge } from "@/components/ui/tier-badge"
+
+interface PoweredByItem {
+  name: string
+  url?: string
+}
 
 export function ComponentPreviewTabs({
   className,
@@ -17,6 +23,7 @@ export function ComponentPreviewTabs({
   source,
   readiness,
   tier,
+  poweredBy,
   ...props
 }: React.ComponentProps<"div"> & {
   align?: "center" | "start" | "end"
@@ -28,6 +35,7 @@ export function ComponentPreviewTabs({
   source: React.ReactNode
   readiness?: "alpha" | "beta" | "production"
   tier?: "free" | "pro"
+  poweredBy?: PoweredByItem[]
 }) {
   return (
     <div
@@ -42,6 +50,7 @@ export function ComponentPreviewTabs({
           <ReadinessBadge readiness={readiness} />
           <TierBadge tier={tier} />
         </div>
+        <PoweredByBadge poweredBy={poweredBy} />
         <div
           data-align={align}
           data-justify={justify}

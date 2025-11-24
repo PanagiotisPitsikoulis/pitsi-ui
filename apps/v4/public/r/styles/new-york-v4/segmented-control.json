@@ -21,5 +21,15 @@
     "primitives"
   ],
   "tier": "free",
-  "readiness": "production"
+  "readiness": "production",
+  "poweredBy": [
+    {
+      "name": "shadcn/ui",
+      "url": "https://ui.shadcn.com"
+    },
+    {
+      "name": "Radix UI",
+      "url": "https://radix-ui.com"
+    }
+  ]
 }

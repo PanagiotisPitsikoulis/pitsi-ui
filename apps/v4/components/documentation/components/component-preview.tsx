@@ -71,6 +71,7 @@ export function ComponentPreview({
         hideCode={hideCode}
         readiness={registryItem?.readiness}
         tier={registryItem?.tier ?? "free"}
+        poweredBy={registryItem?.poweredBy}
         component={
           <div className="relative aspect-video w-full overflow-y-auto rounded-md">
             <iframe
@@ -99,6 +100,7 @@ export function ComponentPreview({
       hideCode={hideCode}
       readiness={registryItem?.readiness}
       tier={registryItem?.tier ?? "free"}
+      poweredBy={registryItem?.poweredBy}
       component={<Component />}
       source={
         <ComponentSource

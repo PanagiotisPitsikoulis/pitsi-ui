@@ -9,7 +9,7 @@ export default async function ApiPage() {
   const user = await getCurrentUser()
 
   if (!user) {
-    redirect("/signin")
+    redirect("/api/auth/signin")
   }
 
   const keys = await getUserApiKeys(user.id)
