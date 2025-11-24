@@ -52,10 +52,10 @@ export function SiteFooterClient({
     return null
   }
 
-  const footerClassName = "bg-page py-16 md:py-32"
+  const footerClassName = "bg-page py-16 md:py-32 overflow-hidden"
 
   const containerClassName =
-    "max-w-5xl mx-auto relative grid grid-cols-1 gap-y-10 md:grid-cols-[repeat(5,1fr)_16px] px-6 lg:px-3"
+    "max-w-5xl mx-auto relative grid grid-cols-1 gap-y-10 md:grid-cols-[1fr_4fr_16px] px-6"
 
   // Format category name for display
   const formatName = (name: string) => {
@@ -73,9 +73,9 @@ export function SiteFooterClient({
 
   return (
     <footer className={footerClassName}>
-      <div className={cn("container", containerClassName)}>
+      <div className={containerClassName}>
         {/* Components Row */}
-        <div className="text-foreground md:col-span-5 grid grid-cols-1 md:grid-cols-5 gap-4 text-[13px] leading-none tracking-[-0.15px]">
+        <div className="text-foreground md:col-span-2 grid grid-cols-1 md:grid-cols-5 gap-4 text-[13px] leading-none tracking-[-0.15px]">
           <div className="flex flex-col items-start">
             <div className="flex h-[22px] items-center">
               <h6 className="font-medium">Components</h6>
@@ -109,7 +109,7 @@ export function SiteFooterClient({
         </div>
 
         {/* Blocks Row */}
-        <div className="text-foreground md:col-span-5 grid grid-cols-1 md:grid-cols-5 gap-4 text-[13px] leading-none tracking-[-0.15px]">
+        <div className="text-foreground md:col-span-2 grid grid-cols-1 md:grid-cols-5 gap-4 text-[13px] leading-none tracking-[-0.15px]">
           <div className="flex flex-col items-start">
             <div className="flex h-[22px] items-center">
               <h6 className="font-medium">Blocks</h6>
@@ -155,7 +155,7 @@ export function SiteFooterClient({
         </div>
 
         {/* Animations Row */}
-        <div className="text-foreground md:col-span-5 grid grid-cols-1 md:grid-cols-5 gap-4 text-[13px] leading-none tracking-[-0.15px]">
+        <div className="text-foreground md:col-span-2 grid grid-cols-1 md:grid-cols-5 gap-4 text-[13px] leading-none tracking-[-0.15px]">
           <div className="flex flex-col items-start">
             <div className="flex h-[22px] items-center">
               <h6 className="font-medium">Animations</h6>
@@ -189,7 +189,7 @@ export function SiteFooterClient({
         </div>
 
         {/* General Row - with Documentation, Pages, and Templates */}
-        <div className="text-foreground md:col-span-5 grid grid-cols-1 md:grid-cols-5 gap-4 text-[13px] leading-none tracking-[-0.15px]">
+        <div className="text-foreground md:col-span-2 grid grid-cols-1 md:grid-cols-5 gap-4 text-[13px] leading-none tracking-[-0.15px]">
           {/* General - Title and Description */}
           <div className="flex flex-col items-start">
             <div className="flex h-[22px] items-center">
@@ -289,7 +289,7 @@ export function SiteFooterClient({
         </div>
 
         {/* Logo in top right */}
-        <div className="absolute right-0 top-0">
+        <div className="absolute right-6 top-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
