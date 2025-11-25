@@ -81,7 +81,15 @@ export function ComponentPreview({
               loading="lazy"
               sandbox="allow-scripts allow-same-origin"
               allowFullScreen
-              style={{ overflow: 'hidden' }}
+              style={{
+                overflow: 'hidden',
+                transform: 'scale(0.8)',
+                transformOrigin: 'center center',
+                width: '125%',
+                height: '125%',
+                marginLeft: '-12.5%',
+                marginTop: '-12.5%'
+              }}
             />
           </div>
         }

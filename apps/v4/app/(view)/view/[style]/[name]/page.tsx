@@ -191,7 +191,7 @@ export default async function BlockPage({
           />
         </div>
       ) : isAnimation ? (
-        <div className="bg-background min-h-screen w-full">
+        <div className="bg-background min-h-screen w-full overflow-hidden">
           <LazyComponentRenderer
             name={name}
             styleName={style.name}
