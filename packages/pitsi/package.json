@@ -1,6 +1,6 @@
 {
   "name": "pitsi",
-  "version": "3.5.1",
+  "version": "3.5.2",
   "description": "A CLI for adding beautifully designed, accessible React components built with Radix UI and Tailwind CSS to your project.",
   "publishConfig": {
     "access": "public"
