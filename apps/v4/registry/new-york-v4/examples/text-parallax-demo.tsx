@@ -159,15 +159,15 @@ export default function TextParallaxDemo() {
   const centerIndex = Math.floor(characters.length / 2)
 
   const macIcon = [
-    "/mac/Discord.png",
-    "/mac/figma.png",
-    "/mac/Framer.png",
-    "/mac/Github.png",
-    "/mac/Monog.png",
-    "/mac/notion.png",
-    "/mac/Pieces.png",
-    "/mac/Postman.png",
-    "/mac/vsCode.png",
+    "https://skiper-ui.com/mac/Discord.png",
+    "https://skiper-ui.com/mac/figma.png",
+    "https://skiper-ui.com/mac/Framer.png",
+    "https://skiper-ui.com/mac/Github.png",
+    "https://skiper-ui.com/mac/Monog.png",
+    "https://skiper-ui.com/mac/notion.png",
+    "https://skiper-ui.com/mac/Pieces.png",
+    "https://skiper-ui.com/mac/Postman.png",
+    "https://skiper-ui.com/mac/vsCode.png",
   ]
   const iconCenterIndex = Math.floor(macIcon.length / 2)
 
