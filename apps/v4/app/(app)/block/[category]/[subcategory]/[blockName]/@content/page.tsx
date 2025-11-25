@@ -50,7 +50,7 @@ export default async function BlockContentPage({
   return (
     <div className="flex min-w-0 flex-1 flex-col">
       <div className="h-(--top-spacing) shrink-0" />
-      <div className="container flex flex-col gap-8 px-6 py-6 lg:px-3 lg:py-8">
+      <div className="container flex flex-col gap-4 px-6 py-6 lg:px-3 lg:py-8">
         {/* Breadcrumbs */}
         <Breadcrumb>
           <BreadcrumbList>

@@ -65,7 +65,7 @@ export function ComponentPreview({
   if (isAnimation) {
     return (
       <ComponentPreviewTabs
-        isScrollable={true}
+        isScrollable={false}
         className={className}
         align={align}
         hideCode={hideCode}
@@ -73,10 +73,15 @@ export function ComponentPreview({
         tier={registryItem?.tier ?? "free"}
         poweredBy={registryItem?.poweredBy}
         component={
-          <div className="relative aspect-video w-full overflow-y-auto rounded-md">
+          <div className="relative aspect-video w-full overflow-hidden rounded-md border">
             <iframe
               src={`/view/${styleName}/${name}`}
-              className="h-full w-full"
+              className="h-full w-full border-0 overflow-hidden"
+              title={`${name} animation`}
+              loading="lazy"
+              sandbox="allow-scripts allow-same-origin"
+              allowFullScreen
+              style={{ overflow: 'hidden' }}
             />
           </div>
         }

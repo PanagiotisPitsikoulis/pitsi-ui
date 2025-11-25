@@ -11,9 +11,11 @@ interface ReadinessBadgeProps {
 }
 
 export function ReadinessBadge({
-  readiness = "alpha",
+  readiness,
   className,
 }: ReadinessBadgeProps) {
+  if (!readiness) return null
+
   const config = {
     alpha: {
       label: "A",
@@ -36,7 +38,7 @@ export function ReadinessBadge({
       <TooltipTrigger asChild>
         <div
           className={cn(
-            "absolute top-4 right-[1.375rem] z-[98] flex size-5 cursor-help items-center justify-center rounded-full bg-muted text-[10px] font-medium uppercase text-muted-foreground",
+            "absolute top-4 right-9 z-[98] flex size-4 cursor-help items-center justify-center rounded-full border-2 border-border bg-card text-[9px] font-bold uppercase text-card-foreground shadow-sm",
             className
           )}
         >

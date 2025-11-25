@@ -3340,7 +3340,7 @@ export const examples: Registry["items"] = [
       },
     ],
     tier: "free",
-    categories: ["primitives"],
+    categories: ["animations"],
     readiness: "production",
   },
   {
@@ -3354,7 +3354,7 @@ export const examples: Registry["items"] = [
       },
     ],
     tier: "free",
-    categories: ["core-components"],
+    categories: ["animations"],
     readiness: "production",
   },
   {
@@ -3368,7 +3368,7 @@ export const examples: Registry["items"] = [
       },
     ],
     tier: "free",
-    categories: ["core-components"],
+    categories: ["animations"],
     readiness: "production",
   },
   {
@@ -3382,7 +3382,7 @@ export const examples: Registry["items"] = [
       },
     ],
     tier: "free",
-    categories: ["primitives"],
+    categories: ["animations"],
     readiness: "production",
   },
   {
@@ -3424,7 +3424,7 @@ export const examples: Registry["items"] = [
       },
     ],
     tier: "free",
-    categories: ["primitives"],
+    categories: ["animations"],
     readiness: "production",
   },
   {
@@ -3438,7 +3438,7 @@ export const examples: Registry["items"] = [
       },
     ],
     tier: "free",
-    categories: ["primitives"],
+    categories: ["animations"],
     readiness: "production",
   },
   {
@@ -3452,7 +3452,7 @@ export const examples: Registry["items"] = [
       },
     ],
     tier: "free",
-    categories: ["primitives"],
+    categories: ["animations"],
     readiness: "production",
   },
   {
@@ -3466,7 +3466,7 @@ export const examples: Registry["items"] = [
       },
     ],
     tier: "free",
-    categories: ["primitives"],
+    categories: ["animations"],
     readiness: "production",
   },
   {
@@ -3480,7 +3480,7 @@ export const examples: Registry["items"] = [
       },
     ],
     tier: "free",
-    categories: ["primitives"],
+    categories: ["animations"],
     readiness: "production",
   },
   {
@@ -3494,7 +3494,7 @@ export const examples: Registry["items"] = [
       },
     ],
     tier: "free",
-    categories: ["primitives"],
+    categories: ["animations"],
     readiness: "production",
   },
   {
@@ -3508,7 +3508,7 @@ export const examples: Registry["items"] = [
       },
     ],
     tier: "free",
-    categories: ["primitives"],
+    categories: ["animations"],
     readiness: "production",
   },
   {
@@ -3522,7 +3522,7 @@ export const examples: Registry["items"] = [
       },
     ],
     tier: "free",
-    categories: ["primitives"],
+    categories: ["animations"],
     readiness: "production",
   },
   {
@@ -3564,7 +3564,7 @@ export const examples: Registry["items"] = [
       },
     ],
     tier: "free",
-    categories: ["primitives"],
+    categories: ["animations"],
     readiness: "production",
   },
   {
@@ -3578,7 +3578,7 @@ export const examples: Registry["items"] = [
       },
     ],
     tier: "free",
-    categories: ["primitives"],
+    categories: ["animations"],
     readiness: "production",
   },
   {
@@ -3592,7 +3592,7 @@ export const examples: Registry["items"] = [
       },
     ],
     tier: "free",
-    categories: ["primitives"],
+    categories: ["animations"],
     readiness: "production",
   },
 ]

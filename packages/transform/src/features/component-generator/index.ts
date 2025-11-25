@@ -10,11 +10,11 @@ import { parseHtmlPage, generateContextSummary, ParsedPage } from "./html-parser
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-// Directories
-const SCRAPED_HTML_DIR = path.join(__dirname, "..", "..", "..", "..", "scraped-html-files")
-const SCREENSHOTS_DIR = path.join(__dirname, "..", "..", "..", "..", "output", "screenshots")
-const THEMES_DIR = path.join(__dirname, "..", "..", "..", "..", "output", "themes")
-const OUTPUT_DIR = path.join(__dirname, "..", "..", "..", "..", "output", "components")
+// Directories (within packages/transform)
+const SCRAPED_HTML_DIR = path.join(__dirname, "..", "..", "..", "scraped-html-files")
+const SCREENSHOTS_DIR = path.join(__dirname, "..", "..", "..", "output", "screenshots")
+const THEMES_DIR = path.join(__dirname, "..", "..", "..", "output", "themes")
+const OUTPUT_DIR = path.join(__dirname, "..", "..", "..", "output", "components")
 
 // Gemini model to use
 const GEMINI_MODEL = "gemini-2.5-pro"
@@ -106,12 +106,11 @@ async function runGemini(prompt: string, imagePaths: string[] = []): Promise<str
   return new Promise((resolve, reject) => {
     const args = ["--model", GEMINI_MODEL]
 
-    // Add up to 3 images for context (first, middle, last sections)
-    const selectedImages = selectKeyImages(imagePaths)
-    for (const imgPath of selectedImages) {
-      if (fs.existsSync(imgPath)) {
-        args.push("--file", imgPath)
-      }
+    // Note: Gemini CLI doesn't support image attachments via --file
+    // Screenshots exist at: imagePaths (for reference)
+    // The prompt includes information about available screenshots
+    if (imagePaths.length > 0) {
+      console.log(`      (${imagePaths.length} screenshots available but not sent to CLI)`)
     }
 
     const gemini = spawn("gemini", args, {

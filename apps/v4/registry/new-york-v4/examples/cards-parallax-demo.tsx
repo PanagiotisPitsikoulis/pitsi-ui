@@ -56,7 +56,7 @@ const StickyCard_001 = ({
           scale,
           top: `calc(-5vh + ${i * 20 + 250}px)`,
         }}
-        className="rounded-4xl relative -top-1/4 flex h-[300px] w-[500px] origin-top flex-col overflow-hidden"
+        className="relative -top-1/4 flex h-[300px] w-[500px] origin-top flex-col overflow-hidden rounded-4xl"
       >
         <img src={src} alt={title} className="h-full w-full object-cover" />
       </motion.div>
@@ -75,10 +75,10 @@ export default function CardsParallaxDemo() {
     <ReactLenis root>
       <main
         ref={container}
-        className="relative flex w-full flex-col items-center justify-center pb-[100vh] pt-[50vh]"
+        className="relative flex w-full flex-col items-center justify-center pt-[50vh] pb-[100vh]"
       >
-        <div className="absolute left-1/2 top-[10%] grid -translate-x-1/2 content-start justify-items-center gap-6 text-center">
-          <span className="after:from-background after:to-foreground relative max-w-[12ch] text-xs uppercase leading-tight opacity-40 after:absolute after:left-1/2 after:top-full after:h-16 after:w-px after:bg-gradient-to-b after:content-['']">
+        <div className="absolute top-[10%] left-1/2 grid -translate-x-1/2 content-start justify-items-center gap-6 text-center">
+          <span className="after:from-background after:to-foreground relative max-w-[12ch] text-xs leading-tight uppercase opacity-40 after:absolute after:top-full after:left-1/2 after:h-16 after:w-px after:bg-gradient-to-b after:content-['']">
             scroll down to see card stack
           </span>
         </div>

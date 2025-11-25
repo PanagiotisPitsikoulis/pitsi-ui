@@ -174,8 +174,8 @@ export default function TextParallaxDemo() {
   return (
     <ReactLenis root>
       <main className="w-full bg-white">
-        <div className="top-22 absolute left-1/2 z-10 grid -translate-x-1/2 content-start justify-items-center gap-6 text-center text-black">
-          <span className="relative max-w-[12ch] text-xs uppercase leading-tight opacity-40 after:absolute after:left-1/2 after:top-full after:h-16 after:w-px after:bg-gradient-to-b after:from-[#f5f4f3] after:to-black after:content-['']">
+        <div className="absolute top-22 left-1/2 z-10 grid -translate-x-1/2 content-start justify-items-center gap-6 text-center text-black">
+          <span className="relative max-w-[12ch] text-xs leading-tight uppercase opacity-40 after:absolute after:top-full after:left-1/2 after:h-16 after:w-px after:bg-gradient-to-b after:from-[#f5f4f3] after:to-black after:content-['']">
             Scroll to see more
           </span>
         </div>
@@ -184,7 +184,7 @@ export default function TextParallaxDemo() {
           className="relative box-border flex h-[210vh] items-center justify-center gap-[2vw] overflow-hidden bg-[#f5f4f3] p-[2vw]"
         >
           <div
-            className="font-geist w-full max-w-4xl text-center text-6xl font-bold uppercase tracking-tighter text-black"
+            className="font-geist w-full max-w-4xl text-center text-6xl font-bold tracking-tighter text-black uppercase"
             style={{
               perspective: "500px",
             }}
@@ -211,7 +211,7 @@ export default function TextParallaxDemo() {
             </span>
             <Bracket className="h-12 scale-x-[-1] text-black" />
           </p>
-          <div className="font-geist w-full max-w-4xl text-center text-6xl font-bold uppercase tracking-tighter text-black">
+          <div className="font-geist w-full max-w-4xl text-center text-6xl font-bold tracking-tighter text-black uppercase">
             {macIcon.map((char, index) => (
               <CharacterV2
                 key={index}
@@ -236,7 +236,7 @@ export default function TextParallaxDemo() {
             <Bracket className="h-12 scale-x-[-1] text-black" />
           </p>
           <div
-            className="font-geist w-full max-w-4xl text-center text-6xl font-bold uppercase tracking-tighter text-black"
+            className="font-geist w-full max-w-4xl text-center text-6xl font-bold tracking-tighter text-black uppercase"
             style={{
               perspective: "500px",
             }}

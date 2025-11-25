@@ -166,6 +166,7 @@ export default async function BlockPage({
   const isBlock = item.type === "registry:block"
   const isComponent =
     item.type === "registry:component" || item.type === "registry:example"
+  const isAnimation = item.categories?.includes("animations")
 
   // Apply theme via localStorage before rendering
   const themeScript = theme
@@ -182,6 +183,14 @@ export default async function BlockPage({
         />
       )}
       {isBlock ? (
+        <div className="bg-background min-h-screen w-full">
+          <LazyComponentRenderer
+            name={name}
+            styleName={style.name}
+            isComponent={isComponent}
+          />
+        </div>
+      ) : isAnimation ? (
         <div className="bg-background min-h-screen w-full">
           <LazyComponentRenderer
             name={name}

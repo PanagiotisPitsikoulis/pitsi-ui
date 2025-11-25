@@ -28507,7 +28507,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["primitives"],
+      categories: ["animations"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -28528,7 +28528,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["core-components"],
+      categories: ["animations"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -28549,7 +28549,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["core-components"],
+      categories: ["animations"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -28570,7 +28570,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["primitives"],
+      categories: ["animations"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -28633,7 +28633,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["primitives"],
+      categories: ["animations"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -28654,7 +28654,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["primitives"],
+      categories: ["animations"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -28675,7 +28675,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["primitives"],
+      categories: ["animations"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -28696,7 +28696,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["primitives"],
+      categories: ["animations"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -28717,7 +28717,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["primitives"],
+      categories: ["animations"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -28738,7 +28738,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["primitives"],
+      categories: ["animations"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -28759,7 +28759,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["primitives"],
+      categories: ["animations"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -28780,7 +28780,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["primitives"],
+      categories: ["animations"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -28843,7 +28843,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["primitives"],
+      categories: ["animations"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -28864,7 +28864,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["primitives"],
+      categories: ["animations"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -28885,7 +28885,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["primitives"],
+      categories: ["animations"],
       meta: undefined,
       tier: "free",
       readiness: "production",

@@ -114,17 +114,17 @@ ${parsedContext.contextSummary ? `### Full Context Summary\n${parsedContext.cont
 ## Task
 Convert the page "${sectionName}" from the website "${siteName}" into clean, production-ready React components.
 
-**Important:** You are receiving screenshots of the actual website along with the HTML. Use the VISUAL appearance from the screenshots as the primary reference, and the HTML structure as a guide for content and hierarchy.
+**Important:** Screenshots have been captured for this page but cannot be sent via CLI. Use the parsed page analysis below as your reference for layout and structure. The extracted theme, colors, fonts, and section information provide all the design context you need.
 
-## Design Analysis from Screenshots
+## Design Approach
 
-Look at the provided screenshots carefully:
-1. Note the overall visual style (modern, minimal, playful, corporate, etc.)
-2. Identify the color scheme and use appropriate Tailwind colors
-3. Notice spacing patterns and apply consistent padding/margins
-4. Observe typography hierarchy (headings vs body text)
-5. Identify interactive elements (buttons, links, cards)
-6. Note any animations or hover effects implied by the design
+Based on the parsed page analysis:
+1. Follow the overall style indicated by the fonts and colors below
+2. Use the provided color palette for theming
+3. Apply consistent spacing using Tailwind's scale
+4. Implement proper typography hierarchy with the specified fonts
+5. Create clean, modern layouts based on the section structure
+6. Add appropriate interactive elements (buttons, links, cards)
 
 ${parsedContextSection}
 ${themeContext}

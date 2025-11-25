@@ -7,8 +7,8 @@ import { getSitesToProcess, WorkingSite } from "../../config/working-sites.js"
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-// Output directory
-const OUTPUT_DIR = path.join(__dirname, "..", "..", "..", "..", "output", "themes")
+// Output directory (within packages/transform)
+const OUTPUT_DIR = path.join(__dirname, "..", "..", "..", "output", "themes")
 
 interface ExtractedColor {
   name: string

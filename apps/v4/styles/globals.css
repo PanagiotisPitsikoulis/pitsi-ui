@@ -27,22 +27,22 @@ html {
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --shadow-2xs:
-    0 4px 12px 2px rgba(0, 0, 0, 0.03), 0 8px 24px 4px rgba(0, 0, 0, 0.02);
+    0 2px 6px 1px rgba(0, 0, 0, 0.02), 0 4px 12px 2px rgba(0, 0, 0, 0.015);
   --shadow-xs:
-    0 6px 18px 3px rgba(0, 0, 0, 0.04), 0 12px 36px 6px rgba(0, 0, 0, 0.03);
+    0 3px 9px 2px rgba(0, 0, 0, 0.025), 0 6px 18px 3px rgba(0, 0, 0, 0.02);
   --shadow-sm:
-    0 8px 24px 4px rgba(0, 0, 0, 0.04), 0 16px 48px 8px rgba(0, 0, 0, 0.02);
+    0 4px 12px 2px rgba(0, 0, 0, 0.03), 0 8px 24px 4px rgba(0, 0, 0, 0.02);
   --shadow:
-    0 12px 32px 6px rgba(0, 0, 0, 0.04), 0 24px 64px 12px rgba(0, 0, 0, 0.02);
+    0 12px 32px 6px rgba(0, 0, 0, 0.04), 0 24px 64px 12px rgba(0, 0, 0, 0.025);
   --shadow-md:
-    0 16px 48px 8px rgba(0, 0, 0, 0.04), 0 32px 96px 16px rgba(0, 0, 0, 0.02);
+    0 16px 48px 8px rgba(0, 0, 0, 0.045), 0 32px 96px 16px rgba(0, 0, 0, 0.03);
   --shadow-lg:
-    0 24px 64px 12px rgba(0, 0, 0, 0.04), 0 48px 128px 24px rgba(0, 0, 0, 0.02);
+    0 24px 64px 12px rgba(0, 0, 0, 0.05), 0 48px 128px 24px rgba(0, 0, 0, 0.035);
   --shadow-xl:
-    0 32px 80px 16px rgba(0, 0, 0, 0.04), 0 64px 160px 32px rgba(0, 0, 0, 0.02);
+    0 32px 80px 16px rgba(0, 0, 0, 0.055), 0 64px 160px 32px rgba(0, 0, 0, 0.04);
   --shadow-2xl:
-    0 48px 120px 24px rgba(0, 0, 0, 0.04), 0 96px 240px 48px rgba(0, 0, 0, 0.02);
-  --shadow-inner: inset 0 8px 16px 4px rgba(0, 0, 0, 0.03);
+    0 48px 120px 24px rgba(0, 0, 0, 0.06), 0 96px 240px 48px rgba(0, 0, 0, 0.045);
+  --shadow-inner: inset 0 8px 16px 4px rgba(0, 0, 0, 0.02);
   --shadow-none: 0 0 #0000;
   --color-background: var(--background);
   --color-foreground: var(--foreground);

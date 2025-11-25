@@ -1,10 +1,10 @@
 "use client"
 
+import { useRef } from "react"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import ReactLenis from "lenis/react"
-import { useRef } from "react"
 
 import { cn } from "@/lib/utils"
 
@@ -117,7 +117,7 @@ const StickyCard002 = ({
               src={card.image}
               alt={card.alt || ""}
               className={cn(
-                "rounded-4xl absolute h-full w-full object-cover",
+                "absolute h-full w-full rounded-4xl object-cover",
                 imageClassName
               )}
               ref={(el) => {

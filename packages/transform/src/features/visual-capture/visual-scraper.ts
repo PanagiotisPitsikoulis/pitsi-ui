@@ -7,9 +7,9 @@ import { getSitesToProcess, WorkingSite } from "../../config/working-sites.js"
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-// Output directories
-const BASE_OUTPUT_DIR = path.join(__dirname, "..", "..", "..", "..", "output", "screenshots")
-const VIDEO_OUTPUT_DIR = path.join(__dirname, "..", "..", "..", "..", "output", "videos")
+// Output directories (within packages/transform)
+const BASE_OUTPUT_DIR = path.join(__dirname, "..", "..", "..", "output", "screenshots")
+const VIDEO_OUTPUT_DIR = path.join(__dirname, "..", "..", "..", "output", "videos")
 
 // Viewport settings
 const VIEWPORT = { width: 1920, height: 1080 }

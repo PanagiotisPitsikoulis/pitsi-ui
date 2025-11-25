@@ -99,10 +99,14 @@ function ComponentPreviewContent({
   // Render animations in iframe
   if (isAnimation) {
     return (
-      <div className="relative h-full w-full min-w-[400px] overflow-hidden">
+      <div className="relative h-full w-full min-w-[400px] overflow-hidden rounded-md">
         <iframe
           src={`/view/${styleName}/${previewName}`}
-          className="h-full w-full"
+          className="h-full w-full border-0"
+          title={`${previewName} animation preview`}
+          loading="lazy"
+          sandbox="allow-scripts allow-same-origin"
+          allowFullScreen
         />
       </div>
     )

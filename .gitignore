@@ -44,3 +44,7 @@ tsconfig.tsbuildinfo
 # transform package - scraped content and output
 packages/transform/scraped-html-files/
 packages/transform/output/
+scraped-html-files/
+packages/scraped-html-files/
+packages/output/videos/
+packages/output/components/
