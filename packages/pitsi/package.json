@@ -1,7 +1,7 @@
 {
   "name": "pitsi",
   "version": "3.5.1",
-  "description": "Add components to your apps.",
+  "description": "A CLI for adding beautifully designed, accessible React components built with Radix UI and Tailwind CSS to your project.",
   "publishConfig": {
     "access": "public"
   },
@@ -12,8 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/PanagiotisPitsikoulis/ui.git",
+    "url": "https://github.com/PanagiotisPitsikoulis/pitsi-ui.git",
     "directory": "packages/pitsi"
+  },
+  "homepage": "https://www.pitsiui.com",
+  "bugs": {
+    "url": "https://github.com/PanagiotisPitsikoulis/pitsi-ui/issues"
   },
   "files": [
     "dist"
@@ -21,9 +25,18 @@
   "keywords": [
     "components",
     "ui",
+    "react",
     "tailwind",
+    "tailwindcss",
     "radix-ui",
-    "pitsi"
+    "design-system",
+    "component-library",
+    "accessible",
+    "typescript",
+    "dark-mode",
+    "pitsi",
+    "nextjs",
+    "shadcn-ui"
   ],
   "type": "module",
   "exports": {
@@ -51,7 +64,7 @@
     "typecheck": "tsc --noEmit",
     "clean": "rimraf dist && rimraf components",
     "start:dev": "cross-env REGISTRY_URL=http://localhost:4000/r node dist/index.js",
-    "start:prod": "cross-env REGISTRY_URL=https://pitsiui.com/r node dist/index.js",
+    "start:prod": "cross-env REGISTRY_URL=https://www.pitsiui.com/r node dist/index.js",
     "start": "node dist/index.js",
     "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
