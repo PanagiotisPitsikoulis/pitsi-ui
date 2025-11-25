@@ -136,23 +136,23 @@ export default function ScrollScaleDemo() {
   const defaultCards = [
     {
       id: 1,
-      image: "/images/lummi/img14.png",
+      image: "https://skiper-ui.com/images/lummi/img14.png",
     },
     {
       id: 2,
-      image: "/images/lummi/img15.png",
+      image: "https://skiper-ui.com/images/lummi/img15.png",
     },
     {
       id: 3,
-      image: "/images/lummi/img29.png",
+      image: "https://skiper-ui.com/images/lummi/img29.png",
     },
     {
       id: 4,
-      image: "/images/lummi/img21.png",
+      image: "https://skiper-ui.com/images/lummi/img21.png",
     },
     {
       id: 5,
-      image: "/images/lummi/img27.png",
+      image: "https://skiper-ui.com/images/lummi/img27.png",
     },
   ]
 

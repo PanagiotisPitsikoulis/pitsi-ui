@@ -5,19 +5,19 @@ import Lenis from "lenis"
 import { motion, MotionValue, useScroll, useTransform } from "motion/react"
 
 const images = [
-  "/images/lummi/img15.png",
-  "/images/lummi/img21.png",
-  "/images/lummi/img3.png",
-  "/images/lummi/img4.png",
-  "/images/lummi/img5.png",
-  "/images/lummi/img6.png",
-  "/images/lummi/img7.png",
-  "/images/lummi/img8.png",
-  "/images/lummi/img24.png",
-  "/images/lummi/img10.png",
-  "/images/lummi/img11.png",
-  "/images/lummi/img12.png",
-  "/images/lummi/img13.png",
+  "https://skiper-ui.com/images/lummi/img15.png",
+  "https://skiper-ui.com/images/lummi/img21.png",
+  "https://skiper-ui.com/images/lummi/img3.png",
+  "https://skiper-ui.com/images/lummi/img4.png",
+  "https://skiper-ui.com/images/lummi/img5.png",
+  "https://skiper-ui.com/images/lummi/img6.png",
+  "https://skiper-ui.com/images/lummi/img7.png",
+  "https://skiper-ui.com/images/lummi/img8.png",
+  "https://skiper-ui.com/images/lummi/img24.png",
+  "https://skiper-ui.com/images/lummi/img10.png",
+  "https://skiper-ui.com/images/lummi/img11.png",
+  "https://skiper-ui.com/images/lummi/img12.png",
+  "https://skiper-ui.com/images/lummi/img13.png",
 ]
 
 const Column = ({

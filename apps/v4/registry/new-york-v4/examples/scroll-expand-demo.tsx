@@ -159,32 +159,32 @@ const HoverExpand_002 = ({
 export default function ScrollExpandDemo() {
   const images = [
     {
-      src: "/images/x.com/13.jpeg",
+      src: "https://skiper-ui.com/images/x.com/13.jpeg",
       alt: "Illustrations by my fav AarzooAly",
       code: "# 23",
     },
     {
-      src: "/images/x.com/32.jpeg",
+      src: "https://skiper-ui.com/images/x.com/32.jpeg",
       alt: "Illustrations by ©AarzooAly",
       code: "# 23",
     },
     {
-      src: "/images/x.com/20.jpeg",
+      src: "https://skiper-ui.com/images/x.com/20.jpeg",
       alt: "Illustrations by ©AarzooAly",
       code: "# 23",
     },
     {
-      src: "/images/x.com/21.jpeg",
+      src: "https://skiper-ui.com/images/x.com/21.jpeg",
       alt: "Illustrations by ©AarzooAly",
       code: "# 23",
     },
     {
-      src: "/images/x.com/19.jpeg",
+      src: "https://skiper-ui.com/images/x.com/19.jpeg",
       alt: "Illustrations by ©AarzooAly",
       code: "# 23",
     },
     {
-      src: "/images/x.com/1.jpeg",
+      src: "https://skiper-ui.com/images/x.com/1.jpeg",
       alt: "Illustrations by ©AarzooAly",
       code: "# 23",
     },
