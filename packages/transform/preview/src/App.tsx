@@ -179,14 +179,17 @@ function CodeViewer({
   title,
   path,
   onClose,
+  isComponent = false,
 }: {
   title: string
   path: string
   onClose: () => void
+  isComponent?: boolean
 }) {
   const [code, setCode] = useState<string>("")
   const [loading, setLoading] = useState(true)
   const [copied, setCopied] = useState(false)
+  const [showPreview, setShowPreview] = useState(isComponent)
 
   useEffect(() => {
     async function loadCode() {
@@ -218,6 +221,14 @@ function CodeViewer({
         <div className="flex items-center justify-between p-4 border-b border-zinc-800">
           <h2 className="font-semibold text-lg">{title}</h2>
           <div className="flex gap-2">
+            {isComponent && (
+              <button
+                onClick={() => setShowPreview(!showPreview)}
+                className="px-3 py-1.5 rounded-md text-sm font-medium bg-zinc-800 hover:bg-zinc-700 transition-colors"
+              >
+                {showPreview ? "Show Code" : "Show Preview"}
+              </button>
+            )}
             <button
               onClick={copyToClipboard}
               className="px-3 py-1.5 rounded-md text-sm font-medium bg-zinc-800 hover:bg-zinc-700 transition-colors"
@@ -236,6 +247,38 @@ function CodeViewer({
           {loading ? (
             <div className="flex items-center justify-center h-64">
               <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white"></div>
+            </div>
+          ) : showPreview && isComponent ? (
+            <div className="bg-white rounded-lg overflow-hidden">
+              <iframe
+                srcDoc={`
+                  <!DOCTYPE html>
+                  <html>
+                    <head>
+                      <meta charset="utf-8">
+                      <meta name="viewport" content="width=device-width, initial-scale=1">
+                      <script src="https://cdn.tailwindcss.com"></script>
+                      <style>
+                        body { margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+                      </style>
+                    </head>
+                    <body>
+                      <div id="root"></div>
+                      <div class="p-8 text-center text-gray-500">
+                        <p class="mb-4">⚠️ Component preview is limited</p>
+                        <p class="text-sm">Generated React components require proper React setup to render.</p>
+                        <p class="text-sm mt-2">Switch to "Show Code" to view the component source.</p>
+                      </div>
+                      <script>
+                        // This is a placeholder - actual React rendering would require a full build setup
+                        console.log('Component code loaded');
+                      </script>
+                    </body>
+                  </html>
+                `}
+                className="w-full h-full min-h-[400px] border-0"
+                title="Component Preview"
+              />
             </div>
           ) : (
             <pre className="text-sm font-mono text-zinc-300 whitespace-pre-wrap">
@@ -319,6 +362,15 @@ function ThemePreview({ theme }: { theme: object }) {
   const colors = (theme as any)?.colors || {}
   const typography = (theme as any)?.typography || {}
 
+  const formatValue = (value: any): string => {
+    if (value === null || value === undefined) return 'N/A'
+    if (typeof value === 'object') {
+      if (Array.isArray(value)) return value.join(', ')
+      return JSON.stringify(value, null, 2)
+    }
+    return String(value)
+  }
+
   return (
     <div className="space-y-4">
       {Object.keys(colors).length > 0 && (
@@ -330,6 +382,7 @@ function ThemePreview({ theme }: { theme: object }) {
                 <div
                   className="w-6 h-6 rounded border border-zinc-700"
                   style={{ backgroundColor: value as string }}
+                  title={formatValue(value)}
                 />
                 <span className="text-xs text-zinc-500">{name}</span>
               </div>
@@ -340,10 +393,11 @@ function ThemePreview({ theme }: { theme: object }) {
       {Object.keys(typography).length > 0 && (
         <div>
           <h4 className="text-sm font-medium text-zinc-400 mb-2">Typography</h4>
-          <div className="text-xs text-zinc-500 space-y-1">
-            {Object.entries(typography).slice(0, 4).map(([name, value]) => (
-              <div key={name}>
-                <span className="text-zinc-400">{name}:</span> {String(value)}
+          <div className="text-xs text-zinc-300 space-y-2 font-mono">
+            {Object.entries(typography).slice(0, 6).map(([name, value]) => (
+              <div key={name} className="flex gap-2">
+                <span className="text-zinc-500 min-w-[80px]">{name}:</span>
+                <span className="text-zinc-300 flex-1">{formatValue(value)}</span>
               </div>
             ))}
           </div>
@@ -492,10 +546,13 @@ function SiteCard({
                 {site.components.map((component) => (
                   <div
                     key={component.path}
-                    className="cursor-pointer p-3 bg-zinc-800 rounded-lg border border-zinc-700 hover:border-zinc-500 transition-colors"
+                    className="cursor-pointer p-3 bg-zinc-800 rounded-lg border border-zinc-700 hover:border-zinc-500 transition-colors group"
                     onClick={() => onViewComponent(`/output/components/${component.path}`, component.filename)}
                   >
-                    <code className="text-xs text-zinc-300">{component.filename}</code>
+                    <div className="flex items-center justify-between">
+                      <code className="text-xs text-zinc-300">{component.filename}</code>
+                      <span className="text-xs text-zinc-600 group-hover:text-zinc-400 transition-colors">⚛️</span>
+                    </div>
                     <p className="text-xs text-zinc-500 mt-1 capitalize">
                       {component.page.replace(/-/g, " ")} page
                     </p>
@@ -514,7 +571,7 @@ function WorkflowTab() {
   const { data, loading } = useWorkflowData()
   const [selectedImage, setSelectedImage] = useState<{ src: string; title: string } | null>(null)
   const [selectedVideo, setSelectedVideo] = useState<{ src: string; title: string } | null>(null)
-  const [selectedCode, setSelectedCode] = useState<{ path: string; title: string } | null>(null)
+  const [selectedCode, setSelectedCode] = useState<{ path: string; title: string; isComponent?: boolean } | null>(null)
   const [selectedCategory, setSelectedCategory] = useState<string>("all")
 
   if (loading) {
@@ -590,10 +647,11 @@ function WorkflowTab() {
             site={site}
             onViewScreenshot={(src, title) => setSelectedImage({ src, title })}
             onViewVideo={(src, title) => setSelectedVideo({ src, title })}
-            onViewComponent={(path, title) => setSelectedCode({ path, title })}
+            onViewComponent={(path, title) => setSelectedCode({ path, title, isComponent: true })}
             onViewTheme={() => setSelectedCode({
               path: `/output/themes/${site.category}/${site.site}/theme.json`,
               title: `${site.site} Theme`,
+              isComponent: false
             })}
           />
         ))}
@@ -619,6 +677,7 @@ function WorkflowTab() {
         <CodeViewer
           path={selectedCode.path}
           title={selectedCode.title}
+          isComponent={selectedCode.isComponent}
           onClose={() => setSelectedCode(null)}
         />
       )}

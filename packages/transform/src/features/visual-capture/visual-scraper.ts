@@ -158,7 +158,8 @@ async function screenshotSections(
 }
 
 /**
- * Record video of scrolling through the page to capture animations
+ * Record video of scrolling through the entire page slowly
+ * Creates one cinematic video per page with smooth scroll
  */
 async function recordPageVideo(
   context: BrowserContext,
@@ -175,27 +176,34 @@ async function recordPageVideo(
     await page.goto(url, { waitUntil: "networkidle", timeout: 60000 })
     await page.waitForTimeout(PAGE_LOAD_WAIT)
 
+    // Pause at the top to show initial state
+    await page.waitForTimeout(2000)
+
     // Get total page height
     const totalHeight = await page.evaluate(() => document.body.scrollHeight)
     const viewportHeight = VIEWPORT.height
-    const scrollSteps = Math.ceil(totalHeight / (viewportHeight * 0.5))
 
-    // Scroll through the page slowly to capture animations
+    // Slow, cinematic scroll - one smooth motion from top to bottom
+    // Calculate scroll duration based on page length (aim for ~10-15 seconds per viewport)
+    const totalScrollTime = Math.max(15000, (totalHeight / viewportHeight) * 8000)
+    const scrollSteps = Math.ceil(totalScrollTime / 100) // 100ms per step
+
+    // Smooth scroll from top to bottom
     for (let i = 0; i <= scrollSteps; i++) {
-      const scrollPosition = (totalHeight / scrollSteps) * i
+      const progress = i / scrollSteps
+      const scrollPosition = totalHeight * progress
+
       await page.evaluate((top) => {
-        window.scrollTo({ top, behavior: "smooth" })
+        window.scrollTo({ top, behavior: "auto" }) // Use auto for precise control
       }, scrollPosition)
-      await page.waitForTimeout(800) // Wait for smooth scroll and animations
+
+      await page.waitForTimeout(100) // Small step interval for smooth motion
     }
 
-    // Scroll back to top
-    await page.evaluate(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" })
-    })
-    await page.waitForTimeout(1000)
+    // Pause at bottom
+    await page.waitForTimeout(2000)
 
-    console.log(`    ✓ Video recorded: ${pageSlug}.webm`)
+    console.log(`    ✓ Video recorded: ${pageSlug}.webm (${Math.round(totalScrollTime / 1000)}s)`)
   } catch (error) {
     console.error(`    ✗ Failed to record video:`, error.message)
   } finally {
