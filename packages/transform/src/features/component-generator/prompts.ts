@@ -102,21 +102,12 @@ ${parsedContext.contextSummary ? `### Full Context Summary\n${parsedContext.cont
 `
   }
 
-  // Limit HTML content for prompt (keep the structure, trim very long content)
-  const maxHtmlLength = 80000
-  let trimmedHtml = htmlContent
-  if (htmlContent.length > maxHtmlLength) {
-    // Try to keep the head and beginning of body
-    const headEnd = htmlContent.indexOf("</head>")
-    const bodyStart = htmlContent.indexOf("<body")
-    if (headEnd > 0 && bodyStart > 0) {
-      const head = htmlContent.slice(0, headEnd + 7)
-      const bodyContent = htmlContent.slice(bodyStart, bodyStart + maxHtmlLength - head.length)
-      trimmedHtml = head + "\n<!-- ... head content ... -->\n" + bodyContent + "\n<!-- ... content truncated ... -->"
-    } else {
-      trimmedHtml = htmlContent.slice(0, maxHtmlLength) + "\n<!-- ... content truncated ... -->"
-    }
-  }
+  // Don't include full HTML - just note it exists
+  const htmlNote = `The source HTML file exists and has been analyzed. Key information extracted:
+- File size: ${(htmlContent.length / 1024).toFixed(0)}KB
+- The parsed context above contains all relevant information from the HTML
+- Use the screenshots as your PRIMARY reference for visual design
+- Use the parsed context for content, structure, and text`
 
   return `You are an expert React developer specializing in converting Framer website designs to modern React components using TypeScript, Tailwind CSS, and shadcn/ui components.
 
@@ -174,14 +165,11 @@ Import from "@/components/ui/[name]":
 
 ${availableComponents}
 
-## Source HTML (Reference)
+## Source HTML Information
 
-Use this HTML to understand content structure, text content, and hierarchy.
-Extract actual text content, image URLs, and link destinations from here.
+${htmlNote}
 
-\`\`\`html
-${trimmedHtml}
-\`\`\`
+**Note:** All text content, image information, and structural details have been extracted and provided in the "Page Analysis" section above. Use that parsed information instead of raw HTML.
 
 ## Output Requirements
 

@@ -16,31 +16,32 @@ export function ReadinessBadge({
 }: ReadinessBadgeProps) {
   const config = {
     alpha: {
-      className: "bg-red-500",
+      label: "A",
       title: "Alpha",
     },
     beta: {
-      className: "bg-orange-400",
+      label: "B",
       title: "Beta",
     },
     production: {
-      className: "bg-green-500",
-      title: "Production",
+      label: "S",
+      title: "Stable",
     },
   }
 
-  const { className: badgeClassName, title } = config[readiness]
+  const { label, title } = config[readiness]
 
   return (
     <Tooltip>
       <TooltipTrigger asChild>
         <div
           className={cn(
-            "absolute top-4 right-[1.375rem] z-[98] size-3.5 cursor-help rounded-full",
-            badgeClassName,
+            "absolute top-4 right-[1.375rem] z-[98] flex size-5 cursor-help items-center justify-center rounded-full bg-muted text-[10px] font-medium uppercase text-muted-foreground",
             className
           )}
-        />
+        >
+          {label}
+        </div>
       </TooltipTrigger>
       <TooltipContent>{title}</TooltipContent>
     </Tooltip>
