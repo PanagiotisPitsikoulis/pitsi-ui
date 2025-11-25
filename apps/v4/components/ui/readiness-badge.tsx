@@ -10,39 +10,33 @@ interface ReadinessBadgeProps {
   className?: string
 }
 
-export function ReadinessBadge({
-  readiness,
-  className,
-}: ReadinessBadgeProps) {
+export function ReadinessBadge({ readiness, className }: ReadinessBadgeProps) {
   if (!readiness) return null
 
   const config = {
     alpha: {
-      label: "A",
       title: "Alpha",
     },
     beta: {
-      label: "B",
       title: "Beta",
     },
     production: {
-      label: "S",
       title: "Stable",
     },
   }
 
-  const { label, title } = config[readiness]
+  const { title } = config[readiness]
 
   return (
     <Tooltip>
       <TooltipTrigger asChild>
         <div
           className={cn(
-            "absolute top-4 right-9 z-[98] flex size-4 cursor-help items-center justify-center rounded-full border-2 border-border bg-card text-[9px] font-bold uppercase text-card-foreground shadow-sm",
+            "bg-muted absolute top-4 right-6.5 z-[97] flex size-3.5 cursor-help items-center justify-center rounded-full text-[8px]",
             className
           )}
         >
-          {label}
+          {config[readiness].title.slice(0, 1)}
         </div>
       </TooltipTrigger>
       <TooltipContent>{title}</TooltipContent>

@@ -107,6 +107,14 @@ function ComponentPreviewContent({
           loading="lazy"
           sandbox="allow-scripts allow-same-origin"
           allowFullScreen
+          style={{
+            transform: 'scale(0.7)',
+            transformOrigin: 'center center',
+            width: '142.86%',
+            height: '142.86%',
+            marginLeft: '-21.43%',
+            marginTop: '-21.43%'
+          }}
         />
       </div>
     )
@@ -114,7 +122,7 @@ function ComponentPreviewContent({
 
   return (
     <div className="flex h-full w-full items-center justify-center">
-      <div className="flex w-fit min-w-[600px] origin-center scale-[0.45] transform items-center justify-center">
+      <div className="flex w-fit min-w-[600px] origin-center scale-[0.5] transform items-center justify-center">
         <Component />
       </div>
     </div>
