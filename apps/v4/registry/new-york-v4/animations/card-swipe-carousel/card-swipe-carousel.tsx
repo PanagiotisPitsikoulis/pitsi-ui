@@ -4,53 +4,57 @@ import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react"
 import { motion } from "motion/react"
 import { Autoplay, EffectCards, Navigation, Pagination } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
+import "swiper/css"
+import "swiper/css/effect-cards"
+import "swiper/css/navigation"
+import "swiper/css/pagination"
 
 import { cn } from "@/lib/utils"
 
 const Skiper48 = () => {
   const images = [
     {
-      src: "/images/x.com/13.jpeg",
+      src: "https://skiper-ui.com/images/x.com/13.jpeg",
       alt: "Illustrations by my fav AarzooAly",
     },
     {
-      src: "/images/x.com/32.jpeg",
+      src: "https://skiper-ui.com/images/x.com/32.jpeg",
       alt: "Illustrations by my fav AarzooAly",
     },
     {
-      src: "/images/x.com/20.jpeg",
+      src: "https://skiper-ui.com/images/x.com/20.jpeg",
       alt: "Illustrations by my fav AarzooAly",
     },
     {
-      src: "/images/x.com/21.jpeg",
+      src: "https://skiper-ui.com/images/x.com/21.jpeg",
       alt: "Illustrations by my fav AarzooAly",
     },
     {
-      src: "/images/x.com/19.jpeg",
+      src: "https://skiper-ui.com/images/x.com/19.jpeg",
       alt: "Illustrations by my fav AarzooAly",
     },
     {
-      src: "/images/x.com/1.jpeg",
+      src: "https://skiper-ui.com/images/x.com/1.jpeg",
       alt: "Illustrations by my fav AarzooAly",
     },
     {
-      src: "/images/x.com/2.jpeg",
+      src: "https://skiper-ui.com/images/x.com/2.jpeg",
       alt: "Illustrations by my fav AarzooAly",
     },
     {
-      src: "/images/x.com/3.jpeg",
+      src: "https://skiper-ui.com/images/x.com/3.jpeg",
       alt: "Illustrations by my fav AarzooAly",
     },
     {
-      src: "/images/x.com/4.jpeg",
+      src: "https://skiper-ui.com/images/x.com/4.jpeg",
       alt: "Illustrations by my fav AarzooAly",
     },
     {
-      src: "/images/x.com/5.jpeg",
+      src: "https://skiper-ui.com/images/x.com/5.jpeg",
       alt: "Illustrations by my fav AarzooAly",
     },
     {
-      src: "/images/x.com/6.jpeg",
+      src: "https://skiper-ui.com/images/x.com/6.jpeg",
       alt: "Illustrations by my fav AarzooAly",
     },
   ]
