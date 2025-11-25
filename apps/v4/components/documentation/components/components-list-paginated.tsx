@@ -108,12 +108,7 @@ function ComponentPreviewContent({
           sandbox="allow-scripts allow-same-origin"
           allowFullScreen
           style={{
-            transform: 'scale(0.7)',
-            transformOrigin: 'center center',
-            width: '142.86%',
-            height: '142.86%',
-            marginLeft: '-21.43%',
-            marginTop: '-21.43%'
+            zoom: 0.7
           }}
         />
       </div>

@@ -76,19 +76,13 @@ export function ComponentPreview({
           <div className="relative aspect-video w-full overflow-hidden rounded-md border">
             <iframe
               src={`/view/${styleName}/${name}`}
-              className="h-full w-full border-0 overflow-hidden"
+              className="h-full w-full border-0"
               title={`${name} animation`}
               loading="lazy"
               sandbox="allow-scripts allow-same-origin"
               allowFullScreen
               style={{
-                overflow: 'hidden',
-                transform: 'scale(0.8)',
-                transformOrigin: 'center center',
-                width: '125%',
-                height: '125%',
-                marginLeft: '-12.5%',
-                marginTop: '-12.5%'
+                zoom: 0.8
               }}
             />
           </div>
