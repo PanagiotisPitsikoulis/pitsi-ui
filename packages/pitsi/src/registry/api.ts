@@ -170,7 +170,7 @@ export async function getpitsiRegistryIndex() {
 
 export async function getRegistryStyles() {
   try {
-    const [result] = await fetchRegistry(["styles/index.json"])
+    const [result] = await fetchRegistry(["styles.json"])
 
     return stylesSchema.parse(result)
   } catch (error) {

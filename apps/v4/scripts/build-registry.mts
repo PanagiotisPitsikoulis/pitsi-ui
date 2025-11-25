@@ -199,6 +199,26 @@ async function buildBlocksIndex() {
   await exec(`prettier --write registry/__blocks__.json`)
 }
 
+async function buildStylesIndex() {
+  const payload = STYLES.map((style) => ({
+    name: style.name,
+    label: style.title,
+  }))
+
+  const outputPath = path.join(process.cwd(), "public/r/styles.json")
+  await fs.writeFile(outputPath, JSON.stringify(payload, null, 2))
+
+  await new Promise<void>((resolve, reject) => {
+    execFile('prettier', ['--write', outputPath], (error) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve();
+      }
+    });
+  })
+}
+
 try {
   const styles = Array.from(STYLES)
   console.log(`🎨 Found ${styles.length} styles: ${styles.map((s) => s.name).join(", ")}`)
@@ -219,6 +239,9 @@ try {
 
   console.log("\n🗂️ Building registry/__blocks__.json...")
   await buildBlocksIndex()
+
+  console.log("\n🎨 Building public/r/styles.json...")
+  await buildStylesIndex()
 
   // Clean up intermediate files.
   console.log("\n🧹 Cleaning up intermediate files...")
