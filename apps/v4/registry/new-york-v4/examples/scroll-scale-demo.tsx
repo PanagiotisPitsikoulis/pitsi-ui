@@ -4,7 +4,6 @@ import { useRef } from "react"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import ReactLenis from "lenis/react"
 
 import { cn } from "@/lib/utils"
 
@@ -157,10 +156,8 @@ export default function ScrollScaleDemo() {
   ]
 
   return (
-    <ReactLenis root>
-      <div className="h-full w-full">
-        <StickyCard002 cards={defaultCards} />
-      </div>
-    </ReactLenis>
+    <div className="h-full w-full">
+      <StickyCard002 cards={defaultCards} />
+    </div>
   )
 }

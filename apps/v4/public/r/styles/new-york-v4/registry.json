@@ -1012,6 +1012,30 @@
       ]
     },
     {
+      "name": "progressive-blur",
+      "type": "registry:ui",
+      "dependencies": [
+        "motion/react"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/progressive-blur.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "primitives"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "poweredBy": [
+        {
+          "name": "Skiper UI",
+          "url": "https://skiper-ui.com"
+        }
+      ]
+    },
+    {
       "name": "radio-group",
       "type": "registry:ui",
       "dependencies": [
@@ -1066,6 +1090,24 @@
           "url": "https://react-resizable-panels.vercel.app"
         }
       ]
+    },
+    {
+      "name": "responsive",
+      "type": "registry:ui",
+      "registryDependencies": [
+        "use-mobile"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/responsive.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "layout"
+      ],
+      "tier": "free",
+      "readiness": "production"
     },
     {
       "name": "scroll-area",
@@ -1443,8 +1485,8 @@
       "readiness": "production",
       "poweredBy": [
         {
-          "name": "Motion",
-          "url": "https://motion.dev"
+          "name": "Skiper UI",
+          "url": "https://skiper-ui.com"
         }
       ]
     },
@@ -1789,8 +1831,8 @@
       "readiness": "beta",
       "poweredBy": [
         {
-          "name": "Motion",
-          "url": "https://motion.dev"
+          "name": "Skiper UI",
+          "url": "https://skiper-ui.com"
         }
       ]
     },
@@ -1811,8 +1853,8 @@
       "readiness": "beta",
       "poweredBy": [
         {
-          "name": "Motion",
-          "url": "https://motion.dev"
+          "name": "Skiper UI",
+          "url": "https://skiper-ui.com"
         }
       ]
     },
@@ -1833,8 +1875,8 @@
       "readiness": "beta",
       "poweredBy": [
         {
-          "name": "Motion",
-          "url": "https://motion.dev"
+          "name": "Skiper UI",
+          "url": "https://skiper-ui.com"
         }
       ]
     },
@@ -1855,8 +1897,8 @@
       "readiness": "beta",
       "poweredBy": [
         {
-          "name": "Motion",
-          "url": "https://motion.dev"
+          "name": "Skiper UI",
+          "url": "https://skiper-ui.com"
         }
       ]
     },
@@ -1877,8 +1919,8 @@
       "readiness": "beta",
       "poweredBy": [
         {
-          "name": "Motion",
-          "url": "https://motion.dev"
+          "name": "Skiper UI",
+          "url": "https://skiper-ui.com"
         }
       ]
     },
@@ -1899,8 +1941,8 @@
       "readiness": "beta",
       "poweredBy": [
         {
-          "name": "Motion",
-          "url": "https://motion.dev"
+          "name": "Skiper UI",
+          "url": "https://skiper-ui.com"
         }
       ]
     },
@@ -1921,8 +1963,8 @@
       "readiness": "beta",
       "poweredBy": [
         {
-          "name": "Motion",
-          "url": "https://motion.dev"
+          "name": "Skiper UI",
+          "url": "https://skiper-ui.com"
         }
       ]
     },
@@ -1943,8 +1985,8 @@
       "readiness": "beta",
       "poweredBy": [
         {
-          "name": "Motion",
-          "url": "https://motion.dev"
+          "name": "Skiper UI",
+          "url": "https://skiper-ui.com"
         }
       ]
     },
@@ -1965,8 +2007,8 @@
       "readiness": "beta",
       "poweredBy": [
         {
-          "name": "Motion",
-          "url": "https://motion.dev"
+          "name": "Skiper UI",
+          "url": "https://skiper-ui.com"
         }
       ]
     },
@@ -1987,8 +2029,8 @@
       "readiness": "beta",
       "poweredBy": [
         {
-          "name": "Motion",
-          "url": "https://motion.dev"
+          "name": "Skiper UI",
+          "url": "https://skiper-ui.com"
         }
       ]
     },
@@ -2009,8 +2051,8 @@
       "readiness": "beta",
       "poweredBy": [
         {
-          "name": "Motion",
-          "url": "https://motion.dev"
+          "name": "Skiper UI",
+          "url": "https://skiper-ui.com"
         }
       ]
     },
@@ -2028,7 +2070,13 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "poweredBy": [
+        {
+          "name": "Skiper UI",
+          "url": "https://skiper-ui.com"
+        }
+      ]
     },
     {
       "name": "smooth-scroll",
@@ -2044,7 +2092,13 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "poweredBy": [
+        {
+          "name": "Skiper UI",
+          "url": "https://skiper-ui.com"
+        }
+      ]
     },
     {
       "name": "sticky-footer",
@@ -2060,7 +2114,13 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "poweredBy": [
+        {
+          "name": "Skiper UI",
+          "url": "https://skiper-ui.com"
+        }
+      ]
     },
     {
       "name": "text-along-path",
@@ -2079,8 +2139,8 @@
       "readiness": "beta",
       "poweredBy": [
         {
-          "name": "Motion",
-          "url": "https://motion.dev"
+          "name": "Skiper UI",
+          "url": "https://skiper-ui.com"
         }
       ]
     },
@@ -2101,8 +2161,8 @@
       "readiness": "beta",
       "poweredBy": [
         {
-          "name": "Motion",
-          "url": "https://motion.dev"
+          "name": "Skiper UI",
+          "url": "https://skiper-ui.com"
         }
       ]
     },
@@ -2123,8 +2183,8 @@
       "readiness": "beta",
       "poweredBy": [
         {
-          "name": "Motion",
-          "url": "https://motion.dev"
+          "name": "Skiper UI",
+          "url": "https://skiper-ui.com"
         }
       ]
     },
@@ -2145,8 +2205,8 @@
       "readiness": "beta",
       "poweredBy": [
         {
-          "name": "Motion",
-          "url": "https://motion.dev"
+          "name": "Skiper UI",
+          "url": "https://skiper-ui.com"
         }
       ]
     },
@@ -2167,8 +2227,118 @@
       "readiness": "beta",
       "poweredBy": [
         {
-          "name": "Motion",
-          "url": "https://motion.dev"
+          "name": "Skiper UI",
+          "url": "https://skiper-ui.com"
+        }
+      ]
+    },
+    {
+      "name": "blend-mode-cursor",
+      "type": "registry:ui",
+      "description": "A cursor that follows the mouse with mix-blend-difference effect",
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/blend-mode-cursor/blend-mode-cursor.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta",
+      "poweredBy": [
+        {
+          "name": "Skiper UI",
+          "url": "https://skiper-ui.com"
+        }
+      ]
+    },
+    {
+      "name": "cursor-hover-mask",
+      "type": "registry:ui",
+      "description": "A text mask effect that follows the cursor and reveals alternate content",
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/cursor-hover-mask/cursor-hover-mask.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta",
+      "poweredBy": [
+        {
+          "name": "Skiper UI",
+          "url": "https://skiper-ui.com"
+        }
+      ]
+    },
+    {
+      "name": "floating-image-gallery",
+      "type": "registry:ui",
+      "description": "A floating image gallery where images move at different speeds based on mouse movement",
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/floating-image-gallery/floating-image-gallery.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta",
+      "poweredBy": [
+        {
+          "name": "Skiper UI",
+          "url": "https://skiper-ui.com"
+        }
+      ]
+    },
+    {
+      "name": "mouse-hover-gallery",
+      "type": "registry:ui",
+      "description": "A project gallery where hovering over items reveals an image that follows the cursor",
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/mouse-hover-gallery/mouse-hover-gallery.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta",
+      "poweredBy": [
+        {
+          "name": "Skiper UI",
+          "url": "https://skiper-ui.com"
+        }
+      ]
+    },
+    {
+      "name": "nav-menu",
+      "type": "registry:ui",
+      "description": "An animated navigation menu with character-by-character animations and hover image reveal",
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/nav-menu/nav-menu.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta",
+      "poweredBy": [
+        {
+          "name": "Skiper UI",
+          "url": "https://skiper-ui.com"
         }
       ]
     },
@@ -22699,6 +22869,24 @@
       "readiness": "production"
     },
     {
+      "name": "progressive-blur-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "progressive-blur"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/progressive-blur-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "primitives"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
       "name": "radio-group-demo",
       "type": "registry:example",
       "registryDependencies": [
@@ -22803,6 +22991,24 @@
       ],
       "categories": [
         "core-components"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "responsive-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "responsive"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/responsive-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "layout"
       ],
       "tier": "free",
       "readiness": "production"
@@ -24518,6 +24724,96 @@
       "files": [
         {
           "path": "registry/new-york-v4/examples/zoom-parallax-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "blend-mode-cursor-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "blend-mode-cursor"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/blend-mode-cursor-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "cursor-hover-mask-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "cursor-hover-mask"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/cursor-hover-mask-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "floating-image-gallery-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "floating-image-gallery"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/floating-image-gallery-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "mouse-hover-gallery-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "mouse-hover-gallery"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/mouse-hover-gallery-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "nav-menu-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "nav-menu"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/nav-menu-demo.tsx",
           "type": "registry:example"
         }
       ],

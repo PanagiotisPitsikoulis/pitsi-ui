@@ -62,9 +62,7 @@ export const workingSites: WorkingSite[] = [
  * Priority sites - these are processed first by capture/generate commands
  * Add site names here to focus on specific sites
  */
-export const prioritySiteNames: string[] = [
-  "agency-2",
-]
+export const prioritySiteNames: string[] = ["agency-2", "simple-3"]
 
 /**
  * Get priority sites (filtered from workingSites)

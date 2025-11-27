@@ -138,16 +138,13 @@ async function LazyComponentRenderer({
 
 export default async function BlockPage({
   params,
-  searchParams,
 }: {
   params: Promise<{
     style: string
     name: string
   }>
-  searchParams: Promise<{ theme?: string }>
 }) {
   const { style: styleName, name } = await params
-  const { theme } = await searchParams
   const style = getStyle(styleName)
 
   if (!style) {
@@ -168,20 +165,8 @@ export default async function BlockPage({
     item.type === "registry:component" || item.type === "registry:example"
   const isAnimation = item.categories?.includes("animations")
 
-  // Apply theme via localStorage before rendering
-  const themeScript = theme
-    ? `localStorage.setItem('theme', '${theme}');document.documentElement.classList.remove('light','dark');document.documentElement.classList.add('${theme}');`
-    : ""
-
   return (
     <>
-      {theme && (
-        <script
-          dangerouslySetInnerHTML={{
-            __html: themeScript,
-          }}
-        />
-      )}
       {isBlock ? (
         <div className="bg-background min-h-screen w-full">
           <LazyComponentRenderer

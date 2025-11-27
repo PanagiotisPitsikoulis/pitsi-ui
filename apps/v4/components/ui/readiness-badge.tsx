@@ -1,3 +1,5 @@
+import { OctagonX, TriangleAlert } from "lucide-react"
+
 import { cn } from "@/lib/utils"
 import {
   Tooltip,
@@ -11,32 +13,34 @@ interface ReadinessBadgeProps {
 }
 
 export function ReadinessBadge({ readiness, className }: ReadinessBadgeProps) {
-  if (!readiness) return null
+  if (!readiness || readiness === "production") return null
 
   const config = {
     alpha: {
+      icon: OctagonX,
       title: "Alpha",
     },
     beta: {
+      icon: TriangleAlert,
       title: "Beta",
-    },
-    production: {
-      title: "Stable",
     },
   }
 
-  const { title } = config[readiness]
+  const selectedConfig = config[readiness as keyof typeof config]
+  if (!selectedConfig) return null
+
+  const { icon: Icon, title } = selectedConfig
 
   return (
     <Tooltip>
       <TooltipTrigger asChild>
         <div
           className={cn(
-            "bg-muted absolute top-4 right-6.5 z-[97] flex size-3.5 cursor-help items-center justify-center rounded-full text-[8px]",
+            "absolute top-2 right-8 z-[98] cursor-help rounded-full bg-black/90 p-1 dark:bg-white/90",
             className
           )}
         >
-          {config[readiness].title.slice(0, 1)}
+          <Icon className="size-3 text-white dark:text-black" strokeWidth={2} />
         </div>
       </TooltipTrigger>
       <TooltipContent>{title}</TooltipContent>

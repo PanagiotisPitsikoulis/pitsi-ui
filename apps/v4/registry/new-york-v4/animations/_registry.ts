@@ -1,4 +1,8 @@
-const MOTION_POWERED_BY = [{ name: "Motion", url: "https://motion.dev" }]
+import { Registry } from "pitsi/schema"
+
+import { POWERED_BY } from "@/lib/config/powered-by"
+
+const SKIPERUI_POWERED_BY = [...POWERED_BY.skiperui]
 
 export const animations: Registry["items"] = [
   {
@@ -14,7 +18,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
-    poweredBy: MOTION_POWERED_BY,
+    poweredBy: SKIPERUI_POWERED_BY,
   },
   {
     name: "card-swipe-carousel",
@@ -29,7 +33,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
-    poweredBy: MOTION_POWERED_BY,
+    poweredBy: SKIPERUI_POWERED_BY,
   },
   {
     name: "cards-parallax",
@@ -44,7 +48,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
-    poweredBy: MOTION_POWERED_BY,
+    poweredBy: SKIPERUI_POWERED_BY,
   },
   {
     name: "parallax-scroll",
@@ -59,7 +63,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
-    poweredBy: MOTION_POWERED_BY,
+    poweredBy: SKIPERUI_POWERED_BY,
   },
   {
     name: "perspective-carousel",
@@ -74,7 +78,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
-    poweredBy: MOTION_POWERED_BY,
+    poweredBy: SKIPERUI_POWERED_BY,
   },
   {
     name: "perspective-section-transition",
@@ -89,7 +93,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
-    poweredBy: MOTION_POWERED_BY,
+    poweredBy: SKIPERUI_POWERED_BY,
   },
   {
     name: "scroll-expand",
@@ -104,7 +108,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
-    poweredBy: MOTION_POWERED_BY,
+    poweredBy: SKIPERUI_POWERED_BY,
   },
   {
     name: "scroll-fade",
@@ -119,7 +123,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
-    poweredBy: MOTION_POWERED_BY,
+    poweredBy: SKIPERUI_POWERED_BY,
   },
   {
     name: "scroll-scale",
@@ -134,7 +138,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
-    poweredBy: MOTION_POWERED_BY,
+    poweredBy: SKIPERUI_POWERED_BY,
   },
   {
     name: "slide-down",
@@ -149,7 +153,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
-    poweredBy: MOTION_POWERED_BY,
+    poweredBy: SKIPERUI_POWERED_BY,
   },
   {
     name: "slide-up",
@@ -164,7 +168,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
-    poweredBy: MOTION_POWERED_BY,
+    poweredBy: SKIPERUI_POWERED_BY,
   },
   {
     name: "smooth-parallax-scroll",
@@ -179,6 +183,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
+    poweredBy: SKIPERUI_POWERED_BY,
   },
   {
     name: "smooth-scroll",
@@ -193,6 +198,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
+    poweredBy: SKIPERUI_POWERED_BY,
   },
   {
     name: "sticky-footer",
@@ -207,6 +213,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
+    poweredBy: SKIPERUI_POWERED_BY,
   },
   {
     name: "text-along-path",
@@ -221,7 +228,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
-    poweredBy: MOTION_POWERED_BY,
+    poweredBy: SKIPERUI_POWERED_BY,
   },
   {
     name: "text-gradient-opacity",
@@ -236,7 +243,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
-    poweredBy: MOTION_POWERED_BY,
+    poweredBy: SKIPERUI_POWERED_BY,
   },
   {
     name: "text-parallax",
@@ -251,7 +258,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
-    poweredBy: MOTION_POWERED_BY,
+    poweredBy: SKIPERUI_POWERED_BY,
   },
   {
     name: "transforms-3d",
@@ -266,7 +273,7 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
-    poweredBy: MOTION_POWERED_BY,
+    poweredBy: SKIPERUI_POWERED_BY,
   },
   {
     name: "zoom-parallax",
@@ -281,6 +288,86 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
-    poweredBy: MOTION_POWERED_BY,
+    poweredBy: SKIPERUI_POWERED_BY,
+  },
+  {
+    name: "blend-mode-cursor",
+    type: "registry:ui",
+    description:
+      "A cursor that follows the mouse with mix-blend-difference effect",
+    files: [
+      {
+        path: "animations/blend-mode-cursor/blend-mode-cursor.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+    poweredBy: SKIPERUI_POWERED_BY,
+  },
+  {
+    name: "cursor-hover-mask",
+    type: "registry:ui",
+    description:
+      "A text mask effect that follows the cursor and reveals alternate content",
+    files: [
+      {
+        path: "animations/cursor-hover-mask/cursor-hover-mask.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+    poweredBy: SKIPERUI_POWERED_BY,
+  },
+  {
+    name: "floating-image-gallery",
+    type: "registry:ui",
+    description:
+      "A floating image gallery where images move at different speeds based on mouse movement",
+    files: [
+      {
+        path: "animations/floating-image-gallery/floating-image-gallery.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+    poweredBy: SKIPERUI_POWERED_BY,
+  },
+  {
+    name: "mouse-hover-gallery",
+    type: "registry:ui",
+    description:
+      "A project gallery where hovering over items reveals an image that follows the cursor",
+    files: [
+      {
+        path: "animations/mouse-hover-gallery/mouse-hover-gallery.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+    poweredBy: SKIPERUI_POWERED_BY,
+  },
+  {
+    name: "nav-menu",
+    type: "registry:ui",
+    description:
+      "An animated navigation menu with character-by-character animations and hover image reveal",
+    files: [
+      {
+        path: "animations/nav-menu/nav-menu.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+    poweredBy: SKIPERUI_POWERED_BY,
   },
 ]

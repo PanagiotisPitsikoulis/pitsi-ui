@@ -22,6 +22,8 @@ import { trackEvent } from "@/lib/events"
 import { createFileTreeForRegistryItemFiles, FileTree } from "@/lib/registry"
 import { cn } from "@/lib/utils"
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard"
+import { ReadinessBadge } from "@/components/ui/readiness-badge"
+import { TierBadge } from "@/components/ui/tier-badge"
 import { getIconForLanguageExtension } from "@/components/shared/icons"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
@@ -223,6 +225,8 @@ function PreviewSection({ styleName }: { styleName: Style["name"] }) {
               minSize={30}
               suppressHydrationWarning
             >
+              <ReadinessBadge readiness={item.readiness} />
+              <TierBadge tier={item.tier ?? "free"} />
               <iframe
                 key={iframeKey}
                 src={`/view/${styleName}/${item.name}`}
@@ -250,6 +254,8 @@ function PreviewSection({ styleName }: { styleName: Style["name"] }) {
           <div className="absolute inset-0 [background-image:radial-gradient(#d4d4d4_1px,transparent_1px)] [background-size:20px_20px] dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]" />
           <div className="after:bg-background/50 relative min-w-[1024px] after:absolute after:inset-0 after:z-0">
             <div className="relative z-10 h-(--height) min-h-[600px] w-full">
+              <ReadinessBadge readiness={item.readiness} />
+              <TierBadge tier={item.tier ?? "free"} />
               <iframe
                 key={iframeKey}
                 src={`/view/${styleName}/${item.name}`}

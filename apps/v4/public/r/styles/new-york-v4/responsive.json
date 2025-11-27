@@ -1,0 +1,20 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "responsive",
+  "type": "registry:ui",
+  "registryDependencies": [
+    "use-mobile"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/ui/responsive.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\n\nimport { useIsMobile } from \"@/registry/new-york-v4/hooks/use-mobile\"\n\nexport interface ResponsiveProps {\n  /** Content to render on mobile screens (< 768px) */\n  mobile: React.ReactNode\n  /** Content to render on desktop screens (>= 768px) */\n  desktop: React.ReactNode\n  /** Fallback content to render during SSR/hydration before client-side detection */\n  fallback?: React.ReactNode\n}\n\n/**\n * Responsive component that renders different content based on screen size.\n * Uses the useIsMobile hook to detect mobile screens (< 768px).\n *\n * @example\n * ```tsx\n * <Responsive\n *   mobile={<MobileNav />}\n *   desktop={<DesktopNav />}\n * />\n * ```\n */\nfunction Responsive({ mobile, desktop, fallback }: ResponsiveProps) {\n  const isMobile = useIsMobile()\n  const [mounted, setMounted] = React.useState(false)\n\n  React.useEffect(() => {\n    setMounted(true)\n  }, [])\n\n  // During SSR or before hydration, render fallback or desktop content\n  if (!mounted) {\n    return <>{fallback ?? desktop}</>\n  }\n\n  return <>{isMobile ? mobile : desktop}</>\n}\n\nexport { Responsive }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "layout"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

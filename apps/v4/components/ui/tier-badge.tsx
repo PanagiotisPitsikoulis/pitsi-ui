@@ -1,3 +1,5 @@
+import { BadgeDollarSign, CircleDashed } from "lucide-react"
+
 import { cn } from "@/lib/utils"
 import {
   Tooltip,
@@ -15,27 +17,28 @@ export function TierBadge({ tier, className }: TierBadgeProps) {
 
   const config = {
     free: {
-      className: "bg-green-500",
+      icon: CircleDashed,
       title: "Free",
     },
     pro: {
-      className: "bg-yellow-400",
+      icon: BadgeDollarSign,
       title: "Pro",
     },
   }
 
-  const { className: badgeClassName, title } = config[tier]
+  const { icon: Icon, title } = config[tier]
 
   return (
     <Tooltip>
       <TooltipTrigger asChild>
         <div
           className={cn(
-            "absolute top-4 right-4 z-[98] size-3.5 cursor-help rounded-full",
-            badgeClassName,
+            "absolute top-2 right-2 z-[98] cursor-help rounded-full bg-black/90 p-1 dark:bg-white/90",
             className
           )}
-        />
+        >
+          <Icon className="size-3 text-white dark:text-black" strokeWidth={2} />
+        </div>
       </TooltipTrigger>
       <TooltipContent>{title}</TooltipContent>
     </Tooltip>

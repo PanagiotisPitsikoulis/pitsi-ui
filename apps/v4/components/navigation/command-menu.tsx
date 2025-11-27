@@ -3,9 +3,9 @@
 import * as React from "react"
 import { useRouter } from "next/navigation"
 import { type DialogProps } from "@radix-ui/react-dialog"
-import { CornerDownLeft, LayoutDashboard, Search } from "lucide-react"
 import { IconArrowRight } from "@tabler/icons-react"
 import { useDocsSearch } from "fumadocs-core/search/client"
+import { CornerDownLeft, LayoutDashboard, Search } from "lucide-react"
 
 import { trackEvent } from "@/lib/events"
 import { source } from "@/lib/source"
@@ -121,7 +121,6 @@ export function CommandMenu({
     [packageManager, setSelectedType, setCopyPayload]
   )
 
-
   const handleCategoryHighlight = React.useCallback(() => {
     setSelectedType("page")
     setCopyPayload("")
@@ -172,7 +171,7 @@ export function CommandMenu({
           variant="secondary"
           size="icon"
           className={cn(
-            "border-border bg-background relative h-8 w-8 rounded-full border shadow-xs md:w-auto md:px-3 md:pr-12"
+            "border-border bg-background! relative h-8 w-8 rounded-full border shadow-xs md:w-auto md:px-3 md:pr-12"
           )}
           onClick={() => setOpen(true)}
           {...props}
@@ -181,10 +180,10 @@ export function CommandMenu({
           <span className="ml-2 hidden pr-14 md:inline">Search...</span>
           <div className="absolute top-1.5 right-1.5 hidden md:flex">
             <KbdGroup className="gap-px">
-              <Kbd className="border-border bg-background aspect-square rounded-full border px-1.5 shadow-2xs">
+              <Kbd className="border-border bg-background dark:bg-secondary aspect-square rounded-full border px-1.5 shadow-xs">
                 ⌘
               </Kbd>
-              <Kbd className="border-border bg-background aspect-square rounded-full border px-1.5 shadow-2xs">
+              <Kbd className="border-border bg-background dark:bg-secondary aspect-square rounded-full border px-1.5 shadow-xs">
                 K
               </Kbd>
             </KbdGroup>

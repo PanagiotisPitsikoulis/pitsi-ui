@@ -228,9 +228,9 @@ async function getRegistryItemWithContent(
   
   const itemFiles =
     item.files?.map((file: unknown) => {
-      const fileObj = typeof file === "string" ? { path: file } : file
-      
-      
+      const fileObj = typeof file === "string" ? { path: file } : file as { path: string; [key: string]: unknown }
+
+
       const absolutePath = path.join(process.cwd(), fileObj.path)
       return {
         ...fileObj,
@@ -248,20 +248,20 @@ async function getRegistryItemWithContent(
     return null
   }
 
-  let files: typeof result.data.files = []
+  const filesList: NonNullable<typeof result.data.files> = []
   for (const file of itemFiles) {
-    const content = await getFileContent(file)
+    const content = await getFileContent(file as { path: string })
     const relativePath = path.relative(process.cwd(), file.path)
 
-    files.push({
+    filesList.push({
       ...file,
       path: relativePath,
       content,
-    })
+    } as NonNullable<typeof result.data.files>[number])
   }
 
-  
-  files = fixFilePaths(files)
+
+  const files = fixFilePaths(filesList)
 
   const parsed = registryItemSchema.safeParse({
     ...result.data,
@@ -276,7 +276,7 @@ async function getRegistryItemWithContent(
   return parsed.data
 }
 
-async function getFileContent(file: z.infer<typeof registryItemFileSchema>) {
+async function getFileContent(file: { path: string; type?: string }) {
   const raw = await fs.readFile(file.path, "utf-8")
 
   const project = new Project({

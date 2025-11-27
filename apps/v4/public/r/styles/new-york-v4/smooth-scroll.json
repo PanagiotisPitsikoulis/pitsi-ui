@@ -14,5 +14,11 @@
     "animations"
   ],
   "tier": "free",
-  "readiness": "beta"
+  "readiness": "beta",
+  "poweredBy": [
+    {
+      "name": "Skiper UI",
+      "url": "https://skiper-ui.com"
+    }
+  ]
 }

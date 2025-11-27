@@ -12,10 +12,6 @@ export type TextGradientOpacityProps = {
   text: string
   /** Additional CSS classes */
   className?: string
-  /** Gradient starting color. Default: "from-gray-300" */
-  gradientFrom?: string
-  /** Gradient ending color. Default: "to-gray-900" */
-  gradientTo?: string
   /** Scroll offset when to start/end animation. Default: ["start 0.9", "start 0.25"] */
   offset?: [string, string]
   /** Enable scroll-based animation. Default: true */
@@ -25,15 +21,13 @@ export type TextGradientOpacityProps = {
 }
 
 /**
- * Text that reveals word by word with gradient opacity on scroll.
+ * Text that reveals word by word with opacity on scroll.
  * Creates a progressive disclosure effect perfect for long-form content.
  */
 export const TextGradientOpacity = memo<TextGradientOpacityProps>(
   ({
     text,
     className,
-    gradientFrom = "from-gray-300",
-    gradientTo = "to-gray-900",
     offset = ["start 0.9", "start 0.25"],
     scrollBased = true,
     noMobile = false,
@@ -62,10 +56,8 @@ export const TextGradientOpacity = memo<TextGradientOpacityProps>(
         <div className={cn("relative", className)}>
           <p
             className={cn(
-              "flex flex-wrap gap-x-2 gap-y-1 bg-gradient-to-r bg-clip-text font-bold text-transparent",
-              textSize,
-              gradientFrom,
-              gradientTo
+              "text-foreground flex flex-wrap gap-x-2 gap-y-1 font-bold",
+              textSize
             )}
           >
             {text}
@@ -78,14 +70,12 @@ export const TextGradientOpacity = memo<TextGradientOpacityProps>(
       <div ref={ref} className={cn("relative", className)}>
         <p className={cn("flex flex-wrap gap-x-2 gap-y-1 font-bold", textSize)}>
           {words.map((word, i) => (
-            <GradientWord
+            <OpacityWord
               key={i}
               word={word}
               index={i}
               totalWords={words.length}
               scrollYProgress={scrollYProgress}
-              gradientFrom={gradientFrom}
-              gradientTo={gradientTo}
             />
           ))}
         </p>
@@ -169,38 +159,29 @@ export const AnimatedTextReveal = memo<AnimatedTextRevealProps>(
 
 AnimatedTextReveal.displayName = "AnimatedTextReveal"
 
-// Helper component for gradient word opacity
-type GradientWordProps = {
+// Helper component for word opacity animation
+type OpacityWordProps = {
   word: string
   index: number
   totalWords: number
   scrollYProgress: any
-  gradientFrom: string
-  gradientTo: string
 }
 
-const GradientWord = memo<GradientWordProps>(
-  ({ word, index, totalWords, scrollYProgress, gradientFrom, gradientTo }) => {
+const OpacityWord = memo<OpacityWordProps>(
+  ({ word, index, totalWords, scrollYProgress }) => {
     const start = index / totalWords
     const end = start + 1 / totalWords
     const opacity = useTransform(scrollYProgress, [start, end], [0.2, 1])
 
     return (
-      <motion.span
-        style={{ opacity }}
-        className={cn(
-          "bg-gradient-to-r bg-clip-text text-transparent",
-          gradientFrom,
-          gradientTo
-        )}
-      >
+      <motion.span style={{ opacity }} className="text-foreground">
         {word}
       </motion.span>
     )
   }
 )
 
-GradientWord.displayName = "GradientWord"
+OpacityWord.displayName = "OpacityWord"
 
 // Helper component for character reveal
 type RevealCharProps = {

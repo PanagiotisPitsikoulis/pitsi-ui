@@ -1,0 +1,20 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "floating-image-gallery-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "floating-image-gallery"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/floating-image-gallery-demo.tsx",
+      "content": "\"use client\"\n\nimport { FloatingImageGallery } from \"@/registry/new-york-v4/animations/floating-image-gallery/floating-image-gallery\"\n\nconst layers = [\n  {\n    speed: 1,\n    brightness: 0.7,\n    images: [\n      {\n        src: \"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop\",\n        width: 300,\n        style: { left: \"90%\", top: \"70%\" },\n      },\n      {\n        src: \"https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&h=400&fit=crop\",\n        width: 300,\n        style: { left: \"5%\", top: \"65%\" },\n      },\n      {\n        src: \"https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=600&h=400&fit=crop\",\n        width: 225,\n        style: { left: \"35%\", top: \"0%\" },\n      },\n    ],\n  },\n  {\n    speed: 0.5,\n    brightness: 0.6,\n    images: [\n      {\n        src: \"https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=600&h=400&fit=crop\",\n        width: 250,\n        style: { left: \"5%\", top: \"10%\" },\n      },\n      {\n        src: \"https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&h=400&fit=crop\",\n        width: 200,\n        style: { left: \"80%\", top: \"5%\" },\n      },\n      {\n        src: \"https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&h=400&fit=crop\",\n        width: 225,\n        style: { left: \"60%\", top: \"60%\" },\n      },\n    ],\n  },\n  {\n    speed: 0.25,\n    brightness: 0.5,\n    images: [\n      {\n        src: \"https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=600&h=400&fit=crop\",\n        width: 150,\n        style: { left: \"65%\", top: \"2.5%\" },\n      },\n      {\n        src: \"https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=600&h=400&fit=crop\",\n        width: 200,\n        style: { left: \"40%\", top: \"75%\" },\n      },\n    ],\n  },\n]\n\nexport default function FloatingImageGalleryDemo() {\n  return (\n    <FloatingImageGallery layers={layers}>\n      <div className=\"text-lg\">\n        <h1 className=\"m-0 text-center font-normal text-white\">\n          Floating Images Gallery\n        </h1>\n        <p className=\"m-0 mt-2 text-center text-gray-400\">\n          Move your mouse to see the effect\n        </p>\n      </div>\n    </FloatingImageGallery>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

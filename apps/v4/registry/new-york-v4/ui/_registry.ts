@@ -35,6 +35,9 @@ const SONNER_POWERED_BY = [
 ]
 
 const MOTION_POWERED_BY = [{ name: "Motion", url: "https://motion.dev" }]
+const SKIPERUI_POWERED_BY = [
+  { name: "Skiper UI", url: "https://skiper-ui.com" },
+]
 
 const RESIZABLE_PANELS_POWERED_BY = [
   SHADCN,
@@ -617,6 +620,21 @@ export const ui: Registry["items"] = [
     poweredBy: RADIX_POWERED_BY,
   },
   {
+    name: "progressive-blur",
+    type: "registry:ui",
+    dependencies: ["motion/react"],
+    files: [
+      {
+        path: "ui/progressive-blur.tsx",
+        type: "registry:ui",
+      },
+    ],
+    tier: "free",
+    categories: ["primitives"],
+    readiness: "production",
+    poweredBy: SKIPERUI_POWERED_BY,
+  },
+  {
     name: "radio-group",
     type: "registry:ui",
     dependencies: ["@radix-ui/react-radio-group"],
@@ -645,6 +663,20 @@ export const ui: Registry["items"] = [
     categories: ["core-components"],
     readiness: "production",
     poweredBy: RESIZABLE_PANELS_POWERED_BY,
+  },
+  {
+    name: "responsive",
+    type: "registry:ui",
+    registryDependencies: ["use-mobile"],
+    files: [
+      {
+        path: "ui/responsive.tsx",
+        type: "registry:ui",
+      },
+    ],
+    tier: "free",
+    categories: ["layout"],
+    readiness: "production",
   },
   {
     name: "scroll-area",
@@ -883,7 +915,7 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["sectorial"],
     readiness: "production",
-    poweredBy: MOTION_POWERED_BY,
+    poweredBy: SKIPERUI_POWERED_BY,
   },
   {
     name: "switch",

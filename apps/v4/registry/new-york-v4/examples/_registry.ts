@@ -2090,6 +2090,20 @@ export const examples: Registry["items"] = [
     readiness: "production",
   },
   {
+    name: "progressive-blur-demo",
+    type: "registry:example",
+    registryDependencies: ["progressive-blur"],
+    files: [
+      {
+        path: "examples/progressive-blur-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    tier: "free",
+    categories: ["primitives"],
+    readiness: "production",
+  },
+  {
     name: "radio-group-demo",
     type: "registry:example",
     registryDependencies: ["radio-group"],
@@ -2171,6 +2185,20 @@ export const examples: Registry["items"] = [
     ],
     tier: "free",
     categories: ["core-components"],
+    readiness: "production",
+  },
+  {
+    name: "responsive-demo",
+    type: "registry:example",
+    registryDependencies: ["responsive"],
+    files: [
+      {
+        path: "examples/responsive-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    tier: "free",
+    categories: ["layout"],
     readiness: "production",
   },
   {
@@ -3588,6 +3616,76 @@ export const examples: Registry["items"] = [
     files: [
       {
         path: "examples/zoom-parallax-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    tier: "free",
+    categories: ["animations"],
+    readiness: "production",
+  },
+  {
+    name: "blend-mode-cursor-demo",
+    type: "registry:example",
+    registryDependencies: ["blend-mode-cursor"],
+    files: [
+      {
+        path: "examples/blend-mode-cursor-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    tier: "free",
+    categories: ["animations"],
+    readiness: "production",
+  },
+  {
+    name: "cursor-hover-mask-demo",
+    type: "registry:example",
+    registryDependencies: ["cursor-hover-mask"],
+    files: [
+      {
+        path: "examples/cursor-hover-mask-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    tier: "free",
+    categories: ["animations"],
+    readiness: "production",
+  },
+  {
+    name: "floating-image-gallery-demo",
+    type: "registry:example",
+    registryDependencies: ["floating-image-gallery"],
+    files: [
+      {
+        path: "examples/floating-image-gallery-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    tier: "free",
+    categories: ["animations"],
+    readiness: "production",
+  },
+  {
+    name: "mouse-hover-gallery-demo",
+    type: "registry:example",
+    registryDependencies: ["mouse-hover-gallery"],
+    files: [
+      {
+        path: "examples/mouse-hover-gallery-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    tier: "free",
+    categories: ["animations"],
+    readiness: "production",
+  },
+  {
+    name: "nav-menu-demo",
+    type: "registry:example",
+    registryDependencies: ["nav-menu"],
+    files: [
+      {
+        path: "examples/nav-menu-demo.tsx",
         type: "registry:example",
       },
     ],

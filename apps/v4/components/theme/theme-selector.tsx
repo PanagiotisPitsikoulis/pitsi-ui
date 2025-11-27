@@ -1,6 +1,6 @@
 "use client"
 
-import { THEMES } from "@/lib/themes"
+import { THEMES } from "@/lib/config/themes"
 import { cn } from "@/lib/utils"
 import { useThemeConfig } from "@/components/theme/active-theme"
 import { Label } from "@/registry/new-york-v4/ui/label"

@@ -4,6 +4,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react"
 import { motion } from "motion/react"
 import { Autoplay, EffectCards, Navigation, Pagination } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
+
 import "swiper/css"
 import "swiper/css/effect-cards"
 import "swiper/css/navigation"

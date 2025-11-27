@@ -17,7 +17,7 @@ export async function SiteFooter() {
   pageTree.children.forEach((child) => {
     if (child.type === "page") {
       allDocsPages.push({
-        name: child.name,
+        name: String(child.name),
         url: child.url,
       })
     } else if (child.type === "folder") {
@@ -25,7 +25,7 @@ export async function SiteFooter() {
       child.children.forEach((subChild) => {
         if (subChild.type === "page") {
           allDocsPages.push({
-            name: subChild.name,
+            name: String(subChild.name),
             url: subChild.url,
           })
         }
@@ -42,7 +42,7 @@ export async function SiteFooter() {
       ? componentsFolder.children
           .filter((child) => child.type === "page")
           .map((child) => ({
-            name: child.name,
+            name: String(child.name),
             url: child.url,
           }))
       : []
@@ -56,7 +56,7 @@ export async function SiteFooter() {
       ? animationsFolder.children
           .filter((child) => child.type === "page")
           .map((child) => ({
-            name: child.name,
+            name: String(child.name),
             url: child.url,
           }))
       : []

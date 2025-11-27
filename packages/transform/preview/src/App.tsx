@@ -62,11 +62,15 @@ interface GeneratedComponent {
   path: string
 }
 
+interface PageMedia {
+  page: string
+  screenshots: string[]
+}
+
 interface WorkflowSite {
   category: string
   site: string
-  screenshots: string[]
-  videos: string[]
+  pages: PageMedia[]
   theme: object | null
   components: GeneratedComponent[]
 }
@@ -189,7 +193,6 @@ function CodeViewer({
   const [code, setCode] = useState<string>("")
   const [loading, setLoading] = useState(true)
   const [copied, setCopied] = useState(false)
-  const [showPreview, setShowPreview] = useState(isComponent)
 
   useEffect(() => {
     async function loadCode() {
@@ -221,14 +224,6 @@ function CodeViewer({
         <div className="flex items-center justify-between p-4 border-b border-zinc-800">
           <h2 className="font-semibold text-lg">{title}</h2>
           <div className="flex gap-2">
-            {isComponent && (
-              <button
-                onClick={() => setShowPreview(!showPreview)}
-                className="px-3 py-1.5 rounded-md text-sm font-medium bg-zinc-800 hover:bg-zinc-700 transition-colors"
-              >
-                {showPreview ? "Show Code" : "Show Preview"}
-              </button>
-            )}
             <button
               onClick={copyToClipboard}
               className="px-3 py-1.5 rounded-md text-sm font-medium bg-zinc-800 hover:bg-zinc-700 transition-colors"
@@ -247,38 +242,6 @@ function CodeViewer({
           {loading ? (
             <div className="flex items-center justify-center h-64">
               <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white"></div>
-            </div>
-          ) : showPreview && isComponent ? (
-            <div className="bg-white rounded-lg overflow-hidden">
-              <iframe
-                srcDoc={`
-                  <!DOCTYPE html>
-                  <html>
-                    <head>
-                      <meta charset="utf-8">
-                      <meta name="viewport" content="width=device-width, initial-scale=1">
-                      <script src="https://cdn.tailwindcss.com"></script>
-                      <style>
-                        body { margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
-                      </style>
-                    </head>
-                    <body>
-                      <div id="root"></div>
-                      <div class="p-8 text-center text-gray-500">
-                        <p class="mb-4">⚠️ Component preview is limited</p>
-                        <p class="text-sm">Generated React components require proper React setup to render.</p>
-                        <p class="text-sm mt-2">Switch to "Show Code" to view the component source.</p>
-                      </div>
-                      <script>
-                        // This is a placeholder - actual React rendering would require a full build setup
-                        console.log('Component code loaded');
-                      </script>
-                    </body>
-                  </html>
-                `}
-                className="w-full h-full min-h-[400px] border-0"
-                title="Component Preview"
-              />
             </div>
           ) : (
             <pre className="text-sm font-mono text-zinc-300 whitespace-pre-wrap">
@@ -324,42 +287,8 @@ function ImageModal({
   )
 }
 
-function VideoModal({
-  src,
-  title,
-  onClose,
-}: {
-  src: string
-  title: string
-  onClose: () => void
-}) {
-  return (
-    <div
-      className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-      onClick={onClose}
-    >
-      <div className="relative max-w-[95vw] max-h-[95vh]">
-        <button
-          onClick={onClose}
-          className="absolute -top-10 right-0 px-3 py-1.5 rounded-md text-sm font-medium bg-zinc-800 hover:bg-zinc-700 transition-colors"
-        >
-          Close
-        </button>
-        <video
-          src={src}
-          controls
-          autoPlay
-          className="max-w-full max-h-[85vh] rounded-lg"
-          onClick={(e) => e.stopPropagation()}
-        />
-        <p className="text-center text-zinc-400 mt-2">{title}</p>
-      </div>
-    </div>
-  )
-}
-
 function ThemePreview({ theme }: { theme: object }) {
-  const colors = (theme as any)?.colors || {}
+  const colors = (theme as any)?.colors || []
   const typography = (theme as any)?.typography || {}
 
   const formatValue = (value: any): string => {
@@ -371,22 +300,33 @@ function ThemePreview({ theme }: { theme: object }) {
     return String(value)
   }
 
+  // Handle colors as an array (from theme-extractor)
+  const colorArray = Array.isArray(colors)
+    ? colors
+    : Object.entries(colors).map(([name, value]) => ({ name, value }))
+
   return (
     <div className="space-y-4">
-      {Object.keys(colors).length > 0 && (
+      {colorArray.length > 0 && (
         <div>
           <h4 className="text-sm font-medium text-zinc-400 mb-2">Colors</h4>
           <div className="flex flex-wrap gap-2">
-            {Object.entries(colors).slice(0, 12).map(([name, value]) => (
-              <div key={name} className="flex items-center gap-2">
-                <div
-                  className="w-6 h-6 rounded border border-zinc-700"
-                  style={{ backgroundColor: value as string }}
-                  title={formatValue(value)}
-                />
-                <span className="text-xs text-zinc-500">{name}</span>
-              </div>
-            ))}
+            {colorArray.slice(0, 12).map((color: any, index: number) => {
+              const name = color.name || `color-${index + 1}`
+              const value = color.value || color
+              const displayValue = typeof value === 'string' ? value : value.rgb || value.hsl || value.hex || 'transparent'
+
+              return (
+                <div key={name} className="flex items-center gap-2">
+                  <div
+                    className="w-6 h-6 rounded border border-zinc-700"
+                    style={{ backgroundColor: displayValue }}
+                    title={`${name}: ${displayValue}`}
+                  />
+                  <span className="text-xs text-zinc-500">{name}</span>
+                </div>
+              )
+            })}
           </div>
         </div>
       )}
@@ -394,12 +334,29 @@ function ThemePreview({ theme }: { theme: object }) {
         <div>
           <h4 className="text-sm font-medium text-zinc-400 mb-2">Typography</h4>
           <div className="text-xs text-zinc-300 space-y-2 font-mono">
-            {Object.entries(typography).slice(0, 6).map(([name, value]) => (
-              <div key={name} className="flex gap-2">
-                <span className="text-zinc-500 min-w-[80px]">{name}:</span>
-                <span className="text-zinc-300 flex-1">{formatValue(value)}</span>
-              </div>
-            ))}
+            {Object.entries(typography).slice(0, 6).map(([name, value]) => {
+              // Handle font objects
+              if (value && typeof value === 'object' && 'family' in value) {
+                const font = value as { family: string; weights?: number[]; source?: string }
+                return (
+                  <div key={name} className="flex gap-2">
+                    <span className="text-zinc-500 min-w-[80px]">{name}:</span>
+                    <span className="text-zinc-300 flex-1">
+                      {font.family}
+                      {font.weights && ` (${font.weights.join(', ')})`}
+                      {font.source && <span className="text-zinc-500 ml-2">[{font.source}]</span>}
+                    </span>
+                  </div>
+                )
+              }
+
+              return (
+                <div key={name} className="flex gap-2">
+                  <span className="text-zinc-500 min-w-[80px]">{name}:</span>
+                  <span className="text-zinc-300 flex-1">{formatValue(value)}</span>
+                </div>
+              )
+            })}
           </div>
         </div>
       )}
@@ -410,24 +367,33 @@ function ThemePreview({ theme }: { theme: object }) {
 function SiteCard({
   site,
   onViewScreenshot,
-  onViewVideo,
   onViewComponent,
   onViewTheme,
 }: {
   site: WorkflowSite
   onViewScreenshot: (path: string, name: string) => void
-  onViewVideo: (path: string, name: string) => void
   onViewComponent: (path: string, name: string) => void
   onViewTheme: () => void
 }) {
-  const [expanded, setExpanded] = useState(false)
+  const [expandedPages, setExpandedPages] = useState<Set<string>>(new Set())
+
+  const togglePage = (page: string) => {
+    setExpandedPages(prev => {
+      const next = new Set(prev)
+      if (next.has(page)) {
+        next.delete(page)
+      } else {
+        next.add(page)
+      }
+      return next
+    })
+  }
+
+  const totalScreenshots = site.pages.reduce((sum, p) => sum + p.screenshots.length, 0)
 
   return (
     <div className="rounded-xl border border-zinc-800 bg-zinc-900 overflow-hidden">
-      <div
-        className="p-4 flex items-center justify-between cursor-pointer hover:bg-zinc-800/50 transition-colors"
-        onClick={() => setExpanded(!expanded)}
-      >
+      <div className="p-4 border-b border-zinc-800">
         <div>
           <h3 className="font-semibold text-lg capitalize">
             {site.site.replace(/-/g, " ")}
@@ -436,133 +402,144 @@ function SiteCard({
             {site.category.replace(/-/g, " ")}
           </p>
         </div>
-        <div className="flex items-center gap-4">
-          <div className="flex gap-2 text-xs text-zinc-500">
-            {site.screenshots.length > 0 && (
-              <span className="bg-zinc-800 px-2 py-1 rounded">
-                {site.screenshots.length} screenshots
-              </span>
-            )}
-            {site.videos.length > 0 && (
-              <span className="bg-zinc-800 px-2 py-1 rounded">
-                {site.videos.length} videos
-              </span>
-            )}
-            {site.components.length > 0 && (
-              <span className="bg-zinc-800 px-2 py-1 rounded">
-                {site.components.length} components
-              </span>
-            )}
-            {site.theme && (
-              <span className="bg-zinc-800 px-2 py-1 rounded">theme</span>
-            )}
-          </div>
-          <span className="text-zinc-500">{expanded ? "▼" : "▶"}</span>
+        <div className="flex gap-2 text-xs text-zinc-500 mt-2">
+          {site.components.length > 0 && (
+            <span className="bg-zinc-800 px-2 py-1 rounded">
+              {site.components.length} components
+            </span>
+          )}
+          {site.theme && (
+            <span className="bg-zinc-800 px-2 py-1 rounded">theme</span>
+          )}
+          {site.pages.length > 0 && (
+            <span className="bg-zinc-800 px-2 py-1 rounded">
+              {site.pages.length} pages
+            </span>
+          )}
+          {totalScreenshots > 0 && (
+            <span className="bg-zinc-800 px-2 py-1 rounded">
+              {totalScreenshots} screenshots
+            </span>
+          )}
         </div>
       </div>
 
-      {expanded && (
-        <div className="border-t border-zinc-800 p-4 space-y-6">
-          {/* Screenshots */}
-          {site.screenshots.length > 0 && (
-            <div>
-              <h4 className="text-sm font-medium text-zinc-400 mb-3 flex items-center gap-2">
-                <span>📸</span> Screenshots
-              </h4>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-                {site.screenshots.map((screenshot) => {
-                  const name = screenshot.split("/").pop() || screenshot
-                  return (
-                    <div
-                      key={screenshot}
-                      className="cursor-pointer group"
-                      onClick={() => onViewScreenshot(`/output/screenshots/${site.category}/${site.site}/${name}`, name)}
-                    >
-                      <div className="aspect-video bg-zinc-800 rounded-lg overflow-hidden border border-zinc-700 group-hover:border-zinc-500 transition-colors">
-                        <img
-                          src={`/output/screenshots/${site.category}/${site.site}/${name}`}
-                          alt={name}
-                          className="w-full h-full object-cover"
-                          loading="lazy"
-                        />
-                      </div>
-                      <p className="text-xs text-zinc-500 mt-1 truncate">{name}</p>
-                    </div>
-                  )
-                })}
-              </div>
-            </div>
-          )}
-
-          {/* Videos */}
-          {site.videos.length > 0 && (
-            <div>
-              <h4 className="text-sm font-medium text-zinc-400 mb-3 flex items-center gap-2">
-                <span>🎬</span> Videos
-              </h4>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                {site.videos.map((video) => {
-                  const name = video.split("/").pop() || video
-                  return (
-                    <div
-                      key={video}
-                      className="cursor-pointer group"
-                      onClick={() => onViewVideo(`/output/videos/${site.category}/${site.site}/${name}`, name)}
-                    >
-                      <div className="aspect-video bg-zinc-800 rounded-lg overflow-hidden border border-zinc-700 group-hover:border-zinc-500 transition-colors flex items-center justify-center">
-                        <span className="text-4xl">▶️</span>
-                      </div>
-                      <p className="text-xs text-zinc-500 mt-1 truncate">{name}</p>
-                    </div>
-                  )
-                })}
-              </div>
-            </div>
-          )}
-
-          {/* Theme */}
-          {site.theme && (
-            <div>
-              <h4 className="text-sm font-medium text-zinc-400 mb-3 flex items-center gap-2">
-                <span>🎨</span> Theme
-                <button
-                  onClick={onViewTheme}
-                  className="ml-auto text-xs bg-zinc-800 px-2 py-1 rounded hover:bg-zinc-700 transition-colors"
+      <div className="p-4 space-y-6">
+        {/* Components - Always visible */}
+        {site.components.length > 0 && (
+          <div>
+            <h4 className="text-sm font-medium text-zinc-400 mb-3 flex items-center gap-2">
+              <span>⚛️</span> React Components
+            </h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {site.components.map((component) => (
+                <div
+                  key={component.path}
+                  className="cursor-pointer p-4 bg-zinc-800 rounded-lg border border-zinc-700 hover:border-zinc-500 transition-colors group"
+                  onClick={() => onViewComponent(`/output/components/${component.path}`, component.filename)}
                 >
-                  View JSON
-                </button>
-              </h4>
-              <ThemePreview theme={site.theme} />
-            </div>
-          )}
-
-          {/* Components */}
-          {site.components.length > 0 && (
-            <div>
-              <h4 className="text-sm font-medium text-zinc-400 mb-3 flex items-center gap-2">
-                <span>⚛️</span> React Components
-              </h4>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                {site.components.map((component) => (
-                  <div
-                    key={component.path}
-                    className="cursor-pointer p-3 bg-zinc-800 rounded-lg border border-zinc-700 hover:border-zinc-500 transition-colors group"
-                    onClick={() => onViewComponent(`/output/components/${component.path}`, component.filename)}
-                  >
-                    <div className="flex items-center justify-between">
-                      <code className="text-xs text-zinc-300">{component.filename}</code>
-                      <span className="text-xs text-zinc-600 group-hover:text-zinc-400 transition-colors">⚛️</span>
-                    </div>
-                    <p className="text-xs text-zinc-500 mt-1 capitalize">
-                      {component.page.replace(/-/g, " ")} page
-                    </p>
+                  <div className="flex items-center justify-between mb-2">
+                    <code className="text-sm font-semibold text-zinc-300">{component.filename}</code>
+                    <span className="text-lg text-zinc-600 group-hover:text-zinc-400 transition-colors">⚛️</span>
                   </div>
-                ))}
-              </div>
+                  <p className="text-xs text-zinc-500 capitalize">
+                    {component.page.replace(/-/g, " ")} page
+                  </p>
+                  <div className="mt-2 text-xs text-zinc-600 group-hover:text-zinc-500 transition-colors">
+                    Click to view & preview
+                  </div>
+                </div>
+              ))}
             </div>
-          )}
-        </div>
-      )}
+          </div>
+        )}
+
+        {/* Theme - Always visible */}
+        {site.theme && (
+          <div>
+            <h4 className="text-sm font-medium text-zinc-400 mb-3 flex items-center gap-2">
+              <span>🎨</span> Theme
+              <button
+                onClick={onViewTheme}
+                className="ml-auto text-xs bg-zinc-800 px-2 py-1 rounded hover:bg-zinc-700 transition-colors"
+              >
+                View JSON
+              </button>
+            </h4>
+            <ThemePreview theme={site.theme} />
+          </div>
+        )}
+
+        {/* Pages - Screenshots grouped by page */}
+        {site.pages.length > 0 && (
+          <div>
+            <h4 className="text-sm font-medium text-zinc-400 mb-3 flex items-center gap-2">
+              <span>📄</span> Pages & Screenshots
+            </h4>
+            <div className="space-y-3">
+              {site.pages.map((pageMedia) => {
+                const isExpanded = expandedPages.has(pageMedia.page)
+                const hasMedia = pageMedia.screenshots.length > 0
+
+                if (!hasMedia) return null
+
+                return (
+                  <div key={pageMedia.page} className="border border-zinc-800 rounded-lg overflow-hidden">
+                    <div
+                      className="p-3 bg-zinc-800/50 cursor-pointer hover:bg-zinc-800 transition-colors flex items-center justify-between"
+                      onClick={() => togglePage(pageMedia.page)}
+                    >
+                      <div className="flex items-center gap-2">
+                        <span className="text-zinc-400 capitalize font-medium">
+                          {pageMedia.page.replace(/-/g, " ")}
+                        </span>
+                        <div className="flex gap-2 text-xs text-zinc-600">
+                          {pageMedia.screenshots.length > 0 && (
+                            <span>{pageMedia.screenshots.length} screenshots</span>
+                          )}
+                        </div>
+                      </div>
+                      <span className="text-zinc-600">{isExpanded ? "▼" : "▶"}</span>
+                    </div>
+
+                    {isExpanded && (
+                      <div className="p-3 space-y-3">
+                        {/* Screenshots for this page */}
+                        {pageMedia.screenshots.length > 0 && (
+                          <div>
+                            <h5 className="text-xs font-medium text-zinc-500 mb-2 flex items-center gap-1">
+                              <span>📸</span> Page Screenshots
+                            </h5>
+                            <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                              {pageMedia.screenshots.map((screenshot) => (
+                                <div
+                                  key={screenshot}
+                                  className="cursor-pointer group"
+                                  onClick={() => onViewScreenshot(`/output/screenshots/${site.category}/${site.site}/${screenshot}`, screenshot)}
+                                >
+                                  <div className="aspect-video bg-zinc-800 rounded-lg overflow-hidden border border-zinc-700 group-hover:border-zinc-500 transition-colors">
+                                    <img
+                                      src={`/output/screenshots/${site.category}/${site.site}/${screenshot}`}
+                                      alt={screenshot}
+                                      className="w-full h-full object-cover"
+                                      loading="lazy"
+                                    />
+                                  </div>
+                                  <p className="text-xs text-zinc-500 mt-1 truncate">{screenshot}</p>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   )
 }
@@ -570,7 +547,6 @@ function SiteCard({
 function WorkflowTab() {
   const { data, loading } = useWorkflowData()
   const [selectedImage, setSelectedImage] = useState<{ src: string; title: string } | null>(null)
-  const [selectedVideo, setSelectedVideo] = useState<{ src: string; title: string } | null>(null)
   const [selectedCode, setSelectedCode] = useState<{ path: string; title: string; isComponent?: boolean } | null>(null)
   const [selectedCategory, setSelectedCategory] = useState<string>("all")
 
@@ -592,7 +568,7 @@ function WorkflowTab() {
           <div className="text-5xl mb-4">🔄</div>
           <h3 className="text-xl font-semibold mb-2">No Workflow Results Yet</h3>
           <p className="text-zinc-400 mb-4">
-            Run the transform workflow to capture screenshots, videos, extract themes, and generate React components.
+            Run the transform workflow to capture screenshots, extract themes, and generate pixel-perfect React components.
           </p>
           <code className="bg-zinc-800 px-3 py-2 rounded-md text-sm block">
             pnpm transform:workflow
@@ -609,8 +585,8 @@ function WorkflowTab() {
 
   const stats = {
     sites: data.sites.length,
-    screenshots: data.sites.reduce((acc, s) => acc + s.screenshots.length, 0),
-    videos: data.sites.reduce((acc, s) => acc + s.videos.length, 0),
+    pages: data.sites.reduce((acc, s) => acc + s.pages.length, 0),
+    screenshots: data.sites.reduce((acc, s) => acc + s.pages.reduce((sum, p) => sum + p.screenshots.length, 0), 0),
     components: data.sites.reduce((acc, s) => acc + s.components.length, 0),
     themes: data.sites.filter((s) => s.theme).length,
   }
@@ -618,7 +594,7 @@ function WorkflowTab() {
   return (
     <>
       <div className="px-6 py-2 text-zinc-400 text-sm">
-        {stats.sites} sites &middot; {stats.screenshots} screenshots &middot; {stats.videos} videos &middot; {stats.components} components &middot; {stats.themes} themes
+        {stats.sites} sites &middot; {stats.pages} pages &middot; {stats.screenshots} screenshots &middot; {stats.components} components &middot; {stats.themes} themes
       </div>
 
       <div className="px-6 py-4">
@@ -646,7 +622,6 @@ function WorkflowTab() {
             key={`${site.category}/${site.site}`}
             site={site}
             onViewScreenshot={(src, title) => setSelectedImage({ src, title })}
-            onViewVideo={(src, title) => setSelectedVideo({ src, title })}
             onViewComponent={(path, title) => setSelectedCode({ path, title, isComponent: true })}
             onViewTheme={() => setSelectedCode({
               path: `/output/themes/${site.category}/${site.site}/theme.json`,
@@ -662,14 +637,6 @@ function WorkflowTab() {
           src={selectedImage.src}
           title={selectedImage.title}
           onClose={() => setSelectedImage(null)}
-        />
-      )}
-
-      {selectedVideo && (
-        <VideoModal
-          src={selectedVideo.src}
-          title={selectedVideo.title}
-          onClose={() => setSelectedVideo(null)}
         />
       )}
 

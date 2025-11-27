@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Minus, Plus } from "lucide-react"
+import { GalleryVerticalEnd, Minus, Plus } from "lucide-react"
 
 import { SearchForm } from "@/registry/new-york-v4/blocks/application/dashboard/sidebar-05/components/search-form"
 import {

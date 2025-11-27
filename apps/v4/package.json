@@ -23,6 +23,8 @@
     "db:migrate": "drizzle-kit migrate",
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
+    "stripe:test": "./scripts/stripe-test.sh",
+    "stripe:setup": "./scripts/stripe-setup.sh",
     "postinstall": "fumadocs-mdx"
   },
   "dependencies": {

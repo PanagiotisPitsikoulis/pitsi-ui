@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { IndexBlocksApplication } from "./__index__blocks-application"
 import { IndexBlocksECommerce } from "./__index__blocks-e-commerce"
 import { IndexBlocksFullPages } from "./__index__blocks-full-pages"

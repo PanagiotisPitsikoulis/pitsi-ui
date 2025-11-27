@@ -52,6 +52,22 @@ const nextConfig = {
         protocol: "https",
         hostname: "html.tailus.io",
       },
+      {
+        protocol: "https",
+        hostname: "framerusercontent.com",
+      },
+      {
+        protocol: "https",
+        hostname: "assets-global.website-files.com",
+      },
+      {
+        protocol: "https",
+        hostname: "assets.website-files.com",
+      },
+      {
+        protocol: "https",
+        hostname: "fonts.googleapis.com",
+      },
     ],
   },
   cacheComponents: true,

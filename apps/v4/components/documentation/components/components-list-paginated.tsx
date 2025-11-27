@@ -5,14 +5,17 @@ import dynamic from "next/dynamic"
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
 
+import { cn } from "@/lib/utils"
 import { PAGES_NEW } from "@/lib/docs"
 import {
   getRegistryComponent,
   getRegistryIndexItem,
   registryComponentExists,
 } from "@/lib/registry-client"
+import type { Style } from "@/registry/styles"
 import { ReadinessBadge } from "@/components/ui/readiness-badge"
 import { TierBadge } from "@/components/ui/tier-badge"
+import { LazyComponentPreview } from "@/components/documentation/components/lazy-component-preview"
 import { Spinner } from "@/registry/new-york-v4/ui/spinner"
 
 interface ComponentItem {
@@ -25,7 +28,7 @@ interface ComponentItem {
 
 interface ComponentsListPaginatedProps {
   items: ComponentItem[]
-  styleName?: string
+  styleName?: Style["name"]
   label?: string
 }
 
@@ -34,7 +37,7 @@ function ComponentPreviewContent({
   styleName,
 }: {
   registryName: string
-  styleName: string
+  styleName: Style["name"]
 }) {
   // Special cases for components that need specific demos
   const specialCases: Record<string, string> = {
@@ -99,28 +102,31 @@ function ComponentPreviewContent({
   // Render animations in iframe
   if (isAnimation) {
     return (
-      <div className="relative h-full w-full min-w-[400px] overflow-hidden rounded-md">
-        <iframe
-          src={`/view/${styleName}/${previewName}`}
-          className="h-full w-full border-0"
-          title={`${previewName} animation preview`}
-          loading="lazy"
-          sandbox="allow-scripts allow-same-origin"
-          allowFullScreen
-          style={{
-            zoom: 0.7
-          }}
-        />
-      </div>
+      <iframe
+        src={`/view/${styleName}/${previewName}`}
+        className="absolute inset-0 size-full border-0"
+        title={`${previewName} animation preview`}
+        loading="lazy"
+        sandbox="allow-scripts allow-same-origin"
+        allowFullScreen
+        style={{
+          transform: 'scale(0.65)',
+          transformOrigin: 'center',
+          width: '153.85%',
+          height: '153.85%',
+          left: '-26.92%',
+          top: '-26.92%'
+        }}
+      />
     )
   }
 
   return (
-    <div className="flex h-full w-full items-center justify-center">
+    <LazyComponentPreview className="flex h-full w-full items-center justify-center">
       <div className="flex w-fit min-w-[600px] origin-center scale-[0.5] transform items-center justify-center">
         <Component />
       </div>
-    </div>
+    </LazyComponentPreview>
   )
 }
 
@@ -149,6 +155,13 @@ export function ComponentsListPaginated({
           const registryName = item.registryName || item.$id
           const registryItem = getRegistryIndexItem(registryName, styleName)
 
+          // Check if it's an animation to apply different styling
+          const demoName = `${registryName}-demo`
+          const demoItem = getRegistryIndexItem(demoName, styleName)
+          const isAnimation =
+            registryItem?.categories?.includes("animations") ||
+            demoItem?.categories?.includes("animations")
+
           return (
             <div
               key={item.$id}
@@ -162,7 +175,10 @@ export function ComponentsListPaginated({
                   <div data-slot="preview" className="overflow-visible">
                     <div
                       data-align="center"
-                      className="preview relative flex aspect-square w-full items-center justify-center p-8"
+                      className={cn(
+                        "preview relative flex aspect-square w-full items-center justify-center",
+                        isAnimation ? "" : "p-8"
+                      )}
                     >
                       <ComponentPreview
                         registryName={registryName}

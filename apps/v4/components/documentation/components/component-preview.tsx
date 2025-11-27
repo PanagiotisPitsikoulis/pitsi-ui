@@ -56,7 +56,10 @@ export function ComponentPreview({
             <ReadinessBadge readiness={registryItem?.readiness} />
             <TierBadge tier={registryItem?.tier ?? "free"} />
           </div>
-          <iframe src={`/view/${styleName}/${name}`} className="size-full" />
+          <iframe
+            src={`/view/${styleName}/${name}`}
+            className="size-full"
+          />
         </div>
       </div>
     )
@@ -66,26 +69,29 @@ export function ComponentPreview({
     return (
       <ComponentPreviewTabs
         isScrollable={false}
+        isFullBleed={true}
         className={className}
         align={align}
         hideCode={hideCode}
         readiness={registryItem?.readiness}
         tier={registryItem?.tier ?? "free"}
-        poweredBy={registryItem?.poweredBy}
         component={
-          <div className="relative aspect-video w-full overflow-hidden rounded-md border">
-            <iframe
-              src={`/view/${styleName}/${name}`}
-              className="h-full w-full border-0"
-              title={`${name} animation`}
-              loading="lazy"
-              sandbox="allow-scripts allow-same-origin"
-              allowFullScreen
-              style={{
-                zoom: 0.8
-              }}
-            />
-          </div>
+          <iframe
+            src={`/view/${styleName}/${name}`}
+            className="absolute inset-0 size-full border-0"
+            title={`${name} animation`}
+            loading="lazy"
+            sandbox="allow-scripts allow-same-origin"
+            allowFullScreen
+            style={{
+              transform: 'scale(0.75)',
+              transformOrigin: 'center',
+              width: '133.33%',
+              height: '133.33%',
+              left: '-16.66%',
+              top: '-16.66%'
+            }}
+          />
         }
         source={
           <ComponentSource
@@ -107,7 +113,6 @@ export function ComponentPreview({
       hideCode={hideCode}
       readiness={registryItem?.readiness}
       tier={registryItem?.tier ?? "free"}
-      poweredBy={registryItem?.poweredBy}
       component={<Component />}
       source={
         <ComponentSource

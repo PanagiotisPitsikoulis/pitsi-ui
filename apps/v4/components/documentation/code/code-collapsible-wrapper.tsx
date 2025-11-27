@@ -9,6 +9,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/registry/new-york-v4/ui/collapsible"
+import { ProgressiveBlur } from "@/registry/new-york-v4/ui/progressive-blur"
 import { Separator } from "@/registry/new-york-v4/ui/separator"
 
 export function CodeCollapsibleWrapper({
@@ -28,9 +29,9 @@ export function CodeCollapsibleWrapper({
       <CollapsibleTrigger asChild>
         <div className="absolute top-1.5 right-9 z-10 flex items-center">
           <Button
-            variant="ghost"
+            variant="default"
             size="sm"
-            className="text-muted-foreground h-7 rounded-md px-2"
+            className="h-7 rounded-md px-2"
           >
             {isOpened ? "Collapse" : "Expand"}
           </Button>
@@ -43,8 +44,16 @@ export function CodeCollapsibleWrapper({
       >
         {children}
       </CollapsibleContent>
-      <CollapsibleTrigger className="from-code/70 to-code text-muted-foreground absolute inset-x-0 -bottom-2 flex h-20 items-center justify-center rounded-b-lg bg-gradient-to-b text-sm group-data-[state=open]/collapsible:hidden">
-        {isOpened ? "Collapse" : "Expand"}
+      <CollapsibleTrigger className="absolute inset-x-0 -bottom-2 flex h-20 items-center justify-center rounded-b-lg group-data-[state=open]/collapsible:hidden">
+        <ProgressiveBlur
+          className="absolute inset-0 rounded-b-lg"
+          direction="bottom"
+          blurLayers={6}
+          blurIntensity={1}
+        />
+        <Button variant="default" size="sm" className="relative z-10">
+          {isOpened ? "Collapse" : "Expand"}
+        </Button>
       </CollapsibleTrigger>
     </Collapsible>
   )

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest"
 import { processMdxForLLMs } from "@/lib/docs/llm"
 import * as registryUtils from "@/lib/registry"

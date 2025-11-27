@@ -3,6 +3,7 @@ import * as fs from "fs"
 import * as path from "path"
 import { fileURLToPath } from "url"
 import { getSitesToProcess, WorkingSite } from "../../config/working-sites.js"
+import { purgeSiteOutput } from "../../utils/purge.js"
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -471,6 +472,9 @@ async function extractSiteTheme(
   site: WorkingSite
 ): Promise<ExtractedTheme> {
   console.log(`\n[${site.name}] Extracting theme from ${site.url}`)
+
+  // Purge old theme data for this site
+  purgeSiteOutput(OUTPUT_DIR, site.category, site.name)
 
   const page = await browser.newPage()
 

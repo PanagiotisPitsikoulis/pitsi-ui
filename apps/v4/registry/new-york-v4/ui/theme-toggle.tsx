@@ -68,7 +68,6 @@ export function ThemeToggle({
       <div className={cn("w-fit", className)} {...props}>
         <SegmentedControl
           value={value}
-          className="bg-background"
           onValueChange={(newTheme) => {
             const nextTheme = value === "light" ? "dark" : "light"
             handleThemeChange(nextTheme)
@@ -104,12 +103,11 @@ export function ThemeToggle({
     <div className={cn("w-fit", className)} {...props}>
       <SegmentedControl
         value={value}
-        className="bg-background p-px"
         onValueChange={handleThemeChange}
         defaultValue="system"
       >
         <SegmentedControlList
-          className="border-border bg-background w-fit rounded-full border shadow-xs"
+          className="border-border bg-background bg-background w-fit rounded-full border shadow-xs"
           floatingBgClassName="rounded-full border border-border bg-background shadow-2xs dark:bg-secondary"
         >
           {themes.map(([key, Icon]) => (

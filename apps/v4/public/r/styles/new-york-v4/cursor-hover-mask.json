@@ -1,0 +1,24 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "cursor-hover-mask",
+  "type": "registry:ui",
+  "description": "A text mask effect that follows the cursor and reveals alternate content",
+  "files": [
+    {
+      "path": "registry/new-york-v4/animations/cursor-hover-mask/cursor-hover-mask.tsx",
+      "content": "// @ts-nocheck\n\"use client\"\n\nimport type { ReactNode } from \"react\"\nimport { useEffect, useState } from \"react\"\nimport { motion } from \"motion/react\"\n\nimport { cn } from \"@/lib/utils\"\n\nfunction useMousePosition() {\n  const [mousePosition, setMousePosition] = useState<{\n    x: number | null\n    y: number | null\n  }>({ x: null, y: null })\n\n  useEffect(() => {\n    const updateMousePosition = (e: MouseEvent) => {\n      setMousePosition({ x: e.clientX, y: e.clientY })\n    }\n\n    window.addEventListener(\"mousemove\", updateMousePosition)\n    return () => window.removeEventListener(\"mousemove\", updateMousePosition)\n  }, [])\n\n  return mousePosition\n}\n\nexport type CursorHoverMaskProps = {\n  /** Content shown in the mask (revealed content) */\n  maskContent: ReactNode\n  /** Content shown in the background (base content) */\n  children: ReactNode\n  /** Size of the mask when not hovering. Default: 40 */\n  size?: number\n  /** Size of the mask when hovering. Default: 400 */\n  hoverSize?: number\n  /** Background color of the mask area. Default: \"#ec4e39\" */\n  maskBackground?: string\n  /** Additional CSS classes for the container */\n  className?: string\n  /** Additional CSS classes for the mask layer */\n  maskClassName?: string\n  /** Additional CSS classes for the body layer */\n  bodyClassName?: string\n}\n\n/**\n * A text mask effect that follows the cursor and reveals alternate content.\n * The mask expands on hover to reveal hidden content underneath.\n */\nexport function CursorHoverMask({\n  maskContent,\n  children,\n  size = 40,\n  hoverSize = 400,\n  maskBackground = \"#ec4e39\",\n  className,\n  maskClassName,\n  bodyClassName,\n}: CursorHoverMaskProps) {\n  const [isHovered, setIsHovered] = useState(false)\n  const { x, y } = useMousePosition()\n  const currentSize = isHovered ? hoverSize : size\n\n  return (\n    <div className={cn(\"relative h-screen\", className)}>\n      <motion.div\n        className={cn(\n          \"absolute flex h-full w-full cursor-default items-center justify-center text-black\",\n          maskClassName\n        )}\n        style={{\n          background: maskBackground,\n          maskImage: `url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='black'/%3E%3C/svg%3E\")`,\n          maskRepeat: \"no-repeat\",\n        }}\n        animate={{\n          WebkitMaskPosition: `${(x ?? 0) - currentSize / 2}px ${(y ?? 0) - currentSize / 2}px`,\n          WebkitMaskSize: `${currentSize}px`,\n        }}\n        transition={{ type: \"tween\", ease: \"backOut\", duration: 0.5 }}\n      >\n        <div\n          onMouseEnter={() => setIsHovered(true)}\n          onMouseLeave={() => setIsHovered(false)}\n          className=\"w-full max-w-[1000px] p-10\"\n        >\n          {maskContent}\n        </div>\n      </motion.div>\n\n      <div\n        className={cn(\n          \"flex h-full w-full cursor-default items-center justify-center\",\n          bodyClassName\n        )}\n      >\n        <div className=\"w-full max-w-[1000px] p-10\">{children}</div>\n      </div>\n    </div>\n  )\n}\n\nexport default CursorHoverMask\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "beta",
+  "poweredBy": [
+    {
+      "name": "Skiper UI",
+      "url": "https://skiper-ui.com"
+    }
+  ]
+}

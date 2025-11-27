@@ -3,14 +3,8 @@
 import * as React from "react"
 
 import { cn } from "@/lib/utils"
-import { PoweredByBadge } from "@/components/ui/powered-by-badge"
 import { ReadinessBadge } from "@/components/ui/readiness-badge"
 import { TierBadge } from "@/components/ui/tier-badge"
-
-interface PoweredByItem {
-  name: string
-  url?: string
-}
 
 export function ComponentPreviewTabs({
   className,
@@ -19,11 +13,11 @@ export function ComponentPreviewTabs({
   hideCode = false,
   chromeLessOnMobile = false,
   isScrollable = false,
+  isFullBleed = false,
   component,
   source,
   readiness,
   tier,
-  poweredBy,
   ...props
 }: React.ComponentProps<"div"> & {
   align?: "center" | "start" | "end"
@@ -31,11 +25,11 @@ export function ComponentPreviewTabs({
   hideCode?: boolean
   chromeLessOnMobile?: boolean
   isScrollable?: boolean
+  isFullBleed?: boolean
   component: React.ReactNode
   source: React.ReactNode
   readiness?: "alpha" | "beta" | "production"
   tier?: "free" | "pro"
-  poweredBy?: PoweredByItem[]
 }) {
   return (
     <div
@@ -50,13 +44,16 @@ export function ComponentPreviewTabs({
           <ReadinessBadge readiness={readiness} />
           <TierBadge tier={tier} />
         </div>
-        <PoweredByBadge poweredBy={poweredBy} />
         <div
           data-align={align}
           data-justify={justify}
           className={cn(
             "preview flex w-full data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=start]:justify-start",
-            chromeLessOnMobile ? "sm:p-10" : "h-[450px] p-10"
+            isFullBleed
+              ? "relative aspect-video overflow-hidden"
+              : chromeLessOnMobile
+                ? "sm:p-10"
+                : "h-[450px] p-10"
           )}
         >
           {component}

@@ -1,258 +1,90 @@
 "use client"
 
-import React, { useRef } from "react"
-import ReactLenis from "lenis/react"
+import { useRef } from "react"
 import { motion, useScroll, useTransform } from "motion/react"
 
-import { cn } from "@/lib/utils"
-
-type CharacterProps = {
-  char: string
-  index: number
-  centerIndex: number
-  scrollYProgress: any
-}
-
-const CharacterV1 = ({
-  char,
-  index,
-  centerIndex,
-  scrollYProgress,
-}: CharacterProps) => {
-  const isSpace = char === " "
-
-  const distanceFromCenter = index - centerIndex
-
-  const x = useTransform(
-    scrollYProgress,
-    [0, 0.5],
-    [distanceFromCenter * 50, 0]
-  )
-  const rotateX = useTransform(
-    scrollYProgress,
-    [0, 0.5],
-    [distanceFromCenter * 50, 0]
-  )
+const Slide = ({
+  src,
+  direction,
+  left,
+  progress,
+}: {
+  src: string
+  direction: "left" | "right"
+  left: string
+  progress: any
+}) => {
+  const dir = direction === "left" ? -1 : 1
+  const translateX = useTransform(progress, [0, 1], [150 * dir, -150 * dir])
 
   return (
-    <motion.span
-      className={cn("inline-block text-orange-500", isSpace && "w-4")}
-      style={{
-        x,
-        rotateX,
-      }}
+    <motion.div
+      style={{ x: translateX, left }}
+      className="relative flex whitespace-nowrap"
     >
-      {char}
-    </motion.span>
-  )
-}
-const CharacterV2 = ({
-  char,
-  index,
-  centerIndex,
-  scrollYProgress,
-}: CharacterProps) => {
-  const isSpace = char === " "
-  const distanceFromCenter = index - centerIndex
-
-  const x = useTransform(
-    scrollYProgress,
-    [0, 0.5],
-    [distanceFromCenter * 50, 0]
-  )
-  const scale = useTransform(scrollYProgress, [0, 0.5], [0.75, 1])
-
-  const y = useTransform(
-    scrollYProgress,
-    [0, 0.5],
-    [Math.abs(distanceFromCenter) * 50, 0]
-  )
-
-  return (
-    <motion.img
-      src={char}
-      className={cn("inline-block", isSpace && "w-4")}
-      style={{
-        x,
-        scale,
-        y,
-        transformOrigin: "center",
-      }}
-    />
-  )
-}
-const CharacterV3 = ({
-  char,
-  index,
-  centerIndex,
-  scrollYProgress,
-}: CharacterProps) => {
-  const isSpace = char === " "
-  const distanceFromCenter = index - centerIndex
-
-  const x = useTransform(
-    scrollYProgress,
-    [0, 0.5],
-    [distanceFromCenter * 90, 0]
-  )
-  const rotate = useTransform(
-    scrollYProgress,
-    [0, 0.5],
-    [distanceFromCenter * 50, 0]
-  )
-
-  const y = useTransform(
-    scrollYProgress,
-    [0, 0.5],
-    [-Math.abs(distanceFromCenter) * 20, 0]
-  )
-  const scale = useTransform(scrollYProgress, [0, 0.5], [0.75, 1])
-
-  return (
-    <motion.img
-      src={char}
-      className={cn("inline-block", isSpace && "w-4")}
-      style={{
-        x,
-        rotate,
-        y,
-        scale,
-        transformOrigin: "center",
-      }}
-    />
+      <Phrase src={src} />
+      <Phrase src={src} />
+      <Phrase src={src} />
+    </motion.div>
   )
 }
 
-const Bracket = ({ className }: { className: string }) => {
+const Phrase = ({ src }: { src: string }) => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 27 78"
-      className={className}
-    >
-      <path
-        fill="#000"
-        d="M26.52 77.21h-5.75c-6.83 0-12.38-5.56-12.38-12.38V48.38C8.39 43.76 4.63 40 .01 40v-4c4.62 0 8.38-3.76 8.38-8.38V12.4C8.38 5.56 13.94 0 20.77 0h5.75v4h-5.75c-4.62 0-8.38 3.76-8.38 8.38V27.6c0 4.34-2.25 8.17-5.64 10.38 3.39 2.21 5.64 6.04 5.64 10.38v16.45c0 4.62 3.76 8.38 8.38 8.38h5.75v4.02Z"
-      ></path>
-    </svg>
+    <div className="flex items-center gap-5 px-5">
+      <p className="text-foreground text-[7.5vw]">Front End Developer</p>
+      <span className="relative aspect-[4/2] h-[7.5vw] overflow-hidden rounded-full">
+        <img
+          src={src}
+          alt="decorative"
+          className="h-full w-full object-cover"
+        />
+      </span>
+    </div>
   )
 }
 
 export default function TextParallaxDemo() {
-  const targetRef = useRef<HTMLDivElement | null>(null)
-  const targetRef2 = useRef<HTMLDivElement | null>(null)
-  const targetRef3 = useRef<HTMLDivElement | null>(null)
-
+  const container = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
-    target: targetRef,
-  })
-  const { scrollYProgress: scrollYProgress2 } = useScroll({
-    target: targetRef2,
-  })
-  const { scrollYProgress: scrollYProgress3 } = useScroll({
-    target: targetRef3,
+    target: container,
+    offset: ["start end", "end start"],
   })
 
-  const text = "see more from gxuri"
-  const characters = text.split("")
-  const centerIndex = Math.floor(characters.length / 2)
-
-  const macIcon = [
-    "https://skiper-ui.com/mac/Discord.png",
-    "https://skiper-ui.com/mac/figma.png",
-    "https://skiper-ui.com/mac/Framer.png",
-    "https://skiper-ui.com/mac/Github.png",
-    "https://skiper-ui.com/mac/Monog.png",
-    "https://skiper-ui.com/mac/notion.png",
-    "https://skiper-ui.com/mac/Pieces.png",
-    "https://skiper-ui.com/mac/Postman.png",
-    "https://skiper-ui.com/mac/vsCode.png",
+  const images = [
+    "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=200&fit=crop",
+    "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&h=200&fit=crop",
+    "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=400&h=200&fit=crop",
   ]
-  const iconCenterIndex = Math.floor(macIcon.length / 2)
 
   return (
-    <ReactLenis root>
-      <main className="w-full bg-white">
-        <div className="absolute top-22 left-1/2 z-10 grid -translate-x-1/2 content-start justify-items-center gap-6 text-center text-black">
-          <span className="relative max-w-[12ch] text-xs leading-tight uppercase opacity-40 after:absolute after:top-full after:left-1/2 after:h-16 after:w-px after:bg-gradient-to-b after:from-[#f5f4f3] after:to-black after:content-['']">
-            Scroll to see more
-          </span>
-        </div>
-        <div
-          ref={targetRef}
-          className="relative box-border flex h-[210vh] items-center justify-center gap-[2vw] overflow-hidden bg-[#f5f4f3] p-[2vw]"
-        >
-          <div
-            className="font-geist w-full max-w-4xl text-center text-6xl font-bold tracking-tighter text-black uppercase"
-            style={{
-              perspective: "500px",
-            }}
-          >
-            {characters.map((char, index) => (
-              <CharacterV1
-                key={index}
-                char={char}
-                index={index}
-                centerIndex={centerIndex}
-                scrollYProgress={scrollYProgress}
-              />
-            ))}
-          </div>
-        </div>
-        <div
-          ref={targetRef2}
-          className="relative -mt-[100vh] box-border flex h-[210vh] flex-col items-center justify-center gap-[2vw] overflow-hidden bg-[#f5f4f3] p-[2vw]"
-        >
-          <p className="font-geist flex items-center justify-center gap-3 text-2xl font-medium tracking-tight text-black">
-            <Bracket className="h-12 text-black" />
-            <span className="font-geist font-medium">
-              intergrate with your fav tech stack
-            </span>
-            <Bracket className="h-12 scale-x-[-1] text-black" />
-          </p>
-          <div className="font-geist w-full max-w-4xl text-center text-6xl font-bold tracking-tighter text-black uppercase">
-            {macIcon.map((char, index) => (
-              <CharacterV2
-                key={index}
-                char={char}
-                index={index}
-                centerIndex={iconCenterIndex}
-                scrollYProgress={scrollYProgress2}
-              />
-            ))}
-          </div>
-        </div>
-        <div
-          ref={targetRef3}
-          className="relative -mt-[95vh] box-border flex h-[210vh] flex-col items-center justify-center gap-[2vw] overflow-hidden bg-[#f5f4f3] p-[2vw]"
-        >
-          {" "}
-          <p className="font-geist flex items-center justify-center gap-3 text-2xl font-medium tracking-tight text-black">
-            <Bracket className="h-12 text-black" />
-            <span className="font-geist font-medium">
-              intergrate with your fav tech stack
-            </span>
-            <Bracket className="h-12 scale-x-[-1] text-black" />
-          </p>
-          <div
-            className="font-geist w-full max-w-4xl text-center text-6xl font-bold tracking-tighter text-black uppercase"
-            style={{
-              perspective: "500px",
-            }}
-          >
-            {macIcon.map((char, index) => (
-              <CharacterV3
-                key={index}
-                char={char}
-                index={index}
-                centerIndex={iconCenterIndex}
-                scrollYProgress={scrollYProgress3}
-              />
-            ))}
-          </div>
-        </div>
-      </main>
-    </ReactLenis>
+    <main className="overflow-hidden">
+      <div className="relative grid h-[50vh] content-center justify-items-center gap-6 text-center">
+        <span className="after:from-background after:to-foreground relative max-w-[12ch] text-xs leading-tight uppercase opacity-40 after:absolute after:top-full after:left-1/2 after:h-16 after:w-px after:bg-gradient-to-b after:content-['']">
+          Scroll to see effect
+        </span>
+      </div>
+      <div ref={container}>
+        <Slide
+          src={images[0]}
+          direction="left"
+          left="-40%"
+          progress={scrollYProgress}
+        />
+        <Slide
+          src={images[1]}
+          direction="right"
+          left="-25%"
+          progress={scrollYProgress}
+        />
+        <Slide
+          src={images[2]}
+          direction="left"
+          left="-75%"
+          progress={scrollYProgress}
+        />
+      </div>
+      <div className="h-[50vh]" />
+    </main>
   )
 }

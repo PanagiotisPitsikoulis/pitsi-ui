@@ -4,7 +4,7 @@ import * as React from "react"
 import { IconCheck, IconCopy } from "@tabler/icons-react"
 import template from "lodash/template"
 
-import { THEMES } from "@/lib/themes"
+import { THEMES } from "@/lib/config/themes"
 import { cn } from "@/lib/utils"
 import { copyToClipboardWithMeta } from "@/components/documentation/code/copy-button"
 import { Icons } from "@/components/shared/icons"

@@ -15,6 +15,8 @@ import { absoluteUrl } from "@/lib/utils"
 import { DocsCopyPage } from "@/components/documentation/docs/docs-copy-page"
 import { DocsTableOfContents } from "@/components/documentation/docs/docs-toc"
 import { OpenInV0Cta } from "@/components/documentation/integrations/open-in-v0-cta"
+import { PoweredByBadge } from "@/components/ui/powered-by-badge"
+import { Index } from "@/registry/__index__"
 import { Badge } from "@/registry/new-york-v4/ui/badge"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
@@ -53,6 +55,9 @@ export default async function ComponentContentPage({
   const doc = page.data
   const MDX = doc.body
   const neighbours = findNeighbour(source.pageTree, page.url)
+
+  // Get registry item for poweredBy info from Index
+  const registryItem = Index["new-york-v4"]?.[component]
 
   const raw = await page.data.getText("raw")
   const { attributes } = fm(raw)
@@ -118,6 +123,11 @@ export default async function ComponentContentPage({
                   {doc.description}
                 </p>
               )}
+              <PoweredByBadge
+                poweredBy={registryItem?.poweredBy}
+                variant="inline"
+                className="pt-2"
+              />
             </div>
             {links ? (
               <div className="flex items-center gap-2 pt-4">

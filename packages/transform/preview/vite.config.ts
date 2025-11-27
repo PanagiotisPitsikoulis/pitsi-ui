@@ -153,14 +153,7 @@ function serveOutputPlugin() {
   return {
     name: "serve-output",
     configureServer(server: any) {
-      // Serve manifest.json
-      server.middlewares.use("/output/manifest.json", (_req: any, res: any) => {
-        const manifest = generateWorkflowManifest()
-        res.setHeader("Content-Type", "application/json")
-        res.end(JSON.stringify(manifest))
-      })
-
-      // Serve output files (screenshots, videos, themes, components)
+      // Serve output files (screenshots, videos, themes, components, manifest.json)
       server.middlewares.use("/output", (req: any, res: any, next: any) => {
         const filePath = path.join(outputDir, req.url)
 

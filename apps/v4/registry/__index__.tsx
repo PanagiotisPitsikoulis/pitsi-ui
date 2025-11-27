@@ -763,6 +763,27 @@ export const Index: Record<string, Record<string, any>> = {
       readiness: "production",
       poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
+    "progressive-blur": {
+      name: "progressive-blur",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/ui/progressive-blur.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/ui/progressive-blur.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["primitives"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
+    },
     "radio-group": {
       name: "radio-group",
       description: "",
@@ -804,6 +825,27 @@ export const Index: Record<string, Record<string, any>> = {
       tier: "free",
       readiness: "production",
       poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"react-resizable-panels","url":"https://react-resizable-panels.vercel.app"}],
+    },
+    "responsive": {
+      name: "responsive",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: ["use-mobile"],
+      files: [{
+        path: "registry/new-york-v4/ui/responsive.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/ui/responsive.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["layout"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+      poweredBy: undefined,
     },
     "scroll-area": {
       name: "scroll-area",
@@ -1055,7 +1097,7 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"Motion","url":"https://motion.dev"}],
+      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
     },
     "switch": {
       name: "switch",
@@ -1349,7 +1391,7 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Motion","url":"https://motion.dev"}],
+      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
     },
     "card-swipe-carousel": {
       name: "card-swipe-carousel",
@@ -1370,7 +1412,7 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Motion","url":"https://motion.dev"}],
+      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
     },
     "cards-parallax": {
       name: "cards-parallax",
@@ -1391,7 +1433,7 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Motion","url":"https://motion.dev"}],
+      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
     },
     "parallax-scroll": {
       name: "parallax-scroll",
@@ -1412,7 +1454,7 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Motion","url":"https://motion.dev"}],
+      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
     },
     "perspective-carousel": {
       name: "perspective-carousel",
@@ -1433,7 +1475,7 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Motion","url":"https://motion.dev"}],
+      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
     },
     "perspective-section-transition": {
       name: "perspective-section-transition",
@@ -1454,7 +1496,7 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Motion","url":"https://motion.dev"}],
+      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
     },
     "scroll-expand": {
       name: "scroll-expand",
@@ -1475,7 +1517,7 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Motion","url":"https://motion.dev"}],
+      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
     },
     "scroll-fade": {
       name: "scroll-fade",
@@ -1496,7 +1538,7 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Motion","url":"https://motion.dev"}],
+      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
     },
     "scroll-scale": {
       name: "scroll-scale",
@@ -1517,7 +1559,7 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Motion","url":"https://motion.dev"}],
+      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
     },
     "slide-down": {
       name: "slide-down",
@@ -1538,7 +1580,7 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Motion","url":"https://motion.dev"}],
+      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
     },
     "slide-up": {
       name: "slide-up",
@@ -1559,7 +1601,7 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Motion","url":"https://motion.dev"}],
+      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
     },
     "smooth-parallax-scroll": {
       name: "smooth-parallax-scroll",
@@ -1580,7 +1622,7 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: undefined,
+      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
     },
     "smooth-scroll": {
       name: "smooth-scroll",
@@ -1601,7 +1643,7 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: undefined,
+      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
     },
     "sticky-footer": {
       name: "sticky-footer",
@@ -1622,7 +1664,7 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: undefined,
+      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
     },
     "text-along-path": {
       name: "text-along-path",
@@ -1643,7 +1685,7 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Motion","url":"https://motion.dev"}],
+      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
     },
     "text-gradient-opacity": {
       name: "text-gradient-opacity",
@@ -1664,7 +1706,7 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Motion","url":"https://motion.dev"}],
+      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
     },
     "text-parallax": {
       name: "text-parallax",
@@ -1685,7 +1727,7 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Motion","url":"https://motion.dev"}],
+      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
     },
     "transforms-3d": {
       name: "transforms-3d",
@@ -1706,7 +1748,7 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Motion","url":"https://motion.dev"}],
+      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
     },
     "zoom-parallax": {
       name: "zoom-parallax",
@@ -1727,7 +1769,112 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Motion","url":"https://motion.dev"}],
+      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
+    },
+    "blend-mode-cursor": {
+      name: "blend-mode-cursor",
+      description: "A cursor that follows the mouse with mix-blend-difference effect",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/animations/blend-mode-cursor/blend-mode-cursor.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/blend-mode-cursor/blend-mode-cursor.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
+    },
+    "cursor-hover-mask": {
+      name: "cursor-hover-mask",
+      description: "A text mask effect that follows the cursor and reveals alternate content",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/animations/cursor-hover-mask/cursor-hover-mask.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/cursor-hover-mask/cursor-hover-mask.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
+    },
+    "floating-image-gallery": {
+      name: "floating-image-gallery",
+      description: "A floating image gallery where images move at different speeds based on mouse movement",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/animations/floating-image-gallery/floating-image-gallery.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/floating-image-gallery/floating-image-gallery.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
+    },
+    "mouse-hover-gallery": {
+      name: "mouse-hover-gallery",
+      description: "A project gallery where hovering over items reveals an image that follows the cursor",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/animations/mouse-hover-gallery/mouse-hover-gallery.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/mouse-hover-gallery/mouse-hover-gallery.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
+    },
+    "nav-menu": {
+      name: "nav-menu",
+      description: "An animated navigation menu with character-by-character animations and hover image reveal",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/animations/nav-menu/nav-menu.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/nav-menu/nav-menu.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
     },
     "dashboard-01": {
       name: "dashboard-01",
@@ -26728,6 +26875,27 @@ export const Index: Record<string, Record<string, any>> = {
       readiness: "production",
       poweredBy: undefined,
     },
+    "progressive-blur-demo": {
+      name: "progressive-blur-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["progressive-blur"],
+      files: [{
+        path: "registry/new-york-v4/examples/progressive-blur-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/progressive-blur-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["primitives"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+      poweredBy: undefined,
+    },
     "radio-group-demo": {
       name: "radio-group-demo",
       description: "",
@@ -26849,6 +27017,27 @@ export const Index: Record<string, Record<string, any>> = {
         return { default: mod.default || mod[exportName] }
       }),
       categories: ["core-components"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+      poweredBy: undefined,
+    },
+    "responsive-demo": {
+      name: "responsive-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["responsive"],
+      files: [{
+        path: "registry/new-york-v4/examples/responsive-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/responsive-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["layout"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -28882,6 +29071,111 @@ export const Index: Record<string, Record<string, any>> = {
       }],
       component: React.lazy(async () => {
         const mod = await import("@/registry/new-york-v4/examples/zoom-parallax-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+      poweredBy: undefined,
+    },
+    "blend-mode-cursor-demo": {
+      name: "blend-mode-cursor-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["blend-mode-cursor"],
+      files: [{
+        path: "registry/new-york-v4/examples/blend-mode-cursor-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/blend-mode-cursor-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+      poweredBy: undefined,
+    },
+    "cursor-hover-mask-demo": {
+      name: "cursor-hover-mask-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["cursor-hover-mask"],
+      files: [{
+        path: "registry/new-york-v4/examples/cursor-hover-mask-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/cursor-hover-mask-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+      poweredBy: undefined,
+    },
+    "floating-image-gallery-demo": {
+      name: "floating-image-gallery-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["floating-image-gallery"],
+      files: [{
+        path: "registry/new-york-v4/examples/floating-image-gallery-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/floating-image-gallery-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+      poweredBy: undefined,
+    },
+    "mouse-hover-gallery-demo": {
+      name: "mouse-hover-gallery-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["mouse-hover-gallery"],
+      files: [{
+        path: "registry/new-york-v4/examples/mouse-hover-gallery-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/mouse-hover-gallery-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+      poweredBy: undefined,
+    },
+    "nav-menu-demo": {
+      name: "nav-menu-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["nav-menu"],
+      files: [{
+        path: "registry/new-york-v4/examples/nav-menu-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/nav-menu-demo.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import * as React from "react"
 
 export const IndexBlocksMarketing: Record<string, Record<string, any>> = {

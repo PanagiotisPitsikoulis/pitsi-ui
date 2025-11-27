@@ -1,7 +1,10 @@
+"use client"
+
 import React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
 
+import { useIsMobile } from "@/registry/new-york-v4/hooks/use-mobile"
 import { cn } from "@/registry/new-york-v4/lib/utils"
 
 type HTMLDivProps = React.HTMLAttributes<HTMLDivElement>
@@ -109,19 +112,26 @@ export const spacerVariants = cva("shrink-0", {
   },
 })
 
+type SpacerSize = VariantProps<typeof spacerVariants>["size"]
+
 export interface SpacerProps
   extends HTMLDivProps,
     VariantProps<typeof spacerVariants> {
   asChild?: boolean
+  /** Size override for mobile screens (< 768px) */
+  sizeMobile?: SpacerSize
 }
 
 export const Spacer = React.forwardRef<HTMLDivElement, SpacerProps>(
-  ({ className, size, axis, asChild = false, ...props }, ref) => {
+  ({ className, size, sizeMobile, axis, asChild = false, ...props }, ref) => {
+    const isMobile = useIsMobile()
     const Comp = asChild ? Slot : "div"
+    const effectiveSize = isMobile && sizeMobile ? sizeMobile : size
+
     return (
       <Comp
         ref={ref}
-        className={cn(spacerVariants({ size, axis }), className)}
+        className={cn(spacerVariants({ size: effectiveSize, axis }), className)}
         aria-hidden="true"
         {...props}
       />

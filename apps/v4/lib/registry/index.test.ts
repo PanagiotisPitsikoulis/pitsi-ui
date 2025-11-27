@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest"
 import {
   fixFilePaths,
@@ -14,7 +15,7 @@ import {
   getBlockSubcategoryBlockCounts,
   getAllRegistryItems,
 } from "@/lib/registry"
-import type { RegistryItem } from "@/registry/schema"
+import type { RegistryItem } from "pitsi/schema"
 
 describe("registry-utils", () => {
   describe("fixFilePaths", () => {

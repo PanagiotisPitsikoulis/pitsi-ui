@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import Lenis from "lenis"
 import { motion, MotionValue, useScroll, useTransform } from "motion/react"
 
 const images = [
@@ -61,19 +60,11 @@ export default function ParallaxScrollDemo() {
   const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 3])
 
   useEffect(() => {
-    const lenis = new Lenis()
-
-    const raf = (time: number) => {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
-
     const resize = () => {
       setDimension({ width: window.innerWidth, height: window.innerHeight })
     }
 
     window.addEventListener("resize", resize)
-    requestAnimationFrame(raf)
     resize()
 
     return () => {

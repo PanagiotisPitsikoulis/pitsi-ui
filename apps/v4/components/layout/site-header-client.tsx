@@ -1,8 +1,8 @@
 "use client"
 
 import type { ReactNode } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
 
 import { cn } from "@/lib/utils"
 import { MainNav } from "@/components/navigation/main-nav"
@@ -27,23 +27,24 @@ export function SiteHeaderClient({
   navItems: any[]
   siteName: string
 }) {
-  const pathname = usePathname()
-  const isHomepage = pathname === "/"
-  const isAuthPage =
-    pathname === "/signin" ||
-    pathname === "/signup" ||
-    pathname.startsWith("/auth/") ||
-    pathname === "/forgot-password" ||
-    pathname === "/reset-password"
+  const [hasScrolled, setHasScrolled] = useState(false)
 
-  const useCompactUI = isHomepage || isAuthPage
+  useEffect(() => {
+    const handleScroll = () => {
+      setHasScrolled(window.scrollY > 10)
+    }
 
-  const containerClassName = cn(
-    useCompactUI ? "max-w-5xl mx-auto" : "",
-    "flex h-(--header-height) items-center px-6 lg:px-3"
+    handleScroll()
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  const containerClassName = "flex h-(--header-height) items-center px-6 lg:px-3"
+
+  const headerClassName = cn(
+    "sticky top-0 z-[100] w-full",
+    hasScrolled ? "bg-page" : "bg-transparent"
   )
-
-  const headerClassName = cn("bg-page sticky top-0 z-[100] w-full")
 
   return (
     <header className={headerClassName}>

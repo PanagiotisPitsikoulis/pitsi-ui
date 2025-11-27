@@ -95,7 +95,9 @@ export default async function Page(props: {
 
   if (isComponentPage || isAnimationPage) {
     const itemName = params.slug[1]
-    const registryItem = (await queryRegistry({ name: itemName })) as RegistryItem | null
+    const registryItem = (await queryRegistry({
+      name: itemName,
+    })) as RegistryItem | null
 
     if (registryItem?.tier === "pro") {
       const user = await getCurrentUser()
@@ -146,7 +148,7 @@ export default async function Page(props: {
   const componentsData =
     componentsFolder?.type === "folder"
       ? componentsFolder.children
-          .filter((c) => c.type === "page" && c.url !== "/docs/components")
+          .filter((c): c is Extract<typeof c, { type: "page" }> => c.type === "page" && c.url !== "/docs/components")
           .map((c) => {
             // Extract registry name from URL: /docs/components/button -> button
             const urlParts = c.url.split("/").filter(Boolean)
@@ -174,7 +176,7 @@ export default async function Page(props: {
   const animationsData =
     animationsFolder?.type === "folder"
       ? animationsFolder.children
-          .filter((a) => a.type === "page")
+          .filter((a): a is Extract<typeof a, { type: "page" }> => a.type === "page")
           .map((a) => {
             // Extract registry name from URL: /docs/animations/parallax-scroll -> parallax-scroll
             const urlParts = a.url.split("/").filter(Boolean)
@@ -312,7 +314,7 @@ export default async function Page(props: {
                 </div>
               </div>
               {doc.description && (
-                <p className="text-muted-foreground text-[1.05rem] text-balance sm:text-base">
+                <p className="text-foreground text-[1.05rem] text-balance sm:text-base">
                   {doc.description}
                 </p>
               )}

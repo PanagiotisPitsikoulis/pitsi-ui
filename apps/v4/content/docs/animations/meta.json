@@ -2,8 +2,13 @@
   "title": "Animations",
   "pages": [
     "background-image-parallax",
+    "blend-mode-cursor",
     "card-swipe-carousel",
     "cards-parallax",
+    "cursor-hover-mask",
+    "floating-image-gallery",
+    "mouse-hover-gallery",
+    "nav-menu",
     "parallax-scroll",
     "perspective-carousel",
     "perspective-section-transition",

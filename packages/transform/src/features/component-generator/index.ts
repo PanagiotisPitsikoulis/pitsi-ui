@@ -6,6 +6,7 @@ import { getSitesToProcess, WorkingSite } from "../../config/working-sites.js"
 import { getAvailableComponents } from "./registry-components.js"
 import { buildPrompt, PromptOptions } from "./prompts.js"
 import { parseHtmlPage, generateContextSummary, ParsedPage } from "./html-parser.js"
+import { purgeSiteOutput } from "../../utils/purge.js"
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -44,6 +45,13 @@ function checkGeminiCli(): boolean {
     execSync("which gemini", { stdio: "ignore" })
     return true
   } catch {
+    console.error("❌ Gemini CLI not found!")
+    console.error("")
+    console.error("Install Gemini CLI:")
+    console.error("  npm install -g @google/gemini-cli")
+    console.error("")
+    console.error("Then authenticate:")
+    console.error("  gemini auth login")
     return false
   }
 }
@@ -100,18 +108,12 @@ function extractPageName(htmlFile: string): string {
 }
 
 /**
- * Run Gemini CLI with a prompt and optional images
+ * Run Gemini CLI with a prompt
+ * The prompt includes file paths so Gemini can access them with its tools
  */
-async function runGemini(prompt: string, imagePaths: string[] = []): Promise<string> {
+async function runGemini(prompt: string): Promise<string> {
   return new Promise((resolve, reject) => {
     const args = ["--model", GEMINI_MODEL]
-
-    // Note: Gemini CLI doesn't support image attachments via --file
-    // Screenshots exist at: imagePaths (for reference)
-    // The prompt includes information about available screenshots
-    if (imagePaths.length > 0) {
-      console.log(`      (${imagePaths.length} screenshots available but not sent to CLI)`)
-    }
 
     const gemini = spawn("gemini", args, {
       stdio: ["pipe", "pipe", "pipe"],
@@ -144,20 +146,6 @@ async function runGemini(prompt: string, imagePaths: string[] = []): Promise<str
     gemini.stdin.write(prompt)
     gemini.stdin.end()
   })
-}
-
-/**
- * Select key images (first, middle, last) for context
- */
-function selectKeyImages(imagePaths: string[]): string[] {
-  if (imagePaths.length === 0) return []
-  if (imagePaths.length <= 3) return imagePaths
-
-  const first = imagePaths[0]
-  const middle = imagePaths[Math.floor(imagePaths.length / 2)]
-  const last = imagePaths[imagePaths.length - 1]
-
-  return [first, middle, last]
 }
 
 /**
@@ -199,9 +187,12 @@ async function generateComponent(task: GenerationTask): Promise<GenerationResult
     // Build the prompt with rich context
     const promptOptions: PromptOptions = {
       htmlContent: task.htmlContent,
+      htmlFilePath: task.htmlFile,
       sectionName: task.pageName,
       siteName: task.site.name,
       availableComponents,
+      screenshotPaths: task.screenshotPaths,
+      themePath: task.themePath,
       theme: themeData,
       // Additional context from parsing
       parsedContext: {
@@ -215,13 +206,17 @@ async function generateComponent(task: GenerationTask): Promise<GenerationResult
           .join(", "),
         imageCount: task.parsedPage.allImages.length,
         contextSummary,
+        // Include actual image URLs so Gemini uses them
+        imageUrls: task.parsedPage.allImages
+          .map((img) => img.src)
+          .filter((src) => src && src.startsWith("http")),
       },
     }
 
     const prompt = buildPrompt(promptOptions)
 
-    // Run Gemini with images for visual context
-    const result = await runGemini(prompt, task.screenshotPaths)
+    // Run Gemini CLI - file paths are included in the prompt
+    const result = await runGemini(prompt)
 
     // Extract code from response
     const componentCode = extractCodeFromResponse(result)
@@ -329,6 +324,9 @@ function saveDebugData(
 async function processSite(site: WorkingSite): Promise<void> {
   console.log(`\n[${site.name}] Processing ${site.url}`)
 
+  // Purge old generated components for this site
+  purgeSiteOutput(OUTPUT_DIR, site.category, site.name)
+
   const htmlFiles = getHtmlFilesForSite(site)
   if (htmlFiles.length === 0) {
     console.log(`  Skipping - no HTML files found`)
@@ -351,6 +349,7 @@ async function processSite(site: WorkingSite): Promise<void> {
     const screenshotPaths = getScreenshotsForPage(site, pageName)
 
     console.log(`  [${pageName}] Parsing HTML...`)
+    console.log(`    Found ${screenshotPaths.length} screenshots`)
 
     // Parse the HTML to extract rich context
     const parsedPage = parseHtmlPage(htmlContent)
@@ -392,23 +391,12 @@ async function processSite(site: WorkingSite): Promise<void> {
  * Main function
  */
 async function main(): Promise<void> {
-  console.log("🤖 Component Generator - Gemini CLI")
-  console.log("===================================")
+  console.log("🤖 Component Generator - Pixel Perfect Static UI")
+  console.log("=================================================")
   console.log(`Model: ${GEMINI_MODEL}`)
 
   // Check for Gemini CLI
   if (!checkGeminiCli()) {
-    console.error("❌ Gemini CLI not found!")
-    console.error("")
-    console.error("Install Gemini CLI:")
-    console.error("  npm install -g @anthropic-ai/gemini-cli")
-    console.error("  # or")
-    console.error("  brew install gemini")
-    console.error("")
-    console.error("Then authenticate:")
-    console.error("  gemini auth login")
-    console.error("")
-    console.error("Visit: https://github.com/google-gemini/gemini-cli")
     process.exit(1)
   }
 

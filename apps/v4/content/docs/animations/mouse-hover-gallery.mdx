@@ -1,0 +1,67 @@
+---
+title: Mouse Hover Gallery
+description: A project gallery where hovering over items reveals an image that follows the cursor.
+component: true
+---
+
+<ComponentPreview
+  name="mouse-hover-gallery-demo"
+  title="Mouse Hover Gallery"
+  description="A project gallery where hovering over items reveals an image that follows the cursor."
+/>
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx pitsi@latest add mouse-hover-gallery
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  name="mouse-hover-gallery"
+  title="animations/mouse-hover-gallery/mouse-hover-gallery.tsx"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { MouseHoverGallery } from "@/components/animations/mouse-hover-gallery"
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `projects` | `Array<{ title, src, color, subtitle? }>` | - | Array of projects to display |
+
+### Project Object
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `title` | `string` | Project title |
+| `src` | `string` | Image source URL |
+| `color` | `string` | Background color for the image modal |
+| `subtitle` | `string` | Optional subtitle (default: "Design & Development") |

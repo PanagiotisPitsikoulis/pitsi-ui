@@ -1,5 +1,5 @@
 /**
- * Prompt templates for generating React components with Gemini
+ * Prompt templates for generating pixel-perfect React components with Gemini
  */
 
 export interface ParsedContext {
@@ -11,13 +11,17 @@ export interface ParsedContext {
   breakpoints: string
   imageCount: number
   contextSummary: string
+  imageUrls: string[] // Actual image URLs extracted from HTML
 }
 
 export interface PromptOptions {
   htmlContent: string
+  htmlFilePath?: string
   sectionName: string
   siteName: string
   availableComponents: string
+  screenshotPaths?: string[]
+  themePath?: string
   theme?: {
     typography?: {
       display?: { family: string } | null
@@ -34,17 +38,48 @@ export interface PromptOptions {
 }
 
 /**
- * Build the main prompt for component generation
+ * Build the main prompt for pixel-perfect component generation
  */
 export function buildPrompt(options: PromptOptions): string {
   const {
     htmlContent,
+    htmlFilePath,
     sectionName,
     siteName,
-    availableComponents,
+    screenshotPaths,
+    themePath,
     theme,
     parsedContext,
   } = options
+
+  // Build file locations section
+  let fileLocationsSection = `
+## 📁 FILE LOCATIONS - USE YOUR read_file TOOL TO ACCESS THESE
+
+**IMPORTANT:** You have access to all these files on the local filesystem. Use your \`read_file\` tool to read and analyze them.
+
+`
+  if (htmlFilePath) {
+    fileLocationsSection += `### HTML Source File
+\`${htmlFilePath}\`
+Read this file to get the complete HTML structure, exact image URLs, CSS styles, and content.
+
+`
+  }
+  if (screenshotPaths && screenshotPaths.length > 0) {
+    fileLocationsSection += `### Screenshots (PRIMARY VISUAL REFERENCE)
+${screenshotPaths.map((p) => `\`${p}\``).join('\n')}
+**CRITICAL:** These screenshots are your PRIMARY reference. Your output MUST match these EXACTLY.
+
+`
+  }
+  if (themePath) {
+    fileLocationsSection += `### Theme File
+\`${themePath}\`
+Read this JSON file for extracted color values, typography, and design tokens.
+
+`
+  }
 
   // Build theme context if available
   let themeContext = ""
@@ -98,6 +133,11 @@ ${parsedContext.sections || "No sections detected"}
 ### Assets
 - Total images: ${parsedContext.imageCount}
 
+### ACTUAL IMAGE URLs (USE THESE EXACT URLs)
+${parsedContext.imageUrls && parsedContext.imageUrls.length > 0
+  ? parsedContext.imageUrls.map((url, i) => `${i + 1}. ${url}`).join('\n')
+  : 'No images found in HTML'}
+
 ${parsedContext.contextSummary ? `### Full Context Summary\n${parsedContext.contextSummary}` : ""}
 `
   }
@@ -109,61 +149,124 @@ ${parsedContext.contextSummary ? `### Full Context Summary\n${parsedContext.cont
 - Use the screenshots as your PRIMARY reference for visual design
 - Use the parsed context for content, structure, and text`
 
-  return `You are an expert React developer specializing in converting Framer website designs to modern React components using TypeScript, Tailwind CSS, and shadcn/ui components.
+  return `You are an expert React developer specializing in creating PIXEL-PERFECT reproductions of website designs using TypeScript and Tailwind CSS.
 
 ## Task
-Convert the page "${sectionName}" from the website "${siteName}" into clean, production-ready React components.
+Create a PIXEL-PERFECT STATIC recreation of the page "${sectionName}" from the website "${siteName}".
 
-**Important:** Screenshots have been captured for this page but cannot be sent via CLI. Use the parsed page analysis below as your reference for layout and structure. The extracted theme, colors, fonts, and section information provide all the design context you need.
+**IMPORTANT: This is a STATIC UI recreation. Do NOT add any animations, transitions, hover effects, or interactive behaviors beyond basic navigation links.**
 
-## Design Approach
+${fileLocationsSection}
 
-Based on the parsed page analysis:
-1. Follow the overall style indicated by the fonts and colors below
-2. Use the provided color palette for theming
-3. Apply consistent spacing using Tailwind's scale
-4. Implement proper typography hierarchy with the specified fonts
-5. Create clean, modern layouts based on the section structure
-6. Add appropriate interactive elements (buttons, links, cards)
+## Critical Goal: PIXEL-PERFECT STATIC ACCURACY
+Your primary objective is to recreate the original design with EXACT visual accuracy as a STATIC page. This means:
+1. Use the EXACT same images from the original (preserve all src URLs from the HTML file)
+2. Match the EXACT typography (font families, sizes, weights, line heights)
+3. Use the EXACT color values extracted from the theme
+4. Match the EXACT spacing, padding, and margins
+5. Preserve the EXACT layout structure and element positioning
+6. **NO ANIMATIONS** - Do not add Framer Motion, CSS transitions, or any animated effects
+7. **STATIC ONLY** - Focus purely on visual fidelity, not interactivity
+
+**IMPORTANT:** Use your \`read_file\` tool to access the files listed above. The HTML file contains exact image URLs, and screenshots show the visual design.
+
+${screenshotPaths && screenshotPaths.length > 0 ? `
+## 📸 SCREENSHOT FILES - YOUR PRIMARY REFERENCE
+**CRITICAL:** ${screenshotPaths.length} screenshot${screenshotPaths.length > 1 ? 's have' : ' has'} been captured showing the exact visual design.
+
+**SCREENSHOT FILE${screenshotPaths.length > 1 ? 'S' : ''} (use read_file tool to access):**
+${screenshotPaths.map((p, i) => `${i + 1}. ${p}`).join('\n')}
+
+Your component MUST match these screenshots EXACTLY. Every pixel, every color, every spacing must be identical.
+` : ""}
+
+## 🖼️ CRITICAL: Image Handling Requirements
+
+**ABSOLUTELY MANDATORY - NEVER IGNORE THIS:**
+
+1. **PRESERVE EXACT IMAGE URLs**: Copy image src attributes EXACTLY as they appear in the HTML
+   - ✅ DO: \`src="https://framerusercontent.com/images/abc123.png"\`
+   - ❌ NEVER: \`src="https://placehold.co/..."\` or \`src="/placeholder.svg"\`
+   - ❌ NEVER: Make up URLs or use placeholder services
+
+2. **Use Next.js Image Component** for all images:
+\`\`\`tsx
+import Image from "next/image"
+
+// For images with known URLs from the HTML:
+<Image
+  src="https://exact-url-from-html.com/image.png"
+  alt="Descriptive alt text"
+  width={400}
+  height={300}
+  className="..."
+/>
+
+// For background images, use CSS:
+<div
+  className="bg-cover bg-center"
+  style={{ backgroundImage: 'url(https://exact-url-from-html.com/bg.jpg)' }}
+/>
+\`\`\`
+
+3. **Extract ALL image URLs** from the HTML and use them:
+   - Look for \`<img src="...">\` tags
+   - Look for \`background-image: url(...)\` in styles
+   - Look for \`srcset\` attributes
+   - Look for SVG graphics inline or as sources
+
+4. **If you cannot find an image URL**, use a solid color placeholder div with a comment:
+\`\`\`tsx
+{/* TODO: Image URL not found in source */}
+<div className="bg-gray-200 w-full h-64" />
+\`\`\`
+
+**REMEMBER**: The goal is PIXEL-PERFECT recreation. Without the exact images, the result will not match the original.
 
 ${parsedContextSection}
 ${themeContext}
 
 ## Technical Requirements
 
-### Stack
+### Stack - USE ONLY THESE
 - React 18+ with TypeScript
-- Tailwind CSS for ALL styling (no inline styles, no CSS files)
-- shadcn/ui components from the registry (listed below)
-- Lucide React for icons: \`import { IconName } from "lucide-react"\`
-- Next.js Image: \`import Image from "next/image"\`
-- Next.js Link: \`import Link from "next/link"\`
+- **Tailwind CSS ONLY** for all styling (absolutely NO component libraries, NO shadcn, NO other UI frameworks)
+- Lucide React for icons ONLY: \`import { IconName } from "lucide-react"\`
+- Standard HTML elements styled with Tailwind
+- Next.js Image for images: \`import Image from "next/image"\`
+- Next.js Link for navigation: \`import Link from "next/link"\`
+
+### What NOT to Include
+- ❌ NO Framer Motion or any animation library
+- ❌ NO CSS animations or transitions
+- ❌ NO hover effects beyond basic cursor changes
+- ❌ NO scroll effects or parallax
+- ❌ NO loading states or skeleton screens
+- ❌ NO interactive carousels or sliders (use static grid instead)
 
 ### Component Architecture
 1. Create a main page component that composes multiple section components
 2. Each major section (Hero, Features, CTA, etc.) should be its own component
-3. Extract repeated patterns into reusable components
-4. Use proper TypeScript interfaces for all props
+3. Build ALL UI elements from scratch using Tailwind CSS classes
+4. NO external component libraries - build everything with native HTML + Tailwind
+5. Use proper TypeScript interfaces for all props
 
-### Styling Guidelines
+### Styling Guidelines - PIXEL-PERFECT REQUIREMENTS
+- **Images**: Use the EXACT image URLs from the original HTML - DO NOT use placeholders
+- **Colors**: Use the EXACT color values from the extracted theme (see theme section above)
+- **Typography**: Apply the EXACT fonts specified in the theme with correct weights and sizes
+- **Spacing**: Match the EXACT spacing from the original design
 - Use Tailwind's responsive prefixes: \`sm:\`, \`md:\`, \`lg:\`, \`xl:\`, \`2xl:\`
-- Apply \`dark:\` variants for dark mode support
-- Use semantic color classes: \`bg-background\`, \`text-foreground\`, \`bg-primary\`, etc.
-- Maintain consistent spacing using Tailwind's scale (4, 6, 8, 12, 16, 20, 24)
-- Use \`container\` and \`max-w-*\` for content width constraints
+- Apply \`dark:\` variants if the original has dark mode
+- Use arbitrary values when needed for exact matching: \`text-[#1a1a1a]\`, \`w-[342px]\`, etc.
+- Use Tailwind's full utility class set for shadows, borders, transforms, etc.
 
 ### Code Quality
 - Fully typed with TypeScript (no \`any\` types)
-- Semantic HTML elements (\`<section>\`, \`<article>\`, \`<nav>\`, etc.)
+- Semantic HTML elements (\`<section>\`, \`<article>\`, \`<nav>\`, \`<header>\`, \`<footer>\`, etc.)
 - Accessible: aria-labels, roles, proper heading hierarchy
-- Responsive: Mobile-first approach
+- Responsive: Mobile-first approach matching original breakpoints
 - Clean imports: Group and organize imports logically
-
-## Available shadcn/ui Components
-
-Import from "@/components/ui/[name]":
-
-${availableComponents}
 
 ## Source HTML Information
 
@@ -173,28 +276,68 @@ ${htmlNote}
 
 ## Output Requirements
 
-Generate a COMPLETE React component file that:
+Generate a COMPLETE React component file that achieves PIXEL-PERFECT accuracy:
 
-1. **Accurately recreates the visual design** from the screenshots
-2. **Preserves all text content** from the HTML
-3. **Uses shadcn/ui components** appropriately (Button, Card, etc.)
-4. **Is fully responsive** with proper breakpoint handling
-5. **Includes TypeScript types** for all props and data
-6. **Has clean, readable code** with proper formatting
+### CRITICAL REQUIREMENTS (In Order of Priority)
+1. **EXACT Visual Recreation**: The output must look IDENTICAL to the original
+   - Use EXACT image URLs from the HTML (no placeholders like placehold.co)
+   - Apply EXACT colors from the theme (use arbitrary values if needed)
+   - Match EXACT typography (font families, sizes, weights from theme)
+   - Preserve EXACT spacing, padding, margins
+
+2. **STATIC ONLY**: No animations, no transitions, no hover effects
+   - Do NOT import framer-motion or any animation library
+   - Do NOT add whileHover, whileInView, or any motion props
+   - Keep it simple and static
+
+3. **Preserve ALL Content**: Every piece of text, every image, every link from the original
+
+4. **Tailwind CSS ONLY**: Build everything from scratch
+   - NO shadcn components
+   - NO component libraries
+   - Only native HTML elements + Tailwind classes
+   - Use arbitrary values for exact matching: \`bg-[#f5f5f5]\`, \`text-[18px]\`, \`leading-[1.6]\`
+
+5. **Fully Responsive**: Match the original's responsive behavior exactly
+   - Use same breakpoints as original
+   - Preserve layout changes at each breakpoint
+
+6. **TypeScript Types**: Full type safety throughout
+
+7. **Clean, Production Code**: Organized, semantic, accessible
 
 ### File Structure
 \`\`\`tsx
-// Imports (React, Next.js, shadcn/ui, lucide-react)
+"use client"  // Add this if using React hooks (useState, useEffect)
+
+// Imports (React, Next.js, lucide-react ONLY - NO framer-motion)
+import React from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { IconName } from 'lucide-react'
 
 // Type definitions
+interface Props { }
 
-// Sub-components (Hero, Features, etc.)
+// Sub-components (each section as a component)
+const HeroSection = () => { }
+const FeaturesSection = () => { }
 
 // Main page component (default export)
+export default function PageName() {
+  return (
+    <div>
+      <HeroSection />
+      <FeaturesSection />
+      {/* ... */}
+    </div>
+  )
+}
 \`\`\`
 
-Respond with ONLY the TypeScript React code wrapped in a \`\`\`tsx code block.
-Do NOT include any explanation, commentary, or markdown outside the code block.`
+**CRITICAL**: Respond with ONLY the TypeScript React code wrapped in a \`\`\`tsx code block.
+Do NOT include ANY explanation, commentary, or markdown outside the code block.
+The code must be immediately usable and render pixel-perfect to the original.`
 }
 
 /**
@@ -205,19 +348,19 @@ export function buildSectionPrompt(
   options: Omit<PromptOptions, "sectionName">
 ): string {
   const sectionPrompts: Record<SectionType, string> = {
-    hero: "This is a hero section - typically the first thing visitors see. Focus on impact, clear CTAs, and compelling imagery.",
+    hero: "This is a hero section - typically the first thing visitors see. Focus on visual impact and clear CTAs.",
     features: "This is a features section showcasing product/service capabilities. Use cards or grid layouts.",
     pricing: "This is a pricing section with plan comparisons. Use cards with clear hierarchy.",
-    testimonials: "This is a testimonials section with customer reviews. Consider carousel or grid layout.",
-    cta: "This is a call-to-action section. Focus on conversion with clear buttons and minimal distractions.",
-    faq: "This is an FAQ section. Use accordion components for expandable questions.",
-    contact: "This is a contact section with form or contact info. Include proper form validation.",
+    testimonials: "This is a testimonials section with customer reviews. Use static cards or grid layout.",
+    cta: "This is a call-to-action section. Focus on conversion with clear buttons.",
+    faq: "This is an FAQ section. Display all questions and answers expanded (no accordion).",
+    contact: "This is a contact section with form or contact info.",
     footer: "This is a footer section with links, social icons, and legal info.",
-    header: "This is a header/navigation section. Include mobile menu handling.",
+    header: "This is a header/navigation section.",
     about: "This is an about section describing the company/product.",
     team: "This is a team section showing team members. Use avatar and card components.",
     blog: "This is a blog section showing articles. Use card layouts with images.",
-    gallery: "This is a gallery section with images. Consider masonry or carousel layouts.",
+    gallery: "This is a gallery section with images. Use a static grid layout.",
     stats: "This is a stats/metrics section. Use large numbers with labels.",
   }
 
@@ -267,9 +410,13 @@ ${originalCode}
 ${feedback}
 
 ## Requirements
-- Keep using TypeScript, Tailwind CSS, and shadcn/ui components
+- Keep using TypeScript and Tailwind CSS ONLY
+- NO component libraries - use only native HTML elements with Tailwind classes
+- NO animations or Framer Motion - keep it static
+- Maintain pixel-perfect accuracy to the original design
 - Maintain the same general structure unless the feedback requires changes
 - Ensure the component remains accessible and responsive
+- Use exact color values, fonts, and spacing from the original
 
 Respond with ONLY the improved TypeScript React component code wrapped in a \`\`\`tsx code block.`
 }
@@ -300,9 +447,12 @@ ${originalCode}
 ${variationDescriptions[variationType]}
 
 ## Requirements
-- Keep using TypeScript, Tailwind CSS, and shadcn/ui components
+- Keep using TypeScript and Tailwind CSS ONLY
+- NO component libraries - use only native HTML elements with Tailwind classes
+- NO animations - keep it static
 - Maintain the same functionality and content structure
 - Apply the variation style throughout the component
+- Preserve pixel-perfect spacing and typography hierarchy
 
 Respond with ONLY the TypeScript React component code wrapped in a \`\`\`tsx code block.`
 }

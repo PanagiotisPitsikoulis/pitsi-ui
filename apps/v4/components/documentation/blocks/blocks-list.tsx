@@ -7,6 +7,7 @@ import { ArrowUpRight } from "lucide-react"
 import { useContentPagination } from "@/hooks/use-content-pagination"
 import { ReadinessBadge } from "@/components/ui/readiness-badge"
 import { TierBadge } from "@/components/ui/tier-badge"
+import { LazyComponentPreview } from "@/components/documentation/components/lazy-component-preview"
 import { Spinner } from "@/registry/new-york-v4/ui/spinner"
 
 interface BlockItem {
@@ -35,7 +36,7 @@ function BlockPreview({
   const [isLoading, setIsLoading] = React.useState(true)
 
   return (
-    <div className="relative h-full w-full overflow-hidden">
+    <LazyComponentPreview className="relative h-full w-full overflow-hidden">
       {isLoading && (
         <div className="absolute inset-0 z-10 flex items-center justify-center">
           <Spinner />
@@ -50,7 +51,7 @@ function BlockPreview({
         }}
         onLoad={() => setIsLoading(false)}
       />
-    </div>
+    </LazyComponentPreview>
   )
 }
 

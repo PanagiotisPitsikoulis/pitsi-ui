@@ -1,9 +1,9 @@
 #!/usr/bin/env tsx
 /**
  * Priority Workflow - Run full pipeline for priority sites
- * 1. Capture screenshots & videos
+ * 1. Capture screenshots
  * 2. Extract themes & typography
- * 3. Generate React components with Gemini
+ * 3. Generate pixel-perfect static React components with Gemini
  */
 
 import { execSync } from "child_process"
@@ -72,14 +72,20 @@ async function main() {
   const startTime = Date.now()
   const results: StepResult[] = []
 
-  // Step 1: Capture screenshots & videos
-  results.push(runStep("📸 Visual Capture (Screenshots & Videos)", "pnpm capture"))
+  // Step 1: Capture screenshots
+  results.push(runStep("📸 Visual Capture (Screenshots)", "pnpm capture"))
 
   // Step 2: Extract themes
   results.push(runStep("🎨 Theme Extraction (Colors & Typography)", "pnpm extract:theme"))
 
-  // Step 3: Generate components
-  results.push(runStep("🤖 Component Generation (Gemini AI)", "pnpm generate"))
+  // Step 3: Generate pixel-perfect static components
+  results.push(runStep("🤖 Pixel-Perfect Component Generation (Gemini AI)", "pnpm generate"))
+
+  // Step 4: Fix component imports
+  results.push(runStep("🔧 Fix Component Imports", "pnpm fix:components"))
+
+  // Step 5: Build manifest
+  results.push(runStep("📦 Build Manifest (Unified Index)", "pnpm manifest:build"))
 
   // Summary
   const totalDuration = (Date.now() - startTime) / 1000 / 60
@@ -104,9 +110,11 @@ async function main() {
 
   console.log(`\n📁 Output: ${path.join(ROOT_DIR, "output")}`)
   console.log(`   • screenshots/  - Section screenshots`)
-  console.log(`   • videos/       - Page scroll videos`)
   console.log(`   • themes/       - Extracted themes & fonts`)
-  console.log(`   • components/   - Generated React components`)
+  console.log(`   • components/   - Generated React components (imports fixed)`)
+  console.log(`   • manifest.json - Unified index for preview app`)
+  console.log(`\n🎨 Preview: cd packages/transform/preview && pnpm dev`)
+  console.log(`   Then open http://localhost:5173/`)
 
   if (failed > 0) {
     process.exit(1)

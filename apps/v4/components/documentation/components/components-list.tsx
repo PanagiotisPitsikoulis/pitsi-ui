@@ -1,6 +1,7 @@
 import * as React from "react"
 
 import { ComponentsListPaginated } from "@/components/documentation/components/components-list-paginated"
+import type { Style } from "@/registry/styles"
 
 interface ComponentItem {
   $id: string
@@ -13,7 +14,7 @@ interface ComponentItem {
 
 interface ComponentsListProps {
   items?: ComponentItem[]
-  styleName?: string
+  styleName?: Style["name"]
   label?: string
   category?: string
 }
