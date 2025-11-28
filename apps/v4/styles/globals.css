@@ -20,7 +20,7 @@ html {
 @theme inline {
   --breakpoint-3xl: 1600px;
   --breakpoint-4xl: 2000px;
-  --font-sans: var(--font-sans);
+  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-mono);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -221,6 +221,10 @@ html {
   box-shadow: none !important;
 }
 
+.display {
+  font-family: var(--font-display), sans-serif;
+}
+
 /* Force copy buttons to use background color */
 [data-slot="copy-button"] {
   @apply !bg-background;
@@ -239,4 +243,393 @@ html {
 [data-slot="search-button"]:hover svg,
 [data-slot="search-button"]:hover span {
   color: hsl(var(--muted-foreground)) !important;
+}
+
+/* Custom animations for feature illustrations */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes expand {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(1.05); }
+}
+
+@keyframes slide {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(5%); }
+}
+
+@keyframes scale-track {
+  0%, 100% { transform: scaleX(1); opacity: 1; }
+  50% { transform: scaleX(0.95); opacity: 0.8; }
+}
+
+@keyframes playhead {
+  0% { left: 0%; }
+  100% { left: 95%; }
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orbit-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes ring-expand {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(var(--brand), 0.2); }
+  50% { box-shadow: 0 0 15px rgba(var(--brand), 0.4); }
+}
+
+@keyframes typing-dots {
+  0%, 60%, 100% { opacity: 0.3; }
+  30% { opacity: 1; }
+}
+
+@keyframes scroll-content {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10%); }
+}
+
+@keyframes data-row {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes cursor-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Cursor clicks on an element - moves to target, clicks, returns */
+@keyframes cursor-click {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  40% { transform: translate(15px, 10px) scale(1); }
+  50% { transform: translate(15px, 10px) scale(0.85); }
+  60% { transform: translate(15px, 10px) scale(1); }
+}
+
+/* Cursor drags an element - smooth drag motion */
+@keyframes cursor-drag {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(5px, 5px); }
+  30%, 70% { transform: translate(25px, 15px); }
+  80% { transform: translate(30px, 10px); }
+}
+
+/* Cursor hovers and reads - small idle movements */
+@keyframes cursor-hover {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(2px, -1px); }
+  50% { transform: translate(0px, 2px); }
+  75% { transform: translate(-2px, 0px); }
+}
+
+/* Cursor selects text - horizontal sweep */
+@keyframes cursor-select {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(0, 0); }
+  80% { transform: translate(40px, 0); }
+}
+
+/* Cursor scrolls/swipes - vertical motion */
+@keyframes cursor-scroll {
+  0%, 100% { transform: translate(0, 0); }
+  30% { transform: translate(0, 0); }
+  70% { transform: translate(0, 20px); }
+}
+
+/* Cursor navigates - moves between points */
+@keyframes cursor-navigate {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(20px, -5px) scale(1); }
+  35% { transform: translate(20px, -5px) scale(0.9); }
+  45% { transform: translate(20px, -5px) scale(1); }
+  70% { transform: translate(-10px, 15px) scale(1); }
+  80% { transform: translate(-10px, 15px) scale(0.9); }
+  90% { transform: translate(-10px, 15px) scale(1); }
+}
+
+/* ========== SYNCED UI REACTIONS ========== */
+/* These sync with cursor animations to create real interactions */
+
+/* Block opens/highlights when cursor clicks - synced with cursor-click (4s) */
+@keyframes block-open {
+  0%, 35% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 transparent;
+    z-index: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    z-index: 10;
+  }
+  65%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 transparent;
+    z-index: 0;
+  }
+}
+
+/* Element moves when dragged - synced with cursor-drag (5s) */
+@keyframes element-drag {
+  0%, 15% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: translate(5px, 5px) scale(1.08);
+    opacity: 0.9;
+  }
+  35%, 65% {
+    transform: translate(25px, 15px) scale(1.08);
+    opacity: 0.85;
+  }
+  75% {
+    transform: translate(30px, 10px) scale(1.05);
+    opacity: 0.9;
+  }
+  85%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Text selection grows - synced with cursor-select (4-5s) */
+@keyframes text-select {
+  0%, 20% {
+    background-size: 0% 100%;
+  }
+  80%, 100% {
+    background-size: 100% 100%;
+  }
+}
+
+/* Tree node children expand - synced with cursor-navigate (6s) */
+@keyframes node-expand {
+  0%, 20% {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  30%, 65% {
+    max-height: 60px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  75%, 100% {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+}
+
+/* Playhead moves with drag - synced with cursor-drag */
+@keyframes playhead-drag {
+  0%, 15% { left: 10%; }
+  35%, 65% { left: 60%; }
+  85%, 100% { left: 10%; }
+}
+
+/* Color swatch gets selected ring */
+@keyframes swatch-select {
+  0%, 35% {
+    ring-offset-width: 0px;
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  65%, 100% {
+    transform: scale(1);
+  }
+}
+
+/* Code line highlight */
+@keyframes code-highlight {
+  0%, 20% {
+    background-color: transparent;
+  }
+  30%, 80% {
+    background-color: var(--brand, #6366f1);
+    background-opacity: 0.15;
+  }
+  90%, 100% {
+    background-color: transparent;
+  }
+}
+
+/* Table row gets selected - synced with cursor-click (4s) */
+@keyframes row-select {
+  0%, 35% {
+    background-color: transparent;
+    transform: scaleX(1);
+  }
+  45%, 55% {
+    background-color: var(--brand, oklch(0.65 0.15 230));
+    transform: scaleX(1.02);
+  }
+  65%, 100% {
+    background-color: transparent;
+    transform: scaleX(1);
+  }
+}
+
+/* Capability badge pulses - synced with cursor-hover (3s) */
+@keyframes capability-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  25% { transform: scale(1.1); opacity: 1; }
+  50% { transform: scale(1); opacity: 0.8; }
+  75% { transform: scale(1.05); opacity: 0.9; }
+}
+
+/* Chat message gets selection highlight - synced with cursor-select (5s) */
+@keyframes message-select {
+  0%, 20% {
+    background: linear-gradient(90deg, var(--brand, oklch(0.65 0.15 230)) 0%, transparent 0%);
+    background-size: 0% 100%;
+  }
+  80%, 95% {
+    background: linear-gradient(90deg, var(--brand, oklch(0.65 0.15 230)) 0%, var(--brand, oklch(0.65 0.15 230)) 100%);
+    background-size: 100% 100%;
+  }
+  100% {
+    background-size: 0% 100%;
+  }
+}
+
+/* Service card highlights - synced with cursor-click (5s) */
+@keyframes service-select {
+  0%, 35% {
+    transform: scale(1);
+    border-color: transparent;
+  }
+  50% {
+    transform: scale(1.08);
+    border-color: var(--brand, oklch(0.65 0.15 230));
+  }
+  65%, 100% {
+    transform: scale(1);
+    border-color: transparent;
+  }
+}
+
+/* Sidebar item gets selected - synced with cursor-navigate (6s) */
+@keyframes sidebar-select {
+  0%, 20% {
+    background-color: transparent;
+    padding-left: 0.5rem;
+  }
+  30%, 65% {
+    background-color: var(--brand, oklch(0.65 0.15 230));
+    padding-left: 0.75rem;
+  }
+  75%, 100% {
+    background-color: transparent;
+    padding-left: 0.5rem;
+  }
+}
+
+/* Animation preset gets selected */
+@keyframes preset-select {
+  0%, 20% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 transparent;
+  }
+  35%, 60% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 2px var(--brand, oklch(0.65 0.15 230));
+  }
+  75%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+/* Bezier control point follows drag - synced with cursor-drag (5s) */
+@keyframes control-drag {
+  0%, 15% { transform: translate(0, 0); }
+  30%, 65% { transform: translate(10px, -15px); }
+  80%, 100% { transform: translate(0, 0); }
+}
+
+/* Color swatch gets selection ring - synced with cursor-click (4s) */
+@keyframes swatch-click {
+  0%, 35% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 transparent;
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 3px var(--brand, oklch(0.65 0.15 230));
+  }
+  65%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+/* Decoration item gets selected - synced with cursor-navigate (5s) */
+@keyframes decoration-select {
+  0%, 20% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  35%, 55% {
+    transform: scale(1.15) rotate(5deg);
+    opacity: 1;
+  }
+  70%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+}
+
+/* Mobile content scrolls with finger - synced with cursor-scroll (4s) */
+@keyframes mobile-scroll {
+  0%, 30% { transform: translateY(0); }
+  70%, 100% { transform: translateY(-20px); }
+}
+
+/* Prop indicator highlights when clicked - synced with cursor-click (5s) */
+@keyframes prop-highlight {
+  0%, 35% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.3);
+    filter: brightness(1.3);
+  }
+  65%, 100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+
+/* Section highlights on hover - synced with cursor-hover (3s) */
+@keyframes section-highlight {
+  0%, 100% { background-color: transparent; }
+  25%, 75% { background-color: rgba(var(--brand), 0.1); }
 }

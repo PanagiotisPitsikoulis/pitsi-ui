@@ -1,12 +1,12 @@
 import {
   Geist_Mono as FontMono,
-  Geist as FontSans,
-  Inter,
+  Poppins,
+  Source_Sans_3,
 } from "next/font/google"
 
 import { cn } from "@/lib/utils"
 
-const fontSans = FontSans({
+const fontSans = Source_Sans_3({
   subsets: ["latin"],
   variable: "--font-sans",
 })
@@ -17,13 +17,14 @@ const fontMono = FontMono({
   weight: ["400"],
 })
 
-const fontInter = Inter({
+const fontDisplay = Poppins({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-display",
+  weight: ["400", "500", "600", "700"],
 })
 
 export const fontVariables = cn(
   fontSans.variable,
   fontMono.variable,
-  fontInter.variable
+  fontDisplay.variable
 )

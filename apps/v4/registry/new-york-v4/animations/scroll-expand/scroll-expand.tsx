@@ -1,12 +1,204 @@
 "use client"
 
 import type { ReactNode } from "react"
-import { memo, useMemo, useRef } from "react"
-import { motion, useScroll, useTransform } from "motion/react"
+import { memo, useMemo, useRef, useState } from "react"
+import { AnimatePresence, motion, useScroll, useTransform } from "motion/react"
 
+import { cn } from "@/lib/utils"
 import { useAnimationState } from "@/hooks/use-animation-state"
 import { useIsMobile } from "@/hooks/use-mobile"
 
+export type HoverExpandImageProps = {
+  /** Image source URL */
+  src: string
+  /** Alt text for accessibility */
+  alt?: string
+  /** Label shown when expanded */
+  label?: string
+}
+
+export type HoverExpandGalleryProps = {
+  /** Array of images to display */
+  images: HoverExpandImageProps[]
+  /** Additional CSS classes */
+  className?: string
+  /** Direction of the gallery. Default: "horizontal" */
+  direction?: "horizontal" | "vertical"
+  /** Collapsed size in rem. Default: 5 */
+  collapsedSize?: number
+  /** Expanded size in rem. Default: 24 */
+  expandedSize?: number
+  /** Initially active index. Default: 1 */
+  defaultActive?: number
+  /** Enable animation. Default: true */
+  animated?: boolean
+  /** Disable animation on mobile. Default: false */
+  noMobile?: boolean
+}
+
+/**
+ * Hover-activated expanding image gallery.
+ * Images expand when hovered or clicked.
+ */
+export const HoverExpandGallery = memo<HoverExpandGalleryProps>(
+  ({
+    images,
+    className,
+    direction = "horizontal",
+    collapsedSize = 5,
+    expandedSize = 24,
+    defaultActive = 1,
+    animated = true,
+    noMobile = false,
+  }) => {
+    const isMobile = useIsMobile()
+    const [activeImage, setActiveImage] = useState<number | null>(defaultActive)
+
+    const shouldDisable = noMobile && isMobile
+
+    if (shouldDisable || !animated) {
+      return (
+        <div
+          className={cn(
+            "relative w-full max-w-6xl px-5",
+            direction === "vertical" ? "flex flex-col" : "flex",
+            className
+          )}
+        >
+          <div
+            className={cn(
+              "flex w-full items-center justify-center gap-1",
+              direction === "vertical" ? "flex-col" : ""
+            )}
+          >
+            {images.map((image, index) => (
+              <div
+                key={index}
+                className="relative cursor-pointer overflow-hidden rounded-3xl"
+                style={{
+                  width:
+                    direction === "horizontal"
+                      ? activeImage === index
+                        ? `${expandedSize}rem`
+                        : `${collapsedSize}rem`
+                      : `${expandedSize}rem`,
+                  height:
+                    direction === "vertical"
+                      ? activeImage === index
+                        ? `${expandedSize}rem`
+                        : `${collapsedSize / 2}rem`
+                      : `${expandedSize}rem`,
+                }}
+                onClick={() => setActiveImage(index)}
+              >
+                <img
+                  src={image.src}
+                  className="size-full object-cover"
+                  alt={image.alt || "Gallery image"}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      )
+    }
+
+    return (
+      <motion.div
+        initial={{ opacity: 0, translateY: 20 }}
+        animate={{ opacity: 1, translateY: 0 }}
+        transition={{ duration: 0.3, delay: 0.5 }}
+        className={cn("relative w-full max-w-6xl px-5", className)}
+      >
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3 }}
+          className="w-full"
+        >
+          <div
+            className={cn(
+              "flex w-full items-center justify-center gap-1",
+              direction === "vertical" ? "flex-col" : ""
+            )}
+          >
+            {images.map((image, index) => (
+              <motion.div
+                key={index}
+                className="relative cursor-pointer overflow-hidden rounded-3xl"
+                initial={{
+                  width:
+                    direction === "horizontal"
+                      ? "2.5rem"
+                      : `${expandedSize}rem`,
+                  height:
+                    direction === "vertical" ? "2.5rem" : `${expandedSize}rem`,
+                }}
+                animate={{
+                  width:
+                    direction === "horizontal"
+                      ? activeImage === index
+                        ? `${expandedSize}rem`
+                        : `${collapsedSize}rem`
+                      : `${expandedSize}rem`,
+                  height:
+                    direction === "vertical"
+                      ? activeImage === index
+                        ? `${expandedSize}rem`
+                        : "2.5rem"
+                      : `${expandedSize}rem`,
+                }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                onClick={() => setActiveImage(index)}
+                onHoverStart={() => setActiveImage(index)}
+              >
+                <AnimatePresence>
+                  {activeImage === index && (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      className="absolute h-full w-full bg-gradient-to-t from-black/40 to-transparent"
+                    />
+                  )}
+                </AnimatePresence>
+                <AnimatePresence>
+                  {activeImage === index && image.label && (
+                    <motion.div
+                      initial={{
+                        opacity: 0,
+                        y: direction === "vertical" ? 20 : 0,
+                      }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{
+                        opacity: 0,
+                        y: direction === "vertical" ? 20 : 0,
+                      }}
+                      className="absolute flex h-full w-full flex-col items-end justify-end p-4"
+                    >
+                      <p className="text-left text-xs text-white/50">
+                        {image.label}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+                <img
+                  src={image.src}
+                  className="size-full object-cover"
+                  alt={image.alt || "Gallery image"}
+                />
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </motion.div>
+    )
+  }
+)
+
+HoverExpandGallery.displayName = "HoverExpandGallery"
+
+// Original scroll-based expand component
 export type ScrollExpandProps = {
   children: ReactNode
   className?: string
@@ -16,6 +208,10 @@ export type ScrollExpandProps = {
   noMobile?: boolean
 }
 
+/**
+ * Element that expands margins on scroll.
+ * Creates a reveal effect with animated margins and border radius.
+ */
 export const ScrollExpand = memo<ScrollExpandProps>(
   ({
     children,
@@ -115,4 +311,4 @@ export const ScrollExpand = memo<ScrollExpandProps>(
 
 ScrollExpand.displayName = "ScrollExpand"
 
-export default ScrollExpand
+export default HoverExpandGallery

@@ -1,6 +1,7 @@
 import { cache } from "react"
 
 import { auth } from "./auth"
+import type { PlanType } from "./db/schema"
 
 export type User = {
   id: string
@@ -8,6 +9,7 @@ export type User = {
   email: string
   image: string | null
   isPro: boolean
+  planType: PlanType
 }
 
 /**
@@ -42,5 +44,6 @@ export const getCurrentUser = cache(async (): Promise<User | null> => {
     email: session.user.email,
     image: session.user.image ?? null,
     isPro: (session.user as any).isPro ?? false,
+    planType: ((session.user as any).planType as PlanType) ?? "free",
   }
 })

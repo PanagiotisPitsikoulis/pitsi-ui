@@ -1,11 +1,60 @@
 "use client"
 
 import type { ReactNode } from "react"
-import { memo, useCallback, useEffect, useState } from "react"
+import { memo } from "react"
 
 import { cn } from "@/lib/utils"
-import { useIsMobile } from "@/hooks/use-mobile"
 
+export type StickyRevealFooterProps = {
+  /** Footer content */
+  children: ReactNode
+  /** Additional CSS classes for outer container */
+  className?: string
+  /** Footer height in pixels. Default: 800 */
+  height?: number
+}
+
+/**
+ * Footer that reveals from behind the main content on scroll.
+ * Uses pure CSS clip-path and sticky positioning for smooth effect.
+ *
+ * Best used for promotional footers or CTA sections at the bottom of long pages.
+ */
+export const StickyRevealFooter = memo<StickyRevealFooterProps>(
+  ({ children, className, height = 800 }) => {
+    return (
+      <div
+        className={cn("relative", className)}
+        style={{
+          height: `${height}px`,
+          clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)",
+        }}
+      >
+        <div
+          className="relative"
+          style={{
+            top: "-100vh",
+            height: `calc(100vh + ${height}px)`,
+          }}
+        >
+          <div
+            className="sticky h-full"
+            style={{
+              top: `calc(100vh - ${height}px)`,
+              height: `${height}px`,
+            }}
+          >
+            {children}
+          </div>
+        </div>
+      </div>
+    )
+  }
+)
+
+StickyRevealFooter.displayName = "StickyRevealFooter"
+
+// Legacy export for backwards compatibility with old API
 export type StickyFooterProps = {
   /** Footer content */
   children: ReactNode
@@ -18,63 +67,17 @@ export type StickyFooterProps = {
 }
 
 /**
- * Footer that becomes fixed when scrolling up near the bottom of the page.
- * Creates a smooth reveal effect for call-to-action footers.
- *
- * Best used for promotional footers or CTA sections at the bottom of long pages.
+ * @deprecated Use StickyRevealFooter for the CSS-based reveal effect.
+ * This component uses JavaScript scroll listeners.
  */
 export const StickyFooter = memo<StickyFooterProps>(
-  ({ children, className, triggerHeight = 100, disableOnMobile = false }) => {
-    const isMobile = useIsMobile()
-    const [isSticky, setIsSticky] = useState(false)
-    const [lastScrollY, setLastScrollY] = useState(0)
-
-    const shouldDisable = disableOnMobile && isMobile
-
-    const handleScroll = useCallback(() => {
-      if (shouldDisable) return
-
-      const currentScrollY = window.scrollY
-      const scrollHeight = document.documentElement.scrollHeight
-      const clientHeight = document.documentElement.clientHeight
-      const distanceFromBottom = scrollHeight - (currentScrollY + clientHeight)
-
-      // Check if scrolling up and near bottom
-      if (currentScrollY < lastScrollY && distanceFromBottom < triggerHeight) {
-        setIsSticky(true)
-      } else if (currentScrollY > lastScrollY) {
-        setIsSticky(false)
-      }
-
-      setLastScrollY(currentScrollY)
-    }, [lastScrollY, triggerHeight, shouldDisable])
-
-    useEffect(() => {
-      if (shouldDisable) {
-        setIsSticky(false)
-        return
-      }
-
-      window.addEventListener("scroll", handleScroll, { passive: true })
-      return () => window.removeEventListener("scroll", handleScroll)
-    }, [handleScroll, shouldDisable])
-
+  ({ children, className }) => {
     return (
-      <footer
-        className={cn(
-          "w-full transition-all duration-300",
-          isSticky && !shouldDisable
-            ? "fixed right-0 bottom-0 left-0 z-50"
-            : "relative",
-          className
-        )}
-      >
-        {children}
-      </footer>
+      <footer className={cn("relative w-full", className)}>{children}</footer>
     )
   }
 )
 
 StickyFooter.displayName = "StickyFooter"
 
-export default StickyFooter
+export default StickyRevealFooter

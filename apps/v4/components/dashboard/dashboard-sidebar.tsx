@@ -11,6 +11,7 @@ import {
   Receipt,
   Shield,
   User,
+  Users,
 } from "lucide-react"
 
 import {
@@ -37,6 +38,11 @@ const SETTINGS_NAV = [
     name: "Profile",
     href: "/dashboard/profile",
     icon: User,
+  },
+  {
+    name: "Team",
+    href: "/dashboard/team",
+    icon: Users,
   },
   {
     name: "Notifications",

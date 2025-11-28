@@ -2,7 +2,13 @@
   "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "perspective-carousel",
   "type": "registry:ui",
-  "description": "Animation component: perspective carousel",
+  "description": "3D perspective carousel with rotation effects.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "registry/new-york-v4/animations/perspective-carousel/perspective-carousel.tsx",

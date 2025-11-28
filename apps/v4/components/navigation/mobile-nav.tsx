@@ -30,10 +30,6 @@ const TOP_LEVEL_SECTIONS = [
     href: "/docs/mcp",
   },
   {
-    name: "Forms",
-    href: "/docs/forms",
-  },
-  {
     name: "Changelog",
     href: "/docs/changelog",
   },
@@ -78,6 +74,7 @@ export function MobileNav({
             <span className="sr-only">Toggle Menu</span>
           </div>
           <Icons.logo className="size-5" />
+          <span className="display font-semibold tracking-tight">Pitsi UI</span>
         </Button>
       </PopoverTrigger>
       <PopoverContent

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "hero-button",
+  "type": "registry:ui",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/ui/hero-button.tsx",
+      "content": "import * as React from \"react\"\nimport { ArrowRight } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\n\nfunction HeroButton({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof Button>) {\n  return (\n    <Button\n      size=\"lg\"\n      className={cn(\"relative rounded-full pr-12\", className)}\n      {...props}\n    >\n      {children}\n      <div className=\"bg-background absolute inset-y-0 right-1 my-auto flex aspect-square size-8 items-center justify-center rounded-full\">\n        <ArrowRight className=\"text-foreground size-4\" />\n      </div>\n    </Button>\n  )\n}\n\nexport { HeroButton }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "core-components"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

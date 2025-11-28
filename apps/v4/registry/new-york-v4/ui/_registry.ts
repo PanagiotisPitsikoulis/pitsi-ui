@@ -213,6 +213,20 @@ export const ui: Registry["items"] = [
     poweredBy: SHADCN_POWERED_BY,
   },
   {
+    name: "hero-button",
+    type: "registry:ui",
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "ui/hero-button.tsx",
+        type: "registry:ui",
+      },
+    ],
+    tier: "free",
+    categories: ["core-components"],
+    readiness: "production",
+  },
+  {
     name: "calendar",
     type: "registry:ui",
     dependencies: ["react-day-picker@latest", "date-fns"],

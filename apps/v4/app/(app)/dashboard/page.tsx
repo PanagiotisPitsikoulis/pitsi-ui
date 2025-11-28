@@ -120,7 +120,7 @@ export default async function DashboardPage() {
               </p>
             </div>
             <Button asChild>
-              <Link href="/pricing">
+              <Link href="/#pricing">
                 <Sparkles className="mr-2 size-4" />
                 Upgrade Now
               </Link>

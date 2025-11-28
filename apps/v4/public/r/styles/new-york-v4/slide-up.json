@@ -2,7 +2,13 @@
   "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "slide-up",
   "type": "registry:ui",
-  "description": "Animation component: slide up",
+  "description": "Content that slides up into view on scroll.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "use-animation-state"
+  ],
   "files": [
     {
       "path": "registry/new-york-v4/animations/slide-up/slide-up.tsx",

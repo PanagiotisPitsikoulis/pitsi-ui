@@ -1,0 +1,20 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "hero-button-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "hero-button"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/hero-button-demo.tsx",
+      "content": "import { HeroButton } from \"@/registry/new-york-v4/ui/hero-button\"\n\nexport default function HeroButtonDemo() {\n  return <HeroButton>Start Copy Pasting</HeroButton>\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "core-components"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

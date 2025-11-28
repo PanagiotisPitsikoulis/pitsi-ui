@@ -1,0 +1,393 @@
+"use client"
+
+import { useState } from "react"
+import Link from "next/link"
+import { useRouter } from "next/navigation"
+import { Check, Loader2 } from "lucide-react"
+
+import type { PlanType } from "@/lib/server/db/schema"
+import { Button } from "@/registry/new-york-v4/ui/button"
+import { Spacer } from "@/registry/new-york-v4/ui/spacer"
+
+const features = {
+  free: [
+    "Access to free components",
+    "Basic documentation",
+    "Community support",
+    "CLI tool access",
+  ],
+  pro: [
+    "Everything in Free",
+    "Access to all Pro components",
+    "Access to all Pro blocks",
+    "Access to all Pro animations",
+    "API keys for private registry",
+    "Lifetime updates",
+  ],
+  exclusive: [
+    "Everything in Pro",
+    "Priority support",
+    "Commercial license",
+    "Early access to new components",
+    "Direct support channel",
+  ],
+  team: [
+    "Everything in Exclusive",
+    "Up to 10 team members",
+    "Team API key management",
+    "Shared team dashboard",
+  ],
+  enterprise: [
+    "Everything in Team",
+    "Unlimited team members",
+    "Custom block requests",
+    "Dedicated support",
+    "Custom integrations",
+  ],
+}
+
+function CheckoutButton({
+  isLoggedIn,
+  planType,
+  variant = "default",
+}: {
+  isLoggedIn: boolean
+  planType: "pro" | "exclusive" | "team" | "enterprise"
+  variant?: "default" | "highlighted"
+}) {
+  const router = useRouter()
+  const [isLoading, setIsLoading] = useState(false)
+
+  const handleCheckout = async () => {
+    if (!isLoggedIn) {
+      router.push("/signin")
+      return
+    }
+
+    setIsLoading(true)
+
+    try {
+      const response = await fetch("/api/stripe/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ planType }),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to create checkout session")
+      }
+
+      if (data.url) {
+        window.location.href = data.url
+      }
+    } catch (error) {
+      console.error("Checkout error:", error)
+      setIsLoading(false)
+    }
+  }
+
+  const buttonLabels = {
+    pro: "Buy Now",
+    exclusive: "Buy Now",
+    team: "Buy Now",
+    enterprise: "Buy Now",
+  }
+  const buttonText = buttonLabels[planType]
+
+  if (!isLoggedIn) {
+    return (
+      <Button
+        asChild
+        size="lg"
+        className={`w-full rounded-xl ${
+          variant === "highlighted"
+            ? "bg-background text-foreground hover:bg-background/90"
+            : ""
+        }`}
+      >
+        <Link href="/signin">Sign in to Purchase</Link>
+      </Button>
+    )
+  }
+
+  return (
+    <Button
+      onClick={handleCheckout}
+      disabled={isLoading}
+      size="lg"
+      className={`w-full rounded-xl ${
+        variant === "highlighted"
+          ? "bg-background text-foreground hover:bg-background/90"
+          : ""
+      }`}
+    >
+      {isLoading ? (
+        <>
+          <Loader2 className="mr-2 size-4 animate-spin" />
+          Redirecting...
+        </>
+      ) : (
+        buttonText
+      )}
+    </Button>
+  )
+}
+
+function PricingCard({
+  name,
+  price,
+  originalPrice,
+  priceLabel,
+  description,
+  featureList,
+  highlighted = false,
+  badge,
+  children,
+}: {
+  name: string
+  price: string
+  originalPrice?: string
+  priceLabel: string
+  description: string
+  featureList: string[]
+  highlighted?: boolean
+  badge?: string
+  children: React.ReactNode
+}) {
+  return (
+    <div
+      className={`relative flex flex-col rounded-3xl border p-6 md:p-8 ${
+        highlighted
+          ? "border-foreground/20 bg-foreground text-background shadow-2xl"
+          : "border-border bg-background shadow-lg"
+      }`}
+    >
+      {badge && (
+        <div
+          className={`absolute -top-3 left-1/2 -translate-x-1/2 rounded-full px-4 py-1.5 text-xs font-medium ${
+            highlighted
+              ? "bg-background text-foreground"
+              : "bg-foreground text-background"
+          }`}
+        >
+          {badge}
+        </div>
+      )}
+      <div className="mb-4">
+        <h3 className="text-lg font-semibold">{name}</h3>
+        <p
+          className={`mt-1 text-sm ${highlighted ? "text-background/60" : "text-muted-foreground"}`}
+        >
+          {description}
+        </p>
+      </div>
+      <div className="mb-6">
+        <div className="flex items-baseline gap-2">
+          <span className="text-4xl font-bold tracking-tight">{price}</span>
+          {originalPrice && (
+            <span
+              className={`text-lg line-through ${highlighted ? "text-background/40" : "text-muted-foreground/60"}`}
+            >
+              {originalPrice}
+            </span>
+          )}
+          <span
+            className={`text-sm ${highlighted ? "text-background/60" : "text-muted-foreground"}`}
+          >
+            /{priceLabel}
+          </span>
+        </div>
+      </div>
+      <div className="mb-6">{children}</div>
+      <ul className="flex-1 space-y-3">
+        {featureList.map((feature, i) => (
+          <li key={i} className="flex items-start gap-3">
+            <Check
+              className={`mt-0.5 size-4 shrink-0 ${highlighted ? "text-background/60" : "text-muted-foreground"}`}
+            />
+            <span className={`text-sm ${highlighted ? "text-background/80" : ""}`}>{feature}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+export function PricingCardsSection({
+  user,
+}: {
+  user: { isPro: boolean; planType: PlanType } | null
+}) {
+  const [licenseType, setLicenseType] = useState<"single" | "team">("single")
+  const currentPlan = user?.planType ?? "free"
+  const hasPro =
+    currentPlan === "pro" ||
+    currentPlan === "exclusive" ||
+    currentPlan === "team" ||
+    currentPlan === "enterprise"
+  const hasExclusive =
+    currentPlan === "exclusive" ||
+    currentPlan === "team" ||
+    currentPlan === "enterprise"
+  const hasTeam = currentPlan === "team" || currentPlan === "enterprise"
+  const hasEnterprise = currentPlan === "enterprise"
+
+  return (
+    <div
+      id="pricing"
+      className="container flex flex-col items-center justify-center px-6 py-24 text-center"
+    >
+      <p className="text-muted-foreground text-sm font-medium uppercase tracking-widest">
+        Simple Pricing
+      </p>
+      <Spacer size="lg" sizeMobile="md" />
+      <h2 className="display max-w-4xl text-4xl leading-[1.1] tracking-tight md:text-6xl lg:text-7xl">
+        One Price.
+        <br />
+        <span className="text-muted-foreground">Lifetime Access.</span>
+      </h2>
+      <Spacer size="xl" sizeMobile="lg" />
+
+      {/* License Type Toggle */}
+      <div className="mb-8 inline-flex rounded-full border border-border bg-muted/50 p-1">
+        <button
+          onClick={() => setLicenseType("single")}
+          className={`rounded-full px-6 py-2 text-sm font-medium transition-all ${
+            licenseType === "single"
+              ? "bg-background text-foreground shadow-sm"
+              : "text-muted-foreground hover:text-foreground"
+          }`}
+        >
+          Single User
+        </button>
+        <button
+          onClick={() => setLicenseType("team")}
+          className={`rounded-full px-6 py-2 text-sm font-medium transition-all ${
+            licenseType === "team"
+              ? "bg-background text-foreground shadow-sm"
+              : "text-muted-foreground hover:text-foreground"
+          }`}
+        >
+          Team License
+        </button>
+      </div>
+
+      <Spacer size="lg" sizeMobile="md" />
+
+      {licenseType === "single" ? (
+        <>
+          <div className="grid w-full max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {/* Free Plan */}
+            <PricingCard
+              name="Free"
+              price="€0"
+              priceLabel="forever"
+              description="Get started with free components"
+              featureList={features.free}
+            >
+              <Button
+                asChild
+                size="lg"
+                variant="secondary"
+                className="w-full rounded-xl"
+              >
+                <Link href="/docs">Get Started</Link>
+              </Button>
+            </PricingCard>
+
+            {/* Pro Plan */}
+            <PricingCard
+              name="Pro"
+              price="€149"
+              priceLabel="one-time"
+              description="Full access for individuals"
+              featureList={features.pro}
+              highlighted
+              badge="Most Popular"
+            >
+              {hasPro ? (
+                <div className="flex h-12 w-full items-center justify-center rounded-xl bg-background/10 text-sm font-medium">
+                  {currentPlan === "pro" ? "Current Plan" : "Included"}
+                </div>
+              ) : (
+                <CheckoutButton isLoggedIn={!!user} planType="pro" variant="highlighted" />
+              )}
+            </PricingCard>
+
+            {/* Exclusive Plan */}
+            <PricingCard
+              name="Exclusive"
+              price="€499"
+              priceLabel="one-time"
+              description="Premium access with priority support"
+              featureList={features.exclusive}
+            >
+              {hasExclusive ? (
+                <div className="flex h-12 w-full items-center justify-center rounded-xl bg-muted text-sm font-medium">
+                  {currentPlan === "exclusive" ? "Current Plan" : "Included"}
+                </div>
+              ) : (
+                <CheckoutButton
+                  isLoggedIn={!!user}
+                  planType="exclusive"
+                />
+              )}
+            </PricingCard>
+          </div>
+        </>
+      ) : (
+        <div className="grid w-full max-w-4xl gap-6 md:grid-cols-2">
+          {/* Startup Plan */}
+          <PricingCard
+            name="Startup"
+            price="€999"
+            originalPrice="€4,990"
+            priceLabel="one-time"
+            description="For teams up to 10 members"
+            featureList={features.team}
+            highlighted
+            badge="Save 80%"
+          >
+            {hasTeam ? (
+              <div className="flex h-12 w-full items-center justify-center rounded-xl bg-background/10 text-sm font-medium">
+                {currentPlan === "team" ? "Current Plan" : "Included"}
+              </div>
+            ) : (
+              <CheckoutButton isLoggedIn={!!user} planType="team" variant="highlighted" />
+            )}
+          </PricingCard>
+
+          {/* Enterprise Plan */}
+          <PricingCard
+            name="Enterprise"
+            price="€1,999"
+            originalPrice="€14,970"
+            priceLabel="one-time"
+            description="Unlimited team members"
+            featureList={features.enterprise}
+            badge="Save 87%"
+          >
+            {hasEnterprise ? (
+              <div className="flex h-12 w-full items-center justify-center rounded-xl bg-muted text-sm font-medium">
+                {currentPlan === "enterprise" ? "Current Plan" : "Included"}
+              </div>
+            ) : (
+              <CheckoutButton
+                isLoggedIn={!!user}
+                planType="enterprise"
+                variant="highlighted"
+              />
+            )}
+          </PricingCard>
+        </div>
+      )}
+
+      <Spacer size="lg" sizeMobile="md" />
+      <p className="text-muted-foreground text-sm">
+        Secure payment powered by Stripe. No recurring charges, no hidden fees.
+      </p>
+    </div>
+  )
+}

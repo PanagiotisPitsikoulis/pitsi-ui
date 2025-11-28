@@ -1,35 +1,34 @@
 "use client"
 
 import type { ReactNode } from "react"
-import { memo, useMemo, useRef } from "react"
-import { motion, useScroll, useTransform, type MotionValue } from "motion/react"
+import {
+  createContext,
+  memo,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react"
+import { motion, MotionValue, useScroll, useTransform } from "motion/react"
 
 import { cn } from "@/lib/utils"
 import { useAnimationState } from "@/hooks/use-animation-state"
 import { useIsMobile } from "@/hooks/use-mobile"
 
-export type ParallaxConfig = {
-  /** Vertical movement range. Example: ["0%", "20%"] or [0, 100] */
-  y?: [string | number, string | number]
-  /** Horizontal movement range. Example: ["-20%", "20%"] or [-100, 100] */
-  x?: [string | number, string | number]
-  /** Scale transformation range. Example: [0.8, 1.2] */
-  scale?: [number, number]
-  /** Opacity change range. Example: [0, 1] */
-  opacity?: [number, number]
-  /** Rotation range in degrees. Example: [-10, 10] */
-  rotate?: [number, number]
-}
+// Context for gallery scroll progress
+const GalleryContext = createContext<{
+  scrollYProgress: MotionValue<number>
+  height: number
+} | null>(null)
 
-export type ParallaxScrollProps = {
-  /** Content to apply parallax effect to */
+export type ParallaxGalleryProps = {
+  /** Gallery columns */
   children: ReactNode
   /** Additional CSS classes */
   className?: string
-  /** Scroll offset when to start/end animation. Default: ["start end", "end start"] */
-  offset?: [string, string]
-  /** Configuration for various transform properties */
-  config?: ParallaxConfig
+  /** Gallery height. Default: "175vh" */
+  height?: string
   /** Enable scroll-based animation. Default: true */
   scrollBased?: boolean
   /** Disable animation on mobile. Default: false */
@@ -37,16 +36,163 @@ export type ParallaxScrollProps = {
 }
 
 /**
- * General-purpose parallax component with configurable transforms.
- * Can control position, scale, opacity, and rotation independently.
- * Perfect for creating complex scroll-based animations.
+ * Container for multi-column parallax gallery.
+ * Provides scroll progress to child ParallaxColumn components.
+ */
+export const ParallaxGallery = memo<ParallaxGalleryProps>(
+  ({
+    children,
+    className,
+    height = "175vh",
+    scrollBased = true,
+    noMobile = false,
+  }) => {
+    const ref = useRef<HTMLDivElement>(null)
+    const [dimension, setDimension] = useState({ width: 0, height: 0 })
+    const { shouldUseScroll } = useAnimationState(scrollBased, noMobile)
+
+    const { scrollYProgress } = useScroll({
+      target: shouldUseScroll ? ref : undefined,
+      offset: ["start end", "end start"],
+    })
+
+    useEffect(() => {
+      const resize = () => {
+        setDimension({ width: window.innerWidth, height: window.innerHeight })
+      }
+      window.addEventListener("resize", resize)
+      resize()
+      return () => window.removeEventListener("resize", resize)
+    }, [])
+
+    return (
+      <GalleryContext.Provider
+        value={{ scrollYProgress, height: dimension.height }}
+      >
+        <div
+          ref={ref}
+          className={cn(
+            "relative box-border flex gap-[2vw] overflow-hidden p-[2vw]",
+            className
+          )}
+          style={{ height }}
+        >
+          {children}
+        </div>
+      </GalleryContext.Provider>
+    )
+  }
+)
+
+ParallaxGallery.displayName = "ParallaxGallery"
+
+export type ParallaxColumnProps = {
+  /** Column images */
+  images: string[]
+  /** Speed multiplier for parallax. Default: 1 */
+  speed?: number
+  /** Initial top offset. Default: "-45%" */
+  initialOffset?: string
+  /** Additional CSS classes */
+  className?: string
+  /** Enable scroll-based animation. Default: true */
+  scrollBased?: boolean
+  /** Disable animation on mobile. Default: false */
+  noMobile?: boolean
+}
+
+/**
+ * Individual column in a parallax gallery.
+ * Use inside ParallaxGallery.
+ */
+export const ParallaxColumn = memo<ParallaxColumnProps>(
+  ({
+    images,
+    speed = 1,
+    initialOffset = "-45%",
+    className,
+    scrollBased = true,
+    noMobile = false,
+  }) => {
+    const context = useContext(GalleryContext)
+    const { shouldDisableAnimation } = useAnimationState(scrollBased, noMobile)
+
+    const y = useTransform(
+      context?.scrollYProgress || new MotionValue(0),
+      [0, 1],
+      [0, (context?.height || 0) * speed]
+    )
+
+    if (shouldDisableAnimation || !context) {
+      return (
+        <div
+          className={cn(
+            "relative flex w-1/4 min-w-[250px] flex-col gap-[2vw]",
+            className
+          )}
+          style={{ top: initialOffset }}
+        >
+          {images.map((src, i) => (
+            <div key={i} className="relative h-full w-full overflow-hidden">
+              <img
+                src={src}
+                alt={`Gallery image ${i + 1}`}
+                className="pointer-events-none object-cover"
+              />
+            </div>
+          ))}
+        </div>
+      )
+    }
+
+    return (
+      <motion.div
+        className={cn(
+          "relative flex h-full w-1/4 min-w-[250px] flex-col gap-[2vw]",
+          className
+        )}
+        style={{ y, top: initialOffset }}
+      >
+        {images.map((src, i) => (
+          <div key={i} className="relative h-full w-full overflow-hidden">
+            <img
+              src={src}
+              alt={`Gallery image ${i + 1}`}
+              className="pointer-events-none object-cover"
+            />
+          </div>
+        ))}
+      </motion.div>
+    )
+  }
+)
+
+ParallaxColumn.displayName = "ParallaxColumn"
+
+export type ParallaxScrollProps = {
+  /** Content to apply parallax effect to */
+  children: ReactNode
+  /** Additional CSS classes */
+  className?: string
+  /** Scroll offset. Default: ["start end", "end start"] */
+  offset?: [string, string]
+  /** Y movement range. Default: [0, 100] */
+  yRange?: [number, number]
+  /** Enable scroll-based animation. Default: true */
+  scrollBased?: boolean
+  /** Disable animation on mobile. Default: false */
+  noMobile?: boolean
+}
+
+/**
+ * General-purpose parallax scroll component.
  */
 export const ParallaxScroll = memo<ParallaxScrollProps>(
   ({
     children,
     className,
     offset = ["start end", "end start"],
-    config = { y: ["0%", "20%"] },
+    yRange = [0, 100],
     scrollBased = true,
     noMobile = false,
   }) => {
@@ -57,58 +203,17 @@ export const ParallaxScroll = memo<ParallaxScrollProps>(
       noMobile
     )
 
+    const adjustedRange = useMemo(
+      () => (isMobile ? [yRange[0] * 0.5, yRange[1] * 0.5] : yRange),
+      [isMobile, yRange]
+    ) as [number, number]
+
     const { scrollYProgress } = useScroll({
       target: shouldUseScroll ? ref : undefined,
       offset: offset as any,
     })
 
-    const adjustedConfig = useMemo(() => {
-      if (!isMobile) return config
-
-      // Reduce movement on mobile for better performance
-      return {
-        ...config,
-        y: config.y
-          ? [
-              typeof config.y[0] === "string" ? config.y[0] : config.y[0] * 0.5,
-              typeof config.y[1] === "string" ? config.y[1] : config.y[1] * 0.5,
-            ]
-          : undefined,
-        x: config.x
-          ? [
-              typeof config.x[0] === "string" ? config.x[0] : config.x[0] * 0.5,
-              typeof config.x[1] === "string" ? config.x[1] : config.x[1] * 0.5,
-            ]
-          : undefined,
-      } as ParallaxConfig
-    }, [config, isMobile])
-
-    // Create motion values for each transform property
-    const y = adjustedConfig.y
-      ? useTransform(scrollYProgress, [0, 1], adjustedConfig.y as any)
-      : undefined
-    const x = adjustedConfig.x
-      ? useTransform(scrollYProgress, [0, 1], adjustedConfig.x as any)
-      : undefined
-    const scale = adjustedConfig.scale
-      ? useTransform(scrollYProgress, [0, 1], adjustedConfig.scale)
-      : undefined
-    const opacity = adjustedConfig.opacity
-      ? useTransform(scrollYProgress, [0, 1], adjustedConfig.opacity)
-      : undefined
-    const rotate = adjustedConfig.rotate
-      ? useTransform(scrollYProgress, [0, 1], adjustedConfig.rotate)
-      : undefined
-
-    const motionValues: Record<string, MotionValue> = useMemo(() => {
-      const values: Record<string, MotionValue> = {}
-      if (y) values.y = y
-      if (x) values.x = x
-      if (scale) values.scale = scale
-      if (opacity) values.opacity = opacity
-      if (rotate) values.rotate = rotate
-      return values
-    }, [y, x, scale, opacity, rotate])
+    const y = useTransform(scrollYProgress, [0, 1], adjustedRange)
 
     if (shouldDisableAnimation) {
       return <div className={className}>{children}</div>
@@ -117,7 +222,7 @@ export const ParallaxScroll = memo<ParallaxScrollProps>(
     return (
       <motion.div
         ref={ref}
-        style={motionValues}
+        style={{ y }}
         className={cn("will-change-transform", className)}
       >
         {children}
@@ -128,80 +233,4 @@ export const ParallaxScroll = memo<ParallaxScrollProps>(
 
 ParallaxScroll.displayName = "ParallaxScroll"
 
-export type VerticalParallaxProps = {
-  /** Content to apply vertical parallax to */
-  children: ReactNode
-  /** Additional CSS classes */
-  className?: string
-  /** Percentage distance to move. Default: 20 */
-  speed?: number
-  /** Move opposite to scroll direction. Default: false */
-  reverse?: boolean
-  /** Disable animation on mobile. Default: false */
-  noMobile?: boolean
-}
-
-/**
- * Simplified vertical parallax component.
- * Elements move up or down at different speed than scroll.
- */
-export const VerticalParallax = memo<VerticalParallaxProps>(
-  ({ children, className, speed = 20, reverse = false, noMobile = false }) => {
-    const movement = reverse ? [speed, -speed] : [-speed, speed]
-
-    return (
-      <ParallaxScroll
-        config={{ y: [`${movement[0]}%`, `${movement[1]}%`] }}
-        className={className}
-        noMobile={noMobile}
-      >
-        {children}
-      </ParallaxScroll>
-    )
-  }
-)
-
-VerticalParallax.displayName = "VerticalParallax"
-
-export type HorizontalParallaxProps = {
-  /** Content to apply horizontal parallax to */
-  children: ReactNode
-  /** Additional CSS classes */
-  className?: string
-  /** Movement direction. Default: "left" */
-  direction?: "left" | "right"
-  /** Distance to move in percentage. Default: 20 */
-  speed?: number
-  /** Disable animation on mobile. Default: false */
-  noMobile?: boolean
-}
-
-/**
- * Simplified horizontal parallax component.
- * Elements move left or right as you scroll.
- */
-export const HorizontalParallax = memo<HorizontalParallaxProps>(
-  ({
-    children,
-    className,
-    direction = "left",
-    speed = 20,
-    noMobile = false,
-  }) => {
-    const movement = direction === "left" ? [-speed, speed] : [speed, -speed]
-
-    return (
-      <ParallaxScroll
-        config={{ x: [`${movement[0]}%`, `${movement[1]}%`] }}
-        className={className}
-        noMobile={noMobile}
-      >
-        {children}
-      </ParallaxScroll>
-    )
-  }
-)
-
-HorizontalParallax.displayName = "HorizontalParallax"
-
-export default ParallaxScroll
+export default ParallaxGallery

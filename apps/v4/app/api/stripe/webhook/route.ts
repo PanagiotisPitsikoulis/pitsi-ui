@@ -44,8 +44,13 @@ export async function POST(req: Request) {
       case "checkout.session.completed": {
         const session = event.data.object as Stripe.Checkout.Session
 
-        // Get user ID from metadata
+        // Get user ID and plan type from metadata
         const userId = session.metadata?.userId
+        const planType = (session.metadata?.planType || "pro") as
+          | "pro"
+          | "exclusive"
+          | "team"
+          | "enterprise"
 
         if (!userId) {
           console.error("No userId in session metadata")
@@ -55,18 +60,19 @@ export async function POST(req: Request) {
           )
         }
 
-        // Update user to Pro
+        // Update user with plan
         await db
           .update(user)
           .set({
-            isPro: true,
+            isPro: true, // Both pro and team have pro access
+            planType: planType,
             stripeCustomerId: session.customer as string,
             stripePaymentId: session.payment_intent as string,
             proUpgradedAt: new Date(),
           })
           .where(eq(user.id, userId))
 
-        console.log(`User ${userId} upgraded to Pro`)
+        console.log(`User ${userId} upgraded to ${planType}`)
         break
       }
 

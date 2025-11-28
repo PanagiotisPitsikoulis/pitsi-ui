@@ -2,7 +2,15 @@
   "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "text-gradient-opacity",
   "type": "registry:ui",
-  "description": "Animation component: text gradient opacity",
+  "description": "Text with gradient opacity reveal on scroll.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "utils",
+    "use-animation-state",
+    "use-mobile"
+  ],
   "files": [
     {
       "path": "registry/new-york-v4/animations/text-gradient-opacity/text-gradient-opacity.tsx",

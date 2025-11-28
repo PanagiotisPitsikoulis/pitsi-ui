@@ -436,6 +436,20 @@ export const examples: Registry["items"] = [
     readiness: "production",
   },
   {
+    name: "hero-button-demo",
+    type: "registry:example",
+    registryDependencies: ["hero-button"],
+    files: [
+      {
+        path: "examples/hero-button-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    tier: "free",
+    categories: ["core-components"],
+    readiness: "production",
+  },
+  {
     name: "button-group-size",
     type: "registry:example",
     registryDependencies: ["button-group"],

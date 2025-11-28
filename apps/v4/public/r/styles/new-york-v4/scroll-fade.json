@@ -2,7 +2,13 @@
   "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "scroll-fade",
   "type": "registry:ui",
-  "description": "Animation component: scroll fade",
+  "description": "Content that fades in as you scroll into view.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "use-animation-state"
+  ],
   "files": [
     {
       "path": "registry/new-york-v4/animations/scroll-fade/scroll-fade.tsx",

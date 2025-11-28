@@ -1,7 +1,9 @@
 "use client"
 
-import { useRef } from "react"
-import { motion, MotionValue, useScroll, useTransform } from "motion/react"
+import {
+  ZoomGalleryContainer,
+  ZoomGalleryImage,
+} from "@/registry/new-york-v4/animations/zoom-parallax/zoom-parallax"
 
 const pictures = [
   {
@@ -40,61 +42,18 @@ const pictures = [
   },
 ]
 
-function ZoomImage({
-  src,
-  targetScale,
-  style,
-  scrollYProgress,
-  index,
-}: {
-  src: string
-  targetScale: number
-  style?: React.CSSProperties
-  scrollYProgress: MotionValue<number>
-  index: number
-}) {
-  const scale = useTransform(scrollYProgress, [0, 1], [1, targetScale])
-
-  return (
-    <motion.div
-      style={{ scale }}
-      className="absolute top-0 flex h-full w-full items-center justify-center"
-    >
-      <div
-        className="relative"
-        style={style || { width: "25vw", height: "25vh" }}
-      >
-        <img
-          src={src}
-          alt={`Gallery image ${index + 1}`}
-          className="h-full w-full object-cover"
-        />
-      </div>
-    </motion.div>
-  )
-}
-
 export default function ZoomParallaxDemo() {
-  const container = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start start", "end end"],
-  })
-
   return (
-    <div ref={container} className="relative h-[300vh]">
-      <div className="sticky top-0 h-screen overflow-hidden">
-        {pictures.map((picture, index) => (
-          <ZoomImage
-            key={index}
-            src={picture.src}
-            targetScale={picture.targetScale}
-            style={picture.style}
-            scrollYProgress={scrollYProgress}
-            index={index}
-          />
-        ))}
-      </div>
-    </div>
+    <ZoomGalleryContainer height="300vh">
+      {pictures.map((picture, index) => (
+        <ZoomGalleryImage
+          key={index}
+          src={picture.src}
+          targetScale={picture.targetScale}
+          style={picture.style}
+          alt={`Gallery image ${index + 1}`}
+        />
+      ))}
+    </ZoomGalleryContainer>
   )
 }

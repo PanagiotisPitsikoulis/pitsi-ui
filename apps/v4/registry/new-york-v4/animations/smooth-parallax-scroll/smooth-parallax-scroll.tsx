@@ -1,101 +1,65 @@
 "use client"
 
 import type { ReactNode } from "react"
-import React, { memo, useEffect, useRef, useState } from "react"
+import { createContext, memo, useContext, useMemo, useRef } from "react"
+import { motion, MotionValue, useScroll, useTransform } from "motion/react"
 
 import { cn } from "@/lib/utils"
-import { useIsMobile } from "@/hooks/use-mobile"
+import { useAnimationState } from "@/hooks/use-animation-state"
 
-export type SmoothParallaxScrollProps = {
-  /** Content to wrap with smooth scrolling */
+// Context for scroll progress
+const ScrollProgressContext = createContext<MotionValue<number> | null>(null)
+
+export type SmoothParallaxContainerProps = {
+  /** Parallax layers */
   children: ReactNode
   /** Additional CSS classes */
   className?: string
-  /** Interpolation speed (0-1). Lower = smoother but slower. Default: 0.08 */
-  speed?: number
-  /** Disable smooth scroll on mobile for better native performance. Default: true */
-  disableOnMobile?: boolean
+  /** Container height. Default: "300vh" */
+  height?: string
+  /** Enable scroll-based animation. Default: true */
+  scrollBased?: boolean
+  /** Disable animation on mobile. Default: false */
+  noMobile?: boolean
 }
 
 /**
- * Smooth scroll container with parallax elements support.
- * Creates a buttery smooth scrolling experience with customizable speed.
- * Combine with ParallaxElement for individual element parallax effects.
- *
- * Note: This wraps your entire scrollable content and overrides native scroll behavior.
- * Consider performance implications for very long pages.
+ * Container for smooth parallax scroll effect.
+ * Provides scroll progress to child SmoothParallaxLayer components.
  */
-export const SmoothParallaxScroll = memo<SmoothParallaxScrollProps>(
-  ({ children, className, speed = 0.08, disableOnMobile = true }) => {
-    const isMobile = useIsMobile()
-    const containerRef = useRef<HTMLDivElement>(null)
-    const scrollRef = useRef<HTMLDivElement>(null)
-    const currentScrollY = useRef(0)
-    const targetScrollY = useRef(0)
-    const [scrollProgress, setScrollProgress] = useState(0)
+export const SmoothParallaxContainer = memo<SmoothParallaxContainerProps>(
+  ({
+    children,
+    className,
+    height = "300vh",
+    scrollBased = true,
+    noMobile = false,
+  }) => {
+    const ref = useRef<HTMLDivElement>(null)
+    const { shouldUseScroll, shouldDisableAnimation } = useAnimationState(
+      scrollBased,
+      noMobile
+    )
 
-    const shouldDisable = disableOnMobile && isMobile
+    const { scrollYProgress } = useScroll({
+      target: shouldUseScroll ? ref : undefined,
+      offset: ["start start", "end end"],
+    })
 
-    useEffect(() => {
-      if (shouldDisable) return
-
-      const container = containerRef.current
-      const scrollContent = scrollRef.current
-      if (!container || !scrollContent) return
-
-      let animationFrame: number
-      const maxScroll = scrollContent.offsetHeight - window.innerHeight
-
-      const handleWheel = (e: WheelEvent) => {
-        e.preventDefault()
-        targetScrollY.current += e.deltaY
-        targetScrollY.current = Math.max(
-          0,
-          Math.min(targetScrollY.current, maxScroll)
-        )
-      }
-
-      const smoothScroll = () => {
-        currentScrollY.current +=
-          (targetScrollY.current - currentScrollY.current) * speed
-
-        if (Math.abs(targetScrollY.current - currentScrollY.current) < 0.5) {
-          currentScrollY.current = targetScrollY.current
-        }
-
-        scrollContent.style.transform = `translateY(-${currentScrollY.current}px)`
-
-        // Update scroll progress for child parallax elements
-        const progress = maxScroll > 0 ? currentScrollY.current / maxScroll : 0
-        setScrollProgress(progress)
-
-        animationFrame = requestAnimationFrame(smoothScroll)
-      }
-
-      container.addEventListener("wheel", handleWheel, { passive: false })
-      smoothScroll()
-
-      return () => {
-        container.removeEventListener("wheel", handleWheel)
-        cancelAnimationFrame(animationFrame)
-      }
-    }, [speed, shouldDisable])
-
-    if (shouldDisable) {
+    if (shouldDisableAnimation) {
       return (
-        <ScrollProgressContext.Provider value={scrollProgress}>
-          <div className={className}>{children}</div>
-        </ScrollProgressContext.Provider>
+        <div className={cn("relative", className)} style={{ height }}>
+          <div className="sticky top-0 flex h-screen items-center justify-center overflow-hidden">
+            {children}
+          </div>
+        </div>
       )
     }
 
     return (
-      <ScrollProgressContext.Provider value={scrollProgress}>
-        <div
-          ref={containerRef}
-          className={cn("fixed inset-0 overflow-hidden", className)}
-        >
-          <div ref={scrollRef} className="will-change-transform">
+      <ScrollProgressContext.Provider value={scrollYProgress}>
+        <div ref={ref} className={cn("relative", className)} style={{ height }}>
+          <div className="sticky top-0 flex h-screen items-center justify-center overflow-hidden">
             {children}
           </div>
         </div>
@@ -104,85 +68,140 @@ export const SmoothParallaxScroll = memo<SmoothParallaxScrollProps>(
   }
 )
 
-SmoothParallaxScroll.displayName = "SmoothParallaxScroll"
+SmoothParallaxContainer.displayName = "SmoothParallaxContainer"
 
-// Context for sharing scroll progress with child elements
-const ScrollProgressContext = React.createContext(0)
-
-export type ParallaxElementProps = {
-  /** Content to apply parallax effect to */
+export type SmoothParallaxLayerProps = {
+  /** Layer content */
   children: ReactNode
   /** Additional CSS classes */
   className?: string
-  /** Parallax speed multiplier. Default: 0.5 */
+  /** Y movement range in pixels. Default: [-200, 0] means moves up 200px */
+  yRange?: [number, number]
+  /** Scale range. Default: [1, 1] (no scale) */
+  scaleRange?: [number, number]
+  /** Opacity range. Default: [1, 1] (no opacity change) */
+  opacityRange?: number[]
+  /** Opacity input range. Default: [0, 1] */
+  opacityInputRange?: number[]
+  /** Z-index for layering. Default: 0 */
+  zIndex?: number
+  /** Enable scroll-based animation. Default: true */
+  scrollBased?: boolean
+  /** Disable animation on mobile. Default: false */
+  noMobile?: boolean
+}
+
+/**
+ * Individual parallax layer with customizable movement.
+ * Use inside SmoothParallaxContainer.
+ */
+export const SmoothParallaxLayer = memo<SmoothParallaxLayerProps>(
+  ({
+    children,
+    className,
+    yRange = [-200, 0],
+    scaleRange = [1, 1],
+    opacityRange = [1, 1],
+    opacityInputRange = [0, 1],
+    zIndex = 0,
+    scrollBased = true,
+    noMobile = false,
+  }) => {
+    const context = useContext(ScrollProgressContext)
+    const { shouldDisableAnimation } = useAnimationState(scrollBased, noMobile)
+
+    const y = useTransform(
+      context || new MotionValue(0),
+      [0, 1],
+      [0, yRange[0]]
+    )
+
+    const scale = useTransform(
+      context || new MotionValue(0),
+      [0, 0.5, 1],
+      [scaleRange[0], scaleRange[1], scaleRange[0]]
+    )
+
+    const opacity = useTransform(
+      context || new MotionValue(0),
+      opacityInputRange,
+      opacityRange
+    )
+
+    const hasScale = scaleRange[0] !== scaleRange[1]
+    const hasOpacity = opacityRange.some(
+      (v, i) => i > 0 && v !== opacityRange[0]
+    )
+
+    if (shouldDisableAnimation || !context) {
+      return (
+        <div className={className} style={{ zIndex }}>
+          {children}
+        </div>
+      )
+    }
+
+    return (
+      <motion.div
+        style={{
+          y,
+          ...(hasScale && { scale }),
+          ...(hasOpacity && { opacity }),
+          zIndex,
+        }}
+        className={cn("will-change-transform", className)}
+      >
+        {children}
+      </motion.div>
+    )
+  }
+)
+
+SmoothParallaxLayer.displayName = "SmoothParallaxLayer"
+
+// Legacy exports for backwards compatibility
+export type SmoothParallaxScrollProps = {
+  children: ReactNode
+  className?: string
   speed?: number
-  /** Starting offset percentage (0-1). Default: 0.5 */
+  disableOnMobile?: boolean
+}
+
+/**
+ * @deprecated Use SmoothParallaxContainer and SmoothParallaxLayer instead.
+ */
+export const SmoothParallaxScroll = memo<SmoothParallaxScrollProps>(
+  ({ children, className }) => {
+    return (
+      <SmoothParallaxContainer className={className} height="100%">
+        {children}
+      </SmoothParallaxContainer>
+    )
+  }
+)
+
+SmoothParallaxScroll.displayName = "SmoothParallaxScroll"
+
+export type ParallaxElementProps = {
+  children: ReactNode
+  className?: string
+  speed?: number
   startPosition?: number
 }
 
 /**
- * Element that moves at different speed than scroll within SmoothParallaxScroll.
- * Must be used inside SmoothParallaxScroll component.
- * Creates depth by moving elements at varying speeds.
+ * @deprecated Use SmoothParallaxLayer instead.
  */
 export const ParallaxElement = memo<ParallaxElementProps>(
-  ({ children, className, speed = 0.5, startPosition = 0.5 }) => {
-    const scrollProgress = React.useContext(ScrollProgressContext)
-    const elementRef = useRef<HTMLDivElement>(null)
-
-    useEffect(() => {
-      const element = elementRef.current
-      if (!element) return
-
-      const viewportHeight = window.innerHeight
-      const offset = (scrollProgress - startPosition) * viewportHeight * speed
-      element.style.transform = `translateY(${offset}px)`
-    }, [scrollProgress, speed, startPosition])
-
+  ({ children, className, speed = 0.5 }) => {
     return (
-      <div ref={elementRef} className={cn("will-change-transform", className)}>
+      <SmoothParallaxLayer yRange={[speed * -400, 0]} className={className}>
         {children}
-      </div>
+      </SmoothParallaxLayer>
     )
   }
 )
 
 ParallaxElement.displayName = "ParallaxElement"
 
-export type LayeredParallaxProps = {
-  /** Array of layers with content and speed */
-  layers: Array<{
-    content: ReactNode
-    speed: number
-    className?: string
-  }>
-  /** Additional CSS classes */
-  className?: string
-}
-
-/**
- * Multiple parallax layers with different speeds.
- * Creates depth through motion by layering elements with varying parallax speeds.
- * Must be used inside SmoothParallaxScroll component.
- */
-export const LayeredParallax = memo<LayeredParallaxProps>(
-  ({ layers, className }) => {
-    return (
-      <div className={cn("relative", className)}>
-        {layers.map((layer, i) => (
-          <ParallaxElement
-            key={i}
-            speed={layer.speed}
-            className={cn("absolute inset-0", layer.className)}
-          >
-            {layer.content}
-          </ParallaxElement>
-        ))}
-      </div>
-    )
-  }
-)
-
-LayeredParallax.displayName = "LayeredParallax"
-
-export default SmoothParallaxScroll
+export default SmoothParallaxContainer

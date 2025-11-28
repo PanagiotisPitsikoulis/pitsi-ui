@@ -130,7 +130,7 @@ export function ApiKeysClient({
               unlock all Pro components.
             </p>
             <Button asChild>
-              <Link href="/pricing">
+              <Link href="/#pricing">
                 <Sparkles className="mr-2 size-4" />
                 Upgrade to Pro
               </Link>

@@ -2,7 +2,13 @@
   "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "blend-mode-cursor",
   "type": "registry:ui",
-  "description": "A cursor that follows the mouse with mix-blend-difference effect",
+  "description": "A cursor that follows the mouse with mix-blend-difference effect.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "registry/new-york-v4/animations/blend-mode-cursor/blend-mode-cursor.tsx",

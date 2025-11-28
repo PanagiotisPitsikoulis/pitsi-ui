@@ -196,6 +196,27 @@ export const Index: Record<string, Record<string, any>> = {
       readiness: "production",
       poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"}],
     },
+    "hero-button": {
+      name: "hero-button",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: ["button"],
+      files: [{
+        path: "registry/new-york-v4/ui/hero-button.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/ui/hero-button.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["core-components"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+      poweredBy: undefined,
+    },
     "calendar": {
       name: "calendar",
       description: "",
@@ -1374,9 +1395,9 @@ export const Index: Record<string, Record<string, any>> = {
     },
     "background-image-parallax": {
       name: "background-image-parallax",
-      description: "Animation component: background image parallax",
+      description: "Background image with parallax effect - moves slower than foreground for depth.",
       type: "registry:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["utils","use-animation-state","use-mobile"],
       files: [{
         path: "registry/new-york-v4/animations/background-image-parallax/background-image-parallax.tsx",
         type: "registry:ui",
@@ -1395,9 +1416,9 @@ export const Index: Record<string, Record<string, any>> = {
     },
     "card-swipe-carousel": {
       name: "card-swipe-carousel",
-      description: "Animation component: card swipe carousel",
+      description: "Swipeable card carousel with smooth transitions.",
       type: "registry:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["utils"],
       files: [{
         path: "registry/new-york-v4/animations/card-swipe-carousel/card-swipe-carousel.tsx",
         type: "registry:ui",
@@ -1416,9 +1437,9 @@ export const Index: Record<string, Record<string, any>> = {
     },
     "cards-parallax": {
       name: "cards-parallax",
-      description: "Animation component: cards parallax",
+      description: "Cards that stack and scale on scroll with parallax effect.",
       type: "registry:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["utils","use-animation-state","use-mobile"],
       files: [{
         path: "registry/new-york-v4/animations/cards-parallax/cards-parallax.tsx",
         type: "registry:ui",
@@ -1437,9 +1458,9 @@ export const Index: Record<string, Record<string, any>> = {
     },
     "parallax-scroll": {
       name: "parallax-scroll",
-      description: "Animation component: parallax scroll",
+      description: "Multi-column image gallery with parallax scrolling effect.",
       type: "registry:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["utils","use-animation-state","use-mobile"],
       files: [{
         path: "registry/new-york-v4/animations/parallax-scroll/parallax-scroll.tsx",
         type: "registry:ui",
@@ -1458,9 +1479,9 @@ export const Index: Record<string, Record<string, any>> = {
     },
     "perspective-carousel": {
       name: "perspective-carousel",
-      description: "Animation component: perspective carousel",
+      description: "3D perspective carousel with rotation effects.",
       type: "registry:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["utils"],
       files: [{
         path: "registry/new-york-v4/animations/perspective-carousel/perspective-carousel.tsx",
         type: "registry:ui",
@@ -1479,9 +1500,9 @@ export const Index: Record<string, Record<string, any>> = {
     },
     "perspective-section-transition": {
       name: "perspective-section-transition",
-      description: "Animation component: perspective section transition",
+      description: "Section with 3D perspective transform on scroll.",
       type: "registry:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["utils","use-animation-state","use-mobile"],
       files: [{
         path: "registry/new-york-v4/animations/perspective-section-transition/perspective-section-transition.tsx",
         type: "registry:ui",
@@ -1500,9 +1521,9 @@ export const Index: Record<string, Record<string, any>> = {
     },
     "scroll-expand": {
       name: "scroll-expand",
-      description: "Animation component: scroll expand",
+      description: "Content that expands as you scroll into view.",
       type: "registry:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["use-animation-state","use-mobile"],
       files: [{
         path: "registry/new-york-v4/animations/scroll-expand/scroll-expand.tsx",
         type: "registry:ui",
@@ -1521,9 +1542,9 @@ export const Index: Record<string, Record<string, any>> = {
     },
     "scroll-fade": {
       name: "scroll-fade",
-      description: "Animation component: scroll fade",
+      description: "Content that fades in as you scroll into view.",
       type: "registry:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["use-animation-state"],
       files: [{
         path: "registry/new-york-v4/animations/scroll-fade/scroll-fade.tsx",
         type: "registry:ui",
@@ -1542,9 +1563,9 @@ export const Index: Record<string, Record<string, any>> = {
     },
     "scroll-scale": {
       name: "scroll-scale",
-      description: "Animation component: scroll scale",
+      description: "Content that scales up as you scroll into view.",
       type: "registry:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["use-animation-state"],
       files: [{
         path: "registry/new-york-v4/animations/scroll-scale/scroll-scale.tsx",
         type: "registry:ui",
@@ -1563,9 +1584,9 @@ export const Index: Record<string, Record<string, any>> = {
     },
     "slide-down": {
       name: "slide-down",
-      description: "Animation component: slide down",
+      description: "Content that slides down into view on scroll.",
       type: "registry:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["use-animation-state"],
       files: [{
         path: "registry/new-york-v4/animations/slide-down/slide-down.tsx",
         type: "registry:ui",
@@ -1584,9 +1605,9 @@ export const Index: Record<string, Record<string, any>> = {
     },
     "slide-up": {
       name: "slide-up",
-      description: "Animation component: slide up",
+      description: "Content that slides up into view on scroll.",
       type: "registry:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["use-animation-state"],
       files: [{
         path: "registry/new-york-v4/animations/slide-up/slide-up.tsx",
         type: "registry:ui",
@@ -1605,9 +1626,9 @@ export const Index: Record<string, Record<string, any>> = {
     },
     "smooth-parallax-scroll": {
       name: "smooth-parallax-scroll",
-      description: "Animation component: smooth parallax scroll",
+      description: "Smooth parallax scrolling with GSAP ScrollTrigger.",
       type: "registry:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["utils","use-mobile"],
       files: [{
         path: "registry/new-york-v4/animations/smooth-parallax-scroll/smooth-parallax-scroll.tsx",
         type: "registry:ui",
@@ -1626,9 +1647,9 @@ export const Index: Record<string, Record<string, any>> = {
     },
     "smooth-scroll": {
       name: "smooth-scroll",
-      description: "Animation component: smooth scroll",
+      description: "Smooth scrolling provider using Lenis.",
       type: "registry:ui",
-      registryDependencies: undefined,
+      registryDependencies: [],
       files: [{
         path: "registry/new-york-v4/animations/smooth-scroll/smooth-scroll.tsx",
         type: "registry:ui",
@@ -1647,9 +1668,9 @@ export const Index: Record<string, Record<string, any>> = {
     },
     "sticky-footer": {
       name: "sticky-footer",
-      description: "Animation component: sticky footer",
+      description: "Footer that reveals with a sticky scroll effect.",
       type: "registry:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["utils","use-mobile"],
       files: [{
         path: "registry/new-york-v4/animations/sticky-footer/sticky-footer.tsx",
         type: "registry:ui",
@@ -1668,9 +1689,9 @@ export const Index: Record<string, Record<string, any>> = {
     },
     "text-along-path": {
       name: "text-along-path",
-      description: "Animation component: text along path",
+      description: "Text that follows an SVG path on scroll.",
       type: "registry:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["utils","use-animation-state"],
       files: [{
         path: "registry/new-york-v4/animations/text-along-path/text-along-path.tsx",
         type: "registry:ui",
@@ -1689,9 +1710,9 @@ export const Index: Record<string, Record<string, any>> = {
     },
     "text-gradient-opacity": {
       name: "text-gradient-opacity",
-      description: "Animation component: text gradient opacity",
+      description: "Text with gradient opacity reveal on scroll.",
       type: "registry:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["utils","use-animation-state","use-mobile"],
       files: [{
         path: "registry/new-york-v4/animations/text-gradient-opacity/text-gradient-opacity.tsx",
         type: "registry:ui",
@@ -1710,9 +1731,9 @@ export const Index: Record<string, Record<string, any>> = {
     },
     "text-parallax": {
       name: "text-parallax",
-      description: "Animation component: text parallax",
+      description: "Text that moves at different speed than scroll.",
       type: "registry:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["utils","use-animation-state","use-mobile"],
       files: [{
         path: "registry/new-york-v4/animations/text-parallax/text-parallax.tsx",
         type: "registry:ui",
@@ -1731,9 +1752,9 @@ export const Index: Record<string, Record<string, any>> = {
     },
     "transforms-3d": {
       name: "transforms-3d",
-      description: "Animation component: transforms 3d",
+      description: "3D transform effects with mouse interaction.",
       type: "registry:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["utils"],
       files: [{
         path: "registry/new-york-v4/animations/transforms-3d/transforms-3d.tsx",
         type: "registry:ui",
@@ -1752,9 +1773,9 @@ export const Index: Record<string, Record<string, any>> = {
     },
     "zoom-parallax": {
       name: "zoom-parallax",
-      description: "Animation component: zoom parallax",
+      description: "Images that zoom and move on scroll.",
       type: "registry:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["utils","use-animation-state","use-mobile"],
       files: [{
         path: "registry/new-york-v4/animations/zoom-parallax/zoom-parallax.tsx",
         type: "registry:ui",
@@ -1773,9 +1794,9 @@ export const Index: Record<string, Record<string, any>> = {
     },
     "blend-mode-cursor": {
       name: "blend-mode-cursor",
-      description: "A cursor that follows the mouse with mix-blend-difference effect",
+      description: "A cursor that follows the mouse with mix-blend-difference effect.",
       type: "registry:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["utils"],
       files: [{
         path: "registry/new-york-v4/animations/blend-mode-cursor/blend-mode-cursor.tsx",
         type: "registry:ui",
@@ -1794,9 +1815,9 @@ export const Index: Record<string, Record<string, any>> = {
     },
     "cursor-hover-mask": {
       name: "cursor-hover-mask",
-      description: "A text mask effect that follows the cursor and reveals alternate content",
+      description: "A text mask effect that follows the cursor and reveals alternate content.",
       type: "registry:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["utils"],
       files: [{
         path: "registry/new-york-v4/animations/cursor-hover-mask/cursor-hover-mask.tsx",
         type: "registry:ui",
@@ -1815,9 +1836,9 @@ export const Index: Record<string, Record<string, any>> = {
     },
     "floating-image-gallery": {
       name: "floating-image-gallery",
-      description: "A floating image gallery where images move at different speeds based on mouse movement",
+      description: "A floating image gallery where images move at different speeds based on mouse movement.",
       type: "registry:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["utils"],
       files: [{
         path: "registry/new-york-v4/animations/floating-image-gallery/floating-image-gallery.tsx",
         type: "registry:ui",
@@ -1836,9 +1857,9 @@ export const Index: Record<string, Record<string, any>> = {
     },
     "mouse-hover-gallery": {
       name: "mouse-hover-gallery",
-      description: "A project gallery where hovering over items reveals an image that follows the cursor",
+      description: "A project gallery where hovering over items reveals an image that follows the cursor.",
       type: "registry:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["utils"],
       files: [{
         path: "registry/new-york-v4/animations/mouse-hover-gallery/mouse-hover-gallery.tsx",
         type: "registry:ui",
@@ -1857,9 +1878,9 @@ export const Index: Record<string, Record<string, any>> = {
     },
     "nav-menu": {
       name: "nav-menu",
-      description: "An animated navigation menu with character-by-character animations and hover image reveal",
+      description: "An animated navigation menu with character-by-character animations and hover image reveal.",
       type: "registry:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["utils"],
       files: [{
         path: "registry/new-york-v4/animations/nav-menu/nav-menu.tsx",
         type: "registry:ui",
@@ -24409,6 +24430,27 @@ export const Index: Record<string, Record<string, any>> = {
       }],
       component: React.lazy(async () => {
         const mod = await import("@/registry/new-york-v4/examples/button-group-nested.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["core-components"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+      poweredBy: undefined,
+    },
+    "hero-button-demo": {
+      name: "hero-button-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["hero-button"],
+      files: [{
+        path: "registry/new-york-v4/examples/hero-button-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/hero-button-demo.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
         return { default: mod.default || mod[exportName] }
       }),

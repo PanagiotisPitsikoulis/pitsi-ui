@@ -1,13 +1,15 @@
-Hero
+# Hero
 Your next 6 months of UI. Done.
 1000+ Blocks, No placeholders. No filler. No compromise.
 
-Content
+Real Use Cases
+Stunning Design
+Perfect Code
+ShadCN
+
+# Content
 Why Choose When You Can Have Both?
 Quality AND quantity — finally.
-
-Real Use Cases
-
 
 
 1000+ blocks across every category
@@ -16,7 +18,7 @@ Real Use Cases
 30+ animations ready to drop in
 
 
-Primitives
+# Primitives
 Blocks All the Way Down
 Use ours. Build yours. Mix both.
 
@@ -27,7 +29,7 @@ Every block is just components. Every component is yours to remix.
 Compose, extend, or start from scratch — the system scales with you.
 
 
-Design
+# Design
 Professional Design
 Your App doesnt look vibe coded
 Your App doesnt look like it uses shadcn - generic
@@ -40,7 +42,7 @@ Decorations API — one line, app-wide polish
 Mobile-first: 224 mobile blocks, 56 desktop
 
 
-Power
+# Power
 Blocks Are Just the Beginning
 A full ecosystem behind a simple install
 
@@ -49,7 +51,7 @@ MCP server included
 Built for humans. Built for AI. Built to last.
 
 
-Developer Experience
+# Developer Experience
 Zero New APIs. Infinite New Possibilities.
 The shadcn ecosystem, unified.
 
@@ -59,7 +61,7 @@ Docs for developers. Docs for AI. Docs that don't suck.
 Hours saved. Sanity preserved.
 
 
-Pricing
+# Pricing
 Pay for More. Not for Better.
 Quality isn't gated.
 

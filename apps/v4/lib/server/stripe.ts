@@ -1,5 +1,7 @@
 import Stripe from "stripe"
 
+import type { PlanType } from "./db/schema"
+
 if (!process.env.STRIPE_PRIVATE_KEY) {
   throw new Error("STRIPE_PRIVATE_KEY is not set")
 }
@@ -9,13 +11,38 @@ export const stripe = new Stripe(process.env.STRIPE_PRIVATE_KEY, {
   typescript: true,
 })
 
-// Pro Plan Configuration
-export const PRO_PLAN = {
-  name: "Pro Plan",
-  price: 9900, // 99 euros in cents
-  currency: "eur",
-  description: "One-time purchase for lifetime Pro access",
+// Plan Configurations
+export const PLANS = {
+  pro: {
+    name: "Pro Plan",
+    price: 14900, // 149 euros in cents
+    currency: "eur",
+    description: "One-time purchase for lifetime Pro access",
+  },
+  exclusive: {
+    name: "Exclusive Plan",
+    price: 49900, // 499 euros in cents
+    currency: "eur",
+    description: "Premium access with priority support and commercial license",
+  },
+  team: {
+    name: "Team Plan",
+    price: 99900, // 999 euros in cents
+    currency: "eur",
+    description: "One-time purchase for lifetime Team access with up to 10 members",
+    maxMembers: 10,
+  },
+  enterprise: {
+    name: "Enterprise Plan",
+    price: 199900, // 1999 euros in cents
+    currency: "eur",
+    description: "One-time purchase for unlimited team members",
+    maxMembers: Infinity,
+  },
 } as const
+
+// Legacy export for backwards compatibility
+export const PRO_PLAN = PLANS.pro
 
 // Create or get Stripe customer
 export async function getOrCreateStripeCustomer(
@@ -45,13 +72,15 @@ export async function getOrCreateStripeCustomer(
   return customer.id
 }
 
-// Create checkout session for Pro plan
-export async function createProCheckoutSession(
+// Create checkout session for a specific plan
+export async function createCheckoutSession(
   userId: string,
   email: string,
-  name: string
+  name: string,
+  planType: "pro" | "exclusive" | "team" | "enterprise"
 ): Promise<string> {
   const customerId = await getOrCreateStripeCustomer(userId, email, name)
+  const plan = PLANS[planType]
 
   const session = await stripe.checkout.sessions.create({
     customer: customerId,
@@ -59,24 +88,33 @@ export async function createProCheckoutSession(
     line_items: [
       {
         price_data: {
-          currency: PRO_PLAN.currency,
+          currency: plan.currency,
           product_data: {
-            name: PRO_PLAN.name,
-            description: PRO_PLAN.description,
+            name: plan.name,
+            description: plan.description,
           },
-          unit_amount: PRO_PLAN.price,
+          unit_amount: plan.price,
         },
         quantity: 1,
       },
     ],
     mode: "payment",
-    success_url: `${process.env.NEXT_PUBLIC_APP_URL}/pricing?success=true`,
-    cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/pricing?canceled=true`,
+    success_url: `${process.env.NEXT_PUBLIC_APP_URL}/?success=true`,
+    cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/?canceled=true`,
     metadata: {
       userId,
-      planType: "pro",
+      planType,
     },
   })
 
   return session.url!
+}
+
+// Legacy function for backwards compatibility
+export async function createProCheckoutSession(
+  userId: string,
+  email: string,
+  name: string
+): Promise<string> {
+  return createCheckoutSession(userId, email, name, "pro")
 }

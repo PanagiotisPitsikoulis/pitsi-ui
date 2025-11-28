@@ -1,11 +1,167 @@
 "use client"
 
-import { memo, useMemo, useRef } from "react"
-import { motion, useScroll, useTransform } from "motion/react"
+import type { ReactNode } from "react"
+import { createContext, memo, useContext, useMemo, useRef } from "react"
+import { motion, MotionValue, useScroll, useTransform } from "motion/react"
 
 import { cn } from "@/lib/utils"
 import { useAnimationState } from "@/hooks/use-animation-state"
 
+// Context for scroll progress
+const ScrollPathContext = createContext<MotionValue<number> | null>(null)
+
+export type ScrollPathContainerProps = {
+  /** Container children */
+  children: ReactNode
+  /** Additional CSS classes */
+  className?: string
+  /** Container height. Default: "350vh" */
+  height?: string
+  /** Enable scroll-based animation. Default: true */
+  scrollBased?: boolean
+  /** Disable animation on mobile. Default: false */
+  noMobile?: boolean
+}
+
+/**
+ * Container for scroll-animated path effects.
+ * Provides scroll progress to child ScrollLinePath components.
+ */
+export const ScrollPathContainer = memo<ScrollPathContainerProps>(
+  ({
+    children,
+    className,
+    height = "350vh",
+    scrollBased = true,
+    noMobile = false,
+  }) => {
+    const ref = useRef<HTMLDivElement>(null)
+    const { shouldUseScroll, shouldDisableAnimation } = useAnimationState(
+      scrollBased,
+      noMobile
+    )
+
+    const { scrollYProgress } = useScroll({
+      target: shouldUseScroll ? ref : undefined,
+    })
+
+    if (shouldDisableAnimation) {
+      return (
+        <section
+          className={cn(
+            "flex flex-col items-center overflow-hidden",
+            className
+          )}
+          style={{ height }}
+        >
+          {children}
+        </section>
+      )
+    }
+
+    return (
+      <ScrollPathContext.Provider value={scrollYProgress}>
+        <section
+          ref={ref}
+          className={cn(
+            "flex flex-col items-center overflow-hidden",
+            className
+          )}
+          style={{ height }}
+        >
+          {children}
+        </section>
+      </ScrollPathContext.Provider>
+    )
+  }
+)
+
+ScrollPathContainer.displayName = "ScrollPathContainer"
+
+export type ScrollLinePathProps = {
+  /** SVG path data (d attribute) */
+  path: string
+  /** Additional CSS classes for the SVG */
+  className?: string
+  /** Stroke color. Default: "#C2F84F" */
+  strokeColor?: string
+  /** Stroke width. Default: 20 */
+  strokeWidth?: number
+  /** ViewBox dimensions. Default: "0 0 1278 2319" */
+  viewBox?: string
+  /** Initial path progress (0-1). Default: 0.5 */
+  initialProgress?: number
+  /** Enable scroll-based animation. Default: true */
+  scrollBased?: boolean
+  /** Disable animation on mobile. Default: false */
+  noMobile?: boolean
+}
+
+/**
+ * SVG path that animates its stroke based on scroll progress.
+ * Use inside ScrollPathContainer.
+ */
+export const ScrollLinePath = memo<ScrollLinePathProps>(
+  ({
+    path,
+    className,
+    strokeColor = "#C2F84F",
+    strokeWidth = 20,
+    viewBox = "0 0 1278 2319",
+    initialProgress = 0.5,
+    scrollBased = true,
+    noMobile = false,
+  }) => {
+    const context = useContext(ScrollPathContext)
+    const { shouldDisableAnimation } = useAnimationState(scrollBased, noMobile)
+
+    const pathLength = useTransform(
+      context || new MotionValue(0),
+      [0, 1],
+      [initialProgress, 1]
+    )
+
+    const strokeDashoffset = useTransform(pathLength, (value) => 1 - value)
+
+    if (shouldDisableAnimation || !context) {
+      return (
+        <svg
+          viewBox={viewBox}
+          fill="none"
+          overflow="visible"
+          xmlns="http://www.w3.org/2000/svg"
+          className={className}
+        >
+          <path d={path} stroke={strokeColor} strokeWidth={strokeWidth} />
+        </svg>
+      )
+    }
+
+    return (
+      <svg
+        viewBox={viewBox}
+        fill="none"
+        overflow="visible"
+        xmlns="http://www.w3.org/2000/svg"
+        className={className}
+      >
+        <motion.path
+          d={path}
+          stroke={strokeColor}
+          strokeWidth={strokeWidth}
+          style={{
+            pathLength,
+            strokeDashoffset,
+          }}
+        />
+      </svg>
+    )
+  }
+)
+
+ScrollLinePath.displayName = "ScrollLinePath"
+
+// Original curved text components
 export type CurvedTextProps = {
   /** Text to display along the curve */
   text: string
@@ -188,4 +344,4 @@ export const CircularText = memo<CircularTextProps>(
 
 CircularText.displayName = "CircularText"
 
-export default CurvedText
+export default ScrollPathContainer

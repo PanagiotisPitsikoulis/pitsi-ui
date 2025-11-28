@@ -1,8 +1,12 @@
 "use client"
 
-import { useRef } from "react"
 import { IconArrowRight } from "@tabler/icons-react"
-import { motion, useScroll, useTransform } from "motion/react"
+
+import {
+  CardsParallaxContainer,
+  ParallaxCard,
+  ParallaxCardImage,
+} from "@/registry/new-york-v4/animations/cards-parallax/cards-parallax"
 
 const projects = [
   {
@@ -47,110 +51,43 @@ const projects = [
   },
 ]
 
-const Card = ({
-  i,
-  title,
-  description,
-  src,
-  link,
-  color,
-  progress,
-  range,
-  targetScale,
-}: {
-  i: number
-  title: string
-  description: string
-  src: string
-  link: string
-  color: string
-  progress: any
-  range: [number, number]
-  targetScale: number
-}) => {
-  const container = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start end", "start start"],
-  })
-
-  const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1])
-  const scale = useTransform(progress, range, [1, targetScale])
-
-  return (
-    <div
-      ref={container}
-      className="sticky top-0 flex h-screen items-center justify-center"
-    >
-      <motion.div
-        style={{
-          backgroundColor: color,
-          scale,
-          top: `calc(-5vh + ${i * 25}px)`,
-        }}
-        className="relative flex h-[500px] w-[1000px] max-w-[90vw] origin-top flex-col rounded-3xl p-8 md:p-12"
-      >
-        <h2 className="m-0 text-center text-2xl font-semibold text-black">
-          {title}
-        </h2>
-        <div className="mt-8 flex h-full flex-col gap-8 md:mt-12 md:flex-row md:gap-12">
-          <div className="relative top-[10%] flex w-full flex-col md:w-2/5">
-            <p className="text-sm text-black first-letter:text-2xl first-letter:font-semibold md:text-base">
-              {description}
-            </p>
-            <span className="mt-4 flex items-center gap-2">
-              <a
-                href={link}
-                className="cursor-pointer text-xs text-black underline"
-              >
-                See more
-              </a>
-              <IconArrowRight className="h-4 w-4 text-black" />
-            </span>
-          </div>
-
-          <div className="relative h-full w-full overflow-hidden rounded-3xl md:w-3/5">
-            <motion.div className="h-full w-full" style={{ scale: imageScale }}>
-              <img
-                src={src}
-                alt={title}
-                className="h-full w-full object-cover"
-              />
-            </motion.div>
-          </div>
-        </div>
-      </motion.div>
-    </div>
-  )
-}
-
 export default function CardsParallaxDemo() {
-  const container = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start start", "end end"],
-  })
-
   return (
-    <main ref={container} className="relative">
+    <main>
       <div className="relative grid h-[40vh] content-center justify-items-center gap-6 text-center">
         <span className="after:from-background after:to-foreground relative max-w-[12ch] text-xs leading-tight uppercase opacity-40 after:absolute after:top-full after:left-1/2 after:h-16 after:w-px after:bg-gradient-to-b after:content-['']">
           Scroll to see cards stack
         </span>
       </div>
-      {projects.map((project, i) => {
-        const targetScale = 1 - (projects.length - i) * 0.05
-        return (
-          <Card
-            key={`p_${i}`}
-            i={i}
-            {...project}
-            progress={scrollYProgress}
-            range={[i * 0.25, 1]}
-            targetScale={targetScale}
-          />
-        )
-      })}
+
+      <CardsParallaxContainer cardCount={projects.length}>
+        {projects.map((project, i) => (
+          <ParallaxCard key={i} index={i} backgroundColor={project.color}>
+            <h2 className="m-0 text-center text-2xl font-semibold text-black">
+              {project.title}
+            </h2>
+            <div className="mt-8 flex h-full flex-col gap-8 md:mt-12 md:flex-row md:gap-12">
+              <div className="relative top-[10%] flex w-full flex-col md:w-2/5">
+                <p className="text-sm text-black first-letter:text-2xl first-letter:font-semibold md:text-base">
+                  {project.description}
+                </p>
+                <span className="mt-4 flex items-center gap-2">
+                  <a
+                    href={project.link}
+                    className="cursor-pointer text-xs text-black underline"
+                  >
+                    See more
+                  </a>
+                  <IconArrowRight className="h-4 w-4 text-black" />
+                </span>
+              </div>
+              <div className="h-full w-full md:w-3/5">
+                <ParallaxCardImage src={project.src} alt={project.title} />
+              </div>
+            </div>
+          </ParallaxCard>
+        ))}
+      </CardsParallaxContainer>
     </main>
   )
 }

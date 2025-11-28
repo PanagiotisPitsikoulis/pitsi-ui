@@ -60,7 +60,7 @@ export default async function BillingPage() {
           {!user.isPro && (
             <CardFooter>
               <Button asChild className="w-full">
-                <Link href="/pricing">
+                <Link href="/#pricing">
                   <Sparkles className="mr-2 size-4" />
                   Upgrade to Pro
                 </Link>
@@ -105,7 +105,7 @@ export default async function BillingPage() {
           {!user.isPro && (
             <CardFooter>
               <Button asChild variant="outline" className="w-full">
-                <Link href="/pricing">View Pricing</Link>
+                <Link href="/#pricing">View Pricing</Link>
               </Button>
             </CardFooter>
           )}

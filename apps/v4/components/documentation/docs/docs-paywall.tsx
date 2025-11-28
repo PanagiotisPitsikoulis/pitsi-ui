@@ -35,7 +35,7 @@ export function DocsPaywall({ title, type = "component" }: DocsPaywallProps) {
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
           <Button asChild size="lg">
-            <Link href="/pricing">Upgrade to Pro</Link>
+            <Link href="/#pricing">Upgrade to Pro</Link>
           </Button>
           <Button asChild variant="outline" size="lg">
             <Link href={browseLink}>{browseLabel}</Link>

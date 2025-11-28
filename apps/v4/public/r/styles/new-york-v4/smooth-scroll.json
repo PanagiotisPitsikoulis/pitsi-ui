@@ -2,7 +2,11 @@
   "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "smooth-scroll",
   "type": "registry:ui",
-  "description": "Animation component: smooth scroll",
+  "description": "Smooth scrolling provider using Lenis.",
+  "dependencies": [
+    "lenis"
+  ],
+  "registryDependencies": [],
   "files": [
     {
       "path": "registry/new-york-v4/animations/smooth-scroll/smooth-scroll.tsx",

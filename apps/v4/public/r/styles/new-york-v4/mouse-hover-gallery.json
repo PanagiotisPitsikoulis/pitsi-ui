@@ -2,7 +2,13 @@
   "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "mouse-hover-gallery",
   "type": "registry:ui",
-  "description": "A project gallery where hovering over items reveals an image that follows the cursor",
+  "description": "A project gallery where hovering over items reveals an image that follows the cursor.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "registry/new-york-v4/animations/mouse-hover-gallery/mouse-hover-gallery.tsx",

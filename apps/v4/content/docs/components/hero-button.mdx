@@ -1,0 +1,102 @@
+---
+title: Hero Button
+description: A call-to-action button with an arrow icon, perfect for hero sections.
+component: true
+---
+
+<ComponentPreview name="hero-button-demo" description="A hero button" className="mb-4" />
+
+```tsx showLineNumbers
+<HeroButton>Start Copy Pasting</HeroButton>
+```
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx pitsi@latest add hero-button
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the button component first:</Step>
+
+```bash
+npx pitsi@latest add button
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="hero-button" title="components/ui/hero-button.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { HeroButton } from "@/components/ui/hero-button"
+```
+
+```tsx
+<HeroButton>Get Started</HeroButton>
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview name="hero-button-demo" className="mb-4" />
+
+```tsx
+<HeroButton>Start Copy Pasting</HeroButton>
+```
+
+### With Link
+
+Use the `asChild` prop to render as a link.
+
+```tsx
+import Link from "next/link"
+
+<HeroButton asChild>
+  <Link href="/docs">Get Started</Link>
+</HeroButton>
+```
+
+### Custom Variant
+
+You can pass any Button variant prop.
+
+```tsx
+<HeroButton variant="secondary">Learn More</HeroButton>
+```
+
+## API Reference
+
+### HeroButton
+
+The `HeroButton` component extends the `Button` component with a rounded pill shape and an arrow icon.
+
+| Prop        | Type                                                                          | Default     |
+| ----------- | ----------------------------------------------------------------------------- | ----------- |
+| `variant`   | `"default" \| "outline" \| "ghost" \| "destructive" \| "secondary" \| "link"` | `"default"` |
+| `asChild`   | `boolean`                                                                     | `false`     |
+| `className` | `string`                                                                      | -           |
+| `children`  | `React.ReactNode`                                                             | -           |

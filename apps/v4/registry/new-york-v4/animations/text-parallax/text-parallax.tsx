@@ -1,21 +1,126 @@
 "use client"
 
 import type { ReactNode } from "react"
-import { memo, useMemo, useRef } from "react"
-import { motion, useScroll, useTransform } from "motion/react"
+import { createContext, memo, useContext, useRef } from "react"
+import { motion, MotionValue, useScroll, useTransform } from "motion/react"
 
 import { cn } from "@/lib/utils"
 import { useAnimationState } from "@/hooks/use-animation-state"
-import { useIsMobile } from "@/hooks/use-mobile"
 
+// Context to share scroll progress
+const ScrollProgressContext = createContext<MotionValue<number> | null>(null)
+
+export type HorizontalScrollContainerProps = {
+  /** Child slides */
+  children: ReactNode
+  /** Additional CSS classes */
+  className?: string
+  /** Enable scroll-based animation. Default: true */
+  scrollBased?: boolean
+  /** Disable animation on mobile. Default: false */
+  noMobile?: boolean
+}
+
+/**
+ * Container that tracks scroll progress for horizontal slide animations.
+ * Wrap HorizontalSlide components inside this container.
+ */
+export const HorizontalScrollContainer = memo<HorizontalScrollContainerProps>(
+  ({ children, className, scrollBased = true, noMobile = false }) => {
+    const ref = useRef<HTMLDivElement>(null)
+    const { shouldUseScroll } = useAnimationState(scrollBased, noMobile)
+
+    const { scrollYProgress } = useScroll({
+      target: shouldUseScroll ? ref : undefined,
+      offset: ["start end", "end start"],
+    })
+
+    return (
+      <ScrollProgressContext.Provider value={scrollYProgress}>
+        <div ref={ref} className={className}>
+          {children}
+        </div>
+      </ScrollProgressContext.Provider>
+    )
+  }
+)
+
+HorizontalScrollContainer.displayName = "HorizontalScrollContainer"
+
+export type HorizontalSlideProps = {
+  /** Content to slide */
+  children: ReactNode
+  /** Direction of movement. Default: "left" */
+  direction?: "left" | "right"
+  /** CSS left offset. Default: "0%" */
+  left?: string
+  /** Movement distance in pixels. Default: 150 */
+  distance?: number
+  /** Additional CSS classes */
+  className?: string
+  /** Enable scroll-based animation. Default: true */
+  scrollBased?: boolean
+  /** Disable animation on mobile. Default: false */
+  noMobile?: boolean
+}
+
+/**
+ * Content that slides horizontally based on scroll progress.
+ * Use inside HorizontalScrollContainer for shared scroll tracking.
+ */
+export const HorizontalSlide = memo<HorizontalSlideProps>(
+  ({
+    children,
+    direction = "left",
+    left = "0%",
+    distance = 150,
+    className,
+    scrollBased = true,
+    noMobile = false,
+  }) => {
+    const scrollYProgress = useContext(ScrollProgressContext)
+    const { shouldDisableAnimation } = useAnimationState(scrollBased, noMobile)
+
+    const dir = direction === "left" ? -1 : 1
+    const translateX = useTransform(
+      scrollYProgress || new MotionValue(0),
+      [0, 1],
+      [distance * dir, -distance * dir]
+    )
+
+    if (shouldDisableAnimation || !scrollYProgress) {
+      return (
+        <div
+          className={cn("relative flex whitespace-nowrap", className)}
+          style={{ left }}
+        >
+          {children}
+        </div>
+      )
+    }
+
+    return (
+      <motion.div
+        style={{ x: translateX, left }}
+        className={cn("relative flex whitespace-nowrap", className)}
+      >
+        {children}
+      </motion.div>
+    )
+  }
+)
+
+HorizontalSlide.displayName = "HorizontalSlide"
+
+// Legacy exports for backwards compatibility
 export type TextParallaxProps = {
   /** Content to apply parallax effect to */
   children: ReactNode
   /** Additional CSS classes */
   className?: string
-  /** Multiplier for parallax speed. Positive moves down, negative moves up. Default: 0.5 */
+  /** Multiplier for parallax speed. Default: 0.5 */
   speed?: number
-  /** When to start/end animation relative to viewport. Default: ["start end", "end start"] */
+  /** Scroll offset. Default: ["start end", "end start"] */
   offset?: [string, string]
   /** Enable scroll-based animation. Default: true */
   scrollBased?: boolean
@@ -24,8 +129,8 @@ export type TextParallaxProps = {
 }
 
 /**
- * Text that moves at a different speed than scroll for parallax effect.
- * Creates depth by moving content slower or faster than the scroll speed.
+ * Text that moves vertically at a different speed than scroll.
+ * @deprecated Use HorizontalSlide for horizontal movement or keep for vertical parallax.
  */
 export const TextParallax = memo<TextParallaxProps>(
   ({
@@ -36,16 +141,10 @@ export const TextParallax = memo<TextParallaxProps>(
     scrollBased = true,
     noMobile = false,
   }) => {
-    const isMobile = useIsMobile()
     const ref = useRef<HTMLDivElement>(null)
     const { shouldDisableAnimation, shouldUseScroll } = useAnimationState(
       scrollBased,
       noMobile
-    )
-
-    const adjustedSpeed = useMemo(
-      () => (isMobile ? speed * 0.5 : speed),
-      [isMobile, speed]
     )
 
     const { scrollYProgress } = useScroll({
@@ -53,11 +152,7 @@ export const TextParallax = memo<TextParallaxProps>(
       offset: offset as any,
     })
 
-    const y = useTransform(
-      scrollYProgress,
-      [0, 1],
-      ["0%", `${adjustedSpeed * 100}%`]
-    )
+    const y = useTransform(scrollYProgress, [0, 1], ["0%", `${speed * 100}%`])
 
     if (shouldDisableAnimation) {
       return <div className={className}>{children}</div>
@@ -77,103 +172,4 @@ export const TextParallax = memo<TextParallaxProps>(
 
 TextParallax.displayName = "TextParallax"
 
-export type SplitTextParallaxProps = {
-  /** Text to split and animate */
-  text: string
-  /** Additional CSS classes */
-  className?: string
-  /** Speed range for first and last word. Default: [-0.2, 0.2] */
-  speedRange?: [number, number]
-  /** Enable scroll-based animation. Default: true */
-  scrollBased?: boolean
-  /** Disable animation on mobile. Default: true (recommended for split text) */
-  noMobile?: boolean
-}
-
-/**
- * Text split into words with each word having different parallax speed.
- * Creates a wave-like staggered effect as you scroll.
- */
-export const SplitTextParallax = memo<SplitTextParallaxProps>(
-  ({
-    text,
-    className,
-    speedRange = [-0.2, 0.2],
-    scrollBased = true,
-    noMobile = true, // Disabled by default on mobile for performance
-  }) => {
-    const isMobile = useIsMobile()
-    const ref = useRef<HTMLDivElement>(null)
-    const { shouldDisableAnimation, shouldUseScroll } = useAnimationState(
-      scrollBased,
-      noMobile
-    )
-
-    const adjustedSpeedRange = useMemo(
-      () =>
-        isMobile ? [speedRange[0] * 0.5, speedRange[1] * 0.5] : speedRange,
-      [isMobile, speedRange]
-    ) as [number, number]
-
-    const { scrollYProgress } = useScroll({
-      target: shouldUseScroll ? ref : undefined,
-      offset: ["start end", "end start"],
-    })
-
-    const words = useMemo(() => text.split(" "), [text])
-
-    if (shouldDisableAnimation) {
-      return (
-        <div className={cn("relative", className)}>
-          <p className="flex flex-wrap gap-x-2">{text}</p>
-        </div>
-      )
-    }
-
-    return (
-      <div ref={ref} className={cn("relative", className)}>
-        <p className="flex flex-wrap gap-x-2">
-          {words.map((word, i) => (
-            <WordParallax
-              key={i}
-              word={word}
-              index={i}
-              totalWords={words.length}
-              scrollYProgress={scrollYProgress}
-              speedRange={adjustedSpeedRange}
-            />
-          ))}
-        </p>
-      </div>
-    )
-  }
-)
-
-SplitTextParallax.displayName = "SplitTextParallax"
-
-// Helper component to handle individual word parallax
-type WordParallaxProps = {
-  word: string
-  index: number
-  totalWords: number
-  scrollYProgress: any
-  speedRange: [number, number]
-}
-
-const WordParallax = memo<WordParallaxProps>(
-  ({ word, index, totalWords, scrollYProgress, speedRange }) => {
-    const speed =
-      speedRange[0] + (speedRange[1] - speedRange[0]) * (index / totalWords)
-    const y = useTransform(scrollYProgress, [0, 1], ["0%", `${speed * 100}%`])
-
-    return (
-      <motion.span style={{ y }} className="inline-block will-change-transform">
-        {word}
-      </motion.span>
-    )
-  }
-)
-
-WordParallax.displayName = "WordParallax"
-
-export default TextParallax
+export default HorizontalSlide

@@ -2,7 +2,13 @@
   "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "transforms-3d",
   "type": "registry:ui",
-  "description": "Animation component: transforms 3d",
+  "description": "3D transform effects with mouse interaction.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "registry/new-york-v4/animations/transforms-3d/transforms-3d.tsx",

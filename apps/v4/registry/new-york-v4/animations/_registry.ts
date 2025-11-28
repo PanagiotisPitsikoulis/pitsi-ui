@@ -8,7 +8,10 @@ export const animations: Registry["items"] = [
   {
     name: "background-image-parallax",
     type: "registry:ui",
-    description: "Animation component: background image parallax",
+    description:
+      "Background image with parallax effect - moves slower than foreground for depth.",
+    dependencies: ["motion"],
+    registryDependencies: ["utils", "use-animation-state", "use-mobile"],
     files: [
       {
         path: "animations/background-image-parallax/background-image-parallax.tsx",
@@ -23,7 +26,9 @@ export const animations: Registry["items"] = [
   {
     name: "card-swipe-carousel",
     type: "registry:ui",
-    description: "Animation component: card swipe carousel",
+    description: "Swipeable card carousel with smooth transitions.",
+    dependencies: ["motion"],
+    registryDependencies: ["utils"],
     files: [
       {
         path: "animations/card-swipe-carousel/card-swipe-carousel.tsx",
@@ -38,7 +43,9 @@ export const animations: Registry["items"] = [
   {
     name: "cards-parallax",
     type: "registry:ui",
-    description: "Animation component: cards parallax",
+    description: "Cards that stack and scale on scroll with parallax effect.",
+    dependencies: ["motion"],
+    registryDependencies: ["utils", "use-animation-state", "use-mobile"],
     files: [
       {
         path: "animations/cards-parallax/cards-parallax.tsx",
@@ -53,7 +60,9 @@ export const animations: Registry["items"] = [
   {
     name: "parallax-scroll",
     type: "registry:ui",
-    description: "Animation component: parallax scroll",
+    description: "Multi-column image gallery with parallax scrolling effect.",
+    dependencies: ["motion"],
+    registryDependencies: ["utils", "use-animation-state", "use-mobile"],
     files: [
       {
         path: "animations/parallax-scroll/parallax-scroll.tsx",
@@ -68,7 +77,9 @@ export const animations: Registry["items"] = [
   {
     name: "perspective-carousel",
     type: "registry:ui",
-    description: "Animation component: perspective carousel",
+    description: "3D perspective carousel with rotation effects.",
+    dependencies: ["motion"],
+    registryDependencies: ["utils"],
     files: [
       {
         path: "animations/perspective-carousel/perspective-carousel.tsx",
@@ -83,7 +94,9 @@ export const animations: Registry["items"] = [
   {
     name: "perspective-section-transition",
     type: "registry:ui",
-    description: "Animation component: perspective section transition",
+    description: "Section with 3D perspective transform on scroll.",
+    dependencies: ["motion"],
+    registryDependencies: ["utils", "use-animation-state", "use-mobile"],
     files: [
       {
         path: "animations/perspective-section-transition/perspective-section-transition.tsx",
@@ -98,7 +111,9 @@ export const animations: Registry["items"] = [
   {
     name: "scroll-expand",
     type: "registry:ui",
-    description: "Animation component: scroll expand",
+    description: "Content that expands as you scroll into view.",
+    dependencies: ["motion"],
+    registryDependencies: ["use-animation-state", "use-mobile"],
     files: [
       {
         path: "animations/scroll-expand/scroll-expand.tsx",
@@ -113,7 +128,9 @@ export const animations: Registry["items"] = [
   {
     name: "scroll-fade",
     type: "registry:ui",
-    description: "Animation component: scroll fade",
+    description: "Content that fades in as you scroll into view.",
+    dependencies: ["motion"],
+    registryDependencies: ["use-animation-state"],
     files: [
       {
         path: "animations/scroll-fade/scroll-fade.tsx",
@@ -128,7 +145,9 @@ export const animations: Registry["items"] = [
   {
     name: "scroll-scale",
     type: "registry:ui",
-    description: "Animation component: scroll scale",
+    description: "Content that scales up as you scroll into view.",
+    dependencies: ["motion"],
+    registryDependencies: ["use-animation-state"],
     files: [
       {
         path: "animations/scroll-scale/scroll-scale.tsx",
@@ -143,7 +162,9 @@ export const animations: Registry["items"] = [
   {
     name: "slide-down",
     type: "registry:ui",
-    description: "Animation component: slide down",
+    description: "Content that slides down into view on scroll.",
+    dependencies: ["motion"],
+    registryDependencies: ["use-animation-state"],
     files: [
       {
         path: "animations/slide-down/slide-down.tsx",
@@ -158,7 +179,9 @@ export const animations: Registry["items"] = [
   {
     name: "slide-up",
     type: "registry:ui",
-    description: "Animation component: slide up",
+    description: "Content that slides up into view on scroll.",
+    dependencies: ["motion"],
+    registryDependencies: ["use-animation-state"],
     files: [
       {
         path: "animations/slide-up/slide-up.tsx",
@@ -173,7 +196,9 @@ export const animations: Registry["items"] = [
   {
     name: "smooth-parallax-scroll",
     type: "registry:ui",
-    description: "Animation component: smooth parallax scroll",
+    description: "Smooth parallax scrolling with GSAP ScrollTrigger.",
+    dependencies: ["gsap", "@gsap/react"],
+    registryDependencies: ["utils", "use-mobile"],
     files: [
       {
         path: "animations/smooth-parallax-scroll/smooth-parallax-scroll.tsx",
@@ -188,7 +213,9 @@ export const animations: Registry["items"] = [
   {
     name: "smooth-scroll",
     type: "registry:ui",
-    description: "Animation component: smooth scroll",
+    description: "Smooth scrolling provider using Lenis.",
+    dependencies: ["lenis"],
+    registryDependencies: [],
     files: [
       {
         path: "animations/smooth-scroll/smooth-scroll.tsx",
@@ -203,7 +230,8 @@ export const animations: Registry["items"] = [
   {
     name: "sticky-footer",
     type: "registry:ui",
-    description: "Animation component: sticky footer",
+    description: "Footer that reveals with a sticky scroll effect.",
+    registryDependencies: ["utils", "use-mobile"],
     files: [
       {
         path: "animations/sticky-footer/sticky-footer.tsx",
@@ -218,7 +246,9 @@ export const animations: Registry["items"] = [
   {
     name: "text-along-path",
     type: "registry:ui",
-    description: "Animation component: text along path",
+    description: "Text that follows an SVG path on scroll.",
+    dependencies: ["motion"],
+    registryDependencies: ["utils", "use-animation-state"],
     files: [
       {
         path: "animations/text-along-path/text-along-path.tsx",
@@ -233,7 +263,9 @@ export const animations: Registry["items"] = [
   {
     name: "text-gradient-opacity",
     type: "registry:ui",
-    description: "Animation component: text gradient opacity",
+    description: "Text with gradient opacity reveal on scroll.",
+    dependencies: ["motion"],
+    registryDependencies: ["utils", "use-animation-state", "use-mobile"],
     files: [
       {
         path: "animations/text-gradient-opacity/text-gradient-opacity.tsx",
@@ -248,7 +280,9 @@ export const animations: Registry["items"] = [
   {
     name: "text-parallax",
     type: "registry:ui",
-    description: "Animation component: text parallax",
+    description: "Text that moves at different speed than scroll.",
+    dependencies: ["motion"],
+    registryDependencies: ["utils", "use-animation-state", "use-mobile"],
     files: [
       {
         path: "animations/text-parallax/text-parallax.tsx",
@@ -263,7 +297,9 @@ export const animations: Registry["items"] = [
   {
     name: "transforms-3d",
     type: "registry:ui",
-    description: "Animation component: transforms 3d",
+    description: "3D transform effects with mouse interaction.",
+    dependencies: ["motion"],
+    registryDependencies: ["utils"],
     files: [
       {
         path: "animations/transforms-3d/transforms-3d.tsx",
@@ -278,7 +314,9 @@ export const animations: Registry["items"] = [
   {
     name: "zoom-parallax",
     type: "registry:ui",
-    description: "Animation component: zoom parallax",
+    description: "Images that zoom and move on scroll.",
+    dependencies: ["motion"],
+    registryDependencies: ["utils", "use-animation-state", "use-mobile"],
     files: [
       {
         path: "animations/zoom-parallax/zoom-parallax.tsx",
@@ -294,7 +332,9 @@ export const animations: Registry["items"] = [
     name: "blend-mode-cursor",
     type: "registry:ui",
     description:
-      "A cursor that follows the mouse with mix-blend-difference effect",
+      "A cursor that follows the mouse with mix-blend-difference effect.",
+    dependencies: ["motion"],
+    registryDependencies: ["utils"],
     files: [
       {
         path: "animations/blend-mode-cursor/blend-mode-cursor.tsx",
@@ -310,7 +350,9 @@ export const animations: Registry["items"] = [
     name: "cursor-hover-mask",
     type: "registry:ui",
     description:
-      "A text mask effect that follows the cursor and reveals alternate content",
+      "A text mask effect that follows the cursor and reveals alternate content.",
+    dependencies: ["motion"],
+    registryDependencies: ["utils"],
     files: [
       {
         path: "animations/cursor-hover-mask/cursor-hover-mask.tsx",
@@ -326,7 +368,8 @@ export const animations: Registry["items"] = [
     name: "floating-image-gallery",
     type: "registry:ui",
     description:
-      "A floating image gallery where images move at different speeds based on mouse movement",
+      "A floating image gallery where images move at different speeds based on mouse movement.",
+    registryDependencies: ["utils"],
     files: [
       {
         path: "animations/floating-image-gallery/floating-image-gallery.tsx",
@@ -342,7 +385,9 @@ export const animations: Registry["items"] = [
     name: "mouse-hover-gallery",
     type: "registry:ui",
     description:
-      "A project gallery where hovering over items reveals an image that follows the cursor",
+      "A project gallery where hovering over items reveals an image that follows the cursor.",
+    dependencies: ["motion"],
+    registryDependencies: ["utils"],
     files: [
       {
         path: "animations/mouse-hover-gallery/mouse-hover-gallery.tsx",
@@ -358,7 +403,9 @@ export const animations: Registry["items"] = [
     name: "nav-menu",
     type: "registry:ui",
     description:
-      "An animated navigation menu with character-by-character animations and hover image reveal",
+      "An animated navigation menu with character-by-character animations and hover image reveal.",
+    dependencies: ["motion"],
+    registryDependencies: ["utils"],
     files: [
       {
         path: "animations/nav-menu/nav-menu.tsx",

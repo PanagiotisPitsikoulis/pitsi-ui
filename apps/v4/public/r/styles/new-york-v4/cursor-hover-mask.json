@@ -2,7 +2,13 @@
   "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "cursor-hover-mask",
   "type": "registry:ui",
-  "description": "A text mask effect that follows the cursor and reveals alternate content",
+  "description": "A text mask effect that follows the cursor and reveals alternate content.",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "registry/new-york-v4/animations/cursor-hover-mask/cursor-hover-mask.tsx",

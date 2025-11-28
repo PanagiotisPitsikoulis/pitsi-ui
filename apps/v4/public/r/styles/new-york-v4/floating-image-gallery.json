@@ -2,7 +2,10 @@
   "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "floating-image-gallery",
   "type": "registry:ui",
-  "description": "A floating image gallery where images move at different speeds based on mouse movement",
+  "description": "A floating image gallery where images move at different speeds based on mouse movement.",
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "registry/new-york-v4/animations/floating-image-gallery/floating-image-gallery.tsx",

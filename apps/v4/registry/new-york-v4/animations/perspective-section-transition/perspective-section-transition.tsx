@@ -1,20 +1,22 @@
 "use client"
 
-import type { CSSProperties, ReactNode } from "react"
-import { memo, useMemo, useRef } from "react"
-import { motion, useScroll, useTransform } from "motion/react"
+import type { ReactNode } from "react"
+import { createContext, memo, useContext, useMemo, useRef } from "react"
+import { motion, MotionValue, useScroll, useTransform } from "motion/react"
 
 import { cn } from "@/lib/utils"
 import { useAnimationState } from "@/hooks/use-animation-state"
-import { useIsMobile } from "@/hooks/use-mobile"
 
-export type PerspectiveSectionProps = {
-  /** Section content */
+// Context to share scroll progress between container and sections
+const ScrollProgressContext = createContext<MotionValue<number> | null>(null)
+
+export type PerspectiveContainerProps = {
+  /** Child sections */
   children: ReactNode
   /** Additional CSS classes */
   className?: string
-  /** Perspective value in pixels. Default: 1000 */
-  perspective?: number
+  /** Height of the scroll container. Default: "200vh" */
+  height?: string
   /** Enable scroll-based animation. Default: true */
   scrollBased?: boolean
   /** Disable animation on mobile. Default: false */
@@ -22,60 +24,92 @@ export type PerspectiveSectionProps = {
 }
 
 /**
- * Section with 3D perspective transform on scroll.
- * Creates a card-flip/rotate effect as you scroll through the section.
- * Perfect for creating immersive, depth-based transitions.
+ * Container for perspective section transitions.
+ * Provides scroll progress to child PerspectiveSection components.
+ */
+export const PerspectiveContainer = memo<PerspectiveContainerProps>(
+  ({
+    children,
+    className,
+    height = "200vh",
+    scrollBased = true,
+    noMobile = false,
+  }) => {
+    const ref = useRef<HTMLDivElement>(null)
+    const { shouldUseScroll } = useAnimationState(scrollBased, noMobile)
+
+    const { scrollYProgress } = useScroll({
+      target: shouldUseScroll ? ref : undefined,
+      offset: ["start start", "end end"],
+    })
+
+    return (
+      <ScrollProgressContext.Provider value={scrollYProgress}>
+        <main
+          ref={ref}
+          className={cn("relative", className)}
+          style={{ height }}
+        >
+          {children}
+        </main>
+      </ScrollProgressContext.Provider>
+    )
+  }
+)
+
+PerspectiveContainer.displayName = "PerspectiveContainer"
+
+export type PerspectiveSectionProps = {
+  /** Section content */
+  children: ReactNode
+  /** Additional CSS classes */
+  className?: string
+  /** Scale range [start, end]. Default: [1, 0.8] */
+  scaleRange?: [number, number]
+  /** Rotate range in degrees [start, end]. Default: [0, -5] */
+  rotateRange?: [number, number]
+  /** Whether section is sticky. Default: false */
+  sticky?: boolean
+  /** Enable scroll-based animation. Default: true */
+  scrollBased?: boolean
+  /** Disable animation on mobile. Default: false */
+  noMobile?: boolean
+}
+
+/**
+ * Section that transforms (scale/rotate) based on scroll progress.
+ * Use inside PerspectiveContainer for shared scroll tracking.
  */
 export const PerspectiveSection = memo<PerspectiveSectionProps>(
   ({
     children,
     className,
-    perspective = 1000,
+    scaleRange = [1, 0.8],
+    rotateRange = [0, -5],
+    sticky = false,
     scrollBased = true,
     noMobile = false,
   }) => {
-    const isMobile = useIsMobile()
-    const ref = useRef<HTMLDivElement>(null)
-    const { shouldDisableAnimation, shouldUseScroll } = useAnimationState(
-      scrollBased,
-      noMobile
+    const scrollYProgress = useContext(ScrollProgressContext)
+    const { shouldDisableAnimation } = useAnimationState(scrollBased, noMobile)
+
+    const scale = useTransform(
+      scrollYProgress || new MotionValue(0),
+      [0, 1],
+      scaleRange
+    )
+    const rotate = useTransform(
+      scrollYProgress || new MotionValue(0),
+      [0, 1],
+      rotateRange
     )
 
-    const { scrollYProgress } = useScroll({
-      target: shouldUseScroll ? ref : undefined,
-      offset: ["start end", "end start"],
-    })
-
-    const adjustedPerspective = useMemo(
-      () => (isMobile ? perspective * 1.5 : perspective),
-      [isMobile, perspective]
-    )
-
-    // Rotate on X axis for flip effect
-    const rotateX = useTransform(scrollYProgress, [0, 0.5, 1], [45, 0, -45])
-
-    // Fade in and out
-    const opacity = useTransform(
-      scrollYProgress,
-      [0, 0.3, 0.7, 1],
-      [0, 1, 1, 0]
-    )
-
-    // Scale up as it comes into view
-    const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8])
-
-    const containerStyle: CSSProperties = useMemo(
-      () => ({
-        perspective: `${adjustedPerspective}px`,
-      }),
-      [adjustedPerspective]
-    )
-
-    if (shouldDisableAnimation) {
+    if (shouldDisableAnimation || !scrollYProgress) {
       return (
         <div
           className={cn(
-            "relative flex min-h-screen items-center justify-center",
+            "flex h-screen flex-col items-center justify-center",
+            sticky && "sticky top-0",
             className
           )}
         >
@@ -85,138 +119,23 @@ export const PerspectiveSection = memo<PerspectiveSectionProps>(
     }
 
     return (
-      <div
-        ref={ref}
+      <motion.div
+        style={{ scale, rotate }}
         className={cn(
-          "relative flex min-h-screen items-center justify-center",
+          "flex h-screen flex-col items-center justify-center",
+          sticky && "sticky top-0",
           className
         )}
-        style={containerStyle}
       >
-        <motion.div
-          style={{
-            rotateX,
-            opacity,
-            scale,
-          }}
-          className="w-full will-change-transform"
-        >
-          {children}
-        </motion.div>
-      </div>
+        {children}
+      </motion.div>
     )
   }
 )
 
 PerspectiveSection.displayName = "PerspectiveSection"
 
-export type RotatingCardSectionProps = {
-  /** Content for the front of the card */
-  frontContent: ReactNode
-  /** Content for the back of the card */
-  backContent: ReactNode
-  /** Additional CSS classes */
-  className?: string
-  /** Perspective value in pixels. Default: 1500 */
-  perspective?: number
-  /** Enable scroll-based animation. Default: true */
-  scrollBased?: boolean
-  /** Disable animation on mobile. Default: true (recommended for performance) */
-  noMobile?: boolean
-}
-
-/**
- * Section that rotates like a card flip on scroll.
- * Shows front content, then flips to reveal back content.
- * Creates a dramatic reveal effect for contrasting content.
- */
-export const RotatingCardSection = memo<RotatingCardSectionProps>(
-  ({
-    frontContent,
-    backContent,
-    className,
-    perspective = 1500,
-    scrollBased = true,
-    noMobile = true, // Disabled by default on mobile for performance
-  }) => {
-    const isMobile = useIsMobile()
-    const ref = useRef<HTMLDivElement>(null)
-    const { shouldDisableAnimation, shouldUseScroll } = useAnimationState(
-      scrollBased,
-      noMobile
-    )
-
-    const { scrollYProgress } = useScroll({
-      target: shouldUseScroll ? ref : undefined,
-      offset: ["start end", "end start"],
-    })
-
-    const adjustedPerspective = useMemo(
-      () => (isMobile ? perspective * 1.2 : perspective),
-      [isMobile, perspective]
-    )
-
-    const rotateY = useTransform(scrollYProgress, [0, 1], [0, 180])
-    const frontOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0, 0])
-    const backOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 0, 1])
-
-    const containerStyle: CSSProperties = useMemo(
-      () => ({
-        perspective: `${adjustedPerspective}px`,
-      }),
-      [adjustedPerspective]
-    )
-
-    if (shouldDisableAnimation) {
-      return (
-        <div className={cn("relative min-h-screen", className)}>
-          <div className="flex min-h-screen items-center justify-center p-4">
-            <div className="w-full max-w-4xl space-y-8">
-              <div className="rounded-3xl bg-gradient-to-br from-blue-600 to-purple-600 p-12 shadow-2xl">
-                {frontContent}
-              </div>
-              <div className="rounded-3xl bg-gradient-to-br from-pink-600 to-orange-600 p-12 shadow-2xl">
-                {backContent}
-              </div>
-            </div>
-          </div>
-        </div>
-      )
-    }
-
-    return (
-      <div
-        ref={ref}
-        className={cn("relative min-h-screen", className)}
-        style={containerStyle}
-      >
-        <div className="sticky top-0 flex min-h-screen items-center justify-center p-4">
-          <motion.div
-            style={{ rotateY }}
-            className="relative h-[600px] w-full max-w-4xl will-change-transform"
-          >
-            {/* Front face */}
-            <motion.div
-              style={{ opacity: frontOpacity }}
-              className="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-600 to-purple-600 p-12 shadow-2xl"
-            >
-              {frontContent}
-            </motion.div>
-
-            {/* Back face */}
-            <motion.div
-              style={{ opacity: backOpacity, rotateY: 180 }}
-              className="absolute inset-0 rounded-3xl bg-gradient-to-br from-pink-600 to-orange-600 p-12 shadow-2xl"
-            >
-              {backContent}
-            </motion.div>
-          </motion.div>
-        </div>
-      </div>
-    )
-  }
-)
-
-RotatingCardSection.displayName = "RotatingCardSection"
+// Legacy exports for backwards compatibility
+export { PerspectiveContainer as RotatingCardSection }
 
 export default PerspectiveSection

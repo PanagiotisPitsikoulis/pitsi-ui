@@ -1,5 +1,7 @@
 "use client"
 
+import { StickyRevealFooter } from "@/registry/new-york-v4/animations/sticky-footer/sticky-footer"
+
 const Nav = () => {
   return (
     <div className="flex shrink-0 gap-20">
@@ -21,7 +23,7 @@ const Nav = () => {
   )
 }
 
-const Content = () => {
+const FooterContent = () => {
   return (
     <div className="bg-muted text-foreground flex h-full w-full flex-col justify-between px-12 py-8">
       <div>
@@ -30,21 +32,6 @@ const Content = () => {
       <div className="flex items-end justify-between">
         <h1 className="mt-10 text-[14vw] leading-[0.8]">Sticky Footer</h1>
         <p>©copyright</p>
-      </div>
-    </div>
-  )
-}
-
-const Footer = () => {
-  return (
-    <div
-      className="relative h-[800px]"
-      style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
-    >
-      <div className="relative -top-[100vh] h-[calc(100vh+800px)]">
-        <div className="sticky top-[calc(100vh-800px)] h-[800px]">
-          <Content />
-        </div>
       </div>
     </div>
   )
@@ -65,7 +52,9 @@ export default function StickyFooterDemo() {
   return (
     <main>
       <Intro />
-      <Footer />
+      <StickyRevealFooter height={800}>
+        <FooterContent />
+      </StickyRevealFooter>
     </main>
   )
 }

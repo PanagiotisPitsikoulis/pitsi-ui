@@ -42,8 +42,9 @@ export function SiteHeaderClient({
   const containerClassName = "flex h-(--header-height) items-center px-6 lg:px-3"
 
   const headerClassName = cn(
-    "sticky top-0 z-[100] w-full",
-    hasScrolled ? "bg-page" : "bg-transparent"
+    "sticky top-0 z-[99] w-full",
+    "bg-background/80 backdrop-blur-md lg:bg-transparent lg:backdrop-blur-none",
+    hasScrolled && "lg:bg-page"
   )
 
   return (
@@ -57,12 +58,11 @@ export function SiteHeaderClient({
         <Button
           asChild
           variant="ghost"
-          size="icon"
-          className="hidden size-8 lg:flex"
+          className="hidden h-8 gap-2 px-2 lg:flex"
         >
           <Link href="/">
             <Icons.logo className="size-5" />
-            <span className="sr-only">{siteName}</span>
+            <span className="display font-semibold tracking-tight">Pitsi UI</span>
           </Link>
         </Button>
         <MainNav items={navItems} className="hidden lg:flex" />

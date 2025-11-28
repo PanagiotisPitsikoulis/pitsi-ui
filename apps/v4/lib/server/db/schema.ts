@@ -1,5 +1,8 @@
 import { boolean, pgTable, text, timestamp } from "drizzle-orm/pg-core"
 
+// Plan types
+export type PlanType = "free" | "pro" | "exclusive" | "team" | "enterprise"
+
 // BetterAuth User Table
 export const user = pgTable("user", {
   id: text("id").primaryKey(),
@@ -12,6 +15,7 @@ export const user = pgTable("user", {
   // Stripe subscription fields
   stripeCustomerId: text("stripeCustomerId"),
   isPro: boolean("isPro").default(false).notNull(),
+  planType: text("planType").$type<PlanType>().default("free").notNull(),
   stripePaymentId: text("stripePaymentId"),
   proUpgradedAt: timestamp("proUpgradedAt"),
 })
@@ -71,4 +75,17 @@ export const apiKey = pgTable("api_key", {
   createdAt: timestamp("createdAt").notNull(),
   lastUsedAt: timestamp("lastUsedAt"),
   expiresAt: timestamp("expiresAt"),
+})
+
+// Team Members Table
+export const teamMember = pgTable("team_member", {
+  id: text("id").primaryKey(),
+  teamOwnerId: text("teamOwnerId")
+    .notNull()
+    .references(() => user.id),
+  memberEmail: text("memberEmail").notNull(),
+  memberUserId: text("memberUserId").references(() => user.id), // Linked when user signs up
+  status: text("status").$type<"pending" | "active">().default("pending").notNull(),
+  invitedAt: timestamp("invitedAt").notNull(),
+  acceptedAt: timestamp("acceptedAt"),
 })
