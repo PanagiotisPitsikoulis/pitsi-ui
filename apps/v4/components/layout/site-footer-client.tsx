@@ -1,10 +1,11 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 
 import { cn } from "@/lib/utils"
 import { StickyRevealFooter } from "@/registry/new-york-v4/animations/sticky-footer/sticky-footer"
+import { ThemeToggle } from "@/registry/new-york-v4/ui/theme-toggle"
 
 interface SiteFooterClientProps {
   githubUrl: string
@@ -48,6 +49,21 @@ export function SiteFooterClient({
   allBlockSubcategories,
 }: SiteFooterClientProps) {
   const [activeTab, setActiveTab] = useState<TabType>("general")
+  const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 })
+  const tabsRef = useRef<HTMLDivElement>(null)
+  const tabRefs = useRef<Map<TabType, HTMLButtonElement>>(new Map())
+
+  useEffect(() => {
+    const activeButton = tabRefs.current.get(activeTab)
+    if (activeButton && tabsRef.current) {
+      const containerRect = tabsRef.current.getBoundingClientRect()
+      const buttonRect = activeButton.getBoundingClientRect()
+      setIndicatorStyle({
+        left: buttonRect.left - containerRect.left,
+        width: buttonRect.width,
+      })
+    }
+  }, [activeTab])
 
   // Format category name for display
   const formatName = (name: string) => {
@@ -74,34 +90,47 @@ export function SiteFooterClient({
     <StickyRevealFooter height={600}>
       <footer className="relative flex h-full flex-col justify-end pb-6">
         {/* Background images */}
-        <img
-          src="/marketing/surfing.jpg"
-          alt=""
-          className="absolute inset-x-0 bottom-0 h-[50%] w-full object-cover object-top [mask-image:linear-gradient(to_bottom,transparent_0%,transparent_30%,black_80%,black_100%)] dark:hidden"
-        />
-        <img
-          src="/marketing/sky-night.jpg"
-          alt=""
-          className="absolute inset-x-0 bottom-0 hidden h-[50%] w-full object-cover object-top [mask-image:linear-gradient(to_bottom,transparent_0%,transparent_30%,black_80%,black_100%)] dark:block"
-        />
+        <div className="absolute inset-x-0 bottom-0 flex h-[50%] justify-center">
+          <img
+            src="/marketing/surfing.jpg"
+            alt=""
+            className="h-full w-full max-w-[1920px] object-cover object-top [mask-image:linear-gradient(to_bottom,transparent_0%,transparent_30%,black_80%,black_100%)] dark:hidden"
+          />
+          <img
+            src="/marketing/sky-night.jpg"
+            alt=""
+            className="hidden h-full w-full max-w-[1920px] object-cover object-top [mask-image:linear-gradient(to_bottom,transparent_0%,transparent_30%,black_80%,black_100%)] dark:block"
+          />
+        </div>
         <div className="container relative px-6">
           <div className="mb-32 rounded-3xl border border-zinc-800 bg-zinc-950 px-4 py-4 text-white shadow-2xl md:mb-0">
           {/* Tabs */}
-          <div className="mb-6 flex gap-1 border-b border-zinc-800">
+          <div ref={tabsRef} className="relative mb-6 flex gap-1 border-b border-zinc-800">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
+                ref={(el) => {
+                  if (el) tabRefs.current.set(tab.id, el)
+                }}
                 onClick={() => setActiveTab(tab.id)}
                 className={cn(
-                  "px-4 py-2 text-sm font-medium transition-colors",
+                  "relative z-10 px-4 py-2 text-sm font-medium transition-colors",
                   activeTab === tab.id
-                    ? "border-b-2 border-white text-white"
+                    ? "text-white"
                     : "text-zinc-400 hover:text-white"
                 )}
               >
                 {tab.label}
               </button>
             ))}
+            {/* Animated background indicator */}
+            <div
+              className="absolute bottom-0 h-full rounded-md bg-zinc-800 transition-all duration-300 ease-out"
+              style={{
+                left: indicatorStyle.left,
+                width: indicatorStyle.width,
+              }}
+            />
           </div>
 
           {/* Tab Content */}
@@ -294,16 +323,21 @@ export function SiteFooterClient({
             <p className="text-zinc-400 text-xs">
               © 2025 pitsi/ui. All rights reserved.
             </p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="text-white"
-            >
-              <path d="M12 1 21.5 6.5V17.5L13 22.4211V11.4234L3.49793 5.92225 12 1ZM2.5 7.6555V17.5L11 22.4211V12.5765L2.5 7.6555Z" />
-            </svg>
+            <div className="flex items-center gap-3">
+              <div className="dark">
+                <ThemeToggle mode="light-dark-system" className="w-auto" />
+              </div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="text-white"
+              >
+                <path d="M12 1 21.5 6.5V17.5L13 22.4211V11.4234L3.49793 5.92225 12 1ZM2.5 7.6555V17.5L11 22.4211V12.5765L2.5 7.6555Z" />
+              </svg>
+            </div>
           </div>
           </div>
         </div>

@@ -10,67 +10,69 @@ export function HeroSection() {
       {/* Gradient header overlay */}
       <div className="from-background absolute inset-x-0 top-0 z-10 h-32 bg-gradient-to-b to-transparent" />
       {/* Diagonal background */}
-      <div className="absolute inset-0">
-        {/* Light mode */}
-        <svg
-          className="absolute h-full w-full [mask-image:linear-gradient(to_bottom,transparent_0%,transparent_3%,black_12%)] dark:hidden"
-          viewBox="0 0 1920 1080"
-          preserveAspectRatio="xMidYMid slice"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <defs>
-            <pattern
-              id="hero-image-light"
-              patternUnits="objectBoundingBox"
-              width="1"
-              height="1"
-            >
-              <image
-                href="/marketing/surfing.jpg"
-                x="0"
-                y="0"
-                width="1920"
-                height="1080"
-                preserveAspectRatio="xMidYMid slice"
-              />
-            </pattern>
-          </defs>
-          <path
-            d="M0 0 L1920 0 C1600 160 1333 93 1067 227 C800 360 533 293 267 427 C133 493 67 520 0 560 Z"
-            fill="url(#hero-image-light)"
-          />
-        </svg>
-        {/* Dark mode */}
-        <svg
-          className="absolute hidden h-full w-full [mask-image:linear-gradient(to_bottom,transparent_0%,transparent_3%,black_12%)] dark:block"
-          viewBox="0 0 1920 1080"
-          preserveAspectRatio="xMidYMid slice"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <defs>
-            <pattern
-              id="hero-image-dark"
-              patternUnits="objectBoundingBox"
-              width="1"
-              height="1"
-            >
-              <image
-                href="/marketing/sky-night.jpg"
-                x="0"
-                y="0"
-                width="1920"
-                height="1080"
-                preserveAspectRatio="xMidYMid slice"
-              />
-            </pattern>
-          </defs>
-          <path
-            d="M0 0 L1920 0 C1600 160 1333 93 1067 227 C800 360 533 293 267 427 C133 493 67 520 0 560 Z"
-            fill="url(#hero-image-dark)"
-          />
-        </svg>
+      <div className="absolute inset-0 flex justify-center">
+        <div className="relative w-full max-w-[1920px]">
+          {/* Light mode */}
+          <svg
+            className="absolute h-full w-full [mask-image:linear-gradient(to_bottom,transparent_0%,transparent_3%,black_12%)] dark:hidden"
+            viewBox="0 0 1920 1080"
+            preserveAspectRatio="xMidYMid slice"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <pattern
+                id="hero-image-light"
+                patternUnits="objectBoundingBox"
+                width="1"
+                height="1"
+              >
+                <image
+                  href="/marketing/surfing.jpg"
+                  x="0"
+                  y="0"
+                  width="1920"
+                  height="1080"
+                  preserveAspectRatio="xMidYMid slice"
+                />
+              </pattern>
+            </defs>
+            <path
+              d="M0 0 L1920 0 C1600 160 1333 93 1067 227 C800 360 533 293 267 427 C133 493 67 520 0 560 Z"
+              fill="url(#hero-image-light)"
+            />
+          </svg>
+          {/* Dark mode */}
+          <svg
+            className="absolute hidden h-full w-full [mask-image:linear-gradient(to_bottom,transparent_0%,transparent_3%,black_12%)] dark:block"
+            viewBox="0 0 1920 1080"
+            preserveAspectRatio="xMidYMid slice"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <pattern
+                id="hero-image-dark"
+                patternUnits="objectBoundingBox"
+                width="1"
+                height="1"
+              >
+                <image
+                  href="/marketing/sky-night.jpg"
+                  x="0"
+                  y="0"
+                  width="1920"
+                  height="1080"
+                  preserveAspectRatio="xMidYMid slice"
+                />
+              </pattern>
+            </defs>
+            <path
+              d="M0 0 L1920 0 C1600 160 1333 93 1067 227 C800 360 533 293 267 427 C133 493 67 520 0 560 Z"
+              fill="url(#hero-image-dark)"
+            />
+          </svg>
+        </div>
       </div>
       <div className="relative container flex h-full w-full flex-col items-center justify-center">
         {/*Typography*/}
@@ -181,7 +183,7 @@ export function HeroSection() {
             </div>
           }
           desktop={
-            <div className="grid h-[40rem] w-full gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mx-auto grid h-[40rem] w-full max-w-7xl gap-4 md:grid-cols-2 lg:grid-cols-3">
               {/*Card Desktop*/}
               <ParallaxImage
                 src="/marketing/surfing.jpg"

@@ -2,18 +2,25 @@ import { Suspense } from "react"
 import { Metadata } from "next"
 
 import { getCurrentUser } from "@/lib/server/user"
+import { CardsParallax } from "@/registry/new-york-v4/animations/cards-parallax/cards-parallax"
+import CardsParallaxDemo from "@/registry/new-york-v4/examples/cards-parallax-demo"
 
 import {
+  BackgroundParallaxSection,
+  CardsParallaxSection,
+  ContentExplained,
   ContentSection,
   CTASection,
   DesignSection,
   DeveloperExperienceSection,
   HeroSection,
+  PerspectiveSectionDemo,
   PowerSection,
   PricingCardsSection,
-  PricingSection,
+  PricingExplained,
   PricingToast,
-  PrimitivesSection,
+  PurposeSection,
+  StripeBgGuides,
 } from "./_components"
 
 const title = "The Foundation for your Design System"
@@ -48,18 +55,30 @@ export default async function IndexPage() {
   const user = await getCurrentUser()
 
   return (
-    <div className="min-h-screen">
+    <div className="relative min-h-screen">
+      <StripeBgGuides
+        columnCount={6}
+        animated={true}
+        animationDuration={8}
+        glowColor="hsl(var(--brand))"
+        glowOpacity={0.8}
+        glowSize="20vh"
+        randomize={true}
+        randomInterval={3000}
+      />
       <Suspense fallback={null}>
         <PricingToast />
       </Suspense>
       <HeroSection />
       <ContentSection />
-      <PrimitivesSection />
+      <ContentExplained />
+      <PurposeSection />
+
       <DesignSection />
-      <PowerSection />
-      <DeveloperExperienceSection />
-      <PricingSection />
+      {/*<PowerSection />
+      <DeveloperExperienceSection />*/}
       <PricingCardsSection user={user} />
+      <PricingExplained />
       <CTASection />
     </div>
   )

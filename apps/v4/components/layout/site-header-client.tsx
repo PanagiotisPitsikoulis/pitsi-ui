@@ -8,9 +8,7 @@ import { cn } from "@/lib/utils"
 import { MainNav } from "@/components/navigation/main-nav"
 import { MobileNav } from "@/components/navigation/mobile-nav"
 import { Icons } from "@/components/shared/icons"
-import { SiteConfig } from "@/components/shared/site-config"
 import { Button } from "@/registry/new-york-v4/ui/button"
-import { ThemeToggle } from "@/registry/new-york-v4/ui/theme-toggle"
 
 export function SiteHeaderClient({
   commandMenu,
@@ -76,13 +74,8 @@ export function SiteHeaderClient({
           <div className="flex md:hidden">
             {commandMenu}
           </div>
-          <div className="flex md:hidden">
-            <ThemeToggle mode="light-dark" className="w-auto" />
-          </div>
           <div className="hidden items-center gap-2 md:flex">
-            <ThemeToggle mode="light-dark-system" className="w-auto" />
             {githubLink}
-            <SiteConfig className="3xl:flex hidden" />
           </div>
           {userNav}
         </div>

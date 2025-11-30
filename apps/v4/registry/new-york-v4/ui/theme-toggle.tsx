@@ -74,7 +74,7 @@ export function ThemeToggle({
           }}
         >
           <SegmentedControlList
-            className="border-border bg-background w-fit rounded-full border shadow-xs"
+            className="border-border bg-background w-fit rounded-full border p-px shadow-xs"
             floatingBgClassName="rounded-full border border-border bg-background shadow-2xs dark:bg-secondary"
           >
             {themes.map(([key, Icon]) => {
@@ -107,7 +107,7 @@ export function ThemeToggle({
         defaultValue="system"
       >
         <SegmentedControlList
-          className="border-border bg-background bg-background w-fit rounded-full border shadow-xs"
+          className="border-border bg-background w-fit rounded-full border p-px shadow-xs"
           floatingBgClassName="rounded-full border border-border bg-background shadow-2xs dark:bg-secondary"
         >
           {themes.map(([key, Icon]) => (

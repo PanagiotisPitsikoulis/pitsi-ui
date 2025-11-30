@@ -58,8 +58,11 @@ export function ComponentPreview({
           </div>
           <iframe
             src={`/view/${styleName}/${name}`}
-            className="size-full"
+            className="pointer-events-none size-full overflow-hidden"
+            scrolling="no"
           />
+          {/* Invisible overlay to prevent scrolling */}
+          <div className="absolute inset-0 z-10" />
         </div>
       </div>
     )
@@ -76,22 +79,27 @@ export function ComponentPreview({
         readiness={registryItem?.readiness}
         tier={registryItem?.tier ?? "free"}
         component={
-          <iframe
-            src={`/view/${styleName}/${name}`}
-            className="absolute inset-0 size-full border-0"
-            title={`${name} animation`}
-            loading="lazy"
-            sandbox="allow-scripts allow-same-origin"
-            allowFullScreen
-            style={{
-              transform: 'scale(0.75)',
-              transformOrigin: 'center',
-              width: '133.33%',
-              height: '133.33%',
-              left: '-16.66%',
-              top: '-16.66%'
-            }}
-          />
+          <>
+            <iframe
+              src={`/view/${styleName}/${name}`}
+              className="pointer-events-none absolute inset-0 size-full overflow-hidden border-0"
+              title={`${name} animation`}
+              loading="lazy"
+              sandbox="allow-scripts allow-same-origin"
+              allowFullScreen
+              scrolling="no"
+              style={{
+                transform: 'scale(0.75)',
+                transformOrigin: 'center',
+                width: '133.33%',
+                height: '133.33%',
+                left: '-16.66%',
+                top: '-16.66%'
+              }}
+            />
+            {/* Invisible overlay to prevent scrolling */}
+            <div className="absolute inset-0 z-10" />
+          </>
         }
         source={
           <ComponentSource
@@ -113,7 +121,7 @@ export function ComponentPreview({
       hideCode={hideCode}
       readiness={registryItem?.readiness}
       tier={registryItem?.tier ?? "free"}
-      component={<Component />}
+      component={<div className="pointer-events-none overflow-hidden"><Component /></div>}
       source={
         <ComponentSource
           name={name}

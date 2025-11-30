@@ -40,7 +40,7 @@ const SegmentedControlList = React.forwardRef<
       {/* floating bg */}
       <div
         className={cn(
-          "bg-background absolute inset-y-1 left-0 -z-10 rounded-md shadow-sm transition-transform duration-300",
+          "bg-background absolute inset-y-px left-0 -z-10 rounded-md shadow-sm transition-transform duration-300",
           {
             hidden: !mounted,
           },

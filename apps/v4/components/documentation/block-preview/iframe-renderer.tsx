@@ -34,18 +34,23 @@ const IframeRenderer: React.FC<IframeRendererProps> = ({
   }, [src])
 
   return (
-    <iframe
-      key={`${id}-iframe`}
-      loading={isCached ? "eager" : "lazy"}
-      allowFullScreen
-      ref={iframeRef}
-      title={title}
-      aria-label={ariaLabel || `${title}-preview`}
-      className={cn("absolute inset-0 size-full", className)}
-      src={urlWithCacheBusting}
-      id={id}
-      sandbox="allow-scripts allow-same-origin"
-    />
+    <>
+      <iframe
+        key={`${id}-iframe`}
+        loading={isCached ? "eager" : "lazy"}
+        allowFullScreen
+        ref={iframeRef}
+        title={title}
+        aria-label={ariaLabel || `${title}-preview`}
+        className={cn("pointer-events-none absolute inset-0 size-full overflow-hidden", className)}
+        src={urlWithCacheBusting}
+        id={id}
+        sandbox="allow-scripts allow-same-origin"
+        scrolling="no"
+      />
+      {/* Invisible overlay to prevent scrolling */}
+      <div className="absolute inset-0 z-10" />
+    </>
   )
 }
 

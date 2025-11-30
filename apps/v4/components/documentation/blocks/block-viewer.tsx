@@ -262,17 +262,20 @@ function BlockViewerIframe({
   const { item, iframeKey } = useBlockViewer()
 
   return (
-    <>
+    <div className="relative h-full w-full">
       <iframe
         key={iframeKey}
         src={`/view/${styleName}/${item.name}`}
         height={item.meta?.iframeHeight ?? 800}
         className={cn(
-          "bg-background no-scrollbar relative z-20 h-full w-full",
+          "bg-background no-scrollbar pointer-events-none relative z-20 h-full w-full overflow-hidden",
           className
         )}
+        scrolling="no"
       />
-    </>
+      {/* Invisible overlay to prevent scrolling */}
+      <div className="absolute inset-0 z-30" />
+    </div>
   )
 }
 
@@ -297,7 +300,7 @@ function BlockViewerView({ styleName }: { styleName: Style["name"] }) {
             minSize={30}
             suppressHydrationWarning
           >
-            <div className="flex h-full w-full flex-col">
+            <div className="relative flex h-full w-full flex-col">
               <div className="flex items-center gap-2 p-2">
                 <ReadinessBadge readiness={item.readiness} />
                 <TierBadge tier={item.tier ?? "free"} />
@@ -305,6 +308,8 @@ function BlockViewerView({ styleName }: { styleName: Style["name"] }) {
               <div className="flex-1">
                 <BlockViewerIframe styleName={styleName} />
               </div>
+              {/* Invisible overlay to prevent scrolling */}
+              <div className="absolute inset-0 z-40" />
             </div>
           </ResizablePanel>
           <ResizableHandle
@@ -345,6 +350,8 @@ function BlockViewerMobile({ styleName }: { styleName: Style["name"] }) {
               className="relative z-10 h-full w-full"
             />
           </div>
+          {/* Invisible overlay to prevent scrolling */}
+          <div className="absolute inset-0 z-20" />
         </div>
       </div>
     </div>

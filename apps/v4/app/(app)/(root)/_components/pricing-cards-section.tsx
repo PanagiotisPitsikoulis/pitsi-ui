@@ -160,8 +160,8 @@ function PricingCard({
     <div
       className={`relative flex flex-col rounded-3xl border p-6 md:p-8 ${
         highlighted
-          ? "border-foreground/20 bg-foreground text-background shadow-2xl"
-          : "border-border bg-background shadow-lg"
+          ? "border-foreground/20 bg-foreground text-background shadow-sm"
+          : "border-border bg-background shadow-sm"
       }`}
     >
       {badge && (
@@ -207,7 +207,11 @@ function PricingCard({
             <Check
               className={`mt-0.5 size-4 shrink-0 ${highlighted ? "text-background/60" : "text-muted-foreground"}`}
             />
-            <span className={`text-sm ${highlighted ? "text-background/80" : ""}`}>{feature}</span>
+            <span
+              className={`text-sm ${highlighted ? "text-background/80" : ""}`}
+            >
+              {feature}
+            </span>
           </li>
         ))}
       </ul>
@@ -239,7 +243,7 @@ export function PricingCardsSection({
       id="pricing"
       className="container flex flex-col items-center justify-center px-6 py-24 text-center"
     >
-      <p className="text-muted-foreground text-sm font-medium uppercase tracking-widest">
+      <p className="text-muted-foreground text-sm font-medium tracking-widest uppercase">
         Simple Pricing
       </p>
       <Spacer size="lg" sizeMobile="md" />
@@ -251,7 +255,7 @@ export function PricingCardsSection({
       <Spacer size="xl" sizeMobile="lg" />
 
       {/* License Type Toggle */}
-      <div className="mb-8 inline-flex rounded-full border border-border bg-muted/50 p-1">
+      <div className="border-border bg-muted/50 mb-8 inline-flex rounded-full border p-1">
         <button
           onClick={() => setLicenseType("single")}
           className={`rounded-full px-6 py-2 text-sm font-medium transition-all ${
@@ -305,14 +309,17 @@ export function PricingCardsSection({
               description="Full access for individuals"
               featureList={features.pro}
               highlighted
-              badge="Most Popular"
             >
               {hasPro ? (
-                <div className="flex h-12 w-full items-center justify-center rounded-xl bg-background/10 text-sm font-medium">
+                <div className="bg-background/10 flex h-12 w-full items-center justify-center rounded-xl text-sm font-medium">
                   {currentPlan === "pro" ? "Current Plan" : "Included"}
                 </div>
               ) : (
-                <CheckoutButton isLoggedIn={!!user} planType="pro" variant="highlighted" />
+                <CheckoutButton
+                  isLoggedIn={!!user}
+                  planType="pro"
+                  variant="highlighted"
+                />
               )}
             </PricingCard>
 
@@ -325,14 +332,11 @@ export function PricingCardsSection({
               featureList={features.exclusive}
             >
               {hasExclusive ? (
-                <div className="flex h-12 w-full items-center justify-center rounded-xl bg-muted text-sm font-medium">
+                <div className="bg-muted flex h-12 w-full items-center justify-center rounded-xl text-sm font-medium">
                   {currentPlan === "exclusive" ? "Current Plan" : "Included"}
                 </div>
               ) : (
-                <CheckoutButton
-                  isLoggedIn={!!user}
-                  planType="exclusive"
-                />
+                <CheckoutButton isLoggedIn={!!user} planType="exclusive" />
               )}
             </PricingCard>
           </div>
@@ -348,14 +352,17 @@ export function PricingCardsSection({
             description="For teams up to 10 members"
             featureList={features.team}
             highlighted
-            badge="Save 80%"
           >
             {hasTeam ? (
-              <div className="flex h-12 w-full items-center justify-center rounded-xl bg-background/10 text-sm font-medium">
+              <div className="bg-background/10 flex h-12 w-full items-center justify-center rounded-xl text-sm font-medium">
                 {currentPlan === "team" ? "Current Plan" : "Included"}
               </div>
             ) : (
-              <CheckoutButton isLoggedIn={!!user} planType="team" variant="highlighted" />
+              <CheckoutButton
+                isLoggedIn={!!user}
+                planType="team"
+                variant="highlighted"
+              />
             )}
           </PricingCard>
 
@@ -367,10 +374,9 @@ export function PricingCardsSection({
             priceLabel="one-time"
             description="Unlimited team members"
             featureList={features.enterprise}
-            badge="Save 87%"
           >
             {hasEnterprise ? (
-              <div className="flex h-12 w-full items-center justify-center rounded-xl bg-muted text-sm font-medium">
+              <div className="bg-muted flex h-12 w-full items-center justify-center rounded-xl text-sm font-medium">
                 {currentPlan === "enterprise" ? "Current Plan" : "Included"}
               </div>
             ) : (

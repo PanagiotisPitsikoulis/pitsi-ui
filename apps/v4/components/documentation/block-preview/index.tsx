@@ -131,6 +131,8 @@ const BlockPreview: React.FC<BlockPreviewProps> = ({
                   ) : (
                     <LoadingSpinner />
                   )}
+                  {/* Invisible overlay to prevent scrolling */}
+                  <div className="absolute inset-0 z-20" />
                 </div>
               </Panel>
 

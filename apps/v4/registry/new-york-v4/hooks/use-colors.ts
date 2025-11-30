@@ -1,7 +1,7 @@
 import { useAtom } from "jotai"
 import { atomWithStorage } from "jotai/utils"
 
-import { useMounted } from "@/hooks/use-mounted"
+import { useMounted } from "@/registry/new-york-v4/hooks/use-mounted"
 
 export type ColorFormat = "className" | "hex" | "rgb" | "hsl" | "oklch" | "var"
 

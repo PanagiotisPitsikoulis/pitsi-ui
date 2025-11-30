@@ -1,7 +1,7 @@
 import { useAtom } from "jotai"
 import { atomWithStorage } from "jotai/utils"
 
-type Config = {
+export type Config = {
   style: "new-york-v4"
   packageManager: "npm" | "yarn" | "pnpm" | "bun"
   installationType: "cli" | "manual"
