@@ -17,6 +17,9 @@ export function SiteHeaderClient({
   pageTree,
   navItems,
   siteName,
+  componentPages,
+  animationPages,
+  allBlockSubcategories,
 }: {
   commandMenu: ReactNode
   userNav: ReactNode
@@ -24,6 +27,9 @@ export function SiteHeaderClient({
   pageTree: any
   navItems: any[]
   siteName: string
+  componentPages: Array<{ name: string; url: string }>
+  animationPages: Array<{ name: string; url: string }>
+  allBlockSubcategories: Array<{ category: string; name: string; count: number }>
 }) {
   const [hasScrolled, setHasScrolled] = useState(false)
 
@@ -41,8 +47,7 @@ export function SiteHeaderClient({
 
   const headerClassName = cn(
     "sticky top-0 z-[99] w-full",
-    "bg-background/80 backdrop-blur-md lg:bg-transparent lg:backdrop-blur-none",
-    hasScrolled && "lg:bg-page"
+    hasScrolled ? "bg-background" : "bg-transparent"
   )
 
   return (
@@ -63,7 +68,13 @@ export function SiteHeaderClient({
             <span className="display font-semibold tracking-tight">Pitsi UI</span>
           </Link>
         </Button>
-        <MainNav items={navItems} className="hidden lg:flex" />
+        <MainNav
+          items={navItems}
+          componentPages={componentPages}
+          animationPages={animationPages}
+          allBlockSubcategories={allBlockSubcategories}
+          className="hidden lg:flex"
+        />
         <div className="ml-auto flex items-center gap-1 md:gap-2 md:flex-1 md:justify-end">
           <div className="hidden w-full flex-1 md:flex md:w-auto md:flex-none">
             {commandMenu}

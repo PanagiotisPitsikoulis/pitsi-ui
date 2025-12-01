@@ -134,13 +134,15 @@ function FeatureCard({
   Icon,
   title,
   description,
+  className,
 }: {
   Icon: React.ComponentType<{ className?: string }>
   title: string
   description: string
+  className?: string
 }) {
   return (
-    <div className="group border-border bg-background relative z-10 flex h-[16rem] flex-col overflow-hidden rounded-4xl border shadow-sm md:h-[18rem]">
+    <div className={`group border-border bg-background relative z-10 flex h-[16rem] flex-col overflow-hidden rounded-4xl border shadow-sm md:h-[18rem] ${className ?? ""}`}>
       <div className="flex flex-1 items-center justify-center overflow-hidden p-6">
         <Icon className="text-brand size-16 md:size-20" />
       </div>
@@ -165,9 +167,9 @@ export function PurposeSection() {
         <span className="text-muted-foreground">Real Problems</span>
       </h2>
       <Spacer size="3xl" sizeMobile="xl" />
-      <div className="grid w-full gap-4 lg:grid-cols-3 lg:gap-8">
-        {/* Left column */}
-        <div className="flex flex-col gap-4">
+      <div className="grid w-full grid-cols-6 gap-6">
+        {/* Left column - spans 2 cols */}
+        <div className="col-span-6 flex flex-col gap-6 lg:col-span-2">
           {features.slice(0, 3).map((feature) => (
             <FeatureCard
               key={feature.title}
@@ -178,8 +180,8 @@ export function PurposeSection() {
           ))}
         </div>
 
-        {/* Center element - Instagram-style App */}
-        <div className="border-border bg-background relative hidden h-full w-full flex-col overflow-hidden rounded-4xl border shadow-2xl lg:flex">
+        {/* Center element - Instagram-style App - spans 2 cols */}
+        <div className="col-span-6 border-border bg-background relative hidden h-full w-full flex-col overflow-hidden rounded-4xl border shadow-2xl lg:col-span-2 lg:flex">
           {/* Instagram Navbar */}
           <div className="flex items-center justify-between border-b px-5 py-4">
             <div className="bg-muted h-7 w-24 rounded-full" />
@@ -319,8 +321,8 @@ export function PurposeSection() {
           </div>
         </div>
 
-        {/* Right column */}
-        <div className="flex flex-col gap-4">
+        {/* Right column - spans 2 cols */}
+        <div className="col-span-6 flex flex-col gap-6 lg:col-span-2">
           {features.slice(3, 6).map((feature) => (
             <FeatureCard
               key={feature.title}

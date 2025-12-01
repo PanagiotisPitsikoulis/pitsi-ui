@@ -14,6 +14,34 @@ export async function SiteHeader() {
   const pageTree = source.pageTree
   const navItems = siteConfig.navItems
 
+  // Get component pages
+  const componentsFolder = pageTree.children.find(
+    (child) => child.name === "Components"
+  )
+  const componentPages =
+    componentsFolder?.type === "folder"
+      ? componentsFolder.children
+          .filter((child) => child.type === "page")
+          .map((child) => ({
+            name: String(child.name),
+            url: child.url,
+          }))
+      : []
+
+  // Get animation pages
+  const animationsFolder = pageTree.children.find(
+    (child) => child.name === "Animations"
+  )
+  const animationPages =
+    animationsFolder?.type === "folder"
+      ? animationsFolder.children
+          .filter((child) => child.type === "page")
+          .map((child) => ({
+            name: String(child.name),
+            url: child.url,
+          }))
+      : []
+
   // Get block categories and subcategories
   const mainCategories = await getAllMainCategories()
   const blockCategories = await Promise.all(
@@ -31,6 +59,15 @@ export async function SiteHeader() {
     })
   )
 
+  // Flatten all subcategories for easy access
+  const allBlockSubcategories = blockCategories.flatMap((category) =>
+    category.subcategories.map((sub) => ({
+      category: category.name,
+      name: sub.name,
+      count: sub.count,
+    }))
+  )
+
   return (
     <SiteHeaderClient
       commandMenu={
@@ -45,6 +82,9 @@ export async function SiteHeader() {
       pageTree={pageTree}
       navItems={navItems}
       siteName={siteConfig.name}
+      componentPages={componentPages}
+      animationPages={animationPages}
+      allBlockSubcategories={allBlockSubcategories}
     />
   )
 }

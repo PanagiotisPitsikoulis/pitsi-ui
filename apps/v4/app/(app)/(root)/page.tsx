@@ -56,16 +56,7 @@ export default async function IndexPage() {
 
   return (
     <div className="relative min-h-screen">
-      <StripeBgGuides
-        columnCount={6}
-        animated={true}
-        animationDuration={8}
-        glowColor="hsl(var(--brand))"
-        glowOpacity={0.8}
-        glowSize="20vh"
-        randomize={true}
-        randomInterval={3000}
-      />
+      <StripeBgGuides columnCount={6} animated={false} />
       <Suspense fallback={null}>
         <PricingToast />
       </Suspense>

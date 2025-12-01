@@ -3,12 +3,14 @@ import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 function FeatureCard({
   children,
   label,
+  className,
 }: {
   children?: React.ReactNode
   label: string
+  className?: string
 }) {
   return (
-    <div className="group border-border bg-background relative flex h-[20rem] flex-col overflow-hidden rounded-4xl border shadow-sm md:h-[24rem]">
+    <div className={`group border-border bg-background relative flex h-[20rem] flex-col overflow-hidden rounded-4xl border shadow-sm md:h-[24rem] ${className ?? ""}`}>
       <div className="flex flex-1 items-center justify-center p-6 overflow-hidden">
         {children}
       </div>
@@ -32,10 +34,10 @@ export function DeveloperExperienceSection() {
         <span className="text-muted-foreground">who ship fast.</span>
       </h2>
       <Spacer size="3xl" sizeMobile="xl" />
-      <div className="grid w-full gap-4 md:grid-cols-3">
-        <FeatureCard label="One platform" />
-        <FeatureCard label="Same APIs — nothing to unlearn" />
-        <FeatureCard label="Docs that don't suck" />
+      <div className="grid w-full grid-cols-6 gap-6">
+        <FeatureCard className="col-span-6 md:col-span-2" label="One platform" />
+        <FeatureCard className="col-span-6 md:col-span-2" label="Same APIs — nothing to unlearn" />
+        <FeatureCard className="col-span-6 md:col-span-2" label="Docs that don't suck" />
       </div>
       <Spacer size="xl" sizeMobile="md" />
       <p className="text-muted-foreground max-w-2xl text-base md:text-lg">

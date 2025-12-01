@@ -89,23 +89,9 @@ export function SiteFooterClient({
   return (
     <StickyRevealFooter height={600}>
       <footer className="relative flex h-full flex-col justify-end pb-6">
-        {/* Background images */}
-        <div className="absolute inset-x-0 bottom-0 flex h-[50%] justify-center">
-          <img
-            src="/marketing/surfing.jpg"
-            alt=""
-            className="h-full w-full max-w-[1920px] object-cover object-top [mask-image:linear-gradient(to_bottom,transparent_0%,transparent_30%,black_80%,black_100%)] dark:hidden"
-          />
-          <img
-            src="/marketing/sky-night.jpg"
-            alt=""
-            className="hidden h-full w-full max-w-[1920px] object-cover object-top [mask-image:linear-gradient(to_bottom,transparent_0%,transparent_30%,black_80%,black_100%)] dark:block"
-          />
-        </div>
         <div className="container relative px-6">
-          <div className="mb-32 rounded-3xl border border-zinc-800 bg-zinc-950 px-4 py-4 text-white shadow-2xl md:mb-0">
           {/* Tabs */}
-          <div ref={tabsRef} className="relative mb-6 flex gap-1 border-b border-zinc-800">
+          <div ref={tabsRef} className="relative mb-6 flex gap-1 overflow-x-auto border-b border-border">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
@@ -116,16 +102,16 @@ export function SiteFooterClient({
                 className={cn(
                   "relative z-10 px-4 py-2 text-sm font-medium transition-colors",
                   activeTab === tab.id
-                    ? "text-white"
-                    : "text-zinc-400 hover:text-white"
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
                 )}
               >
                 {tab.label}
               </button>
             ))}
-            {/* Animated background indicator */}
+            {/* Animated border-bottom indicator */}
             <div
-              className="absolute bottom-0 h-full rounded-md bg-zinc-800 transition-all duration-300 ease-out"
+              className="bg-foreground absolute bottom-0 h-[2px] transition-all duration-300 ease-out"
               style={{
                 left: indicatorStyle.left,
                 width: indicatorStyle.width,
@@ -134,10 +120,10 @@ export function SiteFooterClient({
           </div>
 
           {/* Tab Content */}
-          <div className="h-[280px] overflow-auto px-4 text-[13px] leading-relaxed tracking-[-0.15px] text-white">
+          <div className="h-[280px] overflow-auto text-[13px] leading-relaxed tracking-[-0.15px]">
             {/* General Tab */}
             {activeTab === "general" && (
-              <div className="grid grid-cols-2 gap-x-8 gap-y-6 md:grid-cols-5">
+              <div className="grid grid-cols-2 gap-6 md:grid-cols-6">
                 {/* Documentation */}
                 <div className="flex flex-col items-start">
                   <h6 className="mb-2 font-medium">Documentation</h6>
@@ -271,7 +257,7 @@ export function SiteFooterClient({
 
             {/* Blocks Tab */}
             {activeTab === "blocks" && (
-              <div className="grid grid-cols-2 gap-x-4 gap-y-1 md:grid-cols-4 xl:grid-cols-5">
+              <div className="grid grid-cols-2 gap-x-6 gap-y-1 md:grid-cols-6">
                 {allBlockSubcategories.map((sub) => (
                   <div key={`${sub.category}-${sub.name}`} className="py-px">
                     <Link
@@ -287,7 +273,7 @@ export function SiteFooterClient({
 
             {/* Components Tab */}
             {activeTab === "components" && (
-              <div className="grid grid-cols-2 gap-x-4 gap-y-1 md:grid-cols-4 xl:grid-cols-5">
+              <div className="grid grid-cols-2 gap-x-6 gap-y-1 md:grid-cols-6">
                 {componentPages.map((page) => (
                   <div key={page.url} className="py-px">
                     <Link
@@ -303,7 +289,7 @@ export function SiteFooterClient({
 
             {/* Animations Tab */}
             {activeTab === "animations" && (
-              <div className="grid grid-cols-2 gap-x-4 gap-y-1 md:grid-cols-4 xl:grid-cols-5">
+              <div className="grid grid-cols-2 gap-x-6 gap-y-1 md:grid-cols-6">
                 {animationPages.map((page) => (
                   <div key={page.url} className="py-px">
                     <Link
@@ -319,26 +305,23 @@ export function SiteFooterClient({
           </div>
 
           {/* Bottom section with logo and copyright */}
-          <div className="mx-4 mt-6 flex items-center justify-between border-t border-zinc-800 pt-6">
-            <p className="text-zinc-400 text-xs">
+          <div className="mt-6 flex items-center justify-between pt-6">
+            <p className="text-muted-foreground text-xs">
               © 2025 pitsi/ui. All rights reserved.
             </p>
             <div className="flex items-center gap-3">
-              <div className="dark">
-                <ThemeToggle mode="light-dark-system" className="w-auto" />
-              </div>
+              <ThemeToggle mode="light-dark-system" className="w-auto" />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="24"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="text-white"
+                className="text-foreground"
               >
                 <path d="M12 1 21.5 6.5V17.5L13 22.4211V11.4234L3.49793 5.92225 12 1ZM2.5 7.6555V17.5L11 22.4211V12.5765L2.5 7.6555Z" />
               </svg>
             </div>
-          </div>
           </div>
         </div>
       </footer>

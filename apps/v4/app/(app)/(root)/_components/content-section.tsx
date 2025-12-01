@@ -10,6 +10,8 @@ import { HeroButton } from "@/registry/new-york-v4/ui/hero-button"
 import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 import { Spinner } from "@/registry/new-york-v4/ui/spinner"
 
+import { LayoutGrid, LayoutGridItem } from "./layout-grid"
+
 // SVG Icon Components with brand color
 function BlocksIcon({ className }: { className?: string }) {
   return (
@@ -298,9 +300,10 @@ const tabs = [
     href: "/docs/animations",
     Icon: AnimationsIcon,
     items: FEATURED_ITEMS.animations,
-    gridClass: "grid-cols-1 md:grid-cols-3",
+    gridClass: "grid-cols-6",
+    itemClass: "col-span-6 md:col-span-2",
     aspectClass: "aspect-square md:aspect-square",
-    mobileLimit: 2,
+    mobileLimit: 3,
   },
   {
     id: "components",
@@ -310,9 +313,10 @@ const tabs = [
     href: "/docs/components",
     Icon: ComponentsIcon,
     items: FEATURED_ITEMS.components,
-    gridClass: "grid-cols-1 md:grid-cols-3",
+    gridClass: "grid-cols-6",
+    itemClass: "col-span-6 md:col-span-2",
     aspectClass: "aspect-square md:aspect-square",
-    mobileLimit: 2,
+    mobileLimit: 3,
   },
   {
     id: "blocks",
@@ -322,9 +326,10 @@ const tabs = [
     href: "/blocks",
     Icon: BlocksIcon,
     items: FEATURED_ITEMS.blocks,
-    gridClass: "grid-cols-1 md:grid-cols-3",
+    gridClass: "grid-cols-6",
+    itemClass: "col-span-6 md:col-span-2",
     aspectClass: "aspect-[3/2] md:aspect-[4/3]",
-    mobileLimit: 2,
+    mobileLimit: 3,
   },
 ]
 
@@ -416,6 +421,16 @@ function RegistryItemPreview({
 export function ContentSection() {
   const containerRef = useRef<HTMLDivElement>(null)
   const { shouldUseScroll } = useAnimationState(true, false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    checkMobile()
+    window.addEventListener("resize", checkMobile)
+    return () => window.removeEventListener("resize", checkMobile)
+  }, [])
 
   // Track page scroll and calculate progress for this section
   const { scrollY } = useScroll()
@@ -502,52 +517,23 @@ export function ContentSection() {
   const tab2Z = useTransform(scrollYProgress, [0.63, 0.66, 1], [100, 0, 0])
   const tabZs = [tab0Z, tab1Z, tab2Z]
 
-  const tab0Filter = useTransform(
-    scrollYProgress,
-    [0, 0.3, 0.33],
-    ["blur(0px)", "blur(0px)", "blur(12px)"]
-  )
-  const tab1Filter = useTransform(
-    scrollYProgress,
-    [0.3, 0.33, 0.63, 0.66],
-    ["blur(12px)", "blur(0px)", "blur(0px)", "blur(12px)"]
-  )
-  const tab2Filter = useTransform(
-    scrollYProgress,
-    [0.63, 0.66, 1],
-    ["blur(12px)", "blur(0px)", "blur(0px)"]
-  )
-  const tabFilters = [tab0Filter, tab1Filter, tab2Filter]
-
-  // Background colors for cards - active is background, inactive is secondary
-  const tab0Bg = useTransform(
+  // Saturation for tab cards - active is full color, inactive is grayscale
+  const tab0Saturate = useTransform(
     tab0Opacity,
     [0, 0.5, 1],
-    [
-      "var(--color-secondary)",
-      "var(--color-background)",
-      "var(--color-background)",
-    ]
+    ["grayscale(1)", "grayscale(0)", "grayscale(0)"]
   )
-  const tab1Bg = useTransform(
+  const tab1Saturate = useTransform(
     tab1Opacity,
     [0, 0.5, 1],
-    [
-      "var(--color-secondary)",
-      "var(--color-background)",
-      "var(--color-background)",
-    ]
+    ["grayscale(1)", "grayscale(0)", "grayscale(0)"]
   )
-  const tab2Bg = useTransform(
+  const tab2Saturate = useTransform(
     tab2Opacity,
     [0, 0.5, 1],
-    [
-      "var(--color-secondary)",
-      "var(--color-background)",
-      "var(--color-background)",
-    ]
+    ["grayscale(1)", "grayscale(0)", "grayscale(0)"]
   )
-  const tabBgColors = [tab0Bg, tab1Bg, tab2Bg]
+  const tabSaturations = [tab0Saturate, tab1Saturate, tab2Saturate]
 
   // Get the type for each tab
   const getItemType = (tabId: string): "block" | "component" | "animation" => {
@@ -559,192 +545,158 @@ export function ContentSection() {
   return (
     <>
       {/* Header */}
-      <div className="container flex flex-col items-center px-6 pt-24 text-center">
-        <p className="text-muted-foreground text-sm font-medium tracking-widest uppercase">
-          Your Next 6 Months of UI
-        </p>
-        <Spacer size="lg" sizeMobile="md" />
-        <h2 className="display mx-auto max-w-4xl text-4xl leading-[1.1] tracking-tight md:text-6xl lg:text-7xl">
-          Already done.
-          <br />
-          <span className="text-muted-foreground">Just ship.</span>
-        </h2>
-        <Spacer size="3xl" sizeMobile="xl" />
+      <div className="container px-6 pt-24">
+        <LayoutGrid>
+          <LayoutGridItem span={6} className="flex flex-col items-center text-center">
+            <p className="text-muted-foreground text-sm font-medium tracking-widest uppercase">
+              Your Next 6 Months of UI
+            </p>
+            <Spacer size="lg" sizeMobile="md" />
+            <h2 className="display mx-auto max-w-4xl text-4xl leading-[1.1] tracking-tight md:text-6xl lg:text-7xl">
+              Already done.
+              <br />
+              <span className="text-muted-foreground">Just ship.</span>
+            </h2>
+            <Spacer size="3xl" sizeMobile="xl" />
+          </LayoutGridItem>
+        </LayoutGrid>
       </div>
 
       {/* Scroll-jacking container - needs enough height for scroll tracking */}
-      <section ref={containerRef} className="relative h-[300vh]">
+      <section ref={containerRef} className="relative h-[700dvh] md:h-[300vh]">
         <div className="sticky top-20 pt-2">
-          <div className="container flex flex-col items-center px-6">
-            {/* Overall progress indicator */}
-            <figure className="absolute top-1/2 -left-4 m-0 hidden -translate-y-1/2 p-0 lg:block">
-              <svg
-                className="-translate-x-[100px] -rotate-90"
-                width="75"
-                height="75"
-                viewBox="0 0 100 100"
-              >
-                <circle
-                  cx="50"
-                  cy="50"
-                  r="30"
-                  pathLength="1"
-                  className="stroke-muted/20 fill-none"
-                  strokeWidth="5"
-                />
-                <motion.circle
-                  cx="50"
-                  cy="50"
-                  r="30"
-                  pathLength="1"
-                  className="stroke-brand fill-none"
-                  strokeWidth="5"
-                  style={{ pathLength: scrollYProgress }}
-                />
-              </svg>
-            </figure>
-
-            {/* Card + Grid Container */}
-            <div className="bg-background w-full overflow-clip rounded-3xl border shadow-sm">
-              {/* Desktop: 3-column cards - horizontal layout like Tailwind */}
-              <div className="border-border hidden border-b md:grid md:grid-cols-3">
-                {tabs.map((tab, index) => (
-                  <motion.div
-                    key={tab.id}
-                    className="border-border relative flex items-center gap-5 border-r p-6 lg:p-8"
-                    style={{ backgroundColor: tabBgColors[index] }}
-                  >
-                    <div className="shrink-0">
+          <div className="container px-6">
+            {/* Desktop: 3 tab cards in 6-column grid */}
+            <LayoutGrid className="hidden md:grid">
+              {tabs.map((tab, index) => (
+                <LayoutGridItem key={tab.id} span={6} spanMd={2}>
+                  <div className="bg-background relative flex h-full items-center gap-5 border-y border-l border-border/50 p-6 shadow-sm first:rounded-l-xl last:rounded-r-xl last:border-r lg:p-8">
+                    <motion.div
+                      className="shrink-0"
+                      style={{ filter: tabSaturations[index] }}
+                    >
                       <tab.Icon className="text-brand size-14 lg:size-16" />
-                    </div>
-                    <div className="flex flex-col gap-1">
+                    </motion.div>
+                    <motion.div
+                      className="flex flex-col gap-1"
+                      style={{ filter: tabSaturations[index] }}
+                    >
                       <p className="text-brand text-xs font-semibold tracking-widest uppercase">
                         {tab.id}
                       </p>
                       <p className="text-muted-foreground text-sm">
                         {tab.description}
                       </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+                    </motion.div>
+                  </div>
+                </LayoutGridItem>
+              ))}
+            </LayoutGrid>
 
-              {/* Mobile: Single tab with animation */}
-              <div className="border-border relative border-b md:hidden">
-                {tabs.map((tab, index) => (
-                  <motion.div
-                    key={tab.id}
-                    className={`flex items-center gap-4 p-5 ${index === 0 ? "relative" : "absolute inset-0"}`}
-                    style={{
-                      opacity: tabOpacities[index],
-                      backgroundColor: tabBgColors[index],
-                    }}
-                  >
-                    <div className="shrink-0">
-                      <tab.Icon className="text-brand size-12" />
-                    </div>
-                    <div className="flex flex-col gap-1">
-                      <p className="text-brand text-xs font-semibold tracking-widest uppercase">
-                        {tab.id}
-                      </p>
-                      <p className="text-muted-foreground text-sm">
-                        {tab.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-              {/* Grid Content Area */}
-              <div className="bg-background relative">
-                {/* Grid items for each tab */}
-                <div
-                  className="relative"
+            {/* Mobile: Single tab with animation */}
+            <div className="relative rounded-xl border shadow-sm md:hidden">
+              {tabs.map((tab, index) => (
+                <motion.div
+                  key={tab.id}
+                  className={`bg-background flex items-center gap-4 p-5 ${index === 0 ? "relative" : "absolute inset-0"}`}
                   style={{
-                    perspective: "1200px",
-                    perspectiveOrigin: "center 20%",
+                    opacity: tabOpacities[index],
                   }}
                 >
-                  {tabs.map((tab, tabIndex) => (
-                    <motion.div
-                      key={tab.id}
-                      className={
-                        tabIndex === 0 ? "relative" : "absolute inset-0"
-                      }
-                      style={{
-                        opacity: tabOpacities[tabIndex],
-                        scale: tabScales[tabIndex],
-                        y: tabYs[tabIndex],
-                        z: tabZs[tabIndex],
-                        rotateX: tabRotateXs[tabIndex],
-                        filter: tabFilters[tabIndex],
-                        transformStyle: "preserve-3d",
-                        transformOrigin: "center center",
-                      }}
-                    >
-                      <div className={`bg-border grid gap-px ${tab.gridClass}`}>
-                        {tab.items.map((itemName, itemIndex) => (
+                  <div className="shrink-0">
+                    <tab.Icon className="text-brand size-12" />
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <p className="text-brand text-xs font-semibold tracking-widest uppercase">
+                      {tab.id}
+                    </p>
+                    <p className="text-muted-foreground text-sm">
+                      {tab.description}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <Spacer size="lg" sizeMobile="md" />
+
+            {/* Grid Content Area */}
+            <div className="relative overflow-hidden">
+              {/* Grid items for each tab */}
+              <div className="relative">
+                {tabs.map((tab, tabIndex) => (
+                  <motion.div
+                    key={tab.id}
+                    className={
+                      tabIndex === 0 ? "relative" : "absolute inset-0"
+                    }
+                    style={{
+                      opacity: tabOpacities[tabIndex],
+                    }}
+                  >
+                    <LayoutGrid>
+                      {tab.items.map((itemName, itemIndex) => (
+                        <LayoutGridItem key={itemName} span={6} spanMd={2}>
                           <RegistryItemPreview
-                            key={itemName}
                             name={itemName}
                             type={getItemType(tab.id)}
                             aspectClass={tab.aspectClass}
-                            className={
+                            className={`rounded-xl border border-border/50 shadow-sm ${
                               itemIndex >= tab.mobileLimit
                                 ? "hidden md:block"
                                 : ""
-                            }
+                            }`}
                           />
-                        ))}
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
+                        </LayoutGridItem>
+                      ))}
+                    </LayoutGrid>
+                  </motion.div>
+                ))}
+              </div>
 
-                {/* View All Button + Progress Circle - centered overlay */}
-                <div className="pointer-events-none absolute inset-0 z-30 flex items-center justify-center">
-                  {tabs.map((tab, tabIndex) => (
-                    <motion.div
-                      key={tab.id}
-                      className="pointer-events-auto flex items-center gap-2 rounded-full border bg-background py-1.5 pl-1.5 pr-3 shadow-lg"
-                      style={{
-                        opacity: tabOpacities[tabIndex],
-                        position: tabIndex === 0 ? "relative" : "absolute",
-                      }}
-                    >
-                      <Link href={tab.href}>
-                        <HeroButton>View all {tab.label}</HeroButton>
-                      </Link>
-                      {/* Progress Circle */}
-                      <div className="relative shrink-0">
-                        <svg className="size-7 -rotate-90" viewBox="0 0 28 28">
-                          <circle
-                            cx="14"
-                            cy="14"
-                            r="12"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            className="text-muted/30"
-                          />
-                          <motion.circle
-                            cx="14"
-                            cy="14"
-                            r="12"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            className="text-brand"
-                            style={{ pathLength: progressValues[tabIndex] }}
-                            strokeDasharray="1"
-                            strokeDashoffset="0"
-                          />
-                        </svg>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
+              {/* View All Button + Progress Circle - centered overlay */}
+              <div className="pointer-events-none absolute inset-0 z-30 flex items-start pt-8 md:items-center md:pt-0 justify-center">
+                {tabs.map((tab, tabIndex) => (
+                  <motion.div
+                    key={tab.id}
+                    className="pointer-events-auto flex items-center gap-2 rounded-full border bg-background py-1.5 pl-1.5 pr-3 shadow-lg"
+                    style={{
+                      opacity: tabOpacities[tabIndex],
+                      position: tabIndex === 0 ? "relative" : "absolute",
+                    }}
+                  >
+                    <Link href={tab.href}>
+                      <HeroButton>View all {tab.label}</HeroButton>
+                    </Link>
+                    {/* Progress Circle */}
+                    <div className="relative shrink-0">
+                      <svg className="size-7 -rotate-90" viewBox="0 0 28 28">
+                        <circle
+                          cx="14"
+                          cy="14"
+                          r="12"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          className="text-muted/30"
+                        />
+                        <motion.circle
+                          cx="14"
+                          cy="14"
+                          r="12"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          className="text-brand"
+                          style={{ pathLength: progressValues[tabIndex] }}
+                          strokeDasharray="1"
+                          strokeDashoffset="0"
+                        />
+                      </svg>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </div>

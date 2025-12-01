@@ -145,6 +145,7 @@ function PricingCard({
   highlighted = false,
   badge,
   children,
+  className,
 }: {
   name: string
   price: string
@@ -155,6 +156,7 @@ function PricingCard({
   highlighted?: boolean
   badge?: string
   children: React.ReactNode
+  className?: string
 }) {
   return (
     <div
@@ -162,7 +164,7 @@ function PricingCard({
         highlighted
           ? "border-foreground/20 bg-foreground text-background shadow-sm"
           : "border-border bg-background shadow-sm"
-      }`}
+      } ${className ?? ""}`}
     >
       {badge && (
         <div
@@ -282,9 +284,10 @@ export function PricingCardsSection({
 
       {licenseType === "single" ? (
         <>
-          <div className="grid w-full max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid w-full grid-cols-6 gap-6">
             {/* Free Plan */}
             <PricingCard
+              className="col-span-6 md:col-span-2"
               name="Free"
               price="€0"
               priceLabel="forever"
@@ -303,6 +306,7 @@ export function PricingCardsSection({
 
             {/* Pro Plan */}
             <PricingCard
+              className="col-span-6 md:col-span-2"
               name="Pro"
               price="€149"
               priceLabel="one-time"
@@ -325,6 +329,7 @@ export function PricingCardsSection({
 
             {/* Exclusive Plan */}
             <PricingCard
+              className="col-span-6 md:col-span-2"
               name="Exclusive"
               price="€499"
               priceLabel="one-time"
@@ -342,9 +347,10 @@ export function PricingCardsSection({
           </div>
         </>
       ) : (
-        <div className="grid w-full max-w-4xl gap-6 md:grid-cols-2">
+        <div className="grid w-full grid-cols-6 gap-6">
           {/* Startup Plan */}
           <PricingCard
+            className="col-span-6 md:col-span-3"
             name="Startup"
             price="€999"
             originalPrice="€4,990"
@@ -368,6 +374,7 @@ export function PricingCardsSection({
 
           {/* Enterprise Plan */}
           <PricingCard
+            className="col-span-6 md:col-span-3"
             name="Enterprise"
             price="€1,999"
             originalPrice="€14,970"

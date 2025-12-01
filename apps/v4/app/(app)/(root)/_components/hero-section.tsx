@@ -1,8 +1,9 @@
 import { ParallaxImage } from "@/registry/new-york-v4/animations/background-image-parallax/background-image-parallax"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { HeroButton } from "@/registry/new-york-v4/ui/hero-button"
-import { Responsive } from "@/registry/new-york-v4/ui/responsive"
 import { Spacer } from "@/registry/new-york-v4/ui/spacer"
+
+import { LayoutGrid, LayoutGridItem } from "./layout-grid"
 
 export function HeroSection() {
   return (
@@ -74,10 +75,10 @@ export function HeroSection() {
           </svg>
         </div>
       </div>
-      <div className="relative container flex h-full w-full flex-col items-center justify-center">
+      <div className="relative container flex h-full w-full flex-col items-center justify-center px-6">
         {/*Typography*/}
         <Spacer size={"8xl"} sizeMobile={"6xl"} />
-        <h1 className="display text-center text-5xl leading-[0.9] tracking-tight md:text-8xl">
+        <h1 className="display text-center text-[2.5rem] leading-[0.9] tracking-tight sm:text-5xl md:text-8xl">
           The Block Library
           <br />
           shadcn Deserves
@@ -103,164 +104,146 @@ export function HeroSection() {
         </div>
         <Spacer size={"xl"} sizeMobile={"md"} />
         {/*Media*/}
-        <Responsive
-          mobile={
-            <div className="grid w-full gap-4">
-              {/*Card Desktop*/}
-              <ParallaxImage
-                src="/marketing/surfing.jpg"
-                alt="Desktop hero preview"
-                className="aspect-video w-full rounded-4xl"
-                imageClassName="absolute inset-0 h-[120%] w-full"
-                range={["-10%", "10%"]}
-                offset={["start end", "end start"]}
-                zoom
-              >
-                {/* Navbar */}
-                <div className="absolute inset-x-0 top-0 z-10 flex items-center justify-between p-4">
-                  <div className="flex items-center gap-2">
-                    <div className="size-6 rounded-lg bg-white" />
-                    <div className="h-3 w-14 rounded-full bg-white/80" />
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="h-2 w-8 rounded-full bg-white/70" />
-                    <div className="h-2 w-8 rounded-full bg-white/70" />
-                    <div className="h-2 w-8 rounded-full bg-white/70" />
-                    <div className="h-2 w-8 rounded-full bg-white/70" />
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <div className="h-6 w-10 rounded-full bg-white/30" />
-                    <div className="h-6 w-12 rounded-full bg-white" />
-                  </div>
+        <div className="flex w-full flex-col gap-4 md:hidden">
+          {/*Desktop Preview - Mobile View*/}
+          <div className="h-56">
+            <ParallaxImage
+              src="/marketing/surfing.jpg"
+              alt="Desktop hero preview"
+              className="rounded-4xl h-full"
+              imageClassName="absolute inset-0 h-[120%] w-full"
+              range={["-10%", "10%"]}
+              offset={["start end", "end start"]}
+              zoom
+            >
+              {/* Content */}
+              <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-start p-4">
+                <div className="h-5 w-40 rounded-full bg-white" />
+                <div className="mt-1.5 h-5 w-32 rounded-full bg-white" />
+                <div className="mt-3 flex gap-2">
+                  <div className="h-6 w-16 rounded-full bg-white" />
+                  <div className="h-6 w-16 rounded-full bg-white/30 backdrop-blur-sm" />
                 </div>
-                {/* Content */}
-                <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-start p-5">
-                  <div className="h-6 w-48 rounded-full bg-white" />
-                  <div className="mt-2 h-6 w-40 rounded-full bg-white" />
-                  <div className="mt-3 flex flex-col gap-1.5">
-                    <div className="h-2.5 w-44 rounded-full bg-white/70" />
-                    <div className="h-2.5 w-36 rounded-full bg-white/70" />
-                  </div>
-                  <div className="mt-4 flex gap-2">
-                    <div className="h-7 w-20 rounded-full bg-white" />
-                    <div className="h-7 w-20 rounded-full bg-white/30 backdrop-blur-sm" />
-                  </div>
+              </div>
+            </ParallaxImage>
+          </div>
+          {/*Mobile Preview - Mobile View*/}
+          <div className="w-full aspect-[9/16]">
+            <ParallaxImage
+              src="/marketing/party.jpg"
+              alt="Mobile hero preview"
+              className="rounded-4xl h-full"
+              imageClassName="absolute inset-0 h-[120%] w-full"
+              range={["-10%", "10%"]}
+              offset={["start end", "end start"]}
+              zoom
+            >
+              {/* Navbar */}
+              <div className="absolute inset-x-0 top-0 z-10 flex items-center justify-between p-3">
+                <div className="size-6 rounded-lg bg-white" />
+                <div className="flex size-6 flex-col items-center justify-center gap-0.5">
+                  <div className="h-0.5 w-3 rounded-full bg-white" />
+                  <div className="h-0.5 w-3 rounded-full bg-white" />
+                  <div className="h-0.5 w-3 rounded-full bg-white" />
                 </div>
-              </ParallaxImage>
-              {/*Card Mobile*/}
-              <ParallaxImage
-                src="/marketing/party.jpg"
-                alt="Mobile hero preview"
-                className="aspect-[9/16] w-full rounded-4xl"
-                imageClassName="absolute inset-0 h-[120%] w-full"
-                range={["-10%", "10%"]}
-                offset={["start end", "end start"]}
-                zoom
-              >
-                {/* Navbar */}
-                <div className="absolute inset-x-0 top-0 z-10 flex items-center justify-between p-4">
-                  <div className="size-6 rounded-lg bg-white" />
-                  <div className="flex size-6 flex-col items-center justify-center gap-1">
-                    <div className="h-0.5 w-3.5 rounded-full bg-white" />
-                    <div className="h-0.5 w-3.5 rounded-full bg-white" />
-                    <div className="h-0.5 w-3.5 rounded-full bg-white" />
-                  </div>
-                </div>
-                {/* Hero Content Top */}
-                <div className="absolute inset-x-0 top-14 z-10 flex flex-col items-center p-4 text-center">
-                  <div className="h-7 w-40 rounded-full bg-white" />
-                  <div className="mt-2 h-7 w-32 rounded-full bg-white" />
-                  <div className="mt-4 h-2.5 w-44 rounded-full bg-white/70" />
-                  <div className="mt-2 h-2.5 w-36 rounded-full bg-white/70" />
-                </div>
-                {/* Content */}
-                <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-center p-5 pb-8 text-center">
-                  <div className="h-5 w-36 rounded-full bg-white" />
-                  <div className="mt-2 h-2.5 w-28 rounded-full bg-white/70" />
-                  <div className="mt-4 h-8 w-24 rounded-full bg-white" />
-                </div>
-              </ParallaxImage>
-            </div>
-          }
-          desktop={
-            <div className="mx-auto grid h-[40rem] w-full max-w-7xl gap-4 md:grid-cols-2 lg:grid-cols-3">
-              {/*Card Desktop*/}
-              <ParallaxImage
-                src="/marketing/surfing.jpg"
-                alt="Desktop hero preview"
-                className="rounded-4xl lg:col-span-2"
-                imageClassName="absolute inset-0 h-[120%] w-full"
-                range={["-10%", "10%"]}
-                offset={["start end", "end start"]}
-                zoom
-              >
-                {/* Navbar */}
-                <div className="absolute inset-x-0 top-0 z-10 flex items-center justify-between p-6">
-                  <div className="flex items-center gap-3">
-                    <div className="size-8 rounded-lg bg-white" />
-                    <div className="h-4 w-20 rounded-full bg-white/80" />
-                  </div>
-                  <div className="flex items-center gap-6">
-                    <div className="h-3 w-12 rounded-full bg-white/70" />
-                    <div className="h-3 w-12 rounded-full bg-white/70" />
-                    <div className="h-3 w-12 rounded-full bg-white/70" />
-                    <div className="h-3 w-12 rounded-full bg-white/70" />
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="h-8 w-14 rounded-full bg-white/30" />
-                    <div className="h-8 w-16 rounded-full bg-white" />
-                  </div>
-                </div>
-                {/* Content */}
-                <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-start p-8 lg:p-12">
-                  <div className="h-10 w-80 rounded-full bg-white lg:h-12 lg:w-[28rem]" />
-                  <div className="mt-3 h-10 w-64 rounded-full bg-white lg:w-80" />
-                  <div className="mt-4 flex flex-col gap-2">
-                    <div className="h-4 w-72 rounded-full bg-white/70 lg:w-96" />
-                    <div className="h-4 w-56 rounded-full bg-white/70 lg:w-72" />
-                  </div>
-                  <div className="mt-6 flex gap-3">
-                    <div className="h-10 w-28 rounded-full bg-white" />
-                    <div className="h-10 w-28 rounded-full bg-white/30 backdrop-blur-sm" />
-                  </div>
-                </div>
-              </ParallaxImage>
-              {/*Card Mobile*/}
-              <ParallaxImage
-                src="/marketing/party.jpg"
-                alt="Mobile hero preview"
-                className="rounded-4xl"
-                imageClassName="absolute inset-0 h-[120%] w-full"
-                range={["-10%", "10%"]}
-                offset={["start end", "end start"]}
-                zoom
-              >
-                {/* Navbar */}
-                <div className="absolute inset-x-0 top-0 z-10 flex items-center justify-between p-4">
+              </div>
+              {/* Hero Content Top */}
+              <div className="absolute inset-x-0 top-12 z-10 flex flex-col items-center p-3 text-center">
+                <div className="h-5 w-28 rounded-full bg-white" />
+                <div className="mt-1.5 h-5 w-24 rounded-full bg-white" />
+                <div className="mt-2 h-2 w-32 rounded-full bg-white/70" />
+                <div className="mt-1 h-2 w-28 rounded-full bg-white/70" />
+              </div>
+              {/* Content */}
+              <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-center p-4 pb-6 text-center">
+                <div className="h-4 w-28 rounded-full bg-white" />
+                <div className="mt-1.5 h-2 w-24 rounded-full bg-white/70" />
+                <div className="mt-3 h-7 w-20 rounded-full bg-white" />
+              </div>
+            </ParallaxImage>
+          </div>
+        </div>
+        {/*Media - Desktop*/}
+        <LayoutGrid className="hidden h-[40rem] w-full md:grid">
+          {/*Card Desktop*/}
+          <LayoutGridItem span={6} spanMd={4}>
+            <ParallaxImage
+              src="/marketing/surfing.jpg"
+              alt="Desktop hero preview"
+              className="rounded-4xl h-full"
+              imageClassName="absolute inset-0 h-[120%] w-full"
+              range={["-10%", "10%"]}
+              offset={["start end", "end start"]}
+              zoom
+            >
+              {/* Navbar */}
+              <div className="absolute inset-x-0 top-0 z-10 flex items-center justify-between p-6">
+                <div className="flex items-center gap-3">
                   <div className="size-8 rounded-lg bg-white" />
-                  <div className="flex size-8 flex-col items-center justify-center gap-1">
-                    <div className="h-0.5 w-4 rounded-full bg-white" />
-                    <div className="h-0.5 w-4 rounded-full bg-white" />
-                    <div className="h-0.5 w-4 rounded-full bg-white" />
-                  </div>
+                  <div className="h-4 w-20 rounded-full bg-white/80" />
                 </div>
-                {/* Hero Content Top */}
-                <div className="absolute inset-x-0 top-16 z-10 flex flex-col items-center p-4 text-center">
-                  <div className="h-8 w-44 rounded-full bg-white" />
-                  <div className="mt-2 h-8 w-36 rounded-full bg-white" />
-                  <div className="mt-4 h-3 w-48 rounded-full bg-white/70" />
-                  <div className="mt-2 h-3 w-40 rounded-full bg-white/70" />
+                <div className="flex items-center gap-6">
+                  <div className="h-3 w-12 rounded-full bg-white/70" />
+                  <div className="h-3 w-12 rounded-full bg-white/70" />
+                  <div className="h-3 w-12 rounded-full bg-white/70" />
+                  <div className="h-3 w-12 rounded-full bg-white/70" />
                 </div>
-                {/* Content */}
-                <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-center p-6 pb-10 text-center">
-                  <div className="h-6 w-40 rounded-full bg-white" />
-                  <div className="mt-2 h-3 w-32 rounded-full bg-white/70" />
-                  <div className="mt-4 h-10 w-28 rounded-full bg-white" />
+                <div className="flex items-center gap-2">
+                  <div className="h-8 w-14 rounded-full bg-white/30" />
+                  <div className="h-8 w-16 rounded-full bg-white" />
                 </div>
-              </ParallaxImage>
-            </div>
-          }
-        />
+              </div>
+              {/* Content */}
+              <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-start p-8 lg:p-12">
+                <div className="h-10 w-80 rounded-full bg-white lg:h-12 lg:w-[28rem]" />
+                <div className="mt-3 h-10 w-64 rounded-full bg-white lg:w-80" />
+                <div className="mt-3 flex flex-col gap-2">
+                  <div className="h-4 w-72 rounded-full bg-white/70 lg:w-96" />
+                  <div className="h-4 w-56 rounded-full bg-white/70 lg:w-72" />
+                </div>
+                <div className="mt-6 flex gap-3">
+                  <div className="h-10 w-28 rounded-full bg-white" />
+                  <div className="h-10 w-28 rounded-full bg-white/30 backdrop-blur-sm" />
+                </div>
+              </div>
+            </ParallaxImage>
+          </LayoutGridItem>
+          {/*Card Mobile*/}
+          <LayoutGridItem span={6} spanMd={2}>
+            <ParallaxImage
+              src="/marketing/party.jpg"
+              alt="Mobile hero preview"
+              className="rounded-4xl h-full"
+              imageClassName="absolute inset-0 h-[120%] w-full"
+              range={["-10%", "10%"]}
+              offset={["start end", "end start"]}
+              zoom
+            >
+              {/* Navbar */}
+              <div className="absolute inset-x-0 top-0 z-10 flex items-center justify-between p-4">
+                <div className="size-8 rounded-lg bg-white" />
+                <div className="flex size-8 flex-col items-center justify-center gap-1">
+                  <div className="h-0.5 w-4 rounded-full bg-white" />
+                  <div className="h-0.5 w-4 rounded-full bg-white" />
+                  <div className="h-0.5 w-4 rounded-full bg-white" />
+                </div>
+              </div>
+              {/* Hero Content Top */}
+              <div className="absolute inset-x-0 top-16 z-10 flex flex-col items-center p-4 text-center">
+                <div className="h-8 w-44 rounded-full bg-white" />
+                <div className="mt-2 h-8 w-36 rounded-full bg-white" />
+                <div className="mt-4 h-3 w-48 rounded-full bg-white/70" />
+                <div className="mt-2 h-3 w-40 rounded-full bg-white/70" />
+              </div>
+              {/* Content */}
+              <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-center p-6 pb-10 text-center">
+                <div className="h-6 w-40 rounded-full bg-white" />
+                <div className="mt-2 h-3 w-32 rounded-full bg-white/70" />
+                <div className="mt-4 h-10 w-28 rounded-full bg-white" />
+              </div>
+            </ParallaxImage>
+          </LayoutGridItem>
+        </LayoutGrid>
         {/* Stats */}
         <Spacer size={"xl"} sizeMobile={"md"} />
         <div className="text-muted-foreground flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs">

@@ -1,9 +1,9 @@
 export function ContentExplained() {
   return (
     <section className="pt-24">
-      <div className="container">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <div className="relative flex gap-3 rounded-lg border-dashed md:block md:border-l md:p-5">
+      <div className="container px-6">
+        <div className="grid grid-cols-6 gap-6">
+          <div className="relative col-span-6 flex gap-3 rounded-lg border-dashed md:col-span-2 md:block md:border-l md:p-5">
             <div>
               <h3 className="font-medium md:mb-2 md:text-xl">
                 Components
@@ -15,7 +15,7 @@ export function ContentExplained() {
               </p>
             </div>
           </div>
-          <div className="relative flex gap-3 rounded-lg border-dashed md:block md:border-l md:p-5">
+          <div className="relative col-span-6 flex gap-3 rounded-lg border-dashed md:col-span-2 md:block md:border-l md:p-5">
             <div>
               <h3 className="font-medium md:mb-2 md:text-xl">
                 Animations
@@ -27,7 +27,7 @@ export function ContentExplained() {
               </p>
             </div>
           </div>
-          <div className="relative flex gap-3 rounded-lg border-dashed md:block md:border-l md:p-5">
+          <div className="relative col-span-6 flex gap-3 rounded-lg border-dashed md:col-span-2 md:block md:border-l md:p-5">
             <div>
               <h3 className="font-medium md:mb-2 md:text-xl">
                 Blocks
@@ -36,18 +36,6 @@ export function ContentExplained() {
               <p className="text-muted-foreground text-sm md:text-base">
                 Function like components with props and variants — designed for
                 AI and devs alike. Integrated with Payload and Sanity CMS.
-              </p>
-            </div>
-          </div>
-          <div className="relative flex gap-3 rounded-lg border-dashed md:block md:border-l md:p-5">
-            <div>
-              <h3 className="font-medium md:mb-2 md:text-xl">
-                Your Project
-                <span className="bg-brand absolute -left-px hidden h-6 w-px md:inline-block"></span>
-              </h3>
-              <p className="text-muted-foreground text-sm md:text-base">
-                Effortless stunning UIs. Assemble blocks, or build your own from
-                the primitives. Never again build a boring interface.
               </p>
             </div>
           </div>

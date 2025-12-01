@@ -1,4 +1,5 @@
 export { HeroSection } from "./hero-section"
+export { LayoutGrid, LayoutGridItem } from "./layout-grid"
 export { StripeBgGuides } from "./striped-bg-guides"
 export { ContentSection } from "./content-section"
 export { ContentExplained } from "./content-explained"

@@ -25,6 +25,7 @@ interface AnimatedBackgroundGuidesProps {
   maxActiveColumns?: number
   darkMode?: boolean
   contained?: boolean
+  zIndex?: number
 }
 
 const easingFunctions = {
@@ -55,24 +56,20 @@ export function StripeBgGuides({
   maxActiveColumns = 3,
   darkMode = false,
   contained = false,
+  zIndex,
 }: AnimatedBackgroundGuidesProps) {
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 0
   )
 
-  const columns = useMemo(() => {
-    const count = responsive
+  const columnCount_ = useMemo(() => {
+    return responsive
       ? Math.max(Math.floor(windowWidth / parseInt(minColumnWidth)), 1)
       : columnCount
-    return [...Array(count)]
   }, [columnCount, responsive, windowWidth, minColumnWidth])
 
-  const [activeColumns, setActiveColumns] = useState<boolean[]>(
-    columns.map(() => true)
-  )
-
   const getRandomColumns = useCallback(() => {
-    const newActiveColumns = columns.map(() => Math.random() < 0.5)
+    const newActiveColumns = Array.from({ length: columnCount_ }, () => Math.random() < 0.5)
     const activeCount = newActiveColumns.filter(Boolean).length
     if (activeCount > maxActiveColumns) {
       const indicesToDeactivate = newActiveColumns
@@ -85,7 +82,18 @@ export function StripeBgGuides({
       })
     }
     return newActiveColumns
-  }, [columns, maxActiveColumns])
+  }, [columnCount_, maxActiveColumns])
+
+  // Derive active columns - all true by default, or randomized if animated
+  const activeColumns = useMemo(() => {
+    if (randomize && animated) {
+      return getRandomColumns()
+    }
+    return Array.from({ length: columnCount_ }, () => true)
+  }, [columnCount_, randomize, animated, getRandomColumns])
+
+  // State for randomized columns (only used when randomize && animated)
+  const [randomizedColumns, setRandomizedColumns] = useState<boolean[] | null>(null)
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth)
@@ -96,19 +104,18 @@ export function StripeBgGuides({
   }, [])
 
   useEffect(() => {
-    setActiveColumns(columns.map(() => true))
-  }, [columns])
-
-  useEffect(() => {
     if (randomize && animated) {
       const intervalId = setInterval(() => {
-        setActiveColumns(getRandomColumns())
+        setRandomizedColumns(getRandomColumns())
       }, randomInterval)
       return () => clearInterval(intervalId)
     } else {
-      setActiveColumns(columns.map(() => true))
+      setRandomizedColumns(null)
     }
-  }, [randomize, animated, randomInterval, getRandomColumns, columns])
+  }, [randomize, animated, randomInterval, getRandomColumns])
+
+  // Use randomized columns if available, otherwise use derived active columns
+  const finalActiveColumns = randomizedColumns ?? activeColumns
 
   const getAnimationVariants = useCallback(() => {
     const variants = {
@@ -137,12 +144,30 @@ export function StripeBgGuides({
     [getAnimationVariants]
   )
 
+  const isMobile = windowWidth > 0 && windowWidth < 768
+
   const lineColors = useMemo(() => {
+    // Reduce opacity on mobile
+    const mobileMultiplier = isMobile ? 0.4 : 1
+    const darkOpacity = (0.15 * mobileMultiplier).toFixed(2)
+    const lightOpacity = (0.25 * mobileMultiplier).toFixed(2)
+
     return {
-      solid: darkMode ? "hsl(233 14% 13%)" : "hsl(233 14.1% 96.1%)",
-      dashed: darkMode ? "hsl(233 14% 20%)" : "hsl(233 14% 93%)",
+      // Dark mode: subtle light lines, Light mode: more visible dark lines
+      solid: darkMode ? `hsla(220 10% 70% / ${darkOpacity})` : `hsla(220 10% 50% / ${lightOpacity})`,
+      dashed: darkMode
+        ? `hsla(220 10% 70% / ${darkOpacity})`
+        : `hsla(220 10% 50% / ${lightOpacity})`,
     }
-  }, [darkMode])
+  }, [darkMode, isMobile])
+
+  // Calculate line positions for CSS Grid with gap-6 (1.5rem = 24px)
+  // Line at position i (1-5): calc(i * (100% + 1.5rem) / 6) - at column left edges
+  const getLinePosition = (index: number): string => {
+    if (index === 0) return "0"
+    if (index === columnCount_) return "100%"
+    return `calc(${index} * (100% + 1.5rem) / 6)`
+  }
 
   return (
     <div
@@ -150,79 +175,60 @@ export function StripeBgGuides({
         contained ? "absolute inset-0" : "fixed inset-0"
       } ${className}`}
       aria-hidden="true"
-      style={{ zIndex: 0 }}
+      style={{ zIndex: zIndex ?? (contained ? 25 : -1) }}
     >
-      <div className="z-0 h-full w-full px-4 sm:px-6 lg:px-24">
-        <div
-          className="mx-auto h-full w-full"
-          style={{
-            display: "grid",
-            gridTemplateColumns: responsive
-              ? `repeat(auto-fit, minmax(${minColumnWidth}, 1fr))`
-              : `repeat(${columnCount}, minmax(0, 1fr))`,
-            gap: "2rem",
-          }}
-        >
-          {columns.map((_, index) => (
-            <div key={index} className="relative h-full">
-              <div
-                className={`absolute inset-y-0 ${
-                  index === 0
-                    ? "left-0"
-                    : index === columns.length - 1
-                      ? "right-0"
-                      : "left-1/2"
-                } w-px ${
-                  solidLines.includes(index + 1)
-                    ? "bg-gray-300"
-                    : "bg-gradient-to-b"
-                } overflow-hidden`}
-                style={
-                  solidLines.includes(index + 1)
-                    ? { background: lineColors.solid }
-                    : {
-                        backgroundImage: `linear-gradient(to bottom, ${lineColors.dashed} 50%, transparent 50%)`,
-                        backgroundSize: "1px 8px",
-                      }
-                }
-              >
-                <AnimatePresence>
-                  {animated && activeColumns[index] && (
-                    <motion.div
-                      key={`glow-${index}`}
-                      className="absolute w-full"
-                      style={{
-                        height: glowSize,
-                        background: `linear-gradient(to bottom, transparent, ${glowColor}, ${
-                          darkMode ? "black" : "white"
-                        })`,
-                        opacity: glowOpacity,
-                      }}
-                      initial={
-                        typeof animationVariants.initial === "function"
-                          ? animationVariants.initial()
-                          : animationVariants.initial
-                      }
-                      animate={
-                        typeof animationVariants.animate === "function"
-                          ? animationVariants.animate()
-                          : animationVariants.animate
-                      }
-                      exit={
-                        typeof animationVariants.initial === "function"
-                          ? animationVariants.initial()
-                          : animationVariants.initial
-                      }
-                      transition={{
-                        duration: animationDuration,
-                        repeat: Infinity,
-                        ease: easingFunctions[easing],
-                        delay: index * animationDelay,
-                      }}
-                    />
-                  )}
-                </AnimatePresence>
-              </div>
+      <div className="relative z-0 container h-full w-full px-6">
+        <div className="relative grid h-full grid-cols-6 gap-6">
+          {[...Array(columnCount_ + 1)].map((_, index) => (
+            <div
+              key={index}
+              className="absolute inset-y-0 w-px overflow-hidden"
+              style={{
+                left: getLinePosition(index),
+                ...(solidLines.includes(index + 1)
+                  ? { background: lineColors.solid }
+                  : {
+                      backgroundImage: `linear-gradient(to bottom, ${lineColors.dashed} 50%, transparent 50%)`,
+                      backgroundSize: "1px 8px",
+                    }),
+              }}
+            >
+              <AnimatePresence>
+                {animated && finalActiveColumns[index] && (
+                  <motion.div
+                    key={`glow-${index}`}
+                    className="absolute w-full"
+                    style={{
+                      height: glowSize,
+                      background: `linear-gradient(to bottom, transparent, ${glowColor}, ${
+                        darkMode ? "white" : "black"
+                      })`,
+                      opacity: glowOpacity,
+                    }}
+                    initial={
+                      typeof animationVariants.initial === "function"
+                        ? animationVariants.initial()
+                        : animationVariants.initial
+                    }
+                    animate={
+                      typeof animationVariants.animate === "function"
+                        ? animationVariants.animate()
+                        : animationVariants.animate
+                    }
+                    exit={
+                      typeof animationVariants.initial === "function"
+                        ? animationVariants.initial()
+                        : animationVariants.initial
+                    }
+                    transition={{
+                      duration: animationDuration,
+                      repeat: Infinity,
+                      ease: easingFunctions[easing],
+                      delay: index * animationDelay,
+                    }}
+                  />
+                )}
+              </AnimatePresence>
             </div>
           ))}
         </div>

@@ -171,7 +171,7 @@ export function CommandMenu({
           variant="secondary"
           size="icon"
           className={cn(
-            "border-border bg-background! relative h-8 w-8 rounded-full border shadow-xs md:w-auto md:px-3 md:pr-12"
+            "border-border relative h-8 w-8 rounded-full border bg-background shadow-sm md:w-auto md:px-3 md:pr-12 md:shadow-xs"
           )}
           onClick={() => setOpen(true)}
           {...props}

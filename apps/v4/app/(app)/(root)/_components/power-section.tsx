@@ -1,14 +1,18 @@
 import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 
+import { LayoutGrid, LayoutGridItem } from "./layout-grid"
+
 function FeatureCard({
   children,
   label,
+  className,
 }: {
   children?: React.ReactNode
   label: string
+  className?: string
 }) {
   return (
-    <div className="group relative flex h-[20rem] flex-col overflow-hidden rounded-4xl border border-border bg-background shadow-sm md:h-[24rem]">
+    <div className={`group relative flex h-[20rem] flex-col overflow-hidden rounded-4xl border border-border bg-background shadow-sm md:h-[24rem] ${className ?? ""}`}>
       <div className="flex flex-1 items-center justify-center p-6 overflow-hidden">
         {children}
       </div>
@@ -32,11 +36,17 @@ export function PowerSection() {
         <span className="text-muted-foreground">the Beginning.</span>
       </h2>
       <Spacer size="3xl" sizeMobile="xl" />
-      <div className="grid w-full gap-4 md:grid-cols-3">
-        <FeatureCard label="100% Payload CMS compatible" />
-        <FeatureCard label="MCP server included" />
-        <FeatureCard label="Built for AI" />
-      </div>
+      <LayoutGrid className="w-full">
+        <LayoutGridItem span={6} spanMd={2}>
+          <FeatureCard label="100% Payload CMS compatible" />
+        </LayoutGridItem>
+        <LayoutGridItem span={6} spanMd={2}>
+          <FeatureCard label="MCP server included" />
+        </LayoutGridItem>
+        <LayoutGridItem span={6} spanMd={2}>
+          <FeatureCard label="Built for AI" />
+        </LayoutGridItem>
+      </LayoutGrid>
       <Spacer size="xl" sizeMobile="md" />
       <p className="text-muted-foreground max-w-2xl text-base md:text-lg">
         Built for humans. Built for AI. Built to last.
