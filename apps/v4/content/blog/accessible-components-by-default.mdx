@@ -1,0 +1,55 @@
+---
+title: Accessible Components by Default
+description: How pitsi/ui ensures every component meets accessibility standards. Built on Radix UI with ARIA best practices.
+date: "2024-11-05"
+category: deep-dive
+image: /marketing/mountain.jpg
+readTime: 6 min read
+author: pitsi/ui Team
+---
+
+Accessibility isn't an afterthought at pitsi/ui—it's foundational. Every component is built to be accessible from the start, so you can focus on building features instead of fixing accessibility issues later.
+
+## Built on Radix UI
+
+Most of our interactive components are built on Radix UI primitives. This gives us:
+
+**Proper ARIA attributes**: Roles, states, and properties are handled automatically.
+
+**Keyboard navigation**: Full keyboard support out of the box. Tab, Enter, Space, Arrow keys—everything works as expected.
+
+**Focus management**: Focus traps in modals, proper focus restoration, and visible focus indicators.
+
+**Screen reader support**: Announcements, live regions, and proper labeling for assistive technologies.
+
+## What We Add
+
+While Radix handles the behavior, we add:
+
+**Visual focus indicators**: Clear, visible focus states that meet contrast requirements.
+
+**Color contrast**: All text meets WCAG AA contrast ratios. Destructive states, disabled states, everything.
+
+**Reduced motion**: Animations respect `prefers-reduced-motion`. Users who need it get a calmer experience.
+
+**Touch targets**: Interactive elements meet minimum size requirements for mobile users.
+
+## Testing Accessibility
+
+We test every component with:
+
+- Automated tools (axe-core, Lighthouse)
+- Screen readers (VoiceOver, NVDA)
+- Keyboard-only navigation
+- High contrast modes
+
+## Your Responsibility
+
+While we handle component-level accessibility, you still need to:
+
+- Provide meaningful labels for inputs
+- Ensure logical heading hierarchy
+- Add alt text to images
+- Maintain focus order in your layouts
+
+pitsi/ui gives you an accessible foundation. Build on it thoughtfully.

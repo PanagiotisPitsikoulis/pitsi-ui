@@ -1,5 +1,10 @@
-import { defineConfig, defineDocs } from "fumadocs-mdx/config"
+import {
+  defineCollections,
+  defineConfig,
+  defineDocs,
+} from "fumadocs-mdx/config"
 import rehypePrettyCode from "rehype-pretty-code"
+import { z } from "zod/v4"
 
 import { transformers } from "@/lib/docs/highlight"
 
@@ -37,3 +42,20 @@ export const docs = defineDocs({
   //   }),
   // },
 })
+
+export const blog = defineCollections({
+  dir: "content/blog",
+  type: "doc",
+  schema: z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    icon: z.string().optional(),
+    full: z.boolean().optional(),
+    date: z.string(),
+    author: z.string().optional(),
+    category: z.enum(["tutorial", "announcement", "deep-dive", "design"]),
+    image: z.string().optional(),
+    readTime: z.string().optional(),
+  }),
+})
+

@@ -1,0 +1,47 @@
+---
+title: Migrating to Tailwind CSS v4
+description: Everything you need to know about using pitsi/ui with Tailwind CSS v4. New features, migration tips, and what's changed.
+date: "2024-11-08"
+category: tutorial
+image: /marketing/sky-night.jpg
+readTime: 5 min read
+author: pitsi/ui Team
+---
+
+Tailwind CSS v4 brings significant improvements, and pitsi/ui is fully compatible. Here's what you need to know about the migration.
+
+## What's New in Tailwind v4
+
+The major changes that affect pitsi/ui users:
+
+**CSS-first configuration**: Configuration now happens in CSS using `@theme` instead of `tailwind.config.js`. Cleaner, faster, and more intuitive.
+
+**Native CSS variables**: Theme values are exposed as CSS variables by default. This aligns perfectly with our CSS variable approach.
+
+**Improved performance**: The new engine is significantly faster, especially for large projects.
+
+**Container queries**: Built-in support for container queries without plugins.
+
+## Migration Steps
+
+1. **Update dependencies**
+   ```bash
+   npm install tailwindcss@latest
+   ```
+
+2. **Convert your config**
+   Move theme customizations from `tailwind.config.js` to `@theme` blocks in your CSS.
+
+3. **Update pitsi/ui components**
+   Run `npx pitsi@latest diff` to see if any components need updates.
+
+4. **Test thoroughly**
+   Most changes are backward compatible, but test your custom styles.
+
+## CSS Variables Alignment
+
+pitsi/ui has always used CSS variables for theming. With Tailwind v4's native CSS variable support, this integration is even more seamless. Your theme customizations now work at both the CSS and Tailwind level automatically.
+
+## Need Help?
+
+If you run into issues, our Discord community is ready to help. We also have detailed migration guides in the documentation for specific edge cases.

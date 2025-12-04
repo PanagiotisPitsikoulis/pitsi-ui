@@ -1,0 +1,121 @@
+---
+title: Designing for Dark Mode
+description: It's not just inverted colors. A comprehensive guide to creating beautiful dark themes that work.
+date: "2024-11-26"
+category: design
+image: /marketing/cliff.jpg
+readTime: 8 min read
+author: pitsi/ui Team
+---
+
+Dark mode isn't just a preference—for many users, it's essential. Done right, dark mode reduces eye strain, saves battery on OLED screens, and can actually look more sophisticated than light mode. Done wrong, it's a disaster of unreadable text and weird color inversions.
+
+## The Mistakes Everyone Makes
+
+### Mistake 1: Just Inverting Colors
+
+The most common dark mode "implementation" is swapping white backgrounds for black and calling it done. This creates several problems:
+
+- Pure black (#000) backgrounds are harsh and create excessive contrast
+- Some colors that work on white look terrible on dark backgrounds
+- Shadows become invisible or look wrong
+- Images and illustrations clash with the new theme
+
+### Mistake 2: Maintaining Light Mode Contrast
+
+In light mode, you might use a very light gray background with white cards. If you simply darken these, the contrast between them disappears. Dark mode needs its own contrast decisions.
+
+### Mistake 3: Forgetting About Elevation
+
+In light mode, elevation is often shown with shadows. In dark mode, shadows don't work the same way—you need to use lighter surfaces to show elevation instead.
+
+## The Right Way
+
+### Use Dark Gray, Not Black
+
+Start with a dark gray like `#0a0a0a` or `#121212` instead of pure black. It's easier on the eyes and gives you room to go darker for contrast when needed.
+
+### Create a New Color Palette
+
+Every color needs a dark mode variant. Here's our approach:
+
+**Backgrounds**: Multiple levels of dark gray
+```
+Background: oklch(0.13 0 0)
+Card: oklch(0.17 0 0)
+Elevated: oklch(0.21 0 0)
+```
+
+**Text**: Don't use pure white—it's too harsh
+```
+Primary text: oklch(0.95 0 0)
+Secondary text: oklch(0.65 0 0)
+Muted text: oklch(0.45 0 0)
+```
+
+**Brand colors**: Slightly desaturate and lighten
+Vibrant colors that work on white often look garish on dark backgrounds. Tone them down slightly.
+
+### Show Elevation with Lightness
+
+Instead of shadows, use progressively lighter backgrounds:
+
+```
+Base layer: #121212
+First elevation: #1e1e1e
+Second elevation: #2d2d2d
+Third elevation: #3d3d3d
+```
+
+This creates the same sense of depth as shadows in light mode.
+
+### Handle Images Thoughtfully
+
+Bright images can be jarring against dark backgrounds. Consider:
+
+- Reducing brightness slightly (we use `brightness(0.95)`)
+- Adding subtle borders or background colors
+- Ensuring images have appropriate dark mode variants
+
+### Maintain Semantic Color Meaning
+
+Error states should still feel "danger." Success should still feel positive. The hues stay the same, but saturation and lightness adjust:
+
+```
+Light mode error: hsl(0, 84%, 60%)
+Dark mode error: hsl(0, 70%, 55%)
+```
+
+## Implementation in CSS
+
+Modern CSS makes dark mode implementation elegant:
+
+```css
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.13 0 0);
+}
+
+.dark {
+  --background: oklch(0.13 0 0);
+  --foreground: oklch(0.95 0 0);
+}
+```
+
+Using CSS custom properties means your components don't need to know about themes—they just use the variables.
+
+## Testing Your Dark Mode
+
+1. **Use it yourself**. Spend a full day in dark mode. You'll quickly find what doesn't work.
+
+2. **Check in bright light**. Dark mode often fails in sunny environments where screens are hard to see.
+
+3. **Test contrast**. Use tools to verify text remains readable—aim for at least 4.5:1 contrast ratio.
+
+4. **Review all components**. That component you forgot about? It's now blindingly white in your beautiful dark interface.
+
+## Why We Invested So Heavily
+
+Dark mode isn't optional in 2024. Users expect it. Operating systems default to it. We made sure every single component in pitsi/ui has been carefully crafted for both themes.
+
+Toggle between them—you'll notice they feel like two intentional designs, not one design and its awkward inversion.

@@ -1,0 +1,111 @@
+---
+title: The Art of Subtle Shadows
+description: Shadows are the secret to depth and hierarchy. Learn how to use them effectively without making your interface look like it's from 2010.
+date: "2024-11-24"
+category: design
+image: /marketing/sky-night.jpg
+readTime: 6 min read
+author: pitsi/ui Team
+---
+
+Shadows are how we perceive depth in the real world. In interfaces, they serve the same purpose—creating hierarchy, separating elements, and making things feel tangible. But like any powerful tool, shadows are easy to misuse.
+
+## The Evolution of Shadows in UI
+
+Remember the early 2010s? Drop shadows everywhere, often multiple pixels of black with zero blur. It looked like every button was a physical object hovering above the page.
+
+Then came the flat design movement—shadows were banished entirely. Interfaces became cleaner but also flatter, losing some of their depth and hierarchy cues.
+
+Today we've found balance. Modern shadows are subtle, purposeful, and often barely noticeable consciously—but they do important work.
+
+## The Anatomy of a Good Shadow
+
+A CSS box-shadow has four components:
+
+```css
+box-shadow: offset-x offset-y blur-radius color;
+```
+
+Each serves a purpose:
+
+**Offset**: Creates the illusion of a light source. Small offsets feel more natural—we rarely need more than 4-8px.
+
+**Blur**: Larger blur = softer shadow = higher elevation. Hard shadows (low blur) feel closer to the surface.
+
+**Color**: Never use pure black. Use the background color darkened, or add a hint of the object's color. `rgba(0, 0, 0, 0.1)` is a safe starting point.
+
+## Layered Shadows
+
+The secret to realistic shadows is layering. A single shadow never looks quite right because real objects cast multiple shadows:
+
+```css
+box-shadow:
+  0 1px 2px rgba(0, 0, 0, 0.05),
+  0 4px 8px rgba(0, 0, 0, 0.1),
+  0 12px 24px rgba(0, 0, 0, 0.1);
+```
+
+This creates a much more natural, dimensional effect than any single shadow could.
+
+## Our Shadow Scale
+
+We use three elevation levels throughout pitsi/ui:
+
+### Small (sm)
+For subtle lift—hovered cards, focused inputs, dropdown triggers.
+```css
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+```
+
+### Medium (md)
+For clear separation—cards, modals that don't demand attention, popovers.
+```css
+box-shadow:
+  0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  0 2px 4px -1px rgba(0, 0, 0, 0.06);
+```
+
+### Large (lg)
+For high-priority elements—modal dialogs, command menus, elements that need to feel "above" everything else.
+```css
+box-shadow:
+  0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  0 4px 6px -2px rgba(0, 0, 0, 0.05);
+```
+
+## When to Use Shadows
+
+### Do Use Shadows For:
+
+- **Elevation changes** on hover (subtle, small shadow)
+- **Modal dialogs** and overlays that need to feel "above" the page
+- **Floating elements** like tooltips and popovers
+- **Cards** that need to feel distinct from the background
+
+### Don't Use Shadows For:
+
+- **Inline content** that should feel part of the page
+- **Every element** (if everything floats, nothing floats)
+- **Dark mode** (use lighter backgrounds instead)
+
+## Shadows and Interaction
+
+Shadows can reinforce interaction states:
+
+**Hover**: Add or increase shadow slightly. The element "lifts" toward the cursor.
+
+**Active/Pressed**: Remove or reduce shadow. The element "presses" into the surface.
+
+**Focus**: Don't use shadows for focus states—use outlines instead. Shadows indicate elevation, not selection.
+
+## Performance Consideration
+
+Shadows are one of the more expensive CSS properties to render. On elements that animate, consider using `will-change: transform, box-shadow` to hint to the browser.
+
+For very long lists of items, you might skip shadows entirely and use borders instead.
+
+## The Subtlety Principle
+
+Here's the test for shadow intensity: if someone who isn't a designer notices your shadows, they're probably too strong. Shadows should be felt, not seen. They should make the interface feel more natural without drawing attention to themselves.
+
+The best shadow is one you don't consciously notice—but would miss if it were gone.

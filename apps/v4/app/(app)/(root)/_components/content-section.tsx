@@ -545,19 +545,19 @@ export function ContentSection() {
   return (
     <>
       {/* Header */}
-      <div className="container px-6 pt-24">
+      <div className="container px-6 pt-16 md:pt-20">
         <LayoutGrid>
           <LayoutGridItem span={6} className="flex flex-col items-center text-center">
             <p className="text-muted-foreground text-sm font-medium tracking-widest uppercase">
               Your Next 6 Months of UI
             </p>
             <Spacer size="lg" sizeMobile="md" />
-            <h2 className="display mx-auto max-w-4xl text-4xl leading-[1.1] tracking-tight md:text-6xl lg:text-7xl">
+            <h2 className="display mx-auto max-w-4xl text-4xl leading-[0.95] tracking-tight md:text-6xl lg:text-7xl">
               Already done.
               <br />
               <span className="text-muted-foreground">Just ship.</span>
             </h2>
-            <Spacer size="3xl" sizeMobile="xl" />
+            <Spacer size="5xl" sizeMobile="3xl" />
           </LayoutGridItem>
         </LayoutGrid>
       </div>

@@ -1,0 +1,51 @@
+---
+title: CLI v3 Release Notes
+description: The pitsi CLI v3 is here with faster installs, better error messages, and new commands. See what's changed.
+date: "2024-10-28"
+category: announcement
+image: /marketing/party.jpg
+readTime: 3 min read
+author: pitsi/ui Team
+---
+
+The pitsi CLI v3 is our biggest CLI update yet. Faster, smarter, and more helpful—here's everything that's new.
+
+## Speed Improvements
+
+Component installation is now up to 3x faster. We've optimized:
+
+- Dependency resolution (parallel fetching)
+- File writing (batched operations)
+- Registry communication (better caching)
+
+Adding a component that used to take 5 seconds now takes under 2.
+
+## New Commands
+
+**`pitsi diff`**: Compare your local components against the registry. See exactly what's changed and decide whether to update.
+
+**`pitsi search`**: Find components without leaving your terminal. Fuzzy search across names and descriptions.
+
+**`pitsi info`**: Get detailed information about any component—dependencies, file locations, and more.
+
+## Better Error Messages
+
+We've rewritten every error message to be:
+
+- **Specific**: Tells you exactly what went wrong
+- **Actionable**: Includes steps to fix the issue
+- **Contextual**: Shows relevant file paths and configurations
+
+No more cryptic errors. If something fails, you'll know why and how to fix it.
+
+## Framework Detection
+
+The CLI now automatically detects your framework and configures itself appropriately. Next.js, Vite, Remix, Astro—it just works.
+
+## Migration from v2
+
+Most projects need no changes. Run `npx pitsi@latest` and you'll get v3 automatically. If you have custom configurations, check our migration guide for any breaking changes.
+
+## What's Next
+
+We're already working on v3.1 with AI-assisted component suggestions and improved TypeScript support. Stay tuned!

@@ -1,0 +1,7 @@
+export { FullStackBlocksIllustration } from "./full-stack-blocks"
+export { CMSIntegrationIllustration } from "./cms-integration"
+export { FullyFunctionalIllustration } from "./fully-functional"
+export { BattleTestedIllustration } from "./battle-tested"
+export { SmartMCPServerIllustration } from "./smart-mcp-server"
+export { ThemeSystemIllustration } from "./theme-system"
+export { ComposableBlocksIllustration } from "./composable-blocks"

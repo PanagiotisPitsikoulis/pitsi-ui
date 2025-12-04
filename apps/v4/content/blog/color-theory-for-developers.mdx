@@ -1,0 +1,45 @@
+---
+title: Color Theory for Developers
+description: Learn the fundamentals of color theory and how pitsi/ui applies these principles to create harmonious interfaces.
+date: "2024-11-18"
+category: design
+image: /marketing/orange-sky.jpg
+readTime: 6 min read
+author: pitsi/ui Team
+---
+
+Color can make or break a design. Yet for many developers, color selection feels like guesswork. Let's demystify color theory and see how pitsi/ui applies these principles.
+
+## The Color Wheel
+
+At its core, color theory starts with the color wheel. Understanding three key relationships helps you create harmonious palettes:
+
+**Complementary**: Colors opposite each other on the wheel. High contrast, high energy.
+
+**Analogous**: Colors next to each other. Harmonious and calming.
+
+**Triadic**: Three colors equally spaced. Balanced but vibrant.
+
+## How pitsi/ui Uses Color
+
+Our color system is built on semantic meaning rather than specific hues:
+
+- **Primary**: Your brand color, used for key actions
+- **Secondary**: Supporting color for less prominent elements
+- **Accent**: Highlights and focus states
+- **Muted**: Background variations and disabled states
+- **Destructive**: Error states and dangerous actions
+
+This semantic approach means you can completely change your color scheme by updating a few CSS variables, and everything remains harmonious.
+
+## The 60-30-10 Rule
+
+A classic design principle: use your dominant color 60% of the time, secondary 30%, and accent 10%. Our components follow this naturally:
+
+- Backgrounds and large surfaces use muted/background colors (60%)
+- Cards, containers, and secondary elements use secondary tones (30%)
+- Buttons, links, and interactive elements use primary/accent (10%)
+
+## Dark Mode Considerations
+
+Every color in our system has a carefully tuned dark mode counterpart. We don't just invert colors—we adjust saturation and brightness to maintain the same visual weight and contrast ratios.

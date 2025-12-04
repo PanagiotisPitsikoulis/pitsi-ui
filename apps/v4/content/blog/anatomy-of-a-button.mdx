@@ -1,0 +1,47 @@
+---
+title: Anatomy of a Button Component
+description: A deep dive into how we built the Button component. Understanding variants, sizes, and the design decisions behind them.
+date: "2024-11-22"
+category: deep-dive
+image: /marketing/cliff.jpg
+readTime: 7 min read
+author: pitsi/ui Team
+---
+
+The humble button is often the first component developers add to their projects. But don't let its simplicity fool you—a well-designed button component requires careful consideration of many factors.
+
+## The Variant System
+
+Our Button component supports multiple variants, each serving a specific purpose:
+
+**Default**: The primary action button. Use it for the main call-to-action on any page or form.
+
+**Secondary**: Less prominent than default but still clearly clickable. Perfect for secondary actions.
+
+**Outline**: A bordered button that doesn't compete for attention. Great for cancel buttons or tertiary actions.
+
+**Ghost**: Minimal styling that blends with surrounding content. Ideal for icon buttons or inline actions.
+
+**Destructive**: Red-tinted to signal danger. Use sparingly for delete or irreversible actions.
+
+## Size Considerations
+
+We offer four sizes: `sm`, `default`, `lg`, and `icon`. Each is designed for specific contexts:
+
+- **sm**: Compact interfaces, inline buttons, or mobile-first designs
+- **default**: Standard use cases, forms, and most interfaces
+- **lg**: Hero sections, landing pages, or when you need visual impact
+- **icon**: Square buttons for icon-only use cases
+
+## Accessibility First
+
+Every variant maintains WCAG 2.1 AA compliance. We ensure:
+
+- Minimum contrast ratios for all color combinations
+- Focus states that are visible across all variants
+- Proper disabled states that communicate unavailability
+- Full keyboard navigation support
+
+## The Technical Implementation
+
+Under the hood, we use `class-variance-authority` (CVA) to manage our variant system. This approach gives us type-safe variants with excellent DX while keeping the bundle size minimal.

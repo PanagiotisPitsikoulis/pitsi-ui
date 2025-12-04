@@ -1,0 +1,50 @@
+---
+title: The Design System Behind pitsi/ui
+description: A deep dive into our typography, color, and spacing systems. Understanding the constraints that make good design automatic.
+date: "2024-11-25"
+category: deep-dive
+image: /marketing/sky-night.jpg
+readTime: 8 min read
+author: pitsi/ui Team
+---
+
+Good design isn't magic—it's systems. Behind every beautiful interface is a carefully considered set of rules that govern typography, color, spacing, and composition. In this post, we'll pull back the curtain on the design system that powers pitsi/ui.
+
+## Typography: The Foundation
+
+Typography is often called the foundation of design, and for good reason. Text makes up the majority of most interfaces, and how that text is styled has an enormous impact on usability and aesthetics.
+
+Our type scale follows a modular progression:
+
+- **Display**: For hero sections and major headings
+- **H1-H6**: A clear hierarchy for document structure
+- **Body**: Optimized for comfortable reading
+- **Small/Caption**: For secondary information
+
+Each step in the scale relates to the others by a consistent ratio, creating natural visual harmony.
+
+## Color: Intentional Palettes
+
+Color is perhaps the easiest place to go wrong in design. Too many colors create chaos; too few feel bland. Our approach:
+
+**Semantic Colors**: We define colors by their purpose (primary, secondary, destructive, etc.) rather than their appearance. This makes it easy to create consistent meaning across your interface.
+
+**Automatic Dark Mode**: Every color has a carefully tuned dark mode variant. Switch themes and everything just works.
+
+**Accessible by Default**: All color combinations meet WCAG contrast requirements. You can't accidentally create unreadable text.
+
+## Spacing: The Invisible Art
+
+Spacing is what separates amateur designs from professional ones. Our spacing system uses a base unit of 4px, with a scale that provides options for every situation:
+
+- Tight spacing for related elements
+- Medium spacing for content grouping
+- Generous spacing for section separation
+
+Components automatically apply appropriate spacing based on context, so you rarely need to think about it explicitly.
+
+## Bringing It Together
+
+These systems don't exist in isolation—they're designed to work together. The same principles that govern our typography also influence our spacing. Our color system considers how text will be rendered at different sizes.
+
+This holistic approach is what makes pitsi/ui feel cohesive. Every component is built on the same foundation, ensuring they work together seamlessly regardless of how you combine them.

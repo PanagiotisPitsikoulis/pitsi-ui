@@ -1,18 +1,70 @@
 import { Metadata } from "next"
-import { Badge } from "@/registry/new-york-v4/ui/badge"
-import { Button } from "@/registry/new-york-v4/ui/button"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/registry/new-york-v4/ui/card"
-import { CheckCircle2, Circle, Clock, ArrowRight } from "lucide-react"
+import Link from "next/link"
 
-const title = "Product Roadmap"
+import { Spacer } from "@/registry/new-york-v4/ui/spacer"
+
+import { LayoutGrid, LayoutGridItem } from "../(root)/_components/layout-grid"
+import { StripeBgGuides } from "../(root)/_components/striped-bg-guides"
+import { RoadmapContent } from "./_components/roadmap-content"
+
+function RoadmapIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 111 86"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      strokeWidth="1px"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path
+        d="M108.85 7.33984V27.22C108.88 31.92 107.02 36.78 103.28 41.78C99.91 46.28 95.4 50.3899 89.73 54.1199V47.9099C89.73 47.4599 89.64 47.01 89.47 46.55L87.9399 42.3C87.1499 42.68 86.3799 43.0499 85.6099 43.4099C81.1799 45.4899 77.0399 47.2299 73.1899 48.6299C72.6899 48.8199 72.2 48.9899 71.71 49.1599C66.78 50.8799 60.7 52.5399 53.46 54.1599V68.75C52.5 68.94 51.52 69.01 50.51 68.98C49.23 68.94 48.1199 68.6499 47.1799 68.0999L29.3999 57.8398C28.4599 57.2898 27.9499 56.6499 27.8799 55.9099V35.9099C27.9499 36.6499 28.4599 37.2898 29.3999 37.8398L32.3398 39.54L38.45 43.0601L47.1799 48.0999C48.1199 48.6499 49.23 48.94 50.51 48.98C51.79 49.02 53.03 48.8898 54.23 48.5798C58.06 47.6198 61.5998 46.6299 64.8298 45.6299C67.0298 44.9499 69.1 44.25 71.02 43.55C74.96 42.12 79.03 40.26 83.24 37.96C84.12 37.49 84.9999 36.99 85.8899 36.48C93.1599 32.29 98.8199 27.55 102.89 22.28C103.03 22.11 103.15 21.95 103.28 21.78C106.99 16.82 108.85 12.0098 108.85 7.33984Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M39.45 14.31C34.5 17.71 30.5301 20.8299 27.5601 23.6699C24.5901 26.5199 21.7099 30.0299 18.9099 34.2099L5.69995 30.8698C3.80995 30.4098 2.69006 29.5999 2.31006 28.4499C2.23006 28.2099 2.18994 27.98 2.18994 27.75C2.18994 26.9 2.74986 26.16 3.85986 25.52L21.73 15.1999C23.06 14.4299 24.66 13.88 26.5 13.56C28.34 13.23 30.2098 13.1799 32.0898 13.4199L39.45 14.31Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M89.73 47.9099C89.73 48.5399 89.56 49.16 89.24 49.78C88.67 50.84 87.7199 51.76 86.3799 52.53L68.51 62.8499C67.11 63.6599 65.4099 63.96 63.4299 63.74C61.4499 63.53 60.05 62.87 59.24 61.79L53.46 54.1599C60.7 52.5399 66.78 50.8799 71.71 49.1599C72.2 48.9899 72.6899 48.8199 73.1899 48.6299C77.0399 47.2299 81.1799 45.4899 85.6099 43.4099C86.3799 43.0499 87.1499 42.68 87.9399 42.3L89.47 46.55C89.64 47.01 89.73 47.4599 89.73 47.9099Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M108.79 5.87979C108.78 5.41979 108.58 4.96995 108.18 4.54995C107.77 4.11995 107.3 3.74985 106.76 3.43985C106.22 3.12985 105.58 2.84978 104.84 2.61978C104.1 2.38978 103.33 2.26992 102.52 2.26992C93.6601 2.01992 84.48 3.07985 75 5.43985C65.51 7.80985 57.0201 11.1599 49.5201 15.4899C45.5401 17.7899 42.18 20.0399 39.45 22.2399C38.69 22.8399 37.9899 23.4399 37.3299 24.0399C34.4199 26.6899 31.62 29.7699 28.93 33.2899C28.81 33.4399 28.6901 33.5999 28.5701 33.7599C28.0401 34.4599 27.8099 35.1798 27.8799 35.9098C27.9499 36.6498 28.4599 37.2897 29.3999 37.8397L32.3399 39.5399L38.45 43.06L47.18 48.0998C48.12 48.6498 49.23 48.9399 50.51 48.9799C51.79 49.0199 53.03 48.8897 54.23 48.5797C58.06 47.6197 61.5999 46.6298 64.8299 45.6298C67.0299 44.9498 69.1001 44.25 71.0201 43.55C74.9601 42.12 79.03 40.2599 83.24 37.9599C84.12 37.4899 84.9999 36.9899 85.8899 36.4799C93.1599 32.2899 98.8199 27.5499 102.89 22.2799C103.03 22.1099 103.15 21.9499 103.28 21.7799C106.99 16.8199 108.85 12.0097 108.85 7.33975C108.85 6.84975 108.83 6.36979 108.79 5.87979ZM85.6399 23.3197C85.2599 24.6297 84.2201 25.7899 82.5201 26.7699C80.3101 28.0399 77.62 28.6798 74.47 28.6698C71.98 28.6698 69.7799 28.2699 67.8799 27.4599C67.3599 27.2599 66.8699 27.0099 66.3999 26.7399C64.1799 25.4599 63.0601 23.8997 63.0501 22.0797C63.0401 20.2597 64.1399 18.7098 66.3499 17.4398C68.5599 16.1598 71.2399 15.5299 74.3999 15.5299C77.5499 15.5399 80.24 16.1799 82.46 17.4699C84.69 18.7499 85.8001 20.2998 85.8101 22.1198C85.8101 22.5398 85.7599 22.9397 85.6399 23.3197Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M85.8101 22.1199C85.8101 22.5399 85.76 22.9398 85.64 23.3198C85.26 24.6298 84.2201 25.79 82.5201 26.77C80.3101 28.04 77.62 28.6799 74.47 28.6699C71.98 28.6699 69.78 28.27 67.88 27.46C67.36 27.26 66.87 27.01 66.4 26.74C64.18 25.46 63.0601 23.8998 63.0501 22.0798C63.0401 20.2598 64.1399 18.7099 66.3499 17.4399C68.5599 16.1599 71.24 15.53 74.4 15.53C77.55 15.54 80.24 16.18 82.46 17.47C84.69 18.75 85.8001 20.2999 85.8101 22.1199Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M39.45 14.3101V22.24C38.69 22.84 37.9898 23.44 37.3298 24.04C34.4198 26.69 31.6199 29.77 28.9299 33.29C28.8099 33.44 28.6901 33.6 28.5701 33.76C28.0401 34.46 27.8099 35.1799 27.8799 35.9099V43.3699C27.7699 43.4699 27.6601 43.5699 27.5601 43.6699C24.5901 46.5199 21.7099 50.03 18.9099 54.21V34.21C21.7099 30.03 24.5901 26.5199 27.5601 23.6699C30.5301 20.8299 34.5 17.7101 39.45 14.3101Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M18.9099 34.21V54.21L5.69995 50.8699C3.80995 50.4099 2.69006 49.6 2.31006 48.45C2.23006 48.22 2.18994 47.99 2.18994 47.77V27.75C2.18994 27.98 2.23006 28.21 2.31006 28.45C2.69006 29.6 3.80995 30.4099 5.69995 30.8699L18.9099 34.21Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M89.73 47.9099V67.95C89.72 68.57 89.55 69.17 89.24 69.78C88.67 70.84 87.7199 71.76 86.3799 72.53L68.51 82.8499C67.11 83.6599 65.4099 83.96 63.4299 83.74C61.4499 83.53 60.05 82.87 59.24 81.79L53.46 74.1599V54.1599L59.24 61.79C60.05 62.87 61.4499 63.53 63.4299 63.74C65.4099 63.96 67.11 63.6599 68.51 62.8499L86.3799 52.53C87.7199 51.76 88.67 50.84 89.24 49.78C89.56 49.16 89.73 48.5399 89.73 47.9099Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
+const title = "Roadmap"
 const description =
-  "Track our progress and see what's coming next. We're committed to transparency and continuous improvement."
+  "See what we're building next and what's on the horizon for pitsi/ui."
 
 export const metadata: Metadata = {
   title,
@@ -38,272 +90,132 @@ export const metadata: Metadata = {
   },
 }
 
-interface RoadmapItem {
-  title: string
-  description: string
-  date: string
-  status: "completed" | "in-progress" | "planned"
-  features: string[]
-}
-
-const roadmapData: RoadmapItem[] = [
+const roadmapData = [
   {
-    title: "Base Release",
-    description: "Initial public release with core features and foundation",
-    date: "Nov 30, 2025",
-    status: "in-progress",
-    features: [
-      "1000+ beautifully designed blocks",
-      "80+ deeply themed components",
-      "Full shadcn/ui API compatibility",
-      "MCP server integration",
-      "Payload CMS compatibility",
-    ],
-  },
-  {
-    title: "Advanced Themes Support",
-    description: "Enhanced theming system with more customization options",
-    date: "Dec 30, 2025",
-    status: "planned",
-    features: [
-      "Deep theme system",
-      "Decorations API",
-      "Global styling presets",
-      "30+ animation variants",
-      "Advanced color palettes",
-    ],
-  },
-  {
-    title: "React Native Port",
-    description: "Bring pitsi/ui to mobile with React Native support",
-    date: "Feb 28, 2026",
-    status: "planned",
-    features: [
-      "Cross-platform components",
-      "Native performance optimization",
-      "Design tutorials and resources",
-      "Mobile-first examples",
-      "Expo integration",
-    ],
-  },
-  {
-    title: "AI-Powered Design Tool",
+    quarter: "Q4 2024",
+    title: "Foundation & Core Components",
     description:
-      "Intelligent block recommendations and website composition assistant",
-    date: "Mar 30, 2026",
-    status: "planned",
-    features: [
-      "Graph database for block relationships",
-      "Smart block recommendations",
-      "Activity-based suggestions",
-      "Auto-composition of blocks",
-      "Design pattern analysis",
+      "Establishing the core component library and design system foundation.",
+    status: "completed" as const,
+    items: [
+      "Core UI components (Button, Input, Dialog, etc.)",
+      "Design token system with CSS variables",
+      "Dark mode support",
+      "Initial documentation site",
+      "CLI tool for component installation",
     ],
   },
   {
-    title: "pitsi/ui Pencil",
-    description: "Visual editor with AI integration for local development",
-    date: "Apr 30, 2026",
-    status: "planned",
-    features: [
-      "Visual website editing",
-      "Real-time code synchronization",
-      "AI-assisted modifications",
-      "Local file system integration",
-      "Component-level editing",
+    quarter: "Q1 2025",
+    title: "Block Library Expansion",
+    description:
+      "Growing the block library with production-ready page sections and layouts.",
+    status: "in-progress" as const,
+    items: [
+      "Marketing page blocks (Hero, Features, Pricing)",
+      "Dashboard layouts and components",
+      "E-commerce blocks (Product cards, Cart, Checkout)",
+      "Authentication flows",
+      "Settings and profile pages",
     ],
   },
   {
-    title: "Bob Code & Bob Studio",
-    description: "Advanced development tools and visual design studio",
-    date: "May 30, 2026",
-    status: "planned",
-    features: [
-      "Bob Code CLI tool",
-      "Bob Studio visual editor",
-      "Enhanced developer experience",
+    quarter: "Q2 2025",
+    title: "Advanced Interactions",
+    description:
+      "Adding sophisticated animations and interactive components.",
+    status: "planned" as const,
+    items: [
+      "Advanced animation primitives",
+      "Gesture-based interactions",
+      "Data visualization components",
+      "Real-time collaboration UI patterns",
+      "Mobile-first responsive patterns",
+    ],
+  },
+  {
+    quarter: "Q3 2025",
+    title: "AI & Developer Tools",
+    description: "Enhancing the developer experience with AI-powered tools.",
+    status: "planned" as const,
+    items: [
+      "AI component generator",
+      "Visual component editor",
+      "Figma plugin for design handoff",
+      "VS Code extension",
+      "Component analytics dashboard",
+    ],
+  },
+  {
+    quarter: "Future",
+    title: "Exploring",
+    description: "Ideas we're considering for future development.",
+    status: "exploring" as const,
+    items: [
+      "Native mobile components (React Native)",
+      "Design system customization wizard",
+      "Component marketplace",
       "Team collaboration features",
-      "Advanced workflow automation",
+      "Accessibility audit tools",
     ],
   },
 ]
 
-function StatusIcon({ status }: { status: RoadmapItem["status"] }) {
-  switch (status) {
-    case "completed":
-      return <CheckCircle2 className="size-5 text-[var(--success)]" />
-    case "in-progress":
-      return <Clock className="size-5 text-[var(--warning)]" />
-    case "planned":
-      return <Circle className="size-5 text-muted-foreground" />
-  }
-}
-
-function StatusBadge({ status }: { status: RoadmapItem["status"] }) {
-  const variants = {
-    completed: "success" as const,
-    "in-progress": "warning" as const,
-    planned: "outline" as const,
-  }
-
-  const labels = {
-    completed: "Completed",
-    "in-progress": "In Progress",
-    planned: "Planned",
-  }
-
-  return <Badge variant={variants[status]}>{labels[status]}</Badge>
-}
-
 export default function RoadmapPage() {
   return (
-    <div className="bg-page flex flex-1 flex-col">
-      <div className="mx-auto w-full max-w-7xl px-4 py-8 md:px-6 md:py-12 lg:px-8 lg:py-16">
-        {/* Header */}
-        <div className="mb-12 text-center">
-          <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-            Product Roadmap
-          </h1>
-          <p className="text-muted-foreground mx-auto max-w-2xl text-lg md:text-xl">
-            Track our progress and see what's coming next. We're committed to
-            transparency and continuous improvement.
-          </p>
-        </div>
+    <div className="relative -mt-[56px] min-h-screen overflow-x-clip">
+      <StripeBgGuides columnCount={6} animated={false} />
 
-        {/* Release Schedule Overview */}
-        <Card className="mb-12">
-          <CardHeader>
-            <CardTitle>Release Schedule Overview</CardTitle>
-            <CardDescription>
-              Our commitment to delivering quality content on a consistent
-              schedule
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="grid gap-6 md:grid-cols-3">
-              <div className="flex flex-col gap-2">
-                <div className="text-muted-foreground text-sm font-medium">
-                  Base Release
-                </div>
-                <div className="text-2xl font-bold">Nov 30, 2025</div>
-                <div className="text-muted-foreground text-sm">
-                  1000+ blocks + core features
-                </div>
-              </div>
-              <div className="flex flex-col gap-2">
-                <div className="text-muted-foreground text-sm font-medium">
-                  Weekly Releases
-                </div>
-                <div className="text-2xl font-bold">100 blocks/week</div>
-                <div className="text-muted-foreground text-sm">
-                  Continuous content updates
-                </div>
-              </div>
-              <div className="flex flex-col gap-2">
-                <div className="text-muted-foreground text-sm font-medium">
-                  Major Updates
-                </div>
-                <div className="text-2xl font-bold">Every month</div>
-                <div className="text-muted-foreground text-sm">
-                  New features and improvements
-                </div>
+      <div className="relative z-10 container px-6">
+        <Spacer size="6xl" sizeMobile="4xl" />
+        <LayoutGrid>
+          <LayoutGridItem span={6} spanLg={2}>
+            <div className="lg:sticky lg:top-24">
+              <Link
+                href="/"
+                className="text-muted-foreground hover:text-foreground mb-6 inline-flex items-center gap-2 text-sm transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="m12 19-7-7 7-7" />
+                  <path d="M19 12H5" />
+                </svg>
+                Back to home
+              </Link>
+              <p className="text-muted-foreground text-sm font-medium tracking-widest uppercase">
+                What's Next
+              </p>
+              <Spacer size="md" sizeMobile="sm" />
+              <h1 className="display text-4xl leading-[0.9] tracking-tight md:text-5xl lg:text-6xl">
+                Roadmap
+              </h1>
+              <Spacer size="lg" sizeMobile="md" />
+              <p className="text-muted-foreground text-base md:text-lg">
+                See what we're building next and what's on the horizon for
+                pitsi/ui.
+              </p>
+              <Spacer size="6xl" sizeMobile="2xl" />
+              <div className="flex justify-center">
+                <RoadmapIcon className="text-brand w-48" />
               </div>
             </div>
-          </CardContent>
-        </Card>
+          </LayoutGridItem>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-[22px] top-0 h-full w-0.5 bg-border md:left-1/2" />
-
-          {/* Timeline items */}
-          <div className="space-y-12">
-            {roadmapData.map((item, index) => (
-              <div
-                key={index}
-                className="relative grid gap-6 md:grid-cols-2 md:gap-12"
-              >
-                {/* Timeline dot */}
-                <div className="absolute left-[18px] z-10 rounded-full bg-background p-1 md:left-1/2 md:-translate-x-1/2">
-                  <StatusIcon status={item.status} />
-                </div>
-
-                {/* Content - alternating sides on desktop */}
-                <div
-                  className={cn(
-                    "pl-16 md:pl-0",
-                    index % 2 === 0 ? "md:pr-16 md:text-right" : "md:col-start-2 md:pl-16"
-                  )}
-                >
-                  <Card className="transition-all hover:shadow-md">
-                    <CardHeader>
-                      <div
-                        className={cn(
-                          "mb-2 flex items-center gap-2",
-                          index % 2 === 0 ? "md:flex-row-reverse md:justify-end" : ""
-                        )}
-                      >
-                        <StatusBadge status={item.status} />
-                        <span className="text-muted-foreground text-sm font-medium">
-                          {item.date}
-                        </span>
-                      </div>
-                      <CardTitle className="text-xl">{item.title}</CardTitle>
-                      <CardDescription className="text-base">
-                        {item.description}
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <ul className="space-y-2">
-                        {item.features.map((feature, featureIndex) => (
-                          <li
-                            key={featureIndex}
-                            className={cn(
-                              "flex items-start gap-2 text-sm",
-                              index % 2 === 0 ? "md:flex-row-reverse md:text-right" : ""
-                            )}
-                          >
-                            <ArrowRight className="text-primary mt-0.5 size-4 shrink-0" />
-                            <span>{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* CTA Section */}
-        <div className="mt-16 text-center">
-          <Card className="bg-accent/50 border-primary/20">
-            <CardHeader>
-              <CardTitle className="text-2xl">
-                Want to influence our roadmap?
-              </CardTitle>
-              <CardDescription className="text-base">
-                We're always listening to our community. Share your ideas and
-                help shape the future of pitsi/ui.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Button size="lg">Request a Feature</Button>
-                <Button size="lg" variant="outline">
-                  Join Discord
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+          <LayoutGridItem span={6} spanLg={3} className="lg:col-start-4">
+            <RoadmapContent items={roadmapData} />
+          </LayoutGridItem>
+        </LayoutGrid>
+        <Spacer size="6xl" sizeMobile="4xl" />
       </div>
     </div>
   )
-}
-
-function cn(...inputs: any[]) {
-  return inputs.filter(Boolean).join(" ")
 }

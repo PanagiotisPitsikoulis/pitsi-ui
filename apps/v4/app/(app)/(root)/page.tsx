@@ -12,14 +12,14 @@ import {
   ContentSection,
   CTASection,
   DesignSection,
-  DeveloperExperienceSection,
   HeroSection,
   PerspectiveSectionDemo,
-  PowerSection,
+  PowerBentoSection,
   PricingCardsSection,
   PricingExplained,
   PricingToast,
   PurposeSection,
+  ReviewsSection,
   StripeBgGuides,
 } from "./_components"
 
@@ -64,13 +64,12 @@ export default async function IndexPage() {
       <ContentSection />
       <ContentExplained />
       <PurposeSection />
-
       <DesignSection />
-      {/*<PowerSection />
-      <DeveloperExperienceSection />*/}
+      <PowerBentoSection />
       <PricingCardsSection user={user} />
       <PricingExplained />
       <CTASection />
+      <ReviewsSection />
     </div>
   )
 }

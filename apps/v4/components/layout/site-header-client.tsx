@@ -29,7 +29,11 @@ export function SiteHeaderClient({
   siteName: string
   componentPages: Array<{ name: string; url: string }>
   animationPages: Array<{ name: string; url: string }>
-  allBlockSubcategories: Array<{ category: string; name: string; count: number }>
+  allBlockSubcategories: Array<{
+    category: string
+    name: string
+    count: number
+  }>
 }) {
   const [hasScrolled, setHasScrolled] = useState(false)
 
@@ -43,11 +47,12 @@ export function SiteHeaderClient({
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const containerClassName = "flex h-(--header-height) items-center px-6 lg:px-3"
+  const containerClassName =
+    "flex h-(--header-height) items-center px-6 lg:px-3"
 
   const headerClassName = cn(
     "sticky top-0 z-[99] w-full",
-    hasScrolled ? "bg-background" : "bg-transparent"
+    hasScrolled ? "bg-page" : "bg-transparent"
   )
 
   return (
@@ -65,7 +70,9 @@ export function SiteHeaderClient({
         >
           <Link href="/">
             <Icons.logo className="size-5" />
-            <span className="display font-semibold tracking-tight">Pitsi UI</span>
+            <span className="display font-semibold tracking-tight">
+              Pitsi UI
+            </span>
           </Link>
         </Button>
         <MainNav
@@ -75,19 +82,13 @@ export function SiteHeaderClient({
           allBlockSubcategories={allBlockSubcategories}
           className="hidden lg:flex"
         />
-        <div className="ml-auto flex items-center gap-1 md:gap-2 md:flex-1 md:justify-end">
+        <div className="ml-auto flex items-center gap-1 md:flex-1 md:justify-end md:gap-2">
           <div className="hidden w-full flex-1 md:flex md:w-auto md:flex-none">
             {commandMenu}
           </div>
-          <div className="flex md:hidden">
-            {githubLink}
-          </div>
-          <div className="flex md:hidden">
-            {commandMenu}
-          </div>
-          <div className="hidden items-center gap-2 md:flex">
-            {githubLink}
-          </div>
+          <div className="flex md:hidden">{githubLink}</div>
+          <div className="flex md:hidden">{commandMenu}</div>
+          <div className="hidden items-center gap-2 md:flex">{githubLink}</div>
           {userNav}
         </div>
       </div>

@@ -1,0 +1,145 @@
+---
+title: Typography Hierarchy That Works
+description: Size isn't everything. How to create clear visual hierarchy with font weight, color, and spacing.
+date: "2024-11-20"
+category: design
+image: /marketing/mountain.jpg
+readTime: 7 min read
+author: pitsi/ui Team
+---
+
+When people think about typography hierarchy, they think about size. Big text = important, small text = not important. But size is just one tool in the hierarchy toolkit, and overusing it leads to awkward designs with text that's either too big to read comfortably or too small to notice.
+
+## The Hierarchy Toolkit
+
+### 1. Size
+
+Yes, size matters—but subtlety is key. Each step in your scale should be distinct enough to notice but not so dramatic that it looks like a ransom note.
+
+A good type scale might be:
+
+```
+Body: 16px
+Large: 18px
+H3: 20px
+H2: 24px
+H1: 30px
+Display: 48px
+```
+
+Notice how the jumps get bigger as you go up? That's intentional—small sizes need smaller increments to feel different; large sizes can handle bigger jumps.
+
+### 2. Weight
+
+Font weight is underutilized for hierarchy. A bold 16px heading can stand out more than a regular 20px heading, while taking up less space and feeling more integrated with the surrounding text.
+
+Our weight hierarchy:
+- **900 (Black)**: Display text, hero headings only
+- **700 (Bold)**: Primary headings, emphasis
+- **600 (Semibold)**: Secondary headings, subheads
+- **500 (Medium)**: Labels, navigation
+- **400 (Regular)**: Body text
+- **300 (Light)**: Secondary information (use sparingly)
+
+### 3. Color/Opacity
+
+Not all text needs to be the same darkness. Use color to create hierarchy without changing size or weight:
+
+```css
+--text-primary: oklch(0.13 0 0);   /* Main content */
+--text-secondary: oklch(0.45 0 0); /* Supporting text */
+--text-muted: oklch(0.65 0 0);     /* Tertiary info */
+```
+
+### 4. Spacing
+
+The space around text signals its importance. Headlines deserve generous margins. Captions can be tighter. A heading with 48px of space above it feels more important than the same heading with 24px.
+
+### 5. Letter Spacing
+
+Wider letter spacing makes text feel more prominent (good for headings in all caps). Tighter spacing creates density and urgency. Our display text uses slightly tighter tracking; body text stays at default.
+
+## Combining the Tools
+
+The magic happens when you combine these tools thoughtfully:
+
+**Hero Headline**
+```css
+font-size: 48px;
+font-weight: 900;
+letter-spacing: -0.02em;
+color: var(--text-primary);
+```
+
+**Section Heading**
+```css
+font-size: 24px;
+font-weight: 700;
+letter-spacing: -0.01em;
+color: var(--text-primary);
+```
+
+**Card Title**
+```css
+font-size: 16px;
+font-weight: 600;
+color: var(--text-primary);
+```
+
+**Card Description**
+```css
+font-size: 14px;
+font-weight: 400;
+color: var(--text-secondary);
+```
+
+**Metadata**
+```css
+font-size: 12px;
+font-weight: 500;
+color: var(--text-muted);
+text-transform: uppercase;
+letter-spacing: 0.05em;
+```
+
+## Common Mistakes
+
+### Too Many Levels
+
+If you have more than 5-6 levels of hierarchy, your users can't track them all. Simplify.
+
+### Size-Only Thinking
+
+Relying solely on size leads to headings that are either comically large or too similar to body text. Use weight and color too.
+
+### Inconsistent Application
+
+If your H2 is sometimes bold and sometimes semibold, users can't learn your visual language. Be consistent.
+
+### Forgetting Line Height
+
+Different sizes need different line heights. Headlines can be tighter (1.1-1.2); body text needs room to breathe (1.5-1.7).
+
+## Testing Your Hierarchy
+
+### The Squint Test
+
+Squint at your page until you can't read the text. Can you still see the hierarchy? Are the important things more prominent?
+
+### The Scan Test
+
+Look at your page for 5 seconds. What did you notice first? Second? Third? Is that the order you wanted?
+
+### The Context Test
+
+Take a screenshot and shrink it to 50%. Does the hierarchy still work? This simulates how users actually perceive your page.
+
+## Our Approach
+
+In pitsi/ui, we've baked typography hierarchy into our components:
+
+- Card titles use semibold, descriptions use regular secondary text
+- Dialog headers are bold, descriptions are muted
+- Badges use small, medium-weight, uppercase text
+
+You get correct hierarchy by default. And because it's all controlled by CSS variables, you can adjust the entire system if your brand demands something different.

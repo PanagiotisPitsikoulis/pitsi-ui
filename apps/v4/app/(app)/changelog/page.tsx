@@ -1,0 +1,236 @@
+import fs from "fs"
+import { Metadata } from "next"
+import Link from "next/link"
+import path from "path"
+
+import {
+  getAllChanges,
+  getChangeType,
+  parseChangelog,
+} from "@/lib/changelog/parser"
+import { Spacer } from "@/registry/new-york-v4/ui/spacer"
+
+import { LayoutGrid, LayoutGridItem } from "../(root)/_components/layout-grid"
+import { StripeBgGuides } from "../(root)/_components/striped-bg-guides"
+import { ChangelogContent } from "./_components/changelog-content"
+
+function UploadIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 116 89"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path
+        d="M96.7101 55.6401V55.6601C96.7101 56.7301 96.0201 57.6701 94.6601 58.4601L84.9301 64.0701C82.2601 65.6201 79.0101 66.3801 75.1901 66.3801C71.3601 66.3701 68.1101 65.5901 65.4201 64.0401L24.0101 40.1301L14.2301 34.4801L6.69012 30.1301C4.00012 28.5801 2.65014 26.7001 2.64014 24.4901C2.64014 22.2901 3.96013 20.4101 6.63013 18.8701L16.3601 13.2501C17.7401 12.4501 19.3601 12.0601 21.2301 12.0601C23.1001 12.0701 24.7301 12.4701 26.1101 13.2701C27.5001 14.0701 28.2001 15.0101 28.2001 16.0901V16.1101C28.2001 17.1801 27.5101 18.1201 26.1401 18.9001L16.4201 24.5201L28.2001 31.3201L53.4201 45.8801L58.2101 48.6401L67.9901 54.2901L75.1401 58.4201L84.8701 52.8101C86.2501 52.0101 87.8701 51.6101 89.7401 51.6201C91.6101 51.6201 93.2401 52.0201 94.6301 52.8201C96.0101 53.6201 96.7101 54.5601 96.7101 55.6401Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M114 26.3801C114 26.6401 113.97 26.8901 113.9 27.1201C113.66 27.9201 113.03 28.6001 112 29.1601C110.66 29.8901 109.06 30.2701 107.19 30.3101C105.24 30.3101 103.57 29.9301 102.18 29.1801C100.79 28.4201 100.1 27.4801 100.09 26.3601L100.07 22.1401L100.04 15.8001L89.1 22.1101L75.23 30.1201L65.2601 35.8701C63.8901 36.6701 62.2601 37.0601 60.3901 37.0601C58.5201 37.0601 56.8901 36.6501 55.5101 35.8501C54.1201 35.0501 53.42 34.1101 53.42 33.0301C53.41 31.9501 54.1 31.0201 55.48 30.2201L65.1 24.6601L65.91 24.2001L68.92 22.4601L90.25 10.1401L71.9501 10.1101C70.0001 10.1101 68.3701 9.71008 67.0701 8.91008C65.7601 8.11008 65.11 7.14008 65.1 6.02008C65.18 4.94008 65.84 4.01008 67.1 3.24008C68.36 2.47008 69.96 2.08008 71.91 2.08008L107.03 2.15008C108.01 2.15008 108.89 2.26008 109.66 2.47008C110.43 2.68008 111.15 2.98008 111.8 3.35008C112.45 3.73008 112.96 4.14008 113.33 4.59008C113.7 5.04008 113.88 5.54008 113.89 6.10008L114 26.3801Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M114 46.3801C114 47.5101 113.34 48.4401 112 49.1601C110.66 49.8901 109.06 50.2701 107.19 50.3101C105.24 50.3101 103.57 49.9301 102.18 49.1801C100.79 48.4201 100.1 47.4801 100.09 46.3601L100.04 35.8001L67.9899 54.2901L58.21 48.6401L53.4199 45.8801V33.0301C53.4199 34.1101 54.1199 35.0501 55.5099 35.8501C56.8899 36.6501 58.52 37.0601 60.39 37.0601C62.26 37.0601 63.8899 36.6701 65.2599 35.8701L75.2299 30.1201L89.0999 22.1101L100.04 15.8001L100.07 22.1401L100.09 26.3601C100.1 27.4801 100.79 28.4201 102.18 29.1801C103.57 29.9301 105.24 30.3101 107.19 30.3101C109.06 30.2701 110.66 29.8901 112 29.1601C113.03 28.6001 113.66 27.9201 113.9 27.1201L114 46.3801Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M28.2 16.1101V31.3201L16.4199 24.5201L26.14 18.9001C27.51 18.1201 28.2 17.1801 28.2 16.1101Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M96.7101 55.6701V75.6501C96.7201 76.7301 96.0301 77.6701 94.6601 78.4701L84.9301 84.0801C82.2601 85.6301 79.0101 86.3901 75.1901 86.3901C71.3601 86.3801 68.1101 85.6001 65.4201 84.0501L6.69012 50.1401C4.00012 48.5901 2.65014 46.7101 2.64014 44.5001V24.5001C2.65014 26.7101 4.00012 28.5901 6.69012 30.1401L14.2301 34.4901L24.0101 40.1401L65.4201 64.0501C68.1101 65.6001 71.3601 66.3801 75.1901 66.3901C79.0101 66.3901 82.2601 65.6301 84.9301 64.0801L94.6601 58.4701C96.0201 57.6801 96.7101 56.7401 96.7101 55.6701Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M90.2501 10.1401L68.9201 22.4601L65.9101 24.2001L65.1001 24.6601V6.02008C65.1101 7.14008 65.7601 8.11008 67.0701 8.91008C68.3701 9.71008 70.0001 10.1101 71.9501 10.1101L90.2501 10.1401Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
+const title = "Changelog"
+const description =
+  "Stay up to date with the latest additions and improvements to pitsi/ui."
+
+export const metadata: Metadata = {
+  title,
+  description,
+  openGraph: {
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent(
+          title
+        )}&description=${encodeURIComponent(description)}`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent(
+          title
+        )}&description=${encodeURIComponent(description)}`,
+      },
+    ],
+  },
+}
+
+function getCliChangelogData() {
+  const possiblePaths = [
+    path.join(process.cwd(), "..", "..", "packages", "pitsi", "CHANGELOG.md"),
+    path.join(process.cwd(), "packages", "pitsi", "CHANGELOG.md"),
+    path.join(process.cwd(), "..", "packages", "pitsi", "CHANGELOG.md"),
+  ]
+
+  for (const changelogPath of possiblePaths) {
+    try {
+      const content = fs.readFileSync(changelogPath, "utf-8")
+      return parseChangelog(content)
+    } catch {
+      // Try next path
+    }
+  }
+
+  return []
+}
+
+// pitsi/ui changelog - add new entries here
+const uiChangelog = [
+  {
+    version: "4.3.0",
+    date: "Dec 2, 2024",
+    title: "Blog & Changelog System",
+    changes: [
+      "Added MDX-powered blog with categories",
+      "Integrated changelog from changesets",
+      "Added 7 new design-focused blog posts",
+      "Improved dark mode image brightness",
+      "Fixed header transparency on scroll",
+      "Removed gradient overlays for cleaner look",
+    ],
+  },
+  {
+    version: "4.2.0",
+    date: "Nov 28, 2024",
+    title: "Animation Components",
+    changes: [
+      "Added 24 new animation components",
+      "Perspective section transitions",
+      "Background parallax effects",
+      "Improved animation performance",
+      "New motion primitives",
+    ],
+  },
+  {
+    version: "4.1.0",
+    date: "Nov 22, 2024",
+    title: "Navigation & Search",
+    changes: [
+      "New command menu with fuzzy search",
+      "Improved navigation dropdowns",
+      "Added keyboard shortcuts",
+      "Better mobile navigation",
+      "Search across all components",
+    ],
+  },
+  {
+    version: "4.0.0",
+    date: "Nov 15, 2024",
+    title: "Initial v4 Release",
+    changes: [
+      "Complete redesign of documentation site",
+      "New component showcase pages",
+      "Block library with 300+ blocks",
+      "Tailwind CSS v4 support",
+      "React 19 compatibility",
+      "New pricing and landing pages",
+    ],
+  },
+]
+
+export default function ChangelogPage() {
+  const rawCliEntries = getCliChangelogData()
+
+  // Serialize CLI entries for client component
+  const cliEntries = rawCliEntries.map((entry) => ({
+    version: entry.version,
+    changeType: getChangeType(entry),
+    changes: getAllChanges(entry).map((change) => ({
+      type: change.type,
+      pr: change.pr,
+      author: change.author,
+      description: change.description,
+    })),
+  }))
+
+  return (
+    <div className="relative -mt-[56px] min-h-screen overflow-x-clip">
+      <StripeBgGuides columnCount={6} animated={false} />
+
+      <div className="relative z-10 container px-6">
+        <Spacer size="6xl" sizeMobile="4xl" />
+        <LayoutGrid>
+          <LayoutGridItem span={6} spanLg={2}>
+            <div className="lg:sticky lg:top-24">
+              <Link
+                href="/"
+                className="text-muted-foreground hover:text-foreground mb-6 inline-flex items-center gap-2 text-sm transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="m12 19-7-7 7-7" />
+                  <path d="M19 12H5" />
+                </svg>
+                Back to home
+              </Link>
+              <p className="text-muted-foreground text-sm font-medium tracking-widest uppercase">
+                pitsi/ui
+              </p>
+              <Spacer size="md" sizeMobile="sm" />
+              <h1 className="display text-4xl leading-[0.9] tracking-tight md:text-5xl lg:text-6xl">
+                Changelog
+              </h1>
+              <Spacer size="lg" sizeMobile="md" />
+              <p className="text-muted-foreground text-base md:text-lg">
+                All notable changes to pitsi/ui CLI and documentation.
+              </p>
+              <Spacer size="6xl" sizeMobile="2xl" />
+              <div className="flex justify-center">
+                <UploadIcon className="text-brand w-48" />
+              </div>
+            </div>
+          </LayoutGridItem>
+
+          <LayoutGridItem span={6} spanLg={3} className="lg:col-start-4">
+            <ChangelogContent
+              uiEntries={uiChangelog}
+              cliEntries={cliEntries}
+            />
+          </LayoutGridItem>
+        </LayoutGrid>
+        <Spacer size="6xl" sizeMobile="4xl" />
+      </div>
+    </div>
+  )
+}

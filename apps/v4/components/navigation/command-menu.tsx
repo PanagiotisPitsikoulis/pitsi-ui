@@ -168,10 +168,10 @@ export function CommandMenu({
       <DialogTrigger asChild>
         <Button
           data-slot="search-button"
-          variant="secondary"
+          variant="outline"
           size="icon"
           className={cn(
-            "border-border relative h-8 w-8 rounded-full border bg-background shadow-sm md:w-auto md:px-3 md:pr-12 md:shadow-xs"
+            "!bg-background relative h-8 w-8 rounded-full md:w-auto md:px-3 md:pr-12"
           )}
           onClick={() => setOpen(true)}
           {...props}
@@ -180,10 +180,10 @@ export function CommandMenu({
           <span className="ml-2 hidden pr-14 md:inline">Search...</span>
           <div className="absolute top-1.5 right-1.5 hidden md:flex">
             <KbdGroup className="gap-px">
-              <Kbd className="border-border bg-background dark:bg-secondary aspect-square rounded-full border px-1.5 shadow-xs">
+              <Kbd className="border-border bg-background dark:bg-secondary aspect-square rounded-full border px-1.5">
                 ⌘
               </Kbd>
-              <Kbd className="border-border bg-background dark:bg-secondary aspect-square rounded-full border px-1.5 shadow-xs">
+              <Kbd className="border-border bg-background dark:bg-secondary aspect-square rounded-full border px-1.5">
                 K
               </Kbd>
             </KbdGroup>

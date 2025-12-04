@@ -160,7 +160,7 @@ function PricingCard({
 }) {
   return (
     <div
-      className={`relative flex flex-col rounded-3xl border p-6 md:p-8 ${
+      className={`relative flex flex-col rounded-3xl border p-6 text-left md:p-8 ${
         highlighted
           ? "border-foreground/20 bg-foreground text-background shadow-sm"
           : "border-border bg-background shadow-sm"
@@ -207,7 +207,7 @@ function PricingCard({
         {featureList.map((feature, i) => (
           <li key={i} className="flex items-start gap-3">
             <Check
-              className={`mt-0.5 size-4 shrink-0 ${highlighted ? "text-background/60" : "text-muted-foreground"}`}
+              className={`mt-0.5 size-4 shrink-0 ${highlighted ? "text-background/60" : "text-brand"}`}
             />
             <span
               className={`text-sm ${highlighted ? "text-background/80" : ""}`}
@@ -243,18 +243,18 @@ export function PricingCardsSection({
   return (
     <div
       id="pricing"
-      className="container flex flex-col items-center justify-center px-6 py-24 text-center"
+      className="container flex flex-col items-center justify-center px-6 py-10 text-center md:py-20"
     >
       <p className="text-muted-foreground text-sm font-medium tracking-widest uppercase">
         Simple Pricing
       </p>
       <Spacer size="lg" sizeMobile="md" />
       <h2 className="display max-w-4xl text-4xl leading-[1.1] tracking-tight md:text-6xl lg:text-7xl">
-        One Price.
+        One Fair Price.
         <br />
         <span className="text-muted-foreground">Lifetime Access.</span>
       </h2>
-      <Spacer size="xl" sizeMobile="lg" />
+      <Spacer size="5xl" sizeMobile="3xl" />
 
       {/* License Type Toggle */}
       <div className="border-border bg-muted/50 mb-8 inline-flex rounded-full border p-1">
@@ -348,9 +348,31 @@ export function PricingCardsSection({
         </>
       ) : (
         <div className="grid w-full grid-cols-6 gap-6">
+          {/* Team Info Card */}
+          <div className="border-border bg-background col-span-6 flex flex-col justify-center rounded-3xl border p-6 text-left shadow-sm md:col-span-2 md:p-8">
+            <h3 className="text-lg font-semibold">Team Licenses</h3>
+            <p className="text-muted-foreground mt-2 text-sm">
+              Equip your entire team with premium components. Share API keys, collaborate on projects, and ship faster together.
+            </p>
+            <div className="mt-6 space-y-2">
+              <div className="flex items-center gap-2">
+                <Check className="text-brand size-4" />
+                <span className="text-sm">Centralized billing</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Check className="text-brand size-4" />
+                <span className="text-sm">Shared team dashboard</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Check className="text-brand size-4" />
+                <span className="text-sm">Volume discounts</span>
+              </div>
+            </div>
+          </div>
+
           {/* Startup Plan */}
           <PricingCard
-            className="col-span-6 md:col-span-3"
+            className="col-span-6 md:col-span-2"
             name="Startup"
             price="€999"
             originalPrice="€4,990"
@@ -372,10 +394,10 @@ export function PricingCardsSection({
             )}
           </PricingCard>
 
-          {/* Enterprise Plan */}
+          {/* Unlimited Plan */}
           <PricingCard
-            className="col-span-6 md:col-span-3"
-            name="Enterprise"
+            className="col-span-6 md:col-span-2"
+            name="Unlimited"
             price="€1,999"
             originalPrice="€14,970"
             priceLabel="one-time"
@@ -390,7 +412,6 @@ export function PricingCardsSection({
               <CheckoutButton
                 isLoggedIn={!!user}
                 planType="enterprise"
-                variant="highlighted"
               />
             )}
           </PricingCard>

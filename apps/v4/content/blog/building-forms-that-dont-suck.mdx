@@ -1,0 +1,53 @@
+---
+title: Building Forms That Don't Suck
+description: A practical guide to creating user-friendly forms with pitsi/ui. Validation, accessibility, and UX best practices included.
+date: "2024-11-15"
+category: tutorial
+image: /marketing/museum.jpg
+readTime: 8 min read
+author: pitsi/ui Team
+---
+
+Forms are where users interact most closely with your application. A poorly designed form can tank conversion rates and frustrate users. Here's how to build forms that people actually enjoy using.
+
+## Start with Structure
+
+Good form design starts with thoughtful structure:
+
+**Group related fields**: Name fields together, address fields together. Users should never wonder where to look next.
+
+**Use logical order**: Follow natural reading patterns. For Western audiences, left to right, top to bottom.
+
+**Minimize field count**: Every field is friction. Question whether each one is truly necessary.
+
+## Validation Done Right
+
+Validation should help, not punish. Here's our approach:
+
+**Validate on blur**: Don't show errors while users are still typing. Wait until they move to the next field.
+
+**Use inline errors**: Error messages should appear right next to the problem, not in a list at the top.
+
+**Be specific**: "Invalid email" is unhelpful. "Please include an @ symbol" tells users exactly what to fix.
+
+## The Power of Defaults
+
+Smart defaults reduce user effort:
+
+- Pre-fill country based on locale
+- Default date pickers to today
+- Remember previous selections when appropriate
+- Use placeholder text sparingly and meaningfully
+
+## Accessibility Essentials
+
+Our Form components handle the basics, but here's what to remember:
+
+- Every input needs a visible label (not just placeholder text)
+- Error messages must be programmatically associated with their inputs
+- Use `autocomplete` attributes for faster form filling
+- Ensure the form is fully keyboard navigable
+
+## Progressive Enhancement
+
+Start with native HTML form elements. They're accessible, keyboard-friendly, and work without JavaScript. Then enhance with client-side validation and better UX. Your forms should work even if JavaScript fails.

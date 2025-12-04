@@ -1,0 +1,70 @@
+---
+title: Component Composition Patterns
+description: Learn the composition patterns used throughout pitsi/ui. Build complex interfaces from simple, reusable pieces.
+date: "2024-11-02"
+category: deep-dive
+image: /marketing/surfing.jpg
+readTime: 7 min read
+author: pitsi/ui Team
+---
+
+Great component libraries aren't just collections of components—they're systems of composition. Here's how pitsi/ui components are designed to work together.
+
+## The Compound Component Pattern
+
+Many pitsi/ui components use compound components. Instead of one monolithic component with many props, you get multiple related components that work together:
+
+```jsx
+<Card>
+  <CardHeader>
+    <CardTitle>Title</CardTitle>
+    <CardDescription>Description</CardDescription>
+  </CardHeader>
+  <CardContent>Content here</CardContent>
+  <CardFooter>Footer actions</CardFooter>
+</Card>
+```
+
+This pattern provides flexibility while maintaining structure. You choose which pieces to use, and they automatically work together.
+
+## Slot Pattern with asChild
+
+Some components support the `asChild` prop, allowing you to replace the default rendered element:
+
+```jsx
+<Button asChild>
+  <Link href="/about">About</Link>
+</Button>
+```
+
+This gives you button styling with Link behavior. No wrapper divs, no style conflicts.
+
+## Controlled vs Uncontrolled
+
+Our components support both patterns:
+
+**Uncontrolled**: The component manages its own state. Simpler for basic use cases.
+
+**Controlled**: You manage state externally. Necessary for complex interactions or form libraries.
+
+## Composition Over Configuration
+
+Instead of dozens of props, we favor composition:
+
+```jsx
+// Not this
+<Input leftIcon={<SearchIcon />} rightIcon={<ClearIcon />} />
+
+// But this
+<InputGroup>
+  <InputLeftElement><SearchIcon /></InputLeftElement>
+  <Input />
+  <InputRightElement><ClearIcon /></InputRightElement>
+</InputGroup>
+```
+
+More verbose? Slightly. More flexible? Absolutely.
+
+## Why This Matters
+
+These patterns mean pitsi/ui components can handle use cases we never anticipated. You're not limited to what we thought of—you can compose solutions to your specific problems.

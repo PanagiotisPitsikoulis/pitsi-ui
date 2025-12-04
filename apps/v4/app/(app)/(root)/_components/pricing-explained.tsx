@@ -1,6 +1,6 @@
 export function PricingExplained() {
   return (
-    <section>
+    <section className="py-10 md:py-20">
       <div className="container px-6">
         <div className="grid grid-cols-6 gap-6">
           <div className="relative col-span-6 flex gap-2 rounded-lg border-dashed md:col-span-2 md:block md:border-l md:p-3">

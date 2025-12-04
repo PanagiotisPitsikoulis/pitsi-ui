@@ -1,0 +1,107 @@
+---
+title: Micro-interactions That Delight
+description: The tiny animations and feedback that make interfaces feel alive. How to add polish without overwhelming your users.
+date: "2024-11-30"
+category: design
+image: /marketing/surfing.jpg
+readTime: 7 min read
+author: pitsi/ui Team
+---
+
+The best interfaces feel alive. Not in a flashy, look-at-me way, but in a subtle, responsive way. This feeling comes from micro-interactions—the tiny moments of feedback that acknowledge user actions.
+
+## What Makes a Good Micro-interaction
+
+A great micro-interaction does three things:
+
+1. **Confirms the action** - Did my click register? Did the form submit?
+2. **Guides attention** - Where should I look next?
+3. **Adds personality** - Is this app friendly? Professional? Playful?
+
+Bad micro-interactions do the opposite: they distract, confuse, or slow users down.
+
+## The Principles
+
+### 1. Respond Immediately
+
+Users expect instant feedback. Any delay longer than 100ms feels sluggish. This is why we use CSS transitions instead of JavaScript animations wherever possible—they're hardware accelerated and feel instantaneous.
+
+### 2. Be Subtle
+
+The best micro-interactions are barely noticed consciously. A button that shifts 1-2px on hover. A card that gains a slight shadow when selected. These create a feeling of responsiveness without demanding attention.
+
+### 3. Match the Action
+
+Big actions deserve bigger feedback. Deleting something permanent? That animation can be more dramatic. Hovering over a menu item? Keep it minimal.
+
+### 4. Respect Reduced Motion
+
+Some users find animations disorienting or nauseating. Always honor the `prefers-reduced-motion` media query:
+
+```css
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+```
+
+## Examples in pitsi/ui
+
+### Button Hover States
+
+Our buttons don't just change color on hover—they have a subtle transform:
+
+- Scale up very slightly (1.02x)
+- Shift up 1px
+- Gain a hint more shadow
+
+This creates a "lifting" effect that feels tactile without being distracting.
+
+### Focus Rings
+
+When users tab through your interface, they need to know where they are. Our focus rings animate in smoothly, drawing attention without jarring.
+
+### Loading States
+
+Skeleton loaders pulse gently, indicating activity. Spinners rotate at a calm pace. Everything says "working on it" without screaming "WAIT!"
+
+### Toast Notifications
+
+Toasts slide in from the edge of the screen, pause for reading, then slide back out. The timing is carefully tuned—long enough to read, short enough not to annoy.
+
+## Implementation Tips
+
+### Use CSS Transitions for Micro-interactions
+
+```css
+.button {
+  transition: all 0.15s ease-out;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+```
+
+### Use Framer Motion for Larger Animations
+
+When you need more control—staggered lists, spring physics, gesture handling—Framer Motion is the right tool:
+
+```tsx
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.3 }}
+/>
+```
+
+### Test Without Animations
+
+Periodically disable all animations and use your interface. It should still work perfectly—animations enhance, they don't replace good UX.
+
+## Conclusion
+
+Micro-interactions are the difference between an interface that works and one that feels good to use. They require attention to detail and restraint—the temptation to over-animate is strong. But when done right, they create that intangible feeling of polish that users recognize, even if they can't articulate why.

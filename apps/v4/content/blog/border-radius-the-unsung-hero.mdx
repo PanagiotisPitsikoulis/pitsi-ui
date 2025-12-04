@@ -1,0 +1,93 @@
+---
+title: "Border Radius: The Unsung Hero"
+description: How rounded corners affect perception, usability, and brand personality. A deep dive into the details that matter.
+date: "2024-11-22"
+category: design
+image: /marketing/surfing.jpg
+readTime: 5 min read
+author: pitsi/ui Team
+---
+
+Border radius seems trivial. It's just how rounded the corners are, right? But this small detail has an outsized impact on how your interface feels. Sharp corners feel different than rounded ones. Very rounded feels different than slightly rounded.
+
+## The Psychology of Corners
+
+Humans have evolved to be wary of sharp edges—they can hurt us. Rounded shapes feel safer, friendlier, more approachable. This isn't superstition; it's documented in psychological research.
+
+That's why children's products use extreme rounding. Why harsh, industrial designs use sharp corners. Your choice of border radius communicates something about your brand.
+
+## Finding Your Radius
+
+### Sharp (0-2px)
+Creates a technical, precise feeling. Common in developer tools, enterprise software, and brutalist designs. Says "efficient" and "no-nonsense."
+
+### Subtle (4-6px)
+The sweet spot for most professional applications. Takes the edge off without feeling soft. This is where pitsi/ui lives by default.
+
+### Rounded (8-12px)
+Friendlier, more consumer-oriented. Common in social apps, productivity tools, and modern SaaS. Approachable without being childish.
+
+### Pill (full radius)
+Maximum friendliness. Works great for buttons and tags, but can feel unprofessional if overused. Best reserved for CTAs and badges.
+
+## Consistency is Everything
+
+Here's the rule: pick a radius and stick to it. Nothing looks more amateur than mixing different radii randomly. If your buttons are 8px radius, your cards should probably be 8px or 12px—not 4px or 16px.
+
+We use a simple scale:
+
+```css
+--radius-sm: 0.375rem;  /* 6px */
+--radius-md: 0.5rem;    /* 8px */
+--radius-lg: 0.75rem;   /* 12px */
+--radius-xl: 1rem;      /* 16px */
+--radius-full: 9999px;  /* Pill */
+```
+
+Each step up is reserved for specific contexts—cards get `md`, modals get `lg`, avatars get `full`.
+
+## Context Matters
+
+Different elements benefit from different amounts of rounding:
+
+**Buttons**: Medium to high rounding. They need to feel clickable, inviting.
+
+**Cards**: Subtle to medium. Enough to feel friendly, not so much that corners waste space.
+
+**Inputs**: Match your buttons. They often appear together and should feel cohesive.
+
+**Images**: Often look best with subtle rounding or none at all. Heavy rounding can feel forced.
+
+**Modals**: Medium rounding softens the interruption.
+
+## Nested Radius
+
+When you have rounded containers with rounded children, the math matters. The inner radius should be smaller than the outer radius minus the padding:
+
+```
+Inner radius = Outer radius - Padding
+```
+
+If your card has 12px radius and 16px padding, elements inside should have roughly 8px radius (12 - 4) or less.
+
+## The Details
+
+### Inner vs. Outer Corners
+
+When elements are adjacent (like tabs), the outer corners round while inner corners stay sharp. This prevents the awkward "rounded corners touching" effect.
+
+### Responsive Radius
+
+On mobile, consider reducing your radius. Large radii waste precious screen space, and the smaller screen already feels more intimate.
+
+### Borders and Radius
+
+When using borders with rounded corners, ensure the border radius applies to the border, not just the background. In CSS, this is automatic, but in some design tools you need to be explicit.
+
+## Our Approach
+
+We chose a subtle, professional radius as our default—8px for most components. It's rounded enough to feel modern and friendly, but not so round that it looks playful or unprofessional.
+
+But we also provide CSS variables for every radius, so you can adjust the entire system to match your brand. Want sharper corners for a developer-focused product? Change one variable. Want softer corners for a consumer app? Same thing.
+
+The details matter. Border radius is one of those details.

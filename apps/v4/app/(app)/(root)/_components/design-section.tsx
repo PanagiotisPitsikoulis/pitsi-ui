@@ -1,512 +1,259 @@
 "use client"
 
+import * as React from "react"
+import { useRef, useState } from "react"
+
 import { ParallaxImage } from "@/registry/new-york-v4/animations/background-image-parallax/background-image-parallax"
+import { TextGradientOpacity } from "@/registry/new-york-v4/animations/text-gradient-opacity/text-gradient-opacity"
 import {
-  PerspectiveContainer,
-  PerspectiveSection,
-} from "@/registry/new-york-v4/animations/perspective-section-transition/perspective-section-transition"
+  HorizontalScrollContainer,
+  HorizontalSlide,
+} from "@/registry/new-york-v4/animations/text-parallax/text-parallax"
+import { Spinner } from "@/registry/new-york-v4/ui/spinner"
 
 import { StripeBgGuides } from "./striped-bg-guides"
+
+// Featured blocks for the design showcase grid - using confirmed working blocks
+const DESIGN_BLOCKS = [
+  "marketing-gallery-gallery-section-with-innovation",
+  "marketing-hero-section-accommodation-businesses-hero-section",
+  "marketing-blogs-news-alternate-blog-post",
+  "marketing-hero-section-accommodation-hero-section-with-social-icons",
+  "marketing-portfolio-tailwind-css-portfolio-with-product-or-project-s-features",
+  "e-commerce-refund-status-refund-status-with-order-summary",
+  "marketing-hero-section-ecommerce-hero-section",
+  "marketing-hero-section-hero-section-with-customer-logos",
+  "marketing-hero-section-hero-section-with-image-tiles",
+  "marketing-hero-section-hero-section-with-phone-mockup",
+  "marketing-hero-section-hero-section-with-browser-mockup",
+  "marketing-pricing-pricing-section-with-comparison-table",
+  "marketing-faq-faq-section-with-categories",
+  "marketing-testimonials-testimonials-with-rating",
+  "marketing-feature-feature-section-with-cards",
+  "marketing-cta-cta-section-with-app-screenshot",
+]
+
+function RegistryBlockPreview({
+  name,
+  className = "",
+}: {
+  name: string
+  className?: string
+}) {
+  const [isLoading, setIsLoading] = useState(true)
+  const [isInView, setIsInView] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    checkMobile()
+    window.addEventListener("resize", checkMobile)
+    return () => window.removeEventListener("resize", checkMobile)
+  }, [])
+
+  React.useEffect(() => {
+    const element = containerRef.current
+    if (!element) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsInView(true)
+          }
+        })
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "200px",
+      }
+    )
+
+    observer.observe(element)
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [])
+
+  const desktopScale = 0.25
+  const mobileScale = 0.2
+  const scale = isMobile ? mobileScale : desktopScale
+  const sizeMultiplier = 1 / scale
+
+  return (
+    <div
+      ref={containerRef}
+      className={`bg-background relative aspect-[4/3] w-full overflow-hidden ${className}`}
+    >
+      {isInView && (
+        <>
+          {isLoading && (
+            <div className="absolute inset-0 z-10 flex items-center justify-center">
+              <Spinner className="size-4" />
+            </div>
+          )}
+          <iframe
+            src={`/view/new-york-v4/${name}`}
+            className="pointer-events-none h-full w-full origin-top-left"
+            style={{
+              transform: `scale(${scale})`,
+              width: `${sizeMultiplier * 100}%`,
+              height: `${sizeMultiplier * 100}%`,
+            }}
+            onLoad={() => setIsLoading(false)}
+            scrolling="no"
+          />
+        </>
+      )}
+    </div>
+  )
+}
 
 export function DesignSection() {
   return (
     <div className="bg-background relative isolate flex flex-col overflow-hidden">
-      <StripeBgGuides darkMode contained zIndex={999} glowOpacity={0.8} />
+      <StripeBgGuides contained glowOpacity={0.8} />
+
       {/* Intro Section */}
-      <PerspectiveContainer height="200vh">
-        <PerspectiveSection
-          scaleRange={[1, 0.85]}
-          rotateRange={[0, -4]}
-          sticky
-          className="relative flex flex-col items-center justify-start gap-6 pt-16 pb-[10vh] text-center text-white"
-        >
-          <img
-            src="/marketing/museum-3.jpg"
-            alt="Museum"
-            className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover brightness-[0.8] saturate-0"
-          />
-          <img
-            src="/marketing/woman-museum.png"
-            alt="Museum"
-            className="pointer-events-none absolute inset-0 z-50 h-full w-full object-cover brightness-[0.8] saturate-0"
-          />
-          <div className="relative z-10 container px-6">
-            <div className="grid grid-cols-6 gap-6">
-              {/* Hero text - centered */}
-              <div className="col-span-6 flex flex-col items-center gap-2 md:gap-4 text-center">
-                <p className="text-sm font-medium tracking-widest uppercase">
-                  Where Engineering Meets Aesthetics
-                </p>
-                <h2 className="display text-[12vw] leading-[0.85] tracking-tight md:text-[8vw]">
-                  Unparalleled
-                </h2>
-                <div className="flex items-center">
-                  <h2 className="display text-[12vw] leading-[0.85] tracking-tight md:text-[8vw]">
-                    Po
-                  </h2>
-                  <div className="w-0 md:w-32 lg:w-40" />
-                  <h2 className="display text-[12vw] leading-[0.85] tracking-tight md:text-[8vw]">
-                    lish
-                  </h2>
-                </div>
-              </div>
-              {/* Small text - left 2 columns */}
-              <div className="col-span-6 mt-16 flex flex-col items-start md:col-span-2">
-                <p className="text-xs">Every detail considered.</p>
-                <p className="text-xs">
-                  From typography to color, spacing to motion.
-                </p>
-              </div>
-            </div>
-          </div>
-        </PerspectiveSection>
-
-        <PerspectiveSection
-          scaleRange={[0.85, 1]}
-          rotateRange={[4, 0]}
-          className="relative overflow-hidden"
-        >
-          <ParallaxImage
-            src="/marketing/museum-2.jpg"
-            alt="Mountain landscape"
-            className="absolute inset-0 h-full w-full"
-            imageClassName="brightness-[0.3] saturate-0"
-            range={["-5%", "5%"]}
-            offset={["start end", "end start"]}
-          />
-          <div className="relative z-10 container flex h-full flex-col justify-end px-6 py-16">
-            {/* Main content - Title left, Problem/Solution right */}
-            <div className="grid grid-cols-6 items-end gap-6">
-              {/* Left column - Title & Philosophy */}
-              <div className="col-span-6 md:col-span-4">
-                <p className="mb-1 text-sm font-medium tracking-widest text-zinc-400 uppercase md:text-[10px]">
-                  Teaches you how to design
-                </p>
-                <h2 className="display text-4xl leading-[0.95] text-white md:text-[3vw] md:font-medium md:uppercase">
-                  Built-in taste
-                </h2>
-                <p className="mt-6 max-w-lg text-sm leading-relaxed text-zinc-400 mix-blend-difference">
-                  Maybe you're not a designer. You don't need to be. We've made
-                  hundreds of design decisions so you don't have to.
-                </p>
-                <div className="mt-10 hidden flex-wrap gap-4 text-[9px] tracking-wider text-white uppercase md:flex">
-                  <span>65+ Components</span>
-                  <span>·</span>
-                  <span>Zero design skills needed</span>
-                  <span>·</span>
-                  <span>Infinite combinations</span>
-                </div>
-              </div>
-
-              {/* Right column - Problem & Solution */}
-              <div className="col-span-6 md:col-span-2">
-                <div className="space-y-5">
-                  {/* The Problem */}
-                  <div>
-                    <div className="mb-2 flex items-center gap-2">
-                      <div className="h-px flex-1 bg-zinc-700" />
-                      <p className="text-[11px] font-medium tracking-widest text-white uppercase md:text-[10px]">
-                        The Problem
-                      </p>
-                    </div>
-                    <p className="text-[15px] leading-relaxed text-zinc-300 md:text-xs">
-                      Every developer has been there. You have the technical
-                      skills to build anything, but when it comes to making it
-                      look good, something always feels off. Too many choices,
-                      not enough <span className="text-white font-medium">constraints</span>.
-                    </p>
-                  </div>
-
-                  {/* Stats Row */}
-                  <div className="grid grid-cols-3 gap-2">
-                    <div className="text-center">
-                      <p className="text-2xl font-light text-white md:text-lg">73%</p>
-                      <p className="text-[10px] text-white uppercase tracking-wider leading-tight md:text-[8px]">
-                        say design is<br/>their weakness
-                      </p>
-                    </div>
-                    <div className="text-center border-x border-zinc-700">
-                      <p className="text-2xl font-light text-white md:text-lg">4h+</p>
-                      <p className="text-[10px] text-white uppercase tracking-wider leading-tight md:text-[8px]">
-                        tweaking UI<br/>per feature
-                      </p>
-                    </div>
-                    <div className="text-center">
-                      <p className="text-2xl font-light text-white md:text-lg">#1</p>
-                      <p className="text-[10px] text-white uppercase tracking-wider leading-tight md:text-[8px]">
-                        pain point<br/>for solo devs
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* The Solution */}
-                  <div>
-                    <div className="mb-2 flex items-center gap-2">
-                      <div className="h-px flex-1 bg-zinc-700" />
-                      <p className="text-[11px] font-medium tracking-widest text-white uppercase md:text-[10px]">
-                        The Solution
-                      </p>
-                    </div>
-                    <p className="text-[15px] leading-relaxed text-zinc-300 md:text-xs">
-                      Pitsi UI gives you <span className="text-white font-medium">ready-made blocks</span>, composable components,
-                      and guides. Customizable, but with <span className="text-white">just enough options</span>—so
-                      it can't look ugly. Swap images, change colors, make it yours.
-                    </p>
-                  </div>
-
-                  {/* Solution Stats Row */}
-                  <div className="grid grid-cols-3 gap-2">
-                    <div className="text-center">
-                      <p className="text-2xl font-light text-white md:text-lg">50+</p>
-                      <p className="text-[10px] text-white uppercase tracking-wider leading-tight md:text-[8px]">
-                        design decisions<br/>made for you
-                      </p>
-                    </div>
-                    <div className="text-center border-x border-zinc-700">
-                      <p className="text-2xl font-light text-white md:text-lg">1000+</p>
-                      <p className="text-[10px] text-white uppercase tracking-wider leading-tight md:text-[8px]">
-                        ready to use<br/>assets
-                      </p>
-                    </div>
-                    <div className="text-center">
-                      <p className="text-2xl font-light text-white md:text-lg">8px</p>
-                      <p className="text-[10px] text-white uppercase tracking-wider leading-tight md:text-[8px]">
-                        spacing grid<br/>system
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* AI Section */}
-                  <div>
-                    <div className="mb-2 flex items-center gap-2">
-                      <div className="h-px flex-1 bg-zinc-700" />
-                      <p className="text-[11px] font-medium tracking-widest text-white uppercase md:text-[10px]">
-                        AI-friendly design
-                      </p>
-                    </div>
-                    <p className="text-[15px] leading-relaxed text-zinc-300 md:text-xs">
-                      Give your AI the tools to <span className="text-white font-medium">actually design</span>.
-                      Create sections, improve layouts, get feedback, and compose full pages
-                      with <span className="text-white">consistent, professional results</span>. Slop-proof.
-                    </p>
-                  </div>
-
-                  {/* AI Stats Row */}
-                  <div className="grid grid-cols-3 gap-2">
-                    <div className="text-center">
-                      <p className="text-2xl font-light text-white md:text-lg">MCP</p>
-                      <p className="text-[10px] text-white uppercase tracking-wider leading-tight md:text-[8px]">
-                        server<br/>included
-                      </p>
-                    </div>
-                    <div className="text-center border-x border-zinc-700">
-                      <p className="text-2xl font-light text-white md:text-lg">AI</p>
-                      <p className="text-[10px] text-white uppercase tracking-wider leading-tight md:text-[8px]">
-                        friendly<br/>docs
-                      </p>
-                    </div>
-                    <div className="text-center">
-                      <p className="text-2xl font-light text-white md:text-lg">TS</p>
-                      <p className="text-[10px] text-white uppercase tracking-wider leading-tight md:text-[8px]">
-                        props for<br/>blocks
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </PerspectiveSection>
-      </PerspectiveContainer>
-
-      {/* Design System Section */}
-      <div className="bg-background relative min-h-screen overflow-hidden">
+      <div className="relative flex min-h-screen flex-col items-center justify-start gap-6 pt-16 pb-[10vh] text-center">
         <ParallaxImage
-          src="/marketing/museum.jpg"
-          alt="Abstract art"
-          className="absolute inset-0 h-full w-full"
-          imageClassName="brightness-[0.25] saturate-0"
+          src="/marketing/man-sky.jpg"
+          alt="Museum"
+          className="pointer-events-none absolute inset-0 z-0 h-full w-full"
+          imageClassName="object-cover object-bottom"
           range={["-5%", "5%"]}
           offset={["start end", "end start"]}
         />
-        <div className="relative z-10 container px-6 py-16">
+        <ParallaxImage
+          src="/marketing/man-sky-no-bg.png"
+          alt="Museum"
+          className="pointer-events-none absolute inset-0 z-50 h-full w-full"
+          imageClassName="object-cover object-bottom"
+          range={["-5%", "5%"]}
+          offset={["start end", "end start"]}
+        />
+        <div className="relative z-10 container px-6">
           <div className="grid grid-cols-6 gap-6">
-            {/* Header - left 2 columns */}
-            <div className="col-span-6 mb-8 pr-8 lg:col-span-2 lg:mb-0 lg:pr-12">
-              <p className="mb-1 text-sm font-medium tracking-widest text-zinc-400 uppercase">
-                Advanced Theme System
+            <div className="col-span-6 flex flex-col items-center gap-2 text-center text-shadow-xs md:gap-4">
+              <p className="text-sm font-medium tracking-widest text-white uppercase">
+                Where Engineering Meets Aesthetics
               </p>
-              <h2 className="display mb-6 text-4xl leading-[0.95] text-white md:text-5xl">
-                Complete
-                <br />
-                Foundation
+              <h2 className="display text-[12vw] leading-[0.85] tracking-tight text-white md:text-[8vw]">
+                Unparalleled
               </h2>
-              <p className="max-w-md text-sm text-zinc-400">
-                Typography, colors, spacing, and components. Everything you need
-                to build consistent, beautiful interfaces.
+              <div className="flex items-center">
+                <h2 className="display text-[12vw] leading-[0.85] tracking-tight text-white md:text-[8vw]">
+                  Design
+                </h2>
+              </div>
+            </div>
+            <div className="col-span-6 mt-16 flex flex-col items-start md:col-span-2">
+              <p className="text-base text-white text-shadow-2xs">
+                Every detail considered.
+              </p>
+              <p className="text-base text-white text-shadow-2xs">
+                From typography to color, spacing to motion.
               </p>
             </div>
+          </div>
+        </div>
+      </div>
 
-            {/* Content - right 4 columns as 2x2 grid */}
-            <div className="col-span-6 grid grid-cols-2 gap-6 lg:col-span-4">
-              {/* Typography */}
-              <div className="flex flex-col">
-                <div className="mb-4">
-                  <h3 className="text-sm font-semibold text-white">
-                    Typography
-                  </h3>
-                  <p className="text-sm text-zinc-500">
-                    Beautiful text hierarchy, zero guesswork
-                  </p>
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <p className="text-4xl font-bold text-white">Aa</p>
-                    <p className="text-[10px] text-zinc-600">Inter Bold</p>
-                  </div>
-                  <div>
-                    <p className="display text-4xl text-zinc-300">Aa</p>
-                    <p className="text-[10px] text-zinc-600">Display</p>
-                  </div>
-                  <div>
-                    <p className="font-mono text-4xl text-zinc-400">Aa</p>
-                    <p className="text-[10px] text-zinc-600">Mono</p>
-                  </div>
-                  <div>
-                    <p className="text-4xl text-zinc-500 italic">Aa</p>
-                    <p className="text-[10px] text-zinc-600">Italic</p>
-                  </div>
-                </div>
-              </div>
+      {/* Horizontal Parallax - The Problem */}
+      <HorizontalScrollContainer className="bg-background relative flex min-h-[80vh] flex-col justify-center overflow-hidden py-24">
+        <HorizontalSlide
+          direction="left"
+          distance={400}
+          className="text-foreground/5 display text-[20vw] leading-none font-bold tracking-tighter whitespace-nowrap"
+        >
+          HOURS WASTED • STILL LOOKS OFF • HOURS WASTED •
+        </HorizontalSlide>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="container px-6 text-center">
+            <p className="text-brand mb-4 text-xs font-medium tracking-widest uppercase">
+              We Get It
+            </p>
+            <h2 className="display text-foreground mx-auto max-w-4xl text-4xl leading-tight tracking-tight md:text-6xl lg:text-7xl">
+              You&apos;re not a designer.
+              <br />
+              <span className="text-muted-foreground">
+                That&apos;s the point.
+              </span>
+            </h2>
+          </div>
+        </div>
+        <HorizontalSlide
+          direction="right"
+          distance={400}
+          className="text-foreground/5 display text-[20vw] leading-none font-bold tracking-tighter whitespace-nowrap"
+        >
+          SOMETHING&apos;S WRONG • CAN&apos;T TELL WHAT • SOMETHING&apos;S WRONG •
+        </HorizontalSlide>
+      </HorizontalScrollContainer>
 
-              {/* Colors */}
-              <div className="flex flex-col">
-                <div className="mb-4">
-                  <h3 className="text-sm font-semibold text-white">Colors</h3>
-                  <p className="text-sm text-zinc-500">
-                    Harmonious palettes that just work together
-                  </p>
-                </div>
-                <div className="flex flex-wrap gap-y-3">
-                  {/* Blue */}
-                  <div className="flex -space-x-2">
-                    <div className="size-8 rounded-full border-2 border-zinc-900 bg-blue-300" />
-                    <div className="size-8 rounded-full border-2 border-zinc-900 bg-blue-500" />
-                    <div className="size-8 rounded-full border-2 border-zinc-900 bg-blue-700" />
-                    <div className="size-8 rounded-full border-2 border-zinc-900 bg-blue-900" />
-                  </div>
-                  {/* Emerald */}
-                  <div className="flex -space-x-2">
-                    <div className="size-8 rounded-full border-2 border-zinc-900 bg-emerald-300" />
-                    <div className="size-8 rounded-full border-2 border-zinc-900 bg-emerald-500" />
-                    <div className="size-8 rounded-full border-2 border-zinc-900 bg-emerald-700" />
-                    <div className="size-8 rounded-full border-2 border-zinc-900 bg-emerald-900" />
-                  </div>
-                  {/* Amber */}
-                  <div className="flex -space-x-2">
-                    <div className="size-8 rounded-full border-2 border-zinc-900 bg-amber-300" />
-                    <div className="size-8 rounded-full border-2 border-zinc-900 bg-amber-500" />
-                    <div className="size-8 rounded-full border-2 border-zinc-900 bg-amber-700" />
-                    <div className="size-8 rounded-full border-2 border-zinc-900 bg-amber-900" />
-                  </div>
-                  {/* Rose */}
-                  <div className="flex -space-x-2">
-                    <div className="size-8 rounded-full border-2 border-zinc-900 bg-rose-300" />
-                    <div className="size-8 rounded-full border-2 border-zinc-900 bg-rose-500" />
-                    <div className="size-8 rounded-full border-2 border-zinc-900 bg-rose-700" />
-                    <div className="size-8 rounded-full border-2 border-zinc-900 bg-rose-900" />
-                  </div>
-                  {/* Violet */}
-                  <div className="flex -space-x-2">
-                    <div className="size-8 rounded-full border-2 border-zinc-900 bg-violet-300" />
-                    <div className="size-8 rounded-full border-2 border-zinc-900 bg-violet-500" />
-                    <div className="size-8 rounded-full border-2 border-zinc-900 bg-violet-700" />
-                    <div className="size-8 rounded-full border-2 border-zinc-900 bg-violet-900" />
-                  </div>
-                  {/* Zinc */}
-                  <div className="flex -space-x-2">
-                    <div className="size-8 rounded-full border-2 border-zinc-900 bg-zinc-300" />
-                    <div className="size-8 rounded-full border-2 border-zinc-900 bg-zinc-500" />
-                    <div className="size-8 rounded-full border-2 border-zinc-900 bg-zinc-700" />
-                    <div className="size-8 rounded-full border-2 border-zinc-900 bg-zinc-800" />
-                  </div>
-                </div>
-              </div>
+      {/* Text Gradient Opacity - The Solution */}
+      <div className="bg-muted relative min-h-[70vh] overflow-hidden">
+        <div className="relative flex min-h-[70vh] items-center py-24">
+          <div className="container px-6">
+            <p className="text-brand mb-6 text-xs font-medium tracking-widest uppercase">
+              Every Pixel Already Considered
+            </p>
+            <TextGradientOpacity
+              text="Obsessive whitespace. Intentional contrast. Rhythm in every layout. Components with soul — designed by humans who sweat the details, so you don't have to."
+              className="[&_p]:text-foreground [&_p]:text-3xl [&_p]:leading-tight [&_p]:font-normal md:[&_p]:text-5xl lg:[&_p]:text-6xl"
+            />
+          </div>
+        </div>
+      </div>
 
-              {/* Separator between rows */}
-              <div className="col-span-2 border-t border-zinc-700/50" />
+      {/* Final CTA */}
+      <HorizontalScrollContainer className="bg-muted relative flex min-h-[80vh] flex-col justify-center overflow-hidden py-24">
+        <HorizontalSlide
+          direction="left"
+          distance={400}
+          className="text-foreground/5 display text-[20vw] leading-none font-bold tracking-tighter whitespace-nowrap"
+        >
+          PIXEL PERFECT • CLEAN LAYOUTS • PRO QUALITY •
+        </HorizontalSlide>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="container px-6 text-center">
+            <p className="text-brand mb-4 text-xs font-medium tracking-widest uppercase">
+              Level Up Your Project's Design
+            </p>
+            <h2 className="display text-foreground mx-auto max-w-4xl text-4xl leading-tight tracking-tight md:text-6xl lg:text-7xl">
+              Ship work you&apos;re proud of.
+              <br />
+              <span className="text-muted-foreground">
+                Finally.
+              </span>
+            </h2>
+          </div>
+        </div>
+        <HorizontalSlide
+          direction="right"
+          distance={400}
+          className="text-foreground/5 display text-[20vw] leading-none font-bold tracking-tighter whitespace-nowrap"
+        >
+          DESIGN SYSTEM • VISUAL POLISH • ZERO COMPROMISES •
+        </HorizontalSlide>
+      </HorizontalScrollContainer>
 
-              {/* Spacing */}
-              <div className="flex flex-col">
-                <div className="mb-4">
-                  <h3 className="text-sm font-semibold text-white">Spacing</h3>
-                  <p className="text-sm text-zinc-500">
-                    Consistent rhythm without the math
-                  </p>
-                </div>
-                <div className="grid grid-cols-3 gap-3">
-                  <div className="flex items-center gap-2">
-                    <div className="h-1 w-1 rounded-sm bg-zinc-500" />
-                    <span className="text-[10px] text-zinc-600">4px</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-sm bg-zinc-500" />
-                    <span className="text-[10px] text-zinc-600">8px</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="h-3 w-3 rounded-sm bg-zinc-500" />
-                    <span className="text-[10px] text-zinc-600">12px</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="h-4 w-4 rounded-sm bg-zinc-500" />
-                    <span className="text-[10px] text-zinc-600">16px</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="h-5 w-5 rounded-sm bg-zinc-500" />
-                    <span className="text-[10px] text-zinc-600">20px</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="h-6 w-6 rounded-sm bg-zinc-500" />
-                    <span className="text-[10px] text-zinc-600">24px</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="h-8 w-8 rounded-sm bg-zinc-500" />
-                    <span className="text-[10px] text-zinc-600">32px</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="h-10 w-10 rounded-sm bg-zinc-500" />
-                    <span className="text-[10px] text-zinc-600">40px</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="h-12 w-12 rounded-sm bg-zinc-500" />
-                    <span className="text-[10px] text-zinc-600">48px</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Components */}
-              <div className="flex flex-col">
-                <div className="mb-4">
-                  <h3 className="text-sm font-semibold text-white">
-                    Components
-                  </h3>
-                  <p className="text-sm text-zinc-500">
-                    Production-ready, no styling required
-                  </p>
-                </div>
-                <div className="space-y-2.5">
-                  {/* Buttons */}
-                  <div className="flex flex-wrap gap-1.5">
-                    <div className="rounded-md bg-white px-2 py-0.5 text-[10px] font-medium leading-none text-zinc-900">
-                      Button
-                    </div>
-                    <div className="rounded-md border border-zinc-600 px-2 py-0.5 text-[10px] font-medium leading-none text-white">
-                      Outline
-                    </div>
-                    <div className="rounded-md bg-blue-500 px-2 py-0.5 text-[10px] font-medium leading-none text-white">
-                      Primary
-                    </div>
-                    <div className="rounded-md bg-zinc-800 px-2 py-0.5 text-[10px] font-medium leading-none text-zinc-400">
-                      Ghost
-                    </div>
-                  </div>
-                  {/* Input & Select */}
-                  <div className="flex gap-2">
-                    <div className="h-7 flex-1 rounded-md border border-zinc-700 bg-zinc-900/50" />
-                    <div className="flex h-7 items-center gap-1 rounded-md border border-zinc-700 bg-zinc-900/50 px-2">
-                      <span className="text-[10px] text-zinc-400">Select</span>
-                      <span className="text-[8px] text-zinc-600">▼</span>
-                    </div>
-                  </div>
-                  {/* Badges */}
-                  <div className="flex flex-wrap gap-1.5">
-                    <div className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[9px] font-medium text-emerald-400">
-                      Completed
-                    </div>
-                    <div className="rounded-full bg-amber-500/20 px-2 py-0.5 text-[9px] font-medium text-amber-400">
-                      Pending
-                    </div>
-                    <div className="rounded-full bg-rose-500/20 px-2 py-0.5 text-[9px] font-medium text-rose-400">
-                      Cancelled
-                    </div>
-                    <div className="rounded-full bg-blue-500/20 px-2 py-0.5 text-[9px] font-medium text-blue-400">
-                      New
-                    </div>
-                  </div>
-                  {/* Toggle, Checkbox, Radio, Slider */}
-                  <div className="flex items-center gap-3">
-                    <div className="h-4 w-8 rounded-full bg-blue-500 p-0.5">
-                      <div className="ml-auto h-3 w-3 rounded-full bg-white" />
-                    </div>
-                    <div className="flex h-4 w-4 items-center justify-center rounded border border-zinc-600 bg-blue-500 text-[10px] text-white">
-                      ✓
-                    </div>
-                    <div className="h-4 w-4 rounded-full border-2 border-zinc-600">
-                      <div className="m-0.5 h-2 w-2 rounded-full bg-blue-500" />
-                    </div>
-                    <div className="relative h-1 w-12 rounded-full bg-zinc-700">
-                      <div className="absolute top-1/2 left-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white shadow" />
-                    </div>
-                  </div>
-                  {/* Avatar stack & Tooltip */}
-                  <div className="flex items-center gap-3">
-                    <div className="flex -space-x-2">
-                      <div className="h-6 w-6 rounded-full border-2 border-zinc-900 bg-blue-500" />
-                      <div className="h-6 w-6 rounded-full border-2 border-zinc-900 bg-emerald-500" />
-                      <div className="h-6 w-6 rounded-full border-2 border-zinc-900 bg-amber-500" />
-                      <div className="flex h-6 w-6 items-center justify-center rounded-full border-2 border-zinc-900 bg-zinc-700 text-[9px] text-white">
-                        +3
-                      </div>
-                    </div>
-                    <div className="rounded bg-zinc-800 px-2 py-1 text-[9px] text-white">
-                      Tooltip
-                    </div>
-                  </div>
-                  {/* Progress */}
-                  <div className="h-1.5 w-full rounded-full bg-zinc-800">
-                    <div className="h-full w-2/3 rounded-full bg-blue-500" />
-                  </div>
-                </div>
-              </div>
-
-              {/* Separator before Layout */}
-              <div className="col-span-2 border-t border-zinc-700/50" />
-
-              {/* Layout - spans 2 columns */}
-              <div className="col-span-2 flex flex-col">
-                <div className="mb-4">
-                  <h3 className="text-sm font-semibold text-white">Layout</h3>
-                  <p className="text-sm text-zinc-500">
-                    Pixel-perfect layouts, effortlessly
-                  </p>
-                </div>
-                <div className="flex gap-3">
-                  {/* Grid example */}
-                  <div className="flex-1 rounded-lg border border-zinc-700/50 bg-zinc-800/30 p-3">
-                    <div className="grid grid-cols-6 gap-1.5">
-                      <div className="col-span-2 h-8 rounded bg-zinc-700" />
-                      <div className="col-span-4 h-8 rounded bg-zinc-700" />
-                      <div className="col-span-3 h-8 rounded bg-zinc-700" />
-                      <div className="col-span-3 h-8 rounded bg-zinc-700" />
-                      <div className="col-span-6 h-8 rounded bg-zinc-700" />
-                    </div>
-                  </div>
-                  {/* Container example */}
-                  <div className="flex-1 rounded-lg border border-zinc-700/50 bg-zinc-800/30 p-3">
-                    <div className="flex flex-col gap-1.5">
-                      <div className="flex gap-1.5">
-                        <div className="h-8 w-8 shrink-0 rounded bg-zinc-700" />
-                        <div className="h-8 flex-1 rounded bg-zinc-700" />
-                      </div>
-                      <div className="h-16 rounded bg-zinc-700" />
-                      <div className="flex gap-1.5">
-                        <div className="h-8 flex-1 rounded bg-zinc-700" />
-                        <div className="h-8 flex-1 rounded bg-zinc-700" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+      {/* Blocks Grid with Fade */}
+      <div className="relative z-50 overflow-hidden pt-24 pb-24">
+        <div className="container px-6">
+          <div className="[mask-image:linear-gradient(to_bottom,black_0%,black_50%,transparent_100%)]">
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+              {DESIGN_BLOCKS.map((blockName) => (
+                <RegistryBlockPreview
+                  key={blockName}
+                  name={blockName}
+                  className="rounded-2xl border shadow-sm"
+                />
+              ))}
             </div>
           </div>
         </div>
