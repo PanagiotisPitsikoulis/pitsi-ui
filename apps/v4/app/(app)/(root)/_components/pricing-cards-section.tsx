@@ -374,7 +374,7 @@ export function PricingCardsSection({
                 )}
               </PricingCard>
               {/* Decorative overlay icon */}
-              <RightClickIcon className="text-brand pointer-events-none absolute bottom-0 right-0 z-20 hidden size-32 translate-x-6 translate-y-6 md:block" />
+              <RightClickIcon className="text-primary-foreground pointer-events-none absolute -bottom-2 -right-2 z-20 hidden size-32 md:block" />
             </div>
 
             {/* Exclusive Plan */}
