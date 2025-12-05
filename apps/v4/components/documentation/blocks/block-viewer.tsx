@@ -285,7 +285,6 @@ function BlockViewerView({ styleName }: { styleName: Style["name"] }) {
   return (
     <div className="hidden group-data-[view=code]/block-view-wrapper:hidden md:h-(--height) lg:flex">
       <div className="relative grid w-full gap-4">
-        <div className="absolute inset-0 right-4 [background-image:radial-gradient(#d4d4d4_1px,transparent_1px)] [background-size:20px_20px] dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]"></div>
         <ResizablePanelGroup
           id={`block-viewer-${item.name}`}
           direction="horizontal"
@@ -338,7 +337,6 @@ function BlockViewerMobile({ styleName }: { styleName: Style["name"] }) {
   return (
     <div className="group-data-[view=code]/block-view-wrapper:hidden lg:hidden">
       <div className="relative w-full overflow-x-auto">
-        <div className="absolute inset-0 [background-image:radial-gradient(#d4d4d4_1px,transparent_1px)] [background-size:20px_20px] dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]"></div>
         <div className="after:bg-background/50 relative min-w-[1024px] after:absolute after:inset-0 after:z-0">
           <div className="relative z-10 flex items-center gap-2 p-2">
             <ReadinessBadge readiness={item.readiness} />

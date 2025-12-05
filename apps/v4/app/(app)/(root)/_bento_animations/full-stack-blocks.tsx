@@ -254,6 +254,7 @@ export function FullStackBlocksIllustration() {
         gradientStopColor={BRAND_COLOR}
         reverse
       />
+
     </div>
   )
 }

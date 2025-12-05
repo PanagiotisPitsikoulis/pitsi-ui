@@ -41,7 +41,7 @@ export function SmartCustomizationIllustration() {
         {/* Avatar Row */}
         <div className="flex items-center gap-3">
           <motion.div
-            className="flex items-center justify-center rounded-lg bg-muted"
+            className={`flex items-center justify-center rounded-lg transition-colors duration-300 ${hasAccent ? 'bg-brand/20' : 'bg-muted'}`}
             animate={{
               width: isExpanded ? 40 : 32,
               height: isExpanded ? 40 : 32,
@@ -49,11 +49,10 @@ export function SmartCustomizationIllustration() {
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
             <motion.div
-              className="rounded bg-muted-foreground"
+              className={`rounded transition-colors duration-300 ${hasAccent ? 'bg-brand' : 'bg-foreground/40'}`}
               animate={{
                 width: isExpanded ? 20 : 14,
                 height: isExpanded ? 20 : 14,
-                opacity: hasAccent ? 0.5 : 0.3,
               }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
             />
@@ -87,34 +86,37 @@ export function SmartCustomizationIllustration() {
           <div className="flex flex-col gap-2">
             <div className="flex gap-2">
               <div className="h-1.5 flex-1 rounded-full bg-muted" />
-              <motion.div
-                className="h-1.5 w-8 rounded-full bg-muted-foreground"
-                animate={{
-                  opacity: hasAccent ? 0.5 : 0.3,
-                }}
-                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              <div
+                className={`h-1.5 w-8 rounded-full transition-colors duration-300 ${hasAccent ? 'bg-brand' : 'bg-foreground/40'}`}
               />
             </div>
-            <div className="h-6 rounded-lg border border-dashed border-border" />
+            <div
+              className={`h-6 rounded-lg border border-dashed transition-colors duration-300 ${hasAccent ? 'border-brand/50' : 'border-border'}`}
+            />
           </div>
         </motion.div>
       </motion.div>
 
       {/* State Indicator */}
       <div className="absolute bottom-4 flex items-center gap-1.5">
-        {variants.map((_, i) => (
+        {variants.map((variant, i) => (
           <motion.div
             key={i}
-            className="h-1 rounded-full"
+            className={`h-1 rounded-full transition-colors duration-300 ${
+              step === i
+                ? variant.accent
+                  ? 'bg-brand'
+                  : 'bg-muted-foreground'
+                : 'bg-muted'
+            }`}
             animate={{
               width: step === i ? 12 : 4,
-              backgroundColor:
-                step === i ? "var(--muted-foreground)" : "var(--muted)",
             }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
           />
         ))}
       </div>
+
     </div>
   )
 }

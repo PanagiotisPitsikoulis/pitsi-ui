@@ -157,7 +157,7 @@ function FeatureCard({
 export function PurposeSection() {
   return (
     <div className="container flex flex-col items-center justify-center px-6 py-16 text-center md:py-24">
-      <p className="text-muted-foreground text-sm font-medium tracking-widest uppercase">
+      <p className="text-brand text-sm font-medium tracking-widest uppercase">
         Why Pitsi
       </p>
       <Spacer size="md" sizeMobile="sm" />

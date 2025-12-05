@@ -471,12 +471,18 @@ export function ContentSection() {
   )
   const tab2Opacity = useTransform(scrollYProgress, [0.63, 0.66, 1], [0, 1, 1])
 
+  // Pointer events - only active tab is interactive
+  const tab0PointerEvents = useTransform(scrollYProgress, (v) => v < 0.33 ? "auto" : "none")
+  const tab1PointerEvents = useTransform(scrollYProgress, (v) => v >= 0.33 && v < 0.66 ? "auto" : "none")
+  const tab2PointerEvents = useTransform(scrollYProgress, (v) => v >= 0.66 ? "auto" : "none")
+
   // Progress circle (cycles 0-1 for each tab segment)
   const progress0 = useTransform(scrollYProgress, [0, 0.33], [0, 1])
   const progress1 = useTransform(scrollYProgress, [0.33, 0.66], [0, 1])
   const progress2 = useTransform(scrollYProgress, [0.66, 1], [0, 1])
 
   const tabOpacities = [tab0Opacity, tab1Opacity, tab2Opacity]
+  const tabPointerEvents = [tab0PointerEvents, tab1PointerEvents, tab2PointerEvents]
   const progressValues = [progress0, progress1, progress2]
 
   // Creative animations - scale with dramatic zoom
@@ -665,6 +671,7 @@ export function ContentSection() {
                   }
                   style={{
                     opacity: tabOpacities[tabIndex],
+                    pointerEvents: tabPointerEvents[tabIndex],
                   }}
                 >
                   {/* Mobile: stacked layout */}

@@ -48,9 +48,9 @@ export function ComponentPreviewTabs({
           data-align={align}
           data-justify={justify}
           className={cn(
-            "preview flex w-full data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=start]:justify-start",
+            "preview relative flex w-full data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=start]:justify-start",
             isFullBleed
-              ? "relative aspect-video overflow-hidden"
+              ? "aspect-video overflow-hidden"
               : chromeLessOnMobile
                 ? "sm:p-10"
                 : "h-[450px] p-10"

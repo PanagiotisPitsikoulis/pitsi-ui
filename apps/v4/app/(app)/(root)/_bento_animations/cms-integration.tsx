@@ -144,6 +144,7 @@ export function CMSIntegrationIllustration() {
         gradientStopColor={BRAND_COLOR}
         reverse
       />
+
     </div>
   )
 }

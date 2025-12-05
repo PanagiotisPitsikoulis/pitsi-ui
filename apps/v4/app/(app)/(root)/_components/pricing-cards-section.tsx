@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation"
 import { Check, Loader2 } from "lucide-react"
 
 import type { PlanType } from "@/lib/server/db/schema"
-import { ParallaxImage } from "@/registry/new-york-v4/animations/background-image-parallax/background-image-parallax"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 
@@ -189,20 +188,9 @@ function PricingCard({
           : "border-border bg-background shadow-sm"
       } ${className ?? ""}`}
     >
-      {/* Parallax Background for highlighted cards */}
+      {/* Background for highlighted cards */}
       {highlighted && (
-        <>
-          <ParallaxImage
-            src="/marketing/cliff.jpg"
-            alt=""
-            className="pointer-events-none absolute inset-0 z-0"
-            imageClassName="object-cover"
-            range={["-10%", "10%"]}
-            offset={["start end", "end start"]}
-          />
-          {/* Dark overlay for readability */}
-          <div className="absolute inset-0 z-0 bg-black/60" />
-        </>
+        <div className="absolute inset-0 z-0 bg-primary" />
       )}
       {badge && (
         <div
@@ -247,9 +235,7 @@ function PricingCard({
             <Check
               className={`mt-0.5 size-4 shrink-0 ${highlighted ? "text-white/70" : "text-brand"}`}
             />
-            <span
-              className={`text-sm ${highlighted ? "text-white/90" : ""}`}
-            >
+            <span className={`text-sm ${highlighted ? "text-white/90" : ""}`}>
               {feature}
             </span>
           </li>
@@ -283,7 +269,7 @@ export function PricingCardsSection({
       id="pricing"
       className="container flex flex-col items-center justify-center px-6 py-16 text-center md:py-24"
     >
-      <p className="text-muted-foreground text-sm font-medium tracking-widest uppercase">
+      <p className="text-brand text-sm font-medium tracking-widest uppercase">
         Simple Pricing
       </p>
       <Spacer size="md" sizeMobile="sm" />
@@ -390,7 +376,8 @@ export function PricingCardsSection({
           <div className="border-border bg-background col-span-6 flex flex-col justify-center rounded-3xl border p-6 text-left shadow-sm md:col-span-2 md:p-8">
             <h3 className="text-lg font-semibold">Team Licenses</h3>
             <p className="text-muted-foreground mt-2 text-sm">
-              Equip your entire team with premium components. Share API keys, collaborate on projects, and ship faster together.
+              Equip your entire team with premium components. Share API keys,
+              collaborate on projects, and ship faster together.
             </p>
             <div className="mt-6 space-y-2">
               <div className="flex items-center gap-2">
@@ -447,10 +434,7 @@ export function PricingCardsSection({
                 {currentPlan === "enterprise" ? "Current Plan" : "Included"}
               </div>
             ) : (
-              <CheckoutButton
-                isLoggedIn={!!user}
-                planType="enterprise"
-              />
+              <CheckoutButton isLoggedIn={!!user} planType="enterprise" />
             )}
           </PricingCard>
         </div>
