@@ -333,7 +333,7 @@ export function PricingCardsSection({
         <>
           <div className="grid w-full grid-cols-6 gap-6">
             {/* Free Plan */}
-            <div className="relative col-span-6 md:col-span-2">
+            <div className="relative col-span-6 overflow-visible md:col-span-2">
               <PricingCard
                 name="Free"
                 price="€0"

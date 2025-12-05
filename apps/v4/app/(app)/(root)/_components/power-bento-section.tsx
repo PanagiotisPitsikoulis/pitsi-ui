@@ -310,17 +310,17 @@ const gridItems = [
   { type: "icon", icon: PinchIcon },
   {
     type: "card",
-    title: "Full-Stack Blocks",
-    description:
-      "Complete page sections with frontend code and CMS schemas. Heroes, pricing tables, auth flows—ready for production.",
-    illustration: FullStackBlocksIllustration,
-  },
-  {
-    type: "card",
     title: "Logic Included",
     description:
       "Code included in every block. You don't just download the looks—everything works out of the box.",
     illustration: FullyFunctionalIllustration,
+  },
+  {
+    type: "card",
+    title: "Full-Stack Blocks",
+    description:
+      "Complete page sections with frontend code and CMS schemas. Heroes, pricing tables, auth flows—ready for production.",
+    illustration: FullStackBlocksIllustration,
   },
   // Row 3: Smart Customization, CMS Integration, icon
   {
@@ -344,7 +344,7 @@ export function PowerBentoSection() {
   return (
     <div className="container flex flex-col items-center justify-center px-6 py-16 text-center md:py-24">
       <p className="text-brand text-sm font-medium tracking-widest uppercase">
-        Power Under the Hood
+        Advanced Features
       </p>
       <Spacer size="md" sizeMobile="sm" />
       <h2 className="display max-w-4xl text-4xl leading-[0.95] tracking-tight md:text-6xl lg:text-7xl">
