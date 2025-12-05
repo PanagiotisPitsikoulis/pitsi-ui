@@ -13,7 +13,7 @@ import { Spinner } from "@/registry/new-york-v4/ui/spinner"
 
 import { StripeBgGuides } from "./striped-bg-guides"
 
-// Featured blocks for the design showcase grid - using confirmed working blocks
+// Featured blocks for the design showcase grid
 const DESIGN_BLOCKS = [
   "marketing-gallery-gallery-section-with-innovation",
   "marketing-hero-section-accommodation-businesses-hero-section",
@@ -21,16 +21,6 @@ const DESIGN_BLOCKS = [
   "marketing-hero-section-accommodation-hero-section-with-social-icons",
   "marketing-portfolio-tailwind-css-portfolio-with-product-or-project-s-features",
   "e-commerce-refund-status-refund-status-with-order-summary",
-  "marketing-hero-section-ecommerce-hero-section",
-  "marketing-hero-section-hero-section-with-customer-logos",
-  "marketing-hero-section-hero-section-with-image-tiles",
-  "marketing-hero-section-hero-section-with-phone-mockup",
-  "marketing-hero-section-hero-section-with-browser-mockup",
-  "marketing-pricing-pricing-section-with-comparison-table",
-  "marketing-faq-faq-section-with-categories",
-  "marketing-testimonials-testimonials-with-rating",
-  "marketing-feature-feature-section-with-cards",
-  "marketing-cta-cta-section-with-app-screenshot",
 ]
 
 function RegistryBlockPreview({
@@ -87,7 +77,7 @@ function RegistryBlockPreview({
   return (
     <div
       ref={containerRef}
-      className={`bg-background relative aspect-[4/3] w-full overflow-hidden ${className}`}
+      className={`bg-background relative aspect-video w-full overflow-hidden ${className}`}
     >
       {isInView && (
         <>
@@ -98,7 +88,7 @@ function RegistryBlockPreview({
           )}
           <iframe
             src={`/view/new-york-v4/${name}`}
-            className="pointer-events-none h-full w-full origin-top-left"
+            className="h-full w-full origin-top-left"
             style={{
               transform: `scale(${scale})`,
               width: `${sizeMultiplier * 100}%`,
@@ -243,10 +233,49 @@ export function DesignSection() {
       </HorizontalScrollContainer>
 
       {/* Blocks Grid with Fade */}
-      <div className="relative z-50 overflow-hidden pt-24 pb-24">
+      <div className="relative z-50 overflow-hidden py-10 md:py-20">
         <div className="container px-6">
-          <div className="[mask-image:linear-gradient(to_bottom,black_0%,black_50%,transparent_100%)]">
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+          {/* Design Explained */}
+          <div className="grid grid-cols-6 gap-6 mb-10 md:mb-16">
+            <div className="relative col-span-6 flex gap-3 rounded-lg border-dashed md:col-span-2 md:block md:border-l md:p-5">
+              <div>
+                <h3 className="capitalize font-medium md:mb-2 md:text-xl">
+                  Typography
+                  <span className="bg-brand absolute -left-px hidden h-6 w-px md:inline-block"></span>
+                </h3>
+                <p className="text-muted-foreground text-sm md:text-base">
+                  Carefully crafted type scales, line heights, and letter spacing
+                  that make your content effortlessly readable.
+                </p>
+              </div>
+            </div>
+            <div className="relative col-span-6 flex gap-3 rounded-lg border-dashed md:col-span-2 md:block md:border-l md:p-5">
+              <div>
+                <h3 className="capitalize font-medium md:mb-2 md:text-xl">
+                  Spacing & Rhythm
+                  <span className="bg-brand absolute -left-px hidden h-6 w-px md:inline-block"></span>
+                </h3>
+                <p className="text-muted-foreground text-sm md:text-base">
+                  Consistent spacing tokens and vertical rhythm throughout.
+                  Everything aligns, nothing feels off.
+                </p>
+              </div>
+            </div>
+            <div className="relative col-span-6 flex gap-3 rounded-lg border-dashed md:col-span-2 md:block md:border-l md:p-5">
+              <div>
+                <h3 className="capitalize font-medium md:mb-2 md:text-xl">
+                  Color & Contrast
+                  <span className="bg-brand absolute -left-px hidden h-6 w-px md:inline-block"></span>
+                </h3>
+                <p className="text-muted-foreground text-sm md:text-base">
+                  Accessible color palettes with perfect contrast ratios.
+                  Light and dark modes that actually look good.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6">
               {DESIGN_BLOCKS.map((blockName) => (
                 <RegistryBlockPreview
                   key={blockName}

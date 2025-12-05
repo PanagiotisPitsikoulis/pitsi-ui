@@ -18,13 +18,13 @@ export function BattleTestedIllustration() {
       >
         {/* Component Content */}
         <div className="flex items-center gap-3">
-            <div className="h-8 w-8 rounded-full bg-muted/20" />
+            <div className="h-8 w-8 rounded-full bg-muted" />
             <div className="space-y-1">
-                <div className="h-2 w-20 rounded-full bg-muted/20" />
-                <div className="h-2 w-12 rounded-full bg-muted/20" />
+                <div className="h-2 w-20 rounded-full bg-muted" />
+                <div className="h-2 w-12 rounded-full bg-muted" />
             </div>
         </div>
-        <div className="h-16 w-full rounded-lg bg-muted/10" />
+        <div className="h-16 w-full rounded-lg bg-muted" />
 
         {/* Scan Line */}
         <motion.div

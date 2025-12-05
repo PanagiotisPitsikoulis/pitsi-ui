@@ -280,14 +280,20 @@ const FEATURED_ITEMS = {
     "e-commerce-refund-status-refund-status-with-order-summary",
   ],
   components: [
+    "checkbox-demo",
+    "theme-toggle-demo",
+    "tabs-demo",
     "segmented-control-demo",
-    "unicorn-wrapper-demo",
-    "squircle-demo",
+    "spinner-demo",
+    "skeleton-demo",
   ],
   animations: [
-    "card-swipe-carousel-demo",
-    "parallax-scroll-demo",
+    "text-parallax-demo",
     "transforms-3d-demo",
+    "text-along-path-demo",
+    "text-gradient-opacity-demo",
+    "scroll-expand-demo",
+    "perspective-carousel-demo",
   ],
 }
 
@@ -302,8 +308,8 @@ const tabs = [
     items: FEATURED_ITEMS.animations,
     gridClass: "grid-cols-6",
     itemClass: "col-span-6 md:col-span-2",
-    aspectClass: "aspect-square md:aspect-square",
-    mobileLimit: 3,
+    aspectClass: "aspect-video",
+    mobileLimit: 6,
   },
   {
     id: "components",
@@ -315,8 +321,8 @@ const tabs = [
     items: FEATURED_ITEMS.components,
     gridClass: "grid-cols-6",
     itemClass: "col-span-6 md:col-span-2",
-    aspectClass: "aspect-square md:aspect-square",
-    mobileLimit: 3,
+    aspectClass: "aspect-video",
+    mobileLimit: 6,
   },
   {
     id: "blocks",
@@ -328,8 +334,8 @@ const tabs = [
     items: FEATURED_ITEMS.blocks,
     gridClass: "grid-cols-6",
     itemClass: "col-span-6 md:col-span-2",
-    aspectClass: "aspect-[3/2] md:aspect-[4/3]",
-    mobileLimit: 3,
+    aspectClass: "aspect-video",
+    mobileLimit: 6,
   },
 ]
 
@@ -383,9 +389,9 @@ function RegistryItemPreview({
     }
   }, [])
 
-  // Scale factor based on type - smaller on mobile
-  const desktopScale = type === "block" ? 0.3 : type === "animation" ? 0.6 : 0.7
-  const mobileScale = type === "block" ? 0.25 : type === "animation" ? 0.4 : 0.45
+  // Scale factor - components use lighter scaling
+  const desktopScale = type === "component" ? 0.5 : 0.25
+  const mobileScale = type === "component" ? 0.4 : 0.2
   const scale = isMobile ? mobileScale : desktopScale
   const sizeMultiplier = 1 / scale
 
@@ -403,7 +409,7 @@ function RegistryItemPreview({
           )}
           <iframe
             src={`/view/new-york-v4/${name}`}
-            className="pointer-events-none h-full w-full origin-top-left"
+            className="h-full w-full origin-top-left"
             style={{
               transform: `scale(${scale})`,
               width: `${sizeMultiplier * 100}%`,
@@ -544,50 +550,34 @@ export function ContentSection() {
 
   return (
     <>
-      {/* Header */}
-      <div className="container px-6 pt-16 md:pt-20">
-        <LayoutGrid>
-          <LayoutGridItem span={6} className="flex flex-col items-center text-center">
-            <p className="text-muted-foreground text-sm font-medium tracking-widest uppercase">
-              Your Next 6 Months of UI
-            </p>
-            <Spacer size="lg" sizeMobile="md" />
-            <h2 className="display mx-auto max-w-4xl text-4xl leading-[0.95] tracking-tight md:text-6xl lg:text-7xl">
-              Already done.
-              <br />
-              <span className="text-muted-foreground">Just ship.</span>
-            </h2>
-            <Spacer size="5xl" sizeMobile="3xl" />
-          </LayoutGridItem>
-        </LayoutGrid>
-      </div>
-
       {/* Scroll-jacking container - needs enough height for scroll tracking */}
-      <section ref={containerRef} className="relative h-[700dvh] md:h-[300vh]">
+      <section ref={containerRef} className="relative h-[700dvh] md:h-[350vh] pt-16 md:pt-24">
         <div className="sticky top-20 pt-2">
           <div className="container px-6">
             {/* Desktop: 3 tab cards in 6-column grid */}
             <LayoutGrid className="hidden md:grid">
               {tabs.map((tab, index) => (
                 <LayoutGridItem key={tab.id} span={6} spanMd={2}>
-                  <div className="bg-background relative flex h-full items-center gap-5 border-y border-l border-border/50 p-6 shadow-sm first:rounded-l-xl last:rounded-r-xl last:border-r lg:p-8">
-                    <motion.div
-                      className="shrink-0"
-                      style={{ filter: tabSaturations[index] }}
-                    >
-                      <tab.Icon className="text-brand size-14 lg:size-16" />
-                    </motion.div>
-                    <motion.div
-                      className="flex flex-col gap-1"
-                      style={{ filter: tabSaturations[index] }}
-                    >
-                      <p className="text-brand text-xs font-semibold tracking-widest uppercase">
-                        {tab.id}
-                      </p>
-                      <p className="text-muted-foreground text-sm">
-                        {tab.description}
-                      </p>
-                    </motion.div>
+                  <div className="bg-background relative flex flex-col border-y border-l border-border/50 p-6 shadow-sm first:rounded-l-xl last:rounded-r-xl last:border-r lg:p-8">
+                    <div className="flex items-center gap-5">
+                      <motion.div
+                        className="shrink-0"
+                        style={{ filter: tabSaturations[index] }}
+                      >
+                        <tab.Icon className="text-brand size-14 lg:size-16" />
+                      </motion.div>
+                      <motion.div
+                        className="flex flex-col gap-1"
+                        style={{ filter: tabSaturations[index] }}
+                      >
+                        <p className="text-brand text-xs font-semibold tracking-widest uppercase">
+                          {tab.id}
+                        </p>
+                        <p className="text-muted-foreground text-sm">
+                          {tab.description}
+                        </p>
+                      </motion.div>
+                    </div>
                   </div>
                 </LayoutGridItem>
               ))}
@@ -618,87 +608,166 @@ export function ContentSection() {
               ))}
             </div>
 
+            {/* Mobile: Pill below tabs */}
+            <div className="relative mt-4 flex justify-center md:hidden">
+              {tabs.map((tab, tabIndex) => (
+                <motion.div
+                  key={tab.id}
+                  className="flex items-center gap-2 rounded-full border bg-background py-1.5 pl-1.5 pr-3"
+                  style={{
+                    opacity: tabOpacities[tabIndex],
+                    position: tabIndex === 0 ? "relative" : "absolute",
+                  }}
+                >
+                  <Link href={tab.href}>
+                    <HeroButton>View all {tab.label}</HeroButton>
+                  </Link>
+                  <div className="relative shrink-0">
+                    <svg className="size-7 -rotate-90" viewBox="0 0 28 28">
+                      <circle
+                        cx="14"
+                        cy="14"
+                        r="12"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        className="text-muted/30"
+                      />
+                      <motion.circle
+                        cx="14"
+                        cy="14"
+                        r="12"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        className="text-brand"
+                        style={{ pathLength: progressValues[tabIndex] }}
+                        strokeDasharray="1"
+                        strokeDashoffset="0"
+                      />
+                    </svg>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
             <Spacer size="lg" sizeMobile="md" />
 
             {/* Grid Content Area */}
-            <div className="relative overflow-hidden">
-              {/* Grid items for each tab */}
-              <div className="relative">
-                {tabs.map((tab, tabIndex) => (
-                  <motion.div
-                    key={tab.id}
-                    className={
-                      tabIndex === 0 ? "relative" : "absolute inset-0"
-                    }
-                    style={{
-                      opacity: tabOpacities[tabIndex],
-                    }}
-                  >
-                    <LayoutGrid>
-                      {tab.items.map((itemName, itemIndex) => (
-                        <LayoutGridItem key={itemName} span={6} spanMd={2}>
-                          <RegistryItemPreview
-                            name={itemName}
-                            type={getItemType(tab.id)}
-                            aspectClass={tab.aspectClass}
-                            className={`rounded-xl border border-border/50 shadow-sm ${
-                              itemIndex >= tab.mobileLimit
-                                ? "hidden md:block"
-                                : ""
-                            }`}
-                          />
-                        </LayoutGridItem>
-                      ))}
-                    </LayoutGrid>
-                  </motion.div>
-                ))}
-              </div>
+            <div className="relative">
+              {/* Animated Grid Content */}
+              {tabs.map((tab, tabIndex) => (
+                <motion.div
+                  key={tab.id}
+                  className={
+                    tabIndex === 0 ? "relative" : "absolute inset-0"
+                  }
+                  style={{
+                    opacity: tabOpacities[tabIndex],
+                  }}
+                >
+                  {/* Mobile: stacked layout */}
+                  <div className="flex flex-col gap-6 md:hidden">
+                    {tab.items.slice(0, tab.mobileLimit).map((itemName) => (
+                      <RegistryItemPreview
+                        key={itemName}
+                        name={itemName}
+                        type={getItemType(tab.id)}
+                        aspectClass={tab.aspectClass}
+                        className="rounded-xl border border-border/50 shadow-sm"
+                      />
+                    ))}
+                  </div>
 
-              {/* View All Button + Progress Circle - centered overlay */}
-              <div className="pointer-events-none absolute inset-0 z-30 flex items-start pt-8 md:items-center md:pt-0 justify-center">
-                {tabs.map((tab, tabIndex) => (
-                  <motion.div
-                    key={tab.id}
-                    className="pointer-events-auto flex items-center gap-2 rounded-full border bg-background py-1.5 pl-1.5 pr-3 shadow-lg"
-                    style={{
-                      opacity: tabOpacities[tabIndex],
-                      position: tabIndex === 0 ? "relative" : "absolute",
-                    }}
-                  >
-                    <Link href={tab.href}>
-                      <HeroButton>View all {tab.label}</HeroButton>
-                    </Link>
-                    {/* Progress Circle */}
-                    <div className="relative shrink-0">
-                      <svg className="size-7 -rotate-90" viewBox="0 0 28 28">
-                        <circle
-                          cx="14"
-                          cy="14"
-                          r="12"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          className="text-muted/30"
-                        />
-                        <motion.circle
-                          cx="14"
-                          cy="14"
-                          r="12"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          className="text-brand"
-                          style={{ pathLength: progressValues[tabIndex] }}
-                          strokeDasharray="1"
-                          strokeDashoffset="0"
-                        />
-                      </svg>
+                  {/* Desktop: 3-column grid */}
+                  <div className="hidden md:grid md:grid-cols-3 md:gap-6">
+                    {/* Left column */}
+                    <div className="flex flex-col gap-6">
+                      <RegistryItemPreview
+                        name={tab.items[0]}
+                        type={getItemType(tab.id)}
+                        aspectClass={tab.aspectClass}
+                        className="rounded-xl border border-border/50 shadow-sm"
+                      />
+                      <RegistryItemPreview
+                        name={tab.items[3]}
+                        type={getItemType(tab.id)}
+                        aspectClass={tab.aspectClass}
+                        className="rounded-xl border border-border/50 shadow-sm"
+                      />
                     </div>
-                  </motion.div>
-                ))}
-              </div>
+
+                    {/* Middle column - pill at top */}
+                    <div className="flex flex-col gap-6">
+                      <div className="flex items-center justify-center py-2">
+                        <div className="flex items-center gap-2 rounded-full border bg-background py-1.5 pl-1.5 pr-3">
+                          <Link href={tab.href}>
+                            <HeroButton>View all {tab.label}</HeroButton>
+                          </Link>
+                          <div className="relative shrink-0">
+                            <svg className="size-7 -rotate-90" viewBox="0 0 28 28">
+                              <circle
+                                cx="14"
+                                cy="14"
+                                r="12"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                className="text-muted/30"
+                              />
+                              <motion.circle
+                                cx="14"
+                                cy="14"
+                                r="12"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                className="text-brand"
+                                style={{ pathLength: progressValues[tabIndex] }}
+                                strokeDasharray="1"
+                                strokeDashoffset="0"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <RegistryItemPreview
+                        name={tab.items[1]}
+                        type={getItemType(tab.id)}
+                        aspectClass={tab.aspectClass}
+                        className="rounded-xl border border-border/50 shadow-sm"
+                      />
+                      <RegistryItemPreview
+                        name={tab.items[4]}
+                        type={getItemType(tab.id)}
+                        aspectClass={tab.aspectClass}
+                        className="rounded-xl border border-border/50 shadow-sm"
+                      />
+                    </div>
+
+                    {/* Right column */}
+                    <div className="flex flex-col gap-6">
+                      <RegistryItemPreview
+                        name={tab.items[2]}
+                        type={getItemType(tab.id)}
+                        aspectClass={tab.aspectClass}
+                        className="rounded-xl border border-border/50 shadow-sm"
+                      />
+                      <RegistryItemPreview
+                        name={tab.items[5]}
+                        type={getItemType(tab.id)}
+                        aspectClass={tab.aspectClass}
+                        className="rounded-xl border border-border/50 shadow-sm"
+                      />
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </div>
+
+            <Spacer size="6xl" sizeMobile="4xl" />
           </div>
         </div>
       </section>

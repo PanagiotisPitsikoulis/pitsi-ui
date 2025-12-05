@@ -57,17 +57,17 @@ function ReviewCard({
   return (
     <figure
       className={cn(
-        "relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4 shadow-2xs",
+        "relative h-full w-72 cursor-pointer overflow-hidden rounded-xl border p-5 shadow-2xs",
         "border-border bg-background"
       )}
     >
-      <div className="flex flex-row items-center gap-2">
+      <div className="flex flex-row items-center gap-2.5">
         <img
-          className="size-8 shrink-0 rounded-full"
+          className="size-9 shrink-0 rounded-full"
           src={img}
           alt={name}
-          width={32}
-          height={32}
+          width={36}
+          height={36}
         />
         <div className="flex flex-col">
           <figcaption className="text-sm font-medium">{name}</figcaption>
@@ -76,7 +76,7 @@ function ReviewCard({
           </p>
         </div>
       </div>
-      <blockquote className="text-muted-foreground mt-2 text-sm">
+      <blockquote className="text-muted-foreground mt-2.5 text-sm leading-relaxed">
         {body}
       </blockquote>
     </figure>

@@ -5,7 +5,7 @@ export function ContentExplained() {
         <div className="grid grid-cols-6 gap-6">
           <div className="relative col-span-6 flex gap-3 rounded-lg border-dashed md:col-span-2 md:block md:border-l md:p-5">
             <div>
-              <h3 className="font-medium md:mb-2 md:text-xl">
+              <h3 className="capitalize font-medium md:mb-2 md:text-xl">
                 Components
                 <span className="bg-brand absolute -left-px hidden h-6 w-px md:inline-block"></span>
               </h3>
@@ -17,7 +17,7 @@ export function ContentExplained() {
           </div>
           <div className="relative col-span-6 flex gap-3 rounded-lg border-dashed md:col-span-2 md:block md:border-l md:p-5">
             <div>
-              <h3 className="font-medium md:mb-2 md:text-xl">
+              <h3 className="capitalize font-medium md:mb-2 md:text-xl">
                 Animations
                 <span className="bg-brand absolute -left-px hidden h-6 w-px md:inline-block"></span>
               </h3>
@@ -29,7 +29,7 @@ export function ContentExplained() {
           </div>
           <div className="relative col-span-6 flex gap-3 rounded-lg border-dashed md:col-span-2 md:block md:border-l md:p-5">
             <div>
-              <h3 className="font-medium md:mb-2 md:text-xl">
+              <h3 className="capitalize font-medium md:mb-2 md:text-xl">
                 Blocks
                 <span className="bg-brand absolute -left-px hidden h-6 w-px md:inline-block"></span>
               </h3>

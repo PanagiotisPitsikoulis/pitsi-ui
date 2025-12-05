@@ -31,16 +31,16 @@ export function FullyFunctionalIllustration() {
         
         {/* Header */}
         <div className="flex items-center justify-between">
-            <div className="h-2 w-12 rounded-full bg-muted-foreground/20" />
-            <motion.div 
+            <div className="h-2 w-12 rounded-full bg-muted" />
+            <motion.div
                 className="h-2 w-2 rounded-full bg-green-500"
                 animate={{ opacity: isActive ? 1 : 0.2 }}
             />
         </div>
 
         {/* Interactive Element */}
-        <div className="flex items-center justify-between rounded-lg border border-border bg-muted/5 p-2">
-            <div className="h-2 w-16 rounded-full bg-muted-foreground/20" />
+        <div className="flex items-center justify-between rounded-lg border border-border bg-muted p-2">
+            <div className="h-2 w-16 rounded-full bg-muted-foreground/30" />
             
             {/* Switch */}
             <motion.div 
@@ -55,7 +55,7 @@ export function FullyFunctionalIllustration() {
         </div>
         
         {/* Result Area */}
-        <div className="h-16 rounded-lg bg-muted/10 p-2">
+        <div className="h-16 rounded-lg bg-muted p-2">
             <motion.div 
                 className="h-full w-full rounded border border-dashed border-border"
                 animate={{ 

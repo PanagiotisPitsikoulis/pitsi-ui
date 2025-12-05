@@ -156,17 +156,17 @@ function FeatureCard({
 
 export function PurposeSection() {
   return (
-    <div className="container flex flex-col items-center justify-center px-6 py-10 text-center md:py-20">
+    <div className="container flex flex-col items-center justify-center px-6 py-16 text-center md:py-24">
       <p className="text-muted-foreground text-sm font-medium tracking-widest uppercase">
         Why Pitsi
       </p>
-      <Spacer size="lg" sizeMobile="md" />
+      <Spacer size="md" sizeMobile="sm" />
       <h2 className="display max-w-4xl text-4xl leading-[0.95] tracking-tight md:text-6xl lg:text-7xl">
         Built to Solve
         <br />
         <span className="text-muted-foreground">Real Problems</span>
       </h2>
-      <Spacer size="5xl" sizeMobile="3xl" />
+      <Spacer size="3xl" sizeMobile="2xl" />
       <div className="grid w-full grid-cols-6 gap-6">
         {/* Left column - spans 2 cols */}
         <div className="col-span-6 flex flex-col gap-6 lg:col-span-2">
@@ -333,7 +333,7 @@ export function PurposeSection() {
           ))}
         </div>
       </div>
-      <Spacer size="xl" sizeMobile="md" />
+      <Spacer size="2xl" sizeMobile="lg" />
       <p className="text-muted-foreground max-w-2xl text-base md:text-lg">
         Every pain point you&apos;ve experienced with component libraries — we
         built Pitsi to fix it.

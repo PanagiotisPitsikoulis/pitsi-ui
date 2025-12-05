@@ -17,7 +17,7 @@ export function HeroSection() {
           <svg
             className="absolute h-full w-full [mask-image:linear-gradient(to_bottom,transparent_0%,transparent_3%,black_12%)] dark:hidden"
             viewBox="0 0 1920 1080"
-            preserveAspectRatio="xMidYMin slice"
+            preserveAspectRatio="xMidYMid slice"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -34,22 +34,20 @@ export function HeroSection() {
                   y="0"
                   width="1920"
                   height="1080"
-                  preserveAspectRatio="xMidYMin slice"
+                  preserveAspectRatio="xMidYMid slice"
                 />
               </pattern>
             </defs>
             <path
               d="M0 0 L1920 0 C1600 160 1333 93 1067 227 C800 360 533 293 267 427 C133 493 67 520 0 560 Z"
               fill="url(#hero-image-light)"
-              stroke="hsl(var(--border))"
-              strokeWidth="1"
             />
           </svg>
           {/* Dark mode */}
           <svg
             className="absolute hidden h-full w-full [mask-image:linear-gradient(to_bottom,transparent_0%,transparent_3%,black_12%)] dark:block"
             viewBox="0 0 1920 1080"
-            preserveAspectRatio="xMidYMin slice"
+            preserveAspectRatio="xMidYMid slice"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -66,15 +64,13 @@ export function HeroSection() {
                   y="0"
                   width="1920"
                   height="1080"
-                  preserveAspectRatio="xMidYMin slice"
+                  preserveAspectRatio="xMidYMid slice"
                 />
               </pattern>
             </defs>
             <path
               d="M0 0 L1920 0 C1600 160 1333 93 1067 227 C800 360 533 293 267 427 C133 493 67 520 0 560 Z"
               fill="url(#hero-image-dark)"
-              stroke="hsl(var(--border))"
-              strokeWidth="1"
             />
           </svg>
         </div>
@@ -82,15 +78,6 @@ export function HeroSection() {
       <div className="relative container flex h-full w-full flex-col items-center justify-center px-6">
         {/*Typography*/}
         <Spacer size={"8xl"} sizeMobile={"6xl"} />
-        {/* Latest Addition */}
-        <a href="/changelog" className="group mb-8 flex cursor-pointer items-center gap-2.5">
-          <div className="flex items-center -space-x-1 transition-all duration-500 ease-out group-hover:space-x-0">
-            <img src="/marketing/surfing.jpg" alt="" className="size-4 rounded object-cover shadow transition-transform duration-500 ease-out group-hover:-rotate-3" />
-            <img src="/marketing/party.jpg" alt="" className="size-5 rounded object-cover shadow-md transition-transform duration-500 ease-out" />
-            <img src="/marketing/sky-night.jpg" alt="" className="size-4 rounded object-cover shadow -rotate-6 transition-transform duration-500 ease-out group-hover:rotate-3" />
-          </div>
-          <span className="text-muted-foreground text-sm transition-colors duration-500 ease-out group-hover:text-foreground">New Components: Field, Input Group, Item and more</span>
-        </a>
         <h1 className="display text-center text-[2.5rem] leading-[0.9] tracking-tight sm:text-5xl md:text-8xl">
           The Block Library
           <br />

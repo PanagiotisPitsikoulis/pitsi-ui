@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation"
 import { Check, Loader2 } from "lucide-react"
 
 import type { PlanType } from "@/lib/server/db/schema"
+import { ParallaxImage } from "@/registry/new-york-v4/animations/background-image-parallax/background-image-parallax"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 
@@ -96,17 +97,43 @@ function CheckoutButton({
   }
   const buttonText = buttonLabels[planType]
 
-  if (!isLoggedIn) {
+  // Highlighted variant - white button
+  if (variant === "highlighted") {
+    if (!isLoggedIn) {
+      return (
+        <Button
+          asChild
+          size="lg"
+          className="w-full rounded-xl bg-white text-black hover:bg-white/90"
+        >
+          <Link href="/signin">Sign in to Purchase</Link>
+        </Button>
+      )
+    }
+
     return (
       <Button
-        asChild
+        onClick={handleCheckout}
+        disabled={isLoading}
         size="lg"
-        className={`w-full rounded-xl ${
-          variant === "highlighted"
-            ? "bg-background text-foreground hover:bg-background/90"
-            : ""
-        }`}
+        className="w-full rounded-xl bg-white text-black hover:bg-white/90"
       >
+        {isLoading ? (
+          <>
+            <Loader2 className="mr-2 size-4 animate-spin" />
+            Redirecting...
+          </>
+        ) : (
+          buttonText
+        )}
+      </Button>
+    )
+  }
+
+  // Default variant - standard button
+  if (!isLoggedIn) {
+    return (
+      <Button asChild size="lg" className="w-full rounded-xl">
         <Link href="/signin">Sign in to Purchase</Link>
       </Button>
     )
@@ -117,11 +144,7 @@ function CheckoutButton({
       onClick={handleCheckout}
       disabled={isLoading}
       size="lg"
-      className={`w-full rounded-xl ${
-        variant === "highlighted"
-          ? "bg-background text-foreground hover:bg-background/90"
-          : ""
-      }`}
+      className="w-full rounded-xl"
     >
       {isLoading ? (
         <>
@@ -160,57 +183,72 @@ function PricingCard({
 }) {
   return (
     <div
-      className={`relative flex flex-col rounded-3xl border p-6 text-left md:p-8 ${
+      className={`relative flex flex-col overflow-hidden rounded-3xl border p-6 text-left md:p-8 ${
         highlighted
-          ? "border-foreground/20 bg-foreground text-background shadow-sm"
+          ? "border-white/20 text-white shadow-lg"
           : "border-border bg-background shadow-sm"
       } ${className ?? ""}`}
     >
+      {/* Parallax Background for highlighted cards */}
+      {highlighted && (
+        <>
+          <ParallaxImage
+            src="/marketing/cliff.jpg"
+            alt=""
+            className="pointer-events-none absolute inset-0 z-0"
+            imageClassName="object-cover"
+            range={["-10%", "10%"]}
+            offset={["start end", "end start"]}
+          />
+          {/* Dark overlay for readability */}
+          <div className="absolute inset-0 z-0 bg-black/60" />
+        </>
+      )}
       {badge && (
         <div
-          className={`absolute -top-3 left-1/2 -translate-x-1/2 rounded-full px-4 py-1.5 text-xs font-medium ${
+          className={`absolute -top-3 left-1/2 z-10 -translate-x-1/2 rounded-full px-4 py-1.5 text-xs font-medium ${
             highlighted
-              ? "bg-background text-foreground"
+              ? "bg-white text-black"
               : "bg-foreground text-background"
           }`}
         >
           {badge}
         </div>
       )}
-      <div className="mb-4">
+      <div className="relative z-10 mb-4">
         <h3 className="text-lg font-semibold">{name}</h3>
         <p
-          className={`mt-1 text-sm ${highlighted ? "text-background/60" : "text-muted-foreground"}`}
+          className={`mt-1 text-sm ${highlighted ? "text-white/70" : "text-muted-foreground"}`}
         >
           {description}
         </p>
       </div>
-      <div className="mb-6">
+      <div className="relative z-10 mb-6">
         <div className="flex items-baseline gap-2">
           <span className="text-4xl font-bold tracking-tight">{price}</span>
           {originalPrice && (
             <span
-              className={`text-lg line-through ${highlighted ? "text-background/40" : "text-muted-foreground/60"}`}
+              className={`text-lg line-through ${highlighted ? "text-white/40" : "text-muted-foreground/60"}`}
             >
               {originalPrice}
             </span>
           )}
           <span
-            className={`text-sm ${highlighted ? "text-background/60" : "text-muted-foreground"}`}
+            className={`text-sm ${highlighted ? "text-white/70" : "text-muted-foreground"}`}
           >
             /{priceLabel}
           </span>
         </div>
       </div>
-      <div className="mb-6">{children}</div>
-      <ul className="flex-1 space-y-3">
+      <div className="relative z-10 mb-6">{children}</div>
+      <ul className="relative z-10 flex-1 space-y-3">
         {featureList.map((feature, i) => (
           <li key={i} className="flex items-start gap-3">
             <Check
-              className={`mt-0.5 size-4 shrink-0 ${highlighted ? "text-background/60" : "text-brand"}`}
+              className={`mt-0.5 size-4 shrink-0 ${highlighted ? "text-white/70" : "text-brand"}`}
             />
             <span
-              className={`text-sm ${highlighted ? "text-background/80" : ""}`}
+              className={`text-sm ${highlighted ? "text-white/90" : ""}`}
             >
               {feature}
             </span>
@@ -243,26 +281,26 @@ export function PricingCardsSection({
   return (
     <div
       id="pricing"
-      className="container flex flex-col items-center justify-center px-6 py-10 text-center md:py-20"
+      className="container flex flex-col items-center justify-center px-6 py-16 text-center md:py-24"
     >
       <p className="text-muted-foreground text-sm font-medium tracking-widest uppercase">
         Simple Pricing
       </p>
-      <Spacer size="lg" sizeMobile="md" />
+      <Spacer size="md" sizeMobile="sm" />
       <h2 className="display max-w-4xl text-4xl leading-[1.1] tracking-tight md:text-6xl lg:text-7xl">
         One Fair Price.
         <br />
         <span className="text-muted-foreground">Lifetime Access.</span>
       </h2>
-      <Spacer size="5xl" sizeMobile="3xl" />
+      <Spacer size="3xl" sizeMobile="2xl" />
 
       {/* License Type Toggle */}
-      <div className="border-border bg-muted/50 mb-8 inline-flex rounded-full border p-1">
+      <div className="bg-muted/50 inline-flex rounded-full p-1">
         <button
           onClick={() => setLicenseType("single")}
           className={`rounded-full px-6 py-2 text-sm font-medium transition-all ${
             licenseType === "single"
-              ? "bg-background text-foreground shadow-sm"
+              ? "border-border bg-background text-foreground border shadow-sm"
               : "text-muted-foreground hover:text-foreground"
           }`}
         >
@@ -272,7 +310,7 @@ export function PricingCardsSection({
           onClick={() => setLicenseType("team")}
           className={`rounded-full px-6 py-2 text-sm font-medium transition-all ${
             licenseType === "team"
-              ? "bg-background text-foreground shadow-sm"
+              ? "border-border bg-background text-foreground border shadow-sm"
               : "text-muted-foreground hover:text-foreground"
           }`}
         >
@@ -280,7 +318,7 @@ export function PricingCardsSection({
         </button>
       </div>
 
-      <Spacer size="lg" sizeMobile="md" />
+      <Spacer size="2xl" sizeMobile="xl" />
 
       {licenseType === "single" ? (
         <>
@@ -315,7 +353,7 @@ export function PricingCardsSection({
               highlighted
             >
               {hasPro ? (
-                <div className="bg-background/10 flex h-12 w-full items-center justify-center rounded-xl text-sm font-medium">
+                <div className="flex h-12 w-full items-center justify-center rounded-xl bg-white/20 text-sm font-medium text-white">
                   {currentPlan === "pro" ? "Current Plan" : "Included"}
                 </div>
               ) : (
@@ -382,7 +420,7 @@ export function PricingCardsSection({
             highlighted
           >
             {hasTeam ? (
-              <div className="bg-background/10 flex h-12 w-full items-center justify-center rounded-xl text-sm font-medium">
+              <div className="flex h-12 w-full items-center justify-center rounded-xl bg-white/20 text-sm font-medium text-white">
                 {currentPlan === "team" ? "Current Plan" : "Included"}
               </div>
             ) : (
@@ -418,7 +456,7 @@ export function PricingCardsSection({
         </div>
       )}
 
-      <Spacer size="lg" sizeMobile="md" />
+      <Spacer size="2xl" sizeMobile="lg" />
       <p className="text-muted-foreground text-sm">
         Secure payment powered by Stripe. No recurring charges, no hidden fees.
       </p>
