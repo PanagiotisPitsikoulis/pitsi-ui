@@ -126,7 +126,7 @@ function CheckoutButton({
         <Button
           asChild
           size="lg"
-          className="w-full rounded-xl bg-primary-foreground text-primary hover:bg-primary-foreground/90"
+          className="w-full rounded-xl bg-white text-black hover:bg-white/90"
         >
           <Link href="/signin">Sign in to Purchase</Link>
         </Button>
