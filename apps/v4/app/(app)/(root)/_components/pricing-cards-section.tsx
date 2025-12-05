@@ -126,7 +126,7 @@ function CheckoutButton({
         <Button
           asChild
           size="lg"
-          className="w-full rounded-xl bg-white text-black hover:bg-white/90"
+          className="w-full rounded-xl bg-primary-foreground text-primary hover:bg-primary-foreground/90"
         >
           <Link href="/signin">Sign in to Purchase</Link>
         </Button>
@@ -207,7 +207,7 @@ function PricingCard({
     <div
       className={`relative flex flex-col overflow-hidden rounded-3xl border p-6 text-left md:p-8 ${
         highlighted
-          ? "border-white/20 text-white shadow-lg"
+          ? "border-primary-foreground/20 text-primary-foreground shadow-lg"
           : "border-border bg-background shadow-sm"
       } ${className ?? ""}`}
     >
@@ -219,7 +219,7 @@ function PricingCard({
         <div
           className={`absolute -top-3 left-1/2 z-10 -translate-x-1/2 rounded-full px-4 py-1.5 text-xs font-medium ${
             highlighted
-              ? "bg-white text-black"
+              ? "bg-primary-foreground text-primary"
               : "bg-foreground text-background"
           }`}
         >
@@ -229,7 +229,7 @@ function PricingCard({
       <div className="relative z-10 mb-4">
         <h3 className="text-lg font-semibold">{name}</h3>
         <p
-          className={`mt-1 text-sm ${highlighted ? "text-white/70" : "text-muted-foreground"}`}
+          className={`mt-1 text-sm ${highlighted ? "text-primary-foreground/70" : "text-muted-foreground"}`}
         >
           {description}
         </p>
@@ -239,13 +239,13 @@ function PricingCard({
           <span className="text-4xl font-bold tracking-tight">{price}</span>
           {originalPrice && (
             <span
-              className={`text-lg line-through ${highlighted ? "text-white/40" : "text-muted-foreground/60"}`}
+              className={`text-lg line-through ${highlighted ? "text-primary-foreground/40" : "text-muted-foreground/60"}`}
             >
               {originalPrice}
             </span>
           )}
           <span
-            className={`text-sm ${highlighted ? "text-white/70" : "text-muted-foreground"}`}
+            className={`text-sm ${highlighted ? "text-primary-foreground/70" : "text-muted-foreground"}`}
           >
             /{priceLabel}
           </span>
@@ -256,9 +256,9 @@ function PricingCard({
         {featureList.map((feature, i) => (
           <li key={i} className="flex items-start gap-3">
             <Check
-              className={`mt-0.5 size-4 shrink-0 ${highlighted ? "text-white/70" : "text-brand"}`}
+              className={`mt-0.5 size-4 shrink-0 ${highlighted ? "text-primary-foreground/70" : "text-brand"}`}
             />
-            <span className={`text-sm ${highlighted ? "text-white/90" : ""}`}>
+            <span className={`text-sm ${highlighted ? "text-primary-foreground/90" : ""}`}>
               {feature}
             </span>
           </li>
@@ -362,7 +362,7 @@ export function PricingCardsSection({
                 highlighted
               >
                 {hasPro ? (
-                  <div className="flex h-12 w-full items-center justify-center rounded-xl bg-white/20 text-sm font-medium text-white">
+                  <div className="flex h-12 w-full items-center justify-center rounded-xl bg-primary-foreground/20 text-sm font-medium text-primary-foreground">
                     {currentPlan === "pro" ? "Current Plan" : "Included"}
                   </div>
                 ) : (
@@ -374,7 +374,7 @@ export function PricingCardsSection({
                 )}
               </PricingCard>
               {/* Decorative overlay icon */}
-              <RightClickIcon className="pointer-events-none absolute bottom-0 right-0 z-20 hidden size-32 translate-x-6 translate-y-6 text-white md:block" />
+              <RightClickIcon className="text-brand pointer-events-none absolute bottom-0 right-0 z-20 hidden size-32 translate-x-6 translate-y-6 md:block" />
             </div>
 
             {/* Exclusive Plan */}
