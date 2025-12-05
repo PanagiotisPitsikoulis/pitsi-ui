@@ -154,6 +154,20 @@ function FeatureCard({
   )
 }
 
+function IconOnly({
+  Icon,
+  className,
+}: {
+  Icon: React.ComponentType<{ className?: string }>
+  className?: string
+}) {
+  return (
+    <div className={`relative z-10 flex h-[16rem] items-center justify-center md:h-[18rem] ${className ?? ""}`}>
+      <Icon className="text-brand size-36 md:size-48" />
+    </div>
+  )
+}
+
 export function PurposeSection() {
   return (
     <div className="container flex flex-col items-center justify-center px-6 py-16 text-center md:py-24">
@@ -170,14 +184,17 @@ export function PurposeSection() {
       <div className="grid w-full grid-cols-6 gap-6">
         {/* Left column - spans 2 cols */}
         <div className="col-span-6 flex flex-col gap-6 lg:col-span-2">
-          {features.slice(0, 3).map((feature) => (
-            <FeatureCard
-              key={feature.title}
-              Icon={feature.Icon}
-              title={feature.title}
-              description={feature.description}
-            />
-          ))}
+          <FeatureCard
+            Icon={features[0].Icon}
+            title={features[0].title}
+            description={features[0].description}
+          />
+          <IconOnly Icon={features[1].Icon} />
+          <FeatureCard
+            Icon={features[2].Icon}
+            title={features[2].title}
+            description={features[2].description}
+          />
         </div>
 
         {/* Center element - Instagram-style App - spans 2 cols */}
@@ -323,14 +340,17 @@ export function PurposeSection() {
 
         {/* Right column - spans 2 cols */}
         <div className="col-span-6 flex flex-col gap-6 lg:col-span-2">
-          {features.slice(3, 6).map((feature) => (
-            <FeatureCard
-              key={feature.title}
-              Icon={feature.Icon}
-              title={feature.title}
-              description={feature.description}
-            />
-          ))}
+          <IconOnly Icon={features[3].Icon} />
+          <FeatureCard
+            Icon={features[4].Icon}
+            title={features[4].title}
+            description={features[4].description}
+          />
+          <FeatureCard
+            Icon={features[5].Icon}
+            title={features[5].title}
+            description={features[5].description}
+          />
         </div>
       </div>
       <Spacer size="2xl" sizeMobile="lg" />

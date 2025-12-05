@@ -328,7 +328,7 @@ const tabs = [
     id: "blocks",
     label: "300+ free blocks",
     description:
-      "Over 300+ professionally designed, fully responsive blocks ready to drop into your project.",
+      "Professionally designed, fully responsive blocks ready to drop into your project.",
     href: "/blocks",
     Icon: BlocksIcon,
     items: FEATURED_ITEMS.blocks,

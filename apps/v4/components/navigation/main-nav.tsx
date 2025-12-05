@@ -368,7 +368,7 @@ export function MainNav({
                         <ArrowUpRight className="size-4 text-muted-foreground transition-colors group-hover:text-foreground" />
                       </div>
                       <p className="text-muted-foreground text-sm leading-tight">
-                        Over 300+ professionally designed, fully responsive blocks ready to drop into your project.
+                        Professionally designed, fully responsive blocks ready to drop into your project.
                       </p>
                     </Link>
                   </NavigationMenuLink>
