@@ -110,7 +110,22 @@ function NumbersIcon({ className }: { className?: string }) {
 // Grid layout configuration for artistic arrangement
 // Using a 3-column grid with strategic empty spaces and decorative icons
 const gridItems = [
-  // Row 1: Full-Stack, CMS, icon
+  // Row 1: MCP Server, Battle Tested, icon
+  {
+    type: "card",
+    title: "Smart MCP Server",
+    description: "AI integrations built-in. Everything is AI-friendly and ready for your workflows.",
+    illustration: SmartMCPServerIllustration,
+  },
+  {
+    type: "card",
+    title: "Battle Tested",
+    description: "Resilient components that are bug-proof. Tested in production, built to last.",
+    illustration: BattleTestedIllustration,
+  },
+  { type: "icon", icon: SelectCheckboxIcon },
+  // Row 2: icon, Full-Stack Blocks, Logic
+  { type: "icon", icon: PinchIcon },
   {
     type: "card",
     title: "Full-Stack Blocks",
@@ -119,13 +134,11 @@ const gridItems = [
   },
   {
     type: "card",
-    title: "CMS Integration",
-    description: "Payload and Sanity schemas included for seamless content management.",
-    illustration: CMSIntegrationIllustration,
+    title: "Logic Included",
+    description: "Code included in every block. You don't just download the looks—everything works out of the box.",
+    illustration: FullyFunctionalIllustration,
   },
-  { type: "icon", icon: SelectCheckboxIcon },
-  // Row 2: icon, Smart Customization, Logic
-  { type: "icon", icon: PinchIcon },
+  // Row 3: Smart Customization, CMS Integration, icon
   {
     type: "card",
     title: "Smart Customization",
@@ -134,22 +147,9 @@ const gridItems = [
   },
   {
     type: "card",
-    title: "Logic Included",
-    description: "Code included in every block. You don't just download the looks—everything works out of the box.",
-    illustration: FullyFunctionalIllustration,
-  },
-  // Row 3: Battle Tested, MCP Server, icon
-  {
-    type: "card",
-    title: "Battle Tested",
-    description: "Resilient components that are bug-proof. Tested in production, built to last.",
-    illustration: BattleTestedIllustration,
-  },
-  {
-    type: "card",
-    title: "Smart MCP Server",
-    description: "AI integrations built-in. Everything is AI-friendly and ready for your workflows.",
-    illustration: SmartMCPServerIllustration,
+    title: "CMS Integration",
+    description: "Payload and Sanity schemas included for seamless content management.",
+    illustration: CMSIntegrationIllustration,
   },
   { type: "icon", icon: NumbersIcon },
 ]
