@@ -333,49 +333,49 @@ export function PricingCardsSection({
         <>
           <div className="grid w-full grid-cols-6 gap-6">
             {/* Free Plan */}
-            <div className="relative col-span-6 overflow-visible md:col-span-2">
-              <PricingCard
-                name="Free"
-                price="€0"
-                priceLabel="forever"
-                description="Get started with free components"
-                featureList={features.free}
-              >
-                <Button
-                  asChild
-                  size="lg"
-                  variant="secondary"
-                  className="w-full rounded-xl"
-                >
-                  <Link href="/docs">Get Started</Link>
-                </Button>
-              </PricingCard>
-              {/* Decorative overlay icon */}
-              <RightClickIcon className="text-brand pointer-events-none absolute bottom-0 right-0 z-20 hidden size-32 translate-x-6 translate-y-6 md:block" />
-            </div>
-
-            {/* Pro Plan */}
             <PricingCard
               className="col-span-6 md:col-span-2"
-              name="Pro"
-              price="€149"
-              priceLabel="one-time"
-              description="Full access for individuals"
-              featureList={features.pro}
-              highlighted
+              name="Free"
+              price="€0"
+              priceLabel="forever"
+              description="Get started with free components"
+              featureList={features.free}
             >
-              {hasPro ? (
-                <div className="flex h-12 w-full items-center justify-center rounded-xl bg-white/20 text-sm font-medium text-white">
-                  {currentPlan === "pro" ? "Current Plan" : "Included"}
-                </div>
-              ) : (
-                <CheckoutButton
-                  isLoggedIn={!!user}
-                  planType="pro"
-                  variant="highlighted"
-                />
-              )}
+              <Button
+                asChild
+                size="lg"
+                variant="secondary"
+                className="w-full rounded-xl"
+              >
+                <Link href="/docs">Get Started</Link>
+              </Button>
             </PricingCard>
+
+            {/* Pro Plan */}
+            <div className="relative col-span-6 overflow-visible md:col-span-2">
+              <PricingCard
+                name="Pro"
+                price="€149"
+                priceLabel="one-time"
+                description="Full access for individuals"
+                featureList={features.pro}
+                highlighted
+              >
+                {hasPro ? (
+                  <div className="flex h-12 w-full items-center justify-center rounded-xl bg-white/20 text-sm font-medium text-white">
+                    {currentPlan === "pro" ? "Current Plan" : "Included"}
+                  </div>
+                ) : (
+                  <CheckoutButton
+                    isLoggedIn={!!user}
+                    planType="pro"
+                    variant="highlighted"
+                  />
+                )}
+              </PricingCard>
+              {/* Decorative overlay icon */}
+              <RightClickIcon className="pointer-events-none absolute bottom-0 right-0 z-20 hidden size-32 translate-x-6 translate-y-6 text-white md:block" />
+            </div>
 
             {/* Exclusive Plan */}
             <PricingCard
