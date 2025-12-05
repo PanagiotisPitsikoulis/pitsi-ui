@@ -357,11 +357,11 @@ export function MainNav({
             </NavigationMenuTrigger>
             <NavigationMenuContent>
               <div className="flex gap-4 p-4 md:w-[600px] lg:w-[800px]">
-                <div className="flex w-[180px] shrink-0 flex-col gap-3">
+                <div className="flex w-[180px] shrink-0 flex-col gap-2">
                   <NavigationMenuLink asChild>
                     <Link
                       href="/blocks"
-                      className="group flex h-full flex-col justify-start rounded-xl border border-input bg-transparent p-4 no-underline shadow-sm outline-none select-none hover:bg-transparent dark:bg-input/30 dark:hover:bg-input/30"
+                      className="group flex h-fit flex-col justify-start rounded-xl border border-input bg-transparent p-4 no-underline shadow-sm outline-none select-none hover:bg-transparent dark:bg-input/30 dark:hover:bg-input/30"
                     >
                       <div className="mb-2 flex items-center justify-between text-lg font-medium">
                         Blocks
@@ -381,7 +381,7 @@ export function MainNav({
                       className="h-8 bg-transparent pl-8 text-sm"
                     />
                   </div>
-                  <div className="flex items-center justify-center py-2">
+                  <div className="mt-auto flex items-end justify-center">
                     <BlocksIcon className="text-brand size-20" />
                   </div>
                 </div>
@@ -421,11 +421,11 @@ export function MainNav({
             </NavigationMenuTrigger>
             <NavigationMenuContent>
               <div className="flex gap-4 p-4 md:w-[600px] lg:w-[800px]">
-                <div className="flex w-[180px] shrink-0 flex-col gap-3">
+                <div className="flex w-[180px] shrink-0 flex-col gap-2">
                   <NavigationMenuLink asChild>
                     <Link
                       href="/docs/components"
-                      className="group flex h-full flex-col justify-start rounded-xl border border-input bg-transparent p-4 no-underline shadow-sm outline-none select-none hover:bg-transparent dark:bg-input/30 dark:hover:bg-input/30"
+                      className="group flex h-fit flex-col justify-start rounded-xl border border-input bg-transparent p-4 no-underline shadow-sm outline-none select-none hover:bg-transparent dark:bg-input/30 dark:hover:bg-input/30"
                     >
                       <div className="mb-2 flex items-center justify-between text-lg font-medium">
                         Components
@@ -445,7 +445,7 @@ export function MainNav({
                       className="h-8 bg-transparent pl-8 text-sm"
                     />
                   </div>
-                  <div className="flex items-center justify-center py-2">
+                  <div className="mt-auto flex items-end justify-center">
                     <ComponentsIcon className="text-brand size-20" />
                   </div>
                 </div>
@@ -485,11 +485,11 @@ export function MainNav({
             </NavigationMenuTrigger>
             <NavigationMenuContent>
               <div className="flex gap-4 p-4 md:w-[600px] lg:w-[800px]">
-                <div className="flex w-[180px] shrink-0 flex-col gap-3">
+                <div className="flex w-[180px] shrink-0 flex-col gap-2">
                   <NavigationMenuLink asChild>
                     <Link
                       href="/docs/animations"
-                      className="group flex h-full flex-col justify-start rounded-xl border border-input bg-transparent p-4 no-underline shadow-sm outline-none select-none hover:bg-transparent dark:bg-input/30 dark:hover:bg-input/30"
+                      className="group flex h-fit flex-col justify-start rounded-xl border border-input bg-transparent p-4 no-underline shadow-sm outline-none select-none hover:bg-transparent dark:bg-input/30 dark:hover:bg-input/30"
                     >
                       <div className="mb-2 flex items-center justify-between text-lg font-medium">
                         Animations
@@ -509,7 +509,7 @@ export function MainNav({
                       className="h-8 bg-transparent pl-8 text-sm"
                     />
                   </div>
-                  <div className="flex items-center justify-center py-2">
+                  <div className="mt-auto flex items-end justify-center">
                     <AnimationsIcon className="text-brand size-20" />
                   </div>
                 </div>

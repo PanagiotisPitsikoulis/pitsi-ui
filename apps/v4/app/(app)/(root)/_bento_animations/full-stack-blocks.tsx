@@ -152,7 +152,7 @@ export function FullStackBlocksIllustration() {
   return (
     <div
       ref={containerRef}
-      className="relative flex h-full w-full items-center justify-center overflow-hidden bg-background p-10"
+      className="relative flex h-full w-full items-center justify-center overflow-hidden bg-background p-8"
     >
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808005_1px,transparent_1px),linear-gradient(to_bottom,#80808005_1px,transparent_1px)] bg-[size:24px_24px]" />
       <div
@@ -163,98 +163,109 @@ export function FullStackBlocksIllustration() {
         }}
       />
 
-      <div className="flex size-full max-w-xs flex-col items-stretch justify-between gap-6">
+      <div className="flex size-full max-w-[280px] flex-col items-stretch justify-between gap-2">
         {/* Top row */}
-        <div className="flex flex-row items-center justify-between">
-          <div className="flex flex-col items-center gap-1">
+        <div className="flex flex-row items-start justify-between px-2">
+          <div className="flex flex-col items-center gap-1.5">
             <Circle ref={nextRef}>
               <NextLogo className="size-5 text-foreground" />
             </Circle>
-            <span className="text-[8px] font-medium text-muted-foreground">
+            <span className="text-[9px] font-medium text-muted-foreground">
               Next.js
             </span>
           </div>
-          <div className="flex flex-col items-center gap-1">
+          <div className="flex flex-col items-center gap-1.5">
             <Circle ref={reactRef}>
               <ReactLogo className="size-4" />
             </Circle>
-            <span className="text-[8px] font-medium text-muted-foreground">
+            <span className="text-[9px] font-medium text-muted-foreground">
               React
             </span>
           </div>
         </div>
 
         {/* Middle row - center logo */}
-        <div className="flex flex-row items-center justify-center">
+        <div className="flex flex-row items-center justify-center py-2">
           <Circle
             ref={centerRef}
-            className="size-14 rounded-2xl border-border bg-card"
+            className="size-16 rounded-2xl border-border bg-card"
           >
-            <AppLogo className="size-7 text-foreground" />
+            <AppLogo className="size-8 text-foreground" />
           </Circle>
         </div>
 
         {/* Bottom row */}
-        <div className="flex flex-row items-center justify-between">
-          <div className="flex flex-col items-center gap-1">
+        <div className="flex flex-row items-end justify-between px-2">
+          <div className="flex flex-col items-center gap-1.5">
             <Circle ref={drizzleRef}>
               <DrizzleLogo className="size-4" />
             </Circle>
-            <span className="text-[8px] font-medium text-muted-foreground">
+            <span className="text-[9px] font-medium text-muted-foreground">
               Drizzle
             </span>
           </div>
-          <div className="flex flex-col items-center gap-1">
+          <div className="flex flex-col items-center gap-1.5">
             <Circle ref={authRef}>
               <BetterAuthLogo className="size-4" />
             </Circle>
-            <span className="text-[8px] font-medium text-muted-foreground">
-              Auth
+            <span className="text-[9px] font-medium text-muted-foreground">
+              Better Auth
             </span>
           </div>
         </div>
       </div>
 
-      {/* Animated Beams */}
+      {/* Animated Beams - from icons to center */}
+      {/* Top-left (Next.js) to center - curve outward (down) */}
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={nextRef}
         toRef={centerRef}
-        curvature={-50}
-        endYOffset={-5}
+        curvature={-40}
+        endYOffset={-8}
+        endXOffset={-8}
         gradientStartColor={BRAND_COLOR}
         gradientStopColor={BRAND_COLOR}
+        duration={4}
       />
+      {/* Top-right (React) to center - curve outward (down) */}
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={reactRef}
         toRef={centerRef}
-        curvature={50}
-        endYOffset={-5}
+        curvature={-40}
+        endYOffset={-8}
+        endXOffset={8}
         gradientStartColor={BRAND_COLOR}
         gradientStopColor={BRAND_COLOR}
         reverse
+        duration={4.5}
       />
+      {/* Bottom-left (Drizzle) to center - curve outward (up) */}
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={drizzleRef}
         toRef={centerRef}
-        curvature={50}
-        endYOffset={5}
+        curvature={40}
+        endYOffset={8}
+        endXOffset={-8}
         gradientStartColor={BRAND_COLOR}
         gradientStopColor={BRAND_COLOR}
+        duration={5}
       />
+      {/* Bottom-right (Better Auth) to center - curve outward (up) */}
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={authRef}
         toRef={centerRef}
-        curvature={-50}
-        endYOffset={5}
+        curvature={40}
+        endYOffset={8}
+        endXOffset={8}
         gradientStartColor={BRAND_COLOR}
         gradientStopColor={BRAND_COLOR}
         reverse
+        duration={4.2}
       />
-
     </div>
   )
 }

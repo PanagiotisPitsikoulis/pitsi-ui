@@ -56,12 +56,10 @@ export function FullyFunctionalIllustration() {
         
         {/* Result Area */}
         <div className="h-16 rounded-lg bg-muted p-2">
-            <motion.div 
-                className="h-full w-full rounded border border-dashed border-border"
-                animate={{ 
-                    backgroundColor: isActive ? "rgba(var(--brand), 0.1)" : "transparent",
-                    borderColor: isActive ? "var(--brand)" : "var(--border)"
-                }}
+            <div
+                className={`h-full w-full rounded border border-dashed transition-colors duration-300 ${
+                    isActive ? 'bg-brand/10 border-brand' : 'bg-transparent border-border'
+                }`}
             />
         </div>
 

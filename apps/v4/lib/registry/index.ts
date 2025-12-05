@@ -954,6 +954,37 @@ export async function getRegistryItem(
 }
 
 /**
+ * Get summary counts for homepage display
+ * Returns counts for animations, components (UI), and blocks
+ */
+export async function getRegistrySummaryCounts(): Promise<{
+  animations: number
+  components: number
+  blocks: number
+}> {
+  // Get all items
+  const allItems = await getAllRegistryItems()
+
+  // Count animations (items with "animations" category)
+  const animations = allItems.filter((item) =>
+    item.categories?.includes("animations")
+  ).length
+
+  // Count UI components (registry:ui type, excluding animations)
+  const components = allItems.filter(
+    (item) =>
+      item.type === "registry:ui" && !item.categories?.includes("animations")
+  ).length
+
+  // Count blocks
+  const blocks = allItems.filter(
+    (item) => item.type === "registry:block" || item.type === "registry:internal"
+  ).length
+
+  return { animations, components, blocks }
+}
+
+/**
  * Get all blocks in a specific subcategory
  */
 export async function getAllBlocksInSubcategory(

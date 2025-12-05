@@ -364,7 +364,7 @@ export function PowerBentoSection() {
                 key={`icon-${index}`}
                 className="hidden items-center justify-center md:flex"
               >
-                <IconComponent className="text-brand size-48" />
+                <IconComponent className="text-brand size-36" />
               </div>
             )
           }

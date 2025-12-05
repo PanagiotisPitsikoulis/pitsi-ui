@@ -33,7 +33,7 @@ const templates: Template[] = [
     description:
       "A modern landing page template for startups and tech companies. Features hero section, features grid, testimonials, and pricing.",
     category: "landing",
-    image: "/marketing/mountain.jpg",
+    image: "/marketing/mountain.webp",
     features: [
       "Hero with gradient background",
       "Feature cards with icons",
@@ -49,7 +49,7 @@ const templates: Template[] = [
     description:
       "Showcase your agency's work with this elegant portfolio template. Includes project gallery, team section, and contact form.",
     category: "portfolio",
-    image: "/marketing/cliff.jpg",
+    image: "/marketing/cliff.webp",
     features: [
       "Project showcase grid",
       "Filterable portfolio",
@@ -65,7 +65,7 @@ const templates: Template[] = [
     description:
       "A comprehensive analytics dashboard with charts, metrics, and data tables. Perfect for SaaS applications.",
     category: "dashboard",
-    image: "/marketing/party.jpg",
+    image: "/marketing/party.webp",
     features: [
       "Real-time metrics cards",
       "Interactive charts",
@@ -82,7 +82,7 @@ const templates: Template[] = [
     description:
       "A complete e-commerce template with product listings, cart, and checkout flow. Built for conversion.",
     category: "ecommerce",
-    image: "/marketing/surfing.jpg",
+    image: "/marketing/surfing.webp",
     features: [
       "Product grid with filters",
       "Quick view modal",
@@ -99,7 +99,7 @@ const templates: Template[] = [
     description:
       "Marketing site template for SaaS products. Features comparison tables, feature highlights, and conversion-focused design.",
     category: "saas",
-    image: "/marketing/sky-night.jpg",
+    image: "/marketing/sky-night.webp",
     features: [
       "Animated hero section",
       "Feature comparison",
@@ -115,7 +115,7 @@ const templates: Template[] = [
     description:
       "A clean, readable blog template with categories, search, and newsletter integration.",
     category: "blog",
-    image: "/marketing/mountain.jpg",
+    image: "/marketing/mountain.webp",
     features: [
       "Article grid layout",
       "Category filtering",
@@ -131,7 +131,7 @@ const templates: Template[] = [
     description:
       "Minimal and elegant personal portfolio for developers, designers, and creatives.",
     category: "portfolio",
-    image: "/marketing/cliff.jpg",
+    image: "/marketing/cliff.webp",
     features: [
       "About section",
       "Project showcase",
@@ -147,7 +147,7 @@ const templates: Template[] = [
     description:
       "Full-featured admin panel with user management, settings, and CRUD operations.",
     category: "dashboard",
-    image: "/marketing/party.jpg",
+    image: "/marketing/party.webp",
     features: [
       "User management",
       "Role-based access",

@@ -29,7 +29,7 @@ export function HeroSection() {
                 height="1"
               >
                 <image
-                  href="/marketing/surfing.jpg"
+                  href="/marketing/surfing.webp"
                   x="0"
                   y="0"
                   width="1920"
@@ -59,7 +59,7 @@ export function HeroSection() {
                 height="1"
               >
                 <image
-                  href="/marketing/sky-night.jpg"
+                  href="/marketing/sky-night.webp"
                   x="0"
                   y="0"
                   width="1920"
@@ -108,7 +108,7 @@ export function HeroSection() {
           {/*Desktop Preview - Mobile View*/}
           <div className="h-56">
             <ParallaxImage
-              src="/marketing/surfing.jpg"
+              src="/marketing/surfing.webp"
               alt="Desktop hero preview"
               className="rounded-4xl h-full"
               imageClassName="absolute inset-0 h-[120%] w-full"
@@ -130,7 +130,7 @@ export function HeroSection() {
           {/*Mobile Preview - Mobile View*/}
           <div className="w-full aspect-[9/16]">
             <ParallaxImage
-              src="/marketing/party.jpg"
+              src="/marketing/party.webp"
               alt="Mobile hero preview"
               className="rounded-4xl h-full"
               imageClassName="absolute inset-0 h-[120%] w-full"
@@ -168,7 +168,7 @@ export function HeroSection() {
           {/*Card Desktop*/}
           <LayoutGridItem span={6} spanMd={4}>
             <ParallaxImage
-              src="/marketing/surfing.jpg"
+              src="/marketing/surfing.webp"
               alt="Desktop hero preview"
               className="rounded-4xl h-full"
               imageClassName="absolute inset-0 h-[120%] w-full"
@@ -211,7 +211,7 @@ export function HeroSection() {
           {/*Card Mobile*/}
           <LayoutGridItem span={6} spanMd={2}>
             <ParallaxImage
-              src="/marketing/party.jpg"
+              src="/marketing/party.webp"
               alt="Mobile hero preview"
               className="rounded-4xl h-full"
               imageClassName="absolute inset-0 h-[120%] w-full"

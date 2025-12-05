@@ -24,7 +24,7 @@ export function CTASection() {
               height="450"
             >
               <image
-                href="/marketing/surfing.jpg"
+                href="/marketing/surfing.webp"
                 x="0"
                 y="0"
                 width="1440"
@@ -55,7 +55,7 @@ export function CTASection() {
               height="450"
             >
               <image
-                href="/marketing/sky-night.jpg"
+                href="/marketing/sky-night.webp"
                 x="0"
                 y="0"
                 width="1440"
@@ -89,7 +89,7 @@ export function CTASection() {
               height="450"
             >
               <image
-                href="/marketing/surfing.jpg"
+                href="/marketing/surfing.webp"
                 x="0"
                 y="0"
                 width="1440"
@@ -120,7 +120,7 @@ export function CTASection() {
               height="450"
             >
               <image
-                href="/marketing/sky-night.jpg"
+                href="/marketing/sky-night.webp"
                 x="0"
                 y="0"
                 width="1440"

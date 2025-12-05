@@ -12,6 +12,20 @@ import { Spinner } from "@/registry/new-york-v4/ui/spinner"
 
 import { LayoutGrid, LayoutGridItem } from "./layout-grid"
 
+interface ContentSectionProps {
+  registryCounts: {
+    animations: number
+    components: number
+    blocks: number
+  }
+}
+
+// Helper to format count as "X+" rounded down to nearest 10
+function formatCount(count: number): string {
+  const rounded = Math.floor(count / 10) * 10
+  return `${rounded}+`
+}
+
 // SVG Icon Components with brand color
 function BlocksIcon({ className }: { className?: string }) {
   return (
@@ -297,47 +311,49 @@ const FEATURED_ITEMS = {
   ],
 }
 
-const tabs = [
-  {
-    id: "animations",
-    label: "30+ free animations",
-    description:
-      "Smooth, performant animations powered by Motion for delightful interactions.",
-    href: "/docs/animations",
-    Icon: AnimationsIcon,
-    items: FEATURED_ITEMS.animations,
-    gridClass: "grid-cols-6",
-    itemClass: "col-span-6 md:col-span-2",
-    aspectClass: "aspect-video",
-    mobileLimit: 6,
-  },
-  {
-    id: "components",
-    label: "80+ free components",
-    description:
-      "Beautiful, accessible components built with Radix UI and Tailwind CSS.",
-    href: "/docs/components",
-    Icon: ComponentsIcon,
-    items: FEATURED_ITEMS.components,
-    gridClass: "grid-cols-6",
-    itemClass: "col-span-6 md:col-span-2",
-    aspectClass: "aspect-video",
-    mobileLimit: 6,
-  },
-  {
-    id: "blocks",
-    label: "300+ free blocks",
-    description:
-      "Professionally designed, fully responsive blocks ready to drop into your project.",
-    href: "/blocks",
-    Icon: BlocksIcon,
-    items: FEATURED_ITEMS.blocks,
-    gridClass: "grid-cols-6",
-    itemClass: "col-span-6 md:col-span-2",
-    aspectClass: "aspect-video",
-    mobileLimit: 6,
-  },
-]
+function createTabs(counts: ContentSectionProps["registryCounts"]) {
+  return [
+    {
+      id: "animations",
+      label: `${formatCount(counts.animations)} free animations`,
+      description:
+        "Smooth, performant animations powered by Motion for delightful interactions.",
+      href: "/docs/animations",
+      Icon: AnimationsIcon,
+      items: FEATURED_ITEMS.animations,
+      gridClass: "grid-cols-6",
+      itemClass: "col-span-6 md:col-span-2",
+      aspectClass: "aspect-video",
+      mobileLimit: 6,
+    },
+    {
+      id: "components",
+      label: `${formatCount(counts.components)} free components`,
+      description:
+        "Beautiful, accessible components built with Radix UI and Tailwind CSS.",
+      href: "/docs/components",
+      Icon: ComponentsIcon,
+      items: FEATURED_ITEMS.components,
+      gridClass: "grid-cols-6",
+      itemClass: "col-span-6 md:col-span-2",
+      aspectClass: "aspect-video",
+      mobileLimit: 6,
+    },
+    {
+      id: "blocks",
+      label: `${formatCount(counts.blocks)} free blocks`,
+      description:
+        "Professionally designed, fully responsive blocks ready to drop into your project.",
+      href: "/blocks",
+      Icon: BlocksIcon,
+      items: FEATURED_ITEMS.blocks,
+      gridClass: "grid-cols-6",
+      itemClass: "col-span-6 md:col-span-2",
+      aspectClass: "aspect-video",
+      mobileLimit: 6,
+    },
+  ]
+}
 
 function RegistryItemPreview({
   name,
@@ -424,10 +440,11 @@ function RegistryItemPreview({
   )
 }
 
-export function ContentSection() {
+export function ContentSection({ registryCounts }: ContentSectionProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const { shouldUseScroll } = useAnimationState(true, false)
   const [isMobile, setIsMobile] = useState(false)
+  const tabs = createTabs(registryCounts)
 
   React.useEffect(() => {
     const checkMobile = () => {
@@ -556,12 +573,57 @@ export function ContentSection() {
 
   return (
     <>
-      {/* Scroll-jacking container - needs enough height for scroll tracking */}
-      <section ref={containerRef} className="relative h-[700dvh] md:h-[350vh] pt-16 md:pt-24">
+      {/* Mobile: Simple stacked sections */}
+      <section className="md:hidden py-16">
+        <div className="container px-6">
+          {tabs.map((tab) => (
+            <div key={tab.id} className="mb-12 last:mb-0">
+              {/* Tab Card - matching desktop style */}
+              <div className="bg-background relative flex flex-col gap-4 rounded-xl border border-border/50 p-5 shadow-sm">
+                <div className="flex items-center gap-4">
+                  <div className="shrink-0">
+                    <tab.Icon className="text-brand size-12" />
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <p className="text-brand text-xs font-semibold tracking-widest uppercase">
+                      {tab.id}
+                    </p>
+                    <p className="text-muted-foreground text-sm">
+                      {tab.description}
+                    </p>
+                  </div>
+                </div>
+                {/* View All Link */}
+                <Link href={tab.href} className="w-full">
+                  <HeroButton variant="secondary" className="w-full justify-center">View all {tab.label}</HeroButton>
+                </Link>
+              </div>
+
+              <Spacer size="md" />
+
+              {/* 2 Preview Cards */}
+              <div className="flex flex-col gap-4">
+                {tab.items.slice(0, 2).map((itemName) => (
+                  <RegistryItemPreview
+                    key={itemName}
+                    name={itemName}
+                    type={getItemType(tab.id)}
+                    aspectClass={tab.aspectClass}
+                    className="rounded-xl border border-border/50 shadow-sm"
+                  />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Desktop: Scroll-jacking animation */}
+      <section ref={containerRef} className="relative hidden md:block h-[350vh] pt-24">
         <div className="sticky top-20 pt-2">
           <div className="container px-6">
             {/* Desktop: 3 tab cards in 6-column grid */}
-            <LayoutGrid className="hidden md:grid">
+            <LayoutGrid className="grid">
               {tabs.map((tab, index) => (
                 <LayoutGridItem key={tab.id} span={6} spanMd={2}>
                   <div className="bg-background relative flex flex-col border-y border-l border-border/50 p-6 shadow-sm first:rounded-l-xl last:rounded-r-xl last:border-r lg:p-8">
@@ -589,76 +651,7 @@ export function ContentSection() {
               ))}
             </LayoutGrid>
 
-            {/* Mobile: Single tab with animation */}
-            <div className="relative rounded-xl border shadow-sm md:hidden">
-              {tabs.map((tab, index) => (
-                <motion.div
-                  key={tab.id}
-                  className={`bg-background flex items-center gap-4 p-5 ${index === 0 ? "relative" : "absolute inset-0"}`}
-                  style={{
-                    opacity: tabOpacities[index],
-                  }}
-                >
-                  <div className="shrink-0">
-                    <tab.Icon className="text-brand size-12" />
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <p className="text-brand text-xs font-semibold tracking-widest uppercase">
-                      {tab.id}
-                    </p>
-                    <p className="text-muted-foreground text-sm">
-                      {tab.description}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Mobile: Pill below tabs */}
-            <div className="relative mt-4 flex justify-center md:hidden">
-              {tabs.map((tab, tabIndex) => (
-                <motion.div
-                  key={tab.id}
-                  className="flex items-center gap-2 rounded-full border bg-background py-1.5 pl-1.5 pr-3"
-                  style={{
-                    opacity: tabOpacities[tabIndex],
-                    position: tabIndex === 0 ? "relative" : "absolute",
-                  }}
-                >
-                  <Link href={tab.href}>
-                    <HeroButton>View all {tab.label}</HeroButton>
-                  </Link>
-                  <div className="relative shrink-0">
-                    <svg className="size-7 -rotate-90" viewBox="0 0 28 28">
-                      <circle
-                        cx="14"
-                        cy="14"
-                        r="12"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        className="text-muted/30"
-                      />
-                      <motion.circle
-                        cx="14"
-                        cy="14"
-                        r="12"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        className="text-brand"
-                        style={{ pathLength: progressValues[tabIndex] }}
-                        strokeDasharray="1"
-                        strokeDashoffset="0"
-                      />
-                    </svg>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            <Spacer size="lg" sizeMobile="md" />
+            <Spacer size="lg" />
 
             {/* Grid Content Area */}
             <div className="relative">
@@ -674,21 +667,8 @@ export function ContentSection() {
                     pointerEvents: tabPointerEvents[tabIndex],
                   }}
                 >
-                  {/* Mobile: stacked layout */}
-                  <div className="flex flex-col gap-6 md:hidden">
-                    {tab.items.slice(0, tab.mobileLimit).map((itemName) => (
-                      <RegistryItemPreview
-                        key={itemName}
-                        name={itemName}
-                        type={getItemType(tab.id)}
-                        aspectClass={tab.aspectClass}
-                        className="rounded-xl border border-border/50 shadow-sm"
-                      />
-                    ))}
-                  </div>
-
                   {/* Desktop: 3-column grid */}
-                  <div className="hidden md:grid md:grid-cols-3 md:gap-6">
+                  <div className="grid grid-cols-3 gap-6">
                     {/* Left column */}
                     <div className="flex flex-col gap-6">
                       <RegistryItemPreview
@@ -774,7 +754,7 @@ export function ContentSection() {
               ))}
             </div>
 
-            <Spacer size="6xl" sizeMobile="4xl" />
+            <Spacer size="6xl" />
           </div>
         </div>
       </section>

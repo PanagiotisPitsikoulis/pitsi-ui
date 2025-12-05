@@ -163,7 +163,7 @@ function IconOnly({
 }) {
   return (
     <div className={`relative z-10 flex h-[16rem] items-center justify-center md:h-[18rem] ${className ?? ""}`}>
-      <Icon className="text-brand size-36 md:size-48" />
+      <Icon className="text-brand size-28 md:size-36" />
     </div>
   )
 }
@@ -217,7 +217,7 @@ export function PurposeSection() {
               <div className="from-brand to-brand/60 flex size-12 items-center justify-center rounded-full bg-gradient-to-br p-0.5">
                 <div className="bg-background flex size-full items-center justify-center rounded-full p-0.5">
                   <div className="size-full overflow-hidden rounded-full">
-                    <img src="/avatars/01.jpg" alt="" className="h-full w-full object-cover" />
+                    <img src="/avatars/01.webp" alt="" className="h-full w-full object-cover" />
                   </div>
                 </div>
               </div>
@@ -227,7 +227,7 @@ export function PurposeSection() {
               <div className="from-pink-500 to-orange-400 flex size-12 items-center justify-center rounded-full bg-gradient-to-br p-0.5">
                 <div className="bg-background size-full rounded-full p-0.5">
                   <div className="size-full overflow-hidden rounded-full">
-                    <img src="/avatars/02.jpg" alt="" className="h-full w-full object-cover" />
+                    <img src="/avatars/02.webp" alt="" className="h-full w-full object-cover" />
                   </div>
                 </div>
               </div>
@@ -237,7 +237,7 @@ export function PurposeSection() {
               <div className="from-pink-500 to-orange-400 flex size-12 items-center justify-center rounded-full bg-gradient-to-br p-0.5">
                 <div className="bg-background size-full rounded-full p-0.5">
                   <div className="size-full overflow-hidden rounded-full">
-                    <img src="/avatars/03.jpg" alt="" className="h-full w-full object-cover" />
+                    <img src="/avatars/03.webp" alt="" className="h-full w-full object-cover" />
                   </div>
                 </div>
               </div>
@@ -247,7 +247,7 @@ export function PurposeSection() {
               <div className="bg-muted/40 flex size-12 items-center justify-center rounded-full">
                 <div className="bg-background size-full rounded-full p-0.5">
                   <div className="size-full overflow-hidden rounded-full">
-                    <img src="/avatars/04.jpg" alt="" className="h-full w-full object-cover" />
+                    <img src="/avatars/04.webp" alt="" className="h-full w-full object-cover" />
                   </div>
                 </div>
               </div>
@@ -257,7 +257,7 @@ export function PurposeSection() {
               <div className="bg-muted/40 flex size-12 items-center justify-center rounded-full">
                 <div className="bg-background size-full rounded-full p-0.5">
                   <div className="size-full overflow-hidden rounded-full">
-                    <img src="/avatars/05.jpg" alt="" className="h-full w-full object-cover" />
+                    <img src="/avatars/05.webp" alt="" className="h-full w-full object-cover" />
                   </div>
                 </div>
               </div>
@@ -274,7 +274,7 @@ export function PurposeSection() {
                 <div className="from-pink-500 to-orange-400 flex size-8 items-center justify-center rounded-full bg-gradient-to-br p-0.5">
                   <div className="bg-background size-full rounded-full p-0.5">
                     <div className="size-full overflow-hidden rounded-full">
-                      <img src="/avatars/06.jpg" alt="" className="h-full w-full object-cover" />
+                      <img src="/avatars/06.webp" alt="" className="h-full w-full object-cover" />
                     </div>
                   </div>
                 </div>
@@ -290,7 +290,7 @@ export function PurposeSection() {
               </div>
               {/* Post Image */}
               <ParallaxImage
-                src="/marketing/mountain.jpg"
+                src="/marketing/mountain.webp"
                 alt="Mountain cliff"
                 className="aspect-[4/5] w-full"
                 imageClassName="absolute inset-0 h-[120%] w-full"
@@ -309,10 +309,10 @@ export function PurposeSection() {
               <div className="flex items-center gap-2 px-5">
                 <div className="-space-x-1.5 flex">
                   <div className="border-background size-4 overflow-hidden rounded-full border">
-                    <img src="/avatars/07.jpg" alt="" className="h-full w-full object-cover" />
+                    <img src="/avatars/07.webp" alt="" className="h-full w-full object-cover" />
                   </div>
                   <div className="border-background size-4 overflow-hidden rounded-full border">
-                    <img src="/avatars/08.jpg" alt="" className="h-full w-full object-cover" />
+                    <img src="/avatars/08.webp" alt="" className="h-full w-full object-cover" />
                   </div>
                 </div>
                 <div className="bg-muted h-2 w-24 rounded" />

@@ -109,9 +109,9 @@ export function DesignSection() {
       <StripeBgGuides contained glowOpacity={0.8} />
 
       {/* Intro Section */}
-      <div className="relative flex min-h-screen flex-col items-center justify-start gap-6 pt-16 pb-[10vh] text-center">
+      <div className="relative flex min-h-[70vh] md:min-h-screen flex-col items-center justify-start gap-6 pt-16 pb-[10vh] text-center">
         <ParallaxImage
-          src="/marketing/man-sky.jpg"
+          src="/marketing/man-sky.webp"
           alt="Museum"
           className="pointer-events-none absolute inset-0 z-0 h-full w-full"
           imageClassName="object-cover object-bottom"
@@ -119,7 +119,7 @@ export function DesignSection() {
           offset={["start end", "end start"]}
         />
         <ParallaxImage
-          src="/marketing/man-sky-no-bg.png"
+          src="/marketing/man-sky-no-bg.webp"
           alt="Museum"
           className="pointer-events-none absolute inset-0 z-50 h-full w-full"
           imageClassName="object-cover object-bottom"
@@ -154,7 +154,7 @@ export function DesignSection() {
       </div>
 
       {/* Horizontal Parallax - The Problem */}
-      <HorizontalScrollContainer className="bg-background relative flex min-h-[80vh] flex-col justify-center overflow-hidden py-24">
+      <HorizontalScrollContainer className="bg-background relative flex min-h-[50vh] md:min-h-[80vh] flex-col justify-center overflow-hidden py-12 md:py-24">
         <HorizontalSlide
           direction="left"
           distance={400}
@@ -186,8 +186,8 @@ export function DesignSection() {
       </HorizontalScrollContainer>
 
       {/* Text Gradient Opacity - The Solution */}
-      <div className="bg-muted relative min-h-[70vh] overflow-hidden">
-        <div className="relative flex min-h-[70vh] items-center py-24">
+      <div className="bg-muted relative min-h-[40vh] md:min-h-[70vh] overflow-hidden">
+        <div className="relative flex min-h-[40vh] md:min-h-[70vh] items-center py-12 md:py-24">
           <div className="container px-6">
             <p className="text-brand mb-6 text-xs font-medium tracking-widest uppercase">
               Every Pixel Already Considered
@@ -201,7 +201,7 @@ export function DesignSection() {
       </div>
 
       {/* Final CTA */}
-      <HorizontalScrollContainer className="bg-muted relative flex min-h-[80vh] flex-col justify-center overflow-hidden py-24">
+      <HorizontalScrollContainer className="bg-muted relative flex min-h-[50vh] md:min-h-[80vh] flex-col justify-center overflow-hidden py-12 md:py-24">
         <HorizontalSlide
           direction="left"
           distance={400}
@@ -275,7 +275,7 @@ export function DesignSection() {
             </div>
           </div>
           <div>
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6">
               {DESIGN_BLOCKS.map((blockName) => (
                 <RegistryBlockPreview
                   key={blockName}
