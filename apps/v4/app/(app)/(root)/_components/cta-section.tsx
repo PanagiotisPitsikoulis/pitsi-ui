@@ -6,7 +6,7 @@ import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 
 export function CTASection() {
   return (
-    <div className="relative pb-32 md:pb-40">
+    <div id="cta" className="relative pb-32 md:pb-40">
       {/* SVG Waves in background */}
       {/* Back wave - with Tailwind mask fade */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 mx-auto w-full max-w-[1920px]">
@@ -144,17 +144,16 @@ export function CTASection() {
 
       {/* Content */}
       <div className="relative z-10 container flex flex-col items-center justify-center px-6 pt-16 text-center md:pt-24">
-        <h2 className="display max-w-4xl text-4xl leading-[0.95] tracking-tight md:text-6xl lg:text-7xl">
+        <p className="text-brand text-sm font-medium tracking-widest uppercase">
+          Start Building
+        </p>
+        <Spacer size="md" sizeMobile="sm" />
+        <h2 className="display max-w-4xl text-4xl leading-[1.1] tracking-tight md:text-6xl lg:text-7xl">
           Get Ready to Build
           <br />
           <span className="text-foreground">Something Beautiful</span>
         </h2>
-        <Spacer size="md" sizeMobile="sm" />
-        <p className="text-muted-foreground max-w-xl text-base md:text-lg">
-          Join thousands of developers building faster with pitsi/ui. Start with
-          our free components and scale when you need more.
-        </p>
-        <Spacer size="2xl" sizeMobile="xl" />
+        <Spacer size="4xl" sizeMobile="2xl" />
         <div className="flex flex-col gap-4 sm:flex-row">
           <Link href="/blocks">
             <HeroButton>Explore Blocks</HeroButton>

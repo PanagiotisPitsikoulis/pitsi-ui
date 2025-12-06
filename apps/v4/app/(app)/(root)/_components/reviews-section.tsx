@@ -85,7 +85,7 @@ function ReviewCard({
 
 export function ReviewsSection() {
   return (
-    <div className="relative mx-auto -mt-10 flex w-full max-w-[1920px] flex-col items-center justify-center overflow-hidden pb-10">
+    <div id="reviews" className="relative mx-auto -mt-10 flex w-full max-w-[1920px] flex-col items-center justify-center overflow-hidden pb-10">
       <Marquee pauseOnHover className="[--duration:20s]">
         {firstRow.map((review) => (
           <ReviewCard key={review.username} {...review} />

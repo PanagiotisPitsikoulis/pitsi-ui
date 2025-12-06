@@ -105,11 +105,11 @@ function RegistryBlockPreview({
 
 export function DesignSection() {
   return (
-    <div className="bg-background relative isolate flex flex-col overflow-hidden">
+    <div id="design" className="bg-background relative isolate flex flex-col overflow-hidden">
       <StripeBgGuides contained glowOpacity={0.8} />
 
       {/* Intro Section */}
-      <div className="relative flex min-h-[70vh] md:min-h-screen flex-col items-center justify-start gap-6 pt-16 pb-[10vh] text-center">
+      <div className="relative flex min-h-[70svh] md:min-h-svh flex-col items-center justify-start gap-6 pt-16 pb-[10vh] text-center">
         <ParallaxImage
           src="/marketing/man-sky.webp"
           alt="Museum"
@@ -170,7 +170,7 @@ export function DesignSection() {
             <h2 className="display text-foreground mx-auto max-w-4xl text-4xl leading-tight tracking-tight md:text-6xl lg:text-7xl">
               You&apos;re not a designer.
               <br />
-              <span className="text-muted-foreground">
+              <span className="text-foreground">
                 That&apos;s the point.
               </span>
             </h2>
@@ -217,7 +217,7 @@ export function DesignSection() {
             <h2 className="display text-foreground mx-auto max-w-4xl text-4xl leading-tight tracking-tight md:text-6xl lg:text-7xl">
               Ship work you&apos;re proud of.
               <br />
-              <span className="text-muted-foreground">
+              <span className="text-foreground">
                 Finally.
               </span>
             </h2>

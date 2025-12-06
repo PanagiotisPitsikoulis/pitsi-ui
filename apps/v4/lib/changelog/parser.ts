@@ -4,10 +4,8 @@ import path from "path"
 export type ChangeType = "major" | "minor" | "patch"
 
 export interface ChangelogChange {
-  type: "major" | "minor" | "patch"
-  pr?: string
+  type: ChangeType
   commit?: string
-  author?: string
   description: string
 }
 
@@ -21,22 +19,29 @@ export interface ChangelogEntry {
 }
 
 function parseChangeEntry(line: string): ChangelogChange | null {
-  // Match lines like:
-  // - [#8555](https://...) [`commit`](https://...) Thanks [@user](...) - description
-  // or simpler: - [`commit`](https://...) Thanks [@user](...) - description
-  const prMatch = line.match(/\[#(\d+)\]\(([^)]+)\)/)
+  // Match commit hash pattern: [`hash`](url)
   const commitMatch = line.match(/\[`([a-f0-9]+)`\]\(([^)]+)\)/)
-  const authorMatch = line.match(/Thanks \[@([^\]]+)\]/)
-  const descriptionMatch = line.match(/! (.+)$/)
 
-  if (!descriptionMatch) return null
+  // Extract description - try multiple patterns
+  let description: string | null = null
+
+  // Pattern 1: "- [`commit`](url) - description"
+  const dashMatch = line.match(/\]\([^)]+\)\s*-\s*(.+)$/)
+  if (dashMatch) {
+    description = dashMatch[1].trim()
+  }
+
+  // Pattern 2: Simple list item without commit link "- description"
+  if (!description && line.startsWith("- ") && !line.includes("](")) {
+    description = line.slice(2).trim()
+  }
+
+  if (!description) return null
 
   return {
     type: "patch",
-    pr: prMatch ? prMatch[1] : undefined,
     commit: commitMatch ? commitMatch[1] : undefined,
-    author: authorMatch ? authorMatch[1] : undefined,
-    description: descriptionMatch[1].trim(),
+    description,
   }
 }
 
@@ -45,10 +50,10 @@ export function parseChangelog(content: string): ChangelogEntry[] {
   const lines = content.split("\n")
 
   let currentEntry: ChangelogEntry | null = null
-  let currentChangeType: "major" | "minor" | "patch" | null = null
+  let currentChangeType: ChangeType | null = null
 
   for (const line of lines) {
-    // Match version headers like "## 3.5.0"
+    // Match version headers like "## 4.4.0"
     const versionMatch = line.match(/^## (\d+\.\d+\.\d+)/)
     if (versionMatch) {
       if (currentEntry) {
@@ -99,50 +104,28 @@ export function parseChangelog(content: string): ChangelogEntry[] {
 }
 
 export function getChangelogEntries(): ChangelogEntry[] {
-  const changelogPath = path.join(
-    process.cwd(),
-    "..",
-    "..",
-    "packages",
-    "pitsi",
-    "CHANGELOG.md"
-  )
+  const possiblePaths = [
+    path.join(process.cwd(), "CHANGELOG.md"),
+    path.join(process.cwd(), "apps", "v4", "CHANGELOG.md"),
+    path.join(process.cwd(), "..", "apps", "v4", "CHANGELOG.md"),
+  ]
 
-  try {
-    const content = fs.readFileSync(changelogPath, "utf-8")
-    return parseChangelog(content)
-  } catch {
-    // Fallback: try relative path from apps/v4
+  for (const changelogPath of possiblePaths) {
     try {
-      const fallbackPath = path.join(
-        process.cwd(),
-        "packages",
-        "pitsi",
-        "CHANGELOG.md"
-      )
-      const content = fs.readFileSync(fallbackPath, "utf-8")
+      const content = fs.readFileSync(changelogPath, "utf-8")
       return parseChangelog(content)
     } catch {
-      return []
+      // Try next path
     }
   }
+
+  return []
 }
 
 export function getChangeType(entry: ChangelogEntry): ChangeType {
   if (entry.changes.major.length > 0) return "major"
   if (entry.changes.minor.length > 0) return "minor"
   return "patch"
-}
-
-export function getChangeTypeLabel(type: ChangeType): string {
-  switch (type) {
-    case "major":
-      return "Major Release"
-    case "minor":
-      return "New Features"
-    case "patch":
-      return "Bug Fixes"
-  }
 }
 
 export function getAllChanges(entry: ChangelogEntry): ChangelogChange[] {

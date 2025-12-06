@@ -1,11 +1,5 @@
 import type { RegistryItem } from "@/lib/registry"
 
-// Re-export pages constants
-export { PAGES_NEW, PAGES_UPDATED } from "./pages"
-
-
-
-
 export function createComponentCategoryMap(
   registryComponents: RegistryItem[]
 ): Map<string, string[]> {

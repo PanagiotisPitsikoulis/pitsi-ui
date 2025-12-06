@@ -25,6 +25,7 @@ export async function GET(
   return new NextResponse(processedContent, {
     headers: {
       "Content-Type": "text/markdown; charset=utf-8",
+      "Cache-Control": "public, max-age=31536000, immutable",
     },
   })
 }

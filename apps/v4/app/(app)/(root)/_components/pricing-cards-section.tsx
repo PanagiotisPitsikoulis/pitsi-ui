@@ -96,45 +96,16 @@ function CheckoutButton({
   }
   const buttonText = buttonLabels[planType]
 
-  // Highlighted variant - secondary button
-  if (variant === "highlighted") {
-    if (!isLoggedIn) {
-      return (
-        <Button
-          asChild
-          size="lg"
-          variant="secondary"
-          className="w-full rounded-xl shadow-none"
-        >
-          <Link href="/signin">Sign in to Purchase</Link>
-        </Button>
-      )
-    }
+  const buttonVariant = variant === "highlighted" ? "default" : "secondary"
 
-    return (
-      <Button
-        onClick={handleCheckout}
-        disabled={isLoading}
-        size="lg"
-        variant="secondary"
-        className="w-full rounded-xl shadow-none"
-      >
-        {isLoading ? (
-          <>
-            <Loader2 className="mr-2 size-4 animate-spin" />
-            Redirecting...
-          </>
-        ) : (
-          buttonText
-        )}
-      </Button>
-    )
-  }
-
-  // Default variant - standard button
   if (!isLoggedIn) {
     return (
-      <Button asChild size="lg" className="w-full rounded-xl">
+      <Button
+        asChild
+        size="lg"
+        variant={buttonVariant}
+        className="w-full rounded-xl"
+      >
         <Link href="/signin">Sign in to Purchase</Link>
       </Button>
     )
@@ -145,6 +116,7 @@ function CheckoutButton({
       onClick={handleCheckout}
       disabled={isLoading}
       size="lg"
+      variant={buttonVariant}
       className="w-full rounded-xl"
     >
       {isLoading ? (
@@ -166,10 +138,10 @@ function PricingCard({
   priceLabel,
   description,
   featureList,
-  highlighted = false,
   badge,
   children,
   className,
+  featured = false,
 }: {
   name: string
   price: string
@@ -177,69 +149,41 @@ function PricingCard({
   priceLabel: string
   description: string
   featureList: string[]
-  highlighted?: boolean
   badge?: string
   children: React.ReactNode
   className?: string
+  featured?: boolean
 }) {
   return (
     <div
-      className={`relative flex flex-col overflow-hidden rounded-3xl border p-6 text-left md:p-8 ${
-        highlighted
-          ? "border-primary-foreground/20 text-primary-foreground shadow-lg"
-          : "border-border bg-background shadow-sm"
-      } ${className ?? ""}`}
+      className={`relative flex flex-col rounded-3xl border border-border p-6 text-left md:p-8 ${className ?? ""}`}
     >
-      {/* Background for highlighted cards */}
-      {highlighted && (
-        <div className="absolute inset-0 z-0 bg-primary" />
-      )}
       {badge && (
-        <div
-          className={`absolute -top-3 left-1/2 z-10 -translate-x-1/2 rounded-full px-4 py-1.5 text-xs font-medium ${
-            highlighted
-              ? "bg-primary-foreground text-primary"
-              : "bg-foreground text-background"
-          }`}
-        >
+        <div className="absolute -top-3 left-1/2 z-10 -translate-x-1/2 rounded-full bg-foreground px-4 py-1.5 text-xs font-medium text-background">
           {badge}
         </div>
       )}
-      <div className="relative z-10 mb-4">
+      <div className="mb-4">
         <h3 className="text-lg font-semibold">{name}</h3>
-        <p
-          className={`mt-1 text-sm ${highlighted ? "text-primary-foreground/70" : "text-muted-foreground"}`}
-        >
-          {description}
-        </p>
+        <p className="text-muted-foreground mt-1 text-sm">{description}</p>
       </div>
-      <div className="relative z-10 mb-6">
+      <div className="mb-6">
         <div className="flex items-baseline gap-2">
           <span className="text-4xl font-bold tracking-tight">{price}</span>
           {originalPrice && (
-            <span
-              className={`text-lg line-through ${highlighted ? "text-primary-foreground/40" : "text-muted-foreground/60"}`}
-            >
+            <span className="text-muted-foreground/60 text-lg line-through">
               {originalPrice}
             </span>
           )}
-          <span
-            className={`text-sm ${highlighted ? "text-primary-foreground/70" : "text-muted-foreground"}`}
-          >
-            /{priceLabel}
-          </span>
+          <span className="text-muted-foreground text-sm">/{priceLabel}</span>
         </div>
       </div>
-      <div className="relative z-10 mb-6">{children}</div>
-      <ul className="relative z-10 flex-1 space-y-3">
+      <div className="mb-6">{children}</div>
+      <ul className="flex-1 space-y-3">
         {featureList.map((feature, i) => (
           <li key={i} className="flex items-start gap-3">
-            <Check
-              className={`mt-0.5 size-4 shrink-0 ${highlighted ? "text-primary-foreground/70" : "text-brand"}`}
-            />
-            <span className={`text-sm ${highlighted ? "text-primary-foreground/90" : ""}`}>
-              {feature}
-            </span>
+            <Check className={`mt-0.5 size-4 shrink-0 ${featured ? "text-brand" : ""}`} />
+            <span className="text-sm">{feature}</span>
           </li>
         ))}
       </ul>
@@ -278,7 +222,7 @@ export function PricingCardsSection({
       <h2 className="display max-w-4xl text-4xl leading-[1.1] tracking-tight md:text-6xl lg:text-7xl">
         One Fair Price.
         <br />
-        <span className="text-muted-foreground">Lifetime Access.</span>
+        <span className="text-foreground">Lifetime Access.</span>
       </h2>
       <Spacer size="3xl" sizeMobile="2xl" />
 
@@ -313,7 +257,7 @@ export function PricingCardsSection({
           <div className="grid w-full grid-cols-6 gap-6">
             {/* Free Plan */}
             <PricingCard
-              className="col-span-6 md:col-span-2"
+              className="col-span-6 border-dashed bg-page shadow-none md:col-span-2"
               name="Free"
               price="€0"
               priceLabel="forever"
@@ -332,16 +276,16 @@ export function PricingCardsSection({
 
             {/* Pro Plan */}
             <PricingCard
-              className="col-span-6 md:col-span-2"
+              className="col-span-6 bg-background shadow-sm md:col-span-2"
               name="Pro"
               price="€149"
               priceLabel="one-time"
               description="Full access for individuals"
               featureList={features.pro}
-              highlighted
+              featured
             >
               {hasPro ? (
-                <div className="flex h-12 w-full items-center justify-center rounded-xl bg-primary-foreground/20 text-sm font-medium text-primary-foreground">
+                <div className="bg-muted flex h-12 w-full items-center justify-center rounded-xl text-sm font-medium">
                   {currentPlan === "pro" ? "Current Plan" : "Included"}
                 </div>
               ) : (
@@ -355,7 +299,7 @@ export function PricingCardsSection({
 
             {/* Exclusive Plan */}
             <PricingCard
-              className="col-span-6 md:col-span-2"
+              className="col-span-6 border-dashed bg-page shadow-none md:col-span-2"
               name="Exclusive"
               price="€499"
               priceLabel="one-time"
@@ -375,7 +319,7 @@ export function PricingCardsSection({
       ) : (
         <div className="grid w-full grid-cols-6 gap-6">
           {/* Team Info Card */}
-          <div className="border-border bg-background col-span-6 flex flex-col justify-center rounded-3xl border p-6 text-left shadow-sm md:col-span-2 md:p-8">
+          <div className="border-border bg-page col-span-6 flex flex-col justify-center rounded-3xl border border-dashed p-6 text-left md:col-span-2 md:p-8">
             <h3 className="text-lg font-semibold">Team Licenses</h3>
             <p className="text-muted-foreground mt-2 text-sm">
               Equip your entire team with premium components. Share API keys,
@@ -399,17 +343,17 @@ export function PricingCardsSection({
 
           {/* Startup Plan */}
           <PricingCard
-            className="col-span-6 md:col-span-2"
+            className="col-span-6 bg-background shadow-sm md:col-span-2"
             name="Startup"
             price="€999"
             originalPrice="€4,990"
             priceLabel="one-time"
             description="For teams up to 10 members"
             featureList={features.team}
-            highlighted
+            featured
           >
             {hasTeam ? (
-              <div className="flex h-12 w-full items-center justify-center rounded-xl bg-primary-foreground/20 text-sm font-medium text-primary-foreground">
+              <div className="bg-muted flex h-12 w-full items-center justify-center rounded-xl text-sm font-medium">
                 {currentPlan === "team" ? "Current Plan" : "Included"}
               </div>
             ) : (
@@ -423,7 +367,7 @@ export function PricingCardsSection({
 
           {/* Unlimited Plan */}
           <PricingCard
-            className="col-span-6 md:col-span-2"
+            className="col-span-6 border-dashed bg-page shadow-none md:col-span-2"
             name="Unlimited"
             price="€1,999"
             originalPrice="€14,970"

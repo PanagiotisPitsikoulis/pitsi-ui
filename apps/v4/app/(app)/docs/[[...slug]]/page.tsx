@@ -1,5 +1,7 @@
+import { Suspense } from "react"
 import Link from "next/link"
 import { notFound } from "next/navigation"
+import { cacheLife } from "next/cache"
 import { mdxComponents } from "@/mdx-components"
 import {
   IconArrowLeft,
@@ -74,9 +76,40 @@ export async function generateMetadata(props: {
   }
 }
 
+// Component to check pro tier access at request time
+async function ProTierCheck({
+  itemName,
+  title,
+  type,
+  children,
+}: {
+  itemName: string
+  title: string
+  type: "component"
+  children: React.ReactNode
+}) {
+  const registryItem = (await queryRegistry({
+    name: itemName,
+  })) as RegistryItem | null
+
+  if (registryItem?.tier === "pro") {
+    const user = await getCurrentUser()
+    const isPro = user?.isPro ?? false
+
+    if (!isPro) {
+      return <DocsPaywall title={title} type={type} />
+    }
+  }
+
+  return <>{children}</>
+}
+
 export default async function Page(props: {
   params: Promise<{ slug: string[] }>
 }) {
+  "use cache"
+  cacheLife("max")
+
   const params = await props.params
   const page = source.getPage(params.slug)
   if (!page) {
@@ -87,32 +120,13 @@ export default async function Page(props: {
   const MDX = doc.body
   const neighbours = findNeighbour(source.pageTree, page.url)
 
-  // Check tier access for component/animation pages
+  // Check if this is a component/animation page that might need tier checking
   const isComponentPage =
     params.slug?.length === 2 && params.slug[0] === "components"
   const isAnimationPage =
     params.slug?.length === 2 && params.slug[0] === "animations"
-
-  if (isComponentPage || isAnimationPage) {
-    const itemName = params.slug[1]
-    const registryItem = (await queryRegistry({
-      name: itemName,
-    })) as RegistryItem | null
-
-    if (registryItem?.tier === "pro") {
-      const user = await getCurrentUser()
-      const isPro = user?.isPro ?? false
-
-      if (!isPro) {
-        return (
-          <DocsPaywall
-            title={doc.title || itemName}
-            type={isComponentPage ? "component" : "component"}
-          />
-        )
-      }
-    }
-  }
+  const needsTierCheck = isComponentPage || isAnimationPage
+  const itemName = needsTierCheck ? params.slug[1] : ""
 
   const raw = await page.data.getText("raw")
   const { attributes } = fm(raw)
@@ -270,7 +284,7 @@ export default async function Page(props: {
   // Show TOC if available
   const hasToc = enhancedToc?.length
 
-  return (
+  const content = (
     <div className="flex items-stretch text-[1.05rem] sm:text-[15px] xl:w-full">
       <div className="flex min-w-0 flex-1 flex-col">
         <div className="h-(--top-spacing) shrink-0" />
@@ -384,4 +398,21 @@ export default async function Page(props: {
       )}
     </div>
   )
+
+  // Wrap in tier check if needed (for component/animation detail pages)
+  if (needsTierCheck) {
+    return (
+      <Suspense fallback={content}>
+        <ProTierCheck
+          itemName={itemName}
+          title={doc.title || itemName}
+          type="component"
+        >
+          {content}
+        </ProTierCheck>
+      </Suspense>
+    )
+  }
+
+  return content
 }

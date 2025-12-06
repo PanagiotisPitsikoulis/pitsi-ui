@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 import { ParallaxImage } from "@/registry/new-york-v4/animations/background-image-parallax/background-image-parallax"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { HeroButton } from "@/registry/new-york-v4/ui/hero-button"
@@ -7,7 +9,7 @@ import { LayoutGrid, LayoutGridItem } from "./layout-grid"
 
 export function HeroSection() {
   return (
-    <div className="relative -mt-[56px] overflow-hidden">
+    <div id="hero" className="relative -mt-[56px] overflow-hidden">
       {/* Gradient header overlay */}
       <div className="from-background absolute inset-x-0 top-0 z-10 h-32 bg-gradient-to-b to-transparent" />
       {/* Diagonal background */}
@@ -93,8 +95,8 @@ export function HeroSection() {
         <Spacer size={"3xl"} sizeMobile={"lg"} />
         <div className="flex flex-row gap-2">
           <HeroButton>Start Copy Pasting</HeroButton>
-          <Button size={"lg"} variant={"outline"} className="rounded-full">
-            Get Pro
+          <Button asChild size={"lg"} variant={"outline"} className="rounded-full">
+            <a href="#pricing">Get Pro</a>
           </Button>
         </div>
         {/* Features */}

@@ -8,8 +8,6 @@ type RoadmapStatus = "completed" | "in-progress" | "planned" | "exploring"
 
 interface RoadmapItem {
   quarter: string
-  title: string
-  description: string
   status: RoadmapStatus
   items: string[]
 }
@@ -42,8 +40,7 @@ export function RoadmapContent({ items }: RoadmapContentProps) {
       activeFilter === "all" || item.status === activeFilter
     const matchesSearch =
       searchQuery === "" ||
-      item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.quarter.toLowerCase().includes(searchQuery.toLowerCase()) ||
       item.items.some((i) =>
         i.toLowerCase().includes(searchQuery.toLowerCase())
       )
@@ -108,31 +105,30 @@ export function RoadmapContent({ items }: RoadmapContentProps) {
               {/* Title section with vertical line */}
               <div className="border-brand border-l-2 pl-4">
                 {/* Quarter and status */}
-                <div className="mb-1 flex flex-wrap items-center gap-3">
-                  <span className="text-muted-foreground text-sm font-medium uppercase tracking-wider">
+                <div className="mb-3 flex flex-wrap items-center gap-3">
+                  <Badge variant="outline" className="font-mono text-xs">
                     {item.quarter}
-                  </span>
+                  </Badge>
                   <StatusBadge status={item.status} />
                 </div>
 
-                {/* Title and description */}
-                <h2 className="display mb-1 text-xl tracking-tight md:text-2xl">
-                  {item.title}
+                <h2 className="display mb-2 text-xl tracking-tight md:text-2xl">
+                  {statusLabels[item.status]}
                 </h2>
                 <p className="text-muted-foreground text-sm">
-                  {item.description}
+                  {item.items.length} item{item.items.length !== 1 ? "s" : ""} in this milestone
                 </p>
               </div>
 
               {/* Items */}
-              <ul className="mt-4 space-y-2 pl-8">
+              <ul className="mt-4 space-y-3 pl-8">
                 {item.items.map((listItem, itemIndex) => (
                   <li
                     key={itemIndex}
                     className="text-muted-foreground flex items-start gap-2 text-sm"
                   >
                     <span className="bg-muted-foreground mt-1.5 size-1.5 shrink-0 rounded-full" />
-                    <span>{listItem}</span>
+                    <span className="text-foreground">{listItem}</span>
                   </li>
                 ))}
               </ul>

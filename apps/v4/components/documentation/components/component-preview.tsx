@@ -50,7 +50,7 @@ export function ComponentPreview({
 
   if (isBlock) {
     return (
-      <div className="relative aspect-[4/2.5] w-full overflow-hidden rounded-md border md:-mx-1">
+      <div className="bg-background relative aspect-[4/2.5] w-full overflow-hidden rounded-md border md:-mx-1">
         <div className="bg-background absolute inset-0 w-full md:w-[1600px]">
           <div className="flex items-center gap-2">
             <ReadinessBadge readiness={registryItem?.readiness} />
@@ -121,7 +121,7 @@ export function ComponentPreview({
       hideCode={hideCode}
       readiness={registryItem?.readiness}
       tier={registryItem?.tier ?? "free"}
-      component={<div className="pointer-events-none overflow-hidden"><Component /></div>}
+      component={<div className="overflow-hidden"><Component /></div>}
       source={
         <ComponentSource
           name={name}

@@ -12,7 +12,7 @@ export default function ViewLayout({
       <head>
         <meta name="robots" content="noindex, nofollow" />
       </head>
-      <body className={cn("overscroll-none antialiased", fontVariables)}>
+      <body className={cn("bg-background overscroll-none antialiased", fontVariables)}>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

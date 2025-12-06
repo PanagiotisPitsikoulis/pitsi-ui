@@ -1,12 +1,11 @@
-import fs from "fs"
 import { Metadata } from "next"
 import Link from "next/link"
-import path from "path"
+import { cacheLife } from "next/cache"
 
 import {
   getAllChanges,
+  getChangelogEntries,
   getChangeType,
-  parseChangelog,
 } from "@/lib/changelog/parser"
 import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 
@@ -87,90 +86,18 @@ export const metadata: Metadata = {
   },
 }
 
-function getCliChangelogData() {
-  const possiblePaths = [
-    path.join(process.cwd(), "..", "..", "packages", "pitsi", "CHANGELOG.md"),
-    path.join(process.cwd(), "packages", "pitsi", "CHANGELOG.md"),
-    path.join(process.cwd(), "..", "packages", "pitsi", "CHANGELOG.md"),
-  ]
+export default async function ChangelogPage() {
+  "use cache"
+  cacheLife("max")
 
-  for (const changelogPath of possiblePaths) {
-    try {
-      const content = fs.readFileSync(changelogPath, "utf-8")
-      return parseChangelog(content)
-    } catch {
-      // Try next path
-    }
-  }
+  const rawEntries = getChangelogEntries()
 
-  return []
-}
-
-// pitsi/ui changelog - add new entries here
-const uiChangelog = [
-  {
-    version: "4.3.0",
-    date: "Dec 2, 2024",
-    title: "Blog & Changelog System",
-    changes: [
-      "Added MDX-powered blog with categories",
-      "Integrated changelog from changesets",
-      "Added 7 new design-focused blog posts",
-      "Improved dark mode image brightness",
-      "Fixed header transparency on scroll",
-      "Removed gradient overlays for cleaner look",
-    ],
-  },
-  {
-    version: "4.2.0",
-    date: "Nov 28, 2024",
-    title: "Animation Components",
-    changes: [
-      "Added 24 new animation components",
-      "Perspective section transitions",
-      "Background parallax effects",
-      "Improved animation performance",
-      "New motion primitives",
-    ],
-  },
-  {
-    version: "4.1.0",
-    date: "Nov 22, 2024",
-    title: "Navigation & Search",
-    changes: [
-      "New command menu with fuzzy search",
-      "Improved navigation dropdowns",
-      "Added keyboard shortcuts",
-      "Better mobile navigation",
-      "Search across all components",
-    ],
-  },
-  {
-    version: "4.0.0",
-    date: "Nov 15, 2024",
-    title: "Initial v4 Release",
-    changes: [
-      "Complete redesign of documentation site",
-      "New component showcase pages",
-      "Block library with 300+ blocks",
-      "Tailwind CSS v4 support",
-      "React 19 compatibility",
-      "New pricing and landing pages",
-    ],
-  },
-]
-
-export default function ChangelogPage() {
-  const rawCliEntries = getCliChangelogData()
-
-  // Serialize CLI entries for client component
-  const cliEntries = rawCliEntries.map((entry) => ({
+  const entries = rawEntries.map((entry) => ({
     version: entry.version,
     changeType: getChangeType(entry),
     changes: getAllChanges(entry).map((change) => ({
       type: change.type,
-      pr: change.pr,
-      author: change.author,
+      commit: change.commit,
       description: change.description,
     })),
   }))
@@ -213,7 +140,7 @@ export default function ChangelogPage() {
               </h1>
               <Spacer size="lg" sizeMobile="md" />
               <p className="text-muted-foreground text-base md:text-lg">
-                All notable changes to pitsi/ui CLI and documentation.
+                All notable changes to pitsi/ui components and documentation.
               </p>
               <Spacer size="6xl" sizeMobile="2xl" />
               <div className="flex justify-center">
@@ -223,10 +150,7 @@ export default function ChangelogPage() {
           </LayoutGridItem>
 
           <LayoutGridItem span={6} spanLg={3} className="lg:col-start-4">
-            <ChangelogContent
-              uiEntries={uiChangelog}
-              cliEntries={cliEntries}
-            />
+            <ChangelogContent entries={entries} />
           </LayoutGridItem>
         </LayoutGrid>
         <Spacer size="6xl" sizeMobile="4xl" />

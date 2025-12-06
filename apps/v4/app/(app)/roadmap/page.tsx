@@ -1,6 +1,8 @@
 import { Metadata } from "next"
 import Link from "next/link"
+import { cacheLife } from "next/cache"
 
+import { getRoadmapEntries } from "@/lib/roadmap/parser"
 import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 
 import { LayoutGrid, LayoutGridItem } from "../(root)/_components/layout-grid"
@@ -90,78 +92,12 @@ export const metadata: Metadata = {
   },
 }
 
-const roadmapData = [
-  {
-    quarter: "Q4 2024",
-    title: "Foundation & Core Components",
-    description:
-      "Establishing the core component library and design system foundation.",
-    status: "completed" as const,
-    items: [
-      "Core UI components (Button, Input, Dialog, etc.)",
-      "Design token system with CSS variables",
-      "Dark mode support",
-      "Initial documentation site",
-      "CLI tool for component installation",
-    ],
-  },
-  {
-    quarter: "Q1 2025",
-    title: "Block Library Expansion",
-    description:
-      "Growing the block library with production-ready page sections and layouts.",
-    status: "in-progress" as const,
-    items: [
-      "Marketing page blocks (Hero, Features, Pricing)",
-      "Dashboard layouts and components",
-      "E-commerce blocks (Product cards, Cart, Checkout)",
-      "Authentication flows",
-      "Settings and profile pages",
-    ],
-  },
-  {
-    quarter: "Q2 2025",
-    title: "Advanced Interactions",
-    description:
-      "Adding sophisticated animations and interactive components.",
-    status: "planned" as const,
-    items: [
-      "Advanced animation primitives",
-      "Gesture-based interactions",
-      "Data visualization components",
-      "Real-time collaboration UI patterns",
-      "Mobile-first responsive patterns",
-    ],
-  },
-  {
-    quarter: "Q3 2025",
-    title: "AI & Developer Tools",
-    description: "Enhancing the developer experience with AI-powered tools.",
-    status: "planned" as const,
-    items: [
-      "AI component generator",
-      "Visual component editor",
-      "Figma plugin for design handoff",
-      "VS Code extension",
-      "Component analytics dashboard",
-    ],
-  },
-  {
-    quarter: "Future",
-    title: "Exploring",
-    description: "Ideas we're considering for future development.",
-    status: "exploring" as const,
-    items: [
-      "Native mobile components (React Native)",
-      "Design system customization wizard",
-      "Component marketplace",
-      "Team collaboration features",
-      "Accessibility audit tools",
-    ],
-  },
-]
+export default async function RoadmapPage() {
+  "use cache"
+  cacheLife("max")
 
-export default function RoadmapPage() {
+  const entries = getRoadmapEntries()
+
   return (
     <div className="relative -mt-[56px] min-h-screen overflow-x-clip">
       <StripeBgGuides columnCount={6} animated={false} />
@@ -211,7 +147,7 @@ export default function RoadmapPage() {
           </LayoutGridItem>
 
           <LayoutGridItem span={6} spanLg={3} className="lg:col-start-4">
-            <RoadmapContent items={roadmapData} />
+            <RoadmapContent items={entries} />
           </LayoutGridItem>
         </LayoutGrid>
         <Spacer size="6xl" sizeMobile="4xl" />

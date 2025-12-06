@@ -42,26 +42,10 @@ export function BattleTestedIllustration() {
             }}
         />
 
-        {/* Status Badge */}
-        <motion.div
-            className="absolute -right-2 -top-2 flex items-center gap-1 rounded-full bg-success px-2 py-1 text-[10px] font-bold text-success-foreground shadow-sm"
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ 
-                scale: [0, 1.2, 1],
-                opacity: [0, 1, 1]
-            }}
-            transition={{
-                delay: 1.5,
-                duration: 0.5,
-                repeat: Infinity,
-                repeatDelay: 2.5
-            }}
-        >
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="20 6 9 17 4 12" />
-            </svg>
-            <span>PASS</span>
-        </motion.div>
+        {/* Title Badge */}
+        <div className="absolute -right-2 -top-2 rounded-full border bg-background px-2.5 py-1 text-[10px] font-medium text-muted-foreground shadow-xs">
+            30/30 Tests
+        </div>
 
       </motion.div>
     </div>

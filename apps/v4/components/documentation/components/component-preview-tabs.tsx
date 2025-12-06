@@ -34,7 +34,7 @@ export function ComponentPreviewTabs({
   return (
     <div
       className={cn(
-        "group relative mt-4 mb-12 flex flex-col gap-2 rounded-lg border",
+        "bg-background group relative mt-6 mb-12 flex flex-col overflow-hidden rounded-xl border shadow-xs md:-mx-1",
         className
       )}
       {...props}
@@ -48,12 +48,12 @@ export function ComponentPreviewTabs({
           data-align={align}
           data-justify={justify}
           className={cn(
-            "preview relative flex w-full data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=start]:justify-start",
+            "preview bg-background relative flex w-full border-b data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start data-[justify=center]:justify-center data-[justify=end]:justify-end data-[justify=start]:justify-start",
             isFullBleed
               ? "aspect-video overflow-hidden"
               : chromeLessOnMobile
-                ? "sm:p-10"
-                : "h-[450px] p-10"
+                ? "overflow-hidden sm:p-10"
+                : "h-[450px] overflow-hidden p-10"
           )}
         >
           {component}
@@ -61,7 +61,7 @@ export function ComponentPreviewTabs({
         {!hideCode && (
           <div
             data-slot="code"
-            className="[&_[data-rehype-pretty-code-figure]]:!m-0 [&_[data-rehype-pretty-code-figure]]:rounded-t-none [&_[data-rehype-pretty-code-figure]]:border-t [&_pre]:max-h-[400px]"
+            className="[&_[data-rehype-pretty-code-figure]]:!m-0 [&_[data-rehype-pretty-code-figure]]:rounded-none [&_[data-rehype-pretty-code-figure]]:border-0 [&_[data-rehype-pretty-code-figure]]:shadow-none [&_pre]:max-h-[400px]"
           >
             {source}
           </div>

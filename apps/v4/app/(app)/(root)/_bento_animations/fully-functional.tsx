@@ -28,7 +28,12 @@ export function FullyFunctionalIllustration() {
       <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,black_60%,transparent_100%)] pointer-events-none" />
 
       <div className="relative z-10 flex w-full max-w-[200px] flex-col gap-4 rounded-xl border border-border bg-background p-4 shadow-sm">
-        
+
+        {/* Title Badge */}
+        <div className="absolute -right-2 -top-2 rounded-full border bg-background px-2.5 py-1 text-[10px] font-medium text-muted-foreground shadow-xs">
+          fetching data...
+        </div>
+
         {/* Header */}
         <div className="flex items-center justify-between">
             <div className="h-2 w-12 rounded-full bg-muted" />

@@ -1,3 +1,5 @@
+import { cacheLife } from "next/cache"
+
 import { DocsPaywall } from "@/components/documentation/docs/docs-paywall"
 
 export default async function BlockPaywallPage({
@@ -9,6 +11,9 @@ export default async function BlockPaywallPage({
     blockName: string
   }>
 }) {
+  "use cache"
+  cacheLife("max")
+
   const { blockName } = await params
 
   // Format block name for display

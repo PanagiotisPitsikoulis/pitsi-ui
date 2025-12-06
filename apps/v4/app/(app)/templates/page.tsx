@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 import Link from "next/link"
+import { cacheLife } from "next/cache"
 
 import {
   categoryLabels,
@@ -120,7 +121,10 @@ export const metadata: Metadata = {
   },
 }
 
-export default function TemplatesPage() {
+export default async function TemplatesPage() {
+  "use cache"
+  cacheLife("max")
+
   const templates = getTemplates()
   const categories = getTemplateCategories()
 

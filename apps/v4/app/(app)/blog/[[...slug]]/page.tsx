@@ -1,6 +1,7 @@
 import { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
+import { cacheLife } from "next/cache"
 
 import {
   type BlogCategory,
@@ -289,6 +290,9 @@ export async function generateMetadata(props: {
 export default async function BlogPage(props: {
   params: Promise<{ slug?: string[] }>
 }) {
+  "use cache"
+  cacheLife("max")
+
   const params = await props.params
   const parsed = parseSlug(params.slug)
 

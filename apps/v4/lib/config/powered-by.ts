@@ -17,31 +17,24 @@ export const LIBRARIES: Record<string, PoweredByLibrary> = {
     id: "shadcn",
     name: "shadcn/ui",
     url: "https://ui.shadcn.com",
-    logo: "shadcn.png",
-  },
-  mantine: {
-    id: "mantine",
-    name: "Mantine",
-    url: "https://mantine.dev",
-    logo: "mantine.svg",
+    logo: "shadcn.webp",
   },
   skiperui: {
     id: "skiperui",
     name: "Skiper UI",
     url: "https://skiper-ui.com",
-    logo: "skiper-ui.png",
+    logo: "skiper-ui.webp",
   },
   motion: {
     id: "motion",
     name: "Motion",
     url: "https://motion.dev",
-    logo: "motion.png",
+    logo: "motion.webp",
   },
 }
 
 export const POWERED_BY = {
   shadcn: [LIBRARIES.shadcn],
-  mantine: [LIBRARIES.mantine],
   skiperui: [LIBRARIES.skiperui],
   motion: [LIBRARIES.motion],
 } as const

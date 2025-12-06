@@ -1,7 +1,7 @@
- 
 import { Suspense } from "react"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
+import { cacheLife } from "next/cache"
 
 import { siteConfig } from "@/lib/config"
 import { queryRegistry, type RegistryItem } from "@/lib/registry-utils"
@@ -144,6 +144,9 @@ export default async function BlockPage({
     name: string
   }>
 }) {
+  "use cache"
+  cacheLife("max")
+
   const { style: styleName, name } = await params
   const style = getStyle(styleName)
 

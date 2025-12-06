@@ -6,7 +6,6 @@ import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import { PAGES_NEW } from "@/lib/docs"
 import {
   getRegistryComponent,
   getRegistryIndexItem,
@@ -193,17 +192,9 @@ export function ComponentsListPaginated({
                 className="group/link flex flex-col gap-1 px-2"
               >
                 <div className="flex items-center justify-between gap-2">
-                  <div className="flex items-center gap-2">
-                    <span className="group-hover/link:text-primary text-base font-medium transition-colors group-hover/link:underline">
-                      {item.name}
-                    </span>
-                    {PAGES_NEW.includes(item.url) && (
-                      <span
-                        className="bg-primary flex size-2 rounded-full"
-                        title="New"
-                      />
-                    )}
-                  </div>
+                  <span className="group-hover/link:text-primary text-base font-medium transition-colors group-hover/link:underline">
+                    {item.name}
+                  </span>
                   <ArrowUpRight className="text-muted-foreground group-hover/link:text-foreground size-4 shrink-0 transition-colors" />
                 </div>
                 {item.description && (

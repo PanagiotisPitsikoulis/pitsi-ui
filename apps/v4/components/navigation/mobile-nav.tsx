@@ -4,7 +4,6 @@ import * as React from "react"
 import Link, { LinkProps } from "next/link"
 import { useRouter } from "next/navigation"
 
-import { PAGES_NEW } from "@/lib/docs"
 import { source } from "@/lib/source"
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/shared/icons"
@@ -130,12 +129,8 @@ export function MobileNav({
                               key={`${item.url}-${index}`}
                               href={item.url}
                               onOpenChange={setOpen}
-                              className="flex items-center gap-2"
                             >
-                              {item.name}{" "}
-                              {PAGES_NEW.includes(item.url) && (
-                                <span className="bg-primary flex size-2 rounded-full" />
-                              )}
+                              {item.name}
                             </MobileLink>
                           )
                         }

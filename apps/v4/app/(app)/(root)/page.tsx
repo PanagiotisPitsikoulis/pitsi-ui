@@ -2,22 +2,16 @@ import { Suspense } from "react"
 import { Metadata } from "next"
 
 import { getRegistrySummaryCounts } from "@/lib/registry"
-import { getCurrentUser } from "@/lib/server/user"
-import { CardsParallax } from "@/registry/new-york-v4/animations/cards-parallax/cards-parallax"
-import CardsParallaxDemo from "@/registry/new-york-v4/examples/cards-parallax-demo"
 
 import {
-  BackgroundParallaxSection,
-  CardsParallaxSection,
   ContentExplained,
   ContentSection,
   CTASection,
   DesignSection,
+  DynamicPricingSection,
   HeroSection,
-  PerspectiveSectionDemo,
   PowerBentoSection,
   PricingCardsSection,
-  PricingExplained,
   PricingToast,
   PurposeSection,
   ReviewsSection,
@@ -53,7 +47,6 @@ export const metadata: Metadata = {
 }
 
 export default async function IndexPage() {
-  const user = await getCurrentUser()
   const registryCounts = await getRegistrySummaryCounts()
 
   return (
@@ -63,13 +56,14 @@ export default async function IndexPage() {
         <PricingToast />
       </Suspense>
       <HeroSection />
-      <ContentSection registryCounts={registryCounts} />
-      <ContentExplained />
+      {/*<ContentSection registryCounts={registryCounts} />*/}
+      {/*<ContentExplained />*/}
       <PurposeSection />
       <DesignSection />
       <PowerBentoSection />
-      <PricingCardsSection user={user} />
-      <PricingExplained />
+      <Suspense fallback={<PricingCardsSection user={null} />}>
+        <DynamicPricingSection />
+      </Suspense>
       <CTASection />
       <ReviewsSection />
     </div>

@@ -1,11 +1,11 @@
 export function PricingExplained() {
   return (
-    <section className="-mt-8 pb-16 md:-mt-12 md:pb-24">
+    <section id="pricing-explained" className="-mt-8 hidden pb-16 md:-mt-12 md:pb-24 lg:block">
       <div className="container px-6">
         <div className="grid grid-cols-6 gap-6">
           <div className="relative col-span-6 flex gap-3 rounded-lg border-dashed md:col-span-2 md:block md:border-l md:p-5">
             <div>
-              <h3 className="capitalize font-medium md:mb-2 md:text-xl">
+              <h3 className="font-medium capitalize md:mb-2 md:text-xl">
                 30% free / 70% paid
                 <span className="bg-brand absolute -left-px hidden h-6 w-px md:inline-block"></span>
               </h3>
@@ -17,7 +17,7 @@ export function PricingExplained() {
           </div>
           <div className="relative col-span-6 flex gap-3 rounded-lg border-dashed md:col-span-2 md:block md:border-l md:p-5">
             <div>
-              <h3 className="capitalize font-medium md:mb-2 md:text-xl">
+              <h3 className="font-medium capitalize md:mb-2 md:text-xl">
                 Pro unlocks quantity
                 <span className="bg-brand absolute -left-px hidden h-6 w-px md:inline-block"></span>
               </h3>
@@ -29,7 +29,7 @@ export function PricingExplained() {
           </div>
           <div className="relative col-span-6 flex gap-3 rounded-lg border-dashed md:col-span-2 md:block md:border-l md:p-5">
             <div>
-              <h3 className="capitalize font-medium md:mb-2 md:text-xl">
+              <h3 className="font-medium capitalize md:mb-2 md:text-xl">
                 Free updates forever
                 <span className="bg-brand absolute -left-px hidden h-6 w-px md:inline-block"></span>
               </h3>

@@ -88,7 +88,7 @@ export function CodeBlockCommand({
                 <TabsTrigger
                   key={key}
                   value={key}
-                  className="data-[state=active]:bg-background data-[state=active]:border-border h-7 border border-transparent pt-0.5 data-[state=active]:shadow-xs"
+                  className="data-[state=active]:bg-background data-[state=active]:border-border h-7 border border-transparent pt-0.5"
                 >
                   {key}
                 </TabsTrigger>
@@ -100,9 +100,9 @@ export function CodeBlockCommand({
           {Object.entries(tabs).map(([key, value]) => {
             return (
               <TabsContent key={key} value={key} className="mt-0 px-4 py-3.5">
-                <pre>
+                <pre className="bg-background">
                   <code
-                    className="relative font-mono text-sm leading-none"
+                    className="bg-background relative font-mono text-sm leading-none"
                     data-language="bash"
                   >
                     {value}

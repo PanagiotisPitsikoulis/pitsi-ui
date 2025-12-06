@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 import Link from "next/link"
+import { cacheLife } from "next/cache"
 
 import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 
@@ -93,7 +94,10 @@ What constitutes a material change will be determined at our sole discretion. By
   ],
 }
 
-export default function TermsPage() {
+export default async function TermsPage() {
+  "use cache"
+  cacheLife("max")
+
   return (
     <div className="relative -mt-[56px] min-h-screen overflow-x-clip">
       <StripeBgGuides columnCount={6} animated={false} />

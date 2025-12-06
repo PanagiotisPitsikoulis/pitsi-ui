@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
+import { cacheLife } from "next/cache"
 import { mdxComponents } from "@/mdx-components"
 import {
   IconArrowLeft,
@@ -45,6 +46,9 @@ export default async function ComponentContentPage({
     component: string
   }>
 }) {
+  "use cache"
+  cacheLife("max")
+
   const { component } = await params
   const page = source.getPage(["components", component])
 

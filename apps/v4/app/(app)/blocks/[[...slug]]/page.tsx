@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation"
+import { cacheLife } from "next/cache"
 
 import { queryRegistry, type RegistryItem } from "@/lib/registry-utils"
 import { BlocksList } from "@/components/documentation/blocks/blocks-list"
@@ -39,6 +40,7 @@ export default async function BlocksPage({
   params: Promise<{ slug?: string[] }>
 }) {
   "use cache"
+  cacheLife("max")
 
   const { slug = [] } = await params
 

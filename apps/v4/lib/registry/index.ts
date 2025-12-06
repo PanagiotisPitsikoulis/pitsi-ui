@@ -1,6 +1,7 @@
 import fs from "fs/promises"
 import { tmpdir } from "os"
 import path from "path"
+import { cacheLife } from "next/cache"
 import { registryItemFileSchema, registryItemSchema } from "pitsi/schema"
 import { Project, ScriptKind } from "ts-morph"
 import { z } from "zod"
@@ -217,7 +218,9 @@ async function getRegistryItemWithContent(
   name: string,
   styleName: Style["name"]
 ): Promise<RegistryItem | null> {
-  
+  "use cache"
+  cacheLife("max")
+
   const allItems = await getAllRegistryItems()
   const item = allItems.find((i) => i.name === name)
 
@@ -389,9 +392,12 @@ export async function getAllRegistryItems(options?: {
   mainCategory?: string
   subcategory?: string
 }): Promise<RegistryItem[]> {
+  "use cache"
+  cacheLife("max")
+
   const allItems: RegistryItem[] = []
 
-  
+
   const indexFilesToLoad: string[] = []
 
   if (options?.types && options.types.length > 0) {
@@ -962,6 +968,9 @@ export async function getRegistrySummaryCounts(): Promise<{
   components: number
   blocks: number
 }> {
+  "use cache"
+  cacheLife("max")
+
   // Get all items
   const allItems = await getAllRegistryItems()
 

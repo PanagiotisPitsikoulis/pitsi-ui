@@ -1,3 +1,5 @@
+import { cacheLife } from "next/cache"
+
 import { queryRegistry, type RegistryItem } from "@/lib/registry-utils"
 import { DocsPaywall } from "@/components/documentation/docs/docs-paywall"
 
@@ -8,6 +10,9 @@ export default async function AnimationPaywallPage({
     animation: string
   }>
 }) {
+  "use cache"
+  cacheLife("max")
+
   const { animation } = await params
 
   // Get registry item for title

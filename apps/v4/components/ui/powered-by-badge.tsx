@@ -39,15 +39,13 @@ function LogoWithTooltip({ library, size = 20 }: { library: PoweredByLibrary; si
           rel="noopener noreferrer"
           className="focus:ring-ring rounded-md focus:outline-none focus:ring-2"
         >
-          <div className="bg-muted hover:bg-accent flex items-center justify-center rounded-md p-1.5 transition-colors">
-            <Image
-              src={logoPath}
-              alt={library.name}
-              width={size}
-              height={size}
-              className="size-5 rounded object-contain"
-            />
-          </div>
+          <Image
+            src={logoPath}
+            alt={library.name}
+            width={size}
+            height={size}
+            className="size-5 object-contain"
+          />
         </Link>
       </TooltipTrigger>
       <TooltipContent side="bottom" className="text-xs">

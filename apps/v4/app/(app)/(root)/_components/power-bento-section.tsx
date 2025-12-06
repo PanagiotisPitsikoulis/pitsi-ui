@@ -293,7 +293,7 @@ const gridItems = [
   // Row 1: MCP Server, Battle Tested, icon
   {
     type: "card",
-    title: "Smart MCP Server",
+    title: "MCP Server",
     description:
       "AI integrations built-in. Everything is AI-friendly and ready for your workflows.",
     illustration: SmartMCPServerIllustration,
@@ -342,7 +342,7 @@ const gridItems = [
 
 export function PowerBentoSection() {
   return (
-    <div className="container flex flex-col items-center justify-center px-6 py-16 text-center md:py-24">
+    <div id="features" className="container flex flex-col items-center justify-center px-6 py-16 text-center md:py-24">
       <p className="text-brand text-sm font-medium tracking-widest uppercase">
         Advanced Features
       </p>
@@ -350,7 +350,7 @@ export function PowerBentoSection() {
       <h2 className="display max-w-4xl text-4xl leading-[0.95] tracking-tight md:text-6xl lg:text-7xl">
         Production-Ready.
         <br />
-        <span className="text-muted-foreground">Battle-Tested.</span>
+        <span className="text-foreground">Battle-Tested.</span>
       </h2>
       <Spacer size="3xl" sizeMobile="2xl" />
 

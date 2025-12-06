@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
+import { cacheLife } from "next/cache"
 
 import {
   categoryLabels,
@@ -59,6 +60,9 @@ export async function generateMetadata(props: {
 export default async function TemplatePage(props: {
   params: Promise<{ slug: string }>
 }) {
+  "use cache"
+  cacheLife("max")
+
   const params = await props.params
   const template = getTemplate(params.slug)
 

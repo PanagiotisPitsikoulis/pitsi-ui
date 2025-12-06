@@ -170,7 +170,7 @@ function IconOnly({
 
 export function PurposeSection() {
   return (
-    <div className="container flex flex-col items-center justify-center px-6 py-16 text-center md:py-24">
+    <div id="purpose" className="container flex flex-col items-center justify-center px-6 py-16 text-center md:py-24">
       <p className="text-brand text-sm font-medium tracking-widest uppercase">
         Why Pitsi
       </p>
@@ -178,7 +178,7 @@ export function PurposeSection() {
       <h2 className="display max-w-4xl text-4xl leading-[0.95] tracking-tight md:text-6xl lg:text-7xl">
         Built to Solve
         <br />
-        <span className="text-muted-foreground">Real Problems</span>
+        <span className="text-foreground">Real Problems</span>
       </h2>
       <Spacer size="3xl" sizeMobile="2xl" />
       <div className="grid w-full grid-cols-6 gap-6">

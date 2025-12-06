@@ -133,7 +133,7 @@ export const mdxComponents = {
     <hr className="my-4 md:my-8" {...props} />
   ),
   table: ({ className, ...props }: React.ComponentProps<"table">) => (
-    <div className="border-border bg-background no-scrollbar my-6 w-full overflow-y-auto rounded-lg border shadow-xs">
+    <div className="border-border bg-background no-scrollbar my-6 w-full overflow-hidden rounded-xl border shadow-xs md:-mx-1">
       <table
         className={cn(
           "relative w-full overflow-hidden border-none text-sm [&_tbody_tr:last-child]:border-b-0",
@@ -168,7 +168,7 @@ export const mdxComponents = {
     return (
       <pre
         className={cn(
-          "no-scrollbar min-w-0 overflow-x-auto px-4 py-3.5 outline-none has-[[data-highlighted-line]]:px-0 has-[[data-line-numbers]]:px-0 has-[[data-slot=tabs]]:p-0",
+          "bg-background no-scrollbar min-w-0 overflow-x-auto px-4 py-3.5 outline-none has-[[data-highlighted-line]]:px-0 has-[[data-line-numbers]]:px-0 has-[[data-slot=tabs]]:p-0",
           className
         )}
         {...props}
@@ -225,7 +225,7 @@ export const mdxComponents = {
       return (
         <code
           className={cn(
-            "relative rounded-md px-[0.3rem] py-[0.2rem] font-mono text-[0.8rem] break-words outline-none",
+            "bg-background relative rounded-md border px-[0.3rem] py-[0.2rem] font-mono text-[0.8rem] break-words shadow-2xs outline-none",
             className
           )}
           {...props}
@@ -353,7 +353,7 @@ export const mdxComponents = {
   LinkedCard: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
     <Link
       className={cn(
-        "border-border bg-background hover:bg-background/80 flex w-full flex-col items-center rounded-xl border p-6 shadow-xs transition-colors sm:p-10",
+        "border-border bg-background hover:bg-background/80 flex w-full flex-col items-center rounded-xl border p-6 transition-colors sm:p-10",
         className
       )}
       {...props}

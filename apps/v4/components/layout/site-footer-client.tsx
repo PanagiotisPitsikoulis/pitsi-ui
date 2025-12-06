@@ -273,7 +273,7 @@ export function SiteFooterClient({
         </div>
 
         {/* Blocks Section */}
-        <div className="mb-12">
+        <div className="mb-12 hidden md:block">
           <h5 className="mb-6 border-b border-border text-sm font-semibold">Blocks</h5>
           <div className="grid grid-cols-2 gap-x-6 gap-y-1 text-[13px] leading-relaxed tracking-[-0.15px] md:grid-cols-6">
             {allBlockSubcategories.map((sub) => (
@@ -290,7 +290,7 @@ export function SiteFooterClient({
         </div>
 
         {/* Components Section */}
-        <div className="mb-12">
+        <div className="mb-12 hidden md:block">
           <h5 className="mb-6 border-b border-border text-sm font-semibold">Components</h5>
           <div className="grid grid-cols-2 gap-x-6 gap-y-1 text-[13px] leading-relaxed tracking-[-0.15px] md:grid-cols-6">
             {componentPages.map((page) => (
@@ -307,7 +307,7 @@ export function SiteFooterClient({
         </div>
 
         {/* Animations Section */}
-        <div className="mb-12">
+        <div className="mb-12 hidden md:block">
           <h5 className="mb-6 border-b border-border text-sm font-semibold">Animations</h5>
           <div className="grid grid-cols-2 gap-x-6 gap-y-1 text-[13px] leading-relaxed tracking-[-0.15px] md:grid-cols-6">
             {animationPages.map((page) => (

@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { ChevronRight } from "lucide-react"
+import { cacheLife } from "next/cache"
 
 import { queryRegistry, type RegistryItem } from "@/lib/registry-utils"
 import {
@@ -23,6 +24,9 @@ export default async function BlockContentPage({
     blockName: string
   }>
 }) {
+  "use cache"
+  cacheLife("max")
+
   const { category, subcategory, blockName } = await params
   const activeStyle = await getActiveStyle()
 
