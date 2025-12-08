@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "registry/new-york-v4/hooks/use-config.ts",
-      "content": "import { useAtom } from \"jotai\"\nimport { atomWithStorage } from \"jotai/utils\"\n\ntype Config = {\n  style: \"new-york-v4\"\n  packageManager: \"npm\" | \"yarn\" | \"pnpm\" | \"bun\"\n  installationType: \"cli\" | \"manual\"\n}\n\nconst configAtom = atomWithStorage<Config>(\"config\", {\n  style: \"new-york-v4\",\n  packageManager: \"pnpm\",\n  installationType: \"cli\",\n})\n\nexport function useConfig() {\n  return useAtom(configAtom)\n}\n",
+      "content": "import { useAtom } from \"jotai\"\nimport { atomWithStorage } from \"jotai/utils\"\n\nexport type Config = {\n  style: \"new-york-v4\"\n  packageManager: \"npm\" | \"yarn\" | \"pnpm\" | \"bun\"\n  installationType: \"cli\" | \"manual\"\n}\n\nconst configAtom = atomWithStorage<Config>(\"config\", {\n  style: \"new-york-v4\",\n  packageManager: \"pnpm\",\n  installationType: \"cli\",\n})\n\nexport function useConfig() {\n  return useAtom(configAtom)\n}\n",
       "type": "registry:hook"
     }
   ],

@@ -1,3 +1,5 @@
+import "@/styles/globals.css"
+
 import { fontVariables } from "@/lib/config/fonts"
 import { cn } from "@/lib/utils"
 import { ThemeProvider } from "@/components/theme/theme-provider"

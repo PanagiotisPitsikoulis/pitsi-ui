@@ -39,6 +39,7 @@
     "v4:typecheck": "pnpm --filter=v4 typecheck",
     "v4:lint": "pnpm --filter=v4 lint",
     "v4:lint:fix": "pnpm --filter=v4 lint:fix",
+    "v4:deploy": "rm -rf apps/v4/.next && pnpm --filter=v4 build && vercel --prod",
     "bob:dev": "pnpm --filter=bob dev",
     "bob:build": "pnpm --filter=bob build",
     "bob:typecheck": "pnpm --filter=bob typecheck",

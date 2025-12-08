@@ -352,7 +352,7 @@ export function PowerBentoSection() {
         <br />
         <span className="text-foreground">Battle-Tested.</span>
       </h2>
-      <Spacer size="3xl" sizeMobile="2xl" />
+      <Spacer size="4xl" sizeMobile="3xl" />
 
       {/* Artistic Bento Grid - 3 columns with strategic gaps */}
       <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-3 md:gap-6">
@@ -372,13 +372,13 @@ export function PowerBentoSection() {
           return (
             <div key={item.title} className="flex flex-col gap-4">
               {/* Illustration Card */}
-              <div className="border-border bg-background group relative h-72 overflow-hidden rounded-3xl border shadow-sm">
+              <div className="border-border bg-background dark:bg-page group relative h-72 overflow-hidden rounded-3xl border shadow-sm">
                 <div className="relative h-full w-full p-4">
                   <item.illustration />
                 </div>
               </div>
               {/* Description Card */}
-              <div className="border-border bg-background flex flex-col gap-2 rounded-3xl border p-6 text-left shadow-sm">
+              <div className="border-border bg-background dark:bg-page flex flex-col gap-2 rounded-3xl border p-6 text-left shadow-sm">
                 <h3 className="text-lg font-medium capitalize">{item.title}</h3>
                 <p className="text-muted-foreground text-sm">
                   {item.description}

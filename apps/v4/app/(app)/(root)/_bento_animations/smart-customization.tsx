@@ -1,7 +1,7 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import { motion } from "motion/react"
-import { useState, useEffect } from "react"
 
 export function SmartCustomizationIllustration() {
   const [step, setStep] = useState(0)
@@ -25,13 +25,13 @@ export function SmartCustomizationIllustration() {
   const hasAccent = current.accent
 
   return (
-    <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-background p-6">
+    <div className="bg-background relative flex h-full w-full items-center justify-center overflow-hidden p-6">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808005_1px,transparent_1px),linear-gradient(to_bottom,#80808005_1px,transparent_1px)] bg-[size:24px_24px]" />
-      <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,black_60%,transparent_100%)] pointer-events-none" />
+      <div className="pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,black_60%,transparent_100%)]" />
 
       {/* Morphing Card */}
       <motion.div
-        className="relative z-10 flex flex-col rounded-xl border border-border bg-background shadow-sm"
+        className="border-border bg-background relative z-10 flex flex-col rounded-xl border shadow-sm"
         animate={{
           width: isExpanded ? 200 : 160,
           padding: isExpanded ? 16 : 12,
@@ -41,7 +41,7 @@ export function SmartCustomizationIllustration() {
         {/* Avatar Row */}
         <div className="flex items-center gap-3">
           <motion.div
-            className={`flex items-center justify-center rounded-lg transition-colors duration-300 ${hasAccent ? 'bg-brand/20' : 'bg-muted'}`}
+            className={`flex items-center justify-center rounded-lg transition-colors duration-300 ${hasAccent ? "bg-brand/20" : "bg-muted"}`}
             animate={{
               width: isExpanded ? 40 : 32,
               height: isExpanded ? 40 : 32,
@@ -49,7 +49,7 @@ export function SmartCustomizationIllustration() {
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
             <motion.div
-              className={`rounded transition-colors duration-300 ${hasAccent ? 'bg-brand' : 'bg-foreground/40'}`}
+              className={`rounded transition-colors duration-300 ${hasAccent ? "bg-brand" : "bg-muted/40"}`}
               animate={{
                 width: isExpanded ? 20 : 14,
                 height: isExpanded ? 20 : 14,
@@ -61,12 +61,12 @@ export function SmartCustomizationIllustration() {
           {/* Text Lines */}
           <div className="flex flex-1 flex-col gap-1.5">
             <motion.div
-              className="h-2 rounded-full bg-foreground/70"
+              className="bg-muted/70 h-2 rounded-full"
               animate={{ width: isExpanded ? "75%" : "100%" }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
             />
             <motion.div
-              className="h-1.5 rounded-full bg-muted-foreground/30"
+              className="bg-muted-foreground/30 h-1.5 rounded-full"
               animate={{ width: isExpanded ? "50%" : "70%" }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
             />
@@ -85,13 +85,13 @@ export function SmartCustomizationIllustration() {
         >
           <div className="flex flex-col gap-2">
             <div className="flex gap-2">
-              <div className="h-1.5 flex-1 rounded-full bg-muted" />
+              <div className="bg-muted h-1.5 flex-1 rounded-full" />
               <div
-                className={`h-1.5 w-8 rounded-full transition-colors duration-300 ${hasAccent ? 'bg-brand' : 'bg-foreground/40'}`}
+                className={`h-1.5 w-8 rounded-full transition-colors duration-300 ${hasAccent ? "bg-brand" : "bg-muted/40"}`}
               />
             </div>
             <div
-              className={`h-6 rounded-lg border border-dashed transition-colors duration-300 ${hasAccent ? 'border-brand/50' : 'border-border'}`}
+              className={`h-6 rounded-lg border border-dashed transition-colors duration-300 ${hasAccent ? "border-brand/50" : "border-border"}`}
             />
           </div>
         </motion.div>
@@ -105,9 +105,9 @@ export function SmartCustomizationIllustration() {
             className={`h-1 rounded-full transition-colors duration-300 ${
               step === i
                 ? variant.accent
-                  ? 'bg-brand'
-                  : 'bg-muted-foreground'
-                : 'bg-muted'
+                  ? "bg-brand"
+                  : "bg-muted-foreground"
+                : "bg-muted"
             }`}
             animate={{
               width: step === i ? 12 : 4,
@@ -116,7 +116,6 @@ export function SmartCustomizationIllustration() {
           />
         ))}
       </div>
-
     </div>
   )
 }

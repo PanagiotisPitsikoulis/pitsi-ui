@@ -174,7 +174,7 @@ html {
   --primary-foreground: oklch(0.19 0 0);
   --secondary: oklch(0.22 0 0);
   --secondary-foreground: oklch(0.99 0 0);
-  --muted: oklch(0.20 0 0);
+  --muted: oklch(0.2 0 0);
   --muted-foreground: oklch(0.65 0 0);
   --accent: oklch(0.22 0 0);
   --accent-foreground: oklch(0.99 0 0);
@@ -204,7 +204,7 @@ html {
   --sidebar-ring: oklch(0.5 0 0);
   --code: var(--background);
   --code-foreground: oklch(0.84 0 0);
-  --code-highlight: oklch(0.20 0.015 220);
+  --code-highlight: oklch(0.2 0.015 220);
   --code-number: oklch(0.7 0 0);
   --selection: oklch(0.92 0 0);
   --selection-foreground: oklch(0.19 0 0);
@@ -928,7 +928,8 @@ html {
 
 /* Card gets selected */
 @keyframes card-select {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
@@ -938,17 +939,20 @@ html {
 
 /* Card is being dragged */
 @keyframes card-drag {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0);
   }
-  30%, 70% {
+  30%,
+  70% {
     transform: translate(15px, 8px);
   }
 }
 
 /* Terminal typing effect */
 @keyframes terminal-type {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
 }
@@ -979,7 +983,8 @@ html {
 
 /* Issue transitioning from open to fixed */
 @keyframes issue-transition {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
@@ -989,7 +994,8 @@ html {
 
 /* Sync arrow pulsing */
 @keyframes sync-pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
     transform: scaleX(1);
   }
@@ -1001,7 +1007,8 @@ html {
 
 /* Bottom sheet sliding up */
 @keyframes sheet-slide {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -1021,11 +1028,13 @@ html {
 
 /* Tooltip showing */
 @keyframes tooltip-show {
-  0%, 20% {
+  0%,
+  20% {
     opacity: 0;
     transform: translateY(5px);
   }
-  40%, 80% {
+  40%,
+  80% {
     opacity: 1;
     transform: translateY(0);
   }
@@ -1047,11 +1056,13 @@ html {
 
 /* Autocomplete dropdown showing */
 @keyframes autocomplete-show {
-  0%, 30% {
+  0%,
+  30% {
     opacity: 0;
     transform: translateY(-5px);
   }
-  50%, 80% {
+  50%,
+  80% {
     opacity: 1;
     transform: translateY(0);
   }
@@ -1063,7 +1074,8 @@ html {
 
 /* Keyboard focus ring animation */
 @keyframes focus-ring {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 0 0 transparent;
   }
   50% {
@@ -1073,13 +1085,17 @@ html {
 
 /* Form error shake */
 @keyframes error-shake {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateX(0);
   }
-  10%, 30%, 50% {
+  10%,
+  30%,
+  50% {
     transform: translateX(-2px);
   }
-  20%, 40% {
+  20%,
+  40% {
     transform: translateX(2px);
   }
   60% {

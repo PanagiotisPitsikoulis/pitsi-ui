@@ -26,7 +26,8 @@
     "stripe:test": "./scripts/stripe-test.sh",
     "stripe:setup": "./scripts/stripe-setup.sh",
     "images:webp": "bun ./scripts/convert-images-to-webp.ts",
-    "postinstall": "fumadocs-mdx"
+    "postinstall": "fumadocs-mdx",
+    "deploy": "vercel build && vercel deploy --prebuilt"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",

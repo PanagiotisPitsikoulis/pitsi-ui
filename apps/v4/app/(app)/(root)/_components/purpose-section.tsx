@@ -162,7 +162,7 @@ function IconOnly({
   className?: string
 }) {
   return (
-    <div className={`relative z-10 flex h-[16rem] items-center justify-center md:h-[18rem] ${className ?? ""}`}>
+    <div className={`relative z-10 hidden h-[16rem] items-center justify-center md:h-[18rem] lg:flex ${className ?? ""}`}>
       <Icon className="text-brand size-28 md:size-36" />
     </div>
   )
@@ -180,7 +180,7 @@ export function PurposeSection() {
         <br />
         <span className="text-foreground">Real Problems</span>
       </h2>
-      <Spacer size="3xl" sizeMobile="2xl" />
+      <Spacer size="4xl" sizeMobile="3xl" />
       <div className="grid w-full grid-cols-6 gap-6">
         {/* Left column - spans 2 cols */}
         <div className="col-span-6 flex flex-col gap-6 lg:col-span-2">

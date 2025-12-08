@@ -67,6 +67,7 @@ export async function generateMetadata({
 export async function generateStaticParams() {
   const { Index } = await import("@/registry/__index__")
   const params: Array<{ style: string; name: string }> = []
+  const hideAlpha = process.env.HIDE_ALPHA_ITEMS === "true"
 
   for (const style of STYLES) {
     if (!Index[style.name]) {
@@ -76,10 +77,19 @@ export async function generateStaticParams() {
     const styleIndex = Index[style.name]
     for (const itemName in styleIndex) {
       const item = styleIndex[itemName]
+
+      // Skip alpha items if HIDE_ALPHA_ITEMS is true
+      if (hideAlpha && item.readiness === "alpha") {
+        continue
+      }
+
+      // Include blocks, components, examples, and animations (UI items with animations category)
+      const isAnimation = item.categories?.includes("animations")
       if (
         ["registry:block", "registry:component", "registry:example"].includes(
           item.type
-        )
+        ) ||
+        isAnimation
       ) {
         params.push({
           style: style.name,
@@ -179,7 +189,7 @@ export default async function BlockPage({
           />
         </div>
       ) : isAnimation ? (
-        <div className="bg-background min-h-screen w-full overflow-hidden">
+        <div className="bg-background min-h-screen w-full">
           <LazyComponentRenderer
             name={name}
             styleName={style.name}

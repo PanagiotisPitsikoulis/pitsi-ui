@@ -45,14 +45,11 @@ export function ComponentPreview({
   const itemType = type || registryItem?.type
   const isBlock = itemType === "registry:block"
 
-  // Check if this is an animation by looking at categories
-  const isAnimation = registryItem?.categories?.includes("animations")
-
   if (isBlock) {
     return (
       <div className="bg-background relative aspect-[4/2.5] w-full overflow-hidden rounded-md border md:-mx-1">
         <div className="bg-background absolute inset-0 w-full md:w-[1600px]">
-          <div className="flex items-center gap-2">
+          <div className="absolute right-3 top-3 z-20 flex items-center gap-2">
             <ReadinessBadge readiness={registryItem?.readiness} />
             <TierBadge tier={registryItem?.tier ?? "free"} />
           </div>
@@ -65,52 +62,6 @@ export function ComponentPreview({
           <div className="absolute inset-0 z-10" />
         </div>
       </div>
-    )
-  }
-
-  if (isAnimation) {
-    return (
-      <ComponentPreviewTabs
-        isScrollable={false}
-        isFullBleed={true}
-        className={className}
-        align={align}
-        hideCode={hideCode}
-        readiness={registryItem?.readiness}
-        tier={registryItem?.tier ?? "free"}
-        component={
-          <>
-            <iframe
-              src={`/view/${styleName}/${name}`}
-              className="pointer-events-none absolute inset-0 size-full overflow-hidden border-0"
-              title={`${name} animation`}
-              loading="lazy"
-              sandbox="allow-scripts allow-same-origin"
-              allowFullScreen
-              scrolling="no"
-              style={{
-                transform: 'scale(0.75)',
-                transformOrigin: 'center',
-                width: '133.33%',
-                height: '133.33%',
-                left: '-16.66%',
-                top: '-16.66%'
-              }}
-            />
-            {/* Invisible overlay to prevent scrolling */}
-            <div className="absolute inset-0 z-10" />
-          </>
-        }
-        source={
-          <ComponentSource
-            name={name}
-            collapsible={false}
-            styleName={styleName}
-          />
-        }
-        chromeLessOnMobile={chromeLessOnMobile}
-        {...props}
-      />
     )
   }
 

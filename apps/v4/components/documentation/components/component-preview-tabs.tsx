@@ -40,7 +40,7 @@ export function ComponentPreviewTabs({
       {...props}
     >
       <div data-slot="preview" className="relative">
-        <div className="flex items-center gap-2">
+        <div className="absolute right-3 top-3 z-10 flex items-center gap-2">
           <ReadinessBadge readiness={readiness} />
           <TierBadge tier={tier} />
         </div>

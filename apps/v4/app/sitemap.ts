@@ -3,7 +3,6 @@ import type { MetadataRoute } from "next"
 import { getBlogPostSlugs, getBlogCategories, getTotalPages } from "@/lib/blog/source"
 import { queryRegistry, type RegistryItem } from "@/lib/registry-utils"
 import { source } from "@/lib/source"
-import { getTemplates } from "@/lib/templates/source"
 
 const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || "https://pitsiui.com"
 
@@ -17,7 +16,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: "/terms", priority: 0.3 },
     { url: "/roadmap", priority: 0.5 },
     { url: "/changelog", priority: 0.5 },
-    { url: "/templates", priority: 0.8 },
     { url: "/blocks", priority: 0.8 },
     { url: "/blog", priority: 0.8 },
   ]
@@ -84,17 +82,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.4,
       })
     }
-  })
-
-  // Templates
-  const templates = getTemplates()
-  templates.forEach((template) => {
-    entries.push({
-      url: `${BASE_URL}/templates/${template.slug}`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    })
   })
 
   // Blocks - get all categories and subcategories

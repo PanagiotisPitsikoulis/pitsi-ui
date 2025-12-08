@@ -109,7 +109,7 @@ export function DesignSection() {
       <StripeBgGuides contained glowOpacity={0.8} />
 
       {/* Intro Section */}
-      <div className="relative flex min-h-[70svh] md:min-h-svh flex-col items-center justify-start gap-6 pt-16 pb-[10vh] text-center">
+      <div className="relative flex min-h-[32rem] md:min-h-svh flex-col items-center justify-start gap-6 pt-16 pb-[10vh] text-center">
         <ParallaxImage
           src="/marketing/man-sky.webp"
           alt="Museum"

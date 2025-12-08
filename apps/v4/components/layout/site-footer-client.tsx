@@ -116,14 +116,6 @@ export function SiteFooterClient({
                   Roadmap
                 </Link>
               </div>
-              <div className="py-px">
-                <Link
-                  href="/templates"
-                  className="opacity-60 transition-opacity hover:opacity-100"
-                >
-                  Templates
-                </Link>
-              </div>
             </div>
 
             {/* Changelog */}

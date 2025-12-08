@@ -1,4 +1,4 @@
-import { BadgeDollarSign, CircleDashed } from "lucide-react"
+import { BadgeDollarSign, CircleDashed, Star } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import {
@@ -8,7 +8,7 @@ import {
 } from "@/registry/new-york-v4/ui/tooltip"
 
 interface TierBadgeProps {
-  tier?: "free" | "pro"
+  tier?: "free" | "pro" | "exclusive"
   className?: string
 }
 
@@ -23,6 +23,10 @@ export function TierBadge({ tier, className }: TierBadgeProps) {
     pro: {
       icon: BadgeDollarSign,
       title: "Pro",
+    },
+    exclusive: {
+      icon: Star,
+      title: "Exclusive",
     },
   }
 
