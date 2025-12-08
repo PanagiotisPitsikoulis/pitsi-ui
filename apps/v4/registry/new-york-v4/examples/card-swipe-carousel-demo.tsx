@@ -1,4 +1,14 @@
-import { Skiper48 } from "@/registry/new-york-v4/animations/card-swipe-carousel/card-swipe-carousel"
+"use client"
+
+import dynamic from "next/dynamic"
+
+const Skiper48 = dynamic(
+  () =>
+    import(
+      "@/registry/new-york-v4/animations/card-swipe-carousel/card-swipe-carousel"
+    ).then((mod) => mod.Skiper48),
+  { ssr: false }
+)
 
 export default function CardSwipeCarouselDemo() {
   return (

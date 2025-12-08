@@ -1,68 +1,43 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react"
 import { motion } from "motion/react"
-import { Autoplay, EffectCards, Navigation, Pagination } from "swiper/modules"
-import { Swiper, SwiperSlide } from "swiper/react"
-
-import "swiper/css"
-import "swiper/css/effect-cards"
-import "swiper/css/navigation"
-import "swiper/css/pagination"
 
 import { cn } from "@/lib/utils"
 
 const Skiper48 = () => {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return (
+      <div className="bg-background flex h-full w-full items-center justify-center overflow-hidden">
+        <div className="h-[380px] w-[260px] animate-pulse rounded-3xl bg-muted" />
+      </div>
+    )
+  }
+
   const images = [
-    {
-      src: "https://skiper-ui.com/images/x.com/13.jpeg",
-      alt: "Illustrations by my fav AarzooAly",
-    },
-    {
-      src: "https://skiper-ui.com/images/x.com/32.jpeg",
-      alt: "Illustrations by my fav AarzooAly",
-    },
-    {
-      src: "https://skiper-ui.com/images/x.com/20.jpeg",
-      alt: "Illustrations by my fav AarzooAly",
-    },
-    {
-      src: "https://skiper-ui.com/images/x.com/21.jpeg",
-      alt: "Illustrations by my fav AarzooAly",
-    },
-    {
-      src: "https://skiper-ui.com/images/x.com/19.jpeg",
-      alt: "Illustrations by my fav AarzooAly",
-    },
-    {
-      src: "https://skiper-ui.com/images/x.com/1.jpeg",
-      alt: "Illustrations by my fav AarzooAly",
-    },
-    {
-      src: "https://skiper-ui.com/images/x.com/2.jpeg",
-      alt: "Illustrations by my fav AarzooAly",
-    },
-    {
-      src: "https://skiper-ui.com/images/x.com/3.jpeg",
-      alt: "Illustrations by my fav AarzooAly",
-    },
-    {
-      src: "https://skiper-ui.com/images/x.com/4.jpeg",
-      alt: "Illustrations by my fav AarzooAly",
-    },
-    {
-      src: "https://skiper-ui.com/images/x.com/5.jpeg",
-      alt: "Illustrations by my fav AarzooAly",
-    },
-    {
-      src: "https://skiper-ui.com/images/x.com/6.jpeg",
-      alt: "Illustrations by my fav AarzooAly",
-    },
+    { src: "https://skiper-ui.com/images/x.com/13.jpeg", alt: "Illustration 1" },
+    { src: "https://skiper-ui.com/images/x.com/32.jpeg", alt: "Illustration 2" },
+    { src: "https://skiper-ui.com/images/x.com/20.jpeg", alt: "Illustration 3" },
+    { src: "https://skiper-ui.com/images/x.com/21.jpeg", alt: "Illustration 4" },
+    { src: "https://skiper-ui.com/images/x.com/19.jpeg", alt: "Illustration 5" },
+    { src: "https://skiper-ui.com/images/x.com/1.jpeg", alt: "Illustration 6" },
+    { src: "https://skiper-ui.com/images/x.com/2.jpeg", alt: "Illustration 7" },
+    { src: "https://skiper-ui.com/images/x.com/3.jpeg", alt: "Illustration 8" },
+    { src: "https://skiper-ui.com/images/x.com/4.jpeg", alt: "Illustration 9" },
+    { src: "https://skiper-ui.com/images/x.com/5.jpeg", alt: "Illustration 10" },
+    { src: "https://skiper-ui.com/images/x.com/6.jpeg", alt: "Illustration 11" },
   ]
 
   return (
     <div className="bg-background flex h-full w-full items-center justify-center overflow-hidden">
-      <Carousel_002 className="" images={images} loop />
+      <Carousel_002 images={images} loop />
     </div>
   )
 }
@@ -86,11 +61,51 @@ const Carousel_002 = ({
   autoplay?: boolean
   spaceBetween?: number
 }) => {
+  const [SwiperComponents, setSwiperComponents] = useState<{
+    Swiper: any
+    SwiperSlide: any
+    modules: any[]
+  } | null>(null)
+
+  useEffect(() => {
+    // Dynamic import of Swiper to avoid SSR issues
+    Promise.all([
+      import("swiper/react"),
+      import("swiper/modules"),
+      import("swiper/css"),
+      import("swiper/css/effect-cards"),
+      import("swiper/css/navigation"),
+      import("swiper/css/pagination"),
+    ]).then(([swiperReact, swiperModules]) => {
+      setSwiperComponents({
+        Swiper: swiperReact.Swiper,
+        SwiperSlide: swiperReact.SwiperSlide,
+        modules: [
+          swiperModules.EffectCards,
+          swiperModules.Autoplay,
+          swiperModules.Pagination,
+          swiperModules.Navigation,
+        ],
+      })
+    })
+  }, [])
+
+  if (!SwiperComponents || !images) {
+    return (
+      <div className={cn("relative w-full max-w-3xl", className)}>
+        <div className="flex h-[380px] w-[260px] mx-auto animate-pulse rounded-3xl bg-muted" />
+      </div>
+    )
+  }
+
+  const { Swiper, SwiperSlide, modules } = SwiperComponents
+
   const css = `
   .Carousal_002 {
     padding-bottom: 50px !important;
   }
   `
+
   return (
     <motion.div
       initial={{ opacity: 0, translateY: 20 }}
@@ -132,7 +147,7 @@ const Carousel_002 = ({
             : false
         }
         className="Carousal_002 h-[380px] w-[260px]"
-        modules={[EffectCards, Autoplay, Pagination, Navigation]}
+        modules={modules}
       >
         {images.map((image, index) => (
           <SwiperSlide key={index} className="rounded-3xl">
@@ -159,3 +174,5 @@ const Carousel_002 = ({
 }
 
 export { Carousel_002 }
+
+export default Skiper48

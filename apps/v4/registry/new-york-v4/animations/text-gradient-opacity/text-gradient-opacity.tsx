@@ -203,4 +203,21 @@ const RevealChar = memo<RevealCharProps>(
 
 RevealChar.displayName = "RevealChar"
 
-export default TextGradientOpacity
+// Default wrapper for standalone viewing with sample text
+const TextGradientOpacityDemo = () => {
+  return (
+    <div className="flex min-h-screen w-full flex-col items-center justify-center bg-background p-8">
+      <div className="max-w-4xl space-y-16">
+        <TextGradientOpacity
+          text="This text reveals word by word as you scroll down the page creating a beautiful progressive disclosure effect"
+          className="text-center"
+        />
+        <AnimatedTextReveal className="text-center text-muted-foreground">
+          Character by character reveal animation
+        </AnimatedTextReveal>
+      </div>
+    </div>
+  )
+}
+
+export default TextGradientOpacityDemo

@@ -311,4 +311,47 @@ export const ScrollExpand = memo<ScrollExpandProps>(
 
 ScrollExpand.displayName = "ScrollExpand"
 
-export default HoverExpandGallery
+// Default wrapper for standalone viewing with sample images
+const ScrollExpandDemo = () => {
+  const images = [
+    {
+      src: "https://skiper-ui.com/images/x.com/13.jpeg",
+      alt: "Illustration 1",
+      label: "# 1",
+    },
+    {
+      src: "https://skiper-ui.com/images/x.com/32.jpeg",
+      alt: "Illustration 2",
+      label: "# 2",
+    },
+    {
+      src: "https://skiper-ui.com/images/x.com/20.jpeg",
+      alt: "Illustration 3",
+      label: "# 3",
+    },
+    {
+      src: "https://skiper-ui.com/images/x.com/21.jpeg",
+      alt: "Illustration 4",
+      label: "# 4",
+    },
+    {
+      src: "https://skiper-ui.com/images/x.com/19.jpeg",
+      alt: "Illustration 5",
+      label: "# 5",
+    },
+    {
+      src: "https://skiper-ui.com/images/x.com/1.jpeg",
+      alt: "Illustration 6",
+      label: "# 6",
+    },
+  ]
+
+  return (
+    <div className="flex h-full min-h-screen w-full flex-col items-center justify-center gap-12 overflow-hidden bg-[#f5f4f3] py-12">
+      <HoverExpandGallery images={images} direction="horizontal" />
+      <HoverExpandGallery images={images} direction="vertical" />
+    </div>
+  )
+}
+
+export default ScrollExpandDemo

@@ -92,7 +92,7 @@ test("get config", async () => {
     },
     iconLibrary: "lucide",
     registries: {
-      "@pitsi": "https://pitsiui.com/r/styles/{style}/{name}.json",
+      "@pitsi": "https://www.pitsiui.com/r/styles/{style}/{name}.json",
     },
   })
 
@@ -148,7 +148,7 @@ test("get config", async () => {
       ),
     },
     registries: {
-      "@pitsi": "https://pitsiui.com/r/styles/{style}/{name}.json",
+      "@pitsi": "https://www.pitsiui.com/r/styles/{style}/{name}.json",
     },
   })
 
@@ -192,7 +192,7 @@ test("get config", async () => {
       lib: path.resolve(__dirname, "../fixtures/config-jsx", "./lib"),
     },
     registries: {
-      "@pitsi": "https://pitsiui.com/r/styles/{style}/{name}.json",
+      "@pitsi": "https://www.pitsiui.com/r/styles/{style}/{name}.json",
     },
   })
 })
