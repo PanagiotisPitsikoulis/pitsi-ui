@@ -1,7 +1,8 @@
 "use client"
 
 import type { ReactNode } from "react"
-import { memo, useMemo, useRef } from "react"
+import { memo, useRef } from "react"
+import Image from "next/image"
 import { motion, useScroll, useTransform } from "motion/react"
 
 import { cn } from "@/lib/utils"
@@ -83,7 +84,7 @@ export const ParallaxImage = memo<ParallaxImageProps>(
               imageClassName
             )}
           >
-            <img src={src} alt={alt} className="h-full w-full object-cover" />
+            <Image src={src} alt={alt} fill className="object-cover" sizes="100vw" priority />
           </div>
           {children}
         </div>
@@ -109,7 +110,7 @@ export const ParallaxImage = memo<ParallaxImageProps>(
             imageClassName
           )}
         >
-          <img src={src} alt={alt} className="h-full w-full object-cover" />
+          <Image src={src} alt={alt} fill className="object-cover" sizes="100vw" priority />
         </motion.div>
         {children}
       </div>

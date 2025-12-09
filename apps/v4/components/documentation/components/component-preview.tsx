@@ -1,3 +1,5 @@
+import { Suspense } from "react"
+
 import { ReadinessBadge } from "@/components/ui/readiness-badge"
 import { TierBadge } from "@/components/ui/tier-badge"
 import { ComponentPreviewTabs } from "@/components/documentation/components/component-preview-tabs"
@@ -7,6 +9,7 @@ import {
   getRegistryComponent
 } from "@/lib/registry-client"
 import { type Style } from "@/registry/styles"
+import { Spinner } from "@/registry/new-york-v4/ui/spinner"
 
 export function ComponentPreview({
   name,
@@ -72,7 +75,11 @@ export function ComponentPreview({
       hideCode={hideCode}
       readiness={registryItem?.readiness}
       tier={registryItem?.tier ?? "free"}
-      component={<div className="overflow-hidden"><Component /></div>}
+      component={
+        <Suspense fallback={<Spinner className="size-6" />}>
+          <div className="overflow-hidden"><Component /></div>
+        </Suspense>
+      }
       source={
         <ComponentSource
           name={name}

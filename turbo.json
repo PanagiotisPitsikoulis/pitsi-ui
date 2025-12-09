@@ -3,7 +3,8 @@
   "globalEnv": [
     "NODE_ENV",
     "NEXT_PUBLIC_APP_URL",
-    "DATABASE_URL"
+    "DATABASE_URL",
+    "HIDE_ALPHA_ITEMS"
   ],
   "tasks": {
     "build": {
@@ -31,7 +32,8 @@
         "https_proxy",
         "V0_URL",
         "V0_EDIT_SECRET",
-        "DEPLOYMENT_PROTECTION_BYPASS"
+        "DEPLOYMENT_PROTECTION_BYPASS",
+        "HIDE_ALPHA_ITEMS"
       ],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },

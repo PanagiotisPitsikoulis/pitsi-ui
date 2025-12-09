@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 import { ParallaxImage } from "@/registry/new-york-v4/animations/background-image-parallax/background-image-parallax"
 import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 
@@ -216,8 +218,8 @@ export function PurposeSection() {
             <div className="flex flex-col items-center gap-1">
               <div className="from-brand to-brand/60 flex size-12 items-center justify-center rounded-full bg-gradient-to-br p-0.5">
                 <div className="bg-background flex size-full items-center justify-center rounded-full p-0.5">
-                  <div className="size-full overflow-hidden rounded-full">
-                    <img src="/avatars/01.webp" alt="" className="h-full w-full object-cover" />
+                  <div className="relative size-full overflow-hidden rounded-full">
+                    <Image src="/avatars/01.webp" alt="" fill className="object-cover" sizes="48px" />
                   </div>
                 </div>
               </div>
@@ -226,8 +228,8 @@ export function PurposeSection() {
             <div className="flex flex-col items-center gap-1">
               <div className="from-pink-500 to-orange-400 flex size-12 items-center justify-center rounded-full bg-gradient-to-br p-0.5">
                 <div className="bg-background size-full rounded-full p-0.5">
-                  <div className="size-full overflow-hidden rounded-full">
-                    <img src="/avatars/02.webp" alt="" className="h-full w-full object-cover" />
+                  <div className="relative size-full overflow-hidden rounded-full">
+                    <Image src="/avatars/02.webp" alt="" fill className="object-cover" sizes="48px" />
                   </div>
                 </div>
               </div>
@@ -236,8 +238,8 @@ export function PurposeSection() {
             <div className="flex flex-col items-center gap-1">
               <div className="from-pink-500 to-orange-400 flex size-12 items-center justify-center rounded-full bg-gradient-to-br p-0.5">
                 <div className="bg-background size-full rounded-full p-0.5">
-                  <div className="size-full overflow-hidden rounded-full">
-                    <img src="/avatars/03.webp" alt="" className="h-full w-full object-cover" />
+                  <div className="relative size-full overflow-hidden rounded-full">
+                    <Image src="/avatars/03.webp" alt="" fill className="object-cover" sizes="48px" />
                   </div>
                 </div>
               </div>
@@ -246,8 +248,8 @@ export function PurposeSection() {
             <div className="flex flex-col items-center gap-1">
               <div className="bg-muted/40 flex size-12 items-center justify-center rounded-full">
                 <div className="bg-background size-full rounded-full p-0.5">
-                  <div className="size-full overflow-hidden rounded-full">
-                    <img src="/avatars/04.webp" alt="" className="h-full w-full object-cover" />
+                  <div className="relative size-full overflow-hidden rounded-full">
+                    <Image src="/avatars/04.webp" alt="" fill className="object-cover" sizes="48px" />
                   </div>
                 </div>
               </div>
@@ -256,8 +258,8 @@ export function PurposeSection() {
             <div className="flex flex-col items-center gap-1">
               <div className="bg-muted/40 flex size-12 items-center justify-center rounded-full">
                 <div className="bg-background size-full rounded-full p-0.5">
-                  <div className="size-full overflow-hidden rounded-full">
-                    <img src="/avatars/05.webp" alt="" className="h-full w-full object-cover" />
+                  <div className="relative size-full overflow-hidden rounded-full">
+                    <Image src="/avatars/05.webp" alt="" fill className="object-cover" sizes="48px" />
                   </div>
                 </div>
               </div>
@@ -273,8 +275,8 @@ export function PurposeSection() {
               <div className="flex items-center gap-2 px-5 py-2">
                 <div className="from-pink-500 to-orange-400 flex size-8 items-center justify-center rounded-full bg-gradient-to-br p-0.5">
                   <div className="bg-background size-full rounded-full p-0.5">
-                    <div className="size-full overflow-hidden rounded-full">
-                      <img src="/avatars/06.webp" alt="" className="h-full w-full object-cover" />
+                    <div className="relative size-full overflow-hidden rounded-full">
+                      <Image src="/avatars/06.webp" alt="" fill className="object-cover" sizes="32px" />
                     </div>
                   </div>
                 </div>
@@ -308,11 +310,11 @@ export function PurposeSection() {
               {/* Likes */}
               <div className="flex items-center gap-2 px-5">
                 <div className="-space-x-1.5 flex">
-                  <div className="border-background size-4 overflow-hidden rounded-full border">
-                    <img src="/avatars/07.webp" alt="" className="h-full w-full object-cover" />
+                  <div className="border-background relative size-4 overflow-hidden rounded-full border">
+                    <Image src="/avatars/07.webp" alt="" fill className="object-cover" sizes="16px" />
                   </div>
-                  <div className="border-background size-4 overflow-hidden rounded-full border">
-                    <img src="/avatars/08.webp" alt="" className="h-full w-full object-cover" />
+                  <div className="border-background relative size-4 overflow-hidden rounded-full border">
+                    <Image src="/avatars/08.webp" alt="" fill className="object-cover" sizes="16px" />
                   </div>
                 </div>
                 <div className="bg-muted h-2 w-24 rounded" />

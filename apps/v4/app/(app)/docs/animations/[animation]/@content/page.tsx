@@ -30,12 +30,19 @@ export async function generateStaticParams() {
     return []
   }
 
+  const hideAlpha = process.env.HIDE_ALPHA_ITEMS === "true"
+
   return animationsFolder.children
     .filter((child) => child.type === "page")
     .map((child) => {
       const urlParts = child.url.split("/").filter(Boolean)
       const animation = urlParts[urlParts.length - 1]
       return { animation }
+    })
+    .filter(({ animation }) => {
+      if (!hideAlpha) return true
+      const registryItem = Index["new-york-v4"]?.[animation]
+      return registryItem?.readiness !== "alpha"
     })
 }
 

@@ -21,11 +21,36 @@ import { DocsCopyPage } from "@/components/documentation/docs/docs-copy-page"
 import { DocsPaywall } from "@/components/documentation/docs/docs-paywall"
 import { DocsTableOfContents } from "@/components/documentation/docs/docs-toc"
 import { OpenInV0Cta } from "@/components/documentation/integrations/open-in-v0-cta"
+import { Index } from "@/registry/__index__"
 import { Badge } from "@/registry/new-york-v4/ui/badge"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 export function generateStaticParams() {
-  return source.generateParams()
+  const hideAlpha = process.env.HIDE_ALPHA_ITEMS === "true"
+  const allParams = source.generateParams()
+
+  if (!hideAlpha) {
+    return allParams
+  }
+
+  // Filter out alpha components and animations
+  return allParams.filter((param) => {
+    const slug = param.slug
+    if (!slug || slug.length < 2) return true
+
+    // Check if this is a component or animation page
+    const isComponentPage = slug[0] === "components"
+    const isAnimationPage = slug[0] === "animations"
+
+    if (!isComponentPage && !isAnimationPage) return true
+
+    // Get the item name from the slug
+    const itemName = slug[1]
+    const registryItem = Index["new-york-v4"]?.[itemName]
+
+    // Filter out alpha items
+    return registryItem?.readiness !== "alpha"
+  })
 }
 
 export async function generateMetadata(props: {

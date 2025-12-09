@@ -123,7 +123,9 @@ function ComponentPreviewContent({
   return (
     <LazyComponentPreview className="flex h-full w-full items-center justify-center">
       <div className="flex w-fit min-w-[600px] origin-center scale-[0.5] transform items-center justify-center">
-        <Component />
+        <React.Suspense fallback={<Spinner className="size-6" />}>
+          <Component />
+        </React.Suspense>
       </div>
     </LazyComponentPreview>
   )
