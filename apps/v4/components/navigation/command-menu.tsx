@@ -134,17 +134,19 @@ export function CommandMenu({
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
       if ((e.key === "k" && (e.metaKey || e.ctrlKey)) || e.key === "/") {
-        if (
+        const isInInput =
           (e.target instanceof HTMLElement && e.target.isContentEditable) ||
           e.target instanceof HTMLInputElement ||
           e.target instanceof HTMLTextAreaElement ||
           e.target instanceof HTMLSelectElement
-        ) {
+
+        // Allow closing the dialog even when in input, but don't open from inputs
+        if (isInInput && !open) {
           return
         }
 
         e.preventDefault()
-        setOpen((open) => !open)
+        setOpen((prev) => !prev)
       }
 
       if (e.key === "c" && (e.metaKey || e.ctrlKey)) {
@@ -161,7 +163,7 @@ export function CommandMenu({
 
     document.addEventListener("keydown", down)
     return () => document.removeEventListener("keydown", down)
-  }, [copyPayload, runCommand, selectedType, packageManager])
+  }, [open, copyPayload, runCommand, selectedType, packageManager])
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
