@@ -34,6 +34,7 @@
     "preview": "turbo run preview",
     "v4:dev": "pnpm --filter=v4 dev",
     "v4:build": "pnpm --filter=v4 build",
+    "v4:start": "pnpm --filter=v4 start",
     "v4:test": "pnpm --filter=v4 exec vitest run",
     "v4:test:watch": "pnpm --filter=v4 exec vitest",
     "v4:typecheck": "pnpm --filter=v4 typecheck",
