@@ -1,3 +1,4 @@
+import { Suspense } from "react"
 import type { Metadata } from "next"
 
 import { META_THEME_COLORS, siteConfig } from "@/lib/config"
@@ -98,7 +99,9 @@ export default function RootLayout({
         <ThemeProvider>
           <LayoutProvider>
             <ActiveThemeProvider>
-              <ScrollToTop />
+              <Suspense fallback={null}>
+                <ScrollToTop />
+              </Suspense>
               {children}
               <Toaster position="top-center" />
               <Analytics />

@@ -94,7 +94,9 @@ export function HeroSection() {
         {/*Buttons*/}
         <Spacer size={"3xl"} sizeMobile={"lg"} />
         <div className="flex flex-row gap-2">
-          <HeroButton>Start Copy Pasting</HeroButton>
+          <HeroButton asChild>
+            <Link href="/blocks">Start Copy Pasting</Link>
+          </HeroButton>
           <Button asChild size={"lg"} variant={"outline"} className="rounded-full">
             <a href="#pricing">Get Pro</a>
           </Button>
