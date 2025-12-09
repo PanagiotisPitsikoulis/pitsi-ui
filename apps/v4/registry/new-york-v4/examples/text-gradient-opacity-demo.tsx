@@ -1,4 +1,4 @@
-import TextGradientOpacity from "@/registry/new-york-v4/animations/text-gradient-opacity/text-gradient-opacity"
+import { TextGradientOpacity } from "@/registry/new-york-v4/animations/text-gradient-opacity/text-gradient-opacity"
 
 export default function TextGradientOpacityDemo() {
   return (

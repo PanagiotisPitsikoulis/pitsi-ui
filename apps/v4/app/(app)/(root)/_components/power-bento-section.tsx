@@ -11,6 +11,20 @@ import {
   SmartMCPServerIllustration,
 } from "../_bento_animations"
 
+type CardItem = {
+  type: "card"
+  title: string
+  description: string
+  illustration: () => React.JSX.Element
+}
+
+type IconItem = {
+  type: "icon"
+  icon: (props: { className?: string }) => React.JSX.Element
+}
+
+type GridItem = CardItem | IconItem
+
 // Decorative icons for empty spaces
 function SelectCheckboxIcon({ className }: { className?: string }) {
   return (
@@ -289,7 +303,7 @@ function NumbersIcon({ className }: { className?: string }) {
 
 // Grid layout configuration for artistic arrangement
 // Using a 3-column grid with strategic empty spaces and decorative icons
-const gridItems = [
+const gridItems: GridItem[] = [
   // Row 1: MCP Server, Battle Tested, icon
   {
     type: "card",
