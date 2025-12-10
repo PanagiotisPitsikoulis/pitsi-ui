@@ -1,5 +1,7 @@
 import { ImageResponse } from "next/og"
 
+import { LOGO_SVG_PATH } from "@/lib/icons/logo"
+
 // Image metadata
 export const size = {
   width: 180,
@@ -11,7 +13,6 @@ export const contentType = "image/png"
 export default function AppleIcon() {
   return new ImageResponse(
     (
-      // ImageResponse JSX element
       <div
         style={{
           background: "white",
@@ -30,15 +31,10 @@ export default function AppleIcon() {
           width="140"
           height="140"
         >
-          <path d="M12 1 21.5 6.5V17.5L13 22.4211V11.4234L3.49793 5.92225 12 1ZM2.5 7.6555V17.5L11 22.4211V12.5765L2.5 7.6555Z"></path>
+          <path d={LOGO_SVG_PATH} />
         </svg>
       </div>
     ),
-    // ImageResponse options
-    {
-      // For convenience, we can re-use the exported icons size metadata
-      // config to also set the ImageResponse's width and height.
-      ...size,
-    }
+    { ...size }
   )
 }

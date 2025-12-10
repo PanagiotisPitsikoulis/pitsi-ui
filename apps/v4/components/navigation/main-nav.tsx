@@ -5,6 +5,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { ArrowUpRight, Search } from "lucide-react"
 
+import { formatName } from "@/lib/format"
 import { cn } from "@/lib/utils"
 import { Input } from "@/registry/new-york-v4/ui/input"
 import {
@@ -297,14 +298,6 @@ export function MainNav({
       return pathname === "/"
     }
     return pathname.startsWith(href)
-  }
-
-  // Format category name for display
-  const formatName = (name: string) => {
-    return name
-      .split("-")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ")
   }
 
   // Filter nav items to separate dropdowns from regular links

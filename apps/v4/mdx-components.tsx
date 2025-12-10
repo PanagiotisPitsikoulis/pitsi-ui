@@ -353,7 +353,7 @@ export const mdxComponents = {
   LinkedCard: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
     <Link
       className={cn(
-        "border-border bg-background hover:bg-background/80 flex w-full flex-col items-center rounded-xl border p-6 transition-colors sm:p-10",
+        "border-border bg-background hover:bg-background/80 flex w-full flex-col items-center rounded-xl border p-6 shadow-sm transition-colors sm:p-10",
         className
       )}
       {...props}

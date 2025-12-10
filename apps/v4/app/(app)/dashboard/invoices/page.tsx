@@ -1,20 +1,18 @@
 import { redirect } from "next/navigation"
-import { Download, ExternalLink, FileText } from "lucide-react"
+import { FileText } from "lucide-react"
 
 import { db } from "@/lib/server/db"
 import { user as userTable } from "@/lib/server/db/schema"
 import { stripe } from "@/lib/server/stripe"
 import { getCurrentUser } from "@/lib/server/user"
-import { Badge } from "@/registry/new-york-v4/ui/badge"
-import { Button } from "@/registry/new-york-v4/ui/button"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/registry/new-york-v4/ui/card"
 import { eq } from "drizzle-orm"
+
+import {
+  EmptyStateCard,
+  InvoicesListCard,
+  PageHeader,
+  PaymentsListCard,
+} from "@/components/dashboard"
 
 async function getInvoices(stripeCustomerId: string | null) {
   if (!stripeCustomerId) {
@@ -89,7 +87,6 @@ export default async function InvoicesPage() {
     redirect("/api/auth/signin")
   }
 
-  // Get full user data with stripeCustomerId
   const userData = await db
     .select()
     .from(userTable)
@@ -108,116 +105,24 @@ export default async function InvoicesPage() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-2xl font-bold tracking-tight">Invoices</h1>
-        <p className="text-muted-foreground">
-          View and download your payment history
-        </p>
-      </div>
-
+      <PageHeader
+        title="Invoices"
+        description="View and download your payment history"
+      />
       {!hasInvoices && !hasPayments ? (
-        <Card>
-          <CardContent className="flex flex-col items-center justify-center py-12">
-            <FileText className="text-muted-foreground mb-4 size-12" />
-            <h3 className="mb-2 text-lg font-semibold">No invoices yet</h3>
-            <p className="text-muted-foreground text-center text-sm">
-              {currentUser.isPro
-                ? "Your payment was processed but invoices may take a moment to appear."
-                : "Upgrade to Pro to see your invoices here."}
-            </p>
-          </CardContent>
-        </Card>
+        <EmptyStateCard
+          icon={FileText}
+          title="No invoices yet"
+          description={
+            currentUser.isPro
+              ? "Your payment was processed but invoices may take a moment to appear."
+              : "Upgrade to Pro to see your invoices here."
+          }
+        />
       ) : (
         <>
-          {hasInvoices && (
-            <Card>
-              <CardHeader>
-                <CardTitle>Invoices</CardTitle>
-                <CardDescription>
-                  Download invoices for your records
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-2">
-                  {invoices.map((invoice) => (
-                    <div
-                      key={invoice.id}
-                      className="flex items-center justify-between rounded-lg border p-3"
-                    >
-                      <div>
-                        <p className="font-medium">
-                          {invoice.number || "Invoice"}
-                        </p>
-                        <p className="text-muted-foreground text-sm">
-                          {invoice.date} &bull; {invoice.amount}
-                        </p>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Badge
-                          variant={
-                            invoice.status === "paid" ? "success" : "secondary"
-                          }
-                        >
-                          {invoice.status}
-                        </Badge>
-                        {invoice.pdfUrl && (
-                          <Button variant="ghost" size="icon-sm" asChild>
-                            <a
-                              href={invoice.pdfUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              <Download className="size-4" />
-                            </a>
-                          </Button>
-                        )}
-                        {invoice.hostedUrl && (
-                          <Button variant="ghost" size="icon-sm" asChild>
-                            <a
-                              href={invoice.hostedUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              <ExternalLink className="size-4" />
-                            </a>
-                          </Button>
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          )}
-
-          {hasPayments && (
-            <Card>
-              <CardHeader>
-                <CardTitle>Payments</CardTitle>
-                <CardDescription>
-                  Your payment history
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-2">
-                  {payments.map((payment) => (
-                    <div
-                      key={payment.id}
-                      className="flex items-center justify-between rounded-lg border p-3"
-                    >
-                      <div>
-                        <p className="font-medium">{payment.description}</p>
-                        <p className="text-muted-foreground text-sm">
-                          {payment.date} &bull; {payment.amount}
-                        </p>
-                      </div>
-                      <Badge variant="success">Paid</Badge>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          )}
+          {hasInvoices && <InvoicesListCard invoices={invoices} />}
+          {hasPayments && <PaymentsListCard payments={payments} />}
         </>
       )}
     </div>

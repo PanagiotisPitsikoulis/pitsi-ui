@@ -83,13 +83,13 @@ export function SiteHeaderClient({
           className="hidden lg:flex"
         />
         <div className="ml-auto flex items-center gap-1 md:flex-1 md:justify-end md:gap-2">
-          <div className="hidden w-full flex-1 md:flex md:w-auto md:flex-none">
+          <div key="command-menu-desktop" className="hidden w-full flex-1 md:flex md:w-auto md:flex-none">
             {commandMenu}
           </div>
-          <div className="flex md:hidden">{githubLink}</div>
-          <div className="flex md:hidden">{commandMenu}</div>
-          <div className="hidden items-center gap-2 md:flex">{githubLink}</div>
-          {userNav}
+          <div key="github-mobile" className="flex md:hidden">{githubLink}</div>
+          <div key="command-menu-mobile" className="flex md:hidden">{commandMenu}</div>
+          <div key="github-desktop" className="hidden items-center gap-2 md:flex">{githubLink}</div>
+          <div key="user-nav">{userNav}</div>
         </div>
       </div>
     </header>

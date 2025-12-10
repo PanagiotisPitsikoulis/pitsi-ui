@@ -1,11 +1,12 @@
 import { NextResponse } from "next/server"
-import { and, eq } from "drizzle-orm"
-import { nanoid } from "nanoid"
 
 import { auth } from "@/lib/server/auth"
-import { db } from "@/lib/server/db"
-import { teamMember, user } from "@/lib/server/db/schema"
-import { PLANS } from "@/lib/server/stripe"
+import {
+  getMaxMembers,
+  getTeamMembers,
+  getMemberByEmail,
+  inviteTeamMember,
+} from "@/lib/server/team"
 
 // Get team members
 export async function GET(req: Request) {
@@ -26,21 +27,8 @@ export async function GET(req: Request) {
       return NextResponse.json({ error: "Team plan required" }, { status: 403 })
     }
 
-    const members = await db
-      .select({
-        id: teamMember.id,
-        memberEmail: teamMember.memberEmail,
-        status: teamMember.status,
-        invitedAt: teamMember.invitedAt,
-        acceptedAt: teamMember.acceptedAt,
-      })
-      .from(teamMember)
-      .where(eq(teamMember.teamOwnerId, currentUser.id))
-
-    const maxMembers =
-      planType === "enterprise"
-        ? PLANS.enterprise.maxMembers
-        : PLANS.team.maxMembers
+    const members = await getTeamMembers(currentUser.id)
+    const maxMembers = getMaxMembers(planType)
 
     return NextResponse.json({
       members,
@@ -94,15 +82,8 @@ export async function POST(req: Request) {
     }
 
     // Check member limit
-    const existingMembers = await db
-      .select()
-      .from(teamMember)
-      .where(eq(teamMember.teamOwnerId, currentUser.id))
-
-    const maxMembers =
-      planType === "enterprise"
-        ? PLANS.enterprise.maxMembers
-        : PLANS.team.maxMembers
+    const existingMembers = await getTeamMembers(currentUser.id)
+    const maxMembers = getMaxMembers(planType)
 
     if (existingMembers.length >= maxMembers) {
       return NextResponse.json(
@@ -112,46 +93,19 @@ export async function POST(req: Request) {
     }
 
     // Check if member already exists
-    const existingMember = await db
-      .select()
-      .from(teamMember)
-      .where(
-        and(
-          eq(teamMember.teamOwnerId, currentUser.id),
-          eq(teamMember.memberEmail, email.toLowerCase())
-        )
-      )
+    const existingMember = await getMemberByEmail(currentUser.id, email)
 
-    if (existingMember.length > 0) {
+    if (existingMember) {
       return NextResponse.json(
         { error: "This email is already invited" },
         { status: 400 }
       )
     }
 
-    // Check if user exists and link them
-    const existingUser = await db
-      .select()
-      .from(user)
-      .where(eq(user.email, email.toLowerCase()))
-
-    const memberUserId = existingUser.length > 0 ? existingUser[0].id : null
-
     // Create team member invitation
-    const newMember = await db
-      .insert(teamMember)
-      .values({
-        id: nanoid(),
-        teamOwnerId: currentUser.id,
-        memberEmail: email.toLowerCase(),
-        memberUserId,
-        status: memberUserId ? "active" : "pending",
-        invitedAt: new Date(),
-        acceptedAt: memberUserId ? new Date() : null,
-      })
-      .returning()
+    const newMember = await inviteTeamMember(currentUser.id, email)
 
-    return NextResponse.json({ member: newMember[0] })
+    return NextResponse.json({ member: newMember })
   } catch (error) {
     console.error("Error inviting team member:", error)
     return NextResponse.json(

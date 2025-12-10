@@ -1412,7 +1412,7 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
+      poweredBy: undefined,
     },
     "card-swipe-carousel": {
       name: "card-swipe-carousel",
@@ -1496,7 +1496,7 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
+      poweredBy: undefined,
     },
     "perspective-section-transition": {
       name: "perspective-section-transition",
@@ -1538,7 +1538,7 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
+      poweredBy: undefined,
     },
     "scroll-fade": {
       name: "scroll-fade",
@@ -1559,7 +1559,7 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
+      poweredBy: undefined,
     },
     "scroll-scale": {
       name: "scroll-scale",
@@ -1580,7 +1580,7 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
+      poweredBy: undefined,
     },
     "slide-down": {
       name: "slide-down",
@@ -1601,7 +1601,7 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
+      poweredBy: undefined,
     },
     "slide-up": {
       name: "slide-up",
@@ -1622,7 +1622,7 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
+      poweredBy: undefined,
     },
     "smooth-parallax-scroll": {
       name: "smooth-parallax-scroll",
@@ -1643,7 +1643,7 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
+      poweredBy: undefined,
     },
     "smooth-scroll": {
       name: "smooth-scroll",
@@ -1727,7 +1727,7 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
+      poweredBy: undefined,
     },
     "text-parallax": {
       name: "text-parallax",
@@ -1748,7 +1748,7 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
+      poweredBy: undefined,
     },
     "transforms-3d": {
       name: "transforms-3d",
@@ -1769,7 +1769,7 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
+      poweredBy: undefined,
     },
     "zoom-parallax": {
       name: "zoom-parallax",
@@ -1790,7 +1790,7 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
+      poweredBy: undefined,
     },
     "dashboard-01": {
       name: "dashboard-01",

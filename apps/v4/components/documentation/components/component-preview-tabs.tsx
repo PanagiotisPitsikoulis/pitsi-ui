@@ -8,8 +8,8 @@ import { TierBadge } from "@/components/ui/tier-badge"
 
 export function ComponentPreviewTabs({
   className,
-  align = "center",
-  justify = "center",
+  align = "start",
+  justify = "start",
   hideCode = false,
   chromeLessOnMobile = false,
   isScrollable = false,

@@ -2,6 +2,7 @@ import { redirect } from "next/navigation"
 
 import { getCurrentUser } from "@/lib/server/user"
 
+import { PageHeader } from "@/components/dashboard"
 import { TeamClient } from "./client"
 
 export default async function TeamPage() {
@@ -13,12 +14,10 @@ export default async function TeamPage() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-2xl font-bold tracking-tight">Team</h1>
-        <p className="text-muted-foreground">
-          Manage your team members and invitations
-        </p>
-      </div>
+      <PageHeader
+        title="Team"
+        description="Manage your team members and invitations"
+      />
       <TeamClient planType={user.planType} />
     </div>
   )

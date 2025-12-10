@@ -4,9 +4,7 @@ import * as React from "react"
 import Link from "next/link"
 import {
   Check,
-  ChevronRight,
   Clipboard,
-  File,
   Folder,
   Maximize,
   Monitor,
@@ -20,36 +18,21 @@ import { ImperativePanelHandle } from "react-resizable-panels"
 import { z } from "zod"
 
 import { trackEvent } from "@/lib/events"
-import { createFileTreeForRegistryItemFiles, FileTree } from "@/lib/registry"
+import { createFileTreeForRegistryItemFiles } from "@/lib/registry"
 import { cn } from "@/lib/utils"
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard"
 import { ReadinessBadge } from "@/components/ui/readiness-badge"
 import { TierBadge } from "@/components/ui/tier-badge"
+import { FileTreeSidebar } from "@/components/documentation/blocks/shared/file-tree"
 import { OpenInV0Button } from "@/components/documentation/integrations/open-in-v0-button"
 import { getIconForLanguageExtension } from "@/components/shared/icons"
 import { Button } from "@/registry/new-york-v4/ui/button"
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/registry/new-york-v4/ui/collapsible"
 import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/registry/new-york-v4/ui/resizable"
 import { Separator } from "@/registry/new-york-v4/ui/separator"
-import {
-  Sidebar,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarGroupLabel,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-  SidebarMenuSub,
-  SidebarProvider,
-} from "@/registry/new-york-v4/ui/sidebar"
 import { Tabs, TabsList, TabsTrigger } from "@/registry/new-york-v4/ui/tabs"
 import {
   ToggleGroup,
@@ -357,7 +340,7 @@ function BlockViewerMobile({ styleName }: { styleName: Style["name"] }) {
 }
 
 function BlockViewerCode() {
-  const { activeFile, highlightedFiles } = useBlockViewer()
+  const { activeFile, setActiveFile, highlightedFiles, tree } = useBlockViewer()
   const [sidebarOpen, setSidebarOpen] = React.useState(false)
 
   const file = React.useMemo(() => {
@@ -379,7 +362,13 @@ function BlockViewerCode() {
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
-        <BlockViewerFileTree />
+        {tree && (
+          <FileTreeSidebar
+            tree={tree}
+            activeFile={activeFile}
+            setActiveFile={setActiveFile}
+          />
+        )}
       </div>
 
       {/* Overlay for mobile */}
@@ -419,91 +408,6 @@ function BlockViewerCode() {
         />
       </figure>
     </div>
-  )
-}
-
-export function BlockViewerFileTree() {
-  const { tree } = useBlockViewer()
-
-  if (!tree) {
-    return null
-  }
-
-  return (
-    <SidebarProvider className="flex !min-h-full flex-col border-r">
-      <Sidebar collapsible="none" className="w-full flex-1">
-        <SidebarGroupLabel className="h-12 rounded-none border-b px-4 text-sm">
-          Files
-        </SidebarGroupLabel>
-        <SidebarGroup className="p-0">
-          <SidebarGroupContent>
-            <SidebarMenu className="translate-x-0 gap-1.5">
-              {tree.map((file, index) => (
-                <Tree key={index} item={file} index={1} />
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-      </Sidebar>
-    </SidebarProvider>
-  )
-}
-
-function Tree({ item, index }: { item: FileTree; index: number }) {
-  const { activeFile, setActiveFile } = useBlockViewer()
-
-  if (!item.children) {
-    return (
-      <SidebarMenuItem>
-        <SidebarMenuButton
-          isActive={item.path === activeFile}
-          onClick={() => item.path && setActiveFile(item.path)}
-          className="hover:bg-background/80 focus:bg-background/80 focus-visible:bg-background/80 active:bg-background/80 data-[active=true]:bg-background data-[active=true]:border-border rounded-none pl-(--index) whitespace-nowrap data-[active=true]:border data-[active=true]:shadow-xs"
-          data-index={index}
-          style={
-            {
-              "--index": `${index * (index === 2 ? 1.2 : 1.3)}rem`,
-            } as React.CSSProperties
-          }
-        >
-          <ChevronRight className="invisible" />
-          <File className="h-4 w-4" />
-          {item.name}
-        </SidebarMenuButton>
-      </SidebarMenuItem>
-    )
-  }
-
-  return (
-    <SidebarMenuItem>
-      <Collapsible
-        className="group/collapsible [&[data-state=open]>button>svg:first-child]:rotate-90"
-        defaultOpen
-        suppressHydrationWarning
-      >
-        <CollapsibleTrigger asChild>
-          <SidebarMenuButton
-            className="hover:bg-background/80 focus:bg-background/80 focus-visible:bg-background/80 active:bg-background/80 data-[active=true]:bg-background data-[active=true]:border-border rounded-none pl-(--index) whitespace-nowrap data-[active=true]:border data-[active=true]:shadow-xs"
-            style={
-              {
-                "--index": `${index * (index === 1 ? 1 : 1.2)}rem`,
-              } as React.CSSProperties
-            }
-          >
-            <ChevronRight className="transition-transform" />
-            <Folder />
-            {item.name}
-          </SidebarMenuButton>
-        </CollapsibleTrigger>
-        <CollapsibleContent suppressHydrationWarning>
-          <SidebarMenuSub className="m-0 w-full translate-x-0 border-none p-0">
-            {item.children.map((subItem, key) => (
-              <Tree key={key} item={subItem} index={index + 1} />
-            ))}
-          </SidebarMenuSub>
-        </CollapsibleContent>
-      </Collapsible>
-    </SidebarMenuItem>
   )
 }
 

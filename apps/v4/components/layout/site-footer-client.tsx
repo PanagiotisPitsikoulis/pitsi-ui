@@ -1,7 +1,9 @@
 "use client"
 
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
+import { formatName } from "@/lib/format"
 import { ThemeToggle } from "@/registry/new-york-v4/ui/theme-toggle"
 
 interface SiteFooterClientProps {
@@ -43,13 +45,8 @@ export function SiteFooterClient({
   blockCategories,
   allBlockSubcategories,
 }: SiteFooterClientProps) {
-  // Format category name for display
-  const formatName = (name: string) => {
-    return name
-      .split("-")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ")
-  }
+  const pathname = usePathname()
+  const isHomePage = pathname === "/"
 
   // Filter docs pages to exclude components and animations (they have dedicated sections)
   const docsPages = allDocsPages.filter(
@@ -60,8 +57,8 @@ export function SiteFooterClient({
   return (
     <footer className="relative bg-transparent py-12">
       <div className="container px-6">
-        {/* General Section */}
-        <div className="mb-12">
+        {/* General Section - Only on home page */}
+        {isHomePage && <div className="mb-12">
           <h5 className="mb-6 border-b border-border text-sm font-semibold">General</h5>
           <div className="grid grid-cols-2 gap-6 text-[13px] leading-relaxed tracking-[-0.15px] md:grid-cols-6">
             {/* Documentation */}
@@ -196,7 +193,7 @@ export function SiteFooterClient({
               </div>
               <div className="py-px">
                 <Link
-                  href="/docs/changelog"
+                  href="/changelog"
                   className="opacity-60 transition-opacity hover:opacity-100"
                 >
                   Changelog
@@ -262,10 +259,10 @@ export function SiteFooterClient({
               </div>
             </div>
           </div>
-        </div>
+        </div>}
 
-        {/* Blocks Section */}
-        <div className="mb-12 hidden md:block">
+        {/* Blocks Section - Only on home page */}
+        {isHomePage && <div className="mb-12 hidden md:block">
           <h5 className="mb-6 border-b border-border text-sm font-semibold">Blocks</h5>
           <div className="grid grid-cols-2 gap-x-6 gap-y-1 text-[13px] leading-relaxed tracking-[-0.15px] md:grid-cols-6">
             {allBlockSubcategories.map((sub) => (
@@ -279,10 +276,10 @@ export function SiteFooterClient({
               </div>
             ))}
           </div>
-        </div>
+        </div>}
 
-        {/* Components Section */}
-        <div className="mb-12 hidden md:block">
+        {/* Components Section - Only on home page */}
+        {isHomePage && <div className="mb-12 hidden md:block">
           <h5 className="mb-6 border-b border-border text-sm font-semibold">Components</h5>
           <div className="grid grid-cols-2 gap-x-6 gap-y-1 text-[13px] leading-relaxed tracking-[-0.15px] md:grid-cols-6">
             {componentPages.map((page) => (
@@ -296,10 +293,10 @@ export function SiteFooterClient({
               </div>
             ))}
           </div>
-        </div>
+        </div>}
 
-        {/* Animations Section */}
-        <div className="mb-12 hidden md:block">
+        {/* Animations Section - Only on home page */}
+        {isHomePage && <div className="mb-12 hidden md:block">
           <h5 className="mb-6 border-b border-border text-sm font-semibold">Animations</h5>
           <div className="grid grid-cols-2 gap-x-6 gap-y-1 text-[13px] leading-relaxed tracking-[-0.15px] md:grid-cols-6">
             {animationPages.map((page) => (
@@ -313,10 +310,10 @@ export function SiteFooterClient({
               </div>
             ))}
           </div>
-        </div>
+        </div>}
 
         {/* Bottom section with logo and copyright */}
-        <div className="flex items-center justify-between border-t border-border pt-6">
+        <div className={`flex items-center justify-between pt-6 ${isHomePage ? "border-t border-border" : ""}`}>
           <p className="text-muted-foreground text-xs">
             © 2025 pitsi/ui. All rights reserved.
           </p>

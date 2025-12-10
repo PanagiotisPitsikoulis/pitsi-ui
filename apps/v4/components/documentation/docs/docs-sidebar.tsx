@@ -31,7 +31,7 @@ const TOP_LEVEL_SECTIONS = [
   },
   {
     name: "Changelog",
-    href: "/docs/changelog",
+    href: "/changelog",
   },
 ]
 const EXCLUDED_SECTIONS = ["installation", "dark-mode"]

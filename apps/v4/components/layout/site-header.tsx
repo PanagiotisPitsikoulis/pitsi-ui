@@ -11,6 +11,15 @@ import { CommandMenu } from "@/components/navigation/command-menu"
 import { UserNavServer } from "@/components/navigation/user-nav-server"
 
 export async function SiteHeader() {
+  return <SiteHeaderInternal userNav={<UserNavServer />} />
+}
+
+export async function SiteHeaderInternal({
+  userNav,
+}: {
+  userNav: React.ReactNode
+}) {
+  "use cache"
   const pageTree = source.pageTree
   const navItems = siteConfig.navItems
 
@@ -77,7 +86,7 @@ export async function SiteHeader() {
           navItems={navItems}
         />
       }
-      userNav={<UserNavServer />}
+      userNav={userNav}
       githubLink={<GitHubLink />}
       pageTree={pageTree}
       navItems={navItems}

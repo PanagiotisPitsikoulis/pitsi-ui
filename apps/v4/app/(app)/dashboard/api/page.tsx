@@ -3,6 +3,7 @@ import { redirect } from "next/navigation"
 import { getUserApiKeys } from "@/lib/server/api-keys"
 import { getCurrentUser } from "@/lib/server/user"
 
+import { PageHeader } from "@/components/dashboard"
 import { ApiKeysClient } from "./client"
 
 export default async function ApiPage() {
@@ -16,12 +17,10 @@ export default async function ApiPage() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-2xl font-bold tracking-tight">API Keys</h1>
-        <p className="text-muted-foreground">
-          Manage API keys for registry authentication
-        </p>
-      </div>
+      <PageHeader
+        title="API Keys"
+        description="Manage API keys for registry authentication"
+      />
       <ApiKeysClient initialKeys={keys} isPro={user.isPro} />
     </div>
   )

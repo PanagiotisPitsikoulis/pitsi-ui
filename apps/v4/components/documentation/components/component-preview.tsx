@@ -16,7 +16,7 @@ export function ComponentPreview({
   styleName = "new-york-v4",
   type,
   className,
-  align = "center",
+  align = "start",
   hideCode = false,
   chromeLessOnMobile = false,
   ...props
@@ -77,7 +77,7 @@ export function ComponentPreview({
       tier={registryItem?.tier ?? "free"}
       component={
         <Suspense fallback={<Spinner className="size-6" />}>
-          <div className="overflow-hidden"><Component /></div>
+          <div className="h-full w-full overflow-hidden"><Component /></div>
         </Suspense>
       }
       source={

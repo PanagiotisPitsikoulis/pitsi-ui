@@ -8,6 +8,7 @@ import { source } from "@/lib/source"
 import { SiteFooterClient } from "@/components/layout/site-footer-client"
 
 export async function SiteFooter() {
+  "use cache"
   const pageTree = source.pageTree
   const navItems = siteConfig.navItems
 

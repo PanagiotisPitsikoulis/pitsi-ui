@@ -2,6 +2,13 @@ import { blog } from "@/.source"
 
 export type BlogCategory = "tutorial" | "announcement" | "deep-dive" | "design"
 
+export const categoryLabels: Record<BlogCategory, string> = {
+  tutorial: "Tutorial",
+  announcement: "Announcement",
+  "deep-dive": "Deep Dive",
+  design: "Design",
+}
+
 export interface BlogPost {
   slug: string
   title: string
@@ -90,6 +97,49 @@ export function getTotalPages(category?: BlogCategory): number {
 
 export function getBlogCategories(): BlogCategory[] {
   return ["tutorial", "announcement", "deep-dive", "design"]
+}
+
+export interface ParsedSlug {
+  type: "index" | "post" | "page" | "category" | "category-page"
+  page?: number
+  category?: BlogCategory
+  postSlug?: string
+}
+
+export function parseSlug(slug?: string[]): ParsedSlug {
+  if (!slug || slug.length === 0) {
+    return { type: "index", page: 1 }
+  }
+
+  // /blog/page/2
+  if (slug[0] === "page" && slug.length === 2) {
+    const pageNum = parseInt(slug[1], 10)
+    if (!isNaN(pageNum) && pageNum > 0) {
+      return { type: "page", page: pageNum }
+    }
+  }
+
+  // /blog/category/tutorial
+  if (slug[0] === "category" && slug.length >= 2) {
+    const category = slug[1] as BlogCategory
+    if (getBlogCategories().includes(category)) {
+      // /blog/category/tutorial/page/2
+      if (slug.length === 4 && slug[2] === "page") {
+        const pageNum = parseInt(slug[3], 10)
+        if (!isNaN(pageNum) && pageNum > 0) {
+          return { type: "category-page", category, page: pageNum }
+        }
+      }
+      return { type: "category", category, page: 1 }
+    }
+  }
+
+  // /blog/post-slug
+  if (slug.length === 1) {
+    return { type: "post", postSlug: slug[0] }
+  }
+
+  return { type: "index", page: 1 }
 }
 
 export function generateBlogStaticParams(): { slug?: string[] }[] {

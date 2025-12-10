@@ -1854,13 +1854,7 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta",
-      "poweredBy": [
-        {
-          "name": "Skiper UI",
-          "url": "https://skiper-ui.com"
-        }
-      ]
+      "readiness": "beta"
     },
     {
       "name": "card-swipe-carousel",
@@ -1970,13 +1964,7 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta",
-      "poweredBy": [
-        {
-          "name": "Skiper UI",
-          "url": "https://skiper-ui.com"
-        }
-      ]
+      "readiness": "beta"
     },
     {
       "name": "perspective-section-transition",
@@ -2029,13 +2017,7 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta",
-      "poweredBy": [
-        {
-          "name": "Skiper UI",
-          "url": "https://skiper-ui.com"
-        }
-      ]
+      "readiness": "beta"
     },
     {
       "name": "scroll-fade",
@@ -2057,13 +2039,7 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta",
-      "poweredBy": [
-        {
-          "name": "Skiper UI",
-          "url": "https://skiper-ui.com"
-        }
-      ]
+      "readiness": "beta"
     },
     {
       "name": "scroll-scale",
@@ -2085,13 +2061,7 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta",
-      "poweredBy": [
-        {
-          "name": "Skiper UI",
-          "url": "https://skiper-ui.com"
-        }
-      ]
+      "readiness": "beta"
     },
     {
       "name": "slide-down",
@@ -2113,13 +2083,7 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta",
-      "poweredBy": [
-        {
-          "name": "Skiper UI",
-          "url": "https://skiper-ui.com"
-        }
-      ]
+      "readiness": "beta"
     },
     {
       "name": "slide-up",
@@ -2141,13 +2105,7 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta",
-      "poweredBy": [
-        {
-          "name": "Skiper UI",
-          "url": "https://skiper-ui.com"
-        }
-      ]
+      "readiness": "beta"
     },
     {
       "name": "smooth-parallax-scroll",
@@ -2171,13 +2129,7 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta",
-      "poweredBy": [
-        {
-          "name": "Skiper UI",
-          "url": "https://skiper-ui.com"
-        }
-      ]
+      "readiness": "beta"
     },
     {
       "name": "smooth-scroll",
@@ -2282,13 +2234,7 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta",
-      "poweredBy": [
-        {
-          "name": "Skiper UI",
-          "url": "https://skiper-ui.com"
-        }
-      ]
+      "readiness": "beta"
     },
     {
       "name": "text-parallax",
@@ -2312,13 +2258,7 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta",
-      "poweredBy": [
-        {
-          "name": "Skiper UI",
-          "url": "https://skiper-ui.com"
-        }
-      ]
+      "readiness": "beta"
     },
     {
       "name": "transforms-3d",
@@ -2340,13 +2280,7 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta",
-      "poweredBy": [
-        {
-          "name": "Skiper UI",
-          "url": "https://skiper-ui.com"
-        }
-      ]
+      "readiness": "beta"
     },
     {
       "name": "zoom-parallax",
@@ -2370,13 +2304,7 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta",
-      "poweredBy": [
-        {
-          "name": "Skiper UI",
-          "url": "https://skiper-ui.com"
-        }
-      ]
+      "readiness": "beta"
     },
     {
       "name": "dashboard-01",

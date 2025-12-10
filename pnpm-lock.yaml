@@ -124,6 +124,9 @@ importers:
         specifier: ^19.0.0
         version: 19.2.0(react@19.2.0)
     devDependencies:
+      '@tailwindcss/postcss':
+        specifier: ^4.1.17
+        version: 4.1.17
       '@types/node':
         specifier: ^20.11.27
         version: 20.19.10
@@ -556,7 +559,7 @@ importers:
         version: 4.1.5
       msw:
         specifier: ^2.10.4
-        version: 2.10.4(@types/node@24.10.1)(typescript@5.9.2)
+        version: 2.10.4(@types/node@20.19.25)(typescript@5.9.2)
       node-fetch:
         specifier: ^3.3.2
         version: 3.3.2
@@ -9806,12 +9809,12 @@ snapshots:
 
   '@inquirer/ansi@1.0.2': {}
 
-  '@inquirer/confirm@5.1.14(@types/node@24.10.1)':
+  '@inquirer/confirm@5.1.14(@types/node@20.19.25)':
     dependencies:
-      '@inquirer/core': 10.1.15(@types/node@24.10.1)
-      '@inquirer/type': 3.0.8(@types/node@24.10.1)
+      '@inquirer/core': 10.1.15(@types/node@20.19.25)
+      '@inquirer/type': 3.0.8(@types/node@20.19.25)
     optionalDependencies:
-      '@types/node': 24.10.1
+      '@types/node': 20.19.25
 
   '@inquirer/confirm@5.1.21(@types/node@20.19.10)':
     dependencies:
@@ -9836,10 +9839,10 @@ snapshots:
       '@types/node': 24.10.1
     optional: true
 
-  '@inquirer/core@10.1.15(@types/node@24.10.1)':
+  '@inquirer/core@10.1.15(@types/node@20.19.25)':
     dependencies:
       '@inquirer/figures': 1.0.13
-      '@inquirer/type': 3.0.8(@types/node@24.10.1)
+      '@inquirer/type': 3.0.8(@types/node@20.19.25)
       ansi-escapes: 4.3.2
       cli-width: 4.1.0
       mute-stream: 2.0.0
@@ -9847,7 +9850,7 @@ snapshots:
       wrap-ansi: 6.2.0
       yoctocolors-cjs: 2.1.2
     optionalDependencies:
-      '@types/node': 24.10.1
+      '@types/node': 20.19.25
 
   '@inquirer/core@10.3.2(@types/node@20.19.10)':
     dependencies:
@@ -9915,9 +9918,9 @@ snapshots:
       '@types/node': 24.10.1
     optional: true
 
-  '@inquirer/type@3.0.8(@types/node@24.10.1)':
+  '@inquirer/type@3.0.8(@types/node@20.19.25)':
     optionalDependencies:
-      '@types/node': 24.10.1
+      '@types/node': 20.19.25
 
   '@isaacs/balanced-match@4.0.1': {}
 
@@ -12867,7 +12870,7 @@ snapshots:
       tinyglobby: 0.2.15
       unrs-resolver: 1.11.1
     optionalDependencies:
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.48.1(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.1(jiti@2.6.1))
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.47.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.1(jiti@2.6.1))
     transitivePeerDependencies:
       - supports-color
 
@@ -14878,12 +14881,12 @@ snapshots:
 
   ms@4.0.0-nightly.202508271359: {}
 
-  msw@2.10.4(@types/node@24.10.1)(typescript@5.9.2):
+  msw@2.10.4(@types/node@20.19.25)(typescript@5.9.2):
     dependencies:
       '@bundled-es-modules/cookie': 2.0.1
       '@bundled-es-modules/statuses': 1.0.1
       '@bundled-es-modules/tough-cookie': 0.1.6
-      '@inquirer/confirm': 5.1.14(@types/node@24.10.1)
+      '@inquirer/confirm': 5.1.14(@types/node@20.19.25)
       '@mswjs/interceptors': 0.39.5
       '@open-draft/deferred-promise': 2.2.0
       '@open-draft/until': 2.1.0
