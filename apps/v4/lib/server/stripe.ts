@@ -2,13 +2,27 @@ import Stripe from "stripe"
 
 import type { PlanType } from "./db/schema"
 
-if (!process.env.STRIPE_PRIVATE_KEY) {
-  throw new Error("STRIPE_PRIVATE_KEY is not set")
+// Lazy initialization to avoid throwing at module load time
+let _stripe: Stripe | null = null
+
+function getStripe(): Stripe {
+  if (!_stripe) {
+    if (!process.env.STRIPE_PRIVATE_KEY) {
+      throw new Error("STRIPE_PRIVATE_KEY is not set")
+    }
+    _stripe = new Stripe(process.env.STRIPE_PRIVATE_KEY, {
+      apiVersion: "2025-10-29.clover",
+      typescript: true,
+    })
+  }
+  return _stripe
 }
 
-export const stripe = new Stripe(process.env.STRIPE_PRIVATE_KEY, {
-  apiVersion: "2025-10-29.clover",
-  typescript: true,
+// Export for backwards compatibility (lazy getter)
+export const stripe = new Proxy({} as Stripe, {
+  get(_, prop) {
+    return (getStripe() as any)[prop]
+  },
 })
 
 // Plan Configurations

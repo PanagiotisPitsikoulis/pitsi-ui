@@ -56,28 +56,43 @@ export const transformers = [
   },
 ] as ShikiTransformer[]
 
-export async function highlightCode(code: string, language: string = "tsx") {
-  const html = await codeToHtml(code, {
-    lang: language,
-    themes: {
-      dark: "github-dark",
-      light: "github-light",
-    },
-    transformers: [
-      {
-        pre(node) {
-          node.properties["class"] =
-            "bg-background no-scrollbar min-w-0 overflow-x-auto px-4 py-3.5 outline-none has-[[data-highlighted-line]]:px-0 has-[[data-line-numbers]]:px-0 has-[[data-slot=tabs]]:p-0"
-        },
-        code(node) {
-          node.properties["data-line-numbers"] = ""
-        },
-        line(node) {
-          node.properties["data-line"] = ""
-        },
-      },
-    ],
-  })
+function escapeHtml(text: string): string {
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;")
+}
 
-  return html
+export async function highlightCode(code: string, language: string = "tsx"): Promise<string> {
+  try {
+    const html = await codeToHtml(code, {
+      lang: language,
+      themes: {
+        dark: "github-dark",
+        light: "github-light",
+      },
+      transformers: [
+        {
+          pre(node) {
+            node.properties["class"] =
+              "bg-background no-scrollbar min-w-0 overflow-x-auto px-4 py-3.5 outline-none has-[[data-highlighted-line]]:px-0 has-[[data-line-numbers]]:px-0 has-[[data-slot=tabs]]:p-0"
+          },
+          code(node) {
+            node.properties["data-line-numbers"] = ""
+          },
+          line(node) {
+            node.properties["data-line"] = ""
+          },
+        },
+      ],
+    })
+
+    return html
+  } catch (error) {
+    console.warn("Failed to highlight code:", error)
+    // Return plain code as fallback
+    return `<pre class="bg-background no-scrollbar min-w-0 overflow-x-auto px-4 py-3.5"><code>${escapeHtml(code)}</code></pre>`
+  }
 }

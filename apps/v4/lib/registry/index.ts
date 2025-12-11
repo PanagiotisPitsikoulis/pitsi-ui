@@ -221,88 +221,101 @@ async function getRegistryItemWithContent(
   "use cache"
   cacheLife("max")
 
-  const allItems = await getAllRegistryItems()
-  const item = allItems.find((i) => i.name === name)
+  try {
+    const allItems = await getAllRegistryItems()
+    const item = allItems.find((i) => i.name === name)
 
-  if (!item) {
-    return null
-  }
+    if (!item) {
+      return null
+    }
 
-  
-  const itemFiles =
-    item.files?.map((file: unknown) => {
-      const fileObj = typeof file === "string" ? { path: file } : file as { path: string; [key: string]: unknown }
+    const itemFiles =
+      item.files?.map((file: unknown) => {
+        const fileObj = typeof file === "string" ? { path: file } : file as { path: string; [key: string]: unknown }
 
+        const absolutePath = path.join(process.cwd(), fileObj.path)
+        return {
+          ...fileObj,
+          path: absolutePath,
+        }
+      }) ?? []
 
-      const absolutePath = path.join(process.cwd(), fileObj.path)
-      return {
-        ...fileObj,
-        path: absolutePath,
+    const result = registryItemSchema.safeParse({
+      ...item,
+      files: itemFiles,
+    })
+
+    if (!result.success) {
+      return null
+    }
+
+    const filesList: NonNullable<typeof result.data.files> = []
+    for (const file of itemFiles) {
+      const content = await getFileContent(file as { path: string })
+
+      // Skip files that couldn't be read
+      if (content === null) {
+        console.warn(`Skipping file ${file.path} - content could not be read`)
+        continue
       }
-    }) ?? []
 
-  
-  const result = registryItemSchema.safeParse({
-    ...item,
-    files: itemFiles,
-  })
+      const relativePath = path.relative(process.cwd(), file.path)
 
-  if (!result.success) {
+      filesList.push({
+        ...file,
+        path: relativePath,
+        content,
+      } as NonNullable<typeof result.data.files>[number])
+    }
+
+    const files = fixFilePaths(filesList)
+
+    const parsed = registryItemSchema.safeParse({
+      ...result.data,
+      files,
+    })
+
+    if (!parsed.success) {
+      console.error(parsed.error.message)
+      return null
+    }
+
+    return parsed.data
+  } catch (error) {
+    console.error(`Failed to get registry item "${name}" with content:`, error)
     return null
   }
-
-  const filesList: NonNullable<typeof result.data.files> = []
-  for (const file of itemFiles) {
-    const content = await getFileContent(file as { path: string })
-    const relativePath = path.relative(process.cwd(), file.path)
-
-    filesList.push({
-      ...file,
-      path: relativePath,
-      content,
-    } as NonNullable<typeof result.data.files>[number])
-  }
-
-
-  const files = fixFilePaths(filesList)
-
-  const parsed = registryItemSchema.safeParse({
-    ...result.data,
-    files,
-  })
-
-  if (!parsed.success) {
-    console.error(parsed.error.message)
-    return null
-  }
-
-  return parsed.data
 }
 
-async function getFileContent(file: { path: string; type?: string }) {
-  const raw = await fs.readFile(file.path, "utf-8")
+async function getFileContent(file: { path: string; type?: string }): Promise<string | null> {
+  try {
+    const raw = await fs.readFile(file.path, "utf-8")
 
-  const project = new Project({
-    compilerOptions: {},
-  })
+    const project = new Project({
+      compilerOptions: {},
+    })
 
-  const tempFile = await createTempSourceFile(file.path)
-  const sourceFile = project.createSourceFile(tempFile, raw, {
-    scriptKind: ScriptKind.TSX,
-  })
+    const tempFile = await createTempSourceFile(file.path)
+    const sourceFile = project.createSourceFile(tempFile, raw, {
+      scriptKind: ScriptKind.TSX,
+    })
 
-  let code = sourceFile.getFullText()
+    let code = sourceFile.getFullText()
 
-  
-  
-  if (file.type !== "registry:page") {
-    code = code.replaceAll("export default", "export")
+
+
+    if (file.type !== "registry:page") {
+      code = code.replaceAll("export default", "export")
+    }
+
+
+    code = fixImport(code)
+
+    return code
+  } catch (error) {
+    console.warn(`Failed to read file ${file.path}:`, error)
+    return null
   }
-
-  
-  code = fixImport(code)
-
-  return code
 }
 
 function getFileTarget(file: z.infer<typeof registryItemFileSchema>) {
