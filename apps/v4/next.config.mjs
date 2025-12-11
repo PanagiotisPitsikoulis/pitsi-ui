@@ -12,7 +12,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   outputFileTracingIncludes: {
-    "/*": ["./registry/**/*"],
+    "/*": ["./registry/**/*", "./content/**/*"],
   },
   images: {
     remotePatterns: [
@@ -72,7 +72,6 @@ const nextConfig = {
   },
   cacheComponents: true,
   experimental: {
-    instrumentationHook: true,
     serverComponentsHmrCache: true,
     turbopackFileSystemCacheForDev: true,
     optimizePackageImports: [

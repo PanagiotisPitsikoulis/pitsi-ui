@@ -99,10 +99,9 @@ describe("events", () => {
       })
     })
 
-    it("should throw error for invalid event name", () => {
-      expect(() => {
-        trackEvent({ name: "invalid_event" as any })
-      }).toThrow()
+    it("should silently ignore invalid event name", () => {
+      trackEvent({ name: "invalid_event" as any })
+      expect(va.track).not.toHaveBeenCalled()
     })
   })
 })

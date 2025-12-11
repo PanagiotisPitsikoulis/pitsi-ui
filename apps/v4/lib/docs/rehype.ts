@@ -130,13 +130,17 @@ export function rehypeComponent() {
             return
           }
 
-          
+
           if (!src) {
             return
           }
 
-          
+
           const filePath = src
+          if (!fs.existsSync(filePath)) {
+            console.warn(`File not found: ${filePath}`)
+            return
+          }
           let source = fs.readFileSync(filePath, "utf8")
 
           

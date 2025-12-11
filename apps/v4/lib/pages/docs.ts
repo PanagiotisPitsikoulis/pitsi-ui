@@ -39,84 +39,94 @@ export async function generateDocsMetadata({
 }: {
   slug: string[]
 }): Promise<Metadata> {
-  const page = source.getPage(slug)
+  try {
+    const page = source.getPage(slug)
 
-  if (!page) {
-    return { title: "Not Found" }
-  }
+    if (!page) {
+      return { title: "Not Found" }
+    }
 
-  const doc = page.data
+    const doc = page.data
 
-  if (!doc.title || !doc.description) {
-    return { title: "Not Found" }
-  }
+    if (!doc.title || !doc.description) {
+      return { title: "Not Found" }
+    }
 
-  return {
-    title: doc.title,
-    description: doc.description,
-    openGraph: {
+    return {
       title: doc.title,
       description: doc.description,
-      type: "article",
-      url: absoluteUrl(page.url),
-      images: [
-        {
-          url: `/og?title=${encodeURIComponent(
-            doc.title
-          )}&description=${encodeURIComponent(doc.description)}`,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: doc.title,
-      description: doc.description,
-      images: [
-        {
-          url: `/og?title=${encodeURIComponent(
-            doc.title
-          )}&description=${encodeURIComponent(doc.description)}`,
-        },
-      ],
-      creator: "@pitsi",
-    },
+      openGraph: {
+        title: doc.title,
+        description: doc.description,
+        type: "article",
+        url: absoluteUrl(page.url),
+        images: [
+          {
+            url: `/og?title=${encodeURIComponent(
+              doc.title
+            )}&description=${encodeURIComponent(doc.description)}`,
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: doc.title,
+        description: doc.description,
+        images: [
+          {
+            url: `/og?title=${encodeURIComponent(
+              doc.title
+            )}&description=${encodeURIComponent(doc.description)}`,
+          },
+        ],
+        creator: "@pitsi",
+      },
+    }
+  } catch (error) {
+    console.warn(`Failed to generate docs metadata for ${slug.join("/")}:`, error)
+    return { title: "Documentation" }
   }
 }
 
 export async function generateDocsListMetadata(type: DocsItemType) {
-  const page = source.getPage([type])
+  try {
+    const page = source.getPage([type])
 
-  if (!page) {
+    if (!page) {
+      return { title: type === "components" ? "Components" : "Animations" }
+    }
+
+    const { title, description } = page.data
+
+    return {
+      title,
+      description,
+      openGraph: {
+        title,
+        description,
+        type: "article",
+        url: absoluteUrl(page.url),
+        images: [
+          {
+            url: `/og?title=${encodeURIComponent(title || "")}&description=${encodeURIComponent(description || "")}`,
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title,
+        description,
+        images: [
+          {
+            url: `/og?title=${encodeURIComponent(title || "")}&description=${encodeURIComponent(description || "")}`,
+          },
+        ],
+        creator: "@pitsi",
+      },
+    }
+  } catch (error) {
+    console.warn(`Failed to generate docs list metadata for ${type}:`, error)
     return { title: type === "components" ? "Components" : "Animations" }
-  }
-
-  const { title, description } = page.data
-
-  return {
-    title,
-    description,
-    openGraph: {
-      title,
-      description,
-      type: "article",
-      url: absoluteUrl(page.url),
-      images: [
-        {
-          url: `/og?title=${encodeURIComponent(title || "")}&description=${encodeURIComponent(description || "")}`,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [
-        {
-          url: `/og?title=${encodeURIComponent(title || "")}&description=${encodeURIComponent(description || "")}`,
-        },
-      ],
-      creator: "@pitsi",
-    },
   }
 }
 
@@ -127,40 +137,47 @@ export async function generateDocsItemMetadata({
   itemName: string
   type: DocsItemType
 }): Promise<Metadata> {
-  const page = source.getPage([type, itemName])
+  try {
+    const page = source.getPage([type, itemName])
 
-  if (!page) {
+    if (!page) {
+      return {
+        title: `${type === "components" ? "Component" : "Animation"} Not Found`,
+      }
+    }
+
+    const { title, description } = page.data
+
+    return {
+      title,
+      description,
+      openGraph: {
+        title,
+        description,
+        type: "article",
+        url: absoluteUrl(page.url),
+        images: [
+          {
+            url: `/og?title=${encodeURIComponent(title || "")}&description=${encodeURIComponent(description || "")}`,
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title,
+        description,
+        images: [
+          {
+            url: `/og?title=${encodeURIComponent(title || "")}&description=${encodeURIComponent(description || "")}`,
+          },
+        ],
+      },
+    }
+  } catch (error) {
+    console.warn(`Failed to generate docs item metadata for ${itemName}:`, error)
     return {
       title: `${type === "components" ? "Component" : "Animation"} Not Found`,
     }
-  }
-
-  const { title, description } = page.data
-
-  return {
-    title,
-    description,
-    openGraph: {
-      title,
-      description,
-      type: "article",
-      url: absoluteUrl(page.url),
-      images: [
-        {
-          url: `/og?title=${encodeURIComponent(title || "")}&description=${encodeURIComponent(description || "")}`,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [
-        {
-          url: `/og?title=${encodeURIComponent(title || "")}&description=${encodeURIComponent(description || "")}`,
-        },
-      ],
-    },
   }
 }
 

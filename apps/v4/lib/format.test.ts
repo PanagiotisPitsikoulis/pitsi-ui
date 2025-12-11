@@ -49,5 +49,15 @@ describe("format", () => {
       const result = formatDate("2024-03-05")
       expect(result).toBe("Mar 5, 2024")
     })
+
+    it("should return original string for invalid date", () => {
+      const result = formatDate("not-a-date")
+      expect(result).toBe("not-a-date")
+    })
+
+    it("should return original string for empty string", () => {
+      const result = formatDate("")
+      expect(result).toBe("")
+    })
   })
 })

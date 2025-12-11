@@ -64,26 +64,31 @@ export async function getOrCreateStripeCustomer(
   email: string,
   name: string
 ): Promise<string> {
-  // Check if customer already exists by email
-  const existingCustomers = await stripe.customers.list({
-    email,
-    limit: 1,
-  })
+  try {
+    // Check if customer already exists by email
+    const existingCustomers = await stripe.customers.list({
+      email,
+      limit: 1,
+    })
 
-  if (existingCustomers.data.length > 0) {
-    return existingCustomers.data[0].id
+    if (existingCustomers.data.length > 0) {
+      return existingCustomers.data[0].id
+    }
+
+    // Create new customer
+    const customer = await stripe.customers.create({
+      email,
+      name,
+      metadata: {
+        userId,
+      },
+    })
+
+    return customer.id
+  } catch (error) {
+    console.error("Failed to get or create Stripe customer:", error)
+    throw new Error("Failed to process customer information")
   }
-
-  // Create new customer
-  const customer = await stripe.customers.create({
-    email,
-    name,
-    metadata: {
-      userId,
-    },
-  })
-
-  return customer.id
 }
 
 // Create checkout session for a specific plan
@@ -93,35 +98,44 @@ export async function createCheckoutSession(
   name: string,
   planType: "pro" | "exclusive" | "team" | "enterprise"
 ): Promise<string> {
-  const customerId = await getOrCreateStripeCustomer(userId, email, name)
-  const plan = PLANS[planType]
+  try {
+    const customerId = await getOrCreateStripeCustomer(userId, email, name)
+    const plan = PLANS[planType]
 
-  const session = await stripe.checkout.sessions.create({
-    customer: customerId,
-    payment_method_types: ["card"],
-    line_items: [
-      {
-        price_data: {
-          currency: plan.currency,
-          product_data: {
-            name: plan.name,
-            description: plan.description,
+    const session = await stripe.checkout.sessions.create({
+      customer: customerId,
+      payment_method_types: ["card"],
+      line_items: [
+        {
+          price_data: {
+            currency: plan.currency,
+            product_data: {
+              name: plan.name,
+              description: plan.description,
+            },
+            unit_amount: plan.price,
           },
-          unit_amount: plan.price,
+          quantity: 1,
         },
-        quantity: 1,
+      ],
+      mode: "payment",
+      success_url: `${process.env.NEXT_PUBLIC_APP_URL}/?success=true`,
+      cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/?canceled=true`,
+      metadata: {
+        userId,
+        planType,
       },
-    ],
-    mode: "payment",
-    success_url: `${process.env.NEXT_PUBLIC_APP_URL}/?success=true`,
-    cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/?canceled=true`,
-    metadata: {
-      userId,
-      planType,
-    },
-  })
+    })
 
-  return session.url!
+    if (!session.url) {
+      throw new Error("Checkout session created but no URL returned")
+    }
+
+    return session.url
+  } catch (error) {
+    console.error("Failed to create checkout session:", error)
+    throw new Error("Failed to create checkout session")
+  }
 }
 
 // Legacy function for backwards compatibility
