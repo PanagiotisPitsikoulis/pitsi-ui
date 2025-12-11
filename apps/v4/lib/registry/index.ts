@@ -1,6 +1,7 @@
 import fs from "fs/promises"
 import { tmpdir } from "os"
 import path from "path"
+import { cache } from "react"
 import {
   registryItemFileSchema,
   registryItemSchema,
@@ -11,6 +12,23 @@ import { z } from "zod"
 
 import { Index } from "@/registry/__index__"
 import { type Style } from "@/registry/styles"
+
+// Cached registry items - computed once per request
+const getAllItemsFromIndex = cache((): RegistryItem[] => {
+  const allItems: RegistryItem[] = []
+
+  for (const style in Index) {
+    const styleIndex = Index[style]
+    if (typeof styleIndex === "object" && styleIndex !== null) {
+      for (const itemName in styleIndex) {
+        const item = styleIndex[itemName]
+        allItems.push(item)
+      }
+    }
+  }
+
+  return allItems
+})
 
 
 
@@ -408,22 +426,8 @@ export async function getAllRegistryItems(options?: {
   mainCategory?: string
   subcategory?: string
 }): Promise<RegistryItem[]> {
-  const allItems: RegistryItem[] = []
-
-  // Extract all items from all styles (Index is statically imported at top)
-  for (const style in Index) {
-    const styleIndex = Index[style]
-    if (typeof styleIndex === "object" && styleIndex !== null) {
-      for (const itemName in styleIndex) {
-        const item = styleIndex[itemName]
-        allItems.push(item)
-      }
-    }
-  }
-
-  // Cast items directly - schema validation removed as Index items have extra fields
-  // like `component` (React.lazy) that aren't part of the serializable schema
-  const validatedItems = allItems as RegistryItem[]
+  // Use cached function to get all items (computed once per request)
+  const validatedItems = getAllItemsFromIndex()
 
   // Filter by types if specified
   let filteredItems = validatedItems

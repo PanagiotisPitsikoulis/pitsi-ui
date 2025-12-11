@@ -48,6 +48,22 @@ export const metadata: Metadata = {
 }
 
 export default async function IndexPage() {
+  return (
+    <IndexPageInteral
+      pricingSection={
+        <Suspense fallback={<PricingCardsSection user={null} />}>
+          <DynamicPricingSection />
+        </Suspense>
+      }
+    />
+  )
+}
+
+async function IndexPageInteral({
+  pricingSection,
+}: {
+  pricingSection: React.ReactNode
+}) {
   "use cache"
   cacheLife("max")
   const registryCounts = await getRegistrySummaryCounts()
@@ -64,9 +80,7 @@ export default async function IndexPage() {
       <PurposeSection />
       <DesignSection />
       <PowerBentoSection />
-      <Suspense fallback={<PricingCardsSection user={null} />}>
-        <DynamicPricingSection />
-      </Suspense>
+      {pricingSection}
       <CTASection />
       <ReviewsSection />
     </div>

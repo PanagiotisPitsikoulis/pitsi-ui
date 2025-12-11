@@ -1,6 +1,6 @@
 "use client"
 
-import { Component as ReactComponent, Suspense } from "react"
+import { Component as ReactComponent, memo, Suspense } from "react"
 import { AlertCircle, RotateCcw } from "lucide-react"
 
 import { Index } from "@/registry/__index__"
@@ -65,7 +65,7 @@ class ComponentErrorBoundary extends ReactComponent<
   }
 }
 
-export function LazyComponentRenderer({
+export const LazyComponentRenderer = memo(function LazyComponentRenderer({
   name,
   styleName,
   isComponent,
@@ -125,4 +125,4 @@ export function LazyComponentRenderer({
       </Suspense>
     </ComponentErrorBoundary>
   )
-}
+})

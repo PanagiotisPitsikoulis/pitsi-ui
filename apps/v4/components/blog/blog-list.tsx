@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 
 import {
@@ -93,11 +94,14 @@ export function BlogList({ posts, currentCategory }: BlogListProps) {
 
                 {/* Image */}
                 {post.image && (
-                  <div className="mt-6">
-                    <img
+                  <div className="relative mt-6 aspect-video w-full overflow-hidden rounded-2xl shadow-sm">
+                    <Image
                       src={post.image}
-                      alt=""
-                      className="aspect-video w-full rounded-2xl object-cover shadow-sm"
+                      alt={post.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+                      className="object-cover"
+                      priority={false}
                     />
                   </div>
                 )}

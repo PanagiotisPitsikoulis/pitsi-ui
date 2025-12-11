@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import { memo, useMemo } from "react"
 import dynamic from "next/dynamic"
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
@@ -31,43 +32,50 @@ interface ComponentsListPaginatedProps {
   label?: string
 }
 
-function ComponentPreviewContent({
+const ComponentPreviewContent = memo(function ComponentPreviewContent({
   registryName,
   styleName,
 }: {
   registryName: string
   styleName: Style["name"]
 }) {
-  // Special cases for components that need specific demos
+  // Memoize special cases lookup
   const specialCases: Record<string, string> = {
-    chart: "chart-bar-demo", // chart requires ChartConfig, use bar demo
+    chart: "chart-bar-demo",
     "data-table": "data-table-demo",
   }
 
-  // Use special case if it exists
-  let previewName: string | null = specialCases[registryName] || null
+  // Memoize the preview resolution
+  const { previewName, Component, isAnimation } = useMemo(() => {
+    let name: string | null = specialCases[registryName] || null
 
-  // If no special case, try to find a demo version (e.g., "accordion-demo" for "accordion")
-  if (!previewName) {
-    const demoName = `${registryName}-demo`
-    const demoExists = registryComponentExists(demoName, styleName)
+    if (!name) {
+      const demoName = `${registryName}-demo`
+      const demoExists = registryComponentExists(demoName, styleName)
+      const baseComponent = getRegistryComponent(registryName, styleName)
+      const baseItem = getRegistryIndexItem(registryName, styleName)
 
-    // Check if base component exists
-    const Component = getRegistryComponent(registryName, styleName)
-    const registryItem = getRegistryIndexItem(registryName, styleName)
-
-    // Prefer demo, fallback to component
-    previewName = demoExists
-      ? demoName
-      : Component && registryItem
-        ? registryName
-        : null
-  } else {
-    // Verify special case exists
-    if (!registryComponentExists(previewName, styleName)) {
-      previewName = null
+      name = demoExists
+        ? demoName
+        : baseComponent && baseItem
+          ? registryName
+          : null
+    } else {
+      if (!registryComponentExists(name, styleName)) {
+        name = null
+      }
     }
-  }
+
+    if (!name) {
+      return { previewName: null, Component: null, isAnimation: false }
+    }
+
+    const comp = getRegistryComponent(name, styleName)
+    const item = getRegistryIndexItem(name, styleName)
+    const isAnim = item?.categories?.includes("animations") ?? false
+
+    return { previewName: name, Component: comp, isAnimation: isAnim }
+  }, [registryName, styleName])
 
   if (!previewName) {
     return (
@@ -80,9 +88,6 @@ function ComponentPreviewContent({
     )
   }
 
-  // Get the component from the registry
-  const Component = getRegistryComponent(previewName, styleName)
-
   if (!Component) {
     return (
       <div className="flex h-full w-full items-center justify-center">
@@ -93,10 +98,6 @@ function ComponentPreviewContent({
       </div>
     )
   }
-
-  // Check if this is an animation by looking at categories
-  const registryItem = getRegistryIndexItem(previewName, styleName)
-  const isAnimation = registryItem?.categories?.includes("animations")
 
   // Render animations in iframe
   if (isAnimation) {
@@ -129,7 +130,7 @@ function ComponentPreviewContent({
       </div>
     </LazyComponentPreview>
   )
-}
+})
 
 // Dynamically import the preview with a spinner
 const ComponentPreview = dynamic(
@@ -144,7 +145,74 @@ const ComponentPreview = dynamic(
   }
 )
 
-export function ComponentsListPaginated({
+// Memoized card component to prevent re-renders
+const ComponentCard = memo(function ComponentCard({
+  item,
+  styleName,
+}: {
+  item: ComponentItem
+  styleName: Style["name"]
+}) {
+  const registryName = item.registryName || item.$id
+
+  // Memoize registry lookups
+  const { registryItem, isAnimation } = useMemo(() => {
+    const regItem = getRegistryIndexItem(registryName, styleName)
+    const demoName = `${registryName}-demo`
+    const demoItem = getRegistryIndexItem(demoName, styleName)
+    const isAnim =
+      regItem?.categories?.includes("animations") ||
+      demoItem?.categories?.includes("animations")
+
+    return { registryItem: regItem, isAnimation: isAnim }
+  }, [registryName, styleName])
+
+  return (
+    <div
+      id={item.$id}
+      className="group relative flex scroll-mt-20 flex-col gap-4"
+    >
+      <div className="overflow-hidden rounded-2xl border shadow-xs">
+        <div className="bg-background relative transition-all">
+          <ReadinessBadge readiness={registryItem?.readiness} />
+          <TierBadge tier={registryItem?.tier ?? "free"} />
+          <div data-slot="preview" className="overflow-visible">
+            <div
+              data-align="center"
+              className={cn(
+                "preview relative flex aspect-square w-full items-center justify-center",
+                isAnimation ? "" : "p-8"
+              )}
+            >
+              <ComponentPreview
+                registryName={registryName}
+                styleName={styleName}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <Link
+        href={item.url}
+        className="group/link flex flex-col gap-1 px-2"
+      >
+        <div className="flex items-center justify-between gap-2">
+          <span className="group-hover/link:text-primary text-base font-medium transition-colors group-hover/link:underline">
+            {item.name}
+          </span>
+          <ArrowUpRight className="text-muted-foreground group-hover/link:text-foreground size-4 shrink-0 transition-colors" />
+        </div>
+        {item.description && (
+          <p className="text-muted-foreground group-hover/link:text-foreground/70 line-clamp-1 max-w-6/7 text-sm transition-colors">
+            {item.description}
+          </p>
+        )}
+      </Link>
+    </div>
+  )
+})
+
+export const ComponentsListPaginated = memo(function ComponentsListPaginated({
   items,
   label,
   styleName = "new-york-v4",
@@ -152,63 +220,10 @@ export function ComponentsListPaginated({
   return (
     <div className="relative mt-6 pb-8">
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-        {items.map((item) => {
-          const registryName = item.registryName || item.$id
-          const registryItem = getRegistryIndexItem(registryName, styleName)
-
-          // Check if it's an animation to apply different styling
-          const demoName = `${registryName}-demo`
-          const demoItem = getRegistryIndexItem(demoName, styleName)
-          const isAnimation =
-            registryItem?.categories?.includes("animations") ||
-            demoItem?.categories?.includes("animations")
-
-          return (
-            <div
-              key={item.$id}
-              id={item.$id}
-              className="group relative flex scroll-mt-20 flex-col gap-4"
-            >
-              <div className="overflow-hidden rounded-2xl border shadow-xs">
-                <div className="bg-background relative transition-all">
-                  <ReadinessBadge readiness={registryItem?.readiness} />
-                  <TierBadge tier={registryItem?.tier ?? "free"} />
-                  <div data-slot="preview" className="overflow-visible">
-                    <div
-                      data-align="center"
-                      className={cn(
-                        "preview relative flex aspect-square w-full items-center justify-center",
-                        isAnimation ? "" : "p-8"
-                      )}
-                    >
-                      <ComponentPreview
-                        registryName={registryName}
-                        styleName={styleName}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <Link
-                href={item.url}
-                className="group/link flex flex-col gap-1 px-2"
-              >
-                <div className="flex items-center justify-between gap-2">
-                  <span className="group-hover/link:text-primary text-base font-medium transition-colors group-hover/link:underline">
-                    {item.name}
-                  </span>
-                  <ArrowUpRight className="text-muted-foreground group-hover/link:text-foreground size-4 shrink-0 transition-colors" />
-                </div>
-                {item.description && (
-                  <p className="text-muted-foreground group-hover/link:text-foreground/70 line-clamp-1 max-w-6/7 text-sm transition-colors">
-                    {item.description}
-                  </p>
-                )}
-              </Link>
-            </div>
-          )
-        })}
+        {items.map((item) => (
+          <ComponentCard key={item.$id} item={item} styleName={styleName} />
+        ))}
       </div>
     </div>
   )
-}
+})

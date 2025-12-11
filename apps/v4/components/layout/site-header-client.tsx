@@ -1,7 +1,7 @@
 "use client"
 
 import type { ReactNode } from "react"
-import { useEffect, useState } from "react"
+import { memo, useCallback, useEffect, useRef, useState } from "react"
 import Link from "next/link"
 
 import { cn } from "@/lib/utils"
@@ -10,7 +10,7 @@ import { MobileNav } from "@/components/navigation/mobile-nav"
 import { Icons } from "@/components/shared/icons"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
-export function SiteHeaderClient({
+export const SiteHeaderClient = memo(function SiteHeaderClient({
   commandMenu,
   userNav,
   githubLink,
@@ -36,16 +36,27 @@ export function SiteHeaderClient({
   }>
 }) {
   const [hasScrolled, setHasScrolled] = useState(false)
+  const rafRef = useRef<number | null>(null)
+
+  const handleScroll = useCallback(() => {
+    if (rafRef.current !== null) return
+
+    rafRef.current = requestAnimationFrame(() => {
+      setHasScrolled(window.scrollY > 10)
+      rafRef.current = null
+    })
+  }, [])
 
   useEffect(() => {
-    const handleScroll = () => {
-      setHasScrolled(window.scrollY > 10)
-    }
-
     handleScroll()
     window.addEventListener("scroll", handleScroll, { passive: true })
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      if (rafRef.current !== null) {
+        cancelAnimationFrame(rafRef.current)
+      }
+    }
+  }, [handleScroll])
 
   const containerClassName =
     "flex h-(--header-height) items-center px-6 lg:px-3"
@@ -94,4 +105,4 @@ export function SiteHeaderClient({
       </div>
     </header>
   )
-}
+})

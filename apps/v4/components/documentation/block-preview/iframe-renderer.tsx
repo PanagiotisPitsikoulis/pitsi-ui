@@ -1,6 +1,6 @@
 "use client"
 
-import React, { RefObject, useMemo } from "react"
+import React, { memo, RefObject, useMemo } from "react"
 
 import { cn } from "@/lib/utils"
 
@@ -14,7 +14,7 @@ interface IframeRendererProps {
   className?: string
 }
 
-const IframeRenderer: React.FC<IframeRendererProps> = ({
+const IframeRenderer: React.FC<IframeRendererProps> = memo(({
   src,
   title,
   ariaLabel,
@@ -52,6 +52,6 @@ const IframeRenderer: React.FC<IframeRendererProps> = ({
       <div className="absolute inset-0 z-10" />
     </>
   )
-}
+})
 
 export default IframeRenderer
