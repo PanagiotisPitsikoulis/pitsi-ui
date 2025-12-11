@@ -26,60 +26,70 @@ export async function ComponentSource({
   collapsible?: boolean
   styleName?: Style["name"]
 }) {
-  if (!name && !src) {
-    return null
-  }
+  try {
+    if (!name && !src) {
+      return null
+    }
 
-  let code: string | undefined
+    let code: string | undefined
 
-  if (name) {
-    const item = await getRegistryItem(name, styleName)
-    code = item?.files?.[0]?.content
-  }
+    if (name) {
+      const item = await getRegistryItem(name, styleName)
+      code = item?.files?.[0]?.content
+    }
 
-  if (src) {
-    const file = await fs.readFile(path.join(process.cwd(), src), "utf-8")
-    code = file
-  }
+    if (src) {
+      try {
+        const file = await fs.readFile(path.join(process.cwd(), src), "utf-8")
+        code = file
+      } catch (error) {
+        console.warn(`Failed to read source file ${src}:`, error)
+        // Continue - code will be undefined
+      }
+    }
 
-  if (!code) {
-    return null
-  }
+    if (!code) {
+      return null
+    }
 
-  // Fix imports.
-  // Replace @/registry/${style}/ with @/components/.
-  code = code.replaceAll(`@/registry/${styleName}/`, "@/components/")
+    // Fix imports.
+    // Replace @/registry/${style}/ with @/components/.
+    code = code.replaceAll(`@/registry/${styleName}/`, "@/components/")
 
-  // Replace export default with export.
-  code = code.replaceAll("export default", "export")
-  code = code.replaceAll("/* eslint-disable react/no-children-prop */\n", "")
+    // Replace export default with export.
+    code = code.replaceAll("export default", "export")
+    code = code.replaceAll("/* eslint-disable react/no-children-prop */\n", "")
 
-  const lang = language ?? title?.split(".").pop() ?? "tsx"
-  const highlightedCode = await highlightCode(code, lang)
+    const lang = language ?? title?.split(".").pop() ?? "tsx"
+    const highlightedCode = await highlightCode(code, lang)
 
-  if (!collapsible) {
+    if (!collapsible) {
+      return (
+        <div className={cn("relative", className)}>
+          <ComponentCode
+            code={code}
+            highlightedCode={highlightedCode}
+            language={lang}
+            title={title}
+          />
+        </div>
+      )
+    }
+
     return (
-      <div className={cn("relative", className)}>
+      <CodeCollapsibleWrapper className={className}>
         <ComponentCode
           code={code}
           highlightedCode={highlightedCode}
           language={lang}
           title={title}
         />
-      </div>
+      </CodeCollapsibleWrapper>
     )
+  } catch (error) {
+    console.warn(`ComponentSource error for ${name || src}:`, error)
+    return null
   }
-
-  return (
-    <CodeCollapsibleWrapper className={className}>
-      <ComponentCode
-        code={code}
-        highlightedCode={highlightedCode}
-        language={lang}
-        title={title}
-      />
-    </CodeCollapsibleWrapper>
-  )
 }
 
 function ComponentCode({

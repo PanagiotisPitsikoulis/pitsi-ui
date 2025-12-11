@@ -1,0 +1,21 @@
+{
+  "name": "pitsi/ui",
+  "short_name": "pitsi/ui",
+  "description": "A set of beautifully designed components that you can customize, extend, and build on.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#09090b",
+  "icons": [
+    {
+      "src": "/icon",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-icon",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

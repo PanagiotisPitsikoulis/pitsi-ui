@@ -50,29 +50,28 @@ export async function queryRegistry(
 ): Promise<
   RegistryItem[] | string[] | Record<string, number> | RegistryItem | null
 > {
-  const {
-    returnType = "items",
-    types = [],
-    categories = [],
-    excludeNamePrefix = [],
-    mainCategory,
-    subcategory,
-    name,
-    style,
-    filter,
-    excludeCharts = true,
-  } = options
+  try {
+    const {
+      returnType = "items",
+      types = [],
+      categories = [],
+      excludeNamePrefix = [],
+      mainCategory,
+      subcategory,
+      name,
+      style,
+      filter,
+      excludeCharts = true,
+    } = options
 
-  
-  if (name && style) {
-    return await getRegistryItemWithContent(name, style)
-  }
+    if (name && style) {
+      return await getRegistryItemWithContent(name, style)
+    }
 
-  
-  if (name && !style) {
-    const allItems = await getAllRegistryItems()
-    return allItems.find((item) => item.name === name) || null
-  }
+    if (name && !style) {
+      const allItems = await getAllRegistryItems()
+      return allItems.find((item) => item.name === name) || null
+    }
 
   
   let items = await getAllRegistryItems({
@@ -206,6 +205,16 @@ export async function queryRegistry(
     case "items":
     default:
       return items
+    }
+  } catch (error) {
+    console.warn("queryRegistry error:", error)
+    // Return appropriate fallback based on expected return type
+    const { returnType = "items", name } = options
+    if (name) return null
+    if (returnType === "items" || returnType === "ids") return []
+    if (returnType === "categories" || returnType === "subcategories") return []
+    if (returnType === "counts" || returnType === "subcategoryCounts") return {}
+    return null
   }
 }
 

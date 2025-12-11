@@ -41,18 +41,26 @@ export async function DocsItemContent({
   // Get registry item for poweredBy info from Index
   const registryItem = Index["new-york-v4"]?.[itemName]
 
-  const raw = await page.data.getText("raw")
-  const { attributes } = fm(raw)
-  const { links } = z
-    .object({
-      links: z
-        .object({
-          doc: z.string().optional(),
-          api: z.string().optional(),
-        })
-        .optional(),
-    })
-    .parse(attributes)
+  // Safely get raw text for front-matter parsing
+  let raw = ""
+  let links: { doc?: string; api?: string } | undefined
+  try {
+    raw = await page.data.getText("raw")
+    const { attributes } = fm(raw)
+    const parsed = z
+      .object({
+        links: z
+          .object({
+            doc: z.string().optional(),
+            api: z.string().optional(),
+          })
+          .optional(),
+      })
+      .safeParse(attributes)
+    links = parsed.success ? parsed.data.links : undefined
+  } catch (error) {
+    console.warn(`Failed to parse front-matter for ${itemName}:`, error)
+  }
 
   const enhancedToc = doc.toc || []
   const hasToc = enhancedToc?.length

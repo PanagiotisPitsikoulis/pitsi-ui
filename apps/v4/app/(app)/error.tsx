@@ -14,7 +14,14 @@ export default function GlobalError({
   reset: () => void
 }) {
   useEffect(() => {
-    console.error(error)
+    // Log detailed error info for debugging
+    console.warn("=== CLIENT ERROR ===")
+    console.warn("Error name:", error.name)
+    console.warn("Error message:", error.message)
+    console.warn("Error digest:", error.digest)
+    console.warn("Error stack:", error.stack)
+    console.warn("Full error:", error)
+    console.warn("====================")
   }, [error])
 
   return (

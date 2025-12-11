@@ -72,6 +72,7 @@ const nextConfig = {
   },
   cacheComponents: true,
   experimental: {
+    instrumentationHook: true,
     serverComponentsHmrCache: true,
     turbopackFileSystemCacheForDev: true,
     optimizePackageImports: [
