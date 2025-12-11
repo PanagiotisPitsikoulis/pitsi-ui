@@ -15,21 +15,30 @@ export type User = {
 /**
  * Get the current session
  * Uses React cache to dedupe requests
- * Returns null if database is unavailable (graceful degradation)
+ * Returns null if database is unavailable or during static prerendering
  */
 export const getSession = cache(async () => {
   try {
+    const { headers } = await import("next/headers")
+
+    // Get headers - this will throw during prerendering
+    let requestHeaders: Headers
+    try {
+      requestHeaders = await headers()
+    } catch {
+      // During prerendering, headers() is not available
+      return null
+    }
+
     const session = await auth.api.getSession({
-      headers: (await Promise.resolve(
-        (await import("next/headers")).headers()
-      )) as any,
+      headers: requestHeaders as any,
     })
 
     return session
   } catch (error) {
     // Gracefully handle database connection errors
     // This allows pages to render even when the database is unavailable
-    console.warn("Failed to get session (database may be unavailable):", error)
+    console.warn("Failed to get session:", error)
     return null
   }
 })

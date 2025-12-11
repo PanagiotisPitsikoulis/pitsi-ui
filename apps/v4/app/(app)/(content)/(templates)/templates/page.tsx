@@ -1,3 +1,3 @@
-export async function TemplatesPage() {
+export default async function TemplatesPage() {
   return <></>
 }
