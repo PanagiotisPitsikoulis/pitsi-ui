@@ -14,5 +14,5 @@
     "application"
   ],
   "tier": "free",
-  "readiness": "alpha"
+  "readiness": "beta"
 }

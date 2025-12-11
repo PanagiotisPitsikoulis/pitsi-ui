@@ -94,11 +94,11 @@
   ],
   "meta": {
     "iframeHeight": "1000px",
-    "readiness": "alpha"
+    "readiness": "beta"
   },
   "categories": [
     "dashboard"
   ],
   "tier": "free",
-  "readiness": "alpha"
+  "readiness": "beta"
 }

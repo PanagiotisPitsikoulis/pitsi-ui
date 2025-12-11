@@ -85,10 +85,10 @@ export const blocks: Registry["items"] = [
     categories: ["dashboard"],
     meta: {
       iframeHeight: "1000px",
-      readiness: "alpha",
+      readiness: "beta",
     },
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "sidebar-01",
@@ -122,7 +122,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application", "dashboard"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "sidebar-02",
@@ -156,7 +156,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application", "dashboard"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "sidebar-03",
@@ -176,7 +176,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application", "dashboard"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "sidebar-04",
@@ -196,7 +196,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application", "dashboard"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "sidebar-05",
@@ -226,7 +226,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application", "dashboard"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "sidebar-06",
@@ -260,7 +260,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application", "dashboard"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "sidebar-07",
@@ -303,7 +303,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application", "dashboard"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "sidebar-08",
@@ -346,7 +346,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application", "dashboard"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "sidebar-09",
@@ -379,7 +379,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application", "dashboard"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "sidebar-10",
@@ -430,7 +430,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application", "dashboard"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "sidebar-11",
@@ -450,7 +450,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application", "dashboard"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "sidebar-12",
@@ -485,7 +485,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application", "dashboard"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "sidebar-13",
@@ -505,7 +505,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application", "dashboard"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "sidebar-14",
@@ -525,7 +525,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application", "dashboard"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "sidebar-15",
@@ -585,7 +585,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application", "dashboard"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "sidebar-16",
@@ -638,7 +638,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application", "dashboard"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "login-01",
@@ -658,7 +658,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages", "login"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "login-02",
@@ -678,7 +678,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages", "login"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "login-03",
@@ -698,7 +698,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages", "login"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "login-04",
@@ -718,7 +718,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages", "login"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "login-05",
@@ -738,7 +738,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages", "login"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "signup-01",
@@ -758,7 +758,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages", "signup"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "signup-02",
@@ -778,7 +778,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages", "signup"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "signup-03",
@@ -798,7 +798,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages", "signup"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "signup-04",
@@ -818,7 +818,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages", "signup"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "signup-05",
@@ -838,7 +838,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages", "signup"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "otp-01",
@@ -858,7 +858,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages", "otp"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "otp-02",
@@ -878,7 +878,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages", "otp"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "otp-03",
@@ -898,7 +898,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages", "otp"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "otp-04",
@@ -918,7 +918,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages", "otp"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "otp-05",
@@ -938,7 +938,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages", "otp"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   // NEW BLOCKS FROM TEMP REGISTRY
   // ========================================
@@ -954,7 +954,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-application-shell-advanced-layout-with-double-sidebar-layout",
@@ -968,7 +968,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-application-shell-alternate-style-of-application-shell",
@@ -982,7 +982,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-application-shell-application-shell-with-navbar",
@@ -996,7 +996,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-application-shell-appplication-shell-with-background",
@@ -1010,7 +1010,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-application-shell-creative-dashboard-layout-tailwind",
@@ -1024,7 +1024,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-application-shell-dashboard-layout-with-collapsable-sidebar",
@@ -1038,7 +1038,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-application-shell-dashboard-layout-with-navbar",
@@ -1052,7 +1052,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-application-shell-shell-layout-with-expandable-sidebar",
@@ -1066,7 +1066,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-application-shell-stacked-layout-with-multiple-navbars",
@@ -1080,7 +1080,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-forms-account-information-form",
@@ -1094,7 +1094,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-forms-application-layout-with-file-upload",
@@ -1108,7 +1108,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-forms-basic-feedback-form",
@@ -1122,7 +1122,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-forms-basic-tailwind-ui-form",
@@ -1136,7 +1136,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-forms-billing-information-form-with-card-info",
@@ -1150,7 +1150,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-forms-booking-from",
@@ -1164,7 +1164,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-forms-contact-from-tailwind",
@@ -1178,7 +1178,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-forms-custom-review-tailwind-css-from",
@@ -1192,7 +1192,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-forms-edit-profile-form",
@@ -1206,7 +1206,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-forms-feedback-from",
@@ -1220,7 +1220,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-forms-invoice-from-tailwind",
@@ -1234,7 +1234,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-forms-order-billing-form",
@@ -1248,7 +1248,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-forms-registration-form",
@@ -1262,7 +1262,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-forms-registration-from",
@@ -1276,7 +1276,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-forms-request-form-tailwind-css",
@@ -1290,7 +1290,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-forms-simple-contact-from",
@@ -1304,7 +1304,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-forms-tailwind-form-with-progress-bar",
@@ -1318,7 +1318,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-forms-tailwind-login-form-with-cta",
@@ -1332,7 +1332,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-forms-verification-from-tailwind-css",
@@ -1346,7 +1346,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-card-modal-with-share-link-option",
@@ -1360,7 +1360,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-create-meeting-modal",
@@ -1374,7 +1374,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-create-profile-modal-with-file-upload",
@@ -1388,7 +1388,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-create-project-modal-with-team-selection",
@@ -1402,7 +1402,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-currency-converter-modal",
@@ -1416,7 +1416,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-currency-exchange-modal-with-dropdown",
@@ -1430,7 +1430,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-date-input-and-toggle-button-modal",
@@ -1444,7 +1444,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-delete-modal-with-checkbox",
@@ -1458,7 +1458,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-event-modal",
@@ -1472,7 +1472,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-feature-modal-with-carousel",
@@ -1486,7 +1486,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-feedback-modal",
@@ -1500,7 +1500,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-file-upload-modal",
@@ -1514,7 +1514,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-invite-modal-with-file-input",
@@ -1528,7 +1528,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-manage-team-modal",
@@ -1542,7 +1542,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-messaging-modal-with-file-upload",
@@ -1556,7 +1556,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-modal-with-carousel",
@@ -1570,7 +1570,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-modal-with-footer",
@@ -1584,7 +1584,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-modal-with-form-element",
@@ -1598,7 +1598,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-modal-with-full-width-buttons",
@@ -1612,7 +1612,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-modal-with-input-and-toggle-buttons",
@@ -1626,7 +1626,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-modal-with-link-sharing",
@@ -1640,7 +1640,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-modal-with-search",
@@ -1654,7 +1654,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-modal-with-search-and-checkbox",
@@ -1668,7 +1668,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-modal-with-separator",
@@ -1682,7 +1682,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-modal-with-single-action",
@@ -1696,7 +1696,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-modal-with-social-media-buttons",
@@ -1710,7 +1710,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-modal-with-verification-code-input",
@@ -1724,7 +1724,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-multiple-account-handle-with-checkbox",
@@ -1738,7 +1738,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-notification-modal",
@@ -1752,7 +1752,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-payment-modal-with-input-fields",
@@ -1766,7 +1766,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-pricing-plan-modal-with-radio-buttons",
@@ -1780,7 +1780,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-radio-input-modal",
@@ -1794,7 +1794,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-relogin-modal-with-password-input",
@@ -1808,7 +1808,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-share-modal-with-customizing-options",
@@ -1822,7 +1822,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-share-modal-with-input-and-checkbox",
@@ -1836,7 +1836,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-share-with-input-search-modal",
@@ -1850,7 +1850,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-sign-in-modal-with-wide-button",
@@ -1864,7 +1864,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-simple-delete-modal",
@@ -1878,7 +1878,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-simple-modal-with-icon",
@@ -1892,7 +1892,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-simple-modal-with-number-input",
@@ -1906,7 +1906,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-subscribe-modal-with-input",
@@ -1920,7 +1920,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-success-modal-with-two-buttons",
@@ -1934,7 +1934,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-modalbox-team-management-modal",
@@ -1948,7 +1948,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-profile-headers-profile-header-with-buttons",
@@ -1962,7 +1962,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-profile-headers-profile-header-with-user-description",
@@ -1976,7 +1976,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-profile-headers-profile-header-with-user-s-experiences",
@@ -1990,7 +1990,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-profile-headers-profile-headers-with-background-image",
@@ -2004,7 +2004,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-profile-headers-profile-headers-with-center-image",
@@ -2018,7 +2018,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-profile-headers-profile-with-users-skills",
@@ -2032,7 +2032,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-section-headers-default-section-header",
@@ -2046,7 +2046,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-section-headers-section-header-with-cta-buttons",
@@ -2060,7 +2060,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-section-headers-section-header-with-cta-tabs",
@@ -2074,7 +2074,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-section-headers-section-header-with-filter",
@@ -2088,7 +2088,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-section-headers-section-header-with-svg-buttons",
@@ -2102,7 +2102,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-section-headers-section-header-with-tabs",
@@ -2116,7 +2116,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-table-header-default-table-header",
@@ -2130,7 +2130,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-table-header-multi-level-table-header-with-filters",
@@ -2144,7 +2144,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-table-header-table-header-with-search-input-and-cta-button",
@@ -2158,7 +2158,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-table-header-table-header-with-tabs",
@@ -2172,7 +2172,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "application-table-header-tailwind-table-sort-header",
@@ -2186,7 +2186,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-category-filter-basic-filter-with-search-and-cta-button",
@@ -2200,7 +2200,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-category-filter-category-filter-on-right-side",
@@ -2214,7 +2214,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-category-filter-category-filter-with-background",
@@ -2228,7 +2228,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-category-filter-category-filter-with-separate-header",
@@ -2242,7 +2242,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-category-filter-default-category-filter",
@@ -2256,7 +2256,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-comment-list-basic-comments-list-with-like-and-cta-button",
@@ -2270,7 +2270,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-comment-list-comment-block-with-text-editor",
@@ -2284,7 +2284,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-comment-list-comment-form-tailwind",
@@ -2298,7 +2298,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-comment-list-comment-list-with-text-editor",
@@ -2312,7 +2312,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-comment-list-comment-section-with-reply-field",
@@ -2326,7 +2326,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-comment-list-comments-section-with-form",
@@ -2340,7 +2340,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-comment-list-comments-with-replies",
@@ -2354,7 +2354,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-comment-list-nested-comment-section",
@@ -2368,7 +2368,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-comment-list-simple-comment-block",
@@ -2382,7 +2382,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-comment-list-tailwind-comment-list-with-user-images",
@@ -2396,7 +2396,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-comment-list-tailwind-css-comment-list-with-form",
@@ -2411,7 +2411,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-incentives-3-column-grid-tailwind-incentive-section",
@@ -2425,7 +2425,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-incentives-brand-logo-incentive-section",
@@ -2439,7 +2439,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-incentives-form-incentive-section",
@@ -2453,7 +2453,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-incentives-image-in-grid-incentive-section",
@@ -2467,7 +2467,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-incentives-incentive-page-with-card-view",
@@ -2481,7 +2481,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-incentives-incentive-page-with-four-column-grid",
@@ -2495,7 +2495,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-incentives-incentive-page-with-heading",
@@ -2509,7 +2509,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-incentives-incentive-pages-with-description-and-comparison",
@@ -2523,7 +2523,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-incentives-incentives-with-icons",
@@ -2537,7 +2537,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-incentives-split-image-incentive-section",
@@ -2551,7 +2551,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-confirmation-default-order-confirmation",
@@ -2565,7 +2565,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-confirmation-order-confirmation-component-with-scanner",
@@ -2579,7 +2579,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-confirmation-order-confirmation-with-cta",
@@ -2593,7 +2593,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-confirmation-order-confirmation-with-image",
@@ -2607,7 +2607,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-confirmation-order-confirmation-with-message",
@@ -2621,7 +2621,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-confirmation-order-confirmation-with-order-details",
@@ -2635,7 +2635,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-confirmation-order-confirmation-with-order-status",
@@ -2649,7 +2649,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-confirmation-order-confirmation-with-stepper",
@@ -2663,7 +2663,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-confirmation-progress-steps-order-confirmation",
@@ -2677,7 +2677,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-confirmation-side-by-side-order-confirmation",
@@ -2691,7 +2691,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-history-order-history-in-card-layout",
@@ -2705,7 +2705,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-history-order-history-invoice-table",
@@ -2719,7 +2719,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-history-order-history-invoice-with-card-layout",
@@ -2733,7 +2733,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-history-order-history-list-with-invoice",
@@ -2747,7 +2747,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-history-order-history-table",
@@ -2761,7 +2761,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-history-order-history-with-attribute",
@@ -2775,7 +2775,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-history-order-history-with-banner",
@@ -2789,7 +2789,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-history-order-history-with-card-layout",
@@ -2803,7 +2803,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-history-order-history-with-cta-button",
@@ -2817,7 +2817,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-history-order-history-with-date-range-and-sort",
@@ -2831,7 +2831,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-history-order-history-with-date-range-and-status",
@@ -2845,7 +2845,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-history-order-history-with-detail",
@@ -2859,7 +2859,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-history-order-history-with-pagination",
@@ -2873,7 +2873,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-history-order-history-with-simple-details",
@@ -2887,7 +2887,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-history-order-history-with-sorting",
@@ -2901,7 +2901,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-history-order-history-with-status-and-cta-button",
@@ -2915,7 +2915,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-summaries-order-details-in-card-layout",
@@ -2929,7 +2929,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-summaries-order-details-with-payment-method",
@@ -2943,7 +2943,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-summaries-order-summary-with-address-details",
@@ -2957,7 +2957,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-summaries-order-summary-with-billing-form",
@@ -2971,7 +2971,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-summaries-order-summary-with-checkout",
@@ -2985,7 +2985,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-summaries-order-summary-with-customer-information",
@@ -2999,7 +2999,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-summaries-order-summary-with-customer-information-and-stepper",
@@ -3013,7 +3013,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-summaries-order-summary-with-delivery-information",
@@ -3027,7 +3027,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-summaries-order-summary-with-dynamic-action",
@@ -3041,7 +3041,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-summaries-order-summary-with-order-details-payment-and-address",
@@ -3056,7 +3056,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-summaries-order-summary-with-simple-details",
@@ -3070,7 +3070,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-summaries-order-summary-with-stepper-and-sidebar",
@@ -3084,7 +3084,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-summaries-order-summary-with-tabs",
@@ -3098,7 +3098,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-summaries-order-summary-with-two-columns-full-order-details",
@@ -3112,7 +3112,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-summaries-splitted-order-summary",
@@ -3126,7 +3126,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-summaries-tailwind-order-summary-with-details",
@@ -3140,7 +3140,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-tracking-default-order-tracking",
@@ -3154,7 +3154,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-tracking-order-tracking-with-cards",
@@ -3168,7 +3168,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-tracking-order-tracking-with-cta",
@@ -3182,7 +3182,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-tracking-order-tracking-with-horizontal-steps",
@@ -3196,7 +3196,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-tracking-order-tracking-with-location-indication",
@@ -3210,7 +3210,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-tracking-order-tracking-with-map-indication",
@@ -3224,7 +3224,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-tracking-order-tracking-with-progress-indication",
@@ -3238,7 +3238,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-tracking-order-tracking-with-vertical-timeline",
@@ -3252,7 +3252,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-tracking-side-by-side-order-tracking",
@@ -3266,7 +3266,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-order-tracking-vertical-order-tracking-timeline",
@@ -3280,7 +3280,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-list-card-with-full-details",
@@ -3294,7 +3294,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-list-card-with-supporting-text",
@@ -3308,7 +3308,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-list-product-list-with-details",
@@ -3322,7 +3322,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-list-static-product-list-with-grid",
@@ -3336,7 +3336,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-list-tailwind-product-list-with-three-column-grid",
@@ -3350,7 +3350,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-list-with-horizontal-card",
@@ -3364,7 +3364,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-list-with-hover-effect",
@@ -3378,7 +3378,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-list-with-image-and-description",
@@ -3392,7 +3392,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-list-with-purchase-link",
@@ -3406,7 +3406,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-list-with-user-rating",
@@ -3420,7 +3420,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-overview-2-column-grid-images-and-description",
@@ -3434,7 +3434,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-overview-3-column-grid-with-slider-and-details",
@@ -3448,7 +3448,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-overview-description-and-vertical-slider-images",
@@ -3462,7 +3462,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-overview-images-and-description-in-nested-grid",
@@ -3476,7 +3476,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-overview-masonry-image-and-description",
@@ -3490,7 +3490,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-overview-product-image-with-expandable-details",
@@ -3504,7 +3504,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-overview-split-image-slider-with-details",
@@ -3518,7 +3518,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-overview-split-with-image-and-description",
@@ -3532,7 +3532,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-overview-with-image-gallery-and-description",
@@ -3546,7 +3546,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-review-customer-feedback-with-product-image",
@@ -3560,7 +3560,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-review-customer-review-with-cards",
@@ -3574,7 +3574,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-review-customer-reviews-with-average-rating",
@@ -3588,7 +3588,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-review-product-review-with-carousel",
@@ -3602,7 +3602,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-review-product-review-with-rating-icons",
@@ -3616,7 +3616,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-review-product-review-with-slider",
@@ -3630,7 +3630,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-review-product-reviews-with-submit-form",
@@ -3644,7 +3644,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-review-ratings-and-feedback-with-slider",
@@ -3658,7 +3658,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-review-recent-feedback-with-add-review",
@@ -3672,7 +3672,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-review-review-form-with-detailed-user-review",
@@ -3686,7 +3686,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-review-review-in-masonry-structure",
@@ -3700,7 +3700,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-review-review-page-with-filters-review-page",
@@ -3714,7 +3714,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-review-review-page-with-summary-chart",
@@ -3728,7 +3728,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-review-review-page-with-testimonial",
@@ -3742,7 +3742,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-review-tailwind-css-product-review-with-avatars",
@@ -3756,7 +3756,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-review-user-review-with-images",
@@ -3770,7 +3770,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-product-review-user-review-with-star-rating",
@@ -3784,7 +3784,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-refund-form-basic-refund-application-form",
@@ -3798,7 +3798,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-refund-form-product-reason-selection-form",
@@ -3812,7 +3812,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-refund-form-refund-request-process",
@@ -3826,7 +3826,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-refund-overview-default-refund-overview-list",
@@ -3840,7 +3840,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-refund-overview-refund-list-with-filter",
@@ -3854,7 +3854,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-refund-overview-refund-list-with-personal-details",
@@ -3868,7 +3868,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-refund-overview-refund-with-cta",
@@ -3882,7 +3882,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-refund-overview-refund-with-table",
@@ -3896,7 +3896,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-refund-status-default-refund-status-section",
@@ -3910,7 +3910,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-refund-status-refund-status-with-order-summary",
@@ -3924,7 +3924,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-refund-status-refund-status-with-progress-steps",
@@ -3938,7 +3938,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-refund-status-refund-track-with-detailed-steps",
@@ -3952,7 +3952,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-refund-status-side-by-side-refund-status-with-timeline",
@@ -3966,7 +3966,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-shopping-cart-checkout-page-with-cart-summary-and-payment-option",
@@ -3980,7 +3980,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-shopping-cart-multiple-column-shopping-cart-page",
@@ -3994,7 +3994,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-shopping-cart-shopping-cart-with-payment-info",
@@ -4008,7 +4008,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-shopping-cart-shopping-cart-with-radio-button",
@@ -4022,7 +4022,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-shopping-cart-shopping-cart-with-receive-order-details",
@@ -4036,7 +4036,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-shopping-cart-shopping-cart-with-remove-button",
@@ -4050,7 +4050,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-shopping-cart-shopping-cart-with-remove-button-option",
@@ -4064,7 +4064,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-shopping-cart-shopping-cart-with-summary",
@@ -4078,7 +4078,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-shopping-cart-single-column-shopping-cart-page",
@@ -4092,7 +4092,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-shopping-cart-three-columns-shopping-cart-with-card-details",
@@ -4106,7 +4106,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-shopping-cart-two-column-cart-with-summary",
@@ -4120,7 +4120,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-shopping-cart-two-column-shopping-cart-with-order-summary",
@@ -4134,7 +4134,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-shopping-cart-two-column-shopping-cart-with-sticky-position",
@@ -4148,7 +4148,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-shopping-cart-two-column-shopping-cart-with-tab-content",
@@ -4162,7 +4162,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "e-commerce-shopping-cart-two-columns-shopping-cart-with-background-color",
@@ -4176,7 +4176,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["e-commerce"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-404-page-404-error-page-with-illustration",
@@ -4190,7 +4190,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-404-page-404-page-with-cta-button",
@@ -4204,7 +4204,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-404-page-default-404-page",
@@ -4218,7 +4218,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-404-page-side-by-side-404-tailwind-page",
@@ -4232,7 +4232,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-404-page-svg-illustration-with-search-bar",
@@ -4246,7 +4246,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-about-us-page-about-us-with-hero-section-and-tile-view",
@@ -4260,7 +4260,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-about-us-page-about-us-with-image-tiles",
@@ -4274,7 +4274,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-about-us-page-about-us-with-team-and-stats",
@@ -4288,7 +4288,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-about-us-page-about-us-with-two-column-grid-images-and-description",
@@ -4303,7 +4303,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-blog-details-blog-page-with-full-screen-image-and-two-column-grid",
@@ -4318,7 +4318,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-blog-details-blog-page-with-images-and-image-grid",
@@ -4332,7 +4332,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-blog-details-simple-blog-details-page",
@@ -4346,7 +4346,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-career-pages-career-list-and-card-with-hover-effect",
@@ -4360,7 +4360,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-career-pages-career-page-with-creative-image-layout-carousel-slider",
@@ -4375,7 +4375,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-career-pages-career-page-with-description-feature-list-icons-horizontal-stats",
@@ -4390,7 +4390,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-career-pages-career-page-with-three-column-blog-image-feature-list-with-hover",
@@ -4405,7 +4405,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-coming-soon-page-basic-coming-soon-page",
@@ -4419,7 +4419,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-coming-soon-page-circular-countdown-coming-soon-page",
@@ -4433,7 +4433,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-coming-soon-page-dark-tailwinds-are-coming-soon",
@@ -4447,7 +4447,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-coming-soon-page-splitted-coming-soon-page",
@@ -4461,7 +4461,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-coming-soon-page-tailwind-is-coming-soon",
@@ -4475,7 +4475,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-coming-soon-page-tailwind-is-coming-soon-with-a-gradient-background",
@@ -4489,7 +4489,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-contactus-page-contact-us-form-with-background-and-svg-icon",
@@ -4503,7 +4503,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-contactus-page-contact-us-with-feature-list-card-with-email-sign-up",
@@ -4518,7 +4518,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-contactus-page-contact-us-with-form-background",
@@ -4532,7 +4532,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-contactus-page-contact-us-with-gradient-background-image",
@@ -4546,7 +4546,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-legal-pages-legal-page-with-gradient-background-heading",
@@ -4560,7 +4560,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-legal-pages-legal-page-with-list-background",
@@ -4574,7 +4574,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-login-page-login-form-with-gradient-background",
@@ -4588,7 +4588,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-login-page-login-page-with-cta-button-illustrations",
@@ -4602,7 +4602,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-login-page-login-page-with-gradient-background-form",
@@ -4616,7 +4616,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-login-page-login-page-with-gradient-background-image",
@@ -4630,7 +4630,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-login-page-login-page-with-split-form",
@@ -4644,7 +4644,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-login-page-login-with-social-media-button",
@@ -4658,7 +4658,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-maintenance-page-default-maintenance-page",
@@ -4672,7 +4672,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-maintenance-page-maintenance-page-with-countdown",
@@ -4686,7 +4686,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-maintenance-page-maintenance-page-with-logo",
@@ -4700,7 +4700,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-maintenance-page-maintenance-page-with-social-links",
@@ -4714,7 +4714,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-maintenance-page-splitted-under-maintenance-page",
@@ -4728,7 +4728,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-maintenance-page-tailwind-maintenance-page-with-illustration",
@@ -4742,7 +4742,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-pricing-page-pricing-plan-card-with-availability-table",
@@ -4756,7 +4756,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-pricing-page-pricing-plan-card-with-availability-table-and-faqs",
@@ -4770,7 +4770,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-pricing-page-pricing-plans-details-with-gradient-background",
@@ -4784,7 +4784,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "full-pages-pricing-page-pricing-plans-with-tab-plan-comparison-faqs",
@@ -4798,7 +4798,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["full-pages"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-about-cards-with-images",
@@ -4812,7 +4812,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-about-description-cards-with-visual-image",
@@ -4826,7 +4826,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-about-list-with-image",
@@ -4840,7 +4840,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-about-us-as-blog-cards",
@@ -4854,7 +4854,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-about-us-component-tailwind",
@@ -4868,7 +4868,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-about-us-component-tailwind-with-stats",
@@ -4882,7 +4882,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-about-us-image-gallery",
@@ -4896,7 +4896,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-about-us-informative-tailwind-section",
@@ -4910,7 +4910,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-about-us-section-tailwind",
@@ -4924,7 +4924,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-about-us-section-with-number-counter",
@@ -4938,7 +4938,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-about-us-tailwind-with-feature-list",
@@ -4952,7 +4952,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-about-us-tailwind-with-mission-and-vision",
@@ -4966,7 +4966,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-about-us-tailwind-with-vertical-image",
@@ -4980,7 +4980,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-about-us-template",
@@ -4994,7 +4994,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-about-us-two-column-cards",
@@ -5008,7 +5008,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-about-us-with-alternate-image",
@@ -5022,7 +5022,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-about-us-with-descriptive-card",
@@ -5036,7 +5036,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-about-us-with-feature-lists-and-graphs",
@@ -5050,7 +5050,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-about-us-with-stat-counts",
@@ -5064,7 +5064,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-alternate-image-with-feature-list",
@@ -5078,7 +5078,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-background-image-with-overlay-description",
@@ -5092,7 +5092,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-background-image-with-text-overlay",
@@ -5106,7 +5106,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-basic-about-us-section-tailwind",
@@ -5120,7 +5120,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-content-and-image-side-by-side",
@@ -5134,7 +5134,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-creative-about-us-section",
@@ -5148,7 +5148,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-creative-about-us-with-key-feature-list",
@@ -5162,7 +5162,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-creative-visual-image-with-about-info",
@@ -5176,7 +5176,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-dark-theme-about-us-section",
@@ -5190,7 +5190,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-full-heighted-about-us-tailwind-component",
@@ -5204,7 +5204,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-image-with-feature-list",
@@ -5218,7 +5218,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-image-with-mission-and-vision",
@@ -5232,7 +5232,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-images-with-heading-and-description",
@@ -5246,7 +5246,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-side-by-side-about-us-tailwind",
@@ -5260,7 +5260,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-side-by-side-image-about-us-template",
@@ -5274,7 +5274,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-side-by-side-image-with-content",
@@ -5288,7 +5288,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-simple-about-us-section",
@@ -5302,7 +5302,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-splitted-about-us-tailwind-template",
@@ -5316,7 +5316,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-splitted-content-and-image",
@@ -5330,7 +5330,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-tailwind-about-us-cards",
@@ -5344,7 +5344,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-tailwind-about-us-page",
@@ -5358,7 +5358,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-tailwind-about-us-page-with-dark-theme",
@@ -5372,7 +5372,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-tailwind-about-us-section-with-image",
@@ -5386,7 +5386,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-tailwind-about-us-section-with-video-layout",
@@ -5400,7 +5400,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-tailwind-about-us-template-with-image",
@@ -5414,7 +5414,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-tailwind-about-us-with-image-grid",
@@ -5428,7 +5428,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-tailwind-css-about-us-with-tab",
@@ -5442,7 +5442,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-three-columns-about-section",
@@ -5456,7 +5456,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-vertical-about-slider",
@@ -5470,7 +5470,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-vertical-about-us-tailwind",
@@ -5484,7 +5484,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-vertical-stat-counts-cards",
@@ -5498,7 +5498,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-about-us-section-visual-image-with-stats",
@@ -5512,7 +5512,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-alternate-blog-post",
@@ -5526,7 +5526,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-alternate-image-horizontal-blogs",
@@ -5540,7 +5540,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-blog-card-with-category-tags",
@@ -5554,7 +5554,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-blog-card-with-footer",
@@ -5568,7 +5568,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-blog-card-with-image-as-a-background",
@@ -5582,7 +5582,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-blog-list-with-on-large-blog",
@@ -5596,7 +5596,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-blog-listing-with-highlighted-blog",
@@ -5610,7 +5610,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-blog-post-cards-with-bottom-image",
@@ -5624,7 +5624,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-blog-post-with-badge",
@@ -5638,7 +5638,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-blog-post-with-feature-list",
@@ -5652,7 +5652,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-blog-post-with-horizontal-single-column",
@@ -5666,7 +5666,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-blog-post-with-overlay-text",
@@ -5680,7 +5680,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-blog-with-expanded-card",
@@ -5694,7 +5694,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-blogs-with-card-layout-and-scale-effect",
@@ -5708,7 +5708,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-centered-blog-card-slider",
@@ -5722,7 +5722,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-detailed-article-blog",
@@ -5736,7 +5736,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-detailed-blog-post-card",
@@ -5750,7 +5750,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-different-grid-layout-with-opacity-effect",
@@ -5764,7 +5764,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-different-scale-blog-cards",
@@ -5778,7 +5778,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-filter-image-blog-post-slider",
@@ -5792,7 +5792,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-full-height-blog-post",
@@ -5806,7 +5806,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-highlighted-top-blog",
@@ -5820,7 +5820,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-horizontal-blog-post",
@@ -5834,7 +5834,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-informative-blog-with-colorful-cards",
@@ -5848,7 +5848,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-large-horizontal-blog-post",
@@ -5862,7 +5862,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-latest-blog-with-dark-version",
@@ -5876,7 +5876,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-modern-structured-blog-posts",
@@ -5890,7 +5890,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-newest-article-blog",
@@ -5904,7 +5904,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-one-large-blog-with-three-smaller-blog",
@@ -5918,7 +5918,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-partial-blog-cads-slider",
@@ -5932,7 +5932,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-side-by-side-blog-post-layout",
@@ -5946,7 +5946,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-simple-blog-card-with-badge",
@@ -5960,7 +5960,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-simple-blog-post",
@@ -5974,7 +5974,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-simple-three-column-blog-component",
@@ -5988,7 +5988,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-single-blog-post-as-carousel",
@@ -6002,7 +6002,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-tailwind-blog-card-with-two-columns-and-image",
@@ -6016,7 +6016,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-tailwind-blog-cards-with-slider",
@@ -6030,7 +6030,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-tailwind-blog-component-with-background-images",
@@ -6044,7 +6044,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-tailwind-blog-grid-layout-with-scale-effect",
@@ -6058,7 +6058,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-tailwind-blog-post-with-feature-list",
@@ -6072,7 +6072,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-tailwind-blog-post-with-gradient-hover",
@@ -6086,7 +6086,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-tailwind-blog-three-column-grid",
@@ -6100,7 +6100,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-tailwind-blog-with-creative-image-layout",
@@ -6114,7 +6114,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-tailwind-blog-with-different-card-layout",
@@ -6128,7 +6128,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-tailwind-blog-with-gradient-background",
@@ -6142,7 +6142,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-tailwind-blog-with-horizontal-cards",
@@ -6156,7 +6156,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-tailwind-blog-with-testimonials",
@@ -6170,7 +6170,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-tailwind-blogs-with-card-layout-and-grayscale-effect",
@@ -6185,7 +6185,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-tailwind-cards-with-different-layout",
@@ -6199,7 +6199,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-tailwind-css-blog-carousel",
@@ -6213,7 +6213,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-theree-column-with-tag-overlap",
@@ -6227,7 +6227,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-three-column-blog-list",
@@ -6241,7 +6241,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-three-column-blog-with-image",
@@ -6255,7 +6255,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-three-column-with-border",
@@ -6269,7 +6269,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-top-large-blog-post",
@@ -6283,7 +6283,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-trendy-latets-blog-post",
@@ -6297,7 +6297,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-two-column-blog-post-with-name-overlap",
@@ -6311,7 +6311,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-two-column-blog-with-image",
@@ -6325,7 +6325,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-vertical-blog-post-list",
@@ -6339,7 +6339,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-blogs-news-vertical-feature-blog-list",
@@ -6353,7 +6353,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-clients-client-logo-grid-with-background",
@@ -6367,7 +6367,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-clients-client-logos-in-card",
@@ -6381,7 +6381,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-clients-client-section-as-info-card",
@@ -6395,7 +6395,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-clients-customer-logos-as-list-view",
@@ -6409,7 +6409,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-clients-logo-cloud-in-grid",
@@ -6423,7 +6423,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-clients-partner-logo-as-carousel",
@@ -6437,7 +6437,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-clients-simple-customer-logo-grid",
@@ -6451,7 +6451,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-black-and-orange-contact-section-with-map",
@@ -6465,7 +6465,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-center-aligned-contact-form-with-info-card-blocks",
@@ -6479,7 +6479,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-center-aligned-with-info-card-blocks",
@@ -6493,7 +6493,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-clean-contact-information-with-support-form",
@@ -6507,7 +6507,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-colorful-call-to-action-contact-blocks",
@@ -6521,7 +6521,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-contact-form-tailwind-css-with-company-information",
@@ -6535,7 +6535,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-contact-form-with-background",
@@ -6549,7 +6549,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-contact-form-with-company-information",
@@ -6563,7 +6563,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-contact-form-with-illustration",
@@ -6577,7 +6577,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-contact-form-with-image-and-address",
@@ -6591,7 +6591,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-contact-form-with-info-and-map",
@@ -6605,7 +6605,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-contact-info-section-with-office-locations",
@@ -6619,7 +6619,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-contact-section-with-image-details-and-map",
@@ -6633,7 +6633,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-creative-contact-form-design-with-background",
@@ -6647,7 +6647,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-dark-contact-form-with-green-info-cards",
@@ -6661,7 +6661,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-dark-contact-section-with-social-and-info-cards",
@@ -6675,7 +6675,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-dark-info-card-contact-section",
@@ -6689,7 +6689,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-dark-themed-contact-form-with-info-cards",
@@ -6703,7 +6703,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-get-in-touch-with-grid-image-contact-us-form",
@@ -6717,7 +6717,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-image-contact-form-with-info-row",
@@ -6731,7 +6731,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-info-card-blocks-contact-us-form",
@@ -6745,7 +6745,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-multi-panel-contact-with-map-and-form",
@@ -6759,7 +6759,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-overlapping-contact-form",
@@ -6773,7 +6773,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-side-by-side-grid-contact-us-form",
@@ -6787,7 +6787,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-simple-tailwind-css-contact-form-with-social-links",
@@ -6801,7 +6801,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-split-contact-cards-with-map-and-info-blocks",
@@ -6815,7 +6815,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-split-with-image-contact-us-section",
@@ -6829,7 +6829,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-split-with-pattern-contact-form",
@@ -6843,7 +6843,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-tailwind-contact-form-with-info-overlay",
@@ -6857,7 +6857,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-tailwind-contact-form-with-two-fields",
@@ -6871,7 +6871,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-tailwind-contact-section-with-split-form-info-cards-and-map",
@@ -6886,7 +6886,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-tailwind-contact-with-address-location",
@@ -6900,7 +6900,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-tailwind-contact-with-color-varient",
@@ -6914,7 +6914,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-tailwind-contact-with-gradient-background",
@@ -6928,7 +6928,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-tailwind-contact-with-social-icons",
@@ -6942,7 +6942,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-tailwind-css-contact-form-with-map",
@@ -6956,7 +6956,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-tailwind-css-two-column-contact-info-and-form",
@@ -6970,7 +6970,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-tailwind-modern-multi-card-contact-page",
@@ -6984,7 +6984,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-contact-form-three-column-information-card-contact-form-tailwind",
@@ -6998,7 +6998,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-app-download-cta-with-dashboard-visual",
@@ -7012,7 +7012,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-community-cta-with-illustration",
@@ -7026,7 +7026,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-cta-as-box-layout",
@@ -7040,7 +7040,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-cta-buttons-only",
@@ -7054,7 +7054,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-cta-buttons-with-centrally-aligned-features-list",
@@ -7068,7 +7068,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-cta-buttons-with-heading",
@@ -7082,7 +7082,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-cta-buttons-with-split-image",
@@ -7096,7 +7096,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-cta-for-email-sign-up",
@@ -7110,7 +7110,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-cta-page-with-mobile-application-download",
@@ -7124,7 +7124,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-cta-section-for-exclusive-subscriber-rewards",
@@ -7138,7 +7138,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-cta-section-for-home-discovery",
@@ -7152,7 +7152,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-cta-section-for-modern-living-spaces",
@@ -7166,7 +7166,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-cta-section-for-portfolio-strategy",
@@ -7180,7 +7180,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-cta-section-for-stories-solutions",
@@ -7194,7 +7194,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-cta-section-for-subscription",
@@ -7208,7 +7208,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-cta-section-for-unique-seo-solutions",
@@ -7222,7 +7222,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-cta-section-with-background-image",
@@ -7236,7 +7236,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-cta-section-with-creative-solutions",
@@ -7250,7 +7250,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-cta-section-with-download-metrics",
@@ -7264,7 +7264,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-cta-section-with-mesh-gradient-background",
@@ -7278,7 +7278,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-cta-section-with-mobile-application",
@@ -7292,7 +7292,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-cta-section-with-portfolio-advice",
@@ -7306,7 +7306,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-cta-section-with-ratings",
@@ -7320,7 +7320,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-cta-with-centrally-aligned-subscribe-button",
@@ -7334,7 +7334,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-cta-with-email-sign-up-and-image",
@@ -7348,7 +7348,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-cta-with-feature-list",
@@ -7362,7 +7362,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-cta-with-feature-list-and-image",
@@ -7376,7 +7376,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-cta-with-form-and-description",
@@ -7390,7 +7390,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-cta-with-gradient-background",
@@ -7404,7 +7404,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-cta-with-illustration-and-newsletter",
@@ -7418,7 +7418,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-cta-with-newsletter-background",
@@ -7432,7 +7432,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-cta-with-two-cards",
@@ -7446,7 +7446,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-dark-cta-with-success-dashboard-preview",
@@ -7460,7 +7460,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-expert-it-support-cta-with-demo-buttons",
@@ -7474,7 +7474,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-gradient-cta-with-profile-meeting-card",
@@ -7488,7 +7488,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-gradient-cta-with-rating-stars",
@@ -7502,7 +7502,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-hr-dashboard-cta-with-blue-gradient",
@@ -7516,7 +7516,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-it-solutions-cta-with-dual-buttons",
@@ -7530,7 +7530,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-mobile-application-mockup-with-cta-buttons",
@@ -7544,7 +7544,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-multi-image-scrolling-cta-with-trial",
@@ -7558,7 +7558,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-streamlined-trading-cta-with-analytics",
@@ -7572,7 +7572,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-subscribe-form-with-image",
@@ -7586,7 +7586,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-subscribe-form-with-svg-icon",
@@ -7600,7 +7600,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-tailwind-css-cta-section-for-app-download",
@@ -7614,7 +7614,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-tailwind-css-cta-with-community-real-photos",
@@ -7628,7 +7628,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-tailwind-css-gradient-background-cta",
@@ -7642,7 +7642,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-tailwind-css-image-based-cta",
@@ -7656,7 +7656,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-tailwind-cta-section-with-professional-guidance",
@@ -7670,7 +7670,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-cta-tailwind-free-trial-cta-with-benefits",
@@ -7684,7 +7684,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-alternate-faq-style-with-arrow",
@@ -7698,7 +7698,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-border-card-faq",
@@ -7712,7 +7712,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-centered-two-column-faq",
@@ -7726,7 +7726,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-creative-image-with-tailwind-faq",
@@ -7740,7 +7740,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-default-faq-section-with-image-block",
@@ -7754,7 +7754,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-faq-as-testimonial",
@@ -7768,7 +7768,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-faq-cards-with-background",
@@ -7782,7 +7782,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-faq-illustration-with-questions",
@@ -7796,7 +7796,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-faq-inside-horizontal-tabs",
@@ -7810,7 +7810,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-faq-inside-tabs",
@@ -7824,7 +7824,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-faq-list-with-creative-image",
@@ -7838,7 +7838,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-faq-list-with-image-position",
@@ -7852,7 +7852,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-faq-section-as-a-list-block",
@@ -7866,7 +7866,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-faq-section-with-arrow-background",
@@ -7880,7 +7880,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-faq-section-with-arrow-style-block",
@@ -7894,7 +7894,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-faq-section-with-background-block",
@@ -7908,7 +7908,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-faq-section-with-box-layout-block",
@@ -7922,7 +7922,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-faq-section-with-cta-button",
@@ -7936,7 +7936,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-faq-with-active-gradient-background",
@@ -7950,7 +7950,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-faq-with-background",
@@ -7964,7 +7964,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-faq-with-category",
@@ -7978,7 +7978,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-faq-with-cta-form",
@@ -7992,7 +7992,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-faq-with-cta-form-and-illustration",
@@ -8006,7 +8006,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-faq-with-cta-info",
@@ -8020,7 +8020,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-faq-with-cta-section",
@@ -8034,7 +8034,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-faq-with-gradient-background",
@@ -8048,7 +8048,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-faq-with-heading",
@@ -8062,7 +8062,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-faq-with-horizontal-tab",
@@ -8076,7 +8076,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-faq-with-numeric-list",
@@ -8090,7 +8090,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-faq-with-vertical-tab",
@@ -8104,7 +8104,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-faqs-as-tabs-block",
@@ -8118,7 +8118,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-horizontal-aligned-faq",
@@ -8132,7 +8132,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-horizontal-faq",
@@ -8146,7 +8146,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-masonary-structured-faq",
@@ -8160,7 +8160,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-nested-faq-with-category",
@@ -8174,7 +8174,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-question-form-with-faq-list",
@@ -8188,7 +8188,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-side-by-side-faq-and-image",
@@ -8202,7 +8202,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-tailwind-css-faq-with-cta-form",
@@ -8216,7 +8216,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-tailwind-faq-card",
@@ -8230,7 +8230,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-tailwind-faq-component-with-banner-image",
@@ -8244,7 +8244,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-tailwind-faq-section-with-border-layout",
@@ -8258,7 +8258,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-tailwind-faq-section-with-image-and-border-layout",
@@ -8272,7 +8272,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-tailwind-faq-with-illustration",
@@ -8286,7 +8286,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-three-column-faq-cards",
@@ -8300,7 +8300,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-three-column-faq-with-icons",
@@ -8314,7 +8314,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-three-column-tailwind-faq-section",
@@ -8328,7 +8328,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-two-column-faq-with-headings",
@@ -8342,7 +8342,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-two-column-with-icon-background",
@@ -8356,7 +8356,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-vertical-faq-list-with-heading",
@@ -8370,7 +8370,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-faq-vertical-tailwind-faq-section",
@@ -8384,7 +8384,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-a-feature-list-with-a-partial-background",
@@ -8398,7 +8398,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-a-feature-list-with-colorful-icons",
@@ -8412,7 +8412,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-alternate-image-with-a-dark-feature-list",
@@ -8426,7 +8426,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-alternate-image-with-feature-list-block",
@@ -8440,7 +8440,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-application-feature-cards",
@@ -8454,7 +8454,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-center-mode-feature-card-slider",
@@ -8468,7 +8468,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-creative-app-mockup-with-features",
@@ -8482,7 +8482,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-default-feature-tailwind-css-block",
@@ -8496,7 +8496,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-description-with-feature-icons",
@@ -8510,7 +8510,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-feature-block-cards-with-graph-images",
@@ -8524,7 +8524,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-feature-block-with-cover-image-block",
@@ -8538,7 +8538,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-feature-blocks-with-partial-slides",
@@ -8552,7 +8552,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-feature-cards-with-background-icons",
@@ -8566,7 +8566,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-feature-cards-with-graph-images",
@@ -8580,7 +8580,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-feature-cards-with-overlay-images",
@@ -8594,7 +8594,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-feature-grid-with-gradient-icons",
@@ -8608,7 +8608,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-feature-list-card-with-solid-background",
@@ -8622,7 +8622,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-feature-list-with-border-layout",
@@ -8636,7 +8636,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-feature-list-with-dashboard-image",
@@ -8650,7 +8650,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-feature-list-with-rounded-cards",
@@ -8664,7 +8664,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-feature-section-with-card-layout",
@@ -8678,7 +8678,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-feature-section-with-dark-theme-block",
@@ -8692,7 +8692,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-feature-section-with-faq-block",
@@ -8706,7 +8706,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-feature-tab-blocks",
@@ -8720,7 +8720,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-feature-tab-cards-with-banners",
@@ -8734,7 +8734,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-feature-tabs-with-cta-button-block",
@@ -8748,7 +8748,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-features-grid-with-translated-icons",
@@ -8762,7 +8762,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-features-with-a-ticker-slider",
@@ -8776,7 +8776,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-features-with-auto-height-cards",
@@ -8790,7 +8790,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-features-with-graphs-and-the-cover-image",
@@ -8804,7 +8804,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-features-with-illustration",
@@ -8818,7 +8818,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-features-with-illustration-image",
@@ -8832,7 +8832,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-features-with-illustrations",
@@ -8846,7 +8846,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-features-with-the-app-mockup",
@@ -8860,7 +8860,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-grid-layout-feature-cards",
@@ -8874,7 +8874,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-heading-only-feature-section-with-dark-theme",
@@ -8888,7 +8888,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-horizontal-feature-listing",
@@ -8902,7 +8902,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-horizontal-feature-tabs-with-images",
@@ -8916,7 +8916,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-image-with-features",
@@ -8930,7 +8930,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-modern-structured-images-with-feature-lists",
@@ -8944,7 +8944,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-multicolor-background-feature-cards",
@@ -8958,7 +8958,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-multicolor-feature-cards",
@@ -8972,7 +8972,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-partial-feature-slider-with-the-dark-version",
@@ -8986,7 +8986,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-rounded-feature-list-tabs-with-cover-images",
@@ -9000,7 +9000,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-splitted-feature-blocks-with-image",
@@ -9014,7 +9014,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-splitted-feature-section-with-image",
@@ -9028,7 +9028,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-tailwind-css-feature-cards-with-creative-layout",
@@ -9042,7 +9042,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-tailwind-css-features-as-tabs",
@@ -9056,7 +9056,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-tailwind-css-features-with-phone-mock-up",
@@ -9070,7 +9070,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-tailwind-feature-cards",
@@ -9084,7 +9084,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-tailwind-features-with-cta-buttons",
@@ -9098,7 +9098,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-tailwind-features-with-custom-icons",
@@ -9112,7 +9112,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-tailwind-features-with-hover-effect",
@@ -9126,7 +9126,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-testimonial-layout-with-feature-card-block",
@@ -9140,7 +9140,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-three-column-grid-feature-list",
@@ -9154,7 +9154,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-two-column-feature-grid",
@@ -9168,7 +9168,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-vertical-accordion-feature-list",
@@ -9182,7 +9182,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-vertical-feature-card-with-tailwind-css",
@@ -9196,7 +9196,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-vertical-feature-list-with-cover-image",
@@ -9210,7 +9210,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-vertical-feature-list-with-icons",
@@ -9224,7 +9224,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-features-with-gradient-background-block",
@@ -9238,7 +9238,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-footer-centered-footer-with-cta",
@@ -9252,7 +9252,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-footer-centered-footer-with-subscribe-form",
@@ -9266,7 +9266,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-footer-creative-with-cta-buttons",
@@ -9280,7 +9280,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-footer-dark-footer-with-newsletter",
@@ -9294,7 +9294,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-footer-dark-footer-with-subscribe-form",
@@ -9308,7 +9308,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-footer-default-tailwind-footer",
@@ -9322,7 +9322,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-footer-five-columns-with-subscribe-button",
@@ -9336,7 +9336,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-footer-footer-with-app-buttons",
@@ -9350,7 +9350,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-footer-footer-with-background",
@@ -9364,7 +9364,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-footer-footer-with-gallery",
@@ -9378,7 +9378,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-footer-footer-with-member-info",
@@ -9392,7 +9392,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-footer-footer-with-social-media-icons",
@@ -9406,7 +9406,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-footer-four-columns-with-address-location",
@@ -9420,7 +9420,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-footer-four-columns-with-subscribe-form",
@@ -9434,7 +9434,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-footer-horizontal-footer",
@@ -9448,7 +9448,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-footer-horizontal-footer-with-dark-version",
@@ -9462,7 +9462,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-footer-horizontal-footer-with-light-version",
@@ -9476,7 +9476,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-footer-newsletter-form-with-pre-footer-cta",
@@ -9490,7 +9490,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-footer-newsletter-with-address-location",
@@ -9504,7 +9504,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-footer-pre-footer-newsletter",
@@ -9518,7 +9518,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-footer-simple-centered-footer",
@@ -9532,7 +9532,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-footer-simple-footer-with-cta-button",
@@ -9546,7 +9546,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-footer-standard-footer",
@@ -9560,7 +9560,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-footer-subscribe-form-in-footer",
@@ -9574,7 +9574,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-footer-tailwind-footer-template",
@@ -9588,7 +9588,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-footer-tailwind-footer-with-dark-version",
@@ -9602,7 +9602,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-gallery-gallery-section-image-with-lightbox",
@@ -9616,7 +9616,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-gallery-gallery-section-with-autoplay-slider",
@@ -9630,7 +9630,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-gallery-gallery-section-with-grid-and-overlay-effect",
@@ -9644,7 +9644,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-gallery-gallery-section-with-grid-layout",
@@ -9658,7 +9658,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-gallery-gallery-section-with-innovation",
@@ -9672,7 +9672,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-gallery-gallery-section-with-lightbox-effect",
@@ -9686,7 +9686,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-gallery-gallery-section-with-lightbox-image",
@@ -9700,7 +9700,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-gallery-gallery-section-with-masonary-layout",
@@ -9714,7 +9714,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-gallery-gallery-section-with-overlay-effect",
@@ -9728,7 +9728,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-gallery-gallery-section-with-overlay-image",
@@ -9742,7 +9742,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-gallery-gallery-section-with-pagination",
@@ -9756,7 +9756,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-gallery-gallery-section-with-scale-effect",
@@ -9770,7 +9770,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-gallery-gallery-section-with-slider",
@@ -9784,7 +9784,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-gallery-gallery-section-with-tab-content",
@@ -9798,7 +9798,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-gallery-gallery-section-with-testimonial",
@@ -9812,7 +9812,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-gallery-gallery-section-with-transform-image",
@@ -9826,7 +9826,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-gallery-gallery-section-with-vertical-slider",
@@ -9840,7 +9840,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-accommodation-businesses-hero-section",
@@ -9854,7 +9854,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-accommodation-hero-section-with-social-icons",
@@ -9868,7 +9868,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-background-cover-image-with-search",
@@ -9882,7 +9882,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-background-illustration-with-dark-mode",
@@ -9896,7 +9896,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-background-image-with-cta",
@@ -9910,7 +9910,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-booking-hero-section-with-full-background-hero-image-tailwind",
@@ -9925,7 +9925,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-cover-image-with-blog-description",
@@ -9939,7 +9939,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-cover-image-with-cta",
@@ -9953,7 +9953,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-creative-hero-section-with-background-image",
@@ -9967,7 +9967,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-creative-hero-section-with-search",
@@ -9981,7 +9981,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-dark-hero-section-with-gradient-background",
@@ -9995,7 +9995,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-ecommerce-hero-section",
@@ -10009,7 +10009,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-fashion-hero-section-with-multi-column",
@@ -10023,7 +10023,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-flight-booking-hero-section-with-information-stats",
@@ -10037,7 +10037,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-hero-section-with-background-and-cards",
@@ -10051,7 +10051,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-hero-section-with-carousel-slider",
@@ -10065,7 +10065,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-hero-section-with-content-blocks",
@@ -10079,7 +10079,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-hero-section-with-content-card",
@@ -10093,7 +10093,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-hero-section-with-customer-logos",
@@ -10107,7 +10107,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-hero-section-with-dashboard-cover-image",
@@ -10121,7 +10121,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-hero-section-with-data-points-carousel",
@@ -10135,7 +10135,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-hero-section-with-gradient-background",
@@ -10149,7 +10149,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-hero-section-with-phone-mockup",
@@ -10163,7 +10163,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-hero-section-with-seperate-card-layout",
@@ -10177,7 +10177,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-hero-section-with-stat-cards",
@@ -10191,7 +10191,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-hero-section-with-statistics-carousel",
@@ -10205,7 +10205,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-hero-section-with-thumbnail-carousel",
@@ -10219,7 +10219,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-hero-section-with-vertical-carousel",
@@ -10233,7 +10233,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-hero-section-with-vertical-content-block",
@@ -10247,7 +10247,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-hero-with-dark-theme",
@@ -10261,7 +10261,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-hero-with-grid-column-images",
@@ -10275,7 +10275,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-horizontal-header-with-image-grid-and-social-icons",
@@ -10289,7 +10289,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-horizontal-hero-section-with-video",
@@ -10303,7 +10303,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-illustration-with-cta-button",
@@ -10317,7 +10317,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-image-with-heading",
@@ -10331,7 +10331,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-minimal-product-and-services-preview-hero-section",
@@ -10345,7 +10345,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-mobile-application-hero-section",
@@ -10359,7 +10359,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-mobile-application-hero-section-with-image",
@@ -10373,7 +10373,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-modern-hero-section-with-carousel",
@@ -10387,7 +10387,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-phone-mockup-with-app-download",
@@ -10401,7 +10401,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-product-hero-section",
@@ -10415,7 +10415,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-product-hero-section-with-carousel",
@@ -10429,7 +10429,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-registration-form-with-cta",
@@ -10443,7 +10443,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-saas-hero-section-with-kicker-and-dashboard-preview",
@@ -10457,7 +10457,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-side-by-side-hero-section-with-image",
@@ -10471,7 +10471,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-simple-hero-section-with-creative-image",
@@ -10485,7 +10485,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-split-header-hero-section-with-cta-on-image",
@@ -10499,7 +10499,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-splitted-hero-section-with-image",
@@ -10513,7 +10513,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-tailwind-hero-banner",
@@ -10527,7 +10527,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-tailwind-hero-block-with-app-mockup",
@@ -10541,7 +10541,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-tailwind-hero-component-for-business-website",
@@ -10555,7 +10555,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-tailwind-hero-section-with-card-layout",
@@ -10569,7 +10569,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-tailwind-hero-with-gradient-heading",
@@ -10583,7 +10583,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-tailwind-hero-with-stat-counts",
@@ -10597,7 +10597,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-three-column-hero-section",
@@ -10611,7 +10611,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-travel-hero-section-with-dark-background",
@@ -10625,7 +10625,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-vertical-hero-section-with-images",
@@ -10639,7 +10639,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-vertical-hero-section-with-video",
@@ -10653,7 +10653,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-vertical-hero-with-cover-image",
@@ -10667,7 +10667,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-visual-image-with-banner",
@@ -10681,7 +10681,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-hero-section-visual-image-with-partner-logos",
@@ -10695,7 +10695,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-how-it-works-default-how-it-works",
@@ -10709,7 +10709,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-how-it-works-horizontal-how-it-works-steps",
@@ -10723,7 +10723,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-how-it-works-how-it-works-cards-with-illustrations",
@@ -10737,7 +10737,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-how-it-works-how-it-works-cards-with-images",
@@ -10751,7 +10751,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-how-it-works-how-it-works-in-dark-mode",
@@ -10765,7 +10765,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-how-it-works-how-it-works-with-cards",
@@ -10779,7 +10779,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-how-it-works-how-it-works-with-creative-illustration",
@@ -10793,7 +10793,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-how-it-works-how-it-works-with-horizontal-progression",
@@ -10807,7 +10807,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-how-it-works-how-it-works-with-icons",
@@ -10821,7 +10821,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-how-it-works-how-it-works-with-illustration",
@@ -10835,7 +10835,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-how-it-works-how-it-works-with-the-cta",
@@ -10849,7 +10849,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-how-it-works-how-it-works-with-the-grid-layout",
@@ -10863,7 +10863,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-how-it-works-side-by-side-how-it-works-blocks",
@@ -10877,7 +10877,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-how-it-works-splitted-how-it-works-blocks",
@@ -10891,7 +10891,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-how-it-works-vertical-how-it-works-cards",
@@ -10905,7 +10905,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-integration-app-logos-integration",
@@ -10919,7 +10919,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-integration-basic-integration-block",
@@ -10933,7 +10933,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-integration-circular-integration",
@@ -10947,7 +10947,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-integration-dark-integration-section",
@@ -10961,7 +10961,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-integration-four-column-integration-card",
@@ -10975,7 +10975,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-integration-hexagon-integration-cards",
@@ -10989,7 +10989,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-integration-integration-as-double-testimonial",
@@ -11003,7 +11003,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-integration-integration-card-with-background",
@@ -11017,7 +11017,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-integration-integration-grid",
@@ -11031,7 +11031,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-integration-integration-list-with-description",
@@ -11045,7 +11045,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-integration-integration-section-with-badge-and-cta",
@@ -11059,7 +11059,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-integration-integration-with-cta-button",
@@ -11073,7 +11073,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-integration-integrations-card-with-horizontal-layout",
@@ -11087,7 +11087,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-integration-scattered-application-icons",
@@ -11101,7 +11101,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-integration-side-by-side-integration",
@@ -11115,7 +11115,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-integration-slider-app-integration",
@@ -11129,7 +11129,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-integration-three-column-integration-card-with-cta",
@@ -11143,7 +11143,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-integration-two-column-integration-card",
@@ -11157,7 +11157,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-integration-vertical-app-integration",
@@ -11171,7 +11171,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-integration-vertical-integration-carousel",
@@ -11185,7 +11185,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-integration-vertical-integrations-list",
@@ -11199,7 +11199,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-portfolio-grid-layout-with-image-and-description-and-cta",
@@ -11213,7 +11213,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-portfolio-portfolio-section-with-testimonial-layout",
@@ -11227,7 +11227,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-portfolio-portfolio-section-with-three-column-grid",
@@ -11241,7 +11241,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-portfolio-portfolio-with-beautiful-grid-system",
@@ -11255,7 +11255,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-portfolio-tailwind-css-portfolio-with-product-or-project-s-features",
@@ -11270,7 +11270,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-center-align-tailwind-pricing-cards",
@@ -11284,7 +11284,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-dark-pricing-card",
@@ -11298,7 +11298,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-feature-list-with-pricing-plan",
@@ -11312,7 +11312,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-four-tier-pricing-plan",
@@ -11326,7 +11326,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-header-background-pricing-card",
@@ -11340,7 +11340,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-highlight-pricing-feature",
@@ -11354,7 +11354,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-horizontal-card-as-testimonial",
@@ -11368,7 +11368,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-horizontal-card-with-pricing-plans-as-testimonial",
@@ -11382,7 +11382,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-horizontal-pricing-plans",
@@ -11396,7 +11396,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-image-as-pricing-card-background",
@@ -11410,7 +11410,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-image-with-pricing-card",
@@ -11424,7 +11424,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-multicolor-pricing-cards",
@@ -11438,7 +11438,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-pricing-card-with-bordered-layout",
@@ -11452,7 +11452,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-pricing-card-with-cta-button",
@@ -11466,7 +11466,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-pricing-card-with-highlighted-border",
@@ -11480,7 +11480,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-pricing-card-with-highlighted-price",
@@ -11494,7 +11494,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-pricing-cards-with-colored-border",
@@ -11508,7 +11508,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-pricing-cards-with-graph-image",
@@ -11522,7 +11522,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-pricing-cards-with-vertical-tabs",
@@ -11536,7 +11536,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-pricing-components-with-illustration",
@@ -11550,7 +11550,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-pricing-model-with-table",
@@ -11564,7 +11564,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-pricing-plan-for-dark-theme",
@@ -11578,7 +11578,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-pricing-plan-for-dark-theme-with-feature-list",
@@ -11592,7 +11592,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-pricing-plan-with-highlighted-background",
@@ -11606,7 +11606,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-pricing-plan-with-highlighted-gradient-background",
@@ -11620,7 +11620,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-pricing-plan-with-seperate-headers",
@@ -11634,7 +11634,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-pricing-plan-with-toggle-switch",
@@ -11648,7 +11648,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-pricing-plans-as-testimonials",
@@ -11662,7 +11662,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-pricing-plans-with-gradient-background",
@@ -11676,7 +11676,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-pricing-plans-with-image-header",
@@ -11690,7 +11690,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-pricing-table-centrally-aligned",
@@ -11704,7 +11704,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-pricing-table-for-dark-version",
@@ -11718,7 +11718,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-pricing-table-with-four-tiers",
@@ -11732,7 +11732,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-pricing-with-a-toggle-switch",
@@ -11746,7 +11746,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-pricing-with-image-card",
@@ -11760,7 +11760,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-pricing-with-radio-component",
@@ -11774,7 +11774,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-ranking-analyzer-with-dark-theme",
@@ -11788,7 +11788,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-scaled-pricing-card",
@@ -11802,7 +11802,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-simple-transparent-pricing-table",
@@ -11816,7 +11816,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-single-pricing-plan",
@@ -11830,7 +11830,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-tailwind-css-pricing-cards",
@@ -11844,7 +11844,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-tailwind-css-pricing-cards-with-border-separation",
@@ -11858,7 +11858,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-tailwind-css-pricing-table",
@@ -11872,7 +11872,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-tailwind-pricing-table-with-gradient-background",
@@ -11886,7 +11886,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-three-tiers-with-toggle",
@@ -11900,7 +11900,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-two-column-horizontal-pricing-cards",
@@ -11914,7 +11914,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-two-column-pricing-cards",
@@ -11928,7 +11928,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-two-column-stylish-pricing-plans",
@@ -11942,7 +11942,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-two-tier-pricing-cards",
@@ -11956,7 +11956,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-pricing-plans-vertical-accordion-pricing-plans",
@@ -11970,7 +11970,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-a-snapshot-of-our-performance",
@@ -11984,7 +11984,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-a-snapshot-of-our-performance-grid-stats",
@@ -11998,7 +11998,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-breaking-down-the-stats-that-matter",
@@ -12012,7 +12012,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-company-total-growth-overview-stats",
@@ -12026,7 +12026,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-heading-with-four-stats",
@@ -12040,7 +12040,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-horizontal-stats",
@@ -12054,7 +12054,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-horizontal-stats-with-card-style",
@@ -12068,7 +12068,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-impressive-stats",
@@ -12082,7 +12082,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-key-metrics-driving-business-results",
@@ -12096,7 +12096,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-key-stats-and-milestones-overview",
@@ -12110,7 +12110,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-measuring-our-success",
@@ -12124,7 +12124,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-our-growing-stats",
@@ -12138,7 +12138,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-our-growth-in-numbers",
@@ -12152,7 +12152,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-our-growth-in-numbers-stats",
@@ -12166,7 +12166,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-our-growth-stats-with-numbers",
@@ -12180,7 +12180,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-our-impact-in-numbers",
@@ -12194,7 +12194,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-our-statistics-stats",
@@ -12208,7 +12208,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-our-success-stats",
@@ -12222,7 +12222,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-performance-insight-and-analytics",
@@ -12236,7 +12236,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-performance-metrics-stats",
@@ -12250,7 +12250,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-performance-you-can-count-on",
@@ -12264,7 +12264,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-project-stats-and-figma-included",
@@ -12278,7 +12278,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-see-the-stats-behind-our-success",
@@ -12292,7 +12292,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-simple-stats-page",
@@ -12306,7 +12306,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-split-stats-with-heading",
@@ -12320,7 +12320,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-split-with-heading",
@@ -12334,7 +12334,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-stats-card-with-highlight",
@@ -12348,7 +12348,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-stats-with-background",
@@ -12362,7 +12362,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-stats-with-border",
@@ -12376,7 +12376,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-stats-with-border-and-actions",
@@ -12390,7 +12390,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-stats-with-brand-logos",
@@ -12404,7 +12404,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-stats-with-card-layout",
@@ -12418,7 +12418,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-stats-with-creative-card-design",
@@ -12432,7 +12432,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-stats-with-creative-design",
@@ -12446,7 +12446,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-stats-with-custom-colour",
@@ -12460,7 +12460,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-stats-with-custom-icon",
@@ -12474,7 +12474,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-stats-with-horizontal-description",
@@ -12488,7 +12488,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-stats-with-icon-background",
@@ -12502,7 +12502,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-stats-with-indicators",
@@ -12516,7 +12516,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-tailwind-css-horizontal-stats-section",
@@ -12530,7 +12530,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-tailwind-css-impressive-stats",
@@ -12544,7 +12544,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-tailwind-css-stats-with-performance",
@@ -12558,7 +12558,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-tailwind-css-stats-with-stats",
@@ -12572,7 +12572,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-tailwind-stats-card",
@@ -12586,7 +12586,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-tailwind-stats-our-journey-in-figures",
@@ -12600,7 +12600,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-tailwind-tracking-growth-success-stats",
@@ -12614,7 +12614,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-the-data-speaks-for-itself-stats",
@@ -12628,7 +12628,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-stats-vertical-stats",
@@ -12642,7 +12642,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-a-small-horizontal-card-with-an-avatar",
@@ -12656,7 +12656,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-alternate-design-for-team-carousel",
@@ -12670,7 +12670,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-basic-team-member-section",
@@ -12684,7 +12684,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-carousel-with-a-vertical-social-list",
@@ -12698,7 +12698,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-center-card-highlighted-carousel",
@@ -12712,7 +12712,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-centered-team-slider",
@@ -12726,7 +12726,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-connected-team-images-with-a-hover-effect",
@@ -12740,7 +12740,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-creative-team-component",
@@ -12754,7 +12754,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-four-column-grid-layout-with-social-media-and-cta",
@@ -12768,7 +12768,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-four-column-team-cards",
@@ -12782,7 +12782,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-horizontal-team-cards",
@@ -12796,7 +12796,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-horizontal-team-carousel",
@@ -12810,7 +12810,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-informative-team-cards",
@@ -12824,7 +12824,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-modern-team-cards-with-borders",
@@ -12838,7 +12838,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-overlayed-team-card",
@@ -12852,7 +12852,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-rounded-image-team-cards",
@@ -12866,7 +12866,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-side-by-side-headings-and-team-cards",
@@ -12880,7 +12880,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-simple-four-team-cards-with-a-hover-effect",
@@ -12894,7 +12894,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-small-tailwind-team-cards",
@@ -12908,7 +12908,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-tailwind-css-team-section-with-square-images",
@@ -12922,7 +12922,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-tailwind-team-carousel",
@@ -12936,7 +12936,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-tailwind-team-section-with-hover-overlay",
@@ -12950,7 +12950,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-team-card-with-footer",
@@ -12964,7 +12964,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-team-cards-for-dark-version",
@@ -12978,7 +12978,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-team-cards-with-background",
@@ -12992,7 +12992,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-team-cards-with-background-and-cta-button",
@@ -13006,7 +13006,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-team-list-with-hover-description",
@@ -13020,7 +13020,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-team-page-with-grid-layout-cta-and-description",
@@ -13034,7 +13034,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-team-page-with-overlay-card-with-general-description",
@@ -13049,7 +13049,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-team-section-card-with-background-color",
@@ -13063,7 +13063,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-team-section-cards-with-background",
@@ -13077,7 +13077,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-team-section-cards-with-carousel-style",
@@ -13091,7 +13091,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-team-section-cards-with-scale-image-in-hover-effect",
@@ -13105,7 +13105,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-team-section-memoji-cards-with-carousel-style",
@@ -13119,7 +13119,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-team-section-with-carousel-slider",
@@ -13133,7 +13133,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-team-section-with-carousel-style",
@@ -13147,7 +13147,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-team-section-with-circled-images",
@@ -13161,7 +13161,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-team-section-with-creative-image-layout",
@@ -13175,7 +13175,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-team-section-with-different-background-cards-and-hover-memoji-effect",
@@ -13190,7 +13190,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-team-section-with-grayscale-effect",
@@ -13204,7 +13204,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-team-section-with-horizontal-team-cards",
@@ -13218,7 +13218,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-team-section-with-opacity-layout",
@@ -13232,7 +13232,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-team-section-with-overlay-cards",
@@ -13246,7 +13246,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-team-section-with-rotate-and-scale-memoji-effect",
@@ -13260,7 +13260,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-team-section-with-scale-image-and-background-opacity",
@@ -13275,7 +13275,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-team-section-with-three-column-grid-layout",
@@ -13289,7 +13289,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-three-column-team-card-component",
@@ -13303,7 +13303,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-three-column-team-with-side-information-card",
@@ -13317,7 +13317,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-translated-image-with-social-icons",
@@ -13331,7 +13331,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-team-vertical-team-carousel",
@@ -13345,7 +13345,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-3-column-review-cards-with-heading",
@@ -13359,7 +13359,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-3-column-video-cards-testimonial",
@@ -13373,7 +13373,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-alternate-tailwind-tesimonial-cards",
@@ -13387,7 +13387,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-basic-testimonial-cards",
@@ -13401,7 +13401,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-center-mode-slider-with-dark-version",
@@ -13415,7 +13415,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-client-review-two-column-card",
@@ -13429,7 +13429,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-client-testimonial-partial-slider",
@@ -13443,7 +13443,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-customer-review-with-product-image",
@@ -13457,7 +13457,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-heading-and-card-slider-block",
@@ -13471,7 +13471,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-highlighted-testimonial-card-slider",
@@ -13485,7 +13485,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-horizontal-cards-block",
@@ -13499,7 +13499,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-responsive-column-view",
@@ -13513,7 +13513,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-review-cards-with-column-grid",
@@ -13527,7 +13527,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-review-testimonials-with-video",
@@ -13541,7 +13541,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-reviews-with-ratings-and-brand-logos",
@@ -13555,7 +13555,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-side-by-side-testimonial-cards",
@@ -13569,7 +13569,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-simple-testimonial-cards",
@@ -13583,7 +13583,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-single-slide-review-with-full-description-and-background-block",
@@ -13598,7 +13598,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-single-testimonial-slider",
@@ -13612,7 +13612,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-slider-with-user-comments-and-avatars",
@@ -13626,7 +13626,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-split-image-and-description-testimonial-section",
@@ -13640,7 +13640,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-split-image-testimonial-tailwind",
@@ -13654,7 +13654,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-tailwind-carousel-with-arrow",
@@ -13668,7 +13668,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-tailwind-css-customer-review-slider",
@@ -13682,7 +13682,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-tailwind-css-testimonial-in-modern-design",
@@ -13696,7 +13696,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-tailwind-css-vertical-testimonial-carousel-with-cards",
@@ -13711,7 +13711,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-tailwind-testimonial-card-with-gradient-border",
@@ -13725,7 +13725,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-tailwind-testimonial-cards",
@@ -13739,7 +13739,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-tailwind-testimonial-carousel-with-horizontal-card",
@@ -13753,7 +13753,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-tailwind-testimonial-carousel-with-top-thumbnail-images",
@@ -13768,7 +13768,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-tailwind-testimonial-slider-with-dots",
@@ -13782,7 +13782,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-tailwind-testimonial-slider-with-heading",
@@ -13796,7 +13796,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-tailwind-testimonial-with-active-user",
@@ -13810,7 +13810,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-tailwind-testimonial-with-user-review-and-avatars",
@@ -13824,7 +13824,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-testimonial-card-with-translated-images",
@@ -13838,7 +13838,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-testimonial-carousel-tailwind-in-slideshow",
@@ -13852,7 +13852,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-testimonial-carousel-with-memoji",
@@ -13866,7 +13866,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-testimonial-dark-card-with-review",
@@ -13880,7 +13880,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-testimonial-grid-cards",
@@ -13894,7 +13894,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-testimonial-multicolor-cards",
@@ -13908,7 +13908,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-testimonial-slider-as-a-tab",
@@ -13922,7 +13922,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-testimonial-slider-with-background-image",
@@ -13936,7 +13936,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-three-cards-testimonial-slider-section",
@@ -13950,7 +13950,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-two-column-testimonial-card",
@@ -13964,7 +13964,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-two-vertical-testimonial-sliders",
@@ -13978,7 +13978,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-user-experience-testimonial-with-image",
@@ -13992,7 +13992,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-vertical-card-slider",
@@ -14006,7 +14006,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-vertical-testimonial-cards",
@@ -14020,7 +14020,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-vertical-testimonial-slider",
@@ -14034,7 +14034,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-video-cover-testimonials",
@@ -14048,7 +14048,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
   {
     name: "marketing-testimonial-with-user-image-and-reviews-block",
@@ -14062,6 +14062,6 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["marketing"],
     tier: "pro",
-    readiness: "alpha",
+    readiness: "beta",
   },
 ]

@@ -38,5 +38,5 @@
     "dashboard"
   ],
   "tier": "free",
-  "readiness": "alpha"
+  "readiness": "beta"
 }
