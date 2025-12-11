@@ -2,7 +2,6 @@ import * as React from "react"
 import { Plus } from "lucide-react"
 
 import { Calendars } from "@/registry/new-york-v4/blocks/application/dashboard/sidebar-15/components/calendars"
-import { DatePicker } from "@/registry/new-york-v4/blocks/application/dashboard/sidebar-15/components/date-picker"
 import { NavUser } from "@/registry/new-york-v4/blocks/application/dashboard/sidebar-15/components/nav-user"
 import {
   Sidebar,
@@ -51,8 +50,6 @@ export function SidebarRight({
         <NavUser user={data.user} />
       </SidebarHeader>
       <SidebarContent>
-        <DatePicker />
-        <SidebarSeparator className="mx-0" />
         <Calendars calendars={data.calendars} />
       </SidebarContent>
       <SidebarFooter>

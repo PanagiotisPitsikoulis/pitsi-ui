@@ -1,8 +1,6 @@
 "use client"
 
-import {
-  ZoomParallaxImage,
-} from "@/registry/new-york-v4/animations/zoom-parallax/zoom-parallax"
+import { ZoomParallaxImage } from "@/registry/new-york-v4/animations/zoom-parallax/zoom-parallax"
 
 export default function ZoomParallaxDemo() {
   return (

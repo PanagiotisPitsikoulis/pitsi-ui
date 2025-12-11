@@ -1,14 +1,13 @@
-import { notFound } from "next/navigation"
 import { cacheLife } from "next/cache"
+import { notFound } from "next/navigation"
 
 import {
   generateViewMetadata,
   generateViewStaticParams,
 } from "@/lib/pages/view"
 import { queryRegistry, type RegistryItem } from "@/lib/registry-utils"
-import { cn } from "@/lib/utils"
+import { Index } from "@/registry/__index__"
 import { getStyle } from "@/registry/styles"
-
 import { LazyComponentRenderer } from "@/app/(view)/_components"
 
 export async function generateMetadata({
@@ -37,7 +36,6 @@ export default async function BlockPage({
 }) {
   "use cache"
   cacheLife("max")
-
   const { style: styleName, name } = await params
   const style = getStyle(styleName)
 
@@ -55,39 +53,29 @@ export default async function BlockPage({
   }
 
   const isBlock = item.type === "registry:block"
-  const isComponent =
-    item.type === "registry:component" || item.type === "registry:example"
+  const isInternal = item.type === "registry:internal"
+  const isExample = item.type === "registry:example"
+  const isUI = item.type === "registry:ui"
   const isAnimation = item.categories?.includes("animations")
 
+  // For UI components, try to use the demo version instead
+  // UI components like "button" and "dialog" can't render standalone
+  let componentName = name
+  if (isUI) {
+    const demoName = `${name}-demo`
+    const styleIndex = Index[style.name]
+    if (styleIndex && styleIndex[demoName]) {
+      componentName = demoName
+    }
+  }
+
   return (
-    <>
-      {isBlock ? (
-        <div className="bg-background min-h-screen w-full">
-          <LazyComponentRenderer
-            name={name}
-            styleName={style.name}
-            isComponent={isComponent}
-          />
-        </div>
-      ) : isAnimation ? (
-        <div className="bg-background min-h-screen w-full">
-          <LazyComponentRenderer
-            name={name}
-            styleName={style.name}
-            isComponent={isComponent}
-          />
-        </div>
-      ) : (
-        <div className={cn("bg-background flex h-screen w-screen items-center justify-center")}>
-          <div className="flex items-center justify-center p-8">
-            <LazyComponentRenderer
-              name={name}
-              styleName={style.name}
-              isComponent={isComponent}
-            />
-          </div>
-        </div>
-      )}
-    </>
+    <div className="bg-background min-h-screen w-full">
+      <LazyComponentRenderer
+        name={componentName}
+        styleName={style.name}
+        isComponent={isExample || isUI}
+      />
+    </div>
   )
 }

@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/new-york-v4/examples/card-swipe-carousel-demo.tsx",
-      "content": "\"use client\"\n\nimport dynamic from \"next/dynamic\"\n\nconst Skiper48 = dynamic(\n  () =>\n    import(\n      \"@/registry/new-york-v4/animations/card-swipe-carousel/card-swipe-carousel\"\n    ).then((mod) => mod.Skiper48),\n  { ssr: false }\n)\n\nexport default function CardSwipeCarouselDemo() {\n  return (\n    <div className=\"flex min-h-[400px] w-full items-center justify-center p-8\">\n      <Skiper48 />\n    </div>\n  )\n}\n",
+      "content": "\"use client\"\n\nimport dynamic from \"next/dynamic\"\n\nconst Skiper48 = dynamic(\n  () =>\n    import(\"@/registry/new-york-v4/animations/card-swipe-carousel/card-swipe-carousel\").then(\n      (mod) => mod.Skiper48\n    ),\n  { ssr: false }\n)\n\nexport default function CardSwipeCarouselDemo() {\n  return (\n    <div className=\"flex min-h-[400px] w-full items-center justify-center p-8\">\n      <Skiper48 />\n    </div>\n  )\n}\n",
       "type": "registry:example"
     }
   ],

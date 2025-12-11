@@ -84,7 +84,14 @@ export const ParallaxImage = memo<ParallaxImageProps>(
               imageClassName
             )}
           >
-            <Image src={src} alt={alt} fill className="object-cover" sizes="100vw" priority />
+            <Image
+              src={src}
+              alt={alt}
+              fill
+              className="object-cover"
+              sizes="100vw"
+              priority
+            />
           </div>
           {children}
         </div>
@@ -110,7 +117,14 @@ export const ParallaxImage = memo<ParallaxImageProps>(
             imageClassName
           )}
         >
-          <Image src={src} alt={alt} fill className="object-cover" sizes="100vw" priority />
+          <Image
+            src={src}
+            alt={alt}
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
         </motion.div>
         {children}
       </div>

@@ -115,8 +115,7 @@ export const spacerVariants = cva("shrink-0", {
 type SpacerSize = VariantProps<typeof spacerVariants>["size"]
 
 export interface SpacerProps
-  extends HTMLDivProps,
-    VariantProps<typeof spacerVariants> {
+  extends HTMLDivProps, VariantProps<typeof spacerVariants> {
   asChild?: boolean
   /** Size override for mobile screens (< 768px) */
   sizeMobile?: SpacerSize

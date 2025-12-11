@@ -1,5 +1,6 @@
 import { Suspense } from "react"
 import { Metadata } from "next"
+import { cacheLife } from "next/cache"
 
 import { getRegistrySummaryCounts } from "@/lib/registry"
 
@@ -47,6 +48,8 @@ export const metadata: Metadata = {
 }
 
 export default async function IndexPage() {
+  "use cache"
+  cacheLife("max")
   const registryCounts = await getRegistrySummaryCounts()
 
   return (

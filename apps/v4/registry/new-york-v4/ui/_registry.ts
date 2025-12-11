@@ -17,11 +17,6 @@ const RECHARTS_POWERED_BY = [
   { name: "Recharts", url: "https://recharts.org" },
 ]
 
-const REACT_DAY_PICKER_POWERED_BY = [
-  SHADCN,
-  { name: "React Day Picker", url: "https://daypicker.dev" },
-]
-
 const CMDK_POWERED_BY = [SHADCN, { name: "cmdk", url: "https://cmdk.paco.me" }]
 
 const VAUL_POWERED_BY = [
@@ -225,22 +220,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-  },
-  {
-    name: "calendar",
-    type: "registry:ui",
-    dependencies: ["react-day-picker@latest", "date-fns"],
-    registryDependencies: ["button"],
-    files: [
-      {
-        path: "ui/calendar.tsx",
-        type: "registry:ui",
-      },
-    ],
-    tier: "free",
-    categories: ["core-components"],
-    readiness: "production",
-    poweredBy: REACT_DAY_PICKER_POWERED_BY,
   },
   {
     name: "card",

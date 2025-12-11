@@ -40,10 +40,12 @@ export function ComponentPreviewTabs({
       {...props}
     >
       <div data-slot="preview" className="relative">
-        <div className="absolute right-3 top-3 z-10 flex items-center gap-2">
-          <ReadinessBadge readiness={readiness} />
-          <TierBadge tier={tier} />
-        </div>
+        {(readiness || tier) && (
+          <div className="absolute right-3 top-3 z-10 flex items-center gap-2">
+            <ReadinessBadge readiness={readiness} />
+            <TierBadge tier={tier} />
+          </div>
+        )}
         <div
           data-align={align}
           data-justify={justify}
@@ -52,8 +54,8 @@ export function ComponentPreviewTabs({
             isFullBleed
               ? "aspect-video overflow-hidden"
               : chromeLessOnMobile
-                ? "overflow-hidden sm:p-10"
-                : "h-[450px] overflow-hidden p-10"
+                ? "overflow-hidden"
+                : "h-[450px] overflow-hidden"
           )}
         >
           {component}

@@ -1,6 +1,6 @@
 import * as React from "react"
-import { ArrowRight } from "lucide-react"
 import { cva, type VariantProps } from "class-variance-authority"
+import { ArrowRight } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button, buttonVariants } from "@/registry/new-york-v4/ui/button"
@@ -73,13 +73,15 @@ function HeroButton({
             "aspect-square group-hover:aspect-auto group-hover:w-[calc(100%-0.5rem)]"
           )}
         >
-          <span className="absolute left-0 h-full flex items-center whitespace-nowrap text-sm font-medium opacity-0 transition-all duration-300 ease-out group-hover:opacity-100 pl-4">
+          <span className="absolute left-0 flex h-full items-center pl-4 text-sm font-medium whitespace-nowrap opacity-0 transition-all duration-300 ease-out group-hover:opacity-100">
             {children}
           </span>
-          <div className={cn(
-            "absolute right-0 flex items-center justify-center shrink-0",
-            size === "sm" ? "size-6" : size === "lg" ? "size-8" : "size-7"
-          )}>
+          <div
+            className={cn(
+              "absolute right-0 flex shrink-0 items-center justify-center",
+              size === "sm" ? "size-6" : size === "lg" ? "size-8" : "size-7"
+            )}
+          >
             <ArrowRight className="size-4 transition-transform duration-300 ease-out group-hover:-rotate-45" />
           </div>
         </div>

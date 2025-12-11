@@ -47,10 +47,15 @@ export async function generateBlockStaticParams() {
       }
     }
 
+    // Return at least one fallback param if empty (required for cache components)
+    if (params.length === 0) {
+      return [{ category: "application", subcategory: "dashboard", blockName: "sidebar-01" }]
+    }
+
     return params
   } catch (error) {
     console.warn("Failed to generate block static params:", error)
-    return []
+    return [{ category: "application", subcategory: "dashboard", blockName: "sidebar-01" }]
   }
 }
 
@@ -153,9 +158,14 @@ export async function generateSubcategoryStaticParams() {
       })
     )
 
+    // Return at least one fallback param if empty (required for cache components)
+    if (params.length === 0) {
+      return [{ category: "application", subcategory: "dashboard" }]
+    }
+
     return params
   } catch (error) {
     console.warn("Failed to generate subcategory static params:", error)
-    return []
+    return [{ category: "application", subcategory: "dashboard" }]
   }
 }

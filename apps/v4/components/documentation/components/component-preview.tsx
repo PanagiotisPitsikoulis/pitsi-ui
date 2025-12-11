@@ -1,15 +1,9 @@
-import { Suspense } from "react"
-
+import { getRegistryIndexItem } from "@/lib/registry-client"
 import { ReadinessBadge } from "@/components/ui/readiness-badge"
 import { TierBadge } from "@/components/ui/tier-badge"
 import { ComponentPreviewTabs } from "@/components/documentation/components/component-preview-tabs"
 import { ComponentSource } from "@/components/documentation/components/component-source"
-import {
-  getRegistryIndexItem,
-  getRegistryComponent
-} from "@/lib/registry-client"
 import { type Style } from "@/registry/styles"
-import { Spinner } from "@/registry/new-york-v4/ui/spinner"
 
 export function ComponentPreview({
   name,
@@ -29,10 +23,9 @@ export function ComponentPreview({
   type?: "block" | "component" | "example"
   chromeLessOnMobile?: boolean
 }) {
-  const Component = getRegistryComponent(name, styleName)
   const registryItem = getRegistryIndexItem(name, styleName)
 
-  if (!Component) {
+  if (!registryItem) {
     return (
       <p className="text-muted-foreground mt-6 text-sm">
         Component{" "}
@@ -46,20 +39,27 @@ export function ComponentPreview({
 
   // Auto-detect type from registry if not provided
   const itemType = type || registryItem?.type
-  const isBlock = itemType === "registry:block"
+  const isBlock =
+    itemType === "registry:block" ||
+    itemType === "block" ||
+    itemType === "registry:internal"
+
+  // Only show badges for demo components (main preview)
+  const isDemo = name.includes("demo")
 
   if (isBlock) {
     return (
-      <div className="bg-background relative aspect-[4/2.5] w-full overflow-hidden rounded-md border md:-mx-1">
-        <div className="bg-background absolute inset-0 w-full md:w-[1600px]">
-          <div className="absolute right-3 top-3 z-20 flex items-center gap-2">
-            <ReadinessBadge readiness={registryItem?.readiness} />
-            <TierBadge tier={registryItem?.tier ?? "free"} />
-          </div>
+      <div className="bg-page relative aspect-[4/2.5] w-full overflow-hidden rounded-md border md:-mx-1">
+        <div className="bg-page absolute inset-0 w-full md:w-[1600px]">
+          {isDemo && (
+            <div className="absolute top-3 right-3 z-20 flex items-center gap-2">
+              <ReadinessBadge readiness={registryItem?.readiness} />
+              <TierBadge tier={registryItem?.tier ?? "free"} />
+            </div>
+          )}
           <iframe
             src={`/view/${styleName}/${name}`}
             className="pointer-events-none size-full overflow-hidden"
-            scrolling="no"
           />
           {/* Invisible overlay to prevent scrolling */}
           <div className="absolute inset-0 z-10" />
@@ -73,12 +73,13 @@ export function ComponentPreview({
       className={className}
       align={align}
       hideCode={hideCode}
-      readiness={registryItem?.readiness}
-      tier={registryItem?.tier ?? "free"}
+      readiness={isDemo ? registryItem?.readiness : undefined}
+      tier={isDemo ? (registryItem?.tier ?? "free") : undefined}
       component={
-        <Suspense fallback={<Spinner className="size-6" />}>
-          <div className="h-full w-full overflow-hidden"><Component /></div>
-        </Suspense>
+        <iframe
+          src={`/view/${styleName}/${name}`}
+          className="size-full overflow-hidden border-0"
+        />
       }
       source={
         <ComponentSource

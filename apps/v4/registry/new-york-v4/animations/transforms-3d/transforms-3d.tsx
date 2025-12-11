@@ -93,7 +93,7 @@ export function Transforms3d({
 // Default wrapper for standalone viewing with sample image
 const Transforms3dDemo = () => {
   return (
-    <div className="flex min-h-screen w-full items-center justify-center bg-background p-8">
+    <div className="bg-background flex min-h-screen w-full items-center justify-center p-8">
       <Transforms3d
         src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=400&fit=crop"
         alt="Mountain landscape"

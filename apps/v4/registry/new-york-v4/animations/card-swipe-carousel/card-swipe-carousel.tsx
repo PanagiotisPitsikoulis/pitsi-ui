@@ -16,23 +16,44 @@ const Skiper48 = () => {
   if (!mounted) {
     return (
       <div className="bg-background flex h-full w-full items-center justify-center overflow-hidden">
-        <div className="h-[380px] w-[260px] animate-pulse rounded-3xl bg-muted" />
+        <div className="bg-muted h-[380px] w-[260px] animate-pulse rounded-3xl" />
       </div>
     )
   }
 
   const images = [
-    { src: "https://skiper-ui.com/images/x.com/13.jpeg", alt: "Illustration 1" },
-    { src: "https://skiper-ui.com/images/x.com/32.jpeg", alt: "Illustration 2" },
-    { src: "https://skiper-ui.com/images/x.com/20.jpeg", alt: "Illustration 3" },
-    { src: "https://skiper-ui.com/images/x.com/21.jpeg", alt: "Illustration 4" },
-    { src: "https://skiper-ui.com/images/x.com/19.jpeg", alt: "Illustration 5" },
+    {
+      src: "https://skiper-ui.com/images/x.com/13.jpeg",
+      alt: "Illustration 1",
+    },
+    {
+      src: "https://skiper-ui.com/images/x.com/32.jpeg",
+      alt: "Illustration 2",
+    },
+    {
+      src: "https://skiper-ui.com/images/x.com/20.jpeg",
+      alt: "Illustration 3",
+    },
+    {
+      src: "https://skiper-ui.com/images/x.com/21.jpeg",
+      alt: "Illustration 4",
+    },
+    {
+      src: "https://skiper-ui.com/images/x.com/19.jpeg",
+      alt: "Illustration 5",
+    },
     { src: "https://skiper-ui.com/images/x.com/1.jpeg", alt: "Illustration 6" },
     { src: "https://skiper-ui.com/images/x.com/2.jpeg", alt: "Illustration 7" },
     { src: "https://skiper-ui.com/images/x.com/3.jpeg", alt: "Illustration 8" },
     { src: "https://skiper-ui.com/images/x.com/4.jpeg", alt: "Illustration 9" },
-    { src: "https://skiper-ui.com/images/x.com/5.jpeg", alt: "Illustration 10" },
-    { src: "https://skiper-ui.com/images/x.com/6.jpeg", alt: "Illustration 11" },
+    {
+      src: "https://skiper-ui.com/images/x.com/5.jpeg",
+      alt: "Illustration 10",
+    },
+    {
+      src: "https://skiper-ui.com/images/x.com/6.jpeg",
+      alt: "Illustration 11",
+    },
   ]
 
   return (
@@ -93,7 +114,7 @@ const Carousel_002 = ({
   if (!SwiperComponents || !images) {
     return (
       <div className={cn("relative w-full max-w-3xl", className)}>
-        <div className="flex h-[380px] w-[260px] mx-auto animate-pulse rounded-3xl bg-muted" />
+        <div className="bg-muted mx-auto flex h-[380px] w-[260px] animate-pulse rounded-3xl" />
       </div>
     )
   }

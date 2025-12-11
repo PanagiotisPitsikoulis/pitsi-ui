@@ -576,34 +576,6 @@ export const examples: Registry["items"] = [
     readiness: "production",
   },
   {
-    name: "calendar-demo",
-    type: "registry:example",
-    registryDependencies: ["calendar"],
-    files: [
-      {
-        path: "examples/calendar-demo.tsx",
-        type: "registry:example",
-      },
-    ],
-    tier: "free",
-    categories: ["core-components"],
-    readiness: "production",
-  },
-  {
-    name: "calendar-form",
-    type: "registry:example",
-    registryDependencies: ["calendar", "form", "popover"],
-    files: [
-      {
-        path: "examples/calendar-form.tsx",
-        type: "registry:example",
-      },
-    ],
-    tier: "free",
-    categories: ["core-components"],
-    readiness: "production",
-  },
-  {
     name: "card-demo",
     type: "registry:example",
     registryDependencies: ["card", "button", "switch"],
@@ -935,66 +907,6 @@ export const examples: Registry["items"] = [
         type: "registry:example",
       },
     ],
-    tier: "free",
-    categories: ["core-components"],
-    readiness: "production",
-  },
-  {
-    name: "date-picker-demo",
-    type: "registry:example",
-    registryDependencies: ["button", "calendar", "popover"],
-    files: [
-      {
-        path: "examples/date-picker-demo.tsx",
-        type: "registry:example",
-      },
-    ],
-    dependencies: ["date-fns"],
-    tier: "free",
-    categories: ["core-components"],
-    readiness: "production",
-  },
-  {
-    name: "date-picker-form",
-    type: "registry:example",
-    registryDependencies: ["button", "calendar", "form", "popover"],
-    files: [
-      {
-        path: "examples/date-picker-form.tsx",
-        type: "registry:example",
-      },
-    ],
-    dependencies: ["date-fns"],
-    tier: "free",
-    categories: ["core-components"],
-    readiness: "production",
-  },
-  {
-    name: "date-picker-with-presets",
-    type: "registry:example",
-    registryDependencies: ["button", "calendar", "popover", "select"],
-    files: [
-      {
-        path: "examples/date-picker-with-presets.tsx",
-        type: "registry:example",
-      },
-    ],
-    dependencies: ["date-fns"],
-    tier: "free",
-    categories: ["core-components"],
-    readiness: "production",
-  },
-  {
-    name: "date-picker-with-range",
-    type: "registry:example",
-    registryDependencies: ["button", "calendar", "popover"],
-    files: [
-      {
-        path: "examples/date-picker-with-range.tsx",
-        type: "registry:example",
-      },
-    ],
-    dependencies: ["date-fns"],
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
@@ -3346,28 +3258,6 @@ export const examples: Registry["items"] = [
     ],
     tier: "free",
     categories: ["primitives"],
-    readiness: "production",
-  },
-  {
-    name: "calendar-hijri",
-    description: "A Persian calendar.",
-    type: "registry:example",
-    registryDependencies: ["calendar"],
-    files: [
-      {
-        path: "examples/calendar-hijri.tsx",
-        type: "registry:example",
-      },
-    ],
-    tier: "free",
-    categories: ["core-components"],
-    meta: {
-      iframeHeight: "600px",
-      container:
-        "w-full bg-background min-h-svh flex px-4 py-12 items-start md:py-20 justify-center min-w-0",
-      mobile: "component",
-      readiness: "production",
-    },
     readiness: "production",
   },
 

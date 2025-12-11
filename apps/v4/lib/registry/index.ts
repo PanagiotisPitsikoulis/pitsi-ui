@@ -1,18 +1,22 @@
 import fs from "fs/promises"
 import { tmpdir } from "os"
 import path from "path"
-import { cacheLife } from "next/cache"
-import { registryItemFileSchema, registryItemSchema } from "pitsi/schema"
+import {
+  registryItemFileSchema,
+  registryItemSchema,
+  type RegistryItem,
+} from "pitsi/schema"
 import { Project, ScriptKind } from "ts-morph"
 import { z } from "zod"
 
+import { Index } from "@/registry/__index__"
 import { type Style } from "@/registry/styles"
 
 
 
 export type RegistryItemType = z.infer<typeof registryItemSchema>["type"]
 
-export type RegistryItem = z.infer<typeof registryItemSchema>
+export type { RegistryItem }
 
 export interface QueryRegistryOptions {
   
@@ -73,25 +77,19 @@ export async function queryRegistry(
       return allItems.find((item) => item.name === name) || null
     }
 
-  
+
   let items = await getAllRegistryItems({
     types: types.length > 0 ? types : undefined,
     mainCategory,
     subcategory,
   })
 
-  
-  
-  
-
-  
   if (categories.length > 0) {
     items = items.filter((item) =>
       item.categories?.some((cat) => categories.includes(cat))
     )
   }
 
-  
   if (excludeNamePrefix.length > 0) {
     items = items.filter(
       (item) =>
@@ -99,7 +97,6 @@ export async function queryRegistry(
     )
   }
 
-  
   if (excludeCharts) {
     items = items.filter((item) => !item.name.startsWith("chart-"))
   }
@@ -227,9 +224,6 @@ async function getRegistryItemWithContent(
   name: string,
   styleName: Style["name"]
 ): Promise<RegistryItem | null> {
-  "use cache"
-  cacheLife("max")
-
   try {
     const allItems = await getAllRegistryItems()
     const item = allItems.find((i) => i.name === name)
@@ -414,112 +408,64 @@ export async function getAllRegistryItems(options?: {
   mainCategory?: string
   subcategory?: string
 }): Promise<RegistryItem[]> {
-  "use cache"
-  cacheLife("max")
-
   const allItems: RegistryItem[] = []
 
+  // Extract all items from all styles (Index is statically imported at top)
+  for (const style in Index) {
+    const styleIndex = Index[style]
+    if (typeof styleIndex === "object" && styleIndex !== null) {
+      for (const itemName in styleIndex) {
+        const item = styleIndex[itemName]
+        allItems.push(item)
+      }
+    }
+  }
 
-  const indexFilesToLoad: string[] = []
+  // Cast items directly - schema validation removed as Index items have extra fields
+  // like `component` (React.lazy) that aren't part of the serializable schema
+  const validatedItems = allItems as RegistryItem[]
 
+  // Filter by types if specified
+  let filteredItems = validatedItems
   if (options?.types && options.types.length > 0) {
-    
-    for (const type of options.types) {
-      if (type === "registry:block" || type === "registry:internal") {
-        
-        if (options.mainCategory && options.subcategory) {
-          indexFilesToLoad.push(
-            `__index__blocks-${options.mainCategory}-${options.subcategory}`
-          )
-        } else if (options.mainCategory) {
-          indexFilesToLoad.push(`__index__blocks-${options.mainCategory}`)
-        } else {
-          
-          const blockCategories = [
-            "application",
-            "e-commerce",
-            "full-pages",
-            "marketing",
-          ]
-          blockCategories.forEach((cat) => {
-            indexFilesToLoad.push(`__index__blocks-${cat}`)
-          })
-        }
-      } else {
-        
-        const typeName = type.replace("registry:", "")
-        indexFilesToLoad.push(`__index__${typeName}`)
-      }
-    }
-  } else if (options?.mainCategory) {
-    
-    if (options.subcategory) {
-      indexFilesToLoad.push(
-        `__index__blocks-${options.mainCategory}-${options.subcategory}`
-      )
-    } else {
-      indexFilesToLoad.push(`__index__blocks-${options.mainCategory}`)
-    }
-  } else {
-    
-    const allIndexes = [
-      "__index__ui",
-      "__index__lib",
-      "__index__hook",
-      "__index__example",
-      "__index__theme",
-      "__index__style",
-      "__index__blocks-application",
-      "__index__blocks-e-commerce",
-      "__index__blocks-full-pages",
-      "__index__blocks-marketing",
-    ]
-    indexFilesToLoad.push(...allIndexes)
+    filteredItems = filteredItems.filter((item) =>
+      options.types!.includes(item.type)
+    )
   }
 
-
-  for (const indexFile of indexFilesToLoad) {
-    try {
-      const indexModule = await import(`@/registry/${indexFile}.tsx`)
-      const indexKey = Object.keys(indexModule).find((key) =>
-        key.startsWith("Index")
-      )
-
-      if (indexKey && indexModule[indexKey]) {
-        const Index = indexModule[indexKey]
-
-
-        for (const style in Index) {
-          const styleIndex = Index[style]
-          if (typeof styleIndex === "object" && styleIndex !== null) {
-            for (const itemName in styleIndex) {
-              const item = styleIndex[itemName]
-              allItems.push(item)
-            }
-          }
-        }
+  // Filter by mainCategory - use file path for blocks, categories array for others
+  if (options?.mainCategory) {
+    filteredItems = filteredItems.filter((item) => {
+      // For blocks, extract category from file path
+      if (item.type === "registry:block" || item.type === "registry:internal") {
+        const blockCategory = getBlockMainCategory(item)
+        return blockCategory === options.mainCategory
       }
-    } catch (error) {
-
-      console.warn(`⚠️  Index file ${indexFile} not found, skipping`)
-    }
-  }
-
-
-  const validatedItems = allItems
-    .map((item) => {
-      const result = registryItemSchema.safeParse(item)
-      return result.success ? result.data : null
+      // For non-blocks, use categories array
+      return item.categories?.includes(options.mainCategory!)
     })
-    .filter((item): item is RegistryItem => item !== null)
+  }
+
+  // Filter by subcategory - use file path for blocks, categories array for others
+  if (options?.subcategory) {
+    filteredItems = filteredItems.filter((item) => {
+      // For blocks, extract subcategory from file path
+      if (item.type === "registry:block" || item.type === "registry:internal") {
+        const blockSubcategory = getBlockSubcategory(item)
+        return blockSubcategory === options.subcategory
+      }
+      // For non-blocks, use categories array
+      return item.categories?.includes(options.subcategory!)
+    })
+  }
 
   // Filter out alpha items if HIDE_ALPHA_ITEMS env variable is set
   const hideAlpha = process.env.HIDE_ALPHA_ITEMS === "true"
   if (hideAlpha) {
-    return validatedItems.filter((item) => item.readiness !== "alpha")
+    return filteredItems.filter((item) => item.readiness !== "alpha")
   }
 
-  return validatedItems
+  return filteredItems
 }
 
 
@@ -990,9 +936,6 @@ export async function getRegistrySummaryCounts(): Promise<{
   components: number
   blocks: number
 }> {
-  "use cache"
-  cacheLife("max")
-
   // Get all items
   const allItems = await getAllRegistryItems()
 

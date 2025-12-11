@@ -4,9 +4,9 @@ import dynamic from "next/dynamic"
 
 const Skiper48 = dynamic(
   () =>
-    import(
-      "@/registry/new-york-v4/animations/card-swipe-carousel/card-swipe-carousel"
-    ).then((mod) => mod.Skiper48),
+    import("@/registry/new-york-v4/animations/card-swipe-carousel/card-swipe-carousel").then(
+      (mod) => mod.Skiper48
+    ),
   { ssr: false }
 )
 

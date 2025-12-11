@@ -1,6 +1,6 @@
 import { Metadata } from "next"
-import { notFound } from "next/navigation"
 import { cacheLife } from "next/cache"
+import { notFound } from "next/navigation"
 
 import {
   categoryLabels,
@@ -10,11 +10,6 @@ import {
   parseSlug,
 } from "@/lib/blog/source"
 import { absoluteUrl } from "@/lib/utils"
-import { Spacer } from "@/registry/new-york-v4/ui/spacer"
-
-import { PlayingCardsIcon } from "@/components/icons/hero-icons"
-import { ContentPageLayout } from "@/components/layout/content-page-layout"
-
 import {
   BlogList,
   BlogListSidebar,
@@ -22,6 +17,9 @@ import {
   BlogPostContent,
   BlogPostSidebar,
 } from "@/components/blog"
+import { PlayingCardsIcon } from "@/components/icons/hero-icons"
+import { ContentPageLayout } from "@/components/layout/content-page-layout"
+import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 
 export function generateStaticParams() {
   return generateBlogStaticParams()
@@ -30,6 +28,8 @@ export function generateStaticParams() {
 export async function generateMetadata(props: {
   params: Promise<{ slug?: string[] }>
 }): Promise<Metadata> {
+  "use cache"
+  cacheLife("max")
   const params = await props.params
   const parsed = parseSlug(params.slug)
 

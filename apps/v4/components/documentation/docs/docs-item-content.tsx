@@ -13,13 +13,31 @@ import z from "zod"
 import { type DocsItemType } from "@/lib/pages/docs"
 import { source } from "@/lib/source"
 import { absoluteUrl } from "@/lib/utils"
+import { ErrorBoundary } from "@/components/ui/error-boundary"
+import { PoweredByBadge } from "@/components/ui/powered-by-badge"
 import { DocsCopyPage } from "@/components/documentation/docs/docs-copy-page"
 import { DocsTableOfContents } from "@/components/documentation/docs/docs-toc"
 import { OpenInV0Cta } from "@/components/documentation/integrations/open-in-v0-cta"
-import { PoweredByBadge } from "@/components/ui/powered-by-badge"
 import { Index } from "@/registry/__index__"
 import { Badge } from "@/registry/new-york-v4/ui/badge"
 import { Button } from "@/registry/new-york-v4/ui/button"
+
+function SafeMDX({
+  MDX,
+  components,
+}: {
+  MDX: React.ComponentType<{ components: typeof mdxComponents }> | null
+  components: typeof mdxComponents
+}) {
+  if (!MDX) {
+    return null
+  }
+  return (
+    <ErrorBoundary>
+      <MDX components={components} />
+    </ErrorBoundary>
+  )
+}
 
 export async function DocsItemContent({
   itemName,
@@ -34,36 +52,50 @@ export async function DocsItemContent({
     notFound()
   }
 
-  const doc = page.data
-  const MDX = doc.body
-  const neighbours = findNeighbour(source.pageTree, page.url)
+  const doc = page?.data
+  if (!doc) {
+    notFound()
+  }
 
-  // Get registry item for poweredBy info from Index
-  const registryItem = Index["new-york-v4"]?.[itemName]
+  const MDX = doc.body ?? null
+  const neighbours = findNeighbour(source.pageTree, page.url) ?? {
+    previous: null,
+    next: null,
+  }
+
+  // Get registry item for poweredBy info from Index - safely access
+  let registryItem: (typeof Index)["new-york-v4"][string] | undefined
+  try {
+    registryItem = Index?.["new-york-v4"]?.[itemName]
+  } catch {
+    registryItem = undefined
+  }
 
   // Safely get raw text for front-matter parsing
   let raw = ""
   let links: { doc?: string; api?: string } | undefined
   try {
-    raw = await page.data.getText("raw")
-    const { attributes } = fm(raw)
-    const parsed = z
-      .object({
-        links: z
-          .object({
-            doc: z.string().optional(),
-            api: z.string().optional(),
-          })
-          .optional(),
-      })
-      .safeParse(attributes)
-    links = parsed.success ? parsed.data.links : undefined
+    raw = (await page.data.getText?.("raw")) ?? ""
+    if (raw) {
+      const { attributes } = fm(raw)
+      const parsed = z
+        .object({
+          links: z
+            .object({
+              doc: z.string().optional(),
+              api: z.string().optional(),
+            })
+            .optional(),
+        })
+        .safeParse(attributes)
+      links = parsed.success ? parsed.data.links : undefined
+    }
   } catch (error) {
     console.warn(`Failed to parse front-matter for ${itemName}:`, error)
   }
 
-  const enhancedToc = doc.toc || []
-  const hasToc = enhancedToc?.length
+  const enhancedToc = doc.toc ?? []
+  const hasToc = enhancedToc.length > 0
 
   return (
     <div className="flex items-stretch text-[1.05rem] sm:text-[15px] xl:w-full">
@@ -76,11 +108,11 @@ export async function DocsItemContent({
             <div className="flex flex-col gap-2">
               <div className="flex items-start justify-between">
                 <h1 className="scroll-m-20 text-4xl font-semibold tracking-tight sm:text-3xl xl:text-4xl">
-                  {doc.title}
+                  {doc.title ?? itemName}
                 </h1>
                 <div className="docs-nav bg-background/80 border-border/50 fixed inset-x-0 bottom-0 isolate z-50 flex items-center gap-2 border-t px-6 py-4 backdrop-blur-sm sm:static sm:z-0 sm:border-t-0 sm:bg-transparent sm:px-0 sm:pt-1.5 sm:backdrop-blur-none">
                   <DocsCopyPage page={raw} url={absoluteUrl(page.url)} />
-                  {neighbours.previous && (
+                  {neighbours.previous?.url && (
                     <Button
                       variant="outline"
                       size="icon"
@@ -93,7 +125,7 @@ export async function DocsItemContent({
                       </Link>
                     </Button>
                   )}
-                  {neighbours.next && (
+                  {neighbours.next?.url && (
                     <Button
                       variant="outline"
                       size="icon"
@@ -139,23 +171,23 @@ export async function DocsItemContent({
             ) : null}
           </div>
           <div className="w-full flex-1 *:data-[slot=alert]:first:mt-0">
-            <MDX components={mdxComponents} />
+            <SafeMDX MDX={MDX} components={mdxComponents} />
           </div>
         </div>
         <div
           className={`mx-auto hidden h-16 w-full items-center gap-2 px-4 sm:flex md:px-0 ${hasToc ? "max-w-2xl" : "max-w-6xl"}`}
         >
-          {neighbours.previous && (
-            <Button variant="outline" size="sm" asChild className="shadow-none">
+          {neighbours.previous?.url && (
+            <Button variant="outline" size="sm" asChild>
               <Link href={neighbours.previous.url}>
-                <IconArrowLeft /> {neighbours.previous.name}
+                <IconArrowLeft /> {neighbours.previous.name ?? "Previous"}
               </Link>
             </Button>
           )}
-          {neighbours.next && (
+          {neighbours.next?.url && (
             <Button variant="outline" size="sm" className="ml-auto" asChild>
               <Link href={neighbours.next.url}>
-                {neighbours.next.name} <IconArrowRight />
+                {neighbours.next.name ?? "Next"} <IconArrowRight />
               </Link>
             </Button>
           )}
