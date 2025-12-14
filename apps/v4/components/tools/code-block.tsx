@@ -1,0 +1,138 @@
+"use client"
+
+import { memo, useEffect, useState } from "react"
+import { Check, Copy } from "lucide-react"
+import { codeToHtml } from "shiki"
+
+import { cn } from "@/lib/utils"
+import { Button } from "@/registry/new-york-v4/ui/button"
+import { ScrollArea } from "@/registry/new-york-v4/ui/scroll-area"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/registry/new-york-v4/ui/tooltip"
+
+export interface CodeBlockProps {
+  code: string
+  language?: string
+  filename: string
+  onCopy?: () => void
+  height?: number | string
+  className?: string
+}
+
+export const CodeBlock = memo(function CodeBlock({
+  code,
+  language = "css",
+  filename,
+  onCopy,
+  height = 180,
+  className,
+}: CodeBlockProps) {
+  const [highlightedCode, setHighlightedCode] = useState<string>("")
+  const [copied, setCopied] = useState(false)
+
+  useEffect(() => {
+    let mounted = true
+
+    const highlight = async () => {
+      try {
+        const html = await codeToHtml(code, {
+          lang: language,
+          themes: {
+            dark: "github-dark",
+            light: "github-light",
+          },
+          defaultColor: false,
+          transformers: [
+            {
+              pre(node) {
+                node.properties["class"] = "shiki bg-transparent p-0 m-0"
+              },
+            },
+          ],
+        })
+        if (mounted) {
+          setHighlightedCode(html)
+        }
+      } catch {
+        // Fallback to plain text
+        if (mounted) {
+          setHighlightedCode(`<pre><code>${escapeHtml(code)}</code></pre>`)
+        }
+      }
+    }
+
+    highlight()
+
+    return () => {
+      mounted = false
+    }
+  }, [code, language])
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(code)
+    setCopied(true)
+    onCopy?.()
+    setTimeout(() => setCopied(false), 2000)
+  }
+
+  const heightValue = typeof height === "number" ? `${height}px` : height
+
+  return (
+    <figure
+      data-rehype-pretty-code-figure=""
+      className={cn(
+        "bg-code text-code-foreground !mx-0 mt-0 w-full overflow-hidden rounded-lg border shadow-xs",
+        className
+      )}
+    >
+      <figcaption
+        className="text-code-foreground flex h-10 items-center justify-between gap-2 border-b px-3"
+        data-language={language}
+      >
+        <span className="text-xs font-medium opacity-70">{filename}</span>
+        <TooltipProvider delayDuration={0}>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="size-7 shadow-none"
+                onClick={handleCopy}
+              >
+                {copied ? (
+                  <Check className="size-3.5" />
+                ) : (
+                  <Copy className="size-3.5" />
+                )}
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>{copied ? "Copied!" : "Copy"}</TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      </figcaption>
+      <ScrollArea style={{ height: heightValue }}>
+        <div
+          className={cn(
+            "w-full p-3 font-mono text-xs leading-relaxed",
+            "[&_pre]:!bg-transparent [&_pre]:whitespace-pre-wrap [&_pre]:break-all",
+            "[&_code]:!bg-transparent [&_code]:whitespace-pre-wrap [&_code]:break-all"
+          )}
+          dangerouslySetInnerHTML={{ __html: highlightedCode }}
+        />
+      </ScrollArea>
+    </figure>
+  )
+})
+
+function escapeHtml(text: string): string {
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;")
+}

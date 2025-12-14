@@ -117,11 +117,11 @@ const tabsData: ITabData[] = [
   },
   {
     id: 13,
-    title: "Template Views",
+    title: "Full Page Blocks",
     imageSrc:
       "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg",
     description:
-      "See each block in a full page context. Copy entire templates or pick individual blocks for your project.",
+      "Complete landing pages, dashboards, and apps. Copy entire pages or pick individual blocks for your project.",
   },
   {
     id: 14,

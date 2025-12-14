@@ -1,6 +1,5 @@
 import { Suspense } from "react"
 import { Metadata } from "next"
-import { cacheLife } from "next/cache"
 
 import { getRegistrySummaryCounts } from "@/lib/registry"
 
@@ -64,8 +63,6 @@ async function IndexPageInteral({
 }: {
   pricingSection: React.ReactNode
 }) {
-  "use cache"
-  cacheLife("max")
   const registryCounts = await getRegistrySummaryCounts()
 
   return (

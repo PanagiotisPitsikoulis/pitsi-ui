@@ -1,7 +1,7 @@
 "use client"
 
 import type { ReactNode } from "react"
-import { memo, useCallback, useEffect, useRef, useState } from "react"
+import { memo, useEffect, useState } from "react"
 import Link from "next/link"
 
 import { cn } from "@/lib/utils"
@@ -36,27 +36,18 @@ export const SiteHeaderClient = memo(function SiteHeaderClient({
   }>
 }) {
   const [hasScrolled, setHasScrolled] = useState(false)
-  const rafRef = useRef<number | null>(null)
-
-  const handleScroll = useCallback(() => {
-    if (rafRef.current !== null) return
-
-    rafRef.current = requestAnimationFrame(() => {
-      setHasScrolled(window.scrollY > 10)
-      rafRef.current = null
-    })
-  }, [])
 
   useEffect(() => {
+    const handleScroll = () => {
+      setHasScrolled(window.scrollY > 10)
+    }
+
     handleScroll()
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => {
       window.removeEventListener("scroll", handleScroll)
-      if (rafRef.current !== null) {
-        cancelAnimationFrame(rafRef.current)
-      }
     }
-  }, [handleScroll])
+  }, [])
 
   const containerClassName =
     "flex h-(--header-height) items-center px-6 lg:px-3"
@@ -94,13 +85,13 @@ export const SiteHeaderClient = memo(function SiteHeaderClient({
           className="hidden lg:flex"
         />
         <div className="ml-auto flex items-center gap-1 md:flex-1 md:justify-end md:gap-2">
-          <div key="command-menu-desktop" className="hidden w-full flex-1 md:flex md:w-auto md:flex-none">
+          <div className="hidden w-full flex-1 md:flex md:w-auto md:flex-none">
             {commandMenu}
           </div>
-          <div key="github-mobile" className="flex md:hidden">{githubLink}</div>
-          <div key="command-menu-mobile" className="flex md:hidden">{commandMenu}</div>
-          <div key="github-desktop" className="hidden items-center gap-2 md:flex">{githubLink}</div>
-          <div key="user-nav">{userNav}</div>
+          <div className="flex md:hidden">{githubLink}</div>
+          <div className="flex md:hidden">{commandMenu}</div>
+          <div className="hidden items-center gap-2 md:flex">{githubLink}</div>
+          {userNav}
         </div>
       </div>
     </header>

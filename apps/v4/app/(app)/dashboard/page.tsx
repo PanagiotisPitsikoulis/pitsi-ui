@@ -1,8 +1,36 @@
+import { Metadata } from "next"
 import { redirect } from "next/navigation"
 import { Calendar, Key, Sparkles } from "lucide-react"
 
 import { getUserApiKeys } from "@/lib/server/api-keys"
 import { db } from "@/lib/server/db"
+
+const title = "Dashboard"
+const description = "Manage your pitsi/ui account and settings"
+
+export const metadata: Metadata = {
+  title,
+  description,
+  openGraph: {
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent(
+          title
+        )}&description=${encodeURIComponent(description)}`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent(
+          title
+        )}&description=${encodeURIComponent(description)}`,
+      },
+    ],
+  },
+}
 import { user as userTable } from "@/lib/server/db/schema"
 import { getCurrentUser } from "@/lib/server/user"
 import { Badge } from "@/registry/new-york-v4/ui/badge"

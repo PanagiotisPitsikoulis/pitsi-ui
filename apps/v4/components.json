@@ -21,6 +21,12 @@
   "registries": {
     "@tailark": "https://tailark.com/r/{name}.json",
     "@magicui": "https://magicui.design/r/{name}.json",
-    "@kibo-ui": "https://www.kibo-ui.com/r/{name}.json"
+    "@kibo-ui": "https://www.kibo-ui.com/r/{name}.json",
+    "@shadcnblocks": {
+      "url": "https://shadcnblocks.com/r/{name}.json",
+      "headers": {
+        "Authorization": "Bearer sk_live_2_XgKZlwVOgir9v6Wxvw9muWndYYJ2EF"
+      }
+    }
   }
 }

@@ -17,3 +17,17 @@ export { DynamicPricingSection } from "./dynamic-pricing-section"
 export { PricingToast } from "./pricing-toast"
 export { CTASection } from "./cta-section"
 export { ReviewsSection } from "./reviews-section"
+
+// Feature page sections - Blocks
+export { BlocksHeroSection } from "./blocks-hero-section"
+export { BlocksPurposeSection } from "./blocks-purpose-section"
+export { BlocksCategoriesSection } from "./blocks-categories-section"
+export { BlocksShowcaseSection } from "./blocks-showcase-section"
+export { BlocksWorkflowSection } from "./blocks-workflow-section"
+
+// Feature page sections - Components
+export { ComponentsHeroSection } from "./components-hero-section"
+export { ComponentsPurposeSection } from "./components-purpose-section"
+export { ComponentsCategoriesSection } from "./components-categories-section"
+export { ComponentsQualitySection } from "./components-quality-section"
+export { ComponentsIntegrationSection } from "./components-integration-section"

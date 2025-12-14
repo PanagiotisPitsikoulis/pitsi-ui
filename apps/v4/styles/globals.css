@@ -8,9 +8,14 @@
 
 @custom-variant fixed (&:is(.layout-fixed *));
 
-/* Disable smooth scrolling globally */
+/* Disable smooth scrolling and overscroll globally */
 html {
   scroll-behavior: auto !important;
+  overscroll-behavior: none;
+}
+
+body {
+  overscroll-behavior: none;
 }
 
 * {
@@ -113,7 +118,7 @@ html {
 }
 
 :root {
-  --radius: 0.75rem;
+  --radius: 0.875rem;
   --background: oklch(0.995 0 0);
   --foreground: oklch(0.13 0 0);
   --card: oklch(0.99 0 0);

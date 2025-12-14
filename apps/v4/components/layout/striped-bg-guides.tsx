@@ -10,6 +10,7 @@ interface AnimatedBackgroundGuidesProps {
   columnCount?: number
   className?: string
   solidLines?: number[]
+  hiddenLines?: number[]
   animated?: boolean
   animationDuration?: number
   animationDelay?: number
@@ -40,6 +41,7 @@ export function StripeBgGuides({
   columnCount = 4,
   className = "",
   solidLines = [],
+  hiddenLines = [], // Add hiddenLines here
   animated = true,
   animationDuration = 62,
   animationDelay = 0.8,
@@ -179,58 +181,63 @@ export function StripeBgGuides({
     >
       <div className="relative z-0 container h-full w-full px-6">
         <div className="relative grid h-full grid-cols-6 gap-6">
-          {[...Array(columnCount_ + 1)].map((_, index) => (
-            <div
-              key={index}
-              className="absolute inset-y-0 w-px overflow-hidden"
-              style={{
-                left: getLinePosition(index),
-                ...(solidLines.includes(index + 1)
-                  ? { background: lineColors.solid }
-                  : {
-                      backgroundImage: `linear-gradient(to bottom, ${lineColors.dashed} 50%, transparent 50%)`,
-                      backgroundSize: "1px 8px",
-                    }),
-              }}
-            >
-              <AnimatePresence>
-                {animated && finalActiveColumns[index] && (
-                  <motion.div
-                    key={`glow-${index}`}
-                    className="absolute w-full"
-                    style={{
-                      height: glowSize,
-                      background: `linear-gradient(to bottom, transparent, ${glowColor}, ${
-                        darkMode ? "white" : "black"
-                      })`,
-                      opacity: glowOpacity,
-                    }}
-                    initial={
-                      typeof animationVariants.initial === "function"
-                        ? animationVariants.initial()
-                        : animationVariants.initial
-                    }
-                    animate={
-                      typeof animationVariants.animate === "function"
-                        ? animationVariants.animate()
-                        : animationVariants.animate
-                    }
-                    exit={
-                      typeof animationVariants.initial === "function"
-                        ? animationVariants.initial()
-                        : animationVariants.initial
-                    }
-                    transition={{
-                      duration: animationDuration,
-                      repeat: Infinity,
-                      ease: easingFunctions[easing],
-                      delay: index * animationDelay,
-                    }}
-                  />
-                )}
-              </AnimatePresence>
-            </div>
-          ))}
+          {[...Array(columnCount_ + 1)].map((_, index) => {
+            if (hiddenLines.includes(index + 1)) {
+              return null // Skip rendering this line
+            }
+            return (
+              <div
+                key={index}
+                className="absolute inset-y-0 w-px overflow-hidden"
+                style={{
+                  left: getLinePosition(index),
+                  ...(solidLines.includes(index + 1)
+                    ? { background: lineColors.solid }
+                    : {
+                        backgroundImage: `linear-gradient(to bottom, ${lineColors.dashed} 50%, transparent 50%)`,
+                        backgroundSize: "1px 8px",
+                      }),
+                }}
+              >
+                <AnimatePresence>
+                  {animated && finalActiveColumns[index] && (
+                    <motion.div
+                      key={`glow-${index}`}
+                      className="absolute w-full"
+                      style={{
+                        height: glowSize,
+                        background: `linear-gradient(to bottom, transparent, ${glowColor}, ${
+                          darkMode ? "white" : "black"
+                        })`,
+                        opacity: glowOpacity,
+                      }}
+                      initial={
+                        typeof animationVariants.initial === "function"
+                          ? animationVariants.initial()
+                          : animationVariants.initial
+                      }
+                      animate={
+                        typeof animationVariants.animate === "function"
+                          ? animationVariants.animate()
+                          : animationVariants.animate
+                      }
+                      exit={
+                        typeof animationVariants.initial === "function"
+                          ? animationVariants.initial()
+                          : animationVariants.initial
+                      }
+                      transition={{
+                        duration: animationDuration,
+                        repeat: Infinity,
+                        ease: easingFunctions[easing],
+                        delay: index * animationDelay,
+                      }}
+                    />
+                  )}
+                </AnimatePresence>
+              </div>
+            )
+          })}
         </div>
       </div>
     </div>

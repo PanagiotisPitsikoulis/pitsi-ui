@@ -1,5 +1,4 @@
-import { cn } from "@/lib/utils"
-import { Marquee } from "@/registry/new-york-v4/ui/marquee"
+import { ReviewsMarqueeBlock } from "../_blocks"
 
 const reviews = [
   {
@@ -40,62 +39,12 @@ const reviews = [
   },
 ]
 
-const firstRow = reviews.slice(0, reviews.length / 2)
-const secondRow = reviews.slice(reviews.length / 2)
-
-function ReviewCard({
-  name,
-  username,
-  body,
-  img,
-}: {
-  name: string
-  username: string
-  body: string
-  img: string
-}) {
-  return (
-    <figure
-      className={cn(
-        "relative h-full w-72 cursor-pointer overflow-hidden rounded-xl border p-5 shadow-2xs",
-        "border-border bg-background"
-      )}
-    >
-      <div className="flex flex-row items-center gap-2.5">
-        <img
-          className="size-9 shrink-0 rounded-full"
-          src={img}
-          alt={name}
-          width={36}
-          height={36}
-        />
-        <div className="flex flex-col">
-          <figcaption className="text-sm font-medium">{name}</figcaption>
-          <p className="text-muted-foreground text-xs font-medium">
-            {username}
-          </p>
-        </div>
-      </div>
-      <blockquote className="text-muted-foreground mt-2.5 text-sm leading-relaxed">
-        {body}
-      </blockquote>
-    </figure>
-  )
-}
-
 export function ReviewsSection() {
   return (
-    <div id="reviews" className="relative mx-auto -mt-10 flex w-full max-w-[1920px] flex-col items-center justify-center overflow-hidden pb-10">
-      <Marquee pauseOnHover className="[--duration:20s]">
-        {firstRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
-        ))}
-      </Marquee>
-      <Marquee reverse pauseOnHover className="[--duration:20s]">
-        {secondRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
-        ))}
-      </Marquee>
-    </div>
+    <ReviewsMarqueeBlock
+      reviews={reviews}
+      duration="20s"
+      className="-mt-10 pb-10"
+    />
   )
 }

@@ -8,6 +8,16 @@ export const staticPages = [
   { url: "/changelog", priority: 0.5 },
   { url: "/blocks", priority: 0.8 },
   { url: "/blog", priority: 0.8 },
+  { url: "/tools", priority: 0.8 },
+  { url: "/tools/theme-generator", priority: 0.7 },
+  { url: "/tools/shadow-composer", priority: 0.7 },
+  { url: "/tools/page-builder", priority: 0.6 },
+  { url: "/tools/project-preview-composer", priority: 0.6 },
+  { url: "/tools/spacing-generator", priority: 0.6 },
+  { url: "/tools/typography-composer", priority: 0.6 },
+  { url: "/templates", priority: 0.8 },
+  { url: "/signin", priority: 0.3 },
+  { url: "/signup", priority: 0.3 },
 ] as const
 
 export type SitemapEntry = {

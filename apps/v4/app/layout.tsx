@@ -1,5 +1,6 @@
 import { Suspense } from "react"
 import type { Metadata } from "next"
+import { NuqsAdapter } from "nuqs/adapters/next/app"
 
 import { META_THEME_COLORS, siteConfig } from "@/lib/config"
 import { fontVariables } from "@/lib/config/fonts"
@@ -92,7 +93,7 @@ export default function RootLayout({
       </head>
       <body
         className={cn(
-          "group/body font-sans overscroll-none antialiased [--footer-height:calc(var(--spacing)*14)] [--header-height:calc(var(--spacing)*14)] xl:[--footer-height:calc(var(--spacing)*24)]",
+          "group/body font-sans antialiased [--footer-height:calc(var(--spacing)*14)] [--header-height:calc(var(--spacing)*14)] xl:[--footer-height:calc(var(--spacing)*24)]",
           fontVariables
         )}
       >
@@ -102,7 +103,7 @@ export default function RootLayout({
               <Suspense fallback={null}>
                 <ScrollToTop />
               </Suspense>
-              {children}
+              <NuqsAdapter>{children}</NuqsAdapter>
               <Toaster position="top-center" />
               <Analytics />
             </ActiveThemeProvider>

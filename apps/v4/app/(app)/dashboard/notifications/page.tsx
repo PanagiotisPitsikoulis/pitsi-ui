@@ -1,48 +1,34 @@
-"use client"
+import { Metadata } from "next"
 
-import { useState } from "react"
+import NotificationsPageClient from "./page.client"
 
-import { Separator } from "@/registry/new-york-v4/ui/separator"
+const title = "Notifications"
+const description = "Configure how you receive notifications"
 
-import { NotificationToggle, PageHeader, SettingsCard } from "@/components/dashboard"
+export const metadata: Metadata = {
+  title,
+  description,
+  openGraph: {
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent(
+          title
+        )}&description=${encodeURIComponent(description)}`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent(
+          title
+        )}&description=${encodeURIComponent(description)}`,
+      },
+    ],
+  },
+}
 
 export default function NotificationsPage() {
-  const [emailNotifications, setEmailNotifications] = useState(true)
-  const [pushNotifications, setPushNotifications] = useState(false)
-  const [weeklyDigest, setWeeklyDigest] = useState(true)
-
-  return (
-    <div className="space-y-6">
-      <PageHeader
-        title="Notifications"
-        description="Configure how you receive notifications"
-      />
-      <SettingsCard
-        title="Notification Preferences"
-        description="Configure how you receive notifications"
-        saveLabel="Save Preferences"
-      >
-        <NotificationToggle
-          label="Email Notifications"
-          description="Receive notifications via email"
-          checked={emailNotifications}
-          onCheckedChange={setEmailNotifications}
-        />
-        <Separator />
-        <NotificationToggle
-          label="Push Notifications"
-          description="Receive push notifications on your devices"
-          checked={pushNotifications}
-          onCheckedChange={setPushNotifications}
-        />
-        <Separator />
-        <NotificationToggle
-          label="Weekly Digest"
-          description="Get a weekly summary of your activity"
-          checked={weeklyDigest}
-          onCheckedChange={setWeeklyDigest}
-        />
-      </SettingsCard>
-    </div>
-  )
+  return <NotificationsPageClient />
 }

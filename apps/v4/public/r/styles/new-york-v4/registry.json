@@ -13575,6 +13575,22 @@
       "readiness": "beta"
     },
     {
+      "name": "marketing-gallery-art-masonry-grid",
+      "type": "registry:block",
+      "description": "A masonry grid gallery with art images.",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/marketing/gallery/art-masonry-grid.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "marketing"
+      ],
+      "tier": "free",
+      "readiness": "alpha"
+    },
+    {
       "name": "marketing-hero-section-accommodation-businesses-hero-section",
       "type": "registry:block",
       "description": "A accommodation businesses hero section block.",

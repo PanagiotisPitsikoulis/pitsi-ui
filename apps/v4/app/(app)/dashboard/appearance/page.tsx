@@ -1,30 +1,34 @@
-"use client"
+import { Metadata } from "next"
 
-import { Separator } from "@/registry/new-york-v4/ui/separator"
+import AppearancePageClient from "./page.client"
 
-import {
-  AccentColorPicker,
-  PageHeader,
-  SettingsCard,
-  ThemeSelector,
-} from "@/components/dashboard"
+const title = "Appearance"
+const description = "Customize the look and feel of your dashboard"
+
+export const metadata: Metadata = {
+  title,
+  description,
+  openGraph: {
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent(
+          title
+        )}&description=${encodeURIComponent(description)}`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent(
+          title
+        )}&description=${encodeURIComponent(description)}`,
+      },
+    ],
+  },
+}
 
 export default function AppearancePage() {
-  return (
-    <div className="space-y-6">
-      <PageHeader
-        title="Appearance"
-        description="Customize the look and feel of your dashboard"
-      />
-      <SettingsCard
-        title="Appearance Settings"
-        description="Customize the look and feel of your dashboard"
-        saveLabel="Save Appearance"
-      >
-        <ThemeSelector />
-        <Separator />
-        <AccentColorPicker />
-      </SettingsCard>
-    </div>
-  )
+  return <AppearancePageClient />
 }

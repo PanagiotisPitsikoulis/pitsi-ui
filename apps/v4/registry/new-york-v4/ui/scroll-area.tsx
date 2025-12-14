@@ -3,7 +3,7 @@
 import * as React from "react"
 import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area"
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils/index"
 
 function ScrollArea({
   className,
@@ -49,7 +49,7 @@ function ScrollBar({
     >
       <ScrollAreaPrimitive.ScrollAreaThumb
         data-slot="scroll-area-thumb"
-        className="bg-border relative flex-1 rounded-full"
+        className="bg-background relative flex-1 rounded-full shadow-2xs"
       />
     </ScrollAreaPrimitive.ScrollAreaScrollbar>
   )

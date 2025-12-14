@@ -1,8 +1,36 @@
+import { Metadata } from "next"
 import { redirect } from "next/navigation"
 import { FileText } from "lucide-react"
 
 import { db } from "@/lib/server/db"
 import { user as userTable } from "@/lib/server/db/schema"
+
+const title = "Invoices"
+const description = "View and download your payment history"
+
+export const metadata: Metadata = {
+  title,
+  description,
+  openGraph: {
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent(
+          title
+        )}&description=${encodeURIComponent(description)}`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent(
+          title
+        )}&description=${encodeURIComponent(description)}`,
+      },
+    ],
+  },
+}
 import { stripe } from "@/lib/server/stripe"
 import { getCurrentUser } from "@/lib/server/user"
 import { eq } from "drizzle-orm"

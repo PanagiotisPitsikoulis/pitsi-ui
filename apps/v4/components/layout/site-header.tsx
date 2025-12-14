@@ -19,7 +19,6 @@ export async function SiteHeaderInternal({
 }: {
   userNav: React.ReactNode
 }) {
-  "use cache"
   const pageTree = source.pageTree
   const navItems = siteConfig.navItems
 

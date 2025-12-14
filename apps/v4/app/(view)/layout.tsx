@@ -15,7 +15,7 @@ export default function ViewLayout({
         <meta name="robots" content="noindex, nofollow" />
       </head>
       <body
-        className={cn("bg-page overscroll-none antialiased", fontVariables)}
+        className={cn("bg-page antialiased", fontVariables)}
       >
         <ThemeProvider>{children}</ThemeProvider>
       </body>
