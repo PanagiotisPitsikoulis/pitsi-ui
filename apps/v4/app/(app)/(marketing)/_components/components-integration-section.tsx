@@ -5,7 +5,7 @@ import {
   Terminal,
 } from "lucide-react"
 
-import { IntegrationBentoBlock } from "../_blocks"
+import { IntegrationBentoBlock } from "../_blocks/integration-bento-block"
 
 const integrations = [
   {

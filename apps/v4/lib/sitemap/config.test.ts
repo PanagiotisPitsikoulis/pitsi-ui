@@ -65,6 +65,30 @@ describe("sitemap config", () => {
       expect(blogPage?.priority).toBe(0.8)
     })
 
+    it("should have content-features page", () => {
+      const page = staticPages.find((p) => p.url === "/content-features")
+      expect(page).toBeDefined()
+      expect(page?.priority).toBe(0.7)
+    })
+
+    it("should have design-purpose page", () => {
+      const page = staticPages.find((p) => p.url === "/design-purpose")
+      expect(page).toBeDefined()
+      expect(page?.priority).toBe(0.7)
+    })
+
+    it("should have advanced-features page", () => {
+      const page = staticPages.find((p) => p.url === "/advanced-features")
+      expect(page).toBeDefined()
+      expect(page?.priority).toBe(0.7)
+    })
+
+    it("should have tools-information page", () => {
+      const page = staticPages.find((p) => p.url === "/tools-information")
+      expect(page).toBeDefined()
+      expect(page?.priority).toBe(0.7)
+    })
+
     it("should have priorities between 0 and 1", () => {
       staticPages.forEach((page) => {
         expect(page.priority).toBeGreaterThanOrEqual(0)

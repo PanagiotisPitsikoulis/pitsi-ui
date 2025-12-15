@@ -18,6 +18,11 @@ export const staticPages = [
   { url: "/templates", priority: 0.8 },
   { url: "/signin", priority: 0.3 },
   { url: "/signup", priority: 0.3 },
+  // Feature pages
+  { url: "/content-features", priority: 0.7 },
+  { url: "/design-purpose", priority: 0.7 },
+  { url: "/advanced-features", priority: 0.7 },
+  { url: "/tools-information", priority: 0.7 },
 ] as const
 
 export type SitemapEntry = {

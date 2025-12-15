@@ -1,30 +1,33 @@
 import { Metadata } from "next"
 
-import {
-  BlocksCategoriesSection,
-  BlocksHeroSection,
-  BlocksShowcaseSection,
-  BlocksWorkflowSection,
-  CTASection,
-  ReviewsSection,
-  StripeBgGuides,
-} from "../../_components"
+const title = "Blocks - Pitsi UI"
+const description =
+  "1000+ production-ready UI blocks. Marketing, e-commerce, dashboards, authentication—build entire pages in minutes."
 
 export const metadata: Metadata = {
-  title: "Blocks - Pitsi UI",
-  description: "1000+ production-ready UI blocks. Marketing, e-commerce, dashboards, authentication—build entire pages in minutes.",
+  title,
+  description,
+  openGraph: {
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent(
+          title
+        )}&description=${encodeURIComponent(description)}`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [
+      {
+        url: `/og?title=${encodeURIComponent(
+          title
+        )}&description=${encodeURIComponent(description)}`,
+      },
+    ],
+  },
 }
 
 export default function BlocksPage() {
-  return (
-    <div className="relative min-h-screen">
-      <StripeBgGuides columnCount={6} animated={false} />
-      <BlocksHeroSection />
-      <BlocksCategoriesSection />
-      <BlocksShowcaseSection />
-      <BlocksWorkflowSection />
-      <CTASection />
-      <ReviewsSection />
-    </div>
-  )
+  return <div className="relative min-h-screen">{/* Empty */}</div>
 }

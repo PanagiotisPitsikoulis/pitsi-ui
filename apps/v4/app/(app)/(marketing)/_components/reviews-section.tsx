@@ -1,4 +1,4 @@
-import { ReviewsMarqueeBlock } from "../_blocks"
+import { ReviewsMarqueeBlock } from "../_blocks/reviews-marquee-block"
 
 const reviews = [
   {

@@ -88,4 +88,5 @@ export const STORAGE_KEYS = {
   SPACING_GENERATOR: "pitsi-tool-spacing-generator-saved",
   TYPOGRAPHY_COMPOSER: "pitsi-tool-typography-composer-saved",
   TEMPLATE_BUILDER: "pitsi-tool-template-builder-saved",
+  BACKGROUND_DECORATIONS: "pitsi-tool-background-decorations-saved",
 } as const

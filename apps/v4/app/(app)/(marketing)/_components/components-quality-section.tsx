@@ -1,6 +1,6 @@
 "use client"
 
-import { QualitySectionBlock } from "../_blocks"
+import { QualitySectionBlock } from "../_blocks/quality-section-block"
 
 const qualityFeatures = [
   {

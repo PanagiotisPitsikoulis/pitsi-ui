@@ -9,7 +9,7 @@ import {
   User,
 } from "lucide-react"
 
-import { CategoriesGridBlock } from "../_blocks"
+import { CategoriesGridBlock } from "../_blocks/categories-grid-block"
 
 const categories = [
   {

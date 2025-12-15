@@ -145,11 +145,6 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: "/figma",
-        destination: "/docs/figma",
-        permanent: true,
-      },
-      {
         source: "/sidebar",
         destination: "/docs/components/sidebar",
         permanent: true,
@@ -157,11 +152,6 @@ const nextConfig = {
       {
         source: "/react-19",
         destination: "/docs/react-19",
-        permanent: true,
-      },
-      {
-        source: "/charts",
-        destination: "/charts/area",
         permanent: true,
       },
       {

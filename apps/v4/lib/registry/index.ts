@@ -30,14 +30,11 @@ const getAllItemsFromIndex = cache((): RegistryItem[] => {
   return allItems
 })
 
-
-
 export type RegistryItemType = z.infer<typeof registryItemSchema>["type"]
 
 export type { RegistryItem }
 
 export interface QueryRegistryOptions {
-  
   returnType?:
     | "items"
     | "ids"
@@ -46,26 +43,20 @@ export interface QueryRegistryOptions {
     | "counts"
     | "subcategoryCounts"
 
-  
   types?: RegistryItemType[]
   categories?: string[]
   excludeNamePrefix?: string[]
 
-  
   mainCategory?: string
   subcategory?: string
 
-  
   name?: string
   style?: Style["name"]
 
-  
   filter?: (item: RegistryItem) => boolean
 
-  
   excludeCharts?: boolean
 }
-
 
 export async function queryRegistry(
   options: QueryRegistryOptions = {}
@@ -95,131 +86,122 @@ export async function queryRegistry(
       return allItems.find((item) => item.name === name) || null
     }
 
-
-  let items = await getAllRegistryItems({
-    types: types.length > 0 ? types : undefined,
-    mainCategory,
-    subcategory,
-  })
-
-  if (categories.length > 0) {
-    items = items.filter((item) =>
-      item.categories?.some((cat) => categories.includes(cat))
-    )
-  }
-
-  if (excludeNamePrefix.length > 0) {
-    items = items.filter(
-      (item) =>
-        !excludeNamePrefix.some((prefix) => item.name.startsWith(prefix))
-    )
-  }
-
-  if (excludeCharts) {
-    items = items.filter((item) => !item.name.startsWith("chart-"))
-  }
-
-  
-  
-  const alreadyFilteredByCategory = mainCategory && subcategory
-  if (mainCategory && !alreadyFilteredByCategory) {
-    items = items.filter((item) => {
-      const itemMainCategory = getBlockMainCategory(item)
-      if (itemMainCategory !== mainCategory) return false
-
-      if (subcategory) {
-        const itemSubcategory = getBlockSubcategory(item)
-        return itemSubcategory === subcategory
-      }
-
-      return true
+    let items = await getAllRegistryItems({
+      types: types.length > 0 ? types : undefined,
+      mainCategory,
+      subcategory,
     })
-  }
 
-  
-  if (filter) {
-    items = items.filter(filter)
-  }
+    if (categories.length > 0) {
+      items = items.filter((item) =>
+        item.categories?.some((cat) => categories.includes(cat))
+      )
+    }
 
-  
-  switch (returnType) {
-    case "ids":
-      return items.map((item) => item.name)
+    if (excludeNamePrefix.length > 0) {
+      items = items.filter(
+        (item) =>
+          !excludeNamePrefix.some((prefix) => item.name.startsWith(prefix))
+      )
+    }
 
-    case "categories":
-      const categorySet = new Set<string>()
-      items.forEach((item) => {
-        
-        if (
-          item.type === "registry:block" ||
-          item.type === "registry:internal"
-        ) {
-          const cat = getBlockMainCategory(item)
-          if (cat) categorySet.add(cat)
-        } else {
-          
-          item.categories?.forEach((cat) => categorySet.add(cat))
-        }
-      })
-      return Array.from(categorySet).sort()
+    if (excludeCharts) {
+      items = items.filter((item) => !item.name.startsWith("chart-"))
+    }
 
-    case "subcategories":
-      if (!mainCategory) {
-        throw new Error(
-          'returnType "subcategories" requires mainCategory option'
-        )
-      }
-      const subcategorySet = new Set<string>()
-      items.forEach((item) => {
+    const alreadyFilteredByCategory = mainCategory && subcategory
+    if (mainCategory && !alreadyFilteredByCategory) {
+      items = items.filter((item) => {
         const itemMainCategory = getBlockMainCategory(item)
-        const itemSubcategory = getBlockSubcategory(item)
-        if (itemMainCategory === mainCategory && itemSubcategory) {
-          subcategorySet.add(itemSubcategory)
-        }
-      })
-      return Array.from(subcategorySet).sort()
+        if (itemMainCategory !== mainCategory) return false
 
-    case "counts":
-      const counts: Record<string, number> = {}
-      items.forEach((item) => {
-        
-        if (
-          item.type === "registry:block" ||
-          item.type === "registry:internal"
-        ) {
-          const cat = getBlockMainCategory(item)
-          if (cat) {
-            counts[cat] = (counts[cat] || 0) + 1
+        if (subcategory) {
+          const itemSubcategory = getBlockSubcategory(item)
+          return itemSubcategory === subcategory
+        }
+
+        return true
+      })
+    }
+
+    if (filter) {
+      items = items.filter(filter)
+    }
+
+    switch (returnType) {
+      case "ids":
+        return items.map((item) => item.name)
+
+      case "categories":
+        const categorySet = new Set<string>()
+        items.forEach((item) => {
+          if (
+            item.type === "registry:block" ||
+            item.type === "registry:internal"
+          ) {
+            const cat = getBlockMainCategory(item)
+            if (cat) categorySet.add(cat)
+          } else {
+            item.categories?.forEach((cat) => categorySet.add(cat))
           }
-        } else {
-          
-          item.categories?.forEach((cat) => {
-            counts[cat] = (counts[cat] || 0) + 1
-          })
-        }
-      })
-      return counts
+        })
+        return Array.from(categorySet).sort()
 
-    case "subcategoryCounts":
-      if (!mainCategory) {
-        throw new Error(
-          'returnType "subcategoryCounts" requires mainCategory option'
-        )
-      }
-      const subcategoryCounts: Record<string, number> = {}
-      items.forEach((item) => {
-        const itemMainCategory = getBlockMainCategory(item)
-        const itemSubcategory = getBlockSubcategory(item)
-        if (itemMainCategory === mainCategory && itemSubcategory) {
-          subcategoryCounts[itemSubcategory] =
-            (subcategoryCounts[itemSubcategory] || 0) + 1
+      case "subcategories":
+        if (!mainCategory) {
+          throw new Error(
+            'returnType "subcategories" requires mainCategory option'
+          )
         }
-      })
-      return subcategoryCounts
+        const subcategorySet = new Set<string>()
+        items.forEach((item) => {
+          const itemMainCategory = getBlockMainCategory(item)
+          const itemSubcategory = getBlockSubcategory(item)
+          if (itemMainCategory === mainCategory && itemSubcategory) {
+            subcategorySet.add(itemSubcategory)
+          }
+        })
+        return Array.from(subcategorySet).sort()
 
-    case "items":
-    default:
-      return items
+      case "counts":
+        const counts: Record<string, number> = {}
+        items.forEach((item) => {
+          if (
+            item.type === "registry:block" ||
+            item.type === "registry:internal"
+          ) {
+            const cat = getBlockMainCategory(item)
+            if (cat) {
+              counts[cat] = (counts[cat] || 0) + 1
+            }
+          } else {
+            item.categories?.forEach((cat) => {
+              counts[cat] = (counts[cat] || 0) + 1
+            })
+          }
+        })
+        return counts
+
+      case "subcategoryCounts":
+        if (!mainCategory) {
+          throw new Error(
+            'returnType "subcategoryCounts" requires mainCategory option'
+          )
+        }
+        const subcategoryCounts: Record<string, number> = {}
+        items.forEach((item) => {
+          const itemMainCategory = getBlockMainCategory(item)
+          const itemSubcategory = getBlockSubcategory(item)
+          if (itemMainCategory === mainCategory && itemSubcategory) {
+            subcategoryCounts[itemSubcategory] =
+              (subcategoryCounts[itemSubcategory] || 0) + 1
+          }
+        })
+        return subcategoryCounts
+
+      case "items":
+      default:
+        return items
     }
   } catch (error) {
     console.warn("queryRegistry error:", error)
@@ -232,11 +214,6 @@ export async function queryRegistry(
     return null
   }
 }
-
-
-
-
-
 
 async function getRegistryItemWithContent(
   name: string,
@@ -252,7 +229,10 @@ async function getRegistryItemWithContent(
 
     const itemFiles =
       item.files?.map((file: unknown) => {
-        const fileObj = typeof file === "string" ? { path: file } : file as { path: string; [key: string]: unknown }
+        const fileObj =
+          typeof file === "string"
+            ? { path: file }
+            : (file as { path: string; [key: string]: unknown })
 
         const absolutePath = path.join(process.cwd(), fileObj.path)
         return {
@@ -308,7 +288,10 @@ async function getRegistryItemWithContent(
   }
 }
 
-async function getFileContent(file: { path: string; type?: string }): Promise<string | null> {
+async function getFileContent(file: {
+  path: string
+  type?: string
+}): Promise<string | null> {
   try {
     const raw = await fs.readFile(file.path, "utf-8")
 
@@ -323,12 +306,9 @@ async function getFileContent(file: { path: string; type?: string }): Promise<st
 
     let code = sourceFile.getFullText()
 
-
-
     if (file.type !== "registry:page") {
       code = code.replaceAll("export default", "export")
     }
-
 
     code = fixImport(code)
 
@@ -373,12 +353,13 @@ async function createTempSourceFile(filename: string) {
   return path.join(dir, filename)
 }
 
-export function fixFilePaths(files: z.infer<typeof registryItemSchema>["files"]) {
+export function fixFilePaths(
+  files: z.infer<typeof registryItemSchema>["files"]
+) {
   if (!files || files.length === 0) {
     return []
   }
 
-  
   const firstFilePath = files[0].path
   const firstFilePathDir = path.dirname(firstFilePath)
 
@@ -415,11 +396,6 @@ export function fixImport(content: string) {
 
   return content.replace(regex, replacement)
 }
-
-
-
-
-
 
 export async function getAllRegistryItems(options?: {
   types?: RegistryItemType[]
@@ -472,7 +448,6 @@ export async function getAllRegistryItems(options?: {
   return filteredItems
 }
 
-
 export async function getRegistryItems(options: {
   types?: RegistryItemType[]
   categories?: string[]
@@ -485,17 +460,14 @@ export async function getRegistryItems(options: {
   })
 
   return allItems.filter((item) => {
-    
     const typeMatch = types.length === 0 || types.includes(item.type)
     if (!typeMatch) return false
 
-    
     const categoryMatch =
       categories.length === 0 ||
       item.categories?.some((category) => categories.includes(category))
     if (!categoryMatch) return false
 
-    
     const excludeMatch = excludeNamePrefix.some((prefix) =>
       item.name.startsWith(prefix)
     )
@@ -505,7 +477,6 @@ export async function getRegistryItems(options: {
   })
 }
 
-
 export async function getRegistryItemIds(options: {
   types?: RegistryItemType[]
   categories?: string[]
@@ -514,7 +485,6 @@ export async function getRegistryItemIds(options: {
   const items = await getRegistryItems(options)
   return items.map((item) => item.name)
 }
-
 
 export async function getRegistryCategories(options: {
   types?: RegistryItemType[]
@@ -533,7 +503,6 @@ export async function getRegistryCategories(options: {
   return Array.from(categories).sort()
 }
 
-
 export async function getRegistryItemsByCategory(options: {
   category: string
   types?: RegistryItemType[]
@@ -543,7 +512,6 @@ export async function getRegistryItemsByCategory(options: {
   const items = await getRegistryItems({ types, categories: [category] })
   return items.map((item) => item.name)
 }
-
 
 export async function getRegistryCategoryCounts(options: {
   types?: RegistryItemType[]
@@ -562,11 +530,6 @@ export async function getRegistryCategoryCounts(options: {
   return counts
 }
 
-
-
-
-
-
 export function getBlockMainCategory(block: RegistryItem): string | null {
   const firstFile = block.files?.[0]
   if (!firstFile?.path) return null
@@ -575,7 +538,6 @@ export function getBlockMainCategory(block: RegistryItem): string | null {
   return match ? match[1] : null
 }
 
-
 export function getBlockSubcategory(block: RegistryItem): string | null {
   const firstFile = block.files?.[0]
   if (!firstFile?.path) return null
@@ -583,7 +545,6 @@ export function getBlockSubcategory(block: RegistryItem): string | null {
   const match = firstFile.path.match(/blocks\/[^/]+\/([^/]+)\//)
   return match ? match[1] : null
 }
-
 
 export async function getAllBlocks(options: {
   categories?: string[]
@@ -600,7 +561,6 @@ export async function getAllBlocks(options: {
   return items
 }
 
-
 export async function getBlockMainCategories(): Promise<string[]> {
   const blocks = await getAllBlocks({})
   const categories = new Set<string>()
@@ -612,7 +572,6 @@ export async function getBlockMainCategories(): Promise<string[]> {
 
   return Array.from(categories).sort()
 }
-
 
 export async function getBlockSubcategories(
   mainCategory: string
@@ -631,7 +590,6 @@ export async function getBlockSubcategories(
 
   return Array.from(subcategories).sort()
 }
-
 
 export async function getBlocksByCategoryNames(
   mainCategory: string,
@@ -654,7 +612,6 @@ export async function getBlocksByCategoryNames(
   return filteredBlocks.map((block) => block.name)
 }
 
-
 export async function getBlockCategoryBlockCounts(): Promise<
   Record<string, number>
 > {
@@ -670,7 +627,6 @@ export async function getBlockCategoryBlockCounts(): Promise<
 
   return counts
 }
-
 
 export async function getBlockSubcategoryBlockCounts(
   mainCategory: string
@@ -690,11 +646,6 @@ export async function getBlockSubcategoryBlockCounts(
   return counts
 }
 
-
-
-
-
-
 export async function getAllComponents(options: {
   types?: RegistryItemType[]
   categories?: string[]
@@ -704,7 +655,6 @@ export async function getAllComponents(options: {
   return await getRegistryItems({ types, categories })
 }
 
-
 export async function getAllComponentIds(options: {
   types?: RegistryItemType[]
   categories?: string[]
@@ -713,11 +663,9 @@ export async function getAllComponentIds(options: {
   return components.map((component) => component.name)
 }
 
-
 export async function getAllComponentCategories(): Promise<string[]> {
   return await getRegistryCategories({ types: ["registry:ui"] })
 }
-
 
 export async function getComponentsByCategory(
   category: string
@@ -728,17 +676,11 @@ export async function getComponentsByCategory(
   })
 }
 
-
 export async function getCategoryComponentCounts(): Promise<
   Record<string, number>
 > {
   return await getRegistryCategoryCounts({ types: ["registry:ui"] })
 }
-
-
-
-
-
 
 export async function getAllThemes(options: {
   categories?: string[]
@@ -751,18 +693,12 @@ export async function getAllThemes(options: {
   })
 }
 
-
 export async function getAllThemeIds(options: {
   categories?: string[]
 }): Promise<string[]> {
   const themes = await getAllThemes(options)
   return themes.map((theme) => theme.name)
 }
-
-
-
-
-
 
 export async function getAllStyles(options: {
   categories?: string[]
@@ -775,18 +711,12 @@ export async function getAllStyles(options: {
   })
 }
 
-
 export async function getAllStyleIds(options: {
   categories?: string[]
 }): Promise<string[]> {
   const styles = await getAllStyles(options)
   return styles.map((style) => style.name)
 }
-
-
-
-
-
 
 export async function getAllHooks(options: {
   categories?: string[]
@@ -799,18 +729,12 @@ export async function getAllHooks(options: {
   })
 }
 
-
 export async function getAllHookIds(options: {
   categories?: string[]
 }): Promise<string[]> {
   const hooks = await getAllHooks(options)
   return hooks.map((hook) => hook.name)
 }
-
-
-
-
-
 
 export async function getAllExamples(options: {
   categories?: string[]
@@ -823,7 +747,6 @@ export async function getAllExamples(options: {
   })
 }
 
-
 export async function getAllExampleIds(options: {
   categories?: string[]
 }): Promise<string[]> {
@@ -831,25 +754,17 @@ export async function getAllExampleIds(options: {
   return examples.map((example) => example.name)
 }
 
-
-
-
-
-
-
 export async function getItemsByType(
   type: RegistryItemType
 ): Promise<RegistryItem[]> {
   return (await queryRegistry({ types: [type] })) as RegistryItem[]
 }
 
-
 export async function getBlocksByCategory(
   mainCategory: string
 ): Promise<RegistryItem[]> {
   return (await queryRegistry({ mainCategory })) as RegistryItem[]
 }
-
 
 export async function getBlocksBySubcategory(
   mainCategory: string,
@@ -861,7 +776,6 @@ export async function getBlocksBySubcategory(
   })) as RegistryItem[]
 }
 
-
 export async function getItemIdsByType(
   type: RegistryItemType
 ): Promise<string[]> {
@@ -871,14 +785,12 @@ export async function getItemIdsByType(
   })) as string[]
 }
 
-
 export async function getAvailableBlockCategories(): Promise<string[]> {
   return (await queryRegistry({
     types: ["registry:block", "registry:internal"],
     returnType: "categories",
   })) as string[]
 }
-
 
 export async function getAvailableBlockSubcategories(
   mainCategory: string
@@ -889,7 +801,6 @@ export async function getAvailableBlockSubcategories(
   })) as string[]
 }
 
-
 export async function getBlockCategoryCounts(): Promise<
   Record<string, number>
 > {
@@ -899,7 +810,6 @@ export async function getBlockCategoryCounts(): Promise<
   })) as Record<string, number>
 }
 
-
 export async function searchItemsByName(
   pattern: string
 ): Promise<RegistryItem[]> {
@@ -908,13 +818,11 @@ export async function searchItemsByName(
   })) as RegistryItem[]
 }
 
-
 export async function getItemByName(
   name: string
 ): Promise<RegistryItem | null> {
   return (await queryRegistry({ name })) as RegistryItem | null
 }
-
 
 export async function getItemWithContent(
   name: string,
@@ -956,7 +864,8 @@ export async function getRegistrySummaryCounts(): Promise<{
 
   // Count blocks
   const blocks = allItems.filter(
-    (item) => item.type === "registry:block" || item.type === "registry:internal"
+    (item) =>
+      item.type === "registry:block" || item.type === "registry:internal"
   ).length
 
   return { animations, components, blocks }
@@ -1024,9 +933,3 @@ export function createFileTreeForRegistryItemFiles(
 
   return root
 }
-
-
-
-
-
-

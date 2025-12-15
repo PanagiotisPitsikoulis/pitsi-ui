@@ -1,6 +1,6 @@
 "use client"
 
-import { ShowcaseSectionBlock } from "../_blocks"
+import { ShowcaseSectionBlock } from "../_blocks/showcase-section-block"
 
 const SHOWCASE_BLOCKS = [
   "marketing-hero-section-accommodation-businesses-hero-section",

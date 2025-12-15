@@ -1,6 +1,6 @@
 "use client"
 
-import { FeatureHeroBlock } from "../_blocks"
+import { FeatureHeroBlock } from "../_blocks/feature-hero-block"
 
 const HERO_BLOCKS = [
   "marketing-hero-section-hero-section-with-customer-logos",
