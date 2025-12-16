@@ -20,6 +20,7 @@ body {
 
 * {
   scroll-behavior: auto !important;
+  @apply border-border;
 }
 
 @theme inline {

@@ -26,9 +26,7 @@ interface ToolLayoutProps {
 
 function ToolLayout({ children, className }: ToolLayoutProps) {
   return (
-    <div className={cn("relative overflow-x-clip", className)}>
-      {children}
-    </div>
+    <div className={cn("relative overflow-clip", className)}>{children}</div>
   )
 }
 
@@ -57,14 +55,16 @@ interface ToolLayoutContainerProps {
   className?: string
 }
 
-function ToolLayoutContainer({ children, className }: ToolLayoutContainerProps) {
+function ToolLayoutContainer({
+  children,
+  className,
+}: ToolLayoutContainerProps) {
   return (
     <div className={cn("relative z-10 container px-6", className)}>
       <Spacer size="lg" sizeMobile="md" />
       <LayoutGrid className="items-start lg:h-[calc(100vh-100px)]">
         {children}
       </LayoutGrid>
-      <Spacer size="6xl" sizeMobile="4xl" />
     </div>
   )
 }
@@ -106,7 +106,7 @@ interface ToolLayoutHeaderProps {
 
 function ToolLayoutHeader({
   backHref,
-  backLabel = "Back to tools",
+  backLabel = "Tools Menu",
   title,
   description,
   className,
@@ -142,7 +142,7 @@ function ToolLayoutCard({
   return (
     <div
       className={cn(
-        "bg-muted flex flex-col overflow-y-auto rounded-2xl border p-2",
+        "bg-muted flex flex-col overflow-y-auto rounded-3xl border p-2",
         className
       )}
       style={{ height }}
@@ -156,16 +156,19 @@ function ToolLayoutCard({
  * ToolLayoutTabs - Wrapper around Tabs with tool styling
  * -------------------------------------------------------------------------- */
 
-interface ToolLayoutTabsProps extends React.ComponentPropsWithoutRef<typeof Tabs> {
+interface ToolLayoutTabsProps extends React.ComponentPropsWithoutRef<
+  typeof Tabs
+> {
   children: React.ReactNode
 }
 
-function ToolLayoutTabs({ children, className, ...props }: ToolLayoutTabsProps) {
+function ToolLayoutTabs({
+  children,
+  className,
+  ...props
+}: ToolLayoutTabsProps) {
   return (
-    <Tabs
-      className={cn("flex min-h-0 flex-1 flex-col", className)}
-      {...props}
-    >
+    <Tabs className={cn("flex min-h-0 flex-1 flex-col", className)} {...props}>
       {children}
     </Tabs>
   )
@@ -175,11 +178,17 @@ function ToolLayoutTabs({ children, className, ...props }: ToolLayoutTabsProps) 
  * ToolLayoutTabsList - Tab triggers container
  * -------------------------------------------------------------------------- */
 
-interface ToolLayoutTabsListProps extends React.ComponentPropsWithoutRef<typeof TabsList> {
+interface ToolLayoutTabsListProps extends React.ComponentPropsWithoutRef<
+  typeof TabsList
+> {
   children: React.ReactNode
 }
 
-function ToolLayoutTabsList({ children, className, ...props }: ToolLayoutTabsListProps) {
+function ToolLayoutTabsList({
+  children,
+  className,
+  ...props
+}: ToolLayoutTabsListProps) {
   return (
     <TabsList className={cn("h-10 w-full", className)} {...props}>
       {children}
@@ -191,7 +200,9 @@ function ToolLayoutTabsList({ children, className, ...props }: ToolLayoutTabsLis
  * ToolLayoutTabsTrigger - Individual tab trigger with icon support
  * -------------------------------------------------------------------------- */
 
-interface ToolLayoutTabsTriggerProps extends React.ComponentPropsWithoutRef<typeof TabsTrigger> {
+interface ToolLayoutTabsTriggerProps extends React.ComponentPropsWithoutRef<
+  typeof TabsTrigger
+> {
   icon?: React.ComponentType<{ className?: string }>
   children: React.ReactNode
 }
@@ -214,7 +225,9 @@ function ToolLayoutTabsTrigger({
  * ToolLayoutTabsContent - Tab content with optional scroll area
  * -------------------------------------------------------------------------- */
 
-interface ToolLayoutTabsContentProps extends React.ComponentPropsWithoutRef<typeof TabsContent> {
+interface ToolLayoutTabsContentProps extends React.ComponentPropsWithoutRef<
+  typeof TabsContent
+> {
   children: React.ReactNode
   scrollable?: boolean
 }
@@ -228,7 +241,7 @@ function ToolLayoutTabsContent({
   if (scrollable) {
     return (
       <TabsContent className={cn("min-h-0 flex-1", className)} {...props}>
-        <ScrollArea className="h-full [&_[data-radix-scroll-area-scrollbar]]:bg-background">
+        <ScrollArea className="[&_[data-radix-scroll-area-scrollbar]]:bg-background h-full">
           <div className="space-y-3 pt-2">{children}</div>
           <ScrollBar orientation="horizontal" />
         </ScrollArea>
@@ -254,7 +267,7 @@ interface ToolLayoutPreviewProps {
 
 function ToolLayoutPreview({ children, className }: ToolLayoutPreviewProps) {
   return (
-    <LayoutGridItem span={6} spanLg={4} className={cn("lg:pl-8", className)}>
+    <LayoutGridItem span={6} spanLg={4} className={cn("lg:pl-4", className)}>
       <div className="flex flex-col gap-3">{children}</div>
     </LayoutGridItem>
   )
@@ -269,7 +282,10 @@ interface ToolLayoutPreviewHeaderProps {
   className?: string
 }
 
-function ToolLayoutPreviewHeader({ children, className }: ToolLayoutPreviewHeaderProps) {
+function ToolLayoutPreviewHeader({
+  children,
+  className,
+}: ToolLayoutPreviewHeaderProps) {
   return (
     <div className={cn("flex items-center justify-between", className)}>
       {children}
@@ -286,7 +302,10 @@ interface ToolLayoutPreviewTitleProps {
   className?: string
 }
 
-function ToolLayoutPreviewTitle({ children, className }: ToolLayoutPreviewTitleProps) {
+function ToolLayoutPreviewTitle({
+  children,
+  className,
+}: ToolLayoutPreviewTitleProps) {
   return (
     <h2
       className={cn(
@@ -329,16 +348,18 @@ function ToolLayoutPreviewContent({
   return (
     <div
       className={cn(
-        "overflow-hidden rounded-2xl border dark:border-transparent",
+        "overflow-hidden rounded-3xl border dark:border-transparent",
         className
       )}
       style={{
         height,
-        ...(forceLightMode ? {
-          ...lightModeStyles,
-          backgroundColor: "var(--background)",
-          color: "var(--foreground)",
-        } : {}),
+        ...(forceLightMode
+          ? {
+              ...lightModeStyles,
+              backgroundColor: "var(--background)",
+              color: "var(--foreground)",
+            }
+          : {}),
       }}
     >
       {children}

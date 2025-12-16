@@ -4,6 +4,7 @@ import * as React from "react"
 import Link, { LinkProps } from "next/link"
 import { useRouter } from "next/navigation"
 
+import { formatName } from "@/lib/format"
 import { source } from "@/lib/source"
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/shared/icons"
@@ -17,14 +18,6 @@ import {
 const TOP_LEVEL_SECTIONS = [
   { name: "Get Started", href: "/docs" },
   {
-    name: "Components",
-    href: "/docs/components",
-  },
-  {
-    name: "Animations",
-    href: "/docs/animations",
-  },
-  {
     name: "MCP Server",
     href: "/docs/mcp",
   },
@@ -37,10 +30,16 @@ const TOP_LEVEL_SECTIONS = [
 export function MobileNav({
   tree,
   items,
+  componentPages = [],
+  animationPages = [],
+  allBlockSubcategories = [],
   className,
 }: {
   tree: typeof source.pageTree
   items: { href: string; label: string }[]
+  componentPages?: Array<{ name: string; url: string }>
+  animationPages?: Array<{ name: string; url: string }>
+  allBlockSubcategories?: Array<{ category: string; name: string; count: number }>
   className?: string
 }) {
   const [open, setOpen] = React.useState(false)
@@ -101,7 +100,7 @@ export function MobileNav({
           </div>
           <div className="flex flex-col gap-4">
             <div className="text-muted-foreground text-sm font-medium">
-              Sections
+              Quick Links
             </div>
             <div className="flex flex-col gap-3">
               {TOP_LEVEL_SECTIONS.map(({ name, href }) => {
@@ -113,6 +112,66 @@ export function MobileNav({
               })}
             </div>
           </div>
+          {/* Blocks Section */}
+          {allBlockSubcategories.length > 0 && (
+            <div className="flex flex-col gap-4">
+              <div className="text-muted-foreground text-sm font-medium">
+                Blocks
+              </div>
+              <div className="grid grid-cols-2 gap-2">
+                {allBlockSubcategories.map((sub) => (
+                  <MobileLink
+                    key={`${sub.category}-${sub.name}`}
+                    href={`/blocks/category/${sub.category}/subcategory/${sub.name}`}
+                    onOpenChange={setOpen}
+                    className="text-base"
+                  >
+                    {formatName(sub.name)}
+                  </MobileLink>
+                ))}
+              </div>
+            </div>
+          )}
+          {/* Components Section */}
+          {componentPages.length > 0 && (
+            <div className="flex flex-col gap-4">
+              <div className="text-muted-foreground text-sm font-medium">
+                Components
+              </div>
+              <div className="grid grid-cols-2 gap-2">
+                {componentPages.map((page) => (
+                  <MobileLink
+                    key={page.url}
+                    href={page.url}
+                    onOpenChange={setOpen}
+                    className="text-base"
+                  >
+                    {page.name}
+                  </MobileLink>
+                ))}
+              </div>
+            </div>
+          )}
+          {/* Animations Section */}
+          {animationPages.length > 0 && (
+            <div className="flex flex-col gap-4">
+              <div className="text-muted-foreground text-sm font-medium">
+                Animations
+              </div>
+              <div className="grid grid-cols-2 gap-2">
+                {animationPages.map((page) => (
+                  <MobileLink
+                    key={page.url}
+                    href={page.url}
+                    onOpenChange={setOpen}
+                    className="text-base"
+                  >
+                    {page.name}
+                  </MobileLink>
+                ))}
+              </div>
+            </div>
+          )}
           <div className="flex flex-col gap-8">
             {tree?.children?.map((group, index) => {
               if (group.type === "folder") {

@@ -1,10 +1,5 @@
 import { Metadata } from "next"
 
-import { themePresets, type ThemePreset } from "./_components/theme-presets"
-import {
-  defaultThemeState,
-  type ThemeEditorState,
-} from "./_components/theme-types"
 import ThemeGeneratorPageClient from "./page.client"
 
 const title = "Theme Generator"
@@ -35,10 +30,5 @@ export const metadata: Metadata = {
 }
 
 export default function ThemeGeneratorPage() {
-  return (
-    <ThemeGeneratorPageClient
-      presets={themePresets}
-      defaultState={defaultThemeState}
-    />
-  )
+  return <ThemeGeneratorPageClient />
 }

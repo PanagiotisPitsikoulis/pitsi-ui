@@ -1,5 +1,7 @@
 import { Metadata } from "next"
 
+import { AdvancedFeaturesPageClient } from "./page.client"
+
 const title = "Advanced Features - Pitsi UI"
 const description =
   "Explore advanced capabilities including animations, hooks, utilities, and powerful customization options to build exceptional user experiences."
@@ -29,5 +31,5 @@ export const metadata: Metadata = {
 }
 
 export default function AdvancedFeaturesPage() {
-  return <div className="relative min-h-screen">{/* Empty */}</div>
+  return <AdvancedFeaturesPageClient />
 }

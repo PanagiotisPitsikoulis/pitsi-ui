@@ -53,13 +53,13 @@ export async function SiteHeaderInternal({
   // Get block categories and subcategories
   const mainCategories = await getAllMainCategories()
   const blockCategories = await Promise.all(
-    mainCategories.map(async (category) => {
+    mainCategories.map(async (category: string) => {
       const subcategories = await getSubcategories(category)
       const subcategoryCounts = await getSubcategoryBlockCounts(category)
 
       return {
         name: category,
-        subcategories: subcategories.map((subcategory) => ({
+        subcategories: subcategories.map((subcategory: string) => ({
           name: subcategory,
           count: subcategoryCounts[subcategory] || 0,
         })),
@@ -68,8 +68,8 @@ export async function SiteHeaderInternal({
   )
 
   // Flatten all subcategories for easy access
-  const allBlockSubcategories = blockCategories.flatMap((category) =>
-    category.subcategories.map((sub) => ({
+  const allBlockSubcategories = blockCategories.flatMap((category: { name: string; subcategories: { name: string; count: number }[] }) =>
+    category.subcategories.map((sub: { name: string; count: number }) => ({
       category: category.name,
       name: sub.name,
       count: sub.count,

@@ -1,21 +1,12 @@
 "use client"
 
 import * as React from "react"
-import { memo, useMemo } from "react"
-import dynamic from "next/dynamic"
+import { memo } from "react"
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import {
-  getRegistryComponent,
-  getRegistryIndexItem,
-  registryComponentExists,
-} from "@/lib/registry-client"
 import type { Style } from "@/registry/styles"
-import { ReadinessBadge } from "@/components/ui/readiness-badge"
-import { TierBadge } from "@/components/ui/tier-badge"
-import { LazyComponentPreview } from "@/components/documentation/components/lazy-component-preview"
 import { Spinner } from "@/registry/new-york-v4/ui/spinner"
 
 interface ComponentItem {
@@ -24,6 +15,9 @@ interface ComponentItem {
   name: string | React.ReactNode
   registryName?: string
   description?: string
+  readiness?: string
+  tier?: string
+  isAnimation?: boolean
 }
 
 interface ComponentsListPaginatedProps {
@@ -32,118 +26,56 @@ interface ComponentsListPaginatedProps {
   label?: string
 }
 
+// Component preview using iframe
 const ComponentPreviewContent = memo(function ComponentPreviewContent({
   registryName,
   styleName,
+  isAnimation,
 }: {
   registryName: string
   styleName: Style["name"]
+  isAnimation?: boolean
 }) {
-  // Memoize special cases lookup
+  // Try demo version first, then base component
+  const demoName = `${registryName}-demo`
+
+  // Special cases mapping
   const specialCases: Record<string, string> = {
     chart: "chart-bar-demo",
     "data-table": "data-table-demo",
   }
 
-  // Memoize the preview resolution
-  const { previewName, Component, isAnimation } = useMemo(() => {
-    let name: string | null = specialCases[registryName] || null
-
-    if (!name) {
-      const demoName = `${registryName}-demo`
-      const demoExists = registryComponentExists(demoName, styleName)
-      const baseComponent = getRegistryComponent(registryName, styleName)
-      const baseItem = getRegistryIndexItem(registryName, styleName)
-
-      name = demoExists
-        ? demoName
-        : baseComponent && baseItem
-          ? registryName
-          : null
-    } else {
-      if (!registryComponentExists(name, styleName)) {
-        name = null
-      }
-    }
-
-    if (!name) {
-      return { previewName: null, Component: null, isAnimation: false }
-    }
-
-    const comp = getRegistryComponent(name, styleName)
-    const item = getRegistryIndexItem(name, styleName)
-    const isAnim = item?.categories?.includes("animations") ?? false
-
-    return { previewName: name, Component: comp, isAnimation: isAnim }
-  }, [registryName, styleName])
-
-  if (!previewName) {
-    return (
-      <div className="flex h-full w-full items-center justify-center">
-        <div className="text-muted-foreground text-center text-sm">
-          <div className="mb-2 text-4xl">📦</div>
-          <div className="text-xs">{registryName || "No preview"}</div>
-        </div>
-      </div>
-    )
-  }
-
-  if (!Component) {
-    return (
-      <div className="flex h-full w-full items-center justify-center">
-        <div className="text-muted-foreground text-center text-sm">
-          <div className="mb-2 text-4xl">⚠️</div>
-          <div className="text-xs">Component not found: {previewName}</div>
-        </div>
-      </div>
-    )
-  }
-
-  // Render animations in iframe
-  if (isAnimation) {
-    return (
-      <iframe
-        src={`/view/${styleName}/${previewName}`}
-        className="absolute inset-0 size-full border-0"
-        title={`${previewName} animation preview`}
-        loading="lazy"
-        sandbox="allow-scripts allow-same-origin"
-        allowFullScreen
-        style={{
-          transform: 'scale(0.65)',
-          transformOrigin: 'center',
-          width: '153.85%',
-          height: '153.85%',
-          left: '-26.92%',
-          top: '-26.92%'
-        }}
-      />
-    )
-  }
+  const previewName = specialCases[registryName] || demoName
 
   return (
-    <LazyComponentPreview className="flex h-full w-full items-center justify-center">
-      <div className="flex w-fit min-w-[600px] origin-center scale-[0.5] transform items-center justify-center">
-        <React.Suspense fallback={<Spinner className="size-6" />}>
-          <Component />
-        </React.Suspense>
-      </div>
-    </LazyComponentPreview>
+    <iframe
+      src={`/view/${styleName}/${previewName}`}
+      className="absolute inset-0 size-full border-0"
+      title={`${previewName} preview`}
+      loading="lazy"
+      sandbox="allow-scripts allow-same-origin"
+      style={
+        isAnimation
+          ? {
+              transform: "scale(0.65)",
+              transformOrigin: "center",
+              width: "153.85%",
+              height: "153.85%",
+              left: "-26.92%",
+              top: "-26.92%",
+            }
+          : {
+              transform: "scale(0.5)",
+              transformOrigin: "center",
+              width: "200%",
+              height: "200%",
+              left: "-50%",
+              top: "-50%",
+            }
+      }
+    />
   )
 })
-
-// Dynamically import the preview with a spinner
-const ComponentPreview = dynamic(
-  () => Promise.resolve(ComponentPreviewContent),
-  {
-    loading: () => (
-      <div className="flex h-full w-full items-center justify-center">
-        <Spinner />
-      </div>
-    ),
-    ssr: false,
-  }
-)
 
 // Memoized card component to prevent re-renders
 const ComponentCard = memo(function ComponentCard({
@@ -154,18 +86,7 @@ const ComponentCard = memo(function ComponentCard({
   styleName: Style["name"]
 }) {
   const registryName = item.registryName || item.$id
-
-  // Memoize registry lookups
-  const { registryItem, isAnimation } = useMemo(() => {
-    const regItem = getRegistryIndexItem(registryName, styleName)
-    const demoName = `${registryName}-demo`
-    const demoItem = getRegistryIndexItem(demoName, styleName)
-    const isAnim =
-      regItem?.categories?.includes("animations") ||
-      demoItem?.categories?.includes("animations")
-
-    return { registryItem: regItem, isAnimation: isAnim }
-  }, [registryName, styleName])
+  const isAnimation = item.isAnimation
 
   return (
     <div
@@ -174,9 +95,17 @@ const ComponentCard = memo(function ComponentCard({
     >
       <div className="overflow-hidden rounded-2xl border shadow-xs">
         <div className="bg-background relative transition-all">
-          <ReadinessBadge readiness={registryItem?.readiness} />
-          <TierBadge tier={registryItem?.tier ?? "free"} />
-          <div data-slot="preview" className="overflow-visible">
+          {item.readiness && item.readiness !== "production" && (
+            <div className="absolute top-2 left-2 z-10 rounded-full bg-yellow-500/10 px-2 py-0.5 text-xs font-medium text-yellow-600 dark:text-yellow-400">
+              {item.readiness}
+            </div>
+          )}
+          {item.tier && item.tier !== "free" && (
+            <div className="absolute top-2 right-2 z-10 rounded-full bg-purple-500/10 px-2 py-0.5 text-xs font-medium text-purple-600 dark:text-purple-400">
+              {item.tier}
+            </div>
+          )}
+          <div data-slot="preview" className="overflow-hidden">
             <div
               data-align="center"
               className={cn(
@@ -184,18 +113,24 @@ const ComponentCard = memo(function ComponentCard({
                 isAnimation ? "" : "p-8"
               )}
             >
-              <ComponentPreview
-                registryName={registryName}
-                styleName={styleName}
-              />
+              <React.Suspense
+                fallback={
+                  <div className="flex h-full w-full items-center justify-center">
+                    <Spinner />
+                  </div>
+                }
+              >
+                <ComponentPreviewContent
+                  registryName={registryName}
+                  styleName={styleName}
+                  isAnimation={isAnimation}
+                />
+              </React.Suspense>
             </div>
           </div>
         </div>
       </div>
-      <Link
-        href={item.url}
-        className="group/link flex flex-col gap-1 px-2"
-      >
+      <Link href={item.url} className="group/link flex flex-col gap-1 px-2">
         <div className="flex items-center justify-between gap-2">
           <span className="group-hover/link:text-primary text-base font-medium transition-colors group-hover/link:underline">
             {item.name}

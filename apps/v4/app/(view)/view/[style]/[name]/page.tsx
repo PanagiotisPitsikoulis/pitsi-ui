@@ -5,8 +5,7 @@ import {
   generateViewMetadata,
   generateViewStaticParams,
 } from "@/lib/pages/view"
-import { queryRegistry, type RegistryItem } from "@/lib/registry-utils"
-import { Index } from "@/registry/__index__"
+import { itemExists, queryRegistry, type RegistryItem } from "@/lib/registry"
 import { getStyle } from "@/registry/styles"
 import { LazyComponentRenderer } from "@/app/(view)/_components"
 
@@ -56,18 +55,25 @@ export default async function BlockPage({
   const isInternal = item.type === "registry:internal"
   const isExample = item.type === "registry:example"
   const isUI = item.type === "registry:ui"
-  const isAnimation = item.categories?.includes("animations")
 
   // For UI components, try to use the demo version instead
   // UI components like "button" and "dialog" can't render standalone
   let componentName = name
+  let componentItem = item
   if (isUI) {
     const demoName = `${name}-demo`
-    const styleIndex = Index[style.name]
-    if (styleIndex && styleIndex[demoName]) {
+    const demoItem = (await queryRegistry({
+      name: demoName,
+      style: style.name,
+    })) as RegistryItem | null
+    if (demoItem) {
       componentName = demoName
+      componentItem = demoItem
     }
   }
+
+  // Get the file path for dynamic import
+  const filePath = componentItem.files?.[0]?.path || ""
 
   return (
     <div className="bg-background min-h-screen w-full">
@@ -75,6 +81,8 @@ export default async function BlockPage({
         name={componentName}
         styleName={style.name}
         isComponent={isExample || isUI}
+        componentType={componentItem.type}
+        filePath={filePath}
       />
     </div>
   )

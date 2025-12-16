@@ -172,7 +172,7 @@ function IconOnly({
 
 export function PurposeSection() {
   return (
-    <div id="purpose" className="container flex flex-col items-center justify-center px-6 py-16 text-center md:py-24">
+    <div id="purpose" className="container flex flex-col items-center justify-center px-6 text-center">
       <p className="text-brand text-sm font-medium tracking-widest uppercase">
         Why Pitsi
       </p>
@@ -200,7 +200,7 @@ export function PurposeSection() {
         </div>
 
         {/* Center element - Instagram-style App - spans 2 cols */}
-        <div className="col-span-6 border-border bg-background relative hidden h-full w-full flex-col overflow-hidden rounded-4xl border shadow-2xl lg:col-span-2 lg:flex">
+        <div className="col-span-6 border-border bg-background relative hidden h-full w-full flex-col overflow-hidden rounded-4xl border shadow-xs lg:col-span-2 lg:flex">
           {/* Instagram Navbar */}
           <div className="flex items-center justify-between border-b px-5 py-4">
             <div className="bg-muted h-7 w-24 rounded-full" />

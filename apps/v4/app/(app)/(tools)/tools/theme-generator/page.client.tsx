@@ -100,11 +100,12 @@ import {
   generateThemeCSS,
 } from "./_components/generate-css"
 import { SliderWithInput } from "./_components/slider-with-input"
-import type { ThemePreset } from "./_components/theme-presets"
-import type {
-  ThemeEditorState,
-  ThemeStyleProps,
-  ThemeStyles,
+import { themePresets } from "./_components/theme-presets"
+import {
+  defaultThemeState,
+  type ThemeEditorState,
+  type ThemeStyleProps,
+  type ThemeStyles,
 } from "./_components/theme-types"
 
 interface SavedTheme {
@@ -827,8 +828,7 @@ function PresetSelector({
 }
 
 interface ThemeGeneratorPageClientProps {
-  presets: Record<string, ThemePreset>
-  defaultState: ThemeEditorState
+  hasBackgroundDecoration?: boolean
 }
 
 const colorFormats = ["oklch", "hsl", "hex"] as const
@@ -853,9 +853,10 @@ const previewBlockValues = [
 ] as const
 
 export default function ThemeGeneratorPageClient({
-  presets,
-  defaultState,
-}: ThemeGeneratorPageClientProps) {
+  hasBackgroundDecoration = true,
+}: ThemeGeneratorPageClientProps = {}) {
+  const presets = themePresets
+  const defaultState = defaultThemeState
   // URL state with nuqs
   // Include "custom" in allowed values since it's set when user modifies theme
   const presetParser = useMemo(
@@ -1007,7 +1008,7 @@ export default function ThemeGeneratorPageClient({
 
   return (
     <ToolLayout>
-      <ToolLayoutBackground />
+      {hasBackgroundDecoration && <ToolLayoutBackground />}
 
       <ToolLayoutContainer>
         {/* Controls - First 2 columns */}

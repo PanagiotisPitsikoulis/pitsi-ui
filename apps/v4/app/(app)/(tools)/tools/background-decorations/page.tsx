@@ -1,7 +1,5 @@
 import { Metadata } from "next"
 
-import { decorationPresets } from "./_components/decoration-presets"
-import { defaultDecorationState } from "./_components/decoration-types"
 import BackgroundDecorationsPageClient from "./page.client"
 
 const title = "Background Decorations"
@@ -33,10 +31,5 @@ export const metadata: Metadata = {
 }
 
 export default function BackgroundDecorationsPage() {
-  return (
-    <BackgroundDecorationsPageClient
-      presets={decorationPresets}
-      defaultState={defaultDecorationState}
-    />
-  )
+  return <BackgroundDecorationsPageClient />
 }

@@ -1,6 +1,5 @@
 import { Metadata } from "next"
 
-import { defaultState, spacingPresets } from "./_components/spacing-presets"
 import SpacingGeneratorClient from "./page.client"
 
 export const metadata: Metadata = {
@@ -29,10 +28,5 @@ export const metadata: Metadata = {
 }
 
 export default async function SpacingGeneratorPage() {
-  return (
-    <SpacingGeneratorClient
-      presets={spacingPresets}
-      initialState={defaultState}
-    />
-  )
+  return <SpacingGeneratorClient />
 }

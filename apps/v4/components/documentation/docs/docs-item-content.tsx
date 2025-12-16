@@ -11,6 +11,7 @@ import { findNeighbour } from "fumadocs-core/page-tree"
 import z from "zod"
 
 import { type DocsItemType } from "@/lib/pages/docs"
+import { getItemByName } from "@/lib/registry"
 import { source } from "@/lib/source"
 import { absoluteUrl } from "@/lib/utils"
 import { ErrorBoundary } from "@/components/ui/error-boundary"
@@ -18,7 +19,6 @@ import { PoweredByBadge } from "@/components/ui/powered-by-badge"
 import { DocsCopyPage } from "@/components/documentation/docs/docs-copy-page"
 import { DocsTableOfContents } from "@/components/documentation/docs/docs-toc"
 import { OpenInV0Cta } from "@/components/documentation/integrations/open-in-v0-cta"
-import { Index } from "@/registry/__index__"
 import { Badge } from "@/registry/new-york-v4/ui/badge"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
@@ -63,13 +63,8 @@ export async function DocsItemContent({
     next: null,
   }
 
-  // Get registry item for poweredBy info from Index - safely access
-  let registryItem: (typeof Index)["new-york-v4"][string] | undefined
-  try {
-    registryItem = Index?.["new-york-v4"]?.[itemName]
-  } catch {
-    registryItem = undefined
-  }
+  // Get registry item for poweredBy info
+  const registryItem = getItemByName(itemName)
 
   // Safely get raw text for front-matter parsing
   let raw = ""

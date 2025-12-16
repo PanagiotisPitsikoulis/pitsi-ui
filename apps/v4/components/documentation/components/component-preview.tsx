@@ -1,4 +1,4 @@
-import { getRegistryIndexItem } from "@/lib/registry-client"
+import { getItemByName } from "@/lib/registry"
 import { ReadinessBadge } from "@/components/ui/readiness-badge"
 import { TierBadge } from "@/components/ui/tier-badge"
 import { ComponentPreviewTabs } from "@/components/documentation/components/component-preview-tabs"
@@ -23,7 +23,7 @@ export function ComponentPreview({
   type?: "block" | "component" | "example"
   chromeLessOnMobile?: boolean
 }) {
-  const registryItem = getRegistryIndexItem(name, styleName)
+  const registryItem = getItemByName(name)
 
   if (!registryItem) {
     return (

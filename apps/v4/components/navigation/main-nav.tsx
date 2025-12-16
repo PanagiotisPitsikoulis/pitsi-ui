@@ -378,7 +378,7 @@ export function MainNav({
                     <BlocksIcon className="text-brand size-20" />
                   </div>
                 </div>
-                <ul className="grid max-h-[50vh] flex-1 auto-rows-min grid-cols-3 content-start gap-1 overflow-y-auto">
+                <ul className="grid h-[340px] flex-1 auto-rows-min grid-cols-3 content-start gap-1 overflow-y-auto">
                   {allBlockSubcategories
                     .filter((sub) =>
                       formatName(sub.name).toLowerCase().includes(blocksSearch.toLowerCase())
@@ -442,7 +442,7 @@ export function MainNav({
                     <ComponentsIcon className="text-brand size-20" />
                   </div>
                 </div>
-                <ul className="grid max-h-[50vh] flex-1 auto-rows-min grid-cols-3 content-start gap-1 overflow-y-auto">
+                <ul className="grid h-[340px] flex-1 auto-rows-min grid-cols-3 content-start gap-1 overflow-y-auto">
                   {componentPages
                     .filter((page) =>
                       page.name.toLowerCase().includes(componentsSearch.toLowerCase())
@@ -506,7 +506,7 @@ export function MainNav({
                     <AnimationsIcon className="text-brand size-20" />
                   </div>
                 </div>
-                <ul className="grid max-h-[50vh] flex-1 auto-rows-min grid-cols-3 content-start gap-1 overflow-y-auto">
+                <ul className="grid h-[340px] flex-1 auto-rows-min grid-cols-3 content-start gap-1 overflow-y-auto">
                   {animationPages
                     .filter((page) =>
                       page.name.toLowerCase().includes(animationsSearch.toLowerCase())

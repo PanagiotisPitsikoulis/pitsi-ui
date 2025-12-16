@@ -1,6 +1,5 @@
 import { Metadata } from "next"
 
-import { defaultBezier, easingPresets } from "./_components/easing-presets"
 import EasingComposerClient from "./page.client"
 
 export const metadata: Metadata = {
@@ -29,10 +28,5 @@ export const metadata: Metadata = {
 }
 
 export default function EasingComposerPage() {
-  return (
-    <EasingComposerClient
-      presets={easingPresets}
-      initialBezier={defaultBezier}
-    />
-  )
+  return <EasingComposerClient />
 }

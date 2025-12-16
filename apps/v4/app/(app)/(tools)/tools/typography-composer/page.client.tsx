@@ -340,17 +340,17 @@ function TypographyPreview({ state }: { state: TypographyState }) {
 }
 
 interface TypographyComposerClientProps {
-  presets: Record<string, TypographyPreset>
-  initialState: TypographyState
+  hasBackgroundDecoration?: boolean
 }
 
 const unitTypes = ["px", "rem"] as const
 const tabTypes = ["explore", "scale", "fonts", "saved", "export"] as const
 
 export default function TypographyComposerClient({
-  presets,
-  initialState,
-}: TypographyComposerClientProps) {
+  hasBackgroundDecoration = true,
+}: TypographyComposerClientProps = {}) {
+  const presets = typographyPresets
+  const initialState = defaultState
   // URL state with nuqs
   const [baseSize, setBaseSize] = useQueryState(
     "base",
@@ -410,7 +410,7 @@ export default function TypographyComposerClient({
   )
   const [sidebarTab, setSidebarTab] = useQueryState(
     "tab",
-    parseAsStringLiteral(tabTypes).withDefault("explore")
+    parseAsStringLiteral(tabTypes).withDefault("scale")
   )
   const [savedItems, setSavedItems, isHydrated] = useLocalStorage<SavedTypography[]>(STORAGE_KEYS.TYPOGRAPHY_COMPOSER, [])
   const [isDark, setIsDark] = useState(false)
@@ -680,7 +680,7 @@ export default function TypographyComposerClient({
 
   return (
     <ToolLayout>
-      <ToolLayoutBackground />
+      {hasBackgroundDecoration && <ToolLayoutBackground />}
 
       <ToolLayoutContainer>
         <ToolLayoutSidebar>

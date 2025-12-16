@@ -4,81 +4,70 @@ import React from "react"
 
 import { cn } from "@/lib/utils"
 
-import { Badge } from "@/registry/new-york-v4/ui/badge"
-
 export interface SolutionItem {
   type: "image" | "card"
   image?: string
   title?: string
   description?: string
-  href?: string
-  backgroundColor?: string
-  textColor?: string
 }
 
 export interface FeatureSolutionsGridBlockProps {
-  badge?: string
+  tagline?: string
   headline?: string
+  headlineAccent?: string
   description?: string
   items?: SolutionItem[]
   className?: string
 }
 
-const defaultBadge = "Solutions"
-const defaultHeadline = "Transform Your Experience"
-const defaultDescription = "Discover innovative solutions to elevate your journey. From basics to advanced features, experience excellence at each level."
+const defaultTagline = "Deep Customization"
+const defaultHeadline = "Every Detail"
+const defaultHeadlineAccent = "Under Your Control"
+const defaultDescription = "Professional tools with mathematical foundations. From industry presets to granular controls."
 
 const defaultItems: SolutionItem[] = [
   {
     type: "image",
-    image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/photos/simone-hutsch-ee1-cRqJQtA-unsplash.jpg",
+    image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-1.svg",
   },
   {
     type: "card",
-    title: "Smart Solutions",
-    description: "Experience groundbreaking capabilities that redefine possibilities and unlock through innovation.",
-    href: "#",
-    backgroundColor: "bg-muted/50",
+    title: "Multi-Layer Shadows",
+    description: "Up to 5 shadow layers with individual control. Blur, spread, offset, opacity — all fine-tunable.",
   },
   {
     type: "image",
-    image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/photos/simone-hutsch-Ych4LcKFA5E-unsplash.jpg",
+    image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-2.svg",
   },
   {
     type: "card",
-    title: "Advanced Analytics",
-    description: "Take control of your journey with powerful tools and insights. Achieve goals with personalized solutions.",
-    href: "#",
-    backgroundColor: "bg-[#d1efef]",
-    textColor: "text-white",
+    title: "48 Easing Presets",
+    description: "From Apple's spring curves to Material Design's motion. Every preset mathematically derived.",
   },
   {
     type: "image",
-    image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/photos/simone-hutsch-8FIN2qa2vQM-unsplash.jpg",
+    image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-3.svg",
   },
   {
     type: "card",
-    title: "Custom Integration",
-    description: "Enhance your experience with advanced capabilities. Discover new possibilities for growth and success.",
-    href: "#",
-    backgroundColor: "bg-[#d1efef]",
+    title: "Typography Scales",
+    description: "Major Third, Perfect Fourth, Golden Ratio. Mathematical scales for perfect harmony.",
   },
   {
     type: "image",
-    image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/photos/simone-hutsch-ZXLGP2Qh3Mo-unsplash.jpg",
+    image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-1.svg",
   },
   {
     type: "card",
-    title: "Expert Support",
-    description: "Access insights and recommendations tailored to your needs. Navigate your path with confidence.",
-    href: "#",
-    backgroundColor: "bg-muted/50",
+    title: "Color Intelligence",
+    description: "OKLCH perceptual uniformity. 40+ semantic tokens. Automatic contrast ratios.",
   },
 ]
 
 export function FeatureSolutionsGridBlock({
-  badge = defaultBadge,
+  tagline = defaultTagline,
   headline = defaultHeadline,
+  headlineAccent = defaultHeadlineAccent,
   description = defaultDescription,
   items = defaultItems,
   className,
@@ -99,14 +88,20 @@ export function FeatureSolutionsGridBlock({
   }
 
   return (
-    <section className={cn("py-32", className)}>
-      <div className="container">
-        <div className="flex flex-col items-center gap-6 text-center">
-          <Badge variant="outline" className="rounded-full">
-            {badge}
-          </Badge>
-          <h2 className="text-4xl font-medium md:text-5xl">{headline}</h2>
-          <p className="text-muted-foreground max-w-2xl text-lg">{description}</p>
+    <section className={cn(className)}>
+      <div className="container px-6">
+        <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
+          <p className="text-brand text-sm font-medium tracking-widest uppercase">
+            {tagline}
+          </p>
+          <h2 className="display mt-6 text-4xl tracking-tight md:text-5xl lg:text-6xl">
+            {headline}
+            <br />
+            <span className="text-foreground">{headlineAccent}</span>
+          </h2>
+          <p className="text-muted-foreground mt-6 text-base md:text-lg">
+            {description}
+          </p>
         </div>
         <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {items.map((item, index) => (
@@ -116,7 +111,7 @@ export function FeatureSolutionsGridBlock({
                 src={item.image}
                 alt="placeholder"
                 className={cn(
-                  "aspect-square size-full rounded-2xl object-cover",
+                  "aspect-square size-full rounded-3xl object-cover",
                   getOrderClass(index)
                 )}
               />
@@ -124,23 +119,14 @@ export function FeatureSolutionsGridBlock({
               <div
                 key={index}
                 className={cn(
-                  "flex flex-col justify-between gap-20 rounded-2xl p-12 md:gap-32",
-                  item.backgroundColor,
+                  "bg-background flex flex-col justify-between gap-12 rounded-3xl border p-8 shadow-xs lg:p-12",
                   getOrderClass(index)
                 )}
               >
-                <h3 className={cn("text-2xl", item.textColor)}>{item.title}</h3>
-                <div>
-                  <p className={cn("mb-8", item.textColor ? `${item.textColor}/80` : "text-muted-foreground")}>
-                    {item.description}
-                  </p>
-                  <a
-                    href={item.href || "#"}
-                    className={cn("text-sm underline", item.textColor ? `${item.textColor}/80` : "")}
-                  >
-                    More Information
-                  </a>
-                </div>
+                <h3 className="text-xl font-medium lg:text-2xl">{item.title}</h3>
+                <p className="text-muted-foreground text-sm lg:text-base">
+                  {item.description}
+                </p>
               </div>
             )
           ))}

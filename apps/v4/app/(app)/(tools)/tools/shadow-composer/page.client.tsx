@@ -67,7 +67,7 @@ import {
   PreviewType,
 } from "./_components/preview-components"
 import { ShadowLayerControl } from "./_components/shadow-layer-control"
-import type { ShadowPreset } from "./_components/shadow-types"
+import { shadowPresets } from "./_components/shadow-presets"
 import {
   createShadowLayer,
   ShadowLayer,
@@ -243,12 +243,13 @@ function PresetSelector({
 }
 
 interface ShadowComposerPageClientProps {
-  presets: Record<string, ShadowPreset>
+  hasBackgroundDecoration?: boolean
 }
 
 export default function ShadowComposerPageClient({
-  presets,
-}: ShadowComposerPageClientProps) {
+  hasBackgroundDecoration = true,
+}: ShadowComposerPageClientProps = {}) {
+  const presets = shadowPresets
   const [layers, setLayers] = useState<ShadowLayer[]>([createShadowLayer()])
   const [currentPreset, setCurrentPreset] = useState("sm")
   const [sidebarTab, setSidebarTab] = useState<
@@ -352,7 +353,7 @@ export default function ShadowComposerPageClient({
 
   return (
     <ToolLayout>
-      <ToolLayoutBackground />
+      {hasBackgroundDecoration && <ToolLayoutBackground />}
 
       <ToolLayoutContainer>
         {/* Controls - First 2 columns */}

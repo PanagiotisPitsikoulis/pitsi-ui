@@ -1,9 +1,5 @@
 import { Metadata } from "next"
 
-import {
-  defaultState,
-  typographyPresets,
-} from "./_components/typography-presets"
 import TypographyComposerClient from "./page.client"
 
 export const metadata: Metadata = {
@@ -32,10 +28,5 @@ export const metadata: Metadata = {
 }
 
 export default async function TypographyComposerPage() {
-  return (
-    <TypographyComposerClient
-      presets={typographyPresets}
-      initialState={defaultState}
-    />
-  )
+  return <TypographyComposerClient />
 }

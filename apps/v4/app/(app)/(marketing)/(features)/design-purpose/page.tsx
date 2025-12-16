@@ -1,5 +1,7 @@
 import { Metadata } from "next"
 
+import { DesignPurposePageClient } from "./page.client"
+
 const title = "Design - Pitsi UI"
 const description =
   "Unparalleled design quality. Every pixel considered. From typography to color, spacing to motion — components with soul designed by humans who sweat the details."
@@ -28,6 +30,6 @@ export const metadata: Metadata = {
   },
 }
 
-export default function DesignPage() {
-  return <div className="relative min-h-screen">{/* Empty */}</div>
+export default function DesignPurposePage() {
+  return <DesignPurposePageClient />
 }

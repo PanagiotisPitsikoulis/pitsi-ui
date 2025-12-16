@@ -1,8 +1,8 @@
 import { Metadata } from "next"
 
+import { getItemByName } from "@/lib/registry"
 import { source } from "@/lib/source"
 import { absoluteUrl } from "@/lib/utils"
-import { Index } from "@/registry/__index__"
 
 export type DocsItemType = "components" | "animations"
 
@@ -27,7 +27,7 @@ export function generateDocsStaticParams() {
 
     // Get the item name from the slug
     const itemName = slug[1]
-    const registryItem = Index["new-york-v4"]?.[itemName]
+    const registryItem = getItemByName(itemName)
 
     // Filter out alpha items
     return registryItem?.readiness !== "alpha"
@@ -201,7 +201,7 @@ export function generateDocsItemStaticParams(type: DocsItemType) {
     .filter((param) => {
       if (!hideAlpha) return true
       const itemName = param[paramKey]
-      const registryItem = Index["new-york-v4"]?.[itemName]
+      const registryItem = getItemByName(itemName)
       return registryItem?.readiness !== "alpha"
     })
 }

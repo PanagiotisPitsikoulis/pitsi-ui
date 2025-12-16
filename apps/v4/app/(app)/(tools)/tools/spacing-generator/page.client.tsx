@@ -232,8 +232,7 @@ function SpacingPreview({ state }: { state: SpacingState }) {
 }
 
 interface SpacingGeneratorClientProps {
-  presets: Record<string, SpacingPreset>
-  initialState: SpacingState
+  hasBackgroundDecoration?: boolean
 }
 
 const scaleTypes = ["linear", "geometric", "fibonacci", "custom"] as const
@@ -241,9 +240,10 @@ const unitTypes = ["px", "rem"] as const
 const tabTypes = ["explore", "settings", "saved", "export"] as const
 
 export default function SpacingGeneratorClient({
-  presets,
-  initialState,
-}: SpacingGeneratorClientProps) {
+  hasBackgroundDecoration = true,
+}: SpacingGeneratorClientProps = {}) {
+  const presets = spacingPresets
+  const initialState = defaultState
   // URL state with nuqs
   const [baseSize, setBaseSize] = useQueryState(
     "base",
@@ -275,7 +275,7 @@ export default function SpacingGeneratorClient({
   )
   const [sidebarTab, setSidebarTab] = useQueryState(
     "tab",
-    parseAsStringLiteral(tabTypes).withDefault("explore")
+    parseAsStringLiteral(tabTypes).withDefault("settings")
   )
   const [isDark, setIsDark] = useState(false)
   const [savedItems, setSavedItems, isHydrated] = useLocalStorage<SavedSpacing[]>(STORAGE_KEYS.SPACING_GENERATOR, [])
@@ -408,7 +408,7 @@ export default function SpacingGeneratorClient({
 
   return (
     <ToolLayout>
-      <ToolLayoutBackground />
+      {hasBackgroundDecoration && <ToolLayoutBackground />}
 
       <ToolLayoutContainer>
         <ToolLayoutSidebar>

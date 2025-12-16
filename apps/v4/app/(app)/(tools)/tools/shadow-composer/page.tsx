@@ -1,6 +1,5 @@
 import { Metadata } from "next"
 
-import { shadowPresets } from "./_components/shadow-presets"
 import ShadowComposerPageClient from "./page.client"
 
 const title = "Shadow Composer"
@@ -31,5 +30,5 @@ export const metadata: Metadata = {
 }
 
 export default function ShadowComposerPage() {
-  return <ShadowComposerPageClient presets={shadowPresets} />
+  return <ShadowComposerPageClient />
 }

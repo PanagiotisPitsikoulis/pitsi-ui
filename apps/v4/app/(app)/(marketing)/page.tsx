@@ -1,11 +1,7 @@
 import { Suspense } from "react"
 import { Metadata } from "next"
 
-import { getRegistrySummaryCounts } from "@/lib/registry"
-
 import {
-  ContentExplained,
-  ContentSection,
   CTASection,
   DesignSection,
   DynamicPricingSection,
@@ -63,8 +59,6 @@ async function IndexPageInteral({
 }: {
   pricingSection: React.ReactNode
 }) {
-  const registryCounts = await getRegistrySummaryCounts()
-
   return (
     <div className="relative min-h-screen">
       <StripeBgGuides columnCount={6} animated={false} />

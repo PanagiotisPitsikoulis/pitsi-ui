@@ -1,5 +1,7 @@
 import { Metadata } from "next"
 
+import { ContentFeaturesPageClient } from "./page.client"
+
 const title = "Blocks - Pitsi UI"
 const description =
   "1000+ production-ready UI blocks. Marketing, e-commerce, dashboards, authentication—build entire pages in minutes."
@@ -28,6 +30,6 @@ export const metadata: Metadata = {
   },
 }
 
-export default function BlocksPage() {
-  return <div className="relative min-h-screen">{/* Empty */}</div>
+export default function ContentFeaturesPage() {
+  return <ContentFeaturesPageClient />
 }

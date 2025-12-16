@@ -63,10 +63,11 @@ import {
 
 import { decorationPresets, presetConfigs } from "./_components/decoration-presets"
 import { generateCSSCode, generateTailwindCode } from "./_components/generate-code"
-import type {
-  DecorationPreset,
-  DecorationState,
-  DecorationType,
+import {
+  defaultDecorationState,
+  type DecorationPreset,
+  type DecorationState,
+  type DecorationType,
 } from "./_components/decoration-types"
 
 // Icon from tools page
@@ -117,8 +118,7 @@ interface SavedDecoration {
 }
 
 interface BackgroundDecorationsPageClientProps {
-  presets: DecorationPreset[]
-  defaultState: DecorationState
+  hasBackgroundDecoration?: boolean
 }
 
 const sidebarTabs = ["explore", "configure", "saved", "export"] as const
@@ -131,13 +131,14 @@ const presetsObject = decorationPresets.reduce((acc, preset) => {
 }, {} as Record<string, { label: string }>)
 
 export default function BackgroundDecorationsPageClient({
-  presets,
-  defaultState,
-}: BackgroundDecorationsPageClientProps) {
+  hasBackgroundDecoration = true,
+}: BackgroundDecorationsPageClientProps = {}) {
+  const presets = decorationPresets
+  const defaultState = defaultDecorationState
   // URL state
   const [sidebarTab, setSidebarTab] = useQueryState(
     "tab",
-    parseAsStringLiteral(sidebarTabs).withDefault("explore")
+    parseAsStringLiteral(sidebarTabs).withDefault("configure")
   )
   const [codeFormat, setCodeFormat] = useQueryState(
     "format",
@@ -381,7 +382,7 @@ export default function BackgroundDecorationsPageClient({
 
   return (
     <ToolLayout>
-      <ToolLayoutBackground />
+      {hasBackgroundDecoration && <ToolLayoutBackground />}
 
       <ToolLayoutContainer>
         {/* Controls - First 2 columns */}

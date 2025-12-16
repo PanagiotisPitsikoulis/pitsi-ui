@@ -10,47 +10,60 @@ export interface FeatureValueItem {
 }
 
 export interface FeatureValuesBlockProps {
+  tagline?: string
   headline?: string
+  headlineAccent?: string
   values?: FeatureValueItem[]
   className?: string
 }
 
-const defaultHeadline = "Our Values and Principles"
+const defaultTagline = "Export Anywhere"
+const defaultHeadline = "One Design"
+const defaultHeadlineAccent = "All Platforms"
 const defaultValues: FeatureValueItem[] = [
   {
-    title: "Team Spirit",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit architecto atque consequuntur perferendis ratione dolorem vitae, doloribus facere.",
+    title: "CSS Variables",
+    description: "Standard CSS custom properties. Works everywhere, no build step required.",
   },
   {
-    title: "Innovation",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit architecto atque consequuntur perferendis ratione dolorem vitae, doloribus facere.",
+    title: "Tailwind v4",
+    description: "Native Tailwind CSS v4 format. Drop into your config and go.",
   },
   {
-    title: "Quality",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit architecto atque consequuntur perferendis ratione dolorem vitae, doloribus facere.",
+    title: "Figma Variables",
+    description: "Copy directly to Figma. Maintain design-dev parity effortlessly.",
   },
   {
-    title: "Integrity",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit architecto atque consequuntur perferendis ratione dolorem vitae, doloribus facere.",
+    title: "JSON Schema",
+    description: "Structured data for any tooling. Build your own integrations.",
   },
 ]
 
 export function FeatureValuesBlock({
+  tagline = defaultTagline,
   headline = defaultHeadline,
+  headlineAccent = defaultHeadlineAccent,
   values = defaultValues,
   className,
 }: FeatureValuesBlockProps) {
   return (
-    <section className={cn("py-32", className)}>
-      <div className="container">
+    <section className={cn(className)}>
+      <div className="container px-6">
         <div className="grid gap-8 lg:grid-cols-3">
-          <h2 className="row-span-2 text-3xl font-semibold lg:text-5xl">
-            {headline}
-          </h2>
+          <div className="row-span-2">
+            <p className="text-brand text-sm font-medium tracking-widest uppercase">
+              {tagline}
+            </p>
+            <h2 className="display mt-6 text-4xl tracking-tight md:text-5xl lg:text-6xl">
+              {headline}
+              <br />
+              <span className="text-foreground">{headlineAccent}</span>
+            </h2>
+          </div>
           {values.map((value, index) => (
             <div key={index}>
-              <h3 className="mb-2 text-xl font-medium">{value.title}</h3>
-              <p className="text-muted-foreground">{value.description}</p>
+              <h3 className="mb-2 text-lg font-medium md:text-xl">{value.title}</h3>
+              <p className="text-muted-foreground text-sm md:text-base">{value.description}</p>
             </div>
           ))}
         </div>

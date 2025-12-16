@@ -63,6 +63,9 @@ export const SiteHeaderClient = memo(function SiteHeaderClient({
         <MobileNav
           tree={pageTree}
           items={navItems}
+          componentPages={componentPages}
+          animationPages={animationPages}
+          allBlockSubcategories={allBlockSubcategories}
           className="flex lg:hidden"
         />
         <Button

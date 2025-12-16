@@ -1,102 +1,92 @@
 "use client"
 
-import { ChevronRight } from "lucide-react"
 import React from "react"
 
 import { cn } from "@/lib/utils"
-
-import { Button } from "@/registry/new-york-v4/ui/button"
 
 export interface FeatureBentoCard {
   tag: string
   title: string
   description?: string
   image: string
-  href?: string
   layout: "full" | "half" | "third"
 }
 
 export interface FeatureBentoCardsBlockProps {
+  tagline?: string
   headline?: string
+  headlineAccent?: string
   description?: string
-  ctaLabel?: string
-  ctaHref?: string
   cards?: FeatureBentoCard[]
   className?: string
 }
 
-const defaultHeadline = "Built your dream project with our blocks"
-const defaultDescription = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quaerat odit sunt eaque ex, natus vel maxime tenetur odio? Nemo."
-const defaultCtaLabel = "Get started for free"
+const defaultTagline = "What Sets Us Apart"
+const defaultHeadline = "Professional Grade"
+const defaultHeadlineAccent = "Design Tools"
+const defaultDescription = "Industry-inspired presets. Mathematical foundations. Real component previews."
 const defaultCards: FeatureBentoCard[] = [
   {
-    tag: "COPY AND PASTE",
-    title: "Ready to use blocks for your project",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti molestiae similique atque laboriosam a illum ad sit. Natus, iste voluptatem!",
+    tag: "APPLE • STRIPE • SHOPIFY",
+    title: "Industry-Inspired Presets",
+    description: "Not random values. Every preset is derived from real design systems — macOS shadows, Stripe's blue-tinted depth, Material Design spacing.",
     image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-1.svg",
     layout: "full",
   },
   {
-    tag: "EASY TO USE",
-    title: "Customize and build your project",
+    tag: "REAL COMPONENTS",
+    title: "See It In Context",
+    description: "Preview on actual UI — modals, cards, navbars. Not abstract boxes.",
     image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-2.svg",
     layout: "third",
   },
   {
-    tag: "A BLOCK FOR EVERYTHING",
-    title: "Blocks for every project",
+    tag: "MULTI-FORMAT EXPORT",
+    title: "One Design, All Platforms",
+    description: "CSS, Tailwind v4, Figma, Framer Motion, JSON. Export once, use everywhere.",
     image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-3.svg",
     layout: "half",
   },
 ]
 
 export function FeatureBentoCardsBlock({
+  tagline = defaultTagline,
   headline = defaultHeadline,
+  headlineAccent = defaultHeadlineAccent,
   description = defaultDescription,
-  ctaLabel = defaultCtaLabel,
-  ctaHref,
   cards = defaultCards,
   className,
 }: FeatureBentoCardsBlockProps) {
   return (
-    <section className={cn("py-32", className)}>
-      <div className="container">
-        <div className="mx-auto flex max-w-3xl flex-col items-center gap-6">
-          <h2 className="mb-2 text-balance text-center text-3xl font-semibold lg:text-5xl">
+    <section className={cn(className)}>
+      <div className="container px-6">
+        <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
+          <p className="text-brand text-sm font-medium tracking-widest uppercase">
+            {tagline}
+          </p>
+          <h2 className="display mt-6 text-4xl tracking-tight md:text-5xl lg:text-6xl">
             {headline}
+            <br />
+            <span className="text-foreground">{headlineAccent}</span>
           </h2>
-          <p className="text-muted-foreground text-center lg:text-lg">
+          <p className="text-muted-foreground mt-6 text-base md:text-lg">
             {description}
           </p>
-          <Button variant="outline" className="mt-6" asChild={!!ctaHref}>
-            {ctaHref ? (
-              <a href={ctaHref}>
-                {ctaLabel}
-                <ChevronRight className="ml-1 h-4" />
-              </a>
-            ) : (
-              <>
-                {ctaLabel}
-                <ChevronRight className="ml-1 h-4" />
-              </>
-            )}
-          </Button>
         </div>
-        <div className="mx-auto mt-20 flex max-w-5xl grid-cols-1 flex-col gap-6 lg:grid lg:grid-cols-7">
+        <div className="mt-16 flex grid-cols-1 flex-col gap-6 lg:grid lg:grid-cols-7">
           {cards.map((card, index) => {
             if (card.layout === "full") {
               return (
-                <a
+                <div
                   key={index}
-                  href={card.href || "#"}
-                  className="bg-muted col-span-7 grid overflow-hidden rounded-lg sm:grid-cols-2"
+                  className="bg-background col-span-7 grid overflow-hidden rounded-3xl border shadow-xs sm:grid-cols-2"
                 >
                   <div className="flex flex-col justify-between p-8 lg:p-12">
                     <div>
-                      <div className="text-muted-foreground mb-4 text-xs">
+                      <div className="text-brand mb-4 text-xs font-medium tracking-wider">
                         {card.tag}
                       </div>
-                      <h3 className="mb-2 text-xl font-medium lg:text-2xl">
+                      <h3 className="mb-3 text-xl font-medium lg:text-2xl">
                         {card.title}
                       </h3>
                       {card.description && (
@@ -105,81 +95,70 @@ export function FeatureBentoCardsBlock({
                         </p>
                       )}
                     </div>
-                    <div className="mt-6 sm:mt-8">
-                      <Button variant="outline">
-                        Learn more
-                        <ChevronRight className="ml-1 h-4" />
-                      </Button>
-                    </div>
                   </div>
                   <img
                     src={card.image}
-                    alt="placeholder"
+                    alt={card.title}
                     className="order-first aspect-video h-full max-h-96 w-full border-b object-cover sm:order-last sm:aspect-auto lg:max-h-none lg:border-b-0 lg:border-l"
                   />
-                </a>
+                </div>
               )
             }
 
             if (card.layout === "third") {
               return (
-                <a
+                <div
                   key={index}
-                  href={card.href || "#"}
-                  className="bg-muted group relative overflow-hidden rounded-lg lg:col-span-3"
+                  className="bg-background overflow-hidden rounded-3xl border shadow-xs lg:col-span-3"
                 >
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="absolute right-10 top-7 transition-all duration-200 group-hover:opacity-100 lg:translate-y-2 lg:opacity-0 lg:group-hover:translate-y-0"
-                  >
-                    <ChevronRight className="h-4" />
-                  </Button>
                   <img
                     src={card.image}
-                    alt="placeholder"
+                    alt={card.title}
                     className="max-h-72 w-full border-b object-cover"
                   />
                   <div className="p-8 lg:p-12">
-                    <div className="text-muted-foreground mb-4 text-xs">
+                    <div className="text-brand mb-4 text-xs font-medium tracking-wider">
                       {card.tag}
                     </div>
-                    <h3 className="mb-2 text-xl font-medium lg:text-2xl">
+                    <h3 className="mb-3 text-xl font-medium lg:text-2xl">
                       {card.title}
                     </h3>
+                    {card.description && (
+                      <p className="text-muted-foreground text-sm lg:text-base">
+                        {card.description}
+                      </p>
+                    )}
                   </div>
-                </a>
+                </div>
               )
             }
 
             return (
-              <a
+              <div
                 key={index}
-                href={card.href || "#"}
-                className="bg-muted grid overflow-hidden rounded-lg sm:grid-cols-2 lg:col-span-4"
+                className="bg-background grid overflow-hidden rounded-3xl border shadow-xs sm:grid-cols-2 lg:col-span-4"
               >
                 <img
                   src={card.image}
-                  alt="placeholder"
+                  alt={card.title}
                   className="aspect-video h-full max-h-96 w-full border-b object-cover sm:aspect-auto lg:max-h-none lg:border-b-0 lg:border-r"
                 />
                 <div className="flex flex-col justify-between p-8 lg:p-12">
                   <div>
-                    <div className="text-muted-foreground mb-4 text-xs">
+                    <div className="text-brand mb-4 text-xs font-medium tracking-wider">
                       {card.tag}
                     </div>
-                    <h3 className="mb-2 text-xl font-medium lg:text-2xl">
+                    <h3 className="mb-3 text-xl font-medium lg:text-2xl">
                       {card.title}
                     </h3>
-                  </div>
-                  <div className="mt-6 sm:mt-8">
-                    <Button variant="outline">
-                      Learn more
-                      <ChevronRight className="ml-1 h-4" />
-                    </Button>
+                    {card.description && (
+                      <p className="text-muted-foreground text-sm lg:text-base">
+                        {card.description}
+                      </p>
+                    )}
                   </div>
                 </div>
-              </a>
+              </div>
             )
           })}
         </div>

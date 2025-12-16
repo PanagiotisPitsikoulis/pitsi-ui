@@ -1,9 +1,9 @@
 "use client"
 
-import { Component as ReactComponent, memo, Suspense } from "react"
+import { Component as ReactComponent, memo, Suspense, useMemo } from "react"
+import dynamic from "next/dynamic"
 import { AlertCircle, RotateCcw } from "lucide-react"
 
-import { Index } from "@/registry/__index__"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Spinner } from "@/registry/new-york-v4/ui/spinner"
 
@@ -11,6 +11,8 @@ interface LazyComponentRendererProps {
   name: string
   styleName: string
   isComponent: boolean
+  componentType?: string
+  filePath?: string
 }
 
 // Error boundary for catching render errors
@@ -65,24 +67,77 @@ class ComponentErrorBoundary extends ReactComponent<
   }
 }
 
+// Helper to extract the module default export
+function getModuleDefault(mod: Record<string, unknown>) {
+  if (mod.default) return mod.default
+  const exportName = Object.keys(mod).find(
+    (key) => typeof mod[key] === "function" || typeof mod[key] === "object"
+  )
+  return exportName ? mod[exportName] : null
+}
+
+// Parse file path to extract category/subcategory for blocks
+function parseBlockPath(filePath: string): { category: string; subcategory: string; name: string } | null {
+  // filePath is like "registry/new-york-v4/blocks/marketing/hero-section/hero-1.tsx"
+  const match = filePath.match(/blocks\/([^/]+)\/([^/]+)\/([^/]+)\.tsx$/)
+  if (match) {
+    return { category: match[1], subcategory: match[2], name: match[3] }
+  }
+  return null
+}
+
 export const LazyComponentRenderer = memo(function LazyComponentRenderer({
   name,
   styleName,
   isComponent,
+  componentType,
+  filePath,
 }: LazyComponentRendererProps) {
-  // Get the component from the registry index
-  const styleIndex = Index[styleName]
+  // Create dynamic component based on type and path
+  const Component = useMemo(() => {
+    // For UI components
+    if (componentType === "registry:ui") {
+      return dynamic(
+        () =>
+          import(`@/registry/new-york-v4/ui/${name}`).then((mod) => ({
+            default: getModuleDefault(mod) as React.ComponentType,
+          })),
+        { ssr: false }
+      )
+    }
 
-  if (!styleIndex || !styleIndex[name]) {
-    return (
-      <div className="flex h-screen items-center justify-center">
-        <div className="text-muted-foreground">Component not found</div>
-      </div>
-    )
-  }
+    // For example components
+    if (componentType === "registry:example") {
+      return dynamic(
+        () =>
+          import(`@/registry/new-york-v4/examples/${name}`).then((mod) => ({
+            default: getModuleDefault(mod) as React.ComponentType,
+          })),
+        { ssr: false }
+      )
+    }
 
-  const registryItem = styleIndex[name]
-  const Component = registryItem.component
+    // For blocks and internal components
+    if (componentType === "registry:block" || componentType === "registry:internal") {
+      if (filePath) {
+        const blockInfo = parseBlockPath(filePath)
+        if (blockInfo) {
+          return dynamic(
+            () =>
+              import(
+                `@/registry/new-york-v4/blocks/${blockInfo.category}/${blockInfo.subcategory}/${blockInfo.name}`
+              ).then((mod) => ({
+                default: getModuleDefault(mod) as React.ComponentType,
+              })),
+            { ssr: false }
+          )
+        }
+      }
+    }
+
+    // Fallback: return null component
+    return () => null
+  }, [name, componentType, filePath])
 
   if (!Component) {
     return (

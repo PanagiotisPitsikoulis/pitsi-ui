@@ -63,11 +63,11 @@ export function PreviewNavigation({
           ))}
         </PopoverContent>
       </Popover>
-      <div className="flex items-center">
+      <div className="flex items-center shadow-sm rounded-md">
         <Button
           variant="outline"
           size="icon"
-          className="size-8 shrink-0 rounded-r-none shadow-none"
+          className="size-8 shrink-0 rounded-r-none bg-background"
           onClick={goToPrevious}
           disabled={items.length <= 1}
         >
@@ -76,7 +76,7 @@ export function PreviewNavigation({
         <Button
           variant="outline"
           size="icon"
-          className="-ml-px size-8 shrink-0 rounded-l-none shadow-none"
+          className="-ml-px size-8 shrink-0 rounded-l-none bg-background"
           onClick={goToNext}
           disabled={items.length <= 1}
         >

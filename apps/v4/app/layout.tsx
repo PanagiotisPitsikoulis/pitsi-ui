@@ -1,4 +1,3 @@
-import { Suspense } from "react"
 import type { Metadata } from "next"
 import { NuqsAdapter } from "nuqs/adapters/next/app"
 
@@ -7,7 +6,6 @@ import { fontVariables } from "@/lib/config/fonts"
 import { cn } from "@/lib/utils"
 import { LayoutProvider } from "@/hooks/use-layout"
 import { Analytics } from "@/components/shared/analytics"
-import { ScrollToTop } from "@/components/shared/scroll-to-top"
 import { ActiveThemeProvider } from "@/components/theme/active-theme"
 import { ThemeProvider } from "@/components/theme/theme-provider"
 import { Toaster } from "@/registry/new-york-v4/ui/sonner"
@@ -100,9 +98,6 @@ export default function RootLayout({
         <ThemeProvider>
           <LayoutProvider>
             <ActiveThemeProvider>
-              <Suspense fallback={null}>
-                <ScrollToTop />
-              </Suspense>
               <NuqsAdapter>{children}</NuqsAdapter>
               <Toaster position="top-center" />
               <Analytics />

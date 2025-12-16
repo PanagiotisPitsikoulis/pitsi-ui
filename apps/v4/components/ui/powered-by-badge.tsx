@@ -12,7 +12,7 @@ import {
 } from "@/registry/new-york-v4/ui/tooltip"
 
 interface PoweredByBadgeProps {
-  poweredBy?: PoweredByLibrary[]
+  poweredBy?: (PoweredByLibrary | { name: string; url?: string })[]
   className?: string
   variant?: "default" | "inline" | "logos-only"
 }

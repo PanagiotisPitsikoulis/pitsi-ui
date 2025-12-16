@@ -596,7 +596,7 @@ function ToolCard({ tool }: { tool: Tool }) {
 
 export default async function ToolsPage() {
   return (
-    <div className="relative -mt-[56px] min-h-screen overflow-x-clip">
+    <div className="relative -mt-[56px] overflow-x-clip">
       <StripeBgGuides columnCount={6} animated={false} />
 
       <div className="relative z-10 container px-6">

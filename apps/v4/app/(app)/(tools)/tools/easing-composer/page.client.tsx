@@ -93,6 +93,7 @@ import type {
   EasingPreset,
   SavedEasing,
 } from "./_components/easing-types"
+import { defaultBezier, easingPresets } from "./_components/easing-presets"
 import { previewComponents, type PreviewType } from "./_components/preview-components"
 
 function EasingIcon({ className }: { className?: string }) {
@@ -453,30 +454,31 @@ function PresetSelector({
 
 const sidebarTabs = ["explore", "curve", "saved", "export"] as const
 
+// Use imported presets directly
+const presets = easingPresets
+
 interface EasingComposerClientProps {
-  presets: Record<string, EasingPreset>
-  initialBezier: CubicBezier
+  hasBackgroundDecoration?: boolean
 }
 
 export default function EasingComposerClient({
-  presets,
-  initialBezier,
+  hasBackgroundDecoration = true,
 }: EasingComposerClientProps) {
   // URL state
-  const [x1, setX1] = useQueryState("x1", parseAsFloat.withDefault(initialBezier.x1))
-  const [y1, setY1] = useQueryState("y1", parseAsFloat.withDefault(initialBezier.y1))
-  const [x2, setX2] = useQueryState("x2", parseAsFloat.withDefault(initialBezier.x2))
-  const [y2, setY2] = useQueryState("y2", parseAsFloat.withDefault(initialBezier.y2))
+  const [x1, setX1] = useQueryState("x1", parseAsFloat.withDefault(defaultBezier.x1))
+  const [y1, setY1] = useQueryState("y1", parseAsFloat.withDefault(defaultBezier.y1))
+  const [x2, setX2] = useQueryState("x2", parseAsFloat.withDefault(defaultBezier.x2))
+  const [y2, setY2] = useQueryState("y2", parseAsFloat.withDefault(defaultBezier.y2))
   const [duration, setDuration] = useQueryState("dur", parseAsInteger.withDefault(500))
   const [currentPreset, setCurrentPreset] = useQueryState("preset", parseAsString.withDefault("smooth"))
   const [sidebarTab, setSidebarTab] = useQueryState(
     "tab",
-    parseAsStringLiteral(sidebarTabs).withDefault("explore")
+    parseAsStringLiteral(sidebarTabs).withDefault("curve")
   )
   // Local state
   const [savedItems, setSavedItems, isHydrated] = useLocalStorage<SavedEasing[]>(STORAGE_KEYS.EASING_COMPOSER, [])
   const [selectedPreview, setSelectedPreview] = useState<PreviewType>("card")
-  const [isPlaying, setIsPlaying] = useState(true)
+  const [isPlaying, setIsPlaying] = useState(false)
 
   const presetKeys = useMemo(() => Object.keys(presets), [presets])
   const [deckIndex, setDeckIndex] = useState(Math.max(0, presetKeys.indexOf(currentPreset)))
@@ -555,7 +557,7 @@ export default function EasingComposerClient({
 
   return (
     <ToolLayout>
-      <ToolLayoutBackground />
+      {hasBackgroundDecoration && <ToolLayoutBackground />}
 
       <ToolLayoutContainer>
         <ToolLayoutSidebar>
