@@ -18,6 +18,7 @@ export async function generateMetadata({
   }>
 }) {
   const { style, name } = await params
+  // generateViewMetadata is now sync - uses Index directly without file I/O
   return generateViewMetadata({ style, name })
 }
 

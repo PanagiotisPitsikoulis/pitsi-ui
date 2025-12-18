@@ -1,17 +1,18 @@
 import { Metadata } from "next"
 
 import { siteConfig } from "@/lib/config"
-import { queryRegistry, type RegistryItem } from "@/lib/registry-utils"
+import { type RegistryItem } from "@/lib/registry-utils"
 import { absoluteUrl } from "@/lib/utils"
+import { Index } from "@/registry/__index__"
 import { getStyle, STYLES } from "@/registry/styles"
 
-export async function generateViewMetadata({
+export function generateViewMetadata({
   style: styleName,
   name,
 }: {
   style: string
   name: string
-}): Promise<Metadata> {
+}): Metadata {
   try {
     const style = getStyle(styleName)
 
@@ -19,10 +20,8 @@ export async function generateViewMetadata({
       return {}
     }
 
-    const item = (await queryRegistry({
-      name,
-      style: style.name,
-    })) as RegistryItem | null
+    // Use direct Index access for O(1) lookup without file I/O
+    const item = Index[style.name]?.[name] as RegistryItem | undefined
 
     if (!item) {
       return {}
