@@ -30,14 +30,14 @@ echo ""
 # Step 3: Run tests
 echo "3️⃣ Running tests..."
 cd packages/pitsi
-pnpm test
+bun run test
 cd ../..
 echo "✅ All tests passed"
 echo ""
 
 # Step 4: Build the package
 echo "4️⃣ Building package..."
-pnpm pitsi:build
+bun run pitsi:build
 echo "✅ Build complete"
 echo ""
 
@@ -92,15 +92,15 @@ fi
 echo "5️⃣ Publishing to npm..."
 if [ "$1" == "--beta" ]; then
   echo "Publishing as beta..."
-  pnpm pub:beta
+  bun run pub:beta
 elif [ "$1" == "--next" ]; then
   echo "Publishing as next..."
   cd packages/pitsi
-  pnpm pub:next
+  bun run pub:next
   cd ../..
 else
   echo "Publishing as latest..."
-  pnpm pub:release
+  bun run pub:release
 fi
 
 echo ""

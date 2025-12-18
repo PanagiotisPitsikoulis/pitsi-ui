@@ -1,11 +1,13 @@
 "use client"
 
 import * as React from "react"
+import { Eye, Settings2 } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { LayoutGrid, LayoutGridItem } from "@/components/layout/layout-grid"
 import { StripeBgGuides } from "@/components/layout/striped-bg-guides"
 import { BackLink } from "@/components/navigation/back-link"
+import { Button } from "@/registry/new-york-v4/ui/button"
 import { ScrollArea, ScrollBar } from "@/registry/new-york-v4/ui/scroll-area"
 import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 import {
@@ -14,6 +16,28 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/registry/new-york-v4/ui/tabs"
+
+/* -----------------------------------------------------------------------------
+ * Mobile View Context - Toggle between tool controls and preview on mobile
+ * -------------------------------------------------------------------------- */
+
+type MobileView = "tool" | "preview"
+
+interface MobileViewContextValue {
+  mobileView: MobileView
+  setMobileView: (view: MobileView) => void
+  toggleMobileView: () => void
+}
+
+const MobileViewContext = React.createContext<MobileViewContextValue | null>(null)
+
+function useMobileView() {
+  const context = React.useContext(MobileViewContext)
+  if (!context) {
+    throw new Error("useMobileView must be used within a ToolLayout")
+  }
+  return context
+}
 
 /* -----------------------------------------------------------------------------
  * ToolLayout - Root container
@@ -25,8 +49,21 @@ interface ToolLayoutProps {
 }
 
 function ToolLayout({ children, className }: ToolLayoutProps) {
+  const [mobileView, setMobileView] = React.useState<MobileView>("tool")
+
+  const toggleMobileView = React.useCallback(() => {
+    setMobileView((prev) => (prev === "tool" ? "preview" : "tool"))
+  }, [])
+
+  const contextValue = React.useMemo(
+    () => ({ mobileView, setMobileView, toggleMobileView }),
+    [mobileView, toggleMobileView]
+  )
+
   return (
-    <div className={cn("relative overflow-clip", className)}>{children}</div>
+    <MobileViewContext.Provider value={contextValue}>
+      <div className={cn("relative overflow-clip", className)}>{children}</div>
+    </MobileViewContext.Provider>
   )
 }
 
@@ -62,7 +99,7 @@ function ToolLayoutContainer({
   return (
     <div className={cn("relative z-10 container px-6", className)}>
       <Spacer size="lg" sizeMobile="md" />
-      <LayoutGrid className="items-start lg:h-[calc(100vh-100px)]">
+      <LayoutGrid className="items-start">
         {children}
       </LayoutGrid>
     </div>
@@ -79,11 +116,16 @@ interface ToolLayoutSidebarProps {
 }
 
 function ToolLayoutSidebar({ children, className }: ToolLayoutSidebarProps) {
+  const { mobileView } = useMobileView()
+
   return (
     <LayoutGridItem
       span={6}
       spanLg={2}
-      className={cn("lg:max-h-[calc(100vh-100px)]", className)}
+      className={cn(
+        mobileView === "preview" && "hidden lg:block",
+        className
+      )}
     >
       <div className="flex h-full flex-col space-y-4 overflow-hidden">
         {children}
@@ -111,9 +153,31 @@ function ToolLayoutHeader({
   description,
   className,
 }: ToolLayoutHeaderProps) {
+  const { mobileView, toggleMobileView } = useMobileView()
+
   return (
     <div className={cn("h-[100px] shrink-0", className)}>
-      <BackLink href={backHref}>{backLabel}</BackLink>
+      <div className="flex items-center justify-between">
+        <BackLink href={backHref}>{backLabel}</BackLink>
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={toggleMobileView}
+          className="lg:hidden"
+        >
+          {mobileView === "tool" ? (
+            <>
+              <Eye className="size-4" />
+              Preview
+            </>
+          ) : (
+            <>
+              <Settings2 className="size-4" />
+              Controls
+            </>
+          )}
+        </Button>
+      </div>
       <h1 className="display -mt-2 text-2xl font-semibold tracking-tight">
         {title}
       </h1>
@@ -190,9 +254,12 @@ function ToolLayoutTabsList({
   ...props
 }: ToolLayoutTabsListProps) {
   return (
-    <TabsList className={cn("h-10 w-full", className)} {...props}>
-      {children}
-    </TabsList>
+    <ScrollArea className="w-full">
+      <TabsList className={cn("inline-flex h-10 w-max min-w-full gap-2", className)} {...props}>
+        {children}
+      </TabsList>
+      <ScrollBar orientation="horizontal" className="h-1.5" />
+    </ScrollArea>
   )
 }
 
@@ -266,9 +333,35 @@ interface ToolLayoutPreviewProps {
 }
 
 function ToolLayoutPreview({ children, className }: ToolLayoutPreviewProps) {
+  const { mobileView, toggleMobileView } = useMobileView()
+
   return (
-    <LayoutGridItem span={6} spanLg={4} className={cn("lg:pl-4", className)}>
-      <div className="flex flex-col gap-3">{children}</div>
+    <LayoutGridItem
+      span={6}
+      spanLg={4}
+      className={cn(
+        "lg:pl-4",
+        mobileView === "tool" && "hidden lg:block",
+        className
+      )}
+    >
+      <div className="flex flex-col gap-3">
+        {/* Mobile close button - only shown when preview is visible on mobile */}
+        <div className="flex items-center justify-between lg:hidden">
+          <span className="text-muted-foreground text-sm font-medium uppercase tracking-wider">
+            Preview
+          </span>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={toggleMobileView}
+          >
+            <Settings2 className="size-4" />
+            Controls
+          </Button>
+        </div>
+        {children}
+      </div>
     </LayoutGridItem>
   )
 }
@@ -386,4 +479,5 @@ export {
   ToolLayoutPreviewHeader,
   ToolLayoutPreviewTitle,
   ToolLayoutPreviewContent,
+  useMobileView,
 }

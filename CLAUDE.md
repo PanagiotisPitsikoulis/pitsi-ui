@@ -21,8 +21,8 @@ The repository consists of:
 
 ### Monorepo Structure
 
-This is a pnpm workspace with Turborepo for build orchestration:
-- Uses pnpm workspaces (`apps/*`, `packages/*`)
+This is a bun workspace with Turborepo for build orchestration:
+- Uses bun workspaces (`apps/*`, `packages/*`)
 - Turbo manages parallel builds and caching
 - Shared dependencies managed at root level
 
@@ -63,7 +63,7 @@ The registry is the core architecture that powers component distribution:
    - Generates `registry.json` and `__index__.tsx` from registry definitions
    - Creates lazy-loaded component exports for the documentation site
    - Validates registry schema before building
-   - Run with: `pnpm registry:build`
+   - Run with: `bun run registry:build`
 
 ### CLI Architecture (`packages/pitsi`)
 
@@ -107,39 +107,39 @@ Next.js app using:
 
 ```bash
 # Install dependencies
-pnpm install
+bun install
 
 # Development
-pnpm dev                    # Start all apps in parallel
-pnpm v4:dev                # Start v4 docs site (port 4000)
-pnpm pitsi:dev             # Watch and rebuild CLI
+bun run dev                    # Start all apps in parallel
+bun run v4:dev                # Start v4 docs site (port 4000)
+bun run pitsi:dev             # Watch and rebuild CLI
 
 # Building
-pnpm build                 # Build all packages
-pnpm v4:build             # Build v4 docs site
-pnpm pitsi:build          # Build CLI package
+bun run build                 # Build all packages
+bun run v4:build             # Build v4 docs site
+bun run pitsi:build          # Build CLI package
 
 # Testing
-pnpm test                  # Run E2E tests (requires v4:dev running)
-pnpm pitsi:test           # Run CLI unit tests
-pnpm test:dev             # Run tests excluding pitsi-ui
+bun run test                  # Run E2E tests (requires v4:dev running)
+bun run pitsi:test           # Run CLI unit tests
+bun run test:dev             # Run tests excluding pitsi-ui
 
 # Code Quality
-pnpm lint                  # Lint all packages
-pnpm lint:fix             # Fix linting issues
-pnpm typecheck            # Type check all packages
-pnpm format:write         # Format code with Prettier
-pnpm format:check         # Check code formatting
-pnpm check                # Run lint, typecheck, and format check
+bun run lint                  # Lint all packages
+bun run lint:fix             # Fix linting issues
+bun run typecheck            # Type check all packages
+bun run format:write         # Format code with Prettier
+bun run format:check         # Check code formatting
+bun run check                # Run lint, typecheck, and format check
 
 # Registry
-pnpm registry:build       # Build registry from definitions
-pnpm registry:capture     # Capture screenshots of components
-pnpm validate:registries  # Validate registry definitions
+bun run registry:build       # Build registry from definitions
+bun run registry:capture     # Capture screenshots of components
+bun run validate:registries  # Validate registry definitions
 
 # Publishing
-pnpm pub:beta             # Publish CLI to npm with beta tag
-pnpm pub:release          # Publish CLI to npm
+bun run pub:beta             # Publish CLI to npm with beta tag
+bun run pub:release          # Publish CLI to npm
 ```
 
 ### V4 App Commands
@@ -147,11 +147,11 @@ pnpm pub:release          # Publish CLI to npm
 ```bash
 cd apps/v4
 
-pnpm dev                   # Start dev server on port 4000
-pnpm build                # Build for production
-pnpm registry:build       # Build registry files
-pnpm registry:capture     # Capture component screenshots
-pnpm validate:registries  # Validate registry schemas
+bun run dev                   # Start dev server on port 4000
+bun run build                # Build for production
+bun run registry:build       # Build registry files
+bun run registry:capture     # Capture component screenshots
+bun run validate:registries  # Validate registry schemas
 ```
 
 ### CLI Commands
@@ -159,12 +159,12 @@ pnpm validate:registries  # Validate registry schemas
 ```bash
 cd packages/pitsi
 
-pnpm dev                   # Watch mode for development
-pnpm build                # Build CLI
-pnpm test                 # Run tests
-pnpm start:dev            # Run CLI against local registry
-pnpm start:prod           # Run CLI against production registry
-pnpm mcp:inspect          # Inspect MCP server
+bun run dev                   # Watch mode for development
+bun run build                # Build CLI
+bun run test                 # Run tests
+bun run start:dev            # Run CLI against local registry
+bun run start:prod           # Run CLI against production registry
+bun run mcp:inspect          # Inspect MCP server
 ```
 
 ## Working with Components
@@ -188,8 +188,8 @@ pnpm mcp:inspect          # Inspect MCP server
      ],
    }
    ```
-3. Run `pnpm registry:build` from root to generate registry
-4. Test with `pnpm pitsi:dev add your-component` in a test project
+3. Run `bun run registry:build` from root to generate registry
+4. Test with `bun run pitsi:dev add your-component` in a test project
 
 ### Registry Dependencies
 
@@ -217,13 +217,13 @@ Tests the CLI by:
 3. Verifying files are created correctly
 4. Checking dependencies are installed
 
-Run with: `pnpm test` (requires v4:dev to be running)
+Run with: `bun run test` (requires v4:dev to be running)
 
 ### CLI Unit Tests (`packages/pitsi`)
 
 Tests individual CLI utilities and functions.
 
-Run with: `pnpm pitsi:test` or `cd packages/pitsi && pnpm test`
+Run with: `bun run pitsi:test` or `cd packages/pitsi && bun run test`
 
 ## Environment Variables
 
@@ -237,7 +237,7 @@ Run with: `pnpm pitsi:test` or `cd packages/pitsi && pnpm test`
 
 Example for local development:
 ```bash
-REGISTRY_URL=http://localhost:4000/r pnpm pitsi:dev add button
+REGISTRY_URL=http://localhost:4000/r bun run pitsi:dev add button
 ```
 
 ## Code Style
@@ -282,23 +282,23 @@ Follow this order (enforced by prettier):
 
 ### Local Development
 
-1. Start the v4 dev server: `pnpm v4:dev`
-2. In another terminal, watch CLI: `pnpm pitsi:dev`
-3. Test CLI against local registry: `cd /tmp && pnpm start:dev add button`
+1. Start the v4 dev server: `bun run v4:dev`
+2. In another terminal, watch CLI: `bun run pitsi:dev`
+3. Test CLI against local registry: `cd /tmp && bun run start:dev add button`
 
 ### Making Registry Changes
 
 1. Update component in `apps/v4/registry/new-york-v4/`
 2. Update registry definition in corresponding `_registry.ts`
-3. Run `pnpm registry:build` from root
+3. Run `bun run registry:build` from root
 4. Verify changes in registry.json
-5. Test with CLI: `pnpm pitsi:dev add your-component`
+5. Test with CLI: `bun run pitsi:dev add your-component`
 
 ### Publishing the CLI
 
 1. Make changes to `packages/pitsi`
 2. Update version in `packages/pitsi/package.json`
-3. Run tests: `pnpm pitsi:test`
-4. Build: `pnpm pitsi:build`
-5. For beta: `pnpm pub:beta`
-6. For release: `pnpm pub:release`
+3. Run tests: `bun run pitsi:test`
+4. Build: `bun run pitsi:build`
+5. For beta: `bun run pub:beta`
+6. For release: `bun run pub:release`

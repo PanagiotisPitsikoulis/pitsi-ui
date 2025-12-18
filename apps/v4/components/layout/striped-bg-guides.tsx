@@ -2,6 +2,7 @@
 
 import React, { useCallback, useEffect, useMemo, useState } from "react"
 import { AnimatePresence, motion } from "motion/react"
+import { useTheme } from "next-themes"
 
 type AnimationDirection = "top-to-bottom" | "bottom-to-top" | "both" | "random"
 type AnimationEasing = "linear" | "easeIn" | "easeOut" | "easeInOut" | "spring"
@@ -56,10 +57,13 @@ export function StripeBgGuides({
   responsive = false,
   minColumnWidth = "4rem",
   maxActiveColumns = 3,
-  darkMode = false,
+  darkMode: darkModeProp,
   contained = false,
   zIndex,
 }: AnimatedBackgroundGuidesProps) {
+  const { resolvedTheme } = useTheme()
+  const darkMode = darkModeProp ?? resolvedTheme === "dark"
+
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 0
   )
@@ -150,16 +154,16 @@ export function StripeBgGuides({
 
   const lineColors = useMemo(() => {
     // Reduce opacity on mobile
-    const mobileMultiplier = isMobile ? 0.4 : 1
-    const darkOpacity = (0.15 * mobileMultiplier).toFixed(2)
-    const lightOpacity = (0.25 * mobileMultiplier).toFixed(2)
+    const mobileMultiplier = isMobile ? 0.6 : 1
 
     return {
-      // Dark mode: subtle light lines, Light mode: more visible dark lines
-      solid: darkMode ? `hsla(220 10% 70% / ${darkOpacity})` : `hsla(220 10% 50% / ${lightOpacity})`,
+      // Dark mode: white lines for contrast, Light mode: darker lines
+      solid: darkMode
+        ? `hsla(0 0% 100% / ${(0.18 * mobileMultiplier).toFixed(2)})`
+        : `hsla(220 10% 40% / ${(0.3 * mobileMultiplier).toFixed(2)})`,
       dashed: darkMode
-        ? `hsla(220 10% 70% / ${darkOpacity})`
-        : `hsla(220 10% 50% / ${lightOpacity})`,
+        ? `hsla(0 0% 100% / ${(0.18 * mobileMultiplier).toFixed(2)})`
+        : `hsla(220 10% 40% / ${(0.3 * mobileMultiplier).toFixed(2)})`,
     }
   }, [darkMode, isMobile])
 

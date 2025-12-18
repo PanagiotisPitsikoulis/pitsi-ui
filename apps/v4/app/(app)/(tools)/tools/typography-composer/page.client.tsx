@@ -415,6 +415,18 @@ export default function TypographyComposerClient({
   const [savedItems, setSavedItems, isHydrated] = useLocalStorage<SavedTypography[]>(STORAGE_KEYS.TYPOGRAPHY_COMPOSER, [])
   const [isDark, setIsDark] = useState(false)
 
+  const darkModeStyles = isDark
+    ? ({
+        "--background": "oklch(0.145 0 0)",
+        "--foreground": "oklch(0.985 0 0)",
+        "--card": "oklch(0.145 0 0)",
+        "--card-foreground": "oklch(0.985 0 0)",
+        "--muted": "oklch(0.269 0 0)",
+        "--muted-foreground": "oklch(0.708 0 0)",
+        "--border": "oklch(1 0 0 / 10%)",
+      } as React.CSSProperties)
+    : {}
+
   // Derived state object for calculations
   const state: TypographyState = useMemo(
     () => ({
@@ -1235,6 +1247,7 @@ export default function TypographyComposerClient({
                 "h-full overflow-auto bg-background text-foreground",
                 isDark && "dark"
               )}
+              style={darkModeStyles}
             >
               <TypographyPreview state={state} />
             </div>

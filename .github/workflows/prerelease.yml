@@ -22,19 +22,18 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Use PNPM
-        uses: pnpm/action-setup@v4
+      - name: Install bun
+        uses: oven-sh/setup-bun@v2
         with:
-          version: 9.0.6
+          bun-version: latest
 
       - name: Use Node.js 20
         uses: actions/setup-node@v3
         with:
           node-version: 20
-          cache: "pnpm"
 
       - name: Install NPM Dependencies
-        run: pnpm install
+        run: bun install
 
       - name: Modify package.json version
         run: node .github/version-script-beta.js
@@ -45,7 +44,7 @@ jobs:
           NPM_ACCESS_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
 
       - name: Publish Beta to NPM
-        run: pnpm pub:beta
+        run: bun run pub:beta
 
       - name: get-npm-version
         id: package-version

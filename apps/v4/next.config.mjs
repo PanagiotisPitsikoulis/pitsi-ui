@@ -111,6 +111,8 @@ const nextConfig = {
       // Utilities
       "date-fns",
       "lodash",
+      // State management
+      "jotai",
       // Forms
       "react-hook-form",
       // DnD

@@ -1,0 +1,313 @@
+"use client"
+
+import { useState } from "react"
+import { Check, ChevronDown } from "lucide-react"
+
+import { CodeBlock, SliderRow } from "@/components/tools"
+import { ScrollArea, ScrollBar } from "@/registry/new-york-v4/ui/scroll-area"
+import { Spacer } from "@/registry/new-york-v4/ui/spacer"
+
+// Actual theme presets from theme generator tool (brand, complementary, tint)
+const themePresets = [
+  { key: "slate", label: "Slate", colors: ["#2d2d2d", "#777777", "#fefefe"] },
+  { key: "azure", label: "Azure", colors: ["#5c8ac4", "#c4915c", "#f8fafc"] },
+  { key: "azure-tinted", label: "Azure Tinted", colors: ["#5c8ac4", "#ffffff", "#f8fafc"] },
+  { key: "azure-deep", label: "Azure Deep", colors: ["#8eb3d4", "#d4b38e", "#1a2332"] },
+  { key: "violet", label: "Violet", colors: ["#8c6dc4", "#8cb85c", "#faf8fc"] },
+  { key: "violet-tinted", label: "Violet Tinted", colors: ["#8c6dc4", "#ffffff", "#faf8fc"] },
+  { key: "violet-deep", label: "Violet Deep", colors: ["#b097d4", "#b0d48e", "#251a32"] },
+  { key: "rose", label: "Rose", colors: ["#c45c7e", "#5cb89e", "#fcf8fa"] },
+  { key: "rose-tinted", label: "Rose Tinted", colors: ["#c45c7e", "#ffffff", "#fcf8fa"] },
+  { key: "rose-deep", label: "Rose Deep", colors: ["#d48ea8", "#8ed4c2", "#321a25"] },
+  { key: "sage", label: "Sage", colors: ["#5cb87e", "#a85cb8", "#f8fcf9"] },
+  { key: "amber", label: "Amber", colors: ["#c4a15c", "#5c6dc4", "#fcfbf8"] },
+  { key: "cyan", label: "Cyan", colors: ["#5cb4b8", "#c4665c", "#f8fcfc"] },
+  { key: "indigo", label: "Indigo", colors: ["#5c6fc4", "#c4a85c", "#f8f9fc"] },
+  { key: "coral", label: "Coral", colors: ["#c4705c", "#5c9ac4", "#fcf9f8"] },
+  { key: "forest", label: "Forest", colors: ["#5cb870", "#b85c9c", "#f8fcf9"] },
+]
+
+// Ready-Made Presets - Theme presets combobox
+function ThemePresetsPreview() {
+  const [selectedIndex, setSelectedIndex] = useState(0)
+
+  return (
+    <div className="flex min-h-[260px] items-center justify-center">
+      <div className="w-[200px] rounded-lg border bg-background shadow-xs">
+        <button className="flex w-full items-center justify-between gap-2 border-b px-3 py-2.5 text-left">
+          <div className="flex items-center gap-2">
+            <div className="flex -space-x-1">
+              {themePresets[selectedIndex].colors.map((color, i) => (
+                <div
+                  key={i}
+                  className="size-4 rounded-full border-2 border-background"
+                  style={{ backgroundColor: color }}
+                />
+              ))}
+            </div>
+            <span className="text-sm font-medium">{themePresets[selectedIndex].label}</span>
+          </div>
+          <ChevronDown className="size-4 text-muted-foreground" />
+        </button>
+        <ScrollArea className="h-[180px]">
+          <div className="p-1">
+            {themePresets.map((preset, index) => (
+              <button
+                key={preset.key}
+                onClick={() => setSelectedIndex(index)}
+                className={`flex w-full items-center gap-2 rounded-sm px-2 py-2 text-left transition-colors ${
+                  index === selectedIndex ? "bg-accent" : "hover:bg-accent/50"
+                }`}
+              >
+                <div className="flex -space-x-1">
+                  {preset.colors.map((color, i) => (
+                    <div
+                      key={i}
+                      className="size-4 rounded-full border-2 border-background"
+                      style={{ backgroundColor: color }}
+                    />
+                  ))}
+                </div>
+                <span className="flex-1 text-sm font-medium">{preset.label}</span>
+                {index === selectedIndex && <Check className="size-3.5 opacity-70" />}
+              </button>
+            ))}
+          </div>
+        </ScrollArea>
+      </div>
+    </div>
+  )
+}
+
+// Advanced Controls - Shadow composer controls
+function ShadowControlsPreview() {
+  const [blur, setBlur] = useState(12)
+  const [spread, setSpread] = useState(0)
+  const [offsetX, setOffsetX] = useState(0)
+  const [offsetY, setOffsetY] = useState(8)
+  const [opacity, setOpacity] = useState(0.15)
+
+  const shadowValue = `${offsetX}px ${offsetY}px ${blur}px ${spread}px rgba(0,0,0,${opacity})`
+
+  return (
+    <div className="min-h-[260px]">
+      <div className="bg-background rounded-3xl border p-4 shadow-xs">
+        <div className="flex items-center justify-center py-2">
+          <div
+            className="size-16 rounded-xl bg-white"
+            style={{ boxShadow: shadowValue }}
+          />
+        </div>
+        <div className="space-y-2">
+          <SliderRow
+            label="Blur"
+            value={blur}
+            onChange={setBlur}
+            min={0}
+            max={48}
+            step={1}
+            unit="px"
+          />
+          <SliderRow
+            label="Spread"
+            value={spread}
+            onChange={setSpread}
+            min={-20}
+            max={20}
+            step={1}
+            unit="px"
+          />
+          <SliderRow
+            label="Offset X"
+            value={offsetX}
+            onChange={setOffsetX}
+            min={-24}
+            max={24}
+            step={1}
+            unit="px"
+          />
+          <SliderRow
+            label="Offset Y"
+            value={offsetY}
+            onChange={setOffsetY}
+            min={-24}
+            max={24}
+            step={1}
+            unit="px"
+          />
+          <SliderRow
+            label="Opacity"
+            value={opacity}
+            onChange={setOpacity}
+            min={0}
+            max={1}
+            step={0.01}
+            unit=""
+          />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// Export formats matching actual tool output (CSS, Tailwind, Figma)
+const exportTabs = [
+  {
+    key: "css",
+    label: "CSS",
+    code: `@theme {
+  --color-primary: oklch(0.6 0.18 250);
+  --color-primary-foreground: oklch(0.98 0 0);
+  --color-secondary: oklch(0.96 0.02 250);
+  --color-destructive: oklch(0.55 0.22 25);
+  --color-background: oklch(0.995 0 0);
+  --color-foreground: oklch(0.13 0.02 250);
+  --color-muted: oklch(0.96 0.01 250);
+  --color-border: oklch(0.92 0.01 250);
+  --radius: 0.625rem;
+  --shadow-sm: 0 1px 2px 0 oklch(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px oklch(0 0 0 / 0.1);
+}`,
+    language: "css",
+    filename: "theme.css",
+  },
+  {
+    key: "tailwind",
+    label: "Tailwind",
+    code: `/* Tailwind CSS v4 */
+@theme {
+  --color-primary: oklch(0.6 0.18 250);
+  --color-secondary: oklch(0.96 0.02 250);
+  --color-accent: oklch(0.92 0.04 250);
+  --color-background: oklch(0.995 0 0);
+  --color-foreground: oklch(0.13 0.02 250);
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.625rem;
+}`,
+    language: "css",
+    filename: "tailwind.css",
+  },
+  {
+    key: "figma",
+    label: "Figma",
+    code: `{
+  "colors": {
+    "primary": {
+      "value": "#4F46E5",
+      "type": "color"
+    },
+    "secondary": {
+      "value": "#F3F4F6",
+      "type": "color"
+    },
+    "background": {
+      "value": "#FFFFFF",
+      "type": "color"
+    },
+    "foreground": {
+      "value": "#111827",
+      "type": "color"
+    }
+  }
+}`,
+    language: "json",
+    filename: "figma-tokens.json",
+  },
+]
+
+// Export Anywhere - Scrollable tabs with code preview
+function ExportCodePreview() {
+  const [activeTab, setActiveTab] = useState(0)
+
+  return (
+    <div className="min-h-[260px] flex flex-col">
+      <div className="flex gap-1 pb-2 flex-shrink-0">
+        {exportTabs.map((tab, index) => (
+          <button
+            key={tab.key}
+            onClick={() => setActiveTab(index)}
+            className={`shrink-0 rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${
+              index === activeTab
+                ? "bg-primary text-primary-foreground"
+                : "bg-muted hover:bg-muted/80"
+            }`}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+      <div className="flex-1">
+        <CodeBlock
+          code={exportTabs[activeTab].code}
+          language={exportTabs[activeTab].language}
+          filename={exportTabs[activeTab].filename}
+          height={220}
+        />
+      </div>
+    </div>
+  )
+}
+
+const capabilities = [
+  {
+    title: "Ready-Made Presets",
+    description: "Start with curated presets from popular design systems",
+    preview: ThemePresetsPreview,
+    backgroundImage: "/placeholders/art/1.webp",
+  },
+  {
+    title: "Advanced Controls",
+    description: "Simple UI consistent across all tools — no learning curve",
+    preview: ShadowControlsPreview,
+    backgroundImage: "/placeholders/art/5.webp",
+  },
+  {
+    title: "Export Anywhere",
+    description: "CSS, Tailwind, Figma, JSON — configure once, use everywhere",
+    preview: ExportCodePreview,
+    backgroundImage: "/placeholders/art/9.webp",
+  },
+]
+
+export function WhatToolsDoSection() {
+  return (
+    <section className="container px-6">
+      <div className="text-center">
+        <p className="text-brand text-sm font-semibold uppercase tracking-wider">
+          Capabilities
+        </p>
+        <Spacer size="sm" />
+        <h2 className="display text-3xl tracking-tight md:text-5xl">
+          Design systems in minutes
+        </h2>
+        <p className="text-muted-foreground mt-4 text-lg">
+          Stop guessing. Start generating.
+        </p>
+      </div>
+      <Spacer size="3xl" sizeMobile="xl" />
+      <div className="grid gap-6 md:grid-cols-3">
+        {capabilities.map((cap) => (
+          <div key={cap.title} className="flex flex-col gap-3">
+            {/* Preview Card */}
+            <div
+              className="h-[340px] overflow-hidden rounded-3xl border bg-cover bg-center shadow-sm"
+              style={{ backgroundImage: `url(${cap.backgroundImage})` }}
+            >
+              <div className="flex h-full items-center justify-center overflow-hidden p-4">
+                <cap.preview />
+              </div>
+            </div>
+            {/* Description Card */}
+            <div className="bg-background rounded-3xl border p-6 text-center shadow-xs">
+              <h3 className="text-lg font-semibold">{cap.title}</h3>
+              <p className="text-muted-foreground mt-2 text-sm">
+                {cap.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}

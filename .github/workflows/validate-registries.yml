@@ -13,7 +13,7 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    name: pnpm validate:registries
+    name: bun validate:registries
     permissions:
       contents: read
     steps:
@@ -26,29 +26,16 @@ jobs:
         with:
           node-version: 20
 
-      - uses: pnpm/action-setup@v4
-        name: Install pnpm
-        id: pnpm-install
+      - name: Install bun
+        uses: oven-sh/setup-bun@v2
         with:
-          version: 9.0.6
-          run_install: false
+          bun-version: latest
 
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        run: |
-          echo "pnpm_cache_dir=$(pnpm store path)" >> $GITHUB_OUTPUT
-      - uses: actions/cache@v3
-        name: Setup pnpm cache
-        with:
-          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
       - name: Install dependencies
-        run: pnpm install
+        run: bun install
 
       - name: Build packages
-        run: pnpm build --filter=pitsi
+        run: bun run build --filter=pitsi
 
       - name: Validate registries
-        run: pnpm --filter=v4 validate:registries
+        run: bun run --filter v4 validate:registries

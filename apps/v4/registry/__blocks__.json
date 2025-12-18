@@ -4838,53 +4838,5 @@
     "name": "marketing-testimonial-with-user-image-and-reviews-block",
     "description": "A with user image and reviews block block.",
     "categories": ["marketing"]
-  },
-  {
-    "name": "sidebar-header",
-    "description": ""
-  },
-  {
-    "name": "sidebar-footer",
-    "description": ""
-  },
-  {
-    "name": "sidebar-group",
-    "description": ""
-  },
-  {
-    "name": "sidebar-group-collapsible",
-    "description": ""
-  },
-  {
-    "name": "sidebar-group-action",
-    "description": ""
-  },
-  {
-    "name": "sidebar-menu",
-    "description": ""
-  },
-  {
-    "name": "sidebar-menu-action",
-    "description": ""
-  },
-  {
-    "name": "sidebar-menu-sub",
-    "description": ""
-  },
-  {
-    "name": "sidebar-menu-collapsible",
-    "description": ""
-  },
-  {
-    "name": "sidebar-menu-badge",
-    "description": ""
-  },
-  {
-    "name": "sidebar-rsc",
-    "description": ""
-  },
-  {
-    "name": "sidebar-controlled",
-    "description": ""
   }
 ]

@@ -14,6 +14,7 @@ export {
   ToolLayoutPreviewHeader,
   ToolLayoutPreviewTitle,
   ToolLayoutPreviewContent,
+  useMobileView,
 } from "./tool-layout"
 
 // Shared components
