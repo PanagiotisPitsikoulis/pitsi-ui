@@ -12,8 +12,6 @@ import { Toaster } from "@/registry/new-york-v4/ui/sonner"
 
 import "../styles/globals.css"
 
-import Script from "next/script"
-
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
@@ -65,14 +63,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {process.env.NODE_ENV === "development" && (
-          <Script
-            src="//unpkg.com/react-grab/dist/index.global.js"
-            crossOrigin="anonymous"
-            strategy="beforeInteractive"
-            data-enabled="true"
-          />
-        )}
         <script
           dangerouslySetInnerHTML={{
             __html: `

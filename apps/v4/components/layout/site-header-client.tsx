@@ -19,6 +19,7 @@ export const SiteHeaderClient = memo(function SiteHeaderClient({
   siteName,
   componentPages,
   animationPages,
+  toolPages,
   allBlockSubcategories,
 }: {
   commandMenu: ReactNode
@@ -29,6 +30,7 @@ export const SiteHeaderClient = memo(function SiteHeaderClient({
   siteName: string
   componentPages: Array<{ name: string; url: string }>
   animationPages: Array<{ name: string; url: string }>
+  toolPages: Array<{ name: string; url: string }>
   allBlockSubcategories: Array<{
     category: string
     name: string
@@ -65,6 +67,7 @@ export const SiteHeaderClient = memo(function SiteHeaderClient({
           items={navItems}
           componentPages={componentPages}
           animationPages={animationPages}
+          toolPages={toolPages}
           allBlockSubcategories={allBlockSubcategories}
           className="flex lg:hidden"
         />
@@ -84,6 +87,7 @@ export const SiteHeaderClient = memo(function SiteHeaderClient({
           items={navItems}
           componentPages={componentPages}
           animationPages={animationPages}
+          toolPages={toolPages}
           allBlockSubcategories={allBlockSubcategories}
           className="hidden lg:flex"
         />

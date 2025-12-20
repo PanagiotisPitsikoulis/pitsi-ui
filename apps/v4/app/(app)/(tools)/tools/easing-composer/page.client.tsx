@@ -478,7 +478,7 @@ export default function EasingComposerClient({
   // Local state
   const [savedItems, setSavedItems, isHydrated] = useLocalStorage<SavedEasing[]>(STORAGE_KEYS.EASING_COMPOSER, [])
   const [selectedPreview, setSelectedPreview] = useState<PreviewType>("card")
-  const [isPlaying, setIsPlaying] = useState(false)
+  const [isPlaying, setIsPlaying] = useState(true)
 
   const presetKeys = useMemo(() => Object.keys(presets), [presets])
   const [deckIndex, setDeckIndex] = useState(Math.max(0, presetKeys.indexOf(currentPreset)))
@@ -1116,7 +1116,7 @@ export default function EasingComposerClient({
                       className="size-8 shrink-0"
                       onClick={() => setIsPlaying(!isPlaying)}
                     >
-                      {isPlaying ? <Pause className="size-4" /> : <Play className="size-4" />}
+                      {isPlaying ? <Pause className="size-4" fill="currentColor" /> : <Play className="size-4" fill="currentColor" />}
                     </Button>
                   </TooltipTrigger>
                   <TooltipContent>{isPlaying ? "Pause animation" : "Play animation"}</TooltipContent>

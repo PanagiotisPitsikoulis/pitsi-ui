@@ -167,12 +167,12 @@ export function StripeBgGuides({
     const mobileMultiplier = isMobile ? 0.6 : 1
 
     return {
-      // Dark mode: white lines for contrast, Light mode: darker lines
+      // Dark mode: white lines with lower opacity, Light mode: darker lines
       solid: darkMode
-        ? `hsla(0 0% 100% / ${(0.18 * mobileMultiplier).toFixed(2)})`
+        ? `hsla(0 0% 100% / ${(0.06 * mobileMultiplier).toFixed(2)})`
         : `hsla(220 10% 40% / ${(0.3 * mobileMultiplier).toFixed(2)})`,
       dashed: darkMode
-        ? `hsla(0 0% 100% / ${(0.18 * mobileMultiplier).toFixed(2)})`
+        ? `hsla(0 0% 100% / ${(0.06 * mobileMultiplier).toFixed(2)})`
         : `hsla(220 10% 40% / ${(0.3 * mobileMultiplier).toFixed(2)})`,
     }
   }, [darkMode, isMobile])

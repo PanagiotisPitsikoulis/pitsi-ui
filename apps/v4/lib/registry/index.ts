@@ -1,6 +1,7 @@
 import fs from "fs/promises"
 import { tmpdir } from "os"
 import path from "path"
+import { fileURLToPath } from "url"
 import {
   registryItemFileSchema,
   registryItemSchema,
@@ -11,6 +12,14 @@ import { z } from "zod"
 
 import { Index } from "@/registry/__index__"
 import { type Style } from "@/registry/styles"
+
+// =============================================================================
+// STATIC PATH RESOLUTION (avoids dynamic process.cwd() for better build perf)
+// =============================================================================
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+const APP_ROOT = path.resolve(__dirname, "../..")
 
 // =============================================================================
 // LAZY-INITIALIZED SINGLETON INDEXES
@@ -417,7 +426,7 @@ async function getRegistryItemWithContent(
             : (file as { path: string; [key: string]: unknown })
         return {
           ...fileObj,
-          path: path.join(process.cwd(), fileObj.path),
+          path: path.join(APP_ROOT, fileObj.path),
         }
       }) ?? []
 
@@ -431,7 +440,7 @@ async function getRegistryItemWithContent(
 
       filesList.push({
         ...file,
-        path: path.relative(process.cwd(), file.path),
+        path: path.relative(APP_ROOT, file.path),
         content,
       } as NonNullable<typeof result.data.files>[number])
     }

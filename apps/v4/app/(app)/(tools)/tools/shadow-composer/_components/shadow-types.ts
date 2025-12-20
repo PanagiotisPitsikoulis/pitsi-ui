@@ -25,11 +25,15 @@ export const defaultShadowLayer: Omit<ShadowLayer, "id"> = {
   opacity: 0.1,
 }
 
+function generateId(): string {
+  return Math.random().toString(36).substring(2, 9) + Date.now().toString(36)
+}
+
 export function createShadowLayer(
   overrides?: Partial<Omit<ShadowLayer, "id">>
 ): ShadowLayer {
   return {
-    id: crypto.randomUUID(),
+    id: generateId(),
     ...defaultShadowLayer,
     ...overrides,
   }

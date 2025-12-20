@@ -77,12 +77,6 @@ describe("sitemap config", () => {
       expect(page?.priority).toBe(0.7)
     })
 
-    it("should have advanced-features page", () => {
-      const page = staticPages.find((p) => p.url === "/advanced-features")
-      expect(page).toBeDefined()
-      expect(page?.priority).toBe(0.7)
-    })
-
     it("should have tools-information page", () => {
       const page = staticPages.find((p) => p.url === "/tools-information")
       expect(page).toBeDefined()

@@ -281,7 +281,7 @@ function ToolLayoutTabsTrigger({
   ...props
 }: ToolLayoutTabsTriggerProps) {
   return (
-    <TabsTrigger className={cn("flex-1 py-2", className)} {...props}>
+    <TabsTrigger className={cn("flex-1 py-2 shadow-none", className)} {...props}>
       {Icon && <Icon className="size-4" />}
       {children}
     </TabsTrigger>
@@ -347,10 +347,7 @@ function ToolLayoutPreview({ children, className }: ToolLayoutPreviewProps) {
     >
       <div className="flex flex-col gap-3">
         {/* Mobile close button - only shown when preview is visible on mobile */}
-        <div className="flex items-center justify-between lg:hidden">
-          <span className="text-muted-foreground text-sm font-medium uppercase tracking-wider">
-            Preview
-          </span>
+        <div className="flex items-center justify-end lg:hidden">
           <Button
             variant="outline"
             size="sm"

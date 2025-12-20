@@ -47,6 +47,7 @@ export function SiteFooterClient({
 }: SiteFooterClientProps) {
   const pathname = usePathname()
   const isHomePage = pathname === "/"
+  const isDocsPage = pathname.startsWith("/docs")
 
   // Filter docs pages to exclude components and animations (they have dedicated sections)
   const docsPages = allDocsPages.filter(
@@ -55,7 +56,7 @@ export function SiteFooterClient({
   )
 
   return (
-    <footer className="relative bg-transparent py-12">
+    <footer className={`relative bg-transparent pt-12 pb-6 ${isDocsPage ? "pb-24 md:pb-6" : ""}`}>
       <div className="container px-6">
         {/* General Section - Only on home page */}
         {isHomePage && <div className="mb-12">

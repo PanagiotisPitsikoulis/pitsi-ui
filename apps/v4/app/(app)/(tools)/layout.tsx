@@ -4,7 +4,7 @@ export default function ToolsLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="flex flex-col overflow-hidden">
+    <div className="flex flex-col overflow-hidden bg-transparent">
       {children}
     </div>
   )

@@ -5,6 +5,8 @@ import { ArrowUpRight } from "lucide-react"
 
 import { LayoutGrid, LayoutGridItem } from "@/components/layout/layout-grid"
 import { StripeBgGuides } from "@/components/layout/striped-bg-guides"
+import { Button } from "@/registry/new-york-v4/ui/button"
+import { HeroButton } from "@/registry/new-york-v4/ui/hero-button"
 import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 
 export const metadata: Metadata = {
@@ -605,18 +607,32 @@ export default async function ToolsPage() {
         <LayoutGrid>
           <LayoutGridItem span={6}>
             {/* Hero Section */}
-            <div className="mx-auto max-w-2xl text-center">
+            <div className="flex flex-col items-center text-center">
               <p className="text-brand mb-4 text-sm font-medium tracking-widest uppercase">
-                Resources
+                Designer Tools
               </p>
-              <h1 className="display text-5xl tracking-tight md:text-6xl lg:text-7xl">
+              <h1 className="display text-4xl tracking-tight sm:text-5xl md:text-6xl">
                 Designer Tools
               </h1>
               <Spacer size="lg" sizeMobile="md" />
               <p className="text-muted-foreground text-lg md:text-xl">
-                Built to integrate seamlessly with pitsi/ui, as well as to be
-                used standalone. All the tools you need in one place.
+                Built to integrate seamlessly with pitsi/ui, as well as to be used standalone.
+                <br />
+                All the tools you need in one place.
               </p>
+              <Spacer size="xl" sizeMobile="lg" />
+              <div className="flex flex-row gap-2">
+                <Link href="/tools-information">
+                  <HeroButton size="default">
+                    Read more
+                  </HeroButton>
+                </Link>
+                <Link href="/">
+                  <Button variant="outline" size="sm" className="rounded-full">
+                    Back Home
+                  </Button>
+                </Link>
+              </div>
             </div>
 
             <Spacer size="4xl" sizeMobile="2xl" />

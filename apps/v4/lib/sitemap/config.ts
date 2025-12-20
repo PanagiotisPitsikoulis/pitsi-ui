@@ -21,7 +21,6 @@ export const staticPages = [
   // Feature pages
   { url: "/content-features", priority: 0.7 },
   { url: "/design-purpose", priority: 0.7 },
-  { url: "/advanced-features", priority: 0.7 },
   { url: "/tools-information", priority: 0.7 },
 ] as const
 

@@ -1,11 +1,53 @@
 "use client"
 
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { Check, ChevronDown } from "lucide-react"
+import { motion, useScroll, useTransform } from "motion/react"
 
+import { PixelatedImage } from "@/components/effects"
 import { CodeBlock, SliderRow } from "@/components/tools"
-import { ScrollArea, ScrollBar } from "@/registry/new-york-v4/ui/scroll-area"
+import { ScrollArea } from "@/registry/new-york-v4/ui/scroll-area"
 import { Spacer } from "@/registry/new-york-v4/ui/spacer"
+
+// Parallax Bento Card component with pixelated background
+function ParallaxBentoCard({
+  backgroundImage,
+  children,
+}: {
+  backgroundImage: string
+  children: React.ReactNode
+}) {
+  const ref = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  })
+
+  const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"])
+
+  return (
+    <div
+      ref={ref}
+      className="h-[340px] overflow-hidden rounded-[2rem] border shadow-sm relative"
+    >
+      {/* Parallax pixelated background */}
+      <motion.div
+        className="absolute inset-0 -top-[20%] h-[140%] w-full"
+        style={{ y }}
+      >
+        <PixelatedImage
+          src={backgroundImage}
+          className="h-full w-full"
+          pixelSize={24}
+        />
+      </motion.div>
+      {/* Content overlay */}
+      <div className="relative flex h-full items-center justify-center overflow-hidden p-4 z-10">
+        {children}
+      </div>
+    </div>
+  )
+}
 
 // Actual theme presets from theme generator tool (brand, complementary, tint)
 const themePresets = [
@@ -33,8 +75,8 @@ function ThemePresetsPreview() {
 
   return (
     <div className="flex min-h-[260px] items-center justify-center">
-      <div className="w-[200px] rounded-lg border bg-background shadow-xs">
-        <button className="flex w-full items-center justify-between gap-2 border-b px-3 py-2.5 text-left">
+      <div className="w-[220px] overflow-hidden rounded-3xl border bg-background shadow-lg">
+        <button className="flex w-full items-center justify-between gap-2 border-b px-4 py-3 text-left">
           <div className="flex items-center gap-2">
             <div className="flex -space-x-1">
               {themePresets[selectedIndex].colors.map((color, i) => (
@@ -50,12 +92,12 @@ function ThemePresetsPreview() {
           <ChevronDown className="size-4 text-muted-foreground" />
         </button>
         <ScrollArea className="h-[180px]">
-          <div className="p-1">
+          <div className="p-1.5">
             {themePresets.map((preset, index) => (
               <button
                 key={preset.key}
                 onClick={() => setSelectedIndex(index)}
-                className={`flex w-full items-center gap-2 rounded-sm px-2 py-2 text-left transition-colors ${
+                className={`flex w-full items-center gap-2 rounded-xl px-3 py-2.5 text-left transition-colors ${
                   index === selectedIndex ? "bg-accent" : "hover:bg-accent/50"
                 }`}
               >
@@ -82,69 +124,57 @@ function ThemePresetsPreview() {
 // Advanced Controls - Shadow composer controls
 function ShadowControlsPreview() {
   const [blur, setBlur] = useState(12)
-  const [spread, setSpread] = useState(0)
   const [offsetX, setOffsetX] = useState(0)
   const [offsetY, setOffsetY] = useState(8)
   const [opacity, setOpacity] = useState(0.15)
 
-  const shadowValue = `${offsetX}px ${offsetY}px ${blur}px ${spread}px rgba(0,0,0,${opacity})`
+  const shadowValue = `${offsetX}px ${offsetY}px ${blur}px rgba(0,0,0,${opacity})`
 
   return (
-    <div className="min-h-[260px]">
-      <div className="bg-background rounded-3xl border p-4 shadow-xs">
-        <div className="flex items-center justify-center py-2">
-          <div
-            className="size-16 rounded-xl bg-white"
-            style={{ boxShadow: shadowValue }}
-          />
-        </div>
-        <div className="space-y-2">
-          <SliderRow
-            label="Blur"
-            value={blur}
-            onChange={setBlur}
-            min={0}
-            max={48}
-            step={1}
-            unit="px"
-          />
-          <SliderRow
-            label="Spread"
-            value={spread}
-            onChange={setSpread}
-            min={-20}
-            max={20}
-            step={1}
-            unit="px"
-          />
-          <SliderRow
-            label="Offset X"
-            value={offsetX}
-            onChange={setOffsetX}
-            min={-24}
-            max={24}
-            step={1}
-            unit="px"
-          />
-          <SliderRow
-            label="Offset Y"
-            value={offsetY}
-            onChange={setOffsetY}
-            min={-24}
-            max={24}
-            step={1}
-            unit="px"
-          />
-          <SliderRow
-            label="Opacity"
-            value={opacity}
-            onChange={setOpacity}
-            min={0}
-            max={1}
-            step={0.01}
-            unit=""
-          />
-        </div>
+    <div className="w-full h-full flex flex-col bg-background rounded-3xl border p-6 shadow-lg">
+      <div className="flex flex-1 items-center justify-center">
+        <div
+          className="size-14 rounded-2xl bg-white"
+          style={{ boxShadow: shadowValue }}
+        />
+      </div>
+      <div className="space-y-1.5">
+        <SliderRow
+          label="Blur"
+          value={blur}
+          onChange={setBlur}
+          min={0}
+          max={48}
+          step={1}
+          unit="px"
+        />
+                <SliderRow
+          label="Offset X"
+          value={offsetX}
+          onChange={setOffsetX}
+          min={-24}
+          max={24}
+          step={1}
+          unit="px"
+        />
+        <SliderRow
+          label="Offset Y"
+          value={offsetY}
+          onChange={setOffsetY}
+          min={-24}
+          max={24}
+          step={1}
+          unit="px"
+        />
+        <SliderRow
+          label="Opacity"
+          value={opacity}
+          onChange={setOpacity}
+          min={0}
+          max={1}
+          step={0.01}
+          unit=""
+        />
       </div>
     </div>
   )
@@ -216,33 +246,36 @@ const exportTabs = [
   },
 ]
 
-// Export Anywhere - Scrollable tabs with code preview
+// Export Anywhere - Minimal code preview with integrated tabs
 function ExportCodePreview() {
-  const [activeTab, setActiveTab] = useState(0)
+  const [activeTab, setActiveTab] = useState(2)
 
   return (
-    <div className="min-h-[260px] flex flex-col">
-      <div className="flex gap-1 pb-2 flex-shrink-0">
+    <div className="w-full h-full flex flex-col">
+      {/* Floating tabs */}
+      <div className="flex gap-0.5 p-1 bg-background/80 backdrop-blur rounded-lg w-fit mx-auto mb-2">
         {exportTabs.map((tab, index) => (
           <button
             key={tab.key}
             onClick={() => setActiveTab(index)}
-            className={`shrink-0 rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${
+            className={`rounded-md px-2.5 py-1 text-[10px] font-medium transition-colors ${
               index === activeTab
-                ? "bg-primary text-primary-foreground"
-                : "bg-muted hover:bg-muted/80"
+                ? "bg-foreground text-background"
+                : "text-muted-foreground hover:text-foreground"
             }`}
           >
             {tab.label}
           </button>
         ))}
       </div>
-      <div className="flex-1">
+      {/* Code block */}
+      <div className="flex-1 w-full overflow-hidden">
         <CodeBlock
           code={exportTabs[activeTab].code}
           language={exportTabs[activeTab].language}
           filename={exportTabs[activeTab].filename}
           height={220}
+          className="rounded-2xl shadow-lg [&_figcaption]:border-b-0"
         />
       </div>
     </div>
@@ -254,19 +287,19 @@ const capabilities = [
     title: "Ready-Made Presets",
     description: "Start with curated presets from popular design systems",
     preview: ThemePresetsPreview,
-    backgroundImage: "/placeholders/art/1.webp",
+    backgroundImage: "/colors/blue/portrait/1.webp",
   },
   {
     title: "Advanced Controls",
     description: "Simple UI consistent across all tools — no learning curve",
     preview: ShadowControlsPreview,
-    backgroundImage: "/placeholders/art/5.webp",
+    backgroundImage: "/colors/blue/portrait/2.webp",
   },
   {
     title: "Export Anywhere",
     description: "CSS, Tailwind, Figma, JSON — configure once, use everywhere",
     preview: ExportCodePreview,
-    backgroundImage: "/placeholders/art/9.webp",
+    backgroundImage: "/colors/blue/portrait/3.webp",
   },
 ]
 
@@ -289,17 +322,12 @@ export function WhatToolsDoSection() {
       <div className="grid gap-6 md:grid-cols-3">
         {capabilities.map((cap) => (
           <div key={cap.title} className="flex flex-col gap-3">
-            {/* Preview Card */}
-            <div
-              className="h-[340px] overflow-hidden rounded-3xl border bg-cover bg-center shadow-sm"
-              style={{ backgroundImage: `url(${cap.backgroundImage})` }}
-            >
-              <div className="flex h-full items-center justify-center overflow-hidden p-4">
-                <cap.preview />
-              </div>
-            </div>
+            {/* Preview Card with Parallax Background */}
+            <ParallaxBentoCard backgroundImage={cap.backgroundImage}>
+              <cap.preview />
+            </ParallaxBentoCard>
             {/* Description Card */}
-            <div className="bg-background rounded-3xl border p-6 text-center shadow-xs">
+            <div className="bg-background rounded-[2rem] border p-6 text-center shadow-xs">
               <h3 className="text-lg font-semibold">{cap.title}</h3>
               <p className="text-muted-foreground mt-2 text-sm">
                 {cap.description}

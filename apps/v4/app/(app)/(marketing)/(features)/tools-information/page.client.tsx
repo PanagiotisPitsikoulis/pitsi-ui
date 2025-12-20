@@ -27,25 +27,36 @@ export function ToolsInformationPageClient() {
       <StackedToolsSection />
 
       <Spacer size="6xl" sizeMobile="4xl" />
+      <Spacer size="4xl" sizeMobile="2xl" />
 
       {/* What Tools Do */}
       <WhatToolsDoSection />
 
       <Spacer size="6xl" sizeMobile="4xl" />
+      <Spacer size="4xl" sizeMobile="2xl" />
 
       {/* Tool Showcases */}
       {tools.map((tool, index) => (
         <div key={tool.id}>
           <ToolShowcaseSection tool={tool} index={index} />
-          {index < tools.length - 1 && <Spacer size="6xl" sizeMobile="4xl" />}
+          {index < tools.length - 1 && (
+            <>
+              <Spacer size="6xl" sizeMobile="4xl" />
+              <Spacer size="4xl" sizeMobile="2xl" />
+            </>
+          )}
         </div>
       ))}
 
       <Spacer size="6xl" sizeMobile="4xl" />
+      <Spacer size="4xl" sizeMobile="2xl" />
 
       {/* Advanced Features */}
       <AdvancedFeaturesSection />
 
+      <Spacer size="6xl" sizeMobile="4xl" />
+      <Spacer size="6xl" sizeMobile="4xl" />
+      <Spacer size="6xl" sizeMobile="4xl" />
       <Spacer size="6xl" sizeMobile="4xl" />
 
       {/* CTA */}
