@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Play } from "lucide-react"
+import Image from "next/image"
 import React from "react"
 
 import { cn } from "@/lib/utils"
@@ -98,11 +99,12 @@ export function FeatureVideoCardsBlock({
                 </div>
               </div>
               <div className="flex flex-col gap-4 md:flex-row md:justify-between">
-                <div className="aspect-square h-12 w-12 flex-shrink-0">
-                  <img
+                <div className="relative aspect-square h-12 w-12 flex-shrink-0">
+                  <Image
                     src={card.image}
                     alt={card.title}
-                    className="aspect-square h-full w-full rounded-lg object-cover"
+                    fill
+                    className="rounded-lg object-cover"
                   />
                 </div>
                 <div className="min-w-0 flex-1">
@@ -131,16 +133,21 @@ export function FeatureVideoCardsBlock({
                 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
               >
-                <motion.img
-                  src={imageSrc}
-                  alt={imageAlt}
-                  className="h-full w-full rounded-lg object-cover"
+                <motion.div
+                  className="relative h-full w-full"
                   variants={{
                     initial: { scale: 1 },
                     hover: { scale: 1.1 },
                   }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
-                />
+                >
+                  <Image
+                    src={imageSrc}
+                    alt={imageAlt}
+                    fill
+                    className="rounded-lg object-cover"
+                  />
+                </motion.div>
               </motion.div>
               <div className="absolute inset-0 flex items-center justify-center bg-opacity-20">
                 <motion.div

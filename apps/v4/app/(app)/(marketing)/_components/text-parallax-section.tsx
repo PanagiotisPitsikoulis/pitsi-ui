@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 import {
   HorizontalScrollContainer,
   HorizontalSlide,
@@ -14,10 +16,11 @@ const Phrase = ({ src }: { src: string }) => {
     <div className="flex items-center gap-5 px-5">
       <p className="text-foreground text-[7.5vw]">Front End Developer</p>
       <span className="relative aspect-[4/2] h-[7.5vw] overflow-hidden rounded-full">
-        <img
+        <Image
           src={src}
           alt="decorative"
-          className="h-full w-full object-cover"
+          fill
+          className="object-cover"
         />
       </span>
     </div>

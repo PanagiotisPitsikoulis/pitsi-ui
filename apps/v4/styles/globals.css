@@ -1107,3 +1107,143 @@ body {
     transform: translateX(0);
   }
 }
+
+/* ========== HERO SECTION ANIMATIONS ========== */
+
+/* Ink drip animation for tattoo hero */
+@keyframes drip {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(8px) scale(1.05);
+    opacity: 0.15;
+  }
+}
+
+/* Wave animation for boat hero */
+@keyframes wave {
+  0%,
+  100% {
+    transform: translateX(0) scaleY(1);
+  }
+  25% {
+    transform: translateX(-2%) scaleY(1.05);
+  }
+  50% {
+    transform: translateX(0) scaleY(0.95);
+  }
+  75% {
+    transform: translateX(2%) scaleY(1.05);
+  }
+}
+
+/* Scanline effect for sci-fi hero */
+@keyframes scanline {
+  0% {
+    transform: translateY(-100vh);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+/* Barber pole animation */
+@keyframes barber-pole {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+/* Steam rising animation */
+@keyframes steam {
+  0%,
+  100% {
+    transform: translateY(0) scaleX(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-20px) scaleX(1.2);
+    opacity: 0.4;
+  }
+}
+
+/* Gentle sway animation for plants */
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotate(0deg) translateX(0);
+  }
+  25% {
+    transform: rotate(0.5deg) translateX(2px);
+  }
+  75% {
+    transform: rotate(-0.5deg) translateX(-2px);
+  }
+}
+
+/* Sparkle/shimmer effect for makeup hero */
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+/* Calm breathing animation for psychologist hero */
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+}
+
+/* Paw bounce animation for pet-sitting hero */
+@keyframes paw-bounce {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.15;
+  }
+  50% {
+    transform: translateY(-8px) scale(1.1);
+    opacity: 0.25;
+  }
+}
+
+/* Floating animation for decorative elements */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Cursor blink for terminal effect */
+@keyframes cursor-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

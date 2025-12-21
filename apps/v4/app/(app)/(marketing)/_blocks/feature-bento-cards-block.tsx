@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import React from "react"
 
 import { cn } from "@/lib/utils"
@@ -96,11 +97,14 @@ export function FeatureBentoCardsBlock({
                       )}
                     </div>
                   </div>
-                  <img
-                    src={card.image}
-                    alt={card.title}
-                    className="order-first aspect-video h-full max-h-96 w-full border-b object-cover sm:order-last sm:aspect-auto lg:max-h-none lg:border-b-0 lg:border-l"
-                  />
+                  <div className="relative order-first aspect-video h-full max-h-96 w-full border-b sm:order-last sm:aspect-auto lg:max-h-none lg:border-b-0 lg:border-l">
+                    <Image
+                      src={card.image}
+                      alt={card.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
                 </div>
               )
             }
@@ -111,11 +115,14 @@ export function FeatureBentoCardsBlock({
                   key={index}
                   className="bg-background overflow-hidden rounded-3xl border shadow-xs lg:col-span-3"
                 >
-                  <img
-                    src={card.image}
-                    alt={card.title}
-                    className="max-h-72 w-full border-b object-cover"
-                  />
+                  <div className="relative max-h-72 w-full border-b aspect-video">
+                    <Image
+                      src={card.image}
+                      alt={card.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
                   <div className="p-8 lg:p-12">
                     <div className="text-brand mb-4 text-xs font-medium tracking-wider">
                       {card.tag}
@@ -138,11 +145,14 @@ export function FeatureBentoCardsBlock({
                 key={index}
                 className="bg-background grid overflow-hidden rounded-3xl border shadow-xs sm:grid-cols-2 lg:col-span-4"
               >
-                <img
-                  src={card.image}
-                  alt={card.title}
-                  className="aspect-video h-full max-h-96 w-full border-b object-cover sm:aspect-auto lg:max-h-none lg:border-b-0 lg:border-r"
-                />
+                <div className="relative aspect-video h-full max-h-96 w-full border-b sm:aspect-auto lg:max-h-none lg:border-b-0 lg:border-r">
+                  <Image
+                    src={card.image}
+                    alt={card.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 <div className="flex flex-col justify-between p-8 lg:p-12">
                   <div>
                     <div className="text-brand mb-4 text-xs font-medium tracking-wider">

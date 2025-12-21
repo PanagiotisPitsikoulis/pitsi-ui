@@ -2,6 +2,7 @@
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs"
 import { Blocks, ChartPie, ChevronRight, Layout, Target, LucideIcon } from "lucide-react"
+import Image from "next/image"
 import React from "react"
 
 import { cn } from "@/lib/utils"
@@ -100,11 +101,14 @@ export function FeatureTabsAccordionBlock({
                   <h2 className="mb-2 font-medium">{feature.title}</h2>
                   <p className="text-muted-foreground text-sm">{feature.description}</p>
                 </div>
-                <img
-                  src={feature.image}
-                  alt="placeholder"
-                  className="aspect-video max-h-[450px] rounded-xl border object-cover"
-                />
+                <div className="relative aspect-video max-h-[450px] rounded-xl border overflow-hidden">
+                  <Image
+                    src={feature.image}
+                    alt="placeholder"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </AccordionContent>
             </AccordionItem>
           ))}
@@ -144,11 +148,14 @@ export function FeatureTabsAccordionBlock({
                 <h2 className="mb-2 text-2xl font-medium">{feature.title}</h2>
                 <p className="text-muted-foreground">{feature.description}</p>
               </div>
-              <img
-                src={feature.image}
-                alt="placeholder"
-                className="aspect-video max-h-[450px] rounded-xl object-cover"
-              />
+              <div className="relative aspect-video max-h-[450px] rounded-xl overflow-hidden">
+                <Image
+                  src={feature.image}
+                  alt="placeholder"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </TabsContent>
           ))}
         </Tabs>

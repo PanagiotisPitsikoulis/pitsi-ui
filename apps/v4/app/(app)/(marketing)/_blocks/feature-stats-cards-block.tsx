@@ -1,6 +1,7 @@
 "use client"
 
 import { Calendar, Target, Trophy, Users, LucideIcon } from "lucide-react"
+import Image from "next/image"
 import React from "react"
 
 import { cn } from "@/lib/utils"
@@ -125,11 +126,14 @@ export function FeatureStatsCardsBlock({
               </div>
             </div>
           </div>
-          <img
-            src={image}
-            alt="placeholder"
-            className="ml-auto max-h-[450px] w-full rounded-xl object-cover"
-          />
+          <div className="relative ml-auto max-h-[450px] w-full aspect-video rounded-xl overflow-hidden">
+            <Image
+              src={image}
+              alt="placeholder"
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {cards.map((card, index) => (

@@ -1,6 +1,6 @@
 import { Metadata } from "next"
 
-import { ContentFeaturesPageClient } from "./page.client"
+import { ContentFeaturesClient } from "./page.client"
 
 const title = "Blocks - Pitsi UI"
 const description =
@@ -31,5 +31,5 @@ export const metadata: Metadata = {
 }
 
 export default function ContentFeaturesPage() {
-  return <ContentFeaturesPageClient />
+  return <ContentFeaturesClient />
 }

@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 import {
   PerspectiveContainer,
   PerspectiveSection,
@@ -17,10 +19,11 @@ export function PerspectiveSectionDemo() {
         <div className="flex items-center gap-4">
           <p>Section</p>
           <div className="relative h-[10vw] w-[12.5vw] overflow-hidden rounded-lg">
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop"
               alt="Mountain landscape"
-              className="h-full w-full object-cover"
+              fill
+              className="object-cover"
             />
           </div>
           <p>Transition</p>
@@ -33,10 +36,11 @@ export function PerspectiveSectionDemo() {
         rotateRange={[5, 0]}
         className="relative overflow-hidden"
       >
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1920&h=1080&fit=crop"
           alt="Nature landscape"
-          className="absolute inset-0 h-full w-full object-cover"
+          fill
+          className="object-cover"
         />
       </PerspectiveSection>
     </PerspectiveContainer>

@@ -2,6 +2,7 @@
 
 import Autoplay from "embla-carousel-autoplay"
 import { AnimatePresence, motion } from "framer-motion"
+import Image from "next/image"
 import React, { useCallback, useMemo } from "react"
 
 import { cn } from "@/lib/utils"
@@ -159,9 +160,9 @@ export function HeroCarouselBlock({
             }).map((_, index) => (
               <CarouselItem key={index} className="my-10 md:basis-1/3">
                 <div
-                  className={`h-105 w-full transition-transform duration-500 ease-in-out ${getRotation(index)}`}
+                  className={`h-105 w-full transition-transform duration-500 ease-in-out ${getRotation(index)} relative`}
                 >
-                  <img
+                  <Image
                     src={
                       index == items.length
                         ? items[0].image
@@ -171,8 +172,9 @@ export function HeroCarouselBlock({
                             ? items[2].image
                             : items[index].image
                     }
-                    className="h-full w-full object-cover"
+                    className="object-cover"
                     alt=""
+                    fill
                   />
                 </div>
               </CarouselItem>

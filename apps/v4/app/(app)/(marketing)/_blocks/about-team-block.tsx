@@ -1,6 +1,7 @@
 "use client"
 
 import { ArrowUpRight } from "lucide-react"
+import Image from "next/image"
 import React from "react"
 
 import { cn } from "@/lib/utils"
@@ -59,11 +60,14 @@ export function AboutTeamBlock({
             <div className="sticky top-20 md:p-6">
               <div className="mb-8">
                 <div className="mb-6 flex items-center gap-4">
-                  <img
-                    src={profile.image}
-                    alt={profile.title}
-                    className="h-16 w-16 rounded-lg object-cover"
-                  />
+                  <div className="relative h-16 w-16 rounded-lg overflow-hidden">
+                    <Image
+                      src={profile.image}
+                      alt={profile.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
                   <div>
                     <h3 className="font-semibold">{profile.title}</h3>
                     <p className="text-muted-foreground text-sm">
@@ -103,11 +107,12 @@ export function AboutTeamBlock({
                   <p className="leading-relaxed">{profile.vision}</p>
                 </div>
 
-                <div className="my-12">
-                  <img
+                <div className="my-12 relative aspect-video rounded-2xl overflow-hidden">
+                  <Image
                     src={profile.mainImage}
                     alt="Team office"
-                    className="rounded-2xl object-cover"
+                    fill
+                    className="object-cover"
                   />
                 </div>
 

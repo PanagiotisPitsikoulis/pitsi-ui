@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import React from "react"
 
 import { cn } from "@/lib/utils"
@@ -43,13 +44,10 @@ export function HeroMobileAppBlock({
             {description}
           </p>
           <Button className="flex h-fit w-fit items-center gap-[8px] rounded-full px-8 py-5 text-base font-medium transition-all hover:scale-95">
-            <img
+            <Image
               alt="google play and app store download icons"
-              loading="lazy"
-              width="44"
-              height="18"
-              decoding="async"
-              data-nimg="1"
+              width={44}
+              height={18}
               src={ctaIcon}
             />
             <p>{ctaLabel}</p>
@@ -58,20 +56,20 @@ export function HeroMobileAppBlock({
         <div className="relative translate-x-[14.7%]">
           {/* Image inside Iphone */}
           <div className="left-[36.5%]! h-[67%]! w-[31%]! bg-muted absolute top-[12%] -translate-x-[52%] overflow-hidden rounded-[10px]">
-            <img
-              className="min-h-full min-w-full"
+            <Image
+              className="min-h-full min-w-full object-cover"
               src={screenImage}
               alt=""
+              fill
             />
           </div>
           {/* Iphone Image  */}
-          <img
+          <Image
             alt=""
             src={iphoneImage}
             className="relative z-10"
-            loading="lazy"
-            width="1008.71"
-            height="857"
+            width={1009}
+            height={857}
           />
         </div>
       </div>

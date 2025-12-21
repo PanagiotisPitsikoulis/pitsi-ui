@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import React from "react"
 
 import { cn } from "@/lib/utils"
@@ -39,11 +40,12 @@ export function AboutMissionBlock({
     <section className={cn("py-32", className)}>
       <div className="container">
         <div className="gap-15 grid grid-cols-1 lg:grid-cols-7 lg:gap-1">
-          <div className="h-120 col-span-4 border">
-            <img
+          <div className="h-120 col-span-4 border relative">
+            <Image
               src={image}
               alt=""
-              className="h-full w-full object-cover"
+              fill
+              className="object-cover"
             />
           </div>
 
@@ -59,11 +61,14 @@ export function AboutMissionBlock({
                 {quote}
               </p>
               <div className="flex w-fit items-center gap-2">
-                <img
-                  src={author.avatar}
-                  className="size-10"
-                  alt="avatar"
-                />
+                <div className="relative size-10">
+                  <Image
+                    src={author.avatar}
+                    fill
+                    className="object-cover"
+                    alt="avatar"
+                  />
+                </div>
                 <div>
                   <h3 className="font-medium tracking-tight">{author.name}</h3>
                   <p className="text-foreground/40 text-sm">{author.role}</p>

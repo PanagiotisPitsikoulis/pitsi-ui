@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { useState } from "react"
 
 import {
@@ -296,11 +297,14 @@ export function PowerSection() {
                       {tab.description}
                     </p>
                     <div className="mt-4 lg:hidden">
-                      <img
-                        src={tab.imageSrc}
-                        alt={tab.title}
-                        className="h-full max-h-60 w-full rounded-2xl border object-cover"
-                      />
+                      <div className="relative h-full max-h-60 w-full rounded-2xl border overflow-hidden aspect-video">
+                        <Image
+                          src={tab.imageSrc}
+                          alt={tab.title}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
                     </div>
                   </AccordionContent>
                 </AccordionItem>
@@ -313,11 +317,14 @@ export function PowerSection() {
         <div className="col-span-6 hidden lg:col-span-4 lg:block">
           <div className="border-border bg-background relative z-10 overflow-hidden rounded-4xl border shadow-sm lg:h-[500px]">
             <div className="bg-background absolute inset-0 z-[1]" />
-            <img
-              src={activeImage}
-              alt="Feature preview"
-              className="relative z-[2] h-full w-full object-contain p-12 transition-opacity duration-300"
-            />
+            <div className="relative z-[2] h-full w-full p-12">
+              <Image
+                src={activeImage}
+                alt="Feature preview"
+                fill
+                className="object-contain p-12 transition-opacity duration-300"
+              />
+            </div>
           </div>
         </div>
       </div>

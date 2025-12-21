@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import React from "react"
 
 import { cn } from "@/lib/utils"
@@ -139,21 +140,30 @@ export function AboutStatsBlock({
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-12">
-            <img
-              src={intro.images[0]}
-              alt="placeholder"
-              className="size-full max-h-96 rounded-xl object-cover md:col-span-5"
-            />
-            <img
-              src={intro.images[1]}
-              alt="placeholder"
-              className="size-full max-h-96 rounded-xl object-cover md:col-span-4"
-            />
-            <img
-              src={intro.images[2]}
-              alt="placeholder"
-              className="size-full max-h-96 rounded-xl object-cover md:col-span-3"
-            />
+            <div className="relative size-full max-h-96 rounded-xl overflow-hidden md:col-span-5 aspect-video">
+              <Image
+                src={intro.images[0]}
+                alt="placeholder"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="relative size-full max-h-96 rounded-xl overflow-hidden md:col-span-4 aspect-video">
+              <Image
+                src={intro.images[1]}
+                alt="placeholder"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="relative size-full max-h-96 rounded-xl overflow-hidden md:col-span-3 aspect-video">
+              <Image
+                src={intro.images[2]}
+                alt="placeholder"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
 
@@ -179,11 +189,14 @@ export function AboutStatsBlock({
             <div className="grid grid-cols-2 gap-x-7 gap-y-12 lg:grid-cols-4">
               {logos.items.map((item, index) => (
                 <div key={index} className="flex items-center gap-3">
-                  <img
-                    src={item.logo}
-                    alt="logo"
-                    className="h-8 w-auto md:h-14"
-                  />
+                  <div className="relative h-8 w-8 md:h-14 md:w-14">
+                    <Image
+                      src={item.logo}
+                      alt="logo"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
                   <p className="text-xl font-semibold md:text-4xl">{item.name}</p>
                 </div>
               ))}
@@ -200,12 +213,14 @@ export function AboutStatsBlock({
             <div className="grid grid-cols-1 gap-6 md:col-span-2 md:grid-cols-2 md:flex-row lg:col-span-1 lg:grid-cols-1 lg:flex-col">
               {benefits.items.slice(0, 2).map((item, index) =>
                 item.type === "image" ? (
-                  <img
-                    key={index}
-                    src={item.image}
-                    alt="placeholder"
-                    className="max-h-96 w-full rounded-xl object-cover"
-                  />
+                  <div key={index} className="relative max-h-96 w-full rounded-xl overflow-hidden aspect-video">
+                    <Image
+                      src={item.image || ""}
+                      alt="placeholder"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
                 ) : item.type === "stat" && item.stat ? (
                   <div key={index} className="bg-muted flex flex-col justify-center rounded-xl p-8">
                     <p className="mb-2 text-4xl font-medium">{item.stat.value}</p>
@@ -216,19 +231,23 @@ export function AboutStatsBlock({
               )}
             </div>
             {benefits.items[2]?.type === "testimonial" && benefits.items[2].testimonial && (
-              <div className="relative">
-                <img
+              <div className="relative aspect-[3/4] rounded-xl overflow-hidden">
+                <Image
                   src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
                   alt="placeholder"
-                  className="h-full rounded-xl object-cover"
+                  fill
+                  className="object-cover"
                 />
-                <div className="bg-background absolute right-6 bottom-6 left-6 rounded-xl p-4">
+                <div className="bg-background absolute right-6 bottom-6 left-6 rounded-xl p-4 z-10">
                   <div className="mb-4 flex items-center gap-2">
-                    <img
-                      src={benefits.items[2].testimonial.logo}
-                      alt="placeholder"
-                      className="h-7 w-auto"
-                    />
+                    <div className="relative h-7 w-7">
+                      <Image
+                        src={benefits.items[2].testimonial.logo}
+                        alt="placeholder"
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
                     <span className="text-lg font-semibold">
                       {benefits.items[2].testimonial.company}
                     </span>
@@ -250,11 +269,14 @@ export function AboutStatsBlock({
                   <p className="mb-6 font-semibold">{benefits.items[3].stat.label}</p>
                   <p className="text-muted-foreground">{benefits.items[3].stat.description}</p>
                 </div>
-                <img
-                  src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-3.svg"
-                  alt="placeholder"
-                  className="max-h-96 rounded-xl object-cover"
-                />
+                <div className="relative max-h-96 rounded-xl overflow-hidden aspect-video">
+                  <Image
+                    src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-3.svg"
+                    alt="placeholder"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
             )}
           </div>

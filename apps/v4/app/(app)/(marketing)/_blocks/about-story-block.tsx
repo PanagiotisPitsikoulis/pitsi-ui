@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import React from "react"
 
 import { cn } from "@/lib/utils"
@@ -60,43 +61,61 @@ export function AboutStoryBlock({
               <p className="text-muted-foreground">{story.bodyText}</p>
             </div>
             <div className="flex flex-col items-center justify-center gap-6 md:flex-row">
-              <img
-                src={story.images[0]}
-                alt="about 1"
-                className="aspect-[0.7] w-full rounded-lg object-cover md:w-1/2"
-              />
+              <div className="relative aspect-[0.7] w-full rounded-lg overflow-hidden md:w-1/2">
+                <Image
+                  src={story.images[0]}
+                  alt="about 1"
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <div className="flex w-full flex-col items-center justify-center gap-6 md:w-1/2">
-                <img
-                  src={story.images[1]}
-                  alt="about 2"
-                  className="aspect-[1.1] rounded-lg object-cover"
-                />
-                <img
-                  src={story.images[2]}
-                  alt="about 3"
-                  className="aspect-[0.7] rounded-lg object-cover"
-                />
+                <div className="relative aspect-[1.1] w-full rounded-lg overflow-hidden">
+                  <Image
+                    src={story.images[1]}
+                    alt="about 2"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="relative aspect-[0.7] w-full rounded-lg overflow-hidden">
+                  <Image
+                    src={story.images[2]}
+                    alt="about 3"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
           <div className="flex w-full flex-col items-center justify-center gap-12 pt-12 lg:w-1/2 lg:pt-48">
             <div className="flex flex-col items-center justify-center gap-6 md:flex-row">
-              <img
-                src={workplace.images[0]}
-                alt="about 4"
-                className="aspect-[0.9] w-full rounded-lg object-cover md:w-1/2"
-              />
+              <div className="relative aspect-[0.9] w-full rounded-lg overflow-hidden md:w-1/2">
+                <Image
+                  src={workplace.images[0]}
+                  alt="about 4"
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <div className="flex w-full flex-col items-center justify-center gap-6 md:w-1/2">
-                <img
-                  src={workplace.images[1]}
-                  alt="about 5"
-                  className="aspect-[0.8] rounded-lg object-cover"
-                />
-                <img
-                  src={workplace.images[2]}
-                  alt="about 6"
-                  className="aspect-[0.9] rounded-lg object-cover"
-                />
+                <div className="relative aspect-[0.8] w-full rounded-lg overflow-hidden">
+                  <Image
+                    src={workplace.images[1]}
+                    alt="about 5"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="relative aspect-[0.9] w-full rounded-lg overflow-hidden">
+                  <Image
+                    src={workplace.images[2]}
+                    alt="about 6"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </div>
             <div className="px-8">

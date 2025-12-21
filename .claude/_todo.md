@@ -1,240 +1,77 @@
-# Homepage Sections Refactor to Reusable Blocks
+# Template Blocks Implementation - Unique Layouts
+
+## Status: COMPLETED
+
+**Last updated:** 2025-12-21
+
+---
 
 ## Goal
-Make the design page look exactly like the design section of the homepage, and extract all homepage sections into fully reusable blocks with props.
 
-## Current State Analysis
+Implement 294 unique block layouts across 21 templates (14 block types each). No two templates share identical layouts.
 
-### Files to Extract Into Reusable Blocks
-Located in: `apps/v4/app/(app)/(marketing)/_components/`
-
-1. **hero-section.tsx** - Main hero with parallax images, CTAs, feature grid
-2. **purpose-section.tsx** - Feature cards with icons explaining "Why Pitsi"
-3. **design-section.tsx** - Multi-part design showcase with parallax, horizontal scroll, text gradient
-4. **power-bento-section.tsx** - Bento grid with illustrations
-5. **cta-section.tsx** - CTA with wave SVG backgrounds
-6. **reviews-section.tsx** - Marquee testimonials
-
-### Target Location
-`apps/v4/app/(app)/(marketing)/_blocks/`
+**Full plan:** `.claude/plans/2025-12-21-unique-template-blocks.md`
 
 ---
 
-## Implementation Plan
+## Phase 1: New Placeholder Blocks (168 blocks)
 
-### Phase 1: Create Reusable Block Components
-
-#### 1. `_blocks/parallax-hero-block.tsx`
-Props interface:
-```typescript
-interface ParallaxHeroBlockProps {
-  // Typography
-  headline: React.ReactNode
-  subheadline?: string
-  // Images
-  lightModeImage: string
-  darkModeImage?: string
-  mobileImages?: { desktop: string; mobile: string }
-  // CTAs
-  primaryCta?: { label: string; href: string }
-  secondaryCta?: { label: string; href: string }
-  // Stats
-  stats?: { label: string; value: string }[]
-  // Additional content
-  topNote?: string
-  className?: string
-}
-```
-
-#### 2. `_blocks/feature-grid-block.tsx`
-Props interface:
-```typescript
-interface FeatureItem {
-  icon: React.ComponentType<{ className?: string }>
-  title: string
-  description: string
-}
-
-interface FeatureGridBlockProps {
-  tagline: string
-  headline: React.ReactNode
-  features: FeatureItem[]
-  centerContent?: React.ReactNode
-  bottomText?: string
-  className?: string
-}
-```
-
-#### 3. `_blocks/design-showcase-block.tsx`
-Props interface:
-```typescript
-interface DesignShowcaseBlockProps {
-  // Intro section
-  intro: {
-    tagline: string
-    headline: string[]
-    subtext?: string[]
-    backgroundImage: string
-    foregroundImage?: string
-  }
-  // Problem section
-  problem?: {
-    tagline: string
-    headline: React.ReactNode
-    scrollTexts: [string, string]
-  }
-  // Solution section
-  solution?: {
-    tagline: string
-    text: string
-  }
-  // Final CTA section
-  finalCta?: {
-    tagline: string
-    headline: React.ReactNode
-    scrollTexts: [string, string]
-  }
-  // Features grid
-  features?: {
-    title: string
-    description: string
-  }[]
-  // Preview blocks
-  previewBlocks?: string[]
-  className?: string
-}
-```
-
-#### 4. `_blocks/bento-features-block.tsx`
-Props interface:
-```typescript
-interface BentoItem {
-  type: 'card' | 'icon'
-  title?: string
-  description?: string
-  illustration?: React.ComponentType
-  icon?: React.ComponentType<{ className?: string }>
-}
-
-interface BentoFeaturesBlockProps {
-  tagline: string
-  headline: React.ReactNode
-  items: BentoItem[]
-  className?: string
-}
-```
-
-#### 5. `_blocks/cta-wave-block.tsx`
-Props interface:
-```typescript
-interface CtaWaveBlockProps {
-  tagline: string
-  headline: React.ReactNode
-  primaryCta?: { label: string; href: string }
-  secondaryCta?: { label: string; href: string }
-  lightModeImage: string
-  darkModeImage?: string
-  className?: string
-}
-```
-
-#### 6. `_blocks/reviews-marquee-block.tsx`
-Props interface:
-```typescript
-interface Review {
-  name: string
-  username: string
-  body: string
-  img: string
-}
-
-interface ReviewsMarqueeBlockProps {
-  reviews: Review[]
-  duration?: string
-  className?: string
-}
-```
-
-#### 7. `_blocks/index.ts`
-Export all blocks for easy importing.
+| Block Type | Status | Progress |
+|------------|--------|----------|
+| Newsletter | Completed | 21/21 |
+| Blog | Completed | 21/21 |
+| Gallery | Completed | 21/21 |
+| Team | Completed | 21/21 |
+| Stats | Completed | 21/21 |
+| Logos | Completed | 21/21 |
+| Header | Completed | 21/21 |
+| Footer | Completed | 21/21 |
 
 ---
 
-### Phase 2: Refactor Existing Components
+## Phase 2: Redesign Existing Blocks for Variety (126 blocks)
 
-1. Update `_components/hero-section.tsx` to use `ParallaxHeroBlock` with hardcoded homepage data
-2. Update `_components/purpose-section.tsx` to use `FeatureGridBlock` with hardcoded data
-3. Update `_components/design-section.tsx` to use `DesignShowcaseBlock` with hardcoded data
-4. Update `_components/power-bento-section.tsx` to use `BentoFeaturesBlock` with hardcoded data
-5. Update `_components/cta-section.tsx` to use `CtaWaveBlock` with hardcoded data
-6. Update `_components/reviews-section.tsx` to use `ReviewsMarqueeBlock` with hardcoded data
-
----
-
-### Phase 3: Create Design Feature Page
-
-Create `apps/v4/app/(app)/(marketing)/(features)/design/page.tsx`:
-```typescript
-import { Metadata } from "next"
-import { DesignSection, StripeBgGuides, CTASection, ReviewsSection } from "../../_components"
-
-export const metadata: Metadata = {
-  title: "Design - Pitsi UI",
-  description: "Unparalleled design quality...",
-}
-
-export default function DesignPage() {
-  return (
-    <div className="relative min-h-screen">
-      <StripeBgGuides columnCount={6} animated={false} />
-      <DesignSection />
-      <CTASection />
-      <ReviewsSection />
-    </div>
-  )
-}
-```
+| Block Type | Status | Progress |
+|------------|--------|----------|
+| Features | Completed | 21/21 unique |
+| Pricing | Completed | 21/21 unique |
+| Testimonials | Completed | 21/21 unique |
+| CTA | Completed | 21/21 unique |
+| FAQ | Completed | 21/21 unique |
+| Contact | Completed | 21/21 unique |
 
 ---
 
-## File Changes Summary
+## Summary
 
-### New Files (7 files)
-1. `_blocks/parallax-hero-block.tsx`
-2. `_blocks/feature-grid-block.tsx`
-3. `_blocks/design-showcase-block.tsx`
-4. `_blocks/bento-features-block.tsx`
-5. `_blocks/cta-wave-block.tsx`
-6. `_blocks/reviews-marquee-block.tsx`
-7. `_blocks/index.ts`
+All 294 blocks have been implemented with unique layouts:
 
-### Modified Files (7 files)
-1. `_components/hero-section.tsx` - Use ParallaxHeroBlock
-2. `_components/purpose-section.tsx` - Use FeatureGridBlock
-3. `_components/design-section.tsx` - Use DesignShowcaseBlock
-4. `_components/power-bento-section.tsx` - Use BentoFeaturesBlock
-5. `_components/cta-section.tsx` - Use CtaWaveBlock
-6. `_components/reviews-section.tsx` - Use ReviewsMarqueeBlock
-7. `(features)/design/page.tsx` - Create design page
+### Phase 1 - New Blocks (168 total)
+- Newsletter: 21 unique layouts (AI chip badge, data stream, postcard, nautical flag, etc.)
+- Blog: 21 unique layouts (research papers, data logs, gallery exhibitions, etc.)
+- Gallery: 21 unique layouts (data viz grid, holographic, museum wall, porthole frames, etc.)
+- Team: 21 unique layouts (neural network nodes, crew roster, artist collective, etc.)
+- Stats: 21 unique layouts (metric dashboards, holographic counters, nautical gauges, etc.)
+- Logos: 21 unique layouts (tech partner badges, alliance insignias, certifications, etc.)
+- Header: 21 unique layouts (minimal tech nav, HUD interface, gallery minimal, etc.)
+- Footer: 21 unique layouts (terminal interface, gallery credits, nautical chart, etc.)
 
----
-
-## Key Design Principles
-
-1. **Props-First**: All content passed via props, no hardcoded strings in blocks
-2. **Type-Safe**: Full TypeScript interfaces for all props
-3. **Composable**: Blocks can be combined in any order
-4. **Themeable**: className props for styling overrides
-5. **Accessible**: Maintain all accessibility features
-6. **Server Components**: Keep blocks as server components where possible
-7. **Client Components**: Use "use client" only where needed (animations)
+### Phase 2 - Redesigned Blocks (126 total)
+- Features: 21 unique layouts (bento grid, hexagonal, masonry, horizontal scroll, etc.)
+- Pricing: 21 unique layouts (comparison table, holographic cards, menu-style, etc.)
+- Testimonials: 21 unique layouts (metrics-focused, terminal style, polaroid, etc.)
+- CTA: 21 unique layouts (split screen, gradient full-width, scenic image, etc.)
+- FAQ: 21 unique layouts (chat bubble, terminal command, sketchbook, etc.)
+- Contact: 21 unique layouts (chat interface, holographic terminal, postcard style, etc.)
 
 ---
 
-## Execution Order
+## Design Principles Applied
 
-1. Create all block files in `_blocks/`
-2. Create `_blocks/index.ts` with exports
-3. Refactor each `_components/` section to use blocks
-4. Create the design page
-5. Test all pages still work correctly
+All blocks follow `.claude/context/block-design-principles.md`:
+- Borders: `border-border`
+- Badge BG: `bg-muted/50`
+- Hover: `hover:bg-muted`
+- Focus: `focus:ring-1 focus:ring-ring`
+- Cards: `useBlockContext()` → `cardBg`
+- Icons: `text-primary` with `bg-muted/50` background

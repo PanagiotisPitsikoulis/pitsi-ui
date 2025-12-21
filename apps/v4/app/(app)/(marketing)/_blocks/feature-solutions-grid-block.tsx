@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import React from "react"
 
 import { cn } from "@/lib/utils"
@@ -106,15 +107,20 @@ export function FeatureSolutionsGridBlock({
         <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {items.map((item, index) => (
             item.type === "image" ? (
-              <img
+              <div
                 key={index}
-                src={item.image}
-                alt="placeholder"
                 className={cn(
-                  "aspect-square size-full rounded-3xl object-cover",
+                  "relative aspect-square size-full rounded-3xl overflow-hidden",
                   getOrderClass(index)
                 )}
-              />
+              >
+                <Image
+                  src={item.image || ""}
+                  alt="placeholder"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             ) : (
               <div
                 key={index}

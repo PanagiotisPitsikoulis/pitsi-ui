@@ -1,6 +1,7 @@
 "use client"
 
 import { Minus } from "lucide-react"
+import Image from "next/image"
 import React from "react"
 
 import { cn } from "@/lib/utils"
@@ -105,21 +106,30 @@ export function HeroCommunityBlock({
       <div className="relative px-8">
         <div className="bg-linear-to-b from-muted absolute inset-0 top-1/2 h-full w-full to-transparent to-50%"></div>
         <div className="relative mx-auto max-w-5xl">
-          <img
-            src={mainImage}
-            alt="placeholder"
-            className="mt-20 max-h-[580px] w-full rounded-lg object-cover shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]"
-          />
-          <img
-            src={leftImage}
-            alt="placeholder"
-            className="absolute -left-3 top-1/2 hidden max-h-56 -translate-y-1/2 rounded-lg object-cover shadow-md md:block xl:-left-10"
-          />
-          <img
-            src={rightImage}
-            alt="placeholder"
-            className="bg-muted absolute -right-3 top-1/3 hidden h-24 w-24 -translate-y-1/2 rounded-lg shadow-md md:block xl:-right-10"
-          />
+          <div className="relative mt-20 max-h-[580px] w-full aspect-video rounded-lg overflow-hidden shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]">
+            <Image
+              src={mainImage}
+              alt="placeholder"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="absolute -left-3 top-1/2 hidden max-h-56 h-56 w-40 -translate-y-1/2 rounded-lg overflow-hidden shadow-md md:block xl:-left-10">
+            <Image
+              src={leftImage}
+              alt="placeholder"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="bg-muted absolute -right-3 top-1/3 hidden h-24 w-24 -translate-y-1/2 rounded-lg overflow-hidden shadow-md md:block xl:-right-10">
+            <Image
+              src={rightImage}
+              alt="placeholder"
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>
