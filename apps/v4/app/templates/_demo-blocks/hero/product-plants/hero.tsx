@@ -71,16 +71,16 @@ export function HeroProductPlants() {
               Free Shipping Over $50
             </span>
           </div>
-          <h1 className="text-shadow-lg font-sans text-center text-[3rem] leading-[0.85] sm:text-6xl md:text-[7rem] uppercase font-light tracking-widest text-foreground">
+          <h1 className="font-display text-shadow-lg font-sans text-center text-[3rem] leading-[0.85] sm:text-6xl md:text-[7rem] uppercase font-light tracking-widest text-foreground">
             Bring
           </h1>
           <div className="flex items-center justify-center gap-3 md:gap-6">
-            <h1 className="text-shadow-lg font-sans text-center text-[4rem] leading-[0.85] sm:text-7xl md:text-[10rem] text-foreground uppercase font-semibold">
+            <h1 className="font-display text-shadow-lg font-sans text-center text-[4rem] leading-[0.85] sm:text-7xl md:text-[10rem] text-foreground uppercase font-semibold">
               Nature
             </h1>
             <div className="w-12 h-12 md:w-20 md:h-20 rounded-full bg-border hidden sm:block" />
           </div>
-          <h1 className="text-shadow-lg font-sans text-center text-[3rem] leading-[0.9] sm:text-6xl md:text-[8rem] uppercase font-light tracking-widest text-foreground">
+          <h1 className="font-display text-shadow-lg font-sans text-center text-[3rem] leading-[0.9] sm:text-6xl md:text-[8rem] uppercase font-light tracking-widest text-foreground">
             Home
           </h1>
           <Spacer size="xl" sizeMobile="md" />

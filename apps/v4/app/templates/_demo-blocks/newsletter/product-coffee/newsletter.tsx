@@ -21,7 +21,7 @@ export function NewsletterProductCoffee() {
               </svg>
             </div>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-5">
+          <h2 className="font-display text-4xl md:text-6xl font-bold text-foreground mb-5">
             Morning Brew Subscription
           </h2>
           <p className="text-muted-foreground text-lg mb-10 max-w-lg mx-auto">

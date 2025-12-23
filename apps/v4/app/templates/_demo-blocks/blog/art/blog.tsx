@@ -38,7 +38,7 @@ export function BlogArt() {
           <div className="inline-block border-t border-b border-border py-2 px-8 mb-6">
             <span className="text-sm tracking-[0.4em] uppercase text-muted-foreground">Exhibition Highlights</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-serif font-light text-foreground">
+          <h2 className="font-display text-4xl md:text-6xl font-serif font-light text-foreground">
             Current Collections
           </h2>
         </div>

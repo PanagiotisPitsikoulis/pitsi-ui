@@ -18,7 +18,7 @@ export function NewsletterServiceFashion() {
                   </svg>
                   <span className="text-xs font-bold uppercase tracking-widest">Exclusive</span>
                 </div>
-                <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-5 tracking-tight">
+                <h2 className="font-display text-4xl md:text-6xl font-bold text-foreground mb-5 tracking-tight">
                   VIP Runway Access
                 </h2>
                 <p className="text-muted-foreground text-xl mb-8 leading-relaxed">

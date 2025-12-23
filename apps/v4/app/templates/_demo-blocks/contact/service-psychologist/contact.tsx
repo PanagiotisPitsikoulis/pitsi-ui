@@ -7,84 +7,121 @@ import { useBlockContext } from "../../_components"
 export function ContactServicePsychologist() {
   const { cardBg } = useBlockContext()
   return (
-    <section>
+    <section className="py-24">
       <div className="container px-6">
-        <div className="mx-auto max-w-2xl">
-          <div className="text-center mb-12">
-            <p className="text-primary text-sm font-medium tracking-[0.3em] uppercase mb-4">Contact</p>
-            <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-6">
-              Begin Your Healing Journey
-            </h2>
-            <p className="text-muted-foreground">
-              Taking the first step is often the hardest. Reach out for a confidential consultation.
-            </p>
-          </div>
-
-          {/* Calm, private, minimal design */}
-          <div className={`${cardBg} rounded-3xl border border-border p-10 md:p-12`}>
-            <div className="text-center mb-8">
-              <div className="w-12 h-12 rounded-full bg-muted/30 flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                </svg>
-              </div>
-              <p className="text-sm text-muted-foreground">All communications are confidential</p>
+        <div className="grid lg:grid-cols-2 gap-0 max-w-7xl mx-auto overflow-hidden rounded-3xl border border-border">
+          {/* Form Side */}
+          <div className={`${cardBg} p-12 lg:p-16`}>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-6">
+              <svg className="w-3.5 h-3.5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+              <span className="text-xs font-medium text-primary tracking-wider uppercase">Confidential</span>
             </div>
+
+            <h2 className="font-display text-4xl lg:text-5xl text-foreground mb-4">
+              Begin Your Journey
+            </h2>
+            <p className="text-muted-foreground mb-10">
+              Taking the first step is often the hardest. You're not alone.
+            </p>
 
             <form className="space-y-6">
               <div>
-                <label className="text-sm font-medium text-foreground mb-2 block">Name</label>
                 <input
                   type="text"
-                  placeholder="How would you like to be addressed?"
-                  className="w-full px-4 py-4 rounded-2xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
+                  placeholder="Your name (or preferred name)"
+                  className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
                 />
               </div>
 
               <div>
-                <label className="text-sm font-medium text-foreground mb-2 block">Contact Information</label>
                 <input
                   type="email"
-                  placeholder="Email or Phone (your preference)"
-                  className="w-full px-4 py-4 rounded-2xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
+                  placeholder="Email address"
+                  className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
                 />
               </div>
 
               <div>
-                <label className="text-sm font-medium text-foreground mb-2 block">Briefly share what brings you here</label>
+                <input
+                  type="tel"
+                  placeholder="Phone number (optional)"
+                  className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
+                />
+              </div>
+
+              <div>
                 <textarea
-                  placeholder="Take your time. Share what feels comfortable..."
-                  rows={5}
-                  className="w-full px-4 py-4 rounded-2xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring resize-none"
+                  placeholder="Share what brings you here today... (optional)"
+                  rows={4}
+                  className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none"
                 />
               </div>
 
-              <div>
-                <label className="text-sm font-medium text-foreground mb-2 block">Preferred Contact Method</label>
-                <div className="flex gap-3">
-                  <label className={`${cardBg} flex-1 border border-border rounded-xl p-3 cursor-pointer hover:bg-muted transition-colors text-center`}>
-                    <input type="radio" name="contact" className="sr-only" />
-                    <span className="text-sm text-foreground">Email</span>
-                  </label>
-                  <label className={`${cardBg} flex-1 border border-border rounded-xl p-3 cursor-pointer hover:bg-muted transition-colors text-center`}>
-                    <input type="radio" name="contact" className="sr-only" />
-                    <span className="text-sm text-foreground">Phone</span>
-                  </label>
-                  <label className={`${cardBg} flex-1 border border-border rounded-xl p-3 cursor-pointer hover:bg-muted transition-colors text-center`}>
-                    <input type="radio" name="contact" className="sr-only" />
-                    <span className="text-sm text-foreground">Either</span>
-                  </label>
+              <Button className="w-full rounded-full py-6 text-base font-medium tracking-wide">
+                Request Consultation
+              </Button>
+
+              <p className="text-center text-sm text-muted-foreground">
+                Prefer to call? <a href="mailto:care@mindwellness.com" className="text-primary hover:underline">care@mindwellness.com</a>
+              </p>
+            </form>
+          </div>
+
+          {/* Testimonial Side */}
+          <div className="relative bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-primary/5 p-12 lg:p-16 flex flex-col justify-between">
+            <div className="absolute inset-0 bg-[url(/placeholders/blocks/service-psychologist/1.webp)] bg-cover bg-center opacity-5" />
+
+            <div className="relative z-10">
+              <div className={`${cardBg} inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border mb-8`}>
+                <div className="w-2 h-2 rounded-full bg-primary/50" />
+                <span className="text-xs font-medium text-foreground">Client Experience</span>
+              </div>
+
+              <svg className="w-10 h-10 text-primary/30 mb-6" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+              </svg>
+
+              <p className="text-2xl lg:text-3xl font-light text-foreground mb-8 leading-relaxed">
+                "I was hesitant at first, but the supportive environment made all the difference. I finally feel heard and have tools to move forward."
+              </p>
+
+              <div className="flex items-center gap-4">
+                <div className={`${cardBg} w-12 h-12 rounded-full border border-border flex items-center justify-center`}>
+                  <span className="text-sm font-light text-muted-foreground">M</span>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">M.L.</p>
+                  <p className="text-sm text-muted-foreground">Client Since 2023</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative z-10 space-y-6">
+              <div className="pt-8 border-t border-border/50">
+                <div className="grid grid-cols-2 gap-6">
+                  <div>
+                    <p className="text-xs text-muted-foreground mb-1">Response Time</p>
+                    <p className="text-lg font-light text-foreground">24 hours</p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground mb-1">Sessions</p>
+                    <p className="text-lg font-light text-foreground">Virtual & In-Person</p>
+                  </div>
                 </div>
               </div>
 
-              <Button className="w-full rounded-2xl py-6 font-medium">
-                Schedule Session
-              </Button>
-            </form>
-
-            <div className="mt-8 pt-6 border-t border-border text-center space-y-2">
-              <p className="text-sm text-muted-foreground">300 Wellness Center, Suite 200</p>
-              <p className="text-sm text-muted-foreground">Mon-Fri: 9am-7pm, Sat: 10am-2pm</p>
+              <div className={`${cardBg} rounded-2xl border border-border p-4`}>
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  </svg>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    All sessions are completely confidential and conducted in a safe, judgment-free environment.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

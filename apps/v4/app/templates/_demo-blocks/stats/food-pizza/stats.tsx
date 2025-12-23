@@ -8,7 +8,7 @@ export function StatsFoodPizza() {
           <p className="text-primary text-sm tracking-[0.3em] uppercase font-medium mb-4">
             Order Counter
           </p>
-          <h2 className="text-3xl md:text-5xl font-bold">Fresh Stats Daily</h2>
+          <h2 className="font-display text-3xl md:text-5xl font-bold">Fresh Stats Daily</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
           {[

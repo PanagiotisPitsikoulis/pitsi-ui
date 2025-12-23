@@ -34,13 +34,13 @@ export function HeroProductSkincare() {
           <p className="text-shadow text-[10px] md:text-xs tracking-[0.5em] uppercase mb-8">
             Clean Beauty Since 2018
           </p>
-          <h1 className="text-shadow-lg font-serif italic text-left max-lg:text-center text-[2.5rem] leading-none sm:text-4xl md:text-[5rem] text-foreground">
+          <h1 className="font-display text-shadow-lg font-serif italic text-left max-lg:text-center text-[2.5rem] leading-none sm:text-4xl md:text-[5rem] text-foreground">
             the Glow
           </h1>
-          <h1 className="text-shadow-lg text-left max-lg:text-center text-[4rem] leading-[0.75] sm:text-7xl md:text-[12rem] text-foreground font-black uppercase tracking-tighter">
+          <h1 className="font-display text-shadow-lg text-left max-lg:text-center text-[4rem] leading-[0.75] sm:text-7xl md:text-[12rem] text-foreground font-black uppercase tracking-tighter">
             You
           </h1>
-          <h1 className="text-shadow-lg font-serif italic text-left max-lg:text-center text-[2rem] leading-none sm:text-3xl md:text-[4rem] text-foreground">
+          <h1 className="font-display text-shadow-lg font-serif italic text-left max-lg:text-center text-[2rem] leading-none sm:text-3xl md:text-[4rem] text-foreground">
             Deserve
           </h1>
           <Spacer size="xl" sizeMobile="md" />

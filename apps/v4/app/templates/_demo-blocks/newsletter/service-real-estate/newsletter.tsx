@@ -33,7 +33,7 @@ export function NewsletterServiceRealEstate() {
                     Premium Listings
                   </span>
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
                   Find Your Dream Home
                 </h2>
                 <div className="space-y-3">

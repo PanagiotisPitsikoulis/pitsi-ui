@@ -11,7 +11,7 @@ export function NewsletterAi() {
             <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             <span className="text-primary text-xs font-medium tracking-wide">AI POWERED</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 tracking-tight">
+          <h2 className="font-display text-4xl md:text-6xl font-bold text-foreground mb-6 tracking-tight">
             Intelligence Updates
           </h2>
           <p className="text-muted-foreground text-base mb-10 max-w-md mx-auto">

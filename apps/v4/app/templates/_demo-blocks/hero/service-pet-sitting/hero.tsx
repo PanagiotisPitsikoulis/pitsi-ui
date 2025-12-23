@@ -86,10 +86,10 @@ export function HeroServicePetSitting() {
               <ellipse cx="50" cy="65" rx="20" ry="16"/><ellipse cx="25" cy="40" rx="10" ry="12"/><ellipse cx="75" cy="40" rx="10" ry="12"/><ellipse cx="18" cy="55" rx="8" ry="10"/><ellipse cx="82" cy="55" rx="8" ry="10"/>
             </svg>
           </div>
-          <h1 className="text-shadow-lg font-serif italic text-center text-[3rem] leading-[0.9] sm:text-5xl md:text-[7rem] text-foreground">
+          <h1 className="font-display text-shadow-lg font-serif italic text-center text-[3rem] leading-[0.9] sm:text-5xl md:text-[7rem] text-foreground">
             furry friend
           </h1>
-          <h1 className="text-shadow-lg text-center text-[4rem] leading-[0.75] sm:text-7xl md:text-[12rem] text-foreground font-black uppercase tracking-tighter">
+          <h1 className="font-display text-shadow-lg text-center text-[4rem] leading-[0.75] sm:text-7xl md:text-[12rem] text-foreground font-black uppercase tracking-tighter">
             Paradise
           </h1>
           <Spacer size="xl" sizeMobile="md" />

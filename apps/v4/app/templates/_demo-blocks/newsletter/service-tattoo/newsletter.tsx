@@ -34,7 +34,7 @@ export function NewsletterServiceTattoo() {
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-foreground text-background mb-3">
                     <span className="text-xs font-bold uppercase tracking-widest">Flash Drops</span>
                   </div>
-                  <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-3">
+                  <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-3">
                     Ink Alerts
                   </h2>
                 </div>

@@ -2,43 +2,40 @@
 
 import Image from "next/image"
 
+import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
-import { getTemplateThemeStyle } from "../../_components"
+import { ImageOverlay } from "../../_block_components"
 
 export function CTAServicePlants() {
-  const darkCardStyle = getTemplateThemeStyle("service-plants", "tinted", "dark")
-
   return (
     <section>
       <div className="container px-6">
-        <div
-          className="relative rounded-3xl overflow-hidden"
-          style={darkCardStyle}
-        >
-          <div className="absolute inset-0">
-            <Image
-              src="/placeholders/blocks/service-plants/1.webp"
-              alt="Plants background"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-background/80" />
-          </div>
-          <div className="relative z-10 py-16 md:py-24 px-8 text-center">
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
-              Ready to Go Green?
+        <div className="relative overflow-hidden rounded-3xl">
+          <Image
+            src="/placeholders/blocks/service-plants/1.webp"
+            alt="Plants background"
+            fill
+            className="object-cover"
+          />
+          <ImageOverlay opacity={80} />
+          <div className="relative z-20 flex flex-col items-center px-8 py-16 md:py-24">
+            <h2 className="font-display mb-6 text-center text-3xl font-bold text-white md:text-5xl">
+              Start Your Plant Journey
             </h2>
-            <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-8">
-              Join thousands of happy plant parents. Get 15% off your first order when you subscribe to our newsletter.
+            <p className="mb-10 max-w-xl text-center text-lg text-white/70">
+              Get 15% off your first order when you join our community.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+            <div className="mx-auto flex w-full max-w-md flex-col gap-4 sm:flex-row">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-6 py-3 rounded-full bg-card border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
+                className={cn(
+                  "h-12 flex-1 rounded-full border border-white/20 bg-white/10 px-6 text-white",
+                  "placeholder:text-white/50 focus:ring-1 focus:ring-white/30 focus:outline-none"
+                )}
               />
-              <Button className="rounded-full px-8">
+              <Button className="h-12 rounded-full bg-white px-8 text-black hover:bg-white/90">
                 Subscribe
               </Button>
             </div>

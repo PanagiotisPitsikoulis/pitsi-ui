@@ -64,7 +64,7 @@ export function FeaturesServicePsychologist() {
           <p className="text-primary mb-4 text-sm font-light tracking-[0.3em] uppercase">
             Our Approach
           </p>
-          <h2 className="text-foreground text-3xl font-light md:text-5xl">
+          <h2 className="font-display text-foreground text-3xl font-light md:text-5xl">
             Compassionate Care
           </h2>
         </div>

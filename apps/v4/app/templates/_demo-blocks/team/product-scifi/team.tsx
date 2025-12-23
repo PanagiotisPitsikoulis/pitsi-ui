@@ -16,7 +16,7 @@ export function TeamProductScifi() {
       <div className="container px-6">
         <div className="text-center mb-16">
           <p className="text-primary text-xs tracking-[0.4em] uppercase font-mono mb-4">ENGINEERING DIVISION</p>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground">
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground">
             Tech Crew
           </h2>
         </div>

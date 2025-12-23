@@ -67,10 +67,10 @@ export function HeroServiceHospitality() {
           <p className="text-shadow text-sm md:text-lg tracking-[0.4em] mb-4 font-light uppercase">
             Welcome to
           </p>
-          <h1 className="text-shadow-lg font-serif italic text-center text-[3rem] leading-[0.9] sm:text-6xl md:text-[8rem] text-foreground">
+          <h1 className="font-display text-shadow-lg font-serif italic text-center text-[3rem] leading-[0.9] sm:text-6xl md:text-[8rem] text-foreground">
             Timeless
           </h1>
-          <h1 className="text-shadow-lg font-serif italic text-center text-[4rem] leading-[0.85] sm:text-7xl md:text-[11rem] text-foreground">
+          <h1 className="font-display text-shadow-lg font-serif italic text-center text-[4rem] leading-[0.85] sm:text-7xl md:text-[11rem] text-foreground">
             Luxury
           </h1>
           <Spacer size="xl" sizeMobile="md" />

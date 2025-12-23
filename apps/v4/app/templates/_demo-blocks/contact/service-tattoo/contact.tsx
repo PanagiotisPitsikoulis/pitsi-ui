@@ -7,138 +7,133 @@ import { useBlockContext } from "../../_components"
 export function ContactServiceTattoo() {
   const { cardBg } = useBlockContext()
   return (
-    <section>
+    <section className="py-24">
       <div className="container px-6">
-        <div className="mx-auto max-w-4xl">
-          <div className="text-center mb-12">
-            <p className="text-primary text-sm font-bold tracking-[0.3em] uppercase mb-4">Contact</p>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
-              Book Your Ink
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Ready to make your mark? Consultations are free. Let's discuss your custom design.
-            </p>
-          </div>
+        <div className="grid lg:grid-cols-2 gap-0 max-w-7xl mx-auto overflow-hidden rounded-3xl border-2 border-border">
+          {/* Testimonial Side - Left */}
+          <div className="relative bg-gradient-to-br from-foreground/95 to-foreground p-12 lg:p-16 flex flex-col justify-between text-background order-2 lg:order-1">
+            <div className="absolute inset-0 bg-[url(/placeholders/blocks/service-tattoo/1.webp)] bg-cover bg-center opacity-20" />
+            <div className="absolute inset-0 bg-gradient-to-t from-foreground via-transparent to-transparent" />
 
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Portfolio reference section */}
-            <div className={`${cardBg} border-2 border-border rounded-2xl p-8`}>
-              <h3 className="text-xl font-bold text-foreground mb-6">Design Inspiration</h3>
-              <div className="space-y-4">
-                <div className={`${cardBg} border border-border rounded-xl p-4`}>
-                  <p className="text-sm font-bold text-foreground mb-2">Style Preferences</p>
-                  <div className="flex flex-wrap gap-2">
-                    {['Traditional', 'Realism', 'Japanese', 'Black & Grey', 'Neo-Traditional', 'Minimalist'].map((style) => (
-                      <label key={style} className="px-3 py-1 rounded-full bg-muted/50 border border-border text-xs font-medium text-foreground cursor-pointer hover:bg-muted transition-colors">
-                        <input type="checkbox" className="sr-only" />
-                        {style}
-                      </label>
-                    ))}
-                  </div>
+            <div className="relative z-10">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/10 border border-background/20 mb-8">
+                <svg className="w-4 h-4 text-background" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+                <span className="text-xs font-bold text-background tracking-wider uppercase">Artist Portfolio</span>
+              </div>
+
+              <svg className="w-12 h-12 text-background/60 mb-8" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+              </svg>
+
+              <p className="text-2xl lg:text-3xl font-bold mb-12 leading-tight">
+                "My sleeve is a masterpiece. The attention to detail, the shading, the way it flows — absolutely incredible. Worth every penny."
+              </p>
+            </div>
+
+            <div className="relative z-10 space-y-6">
+              <div className="flex items-center gap-4 pb-6 border-b border-background/20">
+                <div className="w-12 h-12 rounded-full bg-background/10 border-2 border-background/20 flex items-center justify-center">
+                  <span className="text-sm font-bold">JR</span>
                 </div>
-
-                <div className={`${cardBg} border border-border rounded-xl p-4`}>
-                  <p className="text-sm font-bold text-foreground mb-2">Size Estimate</p>
-                  <div className="grid grid-cols-3 gap-2">
-                    {['Small', 'Medium', 'Large'].map((size) => (
-                      <label key={size} className={`${cardBg} border border-border rounded-lg p-3 cursor-pointer hover:bg-muted transition-colors text-center`}>
-                        <input type="radio" name="size" className="sr-only" />
-                        <span className="text-sm font-medium text-foreground">{size}</span>
-                      </label>
-                    ))}
-                  </div>
+                <div>
+                  <p className="font-bold">Jake Rodriguez</p>
+                  <p className="text-sm text-background/70">Full Sleeve Client, 2024</p>
                 </div>
+              </div>
 
-                <div className={`${cardBg} border border-border rounded-xl p-4`}>
-                  <p className="text-sm font-bold text-foreground mb-2">Placement</p>
-                  <select className="w-full px-4 py-3 rounded-lg bg-background border border-border text-foreground focus:outline-none focus:ring-1 focus:ring-ring">
-                    <option>Select body area</option>
-                    <option>Arm</option>
-                    <option>Leg</option>
-                    <option>Back</option>
-                    <option>Chest</option>
-                    <option>Other</option>
-                  </select>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <p className="text-xs text-background/60 mb-1">Investment</p>
+                  <p className="text-2xl font-bold">$3,500</p>
+                </div>
+                <div>
+                  <p className="text-xs text-background/60 mb-1">Sessions</p>
+                  <p className="text-2xl font-bold">6</p>
+                </div>
+              </div>
+
+              <div className="pt-6 border-t border-background/20">
+                <p className="text-xs text-background/60 mb-3">Style</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 rounded-full bg-background/10 border border-background/20 text-xs font-bold">Japanese</span>
+                  <span className="px-3 py-1 rounded-full bg-background/10 border border-background/20 text-xs font-bold">Color</span>
+                  <span className="px-3 py-1 rounded-full bg-background/10 border border-background/20 text-xs font-bold">Full Sleeve</span>
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* Consultation form */}
-            <div className={`${cardBg} rounded-2xl p-8 border-2 border-border`}>
-              <h3 className="text-xl font-bold text-foreground mb-6">Request Consultation</h3>
-              <form className="space-y-4">
-                <div>
-                  <label className="text-sm font-bold text-foreground mb-2 block">Name</label>
-                  <input
-                    type="text"
-                    placeholder="Your Name"
-                    className="w-full px-4 py-3 rounded-lg bg-background border-2 border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-                  />
-                </div>
+          {/* Form Side - Right */}
+          <div className={`${cardBg} p-12 lg:p-16 order-1 lg:order-2`}>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-6">
+              <svg className="w-3.5 h-3.5 text-primary" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              </svg>
+              <span className="text-xs font-bold text-primary tracking-wider uppercase">Custom Ink</span>
+            </div>
 
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-sm font-bold text-foreground mb-2 block">Email</label>
-                    <input
-                      type="email"
-                      placeholder="your@email.com"
-                      className="w-full px-4 py-3 rounded-lg bg-background border-2 border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-                    />
-                  </div>
-                  <div>
-                    <label className="text-sm font-bold text-foreground mb-2 block">Phone</label>
-                    <input
-                      type="tel"
-                      placeholder="(555) 123-4567"
-                      className="w-full px-4 py-3 rounded-lg bg-background border-2 border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-                    />
-                  </div>
-                </div>
+            <h2 className="font-display text-4xl lg:text-5xl font-bold text-foreground mb-4">
+              Book Your Ink
+            </h2>
+            <p className="text-muted-foreground mb-10">
+              Custom designs, expert artists, lifetime memories.
+            </p>
 
-                <div>
-                  <label className="text-sm font-bold text-foreground mb-2 block">Design Description</label>
-                  <textarea
-                    placeholder="Describe your tattoo idea, size, placement, and any reference images..."
-                    rows={5}
-                    className="w-full px-4 py-3 rounded-lg bg-background border-2 border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring resize-none"
-                  />
-                </div>
+            <form className="space-y-6">
+              <div>
+                <input
+                  type="text"
+                  placeholder="Your name"
+                  className="w-full bg-transparent border-b-2 border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
+                />
+              </div>
 
-                <div className="flex items-center gap-3 p-4 rounded-lg bg-muted/30">
-                  <svg className="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <div>
+                <input
+                  type="email"
+                  placeholder="Email address"
+                  className="w-full bg-transparent border-b-2 border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
+                />
+              </div>
+
+              <div>
+                <input
+                  type="tel"
+                  placeholder="Phone number (optional)"
+                  className="w-full bg-transparent border-b-2 border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
+                />
+              </div>
+
+              <div>
+                <textarea
+                  placeholder="Describe your tattoo idea (design, style, size, placement)..."
+                  rows={4}
+                  className="w-full bg-transparent border-b-2 border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none"
+                />
+              </div>
+
+              <Button className="w-full rounded-full py-6 text-base font-bold tracking-wide">
+                Book Free Consultation
+              </Button>
+
+              <p className="text-center text-sm text-muted-foreground">
+                Instagram? <a href="mailto:studio@inklegends.com" className="text-primary hover:underline font-bold">@inklegends</a>
+              </p>
+            </form>
+
+            <div className="mt-10 pt-8 border-t border-border">
+              <div className={`${cardBg} rounded-2xl border-2 border-border p-4`}>
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <circle cx="12" cy="12" r="10" />
                     <path d="M12 16v-4M12 8h.01" />
                   </svg>
-                  <p className="text-xs text-muted-foreground">Free consultation - no obligation</p>
-                </div>
-
-                <Button className="w-full rounded-lg font-bold">
-                  Book Consultation
-                </Button>
-              </form>
-            </div>
-          </div>
-
-          <div className="mt-8 pt-8 border-t-2 border-border">
-            <div className="grid sm:grid-cols-2 gap-6">
-              <div className="flex items-center gap-3">
-                <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                <div>
-                  <p className="text-sm font-bold text-foreground">The Studio</p>
-                  <p className="text-xs text-muted-foreground">777 Ink Street, Arts District</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M12 6v6l4 2" />
-                </svg>
-                <div>
-                  <p className="text-sm font-bold text-foreground">Hours</p>
-                  <p className="text-xs text-muted-foreground">Tue-Sat: 12pm-10pm</p>
+                  <div className="text-xs text-muted-foreground">
+                    <p className="font-bold text-foreground mb-1">Free Consultation</p>
+                    <p>No obligation. Discuss your design, get pricing, meet your artist.</p>
+                  </div>
                 </div>
               </div>
             </div>

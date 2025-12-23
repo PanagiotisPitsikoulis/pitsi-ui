@@ -31,13 +31,13 @@ export function HeroServiceBarber() {
         </p>
 
         <h1
-          className="text-shadow-lg text-[3rem] leading-[0.9] tracking-tight text-foreground uppercase font-bold sm:text-6xl md:text-8xl lg:text-[10rem]"
+          className="font-display text-shadow-lg text-[3rem] leading-[0.9] tracking-tight text-foreground uppercase font-bold sm:text-6xl md:text-8xl lg:text-[10rem]"
           style={{ fontFamily: 'Georgia, Times New Roman, serif' }}
         >
           Classic
         </h1>
         <h1
-          className="text-shadow-lg text-[3rem] leading-[0.9] tracking-tight text-foreground uppercase font-bold sm:text-6xl md:text-8xl lg:text-[10rem]"
+          className="font-display text-shadow-lg text-[3rem] leading-[0.9] tracking-tight text-foreground uppercase font-bold sm:text-6xl md:text-8xl lg:text-[10rem]"
           style={{ fontFamily: 'Georgia, Times New Roman, serif' }}
         >
           Cuts

@@ -14,7 +14,7 @@ export function NewsletterFoodJuice() {
             </svg>
             <span className="text-primary text-sm font-bold">100% Fresh</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-5 leading-tight">
+          <h2 className="font-display text-4xl md:text-6xl font-bold text-foreground mb-5 leading-tight">
             Fresh Updates,<br />Delivered Daily
           </h2>
           <p className="text-muted-foreground text-xl mb-10 max-w-2xl mx-auto">

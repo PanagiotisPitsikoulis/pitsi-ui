@@ -19,7 +19,7 @@ export function TeamAiSciFi() {
             <p className="text-primary text-sm tracking-[0.3em] uppercase font-mono">CREW ROSTER</p>
             <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground text-center">
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground text-center">
             Mission Personnel
           </h2>
         </div>

@@ -26,7 +26,7 @@ export function CTAServiceTattoo() {
             <div className="absolute inset-0 bg-background/80" />
           </div>
           <div className="relative z-10 py-16 md:py-24 px-8 text-center">
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+            <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-6">
               Ready for Your Next Ink?
             </h2>
             <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-8">

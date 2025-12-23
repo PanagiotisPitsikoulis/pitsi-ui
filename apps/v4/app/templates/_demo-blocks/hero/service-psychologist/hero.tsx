@@ -39,10 +39,10 @@ export function HeroServicePsychologist() {
               You Are Not Alone
             </span>
           </div>
-          <h1 className="text-shadow-lg font-serif italic text-center text-[2.5rem] leading-none sm:text-4xl md:text-[5rem] text-foreground">
+          <h1 className="font-display text-shadow-lg font-serif italic text-center text-[2.5rem] leading-none sm:text-4xl md:text-[5rem] text-foreground">
             You Are Enough
           </h1>
-          <h1 className="text-shadow-lg text-center text-[4rem] leading-[0.75] sm:text-7xl md:text-[11rem] text-foreground font-extralight tracking-widest uppercase">
+          <h1 className="font-display text-shadow-lg text-center text-[4rem] leading-[0.75] sm:text-7xl md:text-[11rem] text-foreground font-extralight tracking-widest uppercase">
             Begin
           </h1>
           <div className="flex items-center justify-center gap-4 mt-4">

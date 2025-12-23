@@ -37,7 +37,7 @@ export function BlogBoat() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 pb-8 border-b-2 border-border">
             <div className="w-16 h-1 bg-primary mx-auto mb-6" />
-            <h2 className="text-4xl md:text-5xl font-serif text-foreground mb-4">
+            <h2 className="font-display text-4xl md:text-5xl font-serif text-foreground mb-4">
               Captain's Log
             </h2>
             <p className="text-muted-foreground italic">

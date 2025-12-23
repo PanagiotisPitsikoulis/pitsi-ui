@@ -39,7 +39,7 @@ export function NewsletterServiceCoffeeShop() {
                 </svg>
                 <span className="text-primary text-sm font-semibold">Loyalty Program</span>
               </div>
-              <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-3">
+              <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-3">
                 Coffee Stamp Card
               </h2>
               <p className="text-muted-foreground text-lg mb-6">

@@ -38,7 +38,7 @@ export function BlogProductSkincare() {
           <div className="inline-block mb-4">
             <span className="text-primary text-sm uppercase tracking-[0.4em] font-light">Skincare Guides</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-light text-foreground mb-6">
+          <h2 className="font-display text-4xl md:text-6xl font-light text-foreground mb-6">
             Your Routine, Perfected
           </h2>
           <p className="text-lg text-muted-foreground">

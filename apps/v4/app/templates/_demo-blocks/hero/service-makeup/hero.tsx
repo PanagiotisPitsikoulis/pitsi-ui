@@ -49,15 +49,15 @@ export function HeroServiceMakeup() {
           <p className="text-shadow text-xs md:text-sm tracking-[0.4em] mb-4 uppercase">
             Artistry by Design
           </p>
-          <h1 className="text-shadow-lg text-center text-[4rem] leading-[0.75] sm:text-7xl md:text-[11rem] text-transparent [-webkit-text-stroke:1px_hsl(var(--foreground)/0.5)] font-black uppercase tracking-tighter">
+          <h1 className="font-display text-shadow-lg text-center text-[4rem] leading-[0.75] sm:text-7xl md:text-[11rem] text-transparent [-webkit-text-stroke:1px_hsl(var(--foreground)/0.5)] font-black uppercase tracking-tighter">
             Be
           </h1>
           <div className="flex items-baseline justify-center gap-2 md:gap-4">
-            <h1 className="text-shadow-lg font-serif italic text-[3rem] leading-none sm:text-5xl md:text-[8rem] text-foreground">
+            <h1 className="font-display text-shadow-lg font-serif italic text-[3rem] leading-none sm:text-5xl md:text-[8rem] text-foreground">
               Bold
             </h1>
             <span className="text-shadow text-2xl md:text-4xl">/</span>
-            <h1 className="text-shadow-lg font-serif italic text-[3rem] leading-none sm:text-5xl md:text-[8rem] text-foreground">
+            <h1 className="font-display text-shadow-lg font-serif italic text-[3rem] leading-none sm:text-5xl md:text-[8rem] text-foreground">
               Beautiful
             </h1>
           </div>

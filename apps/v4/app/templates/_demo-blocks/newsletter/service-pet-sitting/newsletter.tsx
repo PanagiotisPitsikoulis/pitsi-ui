@@ -20,7 +20,7 @@ export function NewsletterServicePetSitting() {
                 </svg>
                 <span className="text-primary text-sm font-semibold">Pet Care Tips</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
                 Pawsome Newsletter
               </h2>
               <p className="text-muted-foreground text-lg mb-8 max-w-md mx-auto">

@@ -8,7 +8,7 @@ export function StatsServiceBarber() {
           <p className="text-primary text-sm tracking-[0.3em] uppercase font-medium mb-4">
             Experience Counts
           </p>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground">
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground">
             Classic Craftsmanship
           </h2>
         </div>

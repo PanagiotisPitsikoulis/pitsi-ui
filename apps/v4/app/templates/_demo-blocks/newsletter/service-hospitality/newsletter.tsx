@@ -16,7 +16,7 @@ export function NewsletterServiceHospitality() {
                 </svg>
                 <div className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-primary border-2 border-card" />
               </div>
-              <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
+              <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
                 Guest Privileges
               </h2>
               <p className="text-muted-foreground text-lg mb-8 max-w-sm mx-auto">

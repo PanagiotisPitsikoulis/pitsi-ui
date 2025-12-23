@@ -7,94 +7,122 @@ import { useBlockContext } from "../../_components"
 export function ContactProductCoffee() {
   const { cardBg } = useBlockContext()
   return (
-    <section>
+    <section className="py-24 bg-gradient-to-br from-amber-950/10 via-background to-background">
       <div className="container px-6">
-        <div className="mx-auto max-w-4xl">
-          {/* Café counter style header */}
-          <div className="grid lg:grid-cols-5 gap-8 items-center mb-12">
-            <div className="lg:col-span-3">
-              <p className="text-primary text-sm font-light tracking-[0.4em] uppercase mb-4">Connect</p>
-              <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground mb-4">
-                Let's Talk Coffee
-              </h2>
-              <p className="text-muted-foreground">
-                Questions about our beans, brewing methods, or wholesale inquiries? We'd love to hear from you.
-              </p>
-            </div>
-            <div className="lg:col-span-2">
-              <div className={`${cardBg} border border-border rounded-2xl p-6`}>
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-full bg-muted/50 flex items-center justify-center">
-                    <svg className="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                      <circle cx="12" cy="10" r="3" />
-                    </svg>
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left side - Coffee shop testimonial with image */}
+          <div className="relative order-2 lg:order-1">
+            <div className="absolute inset-0 bg-gradient-to-br from-amber-700/20 via-transparent to-transparent rounded-3xl" />
+            <div className="relative h-full min-h-[600px] rounded-3xl overflow-hidden">
+              <div className="absolute inset-0 bg-[url('/placeholders/blocks/product-coffee/1.webp')] bg-cover bg-center" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+
+              <div className="relative h-full flex flex-col justify-end p-8 lg:p-12">
+                <div className={`${cardBg} border border-border rounded-2xl p-8 backdrop-blur-sm bg-background/90`}>
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex gap-0.5">
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} className="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 24 24">
+                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                      ))}
+                    </div>
+                    <span className="text-xs text-muted-foreground tracking-wide">Verified Purchase</span>
                   </div>
-                  <div>
-                    <h3 className="font-medium tracking-wide text-foreground text-sm">Roastery</h3>
-                    <p className="text-xs text-muted-foreground">88 Roaster Row</p>
+
+                  <svg className="w-8 h-8 text-primary mb-4" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                  </svg>
+
+                  <p className="text-foreground text-lg mb-6 leading-relaxed tracking-wide">
+                    "Best coffee beans I've ever purchased. The Ethiopian single-origin has notes of blueberry and jasmine. Simply incredible quality."
+                  </p>
+
+                  <div className="flex items-center gap-4 pb-6 border-b border-border">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-700/30 to-amber-900/10 flex items-center justify-center">
+                      <span className="text-primary font-semibold tracking-wide">AL</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-foreground tracking-wide">Alex Liu</p>
+                      <p className="text-sm text-muted-foreground">Home Barista</p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-muted/50 flex items-center justify-center">
-                    <svg className="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                      <polyline points="22,6 12,13 2,6" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-medium tracking-wide text-foreground text-sm">Email</h3>
-                    <p className="text-xs text-muted-foreground">hello@premiumcoffee.co</p>
+
+                  <div className="grid grid-cols-3 gap-4 mt-6">
+                    <div className="text-center">
+                      <p className="text-lg font-bold text-primary tracking-wide">Single</p>
+                      <p className="text-xs text-muted-foreground tracking-wide">Origin</p>
+                    </div>
+                    <div className="text-center border-x border-border">
+                      <p className="text-lg font-bold text-primary tracking-wide">Fresh</p>
+                      <p className="text-xs text-muted-foreground tracking-wide">Roasted</p>
+                    </div>
+                    <div className="text-center">
+                      <p className="text-lg font-bold text-primary tracking-wide">Artisan</p>
+                      <p className="text-xs text-muted-foreground tracking-wide">Quality</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Café counter inquiry form */}
-          <div className="grid lg:grid-cols-2 gap-6">
-            <div className={`${cardBg} rounded-2xl p-6 border border-border`}>
-              <h3 className="text-lg font-medium tracking-wide text-foreground mb-4">Quick Inquiry</h3>
-              <form className="space-y-3">
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
-                />
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
-                />
-                <select className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground focus:outline-none focus:ring-1 focus:ring-ring">
-                  <option>General Inquiry</option>
-                  <option>Wholesale</option>
-                  <option>Retail</option>
-                  <option>Catering</option>
-                </select>
-                <Button className="w-full rounded-xl">
-                  Send Message
-                </Button>
-              </form>
+          {/* Right side - Form */}
+          <div className="order-1 lg:order-2">
+            <div className="inline-block px-4 py-1.5 bg-amber-500/10 text-amber-700 dark:text-amber-400 text-xs font-medium tracking-[0.3em] uppercase mb-6 rounded-sm">
+              Connect
             </div>
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-foreground mb-6">
+              Let's Talk Coffee
+            </h2>
+            <p className="text-muted-foreground text-lg mb-8 tracking-wide">
+              Questions about our beans, brewing methods, or wholesale inquiries? We'd love to hear from you.
+            </p>
 
-            <div className={`${cardBg} rounded-2xl p-6 border border-border`}>
-              <h3 className="text-lg font-medium tracking-wide text-foreground mb-4">Detailed Message</h3>
-              <form className="space-y-3">
-                <textarea
-                  placeholder="Your message..."
-                  rows={6}
-                  className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring resize-none"
-                />
-                <div className="flex gap-2">
-                  <Button variant="outline" className="flex-1 rounded-xl">
-                    Attach File
-                  </Button>
-                  <Button className="flex-1 rounded-xl">
-                    Send
-                  </Button>
-                </div>
-              </form>
+            <form className="space-y-6">
+              <input
+                type="text"
+                placeholder="Your name"
+                className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors tracking-wide"
+              />
+              <input
+                type="email"
+                placeholder="Email address"
+                className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors tracking-wide"
+              />
+              <input
+                type="tel"
+                placeholder="Phone number (optional)"
+                className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors tracking-wide"
+              />
+              <textarea
+                placeholder="Tell us about your coffee needs..."
+                rows={4}
+                className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none tracking-wide"
+              />
+              <Button className="w-full rounded-full py-6 text-base font-medium tracking-wide">
+                Send Message
+              </Button>
+              <p className="text-center text-sm text-muted-foreground tracking-wide">
+                Prefer email?{" "}
+                <a href="mailto:hello@premiumcoffee.co" className="text-primary hover:underline">
+                  hello@premiumcoffee.co
+                </a>
+              </p>
+            </form>
+
+            {/* Info cards */}
+            <div className="mt-8 pt-8 border-t border-border grid sm:grid-cols-2 gap-6">
+              <div>
+                <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Roastery</p>
+                <p className="text-sm text-foreground tracking-wide">88 Roaster Row</p>
+                <p className="text-xs text-muted-foreground tracking-wide mt-1">Open Daily 7am-6pm</p>
+              </div>
+              <div>
+                <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Wholesale</p>
+                <p className="text-sm text-foreground tracking-wide">wholesale@premiumcoffee.co</p>
+                <p className="text-xs text-muted-foreground tracking-wide mt-1">Bulk orders available</p>
+              </div>
             </div>
           </div>
         </div>

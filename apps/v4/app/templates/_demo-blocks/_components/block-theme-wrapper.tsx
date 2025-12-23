@@ -1,9 +1,12 @@
 "use client"
 
 import React from "react"
+import { useTheme } from "next-themes"
 
 import { cn } from "@/lib/utils"
 import { themePresets } from "@/app/(app)/(tools)/tools/theme-generator/_components/theme-presets"
+
+import { getTemplateFontStyles } from "./template-fonts"
 
 // Tint levels
 export type TintLevel = "base" | "tinted" | "deep"
@@ -67,7 +70,7 @@ function getPresetKey(palette: ColorPalette, tint: TintLevel): string {
   }
 }
 
-// Get theme style as CSS variables
+// Get theme style as CSS variables (colors only)
 export function getTemplateThemeStyle(
   slug: string,
   tint: TintLevel = DEFAULT_TINT,
@@ -85,10 +88,21 @@ export function getTemplateThemeStyle(
   return cssVars as React.CSSProperties
 }
 
+// Get combined theme + font styles
+export function getTemplateStyles(
+  slug: string,
+  tint: TintLevel = DEFAULT_TINT,
+  mode: "light" | "dark" = "dark"
+): React.CSSProperties {
+  const themeStyles = getTemplateThemeStyle(slug, tint, mode)
+  const fontStyles = getTemplateFontStyles(slug)
+  return { ...themeStyles, ...fontStyles }
+}
+
 interface BlockThemeWrapperProps {
   slug: string
   tint?: TintLevel
-  mode?: "light" | "dark"
+  forceDark?: boolean
   children: React.ReactNode
   className?: string
 }
@@ -96,15 +110,18 @@ interface BlockThemeWrapperProps {
 export function BlockThemeWrapper({
   slug,
   tint = DEFAULT_TINT,
-  mode = "dark",
+  forceDark = false,
   children,
   className,
 }: BlockThemeWrapperProps) {
-  const style = getTemplateThemeStyle(slug, tint, mode)
+  const { resolvedTheme } = useTheme()
+  // Use resolved theme from next-themes, with forceDark override for specific blocks
+  const mode = forceDark ? "dark" : (resolvedTheme as "light" | "dark") || "light"
+  const style = getTemplateStyles(slug, tint, mode)
 
   return (
     <div
-      className={cn("relative w-full overflow-hidden bg-background", className)}
+      className={cn("relative w-full overflow-hidden bg-background font-body", className)}
       style={style}
     >
       {children}

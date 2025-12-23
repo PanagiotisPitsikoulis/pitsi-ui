@@ -14,7 +14,7 @@ export function NewsletterArt() {
               </svg>
             </div>
             <div className="border-l-4 border-primary pl-6 mb-6">
-              <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-3 italic">
+              <h2 className="font-display text-4xl md:text-5xl font-serif font-bold text-foreground mb-3 italic">
                 Art Postcard Club
               </h2>
               <p className="text-muted-foreground text-lg font-serif italic">

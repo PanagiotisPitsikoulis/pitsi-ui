@@ -18,7 +18,7 @@ export function TeamServiceRealEstate() {
           <div className="flex justify-center mb-4">
             <Home className="w-10 h-10 text-primary" />
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground">
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground">
             Meet Our Agents
           </h2>
           <p className="text-muted-foreground mt-4">

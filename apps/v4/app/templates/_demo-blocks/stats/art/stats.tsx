@@ -8,7 +8,7 @@ export function StatsArt() {
           <p className="text-primary text-sm tracking-[0.3em] uppercase font-medium mb-4">
             Exhibition Impact
           </p>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground">
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground">
             Gallery by Numbers
           </h2>
         </div>

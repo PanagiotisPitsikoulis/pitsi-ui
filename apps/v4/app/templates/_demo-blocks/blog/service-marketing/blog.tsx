@@ -47,7 +47,7 @@ export function BlogServiceMarketing() {
           <div className="inline-block bg-primary/10 px-4 py-1 rounded-full mb-4">
             <span className="text-primary text-xs font-semibold uppercase tracking-wider">Case Studies</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-4">
+          <h2 className="font-display text-4xl md:text-6xl font-bold text-foreground mb-4">
             Proven Results
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl">

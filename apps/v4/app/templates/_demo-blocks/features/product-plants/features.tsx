@@ -64,7 +64,7 @@ export function FeaturesProductPlants() {
           <p className="text-primary mb-4 text-sm font-medium tracking-[0.3em] uppercase">
             Why Choose Us
           </p>
-          <h2 className="text-foreground text-3xl font-bold md:text-5xl">
+          <h2 className="font-display text-foreground text-3xl font-bold md:text-5xl">
             Grow With Confidence
           </h2>
         </div>

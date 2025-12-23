@@ -18,7 +18,7 @@ export function TeamServicePetSitting() {
           <div className="flex justify-center mb-4">
             <Heart className="w-10 h-10 text-primary fill-primary" />
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground">
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground">
             Your Pet Care Team
           </h2>
           <p className="text-muted-foreground mt-4">

@@ -49,7 +49,7 @@ export function BlogServiceGym() {
               <div className="h-1 w-1 bg-primary rounded-full animate-pulse" />
               <span className="text-primary text-xs uppercase tracking-[0.3em] font-bold">Workout Guides</span>
             </div>
-            <h2 className="text-4xl md:text-6xl font-black text-foreground uppercase">
+            <h2 className="font-display text-4xl md:text-6xl font-black text-foreground uppercase">
               Train Hard
             </h2>
             <p className="text-muted-foreground text-lg mt-2">

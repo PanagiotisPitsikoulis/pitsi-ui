@@ -7,91 +7,102 @@ import { useBlockContext } from "../../_components"
 export function ContactAISciFi() {
   const { cardBg } = useBlockContext()
   return (
-    <section>
+    <section className="py-24 bg-gradient-to-b from-background via-primary/5 to-background">
       <div className="container px-6">
-        <div className="mx-auto max-w-5xl">
-          {/* Holographic terminal header */}
-          <div className="text-center mb-12">
-            <p className="text-primary font-mono text-sm tracking-[0.3em] uppercase mb-4">{">"} contact.init</p>
-            <h2 className="text-3xl md:text-5xl font-mono font-bold text-foreground mb-6">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left side - Holographic testimonial */}
+          <div className="relative order-2 lg:order-1">
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-2xl blur-3xl" />
+            <div className="relative h-full min-h-[600px] rounded-2xl overflow-hidden">
+              <div className="absolute inset-0 bg-[url('/placeholders/blocks/ai-sci-fi/1.webp')] bg-cover bg-center opacity-5" />
+
+              {/* Holographic grid overlay */}
+              <div className="absolute inset-0 bg-[linear-gradient(transparent_0%,transparent_calc(100%_-_1px),hsl(var(--primary))_calc(100%_-_1px)),linear-gradient(90deg,transparent_0%,transparent_calc(100%_-_1px),hsl(var(--primary))_calc(100%_-_1px))] bg-[length:40px_40px] opacity-10" />
+
+              <div className="relative h-full flex flex-col justify-center p-8 lg:p-12">
+                <div className={`${cardBg} border border-primary/50 rounded-xl p-8 backdrop-blur-md bg-background/60 shadow-[0_0_30px_rgba(var(--primary),0.3)]`}>
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                    <span className="font-mono text-xs text-primary tracking-wider">{">"} TRANSMISSION_LOG</span>
+                  </div>
+
+                  <div className="font-mono text-4xl text-primary mb-4">"</div>
+                  <p className="text-foreground text-base font-mono leading-relaxed mb-6">
+                    The integration was seamless. Response time improved by 300%. Our system has never been more efficient.
+                  </p>
+
+                  <div className="space-y-2 pt-4 border-t border-border">
+                    <p className="font-mono text-sm text-foreground">{">"} OPERATIVE: Dr. Chen Wei</p>
+                    <p className="font-mono text-xs text-muted-foreground">{">"} DESIGNATION: Chief Neural Architect</p>
+                    <p className="font-mono text-xs text-muted-foreground">{">"} ENTITY: Synthetic Reality Labs</p>
+                  </div>
+
+                  <div className="flex items-center gap-2 mt-6 pt-4 border-t border-border/50">
+                    <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                    <span className="font-mono text-xs text-muted-foreground">STATUS: VERIFIED</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right side - Form */}
+          <div className="order-1 lg:order-2">
+            <div className="flex items-center gap-2 mb-6">
+              <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              <span className="font-mono text-xs text-primary tracking-wider uppercase">{">"} CONTACT.INIT</span>
+            </div>
+
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 font-mono">
               Establish Connection
             </h2>
-            <p className="text-muted-foreground text-lg font-mono">
+            <p className="text-muted-foreground text-lg mb-8 font-mono">
               Ready to enter the next dimension? Our neural network operators are standing by.
             </p>
-          </div>
 
-          {/* Futuristic panel grid */}
-          <div className="grid lg:grid-cols-3 gap-4 mb-8">
-            <div className={`${cardBg} border border-border rounded-lg p-6`}>
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
-                <h3 className="font-mono font-semibold text-sm text-foreground">{">"} COORDINATES</h3>
-              </div>
-              <p className="text-muted-foreground font-mono text-sm">Sector 7, Grid 42</p>
-              <p className="text-muted-foreground font-mono text-sm">Neo Tokyo</p>
-            </div>
-            <div className={`${cardBg} border border-border rounded-lg p-6`}>
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
-                <h3 className="font-mono font-semibold text-sm text-foreground">{">"} DATA LINK</h3>
-              </div>
-              <p className="text-muted-foreground font-mono text-sm">uplink@synthetic</p>
-              <p className="text-muted-foreground font-mono text-sm">.reality</p>
-            </div>
-            <div className={`${cardBg} border border-border rounded-lg p-6`}>
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
-                <h3 className="font-mono font-semibold text-sm text-foreground">{">"} STATUS</h3>
-              </div>
-              <p className="text-primary font-mono text-sm">ONLINE</p>
-              <p className="text-muted-foreground font-mono text-sm">24/7 Active</p>
-            </div>
-          </div>
-
-          {/* Main terminal form */}
-          <div className={`${cardBg} rounded-lg border-2 border-primary/20 p-8`}>
-            <div className="flex items-center gap-2 mb-6 pb-4 border-b border-border">
-              <div className="flex gap-2">
-                <div className="w-3 h-3 rounded-full bg-muted/50"></div>
-                <div className="w-3 h-3 rounded-full bg-muted/50"></div>
-                <div className="w-3 h-3 rounded-full bg-muted/50"></div>
-              </div>
-              <h3 className="font-mono text-foreground ml-4">{">"} initiate_transmission.exe</h3>
-            </div>
-            <form className="space-y-4">
+            <form className="space-y-6">
               <div>
-                <label className="font-mono text-sm text-muted-foreground mb-2 block">{">"} DESIGNATION:</label>
+                <label className="font-mono text-xs text-primary mb-2 block">{">"} DESIGNATION</label>
                 <input
                   type="text"
-                  placeholder="Enter designation..."
-                  className="w-full px-4 py-3 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring font-mono"
+                  placeholder="Enter your designation"
+                  className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors font-mono"
                 />
               </div>
               <div>
-                <label className="font-mono text-sm text-muted-foreground mb-2 block">{">"} NEURAL_LINK:</label>
+                <label className="font-mono text-xs text-primary mb-2 block">{">"} NEURAL_LINK</label>
                 <input
                   type="email"
                   placeholder="your.address@network.com"
-                  className="w-full px-4 py-3 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring font-mono"
+                  className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors font-mono"
                 />
               </div>
               <div>
-                <label className="font-mono text-sm text-muted-foreground mb-2 block">{">"} TRANSMISSION_DATA:</label>
+                <label className="font-mono text-xs text-primary mb-2 block">{">"} CONTACT_FREQUENCY (optional)</label>
+                <input
+                  type="tel"
+                  placeholder="+1 (555) 000-0000"
+                  className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors font-mono"
+                />
+              </div>
+              <div>
+                <label className="font-mono text-xs text-primary mb-2 block">{">"} TRANSMISSION_DATA</label>
                 <textarea
                   placeholder="Enter transmission content..."
                   rows={4}
-                  className="w-full px-4 py-3 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring resize-none font-mono"
+                  className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none font-mono"
                 />
               </div>
-              <div className="flex items-center gap-4 pt-4">
-                <Button className="flex-1 rounded-lg font-mono">
-                  {">"} TRANSMIT_NOW
-                </Button>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
-                  <span className="font-mono text-xs text-muted-foreground">ENCRYPTED</span>
-                </div>
+
+              <Button className="w-full rounded-full py-6 text-base font-mono font-medium">
+                {">"} TRANSMIT_NOW
+              </Button>
+
+              <div className="flex items-center justify-center gap-3 pt-2">
+                <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                <p className="text-center text-xs text-muted-foreground font-mono">
+                  ENCRYPTED_CHANNEL: uplink@synthetic.reality
+                </p>
               </div>
             </form>
           </div>

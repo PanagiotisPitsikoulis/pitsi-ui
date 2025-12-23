@@ -8,7 +8,7 @@ export function GalleryProductSkincare() {
       <div className="container px-6">
         <div className="text-center mb-16">
           <p className="text-primary text-sm tracking-[0.3em] uppercase font-medium mb-4">Gallery</p>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground">Product Collection</h2>
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground">Product Collection</h2>
           <p className="text-muted-foreground mt-4">Minimalist beauty, maximum results</p>
         </div>
 

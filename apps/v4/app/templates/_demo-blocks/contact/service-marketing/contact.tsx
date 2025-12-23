@@ -7,134 +7,124 @@ import { useBlockContext } from "../../_components"
 export function ContactServiceMarketing() {
   const { cardBg } = useBlockContext()
   return (
-    <section>
+    <section className="py-24">
       <div className="container px-6">
-        <div className="mx-auto max-w-4xl">
-          <div className="text-center mb-12">
-            <p className="text-primary text-sm font-semibold tracking-[0.3em] uppercase mb-4">Contact</p>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
-              Let's Grow Together
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Ready to scale your brand? Get in touch for a free strategy consultation.
-            </p>
-          </div>
-
-          {/* Professional business meeting scheduler */}
-          <div className={`${cardBg} rounded-2xl border border-border p-8`}>
-            <div className="grid lg:grid-cols-3 gap-6 mb-8">
-              <div className={`${cardBg} border border-border rounded-xl p-5 text-center`}>
-                <div className="w-12 h-12 rounded-lg bg-muted/50 flex items-center justify-center mx-auto mb-3">
-                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                    <polyline points="22 4 12 14.01 9 11.01" />
-                  </svg>
-                </div>
-                <p className="text-sm font-semibold text-foreground">Free Audit</p>
-                <p className="text-xs text-muted-foreground mt-1">30 min call</p>
-              </div>
-              <div className={`${cardBg} border border-border rounded-xl p-5 text-center`}>
-                <div className="w-12 h-12 rounded-lg bg-muted/50 flex items-center justify-center mx-auto mb-3">
-                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-                  </svg>
-                </div>
-                <p className="text-sm font-semibold text-foreground">ROI Focused</p>
-                <p className="text-xs text-muted-foreground mt-1">Data-driven</p>
-              </div>
-              <div className={`${cardBg} border border-border rounded-xl p-5 text-center`}>
-                <div className="w-12 h-12 rounded-lg bg-muted/50 flex items-center justify-center mx-auto mb-3">
-                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                    <circle cx="9" cy="7" r="4" />
-                    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
-                  </svg>
-                </div>
-                <p className="text-sm font-semibold text-foreground">Expert Team</p>
-                <p className="text-xs text-muted-foreground mt-1">10+ years exp</p>
-              </div>
+        <div className="grid lg:grid-cols-2 gap-0 max-w-7xl mx-auto overflow-hidden rounded-3xl border border-border">
+          {/* Form Side - Left */}
+          <div className={`${cardBg} p-12 lg:p-16`}>
+            <div className="mb-8">
+              <svg className="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+              </svg>
             </div>
 
-            <h3 className="text-xl font-semibold text-foreground mb-6">Schedule Strategy Call</h3>
-            <form className="space-y-5">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="text-sm font-semibold text-foreground mb-2 block">Full Name</label>
-                  <input
-                    type="text"
-                    placeholder="John Smith"
-                    className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
-                  />
-                </div>
-                <div>
-                  <label className="text-sm font-semibold text-foreground mb-2 block">Company</label>
-                  <input
-                    type="text"
-                    placeholder="Your Company"
-                    className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
-                  />
-                </div>
-              </div>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="text-sm font-semibold text-foreground mb-2 block">Work Email</label>
-                  <input
-                    type="email"
-                    placeholder="john@company.com"
-                    className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
-                  />
-                </div>
-                <div>
-                  <label className="text-sm font-semibold text-foreground mb-2 block">Phone</label>
-                  <input
-                    type="tel"
-                    placeholder="(555) 123-4567"
-                    className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
-                  />
-                </div>
-              </div>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-6">
+              <span className="text-xs font-medium text-primary tracking-wider uppercase">Let's Partner Up</span>
+            </div>
+
+            <h2 className="font-display text-4xl lg:text-5xl text-foreground mb-4">
+              Scale Your Brand
+            </h2>
+            <p className="text-muted-foreground mb-10">
+              Data-driven strategies that deliver measurable growth.
+            </p>
+
+            <form className="space-y-6">
               <div>
-                <label className="text-sm font-semibold text-foreground mb-2 block">Monthly Marketing Budget</label>
-                <select className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground focus:outline-none focus:ring-1 focus:ring-ring">
-                  <option>Select budget range</option>
-                  <option>$5,000 - $10,000</option>
-                  <option>$10,000 - $25,000</option>
-                  <option>$25,000 - $50,000</option>
-                  <option>$50,000+</option>
-                </select>
-              </div>
-              <div>
-                <label className="text-sm font-semibold text-foreground mb-2 block">Project Details & Goals</label>
-                <textarea
-                  placeholder="Tell us about your project and goals..."
-                  rows={4}
-                  className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring resize-none"
+                <input
+                  type="text"
+                  placeholder="Full name"
+                  className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
                 />
               </div>
-              <Button className="w-full rounded-xl font-semibold">
-                Get Free Consultation
-              </Button>
-            </form>
 
-            <div className="mt-8 pt-6 border-t border-border grid sm:grid-cols-2 gap-4">
-              <div className="flex items-center gap-3">
-                <svg className="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Company name"
+                  className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
+                />
+              </div>
+
+              <div>
+                <input
+                  type="email"
+                  placeholder="Work email"
+                  className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
+                />
+              </div>
+
+              <div>
+                <input
+                  type="tel"
+                  placeholder="Phone number (optional)"
+                  className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
+                />
+              </div>
+
+              <div>
+                <textarea
+                  placeholder="Tell us about your goals and challenges..."
+                  rows={4}
+                  className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none"
+                />
+              </div>
+
+              <Button className="w-full rounded-full py-6 text-base font-medium tracking-wide">
+                Get Started
+              </Button>
+
+              <p className="text-center text-sm text-muted-foreground">
+                Prefer email? <a href="mailto:partner@growthagency.com" className="text-primary hover:underline">partner@growthagency.com</a>
+              </p>
+            </form>
+          </div>
+
+          {/* Case Study Side - Right */}
+          <div className="relative bg-gradient-to-br from-foreground to-foreground/90 p-12 lg:p-16 flex flex-col justify-between text-background">
+            <div className="absolute inset-0 bg-[url(/placeholders/blocks/service-marketing/1.webp)] bg-cover bg-center opacity-20" />
+            <div className="absolute inset-0 bg-gradient-to-t from-foreground via-transparent to-transparent" />
+
+            <div className="relative z-10">
+              <svg className="w-12 h-12 text-background/60 mb-8" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+              </svg>
+
+              <p className="text-2xl lg:text-3xl font-light mb-12 leading-relaxed">
+                "Working with this agency transformed our digital presence. We saw a 340% increase in qualified leads within 6 months."
+              </p>
+            </div>
+
+            <div className="relative z-10 space-y-6">
+              <div className="grid grid-cols-2 gap-4 pb-6 border-b border-background/20">
                 <div>
-                  <p className="text-sm font-semibold text-foreground">Headquarters</p>
-                  <p className="text-xs text-muted-foreground">500 Innovation Way</p>
+                  <p className="text-xs text-background/60 mb-1">Partner</p>
+                  <p className="text-sm font-medium">TechFlow SaaS</p>
+                </div>
+                <div>
+                  <p className="text-xs text-background/60 mb-1">Year</p>
+                  <p className="text-sm font-medium">2024</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3">
-                <svg className="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                  <polyline points="22,6 12,13 2,6" />
-                </svg>
-                <div>
-                  <p className="text-sm font-semibold text-foreground">Email</p>
-                  <p className="text-xs text-muted-foreground">hello@growthagency.com</p>
+
+              <div>
+                <p className="text-xs text-background/60 mb-2">Investment</p>
+                <p className="text-3xl font-light mb-4">$75K</p>
+              </div>
+
+              <div>
+                <p className="text-xs text-background/60 mb-3">Services</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 rounded-full bg-background/10 border border-background/20 text-xs">SEO</span>
+                  <span className="px-3 py-1 rounded-full bg-background/10 border border-background/20 text-xs">PPC</span>
+                  <span className="px-3 py-1 rounded-full bg-background/10 border border-background/20 text-xs">Content</span>
+                  <span className="px-3 py-1 rounded-full bg-background/10 border border-background/20 text-xs">Analytics</span>
+                </div>
+              </div>
+
+              <div className="pt-6 border-t border-background/20">
+                <div className="w-24 h-8 rounded bg-background/10 border border-background/20 flex items-center justify-center">
+                  <span className="text-xs font-medium">TechFlow</span>
                 </div>
               </div>
             </div>

@@ -15,7 +15,7 @@ export function TeamFoodJuice() {
       <div className="container px-6">
         <div className="text-center mb-16">
           <p className="text-primary text-sm tracking-wider uppercase font-medium mb-4">Fresh Squad</p>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground">
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground">
             Meet Your Juice Crew
           </h2>
           <p className="text-muted-foreground mt-4">

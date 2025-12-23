@@ -7,107 +7,111 @@ import { useBlockContext } from "../../_components"
 export function ContactProductPlants() {
   const { cardBg } = useBlockContext()
   return (
-    <section>
+    <section className="py-24">
       <div className="container px-6">
-        <div className="mx-auto max-w-4xl">
-          <div className="text-center mb-12">
-            <p className="text-primary text-sm tracking-[0.3em] uppercase font-medium mb-4">Get In Touch</p>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
-              Plant Questions? We're Here
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Need plant care advice or have questions about your order? Our plant experts are ready to help.
-            </p>
-          </div>
-
-          {/* Greenhouse visit scheduler */}
-          <div className={`${cardBg} rounded-2xl border-2 border-border p-8`}>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-lg bg-muted/50 flex items-center justify-center">
-                <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
-                </svg>
+        <div className="mx-auto max-w-7xl">
+          <div className="grid lg:grid-cols-2 gap-0 overflow-hidden rounded-3xl border border-border">
+            {/* Form Side */}
+            <div className={`${cardBg} p-12 lg:p-16`}>
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border mb-6">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                <span className="text-xs tracking-wider uppercase text-muted-foreground">Get In Touch</span>
               </div>
-              <div>
-                <h3 className="text-xl font-semibold text-foreground">Schedule Greenhouse Visit</h3>
-                <p className="text-sm text-muted-foreground">Book a tour or consultation with our plant specialists</p>
-              </div>
-            </div>
 
-            <form className="space-y-4">
-              <div className="grid sm:grid-cols-2 gap-4">
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
+                Let's Grow Together
+              </h2>
+              <p className="text-lg text-muted-foreground mb-10">
+                Have questions about plant care or our greenhouse? Our botanical experts are here to help nurture your green journey.
+              </p>
+
+              <form className="space-y-8">
                 <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">Your Name</label>
                   <input
                     type="text"
-                    placeholder="Name"
-                    className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
+                    placeholder="Your name"
+                    className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
                   />
                 </div>
+
                 <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">Email</label>
                   <input
                     type="email"
-                    placeholder="your@email.com"
-                    className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
+                    placeholder="Email address"
+                    className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
                   />
                 </div>
-              </div>
 
-              <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">Preferred Date</label>
                   <input
-                    type="date"
-                    className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
+                    type="tel"
+                    placeholder="Phone number (optional)"
+                    className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
                   />
                 </div>
-                <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">Visit Type</label>
-                  <select className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground focus:outline-none focus:ring-1 focus:ring-ring">
-                    <option>Greenhouse Tour</option>
-                    <option>Plant Consultation</option>
-                    <option>Care Workshop</option>
-                    <option>Private Event</option>
-                  </select>
-                </div>
-              </div>
 
-              <div>
-                <label className="text-sm font-medium text-foreground mb-2 block">What can we help you with?</label>
-                <textarea
-                  placeholder="Tell us about your plant interests or questions..."
-                  rows={4}
-                  className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring resize-none"
+                <div>
+                  <textarea
+                    placeholder="Tell us about your plant questions or greenhouse visit preferences..."
+                    rows={4}
+                    className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none"
+                  />
+                </div>
+
+                <Button className="w-full rounded-full py-6 text-base">
+                  Send Message
+                </Button>
+
+                <p className="text-sm text-muted-foreground text-center">
+                  Prefer email? <a href="mailto:care@rareplants.co" className="text-primary hover:underline">care@rareplants.co</a>
+                </p>
+              </form>
+            </div>
+
+            {/* Testimonial Side */}
+            <div className="relative bg-gradient-to-br from-primary/10 via-primary/5 to-background p-12 lg:p-16 flex flex-col justify-between">
+              <div className="absolute inset-0 opacity-20">
+                <img
+                  src="/placeholders/blocks/product-plants/1.webp"
+                  alt="Greenhouse"
+                  className="w-full h-full object-cover"
                 />
               </div>
 
-              <Button className="w-full rounded-xl">
-                Book Visit
-              </Button>
-            </form>
+              <div className="relative z-10">
+                <svg className="w-12 h-12 text-primary mb-8" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                </svg>
 
-            <div className="mt-8 pt-6 border-t border-border">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="flex items-center gap-3">
-                  <svg className="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
+                <blockquote className="text-xl md:text-2xl font-light text-foreground mb-8 leading-relaxed">
+                  The greenhouse tour was incredible! The staff helped me select perfect plants for my home and taught me proper care techniques. My urban jungle is thriving!
+                </blockquote>
+
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                    <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                    </svg>
+                  </div>
                   <div>
-                    <p className="text-sm font-semibold text-foreground">Nursery</p>
-                    <p className="text-xs text-muted-foreground">234 Greenhouse Lane</p>
+                    <p className="font-semibold text-foreground">Emma Richardson</p>
+                    <p className="text-sm text-muted-foreground">Plant Enthusiast</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <svg className="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                    <polyline points="22,6 12,13 2,6" />
-                  </svg>
-                  <div>
-                    <p className="text-sm font-semibold text-foreground">Email</p>
-                    <p className="text-xs text-muted-foreground">care@rareplants.co</p>
-                  </div>
+              </div>
+
+              <div className="relative z-10 grid grid-cols-3 gap-6 pt-8 border-t border-border/30">
+                <div>
+                  <p className="text-3xl font-bold text-foreground mb-1">500+</p>
+                  <p className="text-xs text-muted-foreground uppercase tracking-wider">Plant Varieties</p>
+                </div>
+                <div>
+                  <p className="text-3xl font-bold text-foreground mb-1">15yrs</p>
+                  <p className="text-xs text-muted-foreground uppercase tracking-wider">Experience</p>
+                </div>
+                <div>
+                  <p className="text-3xl font-bold text-foreground mb-1">1.2k+</p>
+                  <p className="text-xs text-muted-foreground uppercase tracking-wider">Happy Customers</p>
                 </div>
               </div>
             </div>

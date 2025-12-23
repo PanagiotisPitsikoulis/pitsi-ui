@@ -34,10 +34,10 @@ export function FaqServicePlants() {
   return (
     <section>
       <div className="container px-6">
-        <div className="text-center mb-16">
-          <p className="text-primary text-sm tracking-[0.3em] uppercase font-medium mb-4">FAQ</p>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground">
-            Common Questions
+        <div className="text-center mb-20">
+          <p className="text-primary text-sm tracking-[0.3em] uppercase font-medium mb-4">Questions</p>
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground">
+            Everything You Need to Know
           </h2>
         </div>
         <div className="max-w-3xl mx-auto">

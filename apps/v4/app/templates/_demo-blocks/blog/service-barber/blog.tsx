@@ -40,7 +40,7 @@ export function BlogServiceBarber() {
             <span className="text-xs uppercase tracking-[0.4em] text-muted-foreground font-semibold">Style Guide</span>
             <div className="h-px w-16 bg-border" />
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-4" style={{ fontFamily: 'serif' }}>
+          <h2 className="font-display text-4xl md:text-6xl font-bold text-foreground mb-4" style={{ fontFamily: 'serif' }}>
             Barbershop Chronicles
           </h2>
           <p className="text-muted-foreground italic">

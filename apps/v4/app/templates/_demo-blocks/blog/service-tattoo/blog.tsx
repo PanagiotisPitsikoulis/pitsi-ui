@@ -43,7 +43,7 @@ export function BlogServiceTattoo() {
             <span className="text-xs uppercase tracking-[0.4em] text-muted-foreground font-bold">Artist Spotlights</span>
             <div className="h-px w-12 bg-border" />
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-4">
+          <h2 className="font-display text-4xl md:text-6xl font-bold text-foreground mb-4">
             Featured Artists
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">

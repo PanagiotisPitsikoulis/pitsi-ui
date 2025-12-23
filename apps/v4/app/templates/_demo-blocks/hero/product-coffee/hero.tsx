@@ -49,10 +49,10 @@ export function HeroProductCoffee() {
           <p className="text-shadow text-[10px] md:text-xs tracking-[0.5em] uppercase mb-8 font-light">
             Artisan Roasted
           </p>
-          <h1 className="text-shadow-lg text-center text-[3rem] leading-[0.85] tracking-[0.2em] sm:text-6xl md:text-[8rem] uppercase font-thin text-foreground">
+          <h1 className="font-display text-shadow-lg text-center text-[3rem] leading-[0.85] tracking-[0.2em] sm:text-6xl md:text-[8rem] uppercase font-thin text-foreground">
             Premium
           </h1>
-          <h1 className="text-shadow-lg text-center text-[4rem] leading-[0.8] tracking-[0.1em] sm:text-7xl md:text-[11rem] text-foreground uppercase font-light">
+          <h1 className="font-display text-shadow-lg text-center text-[4rem] leading-[0.8] tracking-[0.1em] sm:text-7xl md:text-[11rem] text-foreground uppercase font-light">
             Coffee
           </h1>
           <Spacer size="xl" sizeMobile="md" />

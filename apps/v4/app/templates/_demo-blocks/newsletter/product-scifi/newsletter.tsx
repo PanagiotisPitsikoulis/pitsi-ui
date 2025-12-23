@@ -28,7 +28,7 @@ export function NewsletterProductScifi() {
                         Signal Active
                       </span>
                     </div>
-                    <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-3">
+                    <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-3">
                       Transmission Frequency
                     </h2>
                     <p className="text-muted-foreground text-lg">

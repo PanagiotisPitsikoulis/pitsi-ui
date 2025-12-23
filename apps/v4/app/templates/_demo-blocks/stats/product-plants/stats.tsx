@@ -8,7 +8,7 @@ export function StatsProductPlants() {
           <p className="text-primary text-sm tracking-[0.3em] uppercase font-medium mb-4">
             Our Impact
           </p>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground">
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground">
             Growing Together
           </h2>
         </div>

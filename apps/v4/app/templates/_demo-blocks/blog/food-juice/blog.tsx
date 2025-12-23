@@ -39,7 +39,7 @@ export function BlogFoodJuice() {
       <div className="container px-6">
         <div className="text-center mb-16">
           <span className="text-primary text-sm uppercase tracking-[0.3em] font-semibold">Fresh Recipes</span>
-          <h2 className="text-4xl md:text-6xl font-bold text-foreground mt-3 mb-4">
+          <h2 className="font-display text-4xl md:text-6xl font-bold text-foreground mt-3 mb-4">
             Juice & Smoothie Guide
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">

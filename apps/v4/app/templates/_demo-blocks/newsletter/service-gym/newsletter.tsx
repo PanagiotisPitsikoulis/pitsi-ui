@@ -24,7 +24,7 @@ export function NewsletterServiceGym() {
                 <div className="text-sm font-bold text-primary uppercase tracking-wider mb-1">
                   Level Up
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
                   Fitness Tips Weekly
                 </h2>
               </div>

@@ -35,10 +35,10 @@ export function HeroAI() {
           <p className="text-shadow text-[10px] md:text-xs tracking-[0.4em] uppercase mb-8">
             Next Generation Intelligence
           </p>
-          <h1 className="text-shadow-lg text-left max-lg:text-center text-[3.5rem] leading-[0.85] sm:text-6xl md:text-[9rem] text-transparent [-webkit-text-stroke:1px_hsl(var(--foreground)/0.5)] uppercase font-black tracking-tighter">
+          <h1 className="font-display text-shadow-lg text-left max-lg:text-center text-[3.5rem] leading-[0.85] sm:text-6xl md:text-[9rem] text-transparent [-webkit-text-stroke:1px_hsl(var(--foreground)/0.5)] uppercase font-black tracking-tighter">
             Beyond
           </h1>
-          <h1 className="text-shadow-lg text-left max-lg:text-center text-[4.5rem] leading-[0.8] sm:text-7xl md:text-[11rem] text-foreground uppercase font-black tracking-tighter">
+          <h1 className="font-display text-shadow-lg text-left max-lg:text-center text-[4.5rem] leading-[0.8] sm:text-7xl md:text-[11rem] text-foreground uppercase font-black tracking-tighter">
             Human
           </h1>
           <div className="flex items-center gap-4 mt-6 max-lg:justify-center">

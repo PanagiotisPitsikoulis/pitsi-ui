@@ -8,7 +8,7 @@ export function StatsAi() {
           <p className="text-primary text-sm tracking-[0.3em] uppercase font-medium mb-4">
             Performance Metrics
           </p>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground">
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground">
             AI-Powered Analytics
           </h2>
         </div>

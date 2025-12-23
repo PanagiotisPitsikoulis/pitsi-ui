@@ -55,10 +55,10 @@ export function HeroProductSciFi() {
           <p className="text-shadow font-mono text-[10px] md:text-xs mb-4">
             $ sudo upgrade --to=future
           </p>
-          <h1 className="text-shadow-lg font-mono text-center text-[3.5rem] leading-[0.8] sm:text-6xl md:text-[9rem] text-transparent [-webkit-text-stroke:1px_hsl(var(--foreground)/0.5)] uppercase font-black">
+          <h1 className="font-display text-shadow-lg font-mono text-center text-[3.5rem] leading-[0.8] sm:text-6xl md:text-[9rem] text-transparent [-webkit-text-stroke:1px_hsl(var(--foreground)/0.5)] uppercase font-black">
             Next Gen
           </h1>
-          <h1 className="text-shadow-lg font-mono text-center text-[4rem] leading-[0.8] sm:text-7xl md:text-[11rem] text-foreground uppercase font-bold tracking-tight">
+          <h1 className="font-display text-shadow-lg font-mono text-center text-[4rem] leading-[0.8] sm:text-7xl md:text-[11rem] text-foreground uppercase font-bold tracking-tight">
             Tech
           </h1>
           <p className="text-shadow font-mono text-[10px] md:text-xs mt-6 tracking-wider">

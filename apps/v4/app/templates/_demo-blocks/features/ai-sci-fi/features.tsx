@@ -65,7 +65,7 @@ export function FeaturesAISciFi() {
           <p className="text-primary mb-4 font-mono text-sm tracking-[0.3em] uppercase">
             {"> system.capabilities"}
           </p>
-          <h2 className="text-foreground font-mono text-3xl font-bold md:text-5xl">
+          <h2 className="font-display text-foreground font-mono text-3xl font-bold md:text-5xl">
             Core Systems Online
           </h2>
         </div>

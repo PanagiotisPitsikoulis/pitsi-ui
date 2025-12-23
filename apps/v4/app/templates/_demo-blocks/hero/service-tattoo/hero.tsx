@@ -28,7 +28,7 @@ export function HeroServiceTattoo() {
       <div className="relative z-10 container flex min-h-[100svh] w-full flex-col justify-end px-6 pb-16 md:pb-24">
         <div className="w-full">
           <h1
-            className="text-shadow-lg text-5xl leading-[0.9] font-black tracking-tight text-foreground uppercase sm:text-6xl md:text-7xl lg:text-8xl"
+            className="font-display text-shadow-lg text-5xl leading-[0.9] font-black tracking-tight text-foreground uppercase sm:text-6xl md:text-7xl lg:text-8xl"
             style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
           >
             Ink Your Story

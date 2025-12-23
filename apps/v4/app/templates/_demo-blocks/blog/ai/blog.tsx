@@ -41,7 +41,7 @@ export function BlogAi() {
           <div className="inline-block px-4 py-1 bg-primary/10 rounded-full mb-4">
             <span className="text-primary text-xs font-mono uppercase tracking-wider">Research Papers</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-4">
+          <h2 className="font-display text-4xl md:text-6xl font-bold text-foreground mb-4">
             Latest Publications
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl">

@@ -11,7 +11,7 @@ export async function POST(request: Request) {
   }
 
   try {
-    const { filePath } = await request.json()
+    const { filePath, addToWorkspace } = await request.json()
 
     if (!filePath || typeof filePath !== "string") {
       return NextResponse.json(
@@ -30,9 +30,13 @@ export async function POST(request: Request) {
     }
 
     // Open in Zed editor
-    // Using 'zed' command which opens in the current window
+    // Use -a flag to add to current workspace (useful for folders)
+    const zedCommand = addToWorkspace
+      ? `zed -a "${filePath}"`
+      : `zed "${filePath}"`
+
     return new Promise((resolve) => {
-      exec(`zed "${filePath}"`, (error, stdout, stderr) => {
+      exec(zedCommand, (error, stdout, stderr) => {
         if (error) {
           console.error("Failed to open in Zed:", error)
           resolve(

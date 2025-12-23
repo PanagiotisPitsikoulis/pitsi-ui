@@ -50,7 +50,7 @@ export function BlogServiceRealEstate() {
             </svg>
             <span className="text-primary text-xs uppercase tracking-[0.3em] font-semibold">Market Insights</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-4">
+          <h2 className="font-display text-4xl md:text-6xl font-bold text-foreground mb-4">
             Real Estate Intelligence
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl">

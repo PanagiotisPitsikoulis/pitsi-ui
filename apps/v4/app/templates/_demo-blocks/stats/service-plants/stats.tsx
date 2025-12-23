@@ -4,10 +4,10 @@ export function StatsServicePlants() {
   return (
     <section>
       <div className="container px-6">
-        <div className="text-center mb-16">
-          <p className="text-primary text-sm tracking-[0.3em] uppercase font-medium mb-4">Our Impact</p>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground">
-            Growing Together
+        <div className="text-center mb-20">
+          <p className="text-primary text-sm tracking-[0.3em] uppercase font-medium mb-4">By the Numbers</p>
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground">
+            Plants Delivered with Care
           </h2>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">

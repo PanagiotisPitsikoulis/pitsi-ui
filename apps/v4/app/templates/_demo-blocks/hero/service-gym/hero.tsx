@@ -32,19 +32,19 @@ export function HeroServiceGym() {
           </p>
 
           <h1
-            className="text-shadow-lg text-5xl leading-[0.85] font-black tracking-[-0.02em] text-foreground uppercase sm:text-6xl md:text-7xl lg:text-8xl"
+            className="font-display text-shadow-lg text-5xl leading-[0.85] font-black tracking-[-0.02em] text-foreground uppercase sm:text-6xl md:text-7xl lg:text-8xl"
             style={{ fontFamily: 'Impact, Haettenschweiler, Arial Narrow Bold, sans-serif' }}
           >
             Push
           </h1>
           <h1
-            className="text-shadow-lg text-5xl leading-[0.85] font-black tracking-[-0.02em] text-foreground uppercase sm:text-6xl md:text-7xl lg:text-8xl"
+            className="font-display text-shadow-lg text-5xl leading-[0.85] font-black tracking-[-0.02em] text-foreground uppercase sm:text-6xl md:text-7xl lg:text-8xl"
             style={{ fontFamily: 'Impact, Haettenschweiler, Arial Narrow Bold, sans-serif' }}
           >
             Your
           </h1>
           <h1
-            className="text-shadow-lg text-5xl leading-[0.85] font-black tracking-[-0.02em] text-foreground uppercase sm:text-6xl md:text-7xl lg:text-8xl"
+            className="font-display text-shadow-lg text-5xl leading-[0.85] font-black tracking-[-0.02em] text-foreground uppercase sm:text-6xl md:text-7xl lg:text-8xl"
             style={{ fontFamily: 'Impact, Haettenschweiler, Arial Narrow Bold, sans-serif' }}
           >
             Limits

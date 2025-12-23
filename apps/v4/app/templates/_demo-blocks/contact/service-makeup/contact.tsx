@@ -7,96 +7,111 @@ import { useBlockContext } from "../../_components"
 export function ContactServiceMakeup() {
   const { cardBg } = useBlockContext()
   return (
-    <section>
+    <section className="py-24">
       <div className="container px-6">
-        <div className="mx-auto max-w-3xl">
-          <div className="text-center mb-12">
-            <p className="text-primary text-sm font-light tracking-[0.3em] uppercase mb-4">Contact</p>
-            <h2 className="text-3xl md:text-5xl font-light text-foreground mb-6">
-              Book Your Glam Session
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              From everyday beauty to bridal glam, let's create your perfect look together.
-            </p>
+        <div className="grid lg:grid-cols-2 gap-0 max-w-7xl mx-auto overflow-hidden rounded-3xl border border-border">
+          {/* Testimonial Side - Left */}
+          <div className="relative bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-primary/10 p-12 lg:p-16 flex flex-col justify-between order-2 lg:order-1">
+            <div className="absolute inset-0 bg-[url(/placeholders/blocks/service-makeup/1.webp)] bg-cover bg-center opacity-15" />
+
+            <div className="relative z-10">
+              <div className={`${cardBg} inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border mb-8`}>
+                <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                <span className="text-xs font-medium text-foreground">Bridal Transformation</span>
+              </div>
+
+              <svg className="w-10 h-10 text-primary/40 mb-6" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+              </svg>
+
+              <p className="text-2xl lg:text-3xl font-light text-foreground mb-8 leading-relaxed">
+                "She made me feel like a goddess on my wedding day. The makeup lasted through tears, dancing, everything. Absolute perfection."
+              </p>
+
+              <div className="flex items-center gap-4">
+                <div className={`${cardBg} w-12 h-12 rounded-full border border-border overflow-hidden`}>
+                  <div className="w-full h-full bg-gradient-to-br from-pink-300 to-purple-300" />
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Sophia Martinez</p>
+                  <p className="text-sm text-muted-foreground">Bride, October 2024</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative z-10 grid grid-cols-3 gap-4 pt-8 border-t border-border/50">
+              <div>
+                <p className="text-3xl font-light text-foreground">500+</p>
+                <p className="text-xs text-muted-foreground mt-1">Brides</p>
+              </div>
+              <div>
+                <p className="text-3xl font-light text-foreground">12yr</p>
+                <p className="text-xs text-muted-foreground mt-1">Experience</p>
+              </div>
+              <div>
+                <p className="text-3xl font-light text-foreground">5★</p>
+                <p className="text-xs text-muted-foreground mt-1">Rated</p>
+              </div>
+            </div>
           </div>
 
-          {/* Glamorous beauty session scheduler */}
-          <div className={`${cardBg} rounded-3xl border-2 border-border p-8 md:p-10 relative overflow-hidden`}>
-            {/* Glamorous gradient accent */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10"></div>
-
-            <div className="flex items-center gap-4 mb-8 pb-6 border-b border-border">
-              <div className="w-16 h-16 rounded-full bg-muted/50 border-2 border-border flex items-center justify-center">
-                <svg className="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="text-xl font-light text-foreground">Glam Session Booking</h3>
-                <p className="text-sm text-muted-foreground">Professional makeup artistry</p>
-              </div>
+          {/* Form Side - Right */}
+          <div className={`${cardBg} p-12 lg:p-16 order-1 lg:order-2`}>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-6">
+              <svg className="w-3.5 h-3.5 text-primary" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z" />
+              </svg>
+              <span className="text-xs font-medium text-primary tracking-wider uppercase">Beauty Artistry</span>
             </div>
 
-            <form className="space-y-5">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="text-sm font-light text-foreground mb-2 block">Name</label>
-                  <input
-                    type="text"
-                    placeholder="Your Name"
-                    className="w-full px-4 py-4 rounded-2xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
-                  />
-                </div>
-                <div>
-                  <label className="text-sm font-light text-foreground mb-2 block">Phone</label>
-                  <input
-                    type="tel"
-                    placeholder="(555) 123-4567"
-                    className="w-full px-4 py-4 rounded-2xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
-                  />
-                </div>
+            <h2 className="font-display text-4xl lg:text-5xl text-foreground mb-4">
+              Book Your Glam Session
+            </h2>
+            <p className="text-muted-foreground mb-10">
+              Bridal, events, photoshoots — let's create your signature look.
+            </p>
+
+            <form className="space-y-6">
+              <div>
+                <input
+                  type="text"
+                  placeholder="Your name"
+                  className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
+                />
               </div>
 
               <div>
-                <label className="text-sm font-light text-foreground mb-2 block">Email</label>
                 <input
                   type="email"
-                  placeholder="your@email.com"
-                  className="w-full px-4 py-4 rounded-2xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
+                  placeholder="Email address"
+                  className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
                 />
               </div>
 
               <div>
-                <label className="text-sm font-light text-foreground mb-3 block">Service Type</label>
-                <div className="grid sm:grid-cols-3 gap-3">
-                  {['Bridal', 'Event', 'Photoshoot', 'Everyday', 'Special Occasion', 'Consultation'].map((service) => (
-                    <label key={service} className={`${cardBg} border border-border rounded-xl p-3 cursor-pointer hover:bg-muted transition-colors text-center`}>
-                      <input type="radio" name="service" className="sr-only" />
-                      <span className="text-sm font-light text-foreground">{service}</span>
-                    </label>
-                  ))}
-                </div>
+                <input
+                  type="tel"
+                  placeholder="Phone number (optional)"
+                  className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
+                />
               </div>
 
               <div>
-                <label className="text-sm font-light text-foreground mb-2 block">Details & Inspiration</label>
                 <textarea
-                  placeholder="Occasion, date, and any inspiration or reference photos you'd like to share..."
+                  placeholder="Service type, occasion, date, inspiration..."
                   rows={4}
-                  className="w-full px-4 py-4 rounded-2xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring resize-none"
+                  className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none"
                 />
               </div>
 
-              <Button className="w-full rounded-2xl py-6 font-light">
-                Book Session
+              <Button className="w-full rounded-full py-6 text-base font-medium tracking-wide">
+                Book Consultation
               </Button>
-            </form>
 
-            <div className="mt-8 pt-6 border-t border-border text-center">
-              <p className="text-sm font-light text-muted-foreground mb-2">Studio Location</p>
-              <p className="text-sm text-foreground">222 Beauty Lane, Glamour District</p>
-              <p className="text-sm text-muted-foreground mt-1">bookings@glamstudio.com</p>
-            </div>
+              <p className="text-center text-sm text-muted-foreground">
+                Prefer email? <a href="mailto:hello@glamstudio.com" className="text-primary hover:underline">hello@glamstudio.com</a>
+              </p>
+            </form>
           </div>
         </div>
       </div>

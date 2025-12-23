@@ -24,7 +24,7 @@ export function NewsletterFoodPizza() {
                 </div>
                 <span className="text-primary font-bold text-sm uppercase tracking-wider">Hot & Fresh</span>
               </div>
-              <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+              <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-4">
                 Join Our Pizza Lovers Club
               </h2>
               <p className="text-muted-foreground text-lg mb-6">

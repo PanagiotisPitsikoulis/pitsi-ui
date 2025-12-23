@@ -59,7 +59,7 @@ function HeroButton({
       variant={variant}
       size={size}
       className={cn(
-        "group relative rounded-full",
+        "group relative overflow-hidden rounded-full",
         paddingBySize[size || "default"],
         className
       )}

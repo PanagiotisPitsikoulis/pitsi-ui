@@ -78,10 +78,10 @@ export function HeroServiceMarketing() {
           <p className="text-shadow font-mono text-xs md:text-sm mb-4">
             {">"} brand.transform()
           </p>
-          <h1 className="text-shadow-lg text-center text-[3rem] leading-[0.9] sm:text-5xl md:text-[8rem] text-transparent [-webkit-text-stroke:1px_hsl(var(--foreground)/0.5)] font-black uppercase tracking-tighter">
+          <h1 className="font-display text-shadow-lg text-center text-[3rem] leading-[0.9] sm:text-5xl md:text-[8rem] text-transparent [-webkit-text-stroke:1px_hsl(var(--foreground)/0.5)] font-black uppercase tracking-tighter">
             Amplify
           </h1>
-          <h1 className="text-shadow-lg text-center text-[4rem] leading-[0.8] sm:text-7xl md:text-[11rem] text-foreground font-black uppercase tracking-tighter">
+          <h1 className="font-display text-shadow-lg text-center text-[4rem] leading-[0.8] sm:text-7xl md:text-[11rem] text-foreground font-black uppercase tracking-tighter">
             Growth
           </h1>
           <div className="flex items-center justify-center gap-4 mt-6">

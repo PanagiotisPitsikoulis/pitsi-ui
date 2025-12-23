@@ -7,104 +7,117 @@ import { useBlockContext } from "../../_components"
 export function ContactServiceFashion() {
   const { cardBg } = useBlockContext()
   return (
-    <section>
+    <section className="py-24">
       <div className="container px-6">
-        <div className="mx-auto max-w-4xl">
-          <div className="text-center mb-12">
-            <p className="text-primary text-sm font-light tracking-[0.4em] uppercase mb-4">Contact</p>
-            <h2 className="text-3xl md:text-5xl font-light text-foreground mb-6">
-              Style Consultation
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Ready to elevate your wardrobe? Our stylists are here to help you discover your perfect look.
-            </p>
-          </div>
+        <div className="mx-auto max-w-7xl">
+          <div className="grid lg:grid-cols-2 gap-0 overflow-hidden">
+            {/* Editorial Testimonial Side */}
+            <div className="relative bg-gradient-to-br from-background via-primary/5 to-primary/10 p-12 lg:p-20 flex flex-col justify-between min-h-[700px]">
+              <div className="absolute inset-0 opacity-5">
+                <img
+                  src="/placeholders/blocks/service-fashion/1.webp"
+                  alt="Fashion"
+                  className="w-full h-full object-cover"
+                />
+              </div>
 
-          {/* Showroom appointment elegant layout */}
-          <div className="grid lg:grid-cols-5 gap-8">
-            <div className="lg:col-span-2">
-              <div className={`${cardBg} border border-border rounded-2xl p-6 h-full`}>
-                <h3 className="text-lg font-medium text-foreground mb-6">Showroom Details</h3>
-                <div className="space-y-6">
-                  <div>
-                    <p className="text-xs font-light text-muted-foreground tracking-wider uppercase mb-2">Address</p>
-                    <p className="text-sm text-foreground">789 Fashion Avenue</p>
-                    <p className="text-sm text-muted-foreground">Style Quarter</p>
+              <div className="relative z-10">
+                <div className="w-12 h-0.5 bg-primary mb-12"></div>
+
+                <p className="text-xs tracking-[0.4em] uppercase text-primary mb-6 font-light">CLIENT TESTIMONIAL</p>
+
+                <blockquote className="text-2xl md:text-3xl font-light text-foreground mb-12 leading-relaxed italic">
+                  "Working with their styling team was transformative. They understood my aesthetic immediately and curated a wardrobe that reflects my personal brand perfectly."
+                </blockquote>
+
+                <div className="flex items-start gap-5 mb-16">
+                  <div className="w-16 h-16 rounded-sm bg-primary/10 border border-primary/20 flex items-center justify-center">
+                    <span className="text-2xl text-primary font-light">L</span>
                   </div>
                   <div>
-                    <p className="text-xs font-light text-muted-foreground tracking-wider uppercase mb-2">Hours</p>
-                    <p className="text-sm text-foreground">By Appointment Only</p>
-                    <p className="text-sm text-muted-foreground">Tue-Sat: 10am-6pm</p>
-                  </div>
-                  <div>
-                    <p className="text-xs font-light text-muted-foreground tracking-wider uppercase mb-2">Contact</p>
-                    <p className="text-sm text-foreground">style@fashionhouse.com</p>
-                    <p className="text-sm text-muted-foreground">+1 (555) STYLE-ME</p>
-                  </div>
-                  <div className="pt-4 border-t border-border">
-                    <p className="text-xs font-light text-muted-foreground mb-3">Services</p>
+                    <p className="font-medium text-foreground text-lg">Lucia Martinez</p>
+                    <p className="text-sm text-muted-foreground font-light mb-3">Creative Director</p>
                     <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 rounded-full bg-muted/50 text-xs text-foreground">Personal Styling</span>
-                      <span className="px-3 py-1 rounded-full bg-muted/50 text-xs text-foreground">Wardrobe Edit</span>
-                      <span className="px-3 py-1 rounded-full bg-muted/50 text-xs text-foreground">Shopping</span>
+                      <span className="text-xs text-muted-foreground px-3 py-1 border border-border rounded-full">Campaign: Fall 2024</span>
                     </div>
                   </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-8 p-6 border-t border-border/30">
+                  <div>
+                    <p className="text-xs text-muted-foreground mb-2 uppercase tracking-wider font-light">Investment</p>
+                    <p className="text-xl text-foreground font-light">$8,500</p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground mb-2 uppercase tracking-wider font-light">Sessions</p>
+                    <p className="text-xl text-foreground font-light">4</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative z-10">
+                <div className="flex items-center gap-4 text-xs text-muted-foreground uppercase tracking-widest">
+                  <span>VOGUE</span>
+                  <span>•</span>
+                  <span>HARPER'S BAZAAR</span>
                 </div>
               </div>
             </div>
 
-            <div className="lg:col-span-3">
-              <div className={`${cardBg} rounded-2xl p-8 border border-border`}>
-                <h3 className="text-xl font-medium text-foreground mb-6">Book a Session</h3>
-                <form className="space-y-5">
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="text-sm font-light text-foreground mb-2 block">First Name</label>
-                      <input
-                        type="text"
-                        placeholder="Jane"
-                        className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
-                      />
-                    </div>
-                    <div>
-                      <label className="text-sm font-light text-foreground mb-2 block">Last Name</label>
-                      <input
-                        type="text"
-                        placeholder="Doe"
-                        className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label className="text-sm font-light text-foreground mb-2 block">Email</label>
-                    <input
-                      type="email"
-                      placeholder="jane@example.com"
-                      className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
-                    />
-                  </div>
-                  <div>
-                    <label className="text-sm font-light text-foreground mb-2 block">Service Type</label>
-                    <select className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground focus:outline-none focus:ring-1 focus:ring-ring">
-                      <option>Personal Styling Session</option>
-                      <option>Wardrobe Consultation</option>
-                      <option>Personal Shopping</option>
-                      <option>Event Styling</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="text-sm font-light text-foreground mb-2 block">Tell us about your style goals</label>
-                    <textarea
-                      placeholder="Share your style preferences, occasions you're dressing for, or any specific needs..."
-                      rows={4}
-                      className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring resize-none"
-                    />
-                  </div>
-                  <Button className="w-full rounded-xl font-light">
-                    Schedule Consultation
-                  </Button>
-                </form>
+            {/* Form Side */}
+            <div className={`${cardBg} p-12 lg:p-20 border-l border-border`}>
+              <div className="inline-block mb-8">
+                <span className="text-xs tracking-[0.4em] uppercase text-primary font-light border-b border-primary pb-2">Book Consultation</span>
               </div>
+
+              <h2 className="font-display text-4xl md:text-5xl font-light text-foreground mb-6">
+                Elevate Your Style
+              </h2>
+              <p className="text-lg text-muted-foreground mb-12 font-light">
+                Schedule a personalized styling session with our expert team. By appointment only.
+              </p>
+
+              <form className="space-y-10">
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Your name"
+                    className="w-full bg-transparent border-b border-border py-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors font-light text-lg"
+                  />
+                </div>
+
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Email address"
+                    className="w-full bg-transparent border-b border-border py-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors font-light text-lg"
+                  />
+                </div>
+
+                <div>
+                  <input
+                    type="tel"
+                    placeholder="Phone number (optional)"
+                    className="w-full bg-transparent border-b border-border py-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors font-light text-lg"
+                  />
+                </div>
+
+                <div>
+                  <textarea
+                    placeholder="Tell us about your style vision and goals..."
+                    rows={4}
+                    className="w-full bg-transparent border-b border-border py-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none font-light text-lg"
+                  />
+                </div>
+
+                <Button className="w-full rounded-full py-7 text-base font-light tracking-wider">
+                  REQUEST CONSULTATION
+                </Button>
+
+                <p className="text-sm text-muted-foreground text-center font-light">
+                  Direct inquiries: <a href="mailto:style@fashionhouse.com" className="text-primary hover:underline">style@fashionhouse.com</a>
+                </p>
+              </form>
             </div>
           </div>
         </div>

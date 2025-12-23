@@ -68,7 +68,7 @@ export function FeaturesServiceMarketing() {
           <p className="text-primary mb-4 text-sm font-medium tracking-[0.3em] uppercase">
             Our Expertise
           </p>
-          <h2 className="text-foreground text-3xl font-bold md:text-5xl">
+          <h2 className="font-display text-foreground text-3xl font-bold md:text-5xl">
             Data-Driven Results
           </h2>
         </div>

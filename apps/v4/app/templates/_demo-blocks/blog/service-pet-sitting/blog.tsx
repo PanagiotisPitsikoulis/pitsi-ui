@@ -41,7 +41,7 @@ export function BlogServicePetSitting() {
             </svg>
             <span className="text-primary text-sm uppercase tracking-wider font-semibold">Pet Care Tips</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-4">
+          <h2 className="font-display text-4xl md:text-6xl font-bold text-foreground mb-4">
             Happy & Healthy Pets
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">

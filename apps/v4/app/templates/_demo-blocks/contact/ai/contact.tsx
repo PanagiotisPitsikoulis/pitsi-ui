@@ -7,99 +7,77 @@ import { useBlockContext } from "../../_components"
 export function ContactAI() {
   const { cardBg } = useBlockContext()
   return (
-    <section>
+    <section className="py-24">
       <div className="container px-6">
-        <div className="mx-auto max-w-3xl">
-          <div className="text-center mb-12">
-            <p className="text-primary text-sm tracking-[0.3em] uppercase font-medium mb-4">Get In Touch</p>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left side - Form */}
+          <div>
+            <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-medium tracking-wide uppercase mb-6">
+              Contact Us
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Let's Build The Future
             </h2>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-muted-foreground text-lg mb-8">
               Ready to transform your business with AI? Our team is here to help you get started.
             </p>
-          </div>
 
-          {/* Chat interface style */}
-          <div className="space-y-4 mb-6">
-            {/* AI Assistant bubble */}
-            <div className="flex gap-3">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <svg className="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07l14.14-14.14" />
-                </svg>
-              </div>
-              <div className={`${cardBg} border border-border rounded-2xl rounded-tl-sm p-4 max-w-[80%]`}>
-                <p className="text-sm text-foreground mb-2">
-                  Hi! I'm your AI assistant. I can help you get started with our platform.
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  Please fill out the form below and our team will reach out within 24 hours.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Contact form */}
-          <div className={`${cardBg} rounded-2xl p-8 border border-border`}>
-            <form className="space-y-4">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  placeholder="First Name"
-                  className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
-                />
-                <input
-                  type="text"
-                  placeholder="Last Name"
-                  className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
-                />
-              </div>
+            <form className="space-y-6">
+              <input
+                type="text"
+                placeholder="Your name"
+                className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
+              />
               <input
                 type="email"
-                placeholder="Work Email"
-                className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
+                placeholder="Email address"
+                className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
               />
               <input
                 type="tel"
-                placeholder="Phone Number"
-                className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
+                placeholder="Phone number (optional)"
+                className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
               />
               <textarea
                 placeholder="Tell us about your project"
                 rows={4}
-                className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring resize-none"
+                className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none"
               />
-              <Button className="w-full rounded-xl">
+              <Button className="w-full rounded-full py-6 text-base font-medium">
                 Schedule Demo
               </Button>
+              <p className="text-center text-sm text-muted-foreground">
+                Prefer email?{" "}
+                <a href="mailto:hello@neuralai.com" className="text-primary hover:underline">
+                  hello@neuralai.com
+                </a>
+              </p>
             </form>
           </div>
 
-          {/* Contact info at bottom */}
-          <div className="mt-8 grid sm:grid-cols-2 gap-6">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-muted/50 flex items-center justify-center flex-shrink-0">
-                <svg className="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="font-semibold text-sm text-foreground">Headquarters</h3>
-                <p className="text-sm text-muted-foreground">100 Innovation Drive, Tech Valley</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-muted/50 flex items-center justify-center flex-shrink-0">
-                <svg className="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                  <polyline points="22,6 12,13 2,6" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="font-semibold text-sm text-foreground">Email</h3>
-                <p className="text-sm text-muted-foreground">hello@neuralai.com</p>
+          {/* Right side - Testimonial with gradient */}
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/5 to-transparent rounded-3xl" />
+            <div className="relative h-full min-h-[600px] rounded-3xl overflow-hidden">
+              <div className="absolute inset-0 bg-[url('/placeholders/blocks/ai/1.webp')] bg-cover bg-center opacity-10" />
+              <div className="relative h-full flex flex-col justify-end p-8 lg:p-12">
+                <div className={`${cardBg} border border-border rounded-2xl p-8 backdrop-blur-sm bg-background/80`}>
+                  <svg className="w-10 h-10 text-primary mb-4" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                  </svg>
+                  <p className="text-foreground text-lg mb-6 leading-relaxed">
+                    "Working with this team transformed how we approach AI integration. The results exceeded our expectations, and their support has been invaluable."
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-muted/50 flex items-center justify-center">
+                      <span className="text-primary font-semibold">JD</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-foreground">James Davidson</p>
+                      <p className="text-sm text-muted-foreground">CTO, TechVentures Inc.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -8,7 +8,7 @@ export function StatsAiSciFi() {
           <p className="text-primary text-sm tracking-[0.3em] uppercase font-medium mb-4">
             System Status
           </p>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground">
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground">
             Neural Network Performance
           </h2>
         </div>

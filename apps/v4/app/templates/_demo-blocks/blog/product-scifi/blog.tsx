@@ -46,7 +46,7 @@ export function BlogProductScifi() {
             </div>
             <span className="text-primary text-xs font-mono uppercase tracking-[0.3em]">Technical Documentation</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-foreground font-mono mb-4">
+          <h2 className="font-display text-4xl md:text-6xl font-bold text-foreground font-mono mb-4">
             SPEC_SHEETS://
           </h2>
           <p className="text-muted-foreground font-mono text-sm">

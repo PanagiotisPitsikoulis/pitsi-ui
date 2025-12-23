@@ -39,7 +39,7 @@ export function BlogServiceMakeup() {
       <div className="container px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <span className="inline-block text-primary text-sm uppercase tracking-[0.4em] mb-4">Step-by-Step Tutorials</span>
-          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-4">
+          <h2 className="font-display text-4xl md:text-6xl font-bold text-foreground mb-4">
             Master Your Look
           </h2>
           <p className="text-lg text-muted-foreground">

@@ -17,7 +17,7 @@ export function NewsletterServiceMakeup() {
                   </svg>
                   <span className="text-primary text-sm font-semibold">Beauty Insider</span>
                 </div>
-                <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-4 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text">
+                <h2 className="font-display text-4xl md:text-6xl font-bold text-foreground mb-4 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text">
                   Glamour Box Teaser
                 </h2>
                 <p className="text-muted-foreground text-lg max-w-xl mx-auto">

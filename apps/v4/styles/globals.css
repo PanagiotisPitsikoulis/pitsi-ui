@@ -27,6 +27,9 @@ body {
   --breakpoint-4xl: 2000px;
   --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-mono);
+  /* Template fonts - set via CSS variables from BlockThemeWrapper */
+  --font-display: var(--font-display, "Inter", sans-serif);
+  --font-body: var(--font-body, "Inter", sans-serif);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);

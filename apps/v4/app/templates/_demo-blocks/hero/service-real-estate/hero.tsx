@@ -46,15 +46,15 @@ export function HeroServiceRealEstate() {
               Premium Properties
             </span>
           </div>
-          <h1 className="text-shadow-lg font-serif italic text-center text-[3rem] leading-[0.9] sm:text-5xl md:text-[7rem] text-foreground">
+          <h1 className="font-display text-shadow-lg font-serif italic text-center text-[3rem] leading-[0.9] sm:text-5xl md:text-[7rem] text-foreground">
             Find your
           </h1>
-          <h1 className="text-shadow-lg text-center text-[4rem] leading-[0.75] sm:text-7xl md:text-[12rem] text-transparent [-webkit-text-stroke:2px_hsl(var(--foreground))] font-black uppercase tracking-tighter">
+          <h1 className="font-display text-shadow-lg text-center text-[4rem] leading-[0.75] sm:text-7xl md:text-[12rem] text-transparent [-webkit-text-stroke:2px_hsl(var(--foreground))] font-black uppercase tracking-tighter">
             Forever
           </h1>
           <div className="flex items-center justify-center gap-4 md:gap-8">
             <div className="w-12 md:w-20 h-px bg-border" />
-            <h1 className="text-shadow-lg text-center text-[2.5rem] leading-none sm:text-4xl md:text-[6rem] uppercase font-black tracking-tight text-foreground">
+            <h1 className="font-display text-shadow-lg text-center text-[2.5rem] leading-none sm:text-4xl md:text-[6rem] uppercase font-black tracking-tight text-foreground">
               Home
             </h1>
             <div className="w-12 md:w-20 h-px bg-border" />

@@ -7,115 +7,133 @@ import { useBlockContext } from "../../_components"
 export function ContactServiceCoffeeShop() {
   const { cardBg } = useBlockContext()
   return (
-    <section>
+    <section className="py-24">
       <div className="container px-6">
-        <div className="mx-auto max-w-3xl">
-          {/* Cozy café header */}
-          <div className="text-center mb-12">
-            <p className="text-primary text-sm font-medium tracking-[0.3em] uppercase mb-4">Visit Us</p>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
-              Come Say Hello
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Whether it's your daily brew or a special occasion, we're here to serve you the perfect cup.
-            </p>
-          </div>
-
-          {/* Café reservation form */}
-          <div className={`${cardBg} rounded-2xl border border-border p-8 md:p-10`}>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-full bg-muted/50 flex items-center justify-center">
-                <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3" />
+        <div className="mx-auto max-w-7xl">
+          <div className="grid lg:grid-cols-2 gap-0 overflow-hidden rounded-3xl border border-border/50">
+            {/* Form Side */}
+            <div className={`${cardBg} p-12 lg:p-16`}>
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 mb-6">
+                <svg className="w-3 h-3 text-primary" viewBox="0 0 24 24" fill="currentColor">
+                  <circle cx="12" cy="12" r="10" />
                 </svg>
+                <span className="text-xs tracking-wider uppercase text-primary font-medium">Visit Us</span>
               </div>
-              <div>
-                <h3 className="text-xl font-semibold text-foreground">Reserve a Table</h3>
-                <p className="text-sm text-muted-foreground">For groups of 4 or more</p>
-              </div>
-            </div>
 
-            <form className="space-y-4">
-              <div className="grid sm:grid-cols-2 gap-4">
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
+                Your Daily Brew Awaits
+              </h2>
+              <p className="text-lg text-muted-foreground mb-10">
+                Reserve a table for groups, inquire about catering, or just reach out to say hello. We'd love to hear from you.
+              </p>
+
+              <form className="space-y-8">
                 <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">Name</label>
                   <input
                     type="text"
-                    placeholder="Your Name"
-                    className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
+                    placeholder="Your name"
+                    className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
                   />
                 </div>
+
                 <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">Email</label>
                   <input
                     type="email"
-                    placeholder="your@email.com"
-                    className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
+                    placeholder="Email address"
+                    className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
                   />
                 </div>
-              </div>
 
-              <div className="grid sm:grid-cols-3 gap-4">
                 <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">Date</label>
                   <input
-                    type="date"
-                    className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground focus:outline-none focus:ring-1 focus:ring-ring"
+                    type="tel"
+                    placeholder="Phone number (optional)"
+                    className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
                   />
                 </div>
-                <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">Time</label>
-                  <select className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground focus:outline-none focus:ring-1 focus:ring-ring">
-                    <option>Morning</option>
-                    <option>Afternoon</option>
-                    <option>Evening</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">Guests</label>
-                  <input
-                    type="number"
-                    placeholder="4"
-                    min="1"
-                    className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
-                  />
-                </div>
-              </div>
 
-              <div>
-                <label className="text-sm font-medium text-foreground mb-2 block">Special Requests</label>
-                <textarea
-                  placeholder="Your message or catering inquiry..."
-                  rows={3}
-                  className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring resize-none"
+                <div>
+                  <textarea
+                    placeholder="Message, reservation details, or catering inquiry..."
+                    rows={4}
+                    className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none"
+                  />
+                </div>
+
+                <Button className="w-full rounded-full py-6 text-base">
+                  Send Message
+                </Button>
+
+                <p className="text-sm text-muted-foreground text-center">
+                  Prefer calling? <a href="mailto:hello@brewcafe.com" className="text-primary hover:underline">hello@brewcafe.com</a>
+                </p>
+              </form>
+            </div>
+
+            {/* Cozy Testimonial Side */}
+            <div className="relative bg-gradient-to-br from-primary/10 via-primary/5 to-background p-12 lg:p-16 flex flex-col justify-between">
+              <div className="absolute inset-0 opacity-20">
+                <img
+                  src="/placeholders/blocks/service-coffee-shop/1.webp"
+                  alt="Coffee Shop"
+                  className="w-full h-full object-cover"
                 />
               </div>
 
-              <Button className="w-full rounded-xl">
-                Reserve Table
-              </Button>
-            </form>
+              <div className="relative z-10">
+                <div className="flex gap-2 mb-8">
+                  <svg className="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                  <svg className="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                  <svg className="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                  <svg className="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                  <svg className="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                </div>
 
-            <div className="mt-8 pt-6 border-t border-border grid sm:grid-cols-2 gap-6">
-              <div className="flex items-center gap-3">
-                <svg className="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                <div>
-                  <p className="text-sm font-semibold text-foreground">Our Café</p>
-                  <p className="text-xs text-muted-foreground">123 Brew Street</p>
+                <blockquote className="text-xl md:text-2xl font-medium text-foreground mb-8 leading-relaxed">
+                  "My favorite spot in the neighborhood. The atmosphere is warm, the coffee is exceptional, and the staff remembers my order. It's become my second home."
+                </blockquote>
+
+                <div className="flex items-center gap-4 mb-10">
+                  <div className="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center">
+                    <svg className="w-7 h-7 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-foreground">Alex Rivera</p>
+                    <p className="text-sm text-muted-foreground">Regular Since 2022</p>
+                  </div>
+                </div>
+
+                <div className="space-y-3 p-5 rounded-2xl bg-background/50 border border-border/30">
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-muted-foreground">Usual Order:</span>
+                    <span className="text-foreground font-medium">Oat Milk Latte</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-muted-foreground">Favorite Spot:</span>
+                    <span className="text-foreground font-medium">Window Seat</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-muted-foreground">Visits/Month:</span>
+                    <span className="text-primary font-semibold">~15</span>
+                  </div>
                 </div>
               </div>
-              <div className="flex items-center gap-3">
-                <svg className="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M12 6v6l4 2" />
-                </svg>
-                <div>
-                  <p className="text-sm font-semibold text-foreground">Hours</p>
-                  <p className="text-xs text-muted-foreground">Mon-Fri: 6am-8pm</p>
-                </div>
+
+              <div className="relative z-10 pt-8 border-t border-border/30 text-center">
+                <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Voted Best Café</p>
+                <p className="text-sm text-foreground font-medium">City Magazine 2024</p>
               </div>
             </div>
           </div>

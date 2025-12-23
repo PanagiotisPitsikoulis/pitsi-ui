@@ -59,10 +59,10 @@ export function HeroServiceFashion() {
           <p className="text-shadow text-muted-foreground text-[10px] md:text-xs tracking-[0.5em] uppercase mb-8">
             New Collection
           </p>
-          <h1 className="text-shadow-lg text-left text-[3rem] leading-[0.85] tracking-tight sm:text-6xl md:text-[7rem] text-foreground uppercase font-extralight">
+          <h1 className="font-display text-shadow-lg text-left text-[3rem] leading-[0.85] tracking-tight sm:text-6xl md:text-[7rem] text-foreground uppercase font-extralight">
             Redefine
           </h1>
-          <h1 className="text-shadow-lg text-left text-[4rem] leading-[0.8] tracking-tight sm:text-7xl md:text-[10rem] text-foreground uppercase font-bold">
+          <h1 className="font-display text-shadow-lg text-left text-[4rem] leading-[0.8] tracking-tight sm:text-7xl md:text-[10rem] text-foreground uppercase font-bold">
             Style
           </h1>
           <div className="flex items-center gap-4 mt-4">

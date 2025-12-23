@@ -1,86 +1,180 @@
 "use client"
 
+import Image from "next/image"
+
+import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
-import { useBlockContext } from "../../_components"
+import { ImageOverlay } from "../../_block_components"
 
 export function ContactServicePlants() {
-  const { cardBg } = useBlockContext()
   return (
     <section>
       <div className="container px-6">
-        <div className="mx-auto max-w-3xl">
-          <div className="text-center mb-12">
-            <p className="text-primary text-sm tracking-[0.3em] uppercase font-medium mb-4">Get In Touch</p>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
-              Let's Talk Plants
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Have questions about plant care? Need help choosing the right plants for your space? We're here to help!
-            </p>
-          </div>
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          {/* Image & Testimonial Side */}
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] lg:aspect-auto lg:h-full lg:min-h-[700px]">
+            <Image
+              src="/placeholders/blocks/service-plants/5.webp"
+              alt="Beautiful indoor plants"
+              fill
+              className="object-cover"
+            />
+            <ImageOverlay opacity={70} />
 
-          <div className={`${cardBg} rounded-2xl p-8 border border-border`}>
-            <h3 className="text-xl font-semibold text-foreground mb-6">Send Us a Message</h3>
-            <form className="space-y-4">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  placeholder="First Name"
-                  className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
-                />
-                <input
-                  type="text"
-                  placeholder="Last Name"
-                  className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
-                />
-              </div>
-              <input
-                type="email"
-                placeholder="Email Address"
-                className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
-              />
-              <textarea
-                placeholder="Your Message"
-                rows={4}
-                className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring resize-none"
-              />
-              <Button className="w-full rounded-xl">
-                Send Message
-              </Button>
-            </form>
+            {/* Testimonial overlay */}
+            <div className="absolute inset-0 flex flex-col justify-end p-8 lg:p-12">
+              <svg
+                className="mb-4 h-8 w-8 text-white/60"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+              </svg>
 
-            <div className="mt-8 pt-6 border-t border-border space-y-4">
-              <div className="flex items-center gap-3">
-                <svg className="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
+              <p className="mb-6 text-xl font-light leading-relaxed text-white lg:text-2xl">
+                "I killed every plant I touched until I found this shop. Now my
+                apartment is a jungle! The care guides changed everything."
+              </p>
+
+              <div className="flex items-center gap-4">
+                <div className="relative h-12 w-12 overflow-hidden rounded-full ring-2 ring-white/20">
+                  <Image
+                    src="/avatars/08.webp"
+                    alt="Alex Thompson"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 <div>
-                  <p className="text-sm font-semibold text-foreground">Visit Our Greenhouse</p>
-                  <p className="text-xs text-muted-foreground">123 Botanical Lane, Green City</p>
+                  <p className="font-medium text-white">Alex Thompson</p>
+                  <p className="text-sm text-white/70">
+                    Plant Parent Since 2023
+                  </p>
                 </div>
               </div>
-              <div className="flex items-center gap-3">
-                <svg className="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                </svg>
+
+              {/* Stats */}
+              <div className="mt-8 grid grid-cols-3 gap-4 border-t border-white/20 pt-8">
                 <div>
-                  <p className="text-sm font-semibold text-foreground">Call Us</p>
-                  <p className="text-xs text-muted-foreground">(555) 123-4567</p>
+                  <p className="text-2xl font-light text-white lg:text-3xl">
+                    1000+
+                  </p>
+                  <p className="mt-1 text-xs text-white/60">Varieties</p>
                 </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <svg className="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                  <polyline points="22,6 12,13 2,6" />
-                </svg>
                 <div>
-                  <p className="text-sm font-semibold text-foreground">Email Us</p>
-                  <p className="text-xs text-muted-foreground">hello@greenplants.com</p>
+                  <p className="text-2xl font-light text-white lg:text-3xl">
+                    Free
+                  </p>
+                  <p className="mt-1 text-xs text-white/60">Care Guide</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-light text-white lg:text-3xl">
+                    Expert
+                  </p>
+                  <p className="mt-1 text-xs text-white/60">Advice</p>
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Form Side */}
+          <div className="lg:py-8">
+            <p className="text-brand-complementary mb-4 text-sm font-medium tracking-[0.3em] uppercase">
+              Get In Touch
+            </p>
+            <h2 className="font-display text-foreground mb-4 text-4xl font-bold lg:text-5xl">
+              Grow With Us
+            </h2>
+            <p className="text-muted-foreground mb-10 text-lg">
+              Expert guidance for every plant parent, from beginner to pro.
+            </p>
+
+            <form className="space-y-6">
+              <div>
+                <input
+                  type="text"
+                  placeholder="Your name"
+                  className={cn(
+                    "border-border text-foreground w-full border-b bg-transparent py-4 transition-colors",
+                    "placeholder:text-muted-foreground focus:border-brand-complementary focus:outline-none"
+                  )}
+                />
+              </div>
+
+              <div>
+                <input
+                  type="email"
+                  placeholder="Email address"
+                  className={cn(
+                    "border-border text-foreground w-full border-b bg-transparent py-4 transition-colors",
+                    "placeholder:text-muted-foreground focus:border-brand-complementary focus:outline-none"
+                  )}
+                />
+              </div>
+
+              <div>
+                <input
+                  type="tel"
+                  placeholder="Phone number (optional)"
+                  className={cn(
+                    "border-border text-foreground w-full border-b bg-transparent py-4 transition-colors",
+                    "placeholder:text-muted-foreground focus:border-brand-complementary focus:outline-none"
+                  )}
+                />
+              </div>
+
+              <div>
+                <textarea
+                  placeholder="What plants are you interested in? Any questions about care?"
+                  rows={4}
+                  className={cn(
+                    "border-border text-foreground w-full resize-none border-b bg-transparent py-4 transition-colors",
+                    "placeholder:text-muted-foreground focus:border-brand-complementary focus:outline-none"
+                  )}
+                />
+              </div>
+
+              <div className="flex items-center gap-3">
+                <Button className="flex-1 rounded-full py-6 text-base font-medium">
+                  Get Plant Advice
+                </Button>
+                <Button
+                  size="icon"
+                  className="h-11 w-11 shrink-0 rounded-full bg-brand-complementary text-background hover:bg-brand-complementary/90"
+                >
+                  <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                  </svg>
+                </Button>
+                <Button
+                  size="icon"
+                  className="h-11 w-11 shrink-0 rounded-full bg-brand-complementary text-background hover:bg-brand-complementary/90"
+                >
+                  <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                  </svg>
+                </Button>
+                <Button
+                  size="icon"
+                  className="h-11 w-11 shrink-0 rounded-full bg-brand-complementary text-background hover:bg-brand-complementary/90"
+                >
+                  <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+                  </svg>
+                </Button>
+              </div>
+
+              <p className="text-muted-foreground text-center text-sm">
+                Or email us at{" "}
+                <a
+                  href="mailto:greenhouse@botanicals.com"
+                  className="text-brand-complementary hover:underline"
+                >
+                  greenhouse@botanicals.com
+                </a>
+              </p>
+            </form>
           </div>
         </div>
       </div>

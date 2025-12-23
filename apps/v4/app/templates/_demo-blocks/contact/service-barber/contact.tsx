@@ -7,91 +7,122 @@ import { useBlockContext } from "../../_components"
 export function ContactServiceBarber() {
   const { cardBg } = useBlockContext()
   return (
-    <section>
+    <section className="py-24">
       <div className="container px-6">
-        <div className="mx-auto max-w-3xl">
-          <div className="text-center mb-12">
-            <p className="text-primary text-sm font-bold tracking-[0.3em] uppercase mb-4">Contact</p>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
-              Book Your Appointment
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Walk-ins welcome, but appointments are recommended. Reach out to schedule your next cut.
-            </p>
-          </div>
-
-          {/* Vintage appointment book style */}
-          <div className={`${cardBg} rounded-xl border-2 border-border p-8`}>
-            {/* Appointment book header */}
-            <div className="flex items-center gap-4 mb-6 pb-6 border-b-2 border-border">
-              <div className="w-16 h-16 rounded-lg bg-muted/50 border-2 border-border flex items-center justify-center">
-                <svg className="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                  <line x1="16" y1="2" x2="16" y2="6" />
-                  <line x1="8" y1="2" x2="8" y2="6" />
-                  <line x1="3" y1="10" x2="21" y2="10" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-foreground">Appointment Book</h3>
-                <p className="text-sm text-muted-foreground">Reserve your spot</p>
-              </div>
-            </div>
-
-            <form className="space-y-5">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="text-sm font-bold text-foreground mb-2 block">Name</label>
-                  <input
-                    type="text"
-                    placeholder="Your Name"
-                    className="w-full px-4 py-3 rounded-lg bg-background border-2 border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-                  />
-                </div>
-                <div>
-                  <label className="text-sm font-bold text-foreground mb-2 block">Phone</label>
-                  <input
-                    type="tel"
-                    placeholder="Phone Number"
-                    className="w-full px-4 py-3 rounded-lg bg-background border-2 border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="text-sm font-bold text-foreground mb-2 block">Service</label>
-                <select className="w-full px-4 py-3 rounded-lg bg-background border-2 border-border text-foreground focus:outline-none focus:ring-2 focus:ring-ring">
-                  <option>Haircut</option>
-                  <option>Haircut + Beard Trim</option>
-                  <option>Shave</option>
-                  <option>Beard Trim</option>
-                  <option>Kids Cut</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="text-sm font-bold text-foreground mb-2 block">Preferred Date & Notes</label>
-                <textarea
-                  placeholder="Preferred date and service notes..."
-                  rows={3}
-                  className="w-full px-4 py-3 rounded-lg bg-background border-2 border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring resize-none"
+        <div className="mx-auto max-w-7xl">
+          <div className="grid lg:grid-cols-2 gap-0 overflow-hidden rounded-xl border-2 border-border">
+            {/* Vintage Testimonial Side */}
+            <div className="relative bg-gradient-to-br from-primary/10 via-background to-primary/5 p-12 lg:p-16 flex flex-col justify-between">
+              <div className="absolute inset-0 opacity-10">
+                <img
+                  src="/placeholders/blocks/service-barber/1.webp"
+                  alt="Barber Shop"
+                  className="w-full h-full object-cover"
                 />
               </div>
 
-              <Button className="w-full rounded-lg font-bold">
-                Book Now
-              </Button>
-            </form>
+              <div className="relative z-10">
+                <div className="flex items-center gap-2 mb-8">
+                  <div className="w-16 h-1 bg-primary"></div>
+                  <div className="w-4 h-1 bg-primary/50"></div>
+                </div>
 
-            <div className="mt-6 pt-6 border-t-2 border-border grid sm:grid-cols-2 gap-4">
-              <div>
-                <p className="text-sm font-bold text-foreground mb-1">The Shop</p>
-                <p className="text-sm text-muted-foreground">456 Main Street, Downtown</p>
+                <svg className="w-10 h-10 text-primary mb-6" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                </svg>
+
+                <blockquote className="text-2xl md:text-3xl font-bold text-foreground mb-8 leading-tight">
+                  "Best barbershop in the city. Classic cuts, modern style, and genuine craftsmanship. Been coming here for 3 years."
+                </blockquote>
+
+                <div className="flex items-center gap-4 mb-12">
+                  <div className="w-14 h-14 rounded-lg bg-primary/20 flex items-center justify-center border-2 border-primary/30">
+                    <svg className="w-7 h-7 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                      <circle cx="12" cy="7" r="4" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-bold text-foreground text-lg">Marcus Thompson</p>
+                    <p className="text-sm text-muted-foreground font-medium">Regular Since 2021</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-3 gap-4 p-6 rounded-lg bg-background/50 border-2 border-border">
+                  <div>
+                    <p className="text-2xl font-bold text-foreground mb-1">15+</p>
+                    <p className="text-xs text-muted-foreground uppercase tracking-wider font-bold">Years</p>
+                  </div>
+                  <div>
+                    <p className="text-2xl font-bold text-foreground mb-1">500+</p>
+                    <p className="text-xs text-muted-foreground uppercase tracking-wider font-bold">Clients</p>
+                  </div>
+                  <div>
+                    <p className="text-2xl font-bold text-foreground mb-1">5★</p>
+                    <p className="text-xs text-muted-foreground uppercase tracking-wider font-bold">Rated</p>
+                  </div>
+                </div>
               </div>
-              <div>
-                <p className="text-sm font-bold text-foreground mb-1">Hours</p>
-                <p className="text-sm text-muted-foreground">Tue-Sat: 9am-7pm, Sun: 10am-4pm</p>
+
+              <div className="relative z-10 text-center">
+                <p className="text-xs text-muted-foreground uppercase tracking-widest font-bold">EST. 2009</p>
               </div>
+            </div>
+
+            {/* Form Side */}
+            <div className={`${cardBg} p-12 lg:p-16`}>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-primary/10 border-2 border-primary/20 mb-6">
+                <span className="text-xs tracking-widest uppercase text-primary font-bold">Book Appointment</span>
+              </div>
+
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
+                Reserve Your Chair
+              </h2>
+              <p className="text-lg text-muted-foreground mb-10 font-medium">
+                Walk-ins welcome, but appointments get priority seating. Book your spot with our master barbers.
+              </p>
+
+              <form className="space-y-8">
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Your name"
+                    className="w-full bg-transparent border-b-2 border-border py-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors font-medium"
+                  />
+                </div>
+
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Email address"
+                    className="w-full bg-transparent border-b-2 border-border py-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors font-medium"
+                  />
+                </div>
+
+                <div>
+                  <input
+                    type="tel"
+                    placeholder="Phone number (optional)"
+                    className="w-full bg-transparent border-b-2 border-border py-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors font-medium"
+                  />
+                </div>
+
+                <div>
+                  <textarea
+                    placeholder="Preferred date, time, and service (haircut, beard trim, shave, etc.)..."
+                    rows={4}
+                    className="w-full bg-transparent border-b-2 border-border py-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none font-medium"
+                  />
+                </div>
+
+                <Button className="w-full rounded-lg py-6 text-base font-bold">
+                  Book Now
+                </Button>
+
+                <p className="text-sm text-muted-foreground text-center font-medium">
+                  Questions? <a href="mailto:shop@classiccuts.com" className="text-primary hover:underline font-bold">shop@classiccuts.com</a>
+                </p>
+              </form>
             </div>
           </div>
         </div>

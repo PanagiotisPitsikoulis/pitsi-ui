@@ -35,7 +35,7 @@ export function BlogFoodPizza() {
     <section className="py-24 bg-background">
       <div className="container px-6">
         <div className="mb-20">
-          <h2 className="text-5xl md:text-7xl font-bold text-foreground mb-6">
+          <h2 className="font-display text-5xl md:text-7xl font-bold text-foreground mb-6">
             From Our Kitchen
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl">

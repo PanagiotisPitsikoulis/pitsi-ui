@@ -14,19 +14,19 @@ export function NewsletterServicePlants() {
             </svg>
             <span className="text-primary text-sm font-medium">Stay Updated</span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
-            Join Our Plant Community
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-4">
+            Stay in the Loop
           </h2>
-          <p className="text-muted-foreground text-lg mb-8">
-            Get weekly plant care tips, exclusive discounts, and first access to new arrivals. Join 10,000+ plant lovers!
+          <p className="text-muted-foreground text-lg mb-10">
+            Weekly care tips, early access to new arrivals, and member-only discounts.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-6 py-3 rounded-full bg-card border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
+              className="h-12 flex-1 px-6 rounded-full bg-card border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
             />
-            <Button className="rounded-full px-8">
+            <Button className="h-12 rounded-full px-8">
               Subscribe
             </Button>
           </div>

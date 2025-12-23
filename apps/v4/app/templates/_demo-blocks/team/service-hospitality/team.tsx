@@ -20,7 +20,7 @@ export function TeamServiceHospitality() {
               <Star key={star} className="w-6 h-6 text-primary fill-primary" />
             ))}
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground">
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground">
             Our Distinguished Team
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">

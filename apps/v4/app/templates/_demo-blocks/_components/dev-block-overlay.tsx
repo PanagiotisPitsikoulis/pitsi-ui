@@ -1,23 +1,27 @@
 "use client"
 
 import { useState } from "react"
-import { Code2, ExternalLink } from "lucide-react"
+import { Code2, Copy, FolderOpen } from "lucide-react"
+import { toast } from "sonner"
 
 interface DevBlockOverlayProps {
-  blockType: string
+  blockKey: string
   slug: string
   children: React.ReactNode
   enabled?: boolean
+  onHover?: (blockKey: string | null) => void
 }
 
-// Base path for the demo blocks - adjust if your project structure differs
-const BASE_PATH = "/Users/panagiotispitsikoulis/Documents/pitsi-ui/apps/v4/app/templates/_demo-blocks"
+// Base paths - adjust if your project structure differs
+const PROJECT_PATH = "/Users/panagiotispitsikoulis/Documents/pitsi-ui/apps/v4"
+const BLOCKS_PATH = `${PROJECT_PATH}/app/templates/_demo-blocks`
 
 export function DevBlockOverlay({
-  blockType,
+  blockKey,
   slug,
   children,
   enabled = true,
+  onHover,
 }: DevBlockOverlayProps) {
   const [isHovered, setIsHovered] = useState(false)
 
@@ -26,53 +30,96 @@ export function DevBlockOverlay({
     return <>{children}</>
   }
 
-  // Construct the file path based on convention
-  const filePath = `${BASE_PATH}/${blockType}/${slug}/${blockType}.tsx`
+  // Extract base type from blockKey (e.g., "features-2" -> "features")
+  const baseType = blockKey.replace(/-\d+$/, "")
 
-  const handleOpenInZed = async () => {
+  // Construct the file path using blockKey for the filename
+  const codePath = `${BLOCKS_PATH}/${baseType}/${slug}/${blockKey}.tsx`
+
+  const openInEditor = async (filePath: string, addToWorkspace = false) => {
     try {
       const response = await fetch("/api/open-in-editor", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ filePath }),
+        body: JSON.stringify({ filePath, addToWorkspace }),
       })
 
       if (!response.ok) {
-        console.error("Failed to open file in Zed")
+        console.error("Failed to open in editor")
       }
     } catch (error) {
-      console.error("Error opening file:", error)
+      console.error("Error opening in editor:", error)
     }
+  }
+
+  const copyPath = async () => {
+    try {
+      await navigator.clipboard.writeText(codePath)
+      toast.success("Copied to clipboard")
+    } catch (error) {
+      console.error("Failed to copy:", error)
+      toast.error("Failed to copy")
+    }
+  }
+
+  const handleMouseEnter = () => {
+    setIsHovered(true)
+    onHover?.(blockKey)
+  }
+
+  const handleMouseLeave = () => {
+    setIsHovered(false)
+    onHover?.(null)
   }
 
   return (
     <div
-      className="relative group"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      className="group relative"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       {children}
 
       {/* Dev overlay */}
       {isHovered && (
-        <div className="absolute inset-0 z-50 pointer-events-none">
+        <div className="pointer-events-none absolute inset-0 z-50">
           {/* Border highlight */}
           <div className="absolute inset-0 border-2 border-dashed border-blue-500/50 bg-blue-500/5" />
 
-          {/* Label and button */}
-          <div className="absolute top-2 right-2 flex items-center gap-2 pointer-events-auto">
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-blue-600 text-white text-xs font-mono shadow-lg">
-              <Code2 className="size-3" />
-              <span>{blockType}/{slug}</span>
+          {/* Label and buttons */}
+          <div className="pointer-events-auto absolute right-2 top-2 flex flex-col items-end gap-2">
+            <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 rounded-md bg-blue-600 px-3 py-1.5 font-mono text-xs text-white shadow-lg">
+                <Code2 className="size-3" />
+                <span>{blockKey}/{slug}</span>
+              </div>
+              <button
+                onClick={() => openInEditor(codePath)}
+                className="flex items-center gap-1.5 rounded-md bg-blue-600 px-3 py-1.5 text-xs font-medium text-white shadow-lg transition-colors hover:bg-blue-700"
+                title={`Open code: ${codePath}`}
+              >
+                <FolderOpen className="size-3" />
+                Code
+                <kbd className="ml-1 rounded bg-blue-500 px-1 py-0.5 font-mono text-[10px]">
+                  ⌘G
+                </kbd>
+              </button>
+              <button
+                onClick={copyPath}
+                className="flex items-center gap-1.5 rounded-md bg-blue-600 px-3 py-1.5 text-xs font-medium text-white shadow-lg transition-colors hover:bg-blue-700"
+                title="Copy path"
+              >
+                <Copy className="size-3" />
+                Copy
+                <kbd className="ml-1 rounded bg-blue-500 px-1 py-0.5 font-mono text-[10px]">
+                  ⌘C
+                </kbd>
+              </button>
             </div>
-            <button
-              onClick={handleOpenInZed}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-blue-600 hover:bg-blue-700 text-white text-xs font-medium shadow-lg transition-colors"
-              title={`Open in Zed: ${filePath}`}
-            >
-              <ExternalLink className="size-3" />
-              Open in Zed
-            </button>
+            {/* Full path display */}
+            <div className="max-w-md truncate rounded-md bg-black/80 px-3 py-1.5 font-mono text-[10px] text-white/70 shadow-lg">
+              {codePath}
+            </div>
           </div>
         </div>
       )}

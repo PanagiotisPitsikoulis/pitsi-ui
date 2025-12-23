@@ -17,7 +17,7 @@ export function NewsletterServicePsychologist() {
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-muted/50 border border-border mb-4">
                 <span className="text-primary text-sm font-medium">Mental Wellness</span>
               </div>
-              <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
+              <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
                 Wellness Journal
               </h2>
               <p className="text-muted-foreground text-base leading-relaxed max-w-sm mx-auto">

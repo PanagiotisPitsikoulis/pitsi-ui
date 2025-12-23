@@ -7,99 +7,126 @@ import { useBlockContext } from "../../_components"
 export function ContactServiceGym() {
   const { cardBg } = useBlockContext()
   return (
-    <section>
+    <section className="py-24">
       <div className="container px-6">
-        <div className="mx-auto max-w-4xl">
-          <div className="text-center mb-12">
-            <p className="text-primary text-sm font-bold tracking-[0.3em] uppercase mb-4">Contact</p>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
-              Start Your Journey
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Ready to transform? Get in touch for a free tour or to discuss your fitness goals with our team.
-            </p>
-          </div>
+        <div className="mx-auto max-w-7xl">
+          <div className="grid lg:grid-cols-2 gap-0 overflow-hidden rounded-2xl border-2 border-border">
+            {/* Transformation Testimonial Side */}
+            <div className="relative bg-gradient-to-br from-primary/10 via-background to-primary/5 p-12 lg:p-16 flex flex-col justify-between">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary/5 rounded-full blur-3xl"></div>
 
-          {/* Trial class booking with class options */}
-          <div className={`${cardBg} rounded-2xl border-2 border-border p-8`}>
-            <div className="flex items-center justify-between mb-8">
-              <div>
-                <h3 className="text-xl font-bold text-foreground">Get a Free Trial</h3>
-                <p className="text-sm text-muted-foreground mt-1">Try any class for free + facility tour</p>
+              <div className="relative z-10">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/30 mb-8">
+                  <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+                  <span className="text-xs tracking-wider uppercase text-primary font-bold">Success Story</span>
+                </div>
+
+                <blockquote className="text-2xl md:text-3xl font-bold text-foreground mb-8 leading-tight">
+                  "Down 35 lbs, stronger than ever, and finally loving the gym. The coaching staff pushed me beyond what I thought possible."
+                </blockquote>
+
+                <div className="flex items-center gap-4 mb-12">
+                  <div className="w-16 h-16 rounded-xl bg-primary/20 flex items-center justify-center border-2 border-primary/30">
+                    <svg className="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                      <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-bold text-foreground text-lg">Jordan Williams</p>
+                    <p className="text-sm text-muted-foreground font-medium">6-Month Transformation</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="p-5 rounded-xl bg-background/50 border-2 border-border text-center">
+                    <p className="text-3xl font-bold text-primary mb-1">-35</p>
+                    <p className="text-xs text-muted-foreground uppercase tracking-wider font-bold">LBS LOST</p>
+                  </div>
+                  <div className="p-5 rounded-xl bg-background/50 border-2 border-border text-center">
+                    <p className="text-3xl font-bold text-primary mb-1">+40%</p>
+                    <p className="text-xs text-muted-foreground uppercase tracking-wider font-bold">STRENGTH</p>
+                  </div>
+                  <div className="p-5 rounded-xl bg-background/50 border-2 border-border text-center">
+                    <p className="text-3xl font-bold text-primary mb-1">100%</p>
+                    <p className="text-xs text-muted-foreground uppercase tracking-wider font-bold">CONFIDENT</p>
+                  </div>
+                </div>
               </div>
-              <div className={`px-4 py-2 rounded-lg bg-muted/50 border border-border`}>
-                <p className="text-xs text-muted-foreground">Open 24/7</p>
+
+              <div className="relative z-10 flex items-center justify-between pt-8 border-t-2 border-border">
+                <div>
+                  <p className="text-xs text-muted-foreground uppercase tracking-wider font-bold mb-1">Program</p>
+                  <p className="text-sm text-foreground font-bold">Performance Training</p>
+                </div>
+                <div>
+                  <p className="text-xs text-muted-foreground uppercase tracking-wider font-bold mb-1">Duration</p>
+                  <p className="text-sm text-foreground font-bold">6 Months</p>
+                </div>
               </div>
             </div>
 
-            <form className="space-y-6">
-              <div className="grid sm:grid-cols-2 gap-4">
+            {/* Form Side */}
+            <div className={`${cardBg} p-12 lg:p-16`}>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 border-2 border-primary/20 mb-6">
+                <span className="text-xs tracking-widest uppercase text-primary font-bold">Free Trial</span>
+              </div>
+
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
+                Start Your Transformation
+              </h2>
+              <p className="text-lg text-muted-foreground mb-10 font-medium">
+                Claim your free trial class and facility tour. No commitment required. Experience what elite training feels like.
+              </p>
+
+              <form className="space-y-8">
                 <div>
-                  <label className="text-sm font-bold text-foreground mb-2 block">Name</label>
                   <input
                     type="text"
-                    placeholder="Your Name"
-                    className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
+                    placeholder="Your name"
+                    className="w-full bg-transparent border-b-2 border-border py-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors font-medium"
                   />
                 </div>
+
                 <div>
-                  <label className="text-sm font-bold text-foreground mb-2 block">Email</label>
                   <input
                     type="email"
-                    placeholder="your@email.com"
-                    className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring"
+                    placeholder="Email address"
+                    className="w-full bg-transparent border-b-2 border-border py-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors font-medium"
                   />
                 </div>
-              </div>
 
-              <div>
-                <label className="text-sm font-bold text-foreground mb-3 block">Select Trial Class</label>
-                <div className="grid sm:grid-cols-2 gap-3">
-                  {['HIIT Training', 'Strength & Conditioning', 'Yoga Flow', 'Spin Class', 'Boxing', 'Personal Training'].map((className) => (
-                    <label key={className} className={`${cardBg} border border-border rounded-lg p-4 cursor-pointer hover:bg-muted transition-colors`}>
-                      <input type="radio" name="class" className="mr-3" />
-                      <span className="text-sm font-medium text-foreground">{className}</span>
-                    </label>
-                  ))}
+                <div>
+                  <input
+                    type="tel"
+                    placeholder="Phone number (optional)"
+                    className="w-full bg-transparent border-b-2 border-border py-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors font-medium"
+                  />
                 </div>
-              </div>
 
-              <div>
-                <label className="text-sm font-bold text-foreground mb-2 block">Fitness Goals</label>
-                <textarea
-                  placeholder="What are your fitness goals?"
-                  rows={3}
-                  className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring resize-none"
-                />
-              </div>
-
-              <Button className="w-full rounded-xl font-bold">
-                Claim Free Trial
-              </Button>
-            </form>
-
-            <div className="mt-8 pt-6 border-t border-border">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="flex items-center gap-3">
-                  <svg className="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
-                  <div>
-                    <p className="text-sm font-bold text-foreground">Gym Location</p>
-                    <p className="text-xs text-muted-foreground">100 Fitness Boulevard</p>
-                  </div>
+                <div>
+                  <textarea
+                    placeholder="Tell us about your fitness goals and experience level..."
+                    rows={4}
+                    className="w-full bg-transparent border-b-2 border-border py-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none font-medium"
+                  />
                 </div>
-                <div className="flex items-center gap-3">
-                  <svg className="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M12 6v6l4 2" />
-                  </svg>
-                  <div>
-                    <p className="text-sm font-bold text-foreground">Open Hours</p>
-                    <p className="text-xs text-muted-foreground">24/7 for members</p>
-                  </div>
+
+                <Button className="w-full rounded-lg py-6 text-base font-bold">
+                  CLAIM FREE TRIAL
+                </Button>
+
+                <p className="text-sm text-muted-foreground text-center font-medium">
+                  Questions? <a href="mailto:info@elitefit.com" className="text-primary hover:underline font-bold">info@elitefit.com</a>
+                </p>
+              </form>
+
+              <div className="mt-8 pt-8 border-t-2 border-border flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-primary"></div>
+                  <span className="text-xs text-muted-foreground font-bold uppercase tracking-wider">Open 24/7</span>
                 </div>
+                <span className="text-xs text-muted-foreground font-medium">100 Fitness Boulevard</span>
               </div>
             </div>
           </div>

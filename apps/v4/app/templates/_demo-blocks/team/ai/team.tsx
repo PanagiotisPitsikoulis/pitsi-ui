@@ -15,7 +15,7 @@ export function TeamAi() {
       <div className="container px-6">
         <div className="text-center mb-16">
           <p className="text-primary text-sm tracking-wider uppercase font-medium mb-4">Neural Network</p>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground">
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground">
             Our AI Team
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">

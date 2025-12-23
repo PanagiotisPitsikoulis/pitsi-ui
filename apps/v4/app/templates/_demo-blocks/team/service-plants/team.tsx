@@ -3,35 +3,124 @@
 import Image from "next/image"
 
 export function TeamServicePlants() {
+  const team = [
+    {
+      name: "Emma Green",
+      role: "Head Horticulturist",
+      avatar: "/avatars/04.webp",
+    },
+    {
+      name: "James Fern",
+      role: "Plant Care Specialist",
+      avatar: "/avatars/05.webp",
+    },
+    {
+      name: "Sofia Bloom",
+      role: "Botanical Designer",
+      avatar: "/avatars/06.webp",
+    },
+    {
+      name: "Marcus Leaf",
+      role: "Delivery Manager",
+      avatar: "/avatars/07.webp",
+    },
+    {
+      name: "Olivia Moss",
+      role: "Customer Success",
+      avatar: "/avatars/08.webp",
+    },
+    {
+      name: "David Vine",
+      role: "Rare Plants Curator",
+      avatar: "/avatars/01.webp",
+    },
+    {
+      name: "Maya Petal",
+      role: "Content Creator",
+      avatar: "/avatars/02.webp",
+    },
+    {
+      name: "Lucas Root",
+      role: "Sustainability Lead",
+      avatar: "/avatars/03.webp",
+    },
+    {
+      name: "Nina Sprout",
+      role: "Nursery Manager",
+      avatar: "/avatars/04.webp",
+    },
+    {
+      name: "Alex Terra",
+      role: "Landscape Advisor",
+      avatar: "/avatars/05.webp",
+    },
+  ]
+
+  // Additional team members for the stacked display
+  const moreTeam = [
+    "/avatars/04.webp",
+    "/avatars/05.webp",
+    "/avatars/06.webp",
+    "/avatars/07.webp",
+    "/avatars/08.webp",
+    "/avatars/01.webp",
+    "/avatars/02.webp",
+    "/avatars/03.webp",
+    "/avatars/04.webp",
+    "/avatars/05.webp",
+  ]
+
   return (
     <section>
       <div className="container px-6">
-        <div className="text-center mb-16">
-          <p className="text-primary text-sm tracking-[0.3em] uppercase font-medium mb-4">Our Experts</p>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground">
+        <div className="mb-20 text-center">
+          <p className="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-primary">
+            Our Experts
+          </p>
+          <h2 className="font-display text-3xl font-bold text-foreground md:text-5xl">
             Meet the Green Team
           </h2>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {[
-            { name: "Emma Green", role: "Head Horticulturist", image: "/placeholders/blocks/service-plants/3.webp" },
-            { name: "James Fern", role: "Plant Care Specialist", image: "/placeholders/blocks/service-plants/4.webp" },
-            { name: "Sofia Bloom", role: "Botanical Designer", image: "/placeholders/blocks/service-plants/5.webp" },
-            { name: "Marcus Leaf", role: "Delivery Manager", image: "/placeholders/blocks/service-plants/6.webp" },
-          ].map((member, i) => (
-            <div key={i} className="text-center group">
-              <div className="relative aspect-square rounded-2xl overflow-hidden mb-4 bg-muted">
+        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+          {team.map((member, i) => (
+            <div key={i} className="group text-center">
+              <div className="relative mx-auto mb-4 aspect-square w-full max-w-[200px] overflow-hidden rounded-full bg-muted">
                 <Image
-                  src={member.image}
+                  src={member.avatar}
                   alt={member.name}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <h3 className="font-semibold text-foreground text-lg">{member.name}</h3>
+              <h3 className="text-lg font-semibold text-foreground">
+                {member.name}
+              </h3>
               <p className="text-muted-foreground">{member.role}</p>
             </div>
           ))}
+        </div>
+
+        {/* Stacked avatars section */}
+        <div className="mt-16 flex flex-col items-center">
+          <div className="flex -space-x-4">
+            {moreTeam.map((avatar, i) => (
+              <div
+                key={i}
+                className="relative h-14 w-14 overflow-hidden rounded-full border-4 border-background bg-muted shadow-lg transition-transform hover:z-10 hover:scale-110"
+                style={{ zIndex: moreTeam.length - i }}
+              >
+                <Image
+                  src={avatar}
+                  alt={`Team member ${i + 1}`}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 text-muted-foreground">
+            +20 more plant experts ready to help
+          </p>
         </div>
       </div>
     </section>

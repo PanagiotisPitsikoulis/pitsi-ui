@@ -40,17 +40,17 @@ export function HeroServiceCoffeeShop() {
           <p className="text-shadow text-[10px] md:text-xs tracking-[0.5em] uppercase mb-8 font-light">
             Established 2019
           </p>
-          <h1 className="text-shadow-lg font-serif italic text-center text-[3.5rem] leading-[0.9] sm:text-6xl md:text-[9rem] text-foreground">
+          <h1 className="font-display text-shadow-lg font-serif italic text-center text-[3.5rem] leading-[0.9] sm:text-6xl md:text-[9rem] text-foreground">
             Morning
           </h1>
           <div className="flex items-center justify-center gap-4 md:gap-8">
             <div className="w-16 md:w-24 h-px bg-border" />
-            <h1 className="text-shadow-lg text-center text-[2rem] leading-none sm:text-4xl md:text-[5rem] uppercase font-extralight tracking-[0.3em] text-foreground">
+            <h1 className="font-display text-shadow-lg text-center text-[2rem] leading-none sm:text-4xl md:text-[5rem] uppercase font-extralight tracking-[0.3em] text-foreground">
               Ritual
             </h1>
             <div className="w-16 md:w-24 h-px bg-border" />
           </div>
-          <h1 className="text-shadow-lg text-center text-[4rem] leading-[0.85] sm:text-7xl md:text-[11rem] text-foreground uppercase font-black tracking-tighter">
+          <h1 className="font-display text-shadow-lg text-center text-[4rem] leading-[0.85] sm:text-7xl md:text-[11rem] text-foreground uppercase font-black tracking-tighter">
             Coffee
           </h1>
           <Spacer size="xl" sizeMobile="md" />

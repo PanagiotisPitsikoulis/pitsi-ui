@@ -75,10 +75,10 @@ export function HeroAISciFi() {
           <p className="text-shadow font-mono text-[10px] md:text-xs tracking-normal mb-6 max-lg:text-center max-lg:w-full">
             {">"} init --dimension=future
           </p>
-          <h1 className="text-shadow-lg font-mono text-left text-[3rem] leading-[0.85] sm:text-5xl md:text-[8rem] text-foreground uppercase font-light tracking-tight max-lg:text-center max-lg:w-full">
+          <h1 className="font-display text-shadow-lg font-mono text-left text-[3rem] leading-[0.85] sm:text-5xl md:text-[8rem] text-foreground uppercase font-light tracking-tight max-lg:text-center max-lg:w-full">
             Synthetic
           </h1>
-          <h1 className="text-shadow-lg font-mono text-left text-[4rem] leading-[0.8] sm:text-7xl md:text-[10rem] text-transparent [-webkit-text-stroke:2px_hsl(var(--foreground))] max-lg:text-center max-lg:w-full uppercase font-black">
+          <h1 className="font-display text-shadow-lg font-mono text-left text-[4rem] leading-[0.8] sm:text-7xl md:text-[10rem] text-transparent [-webkit-text-stroke:2px_hsl(var(--foreground))] max-lg:text-center max-lg:w-full uppercase font-black">
             Reality
           </h1>
           <div className="flex items-center gap-3 mt-4 max-lg:justify-center">

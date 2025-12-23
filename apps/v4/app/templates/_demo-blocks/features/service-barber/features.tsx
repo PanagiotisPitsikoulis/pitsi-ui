@@ -64,7 +64,7 @@ export function FeaturesServiceBarber() {
           <p className="text-primary mb-4 text-sm font-medium tracking-[0.3em] uppercase">
             Our Craft
           </p>
-          <h2 className="text-foreground text-3xl font-bold md:text-5xl">
+          <h2 className="font-display text-foreground text-3xl font-bold md:text-5xl">
             Traditional Excellence
           </h2>
         </div>

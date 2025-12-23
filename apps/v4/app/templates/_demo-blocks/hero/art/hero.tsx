@@ -44,19 +44,19 @@ export function HeroArt() {
           </p>
 
           <h1
-            className="text-shadow-lg text-[2.5rem] leading-[1] tracking-normal text-foreground italic sm:text-5xl md:text-7xl"
+            className="font-display text-shadow-lg text-[2.5rem] leading-[1] tracking-normal text-foreground italic sm:text-5xl md:text-7xl"
             style={{ fontFamily: 'Georgia, Times New Roman, serif' }}
           >
             Where
           </h1>
           <h1
-            className="text-shadow-lg text-[4rem] leading-[0.9] tracking-normal text-foreground italic sm:text-7xl md:text-[10rem] lg:text-[12rem]"
+            className="font-display text-shadow-lg text-[4rem] leading-[0.9] tracking-normal text-foreground italic sm:text-7xl md:text-[10rem] lg:text-[12rem]"
             style={{ fontFamily: 'Georgia, Times New Roman, serif' }}
           >
             Creativity
           </h1>
           <h1
-            className="text-shadow-lg text-[2.5rem] leading-[1] tracking-normal text-foreground italic sm:text-5xl md:text-7xl"
+            className="font-display text-shadow-lg text-[2.5rem] leading-[1] tracking-normal text-foreground italic sm:text-5xl md:text-7xl"
             style={{ fontFamily: 'Georgia, Times New Roman, serif' }}
           >
             Lives

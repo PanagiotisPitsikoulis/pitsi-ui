@@ -126,6 +126,8 @@ const blockImports: Record<BlockType, Record<string, ComponentType>> = {
     "service-marketing": require("./features/service-marketing/features").FeaturesServiceMarketing,
     "service-pet-sitting": require("./features/service-pet-sitting/features").FeaturesServicePetSitting,
     "service-plants": require("./features/service-plants/features").FeaturesServicePlants,
+    "service-plants-2": require("./features/service-plants/features-2").FeaturesServicePlants2,
+    "service-plants-3": require("./features/service-plants/features-3").FeaturesServicePlants3,
     "service-psychologist": require("./features/service-psychologist/features").FeaturesServicePsychologist,
     "service-real-estate": require("./features/service-real-estate/features").FeaturesServiceRealEstate,
     "service-tattoo": require("./features/service-tattoo/features").FeaturesServiceTattoo,
@@ -427,6 +429,98 @@ const blockImports: Record<BlockType, Record<string, ComponentType>> = {
 // Format: "blockType:slug" -> TintLevel
 // Example: "hero:ai" -> "deep" means the ai hero uses deep tint
 const blockTints: Record<string, TintLevel> = {
+  // AI & Technology - bold tech aesthetics
+  "stats:ai": "deep",
+  "testimonials:ai": "deep",
+  "cta:ai": "deep",
+
+  "features:ai-sci-fi": "deep",
+  "stats:ai-sci-fi": "deep",
+  "newsletter:ai-sci-fi": "deep",
+
+  "pricing:product-scifi": "deep",
+  "gallery:product-scifi": "deep",
+  "cta:product-scifi": "deep",
+
+  // Creative & Art - dramatic contrasts
+  "gallery:art": "deep",
+  "testimonials:art": "deep",
+  "newsletter:art": "deep",
+
+  "stats:service-fashion": "deep",
+  "testimonials:service-fashion": "deep",
+  "cta:service-fashion": "deep",
+
+  "gallery:service-tattoo": "deep",
+  "testimonials:service-tattoo": "deep",
+  "newsletter:service-tattoo": "deep",
+
+  // Food & Beverage - warm deep sections
+  "testimonials:food-pizza": "deep",
+  "stats:food-pizza": "deep",
+  "cta:food-pizza": "deep",
+
+  "gallery:food-juice": "deep",
+  "stats:food-juice": "deep",
+  "newsletter:food-juice": "deep",
+
+  "testimonials:service-coffee-shop": "deep",
+  "newsletter:service-coffee-shop": "deep",
+  "cta:service-coffee-shop": "deep",
+
+  // Products - showcase deep sections
+  "testimonials:product-coffee": "deep",
+  "stats:product-coffee": "deep",
+  "newsletter:product-coffee": "deep",
+
+  "stats:product-plants": "deep",
+  "testimonials:product-plants": "deep",
+  "newsletter:product-plants": "deep",
+
+  "gallery:product-skincare": "deep",
+  "testimonials:product-skincare": "deep",
+  "cta:product-skincare": "deep",
+
+  // Health & Wellness - calming deep tones
+  "features:service-gym": "deep",
+  "stats:service-gym": "deep",
+  "cta:service-gym": "deep",
+
+  "testimonials:service-psychologist": "deep",
+  "faq:service-psychologist": "deep",
+  "newsletter:service-psychologist": "deep",
+
+  // Beauty & Personal Care
+  "gallery:service-barber": "deep",
+  "testimonials:service-barber": "deep",
+  "cta:service-barber": "deep",
+
+  "gallery:service-makeup": "deep",
+  "stats:service-makeup": "deep",
+  "newsletter:service-makeup": "deep",
+
+  // Lifestyle & Leisure
+  "gallery:boat": "deep",
+  "testimonials:boat": "deep",
+  "newsletter:boat": "deep",
+
+  "stats:service-hospitality": "deep",
+  "testimonials:service-hospitality": "deep",
+  "cta:service-hospitality": "deep",
+
+  "gallery:service-pet-sitting": "deep",
+  "testimonials:service-pet-sitting": "deep",
+  "newsletter:service-pet-sitting": "deep",
+
+  // Professional Services
+  "stats:service-real-estate": "deep",
+  "testimonials:service-real-estate": "deep",
+  "cta:service-real-estate": "deep",
+
+  "features:service-marketing": "deep",
+  "stats:service-marketing": "deep",
+  "newsletter:service-marketing": "deep",
+
   // service-plants deep tint sections
   "stats:service-plants": "deep",
   "testimonials:service-plants": "deep",
@@ -456,10 +550,37 @@ const blockForceDark: Record<string, boolean> = {
   "hero:service-makeup": true,
   "hero:service-marketing": true,
   "hero:service-pet-sitting": true,
-  "hero:service-plants": true,
   "hero:service-psychologist": true,
   "hero:service-real-estate": true,
   "hero:service-tattoo": true,
+}
+
+// Custom block order for templates with multiple blocks of same type
+// Format: "slug" -> array of block keys (blockType or blockType-N for multiples)
+// Blocks not in this list use default BLOCK_TYPES order
+// Example: "my-template": ["header", "hero", "features", "features-2", "footer"]
+// The "-2" suffix maps to import key "my-template-2" in blockImports
+const customBlockOrder: Record<string, string[]> = {
+  "service-plants": [
+    "header",
+    "hero",
+    "logos",
+    "features",
+    "features-2",
+    "features-3",
+    "products",
+    "pricing",
+    "testimonials",
+    "gallery",
+    "team",
+    "stats",
+    "faq",
+    "blog",
+    "contact",
+    "newsletter",
+    "cta",
+    "footer",
+  ],
 }
 
 // Get tint level for a specific block
@@ -488,15 +609,45 @@ export function getTemplateBlocks(slug: string): Array<{
   Component: ComponentType
   tint?: TintLevel // Only set if different from default
   forceDark?: boolean // Force dark mode for this block
+  blockKey: string // Unique key for the block (e.g., "features" or "features-2")
 }> {
-  const blocks: Array<{ type: BlockType; Component: ComponentType; tint?: TintLevel; forceDark?: boolean }> = []
+  const blocks: Array<{
+    type: BlockType
+    Component: ComponentType
+    tint?: TintLevel
+    forceDark?: boolean
+    blockKey: string
+  }> = []
 
-  for (const blockType of BLOCK_TYPES) {
-    const Component = getBlock(blockType, slug)
-    if (Component) {
-      const tint = getBlockTint(blockType, slug)
-      const forceDark = getBlockForceDark(blockType, slug)
-      blocks.push({ type: blockType, Component, tint, forceDark })
+  // Check if template has custom block order
+  const blockOrder = customBlockOrder[slug]
+
+  if (blockOrder) {
+    // Use custom block order for templates with multiple blocks of same type
+    for (const blockKey of blockOrder) {
+      // Parse blockKey: "features" or "features-2"
+      const [baseType, variant] = blockKey.split("-")
+      const blockType = baseType as BlockType
+
+      // Build the import key: "service-plants" or "service-plants-2"
+      const importKey = variant ? `${slug}-${variant}` : slug
+
+      const Component = blockImports[blockType]?.[importKey] || blockImports[blockType]?.[slug]
+      if (Component) {
+        const tint = getBlockTint(blockType, slug)
+        const forceDark = getBlockForceDark(blockType, slug)
+        blocks.push({ type: blockType, Component, tint, forceDark, blockKey })
+      }
+    }
+  } else {
+    // Default: use BLOCK_TYPES order with single block per type
+    for (const blockType of BLOCK_TYPES) {
+      const Component = getBlock(blockType, slug)
+      if (Component) {
+        const tint = getBlockTint(blockType, slug)
+        const forceDark = getBlockForceDark(blockType, slug)
+        blocks.push({ type: blockType, Component, tint, forceDark, blockKey: blockType })
+      }
     }
   }
 

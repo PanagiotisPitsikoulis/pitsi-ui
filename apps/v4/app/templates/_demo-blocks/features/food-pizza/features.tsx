@@ -66,7 +66,7 @@ export function FeaturesFoodPizza() {
           <p className="text-primary mb-4 font-serif italic text-sm tracking-[0.2em]">
             La Tradizione
           </p>
-          <h2 className="text-foreground font-serif italic text-3xl font-bold md:text-5xl">
+          <h2 className="font-display text-foreground font-serif italic text-3xl font-bold md:text-5xl">
             Authentic Italian Craft
           </h2>
         </div>

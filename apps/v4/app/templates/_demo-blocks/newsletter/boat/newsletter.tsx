@@ -18,7 +18,7 @@ export function NewsletterBoat() {
                   <span className="text-primary text-sm font-semibold">Maritime Updates</span>
                 </div>
               </div>
-              <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 text-center">
+              <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-4 text-center">
                 Set Sail with Our Newsletter
               </h2>
               <p className="text-muted-foreground text-lg mb-8 text-center max-w-xl mx-auto">

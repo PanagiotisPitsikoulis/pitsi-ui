@@ -41,7 +41,7 @@ export function BlogServicePsychologist() {
               <span className="text-primary text-xs uppercase tracking-wider font-medium">Wellness Journal</span>
             </div>
           </div>
-          <h2 className="text-4xl md:text-6xl font-light text-foreground mb-6">
+          <h2 className="font-display text-4xl md:text-6xl font-light text-foreground mb-6">
             Mental Health Insights
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">

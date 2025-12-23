@@ -40,12 +40,12 @@ export function HeroFoodJuice() {
           <p className="text-shadow text-xs md:text-sm tracking-[0.3em] uppercase mb-2">
             Squeeze the Good Stuff
           </p>
-          <h1 className="text-shadow-lg font-serif italic text-center text-[4rem] leading-[0.85] sm:text-7xl md:text-[12rem] text-foreground">
+          <h1 className="font-display text-shadow-lg font-serif italic text-center text-[4rem] leading-[0.85] sm:text-7xl md:text-[12rem] text-foreground">
             Fresh
           </h1>
           <div className="flex items-center justify-center gap-3 md:gap-6">
             <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-border" />
-            <h1 className="text-shadow-lg text-center text-[3rem] leading-none sm:text-5xl md:text-[8rem] text-foreground uppercase font-black tracking-tighter">
+            <h1 className="font-display text-shadow-lg text-center text-[3rem] leading-none sm:text-5xl md:text-[8rem] text-foreground uppercase font-black tracking-tighter">
               Juice
             </h1>
             <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-border" />

@@ -39,7 +39,7 @@ export function BlogAiSciFi() {
             <div className="h-2 w-2 bg-primary rounded-full animate-pulse" />
             <span className="text-primary text-xs font-mono tracking-wider">SYSTEM LOG ACCESS</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-foreground font-mono mb-2">
+          <h2 className="font-display text-4xl md:text-6xl font-bold text-foreground font-mono mb-2">
             DATA_LOGS://
           </h2>
           <p className="text-muted-foreground font-mono text-sm">

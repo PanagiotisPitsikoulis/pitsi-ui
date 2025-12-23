@@ -58,13 +58,13 @@ export function HeroFoodPizza() {
             </p>
             <div className="w-16 h-px bg-border" />
           </div>
-          <h1 className="text-shadow-lg font-serif italic text-center text-[2.5rem] leading-[0.9] sm:text-5xl md:text-[7rem] text-foreground">
+          <h1 className="font-display text-shadow-lg font-serif italic text-center text-[2.5rem] leading-[0.9] sm:text-5xl md:text-[7rem] text-foreground">
             Authentic Italian
           </h1>
-          <h1 className="text-shadow-lg font-serif italic text-center text-[3rem] leading-[0.85] sm:text-6xl md:text-[9rem] text-foreground">
+          <h1 className="font-display text-shadow-lg font-serif italic text-center text-[3rem] leading-[0.85] sm:text-6xl md:text-[9rem] text-foreground">
             Wood-Fired
           </h1>
-          <h1 className="text-shadow-lg font-serif italic text-center text-[4rem] leading-[0.85] sm:text-7xl md:text-[12rem] text-foreground">
+          <h1 className="font-display text-shadow-lg font-serif italic text-center text-[4rem] leading-[0.85] sm:text-7xl md:text-[12rem] text-foreground">
             Pizza
           </h1>
           <Spacer size="lg" sizeMobile="md" />

@@ -33,7 +33,7 @@ export function BlogServiceCoffeeShop() {
       <div className="container px-6">
         <div className="mb-16">
           <p className="text-primary text-sm uppercase tracking-wider mb-3">Stories from the Café</p>
-          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-4">
+          <h2 className="font-display text-4xl md:text-6xl font-bold text-foreground mb-4">
             Coffee & Community
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl">

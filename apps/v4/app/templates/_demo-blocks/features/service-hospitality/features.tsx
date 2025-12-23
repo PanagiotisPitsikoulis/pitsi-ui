@@ -65,7 +65,7 @@ export function FeaturesServiceHospitality() {
           <p className="text-primary mb-4 text-sm font-light tracking-[0.3em] uppercase">
             The Experience
           </p>
-          <h2 className="text-foreground font-serif text-3xl font-light md:text-5xl">
+          <h2 className="font-display text-foreground font-serif text-3xl font-light md:text-5xl">
             Luxury Redefined
           </h2>
         </div>

@@ -31,13 +31,13 @@ export function HeroBoat() {
         </p>
 
         <h1
-          className="text-shadow-lg text-[3rem] leading-[0.95] font-light tracking-[0.1em] text-foreground uppercase sm:text-5xl md:text-7xl lg:text-9xl"
+          className="font-display text-shadow-lg text-[3rem] leading-[0.95] font-light tracking-[0.1em] text-foreground uppercase sm:text-5xl md:text-7xl lg:text-9xl"
           style={{ fontFamily: 'Optima, Candara, Noto Sans, sans-serif' }}
         >
           Set Sail
         </h1>
         <h1
-          className="text-shadow-lg text-[3rem] leading-[0.95] font-light tracking-[0.1em] text-foreground uppercase sm:text-5xl md:text-7xl lg:text-9xl"
+          className="font-display text-shadow-lg text-[3rem] leading-[0.95] font-light tracking-[0.1em] text-foreground uppercase sm:text-5xl md:text-7xl lg:text-9xl"
           style={{ fontFamily: 'Optima, Candara, Noto Sans, sans-serif' }}
         >
           For Adventure

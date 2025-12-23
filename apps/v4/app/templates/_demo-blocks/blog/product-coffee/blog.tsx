@@ -40,7 +40,7 @@ export function BlogProductCoffee() {
             <div className="h-px w-12 bg-primary" />
             <span className="text-primary text-sm uppercase tracking-[0.3em] font-medium">Brew Guides</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-4" style={{ fontFamily: 'serif' }}>
+          <h2 className="font-display text-4xl md:text-6xl font-bold text-foreground mb-4" style={{ fontFamily: 'serif' }}>
             Coffee Knowledge
           </h2>
           <p className="text-lg text-muted-foreground">

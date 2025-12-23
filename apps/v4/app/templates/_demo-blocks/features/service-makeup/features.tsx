@@ -65,7 +65,7 @@ export function FeaturesServiceMakeup() {
           <p className="text-primary mb-4 text-sm font-light tracking-[0.3em] uppercase">
             Our Artistry
           </p>
-          <h2 className="text-foreground text-3xl font-light md:text-5xl">
+          <h2 className="font-display text-foreground text-3xl font-light md:text-5xl">
             Beauty Elevated
           </h2>
         </div>

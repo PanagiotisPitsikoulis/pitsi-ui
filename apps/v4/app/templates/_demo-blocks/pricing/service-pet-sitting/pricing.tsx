@@ -53,7 +53,7 @@ export function PricingServicePetSitting() {
           <p className="text-primary mb-4 text-sm font-medium tracking-[0.3em] uppercase">
             Pricing
           </p>
-          <h2 className="text-foreground mb-4 text-3xl font-bold md:text-5xl">
+          <h2 className="font-display text-foreground mb-4 text-3xl font-bold md:text-5xl">
             Pet Care Services
           </h2>
           <p className="text-muted-foreground mx-auto max-w-2xl text-lg">

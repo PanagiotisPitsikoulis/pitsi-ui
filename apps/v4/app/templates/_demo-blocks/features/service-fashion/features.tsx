@@ -65,7 +65,7 @@ export function FeaturesServiceFashion() {
           <p className="text-primary mb-4 text-sm font-light tracking-[0.3em] uppercase">
             Our Promise
           </p>
-          <h2 className="text-foreground text-3xl font-light md:text-5xl">
+          <h2 className="font-display text-foreground text-3xl font-light md:text-5xl">
             Curated For You
           </h2>
         </div>
