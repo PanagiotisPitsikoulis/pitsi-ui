@@ -3,7 +3,6 @@
 import * as React from "react"
 import Link from "next/link"
 import {
-  AlertCircle,
   Check,
   Clipboard,
   Folder,
@@ -197,58 +196,13 @@ function PreviewIframe({
   height: number | string
   className?: string
 }) {
-  const [isLoading, setIsLoading] = React.useState(true)
-  const [hasError, setHasError] = React.useState(false)
-
-  // Reset states when iframe key changes (refresh)
-  React.useEffect(() => {
-    setIsLoading(true)
-    setHasError(false)
-  }, [iframeKey])
-
   return (
-    <div className="relative h-full w-full">
-      {/* Loading state */}
-      {isLoading && !hasError && (
-        <div className="absolute inset-0 z-30 flex items-center justify-center bg-muted/50">
-          <div className="flex flex-col items-center gap-2">
-            <RotateCw className="size-5 animate-spin text-muted-foreground" />
-            <span className="text-xs text-muted-foreground">Loading preview...</span>
-          </div>
-        </div>
-      )}
-      {/* Error state */}
-      {hasError && (
-        <div className="absolute inset-0 z-30 flex items-center justify-center bg-muted/50">
-          <div className="flex flex-col items-center gap-3 text-center px-4">
-            <AlertCircle className="size-8 text-muted-foreground" />
-            <span className="text-sm font-medium text-muted-foreground">Failed to load preview</span>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => {
-                setHasError(false)
-                setIsLoading(true)
-              }}
-            >
-              <RotateCw className="mr-2 size-3" />
-              Retry
-            </Button>
-          </div>
-        </div>
-      )}
-      <iframe
-        key={iframeKey}
-        src={`/view/${styleName}/${itemName}`}
-        height={height}
-        className={cn("bg-background no-scrollbar h-full w-full", className)}
-        onLoad={() => setIsLoading(false)}
-        onError={() => {
-          setIsLoading(false)
-          setHasError(true)
-        }}
-      />
-    </div>
+    <iframe
+      key={iframeKey}
+      src={`/view/${styleName}/${itemName}`}
+      height={height}
+      className={cn("bg-background no-scrollbar h-full w-full", className)}
+    />
   )
 }
 

@@ -1,12 +1,34 @@
 "use client"
 
+import { useRef } from "react"
+import Image from "next/image"
+import { motion, useScroll, useTransform } from "motion/react"
+
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
-import { useBlockContext } from "../../_components"
+import { useBlockContext, useScrollContainer } from "../../_components"
 
 export function PricingServicePlants() {
   const { cardBg } = useBlockContext()
+  const sectionRef = useRef<HTMLElement>(null)
+  const scrollContainer = useScrollContainer()
+
+  // Track scroll progress relative to the section
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    container: scrollContainer || undefined,
+    offset: ["start end", "end start"],
+  })
+
+  // Side cards rotate toward center as user scrolls (start rotated, end flat)
+  const leftRotation = useTransform(scrollYProgress, [0, 0.5, 1], [-6, -3, 0])
+  const rightRotation = useTransform(scrollYProgress, [0, 0.5, 1], [6, 3, 0])
+
+  // Side cards slide inward on X axis as user scrolls
+  const leftX = useTransform(scrollYProgress, [0, 0.5, 1], [-30, -15, 0])
+  const rightX = useTransform(scrollYProgress, [0, 0.5, 1], [30, 15, 0])
+
   const plans = [
     {
       name: "Starter",
@@ -48,122 +70,147 @@ export function PricingServicePlants() {
   ]
 
   return (
-    <section>
-      <div className="container px-6">
-        <div className="mb-20 text-center">
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-primary">
-            Monthly Boxes
-          </p>
-          <h2 className="font-display mb-4 text-3xl font-bold text-foreground md:text-5xl">
-            Subscribe & Save
-          </h2>
-          <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-            Fresh plants delivered to your door every month.
-          </p>
-        </div>
-        <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-8 lg:flex-row lg:gap-0">
-          {plans.map((plan, i) => {
-            const isLeft = i === 0
-            const isRight = i === 2
-            const isMiddle = plan.popular
+    <>
+      {/* Background decoration */}
+      <div
+        className="pointer-events-none absolute inset-0 z-0"
+        style={{
+          backgroundImage:
+            "url('/placeholders/blocks/service-plants/assets/decoration-3.svg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+        aria-hidden="true"
+      />
+      <section ref={sectionRef} className="py-[10rem]">
+        <div className="relative z-10 container px-6">
+          <div className="mb-20 text-center">
+            <p className="text-primary mb-4 text-sm font-medium tracking-[0.3em] uppercase">
+              Monthly Boxes
+            </p>
+            <h2 className="font-display text-foreground mb-4 text-3xl font-bold md:text-5xl">
+              Subscribe & Save
+            </h2>
+            <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
+              Fresh plants delivered to your door every month.
+            </p>
+          </div>
+          <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-8 lg:flex-row lg:gap-0">
+            {plans.map((plan, i) => {
+              const isLeft = i === 0
+              const isRight = i === 2
+              const isMiddle = plan.popular
 
-            return (
-              <div
-                key={i}
-                className={cn(
-                  "relative w-full max-w-sm rounded-3xl p-10 transition-all duration-300",
-                  // Rotation and positioning for desktop
-                  isLeft &&
-                    "lg:z-0 lg:-mr-6 lg:origin-right lg:-rotate-3 lg:hover:z-20 lg:hover:rotate-0 lg:hover:scale-105",
-                  isRight &&
-                    "lg:z-0 lg:-ml-6 lg:origin-left lg:rotate-3 lg:hover:z-20 lg:hover:rotate-0 lg:hover:scale-105",
-                  isMiddle &&
-                    "lg:z-10 lg:scale-105 lg:hover:scale-110",
-                  // Styling
-                  plan.popular
-                    ? "border-2 border-primary bg-primary text-primary-foreground shadow-xl"
-                    : cn(cardBg, "border border-border shadow-md")
-                )}
-              >
-                {plan.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent px-4 py-1 text-xs font-medium text-accent-foreground">
-                    Most Popular
-                  </div>
-                )}
-                <div className="text-center">
-                  <h3
-                    className={cn(
-                      "mb-2 text-xl font-semibold",
-                      !plan.popular && "text-foreground"
-                    )}
-                  >
-                    {plan.name}
-                  </h3>
-                  <div className="flex items-baseline justify-center gap-1">
-                    <span
+              return (
+                <motion.div
+                  key={i}
+                  className={cn(
+                    "relative w-full max-w-sm rounded-3xl p-10",
+                    // Positioning for desktop
+                    isLeft && "lg:z-0 lg:-mr-6 lg:origin-right",
+                    isRight && "lg:z-0 lg:-ml-6 lg:origin-left",
+                    isMiddle && "lg:z-10 lg:scale-105",
+                    // Styling
+                    plan.popular
+                      ? "bg-primary text-primary-foreground shadow-xl"
+                      : cn(cardBg, "shadow-lg")
+                  )}
+                  style={{
+                    rotate: isLeft ? leftRotation : isRight ? rightRotation : 0,
+                    x: isLeft ? leftX : isRight ? rightX : 0,
+                  }}
+                >
+                  {plan.popular && (
+                    <Image
+                      draggable={false}
+                      src="/placeholders/blocks/service-plants/assets/decoration-small-2.svg"
+                      alt=""
+                      width={150}
+                      height={150}
+                      className="pointer-events-none absolute -top-10 left-1/2 z-30 -translate-x-1/2 select-none"
+                    />
+                  )}
+                  <div className="text-center">
+                    <h3
                       className={cn(
-                        "text-5xl font-bold",
+                        "mb-2 text-xl font-semibold",
                         !plan.popular && "text-foreground"
                       )}
                     >
-                      {plan.price}
-                    </span>
-                    <span
+                      {plan.name}
+                    </h3>
+                    <div className="flex items-baseline justify-center gap-1">
+                      <span
+                        className={cn(
+                          "text-5xl font-bold",
+                          !plan.popular && "text-foreground"
+                        )}
+                      >
+                        {plan.price}
+                      </span>
+                      <span
+                        className={cn(
+                          plan.popular
+                            ? "text-primary-foreground/70"
+                            : "text-muted-foreground"
+                        )}
+                      >
+                        /month
+                      </span>
+                    </div>
+                    <p
                       className={cn(
+                        "mt-2 text-sm",
                         plan.popular
                           ? "text-primary-foreground/70"
                           : "text-muted-foreground"
                       )}
                     >
-                      /month
-                    </span>
+                      {plan.description}
+                    </p>
                   </div>
-                  <p
+                  <ul className="mt-8 mb-8 space-y-4">
+                    {plan.features.map((feature, j) => (
+                      <li key={j} className="flex items-center gap-3">
+                        <svg
+                          className={cn(
+                            "h-5 w-5 flex-shrink-0",
+                            plan.popular
+                              ? "text-primary-foreground"
+                              : "text-primary"
+                          )}
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span
+                          className={cn(!plan.popular && "text-foreground")}
+                        >
+                          {feature}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button
                     className={cn(
-                      "mt-2 text-sm",
-                      plan.popular
-                        ? "text-primary-foreground/70"
-                        : "text-muted-foreground"
+                      "w-full rounded-full",
+                      plan.popular &&
+                        "bg-background text-foreground hover:bg-background/90"
                     )}
+                    variant={plan.popular ? "secondary" : "default"}
                   >
-                    {plan.description}
-                  </p>
-                </div>
-                <ul className="mb-8 mt-8 space-y-4">
-                  {plan.features.map((feature, j) => (
-                    <li key={j} className="flex items-center gap-3">
-                      <svg
-                        className={cn(
-                          "h-5 w-5 flex-shrink-0",
-                          plan.popular ? "text-primary-foreground" : "text-primary"
-                        )}
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      >
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                      <span className={cn(!plan.popular && "text-foreground")}>
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-                <Button
-                  className={cn(
-                    "w-full rounded-full",
-                    plan.popular && "bg-background text-foreground hover:bg-background/90"
-                  )}
-                  variant={plan.popular ? "secondary" : "default"}
-                >
-                  Get Started
-                </Button>
-              </div>
-            )
-          })}
+                    Get Started
+                  </Button>
+                </motion.div>
+              )
+            })}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   )
 }

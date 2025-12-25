@@ -7,8 +7,6 @@ import { ArrowUpRight } from "lucide-react"
 import { useContentPagination } from "@/hooks/use-content-pagination"
 import { ReadinessBadge } from "@/components/ui/readiness-badge"
 import { TierBadge } from "@/components/ui/tier-badge"
-import { LazyComponentPreview } from "@/components/documentation/components/lazy-component-preview"
-import { Spinner } from "@/registry/new-york-v4/ui/spinner"
 
 interface BlockItem {
   name: string
@@ -27,21 +25,12 @@ interface BlocksListProps {
 function BlockPreview({
   name,
   styleName,
-  iframeHeight,
 }: {
   name: string
   styleName: string
-  iframeHeight?: string
 }) {
-  const [isLoading, setIsLoading] = React.useState(true)
-
   return (
-    <LazyComponentPreview className="relative h-full w-full overflow-hidden">
-      {isLoading && (
-        <div className="absolute inset-0 z-10 flex items-center justify-center">
-          <Spinner />
-        </div>
-      )}
+    <div className="relative h-full w-full overflow-hidden">
       <iframe
         src={`/view/${styleName}/${name}`}
         className="pointer-events-none h-full w-full origin-top-left scale-[0.25]"
@@ -49,9 +38,8 @@ function BlockPreview({
           width: "400%",
           height: "400%",
         }}
-        onLoad={() => setIsLoading(false)}
       />
-    </LazyComponentPreview>
+    </div>
   )
 }
 
@@ -70,7 +58,6 @@ function BlockCard({ block }: { block: BlockItem }) {
               <BlockPreview
                 name={block.name}
                 styleName={block.styleName}
-                iframeHeight={block.iframeHeight}
               />
             </div>
           </div>

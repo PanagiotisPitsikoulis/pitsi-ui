@@ -26,7 +26,7 @@ type ColorPalette =
   | "forest"
 
 // Map template slugs to color palettes
-const templatePalettes: Record<string, ColorPalette> = {
+export const templatePalettes: Record<string, ColorPalette> = {
   // AI & Technology
   ai: "azure",
   "ai-sci-fi": "indigo",
@@ -60,13 +60,17 @@ const templatePalettes: Record<string, ColorPalette> = {
 }
 
 // Get preset key for a palette and tint level
-function getPresetKey(palette: ColorPalette, tint: TintLevel): string {
+export function getPresetKey(palette: string, tint: TintLevel): string {
   if (palette === "slate") return "slate"
   switch (tint) {
-    case "base": return palette
-    case "tinted": return `${palette}-tinted`
-    case "deep": return `${palette}-deep`
-    default: return `${palette}-tinted`
+    case "base":
+      return palette
+    case "tinted":
+      return `${palette}-tinted`
+    case "deep":
+      return `${palette}-deep`
+    default:
+      return `${palette}-tinted`
   }
 }
 
@@ -78,7 +82,8 @@ export function getTemplateThemeStyle(
 ): React.CSSProperties {
   const palette = templatePalettes[slug] || "azure"
   const presetKey = getPresetKey(palette, tint)
-  const theme = themePresets[presetKey]?.styles || themePresets["azure-tinted"].styles
+  const theme =
+    themePresets[presetKey]?.styles || themePresets["azure-tinted"].styles
   const styles = theme[mode]
 
   const cssVars: Record<string, string> = {}
@@ -103,6 +108,8 @@ interface BlockThemeWrapperProps {
   slug: string
   tint?: TintLevel
   forceDark?: boolean
+  forceLight?: boolean
+  transparent?: boolean
   children: React.ReactNode
   className?: string
 }
@@ -111,17 +118,27 @@ export function BlockThemeWrapper({
   slug,
   tint = DEFAULT_TINT,
   forceDark = false,
+  forceLight = false,
+  transparent = false,
   children,
   className,
 }: BlockThemeWrapperProps) {
   const { resolvedTheme } = useTheme()
-  // Use resolved theme from next-themes, with forceDark override for specific blocks
-  const mode = forceDark ? "dark" : (resolvedTheme as "light" | "dark") || "light"
+  // Use resolved theme from next-themes, with force overrides for specific blocks
+  const mode = forceDark
+    ? "dark"
+    : forceLight
+      ? "light"
+      : (resolvedTheme as "light" | "dark") || "light"
   const style = getTemplateStyles(slug, tint, mode)
 
   return (
     <div
-      className={cn("relative w-full overflow-hidden bg-background font-body", className)}
+      className={cn(
+        "font-body relative w-full",
+        !transparent && "bg-background",
+        className
+      )}
       style={style}
     >
       {children}

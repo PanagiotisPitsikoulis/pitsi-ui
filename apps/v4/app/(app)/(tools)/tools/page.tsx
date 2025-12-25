@@ -628,7 +628,7 @@ export default async function ToolsPage() {
                   </HeroButton>
                 </Link>
                 <Link href="/">
-                  <Button variant="outline" size="sm" className="rounded-full">
+                  <Button variant="outline" size="default" className="rounded-full">
                     Back Home
                   </Button>
                 </Link>

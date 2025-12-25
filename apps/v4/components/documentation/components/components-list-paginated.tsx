@@ -7,7 +7,6 @@ import { ArrowUpRight } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import type { Style } from "@/registry/styles"
-import { Spinner } from "@/registry/new-york-v4/ui/spinner"
 
 interface ComponentItem {
   $id: string
@@ -113,19 +112,11 @@ const ComponentCard = memo(function ComponentCard({
                 isAnimation ? "" : "p-8"
               )}
             >
-              <React.Suspense
-                fallback={
-                  <div className="flex h-full w-full items-center justify-center">
-                    <Spinner />
-                  </div>
-                }
-              >
-                <ComponentPreviewContent
-                  registryName={registryName}
-                  styleName={styleName}
-                  isAnimation={isAnimation}
-                />
-              </React.Suspense>
+              <ComponentPreviewContent
+                registryName={registryName}
+                styleName={styleName}
+                isAnimation={isAnimation}
+              />
             </div>
           </div>
         </div>

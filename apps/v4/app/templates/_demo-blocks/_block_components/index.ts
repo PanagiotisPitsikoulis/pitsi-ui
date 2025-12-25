@@ -23,3 +23,9 @@ export {
   type BgDecorationProps,
   type BgDecorationVariant,
 } from "./bg-decoration"
+export { KnockoutText, type KnockoutTextProps } from "./knockout-text"
+export {
+  ItemDecoration,
+  type ItemDecorationProps,
+  type Position,
+} from "./item-decoration"

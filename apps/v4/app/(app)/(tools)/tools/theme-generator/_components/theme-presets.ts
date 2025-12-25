@@ -171,78 +171,98 @@ const palettes: ColorPalette[] = [
   },
 ]
 
-// Helper to create base theme (neutral with brand colors)
+// Helper to create base theme (neutral with brand colors and subtle tint)
 function createBaseTheme(palette: ColorPalette): ThemeStyles {
   return {
     light: {
       ...lightBase,
-      // Ensure neutral borders
-      border: "#f5f5f5",
-      input: "#f0f0f0",
-      "sidebar-border": "#f0f0f0",
+      // Subtle but visible tint on backgrounds
+      background: mixColors(palette.light.tint, "#fefefe", 0.4),
+      card: mixColors(palette.light.tint, "#fcfcfc", 0.25),
+      popover: mixColors(palette.light.tint, "#ffffff", 0.2),
+      page: mixColors(palette.light.tint, "#fefefe", 0.45),
+      muted: mixColors(palette.light.tint, "#f7f7f7", 0.35),
+      secondary: mixColors(palette.light.tint, "#f5f5f5", 0.35),
+      accent: mixColors(palette.light.tint, "#f5f5f5", 0.35),
+      sidebar: mixColors(palette.light.tint, "#ffffff", 0.3),
+      code: mixColors(palette.light.tint, "#fefefe", 0.35),
+      // Tinted borders
+      border: mixColors(palette.light.tint, "#f5f5f5", 0.2),
+      input: mixColors(palette.light.tint, "#f0f0f0", 0.2),
+      "sidebar-border": mixColors(palette.light.tint, "#f0f0f0", 0.2),
       brand: palette.light.brand,
       "brand-complementary": palette.light.brandComplementary,
     },
     dark: {
       ...darkBase,
-      // Ensure neutral borders
-      border: "#333333",
-      input: "#363636",
-      "sidebar-border": "#2f2f2f",
+      // Barely noticeable tint on backgrounds - subtle but there
+      background: mixColors(palette.dark.tint, "#262626", 0.25),
+      card: mixColors(palette.dark.tint, "#2d2d2d", 0.15),
+      popover: mixColors(palette.dark.tint, "#2d2d2d", 0.12),
+      page: mixColors(palette.dark.tint, "#141414", 0.28),
+      muted: mixColors(palette.dark.tint, "#333333", 0.2),
+      secondary: mixColors(palette.dark.tint, "#383838", 0.2),
+      accent: mixColors(palette.dark.tint, "#383838", 0.2),
+      sidebar: mixColors(palette.dark.tint, "#1f1f1f", 0.18),
+      code: mixColors(palette.dark.tint, "#262626", 0.2),
+      // Subtle tint on borders
+      border: mixColors(palette.dark.tint, "#333333", 0.1),
+      input: mixColors(palette.dark.tint, "#363636", 0.1),
+      "sidebar-border": mixColors(palette.dark.tint, "#2f2f2f", 0.1),
       brand: palette.dark.brand,
       "brand-complementary": palette.dark.brandComplementary,
     },
   }
 }
 
-// Helper to create tinted theme (very subtle tint on neutrals, brand as primary)
+// Helper to create tinted theme (pronounced tint on neutrals, brand as primary)
 function createTintedTheme(palette: ColorPalette): ThemeStyles {
   return {
     light: {
       ...lightBase,
-      // Very subtle tint on backgrounds
-      background: mixColors(palette.light.tint, "#fefefe", 0.3),
-      card: "#ffffff",
-      popover: "#ffffff",
-      page: mixColors(palette.light.tint, "#fefefe", 0.4),
-      // Subtle tint on muted/secondary/accent
-      muted: mixColors(palette.light.tint, "#f7f7f7", 0.2),
-      secondary: mixColors(palette.light.tint, "#f5f5f5", 0.2),
-      accent: mixColors(palette.light.tint, "#f5f5f5", 0.2),
+      // Strong tint on backgrounds
+      background: mixColors(palette.light.tint, "#fefefe", 0.65),
+      card: mixColors(palette.light.tint, "#ffffff", 0.45),
+      popover: mixColors(palette.light.tint, "#ffffff", 0.4),
+      page: mixColors(palette.light.tint, "#fefefe", 0.75),
+      // Heavy tint on muted/secondary/accent
+      muted: mixColors(palette.light.tint, "#f7f7f7", 0.55),
+      secondary: mixColors(palette.light.tint, "#f5f5f5", 0.55),
+      accent: mixColors(palette.light.tint, "#f5f5f5", 0.55),
       // Primary is the brand color
       primary: palette.light.brand,
       "primary-foreground": "#ffffff",
-      // Neutral borders - close to background
-      border: "#f5f5f5",
-      input: "#f0f0f0",
-      sidebar: "#ffffff",
-      "sidebar-border": "#f0f0f0",
-      code: mixColors(palette.light.tint, "#fefefe", 0.3),
-      "code-highlight": mixColors(palette.light.tint, "#f0f4f8", 0.3),
+      // Tinted borders
+      border: mixColors(palette.light.tint, "#f5f5f5", 0.4),
+      input: mixColors(palette.light.tint, "#f0f0f0", 0.4),
+      sidebar: mixColors(palette.light.tint, "#ffffff", 0.5),
+      "sidebar-border": mixColors(palette.light.tint, "#f0f0f0", 0.35),
+      code: mixColors(palette.light.tint, "#fefefe", 0.6),
+      "code-highlight": mixColors(palette.light.tint, "#f0f4f8", 0.6),
       brand: palette.light.brand,
       "brand-complementary": palette.light.brandComplementary,
     },
     dark: {
       ...darkBase,
-      // Very subtle tint on backgrounds
-      background: mixColors(palette.dark.tint, "#262626", 0.3),
-      card: mixColors(palette.dark.tint, "#2d2d2d", 0.15),
-      popover: mixColors(palette.dark.tint, "#2d2d2d", 0.15),
-      page: mixColors(palette.dark.tint, "#141414", 0.3),
-      // Subtle tint on muted/secondary/accent
-      muted: mixColors(palette.dark.tint, "#333333", 0.2),
-      secondary: mixColors(palette.dark.tint, "#383838", 0.2),
-      accent: mixColors(palette.dark.tint, "#383838", 0.2),
+      // Pronounced tint on backgrounds
+      background: mixColors(palette.dark.tint, "#262626", 0.5),
+      card: mixColors(palette.dark.tint, "#2d2d2d", 0.35),
+      popover: mixColors(palette.dark.tint, "#2d2d2d", 0.35),
+      page: mixColors(palette.dark.tint, "#141414", 0.5),
+      // Strong tint on muted/secondary/accent
+      muted: mixColors(palette.dark.tint, "#333333", 0.4),
+      secondary: mixColors(palette.dark.tint, "#383838", 0.4),
+      accent: mixColors(palette.dark.tint, "#383838", 0.4),
       // Primary is the brand color
       primary: palette.dark.brand,
       "primary-foreground": "#1f1f1f",
-      // Neutral borders - close to background
-      border: "#333333",
-      input: "#363636",
-      sidebar: mixColors(palette.dark.tint, "#1f1f1f", 0.2),
-      "sidebar-border": "#2f2f2f",
-      code: mixColors(palette.dark.tint, "#262626", 0.3),
-      "code-highlight": mixColors(palette.dark.tint, "#2d3748", 0.3),
+      // Tinted borders
+      border: mixColors(palette.dark.tint, "#333333", 0.25),
+      input: mixColors(palette.dark.tint, "#363636", 0.25),
+      sidebar: mixColors(palette.dark.tint, "#1f1f1f", 0.4),
+      "sidebar-border": mixColors(palette.dark.tint, "#2f2f2f", 0.2),
+      code: mixColors(palette.dark.tint, "#262626", 0.5),
+      "code-highlight": mixColors(palette.dark.tint, "#2d3748", 0.5),
       brand: palette.dark.brand,
       "brand-complementary": palette.dark.brandComplementary,
     },

@@ -13,7 +13,7 @@ export type OverlayVariant =
 export interface OverlayProps {
   /** Overlay style variant */
   variant?: OverlayVariant
-  /** Opacity level (0-100) */
+  /** Opacity level (0-100), default 40 */
   opacity?: number
   /** Additional classes */
   className?: string
@@ -24,15 +24,15 @@ export interface OverlayProps {
 const variantClasses: Record<OverlayVariant, string> = {
   dark: "bg-black",
   light: "bg-white",
-  "gradient-bottom": "bg-gradient-to-t from-black via-black/50 to-transparent",
-  "gradient-top": "bg-gradient-to-b from-black via-black/50 to-transparent",
-  "gradient-radial": "bg-[radial-gradient(circle_at_center,transparent_0%,black_100%)]",
-  vignette: "bg-[radial-gradient(ellipse_at_center,transparent_0%,black_70%)]",
+  "gradient-bottom": "bg-gradient-to-t from-black/80 via-black/30 to-transparent",
+  "gradient-top": "bg-gradient-to-b from-black/80 via-black/30 to-transparent",
+  "gradient-radial": "bg-[radial-gradient(circle_at_center,transparent_0%,black_70%)]",
+  vignette: "bg-[radial-gradient(ellipse_at_center,transparent_0%,black_50%)]",
 }
 
 export function Overlay({
   variant = "dark",
-  opacity = 70,
+  opacity = 40,
   className,
   color,
 }: OverlayProps) {

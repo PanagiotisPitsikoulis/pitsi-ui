@@ -67,11 +67,11 @@ export function BlogServicePlants() {
           {posts.map((post, i) => (
             <Link href="#" key={i} className="group">
               <div className="relative mb-4 aspect-[4/3] overflow-hidden rounded-2xl bg-muted">
-                <Image
+                <Image draggable={false}
                   src={post.image}
                   alt={post.title}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="select-none pointer-events-none object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
               <div className="mb-2 flex items-center gap-3">
@@ -90,11 +90,11 @@ export function BlogServicePlants() {
               </p>
               <div className="flex items-center gap-2">
                 <div className="relative h-6 w-6 overflow-hidden rounded-full bg-muted">
-                  <Image
+                  <Image draggable={false}
                     src={post.author.avatar}
                     alt={post.author.name}
                     fill
-                    className="object-cover"
+                    className="select-none pointer-events-none object-cover"
                   />
                 </div>
                 <span className="text-sm text-muted-foreground">

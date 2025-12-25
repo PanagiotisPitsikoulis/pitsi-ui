@@ -29,45 +29,18 @@ export function TeamServicePlants() {
       role: "Customer Success",
       avatar: "/avatars/08.webp",
     },
-    {
-      name: "David Vine",
-      role: "Rare Plants Curator",
-      avatar: "/avatars/01.webp",
-    },
-    {
-      name: "Maya Petal",
-      role: "Content Creator",
-      avatar: "/avatars/02.webp",
-    },
-    {
-      name: "Lucas Root",
-      role: "Sustainability Lead",
-      avatar: "/avatars/03.webp",
-    },
-    {
-      name: "Nina Sprout",
-      role: "Nursery Manager",
-      avatar: "/avatars/04.webp",
-    },
-    {
-      name: "Alex Terra",
-      role: "Landscape Advisor",
-      avatar: "/avatars/05.webp",
-    },
   ]
 
-  // Additional team members for the stacked display
   const moreTeam = [
-    "/avatars/04.webp",
-    "/avatars/05.webp",
-    "/avatars/06.webp",
-    "/avatars/07.webp",
-    "/avatars/08.webp",
     "/avatars/01.webp",
     "/avatars/02.webp",
     "/avatars/03.webp",
     "/avatars/04.webp",
     "/avatars/05.webp",
+    "/avatars/06.webp",
+    "/avatars/07.webp",
+    "/avatars/08.webp",
+    "/avatars/09.webp",
   ]
 
   return (
@@ -80,16 +53,19 @@ export function TeamServicePlants() {
           <h2 className="font-display text-3xl font-bold text-foreground md:text-5xl">
             Meet the Green Team
           </h2>
+          <p className="mt-4 mx-auto max-w-2xl text-lg text-muted-foreground">
+            Passionate plant lovers dedicated to helping you create your perfect indoor jungle. Our experts bring years of experience to ensure every plant thrives.
+          </p>
         </div>
         <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           {team.map((member, i) => (
             <div key={i} className="group text-center">
               <div className="relative mx-auto mb-4 aspect-square w-full max-w-[200px] overflow-hidden rounded-full bg-muted">
-                <Image
+                <Image draggable={false}
                   src={member.avatar}
                   alt={member.name}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="select-none pointer-events-none object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
               <h3 className="text-lg font-semibold text-foreground">
@@ -106,14 +82,14 @@ export function TeamServicePlants() {
             {moreTeam.map((avatar, i) => (
               <div
                 key={i}
-                className="relative h-14 w-14 overflow-hidden rounded-full border-4 border-background bg-muted shadow-lg transition-transform hover:z-10 hover:scale-110"
+                className="relative h-14 w-14 overflow-hidden rounded-full border-4 border-background bg-muted transition-transform hover:z-10 hover:scale-110"
                 style={{ zIndex: moreTeam.length - i }}
               >
-                <Image
+                <Image draggable={false}
                   src={avatar}
                   alt={`Team member ${i + 1}`}
                   fill
-                  className="object-cover"
+                  className="select-none pointer-events-none object-cover"
                 />
               </div>
             ))}

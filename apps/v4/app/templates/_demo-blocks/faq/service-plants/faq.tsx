@@ -32,22 +32,46 @@ export function FaqServicePlants() {
   ]
 
   return (
-    <section>
-      <div className="container px-6">
+    <section className="relative overflow-x-clip">
+      {/* Left decoration */}
+      <div
+        className="pointer-events-none absolute -left-32 top-0 h-[500px] w-[500px] -rotate-12 select-none opacity-50"
+        style={{
+          backgroundImage:
+            "url('/placeholders/blocks/service-plants/assets/decoration-bg-1.svg')",
+          backgroundSize: "contain",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+        aria-hidden="true"
+      />
+      {/* Right decoration */}
+      <div
+        className="pointer-events-none absolute -right-32 top-48 h-[500px] w-[500px] rotate-12 select-none opacity-50"
+        style={{
+          backgroundImage:
+            "url('/placeholders/blocks/service-plants/assets/decoration-bg-2.svg')",
+          backgroundSize: "contain",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+        aria-hidden="true"
+      />
+      <div className="container relative z-10 px-6">
         <div className="text-center mb-20">
           <p className="text-primary text-sm tracking-[0.3em] uppercase font-medium mb-4">Questions</p>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground">
             Everything You Need to Know
           </h2>
         </div>
-        <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="w-full">
+        <div className="max-w-2xl mx-auto">
+          <Accordion type="single" collapsible defaultValue="item-0" className="w-full">
             {faqs.map((faq, i) => (
               <AccordionItem key={i} value={`item-${i}`} className="border-border">
-                <AccordionTrigger className="text-left text-foreground hover:text-primary">
+                <AccordionTrigger className="text-left text-lg text-foreground hover:text-primary">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
+                <AccordionContent className="text-muted-foreground text-base h-24">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

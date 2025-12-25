@@ -17,25 +17,25 @@ export function ProductsServicePlants() {
             </h2>
           </div>
           <Link href="#" className="mt-4 md:mt-0">
-            <Button variant="outline" className="rounded-full border-border">
+            <Button variant="secondary" className="rounded-full">
               View All Plants
             </Button>
           </Link>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { name: "Monstera Deliciosa", price: "$45", image: "/placeholders/blocks/service-plants/2.webp" },
-            { name: "Fiddle Leaf Fig", price: "$65", image: "/placeholders/blocks/service-plants/3.webp" },
-            { name: "Snake Plant", price: "$35", image: "/placeholders/blocks/service-plants/4.webp" },
-            { name: "Pothos Golden", price: "$25", image: "/placeholders/blocks/service-plants/5.webp" },
+            { name: "Monstera Deliciosa", price: "$45", image: "/placeholders/blocks/service-plants/assets/item-1.webp" },
+            { name: "Fiddle Leaf Fig", price: "$65", image: "/placeholders/blocks/service-plants/assets/item-2.webp" },
+            { name: "Snake Plant", price: "$35", image: "/placeholders/blocks/service-plants/assets/item-3.webp" },
+            { name: "Pothos Golden", price: "$25", image: "/placeholders/blocks/service-plants/assets/item-4.webp" },
           ].map((product, i) => (
             <Link href="#" key={i} className="group">
-              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-muted mb-4">
-                <Image
+              <div className="relative aspect-[3/4] rounded-[2.5rem] overflow-hidden border border-border bg-muted mb-4">
+                <Image draggable={false}
                   src={product.image}
                   alt={product.name}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="select-none pointer-events-none object-contain p-6 transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
               <h3 className="font-medium text-foreground group-hover:text-primary transition-colors">{product.name}</h3>

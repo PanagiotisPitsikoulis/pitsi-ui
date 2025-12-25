@@ -27,35 +27,6 @@ export type ColorPalette =
 
 // Map template slugs to color palettes
 export const templatePalettes: Record<string, ColorPalette> = {
-  // AI & Technology
-  ai: "azure",
-  "ai-sci-fi": "indigo",
-  "product-scifi": "cyan",
-  // Creative & Art
-  art: "violet",
-  "service-fashion": "rose",
-  "service-tattoo": "coral",
-  // Food & Beverage
-  "food-pizza": "coral",
-  "food-juice": "amber",
-  "service-coffee-shop": "amber",
-  // Products & E-commerce
-  "product-coffee": "amber",
-  "product-plants": "sage",
-  "product-skincare": "rose",
-  // Health & Wellness
-  "service-gym": "coral",
-  "service-psychologist": "sage",
-  // Beauty & Personal Care
-  "service-barber": "amber",
-  "service-makeup": "rose",
-  // Lifestyle & Leisure
-  boat: "azure",
-  "service-hospitality": "amber",
-  "service-pet-sitting": "forest",
-  // Professional Services
-  "service-real-estate": "indigo",
-  "service-marketing": "violet",
   "service-plants": "sage",
 }
 

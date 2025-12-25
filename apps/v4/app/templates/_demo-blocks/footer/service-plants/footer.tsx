@@ -2,11 +2,10 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Leaf, Mail, MapPin, Phone } from "lucide-react"
+import { Leaf } from "lucide-react"
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Input } from "@/registry/new-york-v4/ui/input"
-import { ThemeToggle } from "@/registry/new-york-v4/ui/theme-toggle"
 
 export function FooterServicePlants() {
   return (
@@ -43,11 +42,11 @@ export function FooterServicePlants() {
       {/* Main Footer */}
       <div className="py-16">
         <div className="container px-6">
-          <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-6">
+          <div className="grid gap-8 md:grid-cols-3 lg:grid-cols-7">
             {/* Brand Column */}
-            <div className="lg:col-span-2">
+            <div className="md:col-span-3 lg:col-span-2">
               <div className="mb-4 flex items-center gap-2">
-                <Image
+                <Image draggable={false}
                   src="/placeholders/blocks/service-plants/assets/logo.svg"
                   alt="Green Therapy"
                   width={40}
@@ -58,23 +57,14 @@ export function FooterServicePlants() {
                   Green Therapy
                 </h3>
               </div>
-              <p className="text-muted-foreground mb-6 max-w-sm text-sm">
+              <p className="text-muted-foreground mb-6 max-w-xs text-sm">
                 Bringing nature indoors since 2018. We source the healthiest,
                 most beautiful plants from sustainable growers worldwide.
               </p>
-              <div className="text-muted-foreground space-y-3 text-sm">
-                <div className="flex items-center gap-3">
-                  <MapPin className="text-muted-foreground h-3.5 w-3.5" />
-                  <span>123 Garden Street, Portland, OR 97201</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Phone className="text-muted-foreground h-3.5 w-3.5" />
-                  <span>(555) 123-4567</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Mail className="text-muted-foreground h-3.5 w-3.5" />
-                  <span>hello@wildplants.com</span>
-                </div>
+              <div className="text-muted-foreground space-y-2 text-sm">
+                <p>123 Garden Street, Portland, OR 97201</p>
+                <p>(555) 123-4567</p>
+                <p>hello@wildplants.com</p>
               </div>
             </div>
 
@@ -122,12 +112,51 @@ export function FooterServicePlants() {
                     Planters & Pots
                   </Link>
                 </li>
+              </ul>
+            </div>
+
+            {/* Collections Column */}
+            <div>
+              <h4 className="text-foreground mb-4 font-semibold">Collections</h4>
+              <ul className="text-muted-foreground space-y-3 text-sm">
                 <li>
                   <Link
                     href="#"
                     className="hover:text-primary transition-colors"
                   >
-                    Gift Cards
+                    Low Light
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="hover:text-primary transition-colors"
+                  >
+                    Pet Friendly
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="hover:text-primary transition-colors"
+                  >
+                    Air Purifying
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="hover:text-primary transition-colors"
+                  >
+                    Succulents
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#"
+                    className="hover:text-primary transition-colors"
+                  >
+                    Tropical
                   </Link>
                 </li>
               </ul>
@@ -294,7 +323,6 @@ export function FooterServicePlants() {
               </Link>
             </div>
             <div className="flex items-center gap-4">
-              <ThemeToggle mode="light-dark-system" className="w-auto" />
               <Link
                 href="#"
                 className="text-muted-foreground hover:text-primary transition-colors"

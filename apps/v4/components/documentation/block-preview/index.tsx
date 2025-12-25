@@ -11,12 +11,9 @@ import {
 import { cn } from "@/lib/utils"
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard"
 
-import IframeRenderer from "./iframe-renderer"
-import LoadingSpinner from "./loading-spinner"
 import { BlockPreviewWrapper } from "./preview-wrapper"
 import { initialState, previewReducer, usePreviewActions } from "./state"
 import BlockPreviewToolbar, { DEFAULTSIZE } from "./toolbar"
-import { useOptimizedIframe } from "./useOptimizedIframe"
 
 export interface BlockPreviewProps {
   previewLink: string
@@ -38,7 +35,7 @@ const BlockPreview: React.FC<BlockPreviewProps> = ({
   const [state, dispatch] = useReducer(previewReducer, initialState)
   const { mode } = state
 
-  const { copyToClipboard, isCopied } = useCopyToClipboard()
+  const { copyToClipboard } = useCopyToClipboard()
 
   const handleCliCopy = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
@@ -48,7 +45,6 @@ const BlockPreview: React.FC<BlockPreviewProps> = ({
   }
 
   const panelGroupRef = useRef<ImperativePanelGroupHandle>(null)
-  const iframeContainerRef = useRef<HTMLDivElement>(null)
 
   const { handleModeChange, setPanelSizes } = usePreviewActions(
     state,
@@ -56,11 +52,6 @@ const BlockPreview: React.FC<BlockPreviewProps> = ({
     panelGroupRef,
     handleCliCopy
   )
-
-  const { iframeRef, shouldLoadIframe, isIframeCached } = useOptimizedIframe({
-    previewUrl: previewLink,
-    containerRef: iframeContainerRef,
-  })
 
   return (
     <BlockPreviewWrapper id={id} height={height}>
@@ -115,22 +106,16 @@ const BlockPreview: React.FC<BlockPreviewProps> = ({
                 minSize={30}
                 className="border-foreground/[0.075]"
               >
-                <div
-                  ref={iframeContainerRef}
-                  className="relative h-[calc(var(--block-height)-51px)] lg:h-[calc(var(--block-height)-48px)]"
-                >
-                  {shouldLoadIframe ? (
-                    <IframeRenderer
-                      src={previewLink}
-                      title={title}
-                      ariaLabel={`${category}-${title}-block-preview`}
-                      id={`iframe-${id}`}
-                      iframeRef={iframeRef}
-                      isCached={isIframeCached}
-                    />
-                  ) : (
-                    <LoadingSpinner />
-                  )}
+                <div className="relative h-[calc(var(--block-height)-51px)] lg:h-[calc(var(--block-height)-48px)]">
+                  <iframe
+                    src={previewLink}
+                    title={title}
+                    aria-label={`${category}-${title}-block-preview`}
+                    id={`iframe-${id}`}
+                    className="pointer-events-none absolute inset-0 size-full overflow-hidden"
+                    sandbox="allow-scripts allow-same-origin"
+                    scrolling="no"
+                  />
                   {/* Invisible overlay to prevent scrolling */}
                   <div className="absolute inset-0 z-20" />
                 </div>

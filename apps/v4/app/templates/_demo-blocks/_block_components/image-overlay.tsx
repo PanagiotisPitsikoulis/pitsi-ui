@@ -3,20 +3,20 @@
 import { cn } from "@/lib/utils"
 
 export interface ImageOverlayProps {
-  /** Opacity level (0-100), default 70 */
+  /** Opacity level (0-100), default 20 */
   opacity?: number
   /** Additional classes */
   className?: string
 }
 
 /**
- * Simple dark overlay for images.
- * Use over images to ensure text readability.
+ * Dark overlay for images using theme background color.
+ * Wrap in a dark-forced theme container for dark overlays.
  */
-export function ImageOverlay({ opacity = 70, className }: ImageOverlayProps) {
+export function ImageOverlay({ opacity = 20, className }: ImageOverlayProps) {
   return (
     <div
-      className={cn("absolute inset-0 z-10 bg-black", className)}
+      className={cn("absolute inset-0 z-10 bg-background", className)}
       style={{ opacity: opacity / 100 }}
       aria-hidden="true"
     />

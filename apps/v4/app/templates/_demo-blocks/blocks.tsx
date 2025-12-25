@@ -5,30 +5,7 @@ import type { ComponentType } from "react"
 import type { TintLevel } from "./_components"
 
 // Template slugs
-export const TEMPLATE_SLUGS = [
-  "ai",
-  "ai-sci-fi",
-  "art",
-  "boat",
-  "food-juice",
-  "food-pizza",
-  "product-coffee",
-  "product-plants",
-  "product-scifi",
-  "product-skincare",
-  "service-barber",
-  "service-coffee-shop",
-  "service-fashion",
-  "service-gym",
-  "service-hospitality",
-  "service-makeup",
-  "service-marketing",
-  "service-pet-sitting",
-  "service-plants",
-  "service-psychologist",
-  "service-real-estate",
-  "service-tattoo",
-] as const
+export const TEMPLATE_SLUGS = ["service-plants"] as const
 
 export type TemplateSlug = (typeof TEMPLATE_SLUGS)[number]
 
@@ -59,507 +36,79 @@ export type BlockType = (typeof BLOCK_TYPES)[number]
 
 const blockImports: Record<BlockType, Record<string, ComponentType>> = {
   header: {
-    ai: require("./header/ai/header").HeaderAi,
-    "ai-sci-fi": require("./header/ai-sci-fi/header").HeaderAiSciFi,
-    art: require("./header/art/header").HeaderArt,
-    boat: require("./header/boat/header").HeaderBoat,
-    "food-juice": require("./header/food-juice/header").HeaderFoodJuice,
-    "food-pizza": require("./header/food-pizza/header").HeaderFoodPizza,
-    "product-coffee": require("./header/product-coffee/header").HeaderProductCoffee,
-    "product-plants": require("./header/product-plants/header").HeaderProductPlants,
-    "product-scifi": require("./header/product-scifi/header").HeaderProductScifi,
-    "product-skincare": require("./header/product-skincare/header").HeaderProductSkincare,
-    "service-barber": require("./header/service-barber/header").HeaderServiceBarber,
-    "service-coffee-shop": require("./header/service-coffee-shop/header").HeaderServiceCoffeeShop,
-    "service-fashion": require("./header/service-fashion/header").HeaderServiceFashion,
-    "service-gym": require("./header/service-gym/header").HeaderServiceGym,
-    "service-hospitality": require("./header/service-hospitality/header").HeaderServiceHospitality,
-    "service-makeup": require("./header/service-makeup/header").HeaderServiceMakeup,
-    "service-marketing": require("./header/service-marketing/header").HeaderServiceMarketing,
-    "service-pet-sitting": require("./header/service-pet-sitting/header").HeaderServicePetSitting,
     "service-plants": require("./header/service-plants/header").HeaderServicePlants,
-    "service-psychologist": require("./header/service-psychologist/header").HeaderServicePsychologist,
-    "service-real-estate": require("./header/service-real-estate/header").HeaderServiceRealEstate,
-    "service-tattoo": require("./header/service-tattoo/header").HeaderServiceTattoo,
   },
   hero: {
-    ai: require("./hero/ai/hero").HeroAI,
-    "ai-sci-fi": require("./hero/ai-sci-fi/hero").HeroAISciFi,
-    art: require("./hero/art/hero").HeroArt,
-    boat: require("./hero/boat/hero").HeroBoat,
-    "food-juice": require("./hero/food-juice/hero").HeroFoodJuice,
-    "food-pizza": require("./hero/food-pizza/hero").HeroFoodPizza,
-    "product-coffee": require("./hero/product-coffee/hero").HeroProductCoffee,
-    "product-plants": require("./hero/product-plants/hero").HeroProductPlants,
-    "product-scifi": require("./hero/product-scifi/hero").HeroProductSciFi,
-    "product-skincare": require("./hero/product-skincare/hero").HeroProductSkincare,
-    "service-barber": require("./hero/service-barber/hero").HeroServiceBarber,
-    "service-coffee-shop": require("./hero/service-coffee-shop/hero").HeroServiceCoffeeShop,
-    "service-fashion": require("./hero/service-fashion/hero").HeroServiceFashion,
-    "service-gym": require("./hero/service-gym/hero").HeroServiceGym,
-    "service-hospitality": require("./hero/service-hospitality/hero").HeroServiceHospitality,
-    "service-makeup": require("./hero/service-makeup/hero").HeroServiceMakeup,
-    "service-marketing": require("./hero/service-marketing/hero").HeroServiceMarketing,
-    "service-pet-sitting": require("./hero/service-pet-sitting/hero").HeroServicePetSitting,
     "service-plants": require("./hero/service-plants/hero").HeroServicePlants,
-    "service-psychologist": require("./hero/service-psychologist/hero").HeroServicePsychologist,
-    "service-real-estate": require("./hero/service-real-estate/hero").HeroServiceRealEstate,
-    "service-tattoo": require("./hero/service-tattoo/hero").HeroServiceTattoo,
   },
   features: {
-    ai: require("./features/ai/features").FeaturesAi,
-    "ai-sci-fi": require("./features/ai-sci-fi/features").FeaturesAiSciFi,
-    art: require("./features/art/features").FeaturesArt,
-    boat: require("./features/boat/features").FeaturesBoat,
-    "food-juice": require("./features/food-juice/features").FeaturesFoodJuice,
-    "food-pizza": require("./features/food-pizza/features").FeaturesFoodPizza,
-    "product-coffee": require("./features/product-coffee/features").FeaturesProductCoffee,
-    "product-plants": require("./features/product-plants/features").FeaturesProductPlants,
-    "product-scifi": require("./features/product-scifi/features").FeaturesProductScifi,
-    "product-skincare": require("./features/product-skincare/features").FeaturesProductSkincare,
-    "service-barber": require("./features/service-barber/features").FeaturesServiceBarber,
-    "service-coffee-shop": require("./features/service-coffee-shop/features").FeaturesServiceCoffeeShop,
-    "service-fashion": require("./features/service-fashion/features").FeaturesServiceFashion,
-    "service-gym": require("./features/service-gym/features").FeaturesServiceGym,
-    "service-hospitality": require("./features/service-hospitality/features").FeaturesServiceHospitality,
-    "service-makeup": require("./features/service-makeup/features").FeaturesServiceMakeup,
-    "service-marketing": require("./features/service-marketing/features").FeaturesServiceMarketing,
-    "service-pet-sitting": require("./features/service-pet-sitting/features").FeaturesServicePetSitting,
     "service-plants": require("./features/service-plants/features").FeaturesServicePlants,
     "service-plants-2": require("./features/service-plants/features-2").FeaturesServicePlants2,
     "service-plants-3": require("./features/service-plants/features-3").FeaturesServicePlants3,
-    "service-psychologist": require("./features/service-psychologist/features").FeaturesServicePsychologist,
-    "service-real-estate": require("./features/service-real-estate/features").FeaturesServiceRealEstate,
-    "service-tattoo": require("./features/service-tattoo/features").FeaturesServiceTattoo,
+    "service-plants-4": require("./features/service-plants/features-4").FeaturesServicePlants4,
+    "service-plants-5": require("./features/service-plants/features-5").FeaturesServicePlants5,
   },
   products: {
     "service-plants": require("./products/service-plants/products").ProductsServicePlants,
   },
   pricing: {
-    ai: require("./pricing/ai/pricing").PricingAi,
-    "ai-sci-fi": require("./pricing/ai-sci-fi/pricing").PricingAiSciFi,
-    art: require("./pricing/art/pricing").PricingArt,
-    boat: require("./pricing/boat/pricing").PricingBoat,
-    "food-juice": require("./pricing/food-juice/pricing").PricingFoodJuice,
-    "food-pizza": require("./pricing/food-pizza/pricing").PricingFoodPizza,
-    "product-coffee": require("./pricing/product-coffee/pricing").PricingProductCoffee,
-    "product-plants": require("./pricing/product-plants/pricing").PricingProductPlants,
-    "product-scifi": require("./pricing/product-scifi/pricing").PricingProductScifi,
-    "product-skincare": require("./pricing/product-skincare/pricing").PricingProductSkincare,
-    "service-barber": require("./pricing/service-barber/pricing").PricingServiceBarber,
-    "service-coffee-shop": require("./pricing/service-coffee-shop/pricing").PricingServiceCoffeeShop,
-    "service-fashion": require("./pricing/service-fashion/pricing").PricingServiceFashion,
-    "service-gym": require("./pricing/service-gym/pricing").PricingServiceGym,
-    "service-hospitality": require("./pricing/service-hospitality/pricing").PricingServiceHospitality,
-    "service-makeup": require("./pricing/service-makeup/pricing").PricingServiceMakeup,
-    "service-marketing": require("./pricing/service-marketing/pricing").PricingServiceMarketing,
-    "service-pet-sitting": require("./pricing/service-pet-sitting/pricing").PricingServicePetSitting,
     "service-plants": require("./pricing/service-plants/pricing").PricingServicePlants,
-    "service-psychologist": require("./pricing/service-psychologist/pricing").PricingServicePsychologist,
-    "service-real-estate": require("./pricing/service-real-estate/pricing").PricingServiceRealEstate,
-    "service-tattoo": require("./pricing/service-tattoo/pricing").PricingServiceTattoo,
   },
   testimonials: {
-    ai: require("./testimonials/ai/testimonials").TestimonialsAi,
-    "ai-sci-fi": require("./testimonials/ai-sci-fi/testimonials").TestimonialsAiSciFi,
-    art: require("./testimonials/art/testimonials").TestimonialsArt,
-    boat: require("./testimonials/boat/testimonials").TestimonialsBoat,
-    "food-juice": require("./testimonials/food-juice/testimonials").TestimonialsFoodJuice,
-    "food-pizza": require("./testimonials/food-pizza/testimonials").TestimonialsFoodPizza,
-    "product-coffee": require("./testimonials/product-coffee/testimonials").TestimonialsProductCoffee,
-    "product-plants": require("./testimonials/product-plants/testimonials").TestimonialsProductPlants,
-    "product-scifi": require("./testimonials/product-scifi/testimonials").TestimonialsProductScifi,
-    "product-skincare": require("./testimonials/product-skincare/testimonials").TestimonialsProductSkincare,
-    "service-barber": require("./testimonials/service-barber/testimonials").TestimonialsServiceBarber,
-    "service-coffee-shop": require("./testimonials/service-coffee-shop/testimonials").TestimonialsServiceCoffeeShop,
-    "service-fashion": require("./testimonials/service-fashion/testimonials").TestimonialsServiceFashion,
-    "service-gym": require("./testimonials/service-gym/testimonials").TestimonialsServiceGym,
-    "service-hospitality": require("./testimonials/service-hospitality/testimonials").TestimonialsServiceHospitality,
-    "service-makeup": require("./testimonials/service-makeup/testimonials").TestimonialsServiceMakeup,
-    "service-marketing": require("./testimonials/service-marketing/testimonials").TestimonialsServiceMarketing,
-    "service-pet-sitting": require("./testimonials/service-pet-sitting/testimonials").TestimonialsServicePetSitting,
     "service-plants": require("./testimonials/service-plants/testimonials").TestimonialsServicePlants,
-    "service-psychologist": require("./testimonials/service-psychologist/testimonials").TestimonialsServicePsychologist,
-    "service-real-estate": require("./testimonials/service-real-estate/testimonials").TestimonialsServiceRealEstate,
-    "service-tattoo": require("./testimonials/service-tattoo/testimonials").TestimonialsServiceTattoo,
   },
   gallery: {
-    ai: require("./gallery/ai/gallery").GalleryAi,
-    "ai-sci-fi": require("./gallery/ai-sci-fi/gallery").GalleryAiSciFi,
-    art: require("./gallery/art/gallery").GalleryArt,
-    boat: require("./gallery/boat/gallery").GalleryBoat,
-    "food-juice": require("./gallery/food-juice/gallery").GalleryFoodJuice,
-    "food-pizza": require("./gallery/food-pizza/gallery").GalleryFoodPizza,
-    "product-coffee": require("./gallery/product-coffee/gallery").GalleryProductCoffee,
-    "product-plants": require("./gallery/product-plants/gallery").GalleryProductPlants,
-    "product-scifi": require("./gallery/product-scifi/gallery").GalleryProductScifi,
-    "product-skincare": require("./gallery/product-skincare/gallery").GalleryProductSkincare,
-    "service-barber": require("./gallery/service-barber/gallery").GalleryServiceBarber,
-    "service-coffee-shop": require("./gallery/service-coffee-shop/gallery").GalleryServiceCoffeeShop,
-    "service-fashion": require("./gallery/service-fashion/gallery").GalleryServiceFashion,
-    "service-gym": require("./gallery/service-gym/gallery").GalleryServiceGym,
-    "service-hospitality": require("./gallery/service-hospitality/gallery").GalleryServiceHospitality,
-    "service-makeup": require("./gallery/service-makeup/gallery").GalleryServiceMakeup,
-    "service-marketing": require("./gallery/service-marketing/gallery").GalleryServiceMarketing,
-    "service-pet-sitting": require("./gallery/service-pet-sitting/gallery").GalleryServicePetSitting,
     "service-plants": require("./gallery/service-plants/gallery").GalleryServicePlants,
-    "service-psychologist": require("./gallery/service-psychologist/gallery").GalleryServicePsychologist,
-    "service-real-estate": require("./gallery/service-real-estate/gallery").GalleryServiceRealEstate,
-    "service-tattoo": require("./gallery/service-tattoo/gallery").GalleryServiceTattoo,
   },
   team: {
-    ai: require("./team/ai/team").TeamAi,
-    "ai-sci-fi": require("./team/ai-sci-fi/team").TeamAiSciFi,
-    art: require("./team/art/team").TeamArt,
-    boat: require("./team/boat/team").TeamBoat,
-    "food-juice": require("./team/food-juice/team").TeamFoodJuice,
-    "food-pizza": require("./team/food-pizza/team").TeamFoodPizza,
-    "product-coffee": require("./team/product-coffee/team").TeamProductCoffee,
-    "product-plants": require("./team/product-plants/team").TeamProductPlants,
-    "product-scifi": require("./team/product-scifi/team").TeamProductScifi,
-    "product-skincare": require("./team/product-skincare/team").TeamProductSkincare,
-    "service-barber": require("./team/service-barber/team").TeamServiceBarber,
-    "service-coffee-shop": require("./team/service-coffee-shop/team").TeamServiceCoffeeShop,
-    "service-fashion": require("./team/service-fashion/team").TeamServiceFashion,
-    "service-gym": require("./team/service-gym/team").TeamServiceGym,
-    "service-hospitality": require("./team/service-hospitality/team").TeamServiceHospitality,
-    "service-makeup": require("./team/service-makeup/team").TeamServiceMakeup,
-    "service-marketing": require("./team/service-marketing/team").TeamServiceMarketing,
-    "service-pet-sitting": require("./team/service-pet-sitting/team").TeamServicePetSitting,
     "service-plants": require("./team/service-plants/team").TeamServicePlants,
-    "service-psychologist": require("./team/service-psychologist/team").TeamServicePsychologist,
-    "service-real-estate": require("./team/service-real-estate/team").TeamServiceRealEstate,
-    "service-tattoo": require("./team/service-tattoo/team").TeamServiceTattoo,
   },
   stats: {
-    ai: require("./stats/ai/stats").StatsAi,
-    "ai-sci-fi": require("./stats/ai-sci-fi/stats").StatsAiSciFi,
-    art: require("./stats/art/stats").StatsArt,
-    boat: require("./stats/boat/stats").StatsBoat,
-    "food-juice": require("./stats/food-juice/stats").StatsFoodJuice,
-    "food-pizza": require("./stats/food-pizza/stats").StatsFoodPizza,
-    "product-coffee": require("./stats/product-coffee/stats").StatsProductCoffee,
-    "product-plants": require("./stats/product-plants/stats").StatsProductPlants,
-    "product-scifi": require("./stats/product-scifi/stats").StatsProductScifi,
-    "product-skincare": require("./stats/product-skincare/stats").StatsProductSkincare,
-    "service-barber": require("./stats/service-barber/stats").StatsServiceBarber,
-    "service-coffee-shop": require("./stats/service-coffee-shop/stats").StatsServiceCoffeeShop,
-    "service-fashion": require("./stats/service-fashion/stats").StatsServiceFashion,
-    "service-gym": require("./stats/service-gym/stats").StatsServiceGym,
-    "service-hospitality": require("./stats/service-hospitality/stats").StatsServiceHospitality,
-    "service-makeup": require("./stats/service-makeup/stats").StatsServiceMakeup,
-    "service-marketing": require("./stats/service-marketing/stats").StatsServiceMarketing,
-    "service-pet-sitting": require("./stats/service-pet-sitting/stats").StatsServicePetSitting,
     "service-plants": require("./stats/service-plants/stats").StatsServicePlants,
-    "service-psychologist": require("./stats/service-psychologist/stats").StatsServicePsychologist,
-    "service-real-estate": require("./stats/service-real-estate/stats").StatsServiceRealEstate,
-    "service-tattoo": require("./stats/service-tattoo/stats").StatsServiceTattoo,
   },
   logos: {
-    ai: require("./logos/ai/logos").LogosAi,
-    "ai-sci-fi": require("./logos/ai-sci-fi/logos").LogosAiSciFi,
-    art: require("./logos/art/logos").LogosArt,
-    boat: require("./logos/boat/logos").LogosBoat,
-    "food-juice": require("./logos/food-juice/logos").LogosFoodJuice,
-    "food-pizza": require("./logos/food-pizza/logos").LogosFoodPizza,
-    "product-coffee": require("./logos/product-coffee/logos").LogosProductCoffee,
-    "product-plants": require("./logos/product-plants/logos").LogosProductPlants,
-    "product-scifi": require("./logos/product-scifi/logos").LogosProductScifi,
-    "product-skincare": require("./logos/product-skincare/logos").LogosProductSkincare,
-    "service-barber": require("./logos/service-barber/logos").LogosServiceBarber,
-    "service-coffee-shop": require("./logos/service-coffee-shop/logos").LogosServiceCoffeeShop,
-    "service-fashion": require("./logos/service-fashion/logos").LogosServiceFashion,
-    "service-gym": require("./logos/service-gym/logos").LogosServiceGym,
-    "service-hospitality": require("./logos/service-hospitality/logos").LogosServiceHospitality,
-    "service-makeup": require("./logos/service-makeup/logos").LogosServiceMakeup,
-    "service-marketing": require("./logos/service-marketing/logos").LogosServiceMarketing,
-    "service-pet-sitting": require("./logos/service-pet-sitting/logos").LogosServicePetSitting,
     "service-plants": require("./logos/service-plants/logos").LogosServicePlants,
-    "service-psychologist": require("./logos/service-psychologist/logos").LogosServicePsychologist,
-    "service-real-estate": require("./logos/service-real-estate/logos").LogosServiceRealEstate,
-    "service-tattoo": require("./logos/service-tattoo/logos").LogosServiceTattoo,
   },
   faq: {
-    ai: require("./faq/ai/faq").FaqAi,
-    "ai-sci-fi": require("./faq/ai-sci-fi/faq").FaqAiSciFi,
-    art: require("./faq/art/faq").FaqArt,
-    boat: require("./faq/boat/faq").FaqBoat,
-    "food-juice": require("./faq/food-juice/faq").FaqFoodJuice,
-    "food-pizza": require("./faq/food-pizza/faq").FaqFoodPizza,
-    "product-coffee": require("./faq/product-coffee/faq").FaqProductCoffee,
-    "product-plants": require("./faq/product-plants/faq").FaqProductPlants,
-    "product-scifi": require("./faq/product-scifi/faq").FaqProductScifi,
-    "product-skincare": require("./faq/product-skincare/faq").FaqProductSkincare,
-    "service-barber": require("./faq/service-barber/faq").FaqServiceBarber,
-    "service-coffee-shop": require("./faq/service-coffee-shop/faq").FaqServiceCoffeeShop,
-    "service-fashion": require("./faq/service-fashion/faq").FaqServiceFashion,
-    "service-gym": require("./faq/service-gym/faq").FaqServiceGym,
-    "service-hospitality": require("./faq/service-hospitality/faq").FaqServiceHospitality,
-    "service-makeup": require("./faq/service-makeup/faq").FaqServiceMakeup,
-    "service-marketing": require("./faq/service-marketing/faq").FaqServiceMarketing,
-    "service-pet-sitting": require("./faq/service-pet-sitting/faq").FaqServicePetSitting,
     "service-plants": require("./faq/service-plants/faq").FaqServicePlants,
-    "service-psychologist": require("./faq/service-psychologist/faq").FaqServicePsychologist,
-    "service-real-estate": require("./faq/service-real-estate/faq").FaqServiceRealEstate,
-    "service-tattoo": require("./faq/service-tattoo/faq").FaqServiceTattoo,
   },
   blog: {
-    ai: require("./blog/ai/blog").BlogAi,
-    "ai-sci-fi": require("./blog/ai-sci-fi/blog").BlogAiSciFi,
-    art: require("./blog/art/blog").BlogArt,
-    boat: require("./blog/boat/blog").BlogBoat,
-    "food-juice": require("./blog/food-juice/blog").BlogFoodJuice,
-    "food-pizza": require("./blog/food-pizza/blog").BlogFoodPizza,
-    "product-coffee": require("./blog/product-coffee/blog").BlogProductCoffee,
-    "product-plants": require("./blog/product-plants/blog").BlogProductPlants,
-    "product-scifi": require("./blog/product-scifi/blog").BlogProductScifi,
-    "product-skincare": require("./blog/product-skincare/blog").BlogProductSkincare,
-    "service-barber": require("./blog/service-barber/blog").BlogServiceBarber,
-    "service-coffee-shop": require("./blog/service-coffee-shop/blog").BlogServiceCoffeeShop,
-    "service-fashion": require("./blog/service-fashion/blog").BlogServiceFashion,
-    "service-gym": require("./blog/service-gym/blog").BlogServiceGym,
-    "service-hospitality": require("./blog/service-hospitality/blog").BlogServiceHospitality,
-    "service-makeup": require("./blog/service-makeup/blog").BlogServiceMakeup,
-    "service-marketing": require("./blog/service-marketing/blog").BlogServiceMarketing,
-    "service-pet-sitting": require("./blog/service-pet-sitting/blog").BlogServicePetSitting,
     "service-plants": require("./blog/service-plants/blog").BlogServicePlants,
-    "service-psychologist": require("./blog/service-psychologist/blog").BlogServicePsychologist,
-    "service-real-estate": require("./blog/service-real-estate/blog").BlogServiceRealEstate,
-    "service-tattoo": require("./blog/service-tattoo/blog").BlogServiceTattoo,
   },
   contact: {
-    ai: require("./contact/ai/contact").ContactAi,
-    "ai-sci-fi": require("./contact/ai-sci-fi/contact").ContactAiSciFi,
-    art: require("./contact/art/contact").ContactArt,
-    boat: require("./contact/boat/contact").ContactBoat,
-    "food-juice": require("./contact/food-juice/contact").ContactFoodJuice,
-    "food-pizza": require("./contact/food-pizza/contact").ContactFoodPizza,
-    "product-coffee": require("./contact/product-coffee/contact").ContactProductCoffee,
-    "product-plants": require("./contact/product-plants/contact").ContactProductPlants,
-    "product-scifi": require("./contact/product-scifi/contact").ContactProductScifi,
-    "product-skincare": require("./contact/product-skincare/contact").ContactProductSkincare,
-    "service-barber": require("./contact/service-barber/contact").ContactServiceBarber,
-    "service-coffee-shop": require("./contact/service-coffee-shop/contact").ContactServiceCoffeeShop,
-    "service-fashion": require("./contact/service-fashion/contact").ContactServiceFashion,
-    "service-gym": require("./contact/service-gym/contact").ContactServiceGym,
-    "service-hospitality": require("./contact/service-hospitality/contact").ContactServiceHospitality,
-    "service-makeup": require("./contact/service-makeup/contact").ContactServiceMakeup,
-    "service-marketing": require("./contact/service-marketing/contact").ContactServiceMarketing,
-    "service-pet-sitting": require("./contact/service-pet-sitting/contact").ContactServicePetSitting,
     "service-plants": require("./contact/service-plants/contact").ContactServicePlants,
-    "service-psychologist": require("./contact/service-psychologist/contact").ContactServicePsychologist,
-    "service-real-estate": require("./contact/service-real-estate/contact").ContactServiceRealEstate,
-    "service-tattoo": require("./contact/service-tattoo/contact").ContactServiceTattoo,
   },
   newsletter: {
-    ai: require("./newsletter/ai/newsletter").NewsletterAi,
-    "ai-sci-fi": require("./newsletter/ai-sci-fi/newsletter").NewsletterAiSciFi,
-    art: require("./newsletter/art/newsletter").NewsletterArt,
-    boat: require("./newsletter/boat/newsletter").NewsletterBoat,
-    "food-juice": require("./newsletter/food-juice/newsletter").NewsletterFoodJuice,
-    "food-pizza": require("./newsletter/food-pizza/newsletter").NewsletterFoodPizza,
-    "product-coffee": require("./newsletter/product-coffee/newsletter").NewsletterProductCoffee,
-    "product-plants": require("./newsletter/product-plants/newsletter").NewsletterProductPlants,
-    "product-scifi": require("./newsletter/product-scifi/newsletter").NewsletterProductScifi,
-    "product-skincare": require("./newsletter/product-skincare/newsletter").NewsletterProductSkincare,
-    "service-barber": require("./newsletter/service-barber/newsletter").NewsletterServiceBarber,
-    "service-coffee-shop": require("./newsletter/service-coffee-shop/newsletter").NewsletterServiceCoffeeShop,
-    "service-fashion": require("./newsletter/service-fashion/newsletter").NewsletterServiceFashion,
-    "service-gym": require("./newsletter/service-gym/newsletter").NewsletterServiceGym,
-    "service-hospitality": require("./newsletter/service-hospitality/newsletter").NewsletterServiceHospitality,
-    "service-makeup": require("./newsletter/service-makeup/newsletter").NewsletterServiceMakeup,
-    "service-marketing": require("./newsletter/service-marketing/newsletter").NewsletterServiceMarketing,
-    "service-pet-sitting": require("./newsletter/service-pet-sitting/newsletter").NewsletterServicePetSitting,
     "service-plants": require("./newsletter/service-plants/newsletter").NewsletterServicePlants,
-    "service-psychologist": require("./newsletter/service-psychologist/newsletter").NewsletterServicePsychologist,
-    "service-real-estate": require("./newsletter/service-real-estate/newsletter").NewsletterServiceRealEstate,
-    "service-tattoo": require("./newsletter/service-tattoo/newsletter").NewsletterServiceTattoo,
   },
   cta: {
-    ai: require("./cta/ai/cta").CtaAi,
-    "ai-sci-fi": require("./cta/ai-sci-fi/cta").CtaAiSciFi,
-    art: require("./cta/art/cta").CtaArt,
-    boat: require("./cta/boat/cta").CtaBoat,
-    "food-juice": require("./cta/food-juice/cta").CtaFoodJuice,
-    "food-pizza": require("./cta/food-pizza/cta").CtaFoodPizza,
-    "product-coffee": require("./cta/product-coffee/cta").CtaProductCoffee,
-    "product-plants": require("./cta/product-plants/cta").CtaProductPlants,
-    "product-scifi": require("./cta/product-scifi/cta").CtaProductScifi,
-    "product-skincare": require("./cta/product-skincare/cta").CtaProductSkincare,
-    "service-barber": require("./cta/service-barber/cta").CtaServiceBarber,
-    "service-coffee-shop": require("./cta/service-coffee-shop/cta").CtaServiceCoffeeShop,
-    "service-fashion": require("./cta/service-fashion/cta").CtaServiceFashion,
-    "service-gym": require("./cta/service-gym/cta").CtaServiceGym,
-    "service-hospitality": require("./cta/service-hospitality/cta").CtaServiceHospitality,
-    "service-makeup": require("./cta/service-makeup/cta").CtaServiceMakeup,
-    "service-marketing": require("./cta/service-marketing/cta").CtaServiceMarketing,
-    "service-pet-sitting": require("./cta/service-pet-sitting/cta").CtaServicePetSitting,
     "service-plants": require("./cta/service-plants/cta").CTAServicePlants,
-    "service-psychologist": require("./cta/service-psychologist/cta").CtaServicePsychologist,
-    "service-real-estate": require("./cta/service-real-estate/cta").CtaServiceRealEstate,
-    "service-tattoo": require("./cta/service-tattoo/cta").CtaServiceTattoo,
   },
   footer: {
-    ai: require("./footer/ai/footer").FooterAi,
-    "ai-sci-fi": require("./footer/ai-sci-fi/footer").FooterAiSciFi,
-    art: require("./footer/art/footer").FooterArt,
-    boat: require("./footer/boat/footer").FooterBoat,
-    "food-juice": require("./footer/food-juice/footer").FooterFoodJuice,
-    "food-pizza": require("./footer/food-pizza/footer").FooterFoodPizza,
-    "product-coffee": require("./footer/product-coffee/footer").FooterProductCoffee,
-    "product-plants": require("./footer/product-plants/footer").FooterProductPlants,
-    "product-scifi": require("./footer/product-scifi/footer").FooterProductScifi,
-    "product-skincare": require("./footer/product-skincare/footer").FooterProductSkincare,
-    "service-barber": require("./footer/service-barber/footer").FooterServiceBarber,
-    "service-coffee-shop": require("./footer/service-coffee-shop/footer").FooterServiceCoffeeShop,
-    "service-fashion": require("./footer/service-fashion/footer").FooterServiceFashion,
-    "service-gym": require("./footer/service-gym/footer").FooterServiceGym,
-    "service-hospitality": require("./footer/service-hospitality/footer").FooterServiceHospitality,
-    "service-makeup": require("./footer/service-makeup/footer").FooterServiceMakeup,
-    "service-marketing": require("./footer/service-marketing/footer").FooterServiceMarketing,
-    "service-pet-sitting": require("./footer/service-pet-sitting/footer").FooterServicePetSitting,
     "service-plants": require("./footer/service-plants/footer").FooterServicePlants,
-    "service-psychologist": require("./footer/service-psychologist/footer").FooterServicePsychologist,
-    "service-real-estate": require("./footer/service-real-estate/footer").FooterServiceRealEstate,
-    "service-tattoo": require("./footer/service-tattoo/footer").FooterServiceTattoo,
   },
 }
 
 // Block tint overrides - only specify if different from default "tinted"
 // Format: "blockType:slug" -> TintLevel
-// Example: "hero:ai" -> "deep" means the ai hero uses deep tint
 const blockTints: Record<string, TintLevel> = {
-  // AI & Technology - bold tech aesthetics
-  "stats:ai": "deep",
-  "testimonials:ai": "deep",
-  "cta:ai": "deep",
-
-  "features:ai-sci-fi": "deep",
-  "stats:ai-sci-fi": "deep",
-  "newsletter:ai-sci-fi": "deep",
-
-  "pricing:product-scifi": "deep",
-  "gallery:product-scifi": "deep",
-  "cta:product-scifi": "deep",
-
-  // Creative & Art - dramatic contrasts
-  "gallery:art": "deep",
-  "testimonials:art": "deep",
-  "newsletter:art": "deep",
-
-  "stats:service-fashion": "deep",
-  "testimonials:service-fashion": "deep",
-  "cta:service-fashion": "deep",
-
-  "gallery:service-tattoo": "deep",
-  "testimonials:service-tattoo": "deep",
-  "newsletter:service-tattoo": "deep",
-
-  // Food & Beverage - warm deep sections
-  "testimonials:food-pizza": "deep",
-  "stats:food-pizza": "deep",
-  "cta:food-pizza": "deep",
-
-  "gallery:food-juice": "deep",
-  "stats:food-juice": "deep",
-  "newsletter:food-juice": "deep",
-
-  "testimonials:service-coffee-shop": "deep",
-  "newsletter:service-coffee-shop": "deep",
-  "cta:service-coffee-shop": "deep",
-
-  // Products - showcase deep sections
-  "testimonials:product-coffee": "deep",
-  "stats:product-coffee": "deep",
-  "newsletter:product-coffee": "deep",
-
-  "stats:product-plants": "deep",
-  "testimonials:product-plants": "deep",
-  "newsletter:product-plants": "deep",
-
-  "gallery:product-skincare": "deep",
-  "testimonials:product-skincare": "deep",
-  "cta:product-skincare": "deep",
-
-  // Health & Wellness - calming deep tones
-  "features:service-gym": "deep",
-  "stats:service-gym": "deep",
-  "cta:service-gym": "deep",
-
-  "testimonials:service-psychologist": "deep",
-  "faq:service-psychologist": "deep",
-  "newsletter:service-psychologist": "deep",
-
-  // Beauty & Personal Care
-  "gallery:service-barber": "deep",
-  "testimonials:service-barber": "deep",
-  "cta:service-barber": "deep",
-
-  "gallery:service-makeup": "deep",
-  "stats:service-makeup": "deep",
-  "newsletter:service-makeup": "deep",
-
-  // Lifestyle & Leisure
-  "gallery:boat": "deep",
-  "testimonials:boat": "deep",
-  "newsletter:boat": "deep",
-
-  "stats:service-hospitality": "deep",
-  "testimonials:service-hospitality": "deep",
-  "cta:service-hospitality": "deep",
-
-  "gallery:service-pet-sitting": "deep",
-  "testimonials:service-pet-sitting": "deep",
-  "newsletter:service-pet-sitting": "deep",
-
-  // Professional Services
-  "stats:service-real-estate": "deep",
-  "testimonials:service-real-estate": "deep",
-  "cta:service-real-estate": "deep",
-
-  "features:service-marketing": "deep",
-  "stats:service-marketing": "deep",
-  "newsletter:service-marketing": "deep",
-
   // service-plants deep tint sections
+  "logos:service-plants": "deep",
   "stats:service-plants": "deep",
   "testimonials:service-plants": "deep",
   "newsletter:service-plants": "deep",
 }
 
 // Block forceDark overrides - forces dark mode for specific blocks
-// Format: "blockType:slug" -> true
-// Use for blocks with image overlays that need dark theme for readability
-const blockForceDark: Record<string, boolean> = {
-  // Heroes with background images
-  "hero:ai": true,
-  "hero:ai-sci-fi": true,
-  "hero:art": true,
-  "hero:boat": true,
-  "hero:food-juice": true,
-  "hero:food-pizza": true,
-  "hero:product-coffee": true,
-  "hero:product-plants": true,
-  "hero:product-scifi": true,
-  "hero:product-skincare": true,
-  "hero:service-barber": true,
-  "hero:service-coffee-shop": true,
-  "hero:service-fashion": true,
-  "hero:service-gym": true,
-  "hero:service-hospitality": true,
-  "hero:service-makeup": true,
-  "hero:service-marketing": true,
-  "hero:service-pet-sitting": true,
-  "hero:service-psychologist": true,
-  "hero:service-real-estate": true,
-  "hero:service-tattoo": true,
+const blockForceDark: Record<string, boolean> = {}
+
+// Block forceLight overrides - forces light mode for specific blocks
+const blockForceLight: Record<string, boolean> = {
+  "header:service-plants": true,
+  "hero:service-plants": true,
 }
 
 // Custom block order for templates with multiple blocks of same type
-// Format: "slug" -> array of block keys (blockType or blockType-N for multiples)
-// Blocks not in this list use default BLOCK_TYPES order
-// Example: "my-template": ["header", "hero", "features", "features-2", "footer"]
-// The "-2" suffix maps to import key "my-template-2" in blockImports
 const customBlockOrder: Record<string, string[]> = {
   "service-plants": [
     "header",
@@ -568,6 +117,8 @@ const customBlockOrder: Record<string, string[]> = {
     "features",
     "features-2",
     "features-3",
+    "features-4",
+    "features-5",
     "products",
     "pricing",
     "testimonials",
@@ -595,6 +146,12 @@ export function getBlockForceDark(blockType: BlockType, slug: string): boolean |
   return blockForceDark[key]
 }
 
+// Get forceLight for a specific block
+export function getBlockForceLight(blockType: BlockType, slug: string): boolean | undefined {
+  const key = `${blockType}:${slug}`
+  return blockForceLight[key]
+}
+
 // Get a block component for a template
 export function getBlock(
   blockType: BlockType,
@@ -609,6 +166,7 @@ export function getTemplateBlocks(slug: string): Array<{
   Component: ComponentType
   tint?: TintLevel // Only set if different from default
   forceDark?: boolean // Force dark mode for this block
+  forceLight?: boolean // Force light mode for this block
   blockKey: string // Unique key for the block (e.g., "features" or "features-2")
 }> {
   const blocks: Array<{
@@ -616,6 +174,7 @@ export function getTemplateBlocks(slug: string): Array<{
     Component: ComponentType
     tint?: TintLevel
     forceDark?: boolean
+    forceLight?: boolean
     blockKey: string
   }> = []
 
@@ -636,7 +195,8 @@ export function getTemplateBlocks(slug: string): Array<{
       if (Component) {
         const tint = getBlockTint(blockType, slug)
         const forceDark = getBlockForceDark(blockType, slug)
-        blocks.push({ type: blockType, Component, tint, forceDark, blockKey })
+        const forceLight = getBlockForceLight(blockType, slug)
+        blocks.push({ type: blockType, Component, tint, forceDark, forceLight, blockKey })
       }
     }
   } else {
@@ -646,7 +206,8 @@ export function getTemplateBlocks(slug: string): Array<{
       if (Component) {
         const tint = getBlockTint(blockType, slug)
         const forceDark = getBlockForceDark(blockType, slug)
-        blocks.push({ type: blockType, Component, tint, forceDark, blockKey: blockType })
+        const forceLight = getBlockForceLight(blockType, slug)
+        blocks.push({ type: blockType, Component, tint, forceDark, forceLight, blockKey: blockType })
       }
     }
   }

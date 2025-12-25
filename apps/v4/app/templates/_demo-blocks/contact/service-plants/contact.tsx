@@ -5,6 +5,7 @@ import Image from "next/image"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
+import { BlockThemeWrapper } from "../../_components"
 import { ImageOverlay } from "../../_block_components"
 
 export function ContactServicePlants() {
@@ -12,74 +13,8 @@ export function ContactServicePlants() {
     <section>
       <div className="container px-6">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Image & Testimonial Side */}
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] lg:aspect-auto lg:h-full lg:min-h-[700px]">
-            <Image
-              src="/placeholders/blocks/service-plants/5.webp"
-              alt="Beautiful indoor plants"
-              fill
-              className="object-cover"
-            />
-            <ImageOverlay opacity={70} />
-
-            {/* Testimonial overlay */}
-            <div className="absolute inset-0 flex flex-col justify-end p-8 lg:p-12">
-              <svg
-                className="mb-4 h-8 w-8 text-white/60"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
-              </svg>
-
-              <p className="mb-6 text-xl font-light leading-relaxed text-white lg:text-2xl">
-                "I killed every plant I touched until I found this shop. Now my
-                apartment is a jungle! The care guides changed everything."
-              </p>
-
-              <div className="flex items-center gap-4">
-                <div className="relative h-12 w-12 overflow-hidden rounded-full ring-2 ring-white/20">
-                  <Image
-                    src="/avatars/08.webp"
-                    alt="Alex Thompson"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div>
-                  <p className="font-medium text-white">Alex Thompson</p>
-                  <p className="text-sm text-white/70">
-                    Plant Parent Since 2023
-                  </p>
-                </div>
-              </div>
-
-              {/* Stats */}
-              <div className="mt-8 grid grid-cols-3 gap-4 border-t border-white/20 pt-8">
-                <div>
-                  <p className="text-2xl font-light text-white lg:text-3xl">
-                    1000+
-                  </p>
-                  <p className="mt-1 text-xs text-white/60">Varieties</p>
-                </div>
-                <div>
-                  <p className="text-2xl font-light text-white lg:text-3xl">
-                    Free
-                  </p>
-                  <p className="mt-1 text-xs text-white/60">Care Guide</p>
-                </div>
-                <div>
-                  <p className="text-2xl font-light text-white lg:text-3xl">
-                    Expert
-                  </p>
-                  <p className="mt-1 text-xs text-white/60">Advice</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* Form Side */}
-          <div className="lg:py-8">
+          <div className="order-2 lg:order-1 lg:py-8">
             <p className="text-brand-complementary mb-4 text-sm font-medium tracking-[0.3em] uppercase">
               Get In Touch
             </p>
@@ -176,6 +111,77 @@ export function ContactServicePlants() {
               </p>
             </form>
           </div>
+
+          {/* Image & Testimonial Side */}
+          <BlockThemeWrapper
+            slug="service-plants"
+            tint="deep"
+            forceDark
+            className="order-1 aspect-[4/5] overflow-hidden rounded-[2rem] lg:order-2 lg:aspect-auto lg:h-full lg:min-h-[700px]"
+          >
+            <Image draggable={false}
+              src="/placeholders/blocks/service-plants/5.webp"
+              alt="Beautiful indoor plants"
+              fill
+              className="select-none pointer-events-none object-cover"
+            />
+            <ImageOverlay opacity={50} />
+
+            {/* Testimonial overlay */}
+            <div className="absolute inset-0 z-20 flex flex-col justify-end p-8 lg:p-12">
+              <svg
+                className="mb-4 h-8 w-8 text-foreground"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+              </svg>
+
+              <p className="mb-6 text-xl font-normal leading-relaxed text-foreground lg:text-2xl">
+                "I killed every plant I touched until I found this shop. Now my
+                apartment is a jungle! The care guides changed everything."
+              </p>
+
+              <div className="flex items-center gap-4">
+                <div className="relative h-12 w-12 overflow-hidden rounded-full ring-2 ring-foreground/40">
+                  <Image draggable={false}
+                    src="/avatars/08.webp"
+                    alt="Alex Thompson"
+                    fill
+                    className="select-none pointer-events-none object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground">Alex Thompson</p>
+                  <p className="text-sm text-foreground/90">
+                    Plant Parent Since 2023
+                  </p>
+                </div>
+              </div>
+
+              {/* Stats */}
+              <div className="mt-8 grid grid-cols-3 gap-4 border-t border-foreground/30 pt-8">
+                <div>
+                  <p className="text-2xl font-medium text-foreground lg:text-3xl">
+                    1000+
+                  </p>
+                  <p className="mt-1 text-xs text-foreground/80">Varieties</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-medium text-foreground lg:text-3xl">
+                    Free
+                  </p>
+                  <p className="mt-1 text-xs text-foreground/80">Care Guide</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-medium text-foreground lg:text-3xl">
+                    Expert
+                  </p>
+                  <p className="mt-1 text-xs text-foreground/80">Advice</p>
+                </div>
+              </div>
+            </div>
+          </BlockThemeWrapper>
         </div>
       </div>
     </section>
