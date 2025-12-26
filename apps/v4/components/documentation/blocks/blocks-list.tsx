@@ -46,14 +46,14 @@ function BlockPreview({
 function BlockCard({ block }: { block: BlockItem }) {
   return (
     <div className="group relative flex scroll-mt-20 flex-col gap-4">
-      <div className="overflow-hidden rounded-2xl border shadow-xs">
+      <div className="overflow-hidden rounded-2xl border-transparent shadow-sm dark:border dark:border-border">
         <div className="bg-background relative transition-all">
           <ReadinessBadge readiness={block.readiness as any} />
           <TierBadge tier={(block.tier ?? "free") as any} />
           <div data-slot="preview" className="overflow-hidden">
             <div
               data-align="center"
-              className="preview relative flex aspect-[4/3] w-full items-center justify-center overflow-hidden"
+              className="preview relative flex aspect-[16/10] w-full items-center justify-center overflow-hidden"
             >
               <BlockPreview
                 name={block.name}
@@ -99,7 +99,7 @@ export function BlocksList({ blocks }: BlocksListProps) {
 
   return (
     <div className="container">
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-3">
         {visibleBlocks.map((block) => (
           <BlockCard key={block.name} block={block} />
         ))}

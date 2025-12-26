@@ -1,11 +1,15 @@
 "use client"
 
-import { Component as ReactComponent, memo, Suspense, useMemo } from "react"
-import dynamic from "next/dynamic"
-import { AlertCircle, RotateCcw } from "lucide-react"
+import { Component as ReactComponent, memo, Suspense, useRef } from "react"
 
-import { Button } from "@/registry/new-york-v4/ui/button"
-import { Spinner } from "@/registry/new-york-v4/ui/spinner"
+import { Index } from "@/registry/__index__"
+import { getBlockSettings } from "@/app/(app)/(content)/(blocks)/blocks"
+import {
+  BlockContainer,
+  BlockThemeWrapper,
+  DEFAULT_TINT,
+} from "@/app/(app)/(content)/(blocks)/_components"
+import { ScrollContainerProvider } from "@/app/(app)/(content)/(blocks)/_components/scroll-container-context"
 
 interface LazyComponentRendererProps {
   name: string
@@ -15,149 +19,95 @@ interface LazyComponentRendererProps {
   filePath?: string
 }
 
-// Error boundary for catching render errors
+// Error boundary for catching render errors - renders nothing on error
 class ComponentErrorBoundary extends ReactComponent<
-  { children: React.ReactNode; name: string },
-  { hasError: boolean; error: Error | null }
+  { children: React.ReactNode },
+  { hasError: boolean }
 > {
-  constructor(props: { children: React.ReactNode; name: string }) {
+  constructor(props: { children: React.ReactNode }) {
     super(props)
-    this.state = { hasError: false, error: null }
+    this.state = { hasError: false }
   }
 
-  static getDerivedStateFromError(error: Error) {
-    return { hasError: true, error }
-  }
-
-  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    console.warn(`Component "${this.props.name}" failed to render:`, error, errorInfo)
+  static getDerivedStateFromError() {
+    return { hasError: true }
   }
 
   render() {
     if (this.state.hasError) {
-      return (
-        <div className="flex h-screen items-center justify-center">
-          <div className="flex flex-col items-center gap-4 text-center px-4">
-            <AlertCircle className="size-10 text-muted-foreground" />
-            <div className="space-y-1">
-              <p className="text-sm font-medium text-muted-foreground">
-                Failed to load component
-              </p>
-              <p className="text-xs text-muted-foreground/70">
-                {this.state.error?.message || "An error occurred"}
-              </p>
-            </div>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => {
-                this.setState({ hasError: false, error: null })
-                window.location.reload()
-              }}
-            >
-              <RotateCcw className="mr-2 size-3" />
-              Reload
-            </Button>
-          </div>
-        </div>
-      )
+      return null
     }
-
     return this.props.children
   }
 }
 
-// Helper to extract the module default export
-function getModuleDefault(mod: Record<string, unknown>) {
-  if (mod.default) return mod.default
-  const exportName = Object.keys(mod).find(
-    (key) => typeof mod[key] === "function" || typeof mod[key] === "object"
-  )
-  return exportName ? mod[exportName] : null
-}
+// Block wrapper for template-associated blocks
+function BlockWrapper({
+  children,
+  name,
+}: {
+  children: React.ReactNode
+  name: string
+}) {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const settings = getBlockSettings(name)
 
-// Parse file path to extract category/subcategory for blocks
-function parseBlockPath(filePath: string): { category: string; subcategory: string; name: string } | null {
-  // filePath is like "registry/new-york-v4/blocks/marketing/hero-section/hero-1.tsx"
-  const match = filePath.match(/blocks\/([^/]+)\/([^/]+)\/([^/]+)\.tsx$/)
-  if (match) {
-    return { category: match[1], subcategory: match[2], name: match[3] }
+  // If block belongs to a template, wrap with theme and container
+  if (settings.templateSlug) {
+    const blockType = settings.blockType
+    const skipAlternatingBg =
+      blockType === "hero" ||
+      blockType === "header" ||
+      settings.forceDark ||
+      settings.forceLight
+    const skipPadding =
+      blockType === "hero" || blockType === "header" || blockType === "footer"
+    const blockTint = settings.tint || DEFAULT_TINT
+
+    return (
+      <ScrollContainerProvider value={containerRef}>
+        <div ref={containerRef} className="min-h-screen overflow-auto">
+          <BlockThemeWrapper
+            slug={settings.templateSlug}
+            tint={blockTint}
+            forceDark={settings.forceDark}
+            forceLight={settings.forceLight}
+          >
+            <BlockContainer
+              index={settings.index}
+              tint={blockTint}
+              forceBg={skipAlternatingBg ? "none" : undefined}
+              noPadding={skipPadding}
+            >
+              {children}
+            </BlockContainer>
+          </BlockThemeWrapper>
+        </div>
+      </ScrollContainerProvider>
+    )
   }
-  return null
+
+  // For non-template blocks, render without wrapper
+  return <>{children}</>
 }
 
 export const LazyComponentRenderer = memo(function LazyComponentRenderer({
   name,
   styleName,
   isComponent,
-  componentType,
-  filePath,
 }: LazyComponentRendererProps) {
-  // Create dynamic component based on type and path
-  const Component = useMemo(() => {
-    // For UI components
-    if (componentType === "registry:ui") {
-      return dynamic(
-        () =>
-          import(`@/registry/new-york-v4/ui/${name}`).then((mod) => ({
-            default: getModuleDefault(mod) as React.ComponentType,
-          })),
-        { ssr: false }
-      )
-    }
+  const styleIndex = Index[styleName as keyof typeof Index]
+  if (!styleIndex) return null
 
-    // For example components
-    if (componentType === "registry:example") {
-      return dynamic(
-        () =>
-          import(`@/registry/new-york-v4/examples/${name}`).then((mod) => ({
-            default: getModuleDefault(mod) as React.ComponentType,
-          })),
-        { ssr: false }
-      )
-    }
+  const item = styleIndex[name as keyof typeof styleIndex]
+  if (!item?.component) return null
 
-    // For blocks and internal components
-    if (componentType === "registry:block" || componentType === "registry:internal") {
-      if (filePath) {
-        const blockInfo = parseBlockPath(filePath)
-        if (blockInfo) {
-          return dynamic(
-            () =>
-              import(
-                `@/registry/new-york-v4/blocks/${blockInfo.category}/${blockInfo.subcategory}/${blockInfo.name}`
-              ).then((mod) => ({
-                default: getModuleDefault(mod) as React.ComponentType,
-              })),
-            { ssr: false }
-          )
-        }
-      }
-    }
+  const Component = item.component
 
-    // Fallback: return null component
-    return () => null
-  }, [name, componentType, filePath])
-
-  if (!Component) {
-    return (
-      <div className="flex h-screen items-center justify-center">
-        <div className="text-muted-foreground">Component not found</div>
-      </div>
-    )
-  }
-
-  // For components/examples, center them without squishing
   if (isComponent) {
     return (
-      <ComponentErrorBoundary name={name}>
-        <Suspense
-          fallback={
-            <div className="flex min-h-screen items-center justify-center">
-              <Spinner className="size-6" />
-            </div>
-          }
-        >
+      <ComponentErrorBoundary>
+        <Suspense fallback={null}>
           <div className="flex min-h-screen w-full items-center justify-center p-8">
             <Component />
           </div>
@@ -166,17 +116,13 @@ export const LazyComponentRenderer = memo(function LazyComponentRenderer({
     )
   }
 
-  // For blocks/animations, render full width
+  // Wrap blocks with template theming when applicable
   return (
-    <ComponentErrorBoundary name={name}>
-      <Suspense
-        fallback={
-          <div className="flex h-screen items-center justify-center">
-            <Spinner className="size-6" />
-          </div>
-        }
-      >
-        <Component />
+    <ComponentErrorBoundary>
+      <Suspense fallback={null}>
+        <BlockWrapper name={name}>
+          <Component />
+        </BlockWrapper>
       </Suspense>
     </ComponentErrorBoundary>
   )

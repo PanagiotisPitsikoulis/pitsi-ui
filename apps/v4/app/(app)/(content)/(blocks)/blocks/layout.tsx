@@ -1,6 +1,6 @@
 import { Metadata } from "next"
 
-import { queryRegistry } from "@/lib/registry-utils"
+import { getAllCategories, getCategoryBlockCounts } from "@/lib/blocks"
 import { BlocksLayoutClient } from "./layout-client"
 
 const title = "Building Blocks for the Web"
@@ -36,63 +36,27 @@ export default async function BlocksLayout({
 }: {
   children: React.ReactNode
 }) {
-  // Fetch categories and counts in parallel
-  const [categories, blockCounts] = await Promise.all([
-    queryRegistry({
-      returnType: "categories",
-      types: ["registry:block", "registry:internal"],
-    }) as Promise<string[]>,
-    queryRegistry({
-      returnType: "counts",
-      types: ["registry:block", "registry:internal"],
-    }) as Promise<Record<string, number>>,
-  ])
+  const categories = getAllCategories()
+  const blockCounts = getCategoryBlockCounts()
 
-  // Build category links with subcategories
-  const categoryLinks = await Promise.all(
-    categories.map(async (category) => {
-      const [subcategories, subcategoryCounts] = await Promise.all([
-        queryRegistry({
-          returnType: "subcategories",
-          mainCategory: category,
-        }) as Promise<string[]>,
-        queryRegistry({
-          returnType: "subcategoryCounts",
-          mainCategory: category,
-        }) as Promise<Record<string, number>>,
-      ])
+  // Calculate total count
+  const totalCount = Object.values(blockCounts).reduce((sum, count) => sum + count, 0)
 
-      // Build subcategory links with counts and sort by count (highest first)
-      const subcategoryLinks = subcategories
-        .map((subcategory) => ({
-          subcategory,
-          href: `/blocks/category/${category}/subcategory/${subcategory}`,
-          count: subcategoryCounts[subcategory] || 0,
-        }))
-        .sort((a, b) => b.count - a.count)
-
-      // Update href to point to the first subcategory after sorting
-      const sortedHref =
-        subcategoryLinks.length > 0
-          ? subcategoryLinks[0].href
-          : `/blocks/category/${category}`
-
-      return {
+  // Build category links with "all" first
+  const categoryLinks = [
+    { category: "all", href: "/blocks/all", count: totalCount },
+    ...categories
+      .map((category) => ({
         category,
-        href: sortedHref,
+        href: `/blocks/${category}`,
         count: blockCounts[category] || 0,
-        subcategories: subcategoryLinks,
-      }
-    })
-  )
-
-  // Sort categories by count (highest first) and filter out empty ones
-  const filteredCategoryLinks = categoryLinks
-    .filter((cat) => cat.subcategories.length > 0)
-    .sort((a, b) => b.count - a.count)
+      }))
+      .filter((cat) => cat.count > 0)
+      .sort((a, b) => b.count - a.count),
+  ]
 
   return (
-    <BlocksLayoutClient categoryLinks={filteredCategoryLinks}>
+    <BlocksLayoutClient categoryLinks={categoryLinks}>
       {children}
     </BlocksLayoutClient>
   )

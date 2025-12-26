@@ -27,7 +27,7 @@ export function MobileNav({
   componentPages = [],
   animationPages = [],
   toolPages = [],
-  allBlockSubcategories = [],
+  blockCategories = [],
   className,
 }: {
   tree: typeof source.pageTree
@@ -35,7 +35,7 @@ export function MobileNav({
   componentPages?: Array<{ name: string; url: string }>
   animationPages?: Array<{ name: string; url: string }>
   toolPages?: Array<{ name: string; url: string }>
-  allBlockSubcategories?: Array<{ category: string; name: string; count: number }>
+  blockCategories?: Array<{ name: string; count: number }>
   className?: string
 }) {
   const [open, setOpen] = React.useState(false)
@@ -124,16 +124,16 @@ export function MobileNav({
           )}
 
           {/* Blocks Section */}
-          {allBlockSubcategories.length > 0 && (
+          {blockCategories.length > 0 && (
             <NavSection title="Blocks">
               <div className="grid grid-cols-2 gap-x-4 gap-y-1">
-                {allBlockSubcategories.map((sub) => (
+                {blockCategories.map((cat) => (
                   <MobileLink
-                    key={`${sub.category}-${sub.name}`}
-                    href={`/blocks/category/${sub.category}/subcategory/${sub.name}`}
+                    key={cat.name}
+                    href={`/blocks/${cat.name}`}
                     onOpenChange={setOpen}
                   >
-                    {formatName(sub.name)}
+                    {formatName(cat.name)}
                   </MobileLink>
                 ))}
               </div>

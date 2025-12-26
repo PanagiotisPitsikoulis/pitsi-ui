@@ -3,17 +3,10 @@
 import { BlocksNav, BlocksSearch } from "@/components/navigation/blocks-nav"
 import { SidebarProvider } from "@/registry/new-york-v4/ui/sidebar"
 
-type SubcategoryLink = {
-  subcategory: string
-  href: string
-  count: number
-}
-
 type CategoryLink = {
   category: string
   href: string
   count: number
-  subcategories: SubcategoryLink[]
 }
 
 interface BlocksLayoutWrapperProps {

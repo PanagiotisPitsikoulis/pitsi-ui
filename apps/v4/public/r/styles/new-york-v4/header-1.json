@@ -1,0 +1,24 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "header-1",
+  "type": "registry:block",
+  "description": "Plant shop header with navigation and CTA button",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/header/header-1.tsx",
+      "content": "\"use client\"\n\nimport Image from \"next/image\"\nimport Link from \"next/link\"\nimport { ArrowRight } from \"lucide-react\"\n\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\n\nexport function HeaderServicePlants() {\n  return (\n    <header className=\"sticky top-0 z-50 h-20 bg-transparent\">\n      <div className=\"container flex h-full items-center px-6\">\n        <div className=\"flex w-full items-center justify-between\">\n          <Link href=\"#\" className=\"flex items-center gap-2\">\n            <Image\n              draggable={false}\n              src=\"/placeholders/blocks/service-plants/assets/logo.svg\"\n              alt=\"Green Therapy\"\n              width={40}\n              height={40}\n              className=\"h-10 w-10\"\n            />\n            <span className=\"text-foreground text-xl font-semibold\">\n              Green Therapy\n            </span>\n          </Link>\n          <nav className=\"hidden items-center gap-8 md:flex\">\n            <Link\n              href=\"#\"\n              className=\"text-muted-foreground hover:text-foreground text-base transition-colors\"\n            >\n              Shop\n            </Link>\n            <Link\n              href=\"#\"\n              className=\"text-muted-foreground hover:text-foreground text-base transition-colors\"\n            >\n              Plant Care\n            </Link>\n            <Link\n              href=\"#\"\n              className=\"text-muted-foreground hover:text-foreground text-base transition-colors\"\n            >\n              About\n            </Link>\n            <Link\n              href=\"#\"\n              className=\"text-muted-foreground hover:text-foreground text-base transition-colors\"\n            >\n              Blog\n            </Link>\n            <Link\n              href=\"#\"\n              className=\"text-muted-foreground hover:text-foreground text-base transition-colors\"\n            >\n              Gallery\n            </Link>\n            <Link\n              href=\"#\"\n              className=\"text-muted-foreground hover:text-foreground text-base transition-colors\"\n            >\n              Contact\n            </Link>\n          </nav>\n          <div className=\"flex items-center gap-4\">\n            <Button\n              size=\"lg\"\n              className=\"group bg-brand-complementary hover:bg-brand-complementary/90 relative overflow-hidden rounded-full pr-12\"\n            >\n              Schedule Visit\n              <div className=\"bg-background text-brand-complementary absolute inset-y-0 right-1 my-auto flex aspect-square size-8 items-center justify-center overflow-hidden rounded-full\">\n                <ArrowRight className=\"size-4 transition-transform duration-300 ease-out group-hover:translate-x-6\" />\n                <ArrowRight className=\"absolute size-4 -translate-x-6 transition-transform duration-300 ease-out group-hover:translate-x-0\" />\n              </div>\n            </Button>\n          </div>\n        </div>\n      </div>\n    </header>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "header"
+  ],
+  "tier": "free",
+  "readiness": "alpha"
+}

@@ -30,62 +30,34 @@ import {
   SidebarMenuItem,
 } from "@/registry/new-york-v4/ui/sidebar"
 
-type SubcategoryLink = {
-  subcategory: string
-  href: string
-  count: number
-}
-
 type CategoryLink = {
   category: string
   href: string
   count: number
-  subcategories: SubcategoryLink[]
 }
 
 function useBlocksNavState(categoryLinks: CategoryLink[]) {
   const pathname = usePathname()
 
-  // Extract active category and subcategory from pathname
-  const categoryMatch = pathname.match(/\/blocks\/category\/([^/]+)/)
-  const subcategoryMatch = pathname.match(
-    /\/blocks\/category\/[^/]+\/subcategory\/([^/]+)/
-  )
-  const activeCategory = categoryMatch ? categoryMatch[1] : null
-  const activeSubcategory = subcategoryMatch ? subcategoryMatch[1] : null
+  // Extract active category from pathname (e.g., /blocks/header or /block/header/header-1)
+  const blocksMatch = pathname.match(/\/blocks\/([^/]+)/)
+  const blockMatch = pathname.match(/\/block\/([^/]+)/)
+  const activeCategory = blocksMatch?.[1] || blockMatch?.[1] || null
 
-  // Flatten all items for search
+  // Build items for search
   const allItems = React.useMemo(() => {
-    const items: { label: string; href: string; type: "category" | "subcategory"; category?: string; count?: number }[] = []
-
-    categoryLinks.forEach(({ category, href, subcategories }) => {
+    return categoryLinks.map(({ category, href, count }) => {
       const formattedCategory = category
         .split("-")
         .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
         .join(" ")
 
-      items.push({ label: formattedCategory, href, type: "category" })
-
-      subcategories.forEach(({ subcategory, href: subHref, count: subCount }) => {
-        const formattedSub = subcategory
-          .split("-")
-          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-          .join(" ")
-        items.push({ label: formattedSub, href: subHref, type: "subcategory", category: formattedCategory, count: subCount })
-      })
+      return { label: formattedCategory, href, count, category }
     })
-
-    return items
   }, [categoryLinks])
 
   // Get current selection label
   const currentLabel = React.useMemo(() => {
-    if (activeSubcategory) {
-      return activeSubcategory
-        .split("-")
-        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(" ")
-    }
     if (activeCategory) {
       return activeCategory
         .split("-")
@@ -93,9 +65,9 @@ function useBlocksNavState(categoryLinks: CategoryLink[]) {
         .join(" ")
     }
     return "Search blocks..."
-  }, [activeCategory, activeSubcategory])
+  }, [activeCategory])
 
-  return { activeCategory, activeSubcategory, allItems, currentLabel }
+  return { activeCategory, allItems, currentLabel }
 }
 
 export function BlocksSearch({
@@ -107,7 +79,7 @@ export function BlocksSearch({
 }) {
   const router = useRouter()
   const [open, setOpen] = React.useState(false)
-  const { activeCategory, activeSubcategory, allItems, currentLabel } = useBlocksNavState(categoryLinks)
+  const { activeCategory, allItems, currentLabel } = useBlocksNavState(categoryLinks)
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -133,53 +105,25 @@ export function BlocksSearch({
           <CommandList>
             <CommandEmpty>No results found.</CommandEmpty>
             <CommandGroup heading="Categories">
-              {allItems
-                .filter((item) => item.type === "category")
-                .map((item) => (
-                  <CommandItem
-                    key={item.href}
-                    value={item.label}
-                    onSelect={() => {
-                      router.push(item.href)
-                      setOpen(false)
-                    }}
-                  >
-                    <Check
-                      className={cn(
-                        "mr-2 size-4",
-                        activeCategory === item.label.toLowerCase().replace(/ /g, "-")
-                          ? "opacity-100"
-                          : "opacity-0"
-                      )}
-                    />
-                    {item.label}
-                  </CommandItem>
-                ))}
-            </CommandGroup>
-            <CommandGroup heading="Subcategories">
-              {allItems
-                .filter((item) => item.type === "subcategory")
-                .map((item) => (
-                  <CommandItem
-                    key={item.href}
-                    value={`${item.category} ${item.label}`}
-                    onSelect={() => {
-                      router.push(item.href)
-                      setOpen(false)
-                    }}
-                  >
-                    <Check
-                      className={cn(
-                        "mr-2 size-4",
-                        activeSubcategory === item.label.toLowerCase().replace(/ /g, "-")
-                          ? "opacity-100"
-                          : "opacity-0"
-                      )}
-                    />
-                    <span className="truncate">{item.label}</span>
-                    <span className="text-muted-foreground ml-auto text-xs">{item.category}</span>
-                  </CommandItem>
-                ))}
+              {allItems.map((item) => (
+                <CommandItem
+                  key={item.href}
+                  value={item.label}
+                  onSelect={() => {
+                    router.push(item.href)
+                    setOpen(false)
+                  }}
+                >
+                  <Check
+                    className={cn(
+                      "mr-2 size-4",
+                      activeCategory === item.category ? "opacity-100" : "opacity-0"
+                    )}
+                  />
+                  {item.label}
+                  <span className="text-muted-foreground ml-auto text-xs">{item.count}</span>
+                </CommandItem>
+              ))}
             </CommandGroup>
           </CommandList>
         </Command>
@@ -195,7 +139,7 @@ export function BlocksNav({
 }) {
   const router = useRouter()
   const [open, setOpen] = React.useState(false)
-  const { activeCategory, activeSubcategory, allItems, currentLabel } = useBlocksNavState(categoryLinks)
+  const { activeCategory, allItems, currentLabel } = useBlocksNavState(categoryLinks)
 
   return (
     <Sidebar
@@ -228,53 +172,25 @@ export function BlocksNav({
                   <CommandList>
                     <CommandEmpty>No results found.</CommandEmpty>
                     <CommandGroup heading="Categories">
-                      {allItems
-                        .filter((item) => item.type === "category")
-                        .map((item) => (
-                          <CommandItem
-                            key={item.href}
-                            value={item.label}
-                            onSelect={() => {
-                              router.push(item.href)
-                              setOpen(false)
-                            }}
-                          >
-                            <Check
-                              className={cn(
-                                "mr-2 size-4",
-                                activeCategory === item.label.toLowerCase().replace(/ /g, "-")
-                                  ? "opacity-100"
-                                  : "opacity-0"
-                              )}
-                            />
-                            {item.label}
-                          </CommandItem>
-                        ))}
-                    </CommandGroup>
-                    <CommandGroup heading="Subcategories">
-                      {allItems
-                        .filter((item) => item.type === "subcategory")
-                        .map((item) => (
-                          <CommandItem
-                            key={item.href}
-                            value={`${item.category} ${item.label}`}
-                            onSelect={() => {
-                              router.push(item.href)
-                              setOpen(false)
-                            }}
-                          >
-                            <Check
-                              className={cn(
-                                "mr-2 size-4",
-                                activeSubcategory === item.label.toLowerCase().replace(/ /g, "-")
-                                  ? "opacity-100"
-                                  : "opacity-0"
-                              )}
-                            />
-                            <span className="truncate">{item.label}</span>
-                            <span className="text-muted-foreground ml-auto text-xs">{item.category}</span>
-                          </CommandItem>
-                        ))}
+                      {allItems.map((item) => (
+                        <CommandItem
+                          key={item.href}
+                          value={item.label}
+                          onSelect={() => {
+                            router.push(item.href)
+                            setOpen(false)
+                          }}
+                        >
+                          <Check
+                            className={cn(
+                              "mr-2 size-4",
+                              activeCategory === item.category ? "opacity-100" : "opacity-0"
+                            )}
+                          />
+                          {item.label}
+                          <span className="text-muted-foreground ml-auto text-xs">{item.count}</span>
+                        </CommandItem>
+                      ))}
                     </CommandGroup>
                   </CommandList>
                 </Command>
@@ -282,51 +198,39 @@ export function BlocksNav({
             </Popover>
           </SidebarGroupContent>
         </SidebarGroup>
-        {categoryLinks.map(({ category, count, subcategories }) => {
-          const formattedName = category
-            .split("-")
-            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(" ")
+        <SidebarGroup>
+          <SidebarGroupLabel className="text-muted-foreground font-medium">
+            Categories
+          </SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu className="gap-0.5">
+              {categoryLinks.map(({ category, href, count }) => {
+                const formattedName = category
+                  .split("-")
+                  .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                  .join(" ")
 
-          return (
-            <SidebarGroup key={category}>
-              <SidebarGroupLabel className="text-muted-foreground font-medium">
-                {formattedName}
-                <span className="text-muted-foreground/50 ml-auto text-xs font-normal">
-                  {count}
-                </span>
-              </SidebarGroupLabel>
-              <SidebarGroupContent>
-                <SidebarMenu className="gap-0.5">
-                  {subcategories.map(({ subcategory, href: subHref, count: subCount }) => {
-                    const formattedSubName = subcategory
-                      .split("-")
-                      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-                      .join(" ")
-
-                    return (
-                      <SidebarMenuItem key={subcategory}>
-                        <SidebarMenuButton
-                          asChild
-                          isActive={activeSubcategory === subcategory}
-                          className="data-[active=true]:bg-accent data-[active=true]:border-accent 3xl:fixed:w-full 3xl:fixed:max-w-48 relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md"
-                        >
-                          <Link href={subHref}>
-                            <span className="absolute inset-0 flex w-(--sidebar-width) bg-transparent" />
-                            {formattedSubName}
-                            <span className="text-muted-foreground/50 ml-auto text-xs font-normal">
-                              {subCount}
-                            </span>
-                          </Link>
-                        </SidebarMenuButton>
-                      </SidebarMenuItem>
-                    )
-                  })}
-                </SidebarMenu>
-              </SidebarGroupContent>
-            </SidebarGroup>
-          )
-        })}
+                return (
+                  <SidebarMenuItem key={category}>
+                    <SidebarMenuButton
+                      asChild
+                      isActive={activeCategory === category}
+                      className="data-[active=true]:bg-accent data-[active=true]:border-accent 3xl:fixed:w-full 3xl:fixed:max-w-48 relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md"
+                    >
+                      <Link href={href}>
+                        <span className="absolute inset-0 flex w-(--sidebar-width) bg-transparent" />
+                        {formattedName}
+                        <span className="text-muted-foreground/50 ml-auto text-xs font-normal">
+                          {count}
+                        </span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                )
+              })}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
       </SidebarContent>
     </Sidebar>
   )

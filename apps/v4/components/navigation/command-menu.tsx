@@ -41,10 +41,7 @@ export function CommandMenu({
   ...props
 }: DialogProps & {
   tree: typeof source.pageTree
-  blockCategories?: {
-    name: string
-    subcategories: { name: string; count: number }[]
-  }[]
+  blockCategories?: Array<{ name: string; count: number }>
   navItems?: { href: string; label: string }[]
 }) {
   const router = useRouter()
@@ -287,62 +284,32 @@ export function CommandMenu({
                   })}
               </CommandGroup>
             ))}
-            {blockCategories?.map((category) => (
+            {blockCategories && blockCategories.length > 0 && (
               <CommandGroup
-                key={category.name}
-                heading={
-                  category.name.charAt(0).toUpperCase() + category.name.slice(1)
-                }
+                heading="Blocks"
                 className="!p-0 [&_[cmdk-group-heading]]:!p-3"
               >
-                {/* Main category item */}
-                <CommandMenuItem
-                  key={`category-${category.name}`}
-                  value={`${category.name} blocks`}
-                  keywords={["blocks", category.name, "category"]}
-                  onHighlight={handleCategoryHighlight}
-                  onSelect={() => {
-                    const firstSubcategory = category.subcategories[0]?.name
-                    const url = firstSubcategory
-                      ? `/blocks/category/${category.name}/subcategory/${firstSubcategory}`
-                      : `/blocks/category/${category.name}`
-                    runCommand(() => router.push(url))
-                  }}
-                >
-                  <LayoutDashboard />
-                  <span>All {category.name} blocks</span>
-                </CommandMenuItem>
-
-                {/* Subcategory items */}
-                {category.subcategories.map((subcategory) => (
+                {blockCategories.map((category) => (
                   <CommandMenuItem
-                    key={`${category.name}-${subcategory.name}`}
-                    value={`${category.name} ${subcategory.name}`}
-                    keywords={[
-                      "blocks",
-                      category.name,
-                      subcategory.name,
-                      "subcategory",
-                    ]}
+                    key={category.name}
+                    value={`${category.name} blocks`}
+                    keywords={["blocks", category.name]}
                     onHighlight={handleCategoryHighlight}
                     onSelect={() => {
-                      runCommand(() =>
-                        router.push(
-                          `/blocks/category/${category.name}/subcategory/${subcategory.name}`
-                        )
-                      )
+                      runCommand(() => router.push(`/blocks/${category.name}`))
                     }}
-                    className="pl-8"
                   >
-                    <IconArrowRight className="size-3" />
-                    <span>{subcategory.name}</span>
+                    <LayoutDashboard />
+                    <span>
+                      {category.name.charAt(0).toUpperCase() + category.name.slice(1)}
+                    </span>
                     <span className="text-muted-foreground ml-auto font-mono text-xs font-normal tabular-nums">
-                      {subcategory.count}
+                      {category.count}
                     </span>
                   </CommandMenuItem>
                 ))}
               </CommandGroup>
-            ))}
+            )}
             <SearchResults
               open={open}
               setOpen={setOpen}

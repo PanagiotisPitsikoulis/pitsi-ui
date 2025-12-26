@@ -20,7 +20,7 @@ export const SiteHeaderClient = memo(function SiteHeaderClient({
   componentPages,
   animationPages,
   toolPages,
-  allBlockSubcategories,
+  blockCategories,
 }: {
   commandMenu: ReactNode
   userNav: ReactNode
@@ -31,11 +31,7 @@ export const SiteHeaderClient = memo(function SiteHeaderClient({
   componentPages: Array<{ name: string; url: string }>
   animationPages: Array<{ name: string; url: string }>
   toolPages: Array<{ name: string; url: string }>
-  allBlockSubcategories: Array<{
-    category: string
-    name: string
-    count: number
-  }>
+  blockCategories: Array<{ name: string; count: number }>
 }) {
   const [hasScrolled, setHasScrolled] = useState(false)
 
@@ -68,7 +64,7 @@ export const SiteHeaderClient = memo(function SiteHeaderClient({
           componentPages={componentPages}
           animationPages={animationPages}
           toolPages={toolPages}
-          allBlockSubcategories={allBlockSubcategories}
+          blockCategories={blockCategories}
           className="flex lg:hidden"
         />
         <Button
@@ -88,7 +84,7 @@ export const SiteHeaderClient = memo(function SiteHeaderClient({
           componentPages={componentPages}
           animationPages={animationPages}
           toolPages={toolPages}
-          allBlockSubcategories={allBlockSubcategories}
+          blockCategories={blockCategories}
           className="hidden lg:flex"
         />
         <div className="ml-auto flex items-center gap-1 md:flex-1 md:justify-end md:gap-2">

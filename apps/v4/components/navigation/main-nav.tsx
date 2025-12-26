@@ -310,14 +310,14 @@ export function MainNav({
   componentPages,
   animationPages,
   toolPages,
-  allBlockSubcategories,
+  blockCategories,
   className,
 }: {
   items: { href: string; label: string }[]
   componentPages: Array<{ name: string; url: string }>
   animationPages: Array<{ name: string; url: string }>
   toolPages: Array<{ name: string; url: string }>
-  allBlockSubcategories: Array<{ category: string; name: string; count: number }>
+  blockCategories: Array<{ name: string; count: number }>
   className?: string
 }) {
   const pathname = usePathname()
@@ -373,7 +373,7 @@ export function MainNav({
         ))}
 
         {/* Blocks dropdown */}
-        {blocksItem && allBlockSubcategories.length > 0 && (
+        {blocksItem && blockCategories.length > 0 && (
           <NavigationMenuItem>
             <NavigationMenuTrigger
               className={cn(
@@ -414,18 +414,18 @@ export function MainNav({
                   </div>
                 </div>
                 <ul className="grid h-[340px] flex-1 auto-rows-min grid-cols-3 content-start gap-1 overflow-y-auto">
-                  {allBlockSubcategories
-                    .filter((sub) =>
-                      formatName(sub.name).toLowerCase().includes(blocksSearch.toLowerCase())
+                  {blockCategories
+                    .filter((cat) =>
+                      formatName(cat.name).toLowerCase().includes(blocksSearch.toLowerCase())
                     )
-                    .map((sub) => (
-                      <li key={`${sub.category}-${sub.name}`}>
+                    .map((cat) => (
+                      <li key={cat.name}>
                         <NavigationMenuLink asChild>
                           <Link
-                            href={`/blocks/category/${sub.category}/subcategory/${sub.name}`}
+                            href={`/blocks/${cat.name}`}
                             className="block select-none rounded-md p-2 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                           >
-                            {formatName(sub.name)}
+                            {formatName(cat.name)}
                           </Link>
                         </NavigationMenuLink>
                       </li>

@@ -23,15 +23,7 @@ interface SiteFooterClientProps {
     name: string
     url: string
   }>
-  blockCategories: Array<{
-    name: string
-    subcategories: Array<{ name: string; count: number }>
-  }>
-  allBlockSubcategories: Array<{
-    category: string
-    name: string
-    count: number
-  }>
+  blockCategories: Array<{ name: string; count: number }>
 }
 
 export function SiteFooterClient({
@@ -43,7 +35,6 @@ export function SiteFooterClient({
   componentPages,
   animationPages,
   blockCategories,
-  allBlockSubcategories,
 }: SiteFooterClientProps) {
   const pathname = usePathname()
   const isHomePage = pathname === "/"
@@ -266,13 +257,13 @@ export function SiteFooterClient({
         {isHomePage && <div className="mb-12 hidden md:block">
           <h5 className="mb-6 border-b border-border text-sm font-semibold">Blocks</h5>
           <div className="grid grid-cols-2 gap-x-6 gap-y-1 text-[13px] leading-relaxed tracking-[-0.15px] md:grid-cols-6">
-            {allBlockSubcategories.map((sub) => (
-              <div key={`${sub.category}-${sub.name}`} className="py-px">
+            {blockCategories.map((cat) => (
+              <div key={cat.name} className="py-px">
                 <Link
-                  href={`/blocks/category/${sub.category}/subcategory/${sub.name}`}
+                  href={`/blocks/${cat.name}`}
                   className="opacity-60 transition-opacity hover:opacity-100"
                 >
-                  {formatName(sub.name)}
+                  {formatName(cat.name)}
                 </Link>
               </div>
             ))}

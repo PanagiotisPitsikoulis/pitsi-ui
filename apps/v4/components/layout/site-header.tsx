@@ -1,8 +1,4 @@
-import {
-  getAllMainCategories,
-  getSubcategories,
-  getSubcategoryBlockCounts,
-} from "@/lib/blocks"
+import { getAllCategories, getCategoryBlockCounts } from "@/lib/blocks"
 import { siteConfig } from "@/lib/config"
 import { source } from "@/lib/source"
 import { GitHubLink } from "@/components/documentation/integrations/github-link"
@@ -61,31 +57,13 @@ export async function SiteHeaderInternal({
     { name: "About Tools", url: "/tools-information" },
   ]
 
-  // Get block categories and subcategories
-  const mainCategories = await getAllMainCategories()
-  const blockCategories = await Promise.all(
-    mainCategories.map(async (category: string) => {
-      const subcategories = await getSubcategories(category)
-      const subcategoryCounts = await getSubcategoryBlockCounts(category)
-
-      return {
-        name: category,
-        subcategories: subcategories.map((subcategory: string) => ({
-          name: subcategory,
-          count: subcategoryCounts[subcategory] || 0,
-        })),
-      }
-    })
-  )
-
-  // Flatten all subcategories for easy access
-  const allBlockSubcategories = blockCategories.flatMap((category: { name: string; subcategories: { name: string; count: number }[] }) =>
-    category.subcategories.map((sub: { name: string; count: number }) => ({
-      category: category.name,
-      name: sub.name,
-      count: sub.count,
-    }))
-  )
+  // Get block categories
+  const categories = getAllCategories()
+  const categoryCounts = getCategoryBlockCounts()
+  const blockCategories = categories.map((category: string) => ({
+    name: category,
+    count: categoryCounts[category] || 0,
+  }))
 
   return (
     <SiteHeaderClient
@@ -104,7 +82,7 @@ export async function SiteHeaderInternal({
       componentPages={componentPages}
       animationPages={animationPages}
       toolPages={toolPages}
-      allBlockSubcategories={allBlockSubcategories}
+      blockCategories={blockCategories}
     />
   )
 }

@@ -219,20 +219,9 @@ async function buildBlocksIndex() {
   await exec(`prettier --write registry/__blocks__.json`)
 }
 
-// Extract main category and subcategory from file path
-function extractMainCategoryFromPath(filePath: string): string | null {
-  const match = filePath.match(/blocks\/([^/]+)\//)
-  return match ? match[1] : null
-}
-
-function extractSubcategoryFromPath(filePath: string): string | null {
-  const match = filePath.match(/blocks\/[^/]+\/([^/]+)\//)
-  return match ? match[1] : null
-}
-
 async function buildBlocksMetadata(styles: Style[]) {
-  // Structure: { mainCategory: { subcategory: blockNames[] } }
-  const categoryStructure: Record<string, Record<string, string[]>> = {}
+  // Structure: { category: blockNames[] }
+  const categoryStructure: Record<string, string[]> = {}
 
   for (const style of styles) {
     const { registry: importedRegistry } = await import(
@@ -249,21 +238,17 @@ async function buildBlocksMetadata(styles: Style[]) {
         continue
       }
 
-      const firstFilePath = item.files?.[0]?.path
-      if (!firstFilePath) continue
+      // Use categories from registry entry directly
+      const categories = item.categories || []
+      if (categories.length === 0) continue
 
-      const mainCategory = extractMainCategoryFromPath(firstFilePath)
-      const subcategory = extractSubcategoryFromPath(firstFilePath)
-
-      if (!mainCategory || !subcategory) continue
+      // Use the first category as the main category
+      const mainCategory = categories[0]
 
       if (!categoryStructure[mainCategory]) {
-        categoryStructure[mainCategory] = {}
+        categoryStructure[mainCategory] = []
       }
-      if (!categoryStructure[mainCategory][subcategory]) {
-        categoryStructure[mainCategory][subcategory] = []
-      }
-      categoryStructure[mainCategory][subcategory].push(item.name)
+      categoryStructure[mainCategory].push(item.name)
     }
   }
 
@@ -276,37 +261,20 @@ async function buildBlocksMetadata(styles: Style[]) {
  * This avoids loading the full registry index (1.2MB) for navigation
  */
 
-export const BLOCK_CATEGORIES: Record<string, Record<string, string[]>> = ${JSON.stringify(categoryStructure, null, 2)}
+export const BLOCK_CATEGORIES: Record<string, string[]> = ${JSON.stringify(categoryStructure, null, 2)}
 
-export function getAllMainCategories(): string[] {
+export function getAllCategories(): string[] {
   return Object.keys(BLOCK_CATEGORIES).sort()
 }
 
-export function getSubcategories(mainCategory: string): string[] {
-  return Object.keys(BLOCK_CATEGORIES[mainCategory] || {}).sort()
-}
-
-export function getBlocksByCategory(mainCategory: string, subcategory?: string): string[] {
-  if (!BLOCK_CATEGORIES[mainCategory]) return []
-  if (subcategory) {
-    return BLOCK_CATEGORIES[mainCategory][subcategory] || []
-  }
-  return Object.values(BLOCK_CATEGORIES[mainCategory]).flat()
+export function getBlocksByCategory(category: string): string[] {
+  return BLOCK_CATEGORIES[category] || []
 }
 
 export function getCategoryBlockCounts(): Record<string, number> {
   const counts: Record<string, number> = {}
-  for (const [category, subcats] of Object.entries(BLOCK_CATEGORIES)) {
-    counts[category] = Object.values(subcats).flat().length
-  }
-  return counts
-}
-
-export function getSubcategoryBlockCounts(mainCategory: string): Record<string, number> {
-  const counts: Record<string, number> = {}
-  const subcats = BLOCK_CATEGORIES[mainCategory] || {}
-  for (const [subcategory, blocks] of Object.entries(subcats)) {
-    counts[subcategory] = blocks.length
+  for (const [category, blocks] of Object.entries(BLOCK_CATEGORIES)) {
+    counts[category] = blocks.length
   }
   return counts
 }

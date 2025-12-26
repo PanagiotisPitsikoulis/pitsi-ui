@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next"
 
+import { getAllCategories, getBlockIdsByCategory } from "@/lib/blocks"
 import { getBlogPostSlugs, getBlogCategories, getTotalPages } from "@/lib/blog/source"
-import { queryRegistry, type RegistryItem } from "@/lib/registry-utils"
 import { BASE_URL, staticPages, createSitemapEntry } from "@/lib/sitemap/config"
 import { source } from "@/lib/source"
 
@@ -43,36 +43,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   })
 
-  // Blocks - get all categories and subcategories
-  const blockCategories = (await queryRegistry({
-    returnType: "categories",
-    types: ["registry:block", "registry:internal"],
-  })) as string[]
+  // Blocks - get all categories
+  const blockCategories = getAllCategories()
+
+  // Add "all" category page
+  entries.push(createSitemapEntry("/blocks/all", 0.8))
 
   for (const category of blockCategories) {
-    const subcategories = (await queryRegistry({
-      returnType: "subcategories",
-      mainCategory: category,
-    })) as string[]
+    // Category page
+    entries.push(createSitemapEntry(`/blocks/${category}`, 0.7))
 
-    for (const subcategory of subcategories) {
-      entries.push(
-        createSitemapEntry(`/blocks/category/${category}/subcategory/${subcategory}`, 0.7)
-      )
-
-      // Individual blocks
-      const blocks = (await queryRegistry({
-        returnType: "items",
-        mainCategory: category,
-        subcategory,
-      })) as RegistryItem[]
-
-      blocks.forEach((block) => {
-        entries.push(
-          createSitemapEntry(`/block/${category}/${subcategory}/${block.name}`, 0.6)
-        )
-      })
-    }
+    // Individual blocks
+    const blockIds = getBlockIdsByCategory(category)
+    blockIds.forEach((blockName) => {
+      entries.push(createSitemapEntry(`/block/${category}/${blockName}`, 0.6))
+    })
   }
 
   return entries

@@ -1,71 +1,41 @@
 import { Metadata } from "next"
 
+import { getAllCategories, getBlockIdsByCategory } from "@/lib/blocks"
 import { formatName } from "@/lib/format"
 import { queryRegistry, type RegistryItem } from "@/lib/registry-utils"
 
 export async function generateBlockStaticParams() {
   try {
-    const categories = (await queryRegistry({
-      returnType: "categories",
-      types: ["registry:block", "registry:internal"],
-    })) as string[]
-
+    const categories = getAllCategories()
     const params: Array<{
       category: string
-      subcategory: string
       blockName: string
     }> = []
 
     for (const category of categories) {
-      try {
-        const subcategories = (await queryRegistry({
-          returnType: "subcategories",
-          mainCategory: category,
-        })) as string[]
-
-        for (const subcategory of subcategories) {
-          try {
-            const blocks = (await queryRegistry({
-              returnType: "items",
-              mainCategory: category,
-              subcategory,
-            })) as RegistryItem[]
-
-            for (const block of blocks) {
-              params.push({
-                category,
-                subcategory,
-                blockName: block.name,
-              })
-            }
-          } catch (error) {
-            console.warn(`Failed to get blocks for ${category}/${subcategory}:`, error)
-          }
-        }
-      } catch (error) {
-        console.warn(`Failed to get subcategories for ${category}:`, error)
+      const blockIds = getBlockIdsByCategory(category)
+      for (const blockName of blockIds) {
+        params.push({ category, blockName })
       }
     }
 
     // Return at least one fallback param if empty (required for cache components)
     if (params.length === 0) {
-      return [{ category: "application", subcategory: "dashboard", blockName: "sidebar-01" }]
+      return [{ category: "header", blockName: "header-1" }]
     }
 
     return params
   } catch (error) {
     console.warn("Failed to generate block static params:", error)
-    return [{ category: "application", subcategory: "dashboard", blockName: "sidebar-01" }]
+    return [{ category: "header", blockName: "header-1" }]
   }
 }
 
 export async function generateBlockMetadata({
   category,
-  subcategory,
   blockName,
 }: {
   category: string
-  subcategory: string
   blockName: string
 }): Promise<Metadata> {
   try {
@@ -108,64 +78,19 @@ export async function generateBlockMetadata({
   }
 }
 
-export async function generateBlocksRedirectStaticParams() {
+export async function generateCategoryStaticParams() {
   try {
-    const categories = (await queryRegistry({
-      returnType: "categories",
-      types: ["registry:block", "registry:internal"],
-    })) as string[]
-
-    const params: Array<{ slug: string[] }> = []
-
-    // Add root /blocks
-    params.push({ slug: [] })
-
-    // Add /blocks/category/[category] for redirects
-    for (const category of categories) {
-      params.push({ slug: ["category", category] })
-    }
-
-    return params
-  } catch (error) {
-    console.warn("Failed to generate blocks redirect params:", error)
-    return [{ slug: [] }]
-  }
-}
-
-export async function generateSubcategoryStaticParams() {
-  try {
-    const categories = (await queryRegistry({
-      returnType: "categories",
-      types: ["registry:block", "registry:internal"],
-    })) as string[]
-
-    const params: Array<{ category: string; subcategory: string }> = []
-
-    await Promise.all(
-      categories.map(async (category) => {
-        try {
-          const subcategories = (await queryRegistry({
-            returnType: "subcategories",
-            mainCategory: category,
-          })) as string[]
-
-          for (const subcategory of subcategories) {
-            params.push({ category, subcategory })
-          }
-        } catch (error) {
-          console.warn(`Failed to get subcategories for ${category}:`, error)
-        }
-      })
-    )
+    const categories = getAllCategories()
 
     // Return at least one fallback param if empty (required for cache components)
-    if (params.length === 0) {
-      return [{ category: "application", subcategory: "dashboard" }]
+    if (categories.length === 0) {
+      return [{ category: "all" }, { category: "header" }]
     }
 
-    return params
+    // Include "all" category first
+    return [{ category: "all" }, ...categories.map((category) => ({ category }))]
   } catch (error) {
-    console.warn("Failed to generate subcategory static params:", error)
-    return [{ category: "application", subcategory: "dashboard" }]
+    console.warn("Failed to generate category static params:", error)
+    return [{ category: "all" }, { category: "header" }]
   }
 }

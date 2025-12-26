@@ -1,0 +1,22 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "service-plants-features-3",
+  "type": "registry:block",
+  "description": "Plant shop features section variant 3 with circle background",
+  "dependencies": [
+    "motion/react"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/features/service-plants/service-plants-features-3.tsx",
+      "content": "\"use client\"\n\nimport Image from \"next/image\"\nimport { Leaf, Package, Recycle, Truck } from \"lucide-react\"\n\nimport { useBlockContext } from \"@/app/templates/_demo-blocks/_components\"\n\nexport function FeaturesServicePlants3() {\n  const { containerBg } = useBlockContext()\n  const circleBg = containerBg === \"page\" ? \"bg-muted\" : \"bg-background\"\n  const features = [\n    {\n      title: \"Local Sourcing\",\n      description:\n        \"Sustainably sourced from local nurseries to support communities.\",\n      icon: Leaf,\n    },\n    {\n      title: \"Eco Packaging\",\n      description:\n        \"Biodegradable materials that break down naturally over time.\",\n      icon: Package,\n    },\n    {\n      title: \"Carbon Neutral\",\n      description:\n        \"Carbon-neutral shipping options for eco-conscious delivery.\",\n      icon: Truck,\n    },\n    {\n      title: \"Plant Recycling\",\n      description: \"Free recycling program for plants that don't survive.\",\n      icon: Recycle,\n    },\n    {\n      title: \"Zero Waste\",\n      description:\n        \"Minimal waste practices throughout our entire supply chain.\",\n      icon: Leaf,\n    },\n    {\n      title: \"Green Energy\",\n      description:\n        \"All our facilities run entirely on renewable energy sources.\",\n      icon: Recycle,\n    },\n  ]\n\n  return (\n    <section>\n      <div className=\"container px-6\">\n        <div className=\"grid items-center gap-8 md:gap-16 lg:grid-cols-2\">\n          <div className=\"flex flex-col items-center text-center lg:items-start lg:text-left\">\n            <p className=\"text-brand mb-2 text-sm font-medium tracking-[0.3em] uppercase\">\n              Our Promise\n            </p>\n            <h2 className=\"font-display text-foreground text-3xl font-bold text-balance md:text-5xl lg:text-6xl\">\n              Sustainability\n            </h2>\n            <p className=\"text-muted-foreground mt-4 max-w-lg text-lg\">\n              From sustainably sourced plants to eco-friendly packaging, every\n              decision considers our planet.\n            </p>\n            <div className=\"mt-14 grid w-full grid-cols-1 gap-4 sm:grid-cols-2\">\n              {features.map((feature, idx) => {\n                const Icon = feature.icon\n                return (\n                  <div\n                    key={idx}\n                    className=\"border-border bg-card flex items-start gap-3 rounded-3xl p-4 shadow-sm dark:border\"\n                  >\n                    <div className=\"bg-brand/10 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg\">\n                      <Icon className=\"text-brand h-5 w-5\" />\n                    </div>\n                    <div className=\"flex flex-col gap-1\">\n                      <h3 className=\"text-foreground text-base font-semibold\">\n                        {feature.title}\n                      </h3>\n                      <p className=\"text-muted-foreground text-sm\">\n                        {feature.description}\n                      </p>\n                    </div>\n                  </div>\n                )\n              })}\n            </div>\n          </div>\n          <div className=\"flex items-center justify-center\">\n            <div className=\"relative aspect-square w-full\">\n              {/* Background circle */}\n              <div\n                className={`border-border absolute inset-x-[15%] top-[30%] bottom-[5%] rounded-full border ${circleBg}`}\n              />\n              {/* Image */}\n              <Image\n                draggable={false}\n                src=\"/placeholders/blocks/service-plants/assets/item-1.webp\"\n                alt=\"Featured plant\"\n                fill\n                className=\"pointer-events-none z-10 -translate-y-[10%] scale-110 object-contain select-none\"\n              />\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "features",
+    "service-plants"
+  ],
+  "tier": "free",
+  "readiness": "alpha"
+}

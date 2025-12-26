@@ -1,0 +1,22 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "service-plants-products",
+  "type": "registry:block",
+  "description": "Plant shop products grid showcasing best sellers",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/products/service-plants/service-plants-products.tsx",
+      "content": "\"use client\"\n\nimport Image from \"next/image\"\nimport Link from \"next/link\"\n\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\n\nexport function ProductsServicePlants() {\n  return (\n    <section>\n      <div className=\"container px-6\">\n        <div className=\"mb-12 flex flex-col md:flex-row md:items-end md:justify-between\">\n          <div>\n            <p className=\"text-primary mb-4 text-sm font-medium tracking-[0.3em] uppercase\">\n              Our Collection\n            </p>\n            <h2 className=\"text-foreground text-3xl font-bold md:text-5xl\">\n              Best Sellers\n            </h2>\n          </div>\n          <Link href=\"#\" className=\"mt-4 md:mt-0\">\n            <Button variant=\"secondary\" className=\"rounded-full\">\n              View All Plants\n            </Button>\n          </Link>\n        </div>\n        <div className=\"grid gap-6 sm:grid-cols-2 lg:grid-cols-4\">\n          {[\n            {\n              name: \"Monstera Deliciosa\",\n              price: \"$45\",\n              image: \"/placeholders/blocks/service-plants/assets/item-1.webp\",\n            },\n            {\n              name: \"Fiddle Leaf Fig\",\n              price: \"$65\",\n              image: \"/placeholders/blocks/service-plants/assets/item-2.webp\",\n            },\n            {\n              name: \"Snake Plant\",\n              price: \"$35\",\n              image: \"/placeholders/blocks/service-plants/assets/item-3.webp\",\n            },\n            {\n              name: \"Pothos Golden\",\n              price: \"$25\",\n              image: \"/placeholders/blocks/service-plants/assets/item-4.webp\",\n            },\n          ].map((product, i) => (\n            <Link href=\"#\" key={i} className=\"group\">\n              <div className=\"border-border bg-muted relative mb-4 aspect-[3/4] overflow-hidden rounded-[2.5rem] border\">\n                <Image\n                  draggable={false}\n                  src={product.image}\n                  alt={product.name}\n                  fill\n                  className=\"pointer-events-none object-contain p-6 transition-transform duration-500 select-none group-hover:scale-105\"\n                />\n              </div>\n              <h3 className=\"text-foreground group-hover:text-primary font-medium transition-colors\">\n                {product.name}\n              </h3>\n              <p className=\"text-primary font-semibold\">{product.price}</p>\n            </Link>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "products",
+    "service-plants"
+  ],
+  "tier": "free",
+  "readiness": "alpha"
+}

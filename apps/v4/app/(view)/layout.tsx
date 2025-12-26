@@ -1,24 +1,13 @@
-import "@/styles/globals.css"
+import type { Metadata } from "next"
 
-import { fontVariables } from "@/lib/config/fonts"
-import { cn } from "@/lib/utils"
-import { ThemeProvider } from "@/components/theme/theme-provider"
+export const metadata: Metadata = {
+  robots: "noindex, nofollow",
+}
 
 export default function ViewLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <meta name="robots" content="noindex, nofollow" />
-      </head>
-      <body
-        className={cn("bg-page antialiased", fontVariables)}
-      >
-        <ThemeProvider>{children}</ThemeProvider>
-      </body>
-    </html>
-  )
+  return <>{children}</>
 }

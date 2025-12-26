@@ -1,0 +1,22 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "service-plants-cta",
+  "type": "registry:block",
+  "description": "Plant shop call-to-action section",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/cta/service-plants/service-plants-cta.tsx",
+      "content": "\"use client\"\n\nimport Image from \"next/image\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\nimport { ImageOverlay } from \"@/app/templates/_demo-blocks/_block_components\"\nimport { BlockThemeWrapper } from \"@/app/templates/_demo-blocks/_components\"\n\nexport function CTAServicePlants() {\n  return (\n    <section>\n      <div className=\"container px-6\">\n        <BlockThemeWrapper\n          slug=\"service-plants\"\n          tint=\"deep\"\n          forceDark\n          className=\"relative overflow-hidden rounded-3xl\"\n        >\n          <Image\n            draggable={false}\n            src=\"/placeholders/blocks/service-plants/1.webp\"\n            alt=\"Plants background\"\n            fill\n            className=\"pointer-events-none object-cover select-none\"\n          />\n          <ImageOverlay opacity={50} />\n          <div className=\"relative z-20 flex flex-col items-center px-8 py-16 md:py-24\">\n            <h2 className=\"font-display text-foreground mb-6 text-center text-3xl font-bold md:text-5xl\">\n              Start Your Plant Journey\n            </h2>\n            <p className=\"text-foreground/70 mb-10 max-w-xl text-center text-lg\">\n              Get 15% off your first order when you join our community.\n            </p>\n            <div className=\"mx-auto flex w-full max-w-md flex-col gap-4 sm:flex-row\">\n              <input\n                type=\"email\"\n                placeholder=\"Enter your email\"\n                className={cn(\n                  \"border-foreground/20 bg-foreground/10 text-foreground h-12 flex-1 rounded-full border px-6\",\n                  \"placeholder:text-foreground/50 focus:ring-foreground/30 focus:ring-1 focus:outline-none\"\n                )}\n              />\n              <Button className=\"bg-foreground text-background hover:bg-foreground/90 h-12 rounded-full px-8\">\n                Subscribe\n              </Button>\n            </div>\n          </div>\n        </BlockThemeWrapper>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "cta",
+    "service-plants"
+  ],
+  "tier": "free",
+  "readiness": "alpha"
+}
