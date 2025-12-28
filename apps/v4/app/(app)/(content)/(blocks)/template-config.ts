@@ -24,6 +24,28 @@ export interface TemplateConfig {
 
 // All template configurations
 export const templateConfigs: Record<string, TemplateConfig> = {
+  "service-travel": {
+    metadata: {
+      slug: "service-travel",
+      name: "Travel Agency",
+      description: "A stunning template for travel agencies and tour operators",
+      heroBlock: "hero-2",
+    },
+    blocks: [
+      { name: "hero-2", forceLight: true },
+    ],
+  },
+  "service-boat": {
+    metadata: {
+      slug: "service-boat",
+      name: "Yacht Charter",
+      description: "A luxury template for yacht rentals and marine services",
+      heroBlock: "hero-3",
+    },
+    blocks: [
+      { name: "hero-3", forceLight: true },
+    ],
+  },
   "service-plants": {
     metadata: {
       slug: "service-plants",

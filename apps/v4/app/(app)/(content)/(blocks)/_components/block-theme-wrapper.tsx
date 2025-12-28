@@ -27,6 +27,8 @@ type ColorPalette =
 
 // Map template slugs to color palettes
 export const templatePalettes: Record<string, ColorPalette> = {
+  // Main landing
+  "pitsi-landing": "azure",
   // AI & Technology
   ai: "azure",
   "ai-sci-fi": "indigo",
@@ -51,12 +53,17 @@ export const templatePalettes: Record<string, ColorPalette> = {
   "service-makeup": "rose",
   // Lifestyle & Leisure
   boat: "azure",
+  "service-travel": "azure",
+  "service-boat": "azure",
   "service-hospitality": "amber",
   "service-pet-sitting": "forest",
   // Professional Services
   "service-real-estate": "indigo",
   "service-marketing": "violet",
   "service-plants": "sage",
+  // Apps
+  "app-guitar": "amber",
+  "app-quiz": "violet",
 }
 
 // Get preset key for a palette and tint level
@@ -137,6 +144,9 @@ export function BlockThemeWrapper({
       className={cn(
         "font-body relative w-full",
         !transparent && "bg-background",
+        // Add dark/light class for Tailwind dark mode utilities
+        forceDark && "dark",
+        forceLight && "light",
         className
       )}
       style={style}

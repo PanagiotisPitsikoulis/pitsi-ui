@@ -1,9 +1,5 @@
 import { Registry } from "pitsi/schema"
 
-import { POWERED_BY } from "@/lib/config/powered-by"
-
-const SKIPERUI_POWERED_BY = [...POWERED_BY.skiperui]
-
 export const animations: Registry["items"] = [
   {
     name: "background-image-parallax",
@@ -37,7 +33,6 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
-    poweredBy: SKIPERUI_POWERED_BY,
   },
   {
     name: "cards-parallax",
@@ -54,7 +49,6 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
-    poweredBy: SKIPERUI_POWERED_BY,
   },
   {
     name: "parallax-scroll",
@@ -71,7 +65,6 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
-    poweredBy: SKIPERUI_POWERED_BY,
   },
   {
     name: "perspective-carousel",
@@ -104,7 +97,6 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
-    poweredBy: SKIPERUI_POWERED_BY,
   },
   {
     name: "scroll-expand",
@@ -217,7 +209,6 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
-    poweredBy: SKIPERUI_POWERED_BY,
   },
   {
     name: "sticky-footer",
@@ -233,7 +224,6 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
-    poweredBy: SKIPERUI_POWERED_BY,
   },
   {
     name: "text-along-path",
@@ -250,7 +240,6 @@ export const animations: Registry["items"] = [
     categories: ["animations"],
     tier: "free",
     readiness: "beta",
-    poweredBy: SKIPERUI_POWERED_BY,
   },
   {
     name: "text-gradient-opacity",

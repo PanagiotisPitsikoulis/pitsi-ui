@@ -1,0 +1,22 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "hero-5",
+  "type": "registry:block",
+  "description": "Mobile app hero with iPhone mockup and app store badges",
+  "registryDependencies": [
+    "button",
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/hero/hero-5.tsx",
+      "content": "\"use client\"\n\nimport Image from \"next/image\"\nimport React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\n\nexport interface HeroMobileAppBlockProps {\n  headline?: string\n  description?: string\n  ctaLabel?: string\n  ctaIcon?: string\n  iphoneImage?: string\n  screenImage?: string\n  className?: string\n}\n\nconst defaultHeadline = \"Master your monetary matters\"\nconst defaultDescription = \"Minimize financial stress and build wealth with our intuitive, AI-enhanced budgeting tool. Our platform analyzes your spending and offers insights for smarter financial decisions.\"\nconst defaultCtaLabel = \"Get started now\"\nconst defaultCtaIcon = \"https://deifkwefumgah.cloudfront.net/shadcnblocks/block/hero49/download.svg\"\nconst defaultIphoneImage = \"https://deifkwefumgah.cloudfront.net/shadcnblocks/block/hero49/iphone.png\"\nconst defaultScreenImage = \"https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-7-tall.svg\"\n\nexport function HeroMobileAppBlock({\n  headline = defaultHeadline,\n  description = defaultDescription,\n  ctaLabel = defaultCtaLabel,\n  ctaIcon = defaultCtaIcon,\n  iphoneImage = defaultIphoneImage,\n  screenImage = defaultScreenImage,\n  className,\n}: HeroMobileAppBlockProps) {\n  return (\n    <section className={cn(\"bg-background\", className)}>\n      <div className=\"container mx-auto flex flex-col items-center px-4 pt-10\">\n        <div className=\"flex max-w-3xl flex-col items-center gap-8 text-center\">\n          <h1 className=\"text-foreground text-5xl font-semibold lg:text-8xl\">\n            {headline}\n          </h1>\n          <p className=\"text-4 text-muted-foreground max-w-xl leading-[165%] tracking-tight\">\n            {description}\n          </p>\n          <Button className=\"flex h-fit w-fit items-center gap-[8px] rounded-full px-8 py-5 text-base font-medium transition-all hover:scale-95\">\n            <Image\n              alt=\"google play and app store download icons\"\n              width={44}\n              height={18}\n              src={ctaIcon}\n            />\n            <p>{ctaLabel}</p>\n          </Button>\n        </div>\n        <div className=\"relative translate-x-[14.7%]\">\n          {/* Image inside Iphone */}\n          <div className=\"left-[36.5%]! h-[67%]! w-[31%]! bg-muted absolute top-[12%] -translate-x-[52%] overflow-hidden rounded-[10px]\">\n            <Image\n              className=\"min-h-full min-w-full object-cover\"\n              src={screenImage}\n              alt=\"\"\n              fill\n            />\n          </div>\n          {/* Iphone Image  */}\n          <Image\n            alt=\"\"\n            src={iphoneImage}\n            className=\"relative z-10\"\n            width={1009}\n            height={857}\n          />\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "hero"
+  ],
+  "tier": "free",
+  "readiness": "alpha"
+}

@@ -1,54 +1,5 @@
 import { Registry } from "pitsi/schema"
 
-const SHADCN = { name: "shadcn/ui", url: "https://ui.shadcn.com" }
-
-const RADIX_POWERED_BY = [
-  SHADCN,
-  { name: "Radix UI", url: "https://radix-ui.com" },
-]
-
-const EMBLA_POWERED_BY = [
-  SHADCN,
-  { name: "Embla Carousel", url: "https://www.embla-carousel.com" },
-]
-
-const RECHARTS_POWERED_BY = [
-  SHADCN,
-  { name: "Recharts", url: "https://recharts.org" },
-]
-
-const CMDK_POWERED_BY = [SHADCN, { name: "cmdk", url: "https://cmdk.paco.me" }]
-
-const VAUL_POWERED_BY = [
-  SHADCN,
-  { name: "Vaul", url: "https://vaul.emilkowal.ski" },
-]
-
-const SONNER_POWERED_BY = [
-  SHADCN,
-  { name: "Sonner", url: "https://sonner.emilkowal.ski" },
-]
-
-const MOTION_POWERED_BY = [{ name: "Motion", url: "https://motion.dev" }]
-const SKIPERUI_POWERED_BY = [
-  { name: "Skiper UI", url: "https://skiper-ui.com" },
-]
-
-const RESIZABLE_PANELS_POWERED_BY = [
-  SHADCN,
-  {
-    name: "react-resizable-panels",
-    url: "https://react-resizable-panels.vercel.app",
-  },
-]
-
-const INPUT_OTP_POWERED_BY = [
-  SHADCN,
-  { name: "input-otp", url: "https://input-otp.rodz.dev" },
-]
-
-const SHADCN_POWERED_BY = [SHADCN]
-
 export const ui: Registry["items"] = [
   {
     name: "accordion",
@@ -85,7 +36,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "alert",
@@ -99,7 +49,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: SHADCN_POWERED_BY,
   },
   {
     name: "alert-dialog",
@@ -115,7 +64,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "aspect-ratio",
@@ -130,7 +78,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "avatar",
@@ -145,7 +92,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "badge",
@@ -160,7 +106,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "breadcrumb",
@@ -175,7 +120,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "button",
@@ -190,7 +134,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "button-group",
@@ -205,7 +148,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: SHADCN_POWERED_BY,
   },
   {
     name: "hero-button",
@@ -233,7 +175,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: SHADCN_POWERED_BY,
   },
   {
     name: "carousel",
@@ -249,7 +190,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: EMBLA_POWERED_BY,
   },
   {
     name: "chart",
@@ -265,7 +205,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RECHARTS_POWERED_BY,
   },
   {
     name: "checkbox",
@@ -280,7 +219,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "collapsible",
@@ -295,7 +233,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "command",
@@ -311,7 +248,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: CMDK_POWERED_BY,
   },
   {
     name: "context-menu",
@@ -326,7 +262,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "container",
@@ -340,7 +275,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["primitives"],
     readiness: "production",
-    poweredBy: SHADCN_POWERED_BY,
   },
   {
     name: "dialog",
@@ -355,7 +289,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "drawer",
@@ -370,7 +303,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: VAUL_POWERED_BY,
   },
   {
     name: "dropdown-menu",
@@ -385,7 +317,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "empty",
@@ -399,7 +330,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: SHADCN_POWERED_BY,
   },
   {
     name: "field",
@@ -414,7 +344,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: SHADCN_POWERED_BY,
   },
   {
     name: "flex",
@@ -430,7 +359,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["primitives"],
     readiness: "production",
-    poweredBy: SHADCN_POWERED_BY,
   },
   {
     name: "grid",
@@ -446,7 +374,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["primitives"],
     readiness: "production",
-    poweredBy: SHADCN_POWERED_BY,
   },
   {
     name: "hover-card",
@@ -461,7 +388,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "input",
@@ -475,7 +401,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: SHADCN_POWERED_BY,
   },
   {
     name: "input-group",
@@ -490,7 +415,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: SHADCN_POWERED_BY,
   },
   {
     name: "input-otp",
@@ -505,7 +429,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: INPUT_OTP_POWERED_BY,
   },
   {
     name: "item",
@@ -520,7 +443,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: SHADCN_POWERED_BY,
   },
   {
     name: "label",
@@ -535,7 +457,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "menubar",
@@ -550,7 +471,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "navigation-menu",
@@ -565,7 +485,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "pagination",
@@ -580,7 +499,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: SHADCN_POWERED_BY,
   },
   {
     name: "popover",
@@ -595,7 +513,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "progress",
@@ -610,7 +527,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "progressive-blur",
@@ -625,7 +541,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["primitives"],
     readiness: "production",
-    poweredBy: SKIPERUI_POWERED_BY,
   },
   {
     name: "radio-group",
@@ -640,7 +555,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "resizable",
@@ -655,7 +569,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RESIZABLE_PANELS_POWERED_BY,
   },
   {
     name: "responsive",
@@ -684,7 +597,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "segmented-control",
@@ -704,7 +616,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["primitives"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "select",
@@ -719,7 +630,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "separator",
@@ -734,7 +644,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "sheet",
@@ -749,7 +658,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "sidebar",
@@ -819,7 +727,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "skeleton",
@@ -833,7 +740,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: SHADCN_POWERED_BY,
   },
   {
     name: "slider",
@@ -848,7 +754,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "sonner",
@@ -863,7 +768,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: SONNER_POWERED_BY,
   },
   {
     name: "spinner",
@@ -878,7 +782,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: SHADCN_POWERED_BY,
   },
   {
     name: "spacer",
@@ -893,22 +796,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["primitives"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
-  },
-  {
-    name: "squircle",
-    type: "registry:ui",
-    dependencies: ["motion/react"],
-    files: [
-      {
-        path: "ui/squircle.tsx",
-        type: "registry:ui",
-      },
-    ],
-    tier: "free",
-    categories: ["sectorial"],
-    readiness: "production",
-    poweredBy: SKIPERUI_POWERED_BY,
   },
   {
     name: "switch",
@@ -923,7 +810,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "table",
@@ -937,7 +823,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: SHADCN_POWERED_BY,
   },
   {
     name: "tabs",
@@ -952,7 +837,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "textarea",
@@ -966,7 +850,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: SHADCN_POWERED_BY,
   },
   {
     name: "theme",
@@ -981,7 +864,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["primitives"],
     readiness: "production",
-    poweredBy: SHADCN_POWERED_BY,
   },
   {
     name: "theme-toggle",
@@ -996,7 +878,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["primitives"],
     readiness: "production",
-    poweredBy: SHADCN_POWERED_BY,
   },
   {
     name: "toast",
@@ -1019,7 +900,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "toggle",
@@ -1034,7 +914,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "toggle-group",
@@ -1050,7 +929,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "tooltip",
@@ -1065,7 +943,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: RADIX_POWERED_BY,
   },
   {
     name: "typography",
@@ -1080,7 +957,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: SHADCN_POWERED_BY,
   },
   {
     name: "unicorn-wrapper",
@@ -1095,7 +971,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["sectorial"],
     readiness: "production",
-    poweredBy: SHADCN_POWERED_BY,
   },
   {
     name: "kbd",
@@ -1109,7 +984,6 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: SHADCN_POWERED_BY,
   },
   {
     name: "native-select",
@@ -1123,6 +997,5 @@ export const ui: Registry["items"] = [
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
-    poweredBy: SHADCN_POWERED_BY,
   },
 ]

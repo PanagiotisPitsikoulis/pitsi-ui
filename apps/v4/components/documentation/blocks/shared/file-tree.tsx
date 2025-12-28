@@ -41,7 +41,7 @@ function TreeItem({ item, index, activeFile, setActiveFile }: TreeItemProps) {
         <SidebarMenuButton
           isActive={item.path === activeFile}
           onClick={() => item.path && setActiveFile(item.path)}
-          className="hover:bg-background/80 focus:bg-background/80 focus-visible:bg-background/80 active:bg-background/80 data-[active=true]:bg-background data-[active=true]:border-border rounded-none pl-(--index) whitespace-nowrap data-[active=true]:border data-[active=true]:shadow-xs"
+          className="hover:bg-background/80 focus:bg-background/80 focus-visible:bg-background/80 active:bg-background/80 data-[active=true]:bg-background data-[active=true]:border-border rounded-none pl-(--index) whitespace-nowrap data-[active=true]:border-y data-[active=true]:shadow-xs"
           data-index={index}
           style={
             {
@@ -66,7 +66,7 @@ function TreeItem({ item, index, activeFile, setActiveFile }: TreeItemProps) {
       >
         <CollapsibleTrigger asChild>
           <SidebarMenuButton
-            className="hover:bg-background/80 focus:bg-background/80 focus-visible:bg-background/80 active:bg-background/80 data-[active=true]:bg-background data-[active=true]:border-border rounded-none pl-(--index) whitespace-nowrap data-[active=true]:border data-[active=true]:shadow-xs"
+            className="hover:bg-background/80 focus:bg-background/80 focus-visible:bg-background/80 active:bg-background/80 data-[active=true]:bg-background data-[active=true]:border-border rounded-none pl-(--index) whitespace-nowrap data-[active=true]:border-y data-[active=true]:shadow-xs"
             style={
               {
                 "--index": `${index * (index === 1 ? 1 : 1.2)}rem`,

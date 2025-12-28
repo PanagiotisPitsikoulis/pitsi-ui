@@ -1,3 +1,4 @@
+import { Suspense } from "react"
 import { cacheLife } from "next/cache"
 import { notFound } from "next/navigation"
 
@@ -7,7 +8,7 @@ import {
 } from "@/lib/pages/view"
 import { itemExists, queryRegistry, type RegistryItem } from "@/lib/registry"
 import { getStyle } from "@/registry/styles"
-import { LazyComponentRenderer } from "@/app/(view)/_components"
+import { LazyComponentRenderer, ThemeFromUrl } from "@/app/(view)/_components"
 
 export async function generateMetadata({
   params,
@@ -78,6 +79,9 @@ export default async function BlockPage({
 
   return (
     <div className="bg-background min-h-screen w-full">
+      <Suspense fallback={null}>
+        <ThemeFromUrl />
+      </Suspense>
       <LazyComponentRenderer
         name={componentName}
         styleName={style.name}

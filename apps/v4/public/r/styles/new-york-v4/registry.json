@@ -52,17 +52,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "alert",
@@ -77,13 +67,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "alert-dialog",
@@ -104,17 +88,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "aspect-ratio",
@@ -132,17 +106,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "avatar",
@@ -160,17 +124,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "badge",
@@ -188,17 +142,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "breadcrumb",
@@ -216,17 +160,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "button",
@@ -244,17 +178,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "button-group",
@@ -273,13 +197,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "hero-button",
@@ -312,13 +230,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "carousel",
@@ -339,17 +251,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Embla Carousel",
-          "url": "https://www.embla-carousel.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "chart",
@@ -371,17 +273,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Recharts",
-          "url": "https://recharts.org"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "checkbox",
@@ -399,17 +291,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "collapsible",
@@ -427,17 +309,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "command",
@@ -458,17 +330,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "cmdk",
-          "url": "https://cmdk.paco.me"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "context-menu",
@@ -486,17 +348,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "container",
@@ -511,13 +363,7 @@
         "primitives"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "dialog",
@@ -535,17 +381,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "drawer",
@@ -564,17 +400,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Vaul",
-          "url": "https://vaul.emilkowal.ski"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "dropdown-menu",
@@ -592,17 +418,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "empty",
@@ -617,13 +433,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "field",
@@ -642,13 +452,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "flex",
@@ -670,13 +474,7 @@
         "primitives"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "grid",
@@ -698,13 +496,7 @@
         "primitives"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "hover-card",
@@ -722,17 +514,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "input",
@@ -747,13 +529,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "input-group",
@@ -773,13 +549,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "input-otp",
@@ -797,17 +567,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "input-otp",
-          "url": "https://input-otp.rodz.dev"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "item",
@@ -825,13 +585,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "label",
@@ -849,17 +603,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "menubar",
@@ -877,17 +621,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "navigation-menu",
@@ -905,17 +639,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "pagination",
@@ -933,13 +657,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "popover",
@@ -957,17 +675,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "progress",
@@ -985,17 +693,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "progressive-blur",
@@ -1013,13 +711,7 @@
         "primitives"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "Skiper UI",
-          "url": "https://skiper-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "radio-group",
@@ -1037,17 +729,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "resizable",
@@ -1065,17 +747,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "react-resizable-panels",
-          "url": "https://react-resizable-panels.vercel.app"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "responsive",
@@ -1111,17 +783,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "segmented-control",
@@ -1144,17 +806,7 @@
         "primitives"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "select",
@@ -1172,17 +824,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "separator",
@@ -1200,17 +842,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "sheet",
@@ -1228,17 +860,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "sidebar",
@@ -1309,17 +931,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "skeleton",
@@ -1334,13 +946,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "slider",
@@ -1358,17 +964,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "sonner",
@@ -1387,17 +983,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Sonner",
-          "url": "https://sonner.emilkowal.ski"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "spinner",
@@ -1415,13 +1001,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "spacer",
@@ -1440,41 +1020,7 @@
         "primitives"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
-    },
-    {
-      "name": "squircle",
-      "type": "registry:ui",
-      "dependencies": [
-        "motion/react"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/ui/squircle.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "categories": [
-        "sectorial"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "Skiper UI",
-          "url": "https://skiper-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "switch",
@@ -1492,17 +1038,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "table",
@@ -1517,13 +1053,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "tabs",
@@ -1541,17 +1071,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "textarea",
@@ -1566,13 +1086,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "theme",
@@ -1590,13 +1104,7 @@
         "primitives"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "theme-toggle",
@@ -1615,13 +1123,7 @@
         "primitives"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "toggle",
@@ -1639,17 +1141,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "toggle-group",
@@ -1670,17 +1162,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "tooltip",
@@ -1698,17 +1180,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        },
-        {
-          "name": "Radix UI",
-          "url": "https://radix-ui.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "typography",
@@ -1726,13 +1198,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "unicorn-wrapper",
@@ -1750,13 +1216,7 @@
         "sectorial"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "kbd",
@@ -1771,13 +1231,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "native-select",
@@ -1792,13 +1246,7 @@
         "core-components"
       ],
       "tier": "free",
-      "readiness": "production",
-      "poweredBy": [
-        {
-          "name": "shadcn/ui",
-          "url": "https://ui.shadcn.com"
-        }
-      ]
+      "readiness": "production"
     },
     {
       "name": "background-image-parallax",
@@ -1844,13 +1292,7 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta",
-      "poweredBy": [
-        {
-          "name": "Skiper UI",
-          "url": "https://skiper-ui.com"
-        }
-      ]
+      "readiness": "beta"
     },
     {
       "name": "cards-parallax",
@@ -1874,13 +1316,7 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta",
-      "poweredBy": [
-        {
-          "name": "Skiper UI",
-          "url": "https://skiper-ui.com"
-        }
-      ]
+      "readiness": "beta"
     },
     {
       "name": "parallax-scroll",
@@ -1904,13 +1340,7 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta",
-      "poweredBy": [
-        {
-          "name": "Skiper UI",
-          "url": "https://skiper-ui.com"
-        }
-      ]
+      "readiness": "beta"
     },
     {
       "name": "perspective-carousel",
@@ -1956,13 +1386,7 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta",
-      "poweredBy": [
-        {
-          "name": "Skiper UI",
-          "url": "https://skiper-ui.com"
-        }
-      ]
+      "readiness": "beta"
     },
     {
       "name": "scroll-expand",
@@ -2117,13 +1541,7 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta",
-      "poweredBy": [
-        {
-          "name": "Skiper UI",
-          "url": "https://skiper-ui.com"
-        }
-      ]
+      "readiness": "beta"
     },
     {
       "name": "sticky-footer",
@@ -2143,13 +1561,7 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta",
-      "poweredBy": [
-        {
-          "name": "Skiper UI",
-          "url": "https://skiper-ui.com"
-        }
-      ]
+      "readiness": "beta"
     },
     {
       "name": "text-along-path",
@@ -2172,13 +1584,7 @@
         "animations"
       ],
       "tier": "free",
-      "readiness": "beta",
-      "poweredBy": [
-        {
-          "name": "Skiper UI",
-          "url": "https://skiper-ui.com"
-        }
-      ]
+      "readiness": "beta"
     },
     {
       "name": "text-gradient-opacity",
@@ -2291,7 +1697,8 @@
         }
       ],
       "categories": [
-        "header"
+        "header",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "alpha"
@@ -2315,7 +1722,58 @@
         }
       ],
       "categories": [
-        "hero"
+        "hero",
+        "service-plants"
+      ],
+      "tier": "free",
+      "readiness": "alpha"
+    },
+    {
+      "name": "hero-2",
+      "type": "registry:block",
+      "description": "Travel agency hero section with parallax effects and knockout text",
+      "dependencies": [
+        "motion/react"
+      ],
+      "registryDependencies": [
+        "button",
+        "hero-button",
+        "spacer"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "service-travel"
+      ],
+      "tier": "free",
+      "readiness": "alpha"
+    },
+    {
+      "name": "hero-3",
+      "type": "registry:block",
+      "description": "Yacht charter hero section with parallax effects and knockout text",
+      "dependencies": [
+        "motion/react"
+      ],
+      "registryDependencies": [
+        "button",
+        "hero-button",
+        "spacer"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "service-boat"
       ],
       "tier": "free",
       "readiness": "alpha"
@@ -2334,7 +1792,8 @@
         }
       ],
       "categories": [
-        "features"
+        "features",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "alpha"
@@ -2353,7 +1812,8 @@
         }
       ],
       "categories": [
-        "features"
+        "features",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "alpha"
@@ -2372,7 +1832,8 @@
         }
       ],
       "categories": [
-        "features"
+        "features",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "alpha"
@@ -2391,7 +1852,8 @@
         }
       ],
       "categories": [
-        "features"
+        "features",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "alpha"
@@ -2410,7 +1872,8 @@
         }
       ],
       "categories": [
-        "features"
+        "features",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "alpha"
@@ -2429,7 +1892,8 @@
         }
       ],
       "categories": [
-        "products"
+        "products",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "alpha"
@@ -2452,7 +1916,8 @@
         }
       ],
       "categories": [
-        "pricing"
+        "pricing",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "alpha"
@@ -2471,7 +1936,8 @@
         }
       ],
       "categories": [
-        "testimonials"
+        "testimonials",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "alpha"
@@ -2487,7 +1953,8 @@
         }
       ],
       "categories": [
-        "gallery"
+        "gallery",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "alpha"
@@ -2503,7 +1970,8 @@
         }
       ],
       "categories": [
-        "team"
+        "team",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "alpha"
@@ -2519,7 +1987,8 @@
         }
       ],
       "categories": [
-        "stats"
+        "stats",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "alpha"
@@ -2535,7 +2004,8 @@
         }
       ],
       "categories": [
-        "logos"
+        "logos",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "alpha"
@@ -2554,7 +2024,8 @@
         }
       ],
       "categories": [
-        "faq"
+        "faq",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "alpha"
@@ -2570,7 +2041,8 @@
         }
       ],
       "categories": [
-        "blog"
+        "blog",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "alpha"
@@ -2595,7 +2067,8 @@
         }
       ],
       "categories": [
-        "contact"
+        "contact",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "alpha"
@@ -2615,7 +2088,8 @@
         }
       ],
       "categories": [
-        "newsletter"
+        "newsletter",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "alpha"
@@ -2634,7 +2108,8 @@
         }
       ],
       "categories": [
-        "cta"
+        "cta",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "alpha"
@@ -2657,7 +2132,8 @@
         }
       ],
       "categories": [
-        "footer"
+        "footer",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "alpha"
@@ -6518,24 +5994,6 @@
       "files": [
         {
           "path": "registry/new-york-v4/examples/spacer-sizes.tsx",
-          "type": "registry:example"
-        }
-      ],
-      "categories": [
-        "primitives"
-      ],
-      "tier": "free",
-      "readiness": "production"
-    },
-    {
-      "name": "squircle-demo",
-      "type": "registry:example",
-      "registryDependencies": [
-        "squircle"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/examples/squircle-demo.tsx",
           "type": "registry:example"
         }
       ],

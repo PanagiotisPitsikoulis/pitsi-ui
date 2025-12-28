@@ -15,7 +15,8 @@
     }
   ],
   "categories": [
-    "newsletter"
+    "newsletter",
+    "service-plants"
   ],
   "tier": "free",
   "readiness": "alpha"

@@ -22,6 +22,8 @@ export const BLOCK_TYPES = [
   "hero",
   "logos",
   "features",
+  "showcase",
+  "bento",
   "products",
   "pricing",
   "testimonials",

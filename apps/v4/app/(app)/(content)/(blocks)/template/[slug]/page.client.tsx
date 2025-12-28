@@ -1,7 +1,7 @@
 "use client"
 
 import { Suspense, useCallback, useEffect, useRef, useState } from "react"
-import Link from "next/link"
+import { useRouter } from "next/navigation"
 import {
   ArrowLeft,
   Code2,
@@ -15,6 +15,7 @@ import {
 import { useTheme } from "next-themes"
 import { toast } from "sonner"
 
+import { cn } from "@/lib/utils"
 import { themePresets } from "@/app/(app)/(tools)/tools/theme-generator/_components/theme-presets"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
@@ -27,6 +28,7 @@ import {
 import {
   Tooltip,
   TooltipContent,
+  TooltipProvider,
   TooltipTrigger,
 } from "@/registry/new-york-v4/ui/tooltip"
 
@@ -54,20 +56,12 @@ const PROJECT_PATH = "/Users/panagiotispitsikoulis/Documents/pitsi-ui/apps/v4"
 const REGISTRY_BLOCKS_PATH = `${PROJECT_PATH}/registry/new-york-v4/blocks`
 const THEME_FILE_PATH = `${PROJECT_PATH}/app/(app)/(tools)/tools/theme-generator/_components/theme-presets.ts`
 
-function ColorBox({ color }: { color: string }) {
-  return (
-    <div
-      className="size-3.5 shrink-0 rounded-full border border-background ring-1 ring-border/50"
-      style={{ backgroundColor: color }}
-    />
-  )
-}
-
 export function TemplateViewerClient({
   slug,
   template,
 }: TemplateViewerClientProps) {
-  const [devOverlayEnabled, setDevOverlayEnabled] = useState(true)
+  const router = useRouter()
+  const [devOverlayEnabled, setDevOverlayEnabled] = useState(false)
   const hoveredBlockRef = useRef<string | null>(null)
   const mainRef = useRef<HTMLElement>(null)
   const blocks = getTemplateBlocks(slug as TemplateSlug)
@@ -76,13 +70,6 @@ export function TemplateViewerClient({
 
   const ThemeIcon =
     resolvedTheme === "dark" ? Moon : resolvedTheme === "light" ? Sun : Monitor
-
-  // Get theme colors for display
-  const palette = templatePalettes[slug] || "azure"
-  const presetKey = getPresetKey(palette, DEFAULT_TINT)
-  const preset = themePresets[presetKey] || themePresets["azure-tinted"]
-  const currentMode = (resolvedTheme as "light" | "dark") || "light"
-  const themeColors = preset?.styles?.[currentMode]
 
   const openInEditor = useCallback(async (filePath: string) => {
     try {
@@ -188,179 +175,183 @@ export function TemplateViewerClient({
 
   if (blocks.length === 0) {
     return (
-      <div className="bg-sidebar flex min-h-screen items-center justify-center">
+      <div className="bg-background flex min-h-screen items-center justify-center">
         <p className="text-muted-foreground">No blocks found for this template</p>
       </div>
     )
   }
 
   return (
-    <div className="bg-sidebar flex h-screen flex-col overflow-hidden">
-      {/* Header */}
-      <header className="grid h-14 shrink-0 grid-cols-[1fr_auto_1fr] items-center gap-4 px-4">
-        {/* Left - Back button */}
-        <div className="flex items-center">
-          <Link href="/blocks/all">
-            <Button variant="ghost" size="sm" className="gap-2">
-              <ArrowLeft className="size-4" />
-              Back
-            </Button>
-          </Link>
-        </div>
+    <div className="relative flex min-h-screen flex-col">
+      <BlockThemeWrapper slug={slug} tint={DEFAULT_TINT} className="flex flex-1 flex-col">
+        {/* Main content area */}
+        <main
+          ref={mainRef}
+          className="bg-background relative isolate flex-1"
+        >
+          <ScrollContainerProvider value={mainRef}>
+            {/* Template blocks */}
+            {blocks.map(
+              ({ name, type, Component, tint, forceDark, forceLight }, index) => {
+                const skipAlternatingBg =
+                  type === "hero" || type === "header" || forceDark || forceLight
+                const skipPadding =
+                  type === "hero" || type === "header" || type === "footer"
+                const blockTint = tint || DEFAULT_TINT
 
-        {/* Center - Title with theme colors */}
-        <div className="flex items-center gap-2">
-          <span className="text-sm font-medium">{template.name}</span>
-          {themeColors && (
+                return (
+                  <BlockThemeWrapper
+                    key={name}
+                    slug={slug}
+                    tint={blockTint}
+                    forceDark={forceDark}
+                    forceLight={forceLight}
+                  >
+                    <DevBlockOverlay
+                      blockKey={name}
+                      enabled={devOverlayEnabled}
+                      onHover={onBlockHover}
+                    >
+                      <BlockContainer
+                        index={index}
+                        tint={blockTint}
+                        forceBg={skipAlternatingBg ? "none" : undefined}
+                        noPadding={skipPadding}
+                      >
+                        <Suspense fallback={null}>
+                          <Component />
+                        </Suspense>
+                      </BlockContainer>
+                    </DevBlockOverlay>
+                  </BlockThemeWrapper>
+                )
+              }
+            )}
+          </ScrollContainerProvider>
+        </main>
+      </BlockThemeWrapper>
+
+      {/* Floating bottom pill - forced dark */}
+      <TooltipProvider delayDuration={0}>
+        <div className="dark fixed bottom-6 left-1/2 z-50 -translate-x-1/2 text-muted-foreground">
+          <div className="flex items-center gap-0.5 rounded-full bg-background p-1 shadow-lg ring-1 ring-border">
+            {/* Back */}
             <Tooltip>
               <TooltipTrigger asChild>
-                <div className="cursor-default flex -space-x-1">
-                  <ColorBox color={themeColors.brand} />
-                  <ColorBox color={themeColors["brand-complementary"]} />
-                  <ColorBox color={themeColors.primary} />
-                </div>
+                <button
+                  onClick={() => router.back()}
+                  className="flex size-7 items-center justify-center rounded-full transition-colors hover:text-foreground"
+                >
+                  <ArrowLeft className="size-3.5" />
+                </button>
               </TooltipTrigger>
-              <TooltipContent>{preset.label}</TooltipContent>
+              <TooltipContent>Back</TooltipContent>
             </Tooltip>
-          )}
-        </div>
 
-        {/* Right - Dev buttons */}
-        <div className="flex items-center justify-end gap-2">
-          {isDev && (
-            <>
-              <Button
-                variant="ghost"
-                size="sm"
-                className="gap-2"
-                onClick={openAssets}
-              >
-                <ImageIcon className="size-4" />
-                <span className="hidden sm:inline">Assets</span>
-                <kbd className="bg-muted text-muted-foreground pointer-events-none hidden rounded px-1.5 py-0.5 font-mono text-[10px] font-medium sm:inline">
-                  ⌘I
-                </kbd>
-              </Button>
-              <Button
-                variant="ghost"
-                size="sm"
-                className="gap-2"
-                onClick={openComponents}
-              >
-                <Layers className="size-4" />
-                <span className="hidden sm:inline">Components</span>
-                <kbd className="bg-muted text-muted-foreground pointer-events-none hidden rounded px-1.5 py-0.5 font-mono text-[10px] font-medium sm:inline">
-                  ⌘K
-                </kbd>
-              </Button>
-              <Button
-                variant="ghost"
-                size="sm"
-                className="gap-2"
-                onClick={openTheme}
-              >
-                <Palette className="size-4" />
-                <span className="hidden sm:inline">Theme</span>
-              </Button>
-              <Button
-                variant={devOverlayEnabled ? "secondary" : "ghost"}
-                size="sm"
-                className="gap-2"
-                onClick={() => setDevOverlayEnabled(!devOverlayEnabled)}
-              >
-                <Code2 className="size-4" />
-                <span className="hidden sm:inline">Dev</span>
-                <kbd className="bg-muted text-muted-foreground pointer-events-none hidden rounded px-1.5 py-0.5 font-mono text-[10px] font-medium sm:inline">
-                  ⌘D
-                </kbd>
-              </Button>
-            </>
-          )}
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="sm" className="gap-2">
-                <ThemeIcon className="size-4" />
-                <span className="hidden capitalize sm:inline">
-                  {theme === "system" ? "System" : resolvedTheme}
-                </span>
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuRadioGroup value={theme} onValueChange={setTheme}>
-                <DropdownMenuRadioItem value="light">
-                  <Sun className="mr-2 size-4" />
-                  Light
-                </DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="dark">
-                  <Moon className="mr-2 size-4" />
-                  Dark
-                </DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="system">
-                  <Monitor className="mr-2 size-4" />
-                  System
-                </DropdownMenuRadioItem>
-              </DropdownMenuRadioGroup>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
-      </header>
+            <div className="mx-0.5 h-4 w-px bg-border" />
 
-      {/* Inset container */}
-      <div className="flex min-h-0 flex-1 flex-col px-2 pb-2">
-        <BlockThemeWrapper
-          slug={slug}
-          tint={DEFAULT_TINT}
-          className="border-border flex flex-1 flex-col overflow-hidden rounded-xl border shadow-inner"
-        >
-          {/* Main content area */}
-          <main
-            ref={mainRef}
-            className="bg-background relative isolate flex-1 overflow-y-auto"
-          >
-            <ScrollContainerProvider value={mainRef}>
-              {/* Template blocks - each wrapped with theme and container */}
-              {blocks.map(
-                ({ name, type, Component, tint, forceDark, forceLight }, index) => {
-                  // Heroes/headers don't get alternating bg since they have their own backgrounds
-                  const skipAlternatingBg =
-                    type === "hero" || type === "header" || forceDark || forceLight
-                  // Heroes/headers/footers handle their own padding
-                  const skipPadding =
-                    type === "hero" || type === "header" || type === "footer"
-                  const blockTint = tint || DEFAULT_TINT
-
-                  return (
-                    <BlockThemeWrapper
-                      key={name}
-                      slug={slug}
-                      tint={blockTint}
-                      forceDark={forceDark}
-                      forceLight={forceLight}
+            {isDev && (
+              <>
+                {/* Assets */}
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <button
+                      onClick={openAssets}
+                      className="flex size-7 items-center justify-center rounded-full transition-colors hover:text-foreground"
                     >
-                      <DevBlockOverlay
-                        blockKey={name}
-                        enabled={devOverlayEnabled}
-                        onHover={onBlockHover}
-                      >
-                        <BlockContainer
-                          index={index}
-                          tint={blockTint}
-                          forceBg={skipAlternatingBg ? "none" : undefined}
-                          noPadding={skipPadding}
-                        >
-                          <Suspense fallback={null}>
-                            <Component />
-                          </Suspense>
-                        </BlockContainer>
-                      </DevBlockOverlay>
-                    </BlockThemeWrapper>
-                  )
-                }
-              )}
-            </ScrollContainerProvider>
-          </main>
-        </BlockThemeWrapper>
-      </div>
+                      <ImageIcon className="size-3.5" />
+                    </button>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    Assets
+                    <kbd className="ml-2 rounded bg-foreground/20 px-1 py-0.5 font-mono text-[10px]">⌘I</kbd>
+                  </TooltipContent>
+                </Tooltip>
+
+                {/* Components */}
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <button
+                      onClick={openComponents}
+                      className="flex size-7 items-center justify-center rounded-full transition-colors hover:text-foreground"
+                    >
+                      <Layers className="size-3.5" />
+                    </button>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    Components
+                    <kbd className="ml-2 rounded bg-foreground/20 px-1 py-0.5 font-mono text-[10px]">⌘K</kbd>
+                  </TooltipContent>
+                </Tooltip>
+
+                {/* Theme */}
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <button
+                      onClick={openTheme}
+                      className="flex size-7 items-center justify-center rounded-full transition-colors hover:text-foreground"
+                    >
+                      <Palette className="size-3.5" />
+                    </button>
+                  </TooltipTrigger>
+                  <TooltipContent>Theme</TooltipContent>
+                </Tooltip>
+
+                {/* Dev toggle */}
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <button
+                      onClick={() => setDevOverlayEnabled(!devOverlayEnabled)}
+                      className={cn(
+                        "flex size-7 items-center justify-center rounded-full transition-colors hover:text-foreground",
+                        devOverlayEnabled && "text-foreground"
+                      )}
+                    >
+                      <Code2 className="size-3.5" />
+                    </button>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    Dev overlay
+                    <kbd className="ml-2 rounded bg-foreground/20 px-1 py-0.5 font-mono text-[10px]">⌘D</kbd>
+                  </TooltipContent>
+                </Tooltip>
+
+                <div className="mx-0.5 h-4 w-px bg-border" />
+              </>
+            )}
+
+            {/* Theme toggle */}
+            <DropdownMenu>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <DropdownMenuTrigger asChild>
+                    <button className="flex size-7 items-center justify-center rounded-full transition-colors hover:text-foreground">
+                      <ThemeIcon className="size-3.5" />
+                    </button>
+                  </DropdownMenuTrigger>
+                </TooltipTrigger>
+                <TooltipContent>Theme</TooltipContent>
+              </Tooltip>
+              <DropdownMenuContent align="center" side="top" sideOffset={8}>
+                <DropdownMenuRadioGroup value={theme} onValueChange={setTheme}>
+                  <DropdownMenuRadioItem value="light">
+                    <Sun className="mr-2 size-4" />
+                    Light
+                  </DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="dark">
+                    <Moon className="mr-2 size-4" />
+                    Dark
+                  </DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="system">
+                    <Monitor className="mr-2 size-4" />
+                    System
+                  </DropdownMenuRadioItem>
+                </DropdownMenuRadioGroup>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
+        </div>
+      </TooltipProvider>
     </div>
   )
 }

@@ -8,6 +8,7 @@ import { type DocsItemType } from "@/lib/pages/docs"
 import { queryRegistry, type RegistryItem } from "@/lib/registry-utils"
 import { source } from "@/lib/source"
 import { absoluteUrl } from "@/lib/utils"
+import { ComponentsFilter } from "@/components/documentation/components/components-filter"
 import { ComponentsList } from "@/components/documentation/components/components-list"
 import { DocsCopyPage } from "@/components/documentation/docs/docs-copy-page"
 import { DocsTableOfContents } from "@/components/documentation/docs/docs-toc"
@@ -158,13 +159,20 @@ export async function DocsListPage({
                 </p>
               )}
             </div>
+            {(type === "components" || type === "animations") && (
+              <ComponentsFilter />
+            )}
           </div>
           <div className="w-full flex-1 *:data-[slot=alert]:first:mt-0">
             <MDX
               components={{
                 ...mdxComponents,
                 ComponentsList: (props: { category?: string }) => (
-                  <ComponentsList items={itemsData} {...props} />
+                  <ComponentsList
+                    items={itemsData}
+                    type={type === "components" ? "component" : "animation"}
+                    {...props}
+                  />
                 ),
               }}
             />

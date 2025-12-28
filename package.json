@@ -58,6 +58,8 @@
     "tests:typecheck": "bun run --bun --filter tests typecheck",
     "registry:build": "bun run --bun --filter v4 registry:build && bun run --bun lint:fix && bun run --bun format:write -- --loglevel silent",
     "registry:capture": "bun run --bun --filter v4 registry:capture",
+    "registry:capture:force": "bun run --bun --filter v4 registry:capture:force",
+    "registry:capture:blocks": "bun run --bun --filter v4 registry:capture:blocks",
     "readiness": "bun run --bun --filter v4 readiness",
     "readiness:list": "bun run --bun --filter v4 readiness:list",
     "readiness:update": "bun run --bun --filter v4 readiness:update",

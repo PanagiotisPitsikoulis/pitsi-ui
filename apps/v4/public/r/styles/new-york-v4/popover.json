@@ -16,15 +16,5 @@
     "core-components"
   ],
   "tier": "free",
-  "readiness": "production",
-  "poweredBy": [
-    {
-      "name": "shadcn/ui",
-      "url": "https://ui.shadcn.com"
-    },
-    {
-      "name": "Radix UI",
-      "url": "https://radix-ui.com"
-    }
-  ]
+  "readiness": "production"
 }

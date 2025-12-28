@@ -1,0 +1,26 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "header-2",
+  "type": "registry:block",
+  "description": "Header with responsive navigation and scroll effects",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/header/header-2.tsx",
+      "content": "\"use client\"\n\nimport { memo, useEffect, useState } from \"react\"\nimport Link from \"next/link\"\nimport { Menu, X } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\n\n// Inline logo icon\nfunction LogoIcon({ className }: { className?: string }) {\n  return (\n    <svg\n      xmlns=\"http://www.w3.org/2000/svg\"\n      viewBox=\"0 0 24 24\"\n      fill=\"currentColor\"\n      className={className}\n    >\n      <path d=\"M12 1 21.5 6.5V17.5L13 22.4211V11.4234L3.49793 5.92225 12 1ZM2.5 7.6555V17.5L11 22.4211V12.5765L2.5 7.6555Z\" />\n    </svg>\n  )\n}\n\nconst navItems = [\n  { label: \"Components\", href: \"/docs/components\" },\n  { label: \"Blocks\", href: \"/blocks\" },\n  { label: \"Animations\", href: \"/docs/animations\" },\n  { label: \"Templates\", href: \"/templates\" },\n]\n\nexport const Header2 = memo(function Header2() {\n  const [hasScrolled, setHasScrolled] = useState(false)\n  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)\n\n  useEffect(() => {\n    const handleScroll = () => {\n      setHasScrolled(window.scrollY > 10)\n    }\n\n    handleScroll()\n    window.addEventListener(\"scroll\", handleScroll, { passive: true })\n    return () => {\n      window.removeEventListener(\"scroll\", handleScroll)\n    }\n  }, [])\n\n  return (\n    <header\n      className={cn(\n        \"sticky top-0 z-[99] w-full transition-colors\",\n        hasScrolled ? \"bg-page\" : \"bg-transparent\"\n      )}\n    >\n      <div className=\"container flex h-14 items-center justify-between px-6 lg:px-3\">\n        {/* Logo */}\n        <Button asChild variant=\"ghost\" className=\"h-8 gap-2 px-2\">\n          <Link href=\"/\">\n            <LogoIcon className=\"size-5\" />\n            <span className=\"display font-semibold tracking-tight\">\n              Pitsi UI\n            </span>\n          </Link>\n        </Button>\n\n        {/* Desktop Navigation */}\n        <nav className=\"hidden items-center gap-1 lg:flex\">\n          {navItems.map((item) => (\n            <Button key={item.href} asChild variant=\"ghost\" size=\"sm\">\n              <Link href={item.href}>{item.label}</Link>\n            </Button>\n          ))}\n        </nav>\n\n        {/* Right side - Desktop */}\n        <div className=\"hidden items-center gap-2 lg:flex\">\n          <Button asChild variant=\"ghost\" size=\"sm\">\n            <a\n              href=\"https://github.com/pitsi-ui/pitsi\"\n              target=\"_blank\"\n              rel=\"noopener noreferrer\"\n            >\n              GitHub\n            </a>\n          </Button>\n          <Button asChild size=\"sm\">\n            <Link href=\"/#pricing\">Get Pro</Link>\n          </Button>\n        </div>\n\n        {/* Mobile menu button */}\n        <Button\n          variant=\"ghost\"\n          size=\"icon\"\n          className=\"lg:hidden\"\n          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}\n        >\n          {mobileMenuOpen ? (\n            <X className=\"size-5\" />\n          ) : (\n            <Menu className=\"size-5\" />\n          )}\n        </Button>\n      </div>\n\n      {/* Mobile menu */}\n      {mobileMenuOpen && (\n        <div className=\"bg-page border-b lg:hidden\">\n          <nav className=\"container flex flex-col gap-1 px-6 py-4\">\n            {navItems.map((item) => (\n              <Button\n                key={item.href}\n                asChild\n                variant=\"ghost\"\n                className=\"justify-start\"\n              >\n                <Link href={item.href}>{item.label}</Link>\n              </Button>\n            ))}\n            <div className=\"my-2 border-t\" />\n            <Button asChild variant=\"ghost\" className=\"justify-start\">\n              <a\n                href=\"https://github.com/pitsi-ui/pitsi\"\n                target=\"_blank\"\n                rel=\"noopener noreferrer\"\n              >\n                GitHub\n              </a>\n            </Button>\n            <Button asChild className=\"mt-2\">\n              <Link href=\"/#pricing\">Get Pro</Link>\n            </Button>\n          </nav>\n        </div>\n      )}\n    </header>\n  )\n})\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "header",
+    "pitsi-landing"
+  ],
+  "tier": "free",
+  "readiness": "alpha"
+}

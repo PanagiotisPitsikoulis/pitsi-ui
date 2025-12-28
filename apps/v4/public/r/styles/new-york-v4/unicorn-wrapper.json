@@ -16,11 +16,5 @@
     "sectorial"
   ],
   "tier": "free",
-  "readiness": "production",
-  "poweredBy": [
-    {
-      "name": "shadcn/ui",
-      "url": "https://ui.shadcn.com"
-    }
-  ]
+  "readiness": "production"
 }

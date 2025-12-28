@@ -1,18 +1,12 @@
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 
-import { TemplateViewerClient } from "./page.client"
+import {
+  getTemplateMetadata,
+  TEMPLATE_SLUGS,
+} from "../../template-config"
 
-// Template metadata
-const templatesMeta: Record<
-  string,
-  { name: string; description: string }
-> = {
-  "service-plants": {
-    name: "Service Plants",
-    description: "A modern template for plant care services and nurseries",
-  },
-}
+import { TemplateViewerClient } from "./page.client"
 
 export async function generateMetadata({
   params,
@@ -20,7 +14,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await params
-  const template = templatesMeta[slug]
+  const template = getTemplateMetadata(slug)
 
   if (!template) {
     return { title: "Template Not Found - Pitsi UI" }
@@ -43,7 +37,7 @@ export async function generateMetadata({
 }
 
 export function generateStaticParams() {
-  return Object.keys(templatesMeta).map((slug) => ({ slug }))
+  return TEMPLATE_SLUGS.map((slug) => ({ slug }))
 }
 
 export default async function TemplateViewerPage({
@@ -52,7 +46,7 @@ export default async function TemplateViewerPage({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const template = templatesMeta[slug]
+  const template = getTemplateMetadata(slug)
 
   if (!template) {
     notFound()

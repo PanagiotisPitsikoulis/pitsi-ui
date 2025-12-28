@@ -20,15 +20,5 @@
     "core-components"
   ],
   "tier": "free",
-  "readiness": "production",
-  "poweredBy": [
-    {
-      "name": "shadcn/ui",
-      "url": "https://ui.shadcn.com"
-    },
-    {
-      "name": "Recharts",
-      "url": "https://recharts.org"
-    }
-  ]
+  "readiness": "production"
 }

@@ -13,7 +13,7 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["header"],
+    categories: ["header", "service-plants"],
     tier: "free",
   },
   {
@@ -29,7 +29,39 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["hero"],
+    categories: ["hero", "service-plants"],
+    tier: "free",
+  },
+  {
+    name: "hero-2",
+    type: "registry:block",
+    description:
+      "Travel agency hero section with parallax effects and knockout text",
+    dependencies: ["motion/react"],
+    registryDependencies: ["button", "hero-button", "spacer"],
+    files: [
+      {
+        path: "blocks/hero/hero-2.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["hero", "service-travel"],
+    tier: "free",
+  },
+  {
+    name: "hero-3",
+    type: "registry:block",
+    description:
+      "Yacht charter hero section with parallax effects and knockout text",
+    dependencies: ["motion/react"],
+    registryDependencies: ["button", "hero-button", "spacer"],
+    files: [
+      {
+        path: "blocks/hero/hero-3.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["hero", "service-boat"],
     tier: "free",
   },
   {
@@ -43,7 +75,7 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["features"],
+    categories: ["features", "service-plants"],
     tier: "free",
   },
   {
@@ -57,7 +89,7 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["features"],
+    categories: ["features", "service-plants"],
     tier: "free",
   },
   {
@@ -71,7 +103,7 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["features"],
+    categories: ["features", "service-plants"],
     tier: "free",
   },
   {
@@ -85,7 +117,7 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["features"],
+    categories: ["features", "service-plants"],
     tier: "free",
   },
   {
@@ -99,7 +131,7 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["features"],
+    categories: ["features", "service-plants"],
     tier: "free",
   },
   {
@@ -113,7 +145,7 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["products"],
+    categories: ["products", "service-plants"],
     tier: "free",
   },
   {
@@ -128,7 +160,7 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["pricing"],
+    categories: ["pricing", "service-plants"],
     tier: "free",
   },
   {
@@ -142,7 +174,7 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["testimonials"],
+    categories: ["testimonials", "service-plants"],
     tier: "free",
   },
   {
@@ -155,7 +187,7 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["gallery"],
+    categories: ["gallery", "service-plants"],
     tier: "free",
   },
   {
@@ -168,7 +200,7 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["team"],
+    categories: ["team", "service-plants"],
     tier: "free",
   },
   {
@@ -181,7 +213,7 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["stats"],
+    categories: ["stats", "service-plants"],
     tier: "free",
   },
   {
@@ -194,7 +226,7 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["logos"],
+    categories: ["logos", "service-plants"],
     tier: "free",
   },
   {
@@ -208,7 +240,7 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["faq"],
+    categories: ["faq", "service-plants"],
     tier: "free",
   },
   {
@@ -221,7 +253,7 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["blog"],
+    categories: ["blog", "service-plants"],
     tier: "free",
   },
   {
@@ -236,7 +268,7 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["contact"],
+    categories: ["contact", "service-plants"],
     tier: "free",
   },
   {
@@ -250,7 +282,7 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["newsletter"],
+    categories: ["newsletter", "service-plants"],
     tier: "free",
   },
   {
@@ -264,7 +296,7 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["cta"],
+    categories: ["cta", "service-plants"],
     tier: "free",
   },
   {
@@ -279,7 +311,7 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["footer"],
+    categories: ["footer", "service-plants"],
     tier: "free",
   },
 ]

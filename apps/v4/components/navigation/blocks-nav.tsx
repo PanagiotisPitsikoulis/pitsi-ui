@@ -3,7 +3,30 @@
 import * as React from "react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
-import { Check, ChevronsUpDown, Search } from "lucide-react"
+import {
+  BarChart3,
+  Building2,
+  Check,
+  ChevronsUpDown,
+  CreditCard,
+  Grid3X3,
+  HelpCircle,
+  Images,
+  Layout,
+  LayoutGrid,
+  Layers,
+  Mail,
+  MousePointerClick,
+  Newspaper,
+  PanelBottom,
+  Quote,
+  Search,
+  Send,
+  ShoppingBag,
+  Sparkles,
+  Users,
+  type LucideIcon,
+} from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import {
@@ -29,6 +52,28 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/registry/new-york-v4/ui/sidebar"
+
+const CATEGORY_ICONS: Record<string, LucideIcon> = {
+  all: Layers,
+  header: Layout,
+  hero: Sparkles,
+  features: Grid3X3,
+  products: ShoppingBag,
+  pricing: CreditCard,
+  testimonials: Quote,
+  gallery: Images,
+  team: Users,
+  stats: BarChart3,
+  logos: Building2,
+  faq: HelpCircle,
+  blog: Newspaper,
+  contact: Mail,
+  newsletter: Send,
+  cta: MousePointerClick,
+  footer: PanelBottom,
+  showcase: LayoutGrid,
+  bento: Grid3X3,
+}
 
 type CategoryLink = {
   category: string
@@ -120,6 +165,10 @@ export function BlocksSearch({
                       activeCategory === item.category ? "opacity-100" : "opacity-0"
                     )}
                   />
+                  {(() => {
+                    const Icon = CATEGORY_ICONS[item.category] || Layers
+                    return <Icon className="size-4 shrink-0" />
+                  })()}
                   {item.label}
                   <span className="text-muted-foreground ml-auto text-xs">{item.count}</span>
                 </CommandItem>
@@ -187,6 +236,10 @@ export function BlocksNav({
                               activeCategory === item.category ? "opacity-100" : "opacity-0"
                             )}
                           />
+                          {(() => {
+                            const Icon = CATEGORY_ICONS[item.category] || Layers
+                            return <Icon className="size-4 shrink-0" />
+                          })()}
                           {item.label}
                           <span className="text-muted-foreground ml-auto text-xs">{item.count}</span>
                         </CommandItem>
@@ -209,16 +262,18 @@ export function BlocksNav({
                   .split("-")
                   .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
                   .join(" ")
+                const Icon = CATEGORY_ICONS[category] || Layers
 
                 return (
                   <SidebarMenuItem key={category}>
                     <SidebarMenuButton
                       asChild
                       isActive={activeCategory === category}
-                      className="data-[active=true]:bg-accent data-[active=true]:border-accent 3xl:fixed:w-full 3xl:fixed:max-w-48 relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md"
+                      className="text-muted-foreground hover:text-foreground data-[active=true]:text-foreground data-[active=true]:bg-accent data-[active=true]:border-accent 3xl:fixed:w-full 3xl:fixed:max-w-48 relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md"
                     >
                       <Link href={href}>
                         <span className="absolute inset-0 flex w-(--sidebar-width) bg-transparent" />
+                        <Icon className="size-4 shrink-0" />
                         {formattedName}
                         <span className="text-muted-foreground/50 ml-auto text-xs font-normal">
                           {count}

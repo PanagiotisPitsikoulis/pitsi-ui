@@ -26,7 +26,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
     "alert": {
       name: "alert",
@@ -47,7 +46,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"}],
     },
     "alert-dialog": {
       name: "alert-dialog",
@@ -68,7 +66,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
     "aspect-ratio": {
       name: "aspect-ratio",
@@ -89,7 +86,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
     "avatar": {
       name: "avatar",
@@ -110,7 +106,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
     "badge": {
       name: "badge",
@@ -131,7 +126,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
     "breadcrumb": {
       name: "breadcrumb",
@@ -152,7 +146,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
     "button": {
       name: "button",
@@ -173,7 +166,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
     "button-group": {
       name: "button-group",
@@ -194,7 +186,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"}],
     },
     "hero-button": {
       name: "hero-button",
@@ -215,7 +206,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "card": {
       name: "card",
@@ -236,7 +226,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"}],
     },
     "carousel": {
       name: "carousel",
@@ -257,7 +246,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Embla Carousel","url":"https://www.embla-carousel.com"}],
     },
     "chart": {
       name: "chart",
@@ -278,7 +266,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Recharts","url":"https://recharts.org"}],
     },
     "checkbox": {
       name: "checkbox",
@@ -299,7 +286,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
     "collapsible": {
       name: "collapsible",
@@ -320,7 +306,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
     "command": {
       name: "command",
@@ -341,7 +326,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"cmdk","url":"https://cmdk.paco.me"}],
     },
     "context-menu": {
       name: "context-menu",
@@ -362,7 +346,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
     "container": {
       name: "container",
@@ -383,7 +366,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"}],
     },
     "dialog": {
       name: "dialog",
@@ -404,7 +386,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
     "drawer": {
       name: "drawer",
@@ -425,7 +406,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Vaul","url":"https://vaul.emilkowal.ski"}],
     },
     "dropdown-menu": {
       name: "dropdown-menu",
@@ -446,7 +426,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
     "empty": {
       name: "empty",
@@ -467,7 +446,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"}],
     },
     "field": {
       name: "field",
@@ -488,7 +466,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"}],
     },
     "flex": {
       name: "flex",
@@ -509,7 +486,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"}],
     },
     "grid": {
       name: "grid",
@@ -530,7 +506,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"}],
     },
     "hover-card": {
       name: "hover-card",
@@ -551,7 +526,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
     "input": {
       name: "input",
@@ -572,7 +546,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"}],
     },
     "input-group": {
       name: "input-group",
@@ -593,7 +566,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"}],
     },
     "input-otp": {
       name: "input-otp",
@@ -614,7 +586,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"input-otp","url":"https://input-otp.rodz.dev"}],
     },
     "item": {
       name: "item",
@@ -635,7 +606,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"}],
     },
     "label": {
       name: "label",
@@ -656,7 +626,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
     "menubar": {
       name: "menubar",
@@ -677,7 +646,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
     "navigation-menu": {
       name: "navigation-menu",
@@ -698,7 +666,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
     "pagination": {
       name: "pagination",
@@ -719,7 +686,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"}],
     },
     "popover": {
       name: "popover",
@@ -740,7 +706,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
     "progress": {
       name: "progress",
@@ -761,7 +726,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
     "progressive-blur": {
       name: "progressive-blur",
@@ -782,7 +746,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
     },
     "radio-group": {
       name: "radio-group",
@@ -803,7 +766,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
     "resizable": {
       name: "resizable",
@@ -824,7 +786,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"react-resizable-panels","url":"https://react-resizable-panels.vercel.app"}],
     },
     "responsive": {
       name: "responsive",
@@ -845,7 +806,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "scroll-area": {
       name: "scroll-area",
@@ -866,7 +826,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
     "segmented-control": {
       name: "segmented-control",
@@ -887,7 +846,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
     "select": {
       name: "select",
@@ -908,7 +866,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
     "separator": {
       name: "separator",
@@ -929,7 +886,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
     "sheet": {
       name: "sheet",
@@ -950,7 +906,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
     "sidebar": {
       name: "sidebar",
@@ -971,7 +926,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
     "skeleton": {
       name: "skeleton",
@@ -992,7 +946,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"}],
     },
     "slider": {
       name: "slider",
@@ -1013,7 +966,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
     "sonner": {
       name: "sonner",
@@ -1034,7 +986,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Sonner","url":"https://sonner.emilkowal.ski"}],
     },
     "spinner": {
       name: "spinner",
@@ -1055,7 +1006,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"}],
     },
     "spacer": {
       name: "spacer",
@@ -1076,28 +1026,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
-    },
-    "squircle": {
-      name: "squircle",
-      description: "",
-      type: "registry:ui",
-      registryDependencies: undefined,
-      files: [{
-        path: "registry/new-york-v4/ui/squircle.tsx",
-        type: "registry:ui",
-        target: ""
-      }],
-      component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/ui/squircle.tsx")
-        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "squircle"
-        return { default: mod.default || mod[exportName] }
-      }),
-      categories: ["sectorial"],
-      meta: undefined,
-      tier: "free",
-      readiness: "production",
-      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
     },
     "switch": {
       name: "switch",
@@ -1118,7 +1046,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
     "table": {
       name: "table",
@@ -1139,7 +1066,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"}],
     },
     "tabs": {
       name: "tabs",
@@ -1160,7 +1086,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
     "textarea": {
       name: "textarea",
@@ -1181,7 +1106,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"}],
     },
     "theme": {
       name: "theme",
@@ -1202,7 +1126,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"}],
     },
     "theme-toggle": {
       name: "theme-toggle",
@@ -1223,7 +1146,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"}],
     },
     "toggle": {
       name: "toggle",
@@ -1244,7 +1166,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
     "toggle-group": {
       name: "toggle-group",
@@ -1265,7 +1186,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
     "tooltip": {
       name: "tooltip",
@@ -1286,7 +1206,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"},{"name":"Radix UI","url":"https://radix-ui.com"}],
     },
     "typography": {
       name: "typography",
@@ -1307,7 +1226,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"}],
     },
     "unicorn-wrapper": {
       name: "unicorn-wrapper",
@@ -1328,7 +1246,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"}],
     },
     "kbd": {
       name: "kbd",
@@ -1349,7 +1266,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"}],
     },
     "native-select": {
       name: "native-select",
@@ -1370,7 +1286,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: [{"name":"shadcn/ui","url":"https://ui.shadcn.com"}],
     },
     "background-image-parallax": {
       name: "background-image-parallax",
@@ -1391,7 +1306,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: undefined,
     },
     "card-swipe-carousel": {
       name: "card-swipe-carousel",
@@ -1412,7 +1326,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
     },
     "cards-parallax": {
       name: "cards-parallax",
@@ -1433,7 +1346,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
     },
     "parallax-scroll": {
       name: "parallax-scroll",
@@ -1454,7 +1366,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
     },
     "perspective-carousel": {
       name: "perspective-carousel",
@@ -1475,7 +1386,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: undefined,
     },
     "perspective-section-transition": {
       name: "perspective-section-transition",
@@ -1496,7 +1406,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
     },
     "scroll-expand": {
       name: "scroll-expand",
@@ -1517,7 +1426,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: undefined,
     },
     "scroll-fade": {
       name: "scroll-fade",
@@ -1538,7 +1446,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: undefined,
     },
     "scroll-scale": {
       name: "scroll-scale",
@@ -1559,7 +1466,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: undefined,
     },
     "slide-down": {
       name: "slide-down",
@@ -1580,7 +1486,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: undefined,
     },
     "slide-up": {
       name: "slide-up",
@@ -1601,7 +1506,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: undefined,
     },
     "smooth-parallax-scroll": {
       name: "smooth-parallax-scroll",
@@ -1622,7 +1526,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: undefined,
     },
     "smooth-scroll": {
       name: "smooth-scroll",
@@ -1643,7 +1546,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
     },
     "sticky-footer": {
       name: "sticky-footer",
@@ -1664,7 +1566,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
     },
     "text-along-path": {
       name: "text-along-path",
@@ -1685,7 +1586,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: [{"name":"Skiper UI","url":"https://skiper-ui.com"}],
     },
     "text-gradient-opacity": {
       name: "text-gradient-opacity",
@@ -1706,7 +1606,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: undefined,
     },
     "text-parallax": {
       name: "text-parallax",
@@ -1727,7 +1626,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: undefined,
     },
     "transforms-3d": {
       name: "transforms-3d",
@@ -1748,7 +1646,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: undefined,
     },
     "zoom-parallax": {
       name: "zoom-parallax",
@@ -1769,7 +1666,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "beta",
-      poweredBy: undefined,
     },
     "header-1": {
       name: "header-1",
@@ -1786,11 +1682,10 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "header-1"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["header"],
+      categories: ["header","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "alpha",
-      poweredBy: undefined,
     },
     "hero-1": {
       name: "hero-1",
@@ -1807,11 +1702,50 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "hero-1"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["hero"],
+      categories: ["hero","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "alpha",
-      poweredBy: undefined,
+    },
+    "hero-2": {
+      name: "hero-2",
+      description: "Travel agency hero section with parallax effects and knockout text",
+      type: "registry:block",
+      registryDependencies: ["button","hero-button","spacer"],
+      files: [{
+        path: "registry/new-york-v4/blocks/hero/hero-2.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/hero/hero-2.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "hero-2"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["hero","service-travel"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "hero-3": {
+      name: "hero-3",
+      description: "Yacht charter hero section with parallax effects and knockout text",
+      type: "registry:block",
+      registryDependencies: ["button","hero-button","spacer"],
+      files: [{
+        path: "registry/new-york-v4/blocks/hero/hero-3.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/hero/hero-3.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "hero-3"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["hero","service-boat"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
     },
     "features-1": {
       name: "features-1",
@@ -1828,11 +1762,10 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "features-1"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["features"],
+      categories: ["features","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "alpha",
-      poweredBy: undefined,
     },
     "features-2": {
       name: "features-2",
@@ -1849,11 +1782,10 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "features-2"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["features"],
+      categories: ["features","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "alpha",
-      poweredBy: undefined,
     },
     "features-3": {
       name: "features-3",
@@ -1870,11 +1802,10 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "features-3"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["features"],
+      categories: ["features","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "alpha",
-      poweredBy: undefined,
     },
     "features-4": {
       name: "features-4",
@@ -1891,11 +1822,10 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "features-4"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["features"],
+      categories: ["features","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "alpha",
-      poweredBy: undefined,
     },
     "features-5": {
       name: "features-5",
@@ -1912,11 +1842,10 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "features-5"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["features"],
+      categories: ["features","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "alpha",
-      poweredBy: undefined,
     },
     "products-1": {
       name: "products-1",
@@ -1933,11 +1862,10 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "products-1"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["products"],
+      categories: ["products","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "alpha",
-      poweredBy: undefined,
     },
     "pricing-1": {
       name: "pricing-1",
@@ -1954,11 +1882,10 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "pricing-1"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["pricing"],
+      categories: ["pricing","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "alpha",
-      poweredBy: undefined,
     },
     "testimonials-1": {
       name: "testimonials-1",
@@ -1975,11 +1902,10 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "testimonials-1"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["testimonials"],
+      categories: ["testimonials","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "alpha",
-      poweredBy: undefined,
     },
     "gallery-1": {
       name: "gallery-1",
@@ -1996,11 +1922,10 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "gallery-1"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["gallery"],
+      categories: ["gallery","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "alpha",
-      poweredBy: undefined,
     },
     "team-1": {
       name: "team-1",
@@ -2017,11 +1942,10 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "team-1"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["team"],
+      categories: ["team","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "alpha",
-      poweredBy: undefined,
     },
     "stats-1": {
       name: "stats-1",
@@ -2038,11 +1962,10 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "stats-1"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["stats"],
+      categories: ["stats","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "alpha",
-      poweredBy: undefined,
     },
     "logos-1": {
       name: "logos-1",
@@ -2059,11 +1982,10 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "logos-1"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["logos"],
+      categories: ["logos","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "alpha",
-      poweredBy: undefined,
     },
     "faq-1": {
       name: "faq-1",
@@ -2080,11 +2002,10 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "faq-1"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["faq"],
+      categories: ["faq","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "alpha",
-      poweredBy: undefined,
     },
     "blog-1": {
       name: "blog-1",
@@ -2101,11 +2022,10 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "blog-1"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["blog"],
+      categories: ["blog","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "alpha",
-      poweredBy: undefined,
     },
     "contact-1": {
       name: "contact-1",
@@ -2122,11 +2042,10 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "contact-1"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["contact"],
+      categories: ["contact","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "alpha",
-      poweredBy: undefined,
     },
     "newsletter-1": {
       name: "newsletter-1",
@@ -2143,11 +2062,10 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "newsletter-1"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["newsletter"],
+      categories: ["newsletter","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "alpha",
-      poweredBy: undefined,
     },
     "cta-1": {
       name: "cta-1",
@@ -2164,11 +2082,10 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "cta-1"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["cta"],
+      categories: ["cta","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "alpha",
-      poweredBy: undefined,
     },
     "footer-1": {
       name: "footer-1",
@@ -2185,11 +2102,10 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "footer-1"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["footer"],
+      categories: ["footer","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "alpha",
-      poweredBy: undefined,
     },
     "utils": {
       name: "utils",
@@ -2210,7 +2126,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: undefined,
       readiness: "production",
-      poweredBy: undefined,
     },
     "dynamic-icon": {
       name: "dynamic-icon",
@@ -2231,7 +2146,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: undefined,
       readiness: "production",
-      poweredBy: undefined,
     },
     "polymorphic": {
       name: "polymorphic",
@@ -2252,7 +2166,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: undefined,
       readiness: "production",
-      poweredBy: undefined,
     },
     "recursive-clone-children": {
       name: "recursive-clone-children",
@@ -2273,7 +2186,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: undefined,
       readiness: "production",
-      poweredBy: undefined,
     },
     "use-animation-state": {
       name: "use-animation-state",
@@ -2294,7 +2206,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: undefined,
       readiness: "production",
-      poweredBy: undefined,
     },
     "use-colors": {
       name: "use-colors",
@@ -2315,7 +2226,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: undefined,
       readiness: "production",
-      poweredBy: undefined,
     },
     "use-config": {
       name: "use-config",
@@ -2336,7 +2246,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: undefined,
       readiness: "production",
-      poweredBy: undefined,
     },
     "use-copy-to-clipboard": {
       name: "use-copy-to-clipboard",
@@ -2357,7 +2266,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: undefined,
       readiness: "production",
-      poweredBy: undefined,
     },
     "use-layout": {
       name: "use-layout",
@@ -2378,7 +2286,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: undefined,
       readiness: "production",
-      poweredBy: undefined,
     },
     "use-media-query": {
       name: "use-media-query",
@@ -2399,7 +2306,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: undefined,
       readiness: "production",
-      poweredBy: undefined,
     },
     "use-meta-color": {
       name: "use-meta-color",
@@ -2420,7 +2326,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: undefined,
       readiness: "production",
-      poweredBy: undefined,
     },
     "use-mobile": {
       name: "use-mobile",
@@ -2441,7 +2346,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: undefined,
       readiness: "production",
-      poweredBy: undefined,
     },
     "use-mounted": {
       name: "use-mounted",
@@ -2462,7 +2366,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: undefined,
       readiness: "production",
-      poweredBy: undefined,
     },
     "use-mutation-observer": {
       name: "use-mutation-observer",
@@ -2483,7 +2386,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: undefined,
       readiness: "production",
-      poweredBy: undefined,
     },
     "use-tab-observer": {
       name: "use-tab-observer",
@@ -2504,7 +2406,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: undefined,
       readiness: "production",
-      poweredBy: undefined,
     },
     "use-content-pagination": {
       name: "use-content-pagination",
@@ -2525,7 +2426,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: undefined,
       readiness: "production",
-      poweredBy: undefined,
     },
     "accordion-demo": {
       name: "accordion-demo",
@@ -2546,7 +2446,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "alert-demo": {
       name: "alert-demo",
@@ -2567,7 +2466,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "alert-destructive": {
       name: "alert-destructive",
@@ -2588,7 +2486,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "alert-dialog-demo": {
       name: "alert-dialog-demo",
@@ -2609,7 +2506,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "aspect-ratio-demo": {
       name: "aspect-ratio-demo",
@@ -2630,7 +2526,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "avatar-demo": {
       name: "avatar-demo",
@@ -2651,7 +2546,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "badge-demo": {
       name: "badge-demo",
@@ -2672,7 +2566,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "badge-destructive": {
       name: "badge-destructive",
@@ -2693,7 +2586,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "badge-outline": {
       name: "badge-outline",
@@ -2714,7 +2606,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "badge-secondary": {
       name: "badge-secondary",
@@ -2735,7 +2626,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "breadcrumb-demo": {
       name: "breadcrumb-demo",
@@ -2756,7 +2646,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "breadcrumb-separator": {
       name: "breadcrumb-separator",
@@ -2777,7 +2666,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "breadcrumb-dropdown": {
       name: "breadcrumb-dropdown",
@@ -2798,7 +2686,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "breadcrumb-ellipsis": {
       name: "breadcrumb-ellipsis",
@@ -2819,7 +2706,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "breadcrumb-link": {
       name: "breadcrumb-link",
@@ -2840,7 +2726,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "breadcrumb-responsive": {
       name: "breadcrumb-responsive",
@@ -2861,7 +2746,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "button-demo": {
       name: "button-demo",
@@ -2882,7 +2766,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "button-default": {
       name: "button-default",
@@ -2903,7 +2786,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "button-secondary": {
       name: "button-secondary",
@@ -2924,7 +2806,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "button-destructive": {
       name: "button-destructive",
@@ -2945,7 +2826,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "button-outline": {
       name: "button-outline",
@@ -2966,7 +2846,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "button-ghost": {
       name: "button-ghost",
@@ -2987,7 +2866,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "button-link": {
       name: "button-link",
@@ -3008,7 +2886,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "button-with-icon": {
       name: "button-with-icon",
@@ -3029,7 +2906,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "button-loading": {
       name: "button-loading",
@@ -3050,7 +2926,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "button-icon": {
       name: "button-icon",
@@ -3071,7 +2946,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "button-as-child": {
       name: "button-as-child",
@@ -3092,7 +2966,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "button-rounded": {
       name: "button-rounded",
@@ -3113,7 +2986,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "button-size": {
       name: "button-size",
@@ -3134,7 +3006,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "button-group-demo": {
       name: "button-group-demo",
@@ -3155,7 +3026,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "button-group-nested": {
       name: "button-group-nested",
@@ -3176,7 +3046,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "hero-button-demo": {
       name: "hero-button-demo",
@@ -3197,7 +3066,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "button-group-size": {
       name: "button-group-size",
@@ -3218,7 +3086,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "button-group-separator": {
       name: "button-group-separator",
@@ -3239,7 +3106,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "button-group-split": {
       name: "button-group-split",
@@ -3260,7 +3126,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "button-group-input": {
       name: "button-group-input",
@@ -3281,7 +3146,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "button-group-dropdown": {
       name: "button-group-dropdown",
@@ -3302,7 +3166,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "button-group-select": {
       name: "button-group-select",
@@ -3323,7 +3186,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "button-group-popover": {
       name: "button-group-popover",
@@ -3344,7 +3206,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "button-group-input-group": {
       name: "button-group-input-group",
@@ -3365,7 +3226,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "button-group-orientation": {
       name: "button-group-orientation",
@@ -3386,7 +3246,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "card-demo": {
       name: "card-demo",
@@ -3407,7 +3266,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "card-with-form": {
       name: "card-with-form",
@@ -3428,7 +3286,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "carousel-demo": {
       name: "carousel-demo",
@@ -3449,7 +3306,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "carousel-size": {
       name: "carousel-size",
@@ -3470,7 +3326,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "carousel-spacing": {
       name: "carousel-spacing",
@@ -3491,7 +3346,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "carousel-orientation": {
       name: "carousel-orientation",
@@ -3512,7 +3366,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "carousel-api": {
       name: "carousel-api",
@@ -3533,7 +3386,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "carousel-plugin": {
       name: "carousel-plugin",
@@ -3554,7 +3406,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "checkbox-demo": {
       name: "checkbox-demo",
@@ -3575,7 +3426,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "checkbox-disabled": {
       name: "checkbox-disabled",
@@ -3596,7 +3446,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "checkbox-form-multiple": {
       name: "checkbox-form-multiple",
@@ -3617,7 +3466,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "checkbox-form-single": {
       name: "checkbox-form-single",
@@ -3638,7 +3486,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "checkbox-with-text": {
       name: "checkbox-with-text",
@@ -3659,7 +3506,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "collapsible-demo": {
       name: "collapsible-demo",
@@ -3680,7 +3526,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "combobox-demo": {
       name: "combobox-demo",
@@ -3701,7 +3546,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "combobox-dropdown-menu": {
       name: "combobox-dropdown-menu",
@@ -3722,7 +3566,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "combobox-form": {
       name: "combobox-form",
@@ -3743,7 +3586,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "combobox-popover": {
       name: "combobox-popover",
@@ -3764,7 +3606,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "combobox-responsive": {
       name: "combobox-responsive",
@@ -3785,7 +3626,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "command-demo": {
       name: "command-demo",
@@ -3806,7 +3646,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "command-dialog": {
       name: "command-dialog",
@@ -3827,7 +3666,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "context-menu-demo": {
       name: "context-menu-demo",
@@ -3848,7 +3686,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "container-demo": {
       name: "container-demo",
@@ -3869,7 +3706,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "data-table-demo": {
       name: "data-table-demo",
@@ -3890,7 +3726,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "dialog-demo": {
       name: "dialog-demo",
@@ -3911,7 +3746,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "dialog-close-button": {
       name: "dialog-close-button",
@@ -3932,7 +3766,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "drawer-demo": {
       name: "drawer-demo",
@@ -3953,7 +3786,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "empty-demo": {
       name: "empty-demo",
@@ -3974,7 +3806,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "empty-icon": {
       name: "empty-icon",
@@ -3995,7 +3826,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "empty-avatar": {
       name: "empty-avatar",
@@ -4016,7 +3846,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "empty-avatar-group": {
       name: "empty-avatar-group",
@@ -4037,7 +3866,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "empty-input-group": {
       name: "empty-input-group",
@@ -4058,7 +3886,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "empty-outline": {
       name: "empty-outline",
@@ -4079,7 +3906,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "empty-background": {
       name: "empty-background",
@@ -4100,7 +3926,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "field-demo": {
       name: "field-demo",
@@ -4121,7 +3946,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "field-input": {
       name: "field-input",
@@ -4142,7 +3966,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "field-textarea": {
       name: "field-textarea",
@@ -4163,7 +3986,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "field-fieldset": {
       name: "field-fieldset",
@@ -4184,7 +4006,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "field-radio": {
       name: "field-radio",
@@ -4205,7 +4026,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "field-checkbox": {
       name: "field-checkbox",
@@ -4226,7 +4046,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "field-switch": {
       name: "field-switch",
@@ -4247,7 +4066,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "field-slider": {
       name: "field-slider",
@@ -4268,7 +4086,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "field-select": {
       name: "field-select",
@@ -4289,7 +4106,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "field-choice-card": {
       name: "field-choice-card",
@@ -4310,7 +4126,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "field-group": {
       name: "field-group",
@@ -4331,7 +4146,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "field-responsive": {
       name: "field-responsive",
@@ -4352,7 +4166,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "flex-demo": {
       name: "flex-demo",
@@ -4373,7 +4186,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "drawer-dialog": {
       name: "drawer-dialog",
@@ -4394,7 +4206,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "dropdown-menu-demo": {
       name: "dropdown-menu-demo",
@@ -4415,7 +4226,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "dropdown-menu-checkboxes": {
       name: "dropdown-menu-checkboxes",
@@ -4436,7 +4246,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "dropdown-menu-radio-group": {
       name: "dropdown-menu-radio-group",
@@ -4457,7 +4266,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "dropdown-menu-dialog": {
       name: "dropdown-menu-dialog",
@@ -4478,7 +4286,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "grid-demo": {
       name: "grid-demo",
@@ -4499,7 +4306,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "hover-card-demo": {
       name: "hover-card-demo",
@@ -4520,7 +4326,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "input-demo": {
       name: "input-demo",
@@ -4541,7 +4346,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "input-disabled": {
       name: "input-disabled",
@@ -4562,7 +4366,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "input-file": {
       name: "input-file",
@@ -4583,7 +4386,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "input-form": {
       name: "input-form",
@@ -4604,7 +4406,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "input-with-button": {
       name: "input-with-button",
@@ -4625,7 +4426,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "input-with-label": {
       name: "input-with-label",
@@ -4646,7 +4446,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "input-with-text": {
       name: "input-with-text",
@@ -4667,7 +4466,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "input-group-demo": {
       name: "input-group-demo",
@@ -4688,7 +4486,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "input-group-label": {
       name: "input-group-label",
@@ -4709,7 +4506,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "input-group-text": {
       name: "input-group-text",
@@ -4730,7 +4526,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "input-group-tooltip": {
       name: "input-group-tooltip",
@@ -4751,7 +4546,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "input-group-button": {
       name: "input-group-button",
@@ -4772,7 +4566,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "input-group-button-group": {
       name: "input-group-button-group",
@@ -4793,7 +4586,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "input-group-dropdown": {
       name: "input-group-dropdown",
@@ -4814,7 +4606,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "input-group-spinner": {
       name: "input-group-spinner",
@@ -4835,7 +4626,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "input-group-textarea": {
       name: "input-group-textarea",
@@ -4856,7 +4646,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "input-group-icon": {
       name: "input-group-icon",
@@ -4877,7 +4666,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "input-group-custom": {
       name: "input-group-custom",
@@ -4898,7 +4686,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "input-otp-demo": {
       name: "input-otp-demo",
@@ -4919,7 +4706,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "input-otp-pattern": {
       name: "input-otp-pattern",
@@ -4940,7 +4726,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "input-otp-separator": {
       name: "input-otp-separator",
@@ -4961,7 +4746,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "input-otp-controlled": {
       name: "input-otp-controlled",
@@ -4982,7 +4766,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "input-otp-form": {
       name: "input-otp-form",
@@ -5003,7 +4786,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "item-demo": {
       name: "item-demo",
@@ -5024,7 +4806,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "item-size": {
       name: "item-size",
@@ -5045,7 +4826,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "item-variant": {
       name: "item-variant",
@@ -5066,7 +4846,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "item-icon": {
       name: "item-icon",
@@ -5087,7 +4866,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "item-image": {
       name: "item-image",
@@ -5108,7 +4886,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "item-avatar": {
       name: "item-avatar",
@@ -5129,7 +4906,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "item-group": {
       name: "item-group",
@@ -5150,7 +4926,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "item-header": {
       name: "item-header",
@@ -5171,7 +4946,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "item-dropdown": {
       name: "item-dropdown",
@@ -5192,7 +4966,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "item-link": {
       name: "item-link",
@@ -5213,7 +4986,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "kbd-demo": {
       name: "kbd-demo",
@@ -5234,7 +5006,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "kbd-tooltip": {
       name: "kbd-tooltip",
@@ -5255,7 +5026,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "kbd-input-group": {
       name: "kbd-input-group",
@@ -5276,7 +5046,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "kbd-button": {
       name: "kbd-button",
@@ -5297,7 +5066,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "kbd-group": {
       name: "kbd-group",
@@ -5318,7 +5086,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "label-demo": {
       name: "label-demo",
@@ -5339,7 +5106,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "menubar-demo": {
       name: "menubar-demo",
@@ -5360,7 +5126,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "navigation-menu-demo": {
       name: "navigation-menu-demo",
@@ -5381,7 +5146,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "native-select-demo": {
       name: "native-select-demo",
@@ -5402,7 +5166,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "native-select-groups": {
       name: "native-select-groups",
@@ -5423,7 +5186,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "native-select-disabled": {
       name: "native-select-disabled",
@@ -5444,7 +5206,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "native-select-invalid": {
       name: "native-select-invalid",
@@ -5465,7 +5226,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "pagination-demo": {
       name: "pagination-demo",
@@ -5486,7 +5246,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "popover-demo": {
       name: "popover-demo",
@@ -5507,7 +5266,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "progress-demo": {
       name: "progress-demo",
@@ -5528,7 +5286,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "progressive-blur-demo": {
       name: "progressive-blur-demo",
@@ -5549,7 +5306,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "radio-group-demo": {
       name: "radio-group-demo",
@@ -5570,7 +5326,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "radio-group-form": {
       name: "radio-group-form",
@@ -5591,7 +5346,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "resizable-demo": {
       name: "resizable-demo",
@@ -5612,7 +5366,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "resizable-demo-with-handle": {
       name: "resizable-demo-with-handle",
@@ -5633,7 +5386,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "resizable-vertical": {
       name: "resizable-vertical",
@@ -5654,7 +5406,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "resizable-handle": {
       name: "resizable-handle",
@@ -5675,7 +5426,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "responsive-demo": {
       name: "responsive-demo",
@@ -5696,7 +5446,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "scroll-area-demo": {
       name: "scroll-area-demo",
@@ -5717,7 +5466,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "scroll-area-horizontal-demo": {
       name: "scroll-area-horizontal-demo",
@@ -5738,7 +5486,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "segmented-control-demo": {
       name: "segmented-control-demo",
@@ -5759,7 +5506,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "segmented-control-custom": {
       name: "segmented-control-custom",
@@ -5780,7 +5526,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "select-demo": {
       name: "select-demo",
@@ -5801,7 +5546,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "select-scrollable": {
       name: "select-scrollable",
@@ -5822,7 +5566,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "select-form": {
       name: "select-form",
@@ -5843,7 +5586,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "separator-demo": {
       name: "separator-demo",
@@ -5864,7 +5606,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "sheet-demo": {
       name: "sheet-demo",
@@ -5885,7 +5626,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "sheet-side": {
       name: "sheet-side",
@@ -5906,7 +5646,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "skeleton-demo": {
       name: "skeleton-demo",
@@ -5927,7 +5666,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "skeleton-card": {
       name: "skeleton-card",
@@ -5948,7 +5686,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "slider-demo": {
       name: "slider-demo",
@@ -5969,7 +5706,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "sonner-demo": {
       name: "sonner-demo",
@@ -5990,7 +5726,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "sonner-types": {
       name: "sonner-types",
@@ -6011,7 +5746,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "spinner-demo": {
       name: "spinner-demo",
@@ -6032,7 +5766,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "spinner-basic": {
       name: "spinner-basic",
@@ -6053,7 +5786,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "spinner-button": {
       name: "spinner-button",
@@ -6074,7 +5806,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "spinner-badge": {
       name: "spinner-badge",
@@ -6095,7 +5826,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "spinner-input-group": {
       name: "spinner-input-group",
@@ -6116,7 +5846,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "spinner-empty": {
       name: "spinner-empty",
@@ -6137,7 +5866,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "spinner-color": {
       name: "spinner-color",
@@ -6158,7 +5886,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "spinner-custom": {
       name: "spinner-custom",
@@ -6179,7 +5906,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "spinner-size": {
       name: "spinner-size",
@@ -6200,7 +5926,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "spinner-item": {
       name: "spinner-item",
@@ -6221,7 +5946,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "spacer-demo": {
       name: "spacer-demo",
@@ -6242,7 +5966,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "spacer-sizes": {
       name: "spacer-sizes",
@@ -6263,28 +5986,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
-    },
-    "squircle-demo": {
-      name: "squircle-demo",
-      description: "",
-      type: "registry:example",
-      registryDependencies: ["squircle"],
-      files: [{
-        path: "registry/new-york-v4/examples/squircle-demo.tsx",
-        type: "registry:example",
-        target: ""
-      }],
-      component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/examples/squircle-demo.tsx")
-        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "squircle-demo"
-        return { default: mod.default || mod[exportName] }
-      }),
-      categories: ["primitives"],
-      meta: undefined,
-      tier: "free",
-      readiness: "production",
-      poweredBy: undefined,
     },
     "switch-demo": {
       name: "switch-demo",
@@ -6305,7 +6006,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "switch-form": {
       name: "switch-form",
@@ -6326,7 +6026,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "table-demo": {
       name: "table-demo",
@@ -6347,7 +6046,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "tabs-demo": {
       name: "tabs-demo",
@@ -6368,7 +6066,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "textarea-demo": {
       name: "textarea-demo",
@@ -6389,7 +6086,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "textarea-disabled": {
       name: "textarea-disabled",
@@ -6410,7 +6106,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "textarea-form": {
       name: "textarea-form",
@@ -6431,7 +6126,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "textarea-with-button": {
       name: "textarea-with-button",
@@ -6452,7 +6146,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "textarea-with-label": {
       name: "textarea-with-label",
@@ -6473,7 +6166,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "textarea-with-text": {
       name: "textarea-with-text",
@@ -6494,7 +6186,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "toggle-group-demo": {
       name: "toggle-group-demo",
@@ -6515,7 +6206,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "toggle-group-disabled": {
       name: "toggle-group-disabled",
@@ -6536,7 +6226,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "toggle-group-lg": {
       name: "toggle-group-lg",
@@ -6557,7 +6246,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "toggle-group-outline": {
       name: "toggle-group-outline",
@@ -6578,7 +6266,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "toggle-group-sm": {
       name: "toggle-group-sm",
@@ -6599,7 +6286,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "toggle-group-single": {
       name: "toggle-group-single",
@@ -6620,7 +6306,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "toggle-group-spacing": {
       name: "toggle-group-spacing",
@@ -6641,7 +6326,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "toggle-demo": {
       name: "toggle-demo",
@@ -6662,7 +6346,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "toggle-disabled": {
       name: "toggle-disabled",
@@ -6683,7 +6366,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "toggle-lg": {
       name: "toggle-lg",
@@ -6704,7 +6386,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "toggle-outline": {
       name: "toggle-outline",
@@ -6725,7 +6406,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "toggle-sm": {
       name: "toggle-sm",
@@ -6746,7 +6426,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "toggle-with-text": {
       name: "toggle-with-text",
@@ -6767,7 +6446,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "tooltip-demo": {
       name: "tooltip-demo",
@@ -6788,7 +6466,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "typography-blockquote": {
       name: "typography-blockquote",
@@ -6809,7 +6486,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "typography-demo": {
       name: "typography-demo",
@@ -6830,7 +6506,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "typography-h1": {
       name: "typography-h1",
@@ -6851,7 +6526,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "typography-h2": {
       name: "typography-h2",
@@ -6872,7 +6546,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "typography-h3": {
       name: "typography-h3",
@@ -6893,7 +6566,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "typography-h4": {
       name: "typography-h4",
@@ -6914,7 +6586,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "typography-inline-code": {
       name: "typography-inline-code",
@@ -6935,7 +6606,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "typography-large": {
       name: "typography-large",
@@ -6956,7 +6626,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "typography-lead": {
       name: "typography-lead",
@@ -6977,7 +6646,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "typography-list": {
       name: "typography-list",
@@ -6998,7 +6666,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "typography-muted": {
       name: "typography-muted",
@@ -7019,7 +6686,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "typography-p": {
       name: "typography-p",
@@ -7040,7 +6706,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "typography-small": {
       name: "typography-small",
@@ -7061,7 +6726,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "typography-table": {
       name: "typography-table",
@@ -7082,7 +6746,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "typography-component-demo": {
       name: "typography-component-demo",
@@ -7103,7 +6766,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "typography-headings": {
       name: "typography-headings",
@@ -7124,7 +6786,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "typography-paragraphs": {
       name: "typography-paragraphs",
@@ -7145,7 +6806,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "typography-labels": {
       name: "typography-labels",
@@ -7166,7 +6826,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "typography-polymorphic": {
       name: "typography-polymorphic",
@@ -7187,7 +6846,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "typography-variants-demo": {
       name: "typography-variants-demo",
@@ -7208,7 +6866,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "theme-demo": {
       name: "theme-demo",
@@ -7229,7 +6886,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "theme-toggle-demo": {
       name: "theme-toggle-demo",
@@ -7250,7 +6906,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "unicorn-wrapper-demo": {
       name: "unicorn-wrapper-demo",
@@ -7271,7 +6926,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "use-tab-observer-demo": {
       name: "use-tab-observer-demo",
@@ -7292,7 +6946,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "mode-toggle": {
       name: "mode-toggle",
@@ -7313,7 +6966,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "background-image-parallax-demo": {
       name: "background-image-parallax-demo",
@@ -7334,7 +6986,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "card-swipe-carousel-demo": {
       name: "card-swipe-carousel-demo",
@@ -7355,7 +7006,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "cards-parallax-demo": {
       name: "cards-parallax-demo",
@@ -7376,7 +7026,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "parallax-scroll-demo": {
       name: "parallax-scroll-demo",
@@ -7397,7 +7046,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "perspective-carousel-demo": {
       name: "perspective-carousel-demo",
@@ -7418,7 +7066,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "perspective-section-transition-demo": {
       name: "perspective-section-transition-demo",
@@ -7439,7 +7086,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "scroll-expand-demo": {
       name: "scroll-expand-demo",
@@ -7460,7 +7106,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "scroll-fade-demo": {
       name: "scroll-fade-demo",
@@ -7481,7 +7126,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "scroll-scale-demo": {
       name: "scroll-scale-demo",
@@ -7502,7 +7146,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "slide-down-demo": {
       name: "slide-down-demo",
@@ -7523,7 +7166,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "slide-up-demo": {
       name: "slide-up-demo",
@@ -7544,7 +7186,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "smooth-parallax-scroll-demo": {
       name: "smooth-parallax-scroll-demo",
@@ -7565,7 +7206,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "smooth-scroll-demo": {
       name: "smooth-scroll-demo",
@@ -7586,7 +7226,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "sticky-footer-demo": {
       name: "sticky-footer-demo",
@@ -7607,7 +7246,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "text-along-path-demo": {
       name: "text-along-path-demo",
@@ -7628,7 +7266,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "text-gradient-opacity-demo": {
       name: "text-gradient-opacity-demo",
@@ -7649,7 +7286,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "text-parallax-demo": {
       name: "text-parallax-demo",
@@ -7670,7 +7306,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "transforms-3d-demo": {
       name: "transforms-3d-demo",
@@ -7691,7 +7326,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "zoom-parallax-demo": {
       name: "zoom-parallax-demo",
@@ -7712,7 +7346,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
-      poweredBy: undefined,
     },
     "sidebar-demo": {
       name: "sidebar-demo",
@@ -7733,7 +7366,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: undefined,
       readiness: "production",
-      poweredBy: undefined,
     },
     "sidebar-header": {
       name: "sidebar-header",
@@ -7754,7 +7386,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: undefined,
       readiness: "production",
-      poweredBy: undefined,
     },
     "sidebar-footer": {
       name: "sidebar-footer",
@@ -7775,7 +7406,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: undefined,
       readiness: "production",
-      poweredBy: undefined,
     },
     "sidebar-group": {
       name: "sidebar-group",
@@ -7796,7 +7426,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: undefined,
       readiness: "production",
-      poweredBy: undefined,
     },
     "sidebar-group-collapsible": {
       name: "sidebar-group-collapsible",
@@ -7817,7 +7446,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: undefined,
       readiness: "production",
-      poweredBy: undefined,
     },
     "sidebar-group-action": {
       name: "sidebar-group-action",
@@ -7838,7 +7466,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: undefined,
       readiness: "production",
-      poweredBy: undefined,
     },
     "sidebar-menu": {
       name: "sidebar-menu",
@@ -7859,7 +7486,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: undefined,
       readiness: "production",
-      poweredBy: undefined,
     },
     "sidebar-menu-action": {
       name: "sidebar-menu-action",
@@ -7880,7 +7506,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: undefined,
       readiness: "production",
-      poweredBy: undefined,
     },
     "sidebar-menu-sub": {
       name: "sidebar-menu-sub",
@@ -7901,7 +7526,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: undefined,
       readiness: "production",
-      poweredBy: undefined,
     },
     "sidebar-menu-collapsible": {
       name: "sidebar-menu-collapsible",
@@ -7922,7 +7546,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: undefined,
       readiness: "production",
-      poweredBy: undefined,
     },
     "sidebar-menu-badge": {
       name: "sidebar-menu-badge",
@@ -7943,7 +7566,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: undefined,
       readiness: "production",
-      poweredBy: undefined,
     },
     "sidebar-rsc": {
       name: "sidebar-rsc",
@@ -7964,7 +7586,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: undefined,
       readiness: "production",
-      poweredBy: undefined,
     },
     "sidebar-controlled": {
       name: "sidebar-controlled",
@@ -7985,7 +7606,6 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: undefined,
       readiness: "production",
-      poweredBy: undefined,
     },
   },
 }

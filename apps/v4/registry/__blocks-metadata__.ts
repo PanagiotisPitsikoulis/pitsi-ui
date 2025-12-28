@@ -8,7 +8,7 @@
 
 export const BLOCK_CATEGORIES: Record<string, string[]> = {
   header: ["header-1"],
-  hero: ["hero-1"],
+  hero: ["hero-1", "hero-2", "hero-3"],
   features: [
     "features-1",
     "features-2",

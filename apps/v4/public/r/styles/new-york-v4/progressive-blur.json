@@ -16,11 +16,5 @@
     "primitives"
   ],
   "tier": "free",
-  "readiness": "production",
-  "poweredBy": [
-    {
-      "name": "Skiper UI",
-      "url": "https://skiper-ui.com"
-    }
-  ]
+  "readiness": "production"
 }

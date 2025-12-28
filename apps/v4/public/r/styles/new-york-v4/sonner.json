@@ -17,15 +17,5 @@
     "core-components"
   ],
   "tier": "free",
-  "readiness": "production",
-  "poweredBy": [
-    {
-      "name": "shadcn/ui",
-      "url": "https://ui.shadcn.com"
-    },
-    {
-      "name": "Sonner",
-      "url": "https://sonner.emilkowal.ski"
-    }
-  ]
+  "readiness": "production"
 }

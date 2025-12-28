@@ -2,101 +2,111 @@
   {
     "name": "header-1",
     "description": "Plant shop header with navigation and CTA button",
-    "categories": ["header"]
+    "categories": ["header", "service-plants"]
   },
   {
     "name": "hero-1",
     "description": "Plant shop hero section with parallax effects and knockout text",
-    "categories": ["hero"]
+    "categories": ["hero", "service-plants"]
+  },
+  {
+    "name": "hero-2",
+    "description": "Travel agency hero section with parallax effects and knockout text",
+    "categories": ["hero", "service-travel"]
+  },
+  {
+    "name": "hero-3",
+    "description": "Yacht charter hero section with parallax effects and knockout text",
+    "categories": ["hero", "service-boat"]
   },
   {
     "name": "features-1",
     "description": "Plant shop features section with icons and center image",
-    "categories": ["features"]
+    "categories": ["features", "service-plants"]
   },
   {
     "name": "features-2",
     "description": "Plant shop features section variant 2",
-    "categories": ["features"]
+    "categories": ["features", "service-plants"]
   },
   {
     "name": "features-3",
     "description": "Plant shop features section variant 3 with circle background",
-    "categories": ["features"]
+    "categories": ["features", "service-plants"]
   },
   {
     "name": "features-4",
     "description": "Plant shop features section variant 4",
-    "categories": ["features"]
+    "categories": ["features", "service-plants"]
   },
   {
     "name": "features-5",
     "description": "Plant shop features section variant 5",
-    "categories": ["features"]
+    "categories": ["features", "service-plants"]
   },
   {
     "name": "products-1",
     "description": "Plant shop products grid showcasing best sellers",
-    "categories": ["products"]
+    "categories": ["products", "service-plants"]
   },
   {
     "name": "pricing-1",
     "description": "Plant shop pricing section with animated cards",
-    "categories": ["pricing"]
+    "categories": ["pricing", "service-plants"]
   },
   {
     "name": "testimonials-1",
     "description": "Plant shop testimonials with stacked cards effect",
-    "categories": ["testimonials"]
+    "categories": ["testimonials", "service-plants"]
   },
   {
     "name": "gallery-1",
     "description": "Plant shop gallery grid with decorative elements",
-    "categories": ["gallery"]
+    "categories": ["gallery", "service-plants"]
   },
   {
     "name": "team-1",
     "description": "Plant shop team section with stacked avatars",
-    "categories": ["team"]
+    "categories": ["team", "service-plants"]
   },
   {
     "name": "stats-1",
     "description": "Plant shop statistics section",
-    "categories": ["stats"]
+    "categories": ["stats", "service-plants"]
   },
   {
     "name": "logos-1",
     "description": "Plant shop logo cloud section",
-    "categories": ["logos"]
+    "categories": ["logos", "service-plants"]
   },
   {
     "name": "faq-1",
     "description": "Plant shop FAQ section with accordion",
-    "categories": ["faq"]
+    "categories": ["faq", "service-plants"]
   },
   {
     "name": "blog-1",
     "description": "Plant shop blog section with article cards",
-    "categories": ["blog"]
+    "categories": ["blog", "service-plants"]
   },
   {
     "name": "contact-1",
     "description": "Plant shop contact form section",
-    "categories": ["contact"]
+    "categories": ["contact", "service-plants"]
   },
   {
     "name": "newsletter-1",
     "description": "Plant shop newsletter subscription section",
-    "categories": ["newsletter"]
+    "categories": ["newsletter", "service-plants"]
   },
   {
     "name": "cta-1",
     "description": "Plant shop call-to-action section",
-    "categories": ["cta"]
+    "categories": ["cta", "service-plants"]
   },
   {
     "name": "footer-1",
     "description": "Plant shop footer with multiple columns and newsletter",
-    "categories": ["footer"]
+    "categories": ["footer", "service-plants"]
   }
 ]

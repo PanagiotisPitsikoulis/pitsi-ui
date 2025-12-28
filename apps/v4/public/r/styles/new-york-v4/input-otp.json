@@ -16,15 +16,5 @@
     "core-components"
   ],
   "tier": "free",
-  "readiness": "production",
-  "poweredBy": [
-    {
-      "name": "shadcn/ui",
-      "url": "https://ui.shadcn.com"
-    },
-    {
-      "name": "input-otp",
-      "url": "https://input-otp.rodz.dev"
-    }
-  ]
+  "readiness": "production"
 }

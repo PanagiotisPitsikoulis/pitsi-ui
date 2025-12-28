@@ -2506,20 +2506,6 @@ export const examples: Registry["items"] = [
     readiness: "production",
   },
   {
-    name: "squircle-demo",
-    type: "registry:example",
-    registryDependencies: ["squircle"],
-    files: [
-      {
-        path: "examples/squircle-demo.tsx",
-        type: "registry:example",
-      },
-    ],
-    tier: "free",
-    categories: ["primitives"],
-    readiness: "production",
-  },
-  {
     name: "switch-demo",
     type: "registry:example",
     registryDependencies: ["switch"],

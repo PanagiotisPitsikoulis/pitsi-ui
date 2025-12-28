@@ -17,6 +17,7 @@ interface ComponentsListProps {
   styleName?: Style["name"]
   label?: string
   category?: string
+  type: "component" | "animation"
 }
 
 export function ComponentsList({
@@ -24,6 +25,7 @@ export function ComponentsList({
   styleName = "new-york-v4",
   label,
   category,
+  type,
 }: ComponentsListProps) {
   if (!items.length) {
     return null
@@ -46,6 +48,7 @@ export function ComponentsList({
       label={label}
       items={filteredItems}
       styleName={styleName}
+      type={type}
     />
   )
 }

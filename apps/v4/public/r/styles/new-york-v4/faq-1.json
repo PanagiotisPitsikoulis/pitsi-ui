@@ -14,7 +14,8 @@
     }
   ],
   "categories": [
-    "faq"
+    "faq",
+    "service-plants"
   ],
   "tier": "free",
   "readiness": "alpha"

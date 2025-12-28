@@ -89,4 +89,12 @@ export const STORAGE_KEYS = {
   TYPOGRAPHY_COMPOSER: "pitsi-tool-typography-composer-saved",
   TEMPLATE_BUILDER: "pitsi-tool-template-builder-saved",
   BACKGROUND_DECORATIONS: "pitsi-tool-background-decorations-saved",
+  BLOCKS_SAVED: "pitsi-blocks-saved",
+  BLOCKS_RECENT: "pitsi-blocks-recent",
+  TEMPLATES_SAVED: "pitsi-templates-saved",
+  TEMPLATES_RECENT: "pitsi-templates-recent",
+  COMPONENTS_SAVED: "pitsi-components-saved",
+  COMPONENTS_RECENT: "pitsi-components-recent",
+  ANIMATIONS_SAVED: "pitsi-animations-saved",
+  ANIMATIONS_RECENT: "pitsi-animations-recent",
 } as const

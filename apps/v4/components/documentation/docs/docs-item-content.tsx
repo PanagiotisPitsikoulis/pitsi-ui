@@ -11,11 +11,9 @@ import { findNeighbour } from "fumadocs-core/page-tree"
 import z from "zod"
 
 import { type DocsItemType } from "@/lib/pages/docs"
-import { getItemByName } from "@/lib/registry"
 import { source } from "@/lib/source"
 import { absoluteUrl } from "@/lib/utils"
 import { ErrorBoundary } from "@/components/ui/error-boundary"
-import { PoweredByBadge } from "@/components/ui/powered-by-badge"
 import { DocsCopyPage } from "@/components/documentation/docs/docs-copy-page"
 import { DocsTableOfContents } from "@/components/documentation/docs/docs-toc"
 import { OpenInV0Cta } from "@/components/documentation/integrations/open-in-v0-cta"
@@ -62,9 +60,6 @@ export async function DocsItemContent({
     previous: null,
     next: null,
   }
-
-  // Get registry item for poweredBy info
-  const registryItem = getItemByName(itemName)
 
   // Safely get raw text for front-matter parsing
   let raw = ""
@@ -140,11 +135,6 @@ export async function DocsItemContent({
                   {doc.description}
                 </p>
               )}
-              <PoweredByBadge
-                poweredBy={registryItem?.poweredBy}
-                variant="inline"
-                className="pt-2"
-              />
             </div>
             {links ? (
               <div className="flex items-center gap-2 pt-4">

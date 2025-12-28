@@ -1,21 +1,18 @@
-import Link from "next/link"
-import { ChevronRight } from "lucide-react"
+import * as React from "react"
 import { cacheLife } from "next/cache"
 
-import { getBlockIdsByCategory } from "@/lib/blocks"
-import { formatName } from "@/lib/format"
-import { queryRegistry, type RegistryItem } from "@/lib/registry-utils"
+import { highlightCode } from "@/lib/highlight-code"
 import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/registry/new-york-v4/ui/breadcrumb"
-import { Button } from "@/registry/new-york-v4/ui/button"
-import { BlockPageDisplay } from "@/components/documentation/blocks/block-page-display"
+  createFileTreeForRegistryItemFiles,
+  getRegistryItem,
+} from "@/lib/registry"
+import { TrackBlockView } from "@/components/documentation/blocks/track-block-view"
 import { getActiveStyle } from "@/registry/styles"
+import {
+  getTemplateForBlock,
+  getBlockIndex,
+} from "@/app/(app)/(content)/(blocks)/template-config"
+import { BlockViewerClient } from "../page.client"
 
 export default async function BlockContentPage({
   params,
@@ -31,70 +28,39 @@ export default async function BlockContentPage({
   const { category, blockName } = await params
   const activeStyle = await getActiveStyle()
 
-  // Get all blocks in this category for pagination
-  const blockIds = getBlockIdsByCategory(category)
-  const blocks = (await queryRegistry({
-    returnType: "items",
-    filter: (item) => blockIds.includes(item.name),
-  })) as RegistryItem[]
+  // Get registry item for code
+  const item = await getRegistryItem(blockName, activeStyle.name)
 
-  // Find current block index
-  const currentIndex = blocks.findIndex((block) => block.name === blockName)
-  const previousBlock = currentIndex > 0 ? blocks[currentIndex - 1] : null
-  const nextBlock =
-    currentIndex < blocks.length - 1 ? blocks[currentIndex + 1] : null
+  // Get file tree and highlighted files
+  const [tree, highlightedFiles] = await Promise.all([
+    item?.files ? createFileTreeForRegistryItemFiles(item.files) : null,
+    item?.files
+      ? Promise.all(
+          item.files.map(async (file) => ({
+            ...file,
+            highlightedContent: await highlightCode(file.content ?? ""),
+          }))
+        )
+      : null,
+  ])
+
+  // Get template info for this block
+  const templateSlug = getTemplateForBlock(blockName)
+  const blockIndex = templateSlug ? getBlockIndex(templateSlug, blockName) : 0
 
   return (
-    <div className="flex min-w-0 flex-1 flex-col">
-      <div className="h-(--top-spacing) shrink-0" />
-      <div className="container flex flex-col gap-4 px-6 py-6 lg:px-3 lg:py-8">
-        {/* Breadcrumbs */}
-        <Breadcrumb>
-          <BreadcrumbList>
-            <BreadcrumbItem>
-              <BreadcrumbLink asChild>
-                <Link href="/blocks">Blocks</Link>
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbLink asChild>
-                <Link href={`/blocks/${category}`}>{formatName(category)}</Link>
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbPage>{formatName(blockName)}</BreadcrumbPage>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
-
-        <BlockPageDisplay name={blockName} styleName={activeStyle.name} />
-
-        {/* Pagination */}
-        <div className="flex h-16 w-full items-center gap-2">
-          {previousBlock && (
-            <Button variant="outline" size="sm" asChild className="shadow-none">
-              <Link href={`/block/${category}/${previousBlock.name}`}>
-                <ChevronRight className="rotate-180" />{" "}
-                {formatName(previousBlock.name)}
-              </Link>
-            </Button>
-          )}
-          {nextBlock && (
-            <Button
-              variant="outline"
-              size="sm"
-              className="ml-auto shadow-none"
-              asChild
-            >
-              <Link href={`/block/${category}/${nextBlock.name}`}>
-                {formatName(nextBlock.name)} <ChevronRight />
-              </Link>
-            </Button>
-          )}
-        </div>
-      </div>
-    </div>
+    <>
+      <TrackBlockView name={blockName} category={category} />
+      <BlockViewerClient
+        blockName={blockName}
+        category={category}
+        styleName={activeStyle.name}
+        templateSlug={templateSlug}
+        blockIndex={blockIndex}
+        item={item}
+        tree={tree}
+        highlightedFiles={highlightedFiles}
+      />
+    </>
   )
 }

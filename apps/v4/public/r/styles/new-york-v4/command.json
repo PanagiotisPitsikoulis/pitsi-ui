@@ -19,15 +19,5 @@
     "core-components"
   ],
   "tier": "free",
-  "readiness": "production",
-  "poweredBy": [
-    {
-      "name": "shadcn/ui",
-      "url": "https://ui.shadcn.com"
-    },
-    {
-      "name": "cmdk",
-      "url": "https://cmdk.paco.me"
-    }
-  ]
+  "readiness": "production"
 }

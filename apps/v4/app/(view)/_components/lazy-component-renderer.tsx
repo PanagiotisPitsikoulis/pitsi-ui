@@ -19,23 +19,35 @@ interface LazyComponentRendererProps {
   filePath?: string
 }
 
-// Error boundary for catching render errors - renders nothing on error
+// Error boundary for catching render errors - shows visible error state
 class ComponentErrorBoundary extends ReactComponent<
-  { children: React.ReactNode },
-  { hasError: boolean }
+  { children: React.ReactNode; name?: string },
+  { hasError: boolean; error?: Error }
 > {
-  constructor(props: { children: React.ReactNode }) {
+  constructor(props: { children: React.ReactNode; name?: string }) {
     super(props)
     this.state = { hasError: false }
   }
 
-  static getDerivedStateFromError() {
-    return { hasError: true }
+  static getDerivedStateFromError(error: Error) {
+    return { hasError: true, error }
   }
 
   render() {
     if (this.state.hasError) {
-      return null
+      return (
+        <div className="flex min-h-screen w-full items-center justify-center bg-red-50 p-16">
+          <div className="max-w-md rounded-lg border border-red-200 bg-white p-8 text-center shadow-sm">
+            <div className="mb-4 text-4xl">⚠️</div>
+            <h2 className="mb-2 text-lg font-semibold text-red-600">
+              Component Error
+            </h2>
+            <p className="text-sm text-red-500">
+              {this.state.error?.message || "Failed to render component"}
+            </p>
+          </div>
+        </div>
+      )
     }
     return this.props.children
   }
@@ -108,8 +120,10 @@ export const LazyComponentRenderer = memo(function LazyComponentRenderer({
     return (
       <ComponentErrorBoundary>
         <Suspense fallback={null}>
-          <div className="flex min-h-screen w-full items-center justify-center p-8">
-            <Component />
+          <div className="bg-background flex min-h-screen w-full items-center justify-center p-16">
+            <div className="flex w-full max-w-4xl items-center justify-center">
+              <Component />
+            </div>
           </div>
         </Suspense>
       </ComponentErrorBoundary>

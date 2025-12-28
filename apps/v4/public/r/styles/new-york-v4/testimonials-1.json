@@ -14,7 +14,8 @@
     }
   ],
   "categories": [
-    "testimonials"
+    "testimonials",
+    "service-plants"
   ],
   "tier": "free",
   "readiness": "alpha"

@@ -11,7 +11,8 @@
     }
   ],
   "categories": [
-    "gallery"
+    "gallery",
+    "service-plants"
   ],
   "tier": "free",
   "readiness": "alpha"

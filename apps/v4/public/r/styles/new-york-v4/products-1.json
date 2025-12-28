@@ -14,7 +14,8 @@
     }
   ],
   "categories": [
-    "products"
+    "products",
+    "service-plants"
   ],
   "tier": "free",
   "readiness": "alpha"

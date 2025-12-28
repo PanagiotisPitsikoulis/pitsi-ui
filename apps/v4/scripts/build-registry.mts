@@ -99,7 +99,6 @@ export const Index: Record<string, Record<string, any>> = {`
       meta: ${JSON.stringify(item.meta)},
       tier: ${JSON.stringify(item.tier)},
       readiness: ${JSON.stringify(item.readiness)},
-      poweredBy: ${JSON.stringify(item.poweredBy)},
     },`
     }
 
@@ -349,6 +348,23 @@ try {
   for (const style of styles) {
     if (existsSync(path.join(process.cwd(), `registry-${style.name}.json`))) {
       await fs.unlink(path.join(process.cwd(), `registry-${style.name}.json`))
+    }
+  }
+
+  // Run block screenshot capture if --capture flag is passed
+  if (process.argv.includes("--capture")) {
+    console.log("\n📸 Capturing block screenshots...")
+    const captureResult = await new Promise<number>((resolve) => {
+      const captureArgs = process.argv.includes("--force-capture")
+        ? ["scripts/capture-blocks.mts", "--force"]
+        : ["scripts/capture-blocks.mts"]
+      const captureProcess = exec(`bun ${captureArgs.join(" ")}`)
+      captureProcess.stdout?.pipe(process.stdout)
+      captureProcess.stderr?.pipe(process.stderr)
+      captureProcess.on("exit", (code) => resolve(code ?? 1))
+    })
+    if (captureResult !== 0) {
+      console.warn("⚠️  Screenshot capture failed (dev server may not be running)")
     }
   }
 

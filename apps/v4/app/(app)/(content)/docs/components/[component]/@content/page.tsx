@@ -1,6 +1,7 @@
 import { cacheLife } from "next/cache"
 
 import { generateDocsItemStaticParams } from "@/lib/pages/docs"
+import { TrackComponentView } from "@/components/documentation/components/track-component-view"
 import { DocsItemContent } from "@/components/documentation/docs/docs-item-content"
 
 export function generateStaticParams() {
@@ -17,5 +18,10 @@ export default async function ComponentContentPage({
 
   const { component } = await params
 
-  return <DocsItemContent itemName={component} type="components" />
+  return (
+    <>
+      <TrackComponentView name={component} />
+      <DocsItemContent itemName={component} type="components" />
+    </>
+  )
 }

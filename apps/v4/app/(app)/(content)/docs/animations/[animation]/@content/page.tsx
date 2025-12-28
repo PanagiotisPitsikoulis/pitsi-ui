@@ -1,6 +1,7 @@
 import { cacheLife } from "next/cache"
 
 import { generateDocsItemStaticParams } from "@/lib/pages/docs"
+import { TrackAnimationView } from "@/components/documentation/animations/track-animation-view"
 import { DocsItemContent } from "@/components/documentation/docs/docs-item-content"
 
 export function generateStaticParams() {
@@ -17,5 +18,10 @@ export default async function AnimationContentPage({
 
   const { animation } = await params
 
-  return <DocsItemContent itemName={animation} type="animations" />
+  return (
+    <>
+      <TrackAnimationView name={animation} />
+      <DocsItemContent itemName={animation} type="animations" />
+    </>
+  )
 }

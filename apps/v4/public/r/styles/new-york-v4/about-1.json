@@ -1,0 +1,21 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "about-1",
+  "type": "registry:block",
+  "description": "About mission section with image, headline and author quote",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/about/about-1.tsx",
+      "content": "\"use client\"\n\nimport Image from \"next/image\"\nimport React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface AboutMissionBlockProps {\n  image?: string\n  headline?: string\n  subtext?: string\n  quote?: string\n  author?: {\n    name: string\n    role: string\n    avatar: string\n  }\n  className?: string\n}\n\nconst defaultImage = \"https://deifkwefumgah.cloudfront.net/shadcnblocks/block/guri4/img2.png\"\nconst defaultHeadline = \"We are a team of creators, thinkers, and builders who believe in crafting experiences that truly connect. Our story is built on passion, innovation, and the drive to bring meaningful ideas to life.\"\nconst defaultSubtext = \"We ask: What's the goal? Who's it for? How do we make it effortless? we begin with why, who, and how to make it better.\"\nconst defaultQuote = \"We aim to bring diverse minds together, turning ideas into experiences that matter.\"\nconst defaultAuthor = {\n  name: \"John Doe\",\n  role: \"Creative Director\",\n  avatar: \"https://deifkwefumgah.cloudfront.net/shadcnblocks/block/guri3/avatar1.png\",\n}\n\nexport function AboutMissionBlock({\n  image = defaultImage,\n  headline = defaultHeadline,\n  subtext = defaultSubtext,\n  quote = defaultQuote,\n  author = defaultAuthor,\n  className,\n}: AboutMissionBlockProps) {\n  return (\n    <section className={cn(\"py-32\", className)}>\n      <div className=\"container\">\n        <div className=\"gap-15 grid grid-cols-1 lg:grid-cols-7 lg:gap-1\">\n          <div className=\"h-120 col-span-4 border relative\">\n            <Image\n              src={image}\n              alt=\"\"\n              fill\n              className=\"object-cover\"\n            />\n          </div>\n\n          <div className=\"lg:pl-15 space-y-15 col-span-3 ml-auto max-w-4xl\">\n            <h1 className=\"text-2xl font-medium tracking-tight\">\n              {headline}\n            </h1>\n            <p className=\"text-foreground/40 text-base lg:text-lg\">\n              {subtext}\n            </p>\n            <div className=\"flex flex-col justify-between gap-4 lg:flex-row lg:items-center\">\n              <p className=\"text-foreground/40 flex-1 text-sm\">\n                {quote}\n              </p>\n              <div className=\"flex w-fit items-center gap-2\">\n                <div className=\"relative size-10\">\n                  <Image\n                    src={author.avatar}\n                    fill\n                    className=\"object-cover\"\n                    alt=\"avatar\"\n                  />\n                </div>\n                <div>\n                  <h3 className=\"font-medium tracking-tight\">{author.name}</h3>\n                  <p className=\"text-foreground/40 text-sm\">{author.role}</p>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "about"
+  ],
+  "tier": "free",
+  "readiness": "alpha"
+}

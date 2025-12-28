@@ -1,0 +1,21 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "features-7",
+  "type": "registry:block",
+  "description": "Feature grid with icon cards and optional center content",
+  "registryDependencies": [
+    "spacer"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/features/features-7.tsx",
+      "content": "\"use client\"\n\nimport { ReactNode } from \"react\"\n\nimport { Spacer } from \"@/registry/new-york-v4/ui/spacer\"\n\nexport interface FeatureCardItem {\n  type: \"card\"\n  icon: ReactNode\n  title: string\n  description: string\n}\n\nexport interface FeatureIconItem {\n  type: \"icon\"\n  icon: ReactNode\n}\n\nexport type FeatureItem = FeatureCardItem | FeatureIconItem\n\nexport interface FeatureGridBlockProps {\n  tagline: string\n  headline: ReactNode\n  description?: string\n  features: FeatureItem[]\n  centerContent?: ReactNode\n  className?: string\n}\n\nexport function FeatureGridBlock({\n  tagline,\n  headline,\n  description,\n  features,\n  centerContent,\n  className,\n}: FeatureGridBlockProps) {\n  // Split features for left/right columns if centerContent is provided\n  const hasCenter = !!centerContent\n  const leftFeatures = hasCenter ? features.slice(0, Math.ceil(features.length / 2)) : features\n  const rightFeatures = hasCenter ? features.slice(Math.ceil(features.length / 2)) : []\n\n  return (\n    <div\n      id=\"features\"\n      className={`container flex flex-col items-center justify-center px-6 py-16 text-center md:py-24 ${className ?? \"\"}`}\n    >\n      <p className=\"text-brand text-sm font-medium tracking-widest uppercase\">\n        {tagline}\n      </p>\n      <Spacer size=\"md\" sizeMobile=\"sm\" />\n      <h2 className=\"display max-w-4xl text-4xl leading-[0.95] tracking-tight md:text-6xl lg:text-7xl\">\n        {headline}\n      </h2>\n      {description && (\n        <>\n          <Spacer size=\"lg\" sizeMobile=\"md\" />\n          <p className=\"text-muted-foreground max-w-2xl text-base md:text-lg\">\n            {description}\n          </p>\n        </>\n      )}\n      <Spacer size=\"4xl\" sizeMobile=\"3xl\" />\n\n      {hasCenter ? (\n        <div className=\"grid w-full grid-cols-6 gap-6\">\n          {/* Left column */}\n          <div className=\"col-span-6 flex flex-col gap-6 lg:col-span-2\">\n            {leftFeatures.map((feature, index) => renderFeatureItem(feature, index))}\n          </div>\n\n          {/* Center content */}\n          <div className=\"col-span-6 hidden lg:col-span-2 lg:block\">\n            {centerContent}\n          </div>\n\n          {/* Right column */}\n          <div className=\"col-span-6 flex flex-col gap-6 lg:col-span-2\">\n            {rightFeatures.map((feature, index) => renderFeatureItem(feature, index + leftFeatures.length))}\n          </div>\n        </div>\n      ) : (\n        <div className=\"grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3\">\n          {features.map((feature, index) => renderFeatureItem(feature, index))}\n        </div>\n      )}\n    </div>\n  )\n}\n\nfunction FeatureCard({ icon, title, description }: FeatureCardItem) {\n  return (\n    <div className=\"group border-border bg-background relative z-10 flex h-[16rem] flex-col overflow-hidden rounded-4xl border shadow-sm md:h-[18rem]\">\n      <div className=\"flex flex-1 items-center justify-center overflow-hidden p-6\">\n        <div className=\"text-brand size-16 md:size-20\">{icon}</div>\n      </div>\n      <div className=\"bg-background/50 border-t px-6 py-4 backdrop-blur-sm\">\n        <p className=\"text-base font-medium\">{title}</p>\n        <p className=\"text-muted-foreground mt-1 text-sm\">{description}</p>\n      </div>\n    </div>\n  )\n}\n\nfunction IconOnly({ icon }: FeatureIconItem) {\n  return (\n    <div className=\"relative z-10 hidden h-[16rem] items-center justify-center md:h-[18rem] lg:flex\">\n      <div className=\"text-brand size-28 md:size-36\">{icon}</div>\n    </div>\n  )\n}\n\nfunction renderFeatureItem(item: FeatureItem, index: number) {\n  if (item.type === \"icon\") {\n    return <IconOnly key={`icon-${index}`} {...item} />\n  }\n  return <FeatureCard key={`card-${index}`} {...item} />\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "features"
+  ],
+  "tier": "free",
+  "readiness": "alpha"
+}

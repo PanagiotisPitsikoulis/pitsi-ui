@@ -1,0 +1,25 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "categories-1",
+  "type": "registry:block",
+  "description": "Categories grid with icon cards and view all link",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "spacer"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/categories/categories-1.tsx",
+      "content": "\"use client\"\n\nimport Link from \"next/link\"\nimport { ReactNode } from \"react\"\nimport { LucideIcon } from \"lucide-react\"\n\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\nimport { Spacer } from \"@/registry/new-york-v4/ui/spacer\"\n\nexport interface CategoryItem {\n  id: string\n  name: string\n  description: string\n  count: string\n  icon: LucideIcon\n  href: string\n  previewBlock?: string\n  color?: string\n}\n\nexport interface CategoriesGridBlockProps {\n  tagline: string\n  headline: ReactNode\n  description: string\n  categories: CategoryItem[]\n  viewAllLink?: {\n    label: string\n    href: string\n  }\n  className?: string\n}\n\nexport function CategoriesGridBlock({\n  tagline,\n  headline,\n  description,\n  categories,\n  viewAllLink,\n  className,\n}: CategoriesGridBlockProps) {\n  return (\n    <div\n      id=\"categories\"\n      className={`container flex flex-col items-center justify-center px-6 py-16 text-center md:py-24 ${className ?? \"\"}`}\n    >\n      <p className=\"text-brand text-sm font-medium tracking-widest uppercase\">\n        {tagline}\n      </p>\n      <Spacer size=\"md\" sizeMobile=\"sm\" />\n      <h2 className=\"display text-muted-foreground max-w-4xl text-4xl leading-[0.95] tracking-tight md:text-6xl lg:text-7xl\">\n        {headline}\n      </h2>\n      <Spacer size=\"lg\" sizeMobile=\"md\" />\n      <p className=\"text-muted-foreground max-w-2xl text-base md:text-lg\">\n        {description}\n      </p>\n      <Spacer size=\"4xl\" sizeMobile=\"3xl\" />\n\n      <div className=\"grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3\">\n        {categories.map((category) => {\n          const Icon = category.icon\n          return (\n            <Link\n              key={category.id}\n              href={category.href}\n              className=\"border-border bg-card hover:border-brand/50 group relative flex flex-col overflow-hidden rounded-2xl border p-6 text-left transition-colors\"\n            >\n              <div className=\"flex items-start justify-between\">\n                <div\n                  className={`flex size-12 items-center justify-center rounded-xl ${category.color ?? \"bg-brand/10 text-brand\"}`}\n                >\n                  <Icon className=\"size-6\" />\n                </div>\n                <span className=\"text-muted-foreground text-sm font-medium\">\n                  {category.count}\n                </span>\n              </div>\n              <Spacer size=\"md\" sizeMobile=\"sm\" />\n              <h3 className=\"text-foreground text-lg font-medium\">\n                {category.name}\n              </h3>\n              <p className=\"text-muted-foreground mt-1 text-sm\">\n                {category.description}\n              </p>\n            </Link>\n          )\n        })}\n      </div>\n\n      {viewAllLink && (\n        <>\n          <Spacer size=\"2xl\" sizeMobile=\"xl\" />\n          <Button asChild variant=\"outline\" className=\"rounded-full\">\n            <Link href={viewAllLink.href}>{viewAllLink.label}</Link>\n          </Button>\n        </>\n      )}\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "categories"
+  ],
+  "tier": "free",
+  "readiness": "alpha"
+}

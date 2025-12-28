@@ -17,15 +17,5 @@
     "core-components"
   ],
   "tier": "free",
-  "readiness": "production",
-  "poweredBy": [
-    {
-      "name": "shadcn/ui",
-      "url": "https://ui.shadcn.com"
-    },
-    {
-      "name": "Vaul",
-      "url": "https://vaul.emilkowal.ski"
-    }
-  ]
+  "readiness": "production"
 }

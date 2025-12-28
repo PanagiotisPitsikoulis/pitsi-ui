@@ -72,7 +72,7 @@ export function DevBlockOverlay({
 
   return (
     <div
-      className="group relative"
+      className="relative"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
