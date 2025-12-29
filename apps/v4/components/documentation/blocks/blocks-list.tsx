@@ -3,7 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
-import { Bookmark, Clock, MoreVertical } from "lucide-react"
+import { Bookmark, Clock, ExternalLink, MoreVertical } from "lucide-react"
 
 import { useSavedBlocks, useRecentBlocks } from "@/lib/blocks-storage"
 import { cn } from "@/lib/utils"
@@ -25,11 +25,45 @@ interface BlockItem {
   tier?: string
   iframeHeight?: string
   styleName: string
+  blockCategory?: string // The block's actual category
+  templateSlug?: string // Associated template slug
 }
 
 interface BlocksListProps {
   blocks: BlockItem[]
   category?: string
+}
+
+// Format category name for display (e.g., "hero" -> "Hero", "cta" -> "CTA")
+function formatCategoryName(category: string): string {
+  const acronyms = ["cta", "faq"]
+  if (acronyms.includes(category.toLowerCase())) {
+    return category.toUpperCase()
+  }
+  return category.charAt(0).toUpperCase() + category.slice(1)
+}
+
+// Category descriptions
+const CATEGORY_DESCRIPTIONS: Record<string, string> = {
+  header: "Navigation bars and site headers with responsive menus",
+  hero: "Eye-catching hero sections to make a strong first impression",
+  features: "Showcase your product or service features and benefits",
+  products: "Product grids, cards, and e-commerce displays",
+  pricing: "Pricing tables and plan comparison sections",
+  testimonials: "Customer reviews, quotes, and social proof",
+  gallery: "Image galleries and media showcases",
+  team: "Team member profiles and about sections",
+  stats: "Statistics, metrics, and achievement displays",
+  logos: "Client logos, partner brands, and trust badges",
+  faq: "Frequently asked questions and accordion sections",
+  blog: "Blog post grids, article previews, and news sections",
+  contact: "Contact forms and get-in-touch sections",
+  newsletter: "Email signup forms and subscription sections",
+  cta: "Call-to-action sections that drive conversions",
+  footer: "Site footers with links, social media, and legal info",
+  showcase: "Product showcases and feature highlights",
+  bento: "Bento grid layouts for modern content presentation",
+  application: "Full application interfaces and dashboard layouts",
 }
 
 function BlockPreview({
@@ -80,8 +114,10 @@ function BlockCard({ block, isBlockSaved, toggleSaveBlock }: {
       <Link href={block.href}>
         <div className="overflow-hidden rounded-2xl shadow-sm dark:border dark:border-border">
           <div className="bg-background relative">
-            <ReadinessBadge readiness={block.readiness as any} />
-            <TierBadge tier={(block.tier ?? "free") as any} />
+            <div className="opacity-0 group-hover/card:opacity-100 transition-opacity duration-200">
+              <ReadinessBadge readiness={block.readiness as any} />
+              <TierBadge tier={(block.tier ?? "free") as any} />
+            </div>
             <div data-slot="preview" className="overflow-hidden">
               <div
                 data-align="center"
@@ -96,7 +132,7 @@ function BlockCard({ block, isBlockSaved, toggleSaveBlock }: {
           </div>
         </div>
       </Link>
-      <div className="flex flex-col gap-1 px-2">
+      <div className="flex flex-col gap-0.5 px-2">
         <div className="flex items-center justify-between">
           <Link href={block.href}>
             <span className="group-hover/card:text-primary text-base font-medium transition-colors group-hover/card:underline">
@@ -115,12 +151,22 @@ function BlockCard({ block, isBlockSaved, toggleSaveBlock }: {
                 <Bookmark className={cn("size-4", saved && "fill-current")} />
                 {saved ? "Remove from saved" : "Save this block"}
               </DropdownMenuItem>
+              {block.templateSlug && (
+                <DropdownMenuItem asChild className="gap-2">
+                  <Link href={`/template/${block.templateSlug}`}>
+                    <ExternalLink className="size-4" />
+                    Open template
+                  </Link>
+                </DropdownMenuItem>
+              )}
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
-        <p className="text-muted-foreground group-hover/card:text-foreground/70 line-clamp-2 min-h-[2.5rem] max-w-6/7 text-sm transition-colors">
-          {block.description || "A component block for your application."}
-        </p>
+        {block.description && (
+          <p className="text-muted-foreground line-clamp-1 text-sm">
+            {block.description}
+          </p>
+        )}
       </div>
     </div>
   )
@@ -195,9 +241,60 @@ export function BlocksList({ blocks, category }: BlocksListProps) {
     )
   }
 
+  // Group blocks by category when showing "all"
+  const showGrouped = category === "all" && !filter
+
+  if (showGrouped) {
+    // Group blocks by their category
+    const blocksByCategory = filteredBlocks.reduce<Record<string, BlockItem[]>>((acc, block) => {
+      const cat = block.blockCategory || block.href.split("/")[2] || "other"
+      if (!acc[cat]) {
+        acc[cat] = []
+      }
+      acc[cat].push(block)
+      return acc
+    }, {})
+
+    // Sort categories alphabetically
+    const sortedCategories = Object.keys(blocksByCategory).sort((a, b) => a.localeCompare(b))
+
+    return (
+      <div className="container space-y-20">
+        {sortedCategories.map((cat) => (
+          <div key={cat}>
+            <div className="mb-8 flex items-start justify-between gap-4">
+              <div className="flex flex-col gap-1">
+                <h2 className="text-lg font-semibold">{formatCategoryName(cat)}</h2>
+                {CATEGORY_DESCRIPTIONS[cat] && (
+                  <p className="text-muted-foreground text-sm">{CATEGORY_DESCRIPTIONS[cat]}</p>
+                )}
+              </div>
+              <Link
+                href={`/blocks/${cat}`}
+                className="text-muted-foreground hover:text-foreground shrink-0 text-sm transition-colors"
+              >
+                View all
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+              {blocksByCategory[cat].map((block) => (
+                <BlockCard
+                  key={block.name}
+                  block={block}
+                  isBlockSaved={isBlockSaved}
+                  toggleSaveBlock={toggleSaveBlock}
+                />
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    )
+  }
+
   return (
     <div className="container">
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
         {filteredBlocks.map((block) => (
           <BlockCard
             key={block.name}

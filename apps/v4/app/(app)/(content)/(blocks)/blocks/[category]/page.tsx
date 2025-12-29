@@ -6,7 +6,7 @@ import { generateCategoryStaticParams } from "@/lib/pages/blocks"
 import { queryRegistry, type RegistryItem } from "@/lib/registry-utils"
 import { BlocksList } from "@/components/documentation/blocks/blocks-list"
 import { getActiveStyle } from "@/registry/styles"
-import { getAllTemplatesMetadata } from "@/app/(app)/(content)/(blocks)/template-config"
+import { getAllTemplatesMetadataIncludingApps } from "@/app/(app)/(content)/(blocks)/template-config"
 
 import { BlocksFilter } from "./blocks-filter"
 import { FullPagesSection } from "./full-pages-section"
@@ -15,8 +15,8 @@ export async function generateStaticParams() {
   return generateCategoryStaticParams()
 }
 
-// Get templates from config
-const templates = getAllTemplatesMetadata()
+// Get templates from config (including application templates)
+const templates = getAllTemplatesMetadataIncludingApps()
 
 export default async function CategoryPage({
   params,
@@ -48,6 +48,7 @@ export default async function CategoryPage({
     // Transform blocks - get category from block's categories array
     const blockItems = blocks.map((block) => {
       const blockCategory = block.categories?.[0] || "uncategorized"
+      const templateSlug = block.categories?.[1] || null // Second category is usually the template
       return {
         name: block.name,
         description: block.description,
@@ -56,6 +57,8 @@ export default async function CategoryPage({
         tier: block.tier,
         iframeHeight: block.meta?.iframeHeight,
         styleName: activeStyle.name,
+        blockCategory,
+        templateSlug,
       }
     })
 
@@ -94,15 +97,20 @@ export default async function CategoryPage({
   }
 
   // Transform blocks into the format expected by BlocksList
-  const blockItems = blocks.map((block) => ({
-    name: block.name,
-    description: block.description,
-    href: `/block/${category}/${block.name}`,
-    readiness: block.readiness,
-    tier: block.tier,
-    iframeHeight: block.meta?.iframeHeight,
-    styleName: activeStyle.name,
-  }))
+  const blockItems = blocks.map((block) => {
+    const templateSlug = block.categories?.[1] || null // Second category is usually the template
+    return {
+      name: block.name,
+      description: block.description,
+      href: `/block/${category}/${block.name}`,
+      readiness: block.readiness,
+      tier: block.tier,
+      iframeHeight: block.meta?.iframeHeight,
+      styleName: activeStyle.name,
+      blockCategory: category,
+      templateSlug,
+    }
+  })
 
   return (
     <div className="flex flex-col gap-8">

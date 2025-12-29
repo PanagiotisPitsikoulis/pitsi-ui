@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "description": "3D transform effects with mouse interaction.",
   "dependencies": [
-    "motion"
+    "motion/react"
   ],
   "registryDependencies": [
     "utils"

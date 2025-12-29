@@ -15,6 +15,18 @@ export const buildOptionsSchema = z.object({
   outputDir: z.string(),
 })
 
+// Transform placeholder paths to full URLs so they work in user projects
+const PLACEHOLDER_BASE_URL =
+  process.env.REGISTRY_PLACEHOLDER_URL || "https://pitsiui.com"
+
+function transformPlaceholderUrls(content: string): string {
+  // Match paths like "/placeholders/blocks/..." in strings (quotes, backticks)
+  return content.replace(
+    /(["'`])(\/placeholders\/[^"'`]+)(["'`])/g,
+    `$1${PLACEHOLDER_BASE_URL}$2$3`
+  )
+}
+
 export const build = new Command()
   .name("build")
   .description("build components for a pitsi registry")
@@ -61,10 +73,12 @@ export const build = new Command()
 
         // Loop through each file in the files array.
         for (const file of registryItem.files ?? []) {
-          file["content"] = await fs.readFile(
+          const rawContent = await fs.readFile(
             path.resolve(resolvePaths.cwd, file.path),
             "utf-8"
           )
+          // Transform placeholder URLs to full URLs for user projects
+          file["content"] = transformPlaceholderUrls(rawContent)
         }
 
         // Validate the registry item.

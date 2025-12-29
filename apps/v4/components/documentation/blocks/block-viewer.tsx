@@ -144,7 +144,7 @@ function BlockViewerToolbar({ styleName }: { styleName: Style["name"] }) {
             </TabsTrigger>
           </TabsList>
         </Tabs>
-        <Separator orientation="vertical" className="hidden !h-4 lg:block" />
+        <Separator orientation="vertical" className="!bg-border/50 hidden !h-4 lg:block" />
         <Button
           size="icon"
           variant="ghost"
@@ -194,7 +194,7 @@ function BlockViewerToolbar({ styleName }: { styleName: Style["name"] }) {
             >
               <Smartphone />
             </ToggleGroupItem>
-            <Separator orientation="vertical" className="mx-0.5 !h-4" />
+            <Separator orientation="vertical" className="!bg-border/50 mx-0.5 !h-4" />
             <Button
               size="icon"
               variant="ghost"
@@ -211,7 +211,7 @@ function BlockViewerToolbar({ styleName }: { styleName: Style["name"] }) {
           </ToggleGroup>
         </div>
 
-        <Separator orientation="vertical" className="!h-4" />
+        <Separator orientation="vertical" className="!bg-border/50 !h-4" />
 
         {/* CLI copy button */}
         <Button
@@ -228,7 +228,7 @@ function BlockViewerToolbar({ styleName }: { styleName: Style["name"] }) {
           </span>
         </Button>
 
-        <Separator orientation="vertical" className="!h-4" />
+        <Separator orientation="vertical" className="!bg-border/50 !h-4" />
         <OpenInV0Button name={item.name} />
       </div>
     </div>

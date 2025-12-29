@@ -1287,6 +1287,26 @@ export const Index: Record<string, Record<string, any>> = {
       tier: "free",
       readiness: "production",
     },
+    "blocks-provider": {
+      name: "blocks-provider",
+      description: "Provider component for pitsi/ui blocks with theme, context, and decoration support.",
+      type: "registry:ui",
+      registryDependencies: ["utils","block-theme","block-context","block-decorations"],
+      files: [{
+        path: "registry/new-york-v4/ui/blocks-provider.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/ui/blocks-provider.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "blocks-provider"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["providers"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
     "background-image-parallax": {
       name: "background-image-parallax",
       description: "Background image with parallax effect - moves slower than foreground for depth.",
@@ -1685,7 +1705,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["header","service-plants"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "hero-1": {
       name: "hero-1",
@@ -1705,7 +1725,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","service-plants"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "hero-2": {
       name: "hero-2",
@@ -1725,7 +1745,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","service-travel"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "hero-3": {
       name: "hero-3",
@@ -1745,7 +1765,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","service-boat"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "features-1": {
       name: "features-1",
@@ -1765,7 +1785,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["features","service-plants"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "features-2": {
       name: "features-2",
@@ -1785,7 +1805,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["features","service-plants"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "features-3": {
       name: "features-3",
@@ -1805,7 +1825,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["features","service-plants"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "features-4": {
       name: "features-4",
@@ -1825,7 +1845,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["features","service-plants"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "features-5": {
       name: "features-5",
@@ -1845,7 +1865,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["features","service-plants"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "products-1": {
       name: "products-1",
@@ -1865,7 +1885,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["products","service-plants"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "pricing-1": {
       name: "pricing-1",
@@ -1885,7 +1905,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["pricing","service-plants"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "testimonials-1": {
       name: "testimonials-1",
@@ -1905,7 +1925,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["testimonials","service-plants"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "gallery-1": {
       name: "gallery-1",
@@ -1925,7 +1945,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["gallery","service-plants"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "team-1": {
       name: "team-1",
@@ -1945,7 +1965,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["team","service-plants"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "stats-1": {
       name: "stats-1",
@@ -1965,7 +1985,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["stats","service-plants"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "logos-1": {
       name: "logos-1",
@@ -1985,7 +2005,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["logos","service-plants"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "faq-1": {
       name: "faq-1",
@@ -2005,7 +2025,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["faq","service-plants"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "blog-1": {
       name: "blog-1",
@@ -2025,7 +2045,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["blog","service-plants"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "contact-1": {
       name: "contact-1",
@@ -2045,7 +2065,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["contact","service-plants"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "newsletter-1": {
       name: "newsletter-1",
@@ -2065,7 +2085,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["newsletter","service-plants"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "cta-1": {
       name: "cta-1",
@@ -2085,7 +2105,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["cta","service-plants"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "footer-1": {
       name: "footer-1",
@@ -2105,7 +2125,587 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["footer","service-plants"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
+    },
+    "application-1": {
+      name: "application-1",
+      description: "Gym progressive overload tracker with lift progression chart and workout history",
+      type: "registry:block",
+      registryDependencies: ["button","card","utils"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/application-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/application-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "application-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "app-shell-1": {
+      name: "app-shell-1",
+      description: "Application shell with sidebar navigation for gym tracker",
+      type: "registry:block",
+      registryDependencies: ["sidebar","avatar","button","utils"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-shell-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-shell-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-shell-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","app-gym-tracker"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "app-dashboard-1": {
+      name: "app-dashboard-1",
+      description: "Gym tracker dashboard with stats, progression chart, and recent workouts",
+      type: "registry:block",
+      registryDependencies: ["button","card","utils"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-dashboard-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-dashboard-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-dashboard-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","app-gym-tracker"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "app-workout-log-1": {
+      name: "app-workout-log-1",
+      description: "Workout logging interface with exercise selection and set tracking",
+      type: "registry:block",
+      registryDependencies: ["button","card","input","label","select","utils"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-workout-log-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-workout-log-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-workout-log-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","app-gym-tracker"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "app-calendar-1": {
+      name: "app-calendar-1",
+      description: "Workout calendar with monthly view and workout indicators",
+      type: "registry:block",
+      registryDependencies: ["button","card","utils"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-calendar-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-calendar-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-calendar-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","app-gym-tracker"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "app-progress-1": {
+      name: "app-progress-1",
+      description: "Progress tracking with multi-lift charts and personal records",
+      type: "registry:block",
+      registryDependencies: ["button","card","tabs","utils"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-progress-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-progress-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-progress-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","app-gym-tracker"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "app-exercises-1": {
+      name: "app-exercises-1",
+      description: "Searchable exercise library with categories and details",
+      type: "registry:block",
+      registryDependencies: ["badge","button","card","input","utils"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-exercises-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-exercises-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-exercises-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","app-gym-tracker"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "app-settings-1": {
+      name: "app-settings-1",
+      description: "Settings page with profile, units, and preferences",
+      type: "registry:block",
+      registryDependencies: ["avatar","button","card","input","label","select","separator","switch","utils"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-settings-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-settings-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-settings-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","app-gym-tracker"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "app-gym-tracker": {
+      name: "app-gym-tracker",
+      description: "Complete gym progressive overload tracker application template",
+      type: "registry:block",
+      registryDependencies: ["app-shell-1","app-dashboard-1","app-workout-log-1","app-calendar-1","app-progress-1","app-exercises-1","app-settings-1"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-gym-tracker.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-gym-tracker.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-gym-tracker"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","app-gym-tracker"],
+      meta: {"iframeHeight":"800px"},
+      tier: "free",
+      readiness: "beta",
+    },
+    "app-quiz-shell-1": {
+      name: "app-quiz-shell-1",
+      description: "Application shell with sidebar navigation for quiz app",
+      type: "registry:block",
+      registryDependencies: ["sidebar","avatar","utils"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-quiz-shell-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-quiz-shell-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-quiz-shell-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","app-quiz"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "app-quiz-dashboard-1": {
+      name: "app-quiz-dashboard-1",
+      description: "Quiz dashboard with stats, weekly accuracy chart, and recent quizzes",
+      type: "registry:block",
+      registryDependencies: ["button","card","utils"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-quiz-dashboard-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-quiz-dashboard-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-quiz-dashboard-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","app-quiz"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "app-quiz-browse-1": {
+      name: "app-quiz-browse-1",
+      description: "Quiz browser with categories and difficulty filters",
+      type: "registry:block",
+      registryDependencies: ["badge","button","card","input","utils"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-quiz-browse-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-quiz-browse-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-quiz-browse-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","app-quiz"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "app-quiz-active-1": {
+      name: "app-quiz-active-1",
+      description: "Active quiz interface with timer and question display",
+      type: "registry:block",
+      registryDependencies: ["button","card","utils"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-quiz-active-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-quiz-active-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-quiz-active-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","app-quiz"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "app-quiz-results-1": {
+      name: "app-quiz-results-1",
+      description: "Quiz results with score and question breakdown",
+      type: "registry:block",
+      registryDependencies: ["badge","button","card","utils"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-quiz-results-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-quiz-results-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-quiz-results-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","app-quiz"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "app-quiz-settings-1": {
+      name: "app-quiz-settings-1",
+      description: "Quiz settings with profile and preferences",
+      type: "registry:block",
+      registryDependencies: ["avatar","button","card","input","label","select","separator","switch","utils"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-quiz-settings-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-quiz-settings-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-quiz-settings-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","app-quiz"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "app-quiz": {
+      name: "app-quiz",
+      description: "Complete quiz application template",
+      type: "registry:block",
+      registryDependencies: ["app-quiz-shell-1","app-quiz-dashboard-1","app-quiz-browse-1","app-quiz-active-1","app-quiz-results-1","app-quiz-settings-1"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-quiz.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-quiz.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-quiz"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","app-quiz"],
+      meta: {"iframeHeight":"800px"},
+      tier: "free",
+      readiness: "beta",
+    },
+    "app-database-shell-1": {
+      name: "app-database-shell-1",
+      description: "Application shell with sidebar navigation for database dashboard",
+      type: "registry:block",
+      registryDependencies: ["sidebar","avatar","utils"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-database-shell-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-database-shell-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-database-shell-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","app-database"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "app-database-dashboard-1": {
+      name: "app-database-dashboard-1",
+      description: "Database dashboard with stats, query volume chart, and top tables",
+      type: "registry:block",
+      registryDependencies: ["badge","button","card","utils"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-database-dashboard-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-database-dashboard-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-database-dashboard-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","app-database"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "app-database-tables-1": {
+      name: "app-database-tables-1",
+      description: "Database tables list with details panel",
+      type: "registry:block",
+      registryDependencies: ["badge","button","card","input","utils"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-database-tables-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-database-tables-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-database-tables-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","app-database"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "app-database-query-1": {
+      name: "app-database-query-1",
+      description: "SQL query editor with results and history",
+      type: "registry:block",
+      registryDependencies: ["button","card","textarea","utils"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-database-query-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-database-query-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-database-query-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","app-database"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "app-database-settings-1": {
+      name: "app-database-settings-1",
+      description: "Database settings with profile and preferences",
+      type: "registry:block",
+      registryDependencies: ["avatar","button","card","input","label","select","separator","switch","utils"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-database-settings-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-database-settings-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-database-settings-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","app-database"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "app-database": {
+      name: "app-database",
+      description: "Complete database dashboard application template",
+      type: "registry:block",
+      registryDependencies: ["app-database-shell-1","app-database-dashboard-1","app-database-tables-1","app-database-query-1","app-database-settings-1"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-database.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-database.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-database"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","app-database"],
+      meta: {"iframeHeight":"800px"},
+      tier: "free",
+      readiness: "beta",
+    },
+    "app-agents-shell-1": {
+      name: "app-agents-shell-1",
+      description: "Application shell with sidebar navigation for AI agents dashboard",
+      type: "registry:block",
+      registryDependencies: ["sidebar","avatar","utils"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-agents-shell-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-agents-shell-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-agents-shell-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","app-agents"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "app-agents-dashboard-1": {
+      name: "app-agents-dashboard-1",
+      description: "AI agents dashboard with stats, daily runs chart, and recent runs",
+      type: "registry:block",
+      registryDependencies: ["badge","button","card","utils"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-agents-dashboard-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-agents-dashboard-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-agents-dashboard-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","app-agents"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "app-agents-list-1": {
+      name: "app-agents-list-1",
+      description: "AI agents list with details panel",
+      type: "registry:block",
+      registryDependencies: ["badge","button","card","dropdown-menu","input","utils"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-agents-list-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-agents-list-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-agents-list-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","app-agents"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "app-agents-runs-1": {
+      name: "app-agents-runs-1",
+      description: "AI agent runs history with filters",
+      type: "registry:block",
+      registryDependencies: ["badge","button","card","dropdown-menu","input","utils"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-agents-runs-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-agents-runs-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-agents-runs-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","app-agents"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "app-agents-logs-1": {
+      name: "app-agents-logs-1",
+      description: "AI agent logs viewer with real-time stream",
+      type: "registry:block",
+      registryDependencies: ["badge","button","card","dropdown-menu","input","utils"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-agents-logs-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-agents-logs-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-agents-logs-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","app-agents"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "app-agents-settings-1": {
+      name: "app-agents-settings-1",
+      description: "AI agents settings with profile and preferences",
+      type: "registry:block",
+      registryDependencies: ["avatar","button","card","input","label","select","separator","switch","utils"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-agents-settings-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-agents-settings-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-agents-settings-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","app-agents"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "app-agents": {
+      name: "app-agents",
+      description: "Complete AI agents dashboard application template",
+      type: "registry:block",
+      registryDependencies: ["app-agents-shell-1","app-agents-dashboard-1","app-agents-list-1","app-agents-runs-1","app-agents-logs-1","app-agents-settings-1"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-agents.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-agents.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-agents"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","app-agents"],
+      meta: {"iframeHeight":"800px"},
+      tier: "free",
+      readiness: "beta",
     },
     "utils": {
       name: "utils",
@@ -2180,6 +2780,66 @@ export const Index: Record<string, Record<string, any>> = {
       component: React.lazy(async () => {
         const mod = await import("@/registry/new-york-v4/lib/recursive-clone-children.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "recursive-clone-children"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: undefined,
+      meta: undefined,
+      tier: undefined,
+      readiness: "production",
+    },
+    "block-theme": {
+      name: "block-theme",
+      description: "Theme utilities for blocks including color palettes, fonts, and tint levels.",
+      type: "registry:lib",
+      registryDependencies: ["utils"],
+      files: [{
+        path: "registry/new-york-v4/lib/block-theme.tsx",
+        type: "registry:lib",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/lib/block-theme.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "block-theme"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: undefined,
+      meta: undefined,
+      tier: undefined,
+      readiness: "production",
+    },
+    "block-context": {
+      name: "block-context",
+      description: "Context provider for blocks with alternating backgrounds and surface styling.",
+      type: "registry:lib",
+      registryDependencies: ["utils","block-theme"],
+      files: [{
+        path: "registry/new-york-v4/lib/block-context.tsx",
+        type: "registry:lib",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/lib/block-context.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "block-context"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: undefined,
+      meta: undefined,
+      tier: undefined,
+      readiness: "production",
+    },
+    "block-decorations": {
+      name: "block-decorations",
+      description: "Decoration components for blocks: overlays, patterns, gradients, and effects.",
+      type: "registry:lib",
+      registryDependencies: ["utils"],
+      files: [{
+        path: "registry/new-york-v4/lib/block-decorations.tsx",
+        type: "registry:lib",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/lib/block-decorations.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "block-decorations"
         return { default: mod.default || mod[exportName] }
       }),
       categories: undefined,
@@ -7343,6 +8003,26 @@ export const Index: Record<string, Record<string, any>> = {
         return { default: mod.default || mod[exportName] }
       }),
       categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "blocks-provider-demo": {
+      name: "blocks-provider-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["blocks-provider"],
+      files: [{
+        path: "registry/new-york-v4/examples/blocks-provider-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/blocks-provider-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "blocks-provider-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["providers"],
       meta: undefined,
       tier: "free",
       readiness: "production",

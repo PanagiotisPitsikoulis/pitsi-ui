@@ -15,6 +15,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["header", "service-plants"],
     tier: "free",
+    readiness: "production",
   },
   {
     name: "hero-1",
@@ -31,6 +32,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["hero", "service-plants"],
     tier: "free",
+    readiness: "production",
   },
   {
     name: "hero-2",
@@ -47,6 +49,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["hero", "service-travel"],
     tier: "free",
+    readiness: "production",
   },
   {
     name: "hero-3",
@@ -63,6 +66,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["hero", "service-boat"],
     tier: "free",
+    readiness: "production",
   },
   {
     name: "features-1",
@@ -77,6 +81,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["features", "service-plants"],
     tier: "free",
+    readiness: "production",
   },
   {
     name: "features-2",
@@ -91,6 +96,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["features", "service-plants"],
     tier: "free",
+    readiness: "production",
   },
   {
     name: "features-3",
@@ -105,6 +111,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["features", "service-plants"],
     tier: "free",
+    readiness: "production",
   },
   {
     name: "features-4",
@@ -119,6 +126,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["features", "service-plants"],
     tier: "free",
+    readiness: "production",
   },
   {
     name: "features-5",
@@ -133,6 +141,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["features", "service-plants"],
     tier: "free",
+    readiness: "production",
   },
   {
     name: "products-1",
@@ -147,6 +156,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["products", "service-plants"],
     tier: "free",
+    readiness: "production",
   },
   {
     name: "pricing-1",
@@ -162,6 +172,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["pricing", "service-plants"],
     tier: "free",
+    readiness: "production",
   },
   {
     name: "testimonials-1",
@@ -176,6 +187,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["testimonials", "service-plants"],
     tier: "free",
+    readiness: "production",
   },
   {
     name: "gallery-1",
@@ -189,6 +201,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["gallery", "service-plants"],
     tier: "free",
+    readiness: "production",
   },
   {
     name: "team-1",
@@ -202,6 +215,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["team", "service-plants"],
     tier: "free",
+    readiness: "production",
   },
   {
     name: "stats-1",
@@ -215,6 +229,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["stats", "service-plants"],
     tier: "free",
+    readiness: "production",
   },
   {
     name: "logos-1",
@@ -228,6 +243,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["logos", "service-plants"],
     tier: "free",
+    readiness: "production",
   },
   {
     name: "faq-1",
@@ -242,6 +258,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["faq", "service-plants"],
     tier: "free",
+    readiness: "production",
   },
   {
     name: "blog-1",
@@ -255,6 +272,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["blog", "service-plants"],
     tier: "free",
+    readiness: "production",
   },
   {
     name: "contact-1",
@@ -270,6 +288,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["contact", "service-plants"],
     tier: "free",
+    readiness: "production",
   },
   {
     name: "newsletter-1",
@@ -284,6 +303,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["newsletter", "service-plants"],
     tier: "free",
+    readiness: "production",
   },
   {
     name: "cta-1",
@@ -298,6 +318,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["cta", "service-plants"],
     tier: "free",
+    readiness: "production",
   },
   {
     name: "footer-1",
@@ -313,5 +334,624 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["footer", "service-plants"],
     tier: "free",
+    readiness: "production",
+  },
+  // Service Template: Plants
+  {
+    name: "service-plants",
+    type: "registry:block",
+    description: "Complete plant shop landing page template with all sections",
+    registryDependencies: [
+      "header-1",
+      "hero-1",
+      "logos-1",
+      "features-1",
+      "features-2",
+      "features-3",
+      "features-4",
+      "features-5",
+      "products-1",
+      "pricing-1",
+      "testimonials-1",
+      "gallery-1",
+      "team-1",
+      "stats-1",
+      "faq-1",
+      "blog-1",
+      "contact-1",
+      "newsletter-1",
+      "cta-1",
+      "footer-1",
+    ],
+    files: [],
+    categories: ["template", "service"],
+    tier: "free",
+    readiness: "production",
+  },
+  {
+    name: "application-1",
+    type: "registry:block",
+    description:
+      "Gym progressive overload tracker with lift progression chart and workout history",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button", "card", "utils"],
+    files: [
+      {
+        path: "blocks/application/application-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["application"],
+    tier: "free",
+    readiness: "production",
+  },
+  // Application Template: Gym Tracker
+  {
+    name: "app-shell-1",
+    type: "registry:block",
+    description: "Application shell with sidebar navigation for gym tracker",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["sidebar", "avatar", "button", "utils"],
+    files: [
+      {
+        path: "blocks/application/app-shell-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["application", "app-gym-tracker"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "app-dashboard-1",
+    type: "registry:block",
+    description:
+      "Gym tracker dashboard with stats, progression chart, and recent workouts",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button", "card", "utils"],
+    files: [
+      {
+        path: "blocks/application/app-dashboard-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["application", "app-gym-tracker"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "app-workout-log-1",
+    type: "registry:block",
+    description:
+      "Workout logging interface with exercise selection and set tracking",
+    dependencies: ["lucide-react"],
+    registryDependencies: [
+      "button",
+      "card",
+      "input",
+      "label",
+      "select",
+      "utils",
+    ],
+    files: [
+      {
+        path: "blocks/application/app-workout-log-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["application", "app-gym-tracker"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "app-calendar-1",
+    type: "registry:block",
+    description: "Workout calendar with monthly view and workout indicators",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button", "card", "utils"],
+    files: [
+      {
+        path: "blocks/application/app-calendar-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["application", "app-gym-tracker"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "app-progress-1",
+    type: "registry:block",
+    description:
+      "Progress tracking with multi-lift charts and personal records",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button", "card", "tabs", "utils"],
+    files: [
+      {
+        path: "blocks/application/app-progress-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["application", "app-gym-tracker"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "app-exercises-1",
+    type: "registry:block",
+    description: "Searchable exercise library with categories and details",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["badge", "button", "card", "input", "utils"],
+    files: [
+      {
+        path: "blocks/application/app-exercises-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["application", "app-gym-tracker"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "app-settings-1",
+    type: "registry:block",
+    description: "Settings page with profile, units, and preferences",
+    dependencies: ["lucide-react"],
+    registryDependencies: [
+      "avatar",
+      "button",
+      "card",
+      "input",
+      "label",
+      "select",
+      "separator",
+      "switch",
+      "utils",
+    ],
+    files: [
+      {
+        path: "blocks/application/app-settings-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["application", "app-gym-tracker"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "app-gym-tracker",
+    type: "registry:block",
+    description:
+      "Complete gym progressive overload tracker application template",
+    dependencies: ["lucide-react"],
+    registryDependencies: [
+      "app-shell-1",
+      "app-dashboard-1",
+      "app-workout-log-1",
+      "app-calendar-1",
+      "app-progress-1",
+      "app-exercises-1",
+      "app-settings-1",
+    ],
+    files: [
+      {
+        path: "blocks/application/app-gym-tracker.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["application", "app-gym-tracker"],
+    tier: "free",
+    readiness: "beta",
+    meta: {
+      iframeHeight: "800px",
+    },
+  },
+  // Application Template: Quiz App
+  {
+    name: "app-quiz-shell-1",
+    type: "registry:block",
+    description: "Application shell with sidebar navigation for quiz app",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["sidebar", "avatar", "utils"],
+    files: [
+      {
+        path: "blocks/application/app-quiz-shell-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["application", "app-quiz"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "app-quiz-dashboard-1",
+    type: "registry:block",
+    description:
+      "Quiz dashboard with stats, weekly accuracy chart, and recent quizzes",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button", "card", "utils"],
+    files: [
+      {
+        path: "blocks/application/app-quiz-dashboard-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["application", "app-quiz"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "app-quiz-browse-1",
+    type: "registry:block",
+    description: "Quiz browser with categories and difficulty filters",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["badge", "button", "card", "input", "utils"],
+    files: [
+      {
+        path: "blocks/application/app-quiz-browse-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["application", "app-quiz"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "app-quiz-active-1",
+    type: "registry:block",
+    description: "Active quiz interface with timer and question display",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button", "card", "utils"],
+    files: [
+      {
+        path: "blocks/application/app-quiz-active-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["application", "app-quiz"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "app-quiz-results-1",
+    type: "registry:block",
+    description: "Quiz results with score and question breakdown",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["badge", "button", "card", "utils"],
+    files: [
+      {
+        path: "blocks/application/app-quiz-results-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["application", "app-quiz"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "app-quiz-settings-1",
+    type: "registry:block",
+    description: "Quiz settings with profile and preferences",
+    dependencies: ["lucide-react"],
+    registryDependencies: [
+      "avatar",
+      "button",
+      "card",
+      "input",
+      "label",
+      "select",
+      "separator",
+      "switch",
+      "utils",
+    ],
+    files: [
+      {
+        path: "blocks/application/app-quiz-settings-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["application", "app-quiz"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "app-quiz",
+    type: "registry:block",
+    description: "Complete quiz application template",
+    dependencies: ["lucide-react"],
+    registryDependencies: [
+      "app-quiz-shell-1",
+      "app-quiz-dashboard-1",
+      "app-quiz-browse-1",
+      "app-quiz-active-1",
+      "app-quiz-results-1",
+      "app-quiz-settings-1",
+    ],
+    files: [
+      {
+        path: "blocks/application/app-quiz.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["application", "app-quiz"],
+    tier: "free",
+    readiness: "beta",
+    meta: {
+      iframeHeight: "800px",
+    },
+  },
+  // Application Template: Database Dashboard
+  {
+    name: "app-database-shell-1",
+    type: "registry:block",
+    description:
+      "Application shell with sidebar navigation for database dashboard",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["sidebar", "avatar", "utils"],
+    files: [
+      {
+        path: "blocks/application/app-database-shell-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["application", "app-database"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "app-database-dashboard-1",
+    type: "registry:block",
+    description:
+      "Database dashboard with stats, query volume chart, and top tables",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["badge", "button", "card", "utils"],
+    files: [
+      {
+        path: "blocks/application/app-database-dashboard-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["application", "app-database"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "app-database-tables-1",
+    type: "registry:block",
+    description: "Database tables list with details panel",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["badge", "button", "card", "input", "utils"],
+    files: [
+      {
+        path: "blocks/application/app-database-tables-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["application", "app-database"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "app-database-query-1",
+    type: "registry:block",
+    description: "SQL query editor with results and history",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button", "card", "textarea", "utils"],
+    files: [
+      {
+        path: "blocks/application/app-database-query-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["application", "app-database"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "app-database-settings-1",
+    type: "registry:block",
+    description: "Database settings with profile and preferences",
+    dependencies: ["lucide-react"],
+    registryDependencies: [
+      "avatar",
+      "button",
+      "card",
+      "input",
+      "label",
+      "select",
+      "separator",
+      "switch",
+      "utils",
+    ],
+    files: [
+      {
+        path: "blocks/application/app-database-settings-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["application", "app-database"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "app-database",
+    type: "registry:block",
+    description: "Complete database dashboard application template",
+    dependencies: ["lucide-react"],
+    registryDependencies: [
+      "app-database-shell-1",
+      "app-database-dashboard-1",
+      "app-database-tables-1",
+      "app-database-query-1",
+      "app-database-settings-1",
+    ],
+    files: [
+      {
+        path: "blocks/application/app-database.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["application", "app-database"],
+    tier: "free",
+    readiness: "beta",
+    meta: {
+      iframeHeight: "800px",
+    },
+  },
+  // Application Template: AI Agents Dashboard
+  {
+    name: "app-agents-shell-1",
+    type: "registry:block",
+    description:
+      "Application shell with sidebar navigation for AI agents dashboard",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["sidebar", "avatar", "utils"],
+    files: [
+      {
+        path: "blocks/application/app-agents-shell-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["application", "app-agents"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "app-agents-dashboard-1",
+    type: "registry:block",
+    description:
+      "AI agents dashboard with stats, daily runs chart, and recent runs",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["badge", "button", "card", "utils"],
+    files: [
+      {
+        path: "blocks/application/app-agents-dashboard-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["application", "app-agents"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "app-agents-list-1",
+    type: "registry:block",
+    description: "AI agents list with details panel",
+    dependencies: ["lucide-react"],
+    registryDependencies: [
+      "badge",
+      "button",
+      "card",
+      "dropdown-menu",
+      "input",
+      "utils",
+    ],
+    files: [
+      {
+        path: "blocks/application/app-agents-list-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["application", "app-agents"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "app-agents-runs-1",
+    type: "registry:block",
+    description: "AI agent runs history with filters",
+    dependencies: ["lucide-react"],
+    registryDependencies: [
+      "badge",
+      "button",
+      "card",
+      "dropdown-menu",
+      "input",
+      "utils",
+    ],
+    files: [
+      {
+        path: "blocks/application/app-agents-runs-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["application", "app-agents"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "app-agents-logs-1",
+    type: "registry:block",
+    description: "AI agent logs viewer with real-time stream",
+    dependencies: ["lucide-react"],
+    registryDependencies: [
+      "badge",
+      "button",
+      "card",
+      "dropdown-menu",
+      "input",
+      "utils",
+    ],
+    files: [
+      {
+        path: "blocks/application/app-agents-logs-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["application", "app-agents"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "app-agents-settings-1",
+    type: "registry:block",
+    description: "AI agents settings with profile and preferences",
+    dependencies: ["lucide-react"],
+    registryDependencies: [
+      "avatar",
+      "button",
+      "card",
+      "input",
+      "label",
+      "select",
+      "separator",
+      "switch",
+      "utils",
+    ],
+    files: [
+      {
+        path: "blocks/application/app-agents-settings-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["application", "app-agents"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "app-agents",
+    type: "registry:block",
+    description: "Complete AI agents dashboard application template",
+    dependencies: ["lucide-react"],
+    registryDependencies: [
+      "app-agents-shell-1",
+      "app-agents-dashboard-1",
+      "app-agents-list-1",
+      "app-agents-runs-1",
+      "app-agents-logs-1",
+      "app-agents-settings-1",
+    ],
+    files: [
+      {
+        path: "blocks/application/app-agents.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["application", "app-agents"],
+    tier: "free",
+    readiness: "beta",
+    meta: {
+      iframeHeight: "800px",
+    },
   },
 ]

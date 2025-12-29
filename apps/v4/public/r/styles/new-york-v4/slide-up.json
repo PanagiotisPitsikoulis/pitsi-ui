@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "description": "Content that slides up into view on scroll.",
   "dependencies": [
-    "motion"
+    "motion/react"
   ],
   "registryDependencies": [
     "use-animation-state"

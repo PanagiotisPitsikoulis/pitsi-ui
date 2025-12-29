@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "description": "3D perspective carousel with rotation effects.",
   "dependencies": [
-    "motion"
+    "motion/react"
   ],
   "registryDependencies": [
     "utils"

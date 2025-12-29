@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "description": "Content that scales up as you scroll into view.",
   "dependencies": [
-    "motion"
+    "motion/react"
   ],
   "registryDependencies": [
     "use-animation-state"

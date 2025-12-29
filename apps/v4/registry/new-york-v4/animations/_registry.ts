@@ -6,7 +6,7 @@ export const animations: Registry["items"] = [
     type: "registry:ui",
     description:
       "Background image with parallax effect - moves slower than foreground for depth.",
-    dependencies: ["motion"],
+    dependencies: ["motion/react"],
     registryDependencies: ["utils", "use-animation-state", "use-mobile"],
     files: [
       {
@@ -22,7 +22,7 @@ export const animations: Registry["items"] = [
     name: "card-swipe-carousel",
     type: "registry:ui",
     description: "Swipeable card carousel with smooth transitions.",
-    dependencies: ["motion"],
+    dependencies: ["motion/react"],
     registryDependencies: ["utils"],
     files: [
       {
@@ -38,7 +38,7 @@ export const animations: Registry["items"] = [
     name: "cards-parallax",
     type: "registry:ui",
     description: "Cards that stack and scale on scroll with parallax effect.",
-    dependencies: ["motion"],
+    dependencies: ["motion/react"],
     registryDependencies: ["utils", "use-animation-state", "use-mobile"],
     files: [
       {
@@ -54,7 +54,7 @@ export const animations: Registry["items"] = [
     name: "parallax-scroll",
     type: "registry:ui",
     description: "Multi-column image gallery with parallax scrolling effect.",
-    dependencies: ["motion"],
+    dependencies: ["motion/react"],
     registryDependencies: ["utils", "use-animation-state", "use-mobile"],
     files: [
       {
@@ -70,7 +70,7 @@ export const animations: Registry["items"] = [
     name: "perspective-carousel",
     type: "registry:ui",
     description: "3D perspective carousel with rotation effects.",
-    dependencies: ["motion"],
+    dependencies: ["motion/react"],
     registryDependencies: ["utils"],
     files: [
       {
@@ -86,7 +86,7 @@ export const animations: Registry["items"] = [
     name: "perspective-section-transition",
     type: "registry:ui",
     description: "Section with 3D perspective transform on scroll.",
-    dependencies: ["motion"],
+    dependencies: ["motion/react"],
     registryDependencies: ["utils", "use-animation-state", "use-mobile"],
     files: [
       {
@@ -102,7 +102,7 @@ export const animations: Registry["items"] = [
     name: "scroll-expand",
     type: "registry:ui",
     description: "Content that expands as you scroll into view.",
-    dependencies: ["motion"],
+    dependencies: ["motion/react"],
     registryDependencies: ["use-animation-state", "use-mobile"],
     files: [
       {
@@ -118,7 +118,7 @@ export const animations: Registry["items"] = [
     name: "scroll-fade",
     type: "registry:ui",
     description: "Content that fades in as you scroll into view.",
-    dependencies: ["motion"],
+    dependencies: ["motion/react"],
     registryDependencies: ["use-animation-state"],
     files: [
       {
@@ -134,7 +134,7 @@ export const animations: Registry["items"] = [
     name: "scroll-scale",
     type: "registry:ui",
     description: "Content that scales up as you scroll into view.",
-    dependencies: ["motion"],
+    dependencies: ["motion/react"],
     registryDependencies: ["use-animation-state"],
     files: [
       {
@@ -150,7 +150,7 @@ export const animations: Registry["items"] = [
     name: "slide-down",
     type: "registry:ui",
     description: "Content that slides down into view on scroll.",
-    dependencies: ["motion"],
+    dependencies: ["motion/react"],
     registryDependencies: ["use-animation-state"],
     files: [
       {
@@ -166,7 +166,7 @@ export const animations: Registry["items"] = [
     name: "slide-up",
     type: "registry:ui",
     description: "Content that slides up into view on scroll.",
-    dependencies: ["motion"],
+    dependencies: ["motion/react"],
     registryDependencies: ["use-animation-state"],
     files: [
       {
@@ -229,7 +229,7 @@ export const animations: Registry["items"] = [
     name: "text-along-path",
     type: "registry:ui",
     description: "Text that follows an SVG path on scroll.",
-    dependencies: ["motion"],
+    dependencies: ["motion/react"],
     registryDependencies: ["utils", "use-animation-state"],
     files: [
       {
@@ -245,7 +245,7 @@ export const animations: Registry["items"] = [
     name: "text-gradient-opacity",
     type: "registry:ui",
     description: "Text with gradient opacity reveal on scroll.",
-    dependencies: ["motion"],
+    dependencies: ["motion/react"],
     registryDependencies: ["utils", "use-animation-state", "use-mobile"],
     files: [
       {
@@ -261,7 +261,7 @@ export const animations: Registry["items"] = [
     name: "text-parallax",
     type: "registry:ui",
     description: "Text that moves at different speed than scroll.",
-    dependencies: ["motion"],
+    dependencies: ["motion/react"],
     registryDependencies: ["utils", "use-animation-state", "use-mobile"],
     files: [
       {
@@ -277,7 +277,7 @@ export const animations: Registry["items"] = [
     name: "transforms-3d",
     type: "registry:ui",
     description: "3D transform effects with mouse interaction.",
-    dependencies: ["motion"],
+    dependencies: ["motion/react"],
     registryDependencies: ["utils"],
     files: [
       {
@@ -293,7 +293,7 @@ export const animations: Registry["items"] = [
     name: "zoom-parallax",
     type: "registry:ui",
     description: "Images that zoom and move on scroll.",
-    dependencies: ["motion"],
+    dependencies: ["motion/react"],
     registryDependencies: ["utils", "use-animation-state", "use-mobile"],
     files: [
       {

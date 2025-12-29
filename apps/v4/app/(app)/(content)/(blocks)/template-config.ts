@@ -1,6 +1,9 @@
 import type { TintLevel } from "./_components"
 
-// Template metadata
+// Template type discriminator
+export type TemplateType = "service" | "application"
+
+// Template metadata (base)
 export interface TemplateMetadata {
   slug: string
   name: string
@@ -16,10 +19,37 @@ export interface BlockConfig {
   forceLight?: boolean
 }
 
-// Complete template configuration
+// Complete service template configuration
 export interface TemplateConfig {
   metadata: TemplateMetadata
   blocks: BlockConfig[]
+}
+
+// ============================================
+// Application Template Types
+// ============================================
+
+// Navigation item for application sidebar
+export interface NavigationItem {
+  name: string // View block name (e.g., "app-dashboard-1")
+  label: string // Display label (e.g., "Dashboard")
+  icon: string // Lucide icon name (e.g., "LayoutDashboard")
+  shortcut?: string // Keyboard shortcut (e.g., "1")
+}
+
+// Application template metadata
+export interface ApplicationTemplateMetadata extends TemplateMetadata {
+  type: "application"
+  defaultView: string // Initial view to show
+  palette: string // Theme palette name (e.g., "amber")
+}
+
+// Application template configuration
+export interface ApplicationTemplateConfig {
+  metadata: ApplicationTemplateMetadata
+  shell: string // Shell wrapper block name
+  navigation: NavigationItem[]
+  views: BlockConfig[]
 }
 
 // All template configurations
@@ -54,26 +84,26 @@ export const templateConfigs: Record<string, TemplateConfig> = {
       heroBlock: "hero-1",
     },
     blocks: [
-      { name: "header-1", forceLight: true },
-      { name: "hero-1", forceLight: true },
+      { name: "header-1", tint: "tinted", forceLight: true },
+      { name: "hero-1", tint: "tinted", forceLight: true },
       { name: "logos-1", tint: "deep" },
-      { name: "features-1" },
-      { name: "features-2" },
-      { name: "features-3" },
-      { name: "features-4" },
-      { name: "features-5" },
-      { name: "products-1" },
-      { name: "pricing-1" },
+      { name: "features-1", tint: "tinted" },
+      { name: "features-2", tint: "tinted" },
+      { name: "features-3", tint: "tinted" },
+      { name: "features-4", tint: "tinted" },
+      { name: "features-5", tint: "tinted" },
+      { name: "products-1", tint: "tinted" },
+      { name: "pricing-1", tint: "tinted" },
       { name: "testimonials-1", tint: "deep" },
-      { name: "gallery-1" },
-      { name: "team-1" },
+      { name: "gallery-1", tint: "tinted" },
+      { name: "team-1", tint: "tinted" },
       { name: "stats-1", tint: "deep" },
-      { name: "faq-1" },
-      { name: "blog-1" },
-      { name: "contact-1" },
+      { name: "faq-1", tint: "tinted" },
+      { name: "blog-1", tint: "tinted" },
+      { name: "contact-1", tint: "tinted" },
       { name: "newsletter-1", tint: "deep" },
-      { name: "cta-1" },
-      { name: "footer-1" },
+      { name: "cta-1", tint: "tinted" },
+      { name: "footer-1", tint: "tinted" },
     ],
   },
 }
@@ -82,7 +112,7 @@ export const templateConfigs: Record<string, TemplateConfig> = {
 export const TEMPLATE_SLUGS = Object.keys(templateConfigs) as TemplateSlug[]
 export type TemplateSlug = keyof typeof templateConfigs
 
-// Get all templates metadata for listing
+// Get all templates metadata for listing (service templates only)
 export function getAllTemplatesMetadata(): TemplateMetadata[] {
   return Object.values(templateConfigs).map((config) => config.metadata)
 }
@@ -166,3 +196,157 @@ export function getBlockRenderSettings(blockName: string): {
     index,
   }
 }
+
+// ============================================
+// Application Template Configurations
+// ============================================
+
+export const applicationTemplateConfigs: Record<
+  string,
+  ApplicationTemplateConfig
+> = {
+  "app-gym-tracker": {
+    metadata: {
+      type: "application",
+      slug: "app-gym-tracker",
+      name: "Gym Tracker",
+      description: "Progressive overload tracker for strength training",
+      heroBlock: "app-dashboard-1",
+      defaultView: "app-dashboard-1",
+      palette: "sage",
+    },
+    shell: "app-shell-1",
+    navigation: [
+      { name: "app-dashboard-1", label: "Dashboard", icon: "LayoutDashboard" },
+      { name: "app-workout-log-1", label: "Log Workout", icon: "Dumbbell" },
+      { name: "app-calendar-1", label: "Calendar", icon: "Calendar" },
+      { name: "app-progress-1", label: "Progress", icon: "TrendingUp" },
+      { name: "app-exercises-1", label: "Exercises", icon: "Library" },
+      { name: "app-settings-1", label: "Settings", icon: "Settings" },
+    ],
+    views: [
+      { name: "app-dashboard-1" },
+      { name: "app-workout-log-1" },
+      { name: "app-calendar-1" },
+      { name: "app-progress-1" },
+      { name: "app-exercises-1" },
+      { name: "app-settings-1" },
+    ],
+  },
+  "app-quiz": {
+    metadata: {
+      type: "application",
+      slug: "app-quiz",
+      name: "Quiz App",
+      description: "Interactive quiz application with progress tracking",
+      heroBlock: "app-quiz-dashboard-1",
+      defaultView: "app-quiz-dashboard-1",
+      palette: "violet",
+    },
+    shell: "app-quiz-shell-1",
+    navigation: [
+      { name: "app-quiz-dashboard-1", label: "Dashboard", icon: "LayoutDashboard" },
+      { name: "app-quiz-browse-1", label: "Browse", icon: "Search" },
+      { name: "app-quiz-active-1", label: "Active Quiz", icon: "Play" },
+      { name: "app-quiz-results-1", label: "Results", icon: "Trophy" },
+      { name: "app-quiz-settings-1", label: "Settings", icon: "Settings" },
+    ],
+    views: [
+      { name: "app-quiz-dashboard-1" },
+      { name: "app-quiz-browse-1" },
+      { name: "app-quiz-active-1" },
+      { name: "app-quiz-results-1" },
+      { name: "app-quiz-settings-1" },
+    ],
+  },
+  "app-database": {
+    metadata: {
+      type: "application",
+      slug: "app-database",
+      name: "Database Dashboard",
+      description: "Database management and query interface",
+      heroBlock: "app-database-dashboard-1",
+      defaultView: "app-database-dashboard-1",
+      palette: "cyan",
+    },
+    shell: "app-database-shell-1",
+    navigation: [
+      { name: "app-database-dashboard-1", label: "Overview", icon: "LayoutDashboard" },
+      { name: "app-database-tables-1", label: "Tables", icon: "Table" },
+      { name: "app-database-query-1", label: "Query", icon: "Terminal" },
+      { name: "app-database-settings-1", label: "Settings", icon: "Settings" },
+    ],
+    views: [
+      { name: "app-database-dashboard-1" },
+      { name: "app-database-tables-1" },
+      { name: "app-database-query-1" },
+      { name: "app-database-settings-1" },
+    ],
+  },
+  "app-agents": {
+    metadata: {
+      type: "application",
+      slug: "app-agents",
+      name: "AI Agents",
+      description: "AI agents dashboard for monitoring and management",
+      heroBlock: "app-agents-dashboard-1",
+      defaultView: "app-agents-dashboard-1",
+      palette: "indigo",
+    },
+    shell: "app-agents-shell-1",
+    navigation: [
+      { name: "app-agents-dashboard-1", label: "Dashboard", icon: "LayoutDashboard" },
+      { name: "app-agents-list-1", label: "Agents", icon: "Bot" },
+      { name: "app-agents-runs-1", label: "Runs", icon: "Play" },
+      { name: "app-agents-logs-1", label: "Logs", icon: "ScrollText" },
+      { name: "app-agents-settings-1", label: "Settings", icon: "Settings" },
+    ],
+    views: [
+      { name: "app-agents-dashboard-1" },
+      { name: "app-agents-list-1" },
+      { name: "app-agents-runs-1" },
+      { name: "app-agents-logs-1" },
+      { name: "app-agents-settings-1" },
+    ],
+  },
+}
+
+// Application template slugs
+export const APPLICATION_TEMPLATE_SLUGS = Object.keys(
+  applicationTemplateConfigs
+) as ApplicationTemplateSlug[]
+export type ApplicationTemplateSlug = keyof typeof applicationTemplateConfigs
+
+// Get all application templates metadata
+export function getAllApplicationTemplatesMetadata(): ApplicationTemplateMetadata[] {
+  return Object.values(applicationTemplateConfigs).map((config) => config.metadata)
+}
+
+// Get application template config by slug
+export function getApplicationTemplateConfig(
+  slug: string
+): ApplicationTemplateConfig | null {
+  return applicationTemplateConfigs[slug] || null
+}
+
+// Get application template navigation
+export function getApplicationNavigation(slug: string): NavigationItem[] {
+  return applicationTemplateConfigs[slug]?.navigation || []
+}
+
+// ============================================
+// Combined Template Utilities
+// ============================================
+
+// Get all templates metadata including application templates
+export function getAllTemplatesMetadataIncludingApps(): TemplateMetadata[] {
+  const serviceTemplates = Object.values(templateConfigs).map((config) => config.metadata)
+  const appTemplates = Object.values(applicationTemplateConfigs).map((config) => config.metadata)
+  return [...serviceTemplates, ...appTemplates]
+}
+
+// Combined template slugs (service + application)
+export const ALL_TEMPLATE_SLUGS = [
+  ...Object.keys(templateConfigs),
+  ...Object.keys(applicationTemplateConfigs),
+] as string[]

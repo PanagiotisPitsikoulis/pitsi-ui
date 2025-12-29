@@ -108,5 +108,155 @@
     "name": "footer-1",
     "description": "Plant shop footer with multiple columns and newsletter",
     "categories": ["footer", "service-plants"]
+  },
+  {
+    "name": "service-plants",
+    "description": "Complete plant shop landing page template with all sections",
+    "categories": ["template", "service"]
+  },
+  {
+    "name": "application-1",
+    "description": "Gym progressive overload tracker with lift progression chart and workout history",
+    "categories": ["application"]
+  },
+  {
+    "name": "app-shell-1",
+    "description": "Application shell with sidebar navigation for gym tracker",
+    "categories": ["application", "app-gym-tracker"]
+  },
+  {
+    "name": "app-dashboard-1",
+    "description": "Gym tracker dashboard with stats, progression chart, and recent workouts",
+    "categories": ["application", "app-gym-tracker"]
+  },
+  {
+    "name": "app-workout-log-1",
+    "description": "Workout logging interface with exercise selection and set tracking",
+    "categories": ["application", "app-gym-tracker"]
+  },
+  {
+    "name": "app-calendar-1",
+    "description": "Workout calendar with monthly view and workout indicators",
+    "categories": ["application", "app-gym-tracker"]
+  },
+  {
+    "name": "app-progress-1",
+    "description": "Progress tracking with multi-lift charts and personal records",
+    "categories": ["application", "app-gym-tracker"]
+  },
+  {
+    "name": "app-exercises-1",
+    "description": "Searchable exercise library with categories and details",
+    "categories": ["application", "app-gym-tracker"]
+  },
+  {
+    "name": "app-settings-1",
+    "description": "Settings page with profile, units, and preferences",
+    "categories": ["application", "app-gym-tracker"]
+  },
+  {
+    "name": "app-gym-tracker",
+    "description": "Complete gym progressive overload tracker application template",
+    "categories": ["application", "app-gym-tracker"]
+  },
+  {
+    "name": "app-quiz-shell-1",
+    "description": "Application shell with sidebar navigation for quiz app",
+    "categories": ["application", "app-quiz"]
+  },
+  {
+    "name": "app-quiz-dashboard-1",
+    "description": "Quiz dashboard with stats, weekly accuracy chart, and recent quizzes",
+    "categories": ["application", "app-quiz"]
+  },
+  {
+    "name": "app-quiz-browse-1",
+    "description": "Quiz browser with categories and difficulty filters",
+    "categories": ["application", "app-quiz"]
+  },
+  {
+    "name": "app-quiz-active-1",
+    "description": "Active quiz interface with timer and question display",
+    "categories": ["application", "app-quiz"]
+  },
+  {
+    "name": "app-quiz-results-1",
+    "description": "Quiz results with score and question breakdown",
+    "categories": ["application", "app-quiz"]
+  },
+  {
+    "name": "app-quiz-settings-1",
+    "description": "Quiz settings with profile and preferences",
+    "categories": ["application", "app-quiz"]
+  },
+  {
+    "name": "app-quiz",
+    "description": "Complete quiz application template",
+    "categories": ["application", "app-quiz"]
+  },
+  {
+    "name": "app-database-shell-1",
+    "description": "Application shell with sidebar navigation for database dashboard",
+    "categories": ["application", "app-database"]
+  },
+  {
+    "name": "app-database-dashboard-1",
+    "description": "Database dashboard with stats, query volume chart, and top tables",
+    "categories": ["application", "app-database"]
+  },
+  {
+    "name": "app-database-tables-1",
+    "description": "Database tables list with details panel",
+    "categories": ["application", "app-database"]
+  },
+  {
+    "name": "app-database-query-1",
+    "description": "SQL query editor with results and history",
+    "categories": ["application", "app-database"]
+  },
+  {
+    "name": "app-database-settings-1",
+    "description": "Database settings with profile and preferences",
+    "categories": ["application", "app-database"]
+  },
+  {
+    "name": "app-database",
+    "description": "Complete database dashboard application template",
+    "categories": ["application", "app-database"]
+  },
+  {
+    "name": "app-agents-shell-1",
+    "description": "Application shell with sidebar navigation for AI agents dashboard",
+    "categories": ["application", "app-agents"]
+  },
+  {
+    "name": "app-agents-dashboard-1",
+    "description": "AI agents dashboard with stats, daily runs chart, and recent runs",
+    "categories": ["application", "app-agents"]
+  },
+  {
+    "name": "app-agents-list-1",
+    "description": "AI agents list with details panel",
+    "categories": ["application", "app-agents"]
+  },
+  {
+    "name": "app-agents-runs-1",
+    "description": "AI agent runs history with filters",
+    "categories": ["application", "app-agents"]
+  },
+  {
+    "name": "app-agents-logs-1",
+    "description": "AI agent logs viewer with real-time stream",
+    "categories": ["application", "app-agents"]
+  },
+  {
+    "name": "app-agents-settings-1",
+    "description": "AI agents settings with profile and preferences",
+    "categories": ["application", "app-agents"]
+  },
+  {
+    "name": "app-agents",
+    "description": "Complete AI agents dashboard application template",
+    "categories": ["application", "app-agents"]
   }
 ]

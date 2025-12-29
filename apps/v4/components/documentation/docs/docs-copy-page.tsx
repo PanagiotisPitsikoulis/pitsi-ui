@@ -20,7 +20,7 @@ import { Separator } from "@/registry/new-york-v4/ui/separator"
 
 function getPromptUrl(baseURL: string, url: string) {
   return `${baseURL}?q=${encodeURIComponent(
-    `I’m looking at this pitsi/ui documentation: ${url}.
+    `I'm looking at this pitsi/ui documentation: ${url}.
 Help me understand how to use it. Be ready to explain concepts, give examples, or help debug based on it.
   `
   )}`
@@ -96,7 +96,7 @@ export function DocsCopyPage({ page, url }: { page: string; url: string }) {
     <Button
       variant="outline"
       size="sm"
-      className="peer -ml-0.5 size-8 rounded-l-none border-0 shadow-none md:size-7 md:text-[0.8rem]"
+      className="peer -ml-0.5 size-8 rounded-l-none border-l-0 md:size-7 md:text-[0.8rem]"
     >
       <IconChevronDown className="rotate-180 sm:rotate-0" />
     </Button>
@@ -104,12 +104,12 @@ export function DocsCopyPage({ page, url }: { page: string; url: string }) {
 
   return (
     <Popover>
-      <div className="border-border bg-background group/buttons relative flex rounded-lg border shadow-xs *:[[data-slot=button]]:focus-visible:relative *:[[data-slot=button]]:focus-visible:z-10">
+      <div className="group/buttons relative flex *:[[data-slot=button]]:focus-visible:relative *:[[data-slot=button]]:focus-visible:z-10">
         <PopoverAnchor />
         <Button
           variant="outline"
           size="sm"
-          className="h-8 rounded-r-none border-none shadow-none md:h-7 md:text-[0.8rem]"
+          className="h-8 rounded-r-none md:h-7 md:text-[0.8rem]"
           onClick={() => copyToClipboard(page)}
         >
           {isCopied ? <IconCheck /> : <IconCopy />}
@@ -129,7 +129,7 @@ export function DocsCopyPage({ page, url }: { page: string; url: string }) {
         </DropdownMenu>
         <Separator
           orientation="vertical"
-          className="!bg-foreground/10 absolute top-0 right-8 z-0 !h-8 peer-focus-visible:opacity-0 sm:right-7 sm:!h-7"
+          className="!bg-foreground/5 absolute top-0 right-8 z-0 !h-8 peer-focus-visible:opacity-0 sm:right-7 sm:!h-7"
         />
         <PopoverTrigger asChild className="flex sm:hidden">
           {trigger}

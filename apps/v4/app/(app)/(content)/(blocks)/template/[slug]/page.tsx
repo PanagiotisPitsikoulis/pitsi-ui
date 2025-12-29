@@ -1,12 +1,18 @@
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 
+import { getActiveStyle } from "@/registry/styles"
+import blocksData from "@/registry/__blocks__.json"
+
 import {
   getTemplateMetadata,
-  TEMPLATE_SLUGS,
+  getApplicationTemplateConfig,
+  getTemplateConfig,
+  ALL_TEMPLATE_SLUGS,
 } from "../../template-config"
 
 import { TemplateViewerClient } from "./page.client"
+import { ApplicationTemplateViewerClient } from "./page.application.client"
 
 export async function generateMetadata({
   params,
@@ -14,7 +20,11 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await params
-  const template = getTemplateMetadata(slug)
+
+  // Check service templates first, then application templates
+  const serviceTemplate = getTemplateMetadata(slug)
+  const appTemplate = getApplicationTemplateConfig(slug)
+  const template = serviceTemplate || appTemplate?.metadata
 
   if (!template) {
     return { title: "Template Not Found - Pitsi UI" }
@@ -37,7 +47,7 @@ export async function generateMetadata({
 }
 
 export function generateStaticParams() {
-  return TEMPLATE_SLUGS.map((slug) => ({ slug }))
+  return ALL_TEMPLATE_SLUGS.map((slug) => ({ slug }))
 }
 
 export default async function TemplateViewerPage({
@@ -46,16 +56,38 @@ export default async function TemplateViewerPage({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const template = getTemplateMetadata(slug)
+  const activeStyle = await getActiveStyle()
 
-  if (!template) {
+  // Check if it's an application template
+  const appTemplate = getApplicationTemplateConfig(slug)
+  if (appTemplate) {
+    return (
+      <ApplicationTemplateViewerClient
+        slug={slug}
+        styleName={activeStyle.name}
+        template={{ name: appTemplate.metadata.name, description: appTemplate.metadata.description }}
+        templateBlocks={appTemplate.views}
+        shell={appTemplate.shell}
+        blocksMetadata={blocksData}
+      />
+    )
+  }
+
+  // Otherwise, it's a service template
+  const template = getTemplateMetadata(slug)
+  const templateConfig = getTemplateConfig(slug)
+
+  if (!template || !templateConfig) {
     notFound()
   }
 
   return (
     <TemplateViewerClient
       slug={slug}
+      styleName={activeStyle.name}
       template={{ name: template.name, description: template.description }}
+      templateBlocks={templateConfig.blocks}
+      blocksMetadata={blocksData}
     />
   )
 }

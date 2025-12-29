@@ -1,0 +1,32 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "database-1",
+  "type": "registry:block",
+  "description": "Complete database dashboard application template",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "app-database-shell-1",
+    "app-database-dashboard-1",
+    "app-database-tables-1",
+    "app-database-query-1",
+    "app-database-settings-1"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/application/database-1.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\n\nimport { AppDatabaseDashboard1 } from \"@/registry/new-york-v4/blocks/application/app-database-dashboard-1\"\nimport { AppDatabaseQuery1 } from \"@/registry/new-york-v4/blocks/application/app-database-query-1\"\nimport { AppDatabaseSettings1 } from \"@/registry/new-york-v4/blocks/application/app-database-settings-1\"\nimport { AppDatabaseShell1 } from \"@/registry/new-york-v4/blocks/application/app-database-shell-1\"\nimport { AppDatabaseTables1 } from \"@/registry/new-york-v4/blocks/application/app-database-tables-1\"\n\ntype DatabaseView = \"overview\" | \"tables\" | \"query\" | \"connections\" | \"settings\"\n\nexport function Database1() {\n  const [activeView, setActiveView] = React.useState<DatabaseView>(\"overview\")\n\n  const handleNavigate = (view: string) => {\n    setActiveView(view as DatabaseView)\n  }\n\n  const renderContent = () => {\n    switch (activeView) {\n      case \"overview\":\n        return (\n          <AppDatabaseDashboard1 onNewQuery={() => setActiveView(\"query\")} />\n        )\n      case \"tables\":\n        return <AppDatabaseTables1 />\n      case \"query\":\n        return <AppDatabaseQuery1 />\n      case \"connections\":\n        return <AppDatabaseTables1 />\n      case \"settings\":\n        return <AppDatabaseSettings1 />\n      default:\n        return (\n          <AppDatabaseDashboard1 onNewQuery={() => setActiveView(\"query\")} />\n        )\n    }\n  }\n\n  return (\n    <AppDatabaseShell1 activeView={activeView} onNavigate={handleNavigate}>\n      {renderContent()}\n    </AppDatabaseShell1>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "iframeHeight": "800px"
+  },
+  "categories": [
+    "application",
+    "app-database"
+  ],
+  "tier": "free",
+  "readiness": "beta"
+}

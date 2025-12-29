@@ -370,6 +370,9 @@ try {
 
   console.log("\n✅ Build complete!")
 } catch (error) {
-  console.error(error)
+  console.error("❌ Build failed:", error instanceof Error ? error.message : String(error))
+  if (error instanceof Error && error.stack) {
+    console.error(error.stack)
+  }
   process.exit(1)
 }

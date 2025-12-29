@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "description": "Swipeable card carousel with smooth transitions.",
   "dependencies": [
-    "motion"
+    "motion/react"
   ],
   "registryDependencies": [
     "utils"

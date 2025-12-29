@@ -21,3 +21,11 @@ export {
   ScrollContainerProvider,
   useScrollContainer,
 } from "./scroll-container-context"
+export {
+  RelatedBlocksSection,
+  type BlockItem,
+} from "./related-blocks-section"
+export {
+  TemplateBlocksSection,
+  type BlockMetadata,
+} from "./template-blocks-section"

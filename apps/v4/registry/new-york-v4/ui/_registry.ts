@@ -880,28 +880,6 @@ export const ui: Registry["items"] = [
     readiness: "production",
   },
   {
-    name: "toast",
-    type: "registry:ui",
-    dependencies: ["@radix-ui/react-toast"],
-    files: [
-      {
-        path: "ui/toast.tsx",
-        type: "registry:ui",
-      },
-      {
-        path: "hooks/use-toast.ts",
-        type: "registry:hook",
-      },
-      {
-        path: "ui/toaster.tsx",
-        type: "registry:ui",
-      },
-    ],
-    tier: "free",
-    categories: ["core-components"],
-    readiness: "production",
-  },
-  {
     name: "toggle",
     type: "registry:ui",
     dependencies: ["@radix-ui/react-toggle"],
@@ -996,6 +974,28 @@ export const ui: Registry["items"] = [
     ],
     tier: "free",
     categories: ["core-components"],
+    readiness: "production",
+  },
+  {
+    name: "blocks-provider",
+    type: "registry:ui",
+    description:
+      "Provider component for pitsi/ui blocks with theme, context, and decoration support.",
+    dependencies: ["next-themes"],
+    registryDependencies: [
+      "utils",
+      "block-theme",
+      "block-context",
+      "block-decorations",
+    ],
+    files: [
+      {
+        path: "ui/blocks-provider.tsx",
+        type: "registry:ui",
+      },
+    ],
+    tier: "free",
+    categories: ["providers"],
     readiness: "production",
   },
 ]

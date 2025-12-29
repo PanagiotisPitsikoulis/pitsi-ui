@@ -1,100 +1,188 @@
 "use client"
 
 import Image from "next/image"
-import { Clock, Shield, Star, Zap } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
+import { type FeaturesBlockProps } from "@/lib/blocks/features.types"
+import { cn } from "@/lib/utils"
 import { useBlockContext } from "@/app/(app)/(content)/(blocks)/_components"
 
-export function FeaturesServicePlants5() {
-  const { containerBg } = useBlockContext()
-  const circleBg = containerBg === "page" ? "bg-muted" : "bg-background"
-  const features = [
+// Block-specific defaults
+const features5Defaults = {
+  badge: "Our Commitment",
+  title: "Quality",
+  description:
+    "Every plant comes with our quality promise, from careful selection to secure packaging.",
+  features: [
     {
+      icon: "Zap",
       title: "Fast Delivery",
       description:
         "Plants delivered within 2-3 business days to your doorstep.",
-      icon: Zap,
     },
     {
+      icon: "Star",
       title: "Quality Promise",
       description: "Only the healthiest, hand-inspected plants make it to you.",
-      icon: Star,
     },
     {
+      icon: "Shield",
       title: "Plant Insurance",
       description: "Free replacement guaranteed if anything goes wrong.",
-      icon: Shield,
     },
     {
+      icon: "Clock",
       title: "Ongoing Support",
       description: "Lifetime care advice included with every plant purchase.",
-      icon: Clock,
     },
     {
+      icon: "Zap",
       title: "Easy Tracking",
       description: "Real-time updates on your order status every step.",
-      icon: Zap,
     },
     {
+      icon: "Shield",
       title: "Secure Checkout",
       description: "Safe and fully encrypted payment processing always.",
-      icon: Shield,
     },
-  ]
+  ],
+  image: {
+    src: "/placeholders/blocks/service-plants/assets/item-5.webp",
+    alt: "Featured plant",
+  },
+}
+
+export function Features5({
+  content = {},
+  classNames = {},
+}: FeaturesBlockProps) {
+  const { containerBg } = useBlockContext()
+  const circleBg = containerBg === "page" ? "bg-muted" : "bg-background"
+
+  // Merge content with defaults
+  const {
+    badge = features5Defaults.badge,
+    title = features5Defaults.title,
+    description = features5Defaults.description,
+    features = features5Defaults.features,
+    image = features5Defaults.image,
+  } = content
 
   return (
-    <section>
-      <div className="container px-6">
-        <div className="grid items-center gap-8 md:gap-16 lg:grid-cols-2">
-          <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-            <p className="text-brand mb-2 text-sm font-medium tracking-[0.3em] uppercase">
-              Our Commitment
-            </p>
-            <h2 className="font-display text-foreground text-3xl font-bold text-balance md:text-5xl lg:text-6xl">
-              Quality
+    <section className={classNames.root}>
+      <div className={cn("container px-6", classNames.container)}>
+        <div
+          className={cn(
+            "grid items-center gap-8 md:gap-16 lg:grid-cols-2",
+            classNames.grid
+          )}
+        >
+          <div
+            className={cn(
+              "flex flex-col items-center text-center lg:items-start lg:text-left",
+              classNames.header?.root
+            )}
+          >
+            {badge && (
+              <p
+                className={cn(
+                  "text-brand mb-2 text-sm font-medium tracking-[0.3em] uppercase",
+                  classNames.header?.badge
+                )}
+              >
+                {badge}
+              </p>
+            )}
+            <h2
+              className={cn(
+                "font-display text-foreground text-3xl font-bold text-balance md:text-5xl lg:text-6xl",
+                classNames.header?.title
+              )}
+            >
+              {title}
             </h2>
-            <p className="text-muted-foreground mt-4 max-w-lg text-lg">
-              Every plant comes with our quality promise, from careful selection
-              to secure packaging.
-            </p>
+            {description && (
+              <p
+                className={cn(
+                  "text-muted-foreground mt-4 max-w-lg text-lg",
+                  classNames.header?.description
+                )}
+              >
+                {description}
+              </p>
+            )}
             <div className="mt-14 grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
-              {features.map((feature, idx) => {
-                const Icon = feature.icon
-                return (
+              {features.map((feature, idx) => (
+                <div
+                  key={idx}
+                  className={cn(
+                    "border-border bg-card flex items-start gap-3 rounded-3xl p-4 shadow-sm dark:border",
+                    classNames.feature?.root
+                  )}
+                >
                   <div
-                    key={idx}
-                    className="border-border bg-card flex items-start gap-3 rounded-3xl p-4 shadow-sm dark:border"
+                    className={cn(
+                      "bg-brand/10 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg",
+                      classNames.feature?.iconWrapper
+                    )}
                   >
-                    <div className="bg-brand/10 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
-                      <Icon className="text-brand h-5 w-5" />
-                    </div>
-                    <div className="flex flex-col gap-1">
-                      <h3 className="text-foreground text-base font-semibold">
-                        {feature.title}
-                      </h3>
-                      <p className="text-muted-foreground text-sm">
-                        {feature.description}
-                      </p>
-                    </div>
+                    <DynamicIcon
+                      name={feature.icon}
+                      className={cn(
+                        "text-brand h-5 w-5",
+                        classNames.feature?.icon
+                      )}
+                    />
                   </div>
-                )
-              })}
+                  <div className="flex flex-col gap-1">
+                    <h3
+                      className={cn(
+                        "text-foreground text-base font-semibold",
+                        classNames.feature?.title
+                      )}
+                    >
+                      {feature.title}
+                    </h3>
+                    <p
+                      className={cn(
+                        "text-muted-foreground text-sm",
+                        classNames.feature?.description
+                      )}
+                    >
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-          <div className="flex items-center justify-center">
+          <div
+            className={cn(
+              "flex items-center justify-center",
+              classNames.image?.root
+            )}
+          >
             <div className="relative aspect-square w-full">
               {/* Background circle */}
               <div
-                className={`border-border absolute inset-x-[15%] top-[30%] bottom-[5%] rounded-full border ${circleBg}`}
+                className={cn(
+                  `border-border absolute inset-x-[15%] top-[30%] bottom-[5%] rounded-full border ${circleBg}`,
+                  classNames.image?.wrapper
+                )}
               />
               {/* Image */}
-              <Image
-                draggable={false}
-                src="/placeholders/blocks/service-plants/assets/item-5.webp"
-                alt="Featured plant"
-                fill
-                className="pointer-events-none z-10 -translate-y-[10%] scale-110 object-contain select-none"
-              />
+              {image && (
+                <Image
+                  draggable={false}
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  className={cn(
+                    "pointer-events-none z-10 -translate-y-[10%] scale-110 object-contain select-none",
+                    classNames.image?.img
+                  )}
+                />
+              )}
             </div>
           </div>
         </div>
@@ -102,3 +190,6 @@ export function FeaturesServicePlants5() {
     </section>
   )
 }
+
+// Re-export for backwards compatibility
+export { Features5 as FeaturesServicePlants5 }

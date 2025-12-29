@@ -13,6 +13,8 @@ import {
   useRecentAnimations,
 } from "@/lib/blocks-storage"
 import { cn } from "@/lib/utils"
+import { ReadinessBadge } from "@/components/ui/readiness-badge"
+import { TierBadge } from "@/components/ui/tier-badge"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -60,13 +62,13 @@ const ComponentPreviewContent = memo(function ComponentPreviewContent({
   const darkSrc = `/r/styles/${styleName}/${previewName}-dark.webp`
 
   return (
-    <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-page">
+    <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-background">
       {/* Light mode image */}
       <Image
         src={lightSrc}
         alt={`${previewName} preview`}
         fill
-        className="object-contain object-center dark:hidden"
+        className="object-contain dark:hidden"
         sizes="(max-width: 768px) 100vw, 50vw"
         priority={false}
       />
@@ -75,7 +77,7 @@ const ComponentPreviewContent = memo(function ComponentPreviewContent({
         src={darkSrc}
         alt={`${previewName} preview`}
         fill
-        className="hidden object-contain object-center dark:block"
+        className="hidden object-contain dark:block"
         sizes="(max-width: 768px) 100vw, 50vw"
         priority={false}
       />
@@ -103,18 +105,12 @@ const ComponentCard = memo(function ComponentCard({
       className="group/card relative flex scroll-mt-20 flex-col gap-4"
     >
       <Link href={item.url}>
-        <div className="overflow-hidden rounded-3xl border shadow-sm">
+        <div className="overflow-hidden rounded-3xl shadow-sm dark:border">
           <div className="bg-background relative">
-            {item.readiness && item.readiness !== "production" && (
-              <div className="absolute top-2 left-2 z-10 rounded-full bg-yellow-500/10 px-2 py-0.5 text-xs font-medium text-yellow-600 dark:text-yellow-400">
-                {item.readiness}
-              </div>
-            )}
-            {item.tier && item.tier !== "free" && (
-              <div className="absolute top-2 right-2 z-10 rounded-full bg-purple-500/10 px-2 py-0.5 text-xs font-medium text-purple-600 dark:text-purple-400">
-                {item.tier}
-              </div>
-            )}
+            <div className="opacity-0 group-hover/card:opacity-100 transition-opacity duration-200">
+              <ReadinessBadge readiness={item.readiness as any} />
+              <TierBadge tier={(item.tier ?? "free") as any} />
+            </div>
             <div data-slot="preview" className="overflow-hidden">
               <div
                 data-align="center"
@@ -129,7 +125,7 @@ const ComponentCard = memo(function ComponentCard({
           </div>
         </div>
       </Link>
-      <div className="flex flex-col gap-1 px-2">
+      <div className="flex flex-col gap-0.5 px-2">
         <div className="flex items-center justify-between gap-2">
           <Link href={item.url}>
             <span className="group-hover/card:text-primary text-base font-medium transition-colors group-hover/card:underline">
@@ -149,7 +145,7 @@ const ComponentCard = memo(function ComponentCard({
           </DropdownMenu>
         </div>
         {item.description && (
-          <p className="text-muted-foreground group-hover/card:text-foreground/70 line-clamp-2 min-h-[2.5rem] max-w-6/7 text-sm transition-colors">
+          <p className="text-muted-foreground group-hover/card:text-foreground/70 line-clamp-2 max-w-6/7 text-sm transition-colors">
             {item.description}
           </p>
         )}
@@ -269,7 +265,7 @@ export const ComponentsListPaginated = memo(function ComponentsListPaginated({
 
   return (
     <div className="relative mt-6 pb-8">
-      <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
         {filteredItems.map((item) => {
           const registryName = item.registryName || item.$id
           return (

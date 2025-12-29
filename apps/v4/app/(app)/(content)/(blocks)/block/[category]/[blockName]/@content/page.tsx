@@ -12,6 +12,7 @@ import {
   getTemplateForBlock,
   getBlockIndex,
 } from "@/app/(app)/(content)/(blocks)/template-config"
+import blocksData from "@/registry/__blocks__.json"
 import { BlockViewerClient } from "../page.client"
 
 export default async function BlockContentPage({
@@ -60,6 +61,7 @@ export default async function BlockContentPage({
         item={item}
         tree={tree}
         highlightedFiles={highlightedFiles}
+        blocks={blocksData}
       />
     </>
   )

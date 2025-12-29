@@ -10,7 +10,7 @@ import { getTemplateFontStyles } from "./template-fonts"
 
 // Tint levels
 export type TintLevel = "base" | "tinted" | "deep"
-export const DEFAULT_TINT: TintLevel = "tinted"
+export const DEFAULT_TINT: TintLevel = "base"
 
 // Color palettes available
 type ColorPalette =
@@ -64,6 +64,7 @@ export const templatePalettes: Record<string, ColorPalette> = {
   // Apps
   "app-guitar": "amber",
   "app-quiz": "violet",
+  "app-gym-tracker": "sage",
 }
 
 // Get preset key for a palette and tint level
@@ -71,13 +72,13 @@ export function getPresetKey(palette: string, tint: TintLevel): string {
   if (palette === "slate") return "slate"
   switch (tint) {
     case "base":
-      return palette
+      return palette // Use palette's base theme (subtle tinting with brand colors)
     case "tinted":
       return `${palette}-tinted`
     case "deep":
       return `${palette}-deep`
     default:
-      return `${palette}-tinted`
+      return palette
   }
 }
 

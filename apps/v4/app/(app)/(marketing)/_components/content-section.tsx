@@ -687,7 +687,7 @@ export function ContentSection({ registryCounts }: ContentSectionProps) {
 
                     {/* Middle column - pill at top */}
                     <div className="flex flex-col gap-6">
-                      <div className="flex items-center justify-center py-2">
+                      <div className="flex items-center justify-center pt-6 pb-2">
                         <div className="flex items-center gap-2 rounded-full border bg-background py-1.5 pl-1.5 pr-3">
                           <Link href={tab.href}>
                             <HeroButton>View all {tab.label}</HeroButton>

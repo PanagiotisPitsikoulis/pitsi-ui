@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "description": "Cards that stack and scale on scroll with parallax effect.",
   "dependencies": [
-    "motion"
+    "motion/react"
   ],
   "registryDependencies": [
     "utils",

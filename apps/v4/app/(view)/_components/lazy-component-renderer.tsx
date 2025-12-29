@@ -74,7 +74,9 @@ function BlockWrapper({
       settings.forceLight
     const skipPadding =
       blockType === "hero" || blockType === "header" || blockType === "footer"
-    const blockTint = settings.tint || DEFAULT_TINT
+    // When viewing standalone, only use "deep" tint - never "tinted"
+    // "tinted" is only for blocks shown within their full template context
+    const blockTint = settings.tint === "deep" ? "deep" : DEFAULT_TINT
 
     return (
       <ScrollContainerProvider value={containerRef}>
@@ -119,13 +121,13 @@ export const LazyComponentRenderer = memo(function LazyComponentRenderer({
   if (isComponent) {
     return (
       <ComponentErrorBoundary>
-        <Suspense fallback={null}>
-          <div className="bg-background flex min-h-screen w-full items-center justify-center p-16">
-            <div className="flex w-full max-w-4xl items-center justify-center">
+        <div className="bg-background flex min-h-screen w-full items-center justify-center p-16">
+          <div className="flex w-full max-w-4xl items-center justify-center">
+            <Suspense fallback={<div className="bg-background min-h-screen w-full" />}>
               <Component />
-            </div>
+            </Suspense>
           </div>
-        </Suspense>
+        </div>
       </ComponentErrorBoundary>
     )
   }
@@ -133,11 +135,11 @@ export const LazyComponentRenderer = memo(function LazyComponentRenderer({
   // Wrap blocks with template theming when applicable
   return (
     <ComponentErrorBoundary>
-      <Suspense fallback={null}>
-        <BlockWrapper name={name}>
+      <BlockWrapper name={name}>
+        <Suspense fallback={<div className="bg-background min-h-screen w-full" />}>
           <Component />
-        </BlockWrapper>
-      </Suspense>
+        </Suspense>
+      </BlockWrapper>
     </ComponentErrorBoundary>
   )
 })

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "quiz-1",
+  "type": "registry:block",
+  "description": "Complete quiz application template",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "app-quiz-shell-1",
+    "app-quiz-dashboard-1",
+    "app-quiz-browse-1",
+    "app-quiz-active-1",
+    "app-quiz-results-1",
+    "app-quiz-settings-1"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/application/quiz-1.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\n\nimport { AppQuizActive1 } from \"@/registry/new-york-v4/blocks/application/app-quiz-active-1\"\nimport { AppQuizBrowse1 } from \"@/registry/new-york-v4/blocks/application/app-quiz-browse-1\"\nimport { AppQuizDashboard1 } from \"@/registry/new-york-v4/blocks/application/app-quiz-dashboard-1\"\nimport { AppQuizResults1 } from \"@/registry/new-york-v4/blocks/application/app-quiz-results-1\"\nimport { AppQuizSettings1 } from \"@/registry/new-york-v4/blocks/application/app-quiz-settings-1\"\nimport { AppQuizShell1 } from \"@/registry/new-york-v4/blocks/application/app-quiz-shell-1\"\n\ntype QuizView =\n  | \"dashboard\"\n  | \"quizzes\"\n  | \"active\"\n  | \"results\"\n  | \"history\"\n  | \"leaderboard\"\n  | \"settings\"\n\nexport function Quiz1() {\n  const [activeView, setActiveView] = React.useState<QuizView>(\"dashboard\")\n  const [quizScore, setQuizScore] = React.useState({ score: 0, total: 0 })\n\n  const handleStartQuiz = () => {\n    setActiveView(\"active\")\n  }\n\n  const handleQuizComplete = (score: number, total: number) => {\n    setQuizScore({ score, total })\n    setActiveView(\"results\")\n  }\n\n  const handleNavigate = (view: string) => {\n    setActiveView(view as QuizView)\n  }\n\n  const renderContent = () => {\n    switch (activeView) {\n      case \"dashboard\":\n        return <AppQuizDashboard1 onStartQuiz={handleStartQuiz} />\n      case \"quizzes\":\n        return <AppQuizBrowse1 onStartQuiz={handleStartQuiz} />\n      case \"active\":\n        return (\n          <AppQuizActive1\n            onComplete={handleQuizComplete}\n            onExit={() => setActiveView(\"quizzes\")}\n          />\n        )\n      case \"results\":\n        return (\n          <AppQuizResults1\n            score={quizScore.score}\n            total={quizScore.total}\n            onRetry={handleStartQuiz}\n            onBrowse={() => setActiveView(\"quizzes\")}\n          />\n        )\n      case \"history\":\n        return <AppQuizBrowse1 onStartQuiz={handleStartQuiz} />\n      case \"leaderboard\":\n        return <AppQuizDashboard1 onStartQuiz={handleStartQuiz} />\n      case \"settings\":\n        return <AppQuizSettings1 />\n      default:\n        return <AppQuizDashboard1 onStartQuiz={handleStartQuiz} />\n    }\n  }\n\n  return (\n    <AppQuizShell1 activeView={activeView} onNavigate={handleNavigate}>\n      {renderContent()}\n    </AppQuizShell1>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "iframeHeight": "800px"
+  },
+  "categories": [
+    "application",
+    "app-quiz"
+  ],
+  "tier": "free",
+  "readiness": "beta"
+}

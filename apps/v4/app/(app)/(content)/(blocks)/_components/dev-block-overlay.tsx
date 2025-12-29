@@ -9,6 +9,7 @@ interface DevBlockOverlayProps {
   children: React.ReactNode
   enabled?: boolean
   onHover?: (blockKey: string | null) => void
+  isApplication?: boolean
 }
 
 // Base paths - adjust if your project structure differs
@@ -20,6 +21,7 @@ export function DevBlockOverlay({
   children,
   enabled = true,
   onHover,
+  isApplication = false,
 }: DevBlockOverlayProps) {
   const [isHovered, setIsHovered] = useState(false)
 
@@ -28,11 +30,17 @@ export function DevBlockOverlay({
     return <>{children}</>
   }
 
-  // Extract block type from blockKey (e.g., "header-1" -> "header", "features-2" -> "features")
-  const blockType = blockKey.replace(/-\d+$/, "")
-
-  // Construct the file path: registry/new-york-v4/blocks/{type}/{blockKey}.tsx
-  const codePath = `${REGISTRY_BLOCKS_PATH}/${blockType}/${blockKey}.tsx`
+  // Construct the file path based on whether it's an application block or regular block
+  let codePath: string
+  if (isApplication) {
+    // Application blocks are in: registry/new-york-v4/blocks/application/{blockKey}.tsx
+    codePath = `${REGISTRY_BLOCKS_PATH}/application/${blockKey}.tsx`
+  } else {
+    // Extract block type from blockKey (e.g., "header-1" -> "header", "features-2" -> "features")
+    const blockType = blockKey.replace(/-\d+$/, "")
+    // Regular blocks are in: registry/new-york-v4/blocks/{type}/{blockKey}.tsx
+    codePath = `${REGISTRY_BLOCKS_PATH}/${blockType}/${blockKey}.tsx`
+  }
 
   const openInEditor = async (filePath: string, addToWorkspace = false) => {
     try {

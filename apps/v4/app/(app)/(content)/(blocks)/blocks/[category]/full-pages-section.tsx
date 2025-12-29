@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowUpRight, ChevronDown } from "lucide-react"
+import { ChevronDown } from "lucide-react"
 
 import {
   Collapsible,
@@ -49,7 +49,7 @@ export function FullPagesSection({ templates, styleName }: FullPagesSectionProps
 
           {/* Expanded: Grid */}
           <CollapsibleContent>
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
               {templates.map((template) => (
                 <TemplateCard
                   key={template.slug}
@@ -110,16 +110,15 @@ function TemplateCard({
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-1 px-2">
-        <div className="flex items-center justify-between gap-2">
-          <span className="group-hover/card:text-primary text-base font-medium transition-colors group-hover/card:underline">
-            {template.name}
-          </span>
-          <ArrowUpRight className="text-muted-foreground group-hover/card:text-foreground size-4 shrink-0 transition-colors" />
-        </div>
-        <p className="text-muted-foreground group-hover/card:text-foreground/70 line-clamp-2 min-h-[2.5rem] max-w-6/7 text-sm transition-colors">
-          {template.description || "A complete page template."}
-        </p>
+      <div className="flex flex-col gap-0.5 px-2">
+        <span className="group-hover/card:text-primary text-base font-medium transition-colors group-hover/card:underline">
+          {template.name}
+        </span>
+        {template.description && (
+          <p className="text-muted-foreground line-clamp-1 text-sm">
+            {template.description}
+          </p>
+        )}
       </div>
     </Link>
   )

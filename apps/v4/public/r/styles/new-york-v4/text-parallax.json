@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "description": "Text that moves at different speed than scroll.",
   "dependencies": [
-    "motion"
+    "motion/react"
   ],
   "registryDependencies": [
     "utils",

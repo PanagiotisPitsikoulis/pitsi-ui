@@ -1,0 +1,27 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "blocks-provider",
+  "type": "registry:ui",
+  "description": "Provider component for pitsi/ui blocks with theme, context, and decoration support.",
+  "dependencies": [
+    "next-themes"
+  ],
+  "registryDependencies": [
+    "utils",
+    "block-theme",
+    "block-context",
+    "block-decorations"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/ui/blocks-provider.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { useTheme } from \"next-themes\"\n\nimport {\n  DEFAULT_TINT,\n  getTemplateStyles,\n  type TintLevel,\n} from \"@/registry/new-york-v4/lib/block-theme\"\nimport { cn } from \"@/registry/new-york-v4/lib/utils\"\n\n// ============================================================================\n// BlocksProvider - Main provider for blocks\n// ============================================================================\n\nexport interface BlocksProviderProps {\n  children: React.ReactNode\n  /** Template slug for color palette (e.g., \"service-plants\", \"ai\", \"art\") */\n  slug?: string\n  /** Tint intensity: base (neutral), tinted (brand colors), or deep (saturated) */\n  tint?: TintLevel\n  /** Force dark mode regardless of system preference */\n  forceDark?: boolean\n  /** Force light mode regardless of system preference */\n  forceLight?: boolean\n  /** Make background transparent (useful for overlays) */\n  transparent?: boolean\n  className?: string\n}\n\n/**\n * Provider component for pitsi/ui blocks with theme, context, and decoration support.\n *\n * Wraps blocks with the appropriate CSS variables for colors and fonts based on\n * the template slug and tint level.\n *\n * @example\n * ```tsx\n * import { BlocksProvider } from \"@/components/ui/blocks-provider\"\n * import { Hero1 } from \"@/components/blocks/hero-1\"\n *\n * export default function Page() {\n *   return (\n *     <BlocksProvider slug=\"service-plants\" tint=\"tinted\">\n *       <Hero1 />\n *     </BlocksProvider>\n *   )\n * }\n * ```\n */\nexport function BlocksProvider({\n  children,\n  slug = \"default\",\n  tint = DEFAULT_TINT,\n  forceDark = false,\n  forceLight = false,\n  transparent = false,\n  className,\n}: BlocksProviderProps) {\n  const { resolvedTheme } = useTheme()\n\n  // Determine the color mode\n  const mode = forceDark\n    ? \"dark\"\n    : forceLight\n      ? \"light\"\n      : (resolvedTheme as \"light\" | \"dark\") || \"light\"\n\n  // Get CSS variables for the template\n  const style = getTemplateStyles(slug, tint, mode)\n\n  return (\n    <div\n      className={cn(\n        \"font-body relative w-full\",\n        !transparent && \"bg-background text-foreground\",\n        forceDark && \"dark\",\n        forceLight && \"light\",\n        className\n      )}\n      style={style}\n    >\n      {children}\n    </div>\n  )\n}\n\n// ============================================================================\n// Re-exports for convenience\n// ============================================================================\n\n// Theme utilities\nexport {\n  type TintLevel,\n  type TemplateFonts,\n  DEFAULT_TINT,\n  templatePalettes,\n  templateFonts,\n  getTemplateFonts,\n  getTemplateFontStyles,\n  getPresetKey,\n  getTemplateThemeStyle,\n  getTemplateStyles,\n  getAllFontFamilies,\n  BlockThemeWrapper,\n  type BlockThemeWrapperProps,\n} from \"@/registry/new-york-v4/lib/block-theme\"\n\n// Context utilities\nexport {\n  type BlockContextValue,\n  useBlockContext,\n  BlockProvider,\n  type BlockProviderProps,\n  BlockContainer,\n  type BlockContainerProps,\n} from \"@/registry/new-york-v4/lib/block-context\"\n\n// Decoration components\nexport {\n  // KnockoutText\n  KnockoutText,\n  type KnockoutTextProps,\n  // Overlay\n  Overlay,\n  type OverlayProps,\n  type OverlayVariant,\n  // ImageOverlay\n  ImageOverlay,\n  type ImageOverlayProps,\n  // ImageOverlayGradient\n  ImageOverlayGradient,\n  type ImageOverlayGradientProps,\n  type GradientDirection,\n  // FloatingDecoration\n  FloatingDecoration,\n  type FloatingDecorationProps,\n  type FloatingShape,\n  type FloatingSize,\n  type FloatingPosition,\n  // PatternDecoration\n  PatternDecoration,\n  type PatternDecorationProps,\n  type PatternType,\n  type PatternSize,\n  // BgDecoration\n  BgDecoration,\n  type BgDecorationProps,\n  type BgDecorationVariant,\n  // ItemDecoration\n  ItemDecoration,\n  type ItemDecorationProps,\n  type ItemPosition,\n} from \"@/registry/new-york-v4/lib/block-decorations\"\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "providers"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

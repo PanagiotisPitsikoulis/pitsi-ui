@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import { Suspense, useEffect, useRef, useState } from "react"
+import Link from "next/link"
 import { useRouter } from "next/navigation"
 import {
   ArrowLeft,
@@ -13,8 +14,10 @@ import {
   Folder,
   ImageIcon,
   Layers,
+  Maximize,
   Monitor,
   Moon,
+  RotateCw,
   Sun,
   Terminal,
 } from "lucide-react"
@@ -49,13 +52,10 @@ import {
   BlockThemeWrapper,
   DEFAULT_TINT,
   ScrollContainerProvider,
+  RelatedBlocksSection,
+  type BlockItem,
 } from "../../../_components"
-import {
-  getBlockComponent,
-  getBlockSettings,
-  getTemplateBlocks,
-  type TemplateSlug,
-} from "../../../blocks"
+import { getTemplateBlocks, type TemplateSlug } from "../../../blocks"
 
 type ViewMode = "preview" | "template" | "code"
 
@@ -72,6 +72,7 @@ interface BlockViewerClientProps {
         highlightedContent: string
       })[]
     | null
+  blocks: BlockItem[]
 }
 
 export function BlockViewerClient({
@@ -83,6 +84,7 @@ export function BlockViewerClient({
   item,
   tree,
   highlightedFiles,
+  blocks,
 }: BlockViewerClientProps) {
   const router = useRouter()
   const [viewMode, setViewMode] = useState<ViewMode>("preview")
@@ -94,8 +96,9 @@ export function BlockViewerClient({
   const { copyToClipboard, isCopied } = useCopyToClipboard()
   const { copyToClipboard: copyCommandToClipboard, isCopied: isCommandCopied } =
     useCopyToClipboard()
-  const mainRef = useRef<HTMLElement>(null)
+  const mainRef = useRef<HTMLDivElement>(null)
   const hasScrolled = useRef(false)
+  const [iframeKey, setIframeKey] = useState(0)
 
   // Dev-only features
   const isDev = process.env.NODE_ENV === "development"
@@ -137,10 +140,6 @@ export function BlockViewerClient({
     ? getTemplateBlocks(templateSlug as TemplateSlug)
     : []
 
-  // Get the block component and settings for preview mode
-  const BlockComponent = getBlockComponent(blockName)
-  const blockSettings = getBlockSettings(blockName)
-
   // Scroll to block when entering template mode
   useEffect(() => {
     if (viewMode === "template" && !hasScrolled.current) {
@@ -148,7 +147,7 @@ export function BlockViewerClient({
       // Small delay to let the components render
       setTimeout(() => {
         const blockElement = document.getElementById(blockName)
-        if (blockElement) {
+        if (blockElement && mainRef.current) {
           blockElement.scrollIntoView({ behavior: "smooth", block: "start" })
         }
       }, 100)
@@ -186,402 +185,440 @@ export function BlockViewerClient({
   }, [isDev, blockName, templateSlug, BLOCK_CODE_PATH, ASSETS_PATH])
 
   return (
-    <div className="relative min-h-screen pt-5">
-      {/* Preview Mode - Render component directly */}
-      {viewMode === "preview" && BlockComponent && (
-        <BlockThemeWrapper
-          slug={blockSettings.templateSlug || ""}
-          tint={blockSettings.tint || DEFAULT_TINT}
-          forceDark={blockSettings.forceDark}
-          forceLight={blockSettings.forceLight}
-        >
-          <main className="relative isolate">
-            <BlockContainer
-              index={blockSettings.index}
-              tint={blockSettings.tint || DEFAULT_TINT}
-              forceBg="none"
-            >
-              <Suspense fallback={null}>
-                <BlockComponent />
-              </Suspense>
-            </BlockContainer>
-          </main>
-        </BlockThemeWrapper>
-      )}
-
-      {/* Template Mode - Render actual components */}
-      {viewMode === "template" && templateSlug && (
-        <BlockThemeWrapper slug={templateSlug} tint={DEFAULT_TINT}>
-          <main ref={mainRef} className="relative isolate">
-            <ScrollContainerProvider value={mainRef}>
-              {templateBlocks.map(
-                (
-                  { name, type, Component, tint, forceDark, forceLight },
-                  index
-                ) => {
-                  const skipAlternatingBg =
-                    type === "hero" ||
-                    type === "header" ||
-                    forceDark ||
-                    forceLight
-                  const skipPadding =
-                    type === "hero" || type === "header" || type === "footer"
-                  const blockTint = tint || DEFAULT_TINT
-                  const isCurrentBlock = name === blockName
-
-                  return (
-                    <BlockThemeWrapper
-                      key={name}
-                      slug={templateSlug}
-                      tint={blockTint}
-                      forceDark={forceDark}
-                      forceLight={forceLight}
-                    >
-                      <div
-                        id={name}
-                        className={cn(
-                          isCurrentBlock &&
-                            "ring-primary ring-offset-background ring-2 ring-offset-2"
-                        )}
-                      >
-                        <BlockContainer
-                          index={index}
-                          tint={blockTint}
-                          forceBg={skipAlternatingBg ? "none" : undefined}
-                          noPadding={skipPadding}
-                        >
-                          <Suspense fallback={null}>
-                            <Component />
-                          </Suspense>
-                        </BlockContainer>
-                      </div>
-                    </BlockThemeWrapper>
-                  )
-                }
-              )}
-            </ScrollContainerProvider>
-          </main>
-        </BlockThemeWrapper>
-      )}
-
-      {/* Code Mode - Same as old CodeSection */}
-      {viewMode === "code" && (
-        <main className="relative isolate">
-          <div className="container pb-6">
-            {/* Install command header */}
-            <div className="bg-background mb-4 flex items-center gap-3 rounded-xl border px-4 py-3 shadow-sm">
-              <Terminal className="text-muted-foreground size-4" />
-              <code className="flex-1 font-mono text-sm">{addCommand}</code>
-              <Button
-                variant="outline"
-                size="icon"
-                className="size-7"
-                onClick={() => copyCommandToClipboard(addCommand)}
-              >
-                {isCommandCopied ? (
-                  <Check className="size-3.5" />
-                ) : (
-                  <Clipboard className="size-3.5" />
-                )}
-              </Button>
-            </div>
-
-            {/* Code viewer - matches old CodeSection */}
-            <div className="overflow-hidden rounded-xl border shadow-xs">
-              <div className="flex items-center justify-between border-b px-4 py-2">
-                <span className="text-muted-foreground text-sm font-medium">
-                  Code
-                </span>
-              </div>
-
-              <div className="bg-code text-code-foreground relative flex h-[600px] overflow-hidden">
-                {/* Sidebar - collapsible on mobile */}
-                <div
-                  className={cn(
-                    "bg-code absolute inset-y-0 left-0 z-40 w-72 transition-transform md:relative md:translate-x-0",
-                    sidebarOpen ? "translate-x-0" : "-translate-x-full"
-                  )}
-                >
-                  {tree && (
-                    <FileTreeSidebar
-                      tree={tree}
-                      activeFile={activeFile}
-                      setActiveFile={setActiveFile}
-                    />
-                  )}
-                </div>
-
-                {/* Overlay for mobile */}
-                {sidebarOpen && (
-                  <div
-                    className="absolute inset-0 z-30 bg-black/50 md:hidden"
-                    onClick={() => setSidebarOpen(false)}
-                  />
-                )}
-
-                <figure
-                  data-rehype-pretty-code-figure=""
-                  className="!mx-0 mt-0 flex min-w-0 flex-1 flex-col !rounded-none border-none"
-                >
-                  <figcaption
-                    className="text-code-foreground [&_svg]:text-code-foreground flex h-12 shrink-0 items-center gap-2 border-b px-4 [&_svg]:size-4 [&_svg]:opacity-70"
-                    data-language={language}
-                  >
-                    {getIconForLanguageExtension(language)}
-                    <span className="line-clamp-1">{file?.target}</span>
-                    <div className="ml-auto flex items-center gap-2">
-                      <Button
-                        size="icon"
-                        variant="outline"
-                        className="bg-background size-7 border shadow-sm md:hidden"
-                        onClick={() => setSidebarOpen(!sidebarOpen)}
-                      >
-                        <Folder />
-                      </Button>
-                      <Button
-                        variant="outline"
-                        size="icon"
-                        className="size-7"
-                        onClick={() => {
-                          if (fileForCopy?.content) {
-                            copyToClipboard(fileForCopy.content)
-                            trackEvent({
-                              name: "copy_block_code",
-                              properties: {
-                                name: blockName,
-                                file: file?.path ?? "",
-                              },
-                            })
-                          }
-                        }}
-                      >
-                        {isCopied ? <Check /> : <Clipboard />}
-                      </Button>
-                    </div>
-                  </figcaption>
-                  <div
-                    key={file?.path}
-                    dangerouslySetInnerHTML={{
-                      __html: file?.highlightedContent ?? "",
-                    }}
-                    className="no-scrollbar overflow-y-auto"
-                  />
-                </figure>
-              </div>
-            </div>
-          </div>
-        </main>
-      )}
-
-      {/* Floating bottom pill - forced dark */}
-      <TooltipProvider delayDuration={0}>
-        <div className="dark text-muted-foreground fixed bottom-6 left-1/2 z-50 -translate-x-1/2">
-          <div className="bg-background ring-border flex items-center gap-0.5 rounded-full p-1 shadow-lg ring-1">
-            {/* Back */}
+    <TooltipProvider delayDuration={0}>
+      <div className="flex min-h-[calc(100vh-var(--header-height))] flex-col gap-3 overflow-x-hidden p-3">
+        {/* Top Toolbar */}
+        <div>
+          <div className="container flex items-center gap-1 rounded-full bg-muted p-1.5">
+            {/* Left side: Back button and View tabs */}
             <Tooltip>
               <TooltipTrigger asChild>
                 <button
                   onClick={() => router.back()}
-                  className="hover:text-foreground flex size-7 items-center justify-center rounded-full transition-colors"
+                  className="text-muted-foreground hover:bg-background/50 hover:text-foreground flex size-9 items-center justify-center rounded-full transition-colors"
                 >
-                  <ArrowLeft className="size-3.5" />
+                  <ArrowLeft className="size-4" />
                 </button>
               </TooltipTrigger>
-              <TooltipContent>Back</TooltipContent>
+              <TooltipContent side="bottom" className="text-xs">Back</TooltipContent>
             </Tooltip>
 
-            <div className="bg-border mx-0.5 h-4 w-px" />
+            {/* Separator */}
+            <div className="mx-1 h-5 w-px bg-border" />
 
-            {/* Preview */}
+            {/* View mode toggles */}
             <Tooltip>
               <TooltipTrigger asChild>
                 <button
                   onClick={() => setViewMode("preview")}
                   className={cn(
-                    "hover:text-foreground flex size-7 items-center justify-center rounded-full transition-colors",
-                    viewMode === "preview" && "text-foreground"
+                    "flex size-9 items-center justify-center rounded-full transition-colors",
+                    viewMode === "preview"
+                      ? "bg-background text-foreground shadow-sm"
+                      : "text-muted-foreground hover:bg-background/50 hover:text-foreground"
                   )}
                 >
-                  <Eye className="size-3.5" />
+                  <Eye className="size-4" />
                 </button>
               </TooltipTrigger>
-              <TooltipContent>Preview</TooltipContent>
+              <TooltipContent side="bottom" className="text-xs">Preview</TooltipContent>
             </Tooltip>
 
-            {/* Template view - only show if block belongs to a template */}
             {templateSlug && (
               <Tooltip>
                 <TooltipTrigger asChild>
                   <button
                     onClick={() => setViewMode("template")}
                     className={cn(
-                      "hover:text-foreground flex size-7 items-center justify-center rounded-full transition-colors",
-                      viewMode === "template" && "text-foreground"
+                      "flex size-9 items-center justify-center rounded-full transition-colors",
+                      viewMode === "template"
+                        ? "bg-background text-foreground shadow-sm"
+                        : "text-muted-foreground hover:bg-background/50 hover:text-foreground"
                     )}
                   >
-                    <Layers className="size-3.5" />
+                    <Layers className="size-4" />
                   </button>
                 </TooltipTrigger>
-                <TooltipContent>View in template</TooltipContent>
+                <TooltipContent side="bottom" className="text-xs">Template</TooltipContent>
               </Tooltip>
             )}
 
-            {/* Code */}
             <Tooltip>
               <TooltipTrigger asChild>
                 <button
                   onClick={() => setViewMode("code")}
                   className={cn(
-                    "hover:text-foreground flex size-7 items-center justify-center rounded-full transition-colors",
-                    viewMode === "code" && "text-foreground"
+                    "flex size-9 items-center justify-center rounded-full transition-colors",
+                    viewMode === "code"
+                      ? "bg-background text-foreground shadow-sm"
+                      : "text-muted-foreground hover:bg-background/50 hover:text-foreground"
                   )}
                 >
-                  <Code2 className="size-3.5" />
+                  <Code2 className="size-4" />
                 </button>
               </TooltipTrigger>
-              <TooltipContent>Code & Install</TooltipContent>
+              <TooltipContent side="bottom" className="text-xs">Code</TooltipContent>
             </Tooltip>
 
-            <div className="bg-border mx-0.5 h-4 w-px" />
+            {/* Separator */}
+            <div className="mx-1 hidden h-5 w-px bg-border lg:block" />
 
-            {/* Copy command */}
+            {/* Fullscreen button */}
             <Tooltip>
               <TooltipTrigger asChild>
-                <button
-                  onClick={() => copyCommandToClipboard(addCommand)}
-                  className={cn(
-                    "hover:text-foreground flex size-7 items-center justify-center rounded-full transition-colors",
-                    isCommandCopied && "text-foreground"
-                  )}
+                <Link
+                  href={`/view/${styleName}/${blockName}`}
+                  target="_blank"
+                  className="text-muted-foreground hover:bg-background/50 hover:text-foreground hidden size-9 items-center justify-center rounded-full transition-colors lg:flex"
                 >
-                  <Terminal className="size-3.5" />
-                </button>
+                  <Maximize className="size-4" />
+                </Link>
               </TooltipTrigger>
-              <TooltipContent>
-                {isCommandCopied ? "Copied!" : "Copy install command"}
-              </TooltipContent>
+              <TooltipContent side="bottom" className="text-xs">Open in new tab</TooltipContent>
             </Tooltip>
 
-            {/* Copy code */}
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <button
-                  onClick={() => {
-                    if (fileForCopy?.content) {
-                      copyToClipboard(fileForCopy.content)
-                      trackEvent({
-                        name: "copy_block_code",
-                        properties: {
-                          name: blockName,
-                          file: file?.path ?? "",
-                        },
-                      })
-                    }
-                  }}
-                  className={cn(
-                    "hover:text-foreground flex size-7 items-center justify-center rounded-full transition-colors",
-                    isCopied && "text-foreground"
-                  )}
-                >
-                  <Clipboard className="size-3.5" />
-                </button>
-              </TooltipTrigger>
-              <TooltipContent>
-                {isCopied ? "Copied!" : "Copy code"}
-              </TooltipContent>
-            </Tooltip>
-
-            <div className="bg-border mx-0.5 h-4 w-px" />
-
-            {/* Theme toggle */}
-            <DropdownMenu>
+            {/* Refresh button */}
+            {viewMode === "preview" && (
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <DropdownMenuTrigger asChild>
-                    <button className="hover:text-foreground flex size-7 items-center justify-center rounded-full transition-colors">
-                      <ThemeIcon className="size-3.5" />
-                    </button>
-                  </DropdownMenuTrigger>
+                  <button
+                    onClick={() => setIframeKey((k) => k + 1)}
+                    className="text-muted-foreground hover:bg-background/50 hover:text-foreground hidden size-9 items-center justify-center rounded-full transition-colors lg:flex"
+                  >
+                    <RotateCw className="size-4" />
+                  </button>
                 </TooltipTrigger>
-                <TooltipContent>Theme</TooltipContent>
+                <TooltipContent side="bottom" className="text-xs">Refresh</TooltipContent>
               </Tooltip>
-              <DropdownMenuContent align="center" side="top" sideOffset={8}>
-                <DropdownMenuRadioGroup value={theme} onValueChange={setTheme}>
-                  <DropdownMenuRadioItem value="light">
-                    <Sun className="mr-2 size-4" />
-                    Light
-                  </DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="dark">
-                    <Moon className="mr-2 size-4" />
-                    Dark
-                  </DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="system">
-                    <Monitor className="mr-2 size-4" />
-                    System
-                  </DropdownMenuRadioItem>
-                </DropdownMenuRadioGroup>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            )}
 
-            {/* Dev-only tools */}
-            {isDev && (
-              <>
-                <div className="bg-border mx-0.5 h-4 w-px" />
+            {/* Right side: Actions */}
+            <div className="ml-auto flex items-center gap-1">
+              {/* Copy command */}
+              <button
+                onClick={() => copyCommandToClipboard(addCommand)}
+                className="bg-background text-foreground flex h-9 items-center gap-2 rounded-full px-3 font-mono text-xs shadow-sm transition-colors"
+              >
+                {isCommandCopied ? <Check className="size-3.5" /> : <Terminal className="size-3.5" />}
+                <span className="hidden md:inline">npx pitsi add {blockName}</span>
+              </button>
 
-                {/* Open Block Code */}
+              {/* Copy code */}
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <button
+                    onClick={() => {
+                      if (fileForCopy?.content) {
+                        copyToClipboard(fileForCopy.content)
+                        trackEvent({
+                          name: "copy_block_code",
+                          properties: {
+                            name: blockName,
+                            file: file?.path ?? "",
+                          },
+                        })
+                      }
+                    }}
+                    className={cn(
+                      "flex size-9 items-center justify-center rounded-full transition-colors",
+                      isCopied
+                        ? "bg-background text-foreground shadow-sm"
+                        : "text-muted-foreground hover:bg-background/50 hover:text-foreground"
+                    )}
+                  >
+                    {isCopied ? <Check className="size-4" /> : <Clipboard className="size-4" />}
+                  </button>
+                </TooltipTrigger>
+                <TooltipContent side="bottom" className="text-xs">
+                  {isCopied ? "Copied!" : "Copy code"}
+                </TooltipContent>
+              </Tooltip>
+
+              {/* Separator */}
+              <div className="mx-1 h-5 w-px bg-border" />
+
+              {/* Theme toggle */}
+              <DropdownMenu>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <button
-                      onClick={() => openInEditor(BLOCK_CODE_PATH)}
-                      className="flex size-7 items-center justify-center rounded-full transition-colors hover:text-foreground"
-                    >
-                      <FileCode className="size-3.5" />
-                    </button>
+                    <DropdownMenuTrigger className="text-muted-foreground hover:bg-background/50 hover:text-foreground flex size-9 items-center justify-center rounded-full transition-colors">
+                      <ThemeIcon className="size-4" />
+                    </DropdownMenuTrigger>
                   </TooltipTrigger>
-                  <TooltipContent>
-                    Open Block
-                    <kbd className="ml-2 rounded bg-foreground/20 px-1 py-0.5 font-mono text-[10px]">⌘G</kbd>
-                  </TooltipContent>
+                  <TooltipContent side="bottom" className="text-xs">Theme</TooltipContent>
                 </Tooltip>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuRadioGroup value={theme} onValueChange={setTheme}>
+                    <DropdownMenuRadioItem value="light">
+                      <Sun className="mr-2 size-4" />
+                      Light
+                    </DropdownMenuRadioItem>
+                    <DropdownMenuRadioItem value="dark">
+                      <Moon className="mr-2 size-4" />
+                      Dark
+                    </DropdownMenuRadioItem>
+                    <DropdownMenuRadioItem value="system">
+                      <Monitor className="mr-2 size-4" />
+                      System
+                    </DropdownMenuRadioItem>
+                  </DropdownMenuRadioGroup>
+                </DropdownMenuContent>
+              </DropdownMenu>
 
-                {/* Open Components */}
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <button
-                      onClick={() => openInEditor(BLOCK_COMPONENTS_PATH, true)}
-                      className="flex size-7 items-center justify-center rounded-full transition-colors hover:text-foreground"
-                    >
-                      <Layers className="size-3.5" />
-                    </button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    Components
-                    <kbd className="ml-2 rounded bg-foreground/20 px-1 py-0.5 font-mono text-[10px]">⌘K</kbd>
-                  </TooltipContent>
-                </Tooltip>
+              {/* Dev-only tools */}
+              {isDev && (
+                <>
+                  {/* Separator */}
+                  <div className="mx-1 h-5 w-px bg-border" />
 
-                {/* Open Assets (conditional) */}
-                {ASSETS_PATH && (
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <button
-                        onClick={() => openInEditor(ASSETS_PATH, true)}
-                        className="flex size-7 items-center justify-center rounded-full transition-colors hover:text-foreground"
+                        onClick={() => openInEditor(BLOCK_CODE_PATH)}
+                        className="text-muted-foreground hover:bg-background/50 hover:text-foreground flex size-9 items-center justify-center rounded-full transition-colors"
                       >
-                        <ImageIcon className="size-3.5" />
+                        <FileCode className="size-4" />
                       </button>
                     </TooltipTrigger>
-                    <TooltipContent>
-                      Assets
-                      <kbd className="ml-2 rounded bg-foreground/20 px-1 py-0.5 font-mono text-[10px]">⌘I</kbd>
+                    <TooltipContent side="bottom" className="text-xs">
+                      Open Block <kbd className="ml-1 text-[10px]">⌘G</kbd>
                     </TooltipContent>
                   </Tooltip>
-                )}
-              </>
-            )}
+
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <button
+                        onClick={() => openInEditor(BLOCK_COMPONENTS_PATH, true)}
+                        className="text-muted-foreground hover:bg-background/50 hover:text-foreground flex size-9 items-center justify-center rounded-full transition-colors"
+                      >
+                        <Layers className="size-4" />
+                      </button>
+                    </TooltipTrigger>
+                    <TooltipContent side="bottom" className="text-xs">
+                      Components <kbd className="ml-1 text-[10px]">⌘K</kbd>
+                    </TooltipContent>
+                  </Tooltip>
+
+                  {ASSETS_PATH && (
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <button
+                          onClick={() => openInEditor(ASSETS_PATH, true)}
+                          className="text-muted-foreground hover:bg-background/50 hover:text-foreground flex size-9 items-center justify-center rounded-full transition-colors"
+                        >
+                          <ImageIcon className="size-4" />
+                        </button>
+                      </TooltipTrigger>
+                      <TooltipContent side="bottom" className="text-xs">
+                        Assets <kbd className="ml-1 text-[10px]">⌘I</kbd>
+                      </TooltipContent>
+                    </Tooltip>
+                  )}
+                </>
+              )}
+            </div>
           </div>
         </div>
-      </TooltipProvider>
-    </div>
+
+        {/* Preview Container */}
+        <div className="container">
+          <div className="bg-muted/30 h-[calc(100vh-var(--header-height)-120px)] min-h-[500px] overflow-hidden rounded-2xl border">
+            {/* Preview Mode - uses iframe for isolation */}
+            {viewMode === "preview" && (
+              <div className="relative h-full w-full">
+                <iframe
+                  key={iframeKey}
+                  src={`/view/${styleName}/${blockName}`}
+                  className="h-full w-full border-0"
+                />
+              </div>
+            )}
+
+            {/* Template Mode - scrollable content */}
+            <div
+              ref={mainRef}
+              className={cn(
+                "h-full overflow-auto",
+                viewMode !== "template" && viewMode !== "code" && "hidden"
+              )}
+            >
+
+              {/* Template Mode */}
+              {viewMode === "template" && templateSlug && (
+                <BlockThemeWrapper slug={templateSlug} tint={DEFAULT_TINT}>
+                  <ScrollContainerProvider value={mainRef}>
+                    {templateBlocks.map(
+                      (
+                        { name, type, Component, tint, forceDark, forceLight },
+                        index
+                      ) => {
+                        const skipAlternatingBg =
+                          type === "hero" ||
+                          type === "header" ||
+                          forceDark ||
+                          forceLight
+                        const skipPadding =
+                          type === "hero" || type === "header" || type === "footer"
+                        const blockTint = tint || DEFAULT_TINT
+                        const isCurrentBlock = name === blockName
+
+                        return (
+                          <BlockThemeWrapper
+                            key={name}
+                            slug={templateSlug}
+                            tint={blockTint}
+                            forceDark={forceDark}
+                            forceLight={forceLight}
+                          >
+                            <div
+                              id={name}
+                              className={cn(
+                                isCurrentBlock &&
+                                  "ring-primary ring-offset-background ring-2 ring-offset-2"
+                              )}
+                            >
+                              <BlockContainer
+                                index={index}
+                                tint={blockTint}
+                                forceBg={skipAlternatingBg ? "none" : undefined}
+                                noPadding={skipPadding}
+                              >
+                                <Suspense fallback={null}>
+                                  <Component />
+                                </Suspense>
+                              </BlockContainer>
+                            </div>
+                          </BlockThemeWrapper>
+                        )
+                      }
+                    )}
+                  </ScrollContainerProvider>
+                </BlockThemeWrapper>
+              )}
+
+            {/* Code Mode */}
+            {viewMode === "code" && (
+              <div className="bg-background h-full overflow-auto p-6 pb-12">
+                <div>
+                  {/* Install command header */}
+                  <div className="bg-background mb-4 flex items-center gap-3 rounded-xl border px-4 py-3">
+                    <Terminal className="text-muted-foreground size-4" />
+                    <code className="flex-1 font-mono text-sm">{addCommand}</code>
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="size-7"
+                      onClick={() => copyCommandToClipboard(addCommand)}
+                    >
+                      {isCommandCopied ? (
+                        <Check className="size-3.5" />
+                      ) : (
+                        <Clipboard className="size-3.5" />
+                      )}
+                    </Button>
+                  </div>
+
+                  {/* Code viewer */}
+                  <div className="overflow-hidden rounded-xl border shadow-xs">
+                    <div className="flex items-center justify-between border-b px-4 py-2">
+                      <span className="text-muted-foreground text-sm font-medium">
+                        Code
+                      </span>
+                    </div>
+
+                    <div className="bg-code text-code-foreground relative flex h-[500px] overflow-hidden">
+                      {/* Sidebar - collapsible on mobile */}
+                      <div
+                        className={cn(
+                          "bg-code absolute inset-y-0 left-0 z-40 w-72 transition-transform md:relative md:translate-x-0",
+                          sidebarOpen ? "translate-x-0" : "-translate-x-full"
+                        )}
+                      >
+                        {tree && (
+                          <FileTreeSidebar
+                            tree={tree}
+                            activeFile={activeFile}
+                            setActiveFile={setActiveFile}
+                          />
+                        )}
+                      </div>
+
+                      {/* Overlay for mobile */}
+                      {sidebarOpen && (
+                        <div
+                          className="absolute inset-0 z-30 bg-black/50 md:hidden"
+                          onClick={() => setSidebarOpen(false)}
+                        />
+                      )}
+
+                      <figure
+                        data-rehype-pretty-code-figure=""
+                        className="!mx-0 mt-0 flex min-w-0 flex-1 flex-col !rounded-none border-none"
+                      >
+                        <figcaption
+                          className="text-code-foreground [&_svg]:text-code-foreground flex h-12 shrink-0 items-center gap-2 border-b px-4 [&_svg]:size-4 [&_svg]:opacity-70"
+                          data-language={language}
+                        >
+                          {getIconForLanguageExtension(language)}
+                          <span className="line-clamp-1">{file?.target}</span>
+                          <div className="ml-auto flex items-center gap-2">
+                            <Button
+                              size="icon"
+                              variant="outline"
+                              className="bg-background size-7 border shadow-sm md:hidden"
+                              onClick={() => setSidebarOpen(!sidebarOpen)}
+                            >
+                              <Folder />
+                            </Button>
+                            <Button
+                              variant="outline"
+                              size="icon"
+                              className="size-7"
+                              onClick={() => {
+                                if (fileForCopy?.content) {
+                                  copyToClipboard(fileForCopy.content)
+                                  trackEvent({
+                                    name: "copy_block_code",
+                                    properties: {
+                                      name: blockName,
+                                      file: file?.path ?? "",
+                                    },
+                                  })
+                                }
+                              }}
+                            >
+                              {isCopied ? <Check /> : <Clipboard />}
+                            </Button>
+                          </div>
+                        </figcaption>
+                        <div
+                          key={file?.path}
+                          dangerouslySetInnerHTML={{
+                            __html: file?.highlightedContent ?? "",
+                          }}
+                          className="overflow-y-auto pb-8"
+                        />
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+            </div>
+          </div>
+        </div>
+
+        {/* Related Blocks Section */}
+        <div className="container">
+          <RelatedBlocksSection
+            currentBlockName={blockName}
+            category={category}
+            templateSlug={templateSlug}
+            styleName={styleName}
+            blocks={blocks}
+          />
+        </div>
+      </div>
+    </TooltipProvider>
   )
 }

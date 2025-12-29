@@ -1,0 +1,34 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "app-gym-tracker",
+  "type": "registry:block",
+  "description": "Complete gym progressive overload tracker application template",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "app-shell-1",
+    "app-dashboard-1",
+    "app-workout-log-1",
+    "app-calendar-1",
+    "app-progress-1",
+    "app-exercises-1",
+    "app-settings-1"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/application/app-gym-tracker.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\n\nimport { type AppNavigationItem } from \"@/lib/blocks/application.types\"\n\nimport { AppCalendar1 } from \"./app-calendar-1\"\nimport { AppDashboard1 } from \"./app-dashboard-1\"\nimport { AppExercises1 } from \"./app-exercises-1\"\nimport { AppProgress1 } from \"./app-progress-1\"\nimport { AppSettings1 } from \"./app-settings-1\"\nimport { AppShell1 } from \"./app-shell-1\"\nimport { AppWorkoutLog1 } from \"./app-workout-log-1\"\n\nconst navigation: AppNavigationItem[] = [\n  {\n    name: \"app-dashboard-1\",\n    label: \"Dashboard\",\n    icon: \"LayoutDashboard\",\n    shortcut: \"1\",\n  },\n  {\n    name: \"app-workout-log-1\",\n    label: \"Log Workout\",\n    icon: \"Dumbbell\",\n    shortcut: \"2\",\n  },\n  {\n    name: \"app-calendar-1\",\n    label: \"Calendar\",\n    icon: \"Calendar\",\n    shortcut: \"3\",\n  },\n  {\n    name: \"app-progress-1\",\n    label: \"Progress\",\n    icon: \"TrendingUp\",\n    shortcut: \"4\",\n  },\n  {\n    name: \"app-exercises-1\",\n    label: \"Exercises\",\n    icon: \"Library\",\n    shortcut: \"5\",\n  },\n  {\n    name: \"app-settings-1\",\n    label: \"Settings\",\n    icon: \"Settings\",\n    shortcut: \"6\",\n  },\n]\n\nexport function AppGymTracker() {\n  const [activeView, setActiveView] = React.useState(\"app-dashboard-1\")\n\n  const handleNavigate = (viewName: string) => {\n    setActiveView(viewName)\n  }\n\n  const handleLogWorkout = () => {\n    setActiveView(\"app-workout-log-1\")\n  }\n\n  const renderView = () => {\n    switch (activeView) {\n      case \"app-dashboard-1\":\n        return <AppDashboard1 onLogWorkout={handleLogWorkout} />\n      case \"app-workout-log-1\":\n        return <AppWorkoutLog1 />\n      case \"app-calendar-1\":\n        return <AppCalendar1 />\n      case \"app-progress-1\":\n        return <AppProgress1 />\n      case \"app-exercises-1\":\n        return <AppExercises1 />\n      case \"app-settings-1\":\n        return <AppSettings1 />\n      default:\n        return <AppDashboard1 onLogWorkout={handleLogWorkout} />\n    }\n  }\n\n  return (\n    <AppShell1\n      content={{\n        appName: \"Gym Tracker\",\n        navigation,\n        user: {\n          name: \"John Doe\",\n          email: \"john@example.com\",\n        },\n        logo: {\n          icon: \"Dumbbell\",\n        },\n      }}\n      activeView={activeView}\n      onNavigate={handleNavigate}\n    >\n      {renderView()}\n    </AppShell1>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "iframeHeight": "800px"
+  },
+  "categories": [
+    "application",
+    "app-gym-tracker"
+  ],
+  "tier": "free",
+  "readiness": "beta"
+}

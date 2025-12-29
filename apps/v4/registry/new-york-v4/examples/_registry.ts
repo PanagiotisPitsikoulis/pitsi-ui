@@ -3513,4 +3513,18 @@ export const examples: Registry["items"] = [
     categories: ["animations"],
     readiness: "production",
   },
+  {
+    name: "blocks-provider-demo",
+    type: "registry:example",
+    registryDependencies: ["blocks-provider"],
+    files: [
+      {
+        path: "examples/blocks-provider-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    tier: "free",
+    categories: ["providers"],
+    readiness: "production",
+  },
 ]

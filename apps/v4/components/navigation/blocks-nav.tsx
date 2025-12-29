@@ -16,6 +16,7 @@ import {
   LayoutGrid,
   Layers,
   Mail,
+  Monitor,
   MousePointerClick,
   Newspaper,
   PanelBottom,
@@ -73,6 +74,7 @@ const CATEGORY_ICONS: Record<string, LucideIcon> = {
   footer: PanelBottom,
   showcase: LayoutGrid,
   bento: Grid3X3,
+  application: Monitor,
 }
 
 type CategoryLink = {

@@ -2,37 +2,85 @@
 
 import Image from "next/image"
 
+import { ctaDefaults, type CtaBlockProps } from "@/lib/blocks/cta.types"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { ImageOverlay } from "@/app/(app)/(content)/(blocks)/_block_components"
 import { BlockThemeWrapper } from "@/app/(app)/(content)/(blocks)/_components"
 
-export function CTAServicePlants() {
+// Block-specific defaults that override the generic defaults
+const blockDefaults = {
+  title: "Start Your Plant Journey",
+  description: "Get 15% off your first order when you join our community.",
+  image: {
+    src: "/placeholders/blocks/service-plants/1.webp",
+    alt: "Plants background",
+  },
+  primaryCta: {
+    label: "Subscribe",
+    href: "#",
+  },
+}
+
+export function Cta1({ content = {}, classNames = {} }: CtaBlockProps) {
+  // Merge content with block-specific defaults, falling back to generic defaults
+  const {
+    title = blockDefaults.title ?? ctaDefaults.title,
+    description = blockDefaults.description ?? ctaDefaults.description,
+    image = blockDefaults.image ?? ctaDefaults.image,
+    primaryCta = blockDefaults.primaryCta ?? ctaDefaults.primaryCta,
+  } = content
+
   return (
-    <section>
-      <div className="container px-6">
+    <section className={classNames.root}>
+      <div className={cn("container px-6", classNames.container)}>
         <BlockThemeWrapper
           slug="service-plants"
           tint="deep"
           forceDark
-          className="relative overflow-hidden rounded-3xl"
+          className={cn(
+            "relative overflow-hidden rounded-3xl",
+            classNames.content
+          )}
         >
-          <Image
-            draggable={false}
-            src="/placeholders/blocks/service-plants/1.webp"
-            alt="Plants background"
-            fill
-            className="pointer-events-none object-cover select-none"
-          />
-          <ImageOverlay opacity={50} />
+          {image && (
+            <>
+              <Image
+                draggable={false}
+                src={image.src}
+                alt={image.alt}
+                fill
+                className={cn(
+                  "pointer-events-none object-cover select-none",
+                  classNames.image?.img
+                )}
+              />
+              <ImageOverlay opacity={50} />
+            </>
+          )}
           <div className="relative z-20 flex flex-col items-center px-8 py-16 md:py-24">
-            <h2 className="font-display text-foreground mb-6 text-center text-3xl font-bold md:text-5xl">
-              Start Your Plant Journey
+            <h2
+              className={cn(
+                "font-display text-foreground mb-6 text-center text-3xl font-bold md:text-5xl",
+                classNames.header?.title
+              )}
+            >
+              {title}
             </h2>
-            <p className="text-foreground/70 mb-10 max-w-xl text-center text-lg">
-              Get 15% off your first order when you join our community.
+            <p
+              className={cn(
+                "text-foreground/70 mb-10 max-w-xl text-center text-lg",
+                classNames.header?.description
+              )}
+            >
+              {description}
             </p>
-            <div className="mx-auto flex w-full max-w-md flex-col gap-4 sm:flex-row">
+            <div
+              className={cn(
+                "mx-auto flex w-full max-w-md flex-col gap-4 sm:flex-row",
+                classNames.cta?.root
+              )}
+            >
               <input
                 type="email"
                 placeholder="Enter your email"
@@ -41,9 +89,16 @@ export function CTAServicePlants() {
                   "placeholder:text-foreground/50 focus:ring-foreground/30 focus:ring-1 focus:outline-none"
                 )}
               />
-              <Button className="bg-foreground text-background hover:bg-foreground/90 h-12 rounded-full px-8">
-                Subscribe
-              </Button>
+              {primaryCta && (
+                <Button
+                  className={cn(
+                    "bg-foreground text-background hover:bg-foreground/90 h-12 rounded-full px-8",
+                    classNames.cta?.primary
+                  )}
+                >
+                  {primaryCta.label}
+                </Button>
+              )}
             </div>
           </div>
         </BlockThemeWrapper>
@@ -51,3 +106,6 @@ export function CTAServicePlants() {
     </section>
   )
 }
+
+// Re-export for backwards compatibility
+export { Cta1 as CTAServicePlants }

@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "description": "Background image with parallax effect - moves slower than foreground for depth.",
   "dependencies": [
-    "motion"
+    "motion/react"
   ],
   "registryDependencies": [
     "utils",

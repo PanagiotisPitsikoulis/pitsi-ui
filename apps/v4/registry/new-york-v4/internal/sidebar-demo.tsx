@@ -8,7 +8,7 @@ import {
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
-  SidebarInset,
+  SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
@@ -16,7 +16,6 @@ import {
   SidebarTrigger,
 } from "@/registry/new-york-v4/ui/sidebar"
 
-// Menu items.
 const items = [
   {
     title: "Home",
@@ -45,10 +44,13 @@ const items = [
   },
 ]
 
-export default function AppSidebar() {
+export default function SidebarDemo() {
   return (
     <SidebarProvider>
       <Sidebar>
+        <SidebarHeader className="border-b px-4 py-3">
+          <span className="text-lg font-semibold">My App</span>
+        </SidebarHeader>
         <SidebarContent>
           <SidebarGroup>
             <SidebarGroupLabel>Application</SidebarGroupLabel>
@@ -69,11 +71,19 @@ export default function AppSidebar() {
           </SidebarGroup>
         </SidebarContent>
       </Sidebar>
-      <SidebarInset>
-        <header className="flex h-12 items-center justify-between px-4">
+      <main className="flex flex-1 flex-col gap-4 p-4">
+        <div className="flex items-center gap-2">
           <SidebarTrigger />
-        </header>
-      </SidebarInset>
+          <span className="text-muted-foreground text-sm">
+            Press{" "}
+            <kbd className="bg-muted rounded px-1.5 py-0.5 text-xs">⌘B</kbd> to
+            toggle
+          </span>
+        </div>
+        <div className="bg-muted/50 flex flex-1 items-center justify-center rounded-lg border border-dashed">
+          <p className="text-muted-foreground">Main content area</p>
+        </div>
+      </main>
     </SidebarProvider>
   )
 }

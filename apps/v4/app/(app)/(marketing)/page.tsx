@@ -68,12 +68,12 @@ async function IndexPageInteral({
       <HeroSection />
       {/*<ContentSection registryCounts={registryCounts} />*/}
       {/*<ContentExplained />*/}
-      <PurposeSection />
+      {/*<PurposeSection />
       <DesignSection />
-      <PowerBentoSection />
+      <PowerBentoSection />*/}
       {pricingSection}
-      <CTASection />
-      <ReviewsSection />
+      {/*<CTASection />
+      <ReviewsSection />*/}
     </div>
   )
 }

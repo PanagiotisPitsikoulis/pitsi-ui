@@ -58,4 +58,47 @@ export const lib: Registry["items"] = [
     ],
     readiness: "production",
   },
+  {
+    name: "block-theme",
+    type: "registry:lib",
+    description:
+      "Theme utilities for blocks including color palettes, fonts, and tint levels.",
+    dependencies: ["next-themes"],
+    registryDependencies: ["utils"],
+    files: [
+      {
+        path: "lib/block-theme.tsx",
+        type: "registry:lib",
+      },
+    ],
+    readiness: "production",
+  },
+  {
+    name: "block-context",
+    type: "registry:lib",
+    description:
+      "Context provider for blocks with alternating backgrounds and surface styling.",
+    registryDependencies: ["utils", "block-theme"],
+    files: [
+      {
+        path: "lib/block-context.tsx",
+        type: "registry:lib",
+      },
+    ],
+    readiness: "production",
+  },
+  {
+    name: "block-decorations",
+    type: "registry:lib",
+    description:
+      "Decoration components for blocks: overlays, patterns, gradients, and effects.",
+    registryDependencies: ["utils"],
+    files: [
+      {
+        path: "lib/block-decorations.tsx",
+        type: "registry:lib",
+      },
+    ],
+    readiness: "production",
+  },
 ]

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "blocks-provider-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "blocks-provider"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/blocks-provider-demo.tsx",
+      "content": "\"use client\"\n\nimport {\n  BlocksProvider,\n  FloatingDecoration,\n  PatternDecoration,\n} from \"@/registry/new-york-v4/ui/blocks-provider\"\n\nexport default function BlocksProviderDemo() {\n  return (\n    <div className=\"flex flex-col gap-4\">\n      {/* Base theme (neutral) */}\n      <BlocksProvider slug=\"default\" tint=\"base\" className=\"rounded-lg p-6\">\n        <div className=\"bg-background relative overflow-hidden rounded-lg border p-6\">\n          <PatternDecoration pattern=\"dots\" opacity={20} />\n          <div className=\"relative z-10\">\n            <h3 className=\"text-lg font-semibold\">Base Theme</h3>\n            <p className=\"text-muted-foreground\">\n              Neutral colors, no brand tinting\n            </p>\n          </div>\n        </div>\n      </BlocksProvider>\n\n      {/* Tinted theme (sage) */}\n      <BlocksProvider\n        slug=\"service-plants\"\n        tint=\"tinted\"\n        className=\"rounded-lg p-6\"\n      >\n        <div className=\"bg-background relative overflow-hidden rounded-lg border p-6\">\n          <FloatingDecoration\n            shape=\"circle\"\n            size=\"sm\"\n            position=\"top-right\"\n            color=\"bg-brand/30\"\n            blur=\"2xl\"\n          />\n          <div className=\"relative z-10\">\n            <h3 className=\"text-lg font-semibold\">Tinted Theme</h3>\n            <p className=\"text-muted-foreground\">\n              Sage brand colors with subtle tinting\n            </p>\n          </div>\n        </div>\n      </BlocksProvider>\n\n      {/* Deep theme (azure) */}\n      <BlocksProvider slug=\"ai\" tint=\"deep\" className=\"rounded-lg p-6\">\n        <div className=\"bg-background relative overflow-hidden rounded-lg border p-6\">\n          <PatternDecoration pattern=\"grid\" opacity={15} fade=\"radial\" />\n          <FloatingDecoration\n            shape=\"blob\"\n            size=\"md\"\n            position=\"bottom-right\"\n            color=\"bg-brand/20\"\n            blur=\"3xl\"\n          />\n          <div className=\"relative z-10\">\n            <h3 className=\"text-lg font-semibold\">Deep Theme</h3>\n            <p className=\"text-muted-foreground\">\n              Azure brand colors with deep background tinting\n            </p>\n          </div>\n        </div>\n      </BlocksProvider>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "providers"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

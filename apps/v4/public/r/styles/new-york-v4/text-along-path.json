@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "description": "Text that follows an SVG path on scroll.",
   "dependencies": [
-    "motion"
+    "motion/react"
   ],
   "registryDependencies": [
     "utils",

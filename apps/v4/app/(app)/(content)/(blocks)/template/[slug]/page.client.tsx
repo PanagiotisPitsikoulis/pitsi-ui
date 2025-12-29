@@ -1,23 +1,28 @@
 "use client"
 
 import { Suspense, useCallback, useEffect, useRef, useState } from "react"
+import Link from "next/link"
 import { useRouter } from "next/navigation"
 import {
   ArrowLeft,
+  Check,
   Code2,
+  Eye,
   ImageIcon,
   Layers,
+  Maximize,
   Monitor,
   Moon,
   Palette,
+  RotateCw,
   Sun,
+  Terminal,
 } from "lucide-react"
 import { useTheme } from "next-themes"
 import { toast } from "sonner"
 
 import { cn } from "@/lib/utils"
-import { themePresets } from "@/app/(app)/(tools)/tools/theme-generator/_components/theme-presets"
-import { Button } from "@/registry/new-york-v4/ui/button"
+import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -31,24 +36,29 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/registry/new-york-v4/ui/tooltip"
+import { type Style } from "@/registry/styles"
 
 import {
   BlockContainer,
   BlockThemeWrapper,
   DEFAULT_TINT,
   DevBlockOverlay,
-  getPresetKey,
   ScrollContainerProvider,
-  templatePalettes,
+  TemplateBlocksSection,
+  type BlockMetadata,
 } from "../../_components"
 import { getTemplateBlocks, type TemplateSlug } from "../../blocks"
+import type { BlockConfig } from "../../template-config"
 
 interface TemplateViewerClientProps {
   slug: string
+  styleName: Style["name"]
   template: {
     name: string
     description: string
   }
+  templateBlocks: BlockConfig[]
+  blocksMetadata: BlockMetadata[]
 }
 
 // Base paths
@@ -58,15 +68,21 @@ const THEME_FILE_PATH = `${PROJECT_PATH}/app/(app)/(tools)/tools/theme-generator
 
 export function TemplateViewerClient({
   slug,
+  styleName,
   template,
+  templateBlocks: templateBlocksConfig,
+  blocksMetadata,
 }: TemplateViewerClientProps) {
   const router = useRouter()
   const [devOverlayEnabled, setDevOverlayEnabled] = useState(false)
   const hoveredBlockRef = useRef<string | null>(null)
-  const mainRef = useRef<HTMLElement>(null)
+  const mainRef = useRef<HTMLDivElement>(null)
   const blocks = getTemplateBlocks(slug as TemplateSlug)
   const isDev = process.env.NODE_ENV === "development"
   const { theme, setTheme, resolvedTheme } = useTheme()
+  const { copyToClipboard: copyInstallCommand, isCopied: isInstallCopied } = useCopyToClipboard()
+  const [iframeKey, setIframeKey] = useState(0)
+  const installCommand = `npx pitsi@latest add ${slug}`
 
   const ThemeIcon =
     resolvedTheme === "dark" ? Moon : resolvedTheme === "light" ? Sun : Monitor
@@ -182,176 +198,246 @@ export function TemplateViewerClient({
   }
 
   return (
-    <div className="relative flex min-h-screen flex-col">
-      <BlockThemeWrapper slug={slug} tint={DEFAULT_TINT} className="flex flex-1 flex-col">
-        {/* Main content area */}
-        <main
-          ref={mainRef}
-          className="bg-background relative isolate flex-1"
-        >
-          <ScrollContainerProvider value={mainRef}>
-            {/* Template blocks */}
-            {blocks.map(
-              ({ name, type, Component, tint, forceDark, forceLight }, index) => {
-                const skipAlternatingBg =
-                  type === "hero" || type === "header" || forceDark || forceLight
-                const skipPadding =
-                  type === "hero" || type === "header" || type === "footer"
-                const blockTint = tint || DEFAULT_TINT
-
-                return (
-                  <BlockThemeWrapper
-                    key={name}
-                    slug={slug}
-                    tint={blockTint}
-                    forceDark={forceDark}
-                    forceLight={forceLight}
-                  >
-                    <DevBlockOverlay
-                      blockKey={name}
-                      enabled={devOverlayEnabled}
-                      onHover={onBlockHover}
-                    >
-                      <BlockContainer
-                        index={index}
-                        tint={blockTint}
-                        forceBg={skipAlternatingBg ? "none" : undefined}
-                        noPadding={skipPadding}
-                      >
-                        <Suspense fallback={null}>
-                          <Component />
-                        </Suspense>
-                      </BlockContainer>
-                    </DevBlockOverlay>
-                  </BlockThemeWrapper>
-                )
-              }
-            )}
-          </ScrollContainerProvider>
-        </main>
-      </BlockThemeWrapper>
-
-      {/* Floating bottom pill - forced dark */}
-      <TooltipProvider delayDuration={0}>
-        <div className="dark fixed bottom-6 left-1/2 z-50 -translate-x-1/2 text-muted-foreground">
-          <div className="flex items-center gap-0.5 rounded-full bg-background p-1 shadow-lg ring-1 ring-border">
-            {/* Back */}
+    <TooltipProvider delayDuration={0}>
+      <div className="flex min-h-[calc(100vh-var(--header-height))] flex-col gap-3 overflow-x-hidden p-3">
+        {/* Top Toolbar */}
+        <div>
+          <div className="container flex items-center gap-1 rounded-full bg-muted p-1.5">
+            {/* Back button */}
             <Tooltip>
               <TooltipTrigger asChild>
                 <button
                   onClick={() => router.back()}
-                  className="flex size-7 items-center justify-center rounded-full transition-colors hover:text-foreground"
+                  className="text-muted-foreground hover:bg-background/50 hover:text-foreground flex size-9 items-center justify-center rounded-full transition-colors"
                 >
-                  <ArrowLeft className="size-3.5" />
+                  <ArrowLeft className="size-4" />
                 </button>
               </TooltipTrigger>
-              <TooltipContent>Back</TooltipContent>
+              <TooltipContent side="bottom" className="text-xs">Back</TooltipContent>
             </Tooltip>
 
-            <div className="mx-0.5 h-4 w-px bg-border" />
+            {/* Separator */}
+            <div className="mx-1 h-5 w-px bg-border" />
 
-            {isDev && (
-              <>
-                {/* Assets */}
+            {/* Preview (always active for template) */}
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <button
+                  className="bg-background text-foreground flex size-9 items-center justify-center rounded-full shadow-sm transition-colors"
+                >
+                  <Eye className="size-4" />
+                </button>
+              </TooltipTrigger>
+              <TooltipContent side="bottom" className="text-xs">Preview</TooltipContent>
+            </Tooltip>
+
+            {/* Separator */}
+            <div className="mx-1 hidden h-5 w-px bg-border lg:block" />
+
+            {/* Fullscreen button */}
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Link
+                  href={`/view/${styleName}/${slug}`}
+                  target="_blank"
+                  className="text-muted-foreground hover:bg-background/50 hover:text-foreground hidden size-9 items-center justify-center rounded-full transition-colors lg:flex"
+                >
+                  <Maximize className="size-4" />
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent side="bottom" className="text-xs">Open in new tab</TooltipContent>
+            </Tooltip>
+
+            {/* Refresh button */}
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <button
+                  onClick={() => setIframeKey((k) => k + 1)}
+                  className="text-muted-foreground hover:bg-background/50 hover:text-foreground hidden size-9 items-center justify-center rounded-full transition-colors lg:flex"
+                >
+                  <RotateCw className="size-4" />
+                </button>
+              </TooltipTrigger>
+              <TooltipContent side="bottom" className="text-xs">Refresh</TooltipContent>
+            </Tooltip>
+
+            {/* Right side: Actions */}
+            <div className="ml-auto flex items-center gap-1">
+              {/* Install template */}
+              <button
+                onClick={() => copyInstallCommand(installCommand)}
+                className="bg-background text-foreground hover:bg-muted flex h-9 items-center gap-2 rounded-full px-3 font-mono text-xs shadow-sm transition-colors"
+              >
+                {isInstallCopied ? <Check className="size-3.5" /> : <Terminal className="size-3.5" />}
+                <span className="hidden md:inline">{isInstallCopied ? "Copied!" : installCommand}</span>
+              </button>
+
+              {/* Separator */}
+              <div className="mx-1 h-5 w-px bg-border" />
+
+              {/* Theme toggle */}
+              <DropdownMenu>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <button
-                      onClick={openAssets}
-                      className="flex size-7 items-center justify-center rounded-full transition-colors hover:text-foreground"
-                    >
-                      <ImageIcon className="size-3.5" />
-                    </button>
+                    <DropdownMenuTrigger className="text-muted-foreground hover:bg-background/50 hover:text-foreground flex size-9 items-center justify-center rounded-full transition-colors">
+                      <ThemeIcon className="size-4" />
+                    </DropdownMenuTrigger>
                   </TooltipTrigger>
-                  <TooltipContent>
-                    Assets
-                    <kbd className="ml-2 rounded bg-foreground/20 px-1 py-0.5 font-mono text-[10px]">⌘I</kbd>
-                  </TooltipContent>
+                  <TooltipContent side="bottom" className="text-xs">Theme</TooltipContent>
                 </Tooltip>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuRadioGroup value={theme} onValueChange={setTheme}>
+                    <DropdownMenuRadioItem value="light">
+                      <Sun className="mr-2 size-4" />
+                      Light
+                    </DropdownMenuRadioItem>
+                    <DropdownMenuRadioItem value="dark">
+                      <Moon className="mr-2 size-4" />
+                      Dark
+                    </DropdownMenuRadioItem>
+                    <DropdownMenuRadioItem value="system">
+                      <Monitor className="mr-2 size-4" />
+                      System
+                    </DropdownMenuRadioItem>
+                  </DropdownMenuRadioGroup>
+                </DropdownMenuContent>
+              </DropdownMenu>
 
-                {/* Components */}
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <button
-                      onClick={openComponents}
-                      className="flex size-7 items-center justify-center rounded-full transition-colors hover:text-foreground"
-                    >
-                      <Layers className="size-3.5" />
-                    </button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    Components
-                    <kbd className="ml-2 rounded bg-foreground/20 px-1 py-0.5 font-mono text-[10px]">⌘K</kbd>
-                  </TooltipContent>
-                </Tooltip>
+              {/* Dev-only tools */}
+              {isDev && (
+                <>
+                  {/* Separator */}
+                  <div className="mx-1 h-5 w-px bg-border" />
 
-                {/* Theme */}
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <button
-                      onClick={openTheme}
-                      className="flex size-7 items-center justify-center rounded-full transition-colors hover:text-foreground"
-                    >
-                      <Palette className="size-3.5" />
-                    </button>
-                  </TooltipTrigger>
-                  <TooltipContent>Theme</TooltipContent>
-                </Tooltip>
+                  {/* Assets */}
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <button
+                        onClick={openAssets}
+                        className="text-muted-foreground hover:bg-background/50 hover:text-foreground flex size-9 items-center justify-center rounded-full transition-colors"
+                      >
+                        <ImageIcon className="size-4" />
+                      </button>
+                    </TooltipTrigger>
+                    <TooltipContent side="bottom" className="text-xs">
+                      Assets <kbd className="ml-1 text-[10px]">⌘I</kbd>
+                    </TooltipContent>
+                  </Tooltip>
 
-                {/* Dev toggle */}
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <button
-                      onClick={() => setDevOverlayEnabled(!devOverlayEnabled)}
-                      className={cn(
-                        "flex size-7 items-center justify-center rounded-full transition-colors hover:text-foreground",
-                        devOverlayEnabled && "text-foreground"
-                      )}
-                    >
-                      <Code2 className="size-3.5" />
-                    </button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    Dev overlay
-                    <kbd className="ml-2 rounded bg-foreground/20 px-1 py-0.5 font-mono text-[10px]">⌘D</kbd>
-                  </TooltipContent>
-                </Tooltip>
+                  {/* Components */}
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <button
+                        onClick={openComponents}
+                        className="text-muted-foreground hover:bg-background/50 hover:text-foreground flex size-9 items-center justify-center rounded-full transition-colors"
+                      >
+                        <Layers className="size-4" />
+                      </button>
+                    </TooltipTrigger>
+                    <TooltipContent side="bottom" className="text-xs">
+                      Components <kbd className="ml-1 text-[10px]">⌘K</kbd>
+                    </TooltipContent>
+                  </Tooltip>
 
-                <div className="mx-0.5 h-4 w-px bg-border" />
-              </>
-            )}
+                  {/* Theme file */}
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <button
+                        onClick={openTheme}
+                        className="text-muted-foreground hover:bg-background/50 hover:text-foreground flex size-9 items-center justify-center rounded-full transition-colors"
+                      >
+                        <Palette className="size-4" />
+                      </button>
+                    </TooltipTrigger>
+                    <TooltipContent side="bottom" className="text-xs">Theme file</TooltipContent>
+                  </Tooltip>
 
-            {/* Theme toggle */}
-            <DropdownMenu>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <DropdownMenuTrigger asChild>
-                    <button className="flex size-7 items-center justify-center rounded-full transition-colors hover:text-foreground">
-                      <ThemeIcon className="size-3.5" />
-                    </button>
-                  </DropdownMenuTrigger>
-                </TooltipTrigger>
-                <TooltipContent>Theme</TooltipContent>
-              </Tooltip>
-              <DropdownMenuContent align="center" side="top" sideOffset={8}>
-                <DropdownMenuRadioGroup value={theme} onValueChange={setTheme}>
-                  <DropdownMenuRadioItem value="light">
-                    <Sun className="mr-2 size-4" />
-                    Light
-                  </DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="dark">
-                    <Moon className="mr-2 size-4" />
-                    Dark
-                  </DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="system">
-                    <Monitor className="mr-2 size-4" />
-                    System
-                  </DropdownMenuRadioItem>
-                </DropdownMenuRadioGroup>
-              </DropdownMenuContent>
-            </DropdownMenu>
+                  {/* Dev overlay toggle */}
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <button
+                        onClick={() => setDevOverlayEnabled(!devOverlayEnabled)}
+                        className={cn(
+                          "flex size-9 items-center justify-center rounded-full transition-colors",
+                          devOverlayEnabled
+                            ? "bg-background text-foreground shadow-sm"
+                            : "text-muted-foreground hover:bg-background/50 hover:text-foreground"
+                        )}
+                      >
+                        <Code2 className="size-4" />
+                      </button>
+                    </TooltipTrigger>
+                    <TooltipContent side="bottom" className="text-xs">
+                      Dev overlay <kbd className="ml-1 text-[10px]">⌘D</kbd>
+                    </TooltipContent>
+                  </Tooltip>
+                </>
+              )}
+            </div>
           </div>
         </div>
-      </TooltipProvider>
-    </div>
+
+        {/* Preview Container */}
+        <div className="container">
+          <div
+            ref={mainRef}
+            className="bg-muted/30 h-[calc(100vh-var(--header-height)-120px)] min-h-[500px] overflow-hidden rounded-2xl border"
+          >
+            <div className="h-full overflow-auto">
+              <BlockThemeWrapper slug={slug} tint={DEFAULT_TINT}>
+                <ScrollContainerProvider value={mainRef}>
+                  {blocks.map(
+                    ({ name, type, Component, tint, forceDark, forceLight }, index) => {
+                      const skipAlternatingBg =
+                        type === "hero" || type === "header" || forceDark || forceLight
+                      const skipPadding =
+                        type === "hero" || type === "header" || type === "footer"
+                      const blockTint = tint || DEFAULT_TINT
+
+                      return (
+                        <BlockThemeWrapper
+                          key={name}
+                          slug={slug}
+                          tint={blockTint}
+                          forceDark={forceDark}
+                          forceLight={forceLight}
+                        >
+                          <DevBlockOverlay
+                            blockKey={name}
+                            enabled={devOverlayEnabled}
+                            onHover={onBlockHover}
+                          >
+                            <BlockContainer
+                              index={index}
+                              tint={blockTint}
+                              forceBg={skipAlternatingBg ? "none" : undefined}
+                              noPadding={skipPadding}
+                            >
+                              <Suspense fallback={null}>
+                                <Component />
+                              </Suspense>
+                            </BlockContainer>
+                          </DevBlockOverlay>
+                        </BlockThemeWrapper>
+                      )
+                    }
+                  )}
+                </ScrollContainerProvider>
+              </BlockThemeWrapper>
+            </div>
+          </div>
+        </div>
+
+        {/* Template Blocks Section */}
+        <div className="container">
+          <TemplateBlocksSection
+            templateBlocks={templateBlocksConfig}
+            styleName={styleName}
+            blocksMetadata={blocksMetadata}
+            title="Blocks in this Template"
+          />
+        </div>
+      </div>
+    </TooltipProvider>
   )
 }

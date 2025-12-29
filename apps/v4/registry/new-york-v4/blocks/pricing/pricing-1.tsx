@@ -2,8 +2,13 @@
 
 import { useRef } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { motion, useScroll, useTransform } from "motion/react"
 
+import {
+  pricingDefaults,
+  type PricingBlockProps,
+} from "@/lib/blocks/pricing.types"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
@@ -11,10 +16,28 @@ import {
   useScrollContainer,
 } from "@/app/(app)/(content)/(blocks)/_components"
 
-export function PricingServicePlants() {
+// Block-specific defaults that extend the shared defaults
+const pricing1Defaults = {
+  ...pricingDefaults,
+  decorationImage: {
+    src: "/placeholders/blocks/service-plants/assets/decoration-small-2.svg",
+    alt: "",
+  },
+}
+
+export function Pricing1({ content = {}, classNames = {} }: PricingBlockProps) {
   const { cardBg } = useBlockContext()
   const sectionRef = useRef<HTMLElement>(null)
   const scrollContainer = useScrollContainer()
+
+  // Merge content with defaults
+  const {
+    badge = pricing1Defaults.badge,
+    title = pricing1Defaults.title,
+    description = pricing1Defaults.description,
+    plans = pricing1Defaults.plans,
+    backgroundImage = pricing1Defaults.backgroundImage,
+  } = content
 
   // Track scroll progress relative to the section
   const { scrollYProgress } = useScroll({
@@ -31,78 +54,73 @@ export function PricingServicePlants() {
   const leftX = useTransform(scrollYProgress, [0, 0.5, 1], [-30, -15, 0])
   const rightX = useTransform(scrollYProgress, [0, 0.5, 1], [30, 15, 0])
 
-  const plans = [
-    {
-      name: "Starter",
-      price: "$29",
-      description: "Perfect for new plant parents",
-      features: [
-        "1 medium plant",
-        "Care guide included",
-        "Standard pot",
-        "Email support",
-      ],
-    },
-    {
-      name: "Grower",
-      price: "$59",
-      description: "For the growing collection",
-      features: [
-        "2 medium plants",
-        "Care guides included",
-        "Premium ceramic pots",
-        "Priority support",
-        "Free repotting guide",
-      ],
-      popular: true,
-    },
-    {
-      name: "Jungle",
-      price: "$99",
-      description: "Transform your space",
-      features: [
-        "4 plants (mixed sizes)",
-        "Care guides included",
-        "Designer pot collection",
-        "24/7 plant hotline",
-        "Monthly care tips",
-        "Free replacements",
-      ],
-    },
-  ]
-
   return (
     <>
       {/* Background decoration */}
-      <div
-        className="pointer-events-none absolute inset-0 z-0"
-        style={{
-          backgroundImage:
-            "url('/placeholders/blocks/service-plants/assets/decoration-3.svg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-        aria-hidden="true"
-      />
-      <section ref={sectionRef} className="py-[10rem]">
-        <div className="relative z-10 container px-6">
-          <div className="mb-20 text-center">
-            <p className="text-primary mb-4 text-sm font-medium tracking-[0.3em] uppercase">
-              Monthly Boxes
-            </p>
-            <h2 className="font-display text-foreground mb-4 text-3xl font-bold md:text-5xl">
-              Subscribe & Save
+      {backgroundImage && (
+        <div
+          className={cn(
+            "pointer-events-none absolute inset-0 z-0",
+            classNames.background
+          )}
+          style={{
+            backgroundImage: `url('${backgroundImage.src}')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+          aria-hidden="true"
+        />
+      )}
+      <section ref={sectionRef} className={cn("py-[10rem]", classNames.root)}>
+        <div
+          className={cn("relative z-10 container px-6", classNames.container)}
+        >
+          <div className={cn("mb-20 text-center", classNames.header?.root)}>
+            {badge && (
+              <p
+                className={cn(
+                  "text-primary mb-4 text-sm font-medium tracking-[0.3em] uppercase",
+                  classNames.header?.badge
+                )}
+              >
+                {badge}
+              </p>
+            )}
+            <h2
+              className={cn(
+                "font-display text-foreground mb-4 text-3xl font-bold md:text-5xl",
+                classNames.header?.title
+              )}
+            >
+              {title}
             </h2>
-            <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-              Fresh plants delivered to your door every month.
-            </p>
+            {description && (
+              <p
+                className={cn(
+                  "text-muted-foreground mx-auto max-w-2xl text-lg",
+                  classNames.header?.description
+                )}
+              >
+                {description}
+              </p>
+            )}
           </div>
-          <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-8 lg:flex-row lg:gap-0">
+          <div
+            className={cn(
+              "mx-auto flex max-w-5xl flex-col items-center justify-center gap-8 lg:flex-row lg:gap-0",
+              classNames.grid
+            )}
+          >
             {plans.map((plan, i) => {
               const isLeft = i === 0
-              const isRight = i === 2
-              const isMiddle = plan.popular
+              const isRight = i === plans.length - 1
+              const isMiddle = plan.highlighted
+
+              // Determine which classNames to use based on highlighted status
+              const planClassNames = plan.highlighted
+                ? classNames.planHighlighted
+                : classNames.plan
 
               return (
                 <motion.div
@@ -114,30 +132,32 @@ export function PricingServicePlants() {
                     isRight && "lg:z-0 lg:-ml-6 lg:origin-left",
                     isMiddle && "lg:z-10 lg:scale-105",
                     // Styling
-                    plan.popular
+                    plan.highlighted
                       ? "bg-primary text-primary-foreground shadow-xl"
-                      : cn(cardBg, "shadow-lg")
+                      : cn(cardBg, "shadow-lg"),
+                    planClassNames?.root
                   )}
                   style={{
                     rotate: isLeft ? leftRotation : isRight ? rightRotation : 0,
                     x: isLeft ? leftX : isRight ? rightX : 0,
                   }}
                 >
-                  {plan.popular && (
+                  {plan.highlighted && (
                     <Image
                       draggable={false}
-                      src="/placeholders/blocks/service-plants/assets/decoration-small-2.svg"
-                      alt=""
+                      src={pricing1Defaults.decorationImage.src}
+                      alt={pricing1Defaults.decorationImage.alt}
                       width={150}
                       height={150}
                       className="pointer-events-none absolute -top-10 left-1/2 z-30 -translate-x-1/2 select-none"
                     />
                   )}
-                  <div className="text-center">
+                  <div className={cn("text-center", planClassNames?.header)}>
                     <h3
                       className={cn(
                         "mb-2 text-xl font-semibold",
-                        !plan.popular && "text-foreground"
+                        !plan.highlighted && "text-foreground",
+                        planClassNames?.name
                       )}
                     >
                       {plan.name}
@@ -146,39 +166,55 @@ export function PricingServicePlants() {
                       <span
                         className={cn(
                           "text-5xl font-bold",
-                          !plan.popular && "text-foreground"
+                          !plan.highlighted && "text-foreground",
+                          planClassNames?.price
                         )}
                       >
                         {plan.price}
                       </span>
-                      <span
-                        className={cn(
-                          plan.popular
-                            ? "text-primary-foreground/70"
-                            : "text-muted-foreground"
-                        )}
-                      >
-                        /month
-                      </span>
+                      {plan.period && (
+                        <span
+                          className={cn(
+                            plan.highlighted
+                              ? "text-primary-foreground/70"
+                              : "text-muted-foreground",
+                            planClassNames?.period
+                          )}
+                        >
+                          {plan.period}
+                        </span>
+                      )}
                     </div>
                     <p
                       className={cn(
                         "mt-2 text-sm",
-                        plan.popular
+                        plan.highlighted
                           ? "text-primary-foreground/70"
-                          : "text-muted-foreground"
+                          : "text-muted-foreground",
+                        planClassNames?.description
                       )}
                     >
                       {plan.description}
                     </p>
                   </div>
-                  <ul className="mt-8 mb-8 space-y-4">
+                  <ul
+                    className={cn(
+                      "mt-8 mb-8 space-y-4",
+                      planClassNames?.features
+                    )}
+                  >
                     {plan.features.map((feature, j) => (
-                      <li key={j} className="flex items-center gap-3">
+                      <li
+                        key={j}
+                        className={cn(
+                          "flex items-center gap-3",
+                          planClassNames?.featureItem
+                        )}
+                      >
                         <svg
                           className={cn(
                             "h-5 w-5 flex-shrink-0",
-                            plan.popular
+                            plan.highlighted
                               ? "text-primary-foreground"
                               : "text-primary"
                           )}
@@ -190,23 +226,27 @@ export function PricingServicePlants() {
                           <polyline points="20 6 9 17 4 12" />
                         </svg>
                         <span
-                          className={cn(!plan.popular && "text-foreground")}
+                          className={cn(!plan.highlighted && "text-foreground")}
                         >
                           {feature}
                         </span>
                       </li>
                     ))}
                   </ul>
-                  <Button
-                    className={cn(
-                      "w-full rounded-full",
-                      plan.popular &&
-                        "bg-background text-foreground hover:bg-background/90"
-                    )}
-                    variant={plan.popular ? "secondary" : "default"}
-                  >
-                    Get Started
-                  </Button>
+                  {plan.cta && (
+                    <Button
+                      className={cn(
+                        "w-full rounded-full",
+                        plan.highlighted &&
+                          "bg-background text-foreground hover:bg-background/90",
+                        planClassNames?.cta
+                      )}
+                      variant={plan.highlighted ? "secondary" : "default"}
+                      asChild
+                    >
+                      <Link href={plan.cta.href}>{plan.cta.label}</Link>
+                    </Button>
+                  )}
                 </motion.div>
               )
             })}
@@ -216,3 +256,6 @@ export function PricingServicePlants() {
     </>
   )
 }
+
+// Re-export for backwards compatibility
+export { Pricing1 as PricingServicePlants }
