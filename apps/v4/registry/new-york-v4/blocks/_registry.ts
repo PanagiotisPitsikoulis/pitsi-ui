@@ -103,6 +103,23 @@ export const blocks: Registry["items"] = [
     readiness: "production",
   },
   {
+    name: "hero-6",
+    type: "registry:block",
+    description:
+      "Stats-focused fitness hero with grid layout, credibility stats row, and parallax side image",
+    dependencies: ["motion/react"],
+    registryDependencies: ["button", "hero-button", "spacer"],
+    files: [
+      {
+        path: "blocks/hero/hero-6.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["hero", "service-fitness"],
+    tier: "free",
+    readiness: "production",
+  },
+  {
     name: "features-1",
     type: "registry:block",
     description: "Plant shop features section with icons and center image",

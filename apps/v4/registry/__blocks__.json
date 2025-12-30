@@ -30,6 +30,11 @@
     "categories": ["hero", "service-fitness"]
   },
   {
+    "name": "hero-6",
+    "description": "Stats-focused fitness hero with grid layout, credibility stats row, and parallax side image",
+    "categories": ["hero", "service-fitness"]
+  },
+  {
     "name": "features-1",
     "description": "Plant shop features section with icons and center image",
     "categories": ["features", "service-plants"]

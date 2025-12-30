@@ -1947,6 +1947,26 @@ export const Index: Record<string, Record<string, any>> = {
       tier: "free",
       readiness: "production",
     },
+    "hero-6": {
+      name: "hero-6",
+      description: "Stats-focused fitness hero with grid layout, credibility stats row, and parallax side image",
+      type: "registry:block",
+      registryDependencies: ["button","hero-button","spacer"],
+      files: [{
+        path: "registry/new-york-v4/blocks/hero/hero-6.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/hero/hero-6.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "hero-6"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["hero","service-fitness"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
     "features-1": {
       name: "features-1",
       description: "Plant shop features section with icons and center image",
