@@ -63,7 +63,10 @@ export function getBlockComponent(blockName: string): ComponentType | null {
 }
 
 // Get all blocks for a template in render order
-export function getTemplateBlocks(slug: string): Array<{
+export function getTemplateBlocks(
+  slug: string,
+  selectedHero?: string
+): Array<{
   name: string
   type: BlockType
   Component: ComponentType
@@ -84,12 +87,19 @@ export function getTemplateBlocks(slug: string): Array<{
   }> = []
 
   for (const blockConfig of config.blocks) {
-    const Component = getBlockComponent(blockConfig.name)
-    const blockType = getBlockType(blockConfig.name)
+    let blockName = blockConfig.name
+
+    // If this is a hero block and we have a selected hero, swap it
+    if (selectedHero && getBlockType(blockConfig.name) === "hero") {
+      blockName = selectedHero
+    }
+
+    const Component = getBlockComponent(blockName)
+    const blockType = getBlockType(blockName)
 
     if (Component && blockType) {
       blocks.push({
-        name: blockConfig.name,
+        name: blockName,
         type: blockType,
         Component,
         tint: blockConfig.tint,
