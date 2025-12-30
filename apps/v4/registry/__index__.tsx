@@ -1927,6 +1927,26 @@ export const Index: Record<string, Record<string, any>> = {
       tier: "free",
       readiness: "production",
     },
+    "hero-5": {
+      name: "hero-5",
+      description: "Full-bleed parallax fitness hero with dark overlay and centered content, video background style",
+      type: "registry:block",
+      registryDependencies: ["button","hero-button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/hero/hero-5.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/hero/hero-5.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "hero-5"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["hero","service-fitness"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
     "features-1": {
       name: "features-1",
       description: "Plant shop features section with icons and center image",

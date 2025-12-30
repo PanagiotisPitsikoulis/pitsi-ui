@@ -86,6 +86,23 @@ export const blocks: Registry["items"] = [
     readiness: "production",
   },
   {
+    name: "hero-5",
+    type: "registry:block",
+    description:
+      "Full-bleed parallax fitness hero with dark overlay and centered content, video background style",
+    dependencies: ["motion/react"],
+    registryDependencies: ["button", "hero-button"],
+    files: [
+      {
+        path: "blocks/hero/hero-5.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["hero", "service-fitness"],
+    tier: "free",
+    readiness: "production",
+  },
+  {
     name: "features-1",
     type: "registry:block",
     description: "Plant shop features section with icons and center image",

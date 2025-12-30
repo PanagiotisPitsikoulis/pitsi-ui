@@ -25,6 +25,11 @@
     "categories": ["hero", "service-fitness"]
   },
   {
+    "name": "hero-5",
+    "description": "Full-bleed parallax fitness hero with dark overlay and centered content, video background style",
+    "categories": ["hero", "service-fitness"]
+  },
+  {
     "name": "features-1",
     "description": "Plant shop features section with icons and center image",
     "categories": ["features", "service-plants"]
