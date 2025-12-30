@@ -2,7 +2,7 @@
 
 import { Suspense, useCallback, useEffect, useRef, useState } from "react"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
+import { useRouter, useSearchParams, usePathname } from "next/navigation"
 import {
   ArrowLeft,
   Check,
@@ -43,12 +43,19 @@ import {
   BlockThemeWrapper,
   DEFAULT_TINT,
   DevBlockOverlay,
+  getTemplateFonts,
+  HeroSwitcher,
   ScrollContainerProvider,
   TemplateBlocksSection,
   type BlockMetadata,
 } from "../../_components"
 import { getTemplateBlocks, type TemplateSlug } from "../../blocks"
-import type { BlockConfig } from "../../template-config"
+import {
+  getTemplatePalette,
+  getTemplateHeroOptions,
+  getTemplateDefaultHero,
+  type BlockConfig,
+} from "../../template-config"
 
 interface TemplateViewerClientProps {
   slug: string
@@ -74,10 +81,31 @@ export function TemplateViewerClient({
   blocksMetadata,
 }: TemplateViewerClientProps) {
   const router = useRouter()
+  const searchParams = useSearchParams()
+  const pathname = usePathname()
   const [devOverlayEnabled, setDevOverlayEnabled] = useState(false)
   const hoveredBlockRef = useRef<string | null>(null)
   const mainRef = useRef<HTMLDivElement>(null)
-  const blocks = getTemplateBlocks(slug as TemplateSlug)
+
+  // Hero selection
+  const heroOptions = getTemplateHeroOptions(slug)
+  const defaultHero = getTemplateDefaultHero(slug) || heroOptions[0]
+  const selectedHero = searchParams.get("hero") || defaultHero
+
+  const handleHeroChange = useCallback(
+    (hero: string) => {
+      const params = new URLSearchParams(searchParams.toString())
+      if (hero === defaultHero) {
+        params.delete("hero")
+      } else {
+        params.set("hero", hero)
+      }
+      router.push(`${pathname}?${params.toString()}`, { scroll: false })
+    },
+    [defaultHero, pathname, router, searchParams]
+  )
+
+  const blocks = getTemplateBlocks(slug as TemplateSlug, selectedHero)
   const isDev = process.env.NODE_ENV === "development"
   const { theme, setTheme, resolvedTheme } = useTheme()
   const { copyToClipboard: copyInstallCommand, isCopied: isInstallCopied } = useCopyToClipboard()
@@ -86,6 +114,9 @@ export function TemplateViewerClient({
 
   const ThemeIcon =
     resolvedTheme === "dark" ? Moon : resolvedTheme === "light" ? Sun : Monitor
+
+  // Get fonts for this template
+  const fonts = getTemplateFonts(slug)
 
   const openInEditor = useCallback(async (filePath: string) => {
     try {
@@ -261,6 +292,16 @@ export function TemplateViewerClient({
               <TooltipContent side="bottom" className="text-xs">Refresh</TooltipContent>
             </Tooltip>
 
+            {/* Hero switcher */}
+            {heroOptions.length > 1 && (
+              <HeroSwitcher
+                heroOptions={heroOptions}
+                selectedHero={selectedHero}
+                onHeroChange={handleHeroChange}
+                defaultHero={defaultHero}
+              />
+            )}
+
             {/* Right side: Actions */}
             <div className="ml-auto flex items-center gap-1">
               {/* Install template */}
@@ -384,7 +425,7 @@ export function TemplateViewerClient({
             className="bg-muted/30 h-[calc(100vh-var(--header-height)-120px)] min-h-[500px] overflow-hidden rounded-2xl border"
           >
             <div className="h-full overflow-auto">
-              <BlockThemeWrapper slug={slug} tint={DEFAULT_TINT}>
+              <BlockThemeWrapper palette={getTemplatePalette(slug)} tint={DEFAULT_TINT} fonts={fonts}>
                 <ScrollContainerProvider value={mainRef}>
                   {blocks.map(
                     ({ name, type, Component, tint, forceDark, forceLight }, index) => {
@@ -397,10 +438,11 @@ export function TemplateViewerClient({
                       return (
                         <BlockThemeWrapper
                           key={name}
-                          slug={slug}
+                          palette={getTemplatePalette(slug)}
                           tint={blockTint}
                           forceDark={forceDark}
                           forceLight={forceLight}
+                          fonts={fonts}
                         >
                           <DevBlockOverlay
                             blockKey={name}
