@@ -1,21 +1,34 @@
 export {
+  // Component
   BlockThemeWrapper,
-  getTemplateThemeStyle,
-  getTemplateStyles,
-  getPresetKey,
-  templatePalettes,
-  DEFAULT_TINT,
+  type BlockThemeWrapperProps,
+  // Types
   type TintLevel,
+  type ColorPalette,
+  type CustomTheme,
+  type CustomFonts,
+  // Constants
+  DEFAULT_TINT,
+  // Theme API
+  getThemeStyles,
+  getFontStyles,
+  getPaletteThemeStyles,
+  getPresetKey,
 } from "./block-theme-wrapper"
 export { BlockContainer } from "./block-container"
 export { BlockProvider, useBlockContext } from "./block-context"
 export { DevBlockOverlay } from "./dev-block-overlay"
 export {
+  // Types
+  type TemplateFonts,
+  type FontPreset,
+  // Constants
+  fontPresets,
+  // Legacy API
   templateFonts,
   getTemplateFonts,
   getTemplateFontStyles,
   getAllFontFamilies,
-  type TemplateFonts,
 } from "./template-fonts"
 export {
   ScrollContainerProvider,
@@ -29,3 +42,4 @@ export {
   TemplateBlocksSection,
   type BlockMetadata,
 } from "./template-blocks-section"
+export { HeroSwitcher } from "./hero-switcher"
