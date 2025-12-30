@@ -69,6 +69,23 @@ export const blocks: Registry["items"] = [
     readiness: "production",
   },
   {
+    name: "hero-4",
+    type: "registry:block",
+    description:
+      "Split layout fitness hero with image left and content right, parallax effects",
+    dependencies: ["motion/react"],
+    registryDependencies: ["button", "hero-button", "spacer"],
+    files: [
+      {
+        path: "blocks/hero/hero-4.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["hero", "service-fitness"],
+    tier: "free",
+    readiness: "production",
+  },
+  {
     name: "features-1",
     type: "registry:block",
     description: "Plant shop features section with icons and center image",
@@ -372,6 +389,90 @@ export const blocks: Registry["items"] = [
     categories: ["template", "service"],
     tier: "free",
     readiness: "production",
+    meta: {
+      heroBlock: "hero-1",
+    },
+  },
+  // Service Template: Travel
+  {
+    name: "service-travel",
+    type: "registry:block",
+    description:
+      "Stunning travel agency landing page template for tour operators",
+    registryDependencies: ["hero-2"],
+    files: [
+      {
+        path: "blocks/service/service-travel.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["template", "service"],
+    tier: "free",
+    readiness: "beta",
+    meta: {
+      heroBlock: "hero-2",
+    },
+  },
+  // Service Template: Boat
+  {
+    name: "service-boat",
+    type: "registry:block",
+    description:
+      "Luxury yacht charter landing page template for marine services",
+    registryDependencies: ["hero-3"],
+    files: [
+      {
+        path: "blocks/service/service-boat.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["template", "service"],
+    tier: "free",
+    readiness: "beta",
+    meta: {
+      heroBlock: "hero-3",
+    },
+  },
+  // Service Template: Fitness
+  {
+    name: "service-fitness",
+    type: "registry:block",
+    description:
+      "Professional personal training landing page template for fitness coaches",
+    registryDependencies: [
+      "header-1",
+      "hero-1",
+      "logos-1",
+      "features-1",
+      "features-2",
+      "features-3",
+      "features-4",
+      "features-5",
+      "products-1",
+      "pricing-1",
+      "testimonials-1",
+      "gallery-1",
+      "team-1",
+      "stats-1",
+      "faq-1",
+      "blog-1",
+      "contact-1",
+      "newsletter-1",
+      "cta-1",
+      "footer-1",
+    ],
+    files: [
+      {
+        path: "blocks/service/service-fitness.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["template", "service"],
+    tier: "free",
+    readiness: "production",
+    meta: {
+      heroBlock: "hero-1",
+    },
   },
   {
     name: "application-1",
@@ -392,14 +493,14 @@ export const blocks: Registry["items"] = [
   },
   // Application Template: Gym Tracker
   {
-    name: "app-shell-1",
+    name: "app-gym-shell-1",
     type: "registry:block",
-    description: "Application shell with sidebar navigation for gym tracker",
+    description: "Two-sidebar gym tracker shell with navigation and stats",
     dependencies: ["lucide-react"],
-    registryDependencies: ["sidebar", "avatar", "button", "utils"],
+    registryDependencies: ["sidebar", "avatar", "button", "separator", "utils"],
     files: [
       {
-        path: "blocks/application/app-shell-1.tsx",
+        path: "blocks/application/app-gym-shell-1.tsx",
         type: "registry:block",
       },
     ],
@@ -408,15 +509,15 @@ export const blocks: Registry["items"] = [
     readiness: "beta",
   },
   {
-    name: "app-dashboard-1",
+    name: "app-gym-today-1",
     type: "registry:block",
     description:
-      "Gym tracker dashboard with stats, progression chart, and recent workouts",
+      "Today view with personalized greeting, week progress, and upcoming sets",
     dependencies: ["lucide-react"],
-    registryDependencies: ["button", "card", "utils"],
+    registryDependencies: ["button", "utils"],
     files: [
       {
-        path: "blocks/application/app-dashboard-1.tsx",
+        path: "blocks/application/app-gym-today-1.tsx",
         type: "registry:block",
       },
     ],
@@ -425,22 +526,14 @@ export const blocks: Registry["items"] = [
     readiness: "beta",
   },
   {
-    name: "app-workout-log-1",
+    name: "app-gym-log-1",
     type: "registry:block",
-    description:
-      "Workout logging interface with exercise selection and set tracking",
+    description: "Active workout logging with set tracking and timer",
     dependencies: ["lucide-react"],
-    registryDependencies: [
-      "button",
-      "card",
-      "input",
-      "label",
-      "select",
-      "utils",
-    ],
+    registryDependencies: ["button", "input", "utils"],
     files: [
       {
-        path: "blocks/application/app-workout-log-1.tsx",
+        path: "blocks/application/app-gym-log-1.tsx",
         type: "registry:block",
       },
     ],
@@ -449,14 +542,14 @@ export const blocks: Registry["items"] = [
     readiness: "beta",
   },
   {
-    name: "app-calendar-1",
+    name: "app-gym-history-1",
     type: "registry:block",
-    description: "Workout calendar with monthly view and workout indicators",
+    description: "Calendar history view with workout indicators and details",
     dependencies: ["lucide-react"],
-    registryDependencies: ["button", "card", "utils"],
+    registryDependencies: ["button", "utils"],
     files: [
       {
-        path: "blocks/application/app-calendar-1.tsx",
+        path: "blocks/application/app-gym-history-1.tsx",
         type: "registry:block",
       },
     ],
@@ -465,15 +558,14 @@ export const blocks: Registry["items"] = [
     readiness: "beta",
   },
   {
-    name: "app-progress-1",
+    name: "app-gym-gains-1",
     type: "registry:block",
-    description:
-      "Progress tracking with multi-lift charts and personal records",
+    description: "Progress tracking with sparkline charts and PR history",
     dependencies: ["lucide-react"],
-    registryDependencies: ["button", "card", "tabs", "utils"],
+    registryDependencies: ["utils"],
     files: [
       {
-        path: "blocks/application/app-progress-1.tsx",
+        path: "blocks/application/app-gym-gains-1.tsx",
         type: "registry:block",
       },
     ],
@@ -482,14 +574,14 @@ export const blocks: Registry["items"] = [
     readiness: "beta",
   },
   {
-    name: "app-exercises-1",
+    name: "app-gym-library-1",
     type: "registry:block",
-    description: "Searchable exercise library with categories and details",
+    description: "Exercise library with search, categories, and history",
     dependencies: ["lucide-react"],
-    registryDependencies: ["badge", "button", "card", "input", "utils"],
+    registryDependencies: ["input", "utils"],
     files: [
       {
-        path: "blocks/application/app-exercises-1.tsx",
+        path: "blocks/application/app-gym-library-1.tsx",
         type: "registry:block",
       },
     ],
@@ -498,14 +590,13 @@ export const blocks: Registry["items"] = [
     readiness: "beta",
   },
   {
-    name: "app-settings-1",
+    name: "app-gym-profile-1",
     type: "registry:block",
-    description: "Settings page with profile, units, and preferences",
+    description: "Profile and settings with preferences and stats",
     dependencies: ["lucide-react"],
     registryDependencies: [
       "avatar",
       "button",
-      "card",
       "input",
       "label",
       "select",
@@ -515,7 +606,7 @@ export const blocks: Registry["items"] = [
     ],
     files: [
       {
-        path: "blocks/application/app-settings-1.tsx",
+        path: "blocks/application/app-gym-profile-1.tsx",
         type: "registry:block",
       },
     ],
@@ -526,17 +617,16 @@ export const blocks: Registry["items"] = [
   {
     name: "app-gym-tracker",
     type: "registry:block",
-    description:
-      "Complete gym progressive overload tracker application template",
+    description: "Complete gym progressive overload tracker with two sidebars",
     dependencies: ["lucide-react"],
     registryDependencies: [
-      "app-shell-1",
-      "app-dashboard-1",
-      "app-workout-log-1",
-      "app-calendar-1",
-      "app-progress-1",
-      "app-exercises-1",
-      "app-settings-1",
+      "app-gym-shell-1",
+      "app-gym-today-1",
+      "app-gym-log-1",
+      "app-gym-history-1",
+      "app-gym-gains-1",
+      "app-gym-library-1",
+      "app-gym-profile-1",
     ],
     files: [
       {
@@ -544,10 +634,11 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["application", "app-gym-tracker"],
+    categories: ["template", "application", "app-gym-tracker"],
     tier: "free",
     readiness: "beta",
     meta: {
+      heroBlock: "app-gym-today-1",
       iframeHeight: "800px",
     },
   },
@@ -678,128 +769,11 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["application", "app-quiz"],
+    categories: ["template", "application", "app-quiz"],
     tier: "free",
     readiness: "beta",
     meta: {
-      iframeHeight: "800px",
-    },
-  },
-  // Application Template: Database Dashboard
-  {
-    name: "app-database-shell-1",
-    type: "registry:block",
-    description:
-      "Application shell with sidebar navigation for database dashboard",
-    dependencies: ["lucide-react"],
-    registryDependencies: ["sidebar", "avatar", "utils"],
-    files: [
-      {
-        path: "blocks/application/app-database-shell-1.tsx",
-        type: "registry:block",
-      },
-    ],
-    categories: ["application", "app-database"],
-    tier: "free",
-    readiness: "beta",
-  },
-  {
-    name: "app-database-dashboard-1",
-    type: "registry:block",
-    description:
-      "Database dashboard with stats, query volume chart, and top tables",
-    dependencies: ["lucide-react"],
-    registryDependencies: ["badge", "button", "card", "utils"],
-    files: [
-      {
-        path: "blocks/application/app-database-dashboard-1.tsx",
-        type: "registry:block",
-      },
-    ],
-    categories: ["application", "app-database"],
-    tier: "free",
-    readiness: "beta",
-  },
-  {
-    name: "app-database-tables-1",
-    type: "registry:block",
-    description: "Database tables list with details panel",
-    dependencies: ["lucide-react"],
-    registryDependencies: ["badge", "button", "card", "input", "utils"],
-    files: [
-      {
-        path: "blocks/application/app-database-tables-1.tsx",
-        type: "registry:block",
-      },
-    ],
-    categories: ["application", "app-database"],
-    tier: "free",
-    readiness: "beta",
-  },
-  {
-    name: "app-database-query-1",
-    type: "registry:block",
-    description: "SQL query editor with results and history",
-    dependencies: ["lucide-react"],
-    registryDependencies: ["button", "card", "textarea", "utils"],
-    files: [
-      {
-        path: "blocks/application/app-database-query-1.tsx",
-        type: "registry:block",
-      },
-    ],
-    categories: ["application", "app-database"],
-    tier: "free",
-    readiness: "beta",
-  },
-  {
-    name: "app-database-settings-1",
-    type: "registry:block",
-    description: "Database settings with profile and preferences",
-    dependencies: ["lucide-react"],
-    registryDependencies: [
-      "avatar",
-      "button",
-      "card",
-      "input",
-      "label",
-      "select",
-      "separator",
-      "switch",
-      "utils",
-    ],
-    files: [
-      {
-        path: "blocks/application/app-database-settings-1.tsx",
-        type: "registry:block",
-      },
-    ],
-    categories: ["application", "app-database"],
-    tier: "free",
-    readiness: "beta",
-  },
-  {
-    name: "app-database",
-    type: "registry:block",
-    description: "Complete database dashboard application template",
-    dependencies: ["lucide-react"],
-    registryDependencies: [
-      "app-database-shell-1",
-      "app-database-dashboard-1",
-      "app-database-tables-1",
-      "app-database-query-1",
-      "app-database-settings-1",
-    ],
-    files: [
-      {
-        path: "blocks/application/app-database.tsx",
-        type: "registry:block",
-      },
-    ],
-    categories: ["application", "app-database"],
-    tier: "free",
-    readiness: "beta",
-    meta: {
+      heroBlock: "app-quiz-dashboard-1",
       iframeHeight: "800px",
     },
   },

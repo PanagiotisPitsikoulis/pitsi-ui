@@ -8,7 +8,7 @@
 
 export const BLOCK_CATEGORIES: Record<string, string[]> = {
   header: ["header-1"],
-  hero: ["hero-1", "hero-2", "hero-3"],
+  hero: ["hero-1", "hero-2", "hero-3", "hero-4"],
   features: [
     "features-1",
     "features-2",
@@ -29,30 +29,29 @@ export const BLOCK_CATEGORIES: Record<string, string[]> = {
   newsletter: ["newsletter-1"],
   cta: ["cta-1"],
   footer: ["footer-1"],
-  template: ["service-plants"],
+  template: [
+    "service-plants",
+    "service-travel",
+    "service-boat",
+    "service-fitness",
+    "app-gym-tracker",
+    "app-quiz",
+  ],
   application: [
     "application-1",
-    "app-shell-1",
-    "app-dashboard-1",
-    "app-workout-log-1",
-    "app-calendar-1",
-    "app-progress-1",
-    "app-exercises-1",
-    "app-settings-1",
-    "app-gym-tracker",
+    "app-gym-shell-1",
+    "app-gym-today-1",
+    "app-gym-log-1",
+    "app-gym-history-1",
+    "app-gym-gains-1",
+    "app-gym-library-1",
+    "app-gym-profile-1",
     "app-quiz-shell-1",
     "app-quiz-dashboard-1",
     "app-quiz-browse-1",
     "app-quiz-active-1",
     "app-quiz-results-1",
     "app-quiz-settings-1",
-    "app-quiz",
-    "app-database-shell-1",
-    "app-database-dashboard-1",
-    "app-database-tables-1",
-    "app-database-query-1",
-    "app-database-settings-1",
-    "app-database",
   ],
 }
 
@@ -70,4 +69,76 @@ export function getCategoryBlockCounts(): Record<string, number> {
     counts[category] = blocks.length
   }
   return counts
+}
+
+/**
+ * Template metadata for Full Pages section
+ * Includes all registry items with "template" category
+ */
+export interface RegistryTemplateMetadata {
+  slug: string
+  name: string
+  description: string
+  heroBlock: string
+  type: "service" | "application"
+}
+
+export const TEMPLATE_METADATA: RegistryTemplateMetadata[] = [
+  {
+    slug: "service-plants",
+    name: "Service Plants",
+    description: "Complete plant shop landing page template with all sections",
+    heroBlock: "hero-1",
+    type: "service",
+  },
+  {
+    slug: "service-travel",
+    name: "Service Travel",
+    description:
+      "Stunning travel agency landing page template for tour operators",
+    heroBlock: "hero-2",
+    type: "service",
+  },
+  {
+    slug: "service-boat",
+    name: "Service Boat",
+    description:
+      "Luxury yacht charter landing page template for marine services",
+    heroBlock: "hero-3",
+    type: "service",
+  },
+  {
+    slug: "service-fitness",
+    name: "Service Fitness",
+    description:
+      "Professional personal training landing page template for fitness coaches",
+    heroBlock: "hero-1",
+    type: "service",
+  },
+  {
+    slug: "app-gym-tracker",
+    name: "App Gym Tracker",
+    description: "Complete gym progressive overload tracker with two sidebars",
+    heroBlock: "app-gym-today-1",
+    type: "application",
+  },
+  {
+    slug: "app-quiz",
+    name: "App Quiz",
+    description: "Complete quiz application template",
+    heroBlock: "app-quiz-dashboard-1",
+    type: "application",
+  },
+]
+
+export function getAllTemplatesFromRegistry(): RegistryTemplateMetadata[] {
+  return TEMPLATE_METADATA
+}
+
+export function getServiceTemplatesFromRegistry(): RegistryTemplateMetadata[] {
+  return TEMPLATE_METADATA.filter((t) => t.type === "service")
+}
+
+export function getApplicationTemplatesFromRegistry(): RegistryTemplateMetadata[] {
+  return TEMPLATE_METADATA.filter((t) => t.type === "application")
 }

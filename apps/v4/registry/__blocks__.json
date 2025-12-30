@@ -20,6 +20,11 @@
     "categories": ["hero", "service-boat"]
   },
   {
+    "name": "hero-4",
+    "description": "Split layout fitness hero with image left and content right, parallax effects",
+    "categories": ["hero", "service-fitness"]
+  },
+  {
     "name": "features-1",
     "description": "Plant shop features section with icons and center image",
     "categories": ["features", "service-plants"]
@@ -115,49 +120,64 @@
     "categories": ["template", "service"]
   },
   {
+    "name": "service-travel",
+    "description": "Stunning travel agency landing page template for tour operators",
+    "categories": ["template", "service"]
+  },
+  {
+    "name": "service-boat",
+    "description": "Luxury yacht charter landing page template for marine services",
+    "categories": ["template", "service"]
+  },
+  {
+    "name": "service-fitness",
+    "description": "Professional personal training landing page template for fitness coaches",
+    "categories": ["template", "service"]
+  },
+  {
     "name": "application-1",
     "description": "Gym progressive overload tracker with lift progression chart and workout history",
     "categories": ["application"]
   },
   {
-    "name": "app-shell-1",
-    "description": "Application shell with sidebar navigation for gym tracker",
+    "name": "app-gym-shell-1",
+    "description": "Two-sidebar gym tracker shell with navigation and stats",
     "categories": ["application", "app-gym-tracker"]
   },
   {
-    "name": "app-dashboard-1",
-    "description": "Gym tracker dashboard with stats, progression chart, and recent workouts",
+    "name": "app-gym-today-1",
+    "description": "Today view with personalized greeting, week progress, and upcoming sets",
     "categories": ["application", "app-gym-tracker"]
   },
   {
-    "name": "app-workout-log-1",
-    "description": "Workout logging interface with exercise selection and set tracking",
+    "name": "app-gym-log-1",
+    "description": "Active workout logging with set tracking and timer",
     "categories": ["application", "app-gym-tracker"]
   },
   {
-    "name": "app-calendar-1",
-    "description": "Workout calendar with monthly view and workout indicators",
+    "name": "app-gym-history-1",
+    "description": "Calendar history view with workout indicators and details",
     "categories": ["application", "app-gym-tracker"]
   },
   {
-    "name": "app-progress-1",
-    "description": "Progress tracking with multi-lift charts and personal records",
+    "name": "app-gym-gains-1",
+    "description": "Progress tracking with sparkline charts and PR history",
     "categories": ["application", "app-gym-tracker"]
   },
   {
-    "name": "app-exercises-1",
-    "description": "Searchable exercise library with categories and details",
+    "name": "app-gym-library-1",
+    "description": "Exercise library with search, categories, and history",
     "categories": ["application", "app-gym-tracker"]
   },
   {
-    "name": "app-settings-1",
-    "description": "Settings page with profile, units, and preferences",
+    "name": "app-gym-profile-1",
+    "description": "Profile and settings with preferences and stats",
     "categories": ["application", "app-gym-tracker"]
   },
   {
     "name": "app-gym-tracker",
-    "description": "Complete gym progressive overload tracker application template",
-    "categories": ["application", "app-gym-tracker"]
+    "description": "Complete gym progressive overload tracker with two sidebars",
+    "categories": ["template", "application", "app-gym-tracker"]
   },
   {
     "name": "app-quiz-shell-1",
@@ -192,36 +212,6 @@
   {
     "name": "app-quiz",
     "description": "Complete quiz application template",
-    "categories": ["application", "app-quiz"]
-  },
-  {
-    "name": "app-database-shell-1",
-    "description": "Application shell with sidebar navigation for database dashboard",
-    "categories": ["application", "app-database"]
-  },
-  {
-    "name": "app-database-dashboard-1",
-    "description": "Database dashboard with stats, query volume chart, and top tables",
-    "categories": ["application", "app-database"]
-  },
-  {
-    "name": "app-database-tables-1",
-    "description": "Database tables list with details panel",
-    "categories": ["application", "app-database"]
-  },
-  {
-    "name": "app-database-query-1",
-    "description": "SQL query editor with results and history",
-    "categories": ["application", "app-database"]
-  },
-  {
-    "name": "app-database-settings-1",
-    "description": "Database settings with profile and preferences",
-    "categories": ["application", "app-database"]
-  },
-  {
-    "name": "app-database",
-    "description": "Complete database dashboard application template",
-    "categories": ["application", "app-database"]
+    "categories": ["template", "application", "app-quiz"]
   }
 ]
