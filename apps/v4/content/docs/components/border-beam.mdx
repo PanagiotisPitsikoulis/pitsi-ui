@@ -1,0 +1,109 @@
+---
+title: Border Beam
+description: An animated border beam effect that travels around the edges of a container.
+component: true
+---
+
+The Border Beam component creates a glowing beam that animates around the border of any container. Perfect for highlighting cards, buttons, or any bordered element.
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx pitsi@latest add border-beam
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the required dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="border-beam" title="components/ui/border-beam.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { BorderBeam } from "@/components/ui/border-beam"
+
+function Card() {
+  return (
+    <div className="relative rounded-xl border p-6">
+      <h3>Featured Card</h3>
+      <p>Content goes here</p>
+      <BorderBeam />
+    </div>
+  )
+}
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `size` | `number` | `50` | Size of the beam |
+| `duration` | `number` | `6` | Animation duration in seconds |
+| `delay` | `number` | `0` | Animation delay in seconds |
+| `colorFrom` | `string` | `"#ffaa40"` | Start color of the gradient |
+| `colorTo` | `string` | `"#9c40ff"` | End color of the gradient |
+| `reverse` | `boolean` | `false` | Reverse the animation direction |
+| `initialOffset` | `number` | `0` | Initial position offset (0-100) |
+| `borderWidth` | `number` | `1` | Width of the border |
+| `className` | `string` | - | Additional CSS classes |
+| `style` | `CSSProperties` | - | Additional inline styles |
+
+## Examples
+
+### Custom Colors
+
+```tsx
+<div className="relative rounded-lg border p-4">
+  <BorderBeam colorFrom="#22c55e" colorTo="#3b82f6" />
+  Content
+</div>
+```
+
+### Slower Animation
+
+```tsx
+<BorderBeam duration={10} size={80} />
+```
+
+### Reversed Direction
+
+```tsx
+<BorderBeam reverse />
+```
+
+### Multiple Beams
+
+```tsx
+<div className="relative rounded-lg border p-4">
+  <BorderBeam />
+  <BorderBeam reverse delay={3} />
+  Content
+</div>
+```

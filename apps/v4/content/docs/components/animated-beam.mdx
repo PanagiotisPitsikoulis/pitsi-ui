@@ -1,0 +1,116 @@
+---
+title: Animated Beam
+description: An animated beam effect that connects two elements visually with a glowing line.
+component: true
+---
+
+The Animated Beam component creates a visual connection between two elements with an animated gradient line. Great for showing data flow, connections, or relationships.
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx pitsi@latest add animated-beam
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the required dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="animated-beam" title="components/ui/animated-beam.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { AnimatedBeam } from "@/components/ui/animated-beam"
+import { useRef } from "react"
+
+function BeamDemo() {
+  const containerRef = useRef(null)
+  const fromRef = useRef(null)
+  const toRef = useRef(null)
+
+  return (
+    <div ref={containerRef} className="relative">
+      <div ref={fromRef}>Source</div>
+      <div ref={toRef}>Target</div>
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={fromRef}
+        toRef={toRef}
+      />
+    </div>
+  )
+}
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `containerRef` | `RefObject<HTMLElement>` | Required | Reference to the container element |
+| `fromRef` | `RefObject<HTMLElement>` | Required | Reference to the source element |
+| `toRef` | `RefObject<HTMLElement>` | Required | Reference to the target element |
+| `curvature` | `number` | `0` | Curvature of the beam path |
+| `reverse` | `boolean` | `false` | Reverse the animation direction |
+| `duration` | `number` | `4-7 (random)` | Animation duration in seconds |
+| `delay` | `number` | `0` | Animation delay in seconds |
+| `pathColor` | `string` | `"gray"` | Color of the static path |
+| `pathWidth` | `number` | `2` | Width of the path |
+| `pathOpacity` | `number` | `0.2` | Opacity of the static path |
+| `gradientStartColor` | `string` | `"#ffaa40"` | Start color of the gradient |
+| `gradientStopColor` | `string` | `"#9c40ff"` | End color of the gradient |
+| `startXOffset` | `number` | `0` | X offset for the start point |
+| `startYOffset` | `number` | `0` | Y offset for the start point |
+| `endXOffset` | `number` | `0` | X offset for the end point |
+| `endYOffset` | `number` | `0` | Y offset for the end point |
+
+## Examples
+
+### Curved Beam
+
+```tsx
+<AnimatedBeam
+  containerRef={containerRef}
+  fromRef={fromRef}
+  toRef={toRef}
+  curvature={50}
+/>
+```
+
+### Custom Colors
+
+```tsx
+<AnimatedBeam
+  containerRef={containerRef}
+  fromRef={fromRef}
+  toRef={toRef}
+  gradientStartColor="#22c55e"
+  gradientStopColor="#3b82f6"
+/>
+```

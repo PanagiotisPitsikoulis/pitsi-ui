@@ -1,0 +1,20 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "texture-card-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "texture-card"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/texture-card-demo.tsx",
+      "content": "import { TextureButton } from \"@/registry/new-york-v4/ui/texture-button\"\nimport {\n  TextureCard,\n  TextureCardContent,\n  TextureCardDescription,\n  TextureCardFooter,\n  TextureCardHeader,\n  TextureCardTitle,\n  TextureSeparator,\n} from \"@/registry/new-york-v4/ui/texture-card\"\n\nexport default function TextureCardDemo() {\n  return (\n    <TextureCard className=\"w-full max-w-sm\">\n      <TextureCardHeader>\n        <TextureCardTitle>Pro Plan</TextureCardTitle>\n        <TextureCardDescription>\n          Perfect for growing teams and businesses.\n        </TextureCardDescription>\n      </TextureCardHeader>\n      <TextureSeparator />\n      <TextureCardContent>\n        <div className=\"text-3xl font-bold\">$29/mo</div>\n        <ul className=\"mt-4 space-y-2 text-sm\">\n          <li>Unlimited projects</li>\n          <li>Advanced analytics</li>\n          <li>Priority support</li>\n          <li>Custom integrations</li>\n        </ul>\n      </TextureCardContent>\n      <TextureSeparator />\n      <TextureCardFooter>\n        <TextureButton className=\"w-full\">Get Started</TextureButton>\n      </TextureCardFooter>\n    </TextureCard>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "sectorial"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

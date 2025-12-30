@@ -1,0 +1,144 @@
+---
+title: Marquee
+description: An infinite scrolling marquee component for logos, testimonials, and more.
+component: true
+---
+
+The Marquee component creates an infinitely scrolling content loop. Perfect for displaying logos, testimonials, or any repeating content.
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx pitsi@latest add marquee
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="marquee" title="components/ui/marquee.tsx" />
+
+<Step>Add the following animations to your `tailwind.config.js`:</Step>
+
+```js title="tailwind.config.js"
+module.exports = {
+  theme: {
+    extend: {
+      keyframes: {
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-100% - var(--gap)))" },
+        },
+        "marquee-vertical": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(calc(-100% - var(--gap)))" },
+        },
+      },
+      animation: {
+        marquee: "marquee var(--duration) linear infinite",
+        "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
+      },
+    },
+  },
+}
+```
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { Marquee } from "@/components/ui/marquee"
+
+function LogoMarquee() {
+  return (
+    <Marquee pauseOnHover>
+      <Logo1 />
+      <Logo2 />
+      <Logo3 />
+    </Marquee>
+  )
+}
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `reverse` | `boolean` | `false` | Reverse the scroll direction |
+| `pauseOnHover` | `boolean` | `false` | Pause animation on hover |
+| `vertical` | `boolean` | `false` | Scroll vertically instead of horizontally |
+| `repeat` | `number` | `4` | Number of times to repeat the content |
+| `className` | `string` | - | Additional CSS classes |
+
+## Examples
+
+### Horizontal Marquee
+
+```tsx
+<Marquee>
+  {logos.map((logo) => (
+    <img key={logo.name} src={logo.src} alt={logo.name} className="h-8" />
+  ))}
+</Marquee>
+```
+
+### Vertical Marquee
+
+```tsx
+<Marquee vertical className="h-[300px]">
+  {testimonials.map((t) => (
+    <TestimonialCard key={t.id} {...t} />
+  ))}
+</Marquee>
+```
+
+### Reversed Direction
+
+```tsx
+<Marquee reverse>
+  {items.map((item) => (
+    <Item key={item.id} {...item} />
+  ))}
+</Marquee>
+```
+
+### Custom Speed
+
+Control the speed using CSS variables:
+
+```tsx
+<Marquee className="[--duration:20s]">
+  {items.map((item) => (
+    <Item key={item.id} {...item} />
+  ))}
+</Marquee>
+```
+
+### Custom Gap
+
+```tsx
+<Marquee className="[--gap:2rem]">
+  {items.map((item) => (
+    <Item key={item.id} {...item} />
+  ))}
+</Marquee>
+```

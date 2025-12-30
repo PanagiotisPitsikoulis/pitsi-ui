@@ -1,0 +1,20 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "marquee-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "marquee"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/marquee-demo.tsx",
+      "content": "import { Marquee } from \"@/registry/new-york-v4/ui/marquee\"\n\nconst logos = [\n  { name: \"Acme\", src: \"https://placehold.co/120x40/e2e8f0/475569?text=Acme\" },\n  {\n    name: \"Globex\",\n    src: \"https://placehold.co/120x40/e2e8f0/475569?text=Globex\",\n  },\n  {\n    name: \"Initech\",\n    src: \"https://placehold.co/120x40/e2e8f0/475569?text=Initech\",\n  },\n  {\n    name: \"Hooli\",\n    src: \"https://placehold.co/120x40/e2e8f0/475569?text=Hooli\",\n  },\n  {\n    name: \"Umbrella\",\n    src: \"https://placehold.co/120x40/e2e8f0/475569?text=Umbrella\",\n  },\n]\n\nexport default function MarqueeDemo() {\n  return (\n    <div className=\"relative flex w-full max-w-2xl flex-col items-center justify-center overflow-hidden\">\n      <Marquee pauseOnHover className=\"[--duration:20s]\">\n        {logos.map((logo) => (\n          <div\n            key={logo.name}\n            className=\"bg-card flex h-16 w-32 items-center justify-center rounded-lg border px-4\"\n          >\n            <span className=\"text-muted-foreground text-sm font-medium\">\n              {logo.name}\n            </span>\n          </div>\n        ))}\n      </Marquee>\n      <Marquee reverse pauseOnHover className=\"[--duration:20s]\">\n        {logos.map((logo) => (\n          <div\n            key={logo.name}\n            className=\"bg-card flex h-16 w-32 items-center justify-center rounded-lg border px-4\"\n          >\n            <span className=\"text-muted-foreground text-sm font-medium\">\n              {logo.name}\n            </span>\n          </div>\n        ))}\n      </Marquee>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "sectorial"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

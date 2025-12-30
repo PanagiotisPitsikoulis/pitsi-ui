@@ -11,6 +11,8 @@ const COMPONENT_CATEGORY_URLS = {
   "core-components": "#core-components",
   primitives: "#primitives",
   sectorial: "#sectorial",
+  layout: "#layout",
+  providers: "#providers",
 }
 
 export default async function ComponentsListPage() {

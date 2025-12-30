@@ -998,4 +998,137 @@ export const ui: Registry["items"] = [
     categories: ["providers"],
     readiness: "production",
   },
+  {
+    name: "animated-beam",
+    type: "registry:ui",
+    description: "Animated beam effect for connecting elements visually.",
+    dependencies: ["motion/react"],
+    files: [
+      {
+        path: "ui/animated-beam.tsx",
+        type: "registry:ui",
+      },
+    ],
+    tier: "free",
+    categories: ["sectorial"],
+    readiness: "production",
+  },
+  {
+    name: "border-beam",
+    type: "registry:ui",
+    description: "Animated border beam effect for cards and containers.",
+    dependencies: ["motion/react"],
+    files: [
+      {
+        path: "ui/border-beam.tsx",
+        type: "registry:ui",
+      },
+    ],
+    tier: "free",
+    categories: ["sectorial"],
+    readiness: "production",
+  },
+  {
+    name: "marquee",
+    type: "registry:ui",
+    description:
+      "Infinite scrolling marquee component for logos, testimonials, and more.",
+    files: [
+      {
+        path: "ui/marquee.tsx",
+        type: "registry:ui",
+      },
+    ],
+    tailwind: {
+      config: {
+        theme: {
+          extend: {
+            keyframes: {
+              marquee: {
+                from: { transform: "translateX(0)" },
+                to: { transform: "translateX(calc(-100% - var(--gap)))" },
+              },
+              "marquee-vertical": {
+                from: { transform: "translateY(0)" },
+                to: { transform: "translateY(calc(-100% - var(--gap)))" },
+              },
+            },
+            animation: {
+              marquee: "marquee var(--duration) linear infinite",
+              "marquee-vertical":
+                "marquee-vertical var(--duration) linear infinite",
+            },
+          },
+        },
+      },
+    },
+    tier: "free",
+    categories: ["sectorial"],
+    readiness: "production",
+  },
+  {
+    name: "bg-guides",
+    type: "registry:ui",
+    description: "Animated background guide lines with glow effects.",
+    dependencies: ["motion/react", "next-themes"],
+    files: [
+      {
+        path: "ui/bg-guides.tsx",
+        type: "registry:ui",
+      },
+    ],
+    tier: "free",
+    categories: ["sectorial"],
+    readiness: "production",
+  },
+  {
+    name: "texture-button",
+    type: "registry:ui",
+    description: "Button with textured gradient styling and multiple variants.",
+    dependencies: ["@radix-ui/react-slot", "class-variance-authority"],
+    files: [
+      {
+        path: "ui/texture-button.tsx",
+        type: "registry:ui",
+      },
+    ],
+    tier: "free",
+    categories: ["sectorial"],
+    readiness: "production",
+  },
+  {
+    name: "texture-card",
+    type: "registry:ui",
+    description: "Card with multi-layered textured border styling.",
+    files: [
+      {
+        path: "ui/texture-card.tsx",
+        type: "registry:ui",
+      },
+    ],
+    tier: "free",
+    categories: ["sectorial"],
+    readiness: "production",
+  },
+  {
+    name: "form",
+    type: "registry:ui",
+    description:
+      "Form components built with React Hook Form for accessible form handling.",
+    dependencies: [
+      "@radix-ui/react-label",
+      "@radix-ui/react-slot",
+      "react-hook-form",
+    ],
+    registryDependencies: ["label"],
+    files: [
+      {
+        path: "ui/form.tsx",
+        type: "registry:ui",
+      },
+    ],
+    tier: "free",
+    categories: ["core-components"],
+    readiness: "production",
+  },
 ]

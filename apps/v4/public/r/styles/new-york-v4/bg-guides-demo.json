@@ -1,0 +1,20 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "bg-guides-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "bg-guides"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/bg-guides-demo.tsx",
+      "content": "\"use client\"\n\nimport { StripeBgGuides } from \"@/registry/new-york-v4/ui/bg-guides\"\n\nexport default function BgGuidesDemo() {\n  return (\n    <div className=\"relative h-[300px] w-full max-w-2xl overflow-hidden rounded-lg border\">\n      <StripeBgGuides\n        contained\n        columnCount={4}\n        animated\n        glowOpacity={0.5}\n        maxActiveColumns={2}\n      />\n      <div className=\"relative z-10 flex h-full flex-col items-center justify-center p-8 text-center\">\n        <h2 className=\"text-2xl font-bold\">Hero Section</h2>\n        <p className=\"text-muted-foreground mt-2\">\n          Background guides add visual interest\n        </p>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "sectorial"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

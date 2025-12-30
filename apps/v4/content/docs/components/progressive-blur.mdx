@@ -1,0 +1,95 @@
+---
+title: Progressive Blur
+description: A component that applies a progressive blur effect with customizable direction and intensity.
+component: true
+---
+
+<ComponentPreview
+  name="progressive-blur-demo"
+  title="Progressive Blur"
+  description="A progressive blur effect"
+/>
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx pitsi@latest add progressive-blur
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the required dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="progressive-blur" title="components/ui/progressive-blur.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ProgressiveBlur } from "@/components/ui/progressive-blur"
+```
+
+```tsx
+<div className="relative">
+  <img src="/hero-image.jpg" alt="Hero" />
+  <ProgressiveBlur
+    direction="top"
+    blurIntensity={16}
+    className="absolute bottom-0 h-1/3 w-full"
+  />
+</div>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `direction` | `"top" \| "bottom" \| "left" \| "right"` | `"bottom"` | The direction of the blur gradient |
+| `blurIntensity` | `number` | `8` | The maximum blur intensity in pixels |
+| `blurLayers` | `number` | `8` | The number of blur layers |
+| `className` | `string` | - | Additional CSS classes |
+
+## Examples
+
+### Bottom Fade
+
+```tsx
+<ProgressiveBlur direction="bottom" blurIntensity={12} />
+```
+
+### Top Fade
+
+```tsx
+<ProgressiveBlur direction="top" blurIntensity={16} />
+```
+
+### Horizontal Blur
+
+```tsx
+<ProgressiveBlur direction="left" blurIntensity={8} />
+```

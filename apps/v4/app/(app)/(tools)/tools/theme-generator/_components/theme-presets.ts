@@ -215,56 +215,38 @@ function createBaseTheme(palette: ColorPalette): ThemeStyles {
   }
 }
 
-// Helper to create tinted theme (pronounced tint on neutrals, brand as primary)
+// Helper to create tinted theme (brand as primary, but neutral backgrounds)
 function createTintedTheme(palette: ColorPalette): ThemeStyles {
   return {
     light: {
       ...lightBase,
-      // Strong tint on backgrounds
-      background: mixColors(palette.light.tint, "#fefefe", 0.65),
-      card: mixColors(palette.light.tint, "#ffffff", 0.45),
-      popover: mixColors(palette.light.tint, "#ffffff", 0.4),
-      page: mixColors(palette.light.tint, "#fefefe", 0.75),
-      // Heavy tint on muted/secondary/accent
-      muted: mixColors(palette.light.tint, "#f7f7f7", 0.55),
-      secondary: mixColors(palette.light.tint, "#f5f5f5", 0.55),
-      accent: mixColors(palette.light.tint, "#f5f5f5", 0.55),
-      // Primary is the brand color
+      // Primary is the brand color - this is what makes "tinted" special
       primary: palette.light.brand,
       "primary-foreground": "#ffffff",
-      // Tinted borders
-      border: mixColors(palette.light.tint, "#f5f5f5", 0.4),
-      input: mixColors(palette.light.tint, "#f0f0f0", 0.4),
-      sidebar: mixColors(palette.light.tint, "#ffffff", 0.5),
-      "sidebar-border": mixColors(palette.light.tint, "#f0f0f0", 0.35),
-      code: mixColors(palette.light.tint, "#fefefe", 0.6),
-      "code-highlight": mixColors(palette.light.tint, "#f0f4f8", 0.6),
+      // Sidebar gets brand styling
+      "sidebar-primary": palette.light.brand,
+      "sidebar-primary-foreground": "#ffffff",
+      // Keep brand colors
       brand: palette.light.brand,
       "brand-complementary": palette.light.brandComplementary,
+      ring: palette.light.brand,
+      selection: palette.light.brand,
+      "selection-foreground": "#ffffff",
     },
     dark: {
       ...darkBase,
-      // Pronounced tint on backgrounds
-      background: mixColors(palette.dark.tint, "#262626", 0.5),
-      card: mixColors(palette.dark.tint, "#2d2d2d", 0.35),
-      popover: mixColors(palette.dark.tint, "#2d2d2d", 0.35),
-      page: mixColors(palette.dark.tint, "#141414", 0.5),
-      // Strong tint on muted/secondary/accent
-      muted: mixColors(palette.dark.tint, "#333333", 0.4),
-      secondary: mixColors(palette.dark.tint, "#383838", 0.4),
-      accent: mixColors(palette.dark.tint, "#383838", 0.4),
       // Primary is the brand color
       primary: palette.dark.brand,
       "primary-foreground": "#1f1f1f",
-      // Tinted borders
-      border: mixColors(palette.dark.tint, "#333333", 0.25),
-      input: mixColors(palette.dark.tint, "#363636", 0.25),
-      sidebar: mixColors(palette.dark.tint, "#1f1f1f", 0.4),
-      "sidebar-border": mixColors(palette.dark.tint, "#2f2f2f", 0.2),
-      code: mixColors(palette.dark.tint, "#262626", 0.5),
-      "code-highlight": mixColors(palette.dark.tint, "#2d3748", 0.5),
+      // Sidebar gets brand styling
+      "sidebar-primary": palette.dark.brand,
+      "sidebar-primary-foreground": "#1f1f1f",
+      // Keep brand colors
       brand: palette.dark.brand,
       "brand-complementary": palette.dark.brandComplementary,
+      ring: palette.dark.brand,
+      selection: palette.dark.brand,
+      "selection-foreground": "#1f1f1f",
     },
   }
 }

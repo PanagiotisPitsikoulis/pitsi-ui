@@ -1274,6 +1274,170 @@
       "readiness": "production"
     },
     {
+      "name": "animated-beam",
+      "type": "registry:ui",
+      "description": "Animated beam effect for connecting elements visually.",
+      "dependencies": [
+        "motion/react"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/animated-beam.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "sectorial"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "border-beam",
+      "type": "registry:ui",
+      "description": "Animated border beam effect for cards and containers.",
+      "dependencies": [
+        "motion/react"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/border-beam.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "sectorial"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "marquee",
+      "type": "registry:ui",
+      "description": "Infinite scrolling marquee component for logos, testimonials, and more.",
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/marquee.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "tailwind": {
+        "config": {
+          "theme": {
+            "extend": {
+              "keyframes": {
+                "marquee": {
+                  "from": {
+                    "transform": "translateX(0)"
+                  },
+                  "to": {
+                    "transform": "translateX(calc(-100% - var(--gap)))"
+                  }
+                },
+                "marquee-vertical": {
+                  "from": {
+                    "transform": "translateY(0)"
+                  },
+                  "to": {
+                    "transform": "translateY(calc(-100% - var(--gap)))"
+                  }
+                }
+              },
+              "animation": {
+                "marquee": "marquee var(--duration) linear infinite",
+                "marquee-vertical": "marquee-vertical var(--duration) linear infinite"
+              }
+            }
+          }
+        }
+      },
+      "categories": [
+        "sectorial"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "bg-guides",
+      "type": "registry:ui",
+      "description": "Animated background guide lines with glow effects.",
+      "dependencies": [
+        "motion/react",
+        "next-themes"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/bg-guides.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "sectorial"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "texture-button",
+      "type": "registry:ui",
+      "description": "Button with textured gradient styling and multiple variants.",
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/texture-button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "sectorial"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "texture-card",
+      "type": "registry:ui",
+      "description": "Card with multi-layered textured border styling.",
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/texture-card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "sectorial"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "form",
+      "type": "registry:ui",
+      "description": "Form components built with React Hook Form for accessible form handling.",
+      "dependencies": [
+        "@radix-ui/react-label",
+        "@radix-ui/react-slot",
+        "react-hook-form"
+      ],
+      "registryDependencies": [
+        "label"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/form.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "core-components"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
       "name": "background-image-parallax",
       "type": "registry:ui",
       "description": "Background image with parallax effect - moves slower than foreground for depth.",
@@ -2189,7 +2353,12 @@
         "cta-1",
         "footer-1"
       ],
-      "files": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/service/service-plants.tsx",
+          "type": "registry:block"
+        }
+      ],
       "categories": [
         "template",
         "service"
@@ -2792,203 +2961,6 @@
       "categories": [
         "application",
         "app-database"
-      ],
-      "tier": "free",
-      "readiness": "beta"
-    },
-    {
-      "name": "app-agents-shell-1",
-      "type": "registry:block",
-      "description": "Application shell with sidebar navigation for AI agents dashboard",
-      "dependencies": [
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "sidebar",
-        "avatar",
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/application/app-agents-shell-1.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "application",
-        "app-agents"
-      ],
-      "tier": "free",
-      "readiness": "beta"
-    },
-    {
-      "name": "app-agents-dashboard-1",
-      "type": "registry:block",
-      "description": "AI agents dashboard with stats, daily runs chart, and recent runs",
-      "dependencies": [
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "badge",
-        "button",
-        "card",
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/application/app-agents-dashboard-1.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "application",
-        "app-agents"
-      ],
-      "tier": "free",
-      "readiness": "beta"
-    },
-    {
-      "name": "app-agents-list-1",
-      "type": "registry:block",
-      "description": "AI agents list with details panel",
-      "dependencies": [
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "badge",
-        "button",
-        "card",
-        "dropdown-menu",
-        "input",
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/application/app-agents-list-1.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "application",
-        "app-agents"
-      ],
-      "tier": "free",
-      "readiness": "beta"
-    },
-    {
-      "name": "app-agents-runs-1",
-      "type": "registry:block",
-      "description": "AI agent runs history with filters",
-      "dependencies": [
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "badge",
-        "button",
-        "card",
-        "dropdown-menu",
-        "input",
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/application/app-agents-runs-1.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "application",
-        "app-agents"
-      ],
-      "tier": "free",
-      "readiness": "beta"
-    },
-    {
-      "name": "app-agents-logs-1",
-      "type": "registry:block",
-      "description": "AI agent logs viewer with real-time stream",
-      "dependencies": [
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "badge",
-        "button",
-        "card",
-        "dropdown-menu",
-        "input",
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/application/app-agents-logs-1.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "application",
-        "app-agents"
-      ],
-      "tier": "free",
-      "readiness": "beta"
-    },
-    {
-      "name": "app-agents-settings-1",
-      "type": "registry:block",
-      "description": "AI agents settings with profile and preferences",
-      "dependencies": [
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "avatar",
-        "button",
-        "card",
-        "input",
-        "label",
-        "select",
-        "separator",
-        "switch",
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/application/app-agents-settings-1.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "application",
-        "app-agents"
-      ],
-      "tier": "free",
-      "readiness": "beta"
-    },
-    {
-      "name": "app-agents",
-      "type": "registry:block",
-      "description": "Complete AI agents dashboard application template",
-      "dependencies": [
-        "lucide-react"
-      ],
-      "registryDependencies": [
-        "app-agents-shell-1",
-        "app-agents-dashboard-1",
-        "app-agents-list-1",
-        "app-agents-runs-1",
-        "app-agents-logs-1",
-        "app-agents-settings-1"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/application/app-agents.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "meta": {
-        "iframeHeight": "800px"
-      },
-      "categories": [
-        "application",
-        "app-agents"
       ],
       "tier": "free",
       "readiness": "beta"
@@ -8107,6 +8079,114 @@
       ],
       "categories": [
         "providers"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "animated-beam-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "animated-beam"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/animated-beam-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "sectorial"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "bg-guides-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "bg-guides"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/bg-guides-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "sectorial"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "border-beam-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "border-beam"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/border-beam-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "sectorial"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "marquee-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "marquee"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/marquee-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "sectorial"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "texture-button-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "texture-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/texture-button-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "sectorial"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "texture-card-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "texture-card"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/texture-card-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "sectorial"
       ],
       "tier": "free",
       "readiness": "production"

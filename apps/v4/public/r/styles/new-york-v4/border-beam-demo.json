@@ -1,0 +1,20 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "border-beam-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "border-beam"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/border-beam-demo.tsx",
+      "content": "import { BorderBeam } from \"@/registry/new-york-v4/ui/border-beam\"\n\nexport default function BorderBeamDemo() {\n  return (\n    <div className=\"bg-card relative flex h-[200px] w-full max-w-md flex-col items-center justify-center overflow-hidden rounded-lg border\">\n      <span className=\"text-4xl font-semibold\">Border Beam</span>\n      <BorderBeam size={200} duration={8} />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "sectorial"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

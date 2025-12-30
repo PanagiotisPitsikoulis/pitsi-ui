@@ -363,7 +363,12 @@ export const blocks: Registry["items"] = [
       "cta-1",
       "footer-1",
     ],
-    files: [],
+    files: [
+      {
+        path: "blocks/service/service-plants.tsx",
+        type: "registry:block",
+      },
+    ],
     categories: ["template", "service"],
     tier: "free",
     readiness: "production",
@@ -792,162 +797,6 @@ export const blocks: Registry["items"] = [
       },
     ],
     categories: ["application", "app-database"],
-    tier: "free",
-    readiness: "beta",
-    meta: {
-      iframeHeight: "800px",
-    },
-  },
-  // Application Template: AI Agents Dashboard
-  {
-    name: "app-agents-shell-1",
-    type: "registry:block",
-    description:
-      "Application shell with sidebar navigation for AI agents dashboard",
-    dependencies: ["lucide-react"],
-    registryDependencies: ["sidebar", "avatar", "utils"],
-    files: [
-      {
-        path: "blocks/application/app-agents-shell-1.tsx",
-        type: "registry:block",
-      },
-    ],
-    categories: ["application", "app-agents"],
-    tier: "free",
-    readiness: "beta",
-  },
-  {
-    name: "app-agents-dashboard-1",
-    type: "registry:block",
-    description:
-      "AI agents dashboard with stats, daily runs chart, and recent runs",
-    dependencies: ["lucide-react"],
-    registryDependencies: ["badge", "button", "card", "utils"],
-    files: [
-      {
-        path: "blocks/application/app-agents-dashboard-1.tsx",
-        type: "registry:block",
-      },
-    ],
-    categories: ["application", "app-agents"],
-    tier: "free",
-    readiness: "beta",
-  },
-  {
-    name: "app-agents-list-1",
-    type: "registry:block",
-    description: "AI agents list with details panel",
-    dependencies: ["lucide-react"],
-    registryDependencies: [
-      "badge",
-      "button",
-      "card",
-      "dropdown-menu",
-      "input",
-      "utils",
-    ],
-    files: [
-      {
-        path: "blocks/application/app-agents-list-1.tsx",
-        type: "registry:block",
-      },
-    ],
-    categories: ["application", "app-agents"],
-    tier: "free",
-    readiness: "beta",
-  },
-  {
-    name: "app-agents-runs-1",
-    type: "registry:block",
-    description: "AI agent runs history with filters",
-    dependencies: ["lucide-react"],
-    registryDependencies: [
-      "badge",
-      "button",
-      "card",
-      "dropdown-menu",
-      "input",
-      "utils",
-    ],
-    files: [
-      {
-        path: "blocks/application/app-agents-runs-1.tsx",
-        type: "registry:block",
-      },
-    ],
-    categories: ["application", "app-agents"],
-    tier: "free",
-    readiness: "beta",
-  },
-  {
-    name: "app-agents-logs-1",
-    type: "registry:block",
-    description: "AI agent logs viewer with real-time stream",
-    dependencies: ["lucide-react"],
-    registryDependencies: [
-      "badge",
-      "button",
-      "card",
-      "dropdown-menu",
-      "input",
-      "utils",
-    ],
-    files: [
-      {
-        path: "blocks/application/app-agents-logs-1.tsx",
-        type: "registry:block",
-      },
-    ],
-    categories: ["application", "app-agents"],
-    tier: "free",
-    readiness: "beta",
-  },
-  {
-    name: "app-agents-settings-1",
-    type: "registry:block",
-    description: "AI agents settings with profile and preferences",
-    dependencies: ["lucide-react"],
-    registryDependencies: [
-      "avatar",
-      "button",
-      "card",
-      "input",
-      "label",
-      "select",
-      "separator",
-      "switch",
-      "utils",
-    ],
-    files: [
-      {
-        path: "blocks/application/app-agents-settings-1.tsx",
-        type: "registry:block",
-      },
-    ],
-    categories: ["application", "app-agents"],
-    tier: "free",
-    readiness: "beta",
-  },
-  {
-    name: "app-agents",
-    type: "registry:block",
-    description: "Complete AI agents dashboard application template",
-    dependencies: ["lucide-react"],
-    registryDependencies: [
-      "app-agents-shell-1",
-      "app-agents-dashboard-1",
-      "app-agents-list-1",
-      "app-agents-runs-1",
-      "app-agents-logs-1",
-      "app-agents-settings-1",
-    ],
-    files: [
-      {
-        path: "blocks/application/app-agents.tsx",
-        type: "registry:block",
-      },
-    ],
-    categories: ["application", "app-agents"],
     tier: "free",
     readiness: "beta",
     meta: {

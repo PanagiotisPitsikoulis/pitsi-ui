@@ -10,6 +10,10 @@ import {
   DEFAULT_TINT,
 } from "@/app/(app)/(content)/(blocks)/_components"
 import { ScrollContainerProvider } from "@/app/(app)/(content)/(blocks)/_components/scroll-container-context"
+import {
+  applicationTemplateConfigs,
+  getApplicationShellForBlock,
+} from "@/app/(app)/(content)/(blocks)/template-config"
 
 interface LazyComponentRendererProps {
   name: string
@@ -19,12 +23,12 @@ interface LazyComponentRendererProps {
   filePath?: string
 }
 
-// Error boundary for catching render errors - shows visible error state
+// Error boundary for catching render errors - shows empty state instead of crashing
 class ComponentErrorBoundary extends ReactComponent<
-  { children: React.ReactNode; name?: string },
+  { children: React.ReactNode; name?: string; silent?: boolean },
   { hasError: boolean; error?: Error }
 > {
-  constructor(props: { children: React.ReactNode; name?: string }) {
+  constructor(props: { children: React.ReactNode; name?: string; silent?: boolean }) {
     super(props)
     this.state = { hasError: false }
   }
@@ -35,16 +39,15 @@ class ComponentErrorBoundary extends ReactComponent<
 
   render() {
     if (this.state.hasError) {
+      // Silent mode: just show empty background (for blocks that may fail gracefully)
+      if (this.props.silent) {
+        return <div className="bg-background min-h-screen w-full" />
+      }
+      // Normal mode: show subtle error indicator
       return (
-        <div className="flex min-h-screen w-full items-center justify-center bg-red-50 p-16">
-          <div className="max-w-md rounded-lg border border-red-200 bg-white p-8 text-center shadow-sm">
-            <div className="mb-4 text-4xl">⚠️</div>
-            <h2 className="mb-2 text-lg font-semibold text-red-600">
-              Component Error
-            </h2>
-            <p className="text-sm text-red-500">
-              {this.state.error?.message || "Failed to render component"}
-            </p>
+        <div className="bg-background flex min-h-screen w-full items-center justify-center p-16">
+          <div className="text-muted-foreground text-center text-sm">
+            Unable to load component
           </div>
         </div>
       )
@@ -53,16 +56,106 @@ class ComponentErrorBoundary extends ReactComponent<
   }
 }
 
+// Application block wrapper - renders view inside its shell
+// Note: Shell components have their own theme baked in (sageTheme, violetTheme, etc.)
+// so we don't wrap with BlockThemeWrapper to avoid conflicts
+function ApplicationBlockWrapper({
+  name,
+  styleName,
+  ViewComponent,
+}: {
+  name: string
+  styleName: string
+  ViewComponent: React.ComponentType
+}) {
+  const shellInfo = getApplicationShellForBlock(name)
+
+  if (!shellInfo) {
+    // Not an application view, render component directly
+    return <ViewComponent />
+  }
+
+  // Get the shell component from the index
+  const styleIndex = Index[styleName as keyof typeof Index]
+  const shellItem = styleIndex?.[shellInfo.shell as keyof typeof styleIndex]
+
+  // Get template config for navigation and metadata
+  const templateConfig = applicationTemplateConfigs[shellInfo.templateSlug]
+
+  if (!shellItem?.component) {
+    // Shell not found, render view standalone
+    return (
+      <div className="bg-background min-h-screen">
+        <ViewComponent />
+      </div>
+    )
+  }
+
+  // Type the shell component with the props it actually accepts
+  const ShellComponent = shellItem.component as React.ComponentType<{
+    children?: React.ReactNode
+    activeView?: string
+    content?: {
+      appName?: string
+      navigation?: Array<{
+        name: string
+        label: string
+        icon: string
+        shortcut?: string
+      }>
+    }
+  }>
+
+  // Map navigation from template config to shell format
+  const navigation = templateConfig?.navigation.map((nav) => ({
+    name: nav.name,
+    label: nav.label,
+    icon: nav.icon,
+    shortcut: nav.shortcut,
+  }))
+
+  return (
+    <div className="min-h-screen">
+      <ShellComponent
+        activeView={name}
+        content={{
+          appName: templateConfig?.metadata.name,
+          navigation,
+        }}
+      >
+        <ViewComponent />
+      </ShellComponent>
+    </div>
+  )
+}
+
 // Block wrapper for template-associated blocks
 function BlockWrapper({
   children,
   name,
+  styleName,
+  Component,
 }: {
   children: React.ReactNode
   name: string
+  styleName: string
+  Component: React.ComponentType
 }) {
   const containerRef = useRef<HTMLDivElement>(null)
   const settings = getBlockSettings(name)
+
+  // Check if this is an application view block
+  const shellInfo = getApplicationShellForBlock(name)
+  if (shellInfo) {
+    // Render application block with its shell
+    return (
+      <ApplicationBlockWrapper
+        name={name}
+        styleName={styleName}
+        ViewComponent={Component}
+      />
+    )
+  }
 
   // If block belongs to a template, wrap with theme and container
   if (settings.templateSlug) {
@@ -74,9 +167,8 @@ function BlockWrapper({
       settings.forceLight
     const skipPadding =
       blockType === "hero" || blockType === "header" || blockType === "footer"
-    // When viewing standalone, only use "deep" tint - never "tinted"
-    // "tinted" is only for blocks shown within their full template context
-    const blockTint = settings.tint === "deep" ? "deep" : DEFAULT_TINT
+    // Use the block's configured tint (tinted themes now have neutral backgrounds)
+    const blockTint = settings.tint || DEFAULT_TINT
 
     return (
       <ScrollContainerProvider value={containerRef}>
@@ -135,7 +227,7 @@ export const LazyComponentRenderer = memo(function LazyComponentRenderer({
   // Wrap blocks with template theming when applicable
   return (
     <ComponentErrorBoundary>
-      <BlockWrapper name={name}>
+      <BlockWrapper name={name} styleName={styleName} Component={Component}>
         <Suspense fallback={<div className="bg-background min-h-screen w-full" />}>
           <Component />
         </Suspense>

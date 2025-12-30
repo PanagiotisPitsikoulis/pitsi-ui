@@ -53,13 +53,6 @@ export const BLOCK_CATEGORIES: Record<string, string[]> = {
     "app-database-query-1",
     "app-database-settings-1",
     "app-database",
-    "app-agents-shell-1",
-    "app-agents-dashboard-1",
-    "app-agents-list-1",
-    "app-agents-runs-1",
-    "app-agents-logs-1",
-    "app-agents-settings-1",
-    "app-agents",
   ],
 }
 

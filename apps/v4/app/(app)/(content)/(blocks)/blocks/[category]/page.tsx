@@ -48,7 +48,7 @@ export default async function CategoryPage({
     // Transform blocks - get category from block's categories array
     const blockItems = blocks.map((block) => {
       const blockCategory = block.categories?.[0] || "uncategorized"
-      const templateSlug = block.categories?.[1] || null // Second category is usually the template
+      const templateSlug = block.categories?.[1] || undefined // Second category is usually the template
       return {
         name: block.name,
         description: block.description,
@@ -98,7 +98,7 @@ export default async function CategoryPage({
 
   // Transform blocks into the format expected by BlocksList
   const blockItems = blocks.map((block) => {
-    const templateSlug = block.categories?.[1] || null // Second category is usually the template
+    const templateSlug = block.categories?.[1] || undefined // Second category is usually the template
     return {
       name: block.name,
       description: block.description,

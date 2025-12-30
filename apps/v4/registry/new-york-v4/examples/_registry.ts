@@ -3527,4 +3527,88 @@ export const examples: Registry["items"] = [
     categories: ["providers"],
     readiness: "production",
   },
+  {
+    name: "animated-beam-demo",
+    type: "registry:example",
+    registryDependencies: ["animated-beam"],
+    files: [
+      {
+        path: "examples/animated-beam-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    tier: "free",
+    categories: ["sectorial"],
+    readiness: "production",
+  },
+  {
+    name: "bg-guides-demo",
+    type: "registry:example",
+    registryDependencies: ["bg-guides"],
+    files: [
+      {
+        path: "examples/bg-guides-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    tier: "free",
+    categories: ["sectorial"],
+    readiness: "production",
+  },
+  {
+    name: "border-beam-demo",
+    type: "registry:example",
+    registryDependencies: ["border-beam"],
+    files: [
+      {
+        path: "examples/border-beam-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    tier: "free",
+    categories: ["sectorial"],
+    readiness: "production",
+  },
+  {
+    name: "marquee-demo",
+    type: "registry:example",
+    registryDependencies: ["marquee"],
+    files: [
+      {
+        path: "examples/marquee-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    tier: "free",
+    categories: ["sectorial"],
+    readiness: "production",
+  },
+  {
+    name: "texture-button-demo",
+    type: "registry:example",
+    registryDependencies: ["texture-button"],
+    files: [
+      {
+        path: "examples/texture-button-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    tier: "free",
+    categories: ["sectorial"],
+    readiness: "production",
+  },
+  {
+    name: "texture-card-demo",
+    type: "registry:example",
+    registryDependencies: ["texture-card"],
+    files: [
+      {
+        path: "examples/texture-card-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    tier: "free",
+    categories: ["sectorial"],
+    readiness: "production",
+  },
 ]

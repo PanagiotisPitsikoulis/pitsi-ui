@@ -1,0 +1,104 @@
+---
+title: Theme
+description: Theme provider component for dark mode support using next-themes.
+component: true
+---
+
+<ComponentPreview
+  name="mode-toggle"
+  title="Theme Toggle"
+  description="A theme toggle component"
+/>
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx pitsi@latest add theme
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the required dependencies:</Step>
+
+```bash
+npm install next-themes
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="theme" title="components/ui/theme.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+Wrap your application with the `ThemeProvider`:
+
+```tsx title="app/layout.tsx"
+import { ThemeProvider } from "@/components/ui/theme"
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
+    </html>
+  )
+}
+```
+
+## Props
+
+The `ThemeProvider` accepts all props from `next-themes`:
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `attribute` | `"class" \| "data-theme"` | `"class"` | HTML attribute to set |
+| `defaultTheme` | `string` | `"system"` | Default theme |
+| `enableSystem` | `boolean` | `true` | Enable system theme detection |
+| `disableTransitionOnChange` | `boolean` | `false` | Disable CSS transitions on theme change |
+| `storageKey` | `string` | `"theme"` | Key to use for localStorage |
+
+## Using the Theme
+
+Access the current theme with the `useTheme` hook:
+
+```tsx
+import { useTheme } from "next-themes"
+
+function ThemeToggle() {
+  const { theme, setTheme } = useTheme()
+
+  return (
+    <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+      Toggle theme
+    </button>
+  )
+}
+```

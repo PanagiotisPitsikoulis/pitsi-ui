@@ -1,0 +1,158 @@
+---
+title: Texture Card
+description: A card with multi-layered textured border styling for a premium, tactile appearance.
+component: true
+---
+
+The Texture Card component provides cards with multiple nested border layers that create a subtle, premium look. Perfect for feature cards, pricing cards, and other content containers.
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx pitsi@latest add texture-card
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="texture-card" title="components/ui/texture-card.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import {
+  TextureCard,
+  TextureCardHeader,
+  TextureCardTitle,
+  TextureCardDescription,
+  TextureCardContent,
+  TextureCardFooter,
+  TextureSeparator,
+} from "@/components/ui/texture-card"
+
+function Example() {
+  return (
+    <TextureCard>
+      <TextureCardHeader>
+        <TextureCardTitle>Card Title</TextureCardTitle>
+        <TextureCardDescription>Card description</TextureCardDescription>
+      </TextureCardHeader>
+      <TextureSeparator />
+      <TextureCardContent>
+        Card content goes here
+      </TextureCardContent>
+      <TextureSeparator />
+      <TextureCardFooter>
+        <button>Action</button>
+      </TextureCardFooter>
+    </TextureCard>
+  )
+}
+```
+
+## Components
+
+### TextureCard
+
+The main card container with layered border styling.
+
+### TextureCardHeader
+
+Container for the card header, typically contains title and description.
+
+### TextureCardTitle
+
+Styled heading for the card title.
+
+### TextureCardDescription
+
+Styled paragraph for the card description.
+
+### TextureCardContent
+
+Container for the main card content with appropriate padding.
+
+### TextureCardFooter
+
+Container for card actions, typically buttons.
+
+### TextureSeparator
+
+A styled separator that matches the card's textured aesthetic.
+
+## Examples
+
+### Feature Card
+
+```tsx
+<TextureCard>
+  <TextureCardHeader>
+    <TextureCardTitle>Premium Feature</TextureCardTitle>
+    <TextureCardDescription>
+      Unlock advanced capabilities with our premium tier.
+    </TextureCardDescription>
+  </TextureCardHeader>
+  <TextureCardContent>
+    <ul className="space-y-2">
+      <li>Feature 1</li>
+      <li>Feature 2</li>
+      <li>Feature 3</li>
+    </ul>
+  </TextureCardContent>
+</TextureCard>
+```
+
+### Pricing Card
+
+```tsx
+<TextureCard>
+  <TextureCardHeader>
+    <TextureCardTitle>Pro Plan</TextureCardTitle>
+    <TextureCardDescription>$29/month</TextureCardDescription>
+  </TextureCardHeader>
+  <TextureSeparator />
+  <TextureCardContent>
+    <p>Everything in Basic, plus:</p>
+    <ul className="mt-4 space-y-2">
+      <li>Advanced analytics</li>
+      <li>Priority support</li>
+      <li>Custom integrations</li>
+    </ul>
+  </TextureCardContent>
+  <TextureSeparator />
+  <TextureCardFooter>
+    <TextureButton className="w-full">Subscribe</TextureButton>
+  </TextureCardFooter>
+</TextureCard>
+```
+
+### Simple Card
+
+```tsx
+<TextureCard>
+  <TextureCardContent>
+    Simple content without header or footer.
+  </TextureCardContent>
+</TextureCard>
+```

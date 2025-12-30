@@ -132,16 +132,37 @@ export function getBlockConfig(
   templateSlug: string,
   blockName: string
 ): BlockConfig | null {
-  const config = templateConfigs[templateSlug]
-  if (!config) return null
-  return config.blocks.find((b) => b.name === blockName) || null
+  // Check service templates
+  const serviceConfig = templateConfigs[templateSlug]
+  if (serviceConfig) {
+    return serviceConfig.blocks.find((b) => b.name === blockName) || null
+  }
+  // Check application templates
+  const appConfig = applicationTemplateConfigs[templateSlug]
+  if (appConfig) {
+    if (appConfig.shell === blockName) {
+      return { name: blockName }
+    }
+    return appConfig.views.find((v) => v.name === blockName) || null
+  }
+  return null
 }
 
 // Reverse lookup: find which template a block belongs to
-export function getTemplateForBlock(blockName: string): TemplateSlug | null {
+export function getTemplateForBlock(blockName: string): string | null {
+  // Check service templates
   for (const [slug, config] of Object.entries(templateConfigs)) {
     if (config.blocks.some((b) => b.name === blockName)) {
-      return slug as TemplateSlug
+      return slug
+    }
+  }
+  // Check application templates (shell + views)
+  for (const [slug, config] of Object.entries(applicationTemplateConfigs)) {
+    if (config.shell === blockName) {
+      return slug
+    }
+    if (config.views.some((v) => v.name === blockName)) {
+      return slug
     }
   }
   return null
@@ -152,15 +173,25 @@ export function getBlockIndex(
   templateSlug: string,
   blockName: string
 ): number {
-  const config = templateConfigs[templateSlug]
-  if (!config) return 0
-  const index = config.blocks.findIndex((b) => b.name === blockName)
-  return index === -1 ? 0 : index
+  // Check service templates
+  const serviceConfig = templateConfigs[templateSlug]
+  if (serviceConfig) {
+    const index = serviceConfig.blocks.findIndex((b) => b.name === blockName)
+    return index === -1 ? 0 : index
+  }
+  // Check application templates
+  const appConfig = applicationTemplateConfigs[templateSlug]
+  if (appConfig) {
+    if (appConfig.shell === blockName) return 0
+    const index = appConfig.views.findIndex((v) => v.name === blockName)
+    return index === -1 ? 0 : index + 1 // +1 because shell is index 0
+  }
+  return 0
 }
 
 // Get complete block settings for standalone rendering
 export function getBlockRenderSettings(blockName: string): {
-  templateSlug: TemplateSlug | null
+  templateSlug: string | null
   tint: TintLevel | undefined
   forceDark: boolean | undefined
   forceLight: boolean | undefined
@@ -183,8 +214,8 @@ export function getBlockRenderSettings(blockName: string): {
   const blockConfig = getBlockConfig(templateSlug, blockName)
   const index = getBlockIndex(templateSlug, blockName)
 
-  // Extract block type from name (e.g., "hero-1" -> "hero")
-  const match = blockName.match(/^([a-z]+)-\d+$/)
+  // Extract block type from name (e.g., "hero-1" -> "hero", "app-dashboard-1" -> "app-dashboard")
+  const match = blockName.match(/^([a-z-]+)-\d+$/)
   const blockType = match ? match[1] : null
 
   return {
@@ -283,32 +314,6 @@ export const applicationTemplateConfigs: Record<
       { name: "app-database-settings-1" },
     ],
   },
-  "app-agents": {
-    metadata: {
-      type: "application",
-      slug: "app-agents",
-      name: "AI Agents",
-      description: "AI agents dashboard for monitoring and management",
-      heroBlock: "app-agents-dashboard-1",
-      defaultView: "app-agents-dashboard-1",
-      palette: "indigo",
-    },
-    shell: "app-agents-shell-1",
-    navigation: [
-      { name: "app-agents-dashboard-1", label: "Dashboard", icon: "LayoutDashboard" },
-      { name: "app-agents-list-1", label: "Agents", icon: "Bot" },
-      { name: "app-agents-runs-1", label: "Runs", icon: "Play" },
-      { name: "app-agents-logs-1", label: "Logs", icon: "ScrollText" },
-      { name: "app-agents-settings-1", label: "Settings", icon: "Settings" },
-    ],
-    views: [
-      { name: "app-agents-dashboard-1" },
-      { name: "app-agents-list-1" },
-      { name: "app-agents-runs-1" },
-      { name: "app-agents-logs-1" },
-      { name: "app-agents-settings-1" },
-    ],
-  },
 }
 
 // Application template slugs
@@ -332,6 +337,27 @@ export function getApplicationTemplateConfig(
 // Get application template navigation
 export function getApplicationNavigation(slug: string): NavigationItem[] {
   return applicationTemplateConfigs[slug]?.navigation || []
+}
+
+// Get application shell for a view block
+export function getApplicationShellForBlock(blockName: string): {
+  shell: string
+  templateSlug: string
+  navigation: NavigationItem[]
+  activeView: string
+} | null {
+  for (const [slug, config] of Object.entries(applicationTemplateConfigs)) {
+    // Check if this block is a view in this application
+    if (config.views.some((v) => v.name === blockName)) {
+      return {
+        shell: config.shell,
+        templateSlug: slug,
+        navigation: config.navigation,
+        activeView: blockName,
+      }
+    }
+  }
+  return null
 }
 
 // ============================================

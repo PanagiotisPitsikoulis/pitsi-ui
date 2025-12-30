@@ -1,0 +1,122 @@
+---
+title: Background Guides
+description: Animated vertical guide lines with glow effects for landing pages and hero sections.
+component: true
+---
+
+The Background Guides component creates animated vertical lines that add visual interest to hero sections and landing pages. Features customizable animations, glow effects, and theme-aware colors.
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx pitsi@latest add bg-guides
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the required dependencies:</Step>
+
+```bash
+npm install motion next-themes
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="bg-guides" title="components/ui/bg-guides.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { StripeBgGuides } from "@/components/ui/bg-guides"
+
+function HeroSection() {
+  return (
+    <section className="relative">
+      <StripeBgGuides />
+      <div className="container relative z-10">
+        <h1>Welcome</h1>
+      </div>
+    </section>
+  )
+}
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `columnCount` | `number` | `4` | Number of columns/lines |
+| `solidLines` | `number[]` | `[]` | Indices of lines to render as solid |
+| `hiddenLines` | `number[]` | `[]` | Indices of lines to hide |
+| `animated` | `boolean` | `true` | Enable glow animations |
+| `animationDuration` | `number` | `62` | Duration of one animation cycle |
+| `animationDelay` | `number` | `0.8` | Delay between each line's animation |
+| `glowColor` | `string` | `"hsl(var(--accent))"` | Color of the glow effect |
+| `glowSize` | `string` | `"10vh"` | Size of the glow |
+| `glowOpacity` | `number` | `0.4` | Opacity of the glow |
+| `randomize` | `boolean` | `true` | Randomize which lines are active |
+| `randomInterval` | `number` | `9000` | Interval for randomization (ms) |
+| `direction` | `"top-to-bottom" \| "bottom-to-top" \| "both" \| "random"` | `"both"` | Animation direction |
+| `easing` | `"linear" \| "easeIn" \| "easeOut" \| "easeInOut" \| "spring"` | `"spring"` | Animation easing |
+| `maxActiveColumns` | `number` | `3` | Maximum active animated columns |
+| `contained` | `boolean` | `false` | Use absolute instead of fixed positioning |
+| `zIndex` | `number` | `-1` | z-index of the container |
+
+## Examples
+
+### Basic Usage
+
+```tsx
+<StripeBgGuides />
+```
+
+### Contained in a Section
+
+```tsx
+<section className="relative overflow-hidden">
+  <StripeBgGuides contained />
+  <div className="relative z-10">Content</div>
+</section>
+```
+
+### Custom Glow Color
+
+```tsx
+<StripeBgGuides glowColor="#22c55e" />
+```
+
+### Static Lines (No Animation)
+
+```tsx
+<StripeBgGuides animated={false} />
+```
+
+### Custom Column Configuration
+
+```tsx
+<StripeBgGuides
+  columnCount={6}
+  solidLines={[1, 6]}
+  hiddenLines={[3, 4]}
+/>
+```

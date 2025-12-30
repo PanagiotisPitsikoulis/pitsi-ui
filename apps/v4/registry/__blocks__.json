@@ -223,40 +223,5 @@
     "name": "app-database",
     "description": "Complete database dashboard application template",
     "categories": ["application", "app-database"]
-  },
-  {
-    "name": "app-agents-shell-1",
-    "description": "Application shell with sidebar navigation for AI agents dashboard",
-    "categories": ["application", "app-agents"]
-  },
-  {
-    "name": "app-agents-dashboard-1",
-    "description": "AI agents dashboard with stats, daily runs chart, and recent runs",
-    "categories": ["application", "app-agents"]
-  },
-  {
-    "name": "app-agents-list-1",
-    "description": "AI agents list with details panel",
-    "categories": ["application", "app-agents"]
-  },
-  {
-    "name": "app-agents-runs-1",
-    "description": "AI agent runs history with filters",
-    "categories": ["application", "app-agents"]
-  },
-  {
-    "name": "app-agents-logs-1",
-    "description": "AI agent logs viewer with real-time stream",
-    "categories": ["application", "app-agents"]
-  },
-  {
-    "name": "app-agents-settings-1",
-    "description": "AI agents settings with profile and preferences",
-    "categories": ["application", "app-agents"]
-  },
-  {
-    "name": "app-agents",
-    "description": "Complete AI agents dashboard application template",
-    "categories": ["application", "app-agents"]
   }
 ]

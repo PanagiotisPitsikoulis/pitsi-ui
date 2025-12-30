@@ -5,6 +5,7 @@ import { useTheme } from "next-themes"
 
 import { cn } from "@/lib/utils"
 import { themePresets } from "@/app/(app)/(tools)/tools/theme-generator/_components/theme-presets"
+import { applicationTemplateConfigs } from "@/app/(app)/(content)/(blocks)/template-config"
 
 import { getTemplateFontStyles } from "./template-fonts"
 
@@ -82,13 +83,27 @@ export function getPresetKey(palette: string, tint: TintLevel): string {
   }
 }
 
+// Get palette for a template slug
+function getTemplatePalette(slug: string): ColorPalette {
+  // Check static mapping first
+  if (templatePalettes[slug]) {
+    return templatePalettes[slug]
+  }
+  // Check application template configs for dynamic palette
+  const appConfig = applicationTemplateConfigs[slug]
+  if (appConfig?.metadata.palette) {
+    return appConfig.metadata.palette as ColorPalette
+  }
+  return "azure"
+}
+
 // Get theme style as CSS variables (colors only)
 export function getTemplateThemeStyle(
   slug: string,
   tint: TintLevel = DEFAULT_TINT,
   mode: "light" | "dark" = "dark"
 ): React.CSSProperties {
-  const palette = templatePalettes[slug] || "azure"
+  const palette = getTemplatePalette(slug)
   const presetKey = getPresetKey(palette, tint)
   const theme =
     themePresets[presetKey]?.styles || themePresets["azure-tinted"].styles

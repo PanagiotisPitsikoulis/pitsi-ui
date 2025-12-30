@@ -1,0 +1,127 @@
+---
+title: Texture Button
+description: A button with textured gradient styling and multiple variants for a unique, tactile appearance.
+component: true
+---
+
+The Texture Button component provides buttons with multi-layered gradient textures that create a tactile, 3D-like appearance. Works great for call-to-action buttons and premium interfaces.
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx pitsi@latest add texture-button
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the required dependencies:</Step>
+
+```bash
+npm install @radix-ui/react-slot class-variance-authority
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="texture-button" title="components/ui/texture-button.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { TextureButton } from "@/components/ui/texture-button"
+
+function Example() {
+  return <TextureButton>Click me</TextureButton>
+}
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `variant` | `"primary" \| "secondary" \| "accent" \| "destructive" \| "minimal" \| "icon"` | `"primary"` | Button variant |
+| `size` | `"default" \| "sm" \| "lg" \| "icon"` | `"default"` | Button size |
+| `asChild` | `boolean` | `false` | Render as child element |
+
+## Examples
+
+### Primary Button
+
+```tsx
+<TextureButton variant="primary">Get Started</TextureButton>
+```
+
+### Secondary Button
+
+```tsx
+<TextureButton variant="secondary">Learn More</TextureButton>
+```
+
+### Accent Button
+
+```tsx
+<TextureButton variant="accent">Upgrade Now</TextureButton>
+```
+
+### Destructive Button
+
+```tsx
+<TextureButton variant="destructive">Delete</TextureButton>
+```
+
+### Minimal Button
+
+```tsx
+<TextureButton variant="minimal">Cancel</TextureButton>
+```
+
+### Icon Button
+
+```tsx
+import { Plus } from "lucide-react"
+
+<TextureButton variant="icon" size="icon">
+  <Plus className="h-4 w-4" />
+</TextureButton>
+```
+
+### Small Size
+
+```tsx
+<TextureButton size="sm">Small Button</TextureButton>
+```
+
+### Large Size
+
+```tsx
+<TextureButton size="lg">Large Button</TextureButton>
+```
+
+### As Link
+
+```tsx
+import Link from "next/link"
+
+<TextureButton asChild>
+  <Link href="/dashboard">Go to Dashboard</Link>
+</TextureButton>
+```
