@@ -1,15 +1,24 @@
 import type { TintLevel } from "./_components"
 
+// ============================================
+// Unified Template System
+// ============================================
+
+// Color palettes available
+export type ColorPalette =
+  | "slate"
+  | "azure"
+  | "violet"
+  | "rose"
+  | "sage"
+  | "amber"
+  | "cyan"
+  | "indigo"
+  | "coral"
+  | "forest"
+
 // Template type discriminator
 export type TemplateType = "service" | "application"
-
-// Template metadata (base)
-export interface TemplateMetadata {
-  slug: string
-  name: string
-  description: string
-  heroBlock: string // The hero block to use for preview
-}
 
 // Block configuration within a template
 export interface BlockConfig {
@@ -19,16 +28,6 @@ export interface BlockConfig {
   forceLight?: boolean
 }
 
-// Complete service template configuration
-export interface TemplateConfig {
-  metadata: TemplateMetadata
-  blocks: BlockConfig[]
-}
-
-// ============================================
-// Application Template Types
-// ============================================
-
 // Navigation item for application sidebar
 export interface NavigationItem {
   name: string // View block name (e.g., "app-dashboard-1")
@@ -37,17 +36,72 @@ export interface NavigationItem {
   shortcut?: string // Keyboard shortcut (e.g., "1")
 }
 
-// Application template metadata
-export interface ApplicationTemplateMetadata extends TemplateMetadata {
-  type: "application"
-  defaultView: string // Initial view to show
-  palette: string // Theme palette name (e.g., "amber")
+// Base template configuration (shared by all templates)
+export interface BaseTemplateConfig {
+  slug: string
+  name: string
+  description: string
+  palette: ColorPalette // Required for ALL templates
+  heroBlock: string // The hero block to use for preview (default)
+  heroOptions?: string[] // Available hero alternatives (including default)
 }
 
-// Application template configuration
-export interface ApplicationTemplateConfig {
-  metadata: ApplicationTemplateMetadata
+// Service template configuration (landing pages)
+export interface ServiceTemplateConfig extends BaseTemplateConfig {
+  type: "service"
+  blocks: BlockConfig[]
+}
+
+// Application template configuration (SPA-like apps)
+export interface ApplicationTemplateConfig extends BaseTemplateConfig {
+  type: "application"
   shell: string // Shell wrapper block name
+  defaultView: string // Initial view to show
+  navigation: NavigationItem[]
+  views: BlockConfig[]
+}
+
+// Unified template type (discriminated union)
+export type UnifiedTemplateConfig = ServiceTemplateConfig | ApplicationTemplateConfig
+
+// Type guards
+export function isServiceTemplate(config: UnifiedTemplateConfig): config is ServiceTemplateConfig {
+  return config.type === "service"
+}
+
+export function isApplicationTemplate(config: UnifiedTemplateConfig): config is ApplicationTemplateConfig {
+  return config.type === "application"
+}
+
+// ============================================
+// Legacy Types (for backwards compatibility during migration)
+// ============================================
+
+// Template metadata (base) - DEPRECATED: Use BaseTemplateConfig
+export interface TemplateMetadata {
+  slug: string
+  name: string
+  description: string
+  heroBlock: string
+}
+
+// Complete service template configuration - DEPRECATED: Use ServiceTemplateConfig
+export interface TemplateConfig {
+  metadata: TemplateMetadata
+  blocks: BlockConfig[]
+}
+
+// Application template metadata - DEPRECATED: Use ApplicationTemplateConfig
+export interface ApplicationTemplateMetadata extends TemplateMetadata {
+  type: "application"
+  defaultView: string
+  palette: string
+}
+
+// Old application config - DEPRECATED: Use ApplicationTemplateConfig
+export interface LegacyApplicationTemplateConfig {
+  metadata: ApplicationTemplateMetadata
+  shell: string
   navigation: NavigationItem[]
   views: BlockConfig[]
 }
@@ -86,6 +140,36 @@ export const templateConfigs: Record<string, TemplateConfig> = {
     blocks: [
       { name: "header-1", tint: "tinted", forceLight: true },
       { name: "hero-1", tint: "tinted", forceLight: true },
+      { name: "logos-1", tint: "deep" },
+      { name: "features-1", tint: "tinted" },
+      { name: "features-2", tint: "tinted" },
+      { name: "features-3", tint: "tinted" },
+      { name: "features-4", tint: "tinted" },
+      { name: "features-5", tint: "tinted" },
+      { name: "products-1", tint: "tinted" },
+      { name: "pricing-1", tint: "tinted" },
+      { name: "testimonials-1", tint: "deep" },
+      { name: "gallery-1", tint: "tinted" },
+      { name: "team-1", tint: "tinted" },
+      { name: "stats-1", tint: "deep" },
+      { name: "faq-1", tint: "tinted" },
+      { name: "blog-1", tint: "tinted" },
+      { name: "contact-1", tint: "tinted" },
+      { name: "newsletter-1", tint: "deep" },
+      { name: "cta-1", tint: "tinted" },
+      { name: "footer-1", tint: "tinted" },
+    ],
+  },
+  "service-fitness": {
+    metadata: {
+      slug: "service-fitness",
+      name: "Personal Training",
+      description: "A professional template for personal trainers and fitness coaches",
+      heroBlock: "hero-4",
+    },
+    blocks: [
+      { name: "header-1", tint: "tinted", forceLight: true },
+      { name: "hero-4", tint: "tinted", forceLight: true },
       { name: "logos-1", tint: "deep" },
       { name: "features-1", tint: "tinted" },
       { name: "features-2", tint: "tinted" },
@@ -234,7 +318,7 @@ export function getBlockRenderSettings(blockName: string): {
 
 export const applicationTemplateConfigs: Record<
   string,
-  ApplicationTemplateConfig
+  LegacyApplicationTemplateConfig
 > = {
   "app-gym-tracker": {
     metadata: {
@@ -242,26 +326,26 @@ export const applicationTemplateConfigs: Record<
       slug: "app-gym-tracker",
       name: "Gym Tracker",
       description: "Progressive overload tracker for strength training",
-      heroBlock: "app-dashboard-1",
-      defaultView: "app-dashboard-1",
+      heroBlock: "app-gym-today-1",
+      defaultView: "app-gym-today-1",
       palette: "sage",
     },
-    shell: "app-shell-1",
+    shell: "app-gym-shell-1",
     navigation: [
-      { name: "app-dashboard-1", label: "Dashboard", icon: "LayoutDashboard" },
-      { name: "app-workout-log-1", label: "Log Workout", icon: "Dumbbell" },
-      { name: "app-calendar-1", label: "Calendar", icon: "Calendar" },
-      { name: "app-progress-1", label: "Progress", icon: "TrendingUp" },
-      { name: "app-exercises-1", label: "Exercises", icon: "Library" },
-      { name: "app-settings-1", label: "Settings", icon: "Settings" },
+      { name: "app-gym-today-1", label: "Today", icon: "LayoutDashboard" },
+      { name: "app-gym-log-1", label: "Log", icon: "Dumbbell" },
+      { name: "app-gym-history-1", label: "History", icon: "Calendar" },
+      { name: "app-gym-gains-1", label: "Gains", icon: "TrendingUp" },
+      { name: "app-gym-library-1", label: "Library", icon: "Library" },
+      { name: "app-gym-profile-1", label: "Profile", icon: "User" },
     ],
     views: [
-      { name: "app-dashboard-1" },
-      { name: "app-workout-log-1" },
-      { name: "app-calendar-1" },
-      { name: "app-progress-1" },
-      { name: "app-exercises-1" },
-      { name: "app-settings-1" },
+      { name: "app-gym-today-1" },
+      { name: "app-gym-log-1" },
+      { name: "app-gym-history-1" },
+      { name: "app-gym-gains-1" },
+      { name: "app-gym-library-1" },
+      { name: "app-gym-profile-1" },
     ],
   },
   "app-quiz": {
@@ -290,30 +374,6 @@ export const applicationTemplateConfigs: Record<
       { name: "app-quiz-settings-1" },
     ],
   },
-  "app-database": {
-    metadata: {
-      type: "application",
-      slug: "app-database",
-      name: "Database Dashboard",
-      description: "Database management and query interface",
-      heroBlock: "app-database-dashboard-1",
-      defaultView: "app-database-dashboard-1",
-      palette: "cyan",
-    },
-    shell: "app-database-shell-1",
-    navigation: [
-      { name: "app-database-dashboard-1", label: "Overview", icon: "LayoutDashboard" },
-      { name: "app-database-tables-1", label: "Tables", icon: "Table" },
-      { name: "app-database-query-1", label: "Query", icon: "Terminal" },
-      { name: "app-database-settings-1", label: "Settings", icon: "Settings" },
-    ],
-    views: [
-      { name: "app-database-dashboard-1" },
-      { name: "app-database-tables-1" },
-      { name: "app-database-query-1" },
-      { name: "app-database-settings-1" },
-    ],
-  },
 }
 
 // Application template slugs
@@ -330,7 +390,7 @@ export function getAllApplicationTemplatesMetadata(): ApplicationTemplateMetadat
 // Get application template config by slug
 export function getApplicationTemplateConfig(
   slug: string
-): ApplicationTemplateConfig | null {
+): LegacyApplicationTemplateConfig | null {
   return applicationTemplateConfigs[slug] || null
 }
 
@@ -361,7 +421,303 @@ export function getApplicationShellForBlock(blockName: string): {
 }
 
 // ============================================
-// Combined Template Utilities
+// UNIFIED TEMPLATES (New Architecture)
+// ============================================
+
+// Single source of truth for all templates
+export const templates: Record<string, UnifiedTemplateConfig> = {
+  // Service Templates
+  "service-plants": {
+    type: "service",
+    slug: "service-plants",
+    name: "Service Plants",
+    description: "A modern template for plant care services and nurseries",
+    palette: "sage",
+    heroBlock: "hero-1",
+    blocks: [
+      { name: "header-1", tint: "tinted", forceLight: true },
+      { name: "hero-1", tint: "tinted", forceLight: true },
+      { name: "logos-1", tint: "deep" },
+      { name: "features-1", tint: "tinted" },
+      { name: "features-2", tint: "tinted" },
+      { name: "features-3", tint: "tinted" },
+      { name: "features-4", tint: "tinted" },
+      { name: "features-5", tint: "tinted" },
+      { name: "products-1", tint: "tinted" },
+      { name: "pricing-1", tint: "tinted" },
+      { name: "testimonials-1", tint: "deep" },
+      { name: "gallery-1", tint: "tinted" },
+      { name: "team-1", tint: "tinted" },
+      { name: "stats-1", tint: "deep" },
+      { name: "faq-1", tint: "tinted" },
+      { name: "blog-1", tint: "tinted" },
+      { name: "contact-1", tint: "tinted" },
+      { name: "newsletter-1", tint: "deep" },
+      { name: "cta-1", tint: "tinted" },
+      { name: "footer-1", tint: "tinted" },
+    ],
+  },
+  "service-travel": {
+    type: "service",
+    slug: "service-travel",
+    name: "Travel Agency",
+    description: "A stunning template for travel agencies and tour operators",
+    palette: "azure",
+    heroBlock: "hero-2",
+    blocks: [
+      { name: "hero-2", forceLight: true },
+    ],
+  },
+  "service-boat": {
+    type: "service",
+    slug: "service-boat",
+    name: "Yacht Charter",
+    description: "A luxury template for yacht rentals and marine services",
+    palette: "azure",
+    heroBlock: "hero-3",
+    blocks: [
+      { name: "hero-3", forceLight: true },
+    ],
+  },
+  "service-fitness": {
+    type: "service",
+    slug: "service-fitness",
+    name: "Personal Training",
+    description: "A professional template for personal trainers and fitness coaches",
+    palette: "slate",
+    heroBlock: "hero-4",
+    heroOptions: ["hero-4", "hero-5", "hero-6"],
+    blocks: [
+      { name: "header-1", tint: "tinted", forceLight: true },
+      { name: "hero-4", tint: "tinted", forceLight: true },
+      { name: "logos-1", tint: "deep" },
+      { name: "features-1", tint: "tinted" },
+      { name: "features-2", tint: "tinted" },
+      { name: "features-3", tint: "tinted" },
+      { name: "features-4", tint: "tinted" },
+      { name: "features-5", tint: "tinted" },
+      { name: "products-1", tint: "tinted" },
+      { name: "pricing-1", tint: "tinted" },
+      { name: "testimonials-1", tint: "deep" },
+      { name: "gallery-1", tint: "tinted" },
+      { name: "team-1", tint: "tinted" },
+      { name: "stats-1", tint: "deep" },
+      { name: "faq-1", tint: "tinted" },
+      { name: "blog-1", tint: "tinted" },
+      { name: "contact-1", tint: "tinted" },
+      { name: "newsletter-1", tint: "deep" },
+      { name: "cta-1", tint: "tinted" },
+      { name: "footer-1", tint: "tinted" },
+    ],
+  },
+
+  // Application Templates
+  "app-gym-tracker": {
+    type: "application",
+    slug: "app-gym-tracker",
+    name: "Gym Tracker",
+    description: "Progressive overload tracker for strength training",
+    palette: "sage",
+    heroBlock: "app-gym-today-1",
+    shell: "app-gym-shell-1",
+    defaultView: "app-gym-today-1",
+    navigation: [
+      { name: "app-gym-today-1", label: "Today", icon: "LayoutDashboard" },
+      { name: "app-gym-log-1", label: "Log", icon: "Dumbbell" },
+      { name: "app-gym-history-1", label: "History", icon: "Calendar" },
+      { name: "app-gym-gains-1", label: "Gains", icon: "TrendingUp" },
+      { name: "app-gym-library-1", label: "Library", icon: "Library" },
+      { name: "app-gym-profile-1", label: "Profile", icon: "User" },
+    ],
+    views: [
+      { name: "app-gym-today-1" },
+      { name: "app-gym-log-1" },
+      { name: "app-gym-history-1" },
+      { name: "app-gym-gains-1" },
+      { name: "app-gym-library-1" },
+      { name: "app-gym-profile-1" },
+    ],
+  },
+  "app-quiz": {
+    type: "application",
+    slug: "app-quiz",
+    name: "Quiz App",
+    description: "Interactive quiz application with progress tracking",
+    palette: "violet",
+    heroBlock: "app-quiz-dashboard-1",
+    shell: "app-quiz-shell-1",
+    defaultView: "app-quiz-dashboard-1",
+    navigation: [
+      { name: "app-quiz-dashboard-1", label: "Dashboard", icon: "LayoutDashboard" },
+      { name: "app-quiz-browse-1", label: "Browse", icon: "Search" },
+      { name: "app-quiz-active-1", label: "Active Quiz", icon: "Play" },
+      { name: "app-quiz-results-1", label: "Results", icon: "Trophy" },
+      { name: "app-quiz-settings-1", label: "Settings", icon: "Settings" },
+    ],
+    views: [
+      { name: "app-quiz-dashboard-1" },
+      { name: "app-quiz-browse-1" },
+      { name: "app-quiz-active-1" },
+      { name: "app-quiz-results-1" },
+      { name: "app-quiz-settings-1" },
+    ],
+  },
+}
+
+// ============================================
+// Unified Helper Functions
+// ============================================
+
+// Get template by slug (unified)
+export function getTemplate(slug: string): UnifiedTemplateConfig | null {
+  return templates[slug] || null
+}
+
+// Get template palette (unified)
+export function getTemplatePalette(slug: string): ColorPalette {
+  const template = templates[slug]
+  if (template) return template.palette
+  // Fallback to legacy configs
+  const appConfig = applicationTemplateConfigs[slug]
+  if (appConfig?.metadata.palette) {
+    return appConfig.metadata.palette as ColorPalette
+  }
+  return "azure"
+}
+
+// Find which template a block belongs to (unified)
+export function getTemplateForBlockUnified(blockName: string): UnifiedTemplateConfig | null {
+  for (const template of Object.values(templates)) {
+    if (isServiceTemplate(template)) {
+      if (template.blocks.some((b) => b.name === blockName)) {
+        return template
+      }
+    } else {
+      if (template.shell === blockName) return template
+      if (template.views.some((v) => v.name === blockName)) return template
+    }
+  }
+  return null
+}
+
+// Get block config from unified templates
+export function getBlockConfigUnified(
+  templateSlug: string,
+  blockName: string
+): BlockConfig | null {
+  const template = templates[templateSlug]
+  if (!template) return null
+
+  if (isServiceTemplate(template)) {
+    return template.blocks.find((b) => b.name === blockName) || null
+  } else {
+    if (template.shell === blockName) return { name: blockName }
+    return template.views.find((v) => v.name === blockName) || null
+  }
+}
+
+// Get block index within template (unified)
+export function getBlockIndexUnified(templateSlug: string, blockName: string): number {
+  const template = templates[templateSlug]
+  if (!template) return 0
+
+  if (isServiceTemplate(template)) {
+    const index = template.blocks.findIndex((b) => b.name === blockName)
+    return index === -1 ? 0 : index
+  } else {
+    if (template.shell === blockName) return 0
+    const index = template.views.findIndex((v) => v.name === blockName)
+    return index === -1 ? 0 : index + 1
+  }
+}
+
+// Get shell info for application view block (unified)
+export function getShellForBlock(blockName: string): {
+  shell: string
+  template: ApplicationTemplateConfig
+} | null {
+  for (const template of Object.values(templates)) {
+    if (isApplicationTemplate(template)) {
+      if (template.views.some((v) => v.name === blockName)) {
+        return { shell: template.shell, template }
+      }
+    }
+  }
+  return null
+}
+
+// Get complete block settings for rendering (unified)
+export function getBlockSettingsUnified(blockName: string): {
+  template: UnifiedTemplateConfig | null
+  templateSlug: string | null
+  tint: TintLevel | undefined
+  forceDark: boolean | undefined
+  forceLight: boolean | undefined
+  blockType: string | null
+  index: number
+} {
+  const template = getTemplateForBlockUnified(blockName)
+
+  if (!template) {
+    return {
+      template: null,
+      templateSlug: null,
+      tint: undefined,
+      forceDark: undefined,
+      forceLight: undefined,
+      blockType: null,
+      index: 0,
+    }
+  }
+
+  const blockConfig = getBlockConfigUnified(template.slug, blockName)
+  const index = getBlockIndexUnified(template.slug, blockName)
+
+  // Extract block type from name
+  const match = blockName.match(/^([a-z-]+)-\d+$/)
+  const blockType = match ? match[1] : null
+
+  return {
+    template,
+    templateSlug: template.slug,
+    tint: blockConfig?.tint,
+    forceDark: blockConfig?.forceDark,
+    forceLight: blockConfig?.forceLight,
+    blockType,
+    index,
+  }
+}
+
+// Get all unified templates
+export function getAllTemplates(): UnifiedTemplateConfig[] {
+  return Object.values(templates)
+}
+
+// Get service templates only
+export function getServiceTemplates(): ServiceTemplateConfig[] {
+  return Object.values(templates).filter(isServiceTemplate)
+}
+
+// Get application templates only
+export function getApplicationTemplates(): ApplicationTemplateConfig[] {
+  return Object.values(templates).filter(isApplicationTemplate)
+}
+
+// Get available hero options for a template
+export function getTemplateHeroOptions(slug: string): string[] {
+  const template = templates[slug]
+  if (!template) return []
+  return template.heroOptions || [template.heroBlock]
+}
+
+// Get default hero for a template
+export function getTemplateDefaultHero(slug: string): string | null {
+  const template = templates[slug]
+  return template?.heroBlock || null
+}
+
+// ============================================
+// Legacy Helpers (for backwards compatibility)
 // ============================================
 
 // Get all templates metadata including application templates
