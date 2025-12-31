@@ -12,6 +12,18 @@ import { cn } from "@/lib/utils"
 export type TintLevel = "base" | "tinted" | "deep"
 export const DEFAULT_TINT: TintLevel = "base"
 
+export type ColorPalette =
+  | "slate"
+  | "azure"
+  | "violet"
+  | "rose"
+  | "sage"
+  | "amber"
+  | "cyan"
+  | "indigo"
+  | "coral"
+  | "forest"
+
 type ThemeStyleProps = Record<string, string>
 
 interface ThemeStyles {
@@ -25,9 +37,42 @@ interface ThemePreset {
 }
 
 // ============================================================================
+// Custom Theme Interface
+// ============================================================================
+
+export interface CustomTheme {
+  /** Primary brand color (required for custom themes) */
+  brand: string
+  /** Complementary color (auto-computed if not provided) */
+  brandComplementary?: string
+  /** Override background color */
+  background?: string
+  /** Override foreground color */
+  foreground?: string
+  /** Override card background */
+  card?: string
+  /** Override card foreground */
+  cardForeground?: string
+  /** Override muted background */
+  muted?: string
+  /** Override muted foreground */
+  mutedForeground?: string
+}
+
+// ============================================================================
 // Font Configuration
 // ============================================================================
 
+export type FontPreset = "modern" | "elegant" | "classic" | "playful"
+
+export interface CustomFonts {
+  display: string
+  body: string
+  displayWeight?: string
+  bodyWeight?: string
+}
+
+// Legacy interface for backwards compatibility
 export interface TemplateFonts {
   display: string
   body: string
@@ -42,32 +87,68 @@ const defaultFonts: TemplateFonts = {
   bodyWeight: "400",
 }
 
-export const templateFonts: Record<string, TemplateFonts> = {
-  "service-plants": {
+// Font presets
+export const fontPresets: Record<FontPreset, TemplateFonts> = {
+  modern: {
+    display: "var(--font-display), Poppins, sans-serif",
+    body: "var(--font-sans), Inter, sans-serif",
+    displayWeight: "700",
+    bodyWeight: "400",
+  },
+  elegant: {
     display: "var(--font-fraunces), Fraunces, serif",
     body: "var(--font-dm-sans), DM Sans, sans-serif",
     displayWeight: "600",
     bodyWeight: "400",
   },
+  classic: {
+    display: "var(--font-playfair), Playfair Display, serif",
+    body: "var(--font-source-sans), Source Sans 3, sans-serif",
+    displayWeight: "700",
+    bodyWeight: "400",
+  },
+  playful: {
+    display: "var(--font-space-grotesk), Space Grotesk, sans-serif",
+    body: "var(--font-nunito), Nunito, sans-serif",
+    displayWeight: "700",
+    bodyWeight: "400",
+  },
 }
 
-export function getTemplateFonts(slug: string): TemplateFonts {
-  return templateFonts[slug] || defaultFonts
-}
+/** Get font styles from preset or custom fonts */
+export function getFontStyles(
+  fonts?: FontPreset | CustomFonts
+): React.CSSProperties {
+  if (!fonts) {
+    return {
+      "--font-display": defaultFonts.display,
+      "--font-body": defaultFonts.body,
+      "--font-display-weight": defaultFonts.displayWeight,
+      "--font-body-weight": defaultFonts.bodyWeight,
+    } as React.CSSProperties
+  }
 
-export function getTemplateFontStyles(slug: string): React.CSSProperties {
-  const fonts = getTemplateFonts(slug)
+  if (typeof fonts === "string") {
+    const preset = fontPresets[fonts] || defaultFonts
+    return {
+      "--font-display": preset.display,
+      "--font-body": preset.body,
+      "--font-display-weight": preset.displayWeight,
+      "--font-body-weight": preset.bodyWeight,
+    } as React.CSSProperties
+  }
+
   return {
     "--font-display": fonts.display,
     "--font-body": fonts.body,
-    "--font-display-weight": fonts.displayWeight,
-    "--font-body-weight": fonts.bodyWeight,
+    "--font-display-weight": fonts.displayWeight || "700",
+    "--font-body-weight": fonts.bodyWeight || "400",
   } as React.CSSProperties
 }
 
 export function getAllFontFamilies(): string[] {
   const families = new Set<string>()
-  Object.values(templateFonts).forEach((fonts) => {
+  Object.values(fontPresets).forEach((fonts) => {
     const displayFamily = fonts.display
       .split(",")[0]
       .replace(/['"]/g, "")
@@ -83,46 +164,21 @@ export function getAllFontFamilies(): string[] {
 // Color Palettes & Theme Presets
 // ============================================================================
 
-type ColorPalette =
-  | "slate"
-  | "azure"
-  | "violet"
-  | "rose"
-  | "sage"
-  | "amber"
-  | "cyan"
-  | "indigo"
-  | "coral"
-  | "forest"
-
-export const templatePalettes: Record<string, ColorPalette> = {
-  "pitsi-landing": "azure",
-  ai: "azure",
-  "ai-sci-fi": "indigo",
-  "product-scifi": "cyan",
-  art: "violet",
-  "service-fashion": "rose",
-  "service-tattoo": "coral",
-  "food-pizza": "coral",
-  "food-juice": "amber",
-  "service-coffee-shop": "amber",
-  "product-coffee": "amber",
-  "product-plants": "sage",
-  "product-skincare": "rose",
-  "service-gym": "coral",
-  "service-psychologist": "sage",
-  "service-barber": "amber",
-  "service-makeup": "rose",
-  boat: "azure",
-  "service-travel": "azure",
-  "service-boat": "azure",
-  "service-hospitality": "amber",
-  "service-pet-sitting": "forest",
-  "service-real-estate": "indigo",
-  "service-marketing": "violet",
-  "service-plants": "sage",
-  "app-guitar": "amber",
-  "app-quiz": "violet",
+// Brand colors for each palette
+const paletteColors: Record<
+  ColorPalette,
+  { brand: string; complementary: string }
+> = {
+  slate: { brand: "#777777", complementary: "#999999" },
+  azure: { brand: "#3b82f6", complementary: "#f97316" },
+  violet: { brand: "#8b5cf6", complementary: "#22c55e" },
+  rose: { brand: "#e11d48", complementary: "#14b8a6" },
+  sage: { brand: "#84a98c", complementary: "#d4a574" },
+  amber: { brand: "#d97706", complementary: "#4f46e5" },
+  cyan: { brand: "#06b6d4", complementary: "#f97316" },
+  indigo: { brand: "#4f46e5", complementary: "#f59e0b" },
+  coral: { brand: "#f97316", complementary: "#06b6d4" },
+  forest: { brand: "#166534", complementary: "#ea580c" },
 }
 
 // Base neutral themes
@@ -192,149 +248,47 @@ const darkBase: ThemeStyleProps = {
   "brand-complementary": "#777777",
 }
 
-// Tinted theme generator
-function createTintedTheme(
-  baseLight: ThemeStyleProps,
-  baseDark: ThemeStyleProps,
-  brandColor: string,
-  brandComplementary: string
-): ThemeStyles {
-  return {
-    light: {
-      ...baseLight,
-      brand: brandColor,
-      "brand-complementary": brandComplementary,
-    },
-    dark: {
-      ...baseDark,
-      brand: brandColor,
-      "brand-complementary": brandComplementary,
-    },
-  }
-}
-
-// Theme presets
-const themePresets: Record<string, ThemePreset> = {
-  slate: {
-    label: "Slate",
-    styles: { light: lightBase, dark: darkBase },
+// Deep background colors for each palette
+const deepBackgrounds: Record<
+  ColorPalette,
+  { light: Partial<ThemeStyleProps>; dark: Partial<ThemeStyleProps> }
+> = {
+  slate: { light: {}, dark: {} },
+  azure: {
+    light: { background: "#f0f7ff", muted: "#e6f0ff" },
+    dark: { background: "#1a2744", muted: "#243352" },
   },
-  "azure-tinted": {
-    label: "Azure Tinted",
-    styles: createTintedTheme(lightBase, darkBase, "#3b82f6", "#f97316"),
+  sage: {
+    light: { background: "#f5f9f6", muted: "#eaf2ec" },
+    dark: { background: "#1a261c", muted: "#243328" },
   },
-  "azure-deep": {
-    label: "Azure Deep",
-    styles: createTintedTheme(
-      { ...lightBase, background: "#f0f7ff", muted: "#e6f0ff" },
-      { ...darkBase, background: "#1a2744", muted: "#243352" },
-      "#3b82f6",
-      "#f97316"
-    ),
+  rose: {
+    light: { background: "#fdf2f4", muted: "#fce7eb" },
+    dark: { background: "#2a1a1e", muted: "#3a242a" },
   },
-  "sage-tinted": {
-    label: "Sage Tinted",
-    styles: createTintedTheme(lightBase, darkBase, "#84a98c", "#d4a574"),
+  amber: {
+    light: { background: "#fffbeb", muted: "#fef3c7" },
+    dark: { background: "#2a2517", muted: "#3a3222" },
   },
-  "sage-deep": {
-    label: "Sage Deep",
-    styles: createTintedTheme(
-      { ...lightBase, background: "#f5f9f6", muted: "#eaf2ec" },
-      { ...darkBase, background: "#1a261c", muted: "#243328" },
-      "#84a98c",
-      "#d4a574"
-    ),
+  violet: {
+    light: { background: "#f5f3ff", muted: "#ede9fe" },
+    dark: { background: "#1e1a2e", muted: "#2a2540" },
   },
-  "rose-tinted": {
-    label: "Rose Tinted",
-    styles: createTintedTheme(lightBase, darkBase, "#e11d48", "#14b8a6"),
+  indigo: {
+    light: { background: "#eef2ff", muted: "#e0e7ff" },
+    dark: { background: "#1a1a2e", muted: "#252540" },
   },
-  "rose-deep": {
-    label: "Rose Deep",
-    styles: createTintedTheme(
-      { ...lightBase, background: "#fdf2f4", muted: "#fce7eb" },
-      { ...darkBase, background: "#2a1a1e", muted: "#3a242a" },
-      "#e11d48",
-      "#14b8a6"
-    ),
+  coral: {
+    light: { background: "#fff7ed", muted: "#ffedd5" },
+    dark: { background: "#2a1f17", muted: "#3a2c22" },
   },
-  "amber-tinted": {
-    label: "Amber Tinted",
-    styles: createTintedTheme(lightBase, darkBase, "#d97706", "#4f46e5"),
+  cyan: {
+    light: { background: "#ecfeff", muted: "#cffafe" },
+    dark: { background: "#162631", muted: "#1f3540" },
   },
-  "amber-deep": {
-    label: "Amber Deep",
-    styles: createTintedTheme(
-      { ...lightBase, background: "#fffbeb", muted: "#fef3c7" },
-      { ...darkBase, background: "#2a2517", muted: "#3a3222" },
-      "#d97706",
-      "#4f46e5"
-    ),
-  },
-  "violet-tinted": {
-    label: "Violet Tinted",
-    styles: createTintedTheme(lightBase, darkBase, "#8b5cf6", "#22c55e"),
-  },
-  "violet-deep": {
-    label: "Violet Deep",
-    styles: createTintedTheme(
-      { ...lightBase, background: "#f5f3ff", muted: "#ede9fe" },
-      { ...darkBase, background: "#1e1a2e", muted: "#2a2540" },
-      "#8b5cf6",
-      "#22c55e"
-    ),
-  },
-  "indigo-tinted": {
-    label: "Indigo Tinted",
-    styles: createTintedTheme(lightBase, darkBase, "#4f46e5", "#f59e0b"),
-  },
-  "indigo-deep": {
-    label: "Indigo Deep",
-    styles: createTintedTheme(
-      { ...lightBase, background: "#eef2ff", muted: "#e0e7ff" },
-      { ...darkBase, background: "#1a1a2e", muted: "#252540" },
-      "#4f46e5",
-      "#f59e0b"
-    ),
-  },
-  "coral-tinted": {
-    label: "Coral Tinted",
-    styles: createTintedTheme(lightBase, darkBase, "#f97316", "#06b6d4"),
-  },
-  "coral-deep": {
-    label: "Coral Deep",
-    styles: createTintedTheme(
-      { ...lightBase, background: "#fff7ed", muted: "#ffedd5" },
-      { ...darkBase, background: "#2a1f17", muted: "#3a2c22" },
-      "#f97316",
-      "#06b6d4"
-    ),
-  },
-  "cyan-tinted": {
-    label: "Cyan Tinted",
-    styles: createTintedTheme(lightBase, darkBase, "#06b6d4", "#f97316"),
-  },
-  "cyan-deep": {
-    label: "Cyan Deep",
-    styles: createTintedTheme(
-      { ...lightBase, background: "#ecfeff", muted: "#cffafe" },
-      { ...darkBase, background: "#162631", muted: "#1f3540" },
-      "#06b6d4",
-      "#f97316"
-    ),
-  },
-  "forest-tinted": {
-    label: "Forest Tinted",
-    styles: createTintedTheme(lightBase, darkBase, "#166534", "#ea580c"),
-  },
-  "forest-deep": {
-    label: "Forest Deep",
-    styles: createTintedTheme(
-      { ...lightBase, background: "#f0fdf4", muted: "#dcfce7" },
-      { ...darkBase, background: "#14261a", muted: "#1f3826" },
-      "#166534",
-      "#ea580c"
-    ),
+  forest: {
+    light: { background: "#f0fdf4", muted: "#dcfce7" },
+    dark: { background: "#14261a", muted: "#1f3826" },
   },
 }
 
@@ -342,7 +296,7 @@ const themePresets: Record<string, ThemePreset> = {
 // Theme Utilities
 // ============================================================================
 
-export function getPresetKey(palette: string, tint: TintLevel): string {
+export function getPresetKey(palette: ColorPalette, tint: TintLevel): string {
   if (tint === "base") return "slate"
   if (palette === "slate") return "slate"
   switch (tint) {
@@ -355,32 +309,143 @@ export function getPresetKey(palette: string, tint: TintLevel): string {
   }
 }
 
-export function getTemplateThemeStyle(
-  slug: string,
+/** Compute a complementary color (simple hue rotation) */
+function computeComplementaryColor(hex: string): string {
+  // Simple implementation - rotate hue by 180 degrees
+  // For production, could use a proper color library
+  const r = parseInt(hex.slice(1, 3), 16)
+  const g = parseInt(hex.slice(3, 5), 16)
+  const b = parseInt(hex.slice(5, 7), 16)
+
+  // Convert to HSL, rotate hue, convert back
+  const max = Math.max(r, g, b)
+  const min = Math.min(r, g, b)
+  let h = 0
+  const l = (max + min) / 2 / 255
+
+  if (max !== min) {
+    const d = max - min
+    const s = l > 0.5 ? d / (2 * 255 - max - min) : d / (max + min)
+    switch (max) {
+      case r:
+        h = ((g - b) / d + (g < b ? 6 : 0)) / 6
+        break
+      case g:
+        h = ((b - r) / d + 2) / 6
+        break
+      case b:
+        h = ((r - g) / d + 4) / 6
+        break
+    }
+  }
+
+  // Rotate hue by 180 degrees
+  h = (h + 0.5) % 1
+
+  // Convert back to RGB
+  const hue2rgb = (p: number, q: number, t: number) => {
+    if (t < 0) t += 1
+    if (t > 1) t -= 1
+    if (t < 1 / 6) return p + (q - p) * 6 * t
+    if (t < 1 / 2) return q
+    if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6
+    return p
+  }
+
+  const s = 0.5 // Keep saturation moderate
+  const q = l < 0.5 ? l * (1 + s) : l + s - l * s
+  const p = 2 * l - q
+
+  const newR = Math.round(hue2rgb(p, q, h + 1 / 3) * 255)
+  const newG = Math.round(hue2rgb(p, q, h) * 255)
+  const newB = Math.round(hue2rgb(p, q, h - 1 / 3) * 255)
+
+  return `#${newR.toString(16).padStart(2, "0")}${newG.toString(16).padStart(2, "0")}${newB.toString(16).padStart(2, "0")}`
+}
+
+/** Get theme styles from palette */
+export function getPaletteThemeStyles(
+  palette: ColorPalette,
   tint: TintLevel = DEFAULT_TINT,
-  mode: "light" | "dark" = "dark"
+  mode: "light" | "dark" = "light"
 ): React.CSSProperties {
-  const palette = templatePalettes[slug] || "azure"
-  const presetKey = getPresetKey(palette, tint)
-  const theme =
-    themePresets[presetKey]?.styles || themePresets["azure-tinted"].styles
-  const styles = theme[mode]
+  const colors = paletteColors[palette]
+  const baseStyles = mode === "light" ? { ...lightBase } : { ...darkBase }
+
+  // Apply brand colors for non-base tints
+  if (tint !== "base" && palette !== "slate") {
+    baseStyles.brand = colors.brand
+    baseStyles["brand-complementary"] = colors.complementary
+  }
+
+  // Apply deep backgrounds
+  if (tint === "deep" && palette !== "slate") {
+    const deepBg = deepBackgrounds[palette]
+    const modeDeep = mode === "light" ? deepBg.light : deepBg.dark
+    Object.assign(baseStyles, modeDeep)
+  }
 
   const cssVars: Record<string, string> = {}
-  for (const [key, value] of Object.entries(styles)) {
+  for (const [key, value] of Object.entries(baseStyles)) {
     cssVars[`--${key}`] = value
   }
   return cssVars as React.CSSProperties
 }
 
-export function getTemplateStyles(
-  slug: string,
+/** Get theme styles from custom theme */
+export function getCustomThemeStyles(
+  theme: CustomTheme,
   tint: TintLevel = DEFAULT_TINT,
-  mode: "light" | "dark" = "dark"
+  mode: "light" | "dark" = "light"
 ): React.CSSProperties {
-  const themeStyles = getTemplateThemeStyle(slug, tint, mode)
-  const fontStyles = getTemplateFontStyles(slug)
-  return { ...themeStyles, ...fontStyles }
+  const baseStyles = mode === "light" ? { ...lightBase } : { ...darkBase }
+
+  // Apply brand color
+  baseStyles.brand = theme.brand
+  baseStyles["brand-complementary"] =
+    theme.brandComplementary || computeComplementaryColor(theme.brand)
+
+  // Apply optional overrides
+  if (theme.background) baseStyles.background = theme.background
+  if (theme.foreground) baseStyles.foreground = theme.foreground
+  if (theme.card) baseStyles.card = theme.card
+  if (theme.cardForeground) baseStyles["card-foreground"] = theme.cardForeground
+  if (theme.muted) baseStyles.muted = theme.muted
+  if (theme.mutedForeground)
+    baseStyles["muted-foreground"] = theme.mutedForeground
+
+  const cssVars: Record<string, string> = {}
+  for (const [key, value] of Object.entries(baseStyles)) {
+    cssVars[`--${key}`] = value
+  }
+  return cssVars as React.CSSProperties
+}
+
+/** Get combined theme + font styles */
+export function getThemeStyles(options: {
+  palette?: ColorPalette
+  theme?: CustomTheme
+  tint?: TintLevel
+  mode?: "light" | "dark"
+  fonts?: FontPreset | CustomFonts
+}): React.CSSProperties {
+  const {
+    palette = "azure",
+    theme,
+    tint = DEFAULT_TINT,
+    mode = "light",
+    fonts,
+  } = options
+
+  // Get color styles
+  const colorStyles = theme
+    ? getCustomThemeStyles(theme, tint, mode)
+    : getPaletteThemeStyles(palette, tint, mode)
+
+  // Get font styles
+  const fontStyles = getFontStyles(fonts)
+
+  return { ...colorStyles, ...fontStyles }
 }
 
 // ============================================================================
@@ -388,22 +453,33 @@ export function getTemplateStyles(
 // ============================================================================
 
 export interface BlockThemeWrapperProps {
-  slug: string
-  tint?: TintLevel
-  forceDark?: boolean
-  forceLight?: boolean
-  transparent?: boolean
   children: React.ReactNode
+  /** Preset color palette */
+  palette?: ColorPalette
+  /** Custom theme colors (overrides palette) */
+  theme?: CustomTheme
+  /** Tint intensity */
+  tint?: TintLevel
+  /** Font preset or custom fonts */
+  fonts?: FontPreset | CustomFonts
+  /** Force dark mode */
+  forceDark?: boolean
+  /** Force light mode */
+  forceLight?: boolean
+  /** Transparent background */
+  transparent?: boolean
   className?: string
 }
 
 export function BlockThemeWrapper({
-  slug,
+  children,
+  palette = "azure",
+  theme,
   tint = DEFAULT_TINT,
+  fonts,
   forceDark = false,
   forceLight = false,
   transparent = false,
-  children,
   className,
 }: BlockThemeWrapperProps) {
   const { resolvedTheme } = useTheme()
@@ -412,7 +488,15 @@ export function BlockThemeWrapper({
     : forceLight
       ? "light"
       : (resolvedTheme as "light" | "dark") || "light"
-  const style = getTemplateStyles(slug, tint, mode)
+
+  // Get styles
+  const style = getThemeStyles({
+    palette,
+    theme,
+    tint,
+    mode,
+    fonts,
+  })
 
   return (
     <div

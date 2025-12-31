@@ -22,9 +22,11 @@
     }
   ],
   "meta": {
+    "heroBlock": "app-quiz-dashboard-1",
     "iframeHeight": "800px"
   },
   "categories": [
+    "template",
     "application",
     "app-quiz"
   ],

@@ -25,39 +25,8 @@ import {
   SidebarTrigger,
 } from "@/registry/new-york-v4/ui/sidebar"
 
-// Violet base theme - neutral UI with violet brand colors
-const violetTheme = {
-  "--background": "#fafafa",
-  "--foreground": "#1f1f1f",
-  "--card": "#ffffff",
-  "--card-foreground": "#1f1f1f",
-  "--popover": "#ffffff",
-  "--popover-foreground": "#1f1f1f",
-  "--primary": "#2d2d2d",
-  "--primary-foreground": "#fbfbfb",
-  "--secondary": "#f5f5f5",
-  "--secondary-foreground": "#2d2d2d",
-  "--muted": "#f5f5f5",
-  "--muted-foreground": "#777777",
-  "--accent": "#f5f5f5",
-  "--accent-foreground": "#2d2d2d",
-  "--destructive": "#dc4545",
-  "--destructive-foreground": "#fefefe",
-  "--border": "transparent",
-  "--input": "#e5e5e5",
-  "--ring": "#8b5cf6",
-  "--radius": "1rem",
-  "--sidebar": "#fafafa",
-  "--sidebar-foreground": "#1f1f1f",
-  "--sidebar-primary": "#2d2d2d",
-  "--sidebar-primary-foreground": "#fbfbfb",
-  "--sidebar-accent": "#f0f0f0",
-  "--sidebar-accent-foreground": "#2d2d2d",
-  "--sidebar-border": "transparent",
-  "--sidebar-ring": "#8b5cf6",
-  "--brand": "#8b5cf6",
-  "--brand-complementary": "#f6c85c",
-} as React.CSSProperties
+// Theme-agnostic shell - uses CSS variables from parent BlockThemeWrapper
+// The shell no longer has hardcoded theme colors; they're inherited from context
 
 const quizShellDefaults = {
   appName: "QuizMaster",
@@ -91,11 +60,10 @@ export function AppQuizShell1({
 }: QuizShellProps) {
   const { appName, navigation, user, logo } = quizShellDefaults
 
+  // Shell uses CSS variables from parent BlockThemeWrapper
+  // No inline style needed - theme colors come from context
   return (
-    <div
-      style={violetTheme}
-      className="bg-background text-foreground h-full min-h-[600px]"
-    >
+    <div className="bg-background text-foreground h-full min-h-[600px]">
       <SidebarProvider defaultOpen>
         <Sidebar variant="inset" collapsible="icon">
           <SidebarHeader>
@@ -173,5 +141,3 @@ export function AppQuizShell1({
     </div>
   )
 }
-
-export { violetTheme }

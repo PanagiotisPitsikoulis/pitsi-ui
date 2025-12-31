@@ -29,8 +29,8 @@ import { Stats1 } from "../stats/stats-1"
 import { Team1 } from "../team/team-1"
 import { Testimonials1 } from "../testimonials/testimonials-1"
 
-// Template slug for theming
-const TEMPLATE_SLUG = "service-plants"
+// Template palette for theming
+const TEMPLATE_PALETTE = "sage" as const
 
 // Block configuration matching template-config.ts
 const blocks: Array<{
@@ -64,7 +64,7 @@ const blocks: Array<{
 
 export function ServicePlants() {
   return (
-    <BlockThemeWrapper slug={TEMPLATE_SLUG} tint="tinted">
+    <BlockThemeWrapper palette={TEMPLATE_PALETTE} tint="tinted">
       <div className="min-h-screen">
         {blocks.map(
           ({ Component, tint, forceDark, forceLight, type }, index) => {
@@ -76,7 +76,7 @@ export function ServicePlants() {
             return (
               <BlockThemeWrapper
                 key={index}
-                slug={TEMPLATE_SLUG}
+                palette={TEMPLATE_PALETTE}
                 tint={tint}
                 forceDark={forceDark}
                 forceLight={forceLight}

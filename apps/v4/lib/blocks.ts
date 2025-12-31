@@ -5,6 +5,12 @@ export {
   getAllCategories,
   getCategoryBlockCounts,
   getBlocksByCategory as getBlockIdsByCategory,
+  // Template metadata exports
+  TEMPLATE_METADATA,
+  getAllTemplatesFromRegistry,
+  getServiceTemplatesFromRegistry,
+  getApplicationTemplatesFromRegistry,
+  type RegistryTemplateMetadata,
 } from "@/registry/__blocks-metadata__"
 
 // Heavy functions that need the full registry are imported lazily

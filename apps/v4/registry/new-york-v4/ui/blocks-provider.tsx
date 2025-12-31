@@ -5,7 +5,11 @@ import { useTheme } from "next-themes"
 
 import {
   DEFAULT_TINT,
-  getTemplateStyles,
+  getThemeStyles,
+  type ColorPalette,
+  type CustomFonts,
+  type CustomTheme,
+  type FontPreset,
   type TintLevel,
 } from "@/registry/new-york-v4/lib/block-theme"
 import { cn } from "@/registry/new-york-v4/lib/utils"
@@ -16,10 +20,14 @@ import { cn } from "@/registry/new-york-v4/lib/utils"
 
 export interface BlocksProviderProps {
   children: React.ReactNode
-  /** Template slug for color palette (e.g., "service-plants", "ai", "art") */
-  slug?: string
+  /** Preset color palette (e.g., "sage", "azure", "violet") */
+  palette?: ColorPalette
+  /** Custom theme colors (overrides palette for specified values) */
+  theme?: CustomTheme
   /** Tint intensity: base (neutral), tinted (brand colors), or deep (saturated) */
   tint?: TintLevel
+  /** Font preset or custom fonts */
+  fonts?: FontPreset | CustomFonts
   /** Force dark mode regardless of system preference */
   forceDark?: boolean
   /** Force light mode regardless of system preference */
@@ -32,17 +40,26 @@ export interface BlocksProviderProps {
 /**
  * Provider component for pitsi/ui blocks with theme, context, and decoration support.
  *
- * Wraps blocks with the appropriate CSS variables for colors and fonts based on
- * the template slug and tint level.
+ * Wraps blocks with the appropriate CSS variables for colors and fonts.
  *
  * @example
  * ```tsx
  * import { BlocksProvider } from "@/components/ui/blocks-provider"
  * import { Hero1 } from "@/components/blocks/hero-1"
  *
+ * // Using a preset palette
  * export default function Page() {
  *   return (
- *     <BlocksProvider slug="service-plants" tint="tinted">
+ *     <BlocksProvider palette="sage" tint="tinted">
+ *       <Hero1 />
+ *     </BlocksProvider>
+ *   )
+ * }
+ *
+ * // Using custom theme colors
+ * export function CustomPage() {
+ *   return (
+ *     <BlocksProvider theme={{ brand: "#5cb87e" }} fonts="elegant">
  *       <Hero1 />
  *     </BlocksProvider>
  *   )
@@ -51,8 +68,10 @@ export interface BlocksProviderProps {
  */
 export function BlocksProvider({
   children,
-  slug = "default",
+  palette = "azure",
+  theme,
   tint = DEFAULT_TINT,
+  fonts,
   forceDark = false,
   forceLight = false,
   transparent = false,
@@ -67,8 +86,14 @@ export function BlocksProvider({
       ? "light"
       : (resolvedTheme as "light" | "dark") || "light"
 
-  // Get CSS variables for the template
-  const style = getTemplateStyles(slug, tint, mode)
+  // Get CSS variables for theme
+  const style = getThemeStyles({
+    palette,
+    theme,
+    tint,
+    mode,
+    fonts,
+  })
 
   return (
     <div
@@ -92,17 +117,24 @@ export function BlocksProvider({
 
 // Theme utilities
 export {
+  // Types
   type TintLevel,
+  type ColorPalette,
+  type CustomTheme,
+  type FontPreset,
+  type CustomFonts,
   type TemplateFonts,
+  // Constants
   DEFAULT_TINT,
-  templatePalettes,
-  templateFonts,
-  getTemplateFonts,
-  getTemplateFontStyles,
+  fontPresets,
+  // Theme API
+  getThemeStyles,
+  getFontStyles,
+  getPaletteThemeStyles,
+  getCustomThemeStyles,
   getPresetKey,
-  getTemplateThemeStyle,
-  getTemplateStyles,
   getAllFontFamilies,
+  // Components
   BlockThemeWrapper,
   type BlockThemeWrapperProps,
 } from "@/registry/new-york-v4/lib/block-theme"

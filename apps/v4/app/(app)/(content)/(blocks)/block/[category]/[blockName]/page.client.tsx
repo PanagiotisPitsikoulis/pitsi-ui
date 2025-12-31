@@ -51,11 +51,13 @@ import {
   BlockContainer,
   BlockThemeWrapper,
   DEFAULT_TINT,
+  getTemplateFonts,
   ScrollContainerProvider,
   RelatedBlocksSection,
   type BlockItem,
 } from "../../../_components"
 import { getTemplateBlocks, type TemplateSlug } from "../../../blocks"
+import { getTemplatePalette } from "../../../template-config"
 
 type ViewMode = "preview" | "template" | "code"
 
@@ -139,6 +141,9 @@ export function BlockViewerClient({
   const templateBlocks = templateSlug
     ? getTemplateBlocks(templateSlug as TemplateSlug)
     : []
+
+  // Get fonts for template
+  const fonts = templateSlug ? getTemplateFonts(templateSlug) : undefined
 
   // Scroll to block when entering template mode
   useEffect(() => {
@@ -445,7 +450,7 @@ export function BlockViewerClient({
 
               {/* Template Mode */}
               {viewMode === "template" && templateSlug && (
-                <BlockThemeWrapper slug={templateSlug} tint={DEFAULT_TINT}>
+                <BlockThemeWrapper palette={getTemplatePalette(templateSlug)} tint={DEFAULT_TINT} fonts={fonts}>
                   <ScrollContainerProvider value={mainRef}>
                     {templateBlocks.map(
                       (
@@ -465,10 +470,11 @@ export function BlockViewerClient({
                         return (
                           <BlockThemeWrapper
                             key={name}
-                            slug={templateSlug}
+                            palette={getTemplatePalette(templateSlug)}
                             tint={blockTint}
                             forceDark={forceDark}
                             forceLight={forceLight}
+                            fonts={fonts}
                           >
                             <div
                               id={name}

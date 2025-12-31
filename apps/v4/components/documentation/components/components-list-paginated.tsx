@@ -265,7 +265,7 @@ export const ComponentsListPaginated = memo(function ComponentsListPaginated({
 
   return (
     <div className="relative mt-6 pb-8">
-      <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         {filteredItems.map((item) => {
           const registryName = item.registryName || item.$id
           return (

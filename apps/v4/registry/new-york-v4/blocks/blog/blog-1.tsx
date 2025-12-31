@@ -64,7 +64,7 @@ const blockDefaults = {
   cta: {
     label: "View All Articles",
     href: "#",
-    variant: "outline" as const,
+    variant: "secondary" as const,
   },
 }
 
@@ -112,8 +112,8 @@ export function Blog1({ content = {}, classNames = {} }: BlogBlockProps) {
               className={cn("mt-4 md:mt-0", classNames.cta)}
             >
               <Button
-                variant={cta.variant ?? "outline"}
-                className="border-border rounded-full"
+                variant={cta.variant ?? "secondary"}
+                className="bg-page hover:bg-page hover:text-muted-foreground/50 rounded-full"
               >
                 {cta.label}
               </Button>

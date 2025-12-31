@@ -8,11 +8,13 @@ import {
   BlockContainer,
   BlockThemeWrapper,
   DEFAULT_TINT,
+  getTemplateFonts,
 } from "@/app/(app)/(content)/(blocks)/_components"
 import { ScrollContainerProvider } from "@/app/(app)/(content)/(blocks)/_components/scroll-container-context"
 import {
-  applicationTemplateConfigs,
-  getApplicationShellForBlock,
+  getShellForBlock,
+  getTemplatePalette,
+  isApplicationTemplate,
 } from "@/app/(app)/(content)/(blocks)/template-config"
 
 interface LazyComponentRendererProps {
@@ -56,9 +58,8 @@ class ComponentErrorBoundary extends ReactComponent<
   }
 }
 
-// Application block wrapper - renders view inside its shell
-// Note: Shell components have their own theme baked in (sageTheme, violetTheme, etc.)
-// so we don't wrap with BlockThemeWrapper to avoid conflicts
+// Application block wrapper - renders view inside its shell with proper theming
+// Shells are now theme-agnostic and receive theme from BlockThemeWrapper
 function ApplicationBlockWrapper({
   name,
   styleName,
@@ -68,26 +69,28 @@ function ApplicationBlockWrapper({
   styleName: string
   ViewComponent: React.ComponentType
 }) {
-  const shellInfo = getApplicationShellForBlock(name)
+  const shellInfo = getShellForBlock(name)
 
   if (!shellInfo) {
     // Not an application view, render component directly
     return <ViewComponent />
   }
 
+  const { shell, template } = shellInfo
+
   // Get the shell component from the index
   const styleIndex = Index[styleName as keyof typeof Index]
-  const shellItem = styleIndex?.[shellInfo.shell as keyof typeof styleIndex]
-
-  // Get template config for navigation and metadata
-  const templateConfig = applicationTemplateConfigs[shellInfo.templateSlug]
+  const shellItem = styleIndex?.[shell as keyof typeof styleIndex]
 
   if (!shellItem?.component) {
-    // Shell not found, render view standalone
+    // Shell not found, render view standalone with template theming
+    const fonts = getTemplateFonts(template.slug)
     return (
-      <div className="bg-background min-h-screen">
-        <ViewComponent />
-      </div>
+      <BlockThemeWrapper palette={template.palette} tint="base" fonts={fonts}>
+        <div className="bg-background min-h-screen">
+          <ViewComponent />
+        </div>
+      </BlockThemeWrapper>
     )
   }
 
@@ -107,25 +110,29 @@ function ApplicationBlockWrapper({
   }>
 
   // Map navigation from template config to shell format
-  const navigation = templateConfig?.navigation.map((nav) => ({
+  const navigation = template.navigation.map((nav) => ({
     name: nav.name,
     label: nav.label,
     icon: nav.icon,
     shortcut: nav.shortcut,
   }))
 
+  // Wrap shell with BlockThemeWrapper to apply template's palette
+  const fonts = getTemplateFonts(template.slug)
   return (
-    <div className="min-h-screen">
-      <ShellComponent
-        activeView={name}
-        content={{
-          appName: templateConfig?.metadata.name,
-          navigation,
-        }}
-      >
-        <ViewComponent />
-      </ShellComponent>
-    </div>
+    <BlockThemeWrapper palette={template.palette} tint="base" fonts={fonts}>
+      <div className="min-h-screen">
+        <ShellComponent
+          activeView={name}
+          content={{
+            appName: template.name,
+            navigation,
+          }}
+        >
+          <ViewComponent />
+        </ShellComponent>
+      </div>
+    </BlockThemeWrapper>
   )
 }
 
@@ -145,9 +152,9 @@ function BlockWrapper({
   const settings = getBlockSettings(name)
 
   // Check if this is an application view block
-  const shellInfo = getApplicationShellForBlock(name)
+  const shellInfo = getShellForBlock(name)
   if (shellInfo) {
-    // Render application block with its shell
+    // Render application block with its shell and theming
     return (
       <ApplicationBlockWrapper
         name={name}
@@ -169,15 +176,19 @@ function BlockWrapper({
       blockType === "hero" || blockType === "header" || blockType === "footer"
     // Use the block's configured tint (tinted themes now have neutral backgrounds)
     const blockTint = settings.tint || DEFAULT_TINT
+    // Get palette and fonts from template
+    const palette = getTemplatePalette(settings.templateSlug)
+    const fonts = getTemplateFonts(settings.templateSlug)
 
     return (
       <ScrollContainerProvider value={containerRef}>
         <div ref={containerRef} className="min-h-screen overflow-auto">
           <BlockThemeWrapper
-            slug={settings.templateSlug}
+            palette={palette}
             tint={blockTint}
             forceDark={settings.forceDark}
             forceLight={settings.forceLight}
+            fonts={fonts}
           >
             <BlockContainer
               index={settings.index}

@@ -1,12 +1,15 @@
 import { cacheLife } from "next/cache"
 import { redirect } from "next/navigation"
 
-import { getAllCategories, getBlockIdsByCategory } from "@/lib/blocks"
+import {
+  getAllCategories,
+  getAllTemplatesFromRegistry,
+  getBlockIdsByCategory,
+} from "@/lib/blocks"
 import { generateCategoryStaticParams } from "@/lib/pages/blocks"
 import { queryRegistry, type RegistryItem } from "@/lib/registry-utils"
 import { BlocksList } from "@/components/documentation/blocks/blocks-list"
 import { getActiveStyle } from "@/registry/styles"
-import { getAllTemplatesMetadataIncludingApps } from "@/app/(app)/(content)/(blocks)/template-config"
 
 import { BlocksFilter } from "./blocks-filter"
 import { FullPagesSection } from "./full-pages-section"
@@ -15,8 +18,8 @@ export async function generateStaticParams() {
   return generateCategoryStaticParams()
 }
 
-// Get templates from config (including application templates)
-const templates = getAllTemplatesMetadataIncludingApps()
+// Get templates from registry metadata (built from registry items with "template" category)
+const templates = getAllTemplatesFromRegistry()
 
 export default async function CategoryPage({
   params,

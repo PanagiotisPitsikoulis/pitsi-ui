@@ -221,6 +221,14 @@ async function buildBlocksIndex() {
 async function buildBlocksMetadata(styles: Style[]) {
   // Structure: { category: blockNames[] }
   const categoryStructure: Record<string, string[]> = {}
+  // Template metadata
+  const templateMetadata: Array<{
+    slug: string
+    name: string
+    description: string
+    heroBlock: string
+    type: "service" | "application"
+  }> = []
 
   for (const style of styles) {
     const { registry: importedRegistry } = await import(
@@ -248,6 +256,35 @@ async function buildBlocksMetadata(styles: Style[]) {
         categoryStructure[mainCategory] = []
       }
       categoryStructure[mainCategory].push(item.name)
+
+      // Check if this is a template item
+      if (categories.includes("template")) {
+        // Format display name from slug (e.g., "service-plants" -> "Service Plants")
+        const displayName = item.name
+          .split("-")
+          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(" ")
+
+        // Get heroBlock from meta, or derive from first hero dependency
+        let heroBlock = (item.meta as Record<string, unknown>)?.heroBlock as string | undefined
+        if (!heroBlock && item.registryDependencies) {
+          // Find first hero block in dependencies
+          heroBlock = item.registryDependencies.find((dep) =>
+            dep.startsWith("hero-") || dep.startsWith("app-")
+          )
+        }
+
+        // Determine template type
+        const templateType = categories.includes("application") ? "application" : "service"
+
+        templateMetadata.push({
+          slug: item.name,
+          name: displayName,
+          description: item.description || "",
+          heroBlock: heroBlock || item.name,
+          type: templateType,
+        })
+      }
     }
   }
 
@@ -276,6 +313,32 @@ export function getCategoryBlockCounts(): Record<string, number> {
     counts[category] = blocks.length
   }
   return counts
+}
+
+/**
+ * Template metadata for Full Pages section
+ * Includes all registry items with "template" category
+ */
+export interface RegistryTemplateMetadata {
+  slug: string
+  name: string
+  description: string
+  heroBlock: string
+  type: "service" | "application"
+}
+
+export const TEMPLATE_METADATA: RegistryTemplateMetadata[] = ${JSON.stringify(templateMetadata, null, 2)}
+
+export function getAllTemplatesFromRegistry(): RegistryTemplateMetadata[] {
+  return TEMPLATE_METADATA
+}
+
+export function getServiceTemplatesFromRegistry(): RegistryTemplateMetadata[] {
+  return TEMPLATE_METADATA.filter((t) => t.type === "service")
+}
+
+export function getApplicationTemplatesFromRegistry(): RegistryTemplateMetadata[] {
+  return TEMPLATE_METADATA.filter((t) => t.type === "application")
 }
 `
 

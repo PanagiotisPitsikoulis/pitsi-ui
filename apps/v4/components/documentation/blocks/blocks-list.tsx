@@ -64,6 +64,7 @@ const CATEGORY_DESCRIPTIONS: Record<string, string> = {
   showcase: "Product showcases and feature highlights",
   bento: "Bento grid layouts for modern content presentation",
   application: "Full application interfaces and dashboard layouts",
+  template: "Complete page templates combining multiple blocks into cohesive designs",
 }
 
 function BlockPreview({
@@ -259,10 +260,10 @@ export function BlocksList({ blocks, category }: BlocksListProps) {
     const sortedCategories = Object.keys(blocksByCategory).sort((a, b) => a.localeCompare(b))
 
     return (
-      <div className="container space-y-20">
+      <div className="container space-y-12">
         {sortedCategories.map((cat) => (
           <div key={cat}>
-            <div className="mb-8 flex items-start justify-between gap-4">
+            <div className="mb-6 flex items-start justify-between gap-4">
               <div className="flex flex-col gap-1">
                 <h2 className="text-lg font-semibold">{formatCategoryName(cat)}</h2>
                 {CATEGORY_DESCRIPTIONS[cat] && (
@@ -276,7 +277,7 @@ export function BlocksList({ blocks, category }: BlocksListProps) {
                 View all
               </Link>
             </div>
-            <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               {blocksByCategory[cat].map((block) => (
                 <BlockCard
                   key={block.name}
@@ -294,7 +295,7 @@ export function BlocksList({ blocks, category }: BlocksListProps) {
 
   return (
     <div className="container">
-      <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {filteredBlocks.map((block) => (
           <BlockCard
             key={block.name}

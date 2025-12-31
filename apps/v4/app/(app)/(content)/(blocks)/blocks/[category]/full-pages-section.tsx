@@ -4,15 +4,15 @@ import Image from "next/image"
 import Link from "next/link"
 import { ChevronDown } from "lucide-react"
 
+import type { RegistryTemplateMetadata } from "@/lib/blocks"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/registry/new-york-v4/ui/collapsible"
-import type { TemplateMetadata } from "@/app/(app)/(content)/(blocks)/template-config"
 
 interface FullPagesSectionProps {
-  templates: TemplateMetadata[]
+  templates: RegistryTemplateMetadata[]
   styleName: string
 }
 
@@ -49,7 +49,7 @@ export function FullPagesSection({ templates, styleName }: FullPagesSectionProps
 
           {/* Expanded: Grid */}
           <CollapsibleContent>
-            <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               {templates.map((template) => (
                 <TemplateCard
                   key={template.slug}
@@ -70,7 +70,7 @@ function TemplateCard({
   styleName,
   compact = false,
 }: {
-  template: TemplateMetadata
+  template: RegistryTemplateMetadata
   styleName: string
   compact?: boolean
 }) {

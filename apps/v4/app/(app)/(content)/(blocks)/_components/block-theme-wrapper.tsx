@@ -1,79 +1,53 @@
 "use client"
 
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { useTheme } from "next-themes"
 
 import { cn } from "@/lib/utils"
 import { themePresets } from "@/app/(app)/(tools)/tools/theme-generator/_components/theme-presets"
-import { applicationTemplateConfigs } from "@/app/(app)/(content)/(blocks)/template-config"
+import { type ColorPalette } from "@/app/(app)/(content)/(blocks)/template-config"
 
-import { getTemplateFontStyles } from "./template-fonts"
+import { fontPresets, type FontPreset } from "./template-fonts"
 
-// Tint levels
+// ============================================================================
+// Theme Types
+// ============================================================================
+
 export type TintLevel = "base" | "tinted" | "deep"
 export const DEFAULT_TINT: TintLevel = "base"
 
-// Color palettes available
-type ColorPalette =
-  | "slate"
-  | "azure"
-  | "violet"
-  | "rose"
-  | "sage"
-  | "amber"
-  | "cyan"
-  | "indigo"
-  | "coral"
-  | "forest"
+// Re-export ColorPalette for convenience
+export type { ColorPalette }
 
-// Map template slugs to color palettes
-export const templatePalettes: Record<string, ColorPalette> = {
-  // Main landing
-  "pitsi-landing": "azure",
-  // AI & Technology
-  ai: "azure",
-  "ai-sci-fi": "indigo",
-  "product-scifi": "cyan",
-  // Creative & Art
-  art: "violet",
-  "service-fashion": "rose",
-  "service-tattoo": "coral",
-  // Food & Beverage
-  "food-pizza": "coral",
-  "food-juice": "amber",
-  "service-coffee-shop": "amber",
-  // Products & E-commerce
-  "product-coffee": "amber",
-  "product-plants": "sage",
-  "product-skincare": "rose",
-  // Health & Wellness
-  "service-gym": "coral",
-  "service-psychologist": "sage",
-  // Beauty & Personal Care
-  "service-barber": "amber",
-  "service-makeup": "rose",
-  // Lifestyle & Leisure
-  boat: "azure",
-  "service-travel": "azure",
-  "service-boat": "azure",
-  "service-hospitality": "amber",
-  "service-pet-sitting": "forest",
-  // Professional Services
-  "service-real-estate": "indigo",
-  "service-marketing": "violet",
-  "service-plants": "sage",
-  // Apps
-  "app-guitar": "amber",
-  "app-quiz": "violet",
-  "app-gym-tracker": "sage",
+// Custom theme interface
+export interface CustomTheme {
+  /** Primary brand color (required for custom themes) */
+  brand: string
+  /** Complementary color (auto-computed if not provided) */
+  brandComplementary?: string
+  /** Override background color */
+  background?: string
+  /** Override foreground color */
+  foreground?: string
 }
 
-// Get preset key for a palette and tint level
+// Custom fonts interface
+export interface CustomFonts {
+  display: string
+  body: string
+  displayWeight?: string
+  bodyWeight?: string
+}
+
+// ============================================================================
+// Theme Utilities
+// ============================================================================
+
 export function getPresetKey(palette: string, tint: TintLevel): string {
   if (palette === "slate") return "slate"
   switch (tint) {
     case "base":
-      return palette // Use palette's base theme (subtle tinting with brand colors)
+      return palette
     case "tinted":
       return `${palette}-tinted`
     case "deep":
@@ -83,27 +57,12 @@ export function getPresetKey(palette: string, tint: TintLevel): string {
   }
 }
 
-// Get palette for a template slug
-function getTemplatePalette(slug: string): ColorPalette {
-  // Check static mapping first
-  if (templatePalettes[slug]) {
-    return templatePalettes[slug]
-  }
-  // Check application template configs for dynamic palette
-  const appConfig = applicationTemplateConfigs[slug]
-  if (appConfig?.metadata.palette) {
-    return appConfig.metadata.palette as ColorPalette
-  }
-  return "azure"
-}
-
-// Get theme style as CSS variables (colors only)
-export function getTemplateThemeStyle(
-  slug: string,
+/** Get theme styles from palette */
+export function getPaletteThemeStyles(
+  palette: ColorPalette,
   tint: TintLevel = DEFAULT_TINT,
   mode: "light" | "dark" = "dark"
 ): React.CSSProperties {
-  const palette = getTemplatePalette(slug)
   const presetKey = getPresetKey(palette, tint)
   const theme =
     themePresets[presetKey]?.styles || themePresets["azure-tinted"].styles
@@ -116,56 +75,112 @@ export function getTemplateThemeStyle(
   return cssVars as React.CSSProperties
 }
 
-// Get combined theme + font styles
-export function getTemplateStyles(
-  slug: string,
-  tint: TintLevel = DEFAULT_TINT,
-  mode: "light" | "dark" = "dark"
+/** Get font styles from preset or custom fonts */
+export function getFontStyles(
+  fonts?: FontPreset | CustomFonts
 ): React.CSSProperties {
-  const themeStyles = getTemplateThemeStyle(slug, tint, mode)
-  const fontStyles = getTemplateFontStyles(slug)
-  return { ...themeStyles, ...fontStyles }
+  if (!fonts) {
+    return {}
+  }
+
+  if (typeof fonts === "string") {
+    const preset = fontPresets[fonts]
+    if (!preset) return {}
+    return {
+      "--font-display": preset.display,
+      "--font-body": preset.body,
+      "--font-display-weight": preset.displayWeight,
+      "--font-body-weight": preset.bodyWeight,
+    } as React.CSSProperties
+  }
+
+  return {
+    "--font-display": fonts.display,
+    "--font-body": fonts.body,
+    "--font-display-weight": fonts.displayWeight || "700",
+    "--font-body-weight": fonts.bodyWeight || "400",
+  } as React.CSSProperties
 }
 
-interface BlockThemeWrapperProps {
-  slug: string
+/** Get combined theme + font styles */
+export function getThemeStyles(options: {
+  palette?: ColorPalette
   tint?: TintLevel
-  forceDark?: boolean
-  forceLight?: boolean
-  transparent?: boolean
+  mode?: "light" | "dark"
+  fonts?: FontPreset | CustomFonts
+}): React.CSSProperties {
+  const { palette = "azure", tint = DEFAULT_TINT, mode = "light", fonts } = options
+  const colorStyles = getPaletteThemeStyles(palette, tint, mode)
+  const fontStyles = getFontStyles(fonts)
+  return { ...colorStyles, ...fontStyles }
+}
+
+// ============================================================================
+// Block Theme Wrapper Component
+// ============================================================================
+
+export interface BlockThemeWrapperProps {
   children: React.ReactNode
+  /** Preset color palette */
+  palette?: ColorPalette
+  /** Tint intensity */
+  tint?: TintLevel
+  /** Font preset or custom fonts */
+  fonts?: FontPreset | CustomFonts
+  /** Force dark mode */
+  forceDark?: boolean
+  /** Force light mode */
+  forceLight?: boolean
+  /** Transparent background */
+  transparent?: boolean
   className?: string
 }
 
 export function BlockThemeWrapper({
-  slug,
+  children,
+  palette = "azure",
   tint = DEFAULT_TINT,
+  fonts,
   forceDark = false,
   forceLight = false,
   transparent = false,
-  children,
   className,
 }: BlockThemeWrapperProps) {
+  const [mounted, setMounted] = useState(false)
   const { resolvedTheme } = useTheme()
-  // Use resolved theme from next-themes, with force overrides for specific blocks
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  // Use resolved theme from next-themes, with force overrides
   const mode = forceDark
     ? "dark"
     : forceLight
       ? "light"
-      : (resolvedTheme as "light" | "dark") || "light"
-  const style = getTemplateStyles(slug, tint, mode)
+      : mounted
+        ? (resolvedTheme as "light" | "dark") || "light"
+        : "light"
+
+  // Get styles
+  const style = getThemeStyles({
+    palette,
+    tint,
+    mode,
+    fonts,
+  })
 
   return (
     <div
       className={cn(
-        "font-body relative w-full",
+        "font-body relative w-full transition-colors duration-150",
         !transparent && "bg-background",
-        // Add dark/light class for Tailwind dark mode utilities
         forceDark && "dark",
         forceLight && "light",
         className
       )}
       style={style}
+      suppressHydrationWarning
     >
       {children}
     </div>

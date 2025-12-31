@@ -1,0 +1,25 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "service-boat",
+  "type": "registry:block",
+  "description": "Luxury yacht charter landing page template for marine services",
+  "registryDependencies": [
+    "hero-3"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/service/service-boat.tsx",
+      "content": "\"use client\"\n\nimport { Suspense } from \"react\"\n\nimport {\n  BlockContainer,\n  BlockThemeWrapper,\n} from \"@/app/(app)/(content)/(blocks)/_components\"\nimport type { TintLevel } from \"@/app/(app)/(content)/(blocks)/_components\"\n\nimport { Hero3 } from \"../hero/hero-3\"\n\n// Template palette for theming\nconst TEMPLATE_PALETTE = \"azure\" as const\n\n// Block configuration matching template-config.ts\nconst blocks: Array<{\n  Component: React.ComponentType\n  tint: TintLevel\n  forceDark?: boolean\n  forceLight?: boolean\n  type: string\n}> = [{ Component: Hero3, tint: \"tinted\", forceLight: true, type: \"hero\" }]\n\nexport function ServiceBoat() {\n  return (\n    <BlockThemeWrapper palette={TEMPLATE_PALETTE} tint=\"tinted\">\n      <div className=\"min-h-screen\">\n        {blocks.map(\n          ({ Component, tint, forceDark, forceLight, type }, index) => {\n            const skipAlternatingBg =\n              type === \"hero\" || type === \"header\" || forceDark || forceLight\n            const skipPadding =\n              type === \"hero\" || type === \"header\" || type === \"footer\"\n\n            return (\n              <BlockThemeWrapper\n                key={index}\n                palette={TEMPLATE_PALETTE}\n                tint={tint}\n                forceDark={forceDark}\n                forceLight={forceLight}\n              >\n                <BlockContainer\n                  index={index}\n                  tint={tint}\n                  forceBg={skipAlternatingBg ? \"none\" : undefined}\n                  noPadding={skipPadding}\n                >\n                  <Suspense fallback={null}>\n                    <Component />\n                  </Suspense>\n                </BlockContainer>\n              </BlockThemeWrapper>\n            )\n          }\n        )}\n      </div>\n    </BlockThemeWrapper>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "heroBlock": "hero-3"
+  },
+  "categories": [
+    "template",
+    "service"
+  ],
+  "tier": "free",
+  "readiness": "beta"
+}
