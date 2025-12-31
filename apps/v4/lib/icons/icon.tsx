@@ -122,6 +122,9 @@ export const BookOpen = createIcon("BookOpen")
 export const Bot = createIcon("Bot")
 export const BotIcon = createIcon("BotIcon")
 
+// Brain icons
+export const Brain = createIcon("Brain")
+
 // Calendar icons
 export const Calendar = createIcon("Calendar")
 
@@ -214,8 +217,14 @@ export const Globe = createIcon("Globe")
 export const GripVertical = createIcon("GripVertical")
 export const GripVerticalIcon = createIcon("GripVerticalIcon")
 
+// Handshake icons
+export const HeartHandshake = createIcon("HeartHandshake")
+
 // Heart icons
 export const Heart = createIcon("Heart")
+
+// History icons
+export const History = createIcon("History")
 
 // Help icons
 export const HelpCircle = createIcon("HelpCircle")
@@ -247,6 +256,9 @@ export const LayoutGrid = createIcon("LayoutGrid")
 
 // Leaf / Plant icons
 export const Leaf = createIcon("Leaf")
+
+// Library icons
+export const Library = createIcon("Library")
 
 // Lifebuoy icons
 export const LifeBuoyIcon = createIcon("LifeBuoyIcon")
@@ -280,6 +292,7 @@ export const Maximize = createIcon("Maximize")
 
 // Message icons
 export const MessageSquare = createIcon("MessageSquare")
+export const MessageCircle = createIcon("MessageCircle")
 
 // Minus / Plus icons
 export const Minus = createIcon("Minus")
@@ -301,6 +314,9 @@ export const MoreVertical = createIcon("MoreVertical")
 export const OctagonX = createIcon("OctagonX")
 export const OctagonXIcon = createIcon("OctagonXIcon")
 
+// Package icons
+export const Package = createIcon("Package")
+
 // Palette / Color icons
 export const Palette = createIcon("Palette")
 export const PipetteIcon = createIcon("PipetteIcon")
@@ -320,6 +336,9 @@ export const PopcornIcon = createIcon("PopcornIcon")
 
 // Radio icons
 export const Radio = createIcon("Radio")
+
+// Recycle icons
+export const Recycle = createIcon("Recycle")
 
 // Refresh / Rotate icons
 export const RefreshCcwIcon = createIcon("RefreshCcwIcon")
@@ -347,6 +366,7 @@ export const Share2 = createIcon("Share2")
 
 // Shield icons
 export const ShieldAlertIcon = createIcon("ShieldAlertIcon")
+export const Shield = createIcon("Shield")
 
 // Shuffle icons
 export const Shuffle = createIcon("Shuffle")
@@ -377,6 +397,9 @@ export const Trash2 = createIcon("Trash2")
 
 // Trophy / Award icons
 export const Trophy = createIcon("Trophy")
+
+// Truck / Delivery icons
+export const Truck = createIcon("Truck")
 
 // User icons
 export const User = createIcon("User")

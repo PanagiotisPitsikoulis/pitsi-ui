@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Leaf } from "lucide-react"
+import { Leaf } from "@/lib/icons"
 
 import {
   footerDefaults,

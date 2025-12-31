@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Dumbbell, Search } from "lucide-react"
+import { Dumbbell, Search } from "@/lib/icons"
 
 import { cn } from "@/lib/utils"
 import { Input } from "@/registry/new-york-v4/ui/input"

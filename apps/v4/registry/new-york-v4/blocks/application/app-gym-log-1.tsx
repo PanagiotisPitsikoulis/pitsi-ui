@@ -10,7 +10,7 @@ import {
   Plus,
   RotateCcw,
   X,
-} from "lucide-react"
+} from "@/lib/icons"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"

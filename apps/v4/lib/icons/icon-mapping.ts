@@ -47,8 +47,9 @@ import {
   // Book icons
   BookOpen01Icon,
 
-  // Bot / AI icons
+  // Bot / AI / Brain icons
   BotIcon,
+  Brain01Icon,
 
   // Calendar icons
   Calendar01Icon,
@@ -134,8 +135,13 @@ import {
   // Grip / Drag icons
   DragDropVerticalIcon,
 
+
   // Heart icons
   HeartAddIcon,
+  HeartCheckIcon,
+
+  // History icons
+  TransactionHistoryIcon,
 
   // Home icons
   Home01Icon,
@@ -163,6 +169,9 @@ import {
 
   // Leaf / Plant icons
   Leaf01Icon,
+
+  // Library icons
+  LibraryIcon,
 
   // Lifebuoy icons
   LifebuoyIcon,
@@ -195,6 +204,7 @@ import {
 
   // Message icons
   Message01Icon,
+  BubbleChatIcon,
 
   // Minus / Plus icons
   MinusSignIcon,
@@ -213,6 +223,9 @@ import {
 
   // Octagon icons
   OctagonIcon,
+
+  // Package icons
+  PackageIcon,
 
   // Palette / Color icons
   SwatchIcon,
@@ -233,6 +246,9 @@ import {
 
   // Radio icons
   RadioIcon,
+
+  // Recycle icons
+  RecycleIcon,
 
   // Refresh / Rotate icons
   RefreshIcon,
@@ -259,6 +275,7 @@ import {
 
   // Shield icons
   Shield01Icon,
+  ShieldIcon,
 
   // Shuffle icons
   ShuffleIcon,
@@ -289,6 +306,9 @@ import {
 
   // Trophy / Award icons
   Award01Icon,
+
+  // Truck / Delivery icons
+  TruckDeliveryIcon,
 
   // User icons
   UserIcon,
@@ -362,6 +382,9 @@ export const iconMapping = {
   // Bot / AI icons
   Bot: BotIcon,
   BotIcon: BotIcon,
+
+  // Brain icons
+  Brain: Brain01Icon,
 
   // Calendar icons
   Calendar: Calendar01Icon,
@@ -455,8 +478,12 @@ export const iconMapping = {
   GripVertical: DragDropVerticalIcon,
   GripVerticalIcon: DragDropVerticalIcon,
 
-  // Heart icons
+  // Heart icons (including HeartHandshake mapped to HeartCheck)
   Heart: HeartAddIcon,
+  HeartHandshake: HeartCheckIcon,
+
+  // History icons
+  History: TransactionHistoryIcon,
 
   // Help icons
   HelpCircle: HelpCircleIcon,
@@ -488,6 +515,9 @@ export const iconMapping = {
 
   // Leaf / Plant icons
   Leaf: Leaf01Icon,
+
+  // Library icons
+  Library: LibraryIcon,
 
   // Lifebuoy icons
   LifeBuoyIcon: LifebuoyIcon,
@@ -524,6 +554,7 @@ export const iconMapping = {
 
   // Message icons
   MessageSquare: Message01Icon,
+  MessageCircle: BubbleChatIcon,
 
   // Minus / Plus icons
   Minus: MinusSignIcon,
@@ -545,6 +576,9 @@ export const iconMapping = {
   OctagonX: OctagonIcon,
   OctagonXIcon: OctagonIcon,
 
+  // Package icons
+  Package: PackageIcon,
+
   // Palette / Color icons
   Palette: SwatchIcon,
   PipetteIcon: DropperIcon,
@@ -564,6 +598,9 @@ export const iconMapping = {
 
   // Radio icons
   Radio: RadioIcon,
+
+  // Recycle icons
+  Recycle: RecycleIcon,
 
   // Refresh / Rotate icons
   RefreshCcwIcon: RefreshIcon,
@@ -591,6 +628,7 @@ export const iconMapping = {
 
   // Shield icons
   ShieldAlertIcon: Shield01Icon,
+  Shield: ShieldIcon,
 
   // Shuffle icons
   Shuffle: ShuffleIcon,
@@ -621,6 +659,9 @@ export const iconMapping = {
 
   // Trophy / Award icons
   Trophy: Award01Icon,
+
+  // Truck / Delivery icons
+  Truck: TruckDeliveryIcon,
 
   // User icons
   User: UserIcon,

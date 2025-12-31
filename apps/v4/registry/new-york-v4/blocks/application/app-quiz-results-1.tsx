@@ -1,6 +1,6 @@
 "use client"
 
-import { CheckCircle, RotateCcw, Trophy, XCircle } from "lucide-react"
+import { CheckCircle, RotateCcw, Trophy, XCircle } from "@/lib/icons"
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {

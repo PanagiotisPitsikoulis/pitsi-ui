@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Camera, User } from "lucide-react"
+import { Camera, User } from "@/lib/icons"
 
 import { cn } from "@/lib/utils"
 import {

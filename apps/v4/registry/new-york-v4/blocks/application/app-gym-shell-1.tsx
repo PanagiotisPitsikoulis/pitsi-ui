@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { Dumbbell, Flame, Play, Trophy, User } from "lucide-react"
+import { Dumbbell, Flame, Play, Trophy, User } from "@/lib/icons"
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"

@@ -508,23 +508,6 @@ export const blocks: Registry["items"] = [
       heroBlock: "hero-1",
     },
   },
-  {
-    name: "application-1",
-    type: "registry:block",
-    description:
-      "Gym progressive overload tracker with lift progression chart and workout history",
-    dependencies: ["lucide-react"],
-    registryDependencies: ["button", "card", "utils"],
-    files: [
-      {
-        path: "blocks/application/application-1.tsx",
-        type: "registry:block",
-      },
-    ],
-    categories: ["application"],
-    tier: "free",
-    readiness: "production",
-  },
   // Application Template: Gym Tracker
   {
     name: "app-gym-shell-1",

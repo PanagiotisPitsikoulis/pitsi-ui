@@ -1,6 +1,6 @@
 "use client"
 
-import { BookOpen, Flame, Target, TrendingUp, Zap } from "lucide-react"
+import { BookOpen, Flame, Target, TrendingUp, Zap } from "@/lib/icons"
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
