@@ -1,6 +1,6 @@
 "use client"
 
-import { Layers2 } from "lucide-react"
+import { Layers2 } from "@/lib/icons"
 
 import {
   DropdownMenu,

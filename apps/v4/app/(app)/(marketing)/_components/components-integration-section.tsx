@@ -3,7 +3,7 @@ import {
   Moon,
   Palette,
   Terminal,
-} from "lucide-react"
+} from "@/lib/icons"
 
 import { IntegrationBentoBlock } from "../_blocks/integration-bento-block"
 

@@ -1,6 +1,6 @@
 "use client"
 
-import { Code2, Eye, Save, Shuffle } from "lucide-react"
+import { Code2, Eye, Save, Shuffle } from "@/lib/icons"
 
 import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 

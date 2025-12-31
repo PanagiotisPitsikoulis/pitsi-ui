@@ -1,6 +1,6 @@
 "use client"
 
-import { Globe } from "lucide-react"
+import { Globe } from "@/lib/icons"
 import React from "react"
 
 import { cn } from "@/lib/utils"

@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react"
 import Color from "color"
-import { Trash2 } from "lucide-react"
+import { Trash2 } from "@/lib/icons"
 
 import { cn } from "@/lib/utils"
 import {

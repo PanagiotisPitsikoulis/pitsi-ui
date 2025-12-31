@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { Check, Loader2 } from "lucide-react"
+import { Check, Loader2 } from "@/lib/icons"
 
 import type { PlanType } from "@/lib/server/db/schema"
 import { Button } from "@/registry/new-york-v4/ui/button"

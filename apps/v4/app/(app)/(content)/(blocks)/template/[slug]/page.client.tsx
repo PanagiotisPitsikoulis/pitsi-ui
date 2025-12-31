@@ -17,7 +17,7 @@ import {
   RotateCw,
   Sun,
   Terminal,
-} from "lucide-react"
+} from "@/lib/icons"
 import { useTheme } from "next-themes"
 import { toast } from "sonner"
 

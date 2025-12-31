@@ -20,7 +20,7 @@ import {
   Save,
   Shuffle,
   Sun,
-} from "lucide-react"
+} from "@/lib/icons"
 import {
   parseAsBoolean,
   parseAsStringLiteral,

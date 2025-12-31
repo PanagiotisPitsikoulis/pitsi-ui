@@ -1,7 +1,7 @@
 "use client"
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs"
-import { Blocks, ChartPie, ChevronRight, Layout, Target, LucideIcon } from "lucide-react"
+import { Blocks, ChartPie, ChevronRight, Layout, Target, LucideIcon } from "@/lib/icons"
 import Image from "next/image"
 import React from "react"
 

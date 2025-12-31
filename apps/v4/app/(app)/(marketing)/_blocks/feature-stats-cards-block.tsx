@@ -1,6 +1,6 @@
 "use client"
 
-import { Calendar, Target, Trophy, Users, LucideIcon } from "lucide-react"
+import { Calendar, Target, Trophy, Users, LucideIcon } from "@/lib/icons"
 import Image from "next/image"
 import React from "react"
 

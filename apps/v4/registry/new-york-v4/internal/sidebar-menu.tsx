@@ -6,7 +6,7 @@ import {
   MapIcon,
   PieChartIcon,
   SendIcon,
-} from "lucide-react"
+} from "@/lib/icons"
 
 import {
   Sidebar,

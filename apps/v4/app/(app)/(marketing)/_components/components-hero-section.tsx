@@ -4,7 +4,7 @@ import {
   CheckCircle2,
   Code2,
   Layers,
-} from "lucide-react"
+} from "@/lib/icons"
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { HeroButton } from "@/registry/new-york-v4/ui/hero-button"

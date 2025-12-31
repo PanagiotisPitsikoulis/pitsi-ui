@@ -16,7 +16,7 @@ import {
   RotateCcw,
   Save,
   Shuffle,
-} from "lucide-react"
+} from "@/lib/icons"
 
 import { generateFigmaShadowEffects } from "@/lib/figma-export"
 import { Deck, DeckCards, DeckEmpty, DeckItem } from "@/components/kibo-ui/deck"

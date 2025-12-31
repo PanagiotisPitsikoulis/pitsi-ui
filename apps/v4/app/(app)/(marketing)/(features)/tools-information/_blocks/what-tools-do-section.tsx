@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef, useState } from "react"
-import { Check, ChevronDown } from "lucide-react"
+import { Check, ChevronDown } from "@/lib/icons"
 import { motion, useScroll, useTransform } from "motion/react"
 
 import { PixelatedImage } from "@/components/effects"

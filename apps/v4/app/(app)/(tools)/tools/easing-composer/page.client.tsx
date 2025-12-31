@@ -18,7 +18,7 @@ import {
   Save,
   Settings,
   Shuffle,
-} from "lucide-react"
+} from "@/lib/icons"
 import {
   parseAsFloat,
   parseAsInteger,

@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Play } from "lucide-react"
+import { Play } from "@/lib/icons"
 import Image from "next/image"
 import React from "react"
 

@@ -1,6 +1,6 @@
 "use client"
 
-import { Frame, Map, PieChart, Plus } from "lucide-react"
+import { Frame, Map, PieChart, Plus } from "@/lib/icons"
 import { toast, Toaster } from "sonner"
 
 import {

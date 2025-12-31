@@ -1,6 +1,6 @@
 "use client"
 
-import { Minus } from "lucide-react"
+import { Minus } from "@/lib/icons"
 import Image from "next/image"
 import React from "react"
 

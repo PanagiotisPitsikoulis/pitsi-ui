@@ -1,7 +1,7 @@
 import { ReactNode } from "react"
 import { Metadata } from "next"
 import Link from "next/link"
-import { ArrowUpRight } from "lucide-react"
+import { ArrowUpRight } from "@/lib/icons"
 
 import { LayoutGrid, LayoutGridItem } from "@/components/layout/layout-grid"
 import { StripeBgGuides } from "@/components/layout/striped-bg-guides"

@@ -15,7 +15,7 @@ import {
   Shuffle,
   Sparkles,
   Sun,
-} from "lucide-react"
+} from "@/lib/icons"
 import { parseAsStringLiteral, useQueryState } from "nuqs"
 
 import { STORAGE_KEYS, useLocalStorage } from "@/lib/local-storage"

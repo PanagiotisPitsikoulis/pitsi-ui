@@ -16,7 +16,7 @@ import {
   Shuffle,
   Sun,
   Type,
-} from "lucide-react"
+} from "@/lib/icons"
 import {
   parseAsFloat,
   parseAsInteger,

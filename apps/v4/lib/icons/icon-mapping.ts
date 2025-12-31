@@ -11,6 +11,9 @@
  */
 
 import {
+  // Accessibility icons
+  AccessIcon,
+
   // Alert / Warning icons
   AlertCircleIcon,
   Alert01Icon,
@@ -30,6 +33,9 @@ import {
   CheckmarkBadge01Icon,
   DollarCircleIcon,
 
+  // Bar Chart icons
+  ChartColumnIcon,
+
   // Bell / Notification icons
   Notification01Icon,
 
@@ -40,6 +46,7 @@ import {
   TextBoldIcon,
   TextItalicIcon,
   TextUnderlineIcon,
+  TextFontIcon,
 
   // Bookmark icons
   Bookmark01Icon,
@@ -50,6 +57,9 @@ import {
   // Bot / AI / Brain icons
   BotIcon,
   Brain01Icon,
+
+  // Box icons
+  BoundingBoxIcon,
 
   // Calculator icons
   CalculatorIcon,
@@ -62,12 +72,14 @@ import {
 
   // Chart icons
   PieChartIcon,
+  PieChart01Icon,
   ChartIncreaseIcon,
 
   // Check icons
   Tick01Icon,
   Tick02Icon,
   CheckmarkCircle01Icon,
+  CheckmarkCircle02Icon,
 
   // Chevron icons
   ArrowDown02Icon,
@@ -81,12 +93,18 @@ import {
   DashedLineCircleIcon,
   HelpCircleIcon,
 
+  // Clipboard icons
+  ClipboardIcon,
+
   // Clock / Time icons
   Clock01Icon,
   Timer01Icon,
 
   // Code icons
   CodeIcon,
+
+  // Compass icons
+  Compass01Icon,
 
   // Copy icons
   Copy01Icon,
@@ -131,11 +149,18 @@ import {
   Folder01Icon,
   FolderOpenIcon,
 
+  // Form / Input icons
+  InputTextIcon,
+
   // Frame icons
   FramerIcon,
 
   // Globe icons
   GlobeIcon,
+
+  // Grid icons
+  Grid02Icon,
+  GridIcon,
 
   // Grip / Drag icons
   DragDropVerticalIcon,
@@ -151,6 +176,9 @@ import {
   // Home icons
   Home01Icon,
 
+  // Image icons
+  Image01Icon,
+
   // Inbox icons
   InboxIcon,
 
@@ -162,6 +190,7 @@ import {
 
   // Key icons
   Key01Icon,
+  Key02Icon,
 
   // Layers icons
   Layers01Icon,
@@ -169,6 +198,7 @@ import {
 
   // Layout icons
   Layout01Icon,
+  Layout02Icon,
   DashboardSquare01Icon,
   GridViewIcon,
 
@@ -209,6 +239,9 @@ import {
   // Maximize icons
   Maximize01Icon,
 
+  // Megaphone icons
+  Megaphone01Icon,
+
   // Message icons
   Message01Icon,
   BubbleChatIcon,
@@ -228,6 +261,9 @@ import {
   MoreHorizontalIcon,
   MoreVerticalIcon,
 
+  // Navigation icons
+  Navigation01Icon,
+
   // Octagon icons
   OctagonIcon,
 
@@ -240,6 +276,14 @@ import {
 
   // Panel icons
   PanelLeftIcon,
+  PanelLeftOpenIcon,
+  PanelLeftCloseIcon,
+
+  // Layout Top icon (for PanelTop)
+  LayoutTopIcon,
+
+  // Pause icons
+  PauseIcon,
 
   // Pencil / Edit icons
   PencilEdit01Icon,
@@ -257,9 +301,13 @@ import {
   // Recycle icons
   RecycleIcon,
 
+  // Redo / Undo icons
+  RedoIcon,
+
   // Refresh / Rotate icons
   RefreshIcon,
   RotateLeft01Icon,
+  RotateClockwiseIcon,
 
   // Save icons
   FloppyDiskIcon,
@@ -284,6 +332,9 @@ import {
   // Shield icons
   Shield01Icon,
   ShieldIcon,
+
+  // Shopping icons
+  ShoppingCart01Icon,
 
   // Shuffle icons
   ShuffleIcon,
@@ -334,6 +385,9 @@ import {
   // Wand / Magic icons
   MagicWand01Icon,
 
+  // Wave icons
+  AudioWave01Icon,
+
   // X / Cancel / Close icons
   Cancel02Icon,
   CancelCircleIcon,
@@ -365,6 +419,9 @@ type IconSvgObject = readonly (readonly [
  * See comments for icons that may need custom SVG implementations.
  */
 export const iconMapping = {
+  // Accessibility icons
+  Accessibility: AccessIcon,
+
   // Alert / Warning icons
   AlertCircle: AlertCircleIcon,
   AlertCircleIcon: AlertCircleIcon,
@@ -388,11 +445,17 @@ export const iconMapping = {
   BadgeCheckIcon: CheckmarkBadge01Icon,
   BadgeDollarSign: DollarCircleIcon,
 
+  // Bar Chart icons
+  BarChart3: ChartColumnIcon,
+
   // Bell / Notification icons
   Bell: Notification01Icon,
 
   // Block icons
   Blocks: CubeIcon,
+
+  // Box icons
+  Box: BoundingBoxIcon,
 
   // Text formatting icons
   Bold: TextBoldIcon,
@@ -433,8 +496,15 @@ export const iconMapping = {
   Check: Tick01Icon,
   CheckIcon: Tick02Icon,
   CheckCircle: CheckmarkCircle01Icon,
+  CheckCircle2: CheckmarkCircle02Icon,
   CheckCircle2Icon: CheckmarkCircle01Icon,
   CircleCheckIcon: CheckmarkCircle01Icon,
+
+  // Clipboard icons
+  Clipboard: ClipboardIcon,
+
+  // Compass icons
+  Compass: Compass01Icon,
 
   // Chevron icons
   ChevronDown: ArrowDown02Icon,
@@ -502,11 +572,19 @@ export const iconMapping = {
   Folder: Folder01Icon,
   FolderOpen: FolderOpenIcon,
 
+  // Form / Input icons
+  FormInput: InputTextIcon,
+
   // Frame icons
   Frame: FramerIcon,
+  FrameIcon: FramerIcon,
 
   // Globe icons
   Globe: GlobeIcon,
+
+  // Grid icons
+  Grid2X2: Grid02Icon,
+  Grid3X3: GridIcon,
 
   // Grip / Drag icons
   GripVertical: DragDropVerticalIcon,
@@ -525,6 +603,9 @@ export const iconMapping = {
   // Home icons
   Home: Home01Icon,
 
+  // Image icons
+  ImageIcon: Image01Icon,
+
   // Inbox icons
   Inbox: InboxIcon,
 
@@ -537,15 +618,18 @@ export const iconMapping = {
 
   // Key icons
   Key: Key01Icon,
+  KeyRound: Key02Icon,
 
   // Layers icons
   Layers: Layers01Icon,
   Layers2: Layers02Icon,
+  Layers3: Layers02Icon,
 
   // Layout icons
   Layout: Layout01Icon,
   LayoutDashboard: DashboardSquare01Icon,
   LayoutGrid: GridViewIcon,
+  LayoutTemplate: Layout02Icon,
 
   // Leaf / Plant icons
   Leaf: Leaf01Icon,
@@ -584,9 +668,13 @@ export const iconMapping = {
 
   // Map icons
   Map: MapsIcon,
+  MapIcon: MapsIcon,
 
   // Maximize icons
   Maximize: Maximize01Icon,
+
+  // Megaphone icons
+  Megaphone: Megaphone01Icon,
 
   // Message icons
   MessageSquare: Message01Icon,
@@ -608,6 +696,9 @@ export const iconMapping = {
   MoreHorizontalIcon: MoreHorizontalIcon,
   MoreVertical: MoreVerticalIcon,
 
+  // Navigation icons
+  Navigation: Navigation01Icon,
+
   // Octagon icons
   OctagonX: OctagonIcon,
   OctagonXIcon: OctagonIcon,
@@ -621,10 +712,19 @@ export const iconMapping = {
 
   // Panel icons
   PanelLeftIcon: PanelLeftIcon,
+  PanelLeftCloseIcon: PanelLeftCloseIcon,
+  PanelLeftOpenIcon: PanelLeftOpenIcon,
+  PanelTop: LayoutTopIcon,
+
+  // Pause icons
+  Pause: PauseIcon,
 
   // Pencil / Edit icons
   Pencil: PencilEdit01Icon,
   SquarePen: SquareArrowUp01Icon, // Note: Not exact match, closest available
+
+  // Pie Chart icon with variant
+  PieChartIcon: PieChart01Icon,
 
   // Play icons
   Play: PlayIcon,
@@ -638,9 +738,13 @@ export const iconMapping = {
   // Recycle icons
   Recycle: RecycleIcon,
 
+  // Redo / Undo icons
+  Redo2: RedoIcon,
+
   // Refresh / Rotate icons
   RefreshCcwIcon: RefreshIcon,
   RotateCcw: RotateLeft01Icon,
+  RotateCw: RotateClockwiseIcon,
 
   // Save icons
   Save: FloppyDiskIcon,
@@ -666,6 +770,9 @@ export const iconMapping = {
   // Shield icons
   ShieldAlertIcon: Shield01Icon,
   Shield: ShieldIcon,
+
+  // Shopping icons
+  ShoppingCart: ShoppingCart01Icon,
 
   // Shuffle icons
   Shuffle: ShuffleIcon,
@@ -697,6 +804,9 @@ export const iconMapping = {
   // Terminal icons
   Terminal: CodeSimpleIcon,
 
+  // Type / Text icons
+  Type: TextFontIcon,
+
   // Trash / Delete icons
   Trash2: Delete01Icon,
   TrashIcon: Delete02Icon,
@@ -714,6 +824,9 @@ export const iconMapping = {
 
   // Wand / Magic icons
   Wand2: MagicWand01Icon,
+
+  // Wave icons
+  Waves: AudioWave01Icon,
 
   // X / Cancel / Close icons
   X: Cancel02Icon,

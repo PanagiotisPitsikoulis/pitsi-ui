@@ -1,4 +1,4 @@
-import { Check, Copy, Search, Wand2 } from "lucide-react"
+import { Check, Copy, Search, Wand2 } from "@/lib/icons"
 
 import { WorkflowStepsBlock } from "../_blocks/workflow-steps-block"
 

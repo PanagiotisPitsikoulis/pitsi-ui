@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Code2, Copy, FolderOpen } from "lucide-react"
+import { Code2, Copy, FolderOpen } from "@/lib/icons"
 import { toast } from "sonner"
 
 interface DevBlockOverlayProps {

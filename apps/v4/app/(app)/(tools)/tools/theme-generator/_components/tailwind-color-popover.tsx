@@ -1,7 +1,7 @@
 "use client"
 
 import { useCallback, useState } from "react"
-import { Check, LayoutGrid, List, Palette } from "lucide-react"
+import { Check, LayoutGrid, List, Palette } from "@/lib/icons"
 
 import { colorsEqual } from "@/lib/colors"
 import { TAILWIND_PALETTE } from "@/lib/tailwind-colors"

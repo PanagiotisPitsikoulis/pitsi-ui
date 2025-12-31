@@ -81,6 +81,9 @@ function createIcon(name: IconName): LucideIcon {
 // All icons from iconMapping are exported with their Lucide-compatible names
 // =============================================================================
 
+// Accessibility icons
+export const Accessibility = createIcon("Accessibility")
+
 // Alert / Warning icons
 export const AlertCircle = createIcon("AlertCircle")
 export const AlertCircleIcon = createIcon("AlertCircleIcon")
@@ -104,11 +107,17 @@ export const ArrowUpRight = createIcon("ArrowUpRight")
 export const BadgeCheckIcon = createIcon("BadgeCheckIcon")
 export const BadgeDollarSign = createIcon("BadgeDollarSign")
 
+// Bar Chart icons
+export const BarChart3 = createIcon("BarChart3")
+
 // Bell / Notification icons
 export const Bell = createIcon("Bell")
 
 // Block icons
 export const Blocks = createIcon("Blocks")
+
+// Box icons
+export const Box = createIcon("Box")
 
 // Text formatting icons
 export const Bold = createIcon("Bold")
@@ -149,8 +158,15 @@ export const TrendingUp = createIcon("TrendingUp")
 export const Check = createIcon("Check")
 export const CheckIcon = createIcon("CheckIcon")
 export const CheckCircle = createIcon("CheckCircle")
+export const CheckCircle2 = createIcon("CheckCircle2")
 export const CheckCircle2Icon = createIcon("CheckCircle2Icon")
 export const CircleCheckIcon = createIcon("CircleCheckIcon")
+
+// Clipboard icons
+export const Clipboard = createIcon("Clipboard")
+
+// Compass icons
+export const Compass = createIcon("Compass")
 
 // Chevron icons
 export const ChevronDown = createIcon("ChevronDown")
@@ -218,11 +234,19 @@ export const Flame = createIcon("Flame")
 export const Folder = createIcon("Folder")
 export const FolderOpen = createIcon("FolderOpen")
 
+// Form / Input icons
+export const FormInput = createIcon("FormInput")
+
 // Frame icons
 export const Frame = createIcon("Frame")
+export const FrameIcon = createIcon("FrameIcon")
 
 // Globe icons
 export const Globe = createIcon("Globe")
+
+// Grid icons
+export const Grid2X2 = createIcon("Grid2X2")
+export const Grid3X3 = createIcon("Grid3X3")
 
 // Grip / Drag icons
 export const GripVertical = createIcon("GripVertical")
@@ -243,6 +267,9 @@ export const HelpCircle = createIcon("HelpCircle")
 // Home icons
 export const Home = createIcon("Home")
 
+// Image icons
+export const ImageIcon = createIcon("ImageIcon")
+
 // Inbox icons
 export const Inbox = createIcon("Inbox")
 
@@ -255,15 +282,18 @@ export const Inspect = createIcon("Inspect")
 
 // Key icons
 export const Key = createIcon("Key")
+export const KeyRound = createIcon("KeyRound")
 
 // Layers icons
 export const Layers = createIcon("Layers")
 export const Layers2 = createIcon("Layers2")
+export const Layers3 = createIcon("Layers3")
 
 // Layout icons
 export const Layout = createIcon("Layout")
 export const LayoutDashboard = createIcon("LayoutDashboard")
 export const LayoutGrid = createIcon("LayoutGrid")
+export const LayoutTemplate = createIcon("LayoutTemplate")
 
 // Leaf / Plant icons
 export const Leaf = createIcon("Leaf")
@@ -299,9 +329,13 @@ export const MailCheck = createIcon("MailCheck")
 
 // Map icons
 export const Map = createIcon("Map")
+export const MapIcon = createIcon("MapIcon")
 
 // Maximize icons
 export const Maximize = createIcon("Maximize")
+
+// Megaphone icons
+export const Megaphone = createIcon("Megaphone")
 
 // Message icons
 export const MessageSquare = createIcon("MessageSquare")
@@ -323,6 +357,9 @@ export const MoreHorizontal = createIcon("MoreHorizontal")
 export const MoreHorizontalIcon = createIcon("MoreHorizontalIcon")
 export const MoreVertical = createIcon("MoreVertical")
 
+// Navigation icons
+export const Navigation = createIcon("Navigation")
+
 // Octagon icons
 export const OctagonX = createIcon("OctagonX")
 export const OctagonXIcon = createIcon("OctagonXIcon")
@@ -336,10 +373,19 @@ export const PipetteIcon = createIcon("PipetteIcon")
 
 // Panel icons
 export const PanelLeftIcon = createIcon("PanelLeftIcon")
+export const PanelLeftCloseIcon = createIcon("PanelLeftCloseIcon")
+export const PanelLeftOpenIcon = createIcon("PanelLeftOpenIcon")
+export const PanelTop = createIcon("PanelTop")
+
+// Pause icons
+export const Pause = createIcon("Pause")
 
 // Pencil / Edit icons
 export const Pencil = createIcon("Pencil")
 export const SquarePen = createIcon("SquarePen")
+
+// Pie Chart icon with variant
+export const PieChartIcon = createIcon("PieChartIcon")
 
 // Play icons
 export const Play = createIcon("Play")
@@ -353,9 +399,13 @@ export const Radio = createIcon("Radio")
 // Recycle icons
 export const Recycle = createIcon("Recycle")
 
+// Redo / Undo icons
+export const Redo2 = createIcon("Redo2")
+
 // Refresh / Rotate icons
 export const RefreshCcwIcon = createIcon("RefreshCcwIcon")
 export const RotateCcw = createIcon("RotateCcw")
+export const RotateCw = createIcon("RotateCw")
 
 // Save icons
 export const Save = createIcon("Save")
@@ -381,6 +431,9 @@ export const ShareIcon = createIcon("ShareIcon")
 // Shield icons
 export const ShieldAlertIcon = createIcon("ShieldAlertIcon")
 export const Shield = createIcon("Shield")
+
+// Shopping icons
+export const ShoppingCart = createIcon("ShoppingCart")
 
 // Shuffle icons
 export const Shuffle = createIcon("Shuffle")
@@ -412,6 +465,9 @@ export const Target = createIcon("Target")
 // Terminal icons
 export const Terminal = createIcon("Terminal")
 
+// Type / Text icons
+export const Type = createIcon("Type")
+
 // Trash / Delete icons
 export const Trash2 = createIcon("Trash2")
 export const TrashIcon = createIcon("TrashIcon")
@@ -429,6 +485,9 @@ export const UserRoundXIcon = createIcon("UserRoundXIcon")
 
 // Wand / Magic icons
 export const Wand2 = createIcon("Wand2")
+
+// Wave icons
+export const Waves = createIcon("Waves")
 
 // X / Cancel / Close icons
 export const X = createIcon("X")

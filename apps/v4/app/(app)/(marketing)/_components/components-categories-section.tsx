@@ -6,7 +6,7 @@ import {
   LayoutTemplate,
   Navigation,
   PanelTop,
-} from "lucide-react"
+} from "@/lib/icons"
 
 import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 

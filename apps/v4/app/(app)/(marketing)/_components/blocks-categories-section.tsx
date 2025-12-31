@@ -7,7 +7,7 @@ import {
   Megaphone,
   ShoppingCart,
   User,
-} from "lucide-react"
+} from "@/lib/icons"
 
 import { CategoriesGridBlock } from "../_blocks/categories-grid-block"
 

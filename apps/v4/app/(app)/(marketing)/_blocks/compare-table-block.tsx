@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowRight } from "lucide-react"
+import { ArrowRight } from "@/lib/icons"
 import React from "react"
 
 import { cn } from "@/lib/utils"

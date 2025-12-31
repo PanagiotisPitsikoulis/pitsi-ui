@@ -1,6 +1,6 @@
 "use client"
 
-import { Database, MessageSquare, Server, Terminal } from "lucide-react"
+import { Database, MessageSquare, Server, Terminal } from "@/lib/icons"
 import { motion } from "motion/react"
 
 export function SmartMCPServerIllustration() {

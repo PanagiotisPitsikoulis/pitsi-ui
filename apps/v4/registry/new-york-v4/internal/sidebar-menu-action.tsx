@@ -7,7 +7,7 @@ import {
   MoreHorizontalIcon,
   PieChartIcon,
   SendIcon,
-} from "lucide-react"
+} from "@/lib/icons"
 
 import {
   DropdownMenu,

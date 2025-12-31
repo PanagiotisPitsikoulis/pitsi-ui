@@ -14,7 +14,7 @@ import {
   SlidersHorizontal,
   Type,
   Waves,
-} from "lucide-react"
+} from "@/lib/icons"
 
 import {
   Tooltip,

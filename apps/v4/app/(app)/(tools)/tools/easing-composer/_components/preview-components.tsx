@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { useEffect, useState } from "react"
-import { Heart, X, ChevronRight, ChevronLeft, Bell } from "lucide-react"
+import { Heart, X, ChevronRight, ChevronLeft, Bell } from "@/lib/icons"
 
 import { cn } from "@/lib/utils"
 

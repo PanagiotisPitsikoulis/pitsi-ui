@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { Heart, Share2 } from "lucide-react"
+import { Heart, Share2 } from "@/lib/icons"
 
 import { cn } from "@/lib/utils"
 
