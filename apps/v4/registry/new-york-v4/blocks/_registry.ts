@@ -5,7 +5,7 @@ export const blocks: Registry["items"] = [
     name: "header-1",
     type: "registry:block",
     description: "Plant shop header with navigation and CTA button",
-    dependencies: ["lucide-react"],
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
     registryDependencies: ["button"],
     files: [
       {
@@ -123,7 +123,7 @@ export const blocks: Registry["items"] = [
     name: "features-1",
     type: "registry:block",
     description: "Plant shop features section with icons and center image",
-    dependencies: ["lucide-react"],
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
     files: [
       {
         path: "blocks/features/features-1.tsx",
@@ -329,7 +329,7 @@ export const blocks: Registry["items"] = [
     name: "contact-1",
     type: "registry:block",
     description: "Plant shop contact form section",
-    dependencies: ["lucide-react"],
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
     registryDependencies: ["button", "input", "textarea", "label"],
     files: [
       {
@@ -375,7 +375,7 @@ export const blocks: Registry["items"] = [
     name: "footer-1",
     type: "registry:block",
     description: "Plant shop footer with multiple columns and newsletter",
-    dependencies: ["lucide-react"],
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
     registryDependencies: ["button", "input"],
     files: [
       {
@@ -513,7 +513,7 @@ export const blocks: Registry["items"] = [
     name: "app-gym-shell-1",
     type: "registry:block",
     description: "Two-sidebar gym tracker shell with navigation and stats",
-    dependencies: ["lucide-react"],
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
     registryDependencies: ["sidebar", "avatar", "button", "separator", "utils"],
     files: [
       {
@@ -530,7 +530,7 @@ export const blocks: Registry["items"] = [
     type: "registry:block",
     description:
       "Today view with personalized greeting, week progress, and upcoming sets",
-    dependencies: ["lucide-react"],
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
     registryDependencies: ["button", "utils"],
     files: [
       {
@@ -546,7 +546,7 @@ export const blocks: Registry["items"] = [
     name: "app-gym-log-1",
     type: "registry:block",
     description: "Active workout logging with set tracking and timer",
-    dependencies: ["lucide-react"],
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
     registryDependencies: ["button", "input", "utils"],
     files: [
       {
@@ -562,7 +562,7 @@ export const blocks: Registry["items"] = [
     name: "app-gym-history-1",
     type: "registry:block",
     description: "Calendar history view with workout indicators and details",
-    dependencies: ["lucide-react"],
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
     registryDependencies: ["button", "utils"],
     files: [
       {
@@ -578,7 +578,7 @@ export const blocks: Registry["items"] = [
     name: "app-gym-gains-1",
     type: "registry:block",
     description: "Progress tracking with sparkline charts and PR history",
-    dependencies: ["lucide-react"],
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
     registryDependencies: ["utils"],
     files: [
       {
@@ -594,7 +594,7 @@ export const blocks: Registry["items"] = [
     name: "app-gym-library-1",
     type: "registry:block",
     description: "Exercise library with search, categories, and history",
-    dependencies: ["lucide-react"],
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
     registryDependencies: ["input", "utils"],
     files: [
       {
@@ -610,7 +610,7 @@ export const blocks: Registry["items"] = [
     name: "app-gym-profile-1",
     type: "registry:block",
     description: "Profile and settings with preferences and stats",
-    dependencies: ["lucide-react"],
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
     registryDependencies: [
       "avatar",
       "button",
@@ -635,7 +635,7 @@ export const blocks: Registry["items"] = [
     name: "app-gym-tracker",
     type: "registry:block",
     description: "Complete gym progressive overload tracker with two sidebars",
-    dependencies: ["lucide-react"],
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
     registryDependencies: [
       "app-gym-shell-1",
       "app-gym-today-1",
@@ -664,7 +664,7 @@ export const blocks: Registry["items"] = [
     name: "app-quiz-shell-1",
     type: "registry:block",
     description: "Application shell with sidebar navigation for quiz app",
-    dependencies: ["lucide-react"],
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
     registryDependencies: ["sidebar", "avatar", "utils"],
     files: [
       {
@@ -681,7 +681,7 @@ export const blocks: Registry["items"] = [
     type: "registry:block",
     description:
       "Quiz dashboard with stats, weekly accuracy chart, and recent quizzes",
-    dependencies: ["lucide-react"],
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
     registryDependencies: ["button", "card", "utils"],
     files: [
       {
@@ -697,7 +697,7 @@ export const blocks: Registry["items"] = [
     name: "app-quiz-browse-1",
     type: "registry:block",
     description: "Quiz browser with categories and difficulty filters",
-    dependencies: ["lucide-react"],
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
     registryDependencies: ["badge", "button", "card", "input", "utils"],
     files: [
       {
@@ -713,7 +713,7 @@ export const blocks: Registry["items"] = [
     name: "app-quiz-active-1",
     type: "registry:block",
     description: "Active quiz interface with timer and question display",
-    dependencies: ["lucide-react"],
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
     registryDependencies: ["button", "card", "utils"],
     files: [
       {
@@ -729,7 +729,7 @@ export const blocks: Registry["items"] = [
     name: "app-quiz-results-1",
     type: "registry:block",
     description: "Quiz results with score and question breakdown",
-    dependencies: ["lucide-react"],
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
     registryDependencies: ["badge", "button", "card", "utils"],
     files: [
       {
@@ -745,7 +745,7 @@ export const blocks: Registry["items"] = [
     name: "app-quiz-settings-1",
     type: "registry:block",
     description: "Quiz settings with profile and preferences",
-    dependencies: ["lucide-react"],
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
     registryDependencies: [
       "avatar",
       "button",
@@ -771,7 +771,7 @@ export const blocks: Registry["items"] = [
     name: "app-quiz",
     type: "registry:block",
     description: "Complete quiz application template",
-    dependencies: ["lucide-react"],
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
     registryDependencies: [
       "app-quiz-shell-1",
       "app-quiz-dashboard-1",

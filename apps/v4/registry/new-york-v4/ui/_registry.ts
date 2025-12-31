@@ -201,7 +201,7 @@ export const ui: Registry["items"] = [
       },
     ],
     registryDependencies: ["card"],
-    dependencies: ["recharts@2.15.4", "lucide-react"],
+    dependencies: ["recharts@2.15.4", "@hugeicons/react", "@hugeicons/core-free-icons"],
     tier: "free",
     categories: ["core-components"],
     readiness: "production",
@@ -665,7 +665,7 @@ export const ui: Registry["items"] = [
     dependencies: [
       "@radix-ui/react-slot",
       "class-variance-authority",
-      "lucide-react",
+      "@hugeicons/react", "@hugeicons/core-free-icons",
     ],
     registryDependencies: [
       "button",
@@ -868,7 +868,7 @@ export const ui: Registry["items"] = [
   {
     name: "theme-toggle",
     type: "registry:ui",
-    dependencies: ["next-themes", "lucide-react"],
+    dependencies: ["next-themes", "@hugeicons/react", "@hugeicons/core-free-icons"],
     files: [
       {
         path: "ui/theme-toggle.tsx",
