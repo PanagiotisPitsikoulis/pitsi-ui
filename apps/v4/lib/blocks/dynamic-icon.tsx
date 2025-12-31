@@ -1,13 +1,13 @@
 "use client"
 
-import * as LucideIcons from "lucide-react"
-import type { LucideIcon } from "lucide-react"
+import * as Icons from "@/lib/icons"
+import type { IconProps, LucideIcon } from "@/lib/icons"
 
-type IconName = keyof typeof LucideIcons
+type IconName = keyof typeof Icons
 
 /**
- * Renders a Lucide icon by name
- * @param name - The name of the Lucide icon (e.g., "Sparkles", "Heart", "Package")
+ * Renders an icon by name
+ * @param name - The name of the icon (e.g., "Sparkles", "Heart", "Package")
  * @param props - Props to pass to the icon component
  */
 export function DynamicIcon({
@@ -19,10 +19,10 @@ export function DynamicIcon({
   size?: number
   strokeWidth?: number
 }) {
-  const Icon = LucideIcons[name as IconName] as LucideIcon | undefined
+  const Icon = Icons[name as IconName] as LucideIcon | undefined
 
-  if (!Icon) {
-    console.warn(`Icon "${name}" not found in lucide-react`)
+  if (!Icon || typeof Icon !== "function") {
+    console.warn(`Icon "${name}" not found`)
     return null
   }
 
@@ -30,9 +30,13 @@ export function DynamicIcon({
 }
 
 /**
- * Get a Lucide icon component by name
+ * Get an icon component by name
  * Returns undefined if the icon is not found
  */
 export function getIcon(name: string): LucideIcon | undefined {
-  return LucideIcons[name as IconName] as LucideIcon | undefined
+  const icon = Icons[name as IconName]
+  if (icon && typeof icon === "function") {
+    return icon as LucideIcon
+  }
+  return undefined
 }
