@@ -85,6 +85,7 @@ function createIcon(name: IconName): LucideIcon {
 export const AlertCircle = createIcon("AlertCircle")
 export const AlertCircleIcon = createIcon("AlertCircleIcon")
 export const TriangleAlert = createIcon("TriangleAlert")
+export const TriangleAlertIcon = createIcon("TriangleAlertIcon")
 
 // Arrow icons
 export const ArrowDown = createIcon("ArrowDown")
@@ -293,10 +294,12 @@ export const Sun = createIcon("Sun")
 
 // More icons
 export const MoreHorizontal = createIcon("MoreHorizontal")
+export const MoreHorizontalIcon = createIcon("MoreHorizontalIcon")
 export const MoreVertical = createIcon("MoreVertical")
 
 // Octagon icons
 export const OctagonX = createIcon("OctagonX")
+export const OctagonXIcon = createIcon("OctagonXIcon")
 
 // Palette / Color icons
 export const Palette = createIcon("Palette")

@@ -6,7 +6,7 @@ import {
   useState,
   type HTMLAttributes,
 } from "react"
-import { Moon, SlidersHorizontal, Sun } from "lucide-react"
+import { Moon, SlidersHorizontal, Sun } from "@/lib/icons"
 import { useTheme } from "next-themes"
 
 import { cn } from "@/registry/new-york-v4/lib/utils"

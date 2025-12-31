@@ -326,6 +326,7 @@ export const iconMapping = {
   AlertCircle: AlertCircleIcon,
   AlertCircleIcon: AlertCircleIcon,
   TriangleAlert: TriangleIcon,
+  TriangleAlertIcon: TriangleIcon,
 
   // Arrow icons
   ArrowDown: ArrowDown01Icon,
@@ -537,10 +538,12 @@ export const iconMapping = {
 
   // More icons
   MoreHorizontal: MoreHorizontalIcon,
+  MoreHorizontalIcon: MoreHorizontalIcon,
   MoreVertical: MoreVerticalIcon,
 
   // Octagon icons
   OctagonX: OctagonIcon,
+  OctagonXIcon: OctagonIcon,
 
   // Palette / Color icons
   Palette: SwatchIcon,
