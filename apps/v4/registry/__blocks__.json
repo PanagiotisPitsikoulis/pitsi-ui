@@ -145,11 +145,6 @@
     "categories": ["template", "service"]
   },
   {
-    "name": "application-1",
-    "description": "Gym progressive overload tracker with lift progression chart and workout history",
-    "categories": ["application"]
-  },
-  {
     "name": "app-gym-shell-1",
     "description": "Two-sidebar gym tracker shell with navigation and stats",
     "categories": ["application", "app-gym-tracker"]

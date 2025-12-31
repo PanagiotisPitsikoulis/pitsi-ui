@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Key, Sparkles } from "lucide-react"
+import { Key, Sparkles } from "@/lib/icons"
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {

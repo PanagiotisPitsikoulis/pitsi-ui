@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { ChevronRight, File, Folder } from "lucide-react"
+import { ChevronRight, File, Folder } from "@/lib/icons"
 
 import { FileTree as FileTreeType } from "@/lib/registry"
 import {

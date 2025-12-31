@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { LayoutGrid } from "lucide-react"
+import { LayoutGrid } from "@/lib/icons"
 
 import { trackEvent } from "@/lib/events"
 import { cn } from "@/lib/utils"

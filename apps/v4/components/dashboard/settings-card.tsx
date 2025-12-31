@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import { Save } from "lucide-react"
+import { Save } from "@/lib/icons"
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {

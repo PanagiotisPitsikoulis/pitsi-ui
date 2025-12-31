@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Eye, Settings2 } from "lucide-react"
+import { Eye, Settings2 } from "@/lib/icons"
 
 import { cn } from "@/lib/utils"
 import { LayoutGrid, LayoutGridItem } from "@/components/layout/layout-grid"

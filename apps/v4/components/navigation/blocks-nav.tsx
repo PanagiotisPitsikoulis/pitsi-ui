@@ -27,7 +27,7 @@ import {
   Sparkles,
   Users,
   type LucideIcon,
-} from "lucide-react"
+} from "@/lib/icons"
 
 import { cn } from "@/lib/utils"
 import {

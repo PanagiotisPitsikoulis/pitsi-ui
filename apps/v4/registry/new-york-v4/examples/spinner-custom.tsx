@@ -1,12 +1,10 @@
-import { Loader2 } from "@/lib/icons"
+import { Loader2, type IconProps } from "@/lib/icons"
 
 import { cn } from "@/registry/new-york-v4/lib/utils"
 
-function Spinner({ className, ...props }: React.ComponentProps<"svg">) {
+function Spinner({ className, ...props }: IconProps) {
   return (
     <Loader2
-      role="status"
-      aria-label="Loading"
       className={cn("size-4 animate-spin", className)}
       {...props}
     />

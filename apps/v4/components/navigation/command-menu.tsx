@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 import { type DialogProps } from "@radix-ui/react-dialog"
 import { IconArrowRight } from "@tabler/icons-react"
 import { useDocsSearch } from "fumadocs-core/search/client"
-import { CornerDownLeft, LayoutDashboard, Search } from "lucide-react"
+import { CornerDownLeft, LayoutDashboard, Search } from "@/lib/icons"
 
 import { trackEvent } from "@/lib/events"
 import { source } from "@/lib/source"

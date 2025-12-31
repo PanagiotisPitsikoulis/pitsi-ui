@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Lock, LogIn } from "lucide-react"
+import { Lock, LogIn } from "@/lib/icons"
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 

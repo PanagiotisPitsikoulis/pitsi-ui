@@ -1,6 +1,6 @@
 import { Metadata } from "next"
 import { redirect } from "next/navigation"
-import { Calendar, Key, Sparkles } from "lucide-react"
+import { Calendar, Key, Sparkles } from "@/lib/icons"
 
 import { getUserApiKeys } from "@/lib/server/api-keys"
 import { db } from "@/lib/server/db"

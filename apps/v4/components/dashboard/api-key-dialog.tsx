@@ -1,6 +1,6 @@
 "use client"
 
-import { AlertCircle, Check, Copy, Loader2, Plus } from "lucide-react"
+import { AlertCircle, Check, Copy, Loader2, Plus } from "@/lib/icons"
 
 import { Alert, AlertDescription } from "@/registry/new-york-v4/ui/alert"
 import { Button } from "@/registry/new-york-v4/ui/button"

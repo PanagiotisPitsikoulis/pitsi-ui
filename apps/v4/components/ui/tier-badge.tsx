@@ -1,4 +1,4 @@
-import { BadgeDollarSign, CircleDashed, Star } from "lucide-react"
+import { BadgeDollarSign, CircleDashed, Star } from "@/lib/icons"
 
 import { cn } from "@/lib/utils"
 import {

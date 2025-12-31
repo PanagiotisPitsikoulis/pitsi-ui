@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowLeft, ArrowRight, ChevronDown } from "lucide-react"
+import { ArrowLeft, ArrowRight, ChevronDown } from "@/lib/icons"
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {

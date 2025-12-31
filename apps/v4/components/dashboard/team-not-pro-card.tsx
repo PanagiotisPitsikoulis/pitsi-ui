@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Users } from "lucide-react"
+import { Users } from "@/lib/icons"
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {

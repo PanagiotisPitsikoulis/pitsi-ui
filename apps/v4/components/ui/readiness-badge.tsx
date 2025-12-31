@@ -1,4 +1,4 @@
-import { OctagonX, TriangleAlert } from "lucide-react"
+import { OctagonX, TriangleAlert } from "@/lib/icons"
 
 import { cn } from "@/lib/utils"
 import {

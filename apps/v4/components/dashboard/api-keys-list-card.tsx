@@ -1,6 +1,6 @@
 "use client"
 
-import { Key, Loader2, Trash2 } from "lucide-react"
+import { Key, Loader2, Trash2 } from "@/lib/icons"
 
 import { formatDate } from "@/lib/format"
 import { Button } from "@/registry/new-york-v4/ui/button"

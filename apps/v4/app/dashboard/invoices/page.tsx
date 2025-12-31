@@ -1,6 +1,6 @@
 import { Metadata } from "next"
 import { redirect } from "next/navigation"
-import { FileText } from "lucide-react"
+import { FileText } from "@/lib/icons"
 
 import { db } from "@/lib/server/db"
 import { user as userTable } from "@/lib/server/db/schema"

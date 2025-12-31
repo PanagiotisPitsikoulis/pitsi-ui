@@ -4,7 +4,7 @@ import { memo } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
-import { Bookmark, Clock, MoreVertical } from "lucide-react"
+import { Bookmark, Clock, MoreVertical } from "@/lib/icons"
 
 import {
   useSavedComponents,

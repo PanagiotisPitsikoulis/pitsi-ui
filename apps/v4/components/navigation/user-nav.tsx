@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { LogOut, Settings, User } from "lucide-react"
+import { LogOut, Settings, User } from "@/lib/icons"
 
 import { signOut } from "@/lib/client/auth"
 import { getUserInitials } from "@/lib/utils/user"

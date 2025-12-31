@@ -1,7 +1,7 @@
 "use client"
 
 import { memo, useEffect, useState } from "react"
-import { Check, Copy } from "lucide-react"
+import { Check, Copy } from "@/lib/icons"
 import { codeToHtml } from "shiki"
 
 import { cn } from "@/lib/utils"

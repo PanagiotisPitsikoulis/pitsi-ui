@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowDown, ArrowUp, Copy, GripVertical, Pencil, Trash2, Upload } from "lucide-react"
+import { ArrowDown, ArrowUp, Copy, GripVertical, Pencil, Trash2, Upload } from "@/lib/icons"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"

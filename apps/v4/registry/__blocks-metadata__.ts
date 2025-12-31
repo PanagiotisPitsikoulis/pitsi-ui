@@ -38,7 +38,6 @@ export const BLOCK_CATEGORIES: Record<string, string[]> = {
     "app-quiz",
   ],
   application: [
-    "application-1",
     "app-gym-shell-1",
     "app-gym-today-1",
     "app-gym-log-1",

@@ -11,7 +11,7 @@ import {
   RotateCw,
   Smartphone,
   Tablet,
-} from "lucide-react"
+} from "@/lib/icons"
 import { registryItemFileSchema, type RegistryItem } from "pitsi/schema"
 import { ImperativePanelHandle } from "react-resizable-panels"
 import { z } from "zod"

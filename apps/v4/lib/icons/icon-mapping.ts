@@ -400,6 +400,34 @@ import {
 
   // Archive icons
   ArchiveIcon,
+
+  // Building icons
+  Building01Icon,
+  Building02Icon,
+
+  // Invoice / Receipt icons
+  InvoiceIcon,
+
+  // Tablet icons
+  Tablet01Icon,
+
+  // News icons
+  NewsIcon,
+
+  // Quote icons
+  QuoteDownIcon,
+
+  // Shopping Bag icons
+  ShoppingBag01Icon,
+
+  // Layout Bottom icon (for PanelBottom)
+  LayoutBottomIcon,
+
+  // Cursor icons (for MousePointerClick)
+  CursorPointer01Icon,
+
+  // Image/Gallery icons (for Images)
+  Image02Icon,
 } from "@hugeicons/core-free-icons"
 
 /**
@@ -838,6 +866,37 @@ export const iconMapping = {
 
   // Zap / Lightning icons
   Zap: ZapIcon,
+
+  // Building icons
+  Building2: Building02Icon,
+  Building: Building01Icon,
+
+  // Receipt / Invoice icons
+  Receipt: InvoiceIcon,
+
+  // Tablet icons
+  Tablet: Tablet01Icon,
+
+  // News icons
+  Newspaper: NewsIcon,
+
+  // Quote icons
+  Quote: QuoteDownIcon,
+
+  // Shopping Bag icons
+  ShoppingBag: ShoppingBag01Icon,
+
+  // Panel Bottom icon
+  PanelBottom: LayoutBottomIcon,
+
+  // Mouse Pointer Click icon
+  MousePointerClick: CursorPointer01Icon,
+
+  // Images / Gallery icon
+  Images: Image02Icon,
+
+  // Send icon (not MailSend)
+  Send: MailSend01Icon,
 } as const
 
 /**

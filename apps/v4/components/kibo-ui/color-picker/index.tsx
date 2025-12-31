@@ -1,7 +1,7 @@
 "use client";
 
 import Color from "color";
-import { PipetteIcon } from "lucide-react";
+import { PipetteIcon } from "@/lib/icons";
 import { Slider } from "radix-ui";
 import {
   type ComponentProps,

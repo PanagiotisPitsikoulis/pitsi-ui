@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect } from "react"
-import { FileCode, FileText, Layers } from "lucide-react"
+import { FileCode, FileText, Layers } from "@/lib/icons"
 
 import {
   Tooltip,

@@ -500,6 +500,37 @@ export const VolumeOffIcon = createIcon("VolumeOffIcon")
 // Zap / Lightning icons
 export const Zap = createIcon("Zap")
 
+// Building icons
+export const Building2 = createIcon("Building2")
+export const Building = createIcon("Building")
+
+// Receipt / Invoice icons
+export const Receipt = createIcon("Receipt")
+
+// Tablet icons
+export const Tablet = createIcon("Tablet")
+
+// News icons
+export const Newspaper = createIcon("Newspaper")
+
+// Quote icons
+export const Quote = createIcon("Quote")
+
+// Shopping Bag icons
+export const ShoppingBag = createIcon("ShoppingBag")
+
+// Panel Bottom icon
+export const PanelBottom = createIcon("PanelBottom")
+
+// Mouse Pointer Click icon
+export const MousePointerClick = createIcon("MousePointerClick")
+
+// Images / Gallery icon
+export const Images = createIcon("Images")
+
+// Send icon
+export const Send = createIcon("Send")
+
 // =============================================================================
 // UTILITY EXPORTS
 // =============================================================================

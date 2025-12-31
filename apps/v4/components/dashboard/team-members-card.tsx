@@ -1,6 +1,6 @@
 "use client"
 
-import { Loader2, Trash2, Users } from "lucide-react"
+import { Loader2, Trash2, Users } from "@/lib/icons"
 
 import { formatDate } from "@/lib/format"
 import type { PlanType } from "@/lib/server/db/schema"

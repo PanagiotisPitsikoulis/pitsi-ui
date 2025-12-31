@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Bot, Copy, Check, RotateCcw } from "lucide-react"
+import { Bot, Copy, Check, RotateCcw } from "@/lib/icons"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"

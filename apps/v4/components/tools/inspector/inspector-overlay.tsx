@@ -2,7 +2,7 @@
 
 import React, { memo, useMemo } from "react"
 import { createPortal } from "react-dom"
-import { Inspect, SquarePen } from "lucide-react"
+import { Inspect, SquarePen } from "@/lib/icons"
 
 import { cn } from "@/lib/utils"
 import {

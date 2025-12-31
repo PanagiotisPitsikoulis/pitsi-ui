@@ -2407,26 +2407,6 @@ export const Index: Record<string, Record<string, any>> = {
       tier: "free",
       readiness: "production",
     },
-    "application-1": {
-      name: "application-1",
-      description: "Gym progressive overload tracker with lift progression chart and workout history",
-      type: "registry:block",
-      registryDependencies: ["button","card","utils"],
-      files: [{
-        path: "registry/new-york-v4/blocks/application/application-1.tsx",
-        type: "registry:block",
-        target: ""
-      }],
-      component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/blocks/application/application-1.tsx")
-        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "application-1"
-        return { default: mod.default || mod[exportName] }
-      }),
-      categories: ["application"],
-      meta: undefined,
-      tier: "free",
-      readiness: "production",
-    },
     "app-gym-shell-1": {
       name: "app-gym-shell-1",
       description: "Two-sidebar gym tracker shell with navigation and stats",

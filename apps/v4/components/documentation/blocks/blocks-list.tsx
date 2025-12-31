@@ -3,7 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
-import { Bookmark, Clock, ExternalLink, MoreVertical } from "lucide-react"
+import { Bookmark, Clock, ExternalLink, MoreVertical } from "@/lib/icons"
 
 import { useSavedBlocks, useRecentBlocks } from "@/lib/blocks-storage"
 import { cn } from "@/lib/utils"

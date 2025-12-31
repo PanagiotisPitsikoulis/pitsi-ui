@@ -1,6 +1,6 @@
 import { Suspense } from "react"
 import Link from "next/link"
-import { LogIn } from "lucide-react"
+import { LogIn } from "@/lib/icons"
 
 import { getCurrentUser } from "@/lib/server/user"
 import { Button } from "@/registry/new-york-v4/ui/button"

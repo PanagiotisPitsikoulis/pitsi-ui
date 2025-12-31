@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Sparkles } from "lucide-react"
+import { Sparkles } from "@/lib/icons"
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {

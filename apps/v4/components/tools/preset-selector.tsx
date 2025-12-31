@@ -1,7 +1,7 @@
 "use client"
 
 import { useCallback, useState } from "react"
-import { Check, ChevronDown, RotateCcw, Save, Shuffle } from "lucide-react"
+import { Check, ChevronDown, RotateCcw, Save, Shuffle } from "@/lib/icons"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"

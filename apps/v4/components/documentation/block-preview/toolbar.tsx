@@ -3,8 +3,8 @@
 import React from "react"
 import Link from "next/link"
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group"
-import { Check, Terminal } from "lucide-react"
-import { Code2, Eye, Maximize } from "lucide-react"
+import { Check, Terminal } from "@/lib/icons"
+import { Code2, Eye, Maximize } from "@/lib/icons"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"

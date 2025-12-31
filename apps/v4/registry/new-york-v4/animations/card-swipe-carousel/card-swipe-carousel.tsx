@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react"
+import { ChevronLeftIcon, ChevronRightIcon } from "@/lib/icons"
 import { motion } from "motion/react"
 
 import { cn } from "@/lib/utils"
