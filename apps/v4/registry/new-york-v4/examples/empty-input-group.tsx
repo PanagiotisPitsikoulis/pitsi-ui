@@ -1,5 +1,4 @@
 import { SearchIcon } from "@/lib/icons"
-
 import {
   Empty,
   EmptyContent,

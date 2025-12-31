@@ -1,8 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { ArrowUpRight, Trophy } from "@/lib/icons"
 
+import { ArrowUpRight, Trophy } from "@/lib/icons"
 import { cn } from "@/lib/utils"
 
 interface Lift {

@@ -1,5 +1,4 @@
 import { Monitor, Smartphone } from "@/lib/icons"
-
 import { Responsive } from "@/registry/new-york-v4/ui/responsive"
 
 export default function ResponsiveDemo() {

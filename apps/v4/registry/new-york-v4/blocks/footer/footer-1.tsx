@@ -2,12 +2,12 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Leaf } from "@/lib/icons"
 
 import {
   footerDefaults,
   type FooterBlockProps,
 } from "@/lib/blocks/footer.types"
+import { Leaf } from "@/lib/icons"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Input } from "@/registry/new-york-v4/ui/input"

@@ -1,7 +1,6 @@
 "use client"
 
 import { ChevronRightIcon } from "@/lib/icons"
-
 import {
   Collapsible,
   CollapsibleContent,

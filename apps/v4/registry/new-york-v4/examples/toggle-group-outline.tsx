@@ -1,5 +1,4 @@
 import { Bold, Italic, Underline } from "@/lib/icons"
-
 import {
   ToggleGroup,
   ToggleGroupItem,

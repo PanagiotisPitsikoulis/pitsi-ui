@@ -4,7 +4,8 @@
   "type": "registry:block",
   "description": "Plant shop contact form section",
   "dependencies": [
-    "lucide-react"
+    "@hugeicons/react",
+    "@hugeicons/core-free-icons"
   ],
   "registryDependencies": [
     "button",

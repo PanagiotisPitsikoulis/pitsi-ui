@@ -2,8 +2,8 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { CircleCheckIcon, CircleHelpIcon, CircleIcon } from "@/lib/icons"
 
+import { CircleCheckIcon, CircleHelpIcon, CircleIcon } from "@/lib/icons"
 import { useIsMobile } from "@/registry/new-york-v4/hooks/use-mobile"
 import {
   NavigationMenu,

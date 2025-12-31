@@ -4,7 +4,8 @@
   "type": "registry:block",
   "description": "Complete quiz application template",
   "dependencies": [
-    "lucide-react"
+    "@hugeicons/react",
+    "@hugeicons/core-free-icons"
   ],
   "registryDependencies": [
     "app-quiz-shell-1",

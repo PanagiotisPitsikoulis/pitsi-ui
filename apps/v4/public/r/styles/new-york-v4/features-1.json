@@ -4,7 +4,8 @@
   "type": "registry:block",
   "description": "Plant shop features section with icons and center image",
   "dependencies": [
-    "lucide-react"
+    "@hugeicons/react",
+    "@hugeicons/core-free-icons"
   ],
   "files": [
     {

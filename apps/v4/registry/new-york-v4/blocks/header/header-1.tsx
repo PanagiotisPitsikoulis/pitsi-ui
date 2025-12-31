@@ -2,12 +2,12 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight } from "@/lib/icons"
 
 import {
   headerDefaults,
   type HeaderBlockProps,
 } from "@/lib/blocks/header.types"
+import { ArrowRight } from "@/lib/icons"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 

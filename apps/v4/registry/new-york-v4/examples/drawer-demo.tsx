@@ -1,9 +1,9 @@
 "use client"
 
 import * as React from "react"
-import { Minus, Plus } from "@/lib/icons"
 import { Bar, BarChart, ResponsiveContainer } from "recharts"
 
+import { Minus, Plus } from "@/lib/icons"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Drawer,

@@ -2,8 +2,8 @@
 
 import * as React from "react"
 import { Command as CommandPrimitive } from "cmdk"
-import { SearchIcon } from "@/lib/icons"
 
+import { SearchIcon } from "@/lib/icons"
 import { cn } from "@/lib/utils"
 import {
   Dialog,

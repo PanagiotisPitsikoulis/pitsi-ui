@@ -1,5 +1,4 @@
 import { Search } from "@/lib/icons"
-
 import {
   InputGroup,
   InputGroupAddon,

@@ -1,6 +1,6 @@
 import Link from "next/link"
-import { Minus } from "@/lib/icons"
 
+import { Minus } from "@/lib/icons"
 import {
   Breadcrumb,
   BreadcrumbItem,

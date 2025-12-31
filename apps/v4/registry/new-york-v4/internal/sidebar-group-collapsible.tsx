@@ -1,7 +1,6 @@
 "use client"
 
 import { ChevronDownIcon, LifeBuoyIcon, SendIcon } from "@/lib/icons"
-
 import {
   Collapsible,
   CollapsibleContent,

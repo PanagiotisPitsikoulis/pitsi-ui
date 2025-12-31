@@ -1,7 +1,6 @@
 "use client"
 
 import { Calendar, Home, Inbox, Search, Settings } from "@/lib/icons"
-
 import {
   Sidebar,
   SidebarContent,

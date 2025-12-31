@@ -1,8 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { Bell, Moon, Palette, Save, Sun, Timer, User } from "@/lib/icons"
 
+import { Bell, Moon, Palette, Save, Sun, Timer, User } from "@/lib/icons"
 import { cn } from "@/lib/utils"
 import {
   Avatar,

@@ -1,6 +1,6 @@
 import { IconFolderCode } from "@tabler/icons-react"
-import { ArrowUpRight } from "@/lib/icons"
 
+import { ArrowUpRight } from "@/lib/icons"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Empty,

@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/new-york-v4/examples/spinner-custom.tsx",
-      "content": "import { Loader2 } from \"lucide-react\"\n\nimport { cn } from \"@/registry/new-york-v4/lib/utils\"\n\nfunction Spinner({ className, ...props }: React.ComponentProps<\"svg\">) {\n  return (\n    <Loader2\n      role=\"status\"\n      aria-label=\"Loading\"\n      className={cn(\"size-4 animate-spin\", className)}\n      {...props}\n    />\n  )\n}\n\nexport default function SpinnerCustom() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <Spinner />\n    </div>\n  )\n}\n",
+      "content": "import { Loader2, type IconProps } from \"@/lib/icons\"\n\nimport { cn } from \"@/registry/new-york-v4/lib/utils\"\n\nfunction Spinner({ className, ...props }: IconProps) {\n  return (\n    <Loader2\n      className={cn(\"size-4 animate-spin\", className)}\n      {...props}\n    />\n  )\n}\n\nexport default function SpinnerCustom() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <Spinner />\n    </div>\n  )\n}\n",
       "type": "registry:example"
     }
   ],

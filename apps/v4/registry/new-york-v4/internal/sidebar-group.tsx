@@ -1,7 +1,6 @@
 "use client"
 
 import { LifeBuoyIcon, SendIcon } from "@/lib/icons"
-
 import {
   Sidebar,
   SidebarContent,

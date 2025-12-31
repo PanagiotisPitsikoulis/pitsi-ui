@@ -2,8 +2,8 @@
 
 import * as React from "react"
 import * as ContextMenuPrimitive from "@radix-ui/react-context-menu"
-import { Check, ChevronRightIcon, CircleIcon } from "@/lib/icons"
 
+import { Check, ChevronRightIcon, CircleIcon } from "@/lib/icons"
 import { cn } from "@/lib/utils"
 
 function ContextMenu({

@@ -6,9 +6,9 @@ import {
   useState,
   type HTMLAttributes,
 } from "react"
-import { Moon, SlidersHorizontal, Sun } from "@/lib/icons"
 import { useTheme } from "next-themes"
 
+import { Moon, SlidersHorizontal, Sun } from "@/lib/icons"
 import { cn } from "@/registry/new-york-v4/lib/utils"
 import {
   SegmentedControl,

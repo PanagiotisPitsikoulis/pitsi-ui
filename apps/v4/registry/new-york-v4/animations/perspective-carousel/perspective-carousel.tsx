@@ -1,7 +1,6 @@
 "use client"
 
 import React from "react"
-import { ChevronLeftIcon, ChevronRightIcon } from "@/lib/icons"
 import { motion } from "motion/react"
 import {
   Autoplay,
@@ -11,6 +10,7 @@ import {
 } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
 
+import { ChevronLeftIcon, ChevronRightIcon } from "@/lib/icons"
 import { cn } from "@/lib/utils"
 
 const Skiper47 = () => {

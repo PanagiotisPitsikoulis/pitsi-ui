@@ -258,7 +258,8 @@
       "type": "registry:ui",
       "dependencies": [
         "recharts@2.15.4",
-        "lucide-react"
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
       ],
       "registryDependencies": [
         "card"
@@ -868,7 +869,8 @@
       "dependencies": [
         "@radix-ui/react-slot",
         "class-variance-authority",
-        "lucide-react"
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
       ],
       "registryDependencies": [
         "button",
@@ -1111,7 +1113,8 @@
       "type": "registry:ui",
       "dependencies": [
         "next-themes",
-        "lucide-react"
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
       ],
       "files": [
         {
@@ -1874,7 +1877,8 @@
       "type": "registry:block",
       "description": "Plant shop header with navigation and CTA button",
       "dependencies": [
-        "lucide-react"
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
       ],
       "registryDependencies": [
         "button"
@@ -2046,7 +2050,8 @@
       "type": "registry:block",
       "description": "Plant shop features section with icons and center image",
       "dependencies": [
-        "lucide-react"
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
       ],
       "files": [
         {
@@ -2315,7 +2320,8 @@
       "type": "registry:block",
       "description": "Plant shop contact form section",
       "dependencies": [
-        "lucide-react"
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
       ],
       "registryDependencies": [
         "button",
@@ -2382,7 +2388,8 @@
       "type": "registry:block",
       "description": "Plant shop footer with multiple columns and newsletter",
       "dependencies": [
-        "lucide-react"
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
       ],
       "registryDependencies": [
         "button",
@@ -2536,7 +2543,8 @@
       "type": "registry:block",
       "description": "Two-sidebar gym tracker shell with navigation and stats",
       "dependencies": [
-        "lucide-react"
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
       ],
       "registryDependencies": [
         "sidebar",
@@ -2563,7 +2571,8 @@
       "type": "registry:block",
       "description": "Today view with personalized greeting, week progress, and upcoming sets",
       "dependencies": [
-        "lucide-react"
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
       ],
       "registryDependencies": [
         "button",
@@ -2587,7 +2596,8 @@
       "type": "registry:block",
       "description": "Active workout logging with set tracking and timer",
       "dependencies": [
-        "lucide-react"
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
       ],
       "registryDependencies": [
         "button",
@@ -2612,7 +2622,8 @@
       "type": "registry:block",
       "description": "Calendar history view with workout indicators and details",
       "dependencies": [
-        "lucide-react"
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
       ],
       "registryDependencies": [
         "button",
@@ -2636,7 +2647,8 @@
       "type": "registry:block",
       "description": "Progress tracking with sparkline charts and PR history",
       "dependencies": [
-        "lucide-react"
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
       ],
       "registryDependencies": [
         "utils"
@@ -2659,7 +2671,8 @@
       "type": "registry:block",
       "description": "Exercise library with search, categories, and history",
       "dependencies": [
-        "lucide-react"
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
       ],
       "registryDependencies": [
         "input",
@@ -2683,7 +2696,8 @@
       "type": "registry:block",
       "description": "Profile and settings with preferences and stats",
       "dependencies": [
-        "lucide-react"
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
       ],
       "registryDependencies": [
         "avatar",
@@ -2713,7 +2727,8 @@
       "type": "registry:block",
       "description": "Complete gym progressive overload tracker with two sidebars",
       "dependencies": [
-        "lucide-react"
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
       ],
       "registryDependencies": [
         "app-gym-shell-1",
@@ -2747,7 +2762,8 @@
       "type": "registry:block",
       "description": "Application shell with sidebar navigation for quiz app",
       "dependencies": [
-        "lucide-react"
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
       ],
       "registryDependencies": [
         "sidebar",
@@ -2772,7 +2788,8 @@
       "type": "registry:block",
       "description": "Quiz dashboard with stats, weekly accuracy chart, and recent quizzes",
       "dependencies": [
-        "lucide-react"
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
       ],
       "registryDependencies": [
         "button",
@@ -2797,7 +2814,8 @@
       "type": "registry:block",
       "description": "Quiz browser with categories and difficulty filters",
       "dependencies": [
-        "lucide-react"
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
       ],
       "registryDependencies": [
         "badge",
@@ -2824,7 +2842,8 @@
       "type": "registry:block",
       "description": "Active quiz interface with timer and question display",
       "dependencies": [
-        "lucide-react"
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
       ],
       "registryDependencies": [
         "button",
@@ -2849,7 +2868,8 @@
       "type": "registry:block",
       "description": "Quiz results with score and question breakdown",
       "dependencies": [
-        "lucide-react"
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
       ],
       "registryDependencies": [
         "badge",
@@ -2875,7 +2895,8 @@
       "type": "registry:block",
       "description": "Quiz settings with profile and preferences",
       "dependencies": [
-        "lucide-react"
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
       ],
       "registryDependencies": [
         "avatar",
@@ -2906,7 +2927,8 @@
       "type": "registry:block",
       "description": "Complete quiz application template",
       "dependencies": [
-        "lucide-react"
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
       ],
       "registryDependencies": [
         "app-quiz-shell-1",

@@ -1,6 +1,6 @@
 import * as React from "react"
-import { ChevronDownIcon } from "@/lib/icons"
 
+import { ChevronDownIcon } from "@/lib/icons"
 import { cn } from "@/lib/utils"
 
 function NativeSelect({ className, ...props }: React.ComponentProps<"select">) {

@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+
 import {
   Calculator,
   Calendar,
@@ -9,7 +10,6 @@ import {
   Smile,
   User,
 } from "@/lib/icons"
-
 import {
   CommandDialog,
   CommandEmpty,

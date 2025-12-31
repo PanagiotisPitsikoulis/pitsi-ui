@@ -1,8 +1,8 @@
 "use client"
 
-import { Frame, Map, PieChart, Plus } from "@/lib/icons"
 import { toast, Toaster } from "sonner"
 
+import { Frame, Map, PieChart, Plus } from "@/lib/icons"
 import {
   Sidebar,
   SidebarContent,

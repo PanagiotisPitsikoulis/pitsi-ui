@@ -1,5 +1,4 @@
 import { Loader2Icon, type IconProps } from "@/lib/icons"
-
 import { cn } from "@/lib/utils"
 
 function Spinner({ className, ...props }: IconProps) {

@@ -1,9 +1,9 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { ChevronLeftIcon, ChevronRightIcon } from "@/lib/icons"
 import { motion } from "motion/react"
 
+import { ChevronLeftIcon, ChevronRightIcon } from "@/lib/icons"
 import { cn } from "@/lib/utils"
 
 const Skiper48 = () => {

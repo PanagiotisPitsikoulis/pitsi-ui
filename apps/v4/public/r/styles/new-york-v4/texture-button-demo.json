@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/new-york-v4/examples/texture-button-demo.tsx",
-      "content": "import { Plus } from \"lucide-react\"\n\nimport { TextureButton } from \"@/registry/new-york-v4/ui/texture-button\"\n\nexport default function TextureButtonDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <TextureButton variant=\"primary\">Primary</TextureButton>\n      <TextureButton variant=\"secondary\">Secondary</TextureButton>\n      <TextureButton variant=\"accent\">Accent</TextureButton>\n      <TextureButton variant=\"destructive\">Destructive</TextureButton>\n      <TextureButton variant=\"minimal\">Minimal</TextureButton>\n      <TextureButton variant=\"icon\" size=\"icon\">\n        <Plus className=\"h-4 w-4\" />\n      </TextureButton>\n    </div>\n  )\n}\n",
+      "content": "import { Plus } from \"@/lib/icons\"\n\nimport { TextureButton } from \"@/registry/new-york-v4/ui/texture-button\"\n\nexport default function TextureButtonDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <TextureButton variant=\"primary\">Primary</TextureButton>\n      <TextureButton variant=\"secondary\">Secondary</TextureButton>\n      <TextureButton variant=\"accent\">Accent</TextureButton>\n      <TextureButton variant=\"destructive\">Destructive</TextureButton>\n      <TextureButton variant=\"minimal\">Minimal</TextureButton>\n      <TextureButton variant=\"icon\" size=\"icon\">\n        <Plus className=\"h-4 w-4\" />\n      </TextureButton>\n    </div>\n  )\n}\n",
       "type": "registry:example"
     }
   ],

@@ -1,8 +1,8 @@
 "use client"
 
 import { useRef } from "react"
-import { Cpu, Database, Globe } from "@/lib/icons"
 
+import { Cpu, Database, Globe } from "@/lib/icons"
 import { AnimatedBeam } from "@/registry/new-york-v4/ui/animated-beam"
 
 export default function AnimatedBeamDemo() {

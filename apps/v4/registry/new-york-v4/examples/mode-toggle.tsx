@@ -1,9 +1,9 @@
 "use client"
 
 import * as React from "react"
-import { Moon, Sun } from "@/lib/icons"
 import { useTheme } from "next-themes"
 
+import { Moon, Sun } from "@/lib/icons"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   DropdownMenu,

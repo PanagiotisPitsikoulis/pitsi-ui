@@ -2,8 +2,8 @@
 
 import * as React from "react"
 import * as MenubarPrimitive from "@radix-ui/react-menubar"
-import { Check, ChevronRightIcon, CircleIcon } from "@/lib/icons"
 
+import { Check, ChevronRightIcon, CircleIcon } from "@/lib/icons"
 import { cn } from "@/lib/utils"
 
 function Menubar({

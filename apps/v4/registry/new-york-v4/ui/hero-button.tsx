@@ -1,7 +1,7 @@
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
-import { ArrowRight } from "@/lib/icons"
 
+import { ArrowRight } from "@/lib/icons"
 import { cn } from "@/lib/utils"
 import { Button, buttonVariants } from "@/registry/new-york-v4/ui/button"
 

@@ -1,8 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { BookOpen, Clock, Search, Star, Users } from "@/lib/icons"
 
+import { BookOpen, Clock, Search, Star, Users } from "@/lib/icons"
 import { cn } from "@/lib/utils"
 import { Badge } from "@/registry/new-york-v4/ui/badge"
 import { Button } from "@/registry/new-york-v4/ui/button"

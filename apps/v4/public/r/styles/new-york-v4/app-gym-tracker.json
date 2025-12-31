@@ -4,7 +4,8 @@
   "type": "registry:block",
   "description": "Complete gym progressive overload tracker with two sidebars",
   "dependencies": [
-    "lucide-react"
+    "@hugeicons/react",
+    "@hugeicons/core-free-icons"
   ],
   "registryDependencies": [
     "app-gym-shell-1",

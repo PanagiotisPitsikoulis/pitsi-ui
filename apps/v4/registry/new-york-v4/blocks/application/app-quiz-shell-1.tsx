@@ -1,9 +1,9 @@
 "use client"
 
 import * as React from "react"
-import { User } from "@/lib/icons"
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
+import { User } from "@/lib/icons"
 import { cn } from "@/lib/utils"
 import {
   Avatar,

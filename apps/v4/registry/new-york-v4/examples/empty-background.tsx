@@ -1,6 +1,6 @@
 import { IconBell } from "@tabler/icons-react"
-import { RefreshCcwIcon } from "@/lib/icons"
 
+import { RefreshCcwIcon } from "@/lib/icons"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Empty,
