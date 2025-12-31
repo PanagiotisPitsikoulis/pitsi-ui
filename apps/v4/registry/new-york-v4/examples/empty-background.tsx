@@ -1,5 +1,5 @@
 import { IconBell } from "@tabler/icons-react"
-import { RefreshCcwIcon } from "lucide-react"
+import { RefreshCcwIcon } from "@/lib/icons"
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {

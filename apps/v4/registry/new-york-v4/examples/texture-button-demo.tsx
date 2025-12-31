@@ -1,4 +1,4 @@
-import { Plus } from "lucide-react"
+import { Plus } from "@/lib/icons"
 
 import { TextureButton } from "@/registry/new-york-v4/ui/texture-button"
 

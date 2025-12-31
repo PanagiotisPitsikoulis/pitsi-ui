@@ -1,4 +1,4 @@
-import { AlertCircleIcon, CheckCircle2Icon, PopcornIcon } from "lucide-react"
+import { AlertCircleIcon, CheckCircle2Icon, PopcornIcon } from "@/lib/icons"
 
 import {
   Alert,

@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Minus, Plus } from "lucide-react"
+import { Minus, Plus } from "@/lib/icons"
 import { Bar, BarChart, ResponsiveContainer } from "recharts"
 
 import { Button } from "@/registry/new-york-v4/ui/button"

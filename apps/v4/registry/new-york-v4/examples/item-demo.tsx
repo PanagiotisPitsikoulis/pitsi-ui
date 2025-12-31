@@ -1,4 +1,4 @@
-import { BadgeCheckIcon, ChevronRightIcon } from "lucide-react"
+import { BadgeCheckIcon, ChevronRightIcon } from "@/lib/icons"
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {

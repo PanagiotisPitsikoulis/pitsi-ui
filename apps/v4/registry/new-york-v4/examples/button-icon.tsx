@@ -1,4 +1,4 @@
-import { ArrowUpCircle } from "lucide-react"
+import { ArrowUpCircle } from "@/lib/icons"
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 

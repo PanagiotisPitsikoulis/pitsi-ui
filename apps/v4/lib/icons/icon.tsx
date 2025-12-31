@@ -84,8 +84,12 @@ function createIcon(name: IconName): LucideIcon {
 // Alert / Warning icons
 export const AlertCircle = createIcon("AlertCircle")
 export const AlertCircleIcon = createIcon("AlertCircleIcon")
+export const AlertTriangleIcon = createIcon("AlertTriangleIcon")
 export const TriangleAlert = createIcon("TriangleAlert")
 export const TriangleAlertIcon = createIcon("TriangleAlertIcon")
+
+// Archive icons
+export const Archive = createIcon("Archive")
 
 // Arrow icons
 export const ArrowDown = createIcon("ArrowDown")
@@ -125,8 +129,13 @@ export const BotIcon = createIcon("BotIcon")
 // Brain icons
 export const Brain = createIcon("Brain")
 
+// Calculator icons
+export const Calculator = createIcon("Calculator")
+
 // Calendar icons
 export const Calendar = createIcon("Calendar")
+export const CalendarIcon = createIcon("CalendarIcon")
+export const CalendarDays = createIcon("CalendarDays")
 
 // Camera icons
 export const Camera = createIcon("Camera")
@@ -138,6 +147,7 @@ export const TrendingUp = createIcon("TrendingUp")
 
 // Check icons
 export const Check = createIcon("Check")
+export const CheckIcon = createIcon("CheckIcon")
 export const CheckCircle = createIcon("CheckCircle")
 export const CheckCircle2Icon = createIcon("CheckCircle2Icon")
 export const CircleCheckIcon = createIcon("CircleCheckIcon")
@@ -167,6 +177,7 @@ export const Code2 = createIcon("Code2")
 
 // Copy icons
 export const Copy = createIcon("Copy")
+export const CopyIcon = createIcon("CopyIcon")
 
 // Corner / Turn icons
 export const CornerDownLeft = createIcon("CornerDownLeft")
@@ -268,6 +279,7 @@ export const Link2Icon = createIcon("Link2Icon")
 
 // List icons
 export const List = createIcon("List")
+export const ListPlus = createIcon("ListPlus")
 
 // Loader icons
 export const Loader2 = createIcon("Loader2")
@@ -283,6 +295,7 @@ export const LogOut = createIcon("LogOut")
 
 // Mail icons
 export const Mail = createIcon("Mail")
+export const MailCheck = createIcon("MailCheck")
 
 // Map icons
 export const Map = createIcon("Map")
@@ -363,6 +376,7 @@ export const Settings2 = createIcon("Settings2")
 
 // Share icons
 export const Share2 = createIcon("Share2")
+export const ShareIcon = createIcon("ShareIcon")
 
 // Shield icons
 export const ShieldAlertIcon = createIcon("ShieldAlertIcon")
@@ -380,11 +394,17 @@ export const SlidersHorizontal = createIcon("SlidersHorizontal")
 // Smartphone icons
 export const Smartphone = createIcon("Smartphone")
 
+// Smile / Emoji icons
+export const Smile = createIcon("Smile")
+
 // Sparkle icons
 export const Sparkles = createIcon("Sparkles")
 
 // Star icons
 export const Star = createIcon("Star")
+
+// Tag icons
+export const Tag = createIcon("Tag")
 
 // Target icons
 export const Target = createIcon("Target")
@@ -394,6 +414,7 @@ export const Terminal = createIcon("Terminal")
 
 // Trash / Delete icons
 export const Trash2 = createIcon("Trash2")
+export const TrashIcon = createIcon("TrashIcon")
 
 // Trophy / Award icons
 export const Trophy = createIcon("Trophy")
@@ -404,6 +425,7 @@ export const Truck = createIcon("Truck")
 // User icons
 export const User = createIcon("User")
 export const Users = createIcon("Users")
+export const UserRoundXIcon = createIcon("UserRoundXIcon")
 
 // Wand / Magic icons
 export const Wand2 = createIcon("Wand2")
@@ -412,6 +434,9 @@ export const Wand2 = createIcon("Wand2")
 export const X = createIcon("X")
 export const XCircle = createIcon("XCircle")
 export const XIcon = createIcon("XIcon")
+
+// Volume icons
+export const VolumeOffIcon = createIcon("VolumeOffIcon")
 
 // Zap / Lightning icons
 export const Zap = createIcon("Zap")

@@ -1,4 +1,4 @@
-import { ChevronRightIcon, ExternalLinkIcon } from "lucide-react"
+import { ChevronRightIcon, ExternalLinkIcon } from "@/lib/icons"
 
 import {
   Item,

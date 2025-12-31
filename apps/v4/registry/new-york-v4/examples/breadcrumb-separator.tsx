@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Minus } from "lucide-react"
+import { Minus } from "@/lib/icons"
 
 import {
   Breadcrumb,

@@ -1,4 +1,4 @@
-import { Bookmark, Heart, Star } from "lucide-react"
+import { Bookmark, Heart, Star } from "@/lib/icons"
 
 import {
   ToggleGroup,

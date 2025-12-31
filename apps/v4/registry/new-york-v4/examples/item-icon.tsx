@@ -1,4 +1,4 @@
-import { ShieldAlertIcon } from "lucide-react"
+import { ShieldAlertIcon } from "@/lib/icons"
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {

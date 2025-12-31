@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Moon, Sun } from "lucide-react"
+import { Moon, Sun } from "@/lib/icons"
 import { useTheme } from "next-themes"
 
 import { Button } from "@/registry/new-york-v4/ui/button"

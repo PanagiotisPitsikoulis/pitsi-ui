@@ -1,4 +1,4 @@
-import { HelpCircle, Info } from "lucide-react"
+import { HelpCircle, Info } from "@/lib/icons"
 
 import {
   InputGroup,

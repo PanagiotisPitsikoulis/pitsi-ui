@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Plus, Radio } from "lucide-react"
+import { Plus, Radio } from "@/lib/icons"
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { ButtonGroup } from "@/registry/new-york-v4/ui/button-group"

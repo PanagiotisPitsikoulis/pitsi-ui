@@ -1,4 +1,4 @@
-import { Check, CreditCard, Info, Mail, Search, Star } from "lucide-react"
+import { Check, CreditCard, Info, Mail, Search, Star } from "@/lib/icons"
 
 import {
   InputGroup,

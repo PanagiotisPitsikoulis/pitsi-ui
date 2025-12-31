@@ -11,7 +11,7 @@ import {
   MoreHorizontal,
   Tag,
   Trash2,
-} from "lucide-react"
+} from "@/lib/icons"
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { ButtonGroup } from "@/registry/new-york-v4/ui/button-group"

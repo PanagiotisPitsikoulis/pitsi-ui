@@ -1,4 +1,4 @@
-import { Minus, Plus } from "lucide-react"
+import { Minus, Plus } from "@/lib/icons"
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { ButtonGroup } from "@/registry/new-york-v4/ui/button-group"

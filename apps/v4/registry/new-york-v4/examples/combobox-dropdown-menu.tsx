@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { MoreHorizontal } from "lucide-react"
+import { MoreHorizontal } from "@/lib/icons"
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {

@@ -1,4 +1,4 @@
-import { ChevronDown, MoreHorizontal } from "lucide-react"
+import { ChevronDown, MoreHorizontal } from "@/lib/icons"
 
 import {
   DropdownMenu,

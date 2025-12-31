@@ -1,7 +1,7 @@
 "use client"
 
 import { zodResolver } from "@hookform/resolvers/zod"
-import { Check, ChevronsUpDown } from "lucide-react"
+import { Check, ChevronsUpDown } from "@/lib/icons"
 import { useForm } from "react-hook-form"
 import { toast } from "sonner"
 import { z } from "zod"

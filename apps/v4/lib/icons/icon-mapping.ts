@@ -51,6 +51,9 @@ import {
   BotIcon,
   Brain01Icon,
 
+  // Calculator icons
+  CalculatorIcon,
+
   // Calendar icons
   Calendar01Icon,
 
@@ -63,6 +66,7 @@ import {
 
   // Check icons
   Tick01Icon,
+  Tick02Icon,
   CheckmarkCircle01Icon,
 
   // Chevron icons
@@ -86,6 +90,7 @@ import {
 
   // Copy icons
   Copy01Icon,
+  Copy02Icon,
 
   // Corner / Turn icons
   ArrowTurnDownIcon,
@@ -181,6 +186,7 @@ import {
 
   // List icons
   ListViewIcon,
+  AddToListIcon,
 
   // Loader icons
   Loading01Icon,
@@ -195,6 +201,7 @@ import {
 
   // Mail icons
   Mail01Icon,
+  MailOpen01Icon,
 
   // Map icons
   MapsIcon,
@@ -272,6 +279,7 @@ import {
 
   // Share icons
   Share01Icon,
+  Share02Icon,
 
   // Shield icons
   Shield01Icon,
@@ -289,11 +297,18 @@ import {
   // Smartphone icons
   SmartPhone01Icon,
 
+  // Smile / Emoji icons
+  SmileIcon,
+  HappyIcon,
+
   // Sparkle icons
   SparklesIcon,
 
   // Star icons
   StarIcon,
+
+  // Tag icons
+  Tag01Icon,
 
   // Target icons
   Target01Icon,
@@ -303,6 +318,7 @@ import {
 
   // Trash / Delete icons
   Delete01Icon,
+  Delete02Icon,
 
   // Trophy / Award icons
   Award01Icon,
@@ -313,6 +329,7 @@ import {
   // User icons
   UserIcon,
   UserGroupIcon,
+  UserRemove01Icon,
 
   // Wand / Magic icons
   MagicWand01Icon,
@@ -321,8 +338,14 @@ import {
   Cancel02Icon,
   CancelCircleIcon,
 
+  // Volume icons
+  VolumeOffIcon,
+
   // Zap / Lightning icons
   ZapIcon,
+
+  // Archive icons
+  ArchiveIcon,
 } from "@hugeicons/core-free-icons"
 
 /**
@@ -345,8 +368,12 @@ export const iconMapping = {
   // Alert / Warning icons
   AlertCircle: AlertCircleIcon,
   AlertCircleIcon: AlertCircleIcon,
+  AlertTriangleIcon: TriangleIcon,
   TriangleAlert: TriangleIcon,
   TriangleAlertIcon: TriangleIcon,
+
+  // Archive icons
+  Archive: ArchiveIcon,
 
   // Arrow icons
   ArrowDown: ArrowDown01Icon,
@@ -386,8 +413,13 @@ export const iconMapping = {
   // Brain icons
   Brain: Brain01Icon,
 
+  // Calculator icons
+  Calculator: CalculatorIcon,
+
   // Calendar icons
   Calendar: Calendar01Icon,
+  CalendarIcon: Calendar01Icon,
+  CalendarDays: Calendar01Icon,
 
   // Camera icons
   Camera: Camera01Icon,
@@ -399,6 +431,7 @@ export const iconMapping = {
 
   // Check icons
   Check: Tick01Icon,
+  CheckIcon: Tick02Icon,
   CheckCircle: CheckmarkCircle01Icon,
   CheckCircle2Icon: CheckmarkCircle01Icon,
   CircleCheckIcon: CheckmarkCircle01Icon,
@@ -428,6 +461,7 @@ export const iconMapping = {
 
   // Copy icons
   Copy: Copy01Icon,
+  CopyIcon: Copy02Icon,
 
   // Corner / Turn icons
   CornerDownLeft: ArrowTurnDownIcon,
@@ -527,6 +561,7 @@ export const iconMapping = {
 
   // List icons
   List: ListViewIcon,
+  ListPlus: AddToListIcon,
 
   // Loader icons
   Loader2: Loading02Icon,
@@ -545,6 +580,7 @@ export const iconMapping = {
 
   // Mail icons
   Mail: Mail01Icon,
+  MailCheck: MailOpen01Icon,
 
   // Map icons
   Map: MapsIcon,
@@ -625,6 +661,7 @@ export const iconMapping = {
 
   // Share icons
   Share2: Share01Icon,
+  ShareIcon: Share02Icon,
 
   // Shield icons
   ShieldAlertIcon: Shield01Icon,
@@ -642,11 +679,17 @@ export const iconMapping = {
   // Smartphone icons
   Smartphone: SmartPhone01Icon,
 
+  // Smile / Emoji icons
+  Smile: SmileIcon,
+
   // Sparkle icons
   Sparkles: SparklesIcon,
 
   // Star icons
   Star: StarIcon,
+
+  // Tag icons
+  Tag: Tag01Icon,
 
   // Target icons
   Target: Target01Icon,
@@ -656,6 +699,7 @@ export const iconMapping = {
 
   // Trash / Delete icons
   Trash2: Delete01Icon,
+  TrashIcon: Delete02Icon,
 
   // Trophy / Award icons
   Trophy: Award01Icon,
@@ -666,6 +710,7 @@ export const iconMapping = {
   // User icons
   User: UserIcon,
   Users: UserGroupIcon,
+  UserRoundXIcon: UserRemove01Icon,
 
   // Wand / Magic icons
   Wand2: MagicWand01Icon,
@@ -674,6 +719,9 @@ export const iconMapping = {
   X: Cancel02Icon,
   XCircle: CancelCircleIcon,
   XIcon: Cancel02Icon,
+
+  // Volume icons
+  VolumeOffIcon: VolumeOffIcon,
 
   // Zap / Lightning icons
   Zap: ZapIcon,

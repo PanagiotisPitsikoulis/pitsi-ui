@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ChevronDownIcon, SlashIcon } from "lucide-react"
+import { ChevronDownIcon, SlashIcon } from "@/lib/icons"
 
 import {
   Breadcrumb,
