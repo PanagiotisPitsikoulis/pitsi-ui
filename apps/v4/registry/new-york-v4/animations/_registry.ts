@@ -305,4 +305,471 @@ export const animations: Registry["items"] = [
     tier: "free",
     readiness: "beta",
   },
+  // OGL-based animations
+  {
+    name: "aurora",
+    type: "registry:ui",
+    description:
+      "Aurora borealis effect with animated gradient colors using WebGL.",
+    dependencies: ["ogl"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "animations/aurora/aurora.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "balatro",
+    type: "registry:ui",
+    description:
+      "Psychedelic card effect with distortion and color manipulation.",
+    dependencies: ["ogl"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "animations/balatro/balatro.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "circular-gallery",
+    type: "registry:ui",
+    description: "3D circular gallery with rotating images using WebGL.",
+    dependencies: ["ogl"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "animations/circular-gallery/circular-gallery.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "flying-posters",
+    type: "registry:ui",
+    description:
+      "Floating poster effect with 3D rotation and mouse interaction.",
+    dependencies: ["ogl"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "animations/flying-posters/flying-posters.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "gradient-blinds",
+    type: "registry:ui",
+    description: "Animated gradient blinds effect with smooth transitions.",
+    dependencies: ["ogl"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "animations/gradient-blinds/gradient-blinds.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "iridescence",
+    type: "registry:ui",
+    description: "Iridescent color-shifting effect with mouse interaction.",
+    dependencies: ["ogl"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "animations/iridescence/iridescence.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "liquid-chrome",
+    type: "registry:ui",
+    description: "Liquid chrome metallic effect with dynamic reflections.",
+    dependencies: ["ogl"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "animations/liquid-chrome/liquid-chrome.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+  },
+  // Three.js-based animations
+  {
+    name: "ascii-text",
+    type: "registry:ui",
+    description: "Text rendered as ASCII art with 3D depth effect.",
+    dependencies: ["three"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "animations/ascii-text/ascii-text.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "ballpit",
+    type: "registry:ui",
+    description: "Interactive 3D ball pit with physics simulation.",
+    dependencies: ["three", "gsap"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "animations/ballpit/ballpit.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "color-bends",
+    type: "registry:ui",
+    description: "Color bending distortion effect with WebGL shaders.",
+    dependencies: ["three"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "animations/color-bends/color-bends.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "dither",
+    type: "registry:ui",
+    description: "Retro dithering effect with customizable patterns.",
+    dependencies: ["three"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "animations/dither/dither.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "fluid-glass",
+    type: "registry:ui",
+    description: "Fluid glass refraction effect with dynamic distortion.",
+    dependencies: ["three"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "animations/fluid-glass/fluid-glass.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "grid-distortion",
+    type: "registry:ui",
+    description: "Grid-based distortion effect with mouse interaction.",
+    dependencies: ["three"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "animations/grid-distortion/grid-distortion.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "shape-blur",
+    type: "registry:ui",
+    description: "Shape morphing with blur transitions between states.",
+    dependencies: ["three"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "animations/shape-blur/shape-blur.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+  },
+  // GSAP-based animations
+  {
+    name: "decay-card",
+    type: "registry:ui",
+    description: "Card with decay and glitch animation effects.",
+    dependencies: ["gsap"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "animations/decay-card/decay-card.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "flowing-menu",
+    type: "registry:ui",
+    description: "Menu with flowing hover animation effects.",
+    dependencies: ["gsap"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "animations/flowing-menu/flowing-menu.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "image-trail",
+    type: "registry:ui",
+    description: "Cursor-following image trail effect with smooth animations.",
+    dependencies: ["gsap"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "animations/image-trail/image-trail.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "shuffle",
+    type: "registry:ui",
+    description: "Card shuffle animation with stacking effects.",
+    dependencies: ["gsap"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "animations/shuffle/shuffle.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "sticker-peel",
+    type: "registry:ui",
+    description: "Sticker peeling effect with 3D perspective.",
+    dependencies: ["gsap"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "animations/sticker-peel/sticker-peel.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+  },
+  // Motion/React-based animations
+  {
+    name: "circular-text",
+    type: "registry:ui",
+    description: "Text arranged in a circle with rotation animation.",
+    dependencies: ["motion/react"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "animations/circular-text/circular-text.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "stack",
+    type: "registry:ui",
+    description: "Draggable card stack with rotation and depth effects.",
+    dependencies: ["motion/react"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "animations/stack/stack.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+  },
+  // Special library animations
+  {
+    name: "dome-gallery",
+    type: "registry:ui",
+    description: "3D dome gallery with gesture-based navigation.",
+    dependencies: ["@use-gesture/react"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "animations/dome-gallery/dome-gallery.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "infinite-menu",
+    type: "registry:ui",
+    description: "Infinite 3D menu with WebGL rendering.",
+    dependencies: ["gl-matrix"],
+    registryDependencies: [],
+    files: [
+      {
+        path: "animations/infinite-menu/infinite-menu.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+  },
+  // Pure React/Canvas animations
+  {
+    name: "curved-loop",
+    type: "registry:ui",
+    description: "Text marquee along a curved path.",
+    registryDependencies: [],
+    files: [
+      {
+        path: "animations/curved-loop/curved-loop.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "fuzzy-text",
+    type: "registry:ui",
+    description: "Text with fuzzy/blurred hover effect.",
+    registryDependencies: [],
+    files: [
+      {
+        path: "animations/fuzzy-text/fuzzy-text.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "glass-surface",
+    type: "registry:ui",
+    description: "Glass morphism surface with dynamic reflections.",
+    registryDependencies: [],
+    files: [
+      {
+        path: "animations/glass-surface/glass-surface.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "letter-glitch",
+    type: "registry:ui",
+    description: "Text with randomized letter glitch effect.",
+    registryDependencies: [],
+    files: [
+      {
+        path: "animations/letter-glitch/letter-glitch.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "noise",
+    type: "registry:ui",
+    description: "Animated noise texture overlay effect.",
+    registryDependencies: [],
+    files: [
+      {
+        path: "animations/noise/noise.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+  },
+  {
+    name: "text-pressure",
+    type: "registry:ui",
+    description: "Text with variable font pressure effect on mouse proximity.",
+    registryDependencies: [],
+    files: [
+      {
+        path: "animations/text-pressure/text-pressure.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["animations"],
+    tier: "free",
+    readiness: "beta",
+  },
 ]
