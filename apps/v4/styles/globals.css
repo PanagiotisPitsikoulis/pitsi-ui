@@ -935,6 +935,12 @@ body {
   body {
     @apply bg-page text-foreground;
   }
+  .maplibregl-popup-content {
+    @apply bg-transparent! shadow-none! p-0! rounded-none!;
+  }
+  .maplibregl-popup-tip {
+    @apply hidden!;
+  }
 }
 
 .dark img:not([data-slot="avatar-image"]) {

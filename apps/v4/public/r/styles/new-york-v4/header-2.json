@@ -1,0 +1,21 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "header-2",
+  "type": "registry:block",
+  "description": "Centered logo header with navigation split left/right",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/header/header-2.tsx",
+      "content": "\"use client\"\n\nimport Link from \"next/link\"\n\nimport { type HeaderBlockProps } from \"@/lib/blocks/header.types\"\nimport { cn } from \"@/lib/utils\"\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\n\nconst header2Defaults = {\n  logo: {\n    text: \"Acme\",\n    href: \"#\",\n  },\n  leftNavigation: [\n    { label: \"Products\", href: \"#\" },\n    { label: \"Solutions\", href: \"#\" },\n    { label: \"Pricing\", href: \"#\" },\n  ],\n  rightNavigation: [\n    { label: \"Blog\", href: \"#\" },\n    { label: \"Docs\", href: \"#\" },\n    { label: \"Support\", href: \"#\" },\n  ],\n  cta: { label: \"Get Started\", href: \"#\" },\n}\n\nexport function Header2({ content = {}, classNames = {} }: HeaderBlockProps) {\n  const {\n    logo = header2Defaults.logo,\n    navigation = [\n      ...header2Defaults.leftNavigation,\n      ...header2Defaults.rightNavigation,\n    ],\n    cta = header2Defaults.cta,\n  } = content\n\n  const leftNav = navigation.slice(0, 3)\n  const rightNav = navigation.slice(3)\n\n  return (\n    <header\n      className={cn(\n        \"bg-background border-border sticky top-0 z-50 border-b\",\n        classNames.root\n      )}\n    >\n      <div\n        className={cn(\n          \"container flex h-16 items-center justify-between px-6\",\n          classNames.container\n        )}\n      >\n        {/* Left Navigation */}\n        <nav\n          className={cn(\n            \"hidden items-center gap-6 md:flex\",\n            classNames.nav?.root\n          )}\n        >\n          {leftNav.map((item, i) => (\n            <Link\n              key={i}\n              href={item.href}\n              className={cn(\n                \"text-muted-foreground hover:text-foreground text-sm font-medium transition-colors\",\n                classNames.nav?.link\n              )}\n            >\n              {item.label}\n            </Link>\n          ))}\n        </nav>\n\n        {/* Centered Logo */}\n        <Link\n          href={logo?.href ?? \"#\"}\n          className={cn(\n            \"absolute left-1/2 -translate-x-1/2 text-xl font-bold\",\n            classNames.logo\n          )}\n        >\n          {logo?.text}\n        </Link>\n\n        {/* Right Navigation + CTA */}\n        <div className=\"flex items-center gap-6\">\n          <nav\n            className={cn(\n              \"hidden items-center gap-6 md:flex\",\n              classNames.nav?.root\n            )}\n          >\n            {rightNav.map((item, i) => (\n              <Link\n                key={i}\n                href={item.href}\n                className={cn(\n                  \"text-muted-foreground hover:text-foreground text-sm font-medium transition-colors\",\n                  classNames.nav?.link\n                )}\n              >\n                {item.label}\n              </Link>\n            ))}\n          </nav>\n          {cta && (\n            <Button size=\"sm\" className={classNames.cta} asChild>\n              <Link href={cta.href}>{cta.label}</Link>\n            </Button>\n          )}\n        </div>\n      </div>\n    </header>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "header"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

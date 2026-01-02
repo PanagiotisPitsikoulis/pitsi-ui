@@ -2,38 +2,28 @@
   "$schema": "https://pitsiui.com/schema/registry-item.json",
   "name": "service-fitness",
   "type": "registry:block",
-  "description": "Professional personal training landing page template for fitness coaches",
+  "description": "Boutique fitness studio landing page with high-energy black & white design",
   "registryDependencies": [
     "header-1",
-    "hero-1",
-    "logos-1",
-    "features-1",
-    "features-2",
-    "features-3",
-    "features-4",
-    "features-5",
-    "products-1",
-    "pricing-1",
-    "testimonials-1",
-    "gallery-1",
-    "team-1",
-    "stats-1",
-    "faq-1",
-    "blog-1",
-    "contact-1",
-    "newsletter-1",
-    "cta-1",
-    "footer-1"
+    "hero-5",
+    "features-6",
+    "features-7",
+    "team-2",
+    "stats-2",
+    "pricing-2",
+    "testimonials-2",
+    "features-8",
+    "footer-2"
   ],
   "files": [
     {
       "path": "registry/new-york-v4/blocks/service/service-fitness.tsx",
-      "content": "\"use client\"\n\nimport { Suspense } from \"react\"\n\nimport {\n  BlockContainer,\n  BlockThemeWrapper,\n} from \"@/app/(app)/(content)/(blocks)/_components\"\nimport type { TintLevel } from \"@/app/(app)/(content)/(blocks)/_components\"\n\nimport { Blog1 } from \"../blog/blog-1\"\nimport { Contact1 } from \"../contact/contact-1\"\nimport { Cta1 } from \"../cta/cta-1\"\nimport { Faq1 } from \"../faq/faq-1\"\nimport { Features1 } from \"../features/features-1\"\nimport { Features2 } from \"../features/features-2\"\nimport { Features3 } from \"../features/features-3\"\nimport { Features4 } from \"../features/features-4\"\nimport { Features5 } from \"../features/features-5\"\nimport { Footer1 } from \"../footer/footer-1\"\nimport { Gallery1 } from \"../gallery/gallery-1\"\nimport { Header1 } from \"../header/header-1\"\nimport { Hero4 } from \"../hero/hero-4\"\nimport { Logos1 } from \"../logos/logos-1\"\nimport { Newsletter1 } from \"../newsletter/newsletter-1\"\nimport { Pricing1 } from \"../pricing/pricing-1\"\nimport { Products1 } from \"../products/products-1\"\nimport { Stats1 } from \"../stats/stats-1\"\nimport { Team1 } from \"../team/team-1\"\nimport { Testimonials1 } from \"../testimonials/testimonials-1\"\n\n// Template palette for theming\nconst TEMPLATE_PALETTE = \"slate\" as const\n\n// Block configuration matching template-config.ts\nconst blocks: Array<{\n  Component: React.ComponentType\n  tint: TintLevel\n  forceDark?: boolean\n  forceLight?: boolean\n  type: string\n}> = [\n  { Component: Header1, tint: \"tinted\", forceLight: true, type: \"header\" },\n  { Component: Hero4, tint: \"tinted\", forceLight: true, type: \"hero\" },\n  { Component: Logos1, tint: \"deep\", type: \"logos\" },\n  { Component: Features1, tint: \"tinted\", type: \"features\" },\n  { Component: Features2, tint: \"tinted\", type: \"features\" },\n  { Component: Features3, tint: \"tinted\", type: \"features\" },\n  { Component: Features4, tint: \"tinted\", type: \"features\" },\n  { Component: Features5, tint: \"tinted\", type: \"features\" },\n  { Component: Products1, tint: \"tinted\", type: \"products\" },\n  { Component: Pricing1, tint: \"tinted\", type: \"pricing\" },\n  { Component: Testimonials1, tint: \"deep\", type: \"testimonials\" },\n  { Component: Gallery1, tint: \"tinted\", type: \"gallery\" },\n  { Component: Team1, tint: \"tinted\", type: \"team\" },\n  { Component: Stats1, tint: \"deep\", type: \"stats\" },\n  { Component: Faq1, tint: \"tinted\", type: \"faq\" },\n  { Component: Blog1, tint: \"tinted\", type: \"blog\" },\n  { Component: Contact1, tint: \"tinted\", type: \"contact\" },\n  { Component: Newsletter1, tint: \"deep\", type: \"newsletter\" },\n  { Component: Cta1, tint: \"tinted\", type: \"cta\" },\n  { Component: Footer1, tint: \"tinted\", type: \"footer\" },\n]\n\nexport function ServiceFitness() {\n  return (\n    <BlockThemeWrapper palette={TEMPLATE_PALETTE} tint=\"tinted\">\n      <div className=\"min-h-screen\">\n        {blocks.map(\n          ({ Component, tint, forceDark, forceLight, type }, index) => {\n            const skipAlternatingBg =\n              type === \"hero\" || type === \"header\" || forceDark || forceLight\n            const skipPadding =\n              type === \"hero\" || type === \"header\" || type === \"footer\"\n\n            return (\n              <BlockThemeWrapper\n                key={index}\n                palette={TEMPLATE_PALETTE}\n                tint={tint}\n                forceDark={forceDark}\n                forceLight={forceLight}\n              >\n                <BlockContainer\n                  index={index}\n                  tint={tint}\n                  forceBg={skipAlternatingBg ? \"none\" : undefined}\n                  noPadding={skipPadding}\n                >\n                  <Suspense fallback={null}>\n                    <Component />\n                  </Suspense>\n                </BlockContainer>\n              </BlockThemeWrapper>\n            )\n          }\n        )}\n      </div>\n    </BlockThemeWrapper>\n  )\n}\n",
+      "content": "\"use client\"\n\nimport { Suspense } from \"react\"\n\nimport {\n  BlockContainer,\n  BlockThemeWrapper,\n} from \"@/app/(app)/(content)/(blocks)/_components\"\nimport type { TintLevel } from \"@/app/(app)/(content)/(blocks)/_components\"\n\nimport { Features6 } from \"../features/features-6\"\nimport { Features7 } from \"../features/features-7\"\nimport { Features8 } from \"../features/features-8\"\nimport { Footer2 } from \"../footer/footer-2\"\nimport { Header1 } from \"../header/header-1\"\nimport { Hero5 } from \"../hero/hero-5\"\nimport { Pricing2 } from \"../pricing/pricing-2\"\nimport { Stats2 } from \"../stats/stats-2\"\nimport { Team2 } from \"../team/team-2\"\nimport { Testimonials2 } from \"../testimonials/testimonials-2\"\n\n// Template palette for theming - fitness uses neutral/slate for the black & white theme\nconst TEMPLATE_PALETTE = \"slate\" as const\n\n// Block configuration for fitness studio landing page\nconst blocks: Array<{\n  Component: React.ComponentType\n  tint: TintLevel\n  forceDark?: boolean\n  forceLight?: boolean\n  type: string\n}> = [\n  { Component: Header1, tint: \"tinted\", forceDark: true, type: \"header\" },\n  { Component: Hero5, tint: \"deep\", forceDark: true, type: \"hero\" },\n  { Component: Features6, tint: \"deep\", forceDark: true, type: \"features\" },\n  { Component: Features7, tint: \"deep\", forceDark: true, type: \"features\" },\n  { Component: Team2, tint: \"deep\", forceDark: true, type: \"team\" },\n  { Component: Stats2, tint: \"base\", forceLight: true, type: \"stats\" },\n  { Component: Pricing2, tint: \"deep\", forceDark: true, type: \"pricing\" },\n  {\n    Component: Testimonials2,\n    tint: \"deep\",\n    forceDark: true,\n    type: \"testimonials\",\n  },\n  { Component: Features8, tint: \"deep\", forceDark: true, type: \"features\" },\n  { Component: Footer2, tint: \"deep\", forceDark: true, type: \"footer\" },\n]\n\nexport function ServiceFitness() {\n  return (\n    <BlockThemeWrapper palette={TEMPLATE_PALETTE} tint=\"tinted\">\n      <div className=\"min-h-screen\">\n        {blocks.map(\n          ({ Component, tint, forceDark, forceLight, type }, index) => {\n            const skipAlternatingBg =\n              type === \"hero\" || type === \"header\" || forceDark || forceLight\n            const skipPadding =\n              type === \"hero\" || type === \"header\" || type === \"footer\"\n\n            return (\n              <BlockThemeWrapper\n                key={index}\n                palette={TEMPLATE_PALETTE}\n                tint={tint}\n                forceDark={forceDark}\n                forceLight={forceLight}\n              >\n                <BlockContainer\n                  index={index}\n                  tint={tint}\n                  forceBg={skipAlternatingBg ? \"none\" : undefined}\n                  noPadding={skipPadding}\n                >\n                  <Suspense fallback={null}>\n                    <Component />\n                  </Suspense>\n                </BlockContainer>\n              </BlockThemeWrapper>\n            )\n          }\n        )}\n      </div>\n    </BlockThemeWrapper>\n  )\n}\n",
       "type": "registry:block"
     }
   ],
   "meta": {
-    "heroBlock": "hero-1"
+    "heroBlock": "hero-5"
   },
   "categories": [
     "template",

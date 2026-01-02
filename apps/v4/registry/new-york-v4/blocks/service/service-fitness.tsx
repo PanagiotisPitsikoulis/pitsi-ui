@@ -8,31 +8,21 @@ import {
 } from "@/app/(app)/(content)/(blocks)/_components"
 import type { TintLevel } from "@/app/(app)/(content)/(blocks)/_components"
 
-import { Blog1 } from "../blog/blog-1"
-import { Contact1 } from "../contact/contact-1"
-import { Cta1 } from "../cta/cta-1"
-import { Faq1 } from "../faq/faq-1"
-import { Features1 } from "../features/features-1"
-import { Features2 } from "../features/features-2"
-import { Features3 } from "../features/features-3"
-import { Features4 } from "../features/features-4"
-import { Features5 } from "../features/features-5"
-import { Footer1 } from "../footer/footer-1"
-import { Gallery1 } from "../gallery/gallery-1"
+import { Features6 } from "../features/features-6"
+import { Features7 } from "../features/features-7"
+import { Features8 } from "../features/features-8"
+import { Footer2 } from "../footer/footer-2"
 import { Header1 } from "../header/header-1"
-import { Hero4 } from "../hero/hero-4"
-import { Logos1 } from "../logos/logos-1"
-import { Newsletter1 } from "../newsletter/newsletter-1"
-import { Pricing1 } from "../pricing/pricing-1"
-import { Products1 } from "../products/products-1"
-import { Stats1 } from "../stats/stats-1"
-import { Team1 } from "../team/team-1"
-import { Testimonials1 } from "../testimonials/testimonials-1"
+import { Hero5 } from "../hero/hero-5"
+import { Pricing2 } from "../pricing/pricing-2"
+import { Stats2 } from "../stats/stats-2"
+import { Team2 } from "../team/team-2"
+import { Testimonials2 } from "../testimonials/testimonials-2"
 
-// Template palette for theming
+// Template palette for theming - fitness uses neutral/slate for the black & white theme
 const TEMPLATE_PALETTE = "slate" as const
 
-// Block configuration matching template-config.ts
+// Block configuration for fitness studio landing page
 const blocks: Array<{
   Component: React.ComponentType
   tint: TintLevel
@@ -40,26 +30,21 @@ const blocks: Array<{
   forceLight?: boolean
   type: string
 }> = [
-  { Component: Header1, tint: "tinted", forceLight: true, type: "header" },
-  { Component: Hero4, tint: "tinted", forceLight: true, type: "hero" },
-  { Component: Logos1, tint: "deep", type: "logos" },
-  { Component: Features1, tint: "tinted", type: "features" },
-  { Component: Features2, tint: "tinted", type: "features" },
-  { Component: Features3, tint: "tinted", type: "features" },
-  { Component: Features4, tint: "tinted", type: "features" },
-  { Component: Features5, tint: "tinted", type: "features" },
-  { Component: Products1, tint: "tinted", type: "products" },
-  { Component: Pricing1, tint: "tinted", type: "pricing" },
-  { Component: Testimonials1, tint: "deep", type: "testimonials" },
-  { Component: Gallery1, tint: "tinted", type: "gallery" },
-  { Component: Team1, tint: "tinted", type: "team" },
-  { Component: Stats1, tint: "deep", type: "stats" },
-  { Component: Faq1, tint: "tinted", type: "faq" },
-  { Component: Blog1, tint: "tinted", type: "blog" },
-  { Component: Contact1, tint: "tinted", type: "contact" },
-  { Component: Newsletter1, tint: "deep", type: "newsletter" },
-  { Component: Cta1, tint: "tinted", type: "cta" },
-  { Component: Footer1, tint: "tinted", type: "footer" },
+  { Component: Header1, tint: "tinted", forceDark: true, type: "header" },
+  { Component: Hero5, tint: "deep", forceDark: true, type: "hero" },
+  { Component: Features6, tint: "deep", forceDark: true, type: "features" },
+  { Component: Features7, tint: "deep", forceDark: true, type: "features" },
+  { Component: Team2, tint: "deep", forceDark: true, type: "team" },
+  { Component: Stats2, tint: "base", forceLight: true, type: "stats" },
+  { Component: Pricing2, tint: "deep", forceDark: true, type: "pricing" },
+  {
+    Component: Testimonials2,
+    tint: "deep",
+    forceDark: true,
+    type: "testimonials",
+  },
+  { Component: Features8, tint: "deep", forceDark: true, type: "features" },
+  { Component: Footer2, tint: "deep", forceDark: true, type: "footer" },
 ]
 
 export function ServiceFitness() {

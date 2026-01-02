@@ -1,0 +1,21 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "cta-6",
+  "type": "registry:block",
+  "description": "Exit intent modal overlay CTA",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/cta/cta-6.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\nimport Link from \"next/link\"\nimport { ArrowRight, Gift, X } from \"lucide-react\"\n\nimport { type CtaBlockProps } from \"@/lib/blocks/cta.types\"\nimport { cn } from \"@/lib/utils\"\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\nimport { Input } from \"@/registry/new-york-v4/ui/input\"\n\nconst cta6Defaults = {\n  badge: \"Wait! Before you go...\",\n  title: \"Get 25% Off Your Order\",\n  description: \"Sign up now and we'll send you an exclusive discount code.\",\n  placeholder: \"Enter your email\",\n  primaryCta: { label: \"Get My Discount\", href: \"#\" },\n  terms: \"By signing up, you agree to our Terms and Privacy Policy.\",\n}\n\nexport function Cta6({ content = {}, classNames = {} }: CtaBlockProps) {\n  const {\n    title = cta6Defaults.title,\n    description = cta6Defaults.description,\n    primaryCta = cta6Defaults.primaryCta,\n  } = content\n\n  const [isOpen, setIsOpen] = useState(true)\n\n  if (!isOpen) return null\n\n  return (\n    <div\n      className={cn(\n        \"fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4\",\n        classNames.root\n      )}\n    >\n      <div\n        className={cn(\n          \"bg-background relative w-full max-w-md overflow-hidden rounded-2xl shadow-2xl\",\n          classNames.content\n        )}\n      >\n        {/* Close button */}\n        <Button\n          variant=\"ghost\"\n          size=\"icon\"\n          className=\"absolute top-4 right-4 z-10\"\n          onClick={() => setIsOpen(false)}\n        >\n          <X className=\"h-4 w-4\" />\n          <span className=\"sr-only\">Close</span>\n        </Button>\n\n        {/* Header with gradient */}\n        <div className=\"bg-gradient-to-br from-rose-500 to-pink-600 px-8 py-10 text-center text-white\">\n          <div className=\"mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white/20\">\n            <Gift className=\"h-8 w-8\" />\n          </div>\n          <div className=\"mb-2 text-sm font-medium tracking-wide uppercase opacity-90\">\n            {cta6Defaults.badge}\n          </div>\n          <h2\n            className={cn(\n              \"text-2xl font-bold md:text-3xl\",\n              classNames.header?.title\n            )}\n          >\n            {title}\n          </h2>\n        </div>\n\n        {/* Form */}\n        <div className=\"p-8\">\n          <p\n            className={cn(\n              \"text-muted-foreground mb-6 text-center\",\n              classNames.header?.description\n            )}\n          >\n            {description}\n          </p>\n\n          <div className=\"space-y-4\">\n            <Input\n              type=\"email\"\n              placeholder={cta6Defaults.placeholder}\n              className=\"h-12\"\n            />\n            {primaryCta && (\n              <Button className=\"group h-12 w-full\" asChild>\n                <Link href={primaryCta.href}>\n                  {primaryCta.label}\n                  <ArrowRight className=\"ml-2 h-4 w-4 transition-transform group-hover:translate-x-1\" />\n                </Link>\n              </Button>\n            )}\n          </div>\n\n          <p className=\"text-muted-foreground mt-4 text-center text-xs\">\n            {cta6Defaults.terms}\n          </p>\n\n          <button\n            onClick={() => setIsOpen(false)}\n            className=\"text-muted-foreground hover:text-foreground mt-4 block w-full text-center text-sm transition-colors\"\n          >\n            No thanks, I'll pay full price\n          </button>\n        </div>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "cta"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

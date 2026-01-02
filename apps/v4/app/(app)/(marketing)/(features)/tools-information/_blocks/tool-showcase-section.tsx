@@ -11,7 +11,6 @@ import {
   ThemeIcon,
   TypographyIcon,
   SpacingIcon,
-  BackgroundDecorationsIcon,
   EasingIcon,
   ShadowIcon,
 } from "./icons"
@@ -25,9 +24,6 @@ const SpacingGeneratorClient = lazy(
 )
 const TypographyComposerClient = lazy(
   () => import("@/app/(app)/(tools)/tools/typography-composer/page.client")
-)
-const BackgroundDecorationsPageClient = lazy(
-  () => import("@/app/(app)/(tools)/tools/background-decorations/page.client")
 )
 const EasingComposerClient = lazy(
   () => import("@/app/(app)/(tools)/tools/easing-composer/page.client")
@@ -122,21 +118,6 @@ export const tools: Tool[] = [
     icon: SpacingIcon,
     href: "/tools/spacing-generator",
     component: SpacingGeneratorClient,
-  },
-  {
-    id: "background-decorations",
-    name: "Background Patterns",
-    tagline: "Subtle patterns & guides",
-    description:
-      "Add depth and visual interest with customizable grid guides, dot patterns, and gradient backgrounds. Perfect for hero sections, cards, and landing pages that need that extra polish.",
-    features: [
-      "Grid & dot patterns",
-      "Animated options",
-      "Customizable colors",
-    ],
-    icon: BackgroundDecorationsIcon,
-    href: "/tools/background-decorations",
-    component: BackgroundDecorationsPageClient,
   },
 ]
 

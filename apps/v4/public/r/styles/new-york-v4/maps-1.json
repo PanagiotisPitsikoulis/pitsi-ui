@@ -1,0 +1,28 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "maps-1",
+  "type": "registry:block",
+  "description": "Basic interactive map with multiple office location markers and popups",
+  "dependencies": [
+    "maplibre-gl",
+    "next-themes"
+  ],
+  "registryDependencies": [
+    "map"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/maps/maps-1.tsx",
+      "content": "\"use client\"\n\nimport {\n  Map,\n  MapControls,\n  MapMarker,\n  MarkerContent,\n  MarkerPopup,\n} from \"@/registry/new-york-v4/ui/map\"\n\nconst locations = [\n  {\n    id: 1,\n    name: \"San Francisco HQ\",\n    address: \"123 Market Street\",\n    coordinates: { lat: 37.7749, lng: -122.4194 },\n  },\n  {\n    id: 2,\n    name: \"New York Office\",\n    address: \"456 Broadway\",\n    coordinates: { lat: 40.7128, lng: -74.006 },\n  },\n  {\n    id: 3,\n    name: \"Austin Office\",\n    address: \"789 Congress Ave\",\n    coordinates: { lat: 30.2672, lng: -97.7431 },\n  },\n]\n\nexport function Maps1() {\n  return (\n    <div className=\"h-[500px] w-full overflow-hidden rounded-xl border\">\n      <Map center={[-98.5795, 39.8283]} zoom={3.5}>\n        <MapControls showZoom showLocate />\n        {locations.map((location) => (\n          <MapMarker\n            key={location.id}\n            longitude={location.coordinates.lng}\n            latitude={location.coordinates.lat}\n          >\n            <MarkerContent>\n              <div className=\"bg-primary text-primary-foreground flex size-8 items-center justify-center rounded-full border-2 border-white shadow-lg\">\n                <span className=\"text-xs font-semibold\">{location.id}</span>\n              </div>\n            </MarkerContent>\n            <MarkerPopup closeButton>\n              <div className=\"min-w-[160px]\">\n                <h3 className=\"font-semibold\">{location.name}</h3>\n                <p className=\"text-muted-foreground text-sm\">\n                  {location.address}\n                </p>\n              </div>\n            </MarkerPopup>\n          </MapMarker>\n        ))}\n      </Map>\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "iframeHeight": "550px"
+  },
+  "categories": [
+    "maps"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

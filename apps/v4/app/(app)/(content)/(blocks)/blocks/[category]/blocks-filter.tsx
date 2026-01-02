@@ -7,7 +7,6 @@ import {
   Box,
   Clock,
   Download,
-  Grid2X2,
   Layers,
   MoreVertical,
   Palette,
@@ -48,7 +47,6 @@ const TOOLS = [
   { id: "easing-composer", label: "Easing Composer", icon: Waves, href: "/tools/easing-composer" },
   { id: "spacing-generator", label: "Spacing Generator", icon: SlidersHorizontal, href: "/tools/spacing-generator" },
   { id: "typography-composer", label: "Typography Composer", icon: Type, href: "/tools/typography-composer" },
-  { id: "background-decorations", label: "Background Decorations", icon: Grid2X2, href: "/tools/background-decorations" },
 ]
 
 export function BlocksFilter() {

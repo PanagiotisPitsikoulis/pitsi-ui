@@ -1,0 +1,33 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "maps-3",
+  "type": "registry:block",
+  "description": "Store locator with searchable sidebar list and interactive map",
+  "dependencies": [
+    "maplibre-gl",
+    "next-themes",
+    "@hugeicons/react",
+    "@hugeicons/core-free-icons"
+  ],
+  "registryDependencies": [
+    "map",
+    "button",
+    "input",
+    "scroll-area"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/maps/maps-3.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\n\nimport { MapPin, Navigation, Search } from \"@/lib/icons\"\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\nimport { Input } from \"@/registry/new-york-v4/ui/input\"\nimport {\n  Map,\n  MapControls,\n  MapMarker,\n  MarkerContent,\n  MarkerPopup,\n} from \"@/registry/new-york-v4/ui/map\"\nimport { ScrollArea } from \"@/registry/new-york-v4/ui/scroll-area\"\n\nconst stores = [\n  {\n    id: 1,\n    name: \"Downtown Store\",\n    address: \"123 Main Street, Suite 100\",\n    city: \"San Francisco, CA 94102\",\n    phone: \"(415) 555-0101\",\n    hours: \"9 AM - 9 PM\",\n    distance: \"0.3 mi\",\n    coordinates: { lat: 37.7849, lng: -122.4094 },\n  },\n  {\n    id: 2,\n    name: \"Marina District\",\n    address: \"456 Chestnut Street\",\n    city: \"San Francisco, CA 94123\",\n    phone: \"(415) 555-0102\",\n    hours: \"10 AM - 8 PM\",\n    distance: \"1.2 mi\",\n    coordinates: { lat: 37.8024, lng: -122.4344 },\n  },\n  {\n    id: 3,\n    name: \"Mission Bay\",\n    address: \"789 Third Street\",\n    city: \"San Francisco, CA 94158\",\n    phone: \"(415) 555-0103\",\n    hours: \"8 AM - 10 PM\",\n    distance: \"2.1 mi\",\n    coordinates: { lat: 37.7749, lng: -122.3894 },\n  },\n  {\n    id: 4,\n    name: \"SOMA Location\",\n    address: \"101 Howard Street\",\n    city: \"San Francisco, CA 94105\",\n    phone: \"(415) 555-0104\",\n    hours: \"9 AM - 7 PM\",\n    distance: \"0.8 mi\",\n    coordinates: { lat: 37.7929, lng: -122.3994 },\n  },\n]\n\nexport function Maps3() {\n  const [selectedStore, setSelectedStore] = React.useState<number | null>(null)\n  const [searchQuery, setSearchQuery] = React.useState(\"\")\n\n  const filteredStores = stores.filter(\n    (store) =>\n      store.name.toLowerCase().includes(searchQuery.toLowerCase()) ||\n      store.address.toLowerCase().includes(searchQuery.toLowerCase())\n  )\n\n  return (\n    <div className=\"bg-card h-[600px] overflow-hidden rounded-xl border\">\n      <div className=\"grid h-full lg:grid-cols-[380px_1fr]\">\n        <div className=\"flex flex-col border-r\">\n          <div className=\"border-b p-4\">\n            <h2 className=\"text-lg font-semibold\">Find a Store</h2>\n            <div className=\"relative mt-3\">\n              <Search className=\"text-muted-foreground absolute top-1/2 left-3 size-4 -translate-y-1/2\" />\n              <Input\n                placeholder=\"Search by city or zip code...\"\n                className=\"pl-9\"\n                value={searchQuery}\n                onChange={(e) => setSearchQuery(e.target.value)}\n              />\n            </div>\n          </div>\n          <ScrollArea className=\"flex-1\">\n            <div className=\"divide-y\">\n              {filteredStores.map((store) => (\n                <button\n                  key={store.id}\n                  className={`hover:bg-muted/50 w-full p-4 text-left transition-colors ${\n                    selectedStore === store.id ? \"bg-muted\" : \"\"\n                  }`}\n                  onClick={() => setSelectedStore(store.id)}\n                >\n                  <div className=\"flex items-start justify-between\">\n                    <div>\n                      <h3 className=\"font-medium\">{store.name}</h3>\n                      <p className=\"text-muted-foreground mt-1 text-sm\">\n                        {store.address}\n                      </p>\n                      <p className=\"text-muted-foreground text-sm\">\n                        {store.city}\n                      </p>\n                    </div>\n                    <span className=\"text-primary text-sm font-medium\">\n                      {store.distance}\n                    </span>\n                  </div>\n                  <div className=\"text-muted-foreground mt-2 flex items-center gap-4 text-xs\">\n                    <span>{store.hours}</span>\n                    <span>{store.phone}</span>\n                  </div>\n                  <Button size=\"sm\" variant=\"outline\" className=\"mt-3\">\n                    <Navigation className=\"mr-2 size-3\" />\n                    Get Directions\n                  </Button>\n                </button>\n              ))}\n            </div>\n          </ScrollArea>\n        </div>\n        <div className=\"relative h-full\">\n          <Map center={[-122.4094, 37.7849]} zoom={12}>\n            <MapControls showZoom showLocate position=\"bottom-right\" />\n            {filteredStores.map((store) => (\n              <MapMarker\n                key={store.id}\n                longitude={store.coordinates.lng}\n                latitude={store.coordinates.lat}\n                onClick={() => setSelectedStore(store.id)}\n              >\n                <MarkerContent>\n                  <div\n                    className={`flex size-8 items-center justify-center rounded-full border-2 border-white shadow-lg transition-transform ${\n                      selectedStore === store.id\n                        ? \"bg-primary scale-125\"\n                        : \"bg-muted-foreground\"\n                    }`}\n                  >\n                    <MapPin className=\"size-4 text-white\" />\n                  </div>\n                </MarkerContent>\n                <MarkerPopup closeButton>\n                  <div className=\"min-w-[180px]\">\n                    <h3 className=\"font-semibold\">{store.name}</h3>\n                    <p className=\"text-muted-foreground text-sm\">\n                      {store.address}\n                    </p>\n                    <p className=\"text-primary mt-1 text-sm font-medium\">\n                      {store.hours}\n                    </p>\n                  </div>\n                </MarkerPopup>\n              </MapMarker>\n            ))}\n          </Map>\n        </div>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "meta": {
+    "iframeHeight": "650px"
+  },
+  "categories": [
+    "maps"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

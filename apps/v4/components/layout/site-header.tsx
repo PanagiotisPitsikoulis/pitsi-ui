@@ -53,7 +53,6 @@ export async function SiteHeaderInternal({
     { name: "Easing Composer", url: "/tools/easing-composer" },
     { name: "Spacing Generator", url: "/tools/spacing-generator" },
     { name: "Typography Composer", url: "/tools/typography-composer" },
-    { name: "Background Decorations", url: "/tools/background-decorations" },
     { name: "About Tools", url: "/tools-information" },
   ]
 

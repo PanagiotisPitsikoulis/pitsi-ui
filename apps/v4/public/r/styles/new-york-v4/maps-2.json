@@ -1,0 +1,28 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "maps-2",
+  "type": "registry:block",
+  "description": "Contact page map with business info sidebar and location pin",
+  "dependencies": [
+    "maplibre-gl",
+    "next-themes",
+    "@hugeicons/react",
+    "@hugeicons/core-free-icons"
+  ],
+  "registryDependencies": [
+    "map"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/maps/maps-2.tsx",
+      "content": "\"use client\"\n\nimport { Clock, Mail, MapPin, Phone } from \"@/lib/icons\"\nimport {\n  Map,\n  MapControls,\n  MapMarker,\n  MarkerContent,\n} from \"@/registry/new-york-v4/ui/map\"\n\nconst businessInfo = {\n  name: \"Downtown Office\",\n  address: \"350 5th Avenue, Suite 1200\",\n  city: \"New York, NY 10118\",\n  phone: \"+1 (555) 123-4567\",\n  email: \"hello@company.com\",\n  hours: \"Mon-Fri: 9:00 AM - 6:00 PM\",\n  coordinates: { lat: 40.7484, lng: -73.9857 },\n}\n\nexport function Maps2() {\n  return (\n    <div className=\"bg-card overflow-hidden rounded-xl border\">\n      <div className=\"grid lg:grid-cols-2\">\n        <div className=\"flex flex-col justify-center p-8 lg:p-12\">\n          <h2 className=\"text-2xl font-bold tracking-tight\">Visit Us</h2>\n          <p className=\"text-muted-foreground mt-2\">\n            We&apos;d love to meet you. Drop by our office anytime.\n          </p>\n          <div className=\"mt-8 space-y-6\">\n            <div className=\"flex items-start gap-4\">\n              <div className=\"bg-primary/10 flex size-10 shrink-0 items-center justify-center rounded-lg\">\n                <MapPin className=\"text-primary size-5\" />\n              </div>\n              <div>\n                <p className=\"font-medium\">{businessInfo.name}</p>\n                <p className=\"text-muted-foreground text-sm\">\n                  {businessInfo.address}\n                </p>\n                <p className=\"text-muted-foreground text-sm\">\n                  {businessInfo.city}\n                </p>\n              </div>\n            </div>\n            <div className=\"flex items-start gap-4\">\n              <div className=\"bg-primary/10 flex size-10 shrink-0 items-center justify-center rounded-lg\">\n                <Phone className=\"text-primary size-5\" />\n              </div>\n              <div>\n                <p className=\"font-medium\">Phone</p>\n                <p className=\"text-muted-foreground text-sm\">\n                  {businessInfo.phone}\n                </p>\n              </div>\n            </div>\n            <div className=\"flex items-start gap-4\">\n              <div className=\"bg-primary/10 flex size-10 shrink-0 items-center justify-center rounded-lg\">\n                <Mail className=\"text-primary size-5\" />\n              </div>\n              <div>\n                <p className=\"font-medium\">Email</p>\n                <p className=\"text-muted-foreground text-sm\">\n                  {businessInfo.email}\n                </p>\n              </div>\n            </div>\n            <div className=\"flex items-start gap-4\">\n              <div className=\"bg-primary/10 flex size-10 shrink-0 items-center justify-center rounded-lg\">\n                <Clock className=\"text-primary size-5\" />\n              </div>\n              <div>\n                <p className=\"font-medium\">Business Hours</p>\n                <p className=\"text-muted-foreground text-sm\">\n                  {businessInfo.hours}\n                </p>\n              </div>\n            </div>\n          </div>\n        </div>\n        <div className=\"h-[400px] lg:h-auto\">\n          <Map\n            center={[\n              businessInfo.coordinates.lng,\n              businessInfo.coordinates.lat,\n            ]}\n            zoom={15}\n          >\n            <MapControls showZoom position=\"bottom-right\" />\n            <MapMarker\n              longitude={businessInfo.coordinates.lng}\n              latitude={businessInfo.coordinates.lat}\n            >\n              <MarkerContent>\n                <div className=\"bg-primary flex size-10 items-center justify-center rounded-full border-2 border-white shadow-lg\">\n                  <MapPin className=\"text-primary-foreground size-5\" />\n                </div>\n              </MarkerContent>\n            </MapMarker>\n          </Map>\n        </div>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "maps",
+    "contact"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "cta-5",
+  "type": "registry:block",
+  "description": "Floating action bar CTA that appears on scroll",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/cta/cta-5.tsx",
+      "content": "\"use client\"\n\nimport { useEffect, useState } from \"react\"\nimport Link from \"next/link\"\nimport { ArrowRight, X } from \"lucide-react\"\n\nimport { type CtaBlockProps } from \"@/lib/blocks/cta.types\"\nimport { cn } from \"@/lib/utils\"\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\n\nconst cta5Defaults = {\n  title: \"Get 20% off your first order\",\n  primaryCta: { label: \"Shop Now\", href: \"#\" },\n}\n\nexport function Cta5({ content = {}, classNames = {} }: CtaBlockProps) {\n  const { title = cta5Defaults.title, primaryCta = cta5Defaults.primaryCta } =\n    content\n\n  const [isVisible, setIsVisible] = useState(false)\n  const [isDismissed, setIsDismissed] = useState(false)\n\n  useEffect(() => {\n    const handleScroll = () => {\n      if (window.scrollY > 300 && !isDismissed) {\n        setIsVisible(true)\n      } else if (window.scrollY <= 300) {\n        setIsVisible(false)\n      }\n    }\n\n    window.addEventListener(\"scroll\", handleScroll)\n    return () => window.removeEventListener(\"scroll\", handleScroll)\n  }, [isDismissed])\n\n  const handleDismiss = () => {\n    setIsDismissed(true)\n    setIsVisible(false)\n  }\n\n  if (!isVisible) return null\n\n  return (\n    <div\n      className={cn(\n        \"fixed right-0 bottom-0 left-0 z-50 transform transition-transform duration-300\",\n        isVisible ? \"translate-y-0\" : \"translate-y-full\",\n        classNames.root\n      )}\n    >\n      <div className=\"bg-primary text-primary-foreground shadow-lg\">\n        <div\n          className={cn(\n            \"container flex items-center justify-between gap-4 px-6 py-3\",\n            classNames.container\n          )}\n        >\n          <p className=\"text-sm font-medium md:text-base\">{title}</p>\n\n          <div className=\"flex items-center gap-3\">\n            {primaryCta && (\n              <Button\n                size=\"sm\"\n                variant=\"secondary\"\n                className=\"group whitespace-nowrap\"\n                asChild\n              >\n                <Link href={primaryCta.href}>\n                  {primaryCta.label}\n                  <ArrowRight className=\"ml-2 h-4 w-4 transition-transform group-hover:translate-x-1\" />\n                </Link>\n              </Button>\n            )}\n            <Button\n              variant=\"ghost\"\n              size=\"icon\"\n              className=\"hover:bg-primary-foreground/10 h-8 w-8 shrink-0\"\n              onClick={handleDismiss}\n            >\n              <X className=\"h-4 w-4\" />\n              <span className=\"sr-only\">Dismiss</span>\n            </Button>\n          </div>\n        </div>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "cta"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

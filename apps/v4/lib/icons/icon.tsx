@@ -132,6 +132,12 @@ export const BookmarkIcon = createIcon("BookmarkIcon")
 export const BookOpen = createIcon("BookOpen")
 
 // Bot / AI icons
+// Bath / Bathroom icons
+export const Bath = createIcon("Bath")
+
+// Bed icons
+export const Bed = createIcon("Bed")
+
 export const Bot = createIcon("Bot")
 export const BotIcon = createIcon("BotIcon")
 
@@ -357,6 +363,10 @@ export const MoreHorizontal = createIcon("MoreHorizontal")
 export const MoreHorizontalIcon = createIcon("MoreHorizontalIcon")
 export const MoreVertical = createIcon("MoreVertical")
 
+// Location icons
+export const Locate = createIcon("Locate")
+export const MapPin = createIcon("MapPin")
+
 // Navigation icons
 export const Navigation = createIcon("Navigation")
 
@@ -380,9 +390,15 @@ export const PanelTop = createIcon("PanelTop")
 // Pause icons
 export const Pause = createIcon("Pause")
 
+// Phone icons
+export const Phone = createIcon("Phone")
+
 // Pencil / Edit icons
 export const Pencil = createIcon("Pencil")
 export const SquarePen = createIcon("SquarePen")
+
+// Square icons
+export const Square = createIcon("Square")
 
 // Pie Chart icon with variant
 export const PieChartIcon = createIcon("PieChartIcon")

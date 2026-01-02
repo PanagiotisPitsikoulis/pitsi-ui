@@ -54,6 +54,12 @@ import {
   // Book icons
   BookOpen01Icon,
 
+  // Bath / Bathroom icons
+  Bathtub01Icon,
+
+  // Bed icons
+  BedIcon,
+
   // Bot / AI / Brain icons
   BotIcon,
   Brain01Icon,
@@ -69,6 +75,9 @@ import {
 
   // Camera icons
   Camera01Icon,
+
+  // Call / Phone icons
+  Call02Icon,
 
   // Chart icons
   PieChartIcon,
@@ -261,6 +270,10 @@ import {
   MoreHorizontalIcon,
   MoreVerticalIcon,
 
+  // Location icons
+  Location01Icon,
+  Location04Icon,
+
   // Navigation icons
   Navigation01Icon,
 
@@ -291,6 +304,9 @@ import {
 
   // Play icons
   PlayIcon,
+
+  // Square icons
+  SquareIcon,
 
   // Popcorn icons
   PopcornIcon,
@@ -496,6 +512,12 @@ export const iconMapping = {
 
   // Book icons
   BookOpen: BookOpen01Icon,
+
+  // Bath / Bathroom icons
+  Bath: Bathtub01Icon,
+
+  // Bed icons
+  Bed: BedIcon,
 
   // Bot / AI icons
   Bot: BotIcon,
@@ -724,6 +746,10 @@ export const iconMapping = {
   MoreHorizontalIcon: MoreHorizontalIcon,
   MoreVertical: MoreVerticalIcon,
 
+  // Location icons
+  Locate: Location04Icon,
+  MapPin: Location01Icon,
+
   // Navigation icons
   Navigation: Navigation01Icon,
 
@@ -747,9 +773,15 @@ export const iconMapping = {
   // Pause icons
   Pause: PauseIcon,
 
+  // Phone icons
+  Phone: Call02Icon,
+
   // Pencil / Edit icons
   Pencil: PencilEdit01Icon,
   SquarePen: SquareArrowUp01Icon, // Note: Not exact match, closest available
+
+  // Square icons
+  Square: SquareIcon,
 
   // Pie Chart icon with variant
   PieChartIcon: PieChart01Icon,

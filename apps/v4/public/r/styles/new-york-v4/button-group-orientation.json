@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/new-york-v4/examples/button-group-orientation.tsx",
-      "content": "import { Minus, Plus } from \"@/lib/icons\"\n\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\nimport { ButtonGroup } from \"@/registry/new-york-v4/ui/button-group\"\n\nexport default function ButtonGroupOrientation() {\n  return (\n    <ButtonGroup\n      orientation=\"vertical\"\n      aria-label=\"Media controls\"\n      className=\"h-fit\"\n    >\n      <Button variant=\"outline\" size=\"icon\">\n        <Plus />\n      </Button>\n      <Button variant=\"outline\" size=\"icon\">\n        <Minus />\n      </Button>\n    </ButtonGroup>\n  )\n}\n",
+      "content": "import { Minus, Plus } from \"@/lib/icons\"\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\nimport { ButtonGroup } from \"@/registry/new-york-v4/ui/button-group\"\n\nexport default function ButtonGroupOrientation() {\n  return (\n    <ButtonGroup\n      orientation=\"vertical\"\n      aria-label=\"Media controls\"\n      className=\"h-fit\"\n    >\n      <Button variant=\"outline\" size=\"icon\">\n        <Plus />\n      </Button>\n      <Button variant=\"outline\" size=\"icon\">\n        <Minus />\n      </Button>\n    </ButtonGroup>\n  )\n}\n",
       "type": "registry:example"
     }
   ],

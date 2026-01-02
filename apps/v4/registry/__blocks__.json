@@ -125,6 +125,76 @@
     "categories": ["footer", "service-plants"]
   },
   {
+    "name": "features-6",
+    "description": "Fitness class types grid with intensity indicators and hover effects",
+    "categories": ["features", "service-fitness"]
+  },
+  {
+    "name": "features-7",
+    "description": "Weekly class schedule with day tabs, booking buttons, and spots indicator",
+    "categories": ["features", "service-fitness"]
+  },
+  {
+    "name": "team-2",
+    "description": "Coach profiles with specialties, certifications, and social links",
+    "categories": ["team", "service-fitness"]
+  },
+  {
+    "name": "pricing-2",
+    "description": "Fitness membership pricing with tiers, features, and popular badge",
+    "categories": ["pricing", "service-fitness"]
+  },
+  {
+    "name": "stats-2",
+    "description": "Animated gym statistics with number counters and highlight section",
+    "categories": ["stats", "service-fitness"]
+  },
+  {
+    "name": "testimonials-2",
+    "description": "Member testimonials with transformation stats and star ratings",
+    "categories": ["testimonials", "service-fitness"]
+  },
+  {
+    "name": "features-8",
+    "description": "Studio location with hours, contact info, amenities, and map",
+    "categories": ["features", "service-fitness"]
+  },
+  {
+    "name": "footer-2",
+    "description": "Fitness footer with newsletter, navigation columns, and social links",
+    "categories": ["footer", "service-fitness"]
+  },
+  {
+    "name": "auth-1",
+    "description": "Centered login form with social sign-in options",
+    "categories": ["auth"]
+  },
+  {
+    "name": "auth-2",
+    "description": "Signup form with name fields, terms checkbox, and social options",
+    "categories": ["auth"]
+  },
+  {
+    "name": "auth-3",
+    "description": "Forgot password form with email input",
+    "categories": ["auth"]
+  },
+  {
+    "name": "auth-4",
+    "description": "Split-screen login with image panel and testimonial",
+    "categories": ["auth"]
+  },
+  {
+    "name": "auth-5",
+    "description": "OTP verification with 6-digit code input",
+    "categories": ["auth"]
+  },
+  {
+    "name": "auth-6",
+    "description": "Reset password form with requirements checklist",
+    "categories": ["auth"]
+  },
+  {
     "name": "service-plants",
     "description": "Complete plant shop landing page template with all sections",
     "categories": ["template", "service"]
@@ -141,7 +211,7 @@
   },
   {
     "name": "service-fitness",
-    "description": "Professional personal training landing page template for fitness coaches",
+    "description": "Boutique fitness studio landing page with high-energy black & white design",
     "categories": ["template", "service"]
   },
   {
@@ -218,5 +288,395 @@
     "name": "app-quiz",
     "description": "Complete quiz application template",
     "categories": ["template", "application", "app-quiz"]
+  },
+  {
+    "name": "maps-1",
+    "description": "Basic interactive map with multiple office location markers and popups",
+    "categories": ["maps"]
+  },
+  {
+    "name": "maps-2",
+    "description": "Contact page map with business info sidebar and location pin",
+    "categories": ["maps", "contact"]
+  },
+  {
+    "name": "maps-3",
+    "description": "Store locator with searchable sidebar list and interactive map",
+    "categories": ["maps"]
+  },
+  {
+    "name": "maps-4",
+    "description": "Delivery tracking map with route visualization and status timeline",
+    "categories": ["maps", "application"]
+  },
+  {
+    "name": "maps-5",
+    "description": "Real estate property listings map with price markers and detailed popups",
+    "categories": ["maps"]
+  },
+  {
+    "name": "header-2",
+    "description": "Centered logo header with navigation split left/right",
+    "categories": ["header"]
+  },
+  {
+    "name": "header-3",
+    "description": "Transparent overlay header that becomes solid on scroll",
+    "categories": ["header"]
+  },
+  {
+    "name": "header-4",
+    "description": "Mega menu header with dropdown panels",
+    "categories": ["header"]
+  },
+  {
+    "name": "header-5",
+    "description": "Mobile-first hamburger header with full-screen overlay",
+    "categories": ["header"]
+  },
+  {
+    "name": "header-6",
+    "description": "Header with integrated search/command palette",
+    "categories": ["header"]
+  },
+  {
+    "name": "header-7",
+    "description": "Sticky shrinking header that shrinks on scroll",
+    "categories": ["header"]
+  },
+  {
+    "name": "header-8",
+    "description": "Double row header with top bar and main nav",
+    "categories": ["header"]
+  },
+  {
+    "name": "footer-3",
+    "description": "Minimal single row footer",
+    "categories": ["footer"]
+  },
+  {
+    "name": "footer-4",
+    "description": "Big CTA footer with ready to get started section",
+    "categories": ["footer"]
+  },
+  {
+    "name": "footer-5",
+    "description": "Dark gradient footer with large brand statement",
+    "categories": ["footer"]
+  },
+  {
+    "name": "footer-6",
+    "description": "App download footer with store badges and QR code",
+    "categories": ["footer"]
+  },
+  {
+    "name": "footer-7",
+    "description": "Comprehensive sitemap-style footer",
+    "categories": ["footer"]
+  },
+  {
+    "name": "footer-8",
+    "description": "Social-focused footer with large icons and follower counts",
+    "categories": ["footer"]
+  },
+  {
+    "name": "cta-2",
+    "description": "Split layout CTA with image and gradient background",
+    "categories": ["cta"]
+  },
+  {
+    "name": "cta-3",
+    "description": "Full-width CTA banner with countdown timer",
+    "categories": ["cta"]
+  },
+  {
+    "name": "cta-4",
+    "description": "Card style CTA with centered content",
+    "categories": ["cta"]
+  },
+  {
+    "name": "cta-5",
+    "description": "Floating action bar CTA that appears on scroll",
+    "categories": ["cta"]
+  },
+  {
+    "name": "cta-6",
+    "description": "Exit intent modal overlay CTA",
+    "categories": ["cta"]
+  },
+  {
+    "name": "gallery-2",
+    "description": "Masonry gallery with lightbox",
+    "categories": ["gallery"]
+  },
+  {
+    "name": "gallery-3",
+    "description": "Carousel gallery with thumbnail navigation",
+    "categories": ["gallery"]
+  },
+  {
+    "name": "gallery-4",
+    "description": "Filterable gallery with category tabs",
+    "categories": ["gallery"]
+  },
+  {
+    "name": "gallery-5",
+    "description": "Grid gallery with full-screen lightbox modal",
+    "categories": ["gallery"]
+  },
+  {
+    "name": "gallery-6",
+    "description": "Before/after comparison slider gallery",
+    "categories": ["gallery"]
+  },
+  {
+    "name": "products-2",
+    "description": "Product card grid with rating, price, add to cart",
+    "categories": ["products"]
+  },
+  {
+    "name": "products-3",
+    "description": "Featured hero product with grid below",
+    "categories": ["products"]
+  },
+  {
+    "name": "products-4",
+    "description": "Horizontal product carousel with quick add",
+    "categories": ["products"]
+  },
+  {
+    "name": "products-5",
+    "description": "Product list view with large images and stock status",
+    "categories": ["products"]
+  },
+  {
+    "name": "products-6",
+    "description": "Product comparison layout with features",
+    "categories": ["products"]
+  },
+  {
+    "name": "newsletter-2",
+    "description": "Inline single horizontal row newsletter",
+    "categories": ["newsletter"]
+  },
+  {
+    "name": "newsletter-3",
+    "description": "Newsletter with benefits icons and social proof",
+    "categories": ["newsletter"]
+  },
+  {
+    "name": "newsletter-4",
+    "description": "Split panel newsletter with image",
+    "categories": ["newsletter"]
+  },
+  {
+    "name": "newsletter-5",
+    "description": "Popup card style newsletter with close button",
+    "categories": ["newsletter"]
+  },
+  {
+    "name": "newsletter-6",
+    "description": "Dark themed newsletter with email icon",
+    "categories": ["newsletter"]
+  },
+  {
+    "name": "faq-2",
+    "description": "Two column FAQ with questions left, answers right",
+    "categories": ["faq"]
+  },
+  {
+    "name": "faq-3",
+    "description": "Searchable FAQ with highlight matching",
+    "categories": ["faq"]
+  },
+  {
+    "name": "faq-4",
+    "description": "Card-style accordion FAQ with icons",
+    "categories": ["faq"]
+  },
+  {
+    "name": "faq-5",
+    "description": "Tabbed categories FAQ with badge counts",
+    "categories": ["faq"]
+  },
+  {
+    "name": "faq-6",
+    "description": "FAQ with support team CTA and avatars",
+    "categories": ["faq"]
+  },
+  {
+    "name": "blog-2",
+    "description": "Featured post with 3-column grid and read time badges",
+    "categories": ["blog"]
+  },
+  {
+    "name": "blog-3",
+    "description": "Blog list view with author avatars and dates",
+    "categories": ["blog"]
+  },
+  {
+    "name": "blog-4",
+    "description": "Magazine layout blog with hero, sidebar, grid",
+    "categories": ["blog"]
+  },
+  {
+    "name": "blog-5",
+    "description": "Minimal clean blog cards, text-focused",
+    "categories": ["blog"]
+  },
+  {
+    "name": "blog-6",
+    "description": "Blog with sidebar (newsletter, categories, recent, tags)",
+    "categories": ["blog"]
+  },
+  {
+    "name": "contact-2",
+    "description": "Contact form with map placeholder and location info",
+    "categories": ["contact"]
+  },
+  {
+    "name": "contact-3",
+    "description": "Multi-channel contact with email, phone, chat cards",
+    "categories": ["contact"]
+  },
+  {
+    "name": "contact-4",
+    "description": "Simple centered contact form with subject dropdown",
+    "categories": ["contact"]
+  },
+  {
+    "name": "contact-5",
+    "description": "Split dark/light contact panel layout",
+    "categories": ["contact"]
+  },
+  {
+    "name": "contact-6",
+    "description": "Office cards contact with multiple global locations",
+    "categories": ["contact"]
+  },
+  {
+    "name": "logos-2",
+    "description": "Marquee logo cloud with infinite scroll animation",
+    "categories": ["logos"]
+  },
+  {
+    "name": "logos-3",
+    "description": "Grid logos with labels and descriptions",
+    "categories": ["logos"]
+  },
+  {
+    "name": "logos-4",
+    "description": "Featured partners with case study links",
+    "categories": ["logos"]
+  },
+  {
+    "name": "logos-5",
+    "description": "Logos with stats and industry breakdown",
+    "categories": ["logos"]
+  },
+  {
+    "name": "logos-6",
+    "description": "Testimonial combo logos with short quotes",
+    "categories": ["logos"]
+  },
+  {
+    "name": "testimonials-3",
+    "description": "Sliding carousel testimonials with navigation",
+    "categories": ["testimonials"]
+  },
+  {
+    "name": "testimonials-4",
+    "description": "Video testimonial cards with play overlay",
+    "categories": ["testimonials"]
+  },
+  {
+    "name": "testimonials-5",
+    "description": "Rating-focused testimonials with aggregate score",
+    "categories": ["testimonials"]
+  },
+  {
+    "name": "testimonials-6",
+    "description": "Case study testimonial cards with metrics",
+    "categories": ["testimonials"]
+  },
+  {
+    "name": "testimonials-7",
+    "description": "Social proof wall with tweet-style cards",
+    "categories": ["testimonials"]
+  },
+  {
+    "name": "pricing-3",
+    "description": "Feature comparison table pricing",
+    "categories": ["pricing"]
+  },
+  {
+    "name": "pricing-4",
+    "description": "Monthly/yearly toggle pricing with savings badge",
+    "categories": ["pricing"]
+  },
+  {
+    "name": "pricing-5",
+    "description": "Enterprise focus pricing with standard and custom tiers",
+    "categories": ["pricing"]
+  },
+  {
+    "name": "pricing-6",
+    "description": "Usage-based pricing with calculator slider",
+    "categories": ["pricing"]
+  },
+  {
+    "name": "pricing-7",
+    "description": "Horizontal pricing cards with icons",
+    "categories": ["pricing"]
+  },
+  {
+    "name": "team-3",
+    "description": "Team cards with social links on hover",
+    "categories": ["team"]
+  },
+  {
+    "name": "team-4",
+    "description": "Leadership section with smaller team grid",
+    "categories": ["team"]
+  },
+  {
+    "name": "team-5",
+    "description": "Carousel team with thumbnail navigation",
+    "categories": ["team"]
+  },
+  {
+    "name": "team-6",
+    "description": "About page style team with story and values",
+    "categories": ["team"]
+  },
+  {
+    "name": "team-7",
+    "description": "Minimal list team by department",
+    "categories": ["team"]
+  },
+  {
+    "name": "stats-3",
+    "description": "Large counter stats with dark background",
+    "categories": ["stats"]
+  },
+  {
+    "name": "stats-4",
+    "description": "Stats cards with icons and change indicators",
+    "categories": ["stats"]
+  },
+  {
+    "name": "stats-5",
+    "description": "Timeline milestone stats",
+    "categories": ["stats"]
+  },
+  {
+    "name": "stats-6",
+    "description": "Before/after comparison stats",
+    "categories": ["stats"]
+  },
+  {
+    "name": "stats-7",
+    "description": "Infographic style stats with bar chart",
+    "categories": ["stats"]
   }
 ]

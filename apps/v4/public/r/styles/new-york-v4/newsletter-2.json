@@ -1,0 +1,22 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "newsletter-2",
+  "type": "registry:block",
+  "description": "Inline single horizontal row newsletter",
+  "registryDependencies": [
+    "button",
+    "input"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/newsletter/newsletter-2.tsx",
+      "content": "\"use client\"\n\nimport { ArrowRight } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\nimport { Input } from \"@/registry/new-york-v4/ui/input\"\n\ninterface NewsletterBlockProps {\n  content?: {\n    title?: string\n    placeholder?: string\n    buttonLabel?: string\n  }\n  classNames?: {\n    root?: string\n    container?: string\n  }\n}\n\nconst newsletter2Defaults = {\n  title: \"Subscribe to our newsletter\",\n  placeholder: \"Enter your email\",\n  buttonLabel: \"Subscribe\",\n}\n\nexport function Newsletter2({\n  content = {},\n  classNames = {},\n}: NewsletterBlockProps) {\n  const {\n    title = newsletter2Defaults.title,\n    placeholder = newsletter2Defaults.placeholder,\n    buttonLabel = newsletter2Defaults.buttonLabel,\n  } = content\n\n  return (\n    <section className={cn(\"bg-muted\", classNames.root)}>\n      <div className={cn(\"container px-6 py-8\", classNames.container)}>\n        <div className=\"flex flex-col items-center justify-between gap-4 md:flex-row\">\n          <p className=\"text-foreground text-lg font-medium\">{title}</p>\n          <div className=\"flex w-full max-w-md gap-2\">\n            <Input\n              type=\"email\"\n              placeholder={placeholder}\n              className=\"bg-background h-11\"\n            />\n            <Button className=\"group h-11 shrink-0\">\n              {buttonLabel}\n              <ArrowRight className=\"ml-2 h-4 w-4 transition-transform group-hover:translate-x-1\" />\n            </Button>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "newsletter"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

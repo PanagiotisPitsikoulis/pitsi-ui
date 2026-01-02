@@ -463,6 +463,20 @@ export const ui: Registry["items"] = [
     readiness: "production",
   },
   {
+    name: "map",
+    type: "registry:ui",
+    dependencies: ["maplibre-gl", "next-themes"],
+    files: [
+      {
+        path: "ui/map.tsx",
+        type: "registry:ui",
+      },
+    ],
+    tier: "free",
+    categories: ["core-components"],
+    readiness: "production",
+  },
+  {
     name: "menubar",
     type: "registry:ui",
     dependencies: ["@radix-ui/react-menubar"],

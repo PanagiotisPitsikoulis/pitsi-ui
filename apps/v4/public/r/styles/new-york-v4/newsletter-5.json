@@ -1,0 +1,22 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "newsletter-5",
+  "type": "registry:block",
+  "description": "Popup card style newsletter with close button",
+  "registryDependencies": [
+    "button",
+    "input"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/newsletter/newsletter-5.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\nimport { X } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\nimport { Input } from \"@/registry/new-york-v4/ui/input\"\n\ninterface NewsletterBlockProps {\n  content?: {\n    title?: string\n    description?: string\n    placeholder?: string\n    buttonLabel?: string\n  }\n  classNames?: {\n    root?: string\n    container?: string\n    header?: { title?: string; description?: string }\n  }\n}\n\nconst newsletter5Defaults = {\n  title: \"Get 10% Off\",\n  description: \"Subscribe and receive an exclusive discount code.\",\n  placeholder: \"Your email\",\n  buttonLabel: \"Get Discount\",\n}\n\nexport function Newsletter5({\n  content = {},\n  classNames = {},\n}: NewsletterBlockProps) {\n  const {\n    title = newsletter5Defaults.title,\n    description = newsletter5Defaults.description,\n    placeholder = newsletter5Defaults.placeholder,\n    buttonLabel = newsletter5Defaults.buttonLabel,\n  } = content\n\n  const [isVisible, setIsVisible] = useState(true)\n\n  if (!isVisible) return null\n\n  return (\n    <section className={cn(\"bg-background\", classNames.root)}>\n      <div\n        className={cn(\"container px-6 py-16 md:py-24\", classNames.container)}\n      >\n        <div className=\"mx-auto max-w-md\">\n          <div className=\"border-border bg-card relative overflow-hidden rounded-2xl border p-8 shadow-lg\">\n            {/* Close button */}\n            <Button\n              variant=\"ghost\"\n              size=\"icon\"\n              className=\"absolute top-2 right-2\"\n              onClick={() => setIsVisible(false)}\n            >\n              <X className=\"h-4 w-4\" />\n            </Button>\n\n            {/* Content */}\n            <div className=\"text-center\">\n              <div className=\"bg-primary/10 mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full\">\n                <svg\n                  className=\"text-primary h-6 w-6\"\n                  fill=\"none\"\n                  viewBox=\"0 0 24 24\"\n                  stroke=\"currentColor\"\n                >\n                  <path\n                    strokeLinecap=\"round\"\n                    strokeLinejoin=\"round\"\n                    strokeWidth={2}\n                    d=\"M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z\"\n                  />\n                </svg>\n              </div>\n\n              <h3\n                className={cn(\n                  \"text-foreground mb-2 text-xl font-bold\",\n                  classNames.header?.title\n                )}\n              >\n                {title}\n              </h3>\n              <p\n                className={cn(\n                  \"text-muted-foreground mb-6 text-sm\",\n                  classNames.header?.description\n                )}\n              >\n                {description}\n              </p>\n\n              <div className=\"space-y-3\">\n                <Input\n                  type=\"email\"\n                  placeholder={placeholder}\n                  className=\"h-11 text-center\"\n                />\n                <Button className=\"w-full\">{buttonLabel}</Button>\n              </div>\n\n              <p className=\"text-muted-foreground mt-4 text-xs\">\n                No spam. Unsubscribe anytime.\n              </p>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "newsletter"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}
