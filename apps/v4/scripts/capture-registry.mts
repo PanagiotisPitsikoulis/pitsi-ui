@@ -36,11 +36,11 @@ function parseConcurrency(): number {
       return val
     }
   }
-  return 3 // default
+  return 2 // default
 }
 
 const BROWSER_CONCURRENCY = parseConcurrency()
-const PAGE_CONCURRENCY = 3
+const PAGE_CONCURRENCY = 2
 
 // Viewport configurations - smaller viewport = bigger components in screenshot
 const VIEWPORT_BLOCKS = { width: 1440, height: 900, deviceScaleFactor: 2 }
@@ -803,7 +803,7 @@ try {
   console.log("  --blocks-only, -b  Only capture blocks (skip examples)")
   console.log("  --verbose, -v      Show detailed progress")
   console.log("  --show-browser     Show browser windows for debugging")
-  console.log("  --concurrency N    Number of browser instances (default: 3, max: 10)")
+  console.log("  --concurrency N    Number of browser instances (default: 2, max: 10)")
 } catch (error) {
   console.error(error)
   process.exit(1)
