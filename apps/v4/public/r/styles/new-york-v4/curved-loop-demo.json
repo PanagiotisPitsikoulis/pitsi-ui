@@ -1,0 +1,21 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "curved-loop-demo",
+  "type": "registry:example",
+  "description": "Curved Loop animation demo",
+  "registryDependencies": [
+    "curved-loop"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/curved-loop-demo.tsx",
+      "content": "import CurvedLoop from \"@/registry/new-york-v4/animations/curved-loop/curved-loop\"\n\nexport default function CurvedLoopDemo() {\n  return (\n    <div className=\"h-full w-full\">\n      <CurvedLoop marqueeText=\"CURVED LOOP \" speed={2} />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

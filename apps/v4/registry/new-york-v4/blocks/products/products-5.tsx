@@ -2,8 +2,8 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { ShoppingCart, Star } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
@@ -37,7 +37,7 @@ const products5Defaults = {
         "Experience immersive sound with industry-leading noise cancellation technology.",
       price: 349,
       originalPrice: 449,
-      image: "/placeholders/blocks/service-plants/1.webp",
+      image: "/elements/landscape/plants/1.webp",
       rating: 4.9,
       inStock: true,
       href: "#",
@@ -47,7 +47,7 @@ const products5Defaults = {
       description:
         "Designed for all-day comfort with adjustable lumbar support and breathable mesh.",
       price: 599,
-      image: "/placeholders/blocks/service-plants/2.webp",
+      image: "/elements/landscape/plants/2.webp",
       rating: 4.7,
       inStock: true,
       href: "#",
@@ -58,7 +58,7 @@ const products5Defaults = {
         "Crystal-clear display with HDR support, perfect for creative professionals.",
       price: 799,
       originalPrice: 899,
-      image: "/placeholders/blocks/service-plants/3.webp",
+      image: "/elements/landscape/plants/3.webp",
       rating: 4.8,
       inStock: false,
       href: "#",
@@ -126,8 +126,9 @@ export function Products5({
                   {/* Rating */}
                   <div className="mb-2 flex items-center gap-1">
                     {[...Array(5)].map((_, j) => (
-                      <Star
+                      <DynamicIcon
                         key={j}
+                        name="Star"
                         className={cn(
                           "h-4 w-4",
                           j < Math.floor(product.rating)
@@ -174,7 +175,10 @@ export function Products5({
                       {product.inStock ? "In Stock" : "Out of Stock"}
                     </span>
                     <Button disabled={!product.inStock}>
-                      <ShoppingCart className="mr-2 h-4 w-4" />
+                      <DynamicIcon
+                        name="ShoppingCart"
+                        className="mr-2 h-4 w-4"
+                      />
                       Add to Cart
                     </Button>
                   </div>

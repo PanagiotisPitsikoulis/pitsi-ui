@@ -1,8 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { Mail, MapPin, Phone } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { type HeaderBlockProps } from "@/lib/blocks/header.types"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
@@ -72,15 +72,15 @@ export function Header8({ content = {}, classNames = {} }: HeaderBlockProps) {
         >
           <div className="hidden items-center gap-6 text-xs md:flex">
             <div className="flex items-center gap-2">
-              <Phone className="h-3 w-3" />
+              <DynamicIcon name="Phone" className="h-3 w-3" />
               <span>{topBar.phone}</span>
             </div>
             <div className="flex items-center gap-2">
-              <Mail className="h-3 w-3" />
+              <DynamicIcon name="Mail" className="h-3 w-3" />
               <span>{topBar.email}</span>
             </div>
             <div className="flex items-center gap-2">
-              <MapPin className="h-3 w-3" />
+              <DynamicIcon name="MapPin" className="h-3 w-3" />
               <span>{topBar.location}</span>
             </div>
           </div>

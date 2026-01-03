@@ -68,19 +68,19 @@ export function Transforms3d({
           alt={alt}
           src={typeof src === "string" ? src : src.src}
           className={cn(
-            "absolute inset-0 size-82 rounded-2xl object-cover object-center shadow-2xl outline outline-gray-950/5 transition duration-300 transform-3d",
+            "outline-foreground/5 absolute inset-0 size-82 rounded-2xl object-cover object-center shadow-2xl outline transition duration-300 transform-3d",
             classNames.image
           )}
         />
         <div
           className={cn(
-            "col-start-1 row-start-1 size-82 rounded-2xl bg-gray-950/5 p-2 shadow-inner inset-ring inset-ring-gray-950/5 dark:bg-white/10 dark:inset-ring-white/10",
+            "bg-foreground/5 inset-ring-foreground/5 col-start-1 row-start-1 size-82 rounded-2xl p-2 shadow-inner inset-ring",
             classNames.placeholder
           )}
         >
           <div
             className={cn(
-              "size-full rounded-lg outline outline-gray-950/10 outline-dashed",
+              "outline-foreground/10 size-full rounded-lg outline outline-dashed",
               classNames.placeholderInner
             )}
           />

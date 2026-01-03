@@ -1,0 +1,21 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "balatro-demo",
+  "type": "registry:example",
+  "description": "Balatro animation demo",
+  "registryDependencies": [
+    "balatro"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/balatro-demo.tsx",
+      "content": "import Balatro from \"@/registry/new-york-v4/animations/balatro/balatro\"\n\nexport default function BalatroDemo() {\n  return (\n    <div className=\"h-full w-full\">\n      <Balatro isRotate={false} mouseInteraction={true} pixelFilter={700} />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

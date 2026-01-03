@@ -1,9 +1,9 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowRight, Zap } from "lucide-react"
 
 import { type CtaBlockProps } from "@/lib/blocks/cta.types"
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
@@ -40,7 +40,7 @@ export function Cta3({ content = {}, classNames = {} }: CtaBlockProps) {
         <div className="mx-auto max-w-4xl text-center">
           {/* Badge */}
           <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-yellow-500 px-4 py-1.5 text-sm font-semibold text-black">
-            <Zap className="h-4 w-4" />
+            <DynamicIcon name="Zap" className="h-4 w-4" />
             {cta3Defaults.badge}
           </div>
 
@@ -93,7 +93,10 @@ export function Cta3({ content = {}, classNames = {} }: CtaBlockProps) {
               >
                 <Link href={primaryCta.href}>
                   {primaryCta.label}
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <DynamicIcon
+                    name="ArrowRight"
+                    className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
+                  />
                 </Link>
               </Button>
             )}

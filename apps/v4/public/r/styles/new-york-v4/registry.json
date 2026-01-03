@@ -1436,6 +1436,70 @@
       "readiness": "production"
     },
     {
+      "name": "section-header",
+      "type": "registry:ui",
+      "description": "Section header with optional badge, title, and description for landing page sections.",
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/section-header.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "sectorial"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "section-label",
+      "type": "registry:ui",
+      "description": "Small uppercase label for subsection headers.",
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/section-label.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "sectorial"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "page-container",
+      "type": "registry:ui",
+      "description": "Container wrapper with configurable max-width, padding, and spacing for page layouts.",
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/page-container.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "sectorial"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "stat-card",
+      "type": "registry:ui",
+      "description": "Card displaying a statistic with label, value, unit, and optional change indicator.",
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/stat-card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "sectorial"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
       "name": "form",
       "type": "registry:ui",
       "description": "Form components built with React Hook Form for accessible form handling.",
@@ -1882,6 +1946,569 @@
       "files": [
         {
           "path": "registry/new-york-v4/animations/zoom-parallax/zoom-parallax.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "aurora",
+      "type": "registry:ui",
+      "description": "Aurora borealis effect with animated gradient colors using WebGL.",
+      "dependencies": [
+        "ogl"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/aurora/aurora.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "balatro",
+      "type": "registry:ui",
+      "description": "Psychedelic card effect with distortion and color manipulation.",
+      "dependencies": [
+        "ogl"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/balatro/balatro.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "circular-gallery",
+      "type": "registry:ui",
+      "description": "3D circular gallery with rotating images using WebGL.",
+      "dependencies": [
+        "ogl"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/circular-gallery/circular-gallery.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "flying-posters",
+      "type": "registry:ui",
+      "description": "Floating poster effect with 3D rotation and mouse interaction.",
+      "dependencies": [
+        "ogl"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/flying-posters/flying-posters.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "gradient-blinds",
+      "type": "registry:ui",
+      "description": "Animated gradient blinds effect with smooth transitions.",
+      "dependencies": [
+        "ogl"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/gradient-blinds/gradient-blinds.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "iridescence",
+      "type": "registry:ui",
+      "description": "Iridescent color-shifting effect with mouse interaction.",
+      "dependencies": [
+        "ogl"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/iridescence/iridescence.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "liquid-chrome",
+      "type": "registry:ui",
+      "description": "Liquid chrome metallic effect with dynamic reflections.",
+      "dependencies": [
+        "ogl"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/liquid-chrome/liquid-chrome.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "ascii-text",
+      "type": "registry:ui",
+      "description": "Text rendered as ASCII art with 3D depth effect.",
+      "dependencies": [
+        "three"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/ascii-text/ascii-text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "ballpit",
+      "type": "registry:ui",
+      "description": "Interactive 3D ball pit with physics simulation.",
+      "dependencies": [
+        "three",
+        "gsap"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/ballpit/ballpit.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "color-bends",
+      "type": "registry:ui",
+      "description": "Color bending distortion effect with WebGL shaders.",
+      "dependencies": [
+        "three"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/color-bends/color-bends.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "dither",
+      "type": "registry:ui",
+      "description": "Retro dithering effect with customizable patterns.",
+      "dependencies": [
+        "three"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/dither/dither.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "fluid-glass",
+      "type": "registry:ui",
+      "description": "Fluid glass refraction effect with dynamic distortion.",
+      "dependencies": [
+        "three"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/fluid-glass/fluid-glass.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "grid-distortion",
+      "type": "registry:ui",
+      "description": "Grid-based distortion effect with mouse interaction.",
+      "dependencies": [
+        "three"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/grid-distortion/grid-distortion.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "shape-blur",
+      "type": "registry:ui",
+      "description": "Shape morphing with blur transitions between states.",
+      "dependencies": [
+        "three"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/shape-blur/shape-blur.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "decay-card",
+      "type": "registry:ui",
+      "description": "Card with decay and glitch animation effects.",
+      "dependencies": [
+        "gsap"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/decay-card/decay-card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "flowing-menu",
+      "type": "registry:ui",
+      "description": "Menu with flowing hover animation effects.",
+      "dependencies": [
+        "gsap"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/flowing-menu/flowing-menu.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "image-trail",
+      "type": "registry:ui",
+      "description": "Cursor-following image trail effect with smooth animations.",
+      "dependencies": [
+        "gsap"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/image-trail/image-trail.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "shuffle",
+      "type": "registry:ui",
+      "description": "Card shuffle animation with stacking effects.",
+      "dependencies": [
+        "gsap"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/shuffle/shuffle.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "sticker-peel",
+      "type": "registry:ui",
+      "description": "Sticker peeling effect with 3D perspective.",
+      "dependencies": [
+        "gsap"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/sticker-peel/sticker-peel.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "circular-text",
+      "type": "registry:ui",
+      "description": "Text arranged in a circle with rotation animation.",
+      "dependencies": [
+        "motion/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/circular-text/circular-text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "stack",
+      "type": "registry:ui",
+      "description": "Draggable card stack with rotation and depth effects.",
+      "dependencies": [
+        "motion/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/stack/stack.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "dome-gallery",
+      "type": "registry:ui",
+      "description": "3D dome gallery with gesture-based navigation.",
+      "dependencies": [
+        "@use-gesture/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/dome-gallery/dome-gallery.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "infinite-menu",
+      "type": "registry:ui",
+      "description": "Infinite 3D menu with WebGL rendering.",
+      "dependencies": [
+        "gl-matrix"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/infinite-menu/infinite-menu.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "curved-loop",
+      "type": "registry:ui",
+      "description": "Text marquee along a curved path.",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/curved-loop/curved-loop.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "fuzzy-text",
+      "type": "registry:ui",
+      "description": "Text with fuzzy/blurred hover effect.",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/fuzzy-text/fuzzy-text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "glass-surface",
+      "type": "registry:ui",
+      "description": "Glass morphism surface with dynamic reflections.",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/glass-surface/glass-surface.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "letter-glitch",
+      "type": "registry:ui",
+      "description": "Text with randomized letter glitch effect.",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/letter-glitch/letter-glitch.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "noise",
+      "type": "registry:ui",
+      "description": "Animated noise texture overlay effect.",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/noise/noise.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "text-pressure",
+      "type": "registry:ui",
+      "description": "Text with variable font pressure effect on mouse proximity.",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/animations/text-pressure/text-pressure.tsx",
           "type": "registry:ui"
         }
       ],
@@ -3413,7 +4040,8 @@
         }
       ],
       "categories": [
-        "header"
+        "header",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -3432,7 +4060,8 @@
         }
       ],
       "categories": [
-        "header"
+        "header",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -3451,7 +4080,8 @@
         }
       ],
       "categories": [
-        "header"
+        "header",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -3470,7 +4100,8 @@
         }
       ],
       "categories": [
-        "header"
+        "header",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -3491,7 +4122,8 @@
         }
       ],
       "categories": [
-        "header"
+        "header",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -3510,7 +4142,8 @@
         }
       ],
       "categories": [
-        "header"
+        "header",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -3529,7 +4162,8 @@
         }
       ],
       "categories": [
-        "header"
+        "header",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -3545,7 +4179,8 @@
         }
       ],
       "categories": [
-        "footer"
+        "footer",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -3565,7 +4200,8 @@
         }
       ],
       "categories": [
-        "footer"
+        "footer",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -3585,7 +4221,8 @@
         }
       ],
       "categories": [
-        "footer"
+        "footer",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -3601,7 +4238,8 @@
         }
       ],
       "categories": [
-        "footer"
+        "footer",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -3621,7 +4259,8 @@
         }
       ],
       "categories": [
-        "footer"
+        "footer",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -3637,7 +4276,8 @@
         }
       ],
       "categories": [
-        "footer"
+        "footer",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -3656,7 +4296,8 @@
         }
       ],
       "categories": [
-        "cta"
+        "cta",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -3675,7 +4316,8 @@
         }
       ],
       "categories": [
-        "cta"
+        "cta",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -3694,7 +4336,8 @@
         }
       ],
       "categories": [
-        "cta"
+        "cta",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -3713,7 +4356,8 @@
         }
       ],
       "categories": [
-        "cta"
+        "cta",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -3732,7 +4376,8 @@
         }
       ],
       "categories": [
-        "cta"
+        "cta",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -3751,7 +4396,8 @@
         }
       ],
       "categories": [
-        "gallery"
+        "gallery",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -3770,7 +4416,8 @@
         }
       ],
       "categories": [
-        "gallery"
+        "gallery",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -3786,7 +4433,8 @@
         }
       ],
       "categories": [
-        "gallery"
+        "gallery",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -3806,7 +4454,8 @@
         }
       ],
       "categories": [
-        "gallery"
+        "gallery",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -3822,7 +4471,8 @@
         }
       ],
       "categories": [
-        "gallery"
+        "gallery",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -3841,7 +4491,8 @@
         }
       ],
       "categories": [
-        "products"
+        "products",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -3860,7 +4511,8 @@
         }
       ],
       "categories": [
-        "products"
+        "products",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -3879,7 +4531,8 @@
         }
       ],
       "categories": [
-        "products"
+        "products",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -3898,7 +4551,8 @@
         }
       ],
       "categories": [
-        "products"
+        "products",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -3917,7 +4571,8 @@
         }
       ],
       "categories": [
-        "products"
+        "products",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -3937,7 +4592,8 @@
         }
       ],
       "categories": [
-        "newsletter"
+        "newsletter",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -3957,7 +4613,8 @@
         }
       ],
       "categories": [
-        "newsletter"
+        "newsletter",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -3977,7 +4634,8 @@
         }
       ],
       "categories": [
-        "newsletter"
+        "newsletter",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -3997,7 +4655,8 @@
         }
       ],
       "categories": [
-        "newsletter"
+        "newsletter",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4017,7 +4676,8 @@
         }
       ],
       "categories": [
-        "newsletter"
+        "newsletter",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4033,7 +4693,8 @@
         }
       ],
       "categories": [
-        "faq"
+        "faq",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4052,7 +4713,8 @@
         }
       ],
       "categories": [
-        "faq"
+        "faq",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4068,7 +4730,8 @@
         }
       ],
       "categories": [
-        "faq"
+        "faq",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4084,7 +4747,8 @@
         }
       ],
       "categories": [
-        "faq"
+        "faq",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4103,7 +4767,8 @@
         }
       ],
       "categories": [
-        "faq"
+        "faq",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4122,7 +4787,8 @@
         }
       ],
       "categories": [
-        "blog"
+        "blog",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4138,7 +4804,8 @@
         }
       ],
       "categories": [
-        "blog"
+        "blog",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4157,7 +4824,8 @@
         }
       ],
       "categories": [
-        "blog"
+        "blog",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4173,7 +4841,8 @@
         }
       ],
       "categories": [
-        "blog"
+        "blog",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4193,7 +4862,8 @@
         }
       ],
       "categories": [
-        "blog"
+        "blog",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4214,7 +4884,8 @@
         }
       ],
       "categories": [
-        "contact"
+        "contact",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4233,7 +4904,8 @@
         }
       ],
       "categories": [
-        "contact"
+        "contact",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4255,7 +4927,8 @@
         }
       ],
       "categories": [
-        "contact"
+        "contact",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4276,7 +4949,8 @@
         }
       ],
       "categories": [
-        "contact"
+        "contact",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4295,7 +4969,8 @@
         }
       ],
       "categories": [
-        "contact"
+        "contact",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4311,7 +4986,8 @@
         }
       ],
       "categories": [
-        "logos"
+        "logos",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4327,7 +5003,8 @@
         }
       ],
       "categories": [
-        "logos"
+        "logos",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4346,7 +5023,8 @@
         }
       ],
       "categories": [
-        "logos"
+        "logos",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4362,7 +5040,8 @@
         }
       ],
       "categories": [
-        "logos"
+        "logos",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4381,7 +5060,8 @@
         }
       ],
       "categories": [
-        "logos"
+        "logos",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4400,7 +5080,8 @@
         }
       ],
       "categories": [
-        "testimonials"
+        "testimonials",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4416,7 +5097,8 @@
         }
       ],
       "categories": [
-        "testimonials"
+        "testimonials",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4432,7 +5114,8 @@
         }
       ],
       "categories": [
-        "testimonials"
+        "testimonials",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4451,7 +5134,8 @@
         }
       ],
       "categories": [
-        "testimonials"
+        "testimonials",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4467,7 +5151,8 @@
         }
       ],
       "categories": [
-        "testimonials"
+        "testimonials",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4486,7 +5171,8 @@
         }
       ],
       "categories": [
-        "pricing"
+        "pricing",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4506,7 +5192,8 @@
         }
       ],
       "categories": [
-        "pricing"
+        "pricing",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4525,7 +5212,8 @@
         }
       ],
       "categories": [
-        "pricing"
+        "pricing",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4545,7 +5233,8 @@
         }
       ],
       "categories": [
-        "pricing"
+        "pricing",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4564,7 +5253,8 @@
         }
       ],
       "categories": [
-        "pricing"
+        "pricing",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4580,7 +5270,8 @@
         }
       ],
       "categories": [
-        "team"
+        "team",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4596,7 +5287,8 @@
         }
       ],
       "categories": [
-        "team"
+        "team",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4615,7 +5307,8 @@
         }
       ],
       "categories": [
-        "team"
+        "team",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4631,7 +5324,8 @@
         }
       ],
       "categories": [
-        "team"
+        "team",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4647,7 +5341,8 @@
         }
       ],
       "categories": [
-        "team"
+        "team",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4663,7 +5358,8 @@
         }
       ],
       "categories": [
-        "stats"
+        "stats",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4679,7 +5375,8 @@
         }
       ],
       "categories": [
-        "stats"
+        "stats",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4695,7 +5392,8 @@
         }
       ],
       "categories": [
-        "stats"
+        "stats",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4711,7 +5409,8 @@
         }
       ],
       "categories": [
-        "stats"
+        "stats",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -4727,7 +5426,8 @@
         }
       ],
       "categories": [
-        "stats"
+        "stats",
+        "service-plants"
       ],
       "tier": "free",
       "readiness": "production"
@@ -9954,6 +10654,557 @@
       ],
       "categories": [
         "sectorial"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "aurora-demo",
+      "type": "registry:example",
+      "description": "Aurora animation demo",
+      "registryDependencies": [
+        "aurora"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/aurora-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "balatro-demo",
+      "type": "registry:example",
+      "description": "Balatro animation demo",
+      "registryDependencies": [
+        "balatro"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/balatro-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "circular-gallery-demo",
+      "type": "registry:example",
+      "description": "Circular Gallery animation demo",
+      "registryDependencies": [
+        "circular-gallery"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/circular-gallery-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "flying-posters-demo",
+      "type": "registry:example",
+      "description": "Flying Posters animation demo",
+      "registryDependencies": [
+        "flying-posters"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/flying-posters-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "gradient-blinds-demo",
+      "type": "registry:example",
+      "description": "Gradient Blinds animation demo",
+      "registryDependencies": [
+        "gradient-blinds"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/gradient-blinds-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "iridescence-demo",
+      "type": "registry:example",
+      "description": "Iridescence animation demo",
+      "registryDependencies": [
+        "iridescence"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/iridescence-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "liquid-chrome-demo",
+      "type": "registry:example",
+      "description": "Liquid Chrome animation demo",
+      "registryDependencies": [
+        "liquid-chrome"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/liquid-chrome-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "ascii-text-demo",
+      "type": "registry:example",
+      "description": "ASCII Text animation demo",
+      "registryDependencies": [
+        "ascii-text"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/ascii-text-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "ballpit-demo",
+      "type": "registry:example",
+      "description": "Ballpit animation demo",
+      "registryDependencies": [
+        "ballpit"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/ballpit-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "color-bends-demo",
+      "type": "registry:example",
+      "description": "Color Bends animation demo",
+      "registryDependencies": [
+        "color-bends"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/color-bends-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "dither-demo",
+      "type": "registry:example",
+      "description": "Dither animation demo",
+      "registryDependencies": [
+        "dither"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/dither-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "fluid-glass-demo",
+      "type": "registry:example",
+      "description": "Fluid Glass animation demo",
+      "registryDependencies": [
+        "fluid-glass"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/fluid-glass-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "grid-distortion-demo",
+      "type": "registry:example",
+      "description": "Grid Distortion animation demo",
+      "registryDependencies": [
+        "grid-distortion"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/grid-distortion-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "shape-blur-demo",
+      "type": "registry:example",
+      "description": "Shape Blur animation demo",
+      "registryDependencies": [
+        "shape-blur"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/shape-blur-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "decay-card-demo",
+      "type": "registry:example",
+      "description": "Decay Card animation demo",
+      "registryDependencies": [
+        "decay-card"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/decay-card-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "flowing-menu-demo",
+      "type": "registry:example",
+      "description": "Flowing Menu animation demo",
+      "registryDependencies": [
+        "flowing-menu"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/flowing-menu-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "image-trail-demo",
+      "type": "registry:example",
+      "description": "Image Trail animation demo",
+      "registryDependencies": [
+        "image-trail"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/image-trail-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "shuffle-demo",
+      "type": "registry:example",
+      "description": "Shuffle animation demo",
+      "registryDependencies": [
+        "shuffle"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/shuffle-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "sticker-peel-demo",
+      "type": "registry:example",
+      "description": "Sticker Peel animation demo",
+      "registryDependencies": [
+        "sticker-peel"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/sticker-peel-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "circular-text-demo",
+      "type": "registry:example",
+      "description": "Circular Text animation demo",
+      "registryDependencies": [
+        "circular-text"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/circular-text-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "stack-demo",
+      "type": "registry:example",
+      "description": "Stack animation demo",
+      "registryDependencies": [
+        "stack"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/stack-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "dome-gallery-demo",
+      "type": "registry:example",
+      "description": "Dome Gallery animation demo",
+      "registryDependencies": [
+        "dome-gallery"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/dome-gallery-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "infinite-menu-demo",
+      "type": "registry:example",
+      "description": "Infinite Menu animation demo",
+      "registryDependencies": [
+        "infinite-menu"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/infinite-menu-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "curved-loop-demo",
+      "type": "registry:example",
+      "description": "Curved Loop animation demo",
+      "registryDependencies": [
+        "curved-loop"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/curved-loop-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "fuzzy-text-demo",
+      "type": "registry:example",
+      "description": "Fuzzy Text animation demo",
+      "registryDependencies": [
+        "fuzzy-text"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/fuzzy-text-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "glass-surface-demo",
+      "type": "registry:example",
+      "description": "Glass Surface animation demo",
+      "registryDependencies": [
+        "glass-surface"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/glass-surface-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "letter-glitch-demo",
+      "type": "registry:example",
+      "description": "Letter Glitch animation demo",
+      "registryDependencies": [
+        "letter-glitch"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/letter-glitch-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "noise-demo",
+      "type": "registry:example",
+      "description": "Noise animation demo",
+      "registryDependencies": [
+        "noise"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/noise-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "text-pressure-demo",
+      "type": "registry:example",
+      "description": "Text Pressure animation demo",
+      "registryDependencies": [
+        "text-pressure"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/text-pressure-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "animations"
       ],
       "tier": "free",
       "readiness": "production"

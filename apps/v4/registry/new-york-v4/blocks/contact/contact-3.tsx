@@ -1,8 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
@@ -11,7 +11,7 @@ interface ContactBlockProps {
     title?: string
     description?: string
     channels?: Array<{
-      icon: "email" | "phone" | "chat"
+      icon: string
       title: string
       description: string
       action: string
@@ -30,7 +30,7 @@ const contact3Defaults = {
   description: "Choose the best way to reach us. We're here to assist you.",
   channels: [
     {
-      icon: "email" as const,
+      icon: "Mail",
       title: "Email Us",
       description:
         "Get a response within 24 hours. Best for detailed inquiries.",
@@ -38,14 +38,14 @@ const contact3Defaults = {
       href: "mailto:support@company.com",
     },
     {
-      icon: "phone" as const,
+      icon: "Phone",
       title: "Call Us",
       description: "Speak directly with our team. Available Mon-Fri 9AM-6PM.",
       action: "Call Now",
       href: "tel:+15551234567",
     },
     {
-      icon: "chat" as const,
+      icon: "MessageCircle",
       title: "Live Chat",
       description:
         "Chat with us in real-time. Average response time under 5 minutes.",
@@ -62,12 +62,6 @@ const contact3Defaults = {
     { platform: "linkedin", href: "#" },
     { platform: "facebook", href: "#" },
   ],
-}
-
-const IconMap = {
-  email: Mail,
-  phone: Phone,
-  chat: MessageCircle,
 }
 
 export function Contact3({ content = {}, classNames = {} }: ContactBlockProps) {
@@ -103,35 +97,35 @@ export function Contact3({ content = {}, classNames = {} }: ContactBlockProps) {
 
         {/* Channel Cards */}
         <div className="mx-auto mb-12 grid max-w-4xl gap-6 md:grid-cols-3">
-          {channels.map((channel, i) => {
-            const Icon = IconMap[channel.icon]
-            return (
-              <div
-                key={i}
-                className="bg-background border-border rounded-xl border p-6 text-center transition-shadow hover:shadow-lg"
-              >
-                <div className="bg-primary/10 text-primary mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full">
-                  <Icon className="h-7 w-7" />
-                </div>
-                <h3 className="text-foreground mb-2 text-lg font-semibold">
-                  {channel.title}
-                </h3>
-                <p className="text-muted-foreground mb-4 text-sm">
-                  {channel.description}
-                </p>
-                <Button asChild className="w-full">
-                  <Link href={channel.href}>{channel.action}</Link>
-                </Button>
+          {channels.map((channel, i) => (
+            <div
+              key={i}
+              className="bg-background border-border rounded-xl border p-6 text-center transition-shadow hover:shadow-lg"
+            >
+              <div className="bg-primary/10 text-primary mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full">
+                <DynamicIcon name={channel.icon} className="h-7 w-7" />
               </div>
-            )
-          })}
+              <h3 className="text-foreground mb-2 text-lg font-semibold">
+                {channel.title}
+              </h3>
+              <p className="text-muted-foreground mb-4 text-sm">
+                {channel.description}
+              </p>
+              <Button asChild className="w-full">
+                <Link href={channel.href}>{channel.action}</Link>
+              </Button>
+            </div>
+          ))}
         </div>
 
         {/* Additional Info */}
         <div className="border-border mx-auto max-w-2xl rounded-xl border p-6 md:p-8">
           <div className="grid gap-6 md:grid-cols-2">
             <div className="flex items-start gap-3">
-              <MapPin className="text-muted-foreground mt-0.5 h-5 w-5 shrink-0" />
+              <DynamicIcon
+                name="MapPin"
+                className="text-muted-foreground mt-0.5 h-5 w-5 shrink-0"
+              />
               <div>
                 <h4 className="text-foreground mb-1 font-medium">
                   Our Location
@@ -142,7 +136,10 @@ export function Contact3({ content = {}, classNames = {} }: ContactBlockProps) {
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <Clock className="text-muted-foreground mt-0.5 h-5 w-5 shrink-0" />
+              <DynamicIcon
+                name="Clock"
+                className="text-muted-foreground mt-0.5 h-5 w-5 shrink-0"
+              />
               <div>
                 <h4 className="text-foreground mb-1 font-medium">
                   Business Hours

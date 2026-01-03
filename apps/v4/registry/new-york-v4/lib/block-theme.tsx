@@ -23,6 +23,7 @@ export type ColorPalette =
   | "indigo"
   | "coral"
   | "forest"
+  | "neon"
 
 type ThemeStyleProps = Record<string, string>
 
@@ -63,7 +64,12 @@ export interface CustomTheme {
 // Font Configuration
 // ============================================================================
 
-export type FontPreset = "modern" | "elegant" | "classic" | "playful"
+export type FontPreset =
+  | "modern"
+  | "elegant"
+  | "classic"
+  | "playful"
+  | "futuristic"
 
 export interface CustomFonts {
   display: string
@@ -81,8 +87,8 @@ export interface TemplateFonts {
 }
 
 const defaultFonts: TemplateFonts = {
-  display: "var(--font-display), Poppins, sans-serif",
-  body: "var(--font-sans), Inter, sans-serif",
+  display: "var(--font-display)",
+  body: "var(--font-sans)",
   displayWeight: "700",
   bodyWeight: "400",
 }
@@ -90,28 +96,34 @@ const defaultFonts: TemplateFonts = {
 // Font presets
 export const fontPresets: Record<FontPreset, TemplateFonts> = {
   modern: {
-    display: "var(--font-display), Poppins, sans-serif",
-    body: "var(--font-sans), Inter, sans-serif",
+    display: "var(--font-display)",
+    body: "var(--font-sans)",
     displayWeight: "700",
     bodyWeight: "400",
   },
   elegant: {
-    display: "var(--font-fraunces), Fraunces, serif",
-    body: "var(--font-dm-sans), DM Sans, sans-serif",
+    display: "var(--font-fraunces)",
+    body: "var(--font-dm-sans)",
     displayWeight: "600",
     bodyWeight: "400",
   },
   classic: {
-    display: "var(--font-playfair), Playfair Display, serif",
-    body: "var(--font-source-sans), Source Sans 3, sans-serif",
+    display: "var(--font-playfair)",
+    body: "var(--font-source-sans)",
     displayWeight: "700",
     bodyWeight: "400",
   },
   playful: {
-    display: "var(--font-space-grotesk), Space Grotesk, sans-serif",
-    body: "var(--font-nunito), Nunito, sans-serif",
+    display: "var(--font-space-grotesk)",
+    body: "var(--font-nunito)",
     displayWeight: "700",
     bodyWeight: "400",
+  },
+  futuristic: {
+    display: "var(--font-orbitron)",
+    body: "var(--font-rajdhani)",
+    displayWeight: "700",
+    bodyWeight: "500",
   },
 }
 
@@ -179,6 +191,7 @@ const paletteColors: Record<
   indigo: { brand: "#4f46e5", complementary: "#f59e0b" },
   coral: { brand: "#f97316", complementary: "#06b6d4" },
   forest: { brand: "#166534", complementary: "#ea580c" },
+  neon: { brand: "#00ff00", complementary: "#ff00ff" },
 }
 
 // Base neutral themes
@@ -290,6 +303,10 @@ const deepBackgrounds: Record<
     light: { background: "#f0fdf4", muted: "#dcfce7" },
     dark: { background: "#14261a", muted: "#1f3826" },
   },
+  neon: {
+    light: { background: "#f0fff0", muted: "#e0ffe0" },
+    dark: { background: "#0a1a0a", muted: "#0f2a0f" },
+  },
 }
 
 // ============================================================================
@@ -372,10 +389,13 @@ export function getPaletteThemeStyles(
   const colors = paletteColors[palette]
   const baseStyles = mode === "light" ? { ...lightBase } : { ...darkBase }
 
-  // Apply brand colors for non-base tints
-  if (tint !== "base" && palette !== "slate") {
+  // Apply brand colors for non-slate palettes
+  if (palette !== "slate") {
     baseStyles.brand = colors.brand
     baseStyles["brand-complementary"] = colors.complementary
+    // Also set primary to brand color for colored palettes
+    baseStyles.primary = colors.brand
+    baseStyles["primary-foreground"] = mode === "light" ? "#0a0a0a" : "#fafafa"
   }
 
   // Apply deep backgrounds

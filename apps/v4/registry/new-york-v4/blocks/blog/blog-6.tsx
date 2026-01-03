@@ -2,8 +2,8 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Clock, Mail, Tag } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Input } from "@/registry/new-york-v4/ui/input"
@@ -34,7 +34,7 @@ const blog6Defaults = {
       title: "Getting Started with Next.js 15",
       excerpt:
         "Learn how to build modern web applications with the latest version of Next.js.",
-      image: "/placeholders/blocks/service-plants/1.webp",
+      image: "/elements/landscape/plants/1.webp",
       category: "Tutorial",
       readTime: "10 min",
       href: "#",
@@ -42,7 +42,7 @@ const blog6Defaults = {
     {
       title: "Understanding Tailwind CSS",
       excerpt: "A comprehensive guide to utility-first CSS.",
-      image: "/placeholders/blocks/service-plants/2.webp",
+      image: "/elements/landscape/plants/2.webp",
       category: "CSS",
       readTime: "8 min",
       href: "#",
@@ -50,7 +50,7 @@ const blog6Defaults = {
     {
       title: "React State Management",
       excerpt: "Comparing different state management solutions.",
-      image: "/placeholders/blocks/service-plants/3.webp",
+      image: "/elements/landscape/plants/3.webp",
       category: "React",
       readTime: "12 min",
       href: "#",
@@ -118,7 +118,8 @@ export function Blog6({ content = {}, classNames = {} }: BlogBlockProps) {
                   </h3>
                   <p className="text-muted-foreground mt-2">{post.excerpt}</p>
                   <div className="text-muted-foreground mt-4 flex items-center gap-1 text-sm">
-                    <Clock className="h-4 w-4" /> {post.readTime}
+                    <DynamicIcon name="Clock" className="h-4 w-4" />{" "}
+                    {post.readTime}
                   </div>
                 </div>
               </Link>
@@ -136,7 +137,7 @@ export function Blog6({ content = {}, classNames = {} }: BlogBlockProps) {
               <div className="space-y-3">
                 <Input type="email" placeholder="Your email" />
                 <Button className="w-full">
-                  <Mail className="mr-2 h-4 w-4" /> Subscribe
+                  <DynamicIcon name="Mail" className="mr-2 h-4 w-4" /> Subscribe
                 </Button>
               </div>
             </div>
@@ -179,7 +180,7 @@ export function Blog6({ content = {}, classNames = {} }: BlogBlockProps) {
             {/* Tags */}
             <div className="border-border rounded-xl border p-6">
               <h4 className="text-foreground mb-4 flex items-center gap-2 font-semibold">
-                <Tag className="h-4 w-4" /> Tags
+                <DynamicIcon name="Tag" className="h-4 w-4" /> Tags
               </h4>
               <div className="flex flex-wrap gap-2">
                 {blog6Defaults.tags.map((tag, i) => (

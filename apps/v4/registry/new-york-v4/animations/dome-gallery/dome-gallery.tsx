@@ -753,10 +753,10 @@ export default function DomeGallery({
       --item-width: calc(var(--circ) / var(--segments-x));
       --item-height: calc(var(--circ) / var(--segments-y));
     }
-    
+
     .sphere-root * { box-sizing: border-box; }
     .sphere, .sphere-item, .item__image { transform-style: preserve-3d; }
-    
+
     .stage {
       width: 100%;
       height: 100%;
@@ -768,13 +768,13 @@ export default function DomeGallery({
       perspective: calc(var(--radius) * 2);
       perspective-origin: 50% 50%;
     }
-    
+
     .sphere {
       transform: translateZ(calc(var(--radius) * -1));
       will-change: transform;
       position: absolute;
     }
-    
+
     .sphere-item {
       width: calc(var(--item-width) * var(--item-size-x));
       height: calc(var(--item-height) * var(--item-size-y));
@@ -787,23 +787,23 @@ export default function DomeGallery({
       transform-origin: 50% 50%;
       backface-visibility: hidden;
       transition: transform 300ms;
-      transform: rotateY(calc(var(--rot-y) * (var(--offset-x) + ((var(--item-size-x) - 1) / 2)) + var(--rot-y-delta, 0deg))) 
-                 rotateX(calc(var(--rot-x) * (var(--offset-y) - ((var(--item-size-y) - 1) / 2)) + var(--rot-x-delta, 0deg))) 
+      transform: rotateY(calc(var(--rot-y) * (var(--offset-x) + ((var(--item-size-x) - 1) / 2)) + var(--rot-y-delta, 0deg)))
+                 rotateX(calc(var(--rot-x) * (var(--offset-y) - ((var(--item-size-y) - 1) / 2)) + var(--rot-x-delta, 0deg)))
                  translateZ(var(--radius));
     }
-    
+
     .sphere-root[data-enlarging="true"] .scrim {
       opacity: 1 !important;
       pointer-events: all !important;
     }
-    
+
     @media (max-aspect-ratio: 1/1) {
       .viewer-frame {
         height: auto !important;
         width: 100% !important;
       }
     }
-    
+
     // body.dg-scroll-lock {
     //   position: fixed !important;
     //   top: 0;
@@ -885,7 +885,7 @@ export default function DomeGallery({
                   }
                 >
                   <div
-                    className="item__image absolute block cursor-pointer overflow-hidden bg-gray-200 transition-transform duration-300"
+                    className="item__image bg-muted absolute block cursor-pointer overflow-hidden transition-transform duration-300"
                     role="button"
                     tabIndex={0}
                     aria-label={it.alt || "Open image"}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "glass-surface-demo",
+  "type": "registry:example",
+  "description": "Glass Surface animation demo",
+  "registryDependencies": [
+    "glass-surface"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/glass-surface-demo.tsx",
+      "content": "import GlassSurface from \"@/registry/new-york-v4/animations/glass-surface/glass-surface\"\n\nexport default function GlassSurfaceDemo() {\n  return (\n    <div className=\"flex h-full w-full items-center justify-center\">\n      <GlassSurface width={200} height={80}>\n        <span className=\"text-lg font-medium\">Glass Effect</span>\n      </GlassSurface>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

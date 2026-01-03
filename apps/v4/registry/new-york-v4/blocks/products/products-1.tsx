@@ -23,7 +23,7 @@ const blockDefaults = {
       name: "Monstera Deliciosa",
       price: "$45",
       image: {
-        src: "/placeholders/blocks/service-plants/assets/item-1.webp",
+        src: "/elements/subject/plants/item-1.webp",
         alt: "Monstera Deliciosa",
       },
       href: "#",
@@ -32,7 +32,7 @@ const blockDefaults = {
       name: "Fiddle Leaf Fig",
       price: "$65",
       image: {
-        src: "/placeholders/blocks/service-plants/assets/item-2.webp",
+        src: "/elements/subject/plants/item-2.webp",
         alt: "Fiddle Leaf Fig",
       },
       href: "#",
@@ -41,7 +41,7 @@ const blockDefaults = {
       name: "Snake Plant",
       price: "$35",
       image: {
-        src: "/placeholders/blocks/service-plants/assets/item-3.webp",
+        src: "/elements/subject/plants/item-3.webp",
         alt: "Snake Plant",
       },
       href: "#",
@@ -50,7 +50,7 @@ const blockDefaults = {
       name: "Pothos Golden",
       price: "$25",
       image: {
-        src: "/placeholders/blocks/service-plants/assets/item-4.webp",
+        src: "/elements/subject/plants/item-4.webp",
         alt: "Pothos Golden",
       },
       href: "#",

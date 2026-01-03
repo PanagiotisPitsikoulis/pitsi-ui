@@ -2,8 +2,8 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Check, X } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
@@ -36,7 +36,7 @@ const products6Defaults = {
       name: "Basic Plan",
       description: "Perfect for individuals getting started",
       price: 9,
-      image: "/placeholders/blocks/service-plants/1.webp",
+      image: "/elements/landscape/plants/1.webp",
       features: ["5 Projects", "Basic Analytics", "Email Support"],
       bestFor: "Beginners",
       href: "#",
@@ -45,7 +45,7 @@ const products6Defaults = {
       name: "Pro Plan",
       description: "For growing teams and businesses",
       price: 29,
-      image: "/placeholders/blocks/service-plants/2.webp",
+      image: "/elements/landscape/plants/2.webp",
       features: [
         "Unlimited Projects",
         "Advanced Analytics",
@@ -60,7 +60,7 @@ const products6Defaults = {
       name: "Enterprise",
       description: "For large-scale operations",
       price: 99,
-      image: "/placeholders/blocks/service-plants/3.webp",
+      image: "/elements/landscape/plants/3.webp",
       features: [
         "Unlimited Projects",
         "Advanced Analytics",
@@ -181,7 +181,10 @@ export function Products6({
                     key={j}
                     className="text-foreground flex items-center gap-2 text-sm"
                   >
-                    <Check className="h-4 w-4 text-green-500" />
+                    <DynamicIcon
+                      name="Check"
+                      className="h-4 w-4 text-green-500"
+                    />
                     {feature}
                   </li>
                 ))}

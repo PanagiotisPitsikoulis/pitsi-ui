@@ -1,11 +1,16 @@
 "use client"
 
 import { useState } from "react"
-import { ChevronLeft, ChevronRight, Clock, User } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
+import {
+  featuresDefaults,
+  type FeaturesBlockProps,
+} from "@/lib/blocks/features.types"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
+// Extended interfaces for schedule-based features block
 interface ScheduleClass {
   id: string
   name: string
@@ -24,357 +29,363 @@ interface DaySchedule {
   classes: ScheduleClass[]
 }
 
-const weekSchedule: DaySchedule[] = [
-  {
-    day: "Monday",
-    shortDay: "Mon",
-    date: "Jan 6",
-    classes: [
-      {
-        id: "1",
-        name: "HIIT",
-        instructor: "Alex Chen",
-        time: "6:00 AM",
-        duration: "45 min",
-        spots: 4,
-        maxSpots: 20,
-        intensity: "extreme",
-      },
-      {
-        id: "2",
-        name: "Yoga Flow",
-        instructor: "Maya Patel",
-        time: "7:00 AM",
-        duration: "60 min",
-        spots: 8,
-        maxSpots: 15,
-        intensity: "medium",
-      },
-      {
-        id: "3",
-        name: "Strength",
-        instructor: "Jake Miller",
-        time: "12:00 PM",
-        duration: "50 min",
-        spots: 6,
-        maxSpots: 16,
-        intensity: "high",
-      },
-      {
-        id: "4",
-        name: "Spin",
-        instructor: "Sofia Reyes",
-        time: "5:30 PM",
-        duration: "45 min",
-        spots: 2,
-        maxSpots: 25,
-        intensity: "high",
-      },
-      {
-        id: "5",
-        name: "Boxing",
-        instructor: "Marcus Webb",
-        time: "7:00 PM",
-        duration: "60 min",
-        spots: 10,
-        maxSpots: 20,
-        intensity: "high",
-      },
-    ],
-  },
-  {
-    day: "Tuesday",
-    shortDay: "Tue",
-    date: "Jan 7",
-    classes: [
-      {
-        id: "6",
-        name: "Strength",
-        instructor: "Jake Miller",
-        time: "6:00 AM",
-        duration: "50 min",
-        spots: 8,
-        maxSpots: 16,
-        intensity: "high",
-      },
-      {
-        id: "7",
-        name: "HIIT",
-        instructor: "Alex Chen",
-        time: "12:00 PM",
-        duration: "45 min",
-        spots: 5,
-        maxSpots: 20,
-        intensity: "extreme",
-      },
-      {
-        id: "8",
-        name: "Recovery",
-        instructor: "Maya Patel",
-        time: "5:30 PM",
-        duration: "30 min",
-        spots: 12,
-        maxSpots: 15,
-        intensity: "low",
-      },
-      {
-        id: "9",
-        name: "Spin",
-        instructor: "Sofia Reyes",
-        time: "6:30 PM",
-        duration: "45 min",
-        spots: 0,
-        maxSpots: 25,
-        intensity: "high",
-      },
-    ],
-  },
-  {
-    day: "Wednesday",
-    shortDay: "Wed",
-    date: "Jan 8",
-    classes: [
-      {
-        id: "10",
-        name: "Boxing",
-        instructor: "Marcus Webb",
-        time: "6:00 AM",
-        duration: "60 min",
-        spots: 7,
-        maxSpots: 20,
-        intensity: "high",
-      },
-      {
-        id: "11",
-        name: "Yoga Flow",
-        instructor: "Maya Patel",
-        time: "7:30 AM",
-        duration: "60 min",
-        spots: 3,
-        maxSpots: 15,
-        intensity: "medium",
-      },
-      {
-        id: "12",
-        name: "HIIT",
-        instructor: "Alex Chen",
-        time: "12:00 PM",
-        duration: "45 min",
-        spots: 9,
-        maxSpots: 20,
-        intensity: "extreme",
-      },
-      {
-        id: "13",
-        name: "Strength",
-        instructor: "Jake Miller",
-        time: "5:30 PM",
-        duration: "50 min",
-        spots: 4,
-        maxSpots: 16,
-        intensity: "high",
-      },
-      {
-        id: "14",
-        name: "Spin",
-        instructor: "Sofia Reyes",
-        time: "7:00 PM",
-        duration: "45 min",
-        spots: 6,
-        maxSpots: 25,
-        intensity: "high",
-      },
-    ],
-  },
-  {
-    day: "Thursday",
-    shortDay: "Thu",
-    date: "Jan 9",
-    classes: [
-      {
-        id: "15",
-        name: "HIIT",
-        instructor: "Alex Chen",
-        time: "6:00 AM",
-        duration: "45 min",
-        spots: 11,
-        maxSpots: 20,
-        intensity: "extreme",
-      },
-      {
-        id: "16",
-        name: "Recovery",
-        instructor: "Maya Patel",
-        time: "7:00 AM",
-        duration: "30 min",
-        spots: 10,
-        maxSpots: 15,
-        intensity: "low",
-      },
-      {
-        id: "17",
-        name: "Boxing",
-        instructor: "Marcus Webb",
-        time: "12:00 PM",
-        duration: "60 min",
-        spots: 8,
-        maxSpots: 20,
-        intensity: "high",
-      },
-      {
-        id: "18",
-        name: "Yoga Flow",
-        instructor: "Maya Patel",
-        time: "5:30 PM",
-        duration: "60 min",
-        spots: 2,
-        maxSpots: 15,
-        intensity: "medium",
-      },
-      {
-        id: "19",
-        name: "Strength",
-        instructor: "Jake Miller",
-        time: "7:00 PM",
-        duration: "50 min",
-        spots: 5,
-        maxSpots: 16,
-        intensity: "high",
-      },
-    ],
-  },
-  {
-    day: "Friday",
-    shortDay: "Fri",
-    date: "Jan 10",
-    classes: [
-      {
-        id: "20",
-        name: "Spin",
-        instructor: "Sofia Reyes",
-        time: "6:00 AM",
-        duration: "45 min",
-        spots: 3,
-        maxSpots: 25,
-        intensity: "high",
-      },
-      {
-        id: "21",
-        name: "HIIT",
-        instructor: "Alex Chen",
-        time: "7:00 AM",
-        duration: "45 min",
-        spots: 6,
-        maxSpots: 20,
-        intensity: "extreme",
-      },
-      {
-        id: "22",
-        name: "Strength",
-        instructor: "Jake Miller",
-        time: "12:00 PM",
-        duration: "50 min",
-        spots: 7,
-        maxSpots: 16,
-        intensity: "high",
-      },
-      {
-        id: "23",
-        name: "Boxing",
-        instructor: "Marcus Webb",
-        time: "5:30 PM",
-        duration: "60 min",
-        spots: 4,
-        maxSpots: 20,
-        intensity: "high",
-      },
-    ],
-  },
-  {
-    day: "Saturday",
-    shortDay: "Sat",
-    date: "Jan 11",
-    classes: [
-      {
-        id: "24",
-        name: "HIIT",
-        instructor: "Alex Chen",
-        time: "8:00 AM",
-        duration: "45 min",
-        spots: 2,
-        maxSpots: 20,
-        intensity: "extreme",
-      },
-      {
-        id: "25",
-        name: "Yoga Flow",
-        instructor: "Maya Patel",
-        time: "9:30 AM",
-        duration: "60 min",
-        spots: 5,
-        maxSpots: 15,
-        intensity: "medium",
-      },
-      {
-        id: "26",
-        name: "Strength",
-        instructor: "Jake Miller",
-        time: "11:00 AM",
-        duration: "50 min",
-        spots: 9,
-        maxSpots: 16,
-        intensity: "high",
-      },
-      {
-        id: "27",
-        name: "Recovery",
-        instructor: "Maya Patel",
-        time: "1:00 PM",
-        duration: "30 min",
-        spots: 8,
-        maxSpots: 15,
-        intensity: "low",
-      },
-    ],
-  },
-  {
-    day: "Sunday",
-    shortDay: "Sun",
-    date: "Jan 12",
-    classes: [
-      {
-        id: "28",
-        name: "Yoga Flow",
-        instructor: "Maya Patel",
-        time: "9:00 AM",
-        duration: "60 min",
-        spots: 4,
-        maxSpots: 15,
-        intensity: "medium",
-      },
-      {
-        id: "29",
-        name: "Recovery",
-        instructor: "Maya Patel",
-        time: "10:30 AM",
-        duration: "30 min",
-        spots: 11,
-        maxSpots: 15,
-        intensity: "low",
-      },
-      {
-        id: "30",
-        name: "Spin",
-        instructor: "Sofia Reyes",
-        time: "12:00 PM",
-        duration: "45 min",
-        spots: 7,
-        maxSpots: 25,
-        intensity: "high",
-      },
-    ],
-  },
-]
+// Block-specific defaults (fitness schedule theme)
+const features7Defaults = {
+  ...featuresDefaults,
+  badge: "Weekly Schedule",
+  title: "Book Your Spot",
+  weekSchedule: [
+    {
+      day: "Monday",
+      shortDay: "Mon",
+      date: "Jan 6",
+      classes: [
+        {
+          id: "1",
+          name: "HIIT",
+          instructor: "Alex Chen",
+          time: "6:00 AM",
+          duration: "45 min",
+          spots: 4,
+          maxSpots: 20,
+          intensity: "extreme" as const,
+        },
+        {
+          id: "2",
+          name: "Yoga Flow",
+          instructor: "Maya Patel",
+          time: "7:00 AM",
+          duration: "60 min",
+          spots: 8,
+          maxSpots: 15,
+          intensity: "medium" as const,
+        },
+        {
+          id: "3",
+          name: "Strength",
+          instructor: "Jake Miller",
+          time: "12:00 PM",
+          duration: "50 min",
+          spots: 6,
+          maxSpots: 16,
+          intensity: "high" as const,
+        },
+        {
+          id: "4",
+          name: "Spin",
+          instructor: "Sofia Reyes",
+          time: "5:30 PM",
+          duration: "45 min",
+          spots: 2,
+          maxSpots: 25,
+          intensity: "high" as const,
+        },
+        {
+          id: "5",
+          name: "Boxing",
+          instructor: "Marcus Webb",
+          time: "7:00 PM",
+          duration: "60 min",
+          spots: 10,
+          maxSpots: 20,
+          intensity: "high" as const,
+        },
+      ],
+    },
+    {
+      day: "Tuesday",
+      shortDay: "Tue",
+      date: "Jan 7",
+      classes: [
+        {
+          id: "6",
+          name: "Strength",
+          instructor: "Jake Miller",
+          time: "6:00 AM",
+          duration: "50 min",
+          spots: 8,
+          maxSpots: 16,
+          intensity: "high" as const,
+        },
+        {
+          id: "7",
+          name: "HIIT",
+          instructor: "Alex Chen",
+          time: "12:00 PM",
+          duration: "45 min",
+          spots: 5,
+          maxSpots: 20,
+          intensity: "extreme" as const,
+        },
+        {
+          id: "8",
+          name: "Recovery",
+          instructor: "Maya Patel",
+          time: "5:30 PM",
+          duration: "30 min",
+          spots: 12,
+          maxSpots: 15,
+          intensity: "low" as const,
+        },
+        {
+          id: "9",
+          name: "Spin",
+          instructor: "Sofia Reyes",
+          time: "6:30 PM",
+          duration: "45 min",
+          spots: 0,
+          maxSpots: 25,
+          intensity: "high" as const,
+        },
+      ],
+    },
+    {
+      day: "Wednesday",
+      shortDay: "Wed",
+      date: "Jan 8",
+      classes: [
+        {
+          id: "10",
+          name: "Boxing",
+          instructor: "Marcus Webb",
+          time: "6:00 AM",
+          duration: "60 min",
+          spots: 7,
+          maxSpots: 20,
+          intensity: "high" as const,
+        },
+        {
+          id: "11",
+          name: "Yoga Flow",
+          instructor: "Maya Patel",
+          time: "7:30 AM",
+          duration: "60 min",
+          spots: 3,
+          maxSpots: 15,
+          intensity: "medium" as const,
+        },
+        {
+          id: "12",
+          name: "HIIT",
+          instructor: "Alex Chen",
+          time: "12:00 PM",
+          duration: "45 min",
+          spots: 9,
+          maxSpots: 20,
+          intensity: "extreme" as const,
+        },
+        {
+          id: "13",
+          name: "Strength",
+          instructor: "Jake Miller",
+          time: "5:30 PM",
+          duration: "50 min",
+          spots: 4,
+          maxSpots: 16,
+          intensity: "high" as const,
+        },
+        {
+          id: "14",
+          name: "Spin",
+          instructor: "Sofia Reyes",
+          time: "7:00 PM",
+          duration: "45 min",
+          spots: 6,
+          maxSpots: 25,
+          intensity: "high" as const,
+        },
+      ],
+    },
+    {
+      day: "Thursday",
+      shortDay: "Thu",
+      date: "Jan 9",
+      classes: [
+        {
+          id: "15",
+          name: "HIIT",
+          instructor: "Alex Chen",
+          time: "6:00 AM",
+          duration: "45 min",
+          spots: 11,
+          maxSpots: 20,
+          intensity: "extreme" as const,
+        },
+        {
+          id: "16",
+          name: "Recovery",
+          instructor: "Maya Patel",
+          time: "7:00 AM",
+          duration: "30 min",
+          spots: 10,
+          maxSpots: 15,
+          intensity: "low" as const,
+        },
+        {
+          id: "17",
+          name: "Boxing",
+          instructor: "Marcus Webb",
+          time: "12:00 PM",
+          duration: "60 min",
+          spots: 8,
+          maxSpots: 20,
+          intensity: "high" as const,
+        },
+        {
+          id: "18",
+          name: "Yoga Flow",
+          instructor: "Maya Patel",
+          time: "5:30 PM",
+          duration: "60 min",
+          spots: 2,
+          maxSpots: 15,
+          intensity: "medium" as const,
+        },
+        {
+          id: "19",
+          name: "Strength",
+          instructor: "Jake Miller",
+          time: "7:00 PM",
+          duration: "50 min",
+          spots: 5,
+          maxSpots: 16,
+          intensity: "high" as const,
+        },
+      ],
+    },
+    {
+      day: "Friday",
+      shortDay: "Fri",
+      date: "Jan 10",
+      classes: [
+        {
+          id: "20",
+          name: "Spin",
+          instructor: "Sofia Reyes",
+          time: "6:00 AM",
+          duration: "45 min",
+          spots: 3,
+          maxSpots: 25,
+          intensity: "high" as const,
+        },
+        {
+          id: "21",
+          name: "HIIT",
+          instructor: "Alex Chen",
+          time: "7:00 AM",
+          duration: "45 min",
+          spots: 6,
+          maxSpots: 20,
+          intensity: "extreme" as const,
+        },
+        {
+          id: "22",
+          name: "Strength",
+          instructor: "Jake Miller",
+          time: "12:00 PM",
+          duration: "50 min",
+          spots: 7,
+          maxSpots: 16,
+          intensity: "high" as const,
+        },
+        {
+          id: "23",
+          name: "Boxing",
+          instructor: "Marcus Webb",
+          time: "5:30 PM",
+          duration: "60 min",
+          spots: 4,
+          maxSpots: 20,
+          intensity: "high" as const,
+        },
+      ],
+    },
+    {
+      day: "Saturday",
+      shortDay: "Sat",
+      date: "Jan 11",
+      classes: [
+        {
+          id: "24",
+          name: "HIIT",
+          instructor: "Alex Chen",
+          time: "8:00 AM",
+          duration: "45 min",
+          spots: 2,
+          maxSpots: 20,
+          intensity: "extreme" as const,
+        },
+        {
+          id: "25",
+          name: "Yoga Flow",
+          instructor: "Maya Patel",
+          time: "9:30 AM",
+          duration: "60 min",
+          spots: 5,
+          maxSpots: 15,
+          intensity: "medium" as const,
+        },
+        {
+          id: "26",
+          name: "Strength",
+          instructor: "Jake Miller",
+          time: "11:00 AM",
+          duration: "50 min",
+          spots: 9,
+          maxSpots: 16,
+          intensity: "high" as const,
+        },
+        {
+          id: "27",
+          name: "Recovery",
+          instructor: "Maya Patel",
+          time: "1:00 PM",
+          duration: "30 min",
+          spots: 8,
+          maxSpots: 15,
+          intensity: "low" as const,
+        },
+      ],
+    },
+    {
+      day: "Sunday",
+      shortDay: "Sun",
+      date: "Jan 12",
+      classes: [
+        {
+          id: "28",
+          name: "Yoga Flow",
+          instructor: "Maya Patel",
+          time: "9:00 AM",
+          duration: "60 min",
+          spots: 4,
+          maxSpots: 15,
+          intensity: "medium" as const,
+        },
+        {
+          id: "29",
+          name: "Recovery",
+          instructor: "Maya Patel",
+          time: "10:30 AM",
+          duration: "30 min",
+          spots: 11,
+          maxSpots: 15,
+          intensity: "low" as const,
+        },
+        {
+          id: "30",
+          name: "Spin",
+          instructor: "Sofia Reyes",
+          time: "12:00 PM",
+          duration: "45 min",
+          spots: 7,
+          maxSpots: 25,
+          intensity: "high" as const,
+        },
+      ],
+    },
+  ] as DaySchedule[],
+}
 
 const intensityColors = {
   low: "bg-emerald-500",
@@ -383,20 +394,48 @@ const intensityColors = {
   extreme: "bg-red-500",
 }
 
-export function Features7() {
+export function Features7({
+  content = {},
+  classNames = {},
+}: FeaturesBlockProps) {
+  const { badge = features7Defaults.badge, title = features7Defaults.title } =
+    content
+
+  // Use block-specific schedule array
+  const weekSchedule =
+    (content as { weekSchedule?: DaySchedule[] }).weekSchedule ??
+    features7Defaults.weekSchedule
+
   const [selectedDay, setSelectedDay] = useState(0)
 
   return (
-    <section className="bg-neutral-950 py-24 lg:py-32">
-      <div className="container px-6">
+    <section className={cn("bg-neutral-950 py-24 lg:py-32", classNames.root)}>
+      <div className={cn("container px-6", classNames.container)}>
         {/* Header */}
-        <div className="mb-12 flex flex-col items-center justify-between gap-6 md:flex-row">
+        <div
+          className={cn(
+            "mb-12 flex flex-col items-center justify-between gap-6 md:flex-row",
+            classNames.header?.root
+          )}
+        >
           <div>
-            <p className="mb-2 text-sm font-medium tracking-[0.3em] text-white/60 uppercase">
-              Weekly Schedule
-            </p>
-            <h2 className="font-display text-4xl font-bold text-white md:text-5xl">
-              Book Your Spot
+            {badge && (
+              <p
+                className={cn(
+                  "mb-2 text-sm font-medium tracking-[0.3em] text-white/60 uppercase",
+                  classNames.header?.badge
+                )}
+              >
+                {badge}
+              </p>
+            )}
+            <h2
+              className={cn(
+                "font-display text-4xl font-bold text-white md:text-5xl",
+                classNames.header?.title
+              )}
+            >
+              {title}
             </h2>
           </div>
           <div className="flex items-center gap-2">
@@ -407,7 +446,7 @@ export function Features7() {
               onClick={() => setSelectedDay(Math.max(0, selectedDay - 1))}
               disabled={selectedDay === 0}
             >
-              <ChevronLeft className="h-4 w-4" />
+              <DynamicIcon name="ChevronLeft" className="h-4 w-4" />
             </Button>
             <Button
               variant="outline"
@@ -416,7 +455,7 @@ export function Features7() {
               onClick={() => setSelectedDay(Math.min(6, selectedDay + 1))}
               disabled={selectedDay === 6}
             >
-              <ChevronRight className="h-4 w-4" />
+              <DynamicIcon name="ChevronRight" className="h-4 w-4" />
             </Button>
           </div>
         </div>
@@ -443,11 +482,14 @@ export function Features7() {
         </div>
 
         {/* Schedule List */}
-        <div className="space-y-3">
+        <div className={cn("space-y-3", classNames.grid)}>
           {weekSchedule[selectedDay].classes.map((classItem) => (
             <div
               key={classItem.id}
-              className="group flex flex-col gap-4 rounded-xl bg-white/5 p-4 transition-colors hover:bg-white/10 md:flex-row md:items-center md:justify-between"
+              className={cn(
+                "group flex flex-col gap-4 rounded-xl bg-white/5 p-4 transition-colors hover:bg-white/10 md:flex-row md:items-center md:justify-between",
+                classNames.feature?.root
+              )}
             >
               <div className="flex items-center gap-4">
                 {/* Intensity dot */}
@@ -467,16 +509,26 @@ export function Features7() {
 
                 {/* Class info */}
                 <div>
-                  <p className="text-lg font-semibold text-white">
+                  <p
+                    className={cn(
+                      "text-lg font-semibold text-white",
+                      classNames.feature?.title
+                    )}
+                  >
                     {classItem.name}
                   </p>
-                  <div className="flex items-center gap-3 text-sm text-white/60">
+                  <div
+                    className={cn(
+                      "flex items-center gap-3 text-sm text-white/60",
+                      classNames.feature?.description
+                    )}
+                  >
                     <span className="flex items-center gap-1">
-                      <User className="h-3.5 w-3.5" />
+                      <DynamicIcon name="User" className="h-3.5 w-3.5" />
                       {classItem.instructor}
                     </span>
                     <span className="flex items-center gap-1">
-                      <Clock className="h-3.5 w-3.5" />
+                      <DynamicIcon name="Clock" className="h-3.5 w-3.5" />
                       {classItem.duration}
                     </span>
                   </div>

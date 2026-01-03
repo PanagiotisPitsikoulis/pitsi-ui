@@ -2,8 +2,8 @@
 
 import { useRef, useState } from "react"
 import Link from "next/link"
-import { ArrowLeft } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Input } from "@/registry/new-york-v4/ui/input"
@@ -55,7 +55,7 @@ export function Auth5() {
           href="#"
           className="text-muted-foreground hover:text-foreground mb-8 inline-flex items-center text-sm"
         >
-          <ArrowLeft className="mr-2 h-4 w-4" />
+          <DynamicIcon name="ArrowLeft" className="mr-2 h-4 w-4" />
           Back
         </Link>
 

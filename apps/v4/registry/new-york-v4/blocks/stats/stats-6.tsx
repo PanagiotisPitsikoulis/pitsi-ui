@@ -1,7 +1,6 @@
 "use client"
 
-import { ArrowDown, ArrowUp } from "lucide-react"
-
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 
 interface StatsBlockProps {
@@ -113,7 +112,7 @@ export function Stats6({ content = {}, classNames = {} }: StatsBlockProps) {
 
                   {/* Arrow */}
                   <div className="text-primary">
-                    <ArrowUp className="h-6 w-6" />
+                    <DynamicIcon name="ArrowUp" className="h-6 w-6" />
                   </div>
 
                   {/* After */}
@@ -138,9 +137,9 @@ export function Stats6({ content = {}, classNames = {} }: StatsBlockProps) {
                 )}
               >
                 {stat.positive ? (
-                  <ArrowUp className="h-4 w-4" />
+                  <DynamicIcon name="ArrowUp" className="h-4 w-4" />
                 ) : (
-                  <ArrowDown className="h-4 w-4" />
+                  <DynamicIcon name="ArrowDown" className="h-4 w-4" />
                 )}
                 <span className="text-sm font-semibold">
                   {stat.improvement}

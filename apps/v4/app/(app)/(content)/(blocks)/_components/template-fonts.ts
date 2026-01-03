@@ -13,32 +13,38 @@ export interface TemplateFonts {
 // Font Presets
 // ============================================================================
 
-export type FontPreset = "modern" | "elegant" | "classic" | "playful"
+export type FontPreset = "modern" | "elegant" | "classic" | "playful" | "futuristic"
 
 export const fontPresets: Record<FontPreset, TemplateFonts> = {
   modern: {
-    display: "var(--font-display), Poppins, sans-serif",
-    body: "var(--font-sans), Inter, sans-serif",
+    display: "var(--font-display)",
+    body: "var(--font-sans)",
     displayWeight: "700",
     bodyWeight: "400",
   },
   elegant: {
-    display: "var(--font-fraunces), Fraunces, serif",
-    body: "var(--font-dm-sans), DM Sans, sans-serif",
+    display: "var(--font-fraunces)",
+    body: "var(--font-dm-sans)",
     displayWeight: "600",
     bodyWeight: "400",
   },
   classic: {
-    display: "var(--font-playfair), Playfair Display, serif",
-    body: "var(--font-source-sans), Source Sans 3, sans-serif",
+    display: "var(--font-playfair)",
+    body: "var(--font-source-sans)",
     displayWeight: "700",
     bodyWeight: "400",
   },
   playful: {
-    display: "var(--font-space-grotesk), Space Grotesk, sans-serif",
-    body: "var(--font-nunito), Nunito, sans-serif",
+    display: "var(--font-space-grotesk)",
+    body: "var(--font-nunito)",
     displayWeight: "700",
     bodyWeight: "400",
+  },
+  futuristic: {
+    display: "var(--font-orbitron)",
+    body: "var(--font-rajdhani)",
+    displayWeight: "700",
+    bodyWeight: "500",
   },
 }
 
@@ -53,7 +59,7 @@ export const templateFonts: Record<string, TemplateFonts> = {
   "service-plants": fontPresets.elegant,
   "service-travel": fontPresets.modern,
   "service-boat": fontPresets.classic,
-  "service-fitness": fontPresets.modern,
+  "service-fitness": fontPresets.futuristic,
 
   // Application templates
   "app-gym-tracker": fontPresets.modern,

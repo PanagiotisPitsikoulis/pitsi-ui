@@ -1,7 +1,6 @@
 "use client"
 
-import { Bell, Gift, Mail, Shield } from "lucide-react"
-
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Input } from "@/registry/new-york-v4/ui/input"
@@ -26,9 +25,9 @@ const newsletter3Defaults = {
   placeholder: "Enter your email",
   buttonLabel: "Subscribe",
   benefits: [
-    { icon: Bell, text: "Weekly insights" },
-    { icon: Gift, text: "Exclusive offers" },
-    { icon: Shield, text: "No spam, ever" },
+    { icon: "Bell", text: "Weekly insights" },
+    { icon: "Gift", text: "Exclusive offers" },
+    { icon: "Shield", text: "No spam, ever" },
   ],
 }
 
@@ -70,7 +69,10 @@ export function Newsletter3({
           <div className="mb-8 flex flex-wrap items-center justify-center gap-6">
             {newsletter3Defaults.benefits.map((benefit, i) => (
               <div key={i} className="flex items-center gap-2">
-                <benefit.icon className="text-primary h-5 w-5" />
+                <DynamicIcon
+                  name={benefit.icon}
+                  className="text-primary h-5 w-5"
+                />
                 <span className="text-foreground text-sm">{benefit.text}</span>
               </div>
             ))}

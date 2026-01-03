@@ -26,7 +26,7 @@ const newsletter4Defaults = {
   description:
     "Join our newsletter and get access to exclusive content, early releases, and special discounts.",
   image: {
-    src: "/placeholders/blocks/service-plants/1.webp",
+    src: "/elements/landscape/plants/1.webp",
     alt: "Newsletter",
   },
   placeholder: "Enter your email address",

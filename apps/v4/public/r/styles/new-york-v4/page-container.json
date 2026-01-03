@@ -1,0 +1,18 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "page-container",
+  "type": "registry:ui",
+  "description": "Container wrapper with configurable max-width, padding, and spacing for page layouts.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/ui/page-container.tsx",
+      "content": "import { cn } from \"@/lib/utils\"\n\nconst maxWidthMap = {\n  sm: \"max-w-sm\",\n  md: \"max-w-md\",\n  lg: \"max-w-lg\",\n  xl: \"max-w-xl\",\n  \"2xl\": \"max-w-2xl\",\n  \"3xl\": \"max-w-3xl\",\n  \"4xl\": \"max-w-4xl\",\n  \"5xl\": \"max-w-5xl\",\n  \"6xl\": \"max-w-6xl\",\n  \"7xl\": \"max-w-7xl\",\n  full: \"max-w-full\",\n} as const\n\ninterface PageContainerProps {\n  children: React.ReactNode\n  maxWidth?: keyof typeof maxWidthMap\n  padding?: \"none\" | \"sm\" | \"md\" | \"lg\"\n  spacing?: \"none\" | \"sm\" | \"md\" | \"lg\"\n  className?: string\n}\n\nexport function PageContainer({\n  children,\n  maxWidth = \"3xl\",\n  padding = \"md\",\n  spacing = \"md\",\n  className,\n}: PageContainerProps) {\n  const paddingClasses = {\n    none: \"\",\n    sm: \"p-4\",\n    md: \"p-6\",\n    lg: \"p-8\",\n  }\n\n  const spacingClasses = {\n    none: \"\",\n    sm: \"space-y-4\",\n    md: \"space-y-6\",\n    lg: \"space-y-8\",\n  }\n\n  return (\n    <div className={paddingClasses[padding]}>\n      <div\n        className={cn(\n          \"mx-auto\",\n          maxWidthMap[maxWidth],\n          spacingClasses[spacing],\n          className\n        )}\n      >\n        {children}\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "sectorial"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

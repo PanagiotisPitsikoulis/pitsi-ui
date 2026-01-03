@@ -1,0 +1,21 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "fuzzy-text-demo",
+  "type": "registry:example",
+  "description": "Fuzzy Text animation demo",
+  "registryDependencies": [
+    "fuzzy-text"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/fuzzy-text-demo.tsx",
+      "content": "import FuzzyText from \"@/registry/new-york-v4/animations/fuzzy-text/fuzzy-text\"\n\nexport default function FuzzyTextDemo() {\n  return (\n    <div className=\"flex h-full w-full items-center justify-center bg-black\">\n      <FuzzyText>FUZZY</FuzzyText>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

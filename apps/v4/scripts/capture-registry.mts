@@ -446,8 +446,8 @@ async function captureItemWithPage(
       await injectPrefetch(page, nextItem)
     }
 
-    // Extra 500ms delay for safety - ensure all images are fully rendered
-    await new Promise((resolve) => setTimeout(resolve, 500))
+    // Extra 2 second delay for safety - ensure all images and content are fully rendered
+    await new Promise((resolve) => setTimeout(resolve, 2000))
 
     // Take screenshot
     await page.screenshot({

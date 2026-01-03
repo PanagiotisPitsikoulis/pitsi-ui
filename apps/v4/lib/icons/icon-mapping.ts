@@ -112,6 +112,9 @@ import {
   // Code icons
   CodeIcon,
 
+  // Command icons
+  CommandIcon,
+
   // Compass icons
   Compass01Icon,
 
@@ -153,6 +156,9 @@ import {
 
   // Flame / Fire icons
   FireIcon,
+
+  // Gift icons
+  GiftIcon,
 
   // Folder icons
   Folder01Icon,
@@ -266,6 +272,9 @@ import {
   Moon01Icon,
   Sun01Icon,
 
+  // Menu icons
+  Menu01Icon,
+
   // More icons
   MoreHorizontalIcon,
   MoreVerticalIcon,
@@ -316,6 +325,9 @@ import {
 
   // Recycle icons
   RecycleIcon,
+
+  // Repeat icons
+  RepeatIcon,
 
   // Redo / Undo icons
   RedoIcon,
@@ -579,6 +591,9 @@ export const iconMapping = {
   // Code icons
   Code2: CodeIcon,
 
+  // Command icons
+  Command: CommandIcon,
+
   // Copy icons
   Copy: Copy01Icon,
   CopyIcon: Copy02Icon,
@@ -617,6 +632,9 @@ export const iconMapping = {
 
   // Flame / Fire icons
   Flame: FireIcon,
+
+  // Gift icons
+  Gift: GiftIcon,
 
   // Folder icons
   Folder: Folder01Icon,
@@ -741,6 +759,9 @@ export const iconMapping = {
   Moon: Moon01Icon,
   Sun: Sun01Icon,
 
+  // Menu icons
+  Menu: Menu01Icon,
+
   // More icons
   MoreHorizontal: MoreHorizontalIcon,
   MoreHorizontalIcon: MoreHorizontalIcon,
@@ -798,10 +819,15 @@ export const iconMapping = {
   // Recycle icons
   Recycle: RecycleIcon,
 
+  // Repeat icons
+  Repeat: RepeatIcon,
+  Repeat2: RepeatIcon,
+
   // Redo / Undo icons
   Redo2: RedoIcon,
 
   // Refresh / Rotate icons
+  RefreshCcw: RefreshIcon,
   RefreshCcwIcon: RefreshIcon,
   RotateCcw: RotateLeft01Icon,
   RotateCw: RotateClockwiseIcon,

@@ -2,9 +2,9 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { ArrowRight, Gift, X } from "lucide-react"
 
 import { type CtaBlockProps } from "@/lib/blocks/cta.types"
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Input } from "@/registry/new-york-v4/ui/input"
@@ -49,14 +49,14 @@ export function Cta6({ content = {}, classNames = {} }: CtaBlockProps) {
           className="absolute top-4 right-4 z-10"
           onClick={() => setIsOpen(false)}
         >
-          <X className="h-4 w-4" />
+          <DynamicIcon name="X" className="h-4 w-4" />
           <span className="sr-only">Close</span>
         </Button>
 
         {/* Header with gradient */}
         <div className="bg-gradient-to-br from-rose-500 to-pink-600 px-8 py-10 text-center text-white">
           <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white/20">
-            <Gift className="h-8 w-8" />
+            <DynamicIcon name="Gift" className="h-8 w-8" />
           </div>
           <div className="mb-2 text-sm font-medium tracking-wide uppercase opacity-90">
             {cta6Defaults.badge}
@@ -92,7 +92,10 @@ export function Cta6({ content = {}, classNames = {} }: CtaBlockProps) {
               <Button className="group h-12 w-full" asChild>
                 <Link href={primaryCta.href}>
                   {primaryCta.label}
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <DynamicIcon
+                    name="ArrowRight"
+                    className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
+                  />
                 </Link>
               </Button>
             )}

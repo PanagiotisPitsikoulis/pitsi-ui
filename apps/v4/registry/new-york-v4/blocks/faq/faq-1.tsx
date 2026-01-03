@@ -56,8 +56,7 @@ export function Faq1({ content = {}, classNames = {} }: FaqBlockProps) {
       <div
         className="pointer-events-none absolute top-0 -left-32 h-[500px] w-[500px] -rotate-12 opacity-50 select-none"
         style={{
-          backgroundImage:
-            "url('/placeholders/blocks/service-plants/assets/decoration-bg-1.svg')",
+          backgroundImage: "url('/elements/decoration-bg/plants/1.svg')",
           backgroundSize: "contain",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -68,8 +67,7 @@ export function Faq1({ content = {}, classNames = {} }: FaqBlockProps) {
       <div
         className="pointer-events-none absolute top-48 -right-32 h-[500px] w-[500px] rotate-12 opacity-50 select-none"
         style={{
-          backgroundImage:
-            "url('/placeholders/blocks/service-plants/assets/decoration-bg-2.svg')",
+          backgroundImage: "url('/elements/decoration-bg/plants/2.svg')",
           backgroundSize: "contain",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",

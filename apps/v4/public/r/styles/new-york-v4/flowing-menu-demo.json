@@ -1,0 +1,21 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "flowing-menu-demo",
+  "type": "registry:example",
+  "description": "Flowing Menu animation demo",
+  "registryDependencies": [
+    "flowing-menu"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/flowing-menu-demo.tsx",
+      "content": "import FlowingMenu from \"@/registry/new-york-v4/animations/flowing-menu/flowing-menu\"\n\nconst menuItems = [\n  { link: \"#\", text: \"Home\", image: \"https://picsum.photos/600/400?random=1\" },\n  { link: \"#\", text: \"About\", image: \"https://picsum.photos/600/400?random=2\" },\n  { link: \"#\", text: \"Work\", image: \"https://picsum.photos/600/400?random=3\" },\n  {\n    link: \"#\",\n    text: \"Contact\",\n    image: \"https://picsum.photos/600/400?random=4\",\n  },\n]\n\nexport default function FlowingMenuDemo() {\n  return (\n    <div className=\"h-full w-full\">\n      <FlowingMenu items={menuItems} />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

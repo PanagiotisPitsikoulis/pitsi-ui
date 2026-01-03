@@ -20,7 +20,7 @@ import {
 const pricing1Defaults = {
   ...pricingDefaults,
   decorationImage: {
-    src: "/placeholders/blocks/service-plants/assets/decoration-small-2.svg",
+    src: "/elements/decoration-small/plants/2.svg",
     alt: "",
   },
 }

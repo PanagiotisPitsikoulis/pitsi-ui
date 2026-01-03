@@ -1,8 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowLeft } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Input } from "@/registry/new-york-v4/ui/input"
 import { Label } from "@/registry/new-york-v4/ui/label"
@@ -16,7 +16,7 @@ export function Auth3() {
           href="#"
           className="text-muted-foreground hover:text-foreground mb-8 inline-flex items-center text-sm"
         >
-          <ArrowLeft className="mr-2 h-4 w-4" />
+          <DynamicIcon name="ArrowLeft" className="mr-2 h-4 w-4" />
           Back to login
         </Link>
 

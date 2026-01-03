@@ -28,7 +28,7 @@ export function Hero1({ content = {}, classNames = {} }: HeroBlockProps) {
     backgroundImage = heroDefaults.backgroundImage,
     decorationImages = [
       {
-        src: "/placeholders/blocks/service-plants/assets/item-3.webp",
+        src: "/elements/subject/plants/item-3.webp",
         alt: "Plant decoration",
       },
     ],

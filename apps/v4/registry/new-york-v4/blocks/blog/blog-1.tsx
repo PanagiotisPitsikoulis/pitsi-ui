@@ -17,7 +17,7 @@ const blockDefaults = {
       excerpt:
         "Everything you need to know about keeping your Monstera deliciosa happy and thriving.",
       image: {
-        src: "/placeholders/blocks/service-plants/2.webp",
+        src: "/elements/landscape/plants/2.webp",
         alt: "Monstera Care",
       },
       category: "Care Guide",
@@ -33,7 +33,7 @@ const blockDefaults = {
       excerpt:
         "Transform your workspace with these hardy plants that thrive without direct sunlight.",
       image: {
-        src: "/placeholders/blocks/service-plants/3.webp",
+        src: "/elements/landscape/plants/3.webp",
         alt: "Office Plants",
       },
       category: "Plant Selection",
@@ -49,7 +49,7 @@ const blockDefaults = {
       excerpt:
         "Learn the art of plant propagation and grow your collection for free.",
       image: {
-        src: "/placeholders/blocks/service-plants/4.webp",
+        src: "/elements/landscape/plants/4.webp",
         alt: "Plant Propagation",
       },
       category: "Tips & Tricks",

@@ -1309,13 +1309,13 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [], scale = 1.0 }) => {
 
           <div
             onClick={handleButtonClick}
-            className={`absolute left-1/2 z-10 grid h-[60px] w-[60px] cursor-pointer place-items-center rounded-full border-[5px] border-black bg-[#00ffff] transition-all ease-[cubic-bezier(0.25,0.1,0.25,1.0)] ${
+            className={`border-foreground bg-primary absolute left-1/2 z-10 grid h-[60px] w-[60px] cursor-pointer place-items-center rounded-full border-[5px] transition-all ease-[cubic-bezier(0.25,0.1,0.25,1.0)] ${
               isMoving
                 ? "pointer-events-none bottom-[-80px] -translate-x-1/2 scale-0 opacity-0 duration-[100ms]"
                 : "pointer-events-auto bottom-[3.8em] -translate-x-1/2 scale-100 opacity-100 duration-[500ms]"
             } `}
           >
-            <p className="relative top-[2px] text-[26px] text-[#060010] select-none">
+            <p className="text-primary-foreground relative top-[2px] text-[26px] select-none">
               &#x2197;
             </p>
           </div>

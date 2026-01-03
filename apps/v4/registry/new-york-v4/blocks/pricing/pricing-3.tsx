@@ -1,8 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { Check, X } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
@@ -163,9 +163,15 @@ export function Pricing3({ content = {}, classNames = {} }: PricingBlockProps) {
                     >
                       {typeof value === "boolean" ? (
                         value ? (
-                          <Check className="text-primary mx-auto h-5 w-5" />
+                          <DynamicIcon
+                            name="Check"
+                            className="text-primary mx-auto h-5 w-5"
+                          />
                         ) : (
-                          <X className="text-muted-foreground/50 mx-auto h-5 w-5" />
+                          <DynamicIcon
+                            name="X"
+                            className="text-muted-foreground/50 mx-auto h-5 w-5"
+                          />
                         )
                       ) : (
                         <span className="text-foreground">{value}</span>

@@ -25,42 +25,42 @@ const gallery4Defaults = {
   categories: ["All", "Branding", "Web Design", "Photography", "Illustration"],
   images: [
     {
-      src: "/placeholders/blocks/service-plants/1.webp",
+      src: "/elements/landscape/plants/1.webp",
       alt: "Project 1",
       category: "Branding",
     },
     {
-      src: "/placeholders/blocks/service-plants/2.webp",
+      src: "/elements/landscape/plants/2.webp",
       alt: "Project 2",
       category: "Web Design",
     },
     {
-      src: "/placeholders/blocks/service-plants/3.webp",
+      src: "/elements/landscape/plants/3.webp",
       alt: "Project 3",
       category: "Photography",
     },
     {
-      src: "/placeholders/blocks/service-plants/4.webp",
+      src: "/elements/landscape/plants/4.webp",
       alt: "Project 4",
       category: "Illustration",
     },
     {
-      src: "/placeholders/blocks/service-plants/5.webp",
+      src: "/elements/landscape/plants/5.webp",
       alt: "Project 5",
       category: "Branding",
     },
     {
-      src: "/placeholders/blocks/service-plants/1.webp",
+      src: "/elements/landscape/plants/1.webp",
       alt: "Project 6",
       category: "Web Design",
     },
     {
-      src: "/placeholders/blocks/service-plants/2.webp",
+      src: "/elements/landscape/plants/2.webp",
       alt: "Project 7",
       category: "Photography",
     },
     {
-      src: "/placeholders/blocks/service-plants/3.webp",
+      src: "/elements/landscape/plants/3.webp",
       alt: "Project 8",
       category: "Branding",
     },

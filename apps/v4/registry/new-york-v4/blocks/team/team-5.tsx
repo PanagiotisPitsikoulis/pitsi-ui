@@ -3,8 +3,8 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { ChevronLeft, ChevronRight } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
@@ -152,13 +152,13 @@ export function Team5({ content = {}, classNames = {} }: TeamBlockProps) {
               {/* Navigation */}
               <div className="mt-8 flex items-center gap-4">
                 <Button variant="outline" size="icon" onClick={prevSlide}>
-                  <ChevronLeft className="h-5 w-5" />
+                  <DynamicIcon name="ChevronLeft" className="h-5 w-5" />
                 </Button>
                 <span className="text-muted-foreground text-sm">
                   {currentIndex + 1} / {members.length}
                 </span>
                 <Button variant="outline" size="icon" onClick={nextSlide}>
-                  <ChevronRight className="h-5 w-5" />
+                  <DynamicIcon name="ChevronRight" className="h-5 w-5" />
                 </Button>
               </div>
             </div>

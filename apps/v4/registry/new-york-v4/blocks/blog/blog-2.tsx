@@ -2,8 +2,8 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Clock } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
@@ -40,7 +40,7 @@ const blog2Defaults = {
     title: "The Future of Web Development: What to Expect in 2025",
     excerpt:
       "Explore the emerging trends and technologies that will shape the future of web development.",
-    image: "/placeholders/blocks/service-plants/1.webp",
+    image: "/elements/landscape/plants/1.webp",
     category: "Technology",
     readTime: "8 min read",
     href: "#",
@@ -49,7 +49,7 @@ const blog2Defaults = {
     {
       title: "Building Scalable APIs",
       excerpt: "Best practices for API design.",
-      image: "/placeholders/blocks/service-plants/2.webp",
+      image: "/elements/landscape/plants/2.webp",
       category: "Development",
       readTime: "5 min read",
       href: "#",
@@ -57,7 +57,7 @@ const blog2Defaults = {
     {
       title: "Design Systems 101",
       excerpt: "Creating consistent UI at scale.",
-      image: "/placeholders/blocks/service-plants/3.webp",
+      image: "/elements/landscape/plants/3.webp",
       category: "Design",
       readTime: "6 min read",
       href: "#",
@@ -65,7 +65,7 @@ const blog2Defaults = {
     {
       title: "DevOps Best Practices",
       excerpt: "Streamline your deployment pipeline.",
-      image: "/placeholders/blocks/service-plants/4.webp",
+      image: "/elements/landscape/plants/4.webp",
       category: "DevOps",
       readTime: "7 min read",
       href: "#",
@@ -97,7 +97,10 @@ export function Blog2({ content = {}, classNames = {} }: BlogBlockProps) {
           <Button variant="ghost" className="group" asChild>
             <Link href="#">
               View All{" "}
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <DynamicIcon
+                name="ArrowRight"
+                className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
+              />
             </Link>
           </Button>
         </div>
@@ -118,7 +121,7 @@ export function Blog2({ content = {}, classNames = {} }: BlogBlockProps) {
             </div>
             <div className="mt-4">
               <div className="text-muted-foreground mb-2 flex items-center gap-2 text-sm">
-                <Clock className="h-4 w-4" />
+                <DynamicIcon name="Clock" className="h-4 w-4" />
                 {featured.readTime}
               </div>
               <h3 className="text-foreground mb-2 text-xl font-bold group-hover:underline">
@@ -155,7 +158,7 @@ export function Blog2({ content = {}, classNames = {} }: BlogBlockProps) {
                     {post.excerpt}
                   </p>
                   <div className="text-muted-foreground mt-2 flex items-center gap-1 text-xs">
-                    <Clock className="h-3 w-3" />
+                    <DynamicIcon name="Clock" className="h-3 w-3" />
                     {post.readTime}
                   </div>
                 </div>

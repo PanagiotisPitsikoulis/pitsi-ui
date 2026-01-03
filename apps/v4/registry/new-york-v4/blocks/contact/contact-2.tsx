@@ -1,7 +1,6 @@
 "use client"
 
-import { Clock, Mail, MapPin, Phone } from "lucide-react"
-
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Input } from "@/registry/new-york-v4/ui/input"
@@ -95,7 +94,10 @@ export function Contact2({ content = {}, classNames = {} }: ContactBlockProps) {
             {/* Map Placeholder */}
             <div className="bg-muted flex aspect-video items-center justify-center rounded-xl">
               <div className="text-center">
-                <MapPin className="text-muted-foreground mx-auto mb-2 h-12 w-12" />
+                <DynamicIcon
+                  name="MapPin"
+                  className="text-muted-foreground mx-auto mb-2 h-12 w-12"
+                />
                 <p className="text-muted-foreground text-sm">
                   Map integration placeholder
                 </p>
@@ -110,13 +112,19 @@ export function Contact2({ content = {}, classNames = {} }: ContactBlockProps) {
                 </h4>
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
-                    <MapPin className="text-muted-foreground mt-0.5 h-5 w-5 shrink-0" />
+                    <DynamicIcon
+                      name="MapPin"
+                      className="text-muted-foreground mt-0.5 h-5 w-5 shrink-0"
+                    />
                     <span className="text-muted-foreground text-sm">
                       {location.address}
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Phone className="text-muted-foreground h-5 w-5 shrink-0" />
+                    <DynamicIcon
+                      name="Phone"
+                      className="text-muted-foreground h-5 w-5 shrink-0"
+                    />
                     <a
                       href={`tel:${location.phone}`}
                       className="text-foreground text-sm hover:underline"
@@ -125,7 +133,10 @@ export function Contact2({ content = {}, classNames = {} }: ContactBlockProps) {
                     </a>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Mail className="text-muted-foreground h-5 w-5 shrink-0" />
+                    <DynamicIcon
+                      name="Mail"
+                      className="text-muted-foreground h-5 w-5 shrink-0"
+                    />
                     <a
                       href={`mailto:${location.email}`}
                       className="text-foreground text-sm hover:underline"
@@ -134,7 +145,10 @@ export function Contact2({ content = {}, classNames = {} }: ContactBlockProps) {
                     </a>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Clock className="text-muted-foreground h-5 w-5 shrink-0" />
+                    <DynamicIcon
+                      name="Clock"
+                      className="text-muted-foreground h-5 w-5 shrink-0"
+                    />
                     <span className="text-muted-foreground text-sm">
                       {location.hours}
                     </span>

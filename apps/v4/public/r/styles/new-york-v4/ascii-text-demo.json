@@ -1,0 +1,21 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "ascii-text-demo",
+  "type": "registry:example",
+  "description": "ASCII Text animation demo",
+  "registryDependencies": [
+    "ascii-text"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/ascii-text-demo.tsx",
+      "content": "import ASCIIText from \"@/registry/new-york-v4/animations/ascii-text/ascii-text\"\n\nexport default function ASCIITextDemo() {\n  return (\n    <div className=\"h-full w-full\">\n      <ASCIIText text=\"PITSI UI\" />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

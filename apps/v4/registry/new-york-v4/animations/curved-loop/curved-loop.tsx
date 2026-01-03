@@ -158,7 +158,10 @@ const CurvedLoop: FC<CurvedLoopProps> = ({
           />
         </defs>
         {ready && (
-          <text xmlSpace="preserve" className={`fill-white ${className ?? ""}`}>
+          <text
+            xmlSpace="preserve"
+            className={`fill-foreground ${className ?? ""}`}
+          >
             <textPath
               ref={textPathRef}
               href={`#${pathId}`}

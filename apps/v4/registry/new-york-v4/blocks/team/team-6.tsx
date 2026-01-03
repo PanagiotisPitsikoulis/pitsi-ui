@@ -32,7 +32,7 @@ const team6Defaults = {
     title: "Our Story",
     content:
       "Founded in 2020, we started with a simple mission: to help businesses succeed in the digital age. What began as a small team of passionate individuals has grown into a global company serving thousands of customers. Our journey has been defined by our commitment to innovation, quality, and customer success. We believe in building lasting relationships and creating products that truly make a difference.",
-    image: "/placeholders/blocks/service-plants/1.webp",
+    image: "/elements/landscape/plants/1.webp",
   },
   values: [
     {

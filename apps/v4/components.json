@@ -27,6 +27,7 @@
       "headers": {
         "Authorization": "Bearer sk_live_2_XgKZlwVOgir9v6Wxvw9muWndYYJ2EF"
       }
-    }
+    },
+    "@react-bits": "https://reactbits.dev/r/{name}.json"
   }
 }

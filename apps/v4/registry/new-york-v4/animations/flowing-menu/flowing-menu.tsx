@@ -31,11 +31,11 @@ interface MenuItemProps extends MenuItemData {
 const FlowingMenu: React.FC<FlowingMenuProps> = ({
   items = [],
   speed = 15,
-  textColor = "#fff",
-  bgColor = "#060010",
-  marqueeBgColor = "#fff",
-  marqueeTextColor = "#060010",
-  borderColor = "#fff",
+  textColor = "hsl(var(--foreground))",
+  bgColor = "hsl(var(--background))",
+  marqueeBgColor = "hsl(var(--foreground))",
+  marqueeTextColor = "hsl(var(--background))",
+  borderColor = "hsl(var(--foreground))",
 }) => {
   return (
     <div

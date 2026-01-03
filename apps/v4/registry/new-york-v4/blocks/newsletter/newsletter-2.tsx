@@ -1,7 +1,6 @@
 "use client"
 
-import { ArrowRight } from "lucide-react"
-
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Input } from "@/registry/new-york-v4/ui/input"
@@ -47,7 +46,10 @@ export function Newsletter2({
             />
             <Button className="group h-11 shrink-0">
               {buttonLabel}
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <DynamicIcon
+                name="ArrowRight"
+                className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
+              />
             </Button>
           </div>
         </div>

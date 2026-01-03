@@ -1,0 +1,21 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "decay-card-demo",
+  "type": "registry:example",
+  "description": "Decay Card animation demo",
+  "registryDependencies": [
+    "decay-card"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/decay-card-demo.tsx",
+      "content": "import DecayCard from \"@/registry/new-york-v4/animations/decay-card/decay-card\"\n\nexport default function DecayCardDemo() {\n  return (\n    <div className=\"flex h-full w-full items-center justify-center\">\n      <DecayCard width={300} height={400} />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

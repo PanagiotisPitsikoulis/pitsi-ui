@@ -1,0 +1,21 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "iridescence-demo",
+  "type": "registry:example",
+  "description": "Iridescence animation demo",
+  "registryDependencies": [
+    "iridescence"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/iridescence-demo.tsx",
+      "content": "import Iridescence from \"@/registry/new-york-v4/animations/iridescence/iridescence\"\n\nexport default function IridescenceDemo() {\n  return (\n    <div className=\"h-full w-full\">\n      <Iridescence speed={1.0} mouseReact={true} />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

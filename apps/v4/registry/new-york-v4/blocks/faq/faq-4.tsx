@@ -1,8 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { ChevronDown, HelpCircle } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 
 interface FaqBlockProps {
@@ -106,12 +106,13 @@ export function Faq4({ content = {}, classNames = {} }: FaqBlockProps) {
                       : "bg-muted text-muted-foreground"
                   )}
                 >
-                  <HelpCircle className="h-5 w-5" />
+                  <DynamicIcon name="HelpCircle" className="h-5 w-5" />
                 </div>
                 <span className="text-foreground flex-1 font-medium">
                   {q.question}
                 </span>
-                <ChevronDown
+                <DynamicIcon
+                  name="ChevronDown"
                   className={cn(
                     "text-muted-foreground h-5 w-5 shrink-0 transition-transform",
                     openIndex === i && "rotate-180"

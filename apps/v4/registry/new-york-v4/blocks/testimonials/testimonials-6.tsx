@@ -2,8 +2,8 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, TrendingUp } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
@@ -171,7 +171,7 @@ export function Testimonials6({
                 {study.metrics.map((metric, j) => (
                   <div key={j} className="text-center">
                     <div className="text-primary flex items-center justify-center gap-1">
-                      <TrendingUp className="h-3 w-3" />
+                      <DynamicIcon name="TrendingUp" className="h-3 w-3" />
                       <span className="text-lg font-bold">{metric.value}</span>
                     </div>
                     <p className="text-muted-foreground text-xs">
@@ -185,7 +185,10 @@ export function Testimonials6({
               <Button variant="outline" className="group/btn w-full" asChild>
                 <Link href={study.href}>
                   Read full story
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                  <DynamicIcon
+                    name="ArrowRight"
+                    className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1"
+                  />
                 </Link>
               </Button>
             </div>

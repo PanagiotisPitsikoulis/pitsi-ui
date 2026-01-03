@@ -16,7 +16,7 @@ import { Input } from "@/registry/new-york-v4/ui/input"
 const footer1Defaults = {
   logo: {
     image: {
-      src: "/placeholders/blocks/service-plants/assets/logo.svg",
+      src: "/elements/decoration-small/plants/logo.svg",
       alt: "Green Therapy",
       width: 40,
       height: 40,

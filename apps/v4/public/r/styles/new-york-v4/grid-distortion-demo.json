@@ -1,0 +1,21 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "grid-distortion-demo",
+  "type": "registry:example",
+  "description": "Grid Distortion animation demo",
+  "registryDependencies": [
+    "grid-distortion"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/grid-distortion-demo.tsx",
+      "content": "import GridDistortion from \"@/registry/new-york-v4/animations/grid-distortion/grid-distortion\"\n\nexport default function GridDistortionDemo() {\n  return (\n    <div className=\"h-full w-full\">\n      <GridDistortion imageSrc=\"https://picsum.photos/600/400\" grid={15} />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

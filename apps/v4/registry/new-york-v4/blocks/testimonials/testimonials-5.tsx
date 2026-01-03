@@ -1,8 +1,8 @@
 "use client"
 
 import Image from "next/image"
-import { Star } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 
 interface TestimonialsBlockProps {
@@ -95,8 +95,9 @@ function StarRating({ rating }: { rating: number }) {
   return (
     <div className="flex gap-0.5">
       {[...Array(5)].map((_, i) => (
-        <Star
+        <DynamicIcon
           key={i}
+          name="Star"
           className={cn(
             "h-4 w-4",
             i < rating ? "fill-yellow-400 text-yellow-400" : "text-gray-300"
@@ -140,8 +141,9 @@ export function Testimonials5({
             <div className="flex flex-col items-start">
               <div className="flex gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star
+                  <DynamicIcon
                     key={i}
+                    name="Star"
                     className="h-5 w-5 fill-yellow-400 text-yellow-400"
                   />
                 ))}
@@ -161,7 +163,10 @@ export function Testimonials5({
                 <span className="text-foreground text-sm font-semibold">
                   {platform.rating}
                 </span>
-                <Star className="h-3.5 w-3.5 fill-yellow-400 text-yellow-400" />
+                <DynamicIcon
+                  name="Star"
+                  className="h-3.5 w-3.5 fill-yellow-400 text-yellow-400"
+                />
               </div>
             ))}
           </div>

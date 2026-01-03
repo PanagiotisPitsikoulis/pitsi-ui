@@ -1,0 +1,21 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "circular-gallery-demo",
+  "type": "registry:example",
+  "description": "Circular Gallery animation demo",
+  "registryDependencies": [
+    "circular-gallery"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/circular-gallery-demo.tsx",
+      "content": "import CircularGallery from \"@/registry/new-york-v4/animations/circular-gallery/circular-gallery\"\n\nexport default function CircularGalleryDemo() {\n  return (\n    <div className=\"h-full w-full\">\n      <CircularGallery />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

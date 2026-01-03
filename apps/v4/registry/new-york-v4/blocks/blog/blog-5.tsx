@@ -1,8 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowRight, Calendar } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 
 interface BlogBlockProps {
@@ -94,7 +94,7 @@ export function Blog5({ content = {}, classNames = {} }: BlogBlockProps) {
               className="border-border bg-card group rounded-xl border p-6 transition-shadow hover:shadow-lg"
             >
               <div className="text-muted-foreground mb-3 flex items-center gap-2 text-sm">
-                <Calendar className="h-4 w-4" />
+                <DynamicIcon name="Calendar" className="h-4 w-4" />
                 {post.date}
               </div>
               <h3 className="text-foreground mb-2 text-lg font-bold group-hover:underline">
@@ -105,7 +105,10 @@ export function Blog5({ content = {}, classNames = {} }: BlogBlockProps) {
               </p>
               <span className="text-primary inline-flex items-center text-sm font-medium">
                 Read more{" "}
-                <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <DynamicIcon
+                  name="ArrowRight"
+                  className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"
+                />
               </span>
             </Link>
           ))}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "infinite-menu-demo",
+  "type": "registry:example",
+  "description": "Infinite Menu animation demo",
+  "registryDependencies": [
+    "infinite-menu"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/infinite-menu-demo.tsx",
+      "content": "import InfiniteMenu from \"@/registry/new-york-v4/animations/infinite-menu/infinite-menu\"\n\nexport default function InfiniteMenuDemo() {\n  return (\n    <div className=\"h-full w-full\">\n      <InfiniteMenu />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

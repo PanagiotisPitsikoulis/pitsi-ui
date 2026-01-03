@@ -2,8 +2,8 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Heart, ShoppingCart, Star } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
@@ -36,7 +36,7 @@ const products2Defaults = {
       name: "Wireless Headphones",
       price: 199,
       originalPrice: 249,
-      image: "/placeholders/blocks/service-plants/1.webp",
+      image: "/elements/landscape/plants/1.webp",
       rating: 4.8,
       reviews: 124,
       href: "#",
@@ -44,7 +44,7 @@ const products2Defaults = {
     {
       name: "Smart Watch Pro",
       price: 349,
-      image: "/placeholders/blocks/service-plants/2.webp",
+      image: "/elements/landscape/plants/2.webp",
       rating: 4.9,
       reviews: 89,
       href: "#",
@@ -53,7 +53,7 @@ const products2Defaults = {
       name: "Portable Speaker",
       price: 79,
       originalPrice: 99,
-      image: "/placeholders/blocks/service-plants/3.webp",
+      image: "/elements/landscape/plants/3.webp",
       rating: 4.6,
       reviews: 256,
       href: "#",
@@ -61,7 +61,7 @@ const products2Defaults = {
     {
       name: "Laptop Stand",
       price: 59,
-      image: "/placeholders/blocks/service-plants/4.webp",
+      image: "/elements/landscape/plants/4.webp",
       rating: 4.7,
       reviews: 178,
       href: "#",
@@ -132,7 +132,7 @@ export function Products2({
                   size="icon"
                   className="absolute top-3 right-3 opacity-0 transition-opacity group-hover:opacity-100"
                 >
-                  <Heart className="h-4 w-4" />
+                  <DynamicIcon name="Heart" className="h-4 w-4" />
                 </Button>
               </Link>
 
@@ -140,7 +140,10 @@ export function Products2({
               <div className="p-4">
                 {/* Rating */}
                 <div className="mb-2 flex items-center gap-1">
-                  <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                  <DynamicIcon
+                    name="Star"
+                    className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                  />
                   <span className="text-foreground text-sm font-medium">
                     {product.rating}
                   </span>
@@ -170,7 +173,7 @@ export function Products2({
 
                 {/* Add to Cart */}
                 <Button className="mt-4 w-full" size="sm">
-                  <ShoppingCart className="mr-2 h-4 w-4" />
+                  <DynamicIcon name="ShoppingCart" className="mr-2 h-4 w-4" />
                   Add to Cart
                 </Button>
               </div>

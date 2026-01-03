@@ -3,8 +3,8 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { ChevronDown, MessageCircle } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
@@ -53,9 +53,9 @@ const faq6Defaults = {
   supportDescription:
     "Our support team is here to help you with anything you need.",
   supportTeam: [
-    { image: "/placeholders/blocks/service-plants/1.webp", name: "Sarah" },
-    { image: "/placeholders/blocks/service-plants/2.webp", name: "Mike" },
-    { image: "/placeholders/blocks/service-plants/3.webp", name: "Emma" },
+    { image: "/elements/landscape/plants/1.webp", name: "Sarah" },
+    { image: "/elements/landscape/plants/2.webp", name: "Mike" },
+    { image: "/elements/landscape/plants/3.webp", name: "Emma" },
   ],
   supportCta: { label: "Contact Support", href: "#" },
 }
@@ -110,7 +110,8 @@ export function Faq6({ content = {}, classNames = {} }: FaqBlockProps) {
                   className="text-foreground hover:bg-muted flex w-full items-center justify-between p-4 text-left font-medium transition-colors"
                 >
                   {q.question}
-                  <ChevronDown
+                  <DynamicIcon
+                    name="ChevronDown"
                     className={cn(
                       "h-5 w-5 shrink-0 transition-transform",
                       openIndex === i && "rotate-180"
@@ -152,7 +153,7 @@ export function Faq6({ content = {}, classNames = {} }: FaqBlockProps) {
 
             <Button asChild>
               <Link href={supportCta.href}>
-                <MessageCircle className="mr-2 h-4 w-4" />
+                <DynamicIcon name="MessageCircle" className="mr-2 h-4 w-4" />
                 {supportCta.label}
               </Link>
             </Button>

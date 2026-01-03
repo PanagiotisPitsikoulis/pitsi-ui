@@ -451,7 +451,7 @@ class App {
     {
       items,
       bend = 1,
-      textColor = "#ffffff",
+      textColor = "hsl(var(--foreground))",
       borderRadius = 0,
       font = "bold 30px Figtree",
       scrollSpeed = 2,
@@ -705,7 +705,7 @@ interface CircularGalleryProps {
 export default function CircularGallery({
   items,
   bend = 3,
-  textColor = "#ffffff",
+  textColor = "hsl(var(--foreground))",
   borderRadius = 0.05,
   font = "bold 30px Figtree",
   scrollSpeed = 2,

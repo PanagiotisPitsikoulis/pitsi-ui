@@ -2,8 +2,8 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Calendar } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 
 interface BlogBlockProps {
@@ -33,10 +33,10 @@ const blog3Defaults = {
     {
       title: "How We Scaled to 1 Million Users",
       excerpt: "The technical challenges and solutions that helped us grow.",
-      image: "/placeholders/blocks/service-plants/1.webp",
+      image: "/elements/landscape/plants/1.webp",
       author: {
         name: "Sarah Chen",
-        avatar: "/placeholders/blocks/service-plants/2.webp",
+        avatar: "/elements/landscape/plants/2.webp",
       },
       date: "Dec 15, 2024",
       href: "#",
@@ -44,10 +44,10 @@ const blog3Defaults = {
     {
       title: "The Art of Product Design",
       excerpt: "Creating intuitive interfaces that users love.",
-      image: "/placeholders/blocks/service-plants/2.webp",
+      image: "/elements/landscape/plants/2.webp",
       author: {
         name: "Mike Johnson",
-        avatar: "/placeholders/blocks/service-plants/3.webp",
+        avatar: "/elements/landscape/plants/3.webp",
       },
       date: "Dec 12, 2024",
       href: "#",
@@ -55,10 +55,10 @@ const blog3Defaults = {
     {
       title: "Remote Work Best Practices",
       excerpt: "Tips for staying productive while working from home.",
-      image: "/placeholders/blocks/service-plants/3.webp",
+      image: "/elements/landscape/plants/3.webp",
       author: {
         name: "Emma Wilson",
-        avatar: "/placeholders/blocks/service-plants/4.webp",
+        avatar: "/elements/landscape/plants/4.webp",
       },
       date: "Dec 10, 2024",
       href: "#",
@@ -66,10 +66,10 @@ const blog3Defaults = {
     {
       title: "Security in the Cloud",
       excerpt: "Protecting your data in a distributed environment.",
-      image: "/placeholders/blocks/service-plants/4.webp",
+      image: "/elements/landscape/plants/4.webp",
       author: {
         name: "Alex Kim",
-        avatar: "/placeholders/blocks/service-plants/5.webp",
+        avatar: "/elements/landscape/plants/5.webp",
       },
       date: "Dec 8, 2024",
       href: "#",
@@ -143,7 +143,7 @@ export function Blog3({ content = {}, classNames = {} }: BlogBlockProps) {
                     </span>
                   </div>
                   <div className="text-muted-foreground flex items-center gap-1 text-sm">
-                    <Calendar className="h-4 w-4" />
+                    <DynamicIcon name="Calendar" className="h-4 w-4" />
                     {post.date}
                   </div>
                 </div>

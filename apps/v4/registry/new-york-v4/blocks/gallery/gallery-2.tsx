@@ -2,8 +2,8 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { X } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
@@ -25,42 +25,42 @@ const gallery2Defaults = {
   description: "A collection of our finest projects and creative endeavors.",
   images: [
     {
-      src: "/placeholders/blocks/service-plants/1.webp",
+      src: "/elements/landscape/plants/1.webp",
       alt: "Project 1",
       height: "tall" as const,
     },
     {
-      src: "/placeholders/blocks/service-plants/2.webp",
+      src: "/elements/landscape/plants/2.webp",
       alt: "Project 2",
       height: "short" as const,
     },
     {
-      src: "/placeholders/blocks/service-plants/3.webp",
+      src: "/elements/landscape/plants/3.webp",
       alt: "Project 3",
       height: "short" as const,
     },
     {
-      src: "/placeholders/blocks/service-plants/4.webp",
+      src: "/elements/landscape/plants/4.webp",
       alt: "Project 4",
       height: "tall" as const,
     },
     {
-      src: "/placeholders/blocks/service-plants/5.webp",
+      src: "/elements/landscape/plants/5.webp",
       alt: "Project 5",
       height: "short" as const,
     },
     {
-      src: "/placeholders/blocks/service-plants/1.webp",
+      src: "/elements/landscape/plants/1.webp",
       alt: "Project 6",
       height: "tall" as const,
     },
     {
-      src: "/placeholders/blocks/service-plants/2.webp",
+      src: "/elements/landscape/plants/2.webp",
       alt: "Project 7",
       height: "short" as const,
     },
     {
-      src: "/placeholders/blocks/service-plants/3.webp",
+      src: "/elements/landscape/plants/3.webp",
       alt: "Project 8",
       height: "short" as const,
     },
@@ -139,7 +139,7 @@ export function Gallery2({ content = {}, classNames = {} }: GalleryBlockProps) {
               className="absolute top-4 right-4 text-white hover:bg-white/10"
               onClick={() => setSelectedImage(null)}
             >
-              <X className="h-6 w-6" />
+              <DynamicIcon name="X" className="h-6 w-6" />
             </Button>
             <div className="relative max-h-[90vh] max-w-[90vw]">
               <Image

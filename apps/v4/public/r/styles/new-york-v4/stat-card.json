@@ -1,0 +1,18 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "stat-card",
+  "type": "registry:ui",
+  "description": "Card displaying a statistic with label, value, unit, and optional change indicator.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/ui/stat-card.tsx",
+      "content": "import { cn } from \"@/lib/utils\"\n\ninterface StatCardClassNames {\n  root?: string\n  label?: string\n  value?: string\n  unit?: string\n  change?: string\n}\n\ninterface StatCardProps {\n  label: string\n  value: string | number\n  unit?: string\n  change?: string\n  positive?: boolean\n  classNames?: StatCardClassNames\n}\n\nexport function StatCard({\n  label,\n  value,\n  unit,\n  change,\n  positive = true,\n  classNames = {},\n}: StatCardProps) {\n  return (\n    <div\n      className={cn(\n        \"bg-card rounded-xl p-4 shadow-sm transition-shadow hover:shadow-md\",\n        classNames.root\n      )}\n    >\n      <p\n        className={cn(\n          \"text-muted-foreground text-[10px] font-medium tracking-wider uppercase\",\n          classNames.label\n        )}\n      >\n        {label}\n      </p>\n      <div className=\"mt-1 flex items-baseline gap-1\">\n        <span\n          className={cn(\"text-2xl font-bold tabular-nums\", classNames.value)}\n        >\n          {value}\n        </span>\n        {unit && (\n          <span\n            className={cn(\"text-muted-foreground text-sm\", classNames.unit)}\n          >\n            {unit}\n          </span>\n        )}\n      </div>\n      {change && (\n        <p\n          className={cn(\n            \"mt-0.5 text-xs font-medium\",\n            positive ? \"text-emerald-600\" : \"text-muted-foreground\",\n            classNames.change\n          )}\n        >\n          {change}\n        </p>\n      )}\n    </div>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "sectorial"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

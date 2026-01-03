@@ -49,6 +49,100 @@ import {
   TemplateBlocksSection,
   type BlockMetadata,
 } from "../../_components"
+import { type ColorPalette } from "@/registry/new-york-v4/lib/block-theme"
+import { type FontPreset } from "../../_components/template-fonts"
+
+// Palette colors for theme display
+const paletteColors: Record<ColorPalette, { brand: string; complementary: string }> = {
+  slate: { brand: "#777777", complementary: "#999999" },
+  azure: { brand: "#3b82f6", complementary: "#f97316" },
+  violet: { brand: "#8b5cf6", complementary: "#22c55e" },
+  rose: { brand: "#e11d48", complementary: "#14b8a6" },
+  sage: { brand: "#84a98c", complementary: "#d4a574" },
+  amber: { brand: "#d97706", complementary: "#4f46e5" },
+  cyan: { brand: "#06b6d4", complementary: "#f97316" },
+  indigo: { brand: "#4f46e5", complementary: "#f59e0b" },
+  coral: { brand: "#f97316", complementary: "#06b6d4" },
+  forest: { brand: "#166534", complementary: "#ea580c" },
+  neon: { brand: "#00ff00", complementary: "#ff00ff" },
+}
+
+// Font preset to template mapping (reverse lookup)
+const templateFontPresets: Record<string, FontPreset> = {
+  "service-plants": "elegant",
+  "service-travel": "modern",
+  "service-boat": "classic",
+  "service-fitness": "futuristic",
+  "app-gym-tracker": "modern",
+  "app-quiz": "playful",
+}
+
+function getTemplateFontPreset(slug: string): FontPreset {
+  return templateFontPresets[slug] || "modern"
+}
+
+function ThemeDisplay({ palette }: { palette: ColorPalette }) {
+  const colors = paletteColors[palette]
+  // Primary is same as brand for non-slate palettes
+  const primaryColor = palette === "slate" ? "#2d2d2d" : colors.brand
+
+  return (
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <Link
+          href={`/tools/theme-generator?palette=${palette}`}
+          className="flex h-9 items-center gap-2 rounded-full bg-background px-3 shadow-sm"
+        >
+          <div className="flex items-center -space-x-1.5">
+            <span
+              className="inline-block size-4 rounded-full border-2 border-background shadow-sm"
+              style={{ backgroundColor: colors.brand }}
+            />
+            <span
+              className="inline-block size-4 rounded-full border-2 border-background shadow-sm"
+              style={{ backgroundColor: colors.complementary }}
+            />
+            <span
+              className="inline-block size-4 rounded-full border-2 border-background shadow-sm"
+              style={{ backgroundColor: primaryColor }}
+            />
+          </div>
+          <span className="text-xs font-medium capitalize text-foreground">
+            {palette}
+          </span>
+        </Link>
+      </TooltipTrigger>
+      <TooltipContent side="bottom" className="text-xs">
+        Edit theme
+      </TooltipContent>
+    </Tooltip>
+  )
+}
+
+function TypographyDisplay({ slug }: { slug: string }) {
+  const preset = getTemplateFontPreset(slug)
+
+  return (
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <Link
+          href={`/tools/typography-composer?preset=${preset}`}
+          className="flex h-9 items-center gap-1.5 rounded-full bg-background px-3 shadow-sm"
+        >
+          <span className="text-sm font-semibold text-foreground">
+            Aa
+          </span>
+          <span className="text-xs font-medium capitalize text-foreground">
+            {preset}
+          </span>
+        </Link>
+      </TooltipTrigger>
+      <TooltipContent side="bottom" className="text-xs">
+        Edit typography
+      </TooltipContent>
+    </Tooltip>
+  )
+}
 import { getTemplateBlocks, type TemplateSlug } from "../../blocks"
 import {
   getTemplatePalette,
@@ -301,6 +395,15 @@ export function TemplateViewerClient({
                 defaultHero={defaultHero}
               />
             )}
+
+            {/* Separator */}
+            <div className="mx-1 hidden h-5 w-px bg-border lg:block" />
+
+            {/* Theme and Typography displays */}
+            <div className="hidden items-center gap-1 lg:flex">
+              <ThemeDisplay palette={getTemplatePalette(slug)} />
+              <TypographyDisplay slug={slug} />
+            </div>
 
             {/* Right side: Actions */}
             <div className="ml-auto flex items-center gap-1">

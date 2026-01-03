@@ -1,10 +1,12 @@
 "use client"
 
 import Image from "next/image"
-import { Instagram, Twitter } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
+import { teamDefaults, type TeamBlockProps } from "@/lib/blocks/team.types"
 import { cn } from "@/lib/utils"
 
+// Extended trainer item for fitness theme
 interface Trainer {
   name: string
   role: string
@@ -18,84 +20,131 @@ interface Trainer {
   }
 }
 
-const trainers: Trainer[] = [
-  {
-    name: "Alex Chen",
-    role: "Head Coach",
-    specialties: ["HIIT", "Functional Training"],
-    image: "/placeholders/blocks/service-fitness/trainers/alex.webp",
-    bio: "Former competitive CrossFit athlete. 10+ years transforming bodies and minds.",
-    certifications: ["NASM-CPT", "CrossFit L3", "Precision Nutrition"],
-    socials: { instagram: "#", twitter: "#" },
-  },
-  {
-    name: "Maya Patel",
-    role: "Yoga & Recovery Specialist",
-    specialties: ["Yoga Flow", "Mobility", "Recovery"],
-    image: "/placeholders/blocks/service-fitness/trainers/maya.webp",
-    bio: "500-hour certified yoga instructor. Believes movement is medicine.",
-    certifications: ["RYT-500", "FRC Mobility", "Breathwork"],
-    socials: { instagram: "#" },
-  },
-  {
-    name: "Marcus Webb",
-    role: "Boxing Coach",
-    specialties: ["Boxing", "Combat Conditioning"],
-    image: "/placeholders/blocks/service-fitness/trainers/marcus.webp",
-    bio: "Pro boxing background. Makes you hit harder and move faster.",
-    certifications: ["USA Boxing", "NASM-CPT", "First Aid"],
-    socials: { instagram: "#", twitter: "#" },
-  },
-  {
-    name: "Jake Miller",
-    role: "Strength Coach",
-    specialties: ["Strength", "Powerlifting"],
-    image: "/placeholders/blocks/service-fitness/trainers/jake.webp",
-    bio: "Competitive powerlifter. Specializes in progressive overload programming.",
-    certifications: ["CSCS", "USAW L2", "FMS"],
-    socials: { instagram: "#" },
-  },
-  {
-    name: "Sofia Reyes",
-    role: "Spin Instructor",
-    specialties: ["Spin", "Endurance"],
-    image: "/placeholders/blocks/service-fitness/trainers/sofia.webp",
-    bio: "Former pro cyclist. Her playlists are legendary.",
-    certifications: ["Spinning®", "Les Mills", "CPR/AED"],
-    socials: { instagram: "#", twitter: "#" },
-  },
-]
+// Block-specific defaults (fitness theme)
+const team2Defaults = {
+  ...teamDefaults,
+  badge: "Meet The Team",
+  title: "World-Class Coaches",
+  description:
+    "Our instructors bring decades of combined experience and a shared passion for helping you become your best self.",
+  trainers: [
+    {
+      name: "Alex Chen",
+      role: "Head Coach",
+      specialties: ["HIIT", "Functional Training"],
+      image: "/placeholders/blocks/service-fitness/trainers/alex.webp",
+      bio: "Former competitive CrossFit athlete. 10+ years transforming bodies and minds.",
+      certifications: ["NASM-CPT", "CrossFit L3", "Precision Nutrition"],
+      socials: { instagram: "#", twitter: "#" },
+    },
+    {
+      name: "Maya Patel",
+      role: "Yoga & Recovery Specialist",
+      specialties: ["Yoga Flow", "Mobility", "Recovery"],
+      image: "/placeholders/blocks/service-fitness/trainers/maya.webp",
+      bio: "500-hour certified yoga instructor. Believes movement is medicine.",
+      certifications: ["RYT-500", "FRC Mobility", "Breathwork"],
+      socials: { instagram: "#" },
+    },
+    {
+      name: "Marcus Webb",
+      role: "Boxing Coach",
+      specialties: ["Boxing", "Combat Conditioning"],
+      image: "/placeholders/blocks/service-fitness/trainers/marcus.webp",
+      bio: "Pro boxing background. Makes you hit harder and move faster.",
+      certifications: ["USA Boxing", "NASM-CPT", "First Aid"],
+      socials: { instagram: "#", twitter: "#" },
+    },
+    {
+      name: "Jake Miller",
+      role: "Strength Coach",
+      specialties: ["Strength", "Powerlifting"],
+      image: "/placeholders/blocks/service-fitness/trainers/jake.webp",
+      bio: "Competitive powerlifter. Specializes in progressive overload programming.",
+      certifications: ["CSCS", "USAW L2", "FMS"],
+      socials: { instagram: "#" },
+    },
+    {
+      name: "Sofia Reyes",
+      role: "Spin Instructor",
+      specialties: ["Spin", "Endurance"],
+      image: "/placeholders/blocks/service-fitness/trainers/sofia.webp",
+      bio: "Former pro cyclist. Her playlists are legendary.",
+      certifications: ["Spinning®", "Les Mills", "CPR/AED"],
+      socials: { instagram: "#", twitter: "#" },
+    },
+  ] as Trainer[],
+}
 
-export function Team2() {
+export function Team2({ content = {}, classNames = {} }: TeamBlockProps) {
+  const {
+    badge = team2Defaults.badge,
+    title = team2Defaults.title,
+    description = team2Defaults.description,
+  } = content
+
+  // Use block-specific trainers array
+  const trainers =
+    (content as { trainers?: Trainer[] }).trainers ?? team2Defaults.trainers
+
   return (
-    <section className="bg-black py-24 lg:py-32">
-      <div className="container px-6">
+    <section className={cn("bg-black py-24 lg:py-32", classNames.root)}>
+      <div className={cn("container px-6", classNames.container)}>
         {/* Header */}
-        <div className="mb-16 text-center">
-          <p className="mb-4 text-sm font-medium tracking-[0.3em] text-white/60 uppercase">
-            Meet The Team
-          </p>
-          <h2 className="font-display text-4xl font-bold text-white md:text-5xl lg:text-6xl">
-            World-Class Coaches
+        <div className={cn("mb-16 text-center", classNames.header?.root)}>
+          {badge && (
+            <p
+              className={cn(
+                "mb-4 text-sm font-medium tracking-[0.3em] text-white/60 uppercase",
+                classNames.header?.badge
+              )}
+            >
+              {badge}
+            </p>
+          )}
+          <h2
+            className={cn(
+              "font-display text-4xl font-bold text-white md:text-5xl lg:text-6xl",
+              classNames.header?.title
+            )}
+          >
+            {title}
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-white/60">
-            Our instructors bring decades of combined experience and a shared
-            passion for helping you become your best self.
-          </p>
+          {description && (
+            <p
+              className={cn(
+                "mx-auto mt-6 max-w-2xl text-lg text-white/60",
+                classNames.header?.description
+              )}
+            >
+              {description}
+            </p>
+          )}
         </div>
 
         {/* Trainers Grid */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div
+          className={cn(
+            "grid gap-8 md:grid-cols-2 lg:grid-cols-3",
+            classNames.grid
+          )}
+        >
           {trainers.map((trainer, index) => (
             <div
               key={trainer.name}
               className={cn(
                 "group relative",
-                index === 0 && "md:col-span-2 lg:col-span-1"
+                index === 0 && "md:col-span-2 lg:col-span-1",
+                classNames.member?.root
               )}
             >
               {/* Image */}
-              <div className="relative mb-6 aspect-[3/4] overflow-hidden rounded-2xl bg-neutral-900">
+              <div
+                className={cn(
+                  "relative mb-6 aspect-[3/4] overflow-hidden rounded-2xl bg-neutral-900",
+                  classNames.member?.avatar
+                )}
+              >
                 <Image
                   src={trainer.image}
                   alt={trainer.name}
@@ -119,21 +168,32 @@ export function Team2() {
                   </div>
 
                   {/* Socials */}
-                  <div className="flex gap-3 opacity-0 transition-opacity group-hover:opacity-100">
+                  <div
+                    className={cn(
+                      "flex gap-3 opacity-0 transition-opacity group-hover:opacity-100",
+                      classNames.member?.social
+                    )}
+                  >
                     {trainer.socials.instagram && (
                       <a
                         href={trainer.socials.instagram}
-                        className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition-colors hover:bg-white/20"
+                        className={cn(
+                          "flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition-colors hover:bg-white/20",
+                          classNames.member?.socialLink
+                        )}
                       >
-                        <Instagram className="h-4 w-4" />
+                        <DynamicIcon name="Instagram" className="h-4 w-4" />
                       </a>
                     )}
                     {trainer.socials.twitter && (
                       <a
                         href={trainer.socials.twitter}
-                        className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition-colors hover:bg-white/20"
+                        className={cn(
+                          "flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition-colors hover:bg-white/20",
+                          classNames.member?.socialLink
+                        )}
                       >
-                        <Twitter className="h-4 w-4" />
+                        <DynamicIcon name="Twitter" className="h-4 w-4" />
                       </a>
                     )}
                   </div>
@@ -142,13 +202,30 @@ export function Team2() {
 
               {/* Info */}
               <div>
-                <h3 className="mb-1 text-xl font-bold text-white">
+                <h3
+                  className={cn(
+                    "mb-1 text-xl font-bold text-white",
+                    classNames.member?.name
+                  )}
+                >
                   {trainer.name}
                 </h3>
-                <p className="mb-3 text-sm font-medium text-white/60">
+                <p
+                  className={cn(
+                    "mb-3 text-sm font-medium text-white/60",
+                    classNames.member?.role
+                  )}
+                >
                   {trainer.role}
                 </p>
-                <p className="mb-4 text-sm text-white/50">{trainer.bio}</p>
+                <p
+                  className={cn(
+                    "mb-4 text-sm text-white/50",
+                    classNames.member?.bio
+                  )}
+                >
+                  {trainer.bio}
+                </p>
 
                 {/* Certifications */}
                 <div className="flex flex-wrap gap-2">

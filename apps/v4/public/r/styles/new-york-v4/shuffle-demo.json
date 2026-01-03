@@ -1,0 +1,21 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "shuffle-demo",
+  "type": "registry:example",
+  "description": "Shuffle animation demo",
+  "registryDependencies": [
+    "shuffle"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/shuffle-demo.tsx",
+      "content": "import Shuffle from \"@/registry/new-york-v4/animations/shuffle/shuffle\"\n\nexport default function ShuffleDemo() {\n  return (\n    <div className=\"flex h-full w-full items-center justify-center\">\n      <Shuffle\n        text=\"SHUFFLE ME\"\n        triggerOnHover={true}\n        className=\"text-4xl font-bold\"\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

@@ -1,8 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowRight, Mail, MapPin, Phone } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Input } from "@/registry/new-york-v4/ui/input"
@@ -72,7 +72,10 @@ export function Contact5({ content = {}, classNames = {} }: ContactBlockProps) {
 
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <Mail className="text-background/70 h-5 w-5 shrink-0" />
+                  <DynamicIcon
+                    name="Mail"
+                    className="text-background/70 h-5 w-5 shrink-0"
+                  />
                   <a
                     href={`mailto:${email}`}
                     className="hover:text-background/80 transition-colors"
@@ -81,7 +84,10 @@ export function Contact5({ content = {}, classNames = {} }: ContactBlockProps) {
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Phone className="text-background/70 h-5 w-5 shrink-0" />
+                  <DynamicIcon
+                    name="Phone"
+                    className="text-background/70 h-5 w-5 shrink-0"
+                  />
                   <a
                     href={`tel:${phone}`}
                     className="hover:text-background/80 transition-colors"
@@ -90,7 +96,10 @@ export function Contact5({ content = {}, classNames = {} }: ContactBlockProps) {
                   </a>
                 </div>
                 <div className="flex items-start gap-3">
-                  <MapPin className="text-background/70 mt-0.5 h-5 w-5 shrink-0" />
+                  <DynamicIcon
+                    name="MapPin"
+                    className="text-background/70 mt-0.5 h-5 w-5 shrink-0"
+                  />
                   <span className="text-background/90">{address}</span>
                 </div>
               </div>
@@ -109,7 +118,10 @@ export function Contact5({ content = {}, classNames = {} }: ContactBlockProps) {
                     className="group flex items-center gap-2 transition-colors hover:opacity-80"
                   >
                     {link.label}
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    <DynamicIcon
+                      name="ArrowRight"
+                      className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                    />
                   </Link>
                 ))}
               </div>

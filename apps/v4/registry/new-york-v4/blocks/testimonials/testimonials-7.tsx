@@ -1,8 +1,8 @@
 "use client"
 
 import Image from "next/image"
-import { Heart, MessageCircle, Repeat2 } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 
 interface TestimonialsBlockProps {
@@ -232,15 +232,15 @@ export function Testimonials7({
               {/* Engagement */}
               <div className="text-muted-foreground flex items-center gap-4 text-xs">
                 <button className="flex items-center gap-1 transition-colors hover:text-red-500">
-                  <Heart className="h-4 w-4" />
+                  <DynamicIcon name="Heart" className="h-4 w-4" />
                   {post.likes}
                 </button>
                 <button className="flex items-center gap-1 transition-colors hover:text-green-500">
-                  <Repeat2 className="h-4 w-4" />
+                  <DynamicIcon name="Repeat2" className="h-4 w-4" />
                   {post.retweets}
                 </button>
                 <button className="hover:text-primary flex items-center gap-1 transition-colors">
-                  <MessageCircle className="h-4 w-4" />
+                  <DynamicIcon name="MessageCircle" className="h-4 w-4" />
                   {post.replies}
                 </button>
               </div>

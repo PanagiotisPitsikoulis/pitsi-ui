@@ -56,7 +56,7 @@ const blockDefaults = {
     },
   },
   image: {
-    src: "/placeholders/blocks/service-plants/5.webp",
+    src: "/elements/landscape/plants/5.webp",
     alt: "Beautiful indoor plants",
   },
   stats: [

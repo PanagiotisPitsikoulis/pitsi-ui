@@ -1,9 +1,9 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowRight, Sparkles } from "lucide-react"
 
 import { type CtaBlockProps } from "@/lib/blocks/cta.types"
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
@@ -38,7 +38,7 @@ export function Cta4({ content = {}, classNames = {} }: CtaBlockProps) {
           >
             {/* Icon */}
             <div className="bg-primary/10 mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl">
-              <Sparkles className="text-primary h-8 w-8" />
+              <DynamicIcon name="Sparkles" className="text-primary h-8 w-8" />
             </div>
 
             {/* Title */}
@@ -67,7 +67,10 @@ export function Cta4({ content = {}, classNames = {} }: CtaBlockProps) {
                 <Button size="lg" className="group w-full sm:w-auto" asChild>
                   <Link href={primaryCta.href}>
                     {primaryCta.label}
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    <DynamicIcon
+                      name="ArrowRight"
+                      className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
+                    />
                   </Link>
                 </Button>
               )}

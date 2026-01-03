@@ -1,8 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { X } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Input } from "@/registry/new-york-v4/ui/input"
@@ -57,7 +57,7 @@ export function Newsletter5({
               className="absolute top-2 right-2"
               onClick={() => setIsVisible(false)}
             >
-              <X className="h-4 w-4" />
+              <DynamicIcon name="X" className="h-4 w-4" />
             </Button>
 
             {/* Content */}

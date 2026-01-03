@@ -1,0 +1,21 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "dome-gallery-demo",
+  "type": "registry:example",
+  "description": "Dome Gallery animation demo",
+  "registryDependencies": [
+    "dome-gallery"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/dome-gallery-demo.tsx",
+      "content": "import DomeGallery from \"@/registry/new-york-v4/animations/dome-gallery/dome-gallery\"\n\nexport default function DomeGalleryDemo() {\n  return (\n    <div className=\"relative h-full w-full\">\n      <DomeGallery />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

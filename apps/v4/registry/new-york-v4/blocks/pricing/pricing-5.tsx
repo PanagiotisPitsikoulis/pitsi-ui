@@ -1,8 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { Building2, Check, Sparkles } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
@@ -109,7 +109,7 @@ export function Pricing5({ content = {}, classNames = {} }: PricingBlockProps) {
           <div className="border-border flex flex-col rounded-2xl border p-8">
             <div className="mb-6 flex items-center gap-3">
               <div className="bg-primary/10 flex h-12 w-12 items-center justify-center rounded-full">
-                <Sparkles className="text-primary h-6 w-6" />
+                <DynamicIcon name="Sparkles" className="text-primary h-6 w-6" />
               </div>
               <div>
                 <h3 className="text-foreground text-xl font-semibold">
@@ -134,7 +134,10 @@ export function Pricing5({ content = {}, classNames = {} }: PricingBlockProps) {
                   key={i}
                   className="text-foreground flex items-center gap-3 text-sm"
                 >
-                  <Check className="text-primary h-5 w-5 shrink-0" />
+                  <DynamicIcon
+                    name="Check"
+                    className="text-primary h-5 w-5 shrink-0"
+                  />
                   {feature}
                 </li>
               ))}
@@ -149,7 +152,10 @@ export function Pricing5({ content = {}, classNames = {} }: PricingBlockProps) {
           <div className="bg-foreground text-background flex flex-col rounded-2xl p-8">
             <div className="mb-6 flex items-center gap-3">
               <div className="bg-background/10 flex h-12 w-12 items-center justify-center rounded-full">
-                <Building2 className="text-background h-6 w-6" />
+                <DynamicIcon
+                  name="Building2"
+                  className="text-background h-6 w-6"
+                />
               </div>
               <div>
                 <h3 className="text-xl font-semibold">{enterprise.name}</h3>
@@ -169,7 +175,10 @@ export function Pricing5({ content = {}, classNames = {} }: PricingBlockProps) {
             <ul className="mb-8 flex-1 space-y-3">
               {enterprise.features.map((feature, i) => (
                 <li key={i} className="flex items-center gap-3 text-sm">
-                  <Check className="text-background h-5 w-5 shrink-0" />
+                  <DynamicIcon
+                    name="Check"
+                    className="text-background h-5 w-5 shrink-0"
+                  />
                   {feature}
                 </li>
               ))}

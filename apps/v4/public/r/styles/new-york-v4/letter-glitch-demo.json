@@ -1,0 +1,21 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "letter-glitch-demo",
+  "type": "registry:example",
+  "description": "Letter Glitch animation demo",
+  "registryDependencies": [
+    "letter-glitch"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/letter-glitch-demo.tsx",
+      "content": "import LetterGlitch from \"@/registry/new-york-v4/animations/letter-glitch/letter-glitch\"\n\nexport default function LetterGlitchDemo() {\n  return (\n    <div className=\"h-full w-full\">\n      <LetterGlitch glitchSpeed={50} />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

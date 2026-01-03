@@ -1,0 +1,21 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "dither-demo",
+  "type": "registry:example",
+  "description": "Dither animation demo",
+  "registryDependencies": [
+    "dither"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/dither-demo.tsx",
+      "content": "import Dither from \"@/registry/new-york-v4/animations/dither/dither\"\n\nexport default function DitherDemo() {\n  return (\n    <div className=\"h-full w-full\">\n      <Dither waveSpeed={0.05} enableMouseInteraction={true} />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

@@ -2,8 +2,8 @@
 
 import { useRef, useState } from "react"
 import Image from "next/image"
-import { ChevronLeft, ChevronRight } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
@@ -23,27 +23,27 @@ const gallery3Defaults = {
   title: "Photo Gallery",
   images: [
     {
-      src: "/placeholders/blocks/service-plants/1.webp",
+      src: "/elements/landscape/plants/1.webp",
       alt: "Image 1",
       caption: "Beautiful landscape",
     },
     {
-      src: "/placeholders/blocks/service-plants/2.webp",
+      src: "/elements/landscape/plants/2.webp",
       alt: "Image 2",
       caption: "Urban architecture",
     },
     {
-      src: "/placeholders/blocks/service-plants/3.webp",
+      src: "/elements/landscape/plants/3.webp",
       alt: "Image 3",
       caption: "Nature close-up",
     },
     {
-      src: "/placeholders/blocks/service-plants/4.webp",
+      src: "/elements/landscape/plants/4.webp",
       alt: "Image 4",
       caption: "Sunset view",
     },
     {
-      src: "/placeholders/blocks/service-plants/5.webp",
+      src: "/elements/landscape/plants/5.webp",
       alt: "Image 5",
       caption: "Mountain range",
     },
@@ -87,7 +87,7 @@ export function Gallery3({ content = {}, classNames = {} }: GalleryBlockProps) {
               onClick={goToPrevious}
               className="h-10 w-10 rounded-full"
             >
-              <ChevronLeft className="h-5 w-5" />
+              <DynamicIcon name="ChevronLeft" className="h-5 w-5" />
             </Button>
             <Button
               variant="outline"
@@ -95,7 +95,7 @@ export function Gallery3({ content = {}, classNames = {} }: GalleryBlockProps) {
               onClick={goToNext}
               className="h-10 w-10 rounded-full"
             >
-              <ChevronRight className="h-5 w-5" />
+              <DynamicIcon name="ChevronRight" className="h-5 w-5" />
             </Button>
           </div>
         </div>

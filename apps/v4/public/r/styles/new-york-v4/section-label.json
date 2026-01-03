@@ -1,0 +1,18 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "section-label",
+  "type": "registry:ui",
+  "description": "Small uppercase label for subsection headers.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/ui/section-label.tsx",
+      "content": "import { cn } from \"@/lib/utils\"\n\ninterface SectionLabelProps {\n  children: React.ReactNode\n  className?: string\n}\n\nexport function SectionLabel({ children, className }: SectionLabelProps) {\n  return (\n    <p\n      className={cn(\n        \"text-muted-foreground text-[10px] font-medium tracking-wider uppercase\",\n        className\n      )}\n    >\n      {children}\n    </p>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "sectorial"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

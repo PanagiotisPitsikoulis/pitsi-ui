@@ -317,366 +317,366 @@
   {
     "name": "header-2",
     "description": "Centered logo header with navigation split left/right",
-    "categories": ["header"]
+    "categories": ["header", "service-plants"]
   },
   {
     "name": "header-3",
     "description": "Transparent overlay header that becomes solid on scroll",
-    "categories": ["header"]
+    "categories": ["header", "service-plants"]
   },
   {
     "name": "header-4",
     "description": "Mega menu header with dropdown panels",
-    "categories": ["header"]
+    "categories": ["header", "service-plants"]
   },
   {
     "name": "header-5",
     "description": "Mobile-first hamburger header with full-screen overlay",
-    "categories": ["header"]
+    "categories": ["header", "service-plants"]
   },
   {
     "name": "header-6",
     "description": "Header with integrated search/command palette",
-    "categories": ["header"]
+    "categories": ["header", "service-plants"]
   },
   {
     "name": "header-7",
     "description": "Sticky shrinking header that shrinks on scroll",
-    "categories": ["header"]
+    "categories": ["header", "service-plants"]
   },
   {
     "name": "header-8",
     "description": "Double row header with top bar and main nav",
-    "categories": ["header"]
+    "categories": ["header", "service-plants"]
   },
   {
     "name": "footer-3",
     "description": "Minimal single row footer",
-    "categories": ["footer"]
+    "categories": ["footer", "service-plants"]
   },
   {
     "name": "footer-4",
     "description": "Big CTA footer with ready to get started section",
-    "categories": ["footer"]
+    "categories": ["footer", "service-plants"]
   },
   {
     "name": "footer-5",
     "description": "Dark gradient footer with large brand statement",
-    "categories": ["footer"]
+    "categories": ["footer", "service-plants"]
   },
   {
     "name": "footer-6",
     "description": "App download footer with store badges and QR code",
-    "categories": ["footer"]
+    "categories": ["footer", "service-plants"]
   },
   {
     "name": "footer-7",
     "description": "Comprehensive sitemap-style footer",
-    "categories": ["footer"]
+    "categories": ["footer", "service-plants"]
   },
   {
     "name": "footer-8",
     "description": "Social-focused footer with large icons and follower counts",
-    "categories": ["footer"]
+    "categories": ["footer", "service-plants"]
   },
   {
     "name": "cta-2",
     "description": "Split layout CTA with image and gradient background",
-    "categories": ["cta"]
+    "categories": ["cta", "service-plants"]
   },
   {
     "name": "cta-3",
     "description": "Full-width CTA banner with countdown timer",
-    "categories": ["cta"]
+    "categories": ["cta", "service-plants"]
   },
   {
     "name": "cta-4",
     "description": "Card style CTA with centered content",
-    "categories": ["cta"]
+    "categories": ["cta", "service-plants"]
   },
   {
     "name": "cta-5",
     "description": "Floating action bar CTA that appears on scroll",
-    "categories": ["cta"]
+    "categories": ["cta", "service-plants"]
   },
   {
     "name": "cta-6",
     "description": "Exit intent modal overlay CTA",
-    "categories": ["cta"]
+    "categories": ["cta", "service-plants"]
   },
   {
     "name": "gallery-2",
     "description": "Masonry gallery with lightbox",
-    "categories": ["gallery"]
+    "categories": ["gallery", "service-plants"]
   },
   {
     "name": "gallery-3",
     "description": "Carousel gallery with thumbnail navigation",
-    "categories": ["gallery"]
+    "categories": ["gallery", "service-plants"]
   },
   {
     "name": "gallery-4",
     "description": "Filterable gallery with category tabs",
-    "categories": ["gallery"]
+    "categories": ["gallery", "service-plants"]
   },
   {
     "name": "gallery-5",
     "description": "Grid gallery with full-screen lightbox modal",
-    "categories": ["gallery"]
+    "categories": ["gallery", "service-plants"]
   },
   {
     "name": "gallery-6",
     "description": "Before/after comparison slider gallery",
-    "categories": ["gallery"]
+    "categories": ["gallery", "service-plants"]
   },
   {
     "name": "products-2",
     "description": "Product card grid with rating, price, add to cart",
-    "categories": ["products"]
+    "categories": ["products", "service-plants"]
   },
   {
     "name": "products-3",
     "description": "Featured hero product with grid below",
-    "categories": ["products"]
+    "categories": ["products", "service-plants"]
   },
   {
     "name": "products-4",
     "description": "Horizontal product carousel with quick add",
-    "categories": ["products"]
+    "categories": ["products", "service-plants"]
   },
   {
     "name": "products-5",
     "description": "Product list view with large images and stock status",
-    "categories": ["products"]
+    "categories": ["products", "service-plants"]
   },
   {
     "name": "products-6",
     "description": "Product comparison layout with features",
-    "categories": ["products"]
+    "categories": ["products", "service-plants"]
   },
   {
     "name": "newsletter-2",
     "description": "Inline single horizontal row newsletter",
-    "categories": ["newsletter"]
+    "categories": ["newsletter", "service-plants"]
   },
   {
     "name": "newsletter-3",
     "description": "Newsletter with benefits icons and social proof",
-    "categories": ["newsletter"]
+    "categories": ["newsletter", "service-plants"]
   },
   {
     "name": "newsletter-4",
     "description": "Split panel newsletter with image",
-    "categories": ["newsletter"]
+    "categories": ["newsletter", "service-plants"]
   },
   {
     "name": "newsletter-5",
     "description": "Popup card style newsletter with close button",
-    "categories": ["newsletter"]
+    "categories": ["newsletter", "service-plants"]
   },
   {
     "name": "newsletter-6",
     "description": "Dark themed newsletter with email icon",
-    "categories": ["newsletter"]
+    "categories": ["newsletter", "service-plants"]
   },
   {
     "name": "faq-2",
     "description": "Two column FAQ with questions left, answers right",
-    "categories": ["faq"]
+    "categories": ["faq", "service-plants"]
   },
   {
     "name": "faq-3",
     "description": "Searchable FAQ with highlight matching",
-    "categories": ["faq"]
+    "categories": ["faq", "service-plants"]
   },
   {
     "name": "faq-4",
     "description": "Card-style accordion FAQ with icons",
-    "categories": ["faq"]
+    "categories": ["faq", "service-plants"]
   },
   {
     "name": "faq-5",
     "description": "Tabbed categories FAQ with badge counts",
-    "categories": ["faq"]
+    "categories": ["faq", "service-plants"]
   },
   {
     "name": "faq-6",
     "description": "FAQ with support team CTA and avatars",
-    "categories": ["faq"]
+    "categories": ["faq", "service-plants"]
   },
   {
     "name": "blog-2",
     "description": "Featured post with 3-column grid and read time badges",
-    "categories": ["blog"]
+    "categories": ["blog", "service-plants"]
   },
   {
     "name": "blog-3",
     "description": "Blog list view with author avatars and dates",
-    "categories": ["blog"]
+    "categories": ["blog", "service-plants"]
   },
   {
     "name": "blog-4",
     "description": "Magazine layout blog with hero, sidebar, grid",
-    "categories": ["blog"]
+    "categories": ["blog", "service-plants"]
   },
   {
     "name": "blog-5",
     "description": "Minimal clean blog cards, text-focused",
-    "categories": ["blog"]
+    "categories": ["blog", "service-plants"]
   },
   {
     "name": "blog-6",
     "description": "Blog with sidebar (newsletter, categories, recent, tags)",
-    "categories": ["blog"]
+    "categories": ["blog", "service-plants"]
   },
   {
     "name": "contact-2",
     "description": "Contact form with map placeholder and location info",
-    "categories": ["contact"]
+    "categories": ["contact", "service-plants"]
   },
   {
     "name": "contact-3",
     "description": "Multi-channel contact with email, phone, chat cards",
-    "categories": ["contact"]
+    "categories": ["contact", "service-plants"]
   },
   {
     "name": "contact-4",
     "description": "Simple centered contact form with subject dropdown",
-    "categories": ["contact"]
+    "categories": ["contact", "service-plants"]
   },
   {
     "name": "contact-5",
     "description": "Split dark/light contact panel layout",
-    "categories": ["contact"]
+    "categories": ["contact", "service-plants"]
   },
   {
     "name": "contact-6",
     "description": "Office cards contact with multiple global locations",
-    "categories": ["contact"]
+    "categories": ["contact", "service-plants"]
   },
   {
     "name": "logos-2",
     "description": "Marquee logo cloud with infinite scroll animation",
-    "categories": ["logos"]
+    "categories": ["logos", "service-plants"]
   },
   {
     "name": "logos-3",
     "description": "Grid logos with labels and descriptions",
-    "categories": ["logos"]
+    "categories": ["logos", "service-plants"]
   },
   {
     "name": "logos-4",
     "description": "Featured partners with case study links",
-    "categories": ["logos"]
+    "categories": ["logos", "service-plants"]
   },
   {
     "name": "logos-5",
     "description": "Logos with stats and industry breakdown",
-    "categories": ["logos"]
+    "categories": ["logos", "service-plants"]
   },
   {
     "name": "logos-6",
     "description": "Testimonial combo logos with short quotes",
-    "categories": ["logos"]
+    "categories": ["logos", "service-plants"]
   },
   {
     "name": "testimonials-3",
     "description": "Sliding carousel testimonials with navigation",
-    "categories": ["testimonials"]
+    "categories": ["testimonials", "service-plants"]
   },
   {
     "name": "testimonials-4",
     "description": "Video testimonial cards with play overlay",
-    "categories": ["testimonials"]
+    "categories": ["testimonials", "service-plants"]
   },
   {
     "name": "testimonials-5",
     "description": "Rating-focused testimonials with aggregate score",
-    "categories": ["testimonials"]
+    "categories": ["testimonials", "service-plants"]
   },
   {
     "name": "testimonials-6",
     "description": "Case study testimonial cards with metrics",
-    "categories": ["testimonials"]
+    "categories": ["testimonials", "service-plants"]
   },
   {
     "name": "testimonials-7",
     "description": "Social proof wall with tweet-style cards",
-    "categories": ["testimonials"]
+    "categories": ["testimonials", "service-plants"]
   },
   {
     "name": "pricing-3",
     "description": "Feature comparison table pricing",
-    "categories": ["pricing"]
+    "categories": ["pricing", "service-plants"]
   },
   {
     "name": "pricing-4",
     "description": "Monthly/yearly toggle pricing with savings badge",
-    "categories": ["pricing"]
+    "categories": ["pricing", "service-plants"]
   },
   {
     "name": "pricing-5",
     "description": "Enterprise focus pricing with standard and custom tiers",
-    "categories": ["pricing"]
+    "categories": ["pricing", "service-plants"]
   },
   {
     "name": "pricing-6",
     "description": "Usage-based pricing with calculator slider",
-    "categories": ["pricing"]
+    "categories": ["pricing", "service-plants"]
   },
   {
     "name": "pricing-7",
     "description": "Horizontal pricing cards with icons",
-    "categories": ["pricing"]
+    "categories": ["pricing", "service-plants"]
   },
   {
     "name": "team-3",
     "description": "Team cards with social links on hover",
-    "categories": ["team"]
+    "categories": ["team", "service-plants"]
   },
   {
     "name": "team-4",
     "description": "Leadership section with smaller team grid",
-    "categories": ["team"]
+    "categories": ["team", "service-plants"]
   },
   {
     "name": "team-5",
     "description": "Carousel team with thumbnail navigation",
-    "categories": ["team"]
+    "categories": ["team", "service-plants"]
   },
   {
     "name": "team-6",
     "description": "About page style team with story and values",
-    "categories": ["team"]
+    "categories": ["team", "service-plants"]
   },
   {
     "name": "team-7",
     "description": "Minimal list team by department",
-    "categories": ["team"]
+    "categories": ["team", "service-plants"]
   },
   {
     "name": "stats-3",
     "description": "Large counter stats with dark background",
-    "categories": ["stats"]
+    "categories": ["stats", "service-plants"]
   },
   {
     "name": "stats-4",
     "description": "Stats cards with icons and change indicators",
-    "categories": ["stats"]
+    "categories": ["stats", "service-plants"]
   },
   {
     "name": "stats-5",
     "description": "Timeline milestone stats",
-    "categories": ["stats"]
+    "categories": ["stats", "service-plants"]
   },
   {
     "name": "stats-6",
     "description": "Before/after comparison stats",
-    "categories": ["stats"]
+    "categories": ["stats", "service-plants"]
   },
   {
     "name": "stats-7",
     "description": "Infographic style stats with bar chart",
-    "categories": ["stats"]
+    "categories": ["stats", "service-plants"]
   }
 ]

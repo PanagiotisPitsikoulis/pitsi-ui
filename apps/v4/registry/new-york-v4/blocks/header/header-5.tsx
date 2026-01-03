@@ -2,8 +2,8 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Menu, X } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { type HeaderBlockProps } from "@/lib/blocks/header.types"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
@@ -61,7 +61,7 @@ export function Header5({ content = {}, classNames = {} }: HeaderBlockProps) {
             onClick={() => setIsOpen(true)}
             className={classNames.cta}
           >
-            <Menu className="h-6 w-6" />
+            <DynamicIcon name="Menu" className="h-6 w-6" />
             <span className="sr-only">Open menu</span>
           </Button>
         </div>
@@ -84,7 +84,7 @@ export function Header5({ content = {}, classNames = {} }: HeaderBlockProps) {
               size="icon"
               onClick={() => setIsOpen(false)}
             >
-              <X className="h-6 w-6" />
+              <DynamicIcon name="X" className="h-6 w-6" />
               <span className="sr-only">Close menu</span>
             </Button>
           </div>

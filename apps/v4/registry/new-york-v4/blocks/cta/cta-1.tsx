@@ -13,7 +13,7 @@ const blockDefaults = {
   title: "Start Your Plant Journey",
   description: "Get 15% off your first order when you join our community.",
   image: {
-    src: "/placeholders/blocks/service-plants/1.webp",
+    src: "/elements/landscape/plants/1.webp",
     alt: "Plants background",
   },
   primaryCta: {

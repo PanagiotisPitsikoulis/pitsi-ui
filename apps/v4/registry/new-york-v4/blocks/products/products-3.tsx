@@ -2,8 +2,8 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Star } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
@@ -40,7 +40,7 @@ const products3Defaults = {
     description:
       "Experience crystal-clear audio with active noise cancellation and 30-hour battery life.",
     price: 299,
-    image: "/placeholders/blocks/service-plants/1.webp",
+    image: "/elements/landscape/plants/1.webp",
     badge: "New",
     href: "#",
   },
@@ -48,26 +48,26 @@ const products3Defaults = {
     {
       name: "Smart Fitness Band",
       price: 149,
-      image: "/placeholders/blocks/service-plants/2.webp",
+      image: "/elements/landscape/plants/2.webp",
       badge: "Bestseller",
       href: "#",
     },
     {
       name: "Wireless Charger",
       price: 49,
-      image: "/placeholders/blocks/service-plants/3.webp",
+      image: "/elements/landscape/plants/3.webp",
       href: "#",
     },
     {
       name: "USB-C Hub",
       price: 79,
-      image: "/placeholders/blocks/service-plants/4.webp",
+      image: "/elements/landscape/plants/4.webp",
       href: "#",
     },
     {
       name: "Mechanical Keyboard",
       price: 199,
-      image: "/placeholders/blocks/service-plants/5.webp",
+      image: "/elements/landscape/plants/5.webp",
       badge: "Hot",
       href: "#",
     },
@@ -102,7 +102,10 @@ export function Products3({
           <Button variant="ghost" className="group" asChild>
             <Link href="#">
               View All
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <DynamicIcon
+                name="ArrowRight"
+                className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
+              />
             </Link>
           </Button>
         </div>

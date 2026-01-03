@@ -15,11 +15,11 @@ const blockDefaults = {
   description:
     "From cozy apartments to sprawling offices, see how our plants have transformed spaces into thriving green sanctuaries.",
   images: [
-    { src: "/placeholders/blocks/service-plants/6.webp", alt: "Gallery 1" },
-    { src: "/placeholders/blocks/service-plants/7.webp", alt: "Gallery 2" },
-    { src: "/placeholders/blocks/service-plants/8.webp", alt: "Gallery 3" },
-    { src: "/placeholders/blocks/service-plants/9.webp", alt: "Gallery 4" },
-    { src: "/placeholders/blocks/service-plants/2.webp", alt: "Gallery 5" },
+    { src: "/elements/landscape/plants/6.webp", alt: "Gallery 1" },
+    { src: "/elements/landscape/plants/7.webp", alt: "Gallery 2" },
+    { src: "/elements/landscape/plants/8.webp", alt: "Gallery 3" },
+    { src: "/elements/landscape/plants/9.webp", alt: "Gallery 4" },
+    { src: "/elements/landscape/plants/2.webp", alt: "Gallery 5" },
   ],
 }
 
@@ -37,7 +37,7 @@ export function Gallery1({ content = {}, classNames = {} }: GalleryBlockProps) {
       {/* Huge decoration - top left corner, clipping off screen */}
       <Image
         draggable={false}
-        src="/placeholders/blocks/service-plants/assets/decoration-small-4.svg"
+        src="/elements/decoration-small/plants/4.svg"
         alt=""
         width={600}
         height={600}
@@ -46,7 +46,7 @@ export function Gallery1({ content = {}, classNames = {} }: GalleryBlockProps) {
       {/* Huge decoration - bottom right corner, clipping off screen */}
       <Image
         draggable={false}
-        src="/placeholders/blocks/service-plants/assets/decoration-small-5.svg"
+        src="/elements/decoration-small/plants/5.svg"
         alt=""
         width={550}
         height={550}

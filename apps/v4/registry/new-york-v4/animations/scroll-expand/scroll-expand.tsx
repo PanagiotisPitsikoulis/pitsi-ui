@@ -176,7 +176,7 @@ export const HoverExpandGallery = memo<HoverExpandGalleryProps>(
                       }}
                       className="absolute flex h-full w-full flex-col items-end justify-end p-4"
                     >
-                      <p className="text-left text-xs text-white/50">
+                      <p className="text-foreground/50 text-left text-xs">
                         {image.label}
                       </p>
                     </motion.div>

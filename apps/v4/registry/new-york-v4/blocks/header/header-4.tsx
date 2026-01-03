@@ -2,8 +2,8 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { ChevronDown } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { type HeaderBlockProps } from "@/lib/blocks/header.types"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
@@ -125,7 +125,9 @@ export function Header4({ content = {}, classNames = {} }: HeaderBlockProps) {
                 )}
               >
                 {item.label}
-                {item.children && <ChevronDown className="h-4 w-4" />}
+                {item.children && (
+                  <DynamicIcon name="ChevronDown" className="h-4 w-4" />
+                )}
               </Link>
 
               {/* Mega Menu Dropdown */}

@@ -2,9 +2,9 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
 
 import { type CtaBlockProps } from "@/lib/blocks/cta.types"
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
@@ -13,7 +13,7 @@ const cta2Defaults = {
   description:
     "Join thousands of teams who have already streamlined their processes and boosted productivity by 40%.",
   image: {
-    src: "/placeholders/blocks/service-plants/1.webp",
+    src: "/elements/landscape/plants/1.webp",
     alt: "Team collaboration",
   },
   primaryCta: { label: "Get Started Free", href: "#" },
@@ -82,7 +82,10 @@ export function Cta2({ content = {}, classNames = {} }: CtaBlockProps) {
                 >
                   <Link href={primaryCta.href}>
                     {primaryCta.label}
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    <DynamicIcon
+                      name="ArrowRight"
+                      className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
+                    />
                   </Link>
                 </Button>
               )}

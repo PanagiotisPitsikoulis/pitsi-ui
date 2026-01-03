@@ -1,18 +1,14 @@
 "use client"
 
-import { useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { motion, useScroll, useTransform } from "motion/react"
 
 import { type HeroBlockProps } from "@/lib/blocks/hero.types"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { HeroButton } from "@/registry/new-york-v4/ui/hero-button"
-import { KnockoutText } from "@/app/(app)/(content)/(blocks)/_block_components"
-import { useScrollContainer } from "@/app/(app)/(content)/(blocks)/_components"
 
-// Hero 5 defaults - Fitness/Elite Training theme (full-bleed video style)
+// Hero 5 defaults - Fitness/Elite Training theme
 const hero5Defaults = {
   badge: "Elite Training",
   title: "Push Beyond\nYour Limits",
@@ -24,142 +20,66 @@ const hero5Defaults = {
     href: "#",
     variant: "outline" as const,
   },
-  backgroundImage: {
-    src: "/placeholders/blocks/service-fitness/subject/2.webp",
+  image: {
+    src: "/elements/subject/gym/3.webp",
     alt: "Intense fitness training session",
-    priority: true,
   },
 }
 
 export function Hero5({ content = {}, classNames = {} }: HeroBlockProps) {
-  const sectionRef = useRef<HTMLElement>(null)
-  const scrollContainer = useScrollContainer()
-
   // Merge content with defaults
   const {
-    badge = hero5Defaults.badge,
     title = hero5Defaults.title,
     description = hero5Defaults.description,
     primaryCta = hero5Defaults.primaryCta,
     secondaryCta = hero5Defaults.secondaryCta,
-    backgroundImage = hero5Defaults.backgroundImage,
+    image = hero5Defaults.image,
   } = content
-
-  // Track scroll progress relative to the section
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    container: scrollContainer || undefined,
-    offset: ["start start", "end start"],
-  })
-
-  // Parallax effect on background image (moves slower than scroll)
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"])
-
-  // Slight scale on background for depth
-  const backgroundScale = useTransform(scrollYProgress, [0, 1], [1, 1.1])
-
-  // Content fade out as user scrolls
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
-
-  // Content moves up as user scrolls
-  const contentY = useTransform(scrollYProgress, [0, 0.5], [0, -50])
 
   return (
     <section
-      ref={sectionRef}
       className={cn(
-        "relative -mt-20 flex min-h-[100svh] items-center justify-center overflow-hidden",
+        "relative min-h-[100svh] overflow-hidden py-20 lg:max-h-[100svh]",
         classNames.root
       )}
     >
-      {/* Full-bleed background image with parallax */}
-      {backgroundImage && (
-        <motion.div
-          className={cn("absolute inset-0 z-0", classNames.background)}
-          style={{
-            y: backgroundY,
-            scale: backgroundScale,
-          }}
+      <div className="flex items-end justify-center gap-10">
+        {/* Main headline */}
+        <h1
+          className={cn(
+            "display text-4xl leading-[1.1] tracking-tight sm:text-5xl md:text-7xl",
+            classNames.header?.title
+          )}
         >
-          <Image
-            draggable={false}
-            src={backgroundImage.src}
-            alt={backgroundImage.alt}
-            fill
-            priority={backgroundImage.priority}
-            className="pointer-events-none object-cover object-center select-none"
-          />
-        </motion.div>
-      )}
+          {title.split("\n").map((line, i) => (
+            <span key={i}>
+              {line}
+              {i < title.split("\n").length - 1 && <br />}
+            </span>
+          ))}
+        </h1>
 
-      {/* Dark overlay for text readability */}
-      <div
-        className="pointer-events-none absolute inset-0 z-[1] bg-black/50"
-        aria-hidden="true"
-      />
-
-      {/* Centered content */}
-      <motion.div
-        className={cn(
-          "relative z-10 flex flex-col items-center px-6 pt-20",
-          classNames.container
-        )}
-        style={{
-          opacity: contentOpacity,
-          y: contentY,
-        }}
-      >
-        {/* Tagline */}
-        {badge && (
+        {/* Subheading */}
+        {description && (
           <p
             className={cn(
-              "relative z-10 mb-6 text-sm font-medium tracking-[0.3em] text-white/80 uppercase",
-              classNames.header?.badge
+              "mt-8 text-lg md:text-2xl",
+              classNames.header?.description
             )}
           >
-            {badge}
+            {description.split("\n").map((line, i) => (
+              <span key={i}>
+                {line}
+                {i < description.split("\n").length - 1 && <br />}
+              </span>
+            ))}
           </p>
         )}
 
-        {/* Typography block with knockout effect */}
-        <KnockoutText padX={40} padY={50} intensity={1}>
-          {/* Main headline */}
-          <h1
-            className={cn(
-              "display text-center text-5xl leading-[0.9] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl",
-              classNames.header?.title
-            )}
-          >
-            {title.split("\n").map((line, i) => (
-              <span key={i}>
-                {line}
-                {i < title.split("\n").length - 1 && <br />}
-              </span>
-            ))}
-          </h1>
-
-          {/* Subheading */}
-          {description && (
-            <p
-              className={cn(
-                "mt-8 text-center text-lg text-white/80 md:text-xl lg:text-2xl",
-                classNames.header?.description
-              )}
-            >
-              {description.split("\n").map((line, i) => (
-                <span key={i}>
-                  {line}
-                  {i < description.split("\n").length - 1 && <br />}
-                </span>
-              ))}
-            </p>
-          )}
-        </KnockoutText>
-
-        {/* Buttons - above blend layer */}
+        {/* Buttons */}
         <div
           className={cn(
-            "relative z-10 mt-10 flex flex-col gap-3 sm:flex-row",
+            "relative z-10 mt-10 flex flex-row gap-3",
             classNames.cta?.root
           )}
         >
@@ -173,7 +93,7 @@ export function Hero5({ content = {}, classNames = {} }: HeroBlockProps) {
               variant={secondaryCta.variant ?? "outline"}
               size="lg"
               className={cn(
-                "rounded-full border-white/30 bg-white/10 px-8 text-white backdrop-blur-sm hover:bg-white/20",
+                "bg-background text-foreground rounded-full px-8",
                 classNames.cta?.secondary
               )}
               asChild
@@ -182,32 +102,20 @@ export function Hero5({ content = {}, classNames = {} }: HeroBlockProps) {
             </Button>
           )}
         </div>
-      </motion.div>
+      </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2"
-        style={{ opacity: contentOpacity }}
-      >
-        <div className="flex flex-col items-center gap-2">
-          <span className="text-xs tracking-widest text-white/60 uppercase">
-            Scroll
-          </span>
-          <div className="h-10 w-6 rounded-full border-2 border-white/30">
-            <motion.div
-              className="mx-auto mt-2 h-2 w-1 rounded-full bg-white/60"
-              animate={{
-                y: [0, 12, 0],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-          </div>
+      {/* Hero Image - Below text */}
+      <div className="container -mt-16 px-4">
+        <div className="relative aspect-[16/9] w-full overflow-hidden rounded-3xl">
+          <Image
+            src={image.src}
+            alt={image.alt}
+            fill
+            className="object-cover object-top"
+            priority
+          />
         </div>
-      </motion.div>
+      </div>
     </section>
   )
 }

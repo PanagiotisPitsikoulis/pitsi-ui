@@ -1,0 +1,21 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "image-trail-demo",
+  "type": "registry:example",
+  "description": "Image Trail animation demo",
+  "registryDependencies": [
+    "image-trail"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/image-trail-demo.tsx",
+      "content": "import ImageTrail from \"@/registry/new-york-v4/animations/image-trail/image-trail\"\n\nconst images = [\n  \"https://picsum.photos/300/400?random=1\",\n  \"https://picsum.photos/300/400?random=2\",\n  \"https://picsum.photos/300/400?random=3\",\n  \"https://picsum.photos/300/400?random=4\",\n  \"https://picsum.photos/300/400?random=5\",\n  \"https://picsum.photos/300/400?random=6\",\n]\n\nexport default function ImageTrailDemo() {\n  return (\n    <div className=\"h-full w-full\">\n      <ImageTrail items={images} variant={1} />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

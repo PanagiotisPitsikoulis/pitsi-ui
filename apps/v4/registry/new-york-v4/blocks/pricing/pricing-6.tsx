@@ -2,8 +2,8 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Check } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Slider } from "@/registry/new-york-v4/ui/slider"
@@ -164,7 +164,10 @@ export function Pricing6({ content = {}, classNames = {} }: PricingBlockProps) {
                   key={i}
                   className="text-foreground flex items-center gap-2 text-sm"
                 >
-                  <Check className="text-primary h-4 w-4 shrink-0" />
+                  <DynamicIcon
+                    name="Check"
+                    className="text-primary h-4 w-4 shrink-0"
+                  />
                   {feature}
                 </li>
               ))}

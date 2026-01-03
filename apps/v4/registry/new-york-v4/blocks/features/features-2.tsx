@@ -17,14 +17,14 @@ const features2Defaults = {
       title: "Curated Collections",
       description:
         "Thoughtfully assembled plant bundles for every room and skill level.",
-      image: "/placeholders/blocks/service-plants/3.webp",
+      image: "/elements/landscape/plants/3.webp",
     },
     {
       icon: "BookOpen",
       title: "Plant Care Library",
       description:
         "Access our comprehensive guides, videos, and expert tips for each species.",
-      image: "/placeholders/blocks/service-plants/4.webp",
+      image: "/elements/landscape/plants/4.webp",
     },
   ],
 }
@@ -112,7 +112,7 @@ export function Features2({
               {idx === 1 && (
                 <Image
                   draggable={false}
-                  src="/placeholders/blocks/service-plants/assets/decoration-small-1.svg"
+                  src="/elements/decoration-small/plants/decoration-small-1.svg"
                   alt=""
                   width={300}
                   height={300}

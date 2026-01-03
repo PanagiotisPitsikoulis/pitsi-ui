@@ -2,8 +2,8 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
@@ -103,7 +103,10 @@ export function Testimonials3({
         <div className="mx-auto max-w-4xl">
           {/* Main Testimonial */}
           <div className="bg-background rounded-2xl p-8 md:p-12">
-            <Quote className="text-primary/20 mb-6 h-12 w-12" />
+            <DynamicIcon
+              name="Quote"
+              className="text-primary/20 mb-6 h-12 w-12"
+            />
 
             <blockquote className="text-foreground mb-8 text-xl leading-relaxed md:text-2xl">
               &ldquo;{current.quote}&rdquo;
@@ -132,10 +135,10 @@ export function Testimonials3({
               {/* Navigation */}
               <div className="flex gap-2">
                 <Button variant="outline" size="icon" onClick={prevSlide}>
-                  <ChevronLeft className="h-5 w-5" />
+                  <DynamicIcon name="ChevronLeft" className="h-5 w-5" />
                 </Button>
                 <Button variant="outline" size="icon" onClick={nextSlide}>
-                  <ChevronRight className="h-5 w-5" />
+                  <DynamicIcon name="ChevronRight" className="h-5 w-5" />
                 </Button>
               </div>
             </div>

@@ -15,6 +15,7 @@
     "packages/tests"
   ],
   "scripts": {
+    "run": "bun ./scripts/run.ts",
     "clean": "rm -rf .turbo node_modules/.cache apps/*/.next apps/*/.turbo packages/*/.turbo",
     "build": "turbo run build",
     "build:all": "turbo run build",
@@ -111,6 +112,7 @@
     "vitest": "^4.0.15"
   },
   "devDependencies": {
+    "@clack/prompts": "^0.11.0",
     "@types/hast": "^3.0.4",
     "@types/node": "^24.10.4",
     "@types/react": "^19.2.2",

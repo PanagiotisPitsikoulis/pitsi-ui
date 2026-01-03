@@ -1,0 +1,21 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "aurora-demo",
+  "type": "registry:example",
+  "description": "Aurora animation demo",
+  "registryDependencies": [
+    "aurora"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/aurora-demo.tsx",
+      "content": "import Aurora from \"@/registry/new-york-v4/animations/aurora/aurora\"\n\nexport default function AuroraDemo() {\n  return (\n    <div className=\"h-full w-full\">\n      <Aurora colorStops={[\"#3b82f6\", \"#8b5cf6\", \"#3b82f6\"]} />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

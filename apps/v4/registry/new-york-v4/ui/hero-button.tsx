@@ -11,6 +11,7 @@ const circleVariants = cva(
     variants: {
       variant: {
         default: "bg-primary-foreground text-primary",
+        brand: "bg-primary-foreground text-primary",
         destructive: "bg-white text-destructive",
         outline: "bg-foreground text-background",
         secondary: "bg-secondary-foreground text-secondary",
@@ -46,7 +47,7 @@ function HeroButton({
   className,
   children,
   expandCircle,
-  variant,
+  variant = "default",
   size = "lg",
   ...props
 }: React.ComponentProps<"button"> &

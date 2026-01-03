@@ -2,41 +2,54 @@
 
 import { useEffect, useRef, useState } from "react"
 
+import { statsDefaults, type StatsBlockProps } from "@/lib/blocks/stats.types"
 import { cn } from "@/lib/utils"
 
-interface Stat {
+// Extended stat item with numeric value for animation
+interface Stats2Item {
   value: number
   suffix: string
   label: string
   description: string
 }
 
-const stats: Stat[] = [
-  {
-    value: 150,
-    suffix: "+",
-    label: "Classes Weekly",
-    description: "Every week, rain or shine",
+// Block-specific defaults (fitness theme)
+const stats2Defaults = {
+  ...statsDefaults,
+  badge: "By The Numbers",
+  title: "Results Speak Louder",
+  stats: [
+    {
+      value: 150,
+      suffix: "+",
+      label: "Classes Weekly",
+      description: "Every week, rain or shine",
+    },
+    {
+      value: 2500,
+      suffix: "+",
+      label: "Active Members",
+      description: "And growing every day",
+    },
+    {
+      value: 98,
+      suffix: "%",
+      label: "Would Recommend",
+      description: "Based on member surveys",
+    },
+    {
+      value: 12,
+      suffix: "",
+      label: "Expert Coaches",
+      description: "World-class instructors",
+    },
+  ] as Stats2Item[],
+  highlightText: {
+    prefix: "Over",
+    value: "1,000,000",
+    suffix: "calories burned collectively this month",
   },
-  {
-    value: 2500,
-    suffix: "+",
-    label: "Active Members",
-    description: "And growing every day",
-  },
-  {
-    value: 98,
-    suffix: "%",
-    label: "Would Recommend",
-    description: "Based on member surveys",
-  },
-  {
-    value: 12,
-    suffix: "",
-    label: "Expert Coaches",
-    description: "World-class instructors",
-  },
-]
+}
 
 function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
   const [displayValue, setDisplayValue] = useState(0)
@@ -82,60 +95,107 @@ function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
   )
 }
 
-export function Stats2() {
+export function Stats2({ content = {}, classNames = {} }: StatsBlockProps) {
+  const { badge = stats2Defaults.badge, title = stats2Defaults.title } = content
+
+  // Use block-specific stats with extended fields
+  const stats =
+    (content as { stats?: Stats2Item[] }).stats ?? stats2Defaults.stats
+  const highlightText =
+    (content as { highlightText?: typeof stats2Defaults.highlightText })
+      .highlightText ?? stats2Defaults.highlightText
+
   return (
-    <section className="bg-white py-24 lg:py-32">
-      <div className="container px-6">
+    <section className={cn("bg-white py-24 lg:py-32", classNames.root)}>
+      <div className={cn("container px-6", classNames.container)}>
         {/* Header */}
-        <div className="mb-16 text-center">
-          <p className="mb-4 text-sm font-medium tracking-[0.3em] text-black/60 uppercase">
-            By The Numbers
-          </p>
-          <h2 className="font-display text-4xl font-bold text-black md:text-5xl lg:text-6xl">
-            Results Speak Louder
+        <div className={cn("mb-16 text-center", classNames.header?.root)}>
+          {badge && (
+            <p
+              className={cn(
+                "mb-4 text-sm font-medium tracking-[0.3em] text-black/60 uppercase",
+                classNames.header?.badge
+              )}
+            >
+              {badge}
+            </p>
+          )}
+          <h2
+            className={cn(
+              "font-display text-4xl font-bold text-black md:text-5xl lg:text-6xl",
+              classNames.header?.title
+            )}
+          >
+            {title}
           </h2>
         </div>
 
         {/* Stats Grid */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div
+          className={cn(
+            "grid gap-8 md:grid-cols-2 lg:grid-cols-4",
+            classNames.grid
+          )}
+        >
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className="group relative overflow-hidden rounded-2xl bg-black p-8 text-center"
+              className={cn(
+                "group relative overflow-hidden rounded-2xl bg-black p-8 text-center",
+                classNames.stat?.root
+              )}
             >
               {/* Background decoration */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
 
               {/* Value */}
               <div className="relative mb-4">
-                <span className="font-display text-5xl font-bold text-white md:text-6xl">
+                <span
+                  className={cn(
+                    "font-display text-5xl font-bold text-white md:text-6xl",
+                    classNames.stat?.value
+                  )}
+                >
                   <AnimatedNumber value={stat.value} suffix={stat.suffix} />
                 </span>
               </div>
 
               {/* Label */}
-              <h3 className="mb-2 text-lg font-semibold text-white">
+              <h3
+                className={cn(
+                  "mb-2 text-lg font-semibold text-white",
+                  classNames.stat?.label
+                )}
+              >
                 {stat.label}
               </h3>
 
               {/* Description */}
-              <p className="text-sm text-white/60">{stat.description}</p>
+              <p
+                className={cn(
+                  "text-sm text-white/60",
+                  classNames.stat?.description
+                )}
+              >
+                {stat.description}
+              </p>
             </div>
           ))}
         </div>
 
         {/* Bottom highlight */}
-        <div className="mt-16 rounded-2xl bg-black p-8 text-center md:p-12">
-          <p className="mb-4 text-sm font-medium tracking-[0.3em] text-white/60 uppercase">
-            Member Achievement
-          </p>
-          <p className="font-display text-3xl font-bold text-white md:text-4xl lg:text-5xl">
-            <span className="text-white/60">Over</span> 1,000,000{" "}
-            <span className="text-white/60">
-              calories burned collectively this month
-            </span>
-          </p>
-        </div>
+        {highlightText && (
+          <div className="mt-16 rounded-2xl bg-black p-8 text-center md:p-12">
+            <p className="mb-4 text-sm font-medium tracking-[0.3em] text-white/60 uppercase">
+              Member Achievement
+            </p>
+            <p className="font-display text-3xl font-bold text-white md:text-4xl lg:text-5xl">
+              <span className="text-white/60">{highlightText.prefix}</span>{" "}
+              {highlightText.value}{" "}
+              <span className="text-white/60">{highlightText.suffix}</span>
+            </p>
+          </div>
+        )}
       </div>
     </section>
   )

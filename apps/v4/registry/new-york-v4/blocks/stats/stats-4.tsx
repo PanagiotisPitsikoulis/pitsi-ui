@@ -1,7 +1,6 @@
 "use client"
 
-import { Globe, TrendingUp, Users, Zap } from "lucide-react"
-
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 
 interface StatsBlockProps {
@@ -9,7 +8,7 @@ interface StatsBlockProps {
     title?: string
     description?: string
     stats?: Array<{
-      icon: "users" | "trending" | "globe" | "zap"
+      icon: string
       value: string
       label: string
       change?: {
@@ -30,37 +29,30 @@ const stats4Defaults = {
   description: "Real-time performance data from our platform.",
   stats: [
     {
-      icon: "users" as const,
+      icon: "Users",
       value: "2.4M",
       label: "Active Users",
       change: { value: "+12%", positive: true },
     },
     {
-      icon: "trending" as const,
+      icon: "TrendingUp",
       value: "$48M",
       label: "Revenue",
       change: { value: "+28%", positive: true },
     },
     {
-      icon: "globe" as const,
+      icon: "Globe",
       value: "98",
       label: "Countries",
       change: { value: "+5", positive: true },
     },
     {
-      icon: "zap" as const,
+      icon: "Zap",
       value: "99.9%",
       label: "Uptime",
       change: { value: "-0.01%", positive: false },
     },
   ],
-}
-
-const IconMap = {
-  users: Users,
-  trending: TrendingUp,
-  globe: Globe,
-  zap: Zap,
 }
 
 export function Stats4({ content = {}, classNames = {} }: StatsBlockProps) {
@@ -95,39 +87,35 @@ export function Stats4({ content = {}, classNames = {} }: StatsBlockProps) {
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {stats.map((stat, i) => {
-            const Icon = IconMap[stat.icon]
-            return (
-              <div
-                key={i}
-                className="bg-background border-border rounded-xl border p-6 transition-shadow hover:shadow-lg"
-              >
-                <div className="mb-4 flex items-center justify-between">
-                  <div className="bg-primary/10 flex h-12 w-12 items-center justify-center rounded-xl">
-                    <Icon className="text-primary h-6 w-6" />
-                  </div>
-                  {stat.change && (
-                    <span
-                      className={cn(
-                        "rounded-full px-2 py-1 text-xs font-medium",
-                        stat.change.positive
-                          ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"
-                          : "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400"
-                      )}
-                    >
-                      {stat.change.value}
-                    </span>
-                  )}
+          {stats.map((stat, i) => (
+            <div
+              key={i}
+              className="bg-background border-border rounded-xl border p-6 transition-shadow hover:shadow-lg"
+            >
+              <div className="mb-4 flex items-center justify-between">
+                <div className="bg-primary/10 flex h-12 w-12 items-center justify-center rounded-xl">
+                  <DynamicIcon
+                    name={stat.icon}
+                    className="text-primary h-6 w-6"
+                  />
                 </div>
-                <p className="text-foreground text-3xl font-bold">
-                  {stat.value}
-                </p>
-                <p className="text-muted-foreground mt-1 text-sm">
-                  {stat.label}
-                </p>
+                {stat.change && (
+                  <span
+                    className={cn(
+                      "rounded-full px-2 py-1 text-xs font-medium",
+                      stat.change.positive
+                        ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"
+                        : "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400"
+                    )}
+                  >
+                    {stat.change.value}
+                  </span>
+                )}
               </div>
-            )
-          })}
+              <p className="text-foreground text-3xl font-bold">{stat.value}</p>
+              <p className="text-muted-foreground mt-1 text-sm">{stat.label}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

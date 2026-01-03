@@ -1,0 +1,21 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "gradient-blinds-demo",
+  "type": "registry:example",
+  "description": "Gradient Blinds animation demo",
+  "registryDependencies": [
+    "gradient-blinds"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/gradient-blinds-demo.tsx",
+      "content": "import GradientBlinds from \"@/registry/new-york-v4/animations/gradient-blinds/gradient-blinds\"\n\nexport default function GradientBlindsDemo() {\n  return (\n    <div className=\"h-full w-full\">\n      <GradientBlinds gradientColors={[\"#FF9FFC\", \"#5227FF\"]} />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

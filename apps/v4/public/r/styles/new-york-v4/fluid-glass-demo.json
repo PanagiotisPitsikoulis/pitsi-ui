@@ -1,0 +1,21 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "fluid-glass-demo",
+  "type": "registry:example",
+  "description": "Fluid Glass animation demo",
+  "registryDependencies": [
+    "fluid-glass"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/fluid-glass-demo.tsx",
+      "content": "import FluidGlass from \"@/registry/new-york-v4/animations/fluid-glass/fluid-glass\"\n\nexport default function FluidGlassDemo() {\n  return (\n    <div className=\"h-full w-full\">\n      <FluidGlass mode=\"lens\" />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

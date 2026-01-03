@@ -1,7 +1,6 @@
 "use client"
 
-import { Mail } from "lucide-react"
-
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Input } from "@/registry/new-york-v4/ui/input"
@@ -46,7 +45,7 @@ export function Newsletter6({
         <div className="mx-auto max-w-2xl text-center">
           {/* Icon */}
           <div className="bg-background/10 mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full">
-            <Mail className="text-background h-8 w-8" />
+            <DynamicIcon name="Mail" className="text-background h-8 w-8" />
           </div>
 
           <h2

@@ -1,8 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { Clock, ExternalLink, Mail, MapPin, Phone } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
@@ -118,14 +118,20 @@ export function Contact6({ content = {}, classNames = {} }: ContactBlockProps) {
 
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
-                  <MapPin className="text-muted-foreground mt-0.5 h-4 w-4 shrink-0" />
+                  <DynamicIcon
+                    name="MapPin"
+                    className="text-muted-foreground mt-0.5 h-4 w-4 shrink-0"
+                  />
                   <span className="text-muted-foreground text-sm">
                     {office.address}
                   </span>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <Phone className="text-muted-foreground h-4 w-4 shrink-0" />
+                  <DynamicIcon
+                    name="Phone"
+                    className="text-muted-foreground h-4 w-4 shrink-0"
+                  />
                   <a
                     href={`tel:${office.phone}`}
                     className="text-foreground text-sm hover:underline"
@@ -135,7 +141,10 @@ export function Contact6({ content = {}, classNames = {} }: ContactBlockProps) {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <Mail className="text-muted-foreground h-4 w-4 shrink-0" />
+                  <DynamicIcon
+                    name="Mail"
+                    className="text-muted-foreground h-4 w-4 shrink-0"
+                  />
                   <a
                     href={`mailto:${office.email}`}
                     className="text-foreground text-sm hover:underline"
@@ -145,7 +154,10 @@ export function Contact6({ content = {}, classNames = {} }: ContactBlockProps) {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <Clock className="text-muted-foreground h-4 w-4 shrink-0" />
+                  <DynamicIcon
+                    name="Clock"
+                    className="text-muted-foreground h-4 w-4 shrink-0"
+                  />
                   <span className="text-muted-foreground text-sm">
                     {office.hours}
                   </span>
@@ -159,7 +171,8 @@ export function Contact6({ content = {}, classNames = {} }: ContactBlockProps) {
                 asChild
               >
                 <Link href={office.mapUrl}>
-                  Get Directions <ExternalLink className="ml-2 h-4 w-4" />
+                  Get Directions{" "}
+                  <DynamicIcon name="ExternalLink" className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
             </div>

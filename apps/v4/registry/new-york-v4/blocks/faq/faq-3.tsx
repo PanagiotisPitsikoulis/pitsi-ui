@@ -1,8 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { ChevronDown, Search } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Input } from "@/registry/new-york-v4/ui/input"
 
@@ -112,7 +112,10 @@ export function Faq3({ content = {}, classNames = {} }: FaqBlockProps) {
 
           {/* Search */}
           <div className="relative">
-            <Search className="text-muted-foreground absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2" />
+            <DynamicIcon
+              name="Search"
+              className="text-muted-foreground absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2"
+            />
             <Input
               type="text"
               placeholder="Search for answers..."
@@ -135,7 +138,8 @@ export function Faq3({ content = {}, classNames = {} }: FaqBlockProps) {
                 className="text-foreground hover:bg-muted flex w-full items-center justify-between p-4 text-left font-medium transition-colors"
               >
                 <span>{highlightText(q.question)}</span>
-                <ChevronDown
+                <DynamicIcon
+                  name="ChevronDown"
                   className={cn(
                     "h-5 w-5 shrink-0 transition-transform",
                     openIndex === i && "rotate-180"

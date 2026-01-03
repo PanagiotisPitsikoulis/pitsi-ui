@@ -1,111 +1,171 @@
 "use client"
 
 import Image from "next/image"
-import { Quote, Star } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
+import {
+  testimonialsDefaults,
+  type TestimonialsBlockProps,
+} from "@/lib/blocks/testimonials.types"
 import { cn } from "@/lib/utils"
 
-interface Testimonial {
-  name: string
-  role: string
-  image: string
+// Extended testimonial item with transformation stats (fitness-specific)
+interface Testimonials2Item {
+  author: string
+  role?: string
+  avatar?: { src: string; alt?: string }
   quote: string
   transformation?: {
     before: string
     after: string
     metric: string
   }
-  rating: number
+  rating?: number
 }
 
-const testimonials: Testimonial[] = [
-  {
-    name: "Sarah M.",
-    role: "Member for 2 years",
-    image: "/placeholders/blocks/service-fitness/testimonials/sarah.webp",
-    quote:
-      "The coaches here actually care about your progress. I came in unable to do a single push-up, and now I'm hitting PRs I never thought possible.",
-    transformation: {
-      before: "0",
-      after: "25",
-      metric: "push-ups",
+// Block-specific defaults (fitness theme)
+const testimonials2Defaults = {
+  ...testimonialsDefaults,
+  badge: "Member Stories",
+  title: "Real Results, Real People",
+  description:
+    "Don't take our word for it. Hear from the athletes who transformed their lives with us.",
+  testimonials: [
+    {
+      author: "Sarah M.",
+      role: "Member for 2 years",
+      avatar: {
+        src: "/placeholders/blocks/service-fitness/testimonials/sarah.webp",
+      },
+      quote:
+        "The coaches here actually care about your progress. I came in unable to do a single push-up, and now I'm hitting PRs I never thought possible.",
+      transformation: { before: "0", after: "25", metric: "push-ups" },
+      rating: 5,
     },
-    rating: 5,
-  },
-  {
-    name: "David K.",
-    role: "Member for 8 months",
-    image: "/placeholders/blocks/service-fitness/testimonials/david.webp",
-    quote:
-      "The community here is unmatched. Everyone pushes each other to be better. It's not just a gym—it's a family.",
-    rating: 5,
-  },
-  {
-    name: "Emma R.",
-    role: "Member for 1 year",
-    image: "/placeholders/blocks/service-fitness/testimonials/emma.webp",
-    quote:
-      "Lost 30 pounds and gained so much confidence. The boxing classes are intense but so rewarding.",
-    transformation: {
-      before: "30",
-      after: "0",
-      metric: "lbs lost",
+    {
+      author: "David K.",
+      role: "Member for 8 months",
+      avatar: {
+        src: "/placeholders/blocks/service-fitness/testimonials/david.webp",
+      },
+      quote:
+        "The community here is unmatched. Everyone pushes each other to be better. It's not just a gym—it's a family.",
+      rating: 5,
     },
-    rating: 5,
-  },
-  {
-    name: "Michael T.",
-    role: "Member for 3 years",
-    image: "/placeholders/blocks/service-fitness/testimonials/michael.webp",
-    quote:
-      "I've tried every gym in the city. Nothing compares to the energy and expertise here. Worth every penny.",
-    rating: 5,
-  },
-]
+    {
+      author: "Emma R.",
+      role: "Member for 1 year",
+      avatar: {
+        src: "/placeholders/blocks/service-fitness/testimonials/emma.webp",
+      },
+      quote:
+        "Lost 30 pounds and gained so much confidence. The boxing classes are intense but so rewarding.",
+      transformation: { before: "30", after: "0", metric: "lbs lost" },
+      rating: 5,
+    },
+    {
+      author: "Michael T.",
+      role: "Member for 3 years",
+      avatar: {
+        src: "/placeholders/blocks/service-fitness/testimonials/michael.webp",
+      },
+      quote:
+        "I've tried every gym in the city. Nothing compares to the energy and expertise here. Worth every penny.",
+      rating: 5,
+    },
+  ] as Testimonials2Item[],
+}
 
-export function Testimonials2() {
+export function Testimonials2({
+  content = {},
+  classNames = {},
+}: TestimonialsBlockProps) {
+  const {
+    badge = testimonials2Defaults.badge,
+    title = testimonials2Defaults.title,
+    description = testimonials2Defaults.description,
+  } = content
+
+  // Use block-specific testimonials with extended fields
+  const testimonials =
+    (content.testimonials as Testimonials2Item[] | undefined) ??
+    testimonials2Defaults.testimonials
   return (
-    <section className="bg-black py-24 lg:py-32">
-      <div className="container px-6">
+    <section className={cn("bg-black py-24 lg:py-32", classNames.root)}>
+      <div className={cn("container px-6", classNames.container)}>
         {/* Header */}
-        <div className="mb-16 text-center">
-          <p className="mb-4 text-sm font-medium tracking-[0.3em] text-white/60 uppercase">
-            Member Stories
-          </p>
-          <h2 className="font-display text-4xl font-bold text-white md:text-5xl lg:text-6xl">
-            Real Results, Real People
+        <div className={cn("mb-16 text-center", classNames.header?.root)}>
+          {badge && (
+            <p
+              className={cn(
+                "mb-4 text-sm font-medium tracking-[0.3em] text-white/60 uppercase",
+                classNames.header?.badge
+              )}
+            >
+              {badge}
+            </p>
+          )}
+          <h2
+            className={cn(
+              "font-display text-4xl font-bold text-white md:text-5xl lg:text-6xl",
+              classNames.header?.title
+            )}
+          >
+            {title}
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-white/60">
-            Don't take our word for it. Hear from the athletes who transformed
-            their lives with us.
-          </p>
+          {description && (
+            <p
+              className={cn(
+                "mx-auto mt-6 max-w-2xl text-lg text-white/60",
+                classNames.header?.description
+              )}
+            >
+              {description}
+            </p>
+          )}
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className={cn("grid gap-6 md:grid-cols-2", classNames.grid)}>
           {testimonials.map((testimonial, index) => (
             <div
-              key={testimonial.name}
+              key={testimonial.author}
               className={cn(
                 "group relative overflow-hidden rounded-2xl bg-white/5 p-6 transition-colors hover:bg-white/10 md:p-8",
-                index === 0 && "md:row-span-2"
+                index === 0 && "md:row-span-2",
+                classNames.testimonial?.root
               )}
             >
               {/* Quote icon */}
-              <Quote className="absolute top-6 right-6 h-8 w-8 text-white/10" />
+              <DynamicIcon
+                name="Quote"
+                className="absolute top-6 right-6 h-8 w-8 text-white/10"
+              />
 
               {/* Rating */}
-              <div className="mb-4 flex gap-1">
-                {Array.from({ length: testimonial.rating }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-white text-white" />
-                ))}
-              </div>
+              {testimonial.rating && (
+                <div
+                  className={cn(
+                    "mb-4 flex gap-1",
+                    classNames.testimonial?.rating
+                  )}
+                >
+                  {Array.from({ length: testimonial.rating }).map((_, i) => (
+                    <DynamicIcon
+                      key={i}
+                      name="Star"
+                      className="h-4 w-4 fill-white text-white"
+                    />
+                  ))}
+                </div>
+              )}
 
               {/* Quote */}
               <blockquote
                 className={cn(
                   "mb-6 text-white/90",
-                  index === 0 ? "text-lg md:text-xl" : "text-base"
+                  index === 0 ? "text-lg md:text-xl" : "text-base",
+                  classNames.testimonial?.quote
                 )}
               >
                 "{testimonial.quote}"
@@ -134,18 +194,41 @@ export function Testimonials2() {
               )}
 
               {/* Author */}
-              <div className="flex items-center gap-4">
-                <div className="relative h-12 w-12 overflow-hidden rounded-full bg-neutral-800">
-                  <Image
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
+              <div
+                className={cn(
+                  "flex items-center gap-4",
+                  classNames.testimonial?.author
+                )}
+              >
+                {testimonial.avatar && (
+                  <div
+                    className={cn(
+                      "relative h-12 w-12 overflow-hidden rounded-full bg-neutral-800",
+                      classNames.testimonial?.avatar
+                    )}
+                  >
+                    <Image
+                      src={testimonial.avatar.src}
+                      alt={testimonial.avatar.alt || testimonial.author}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                )}
                 <div>
-                  <p className="font-semibold text-white">{testimonial.name}</p>
-                  <p className="text-sm text-white/60">{testimonial.role}</p>
+                  <p className="font-semibold text-white">
+                    {testimonial.author}
+                  </p>
+                  {testimonial.role && (
+                    <p
+                      className={cn(
+                        "text-sm text-white/60",
+                        classNames.testimonial?.role
+                      )}
+                    >
+                      {testimonial.role}
+                    </p>
+                  )}
                 </div>
               </div>
             </div>

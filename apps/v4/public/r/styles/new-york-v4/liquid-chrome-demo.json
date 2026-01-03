@@ -1,0 +1,21 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "liquid-chrome-demo",
+  "type": "registry:example",
+  "description": "Liquid Chrome animation demo",
+  "registryDependencies": [
+    "liquid-chrome"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/liquid-chrome-demo.tsx",
+      "content": "import LiquidChrome from \"@/registry/new-york-v4/animations/liquid-chrome/liquid-chrome\"\n\nexport default function LiquidChromeDemo() {\n  return (\n    <div className=\"h-full w-full\">\n      <LiquidChrome speed={0.2} interactive={true} />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

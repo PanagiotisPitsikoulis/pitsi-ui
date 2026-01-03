@@ -1,8 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { ChevronDown } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 
 interface FaqBlockProps {
@@ -161,7 +161,8 @@ export function Faq5({ content = {}, classNames = {} }: FaqBlockProps) {
                 className="text-foreground hover:bg-muted flex w-full items-center justify-between p-4 text-left font-medium transition-colors"
               >
                 {q.question}
-                <ChevronDown
+                <DynamicIcon
+                  name="ChevronDown"
                   className={cn(
                     "h-5 w-5 shrink-0 transition-transform",
                     openIndex === i && "rotate-180"

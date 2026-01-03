@@ -1447,6 +1447,86 @@ export const Index: Record<string, Record<string, any>> = {
       tier: "free",
       readiness: "production",
     },
+    "section-header": {
+      name: "section-header",
+      description: "Section header with optional badge, title, and description for landing page sections.",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/ui/section-header.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/ui/section-header.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "section-header"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["sectorial"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "section-label": {
+      name: "section-label",
+      description: "Small uppercase label for subsection headers.",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/ui/section-label.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/ui/section-label.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "section-label"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["sectorial"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "page-container": {
+      name: "page-container",
+      description: "Container wrapper with configurable max-width, padding, and spacing for page layouts.",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/ui/page-container.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/ui/page-container.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "page-container"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["sectorial"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "stat-card": {
+      name: "stat-card",
+      description: "Card displaying a statistic with label, value, unit, and optional change indicator.",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/ui/stat-card.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/ui/stat-card.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "stat-card"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["sectorial"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
     "form": {
       name: "form",
       description: "Form components built with React Hook Form for accessible form handling.",
@@ -1840,6 +1920,586 @@ export const Index: Record<string, Record<string, any>> = {
       component: React.lazy(async () => {
         const mod = await import("@/registry/new-york-v4/animations/zoom-parallax/zoom-parallax.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "zoom-parallax"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "aurora": {
+      name: "aurora",
+      description: "Aurora borealis effect with animated gradient colors using WebGL.",
+      type: "registry:ui",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/animations/aurora/aurora.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/aurora/aurora.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "aurora"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "balatro": {
+      name: "balatro",
+      description: "Psychedelic card effect with distortion and color manipulation.",
+      type: "registry:ui",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/animations/balatro/balatro.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/balatro/balatro.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "balatro"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "circular-gallery": {
+      name: "circular-gallery",
+      description: "3D circular gallery with rotating images using WebGL.",
+      type: "registry:ui",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/animations/circular-gallery/circular-gallery.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/circular-gallery/circular-gallery.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "circular-gallery"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "flying-posters": {
+      name: "flying-posters",
+      description: "Floating poster effect with 3D rotation and mouse interaction.",
+      type: "registry:ui",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/animations/flying-posters/flying-posters.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/flying-posters/flying-posters.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "flying-posters"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "gradient-blinds": {
+      name: "gradient-blinds",
+      description: "Animated gradient blinds effect with smooth transitions.",
+      type: "registry:ui",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/animations/gradient-blinds/gradient-blinds.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/gradient-blinds/gradient-blinds.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "gradient-blinds"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "iridescence": {
+      name: "iridescence",
+      description: "Iridescent color-shifting effect with mouse interaction.",
+      type: "registry:ui",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/animations/iridescence/iridescence.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/iridescence/iridescence.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "iridescence"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "liquid-chrome": {
+      name: "liquid-chrome",
+      description: "Liquid chrome metallic effect with dynamic reflections.",
+      type: "registry:ui",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/animations/liquid-chrome/liquid-chrome.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/liquid-chrome/liquid-chrome.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "liquid-chrome"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "ascii-text": {
+      name: "ascii-text",
+      description: "Text rendered as ASCII art with 3D depth effect.",
+      type: "registry:ui",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/animations/ascii-text/ascii-text.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/ascii-text/ascii-text.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "ascii-text"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "ballpit": {
+      name: "ballpit",
+      description: "Interactive 3D ball pit with physics simulation.",
+      type: "registry:ui",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/animations/ballpit/ballpit.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/ballpit/ballpit.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "ballpit"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "color-bends": {
+      name: "color-bends",
+      description: "Color bending distortion effect with WebGL shaders.",
+      type: "registry:ui",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/animations/color-bends/color-bends.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/color-bends/color-bends.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "color-bends"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "dither": {
+      name: "dither",
+      description: "Retro dithering effect with customizable patterns.",
+      type: "registry:ui",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/animations/dither/dither.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/dither/dither.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "dither"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "fluid-glass": {
+      name: "fluid-glass",
+      description: "Fluid glass refraction effect with dynamic distortion.",
+      type: "registry:ui",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/animations/fluid-glass/fluid-glass.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/fluid-glass/fluid-glass.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "fluid-glass"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "grid-distortion": {
+      name: "grid-distortion",
+      description: "Grid-based distortion effect with mouse interaction.",
+      type: "registry:ui",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/animations/grid-distortion/grid-distortion.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/grid-distortion/grid-distortion.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "grid-distortion"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "shape-blur": {
+      name: "shape-blur",
+      description: "Shape morphing with blur transitions between states.",
+      type: "registry:ui",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/animations/shape-blur/shape-blur.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/shape-blur/shape-blur.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "shape-blur"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "decay-card": {
+      name: "decay-card",
+      description: "Card with decay and glitch animation effects.",
+      type: "registry:ui",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/animations/decay-card/decay-card.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/decay-card/decay-card.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "decay-card"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "flowing-menu": {
+      name: "flowing-menu",
+      description: "Menu with flowing hover animation effects.",
+      type: "registry:ui",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/animations/flowing-menu/flowing-menu.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/flowing-menu/flowing-menu.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "flowing-menu"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "image-trail": {
+      name: "image-trail",
+      description: "Cursor-following image trail effect with smooth animations.",
+      type: "registry:ui",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/animations/image-trail/image-trail.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/image-trail/image-trail.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "image-trail"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "shuffle": {
+      name: "shuffle",
+      description: "Card shuffle animation with stacking effects.",
+      type: "registry:ui",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/animations/shuffle/shuffle.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/shuffle/shuffle.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "shuffle"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "sticker-peel": {
+      name: "sticker-peel",
+      description: "Sticker peeling effect with 3D perspective.",
+      type: "registry:ui",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/animations/sticker-peel/sticker-peel.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/sticker-peel/sticker-peel.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "sticker-peel"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "circular-text": {
+      name: "circular-text",
+      description: "Text arranged in a circle with rotation animation.",
+      type: "registry:ui",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/animations/circular-text/circular-text.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/circular-text/circular-text.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "circular-text"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "stack": {
+      name: "stack",
+      description: "Draggable card stack with rotation and depth effects.",
+      type: "registry:ui",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/animations/stack/stack.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/stack/stack.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "stack"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "dome-gallery": {
+      name: "dome-gallery",
+      description: "3D dome gallery with gesture-based navigation.",
+      type: "registry:ui",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/animations/dome-gallery/dome-gallery.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/dome-gallery/dome-gallery.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "dome-gallery"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "infinite-menu": {
+      name: "infinite-menu",
+      description: "Infinite 3D menu with WebGL rendering.",
+      type: "registry:ui",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/animations/infinite-menu/infinite-menu.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/infinite-menu/infinite-menu.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "infinite-menu"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "curved-loop": {
+      name: "curved-loop",
+      description: "Text marquee along a curved path.",
+      type: "registry:ui",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/animations/curved-loop/curved-loop.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/curved-loop/curved-loop.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "curved-loop"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "fuzzy-text": {
+      name: "fuzzy-text",
+      description: "Text with fuzzy/blurred hover effect.",
+      type: "registry:ui",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/animations/fuzzy-text/fuzzy-text.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/fuzzy-text/fuzzy-text.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "fuzzy-text"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "glass-surface": {
+      name: "glass-surface",
+      description: "Glass morphism surface with dynamic reflections.",
+      type: "registry:ui",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/animations/glass-surface/glass-surface.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/glass-surface/glass-surface.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "glass-surface"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "letter-glitch": {
+      name: "letter-glitch",
+      description: "Text with randomized letter glitch effect.",
+      type: "registry:ui",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/animations/letter-glitch/letter-glitch.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/letter-glitch/letter-glitch.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "letter-glitch"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "noise": {
+      name: "noise",
+      description: "Animated noise texture overlay effect.",
+      type: "registry:ui",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/animations/noise/noise.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/noise/noise.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "noise"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "text-pressure": {
+      name: "text-pressure",
+      description: "Text with variable font pressure effect on mouse proximity.",
+      type: "registry:ui",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/animations/text-pressure/text-pressure.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/animations/text-pressure/text-pressure.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "text-pressure"
         return { default: mod.default || mod[exportName] }
       }),
       categories: ["animations"],
@@ -3122,7 +3782,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "header-2"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["header"],
+      categories: ["header","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3142,7 +3802,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "header-3"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["header"],
+      categories: ["header","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3162,7 +3822,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "header-4"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["header"],
+      categories: ["header","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3182,7 +3842,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "header-5"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["header"],
+      categories: ["header","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3202,7 +3862,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "header-6"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["header"],
+      categories: ["header","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3222,7 +3882,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "header-7"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["header"],
+      categories: ["header","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3242,7 +3902,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "header-8"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["header"],
+      categories: ["header","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3262,7 +3922,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "footer-3"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["footer"],
+      categories: ["footer","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3282,7 +3942,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "footer-4"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["footer"],
+      categories: ["footer","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3302,7 +3962,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "footer-5"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["footer"],
+      categories: ["footer","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3322,7 +3982,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "footer-6"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["footer"],
+      categories: ["footer","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3342,7 +4002,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "footer-7"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["footer"],
+      categories: ["footer","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3362,7 +4022,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "footer-8"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["footer"],
+      categories: ["footer","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3382,7 +4042,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "cta-2"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["cta"],
+      categories: ["cta","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3402,7 +4062,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "cta-3"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["cta"],
+      categories: ["cta","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3422,7 +4082,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "cta-4"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["cta"],
+      categories: ["cta","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3442,7 +4102,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "cta-5"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["cta"],
+      categories: ["cta","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3462,7 +4122,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "cta-6"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["cta"],
+      categories: ["cta","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3482,7 +4142,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "gallery-2"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["gallery"],
+      categories: ["gallery","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3502,7 +4162,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "gallery-3"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["gallery"],
+      categories: ["gallery","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3522,7 +4182,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "gallery-4"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["gallery"],
+      categories: ["gallery","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3542,7 +4202,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "gallery-5"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["gallery"],
+      categories: ["gallery","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3562,7 +4222,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "gallery-6"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["gallery"],
+      categories: ["gallery","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3582,7 +4242,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "products-2"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["products"],
+      categories: ["products","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3602,7 +4262,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "products-3"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["products"],
+      categories: ["products","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3622,7 +4282,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "products-4"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["products"],
+      categories: ["products","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3642,7 +4302,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "products-5"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["products"],
+      categories: ["products","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3662,7 +4322,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "products-6"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["products"],
+      categories: ["products","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3682,7 +4342,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "newsletter-2"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["newsletter"],
+      categories: ["newsletter","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3702,7 +4362,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "newsletter-3"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["newsletter"],
+      categories: ["newsletter","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3722,7 +4382,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "newsletter-4"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["newsletter"],
+      categories: ["newsletter","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3742,7 +4402,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "newsletter-5"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["newsletter"],
+      categories: ["newsletter","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3762,7 +4422,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "newsletter-6"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["newsletter"],
+      categories: ["newsletter","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3782,7 +4442,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "faq-2"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["faq"],
+      categories: ["faq","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3802,7 +4462,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "faq-3"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["faq"],
+      categories: ["faq","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3822,7 +4482,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "faq-4"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["faq"],
+      categories: ["faq","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3842,7 +4502,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "faq-5"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["faq"],
+      categories: ["faq","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3862,7 +4522,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "faq-6"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["faq"],
+      categories: ["faq","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3882,7 +4542,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "blog-2"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["blog"],
+      categories: ["blog","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3902,7 +4562,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "blog-3"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["blog"],
+      categories: ["blog","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3922,7 +4582,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "blog-4"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["blog"],
+      categories: ["blog","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3942,7 +4602,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "blog-5"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["blog"],
+      categories: ["blog","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3962,7 +4622,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "blog-6"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["blog"],
+      categories: ["blog","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3982,7 +4642,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "contact-2"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["contact"],
+      categories: ["contact","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -4002,7 +4662,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "contact-3"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["contact"],
+      categories: ["contact","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -4022,7 +4682,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "contact-4"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["contact"],
+      categories: ["contact","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -4042,7 +4702,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "contact-5"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["contact"],
+      categories: ["contact","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -4062,7 +4722,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "contact-6"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["contact"],
+      categories: ["contact","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -4082,7 +4742,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "logos-2"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["logos"],
+      categories: ["logos","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -4102,7 +4762,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "logos-3"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["logos"],
+      categories: ["logos","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -4122,7 +4782,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "logos-4"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["logos"],
+      categories: ["logos","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -4142,7 +4802,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "logos-5"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["logos"],
+      categories: ["logos","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -4162,7 +4822,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "logos-6"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["logos"],
+      categories: ["logos","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -4182,7 +4842,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "testimonials-3"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["testimonials"],
+      categories: ["testimonials","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -4202,7 +4862,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "testimonials-4"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["testimonials"],
+      categories: ["testimonials","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -4222,7 +4882,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "testimonials-5"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["testimonials"],
+      categories: ["testimonials","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -4242,7 +4902,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "testimonials-6"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["testimonials"],
+      categories: ["testimonials","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -4262,7 +4922,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "testimonials-7"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["testimonials"],
+      categories: ["testimonials","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -4282,7 +4942,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "pricing-3"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["pricing"],
+      categories: ["pricing","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -4302,7 +4962,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "pricing-4"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["pricing"],
+      categories: ["pricing","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -4322,7 +4982,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "pricing-5"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["pricing"],
+      categories: ["pricing","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -4342,7 +5002,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "pricing-6"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["pricing"],
+      categories: ["pricing","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -4362,7 +5022,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "pricing-7"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["pricing"],
+      categories: ["pricing","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -4382,7 +5042,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "team-3"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["team"],
+      categories: ["team","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -4402,7 +5062,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "team-4"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["team"],
+      categories: ["team","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -4422,7 +5082,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "team-5"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["team"],
+      categories: ["team","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -4442,7 +5102,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "team-6"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["team"],
+      categories: ["team","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -4462,7 +5122,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "team-7"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["team"],
+      categories: ["team","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -4482,7 +5142,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "stats-3"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["stats"],
+      categories: ["stats","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -4502,7 +5162,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "stats-4"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["stats"],
+      categories: ["stats","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -4522,7 +5182,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "stats-5"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["stats"],
+      categories: ["stats","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -4542,7 +5202,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "stats-6"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["stats"],
+      categories: ["stats","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -4562,7 +5222,7 @@ export const Index: Record<string, Record<string, any>> = {
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "stats-7"
         return { default: mod.default || mod[exportName] }
       }),
-      categories: ["stats"],
+      categories: ["stats","service-plants"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -10003,6 +10663,586 @@ export const Index: Record<string, Record<string, any>> = {
         return { default: mod.default || mod[exportName] }
       }),
       categories: ["sectorial"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "aurora-demo": {
+      name: "aurora-demo",
+      description: "Aurora animation demo",
+      type: "registry:example",
+      registryDependencies: ["aurora"],
+      files: [{
+        path: "registry/new-york-v4/examples/aurora-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/aurora-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "aurora-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "balatro-demo": {
+      name: "balatro-demo",
+      description: "Balatro animation demo",
+      type: "registry:example",
+      registryDependencies: ["balatro"],
+      files: [{
+        path: "registry/new-york-v4/examples/balatro-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/balatro-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "balatro-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "circular-gallery-demo": {
+      name: "circular-gallery-demo",
+      description: "Circular Gallery animation demo",
+      type: "registry:example",
+      registryDependencies: ["circular-gallery"],
+      files: [{
+        path: "registry/new-york-v4/examples/circular-gallery-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/circular-gallery-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "circular-gallery-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "flying-posters-demo": {
+      name: "flying-posters-demo",
+      description: "Flying Posters animation demo",
+      type: "registry:example",
+      registryDependencies: ["flying-posters"],
+      files: [{
+        path: "registry/new-york-v4/examples/flying-posters-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/flying-posters-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "flying-posters-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "gradient-blinds-demo": {
+      name: "gradient-blinds-demo",
+      description: "Gradient Blinds animation demo",
+      type: "registry:example",
+      registryDependencies: ["gradient-blinds"],
+      files: [{
+        path: "registry/new-york-v4/examples/gradient-blinds-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/gradient-blinds-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "gradient-blinds-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "iridescence-demo": {
+      name: "iridescence-demo",
+      description: "Iridescence animation demo",
+      type: "registry:example",
+      registryDependencies: ["iridescence"],
+      files: [{
+        path: "registry/new-york-v4/examples/iridescence-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/iridescence-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "iridescence-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "liquid-chrome-demo": {
+      name: "liquid-chrome-demo",
+      description: "Liquid Chrome animation demo",
+      type: "registry:example",
+      registryDependencies: ["liquid-chrome"],
+      files: [{
+        path: "registry/new-york-v4/examples/liquid-chrome-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/liquid-chrome-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "liquid-chrome-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "ascii-text-demo": {
+      name: "ascii-text-demo",
+      description: "ASCII Text animation demo",
+      type: "registry:example",
+      registryDependencies: ["ascii-text"],
+      files: [{
+        path: "registry/new-york-v4/examples/ascii-text-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/ascii-text-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "ascii-text-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "ballpit-demo": {
+      name: "ballpit-demo",
+      description: "Ballpit animation demo",
+      type: "registry:example",
+      registryDependencies: ["ballpit"],
+      files: [{
+        path: "registry/new-york-v4/examples/ballpit-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/ballpit-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "ballpit-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "color-bends-demo": {
+      name: "color-bends-demo",
+      description: "Color Bends animation demo",
+      type: "registry:example",
+      registryDependencies: ["color-bends"],
+      files: [{
+        path: "registry/new-york-v4/examples/color-bends-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/color-bends-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "color-bends-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "dither-demo": {
+      name: "dither-demo",
+      description: "Dither animation demo",
+      type: "registry:example",
+      registryDependencies: ["dither"],
+      files: [{
+        path: "registry/new-york-v4/examples/dither-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/dither-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "dither-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "fluid-glass-demo": {
+      name: "fluid-glass-demo",
+      description: "Fluid Glass animation demo",
+      type: "registry:example",
+      registryDependencies: ["fluid-glass"],
+      files: [{
+        path: "registry/new-york-v4/examples/fluid-glass-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/fluid-glass-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "fluid-glass-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "grid-distortion-demo": {
+      name: "grid-distortion-demo",
+      description: "Grid Distortion animation demo",
+      type: "registry:example",
+      registryDependencies: ["grid-distortion"],
+      files: [{
+        path: "registry/new-york-v4/examples/grid-distortion-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/grid-distortion-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "grid-distortion-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "shape-blur-demo": {
+      name: "shape-blur-demo",
+      description: "Shape Blur animation demo",
+      type: "registry:example",
+      registryDependencies: ["shape-blur"],
+      files: [{
+        path: "registry/new-york-v4/examples/shape-blur-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/shape-blur-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "shape-blur-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "decay-card-demo": {
+      name: "decay-card-demo",
+      description: "Decay Card animation demo",
+      type: "registry:example",
+      registryDependencies: ["decay-card"],
+      files: [{
+        path: "registry/new-york-v4/examples/decay-card-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/decay-card-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "decay-card-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "flowing-menu-demo": {
+      name: "flowing-menu-demo",
+      description: "Flowing Menu animation demo",
+      type: "registry:example",
+      registryDependencies: ["flowing-menu"],
+      files: [{
+        path: "registry/new-york-v4/examples/flowing-menu-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/flowing-menu-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "flowing-menu-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "image-trail-demo": {
+      name: "image-trail-demo",
+      description: "Image Trail animation demo",
+      type: "registry:example",
+      registryDependencies: ["image-trail"],
+      files: [{
+        path: "registry/new-york-v4/examples/image-trail-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/image-trail-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "image-trail-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "shuffle-demo": {
+      name: "shuffle-demo",
+      description: "Shuffle animation demo",
+      type: "registry:example",
+      registryDependencies: ["shuffle"],
+      files: [{
+        path: "registry/new-york-v4/examples/shuffle-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/shuffle-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "shuffle-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "sticker-peel-demo": {
+      name: "sticker-peel-demo",
+      description: "Sticker Peel animation demo",
+      type: "registry:example",
+      registryDependencies: ["sticker-peel"],
+      files: [{
+        path: "registry/new-york-v4/examples/sticker-peel-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/sticker-peel-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "sticker-peel-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "circular-text-demo": {
+      name: "circular-text-demo",
+      description: "Circular Text animation demo",
+      type: "registry:example",
+      registryDependencies: ["circular-text"],
+      files: [{
+        path: "registry/new-york-v4/examples/circular-text-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/circular-text-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "circular-text-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "stack-demo": {
+      name: "stack-demo",
+      description: "Stack animation demo",
+      type: "registry:example",
+      registryDependencies: ["stack"],
+      files: [{
+        path: "registry/new-york-v4/examples/stack-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/stack-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "stack-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "dome-gallery-demo": {
+      name: "dome-gallery-demo",
+      description: "Dome Gallery animation demo",
+      type: "registry:example",
+      registryDependencies: ["dome-gallery"],
+      files: [{
+        path: "registry/new-york-v4/examples/dome-gallery-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/dome-gallery-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "dome-gallery-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "infinite-menu-demo": {
+      name: "infinite-menu-demo",
+      description: "Infinite Menu animation demo",
+      type: "registry:example",
+      registryDependencies: ["infinite-menu"],
+      files: [{
+        path: "registry/new-york-v4/examples/infinite-menu-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/infinite-menu-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "infinite-menu-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "curved-loop-demo": {
+      name: "curved-loop-demo",
+      description: "Curved Loop animation demo",
+      type: "registry:example",
+      registryDependencies: ["curved-loop"],
+      files: [{
+        path: "registry/new-york-v4/examples/curved-loop-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/curved-loop-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "curved-loop-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "fuzzy-text-demo": {
+      name: "fuzzy-text-demo",
+      description: "Fuzzy Text animation demo",
+      type: "registry:example",
+      registryDependencies: ["fuzzy-text"],
+      files: [{
+        path: "registry/new-york-v4/examples/fuzzy-text-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/fuzzy-text-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "fuzzy-text-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "glass-surface-demo": {
+      name: "glass-surface-demo",
+      description: "Glass Surface animation demo",
+      type: "registry:example",
+      registryDependencies: ["glass-surface"],
+      files: [{
+        path: "registry/new-york-v4/examples/glass-surface-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/glass-surface-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "glass-surface-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "letter-glitch-demo": {
+      name: "letter-glitch-demo",
+      description: "Letter Glitch animation demo",
+      type: "registry:example",
+      registryDependencies: ["letter-glitch"],
+      files: [{
+        path: "registry/new-york-v4/examples/letter-glitch-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/letter-glitch-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "letter-glitch-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "noise-demo": {
+      name: "noise-demo",
+      description: "Noise animation demo",
+      type: "registry:example",
+      registryDependencies: ["noise"],
+      files: [{
+        path: "registry/new-york-v4/examples/noise-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/noise-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "noise-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "text-pressure-demo": {
+      name: "text-pressure-demo",
+      description: "Text Pressure animation demo",
+      type: "registry:example",
+      registryDependencies: ["text-pressure"],
+      files: [{
+        path: "registry/new-york-v4/examples/text-pressure-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/text-pressure-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "text-pressure-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["animations"],
       meta: undefined,
       tier: "free",
       readiness: "production",

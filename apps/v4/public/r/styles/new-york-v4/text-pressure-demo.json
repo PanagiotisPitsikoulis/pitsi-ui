@@ -1,0 +1,21 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "text-pressure-demo",
+  "type": "registry:example",
+  "description": "Text Pressure animation demo",
+  "registryDependencies": [
+    "text-pressure"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/text-pressure-demo.tsx",
+      "content": "import TextPressure from \"@/registry/new-york-v4/animations/text-pressure/text-pressure\"\n\nexport default function TextPressureDemo() {\n  return (\n    <div className=\"flex h-full w-full items-center justify-center bg-black\">\n      <TextPressure text=\"PRESSURE\" />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

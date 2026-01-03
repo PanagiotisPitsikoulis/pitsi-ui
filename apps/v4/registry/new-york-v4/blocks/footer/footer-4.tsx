@@ -1,8 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { type FooterBlockProps } from "@/lib/blocks/footer.types"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
@@ -86,7 +86,10 @@ export function Footer4({ content = {}, classNames = {} }: FooterBlockProps) {
               <Button size="lg" variant="secondary" className="group" asChild>
                 <Link href={cta.primaryButton.href}>
                   {cta.primaryButton.label}
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <DynamicIcon
+                    name="ArrowRight"
+                    className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
+                  />
                 </Link>
               </Button>
               <Button

@@ -214,8 +214,8 @@ function Bar({ modeProps = {}, ...p }: { modeProps?: ModeProps } & MeshProps) {
     roughness: 0,
     thickness: 10,
     ior: 1.15,
-    color: "#ffffff",
-    attenuationColor: "#ffffff",
+    color: "#f5f5f5",
+    attenuationColor: "#f5f5f5",
     attenuationDistance: 0.25,
   }
 
@@ -282,12 +282,12 @@ function NavItems({ items }: { items: NavItem[] }) {
         <Text
           key={label}
           fontSize={fontSize}
-          color="white"
+          color="#f5f5f5"
           anchorX="center"
           anchorY="middle"
           outlineWidth={0}
           outlineBlur="20%"
-          outlineColor="#000"
+          outlineColor="#333"
           outlineOpacity={0.5}
           renderOrder={10}
           onClick={(e) => {
@@ -375,9 +375,9 @@ function Typography() {
       letterSpacing={-0.05}
       outlineWidth={0}
       outlineBlur="20%"
-      outlineColor="#000"
+      outlineColor="#333"
       outlineOpacity={0.5}
-      color="white"
+      color="#f5f5f5"
       anchorX="center"
       anchorY="middle"
     >

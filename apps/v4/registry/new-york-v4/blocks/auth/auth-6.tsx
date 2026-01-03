@@ -1,8 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowLeft, Check } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Input } from "@/registry/new-york-v4/ui/input"
@@ -23,7 +23,7 @@ export function Auth6() {
           href="#"
           className="text-muted-foreground hover:text-foreground mb-8 inline-flex items-center text-sm"
         >
-          <ArrowLeft className="mr-2 h-4 w-4" />
+          <DynamicIcon name="ArrowLeft" className="mr-2 h-4 w-4" />
           Back to login
         </Link>
 
@@ -73,7 +73,8 @@ export function Auth6() {
                     req.met ? "text-green-600" : "text-muted-foreground"
                   )}
                 >
-                  <Check
+                  <DynamicIcon
+                    name="Check"
                     className={cn(
                       "h-4 w-4",
                       !req.met && "text-muted-foreground/50"

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "ballpit-demo",
+  "type": "registry:example",
+  "description": "Ballpit animation demo",
+  "registryDependencies": [
+    "ballpit"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/ballpit-demo.tsx",
+      "content": "import Ballpit from \"@/registry/new-york-v4/animations/ballpit/ballpit\"\n\nexport default function BallpitDemo() {\n  return (\n    <div className=\"h-full w-full\">\n      <Ballpit followCursor={true} />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

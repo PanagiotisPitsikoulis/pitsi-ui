@@ -47,7 +47,7 @@ const features5Defaults = {
     },
   ],
   image: {
-    src: "/placeholders/blocks/service-plants/assets/item-5.webp",
+    src: "/elements/subject/plants/item-5.webp",
     alt: "Featured plant",
   },
 }

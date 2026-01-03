@@ -1,0 +1,21 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "stack-demo",
+  "type": "registry:example",
+  "description": "Stack animation demo",
+  "registryDependencies": [
+    "stack"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/stack-demo.tsx",
+      "content": "import Stack from \"@/registry/new-york-v4/animations/stack/stack\"\n\nconst sampleCards = [\n  <div\n    key=\"1\"\n    className=\"flex h-full w-full items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 text-white\"\n  >\n    <span className=\"text-2xl font-bold\">Card 1</span>\n  </div>,\n  <div\n    key=\"2\"\n    className=\"flex h-full w-full items-center justify-center rounded-xl bg-gradient-to-br from-green-500 to-teal-600 text-white\"\n  >\n    <span className=\"text-2xl font-bold\">Card 2</span>\n  </div>,\n  <div\n    key=\"3\"\n    className=\"flex h-full w-full items-center justify-center rounded-xl bg-gradient-to-br from-orange-500 to-red-600 text-white\"\n  >\n    <span className=\"text-2xl font-bold\">Card 3</span>\n  </div>,\n  <div\n    key=\"4\"\n    className=\"flex h-full w-full items-center justify-center rounded-xl bg-gradient-to-br from-pink-500 to-rose-600 text-white\"\n  >\n    <span className=\"text-2xl font-bold\">Card 4</span>\n  </div>,\n]\n\nexport default function StackDemo() {\n  return (\n    <div className=\"flex h-full w-full items-center justify-center\">\n      <Stack cards={sampleCards} randomRotation={true} />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

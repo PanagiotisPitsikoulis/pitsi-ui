@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
-import { ArrowRight, X } from "lucide-react"
 
 import { type CtaBlockProps } from "@/lib/blocks/cta.types"
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
@@ -67,7 +67,10 @@ export function Cta5({ content = {}, classNames = {} }: CtaBlockProps) {
               >
                 <Link href={primaryCta.href}>
                   {primaryCta.label}
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <DynamicIcon
+                    name="ArrowRight"
+                    className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
+                  />
                 </Link>
               </Button>
             )}
@@ -77,7 +80,7 @@ export function Cta5({ content = {}, classNames = {} }: CtaBlockProps) {
               className="hover:bg-primary-foreground/10 h-8 w-8 shrink-0"
               onClick={handleDismiss}
             >
-              <X className="h-4 w-4" />
+              <DynamicIcon name="X" className="h-4 w-4" />
               <span className="sr-only">Dismiss</span>
             </Button>
           </div>

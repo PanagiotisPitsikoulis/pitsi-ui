@@ -2,8 +2,8 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Check } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Switch } from "@/registry/new-york-v4/ui/switch"
@@ -202,7 +202,8 @@ export function Pricing4({ content = {}, classNames = {} }: PricingBlockProps) {
               <ul className="mb-8 flex-1 space-y-3">
                 {plan.features.map((feature, j) => (
                   <li key={j} className="flex items-center gap-3 text-sm">
-                    <Check
+                    <DynamicIcon
+                      name="Check"
                       className={cn(
                         "h-5 w-5 shrink-0",
                         plan.highlighted

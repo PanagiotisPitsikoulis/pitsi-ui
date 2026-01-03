@@ -1,9 +1,8 @@
 "use client"
 
-import * as Icons from "@/lib/icons"
-import type { IconProps, LucideIcon } from "@/lib/icons"
+import { HugeiconsIcon } from "@hugeicons/react"
 
-type IconName = keyof typeof Icons
+import { iconMapping, type IconName as MappedIconName } from "@/lib/icons/icon-mapping"
 
 /**
  * Renders an icon by name
@@ -12,31 +11,45 @@ type IconName = keyof typeof Icons
  */
 export function DynamicIcon({
   name,
-  ...props
+  className,
+  size,
+  strokeWidth = 1.5,
 }: {
   name: string
   className?: string
   size?: number
   strokeWidth?: number
 }) {
-  const Icon = Icons[name as IconName] as LucideIcon | undefined
+  const hugeicon = iconMapping[name as MappedIconName]
 
-  if (!Icon || typeof Icon !== "function") {
-    console.warn(`Icon "${name}" not found`)
+  if (!hugeicon) {
+    console.warn(`Icon "${name}" not found in iconMapping`)
     return null
   }
 
-  return <Icon {...props} />
+  // Parse size from Tailwind className if not provided
+  let computedSize: number | undefined = size
+  if (computedSize === undefined && className) {
+    const match = className.match(/\b(?:size|[wh])-(\d+(?:\.\d+)?)\b/)
+    if (match) {
+      computedSize = parseFloat(match[1]) * 4
+    }
+  }
+
+  return (
+    <HugeiconsIcon
+      icon={hugeicon}
+      size={computedSize ?? 24}
+      strokeWidth={strokeWidth}
+      className={className}
+    />
+  )
 }
 
 /**
- * Get an icon component by name
+ * Get an icon data by name
  * Returns undefined if the icon is not found
  */
-export function getIcon(name: string): LucideIcon | undefined {
-  const icon = Icons[name as IconName]
-  if (icon && typeof icon === "function") {
-    return icon as LucideIcon
-  }
-  return undefined
+export function getIcon(name: string) {
+  return iconMapping[name as MappedIconName]
 }

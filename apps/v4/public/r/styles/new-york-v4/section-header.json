@@ -1,0 +1,18 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "section-header",
+  "type": "registry:ui",
+  "description": "Section header with optional badge, title, and description for landing page sections.",
+  "files": [
+    {
+      "path": "registry/new-york-v4/ui/section-header.tsx",
+      "content": "import { cn } from \"@/lib/utils\"\n\ninterface SectionHeaderClassNames {\n  root?: string\n  badge?: string\n  title?: string\n  description?: string\n}\n\ninterface SectionHeaderProps {\n  badge?: string\n  title: string\n  description?: string\n  align?: \"left\" | \"center\"\n  as?: \"h1\" | \"h2\" | \"h3\"\n  classNames?: SectionHeaderClassNames\n}\n\nexport function SectionHeader({\n  badge,\n  title,\n  description,\n  align = \"center\",\n  as: Tag = \"h2\",\n  classNames = {},\n}: SectionHeaderProps) {\n  return (\n    <div\n      className={cn(\n        \"mb-12 lg:mb-16\",\n        align === \"center\" && \"text-center\",\n        classNames.root\n      )}\n    >\n      {badge && (\n        <p\n          className={cn(\n            \"text-brand mb-4 text-sm font-medium tracking-[0.3em] uppercase\",\n            classNames.badge\n          )}\n        >\n          {badge}\n        </p>\n      )}\n      <Tag\n        className={cn(\n          \"font-display text-foreground text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl\",\n          classNames.title\n        )}\n      >\n        {title.split(\"\\n\").map((line, i) => (\n          <span key={i}>\n            {line}\n            {i < title.split(\"\\n\").length - 1 && <br />}\n          </span>\n        ))}\n      </Tag>\n      {description && (\n        <p\n          className={cn(\n            \"text-muted-foreground mt-6 text-lg md:text-xl\",\n            align === \"center\" && \"mx-auto max-w-2xl\",\n            classNames.description\n          )}\n        >\n          {description.split(\"\\n\").map((line, i) => (\n            <span key={i}>\n              {line}\n              {i < description.split(\"\\n\").length - 1 && <br />}\n            </span>\n          ))}\n        </p>\n      )}\n    </div>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "sectorial"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

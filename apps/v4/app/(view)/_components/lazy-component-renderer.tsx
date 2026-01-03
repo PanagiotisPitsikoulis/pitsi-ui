@@ -1,9 +1,14 @@
 "use client"
 
-import { Component as ReactComponent, memo, Suspense, useRef } from "react"
+import {
+  memo,
+  Component as ReactComponent,
+  Suspense,
+  useRef,
+  type ComponentType,
+} from "react"
 
 import { Index } from "@/registry/__index__"
-import { getBlockSettings } from "@/app/(app)/(content)/(blocks)/blocks"
 import {
   BlockContainer,
   BlockThemeWrapper,
@@ -11,6 +16,7 @@ import {
   getTemplateFonts,
 } from "@/app/(app)/(content)/(blocks)/_components"
 import { ScrollContainerProvider } from "@/app/(app)/(content)/(blocks)/_components/scroll-container-context"
+import { getBlockSettings } from "@/app/(app)/(content)/(blocks)/blocks"
 import {
   getShellForBlock,
   getTemplatePalette,
@@ -30,7 +36,11 @@ class ComponentErrorBoundary extends ReactComponent<
   { children: React.ReactNode; name?: string; silent?: boolean },
   { hasError: boolean; error?: Error }
 > {
-  constructor(props: { children: React.ReactNode; name?: string; silent?: boolean }) {
+  constructor(props: {
+    children: React.ReactNode
+    name?: string
+    silent?: boolean
+  }) {
     super(props)
     this.state = { hasError: false }
   }
@@ -88,7 +98,9 @@ function ApplicationBlockWrapper({
     return (
       <BlockThemeWrapper palette={template.palette} tint="base" fonts={fonts}>
         <div className="bg-background min-h-screen">
-          <ViewComponent />
+          <Suspense fallback={<div className="flex-1" />}>
+            <ViewComponent />
+          </Suspense>
         </div>
       </BlockThemeWrapper>
     )
@@ -129,7 +141,9 @@ function ApplicationBlockWrapper({
             navigation,
           }}
         >
-          <ViewComponent />
+          <Suspense fallback={<div className="flex-1" />}>
+            <ViewComponent />
+          </Suspense>
         </ShellComponent>
       </div>
     </BlockThemeWrapper>
@@ -226,7 +240,9 @@ export const LazyComponentRenderer = memo(function LazyComponentRenderer({
       <ComponentErrorBoundary>
         <div className="bg-background flex min-h-screen w-full items-center justify-center p-16">
           <div className="flex w-full max-w-4xl items-center justify-center">
-            <Suspense fallback={<div className="bg-background min-h-screen w-full" />}>
+            <Suspense
+              fallback={<div className="bg-background min-h-screen w-full" />}
+            >
               <Component />
             </Suspense>
           </div>
@@ -239,7 +255,9 @@ export const LazyComponentRenderer = memo(function LazyComponentRenderer({
   return (
     <ComponentErrorBoundary>
       <BlockWrapper name={name} styleName={styleName} Component={Component}>
-        <Suspense fallback={<div className="bg-background min-h-screen w-full" />}>
+        <Suspense
+          fallback={<div className="bg-background min-h-screen w-full" />}
+        >
           <Component />
         </Suspense>
       </BlockWrapper>

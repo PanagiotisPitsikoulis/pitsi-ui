@@ -1,8 +1,8 @@
 "use client"
 
 import Image from "next/image"
-import { Play } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 
 interface TestimonialsBlockProps {
@@ -30,7 +30,7 @@ const testimonials4Defaults = {
   description: "Hear directly from our customers about their experience.",
   videos: [
     {
-      thumbnail: "/placeholders/blocks/service-plants/1.webp",
+      thumbnail: "/elements/landscape/plants/1.webp",
       quote: "The implementation was seamless and the results were immediate.",
       author: "Jessica Williams",
       role: "Head of Product",
@@ -38,7 +38,7 @@ const testimonials4Defaults = {
       duration: "2:34",
     },
     {
-      thumbnail: "/placeholders/blocks/service-plants/2.webp",
+      thumbnail: "/elements/landscape/plants/2.webp",
       quote: "We've seen a 3x improvement in our conversion rates.",
       author: "Robert Taylor",
       role: "Marketing Director",
@@ -46,7 +46,7 @@ const testimonials4Defaults = {
       duration: "3:12",
     },
     {
-      thumbnail: "/placeholders/blocks/service-plants/3.webp",
+      thumbnail: "/elements/landscape/plants/3.webp",
       quote: "The customer support team is incredibly responsive.",
       author: "Amanda Foster",
       role: "Operations Manager",
@@ -54,7 +54,7 @@ const testimonials4Defaults = {
       duration: "1:58",
     },
     {
-      thumbnail: "/placeholders/blocks/service-plants/4.webp",
+      thumbnail: "/elements/landscape/plants/4.webp",
       quote: "This tool has become essential to our daily workflow.",
       author: "Kevin Anderson",
       role: "Engineering Lead",
@@ -114,7 +114,7 @@ export function Testimonials4({
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-black/30 transition-colors group-hover:bg-black/40">
                   <div className="bg-primary text-primary-foreground flex h-16 w-16 items-center justify-center rounded-full transition-transform group-hover:scale-110">
-                    <Play className="ml-1 h-7 w-7" fill="currentColor" />
+                    <DynamicIcon name="Play" className="ml-1 h-7 w-7" />
                   </div>
                 </div>
                 <div className="bg-background/90 absolute right-3 bottom-3 rounded px-2 py-1 text-xs font-medium">

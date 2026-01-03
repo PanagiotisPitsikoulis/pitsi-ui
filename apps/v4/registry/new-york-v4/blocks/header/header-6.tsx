@@ -2,8 +2,8 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Command, Search } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { type HeaderBlockProps } from "@/lib/blocks/header.types"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
@@ -105,11 +105,11 @@ export function Header6({ content = {}, classNames = {} }: HeaderBlockProps) {
             onClick={() => setIsSearchOpen(true)}
           >
             <div className="flex items-center gap-2">
-              <Search className="h-4 w-4" />
+              <DynamicIcon name="Search" className="h-4 w-4" />
               <span className="text-sm">Search documentation...</span>
             </div>
             <kbd className="bg-muted pointer-events-none flex h-5 items-center gap-1 rounded border px-1.5 text-xs">
-              <Command className="h-3 w-3" />K
+              <DynamicIcon name="Command" className="h-3 w-3" />K
             </kbd>
           </Button>
 
@@ -120,7 +120,7 @@ export function Header6({ content = {}, classNames = {} }: HeaderBlockProps) {
             className="md:hidden"
             onClick={() => setIsSearchOpen(true)}
           >
-            <Search className="h-5 w-5" />
+            <DynamicIcon name="Search" className="h-5 w-5" />
           </Button>
 
           {/* CTA */}
@@ -140,7 +140,10 @@ export function Header6({ content = {}, classNames = {} }: HeaderBlockProps) {
           </DialogHeader>
           <div className="space-y-4">
             <div className="relative">
-              <Search className="text-muted-foreground absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2" />
+              <DynamicIcon
+                name="Search"
+                className="text-muted-foreground absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2"
+              />
               <Input
                 placeholder="Search documentation..."
                 className="pl-10"
@@ -158,7 +161,10 @@ export function Header6({ content = {}, classNames = {} }: HeaderBlockProps) {
                   onClick={() => setIsSearchOpen(false)}
                 >
                   <div className="bg-muted flex h-10 w-10 items-center justify-center rounded-lg">
-                    <Search className="text-muted-foreground h-4 w-4" />
+                    <DynamicIcon
+                      name="Search"
+                      className="text-muted-foreground h-4 w-4"
+                    />
                   </div>
                   <div>
                     <div className="text-foreground text-sm font-medium">

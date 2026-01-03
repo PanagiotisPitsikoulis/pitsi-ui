@@ -1,0 +1,21 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "shape-blur-demo",
+  "type": "registry:example",
+  "description": "Shape Blur animation demo",
+  "registryDependencies": [
+    "shape-blur"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/shape-blur-demo.tsx",
+      "content": "import ShapeBlur from \"@/registry/new-york-v4/animations/shape-blur/shape-blur\"\n\nexport default function ShapeBlurDemo() {\n  return (\n    <div className=\"h-full w-full\">\n      <ShapeBlur variation={0} />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

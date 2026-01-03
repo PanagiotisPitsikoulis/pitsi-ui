@@ -1,0 +1,21 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "circular-text-demo",
+  "type": "registry:example",
+  "description": "Circular Text animation demo",
+  "registryDependencies": [
+    "circular-text"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/circular-text-demo.tsx",
+      "content": "import CircularText from \"@/registry/new-york-v4/animations/circular-text/circular-text\"\n\nexport default function CircularTextDemo() {\n  return (\n    <div className=\"flex h-full w-full items-center justify-center\">\n      <CircularText text=\"ROTATING TEXT\" />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "animations"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

@@ -2,8 +2,8 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { ChevronLeft, ChevronRight, X } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
@@ -24,15 +24,15 @@ const gallery5Defaults = {
   title: "Image Gallery",
   description: "Click any image to view it in full screen.",
   images: [
-    { src: "/placeholders/blocks/service-plants/1.webp", alt: "Image 1" },
-    { src: "/placeholders/blocks/service-plants/2.webp", alt: "Image 2" },
-    { src: "/placeholders/blocks/service-plants/3.webp", alt: "Image 3" },
-    { src: "/placeholders/blocks/service-plants/4.webp", alt: "Image 4" },
-    { src: "/placeholders/blocks/service-plants/5.webp", alt: "Image 5" },
-    { src: "/placeholders/blocks/service-plants/1.webp", alt: "Image 6" },
-    { src: "/placeholders/blocks/service-plants/2.webp", alt: "Image 7" },
-    { src: "/placeholders/blocks/service-plants/3.webp", alt: "Image 8" },
-    { src: "/placeholders/blocks/service-plants/3.webp", alt: "Image 9" },
+    { src: "/elements/landscape/plants/1.webp", alt: "Image 1" },
+    { src: "/elements/landscape/plants/2.webp", alt: "Image 2" },
+    { src: "/elements/landscape/plants/3.webp", alt: "Image 3" },
+    { src: "/elements/landscape/plants/4.webp", alt: "Image 4" },
+    { src: "/elements/landscape/plants/5.webp", alt: "Image 5" },
+    { src: "/elements/landscape/plants/1.webp", alt: "Image 6" },
+    { src: "/elements/landscape/plants/2.webp", alt: "Image 7" },
+    { src: "/elements/landscape/plants/3.webp", alt: "Image 8" },
+    { src: "/elements/landscape/plants/3.webp", alt: "Image 9" },
   ],
 }
 
@@ -110,7 +110,7 @@ export function Gallery5({ content = {}, classNames = {} }: GalleryBlockProps) {
               className="absolute top-4 right-4 z-10 text-white hover:bg-white/10"
               onClick={closeLightbox}
             >
-              <X className="h-6 w-6" />
+              <DynamicIcon name="X" className="h-6 w-6" />
             </Button>
 
             {/* Navigation */}
@@ -120,7 +120,7 @@ export function Gallery5({ content = {}, classNames = {} }: GalleryBlockProps) {
               className="absolute left-4 z-10 text-white hover:bg-white/10"
               onClick={goToPrevious}
             >
-              <ChevronLeft className="h-8 w-8" />
+              <DynamicIcon name="ChevronLeft" className="h-8 w-8" />
             </Button>
             <Button
               variant="ghost"
@@ -128,7 +128,7 @@ export function Gallery5({ content = {}, classNames = {} }: GalleryBlockProps) {
               className="absolute right-4 z-10 text-white hover:bg-white/10"
               onClick={goToNext}
             >
-              <ChevronRight className="h-8 w-8" />
+              <DynamicIcon name="ChevronRight" className="h-8 w-8" />
             </Button>
 
             {/* Image */}

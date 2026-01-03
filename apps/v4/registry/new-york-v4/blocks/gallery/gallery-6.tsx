@@ -27,24 +27,24 @@ const gallery6Defaults = {
   comparisons: [
     {
       before: {
-        src: "/placeholders/blocks/service-plants/1.webp",
+        src: "/elements/landscape/plants/1.webp",
         alt: "Before renovation",
         label: "Before",
       },
       after: {
-        src: "/placeholders/blocks/service-plants/2.webp",
+        src: "/elements/landscape/plants/2.webp",
         alt: "After renovation",
         label: "After",
       },
     },
     {
       before: {
-        src: "/placeholders/blocks/service-plants/3.webp",
+        src: "/elements/landscape/plants/3.webp",
         alt: "Before editing",
         label: "Original",
       },
       after: {
-        src: "/placeholders/blocks/service-plants/4.webp",
+        src: "/elements/landscape/plants/4.webp",
         alt: "After editing",
         label: "Edited",
       },

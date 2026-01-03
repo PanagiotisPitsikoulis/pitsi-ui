@@ -2,8 +2,8 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
@@ -43,26 +43,26 @@ const blog4Defaults = {
     title: "The Complete Guide to Modern Architecture",
     excerpt:
       "Exploring the intersection of form and function in contemporary design.",
-    image: "/placeholders/blocks/service-plants/1.webp",
+    image: "/elements/landscape/plants/1.webp",
     category: "Architecture",
     href: "#",
   },
   sidebar: [
     {
       title: "Minimalism in Interior Design",
-      image: "/placeholders/blocks/service-plants/2.webp",
+      image: "/elements/landscape/plants/2.webp",
       category: "Interior",
       href: "#",
     },
     {
       title: "Sustainable Building Materials",
-      image: "/placeholders/blocks/service-plants/3.webp",
+      image: "/elements/landscape/plants/3.webp",
       category: "Sustainability",
       href: "#",
     },
     {
       title: "Urban Planning Innovations",
-      image: "/placeholders/blocks/service-plants/4.webp",
+      image: "/elements/landscape/plants/4.webp",
       category: "Urban",
       href: "#",
     },
@@ -70,25 +70,25 @@ const blog4Defaults = {
   grid: [
     {
       title: "Color Theory in Design",
-      image: "/placeholders/blocks/service-plants/5.webp",
+      image: "/elements/landscape/plants/5.webp",
       category: "Design",
       href: "#",
     },
     {
       title: "Smart Home Technology",
-      image: "/placeholders/blocks/service-plants/1.webp",
+      image: "/elements/landscape/plants/1.webp",
       category: "Technology",
       href: "#",
     },
     {
       title: "Biophilic Design Trends",
-      image: "/placeholders/blocks/service-plants/2.webp",
+      image: "/elements/landscape/plants/2.webp",
       category: "Trends",
       href: "#",
     },
     {
       title: "Historic Preservation",
-      image: "/placeholders/blocks/service-plants/3.webp",
+      image: "/elements/landscape/plants/3.webp",
       category: "History",
       href: "#",
     },
@@ -120,7 +120,10 @@ export function Blog4({ content = {}, classNames = {} }: BlogBlockProps) {
           <Button variant="outline" className="group" asChild>
             <Link href="#">
               Browse All{" "}
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <DynamicIcon
+                name="ArrowRight"
+                className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
+              />
             </Link>
           </Button>
         </div>

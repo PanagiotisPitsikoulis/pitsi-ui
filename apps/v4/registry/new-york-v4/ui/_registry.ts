@@ -1134,6 +1134,65 @@ export const ui: Registry["items"] = [
     readiness: "production",
   },
   {
+    name: "section-header",
+    type: "registry:ui",
+    description:
+      "Section header with optional badge, title, and description for landing page sections.",
+    files: [
+      {
+        path: "ui/section-header.tsx",
+        type: "registry:ui",
+      },
+    ],
+    tier: "free",
+    categories: ["sectorial"],
+    readiness: "production",
+  },
+  {
+    name: "section-label",
+    type: "registry:ui",
+    description: "Small uppercase label for subsection headers.",
+    files: [
+      {
+        path: "ui/section-label.tsx",
+        type: "registry:ui",
+      },
+    ],
+    tier: "free",
+    categories: ["sectorial"],
+    readiness: "production",
+  },
+  {
+    name: "page-container",
+    type: "registry:ui",
+    description:
+      "Container wrapper with configurable max-width, padding, and spacing for page layouts.",
+    files: [
+      {
+        path: "ui/page-container.tsx",
+        type: "registry:ui",
+      },
+    ],
+    tier: "free",
+    categories: ["sectorial"],
+    readiness: "production",
+  },
+  {
+    name: "stat-card",
+    type: "registry:ui",
+    description:
+      "Card displaying a statistic with label, value, unit, and optional change indicator.",
+    files: [
+      {
+        path: "ui/stat-card.tsx",
+        type: "registry:ui",
+      },
+    ],
+    tier: "free",
+    categories: ["sectorial"],
+    readiness: "production",
+  },
+  {
     name: "form",
     type: "registry:ui",
     description:

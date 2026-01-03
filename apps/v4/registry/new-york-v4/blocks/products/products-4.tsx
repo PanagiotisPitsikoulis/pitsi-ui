@@ -3,8 +3,8 @@
 import { useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { ChevronLeft, ChevronRight, Plus } from "lucide-react"
 
+import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
@@ -34,56 +34,56 @@ const products4Defaults = {
     {
       name: "Wireless Mouse",
       price: 49,
-      image: "/placeholders/blocks/service-plants/1.webp",
+      image: "/elements/landscape/plants/1.webp",
       category: "Electronics",
       href: "#",
     },
     {
       name: "Cotton T-Shirt",
       price: 29,
-      image: "/placeholders/blocks/service-plants/2.webp",
+      image: "/elements/landscape/plants/2.webp",
       category: "Clothing",
       href: "#",
     },
     {
       name: "Leather Wallet",
       price: 79,
-      image: "/placeholders/blocks/service-plants/3.webp",
+      image: "/elements/landscape/plants/3.webp",
       category: "Accessories",
       href: "#",
     },
     {
       name: "Desk Lamp",
       price: 59,
-      image: "/placeholders/blocks/service-plants/4.webp",
+      image: "/elements/landscape/plants/4.webp",
       category: "Home",
       href: "#",
     },
     {
       name: "Bluetooth Speaker",
       price: 99,
-      image: "/placeholders/blocks/service-plants/5.webp",
+      image: "/elements/landscape/plants/5.webp",
       category: "Electronics",
       href: "#",
     },
     {
       name: "Denim Jacket",
       price: 149,
-      image: "/placeholders/blocks/service-plants/1.webp",
+      image: "/elements/landscape/plants/1.webp",
       category: "Clothing",
       href: "#",
     },
     {
       name: "Sunglasses",
       price: 89,
-      image: "/placeholders/blocks/service-plants/2.webp",
+      image: "/elements/landscape/plants/2.webp",
       category: "Accessories",
       href: "#",
     },
     {
       name: "Plant Pot",
       price: 35,
-      image: "/placeholders/blocks/service-plants/3.webp",
+      image: "/elements/landscape/plants/3.webp",
       category: "Home",
       href: "#",
     },
@@ -132,7 +132,7 @@ export function Products4({
               onClick={() => scroll("left")}
               className="h-10 w-10 rounded-full"
             >
-              <ChevronLeft className="h-5 w-5" />
+              <DynamicIcon name="ChevronLeft" className="h-5 w-5" />
             </Button>
             <Button
               variant="outline"
@@ -140,7 +140,7 @@ export function Products4({
               onClick={() => scroll("right")}
               className="h-10 w-10 rounded-full"
             >
-              <ChevronRight className="h-5 w-5" />
+              <DynamicIcon name="ChevronRight" className="h-5 w-5" />
             </Button>
           </div>
         </div>
@@ -167,7 +167,7 @@ export function Products4({
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-black/0 opacity-0 transition-all group-hover:bg-black/20 group-hover:opacity-100">
                   <Button size="icon" variant="secondary" className="h-12 w-12">
-                    <Plus className="h-5 w-5" />
+                    <DynamicIcon name="Plus" className="h-5 w-5" />
                   </Button>
                 </div>
               </Link>
