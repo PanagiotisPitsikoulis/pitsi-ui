@@ -19,5 +19,13 @@
     "auth"
   ],
   "tier": "free",
-  "readiness": "production"
+  "readiness": "production",
+  "blockConfig": {
+    "template": "standalone",
+    "blockType": "auth",
+    "order": 50,
+    "palette": "slate",
+    "typography": "modern",
+    "tint": "tinted"
+  }
 }

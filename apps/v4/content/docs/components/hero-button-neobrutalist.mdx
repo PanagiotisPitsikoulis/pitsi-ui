@@ -1,0 +1,111 @@
+---
+title: Hero Button Neobrutalist
+description: A bold call-to-action button with hard shadows and an arrow icon, perfect for neobrutalist hero sections.
+component: true
+---
+
+<ComponentPreview name="hero-button-neobrutalist-demo" description="A neobrutalist hero button" className="mb-4" />
+
+```tsx showLineNumbers
+<HeroButtonNeobrutalist>Get Started</HeroButtonNeobrutalist>
+<HeroButtonNeobrutalist variant="outline">Learn More</HeroButtonNeobrutalist>
+```
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx pitsi@latest add hero-button-neobrutalist
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install class-variance-authority
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="hero-button-neobrutalist" title="components/ui/hero-button-neobrutalist.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { HeroButtonNeobrutalist } from "@/components/ui/hero-button-neobrutalist"
+```
+
+```tsx
+<HeroButtonNeobrutalist>Get Started</HeroButtonNeobrutalist>
+```
+
+## Features
+
+- Hard drop shadows that grow on hover
+- Bold 2px borders for a striking look
+- Press animation that moves the button down and right
+- Integrated arrow icon with slide animation
+- Optional expand circle mode for more dramatic hover effect
+- Uppercase, bold text with letter spacing
+
+## Examples
+
+### Default
+
+```tsx
+<HeroButtonNeobrutalist>Get Started</HeroButtonNeobrutalist>
+```
+
+### Expand Circle
+
+Use the `expandCircle` prop for a more dramatic hover animation.
+
+```tsx
+<HeroButtonNeobrutalist expandCircle>Explore Now</HeroButtonNeobrutalist>
+```
+
+### Variants
+
+```tsx
+<HeroButtonNeobrutalist variant="default">Default</HeroButtonNeobrutalist>
+<HeroButtonNeobrutalist variant="secondary">Secondary</HeroButtonNeobrutalist>
+<HeroButtonNeobrutalist variant="outline">Outline</HeroButtonNeobrutalist>
+```
+
+### Sizes
+
+```tsx
+<HeroButtonNeobrutalist size="sm">Small</HeroButtonNeobrutalist>
+<HeroButtonNeobrutalist size="default">Default</HeroButtonNeobrutalist>
+<HeroButtonNeobrutalist size="lg">Large</HeroButtonNeobrutalist>
+```
+
+## API Reference
+
+### HeroButtonNeobrutalist
+
+| Prop           | Type                                                                | Default     |
+| -------------- | ------------------------------------------------------------------- | ----------- |
+| `variant`      | `"default" \| "secondary" \| "destructive" \| "outline" \| "ghost"` | `"default"` |
+| `size`         | `"default" \| "sm" \| "lg"`                                         | `"lg"`      |
+| `expandCircle` | `boolean`                                                           | `false`     |

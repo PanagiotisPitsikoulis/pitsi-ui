@@ -5,7 +5,7 @@ import { useTheme } from "next-themes"
 
 import { cn } from "@/lib/utils"
 import { themePresets } from "@/app/(app)/(tools)/tools/theme-generator/_components/theme-presets"
-import { type ColorPalette } from "@/app/(app)/(content)/(blocks)/template-config"
+import { type ColorPalette } from "@/registry/new-york-v4/lib/block-theme"
 
 import { fontPresets, type FontPreset } from "./template-fonts"
 

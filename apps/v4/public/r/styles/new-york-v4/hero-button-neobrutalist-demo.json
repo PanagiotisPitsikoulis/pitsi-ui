@@ -1,0 +1,20 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "hero-button-neobrutalist-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "hero-button-neobrutalist"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/hero-button-neobrutalist-demo.tsx",
+      "content": "import { HeroButtonNeobrutalist } from \"@/registry/new-york-v4/ui/hero-button-neobrutalist\"\n\nexport default function HeroButtonNeobrutalistDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <HeroButtonNeobrutalist>Get Started</HeroButtonNeobrutalist>\n      <HeroButtonNeobrutalist variant=\"outline\">\n        Learn More\n      </HeroButtonNeobrutalist>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "core-components"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

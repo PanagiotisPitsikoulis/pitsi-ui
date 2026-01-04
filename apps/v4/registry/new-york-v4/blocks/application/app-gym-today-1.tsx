@@ -101,7 +101,7 @@ export function AppGymToday1({ onLogWorkout }: AppGymToday1Props) {
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className="bg-card rounded-xl p-4 shadow-sm transition-shadow hover:shadow-md"
+              className="bg-muted rounded-xl p-4 transition-colors"
             >
               <p className="text-muted-foreground text-[10px] font-medium tracking-wider uppercase">
                 {stat.label}
@@ -127,7 +127,7 @@ export function AppGymToday1({ onLogWorkout }: AppGymToday1Props) {
         </div>
 
         {/* Week Progress */}
-        <div className="bg-card rounded-xl p-5 shadow-sm">
+        <div className="bg-muted rounded-xl p-5">
           <div className="mb-4 flex items-center justify-between">
             <div>
               <p className="text-muted-foreground text-[10px] font-medium tracking-wider uppercase">
@@ -192,7 +192,7 @@ export function AppGymToday1({ onLogWorkout }: AppGymToday1Props) {
             {upcomingSets.map((exercise) => (
               <div
                 key={exercise.exercise}
-                className="bg-card flex items-center gap-4 rounded-xl p-4 shadow-sm transition-shadow hover:shadow-md"
+                className="bg-muted flex items-center gap-4 rounded-xl p-4 transition-colors"
               >
                 <div
                   className="flex size-10 shrink-0 items-center justify-center rounded-lg"

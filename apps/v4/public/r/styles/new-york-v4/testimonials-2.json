@@ -15,8 +15,16 @@
   ],
   "categories": [
     "testimonials",
-    "service-fitness"
+    "landing"
   ],
   "tier": "free",
-  "readiness": "production"
+  "readiness": "production",
+  "blockConfig": {
+    "template": "service-fitness",
+    "blockType": "testimonials",
+    "order": 7,
+    "palette": "neon",
+    "typography": "futuristic",
+    "tint": "deep"
+  }
 }

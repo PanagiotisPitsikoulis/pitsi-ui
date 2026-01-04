@@ -10,7 +10,10 @@ import {
   CollapsibleTrigger,
 } from "@/registry/new-york-v4/ui/collapsible"
 
-import type { BlockConfig } from "../template-config"
+// Minimal block info needed for the section
+interface BlockInfo {
+  name: string
+}
 
 export interface BlockMetadata {
   name: string
@@ -19,7 +22,7 @@ export interface BlockMetadata {
 }
 
 interface TemplateBlocksSectionProps {
-  templateBlocks: BlockConfig[]
+  templateBlocks: BlockInfo[]
   styleName: string
   blocksMetadata: BlockMetadata[]
   title?: string

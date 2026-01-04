@@ -28,5 +28,13 @@
     "application"
   ],
   "tier": "free",
-  "readiness": "production"
+  "readiness": "production",
+  "blockConfig": {
+    "template": "standalone",
+    "blockType": "maps",
+    "order": 60,
+    "palette": "slate",
+    "typography": "modern",
+    "tint": "tinted"
+  }
 }

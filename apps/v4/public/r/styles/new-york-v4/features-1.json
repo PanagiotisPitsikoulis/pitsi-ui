@@ -16,8 +16,16 @@
   ],
   "categories": [
     "features",
-    "service-plants"
+    "landing"
   ],
   "tier": "free",
-  "readiness": "production"
+  "readiness": "production",
+  "blockConfig": {
+    "template": "service-plants",
+    "blockType": "features",
+    "order": 4,
+    "palette": "sage",
+    "typography": "elegant",
+    "tint": "tinted"
+  }
 }

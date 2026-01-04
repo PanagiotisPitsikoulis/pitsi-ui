@@ -42,7 +42,7 @@ export function AppGymProfile1() {
         </div>
 
         {/* Profile Section */}
-        <div className="bg-card rounded-xl p-6 shadow-sm">
+        <div className="bg-muted rounded-xl p-6">
           <div className="flex items-start gap-6">
             <div className="relative">
               <Avatar className="size-20">
@@ -85,7 +85,7 @@ export function AppGymProfile1() {
         </div>
 
         {/* Preferences */}
-        <div className="bg-card rounded-xl shadow-sm">
+        <div className="bg-muted rounded-xl">
           <div className="p-6">
             <h2 className="font-semibold">Preferences</h2>
             <p className="text-muted-foreground mt-1 text-sm">
@@ -167,7 +167,7 @@ export function AppGymProfile1() {
         </div>
 
         {/* Stats */}
-        <div className="bg-card rounded-xl p-6 shadow-sm">
+        <div className="bg-muted rounded-xl p-6">
           <h2 className="font-semibold">Your Stats</h2>
           <p className="text-muted-foreground mt-1 text-sm">
             All-time training statistics

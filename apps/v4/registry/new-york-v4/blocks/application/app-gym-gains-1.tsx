@@ -111,7 +111,7 @@ export function AppGymGains1() {
         </div>
 
         {/* Selected Lift Detail */}
-        <div className="bg-card rounded-xl p-5 shadow-sm">
+        <div className="bg-muted rounded-xl p-5">
           <div className="mb-4 flex items-start justify-between">
             <div>
               <p className="text-muted-foreground text-[10px] font-medium tracking-wider uppercase">
@@ -233,7 +233,7 @@ export function AppGymGains1() {
                   key={lift.name}
                   onClick={() => setSelectedLift(lift.name)}
                   className={cn(
-                    "bg-card flex items-center gap-4 rounded-xl p-4 text-left shadow-sm transition-all hover:shadow-md",
+                    "bg-muted flex items-center gap-4 rounded-xl p-4 text-left transition-all",
                     isSelected && "ring-2"
                   )}
                   style={

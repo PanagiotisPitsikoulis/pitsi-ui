@@ -1,6 +1,45 @@
 import { Registry } from "pitsi/schema"
 
+// Block configuration for blocks-first architecture
+// Each block defines its template, palette, typography, and display settings
+export interface BlockConfig {
+  template: string // Which template this block belongs to
+  blockType: string // Type for grouping (hero, cta, features, etc.)
+  order: number // Position in template (lower = earlier)
+  palette: string // Color palette (neon, sage, azure, etc.)
+  typography: string // Typography preset (futuristic, elegant, modern, etc.)
+  tint?: "base" | "tinted" | "deep"
+  forceLight?: boolean
+  forceDark?: boolean
+}
+
+// Helper to create block config
+function bc(
+  template: string,
+  blockType: string,
+  order: number,
+  palette: string,
+  typography: string,
+  tint: "base" | "tinted" | "deep" = "tinted",
+  forceLight?: boolean,
+  forceDark?: boolean
+): BlockConfig {
+  return {
+    template,
+    blockType,
+    order,
+    palette,
+    typography,
+    tint,
+    forceLight,
+    forceDark,
+  }
+}
+
 export const blocks: Registry["items"] = [
+  // ============================================
+  // SERVICE-PLANTS TEMPLATE (sage + elegant)
+  // ============================================
   {
     name: "header-1",
     type: "registry:block",
@@ -13,9 +52,18 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["header", "service-plants"],
+    categories: ["header", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "header",
+      1,
+      "sage",
+      "elegant",
+      "tinted",
+      true
+    ),
   },
   {
     name: "hero-1",
@@ -30,10 +78,393 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["hero", "service-plants"],
+    categories: ["hero", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "hero",
+      2,
+      "sage",
+      "elegant",
+      "tinted",
+      true
+    ),
   },
+  {
+    name: "logos-1",
+    type: "registry:block",
+    description: "Plant shop logo cloud section",
+    files: [
+      {
+        path: "blocks/logos/logos-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["logos", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc("service-plants", "logos", 3, "sage", "elegant", "deep"),
+  },
+  {
+    name: "features-1",
+    type: "registry:block",
+    description: "Plant shop features section with icons and center image",
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
+    files: [
+      {
+        path: "blocks/features/features-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["features", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "features",
+      4,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
+  },
+  {
+    name: "features-2",
+    type: "registry:block",
+    description: "Plant shop features section variant 2",
+    dependencies: ["motion/react"],
+    files: [
+      {
+        path: "blocks/features/features-2.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["features", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "features",
+      4,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
+  },
+  {
+    name: "features-3",
+    type: "registry:block",
+    description: "Plant shop features section variant 3 with circle background",
+    dependencies: ["motion/react"],
+    files: [
+      {
+        path: "blocks/features/features-3.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["features", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "features",
+      4,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
+  },
+  {
+    name: "features-4",
+    type: "registry:block",
+    description: "Plant shop features section variant 4",
+    dependencies: ["motion/react"],
+    files: [
+      {
+        path: "blocks/features/features-4.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["features", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "features",
+      4,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
+  },
+  {
+    name: "features-5",
+    type: "registry:block",
+    description: "Plant shop features section variant 5",
+    dependencies: ["motion/react"],
+    files: [
+      {
+        path: "blocks/features/features-5.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["features", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "features",
+      4,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
+  },
+  {
+    name: "products-1",
+    type: "registry:block",
+    description: "Plant shop products grid showcasing best sellers",
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "blocks/products/products-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["products", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "products",
+      5,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
+  },
+  {
+    name: "pricing-1",
+    type: "registry:block",
+    description: "Plant shop pricing section with animated cards",
+    dependencies: ["motion/react"],
+    registryDependencies: ["button", "utils"],
+    files: [
+      {
+        path: "blocks/pricing/pricing-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["pricing", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "pricing",
+      6,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
+  },
+  {
+    name: "testimonials-1",
+    type: "registry:block",
+    description: "Plant shop testimonials with stacked cards effect",
+    registryDependencies: ["utils"],
+    files: [
+      {
+        path: "blocks/testimonials/testimonials-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["testimonials", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "testimonials",
+      7,
+      "sage",
+      "elegant",
+      "deep"
+    ),
+  },
+  {
+    name: "gallery-1",
+    type: "registry:block",
+    description: "Plant shop gallery grid with decorative elements",
+    files: [
+      {
+        path: "blocks/gallery/gallery-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["gallery", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "gallery",
+      8,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
+  },
+  {
+    name: "team-1",
+    type: "registry:block",
+    description: "Plant shop team section with stacked avatars",
+    files: [
+      {
+        path: "blocks/team/team-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["team", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc("service-plants", "team", 9, "sage", "elegant", "tinted"),
+  },
+  {
+    name: "stats-1",
+    type: "registry:block",
+    description: "Plant shop statistics section",
+    files: [
+      {
+        path: "blocks/stats/stats-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["stats", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc("service-plants", "stats", 10, "sage", "elegant", "deep"),
+  },
+  {
+    name: "faq-1",
+    type: "registry:block",
+    description: "Plant shop FAQ section with accordion",
+    registryDependencies: ["accordion"],
+    files: [
+      {
+        path: "blocks/faq/faq-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["faq", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc("service-plants", "faq", 11, "sage", "elegant", "tinted"),
+  },
+  {
+    name: "blog-1",
+    type: "registry:block",
+    description: "Plant shop blog section with article cards",
+    files: [
+      {
+        path: "blocks/blog/blog-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["blog", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc("service-plants", "blog", 12, "sage", "elegant", "tinted"),
+  },
+  {
+    name: "contact-1",
+    type: "registry:block",
+    description: "Plant shop contact form section",
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
+    registryDependencies: ["button", "input", "textarea", "label"],
+    files: [
+      {
+        path: "blocks/contact/contact-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["contact", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "contact",
+      13,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
+  },
+  {
+    name: "newsletter-1",
+    type: "registry:block",
+    description: "Plant shop newsletter subscription section",
+    registryDependencies: ["button", "input"],
+    files: [
+      {
+        path: "blocks/newsletter/newsletter-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["newsletter", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "newsletter",
+      14,
+      "sage",
+      "elegant",
+      "deep"
+    ),
+  },
+  {
+    name: "cta-1",
+    type: "registry:block",
+    description: "Plant shop call-to-action section",
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "blocks/cta/cta-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["cta", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc("service-plants", "cta", 15, "sage", "elegant", "tinted"),
+  },
+  {
+    name: "footer-1",
+    type: "registry:block",
+    description: "Plant shop footer with multiple columns and newsletter",
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
+    registryDependencies: ["button", "input"],
+    files: [
+      {
+        path: "blocks/footer/footer-1.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["footer", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "footer",
+      20,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
+  },
+
+  // ============================================
+  // SERVICE-TRAVEL TEMPLATE (azure + modern)
+  // ============================================
   {
     name: "hero-2",
     type: "registry:block",
@@ -47,10 +478,23 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["hero", "service-travel"],
+    categories: ["hero", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-travel",
+      "hero",
+      2,
+      "azure",
+      "modern",
+      "tinted",
+      true
+    ),
   },
+
+  // ============================================
+  // SERVICE-BOAT TEMPLATE (azure + classic)
+  // ============================================
   {
     name: "hero-3",
     type: "registry:block",
@@ -64,10 +508,23 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["hero", "service-boat"],
+    categories: ["hero", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-boat",
+      "hero",
+      2,
+      "azure",
+      "classic",
+      "tinted",
+      true
+    ),
   },
+
+  // ============================================
+  // SERVICE-FITNESS TEMPLATE (neon + futuristic)
+  // ============================================
   {
     name: "hero-4",
     type: "registry:block",
@@ -81,9 +538,17 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["hero", "service-fitness"],
+    categories: ["hero", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-fitness",
+      "hero",
+      2,
+      "neon",
+      "futuristic",
+      "tinted"
+    ),
   },
   {
     name: "hero-5",
@@ -91,16 +556,29 @@ export const blocks: Registry["items"] = [
     description:
       "Full-bleed parallax fitness hero with dark overlay and centered content, video background style",
     dependencies: ["motion/react"],
-    registryDependencies: ["button", "hero-button"],
+    registryDependencies: [
+      "button-neobrutalist",
+      "hero-button-neobrutalist",
+      "hero-button",
+      "spacer",
+    ],
     files: [
       {
         path: "blocks/hero/hero-5.tsx",
         type: "registry:block",
       },
     ],
-    categories: ["hero", "service-fitness"],
+    categories: ["hero", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-fitness",
+      "hero",
+      2,
+      "neon",
+      "futuristic",
+      "tinted"
+    ),
   },
   {
     name: "hero-6",
@@ -115,279 +593,90 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["hero", "service-fitness"],
+    categories: ["hero", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-fitness",
+      "hero",
+      2,
+      "neon",
+      "futuristic",
+      "tinted"
+    ),
   },
   {
-    name: "features-1",
+    name: "hero-7",
     type: "registry:block",
-    description: "Plant shop features section with icons and center image",
-    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
+    description:
+      "Bento grid fitness hero with pill navbar, two-column layout, and side image",
+    registryDependencies: ["button", "hero-button"],
     files: [
       {
-        path: "blocks/features/features-1.tsx",
+        path: "blocks/hero/hero-7.tsx",
         type: "registry:block",
       },
     ],
-    categories: ["features", "service-plants"],
+    categories: ["hero", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-fitness",
+      "hero",
+      2,
+      "neon",
+      "futuristic",
+      "tinted"
+    ),
   },
   {
-    name: "features-2",
+    name: "hero-8",
     type: "registry:block",
-    description: "Plant shop features section variant 2",
-    dependencies: ["motion/react"],
+    description:
+      "Bento grid fitness hero with stats, reversed layout, and larger image area",
+    registryDependencies: ["button", "hero-button"],
     files: [
       {
-        path: "blocks/features/features-2.tsx",
+        path: "blocks/hero/hero-8.tsx",
         type: "registry:block",
       },
     ],
-    categories: ["features", "service-plants"],
+    categories: ["hero", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-fitness",
+      "hero",
+      2,
+      "neon",
+      "futuristic",
+      "tinted"
+    ),
   },
   {
-    name: "features-3",
+    name: "hero-9",
     type: "registry:block",
-    description: "Plant shop features section variant 3 with circle background",
-    dependencies: ["motion/react"],
+    description:
+      "Asymmetric bento grid fitness hero with dual images and prominent title",
+    registryDependencies: ["button", "hero-button"],
     files: [
       {
-        path: "blocks/features/features-3.tsx",
+        path: "blocks/hero/hero-9.tsx",
         type: "registry:block",
       },
     ],
-    categories: ["features", "service-plants"],
+    categories: ["hero", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-fitness",
+      "hero",
+      2,
+      "neon",
+      "futuristic",
+      "tinted"
+    ),
   },
-  {
-    name: "features-4",
-    type: "registry:block",
-    description: "Plant shop features section variant 4",
-    dependencies: ["motion/react"],
-    files: [
-      {
-        path: "blocks/features/features-4.tsx",
-        type: "registry:block",
-      },
-    ],
-    categories: ["features", "service-plants"],
-    tier: "free",
-    readiness: "production",
-  },
-  {
-    name: "features-5",
-    type: "registry:block",
-    description: "Plant shop features section variant 5",
-    dependencies: ["motion/react"],
-    files: [
-      {
-        path: "blocks/features/features-5.tsx",
-        type: "registry:block",
-      },
-    ],
-    categories: ["features", "service-plants"],
-    tier: "free",
-    readiness: "production",
-  },
-  {
-    name: "products-1",
-    type: "registry:block",
-    description: "Plant shop products grid showcasing best sellers",
-    registryDependencies: ["button"],
-    files: [
-      {
-        path: "blocks/products/products-1.tsx",
-        type: "registry:block",
-      },
-    ],
-    categories: ["products", "service-plants"],
-    tier: "free",
-    readiness: "production",
-  },
-  {
-    name: "pricing-1",
-    type: "registry:block",
-    description: "Plant shop pricing section with animated cards",
-    dependencies: ["motion/react"],
-    registryDependencies: ["button", "utils"],
-    files: [
-      {
-        path: "blocks/pricing/pricing-1.tsx",
-        type: "registry:block",
-      },
-    ],
-    categories: ["pricing", "service-plants"],
-    tier: "free",
-    readiness: "production",
-  },
-  {
-    name: "testimonials-1",
-    type: "registry:block",
-    description: "Plant shop testimonials with stacked cards effect",
-    registryDependencies: ["utils"],
-    files: [
-      {
-        path: "blocks/testimonials/testimonials-1.tsx",
-        type: "registry:block",
-      },
-    ],
-    categories: ["testimonials", "service-plants"],
-    tier: "free",
-    readiness: "production",
-  },
-  {
-    name: "gallery-1",
-    type: "registry:block",
-    description: "Plant shop gallery grid with decorative elements",
-    files: [
-      {
-        path: "blocks/gallery/gallery-1.tsx",
-        type: "registry:block",
-      },
-    ],
-    categories: ["gallery", "service-plants"],
-    tier: "free",
-    readiness: "production",
-  },
-  {
-    name: "team-1",
-    type: "registry:block",
-    description: "Plant shop team section with stacked avatars",
-    files: [
-      {
-        path: "blocks/team/team-1.tsx",
-        type: "registry:block",
-      },
-    ],
-    categories: ["team", "service-plants"],
-    tier: "free",
-    readiness: "production",
-  },
-  {
-    name: "stats-1",
-    type: "registry:block",
-    description: "Plant shop statistics section",
-    files: [
-      {
-        path: "blocks/stats/stats-1.tsx",
-        type: "registry:block",
-      },
-    ],
-    categories: ["stats", "service-plants"],
-    tier: "free",
-    readiness: "production",
-  },
-  {
-    name: "logos-1",
-    type: "registry:block",
-    description: "Plant shop logo cloud section",
-    files: [
-      {
-        path: "blocks/logos/logos-1.tsx",
-        type: "registry:block",
-      },
-    ],
-    categories: ["logos", "service-plants"],
-    tier: "free",
-    readiness: "production",
-  },
-  {
-    name: "faq-1",
-    type: "registry:block",
-    description: "Plant shop FAQ section with accordion",
-    registryDependencies: ["accordion"],
-    files: [
-      {
-        path: "blocks/faq/faq-1.tsx",
-        type: "registry:block",
-      },
-    ],
-    categories: ["faq", "service-plants"],
-    tier: "free",
-    readiness: "production",
-  },
-  {
-    name: "blog-1",
-    type: "registry:block",
-    description: "Plant shop blog section with article cards",
-    files: [
-      {
-        path: "blocks/blog/blog-1.tsx",
-        type: "registry:block",
-      },
-    ],
-    categories: ["blog", "service-plants"],
-    tier: "free",
-    readiness: "production",
-  },
-  {
-    name: "contact-1",
-    type: "registry:block",
-    description: "Plant shop contact form section",
-    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
-    registryDependencies: ["button", "input", "textarea", "label"],
-    files: [
-      {
-        path: "blocks/contact/contact-1.tsx",
-        type: "registry:block",
-      },
-    ],
-    categories: ["contact", "service-plants"],
-    tier: "free",
-    readiness: "production",
-  },
-  {
-    name: "newsletter-1",
-    type: "registry:block",
-    description: "Plant shop newsletter subscription section",
-    registryDependencies: ["button", "input"],
-    files: [
-      {
-        path: "blocks/newsletter/newsletter-1.tsx",
-        type: "registry:block",
-      },
-    ],
-    categories: ["newsletter", "service-plants"],
-    tier: "free",
-    readiness: "production",
-  },
-  {
-    name: "cta-1",
-    type: "registry:block",
-    description: "Plant shop call-to-action section",
-    registryDependencies: ["button"],
-    files: [
-      {
-        path: "blocks/cta/cta-1.tsx",
-        type: "registry:block",
-      },
-    ],
-    categories: ["cta", "service-plants"],
-    tier: "free",
-    readiness: "production",
-  },
-  {
-    name: "footer-1",
-    type: "registry:block",
-    description: "Plant shop footer with multiple columns and newsletter",
-    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
-    registryDependencies: ["button", "input"],
-    files: [
-      {
-        path: "blocks/footer/footer-1.tsx",
-        type: "registry:block",
-      },
-    ],
-    categories: ["footer", "service-plants"],
-    tier: "free",
-    readiness: "production",
-  },
-  // Fitness blocks
   {
     name: "features-6",
     type: "registry:block",
@@ -400,9 +689,17 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["features", "service-fitness"],
+    categories: ["features", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-fitness",
+      "features",
+      4,
+      "neon",
+      "futuristic",
+      "tinted"
+    ),
   },
   {
     name: "features-7",
@@ -416,9 +713,40 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["features", "service-fitness"],
+    categories: ["features", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-fitness",
+      "features",
+      4,
+      "neon",
+      "futuristic",
+      "tinted"
+    ),
+  },
+  {
+    name: "features-8",
+    type: "registry:block",
+    description: "Studio location with hours, contact info, amenities, and map",
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "blocks/features/features-8.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["features", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc(
+      "service-fitness",
+      "features",
+      4,
+      "neon",
+      "futuristic",
+      "tinted"
+    ),
   },
   {
     name: "team-2",
@@ -432,9 +760,17 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["team", "service-fitness"],
+    categories: ["team", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-fitness",
+      "team",
+      9,
+      "neon",
+      "futuristic",
+      "tinted"
+    ),
   },
   {
     name: "pricing-2",
@@ -448,9 +784,17 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["pricing", "service-fitness"],
+    categories: ["pricing", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-fitness",
+      "pricing",
+      6,
+      "neon",
+      "futuristic",
+      "tinted"
+    ),
   },
   {
     name: "stats-2",
@@ -464,9 +808,17 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["stats", "service-fitness"],
+    categories: ["stats", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-fitness",
+      "stats",
+      10,
+      "neon",
+      "futuristic",
+      "deep"
+    ),
   },
   {
     name: "testimonials-2",
@@ -480,24 +832,17 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["testimonials", "service-fitness"],
+    categories: ["testimonials", "landing"],
     tier: "free",
     readiness: "production",
-  },
-  {
-    name: "features-8",
-    type: "registry:block",
-    description: "Studio location with hours, contact info, amenities, and map",
-    registryDependencies: ["button"],
-    files: [
-      {
-        path: "blocks/features/features-8.tsx",
-        type: "registry:block",
-      },
-    ],
-    categories: ["features", "service-fitness"],
-    tier: "free",
-    readiness: "production",
+    blockConfig: bc(
+      "service-fitness",
+      "testimonials",
+      7,
+      "neon",
+      "futuristic",
+      "deep"
+    ),
   },
   {
     name: "footer-2",
@@ -511,11 +856,23 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["footer", "service-fitness"],
+    categories: ["footer", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-fitness",
+      "footer",
+      20,
+      "neon",
+      "futuristic",
+      "tinted"
+    ),
   },
-  // Auth blocks
+
+  // ============================================
+  // STANDALONE BLOCKS (no template, default styling)
+  // Auth blocks - standalone, use modern defaults
+  // ============================================
   {
     name: "auth-1",
     type: "registry:block",
@@ -530,6 +887,7 @@ export const blocks: Registry["items"] = [
     categories: ["auth"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("standalone", "auth", 50, "slate", "modern", "tinted"),
   },
   {
     name: "auth-2",
@@ -546,6 +904,7 @@ export const blocks: Registry["items"] = [
     categories: ["auth"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("standalone", "auth", 50, "slate", "modern", "tinted"),
   },
   {
     name: "auth-3",
@@ -561,6 +920,7 @@ export const blocks: Registry["items"] = [
     categories: ["auth"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("standalone", "auth", 50, "slate", "modern", "tinted"),
   },
   {
     name: "auth-4",
@@ -576,6 +936,7 @@ export const blocks: Registry["items"] = [
     categories: ["auth"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("standalone", "auth", 50, "slate", "modern", "tinted"),
   },
   {
     name: "auth-5",
@@ -591,6 +952,7 @@ export const blocks: Registry["items"] = [
     categories: ["auth"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("standalone", "auth", 50, "slate", "modern", "tinted"),
   },
   {
     name: "auth-6",
@@ -606,8 +968,12 @@ export const blocks: Registry["items"] = [
     categories: ["auth"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("standalone", "auth", 50, "slate", "modern", "tinted"),
   },
-  // Service Template: Plants
+
+  // ============================================
+  // TEMPLATE ENTRIES (meta blocks)
+  // ============================================
   {
     name: "service-plants",
     type: "registry:block",
@@ -647,7 +1013,6 @@ export const blocks: Registry["items"] = [
       heroBlock: "hero-1",
     },
   },
-  // Service Template: Travel
   {
     name: "service-travel",
     type: "registry:block",
@@ -667,7 +1032,6 @@ export const blocks: Registry["items"] = [
       heroBlock: "hero-2",
     },
   },
-  // Service Template: Boat
   {
     name: "service-boat",
     type: "registry:block",
@@ -687,7 +1051,6 @@ export const blocks: Registry["items"] = [
       heroBlock: "hero-3",
     },
   },
-  // Service Template: Fitness
   {
     name: "service-fitness",
     type: "registry:block",
@@ -695,7 +1058,12 @@ export const blocks: Registry["items"] = [
       "Boutique fitness studio landing page with high-energy black & white design",
     registryDependencies: [
       "header-1",
+      "hero-4",
       "hero-5",
+      "hero-6",
+      "hero-7",
+      "hero-8",
+      "hero-9",
       "features-6",
       "features-7",
       "team-2",
@@ -718,7 +1086,10 @@ export const blocks: Registry["items"] = [
       heroBlock: "hero-5",
     },
   },
-  // Application Template: Gym Tracker
+
+  // ============================================
+  // APPLICATION TEMPLATE: GYM TRACKER (sage + modern)
+  // ============================================
   {
     name: "app-gym-shell-1",
     type: "registry:block",
@@ -731,9 +1102,10 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["application", "app-gym-tracker"],
+    categories: ["application"],
     tier: "free",
     readiness: "beta",
+    blockConfig: bc("app-gym-tracker", "shell", 0, "sage", "modern", "base"),
   },
   {
     name: "app-gym-today-1",
@@ -748,9 +1120,10 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["application", "app-gym-tracker"],
+    categories: ["application"],
     tier: "free",
     readiness: "beta",
+    blockConfig: bc("app-gym-tracker", "view", 1, "sage", "modern", "base"),
   },
   {
     name: "app-gym-log-1",
@@ -764,9 +1137,10 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["application", "app-gym-tracker"],
+    categories: ["application"],
     tier: "free",
     readiness: "beta",
+    blockConfig: bc("app-gym-tracker", "view", 2, "sage", "modern", "base"),
   },
   {
     name: "app-gym-history-1",
@@ -780,9 +1154,10 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["application", "app-gym-tracker"],
+    categories: ["application"],
     tier: "free",
     readiness: "beta",
+    blockConfig: bc("app-gym-tracker", "view", 3, "sage", "modern", "base"),
   },
   {
     name: "app-gym-gains-1",
@@ -796,9 +1171,10 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["application", "app-gym-tracker"],
+    categories: ["application"],
     tier: "free",
     readiness: "beta",
+    blockConfig: bc("app-gym-tracker", "view", 4, "sage", "modern", "base"),
   },
   {
     name: "app-gym-library-1",
@@ -812,9 +1188,10 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["application", "app-gym-tracker"],
+    categories: ["application"],
     tier: "free",
     readiness: "beta",
+    blockConfig: bc("app-gym-tracker", "view", 5, "sage", "modern", "base"),
   },
   {
     name: "app-gym-profile-1",
@@ -837,9 +1214,10 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["application", "app-gym-tracker"],
+    categories: ["application"],
     tier: "free",
     readiness: "beta",
+    blockConfig: bc("app-gym-tracker", "view", 6, "sage", "modern", "base"),
   },
   {
     name: "app-gym-tracker",
@@ -861,7 +1239,7 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["template", "application", "app-gym-tracker"],
+    categories: ["template", "application"],
     tier: "free",
     readiness: "beta",
     meta: {
@@ -869,7 +1247,10 @@ export const blocks: Registry["items"] = [
       iframeHeight: "800px",
     },
   },
-  // Application Template: Quiz App
+
+  // ============================================
+  // APPLICATION TEMPLATE: QUIZ APP (violet + playful)
+  // ============================================
   {
     name: "app-quiz-shell-1",
     type: "registry:block",
@@ -882,9 +1263,10 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["application", "app-quiz"],
+    categories: ["application"],
     tier: "free",
     readiness: "beta",
+    blockConfig: bc("app-quiz", "shell", 0, "violet", "playful", "base"),
   },
   {
     name: "app-quiz-dashboard-1",
@@ -899,9 +1281,10 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["application", "app-quiz"],
+    categories: ["application"],
     tier: "free",
     readiness: "beta",
+    blockConfig: bc("app-quiz", "view", 1, "violet", "playful", "base"),
   },
   {
     name: "app-quiz-browse-1",
@@ -915,9 +1298,10 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["application", "app-quiz"],
+    categories: ["application"],
     tier: "free",
     readiness: "beta",
+    blockConfig: bc("app-quiz", "view", 2, "violet", "playful", "base"),
   },
   {
     name: "app-quiz-active-1",
@@ -931,9 +1315,10 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["application", "app-quiz"],
+    categories: ["application"],
     tier: "free",
     readiness: "beta",
+    blockConfig: bc("app-quiz", "view", 3, "violet", "playful", "base"),
   },
   {
     name: "app-quiz-results-1",
@@ -947,9 +1332,10 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["application", "app-quiz"],
+    categories: ["application"],
     tier: "free",
     readiness: "beta",
+    blockConfig: bc("app-quiz", "view", 4, "violet", "playful", "base"),
   },
   {
     name: "app-quiz-settings-1",
@@ -973,9 +1359,10 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["application", "app-quiz"],
+    categories: ["application"],
     tier: "free",
     readiness: "beta",
+    blockConfig: bc("app-quiz", "view", 5, "violet", "playful", "base"),
   },
   {
     name: "app-quiz",
@@ -996,7 +1383,7 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["template", "application", "app-quiz"],
+    categories: ["template", "application"],
     tier: "free",
     readiness: "beta",
     meta: {
@@ -1004,7 +1391,10 @@ export const blocks: Registry["items"] = [
       iframeHeight: "800px",
     },
   },
-  // Maps blocks
+
+  // ============================================
+  // MAPS BLOCKS (standalone)
+  // ============================================
   {
     name: "maps-1",
     type: "registry:block",
@@ -1024,6 +1414,7 @@ export const blocks: Registry["items"] = [
     meta: {
       iframeHeight: "550px",
     },
+    blockConfig: bc("standalone", "maps", 60, "slate", "modern", "tinted"),
   },
   {
     name: "maps-2",
@@ -1045,6 +1436,7 @@ export const blocks: Registry["items"] = [
     categories: ["maps", "contact"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("standalone", "maps", 60, "slate", "modern", "tinted"),
   },
   {
     name: "maps-3",
@@ -1070,6 +1462,7 @@ export const blocks: Registry["items"] = [
     meta: {
       iframeHeight: "650px",
     },
+    blockConfig: bc("standalone", "maps", 60, "slate", "modern", "tinted"),
   },
   {
     name: "maps-4",
@@ -1095,6 +1488,7 @@ export const blocks: Registry["items"] = [
     meta: {
       iframeHeight: "550px",
     },
+    blockConfig: bc("standalone", "maps", 60, "slate", "modern", "tinted"),
   },
   {
     name: "maps-5",
@@ -1120,17 +1514,30 @@ export const blocks: Registry["items"] = [
     meta: {
       iframeHeight: "650px",
     },
+    blockConfig: bc("standalone", "maps", 60, "slate", "modern", "tinted"),
   },
-  // Generic Header blocks
+
+  // ============================================
+  // ADDITIONAL HEADER BLOCKS (service-plants alternatives)
+  // ============================================
   {
     name: "header-2",
     type: "registry:block",
     description: "Centered logo header with navigation split left/right",
     registryDependencies: ["button"],
     files: [{ path: "blocks/header/header-2.tsx", type: "registry:block" }],
-    categories: ["header", "service-plants"],
+    categories: ["header", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "header",
+      1,
+      "sage",
+      "elegant",
+      "tinted",
+      true
+    ),
   },
   {
     name: "header-3",
@@ -1138,9 +1545,18 @@ export const blocks: Registry["items"] = [
     description: "Transparent overlay header that becomes solid on scroll",
     registryDependencies: ["button"],
     files: [{ path: "blocks/header/header-3.tsx", type: "registry:block" }],
-    categories: ["header", "service-plants"],
+    categories: ["header", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "header",
+      1,
+      "sage",
+      "elegant",
+      "tinted",
+      true
+    ),
   },
   {
     name: "header-4",
@@ -1148,9 +1564,18 @@ export const blocks: Registry["items"] = [
     description: "Mega menu header with dropdown panels",
     registryDependencies: ["button"],
     files: [{ path: "blocks/header/header-4.tsx", type: "registry:block" }],
-    categories: ["header", "service-plants"],
+    categories: ["header", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "header",
+      1,
+      "sage",
+      "elegant",
+      "tinted",
+      true
+    ),
   },
   {
     name: "header-5",
@@ -1158,9 +1583,18 @@ export const blocks: Registry["items"] = [
     description: "Mobile-first hamburger header with full-screen overlay",
     registryDependencies: ["button"],
     files: [{ path: "blocks/header/header-5.tsx", type: "registry:block" }],
-    categories: ["header", "service-plants"],
+    categories: ["header", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "header",
+      1,
+      "sage",
+      "elegant",
+      "tinted",
+      true
+    ),
   },
   {
     name: "header-6",
@@ -1168,9 +1602,18 @@ export const blocks: Registry["items"] = [
     description: "Header with integrated search/command palette",
     registryDependencies: ["button", "dialog", "input"],
     files: [{ path: "blocks/header/header-6.tsx", type: "registry:block" }],
-    categories: ["header", "service-plants"],
+    categories: ["header", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "header",
+      1,
+      "sage",
+      "elegant",
+      "tinted",
+      true
+    ),
   },
   {
     name: "header-7",
@@ -1178,9 +1621,18 @@ export const blocks: Registry["items"] = [
     description: "Sticky shrinking header that shrinks on scroll",
     registryDependencies: ["button"],
     files: [{ path: "blocks/header/header-7.tsx", type: "registry:block" }],
-    categories: ["header", "service-plants"],
+    categories: ["header", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "header",
+      1,
+      "sage",
+      "elegant",
+      "tinted",
+      true
+    ),
   },
   {
     name: "header-8",
@@ -1188,19 +1640,39 @@ export const blocks: Registry["items"] = [
     description: "Double row header with top bar and main nav",
     registryDependencies: ["button"],
     files: [{ path: "blocks/header/header-8.tsx", type: "registry:block" }],
-    categories: ["header", "service-plants"],
+    categories: ["header", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "header",
+      1,
+      "sage",
+      "elegant",
+      "tinted",
+      true
+    ),
   },
-  // Generic Footer blocks
+
+  // ============================================
+  // ADDITIONAL FOOTER BLOCKS (service-plants alternatives)
+  // ============================================
   {
     name: "footer-3",
     type: "registry:block",
     description: "Minimal single row footer",
     files: [{ path: "blocks/footer/footer-3.tsx", type: "registry:block" }],
-    categories: ["footer", "service-plants"],
+    categories: ["footer", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "footer",
+      20,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
   },
   {
     name: "footer-4",
@@ -1208,9 +1680,17 @@ export const blocks: Registry["items"] = [
     description: "Big CTA footer with ready to get started section",
     registryDependencies: ["button", "input"],
     files: [{ path: "blocks/footer/footer-4.tsx", type: "registry:block" }],
-    categories: ["footer", "service-plants"],
+    categories: ["footer", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "footer",
+      20,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
   },
   {
     name: "footer-5",
@@ -1218,18 +1698,34 @@ export const blocks: Registry["items"] = [
     description: "Dark gradient footer with large brand statement",
     registryDependencies: ["button", "input"],
     files: [{ path: "blocks/footer/footer-5.tsx", type: "registry:block" }],
-    categories: ["footer", "service-plants"],
+    categories: ["footer", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "footer",
+      20,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
   },
   {
     name: "footer-6",
     type: "registry:block",
     description: "App download footer with store badges and QR code",
     files: [{ path: "blocks/footer/footer-6.tsx", type: "registry:block" }],
-    categories: ["footer", "service-plants"],
+    categories: ["footer", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "footer",
+      20,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
   },
   {
     name: "footer-7",
@@ -1237,29 +1733,49 @@ export const blocks: Registry["items"] = [
     description: "Comprehensive sitemap-style footer",
     registryDependencies: ["button", "input"],
     files: [{ path: "blocks/footer/footer-7.tsx", type: "registry:block" }],
-    categories: ["footer", "service-plants"],
+    categories: ["footer", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "footer",
+      20,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
   },
   {
     name: "footer-8",
     type: "registry:block",
     description: "Social-focused footer with large icons and follower counts",
     files: [{ path: "blocks/footer/footer-8.tsx", type: "registry:block" }],
-    categories: ["footer", "service-plants"],
+    categories: ["footer", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "footer",
+      20,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
   },
-  // Generic CTA blocks
+
+  // ============================================
+  // ADDITIONAL CTA BLOCKS (service-plants alternatives)
+  // ============================================
   {
     name: "cta-2",
     type: "registry:block",
     description: "Split layout CTA with image and gradient background",
     registryDependencies: ["button"],
     files: [{ path: "blocks/cta/cta-2.tsx", type: "registry:block" }],
-    categories: ["cta", "service-plants"],
+    categories: ["cta", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("service-plants", "cta", 15, "sage", "elegant", "tinted"),
   },
   {
     name: "cta-3",
@@ -1267,9 +1783,10 @@ export const blocks: Registry["items"] = [
     description: "Full-width CTA banner with countdown timer",
     registryDependencies: ["button"],
     files: [{ path: "blocks/cta/cta-3.tsx", type: "registry:block" }],
-    categories: ["cta", "service-plants"],
+    categories: ["cta", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("service-plants", "cta", 15, "sage", "elegant", "tinted"),
   },
   {
     name: "cta-4",
@@ -1277,9 +1794,10 @@ export const blocks: Registry["items"] = [
     description: "Card style CTA with centered content",
     registryDependencies: ["button"],
     files: [{ path: "blocks/cta/cta-4.tsx", type: "registry:block" }],
-    categories: ["cta", "service-plants"],
+    categories: ["cta", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("service-plants", "cta", 15, "sage", "elegant", "tinted"),
   },
   {
     name: "cta-5",
@@ -1287,9 +1805,10 @@ export const blocks: Registry["items"] = [
     description: "Floating action bar CTA that appears on scroll",
     registryDependencies: ["button"],
     files: [{ path: "blocks/cta/cta-5.tsx", type: "registry:block" }],
-    categories: ["cta", "service-plants"],
+    categories: ["cta", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("service-plants", "cta", 15, "sage", "elegant", "tinted"),
   },
   {
     name: "cta-6",
@@ -1297,20 +1816,32 @@ export const blocks: Registry["items"] = [
     description: "Exit intent modal overlay CTA",
     registryDependencies: ["button"],
     files: [{ path: "blocks/cta/cta-6.tsx", type: "registry:block" }],
-    categories: ["cta", "service-plants"],
+    categories: ["cta", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("service-plants", "cta", 15, "sage", "elegant", "tinted"),
   },
-  // Generic Gallery blocks
+
+  // ============================================
+  // ADDITIONAL GALLERY BLOCKS (service-plants alternatives)
+  // ============================================
   {
     name: "gallery-2",
     type: "registry:block",
     description: "Masonry gallery with lightbox",
     registryDependencies: ["dialog"],
     files: [{ path: "blocks/gallery/gallery-2.tsx", type: "registry:block" }],
-    categories: ["gallery", "service-plants"],
+    categories: ["gallery", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "gallery",
+      8,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
   },
   {
     name: "gallery-3",
@@ -1318,18 +1849,34 @@ export const blocks: Registry["items"] = [
     description: "Carousel gallery with thumbnail navigation",
     registryDependencies: ["button"],
     files: [{ path: "blocks/gallery/gallery-3.tsx", type: "registry:block" }],
-    categories: ["gallery", "service-plants"],
+    categories: ["gallery", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "gallery",
+      8,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
   },
   {
     name: "gallery-4",
     type: "registry:block",
     description: "Filterable gallery with category tabs",
     files: [{ path: "blocks/gallery/gallery-4.tsx", type: "registry:block" }],
-    categories: ["gallery", "service-plants"],
+    categories: ["gallery", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "gallery",
+      8,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
   },
   {
     name: "gallery-5",
@@ -1337,29 +1884,56 @@ export const blocks: Registry["items"] = [
     description: "Grid gallery with full-screen lightbox modal",
     registryDependencies: ["button", "dialog"],
     files: [{ path: "blocks/gallery/gallery-5.tsx", type: "registry:block" }],
-    categories: ["gallery", "service-plants"],
+    categories: ["gallery", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "gallery",
+      8,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
   },
   {
     name: "gallery-6",
     type: "registry:block",
     description: "Before/after comparison slider gallery",
     files: [{ path: "blocks/gallery/gallery-6.tsx", type: "registry:block" }],
-    categories: ["gallery", "service-plants"],
+    categories: ["gallery", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "gallery",
+      8,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
   },
-  // Generic Products blocks
+
+  // ============================================
+  // ADDITIONAL PRODUCTS BLOCKS (service-plants alternatives)
+  // ============================================
   {
     name: "products-2",
     type: "registry:block",
     description: "Product card grid with rating, price, add to cart",
     registryDependencies: ["button"],
     files: [{ path: "blocks/products/products-2.tsx", type: "registry:block" }],
-    categories: ["products", "service-plants"],
+    categories: ["products", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "products",
+      5,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
   },
   {
     name: "products-3",
@@ -1367,9 +1941,17 @@ export const blocks: Registry["items"] = [
     description: "Featured hero product with grid below",
     registryDependencies: ["button"],
     files: [{ path: "blocks/products/products-3.tsx", type: "registry:block" }],
-    categories: ["products", "service-plants"],
+    categories: ["products", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "products",
+      5,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
   },
   {
     name: "products-4",
@@ -1377,9 +1959,17 @@ export const blocks: Registry["items"] = [
     description: "Horizontal product carousel with quick add",
     registryDependencies: ["button"],
     files: [{ path: "blocks/products/products-4.tsx", type: "registry:block" }],
-    categories: ["products", "service-plants"],
+    categories: ["products", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "products",
+      5,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
   },
   {
     name: "products-5",
@@ -1387,9 +1977,17 @@ export const blocks: Registry["items"] = [
     description: "Product list view with large images and stock status",
     registryDependencies: ["button"],
     files: [{ path: "blocks/products/products-5.tsx", type: "registry:block" }],
-    categories: ["products", "service-plants"],
+    categories: ["products", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "products",
+      5,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
   },
   {
     name: "products-6",
@@ -1397,11 +1995,22 @@ export const blocks: Registry["items"] = [
     description: "Product comparison layout with features",
     registryDependencies: ["button"],
     files: [{ path: "blocks/products/products-6.tsx", type: "registry:block" }],
-    categories: ["products", "service-plants"],
+    categories: ["products", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "products",
+      5,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
   },
-  // Generic Newsletter blocks
+
+  // ============================================
+  // ADDITIONAL NEWSLETTER BLOCKS (service-plants alternatives)
+  // ============================================
   {
     name: "newsletter-2",
     type: "registry:block",
@@ -1410,9 +2019,17 @@ export const blocks: Registry["items"] = [
     files: [
       { path: "blocks/newsletter/newsletter-2.tsx", type: "registry:block" },
     ],
-    categories: ["newsletter", "service-plants"],
+    categories: ["newsletter", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "newsletter",
+      14,
+      "sage",
+      "elegant",
+      "deep"
+    ),
   },
   {
     name: "newsletter-3",
@@ -1422,9 +2039,17 @@ export const blocks: Registry["items"] = [
     files: [
       { path: "blocks/newsletter/newsletter-3.tsx", type: "registry:block" },
     ],
-    categories: ["newsletter", "service-plants"],
+    categories: ["newsletter", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "newsletter",
+      14,
+      "sage",
+      "elegant",
+      "deep"
+    ),
   },
   {
     name: "newsletter-4",
@@ -1434,9 +2059,17 @@ export const blocks: Registry["items"] = [
     files: [
       { path: "blocks/newsletter/newsletter-4.tsx", type: "registry:block" },
     ],
-    categories: ["newsletter", "service-plants"],
+    categories: ["newsletter", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "newsletter",
+      14,
+      "sage",
+      "elegant",
+      "deep"
+    ),
   },
   {
     name: "newsletter-5",
@@ -1446,9 +2079,17 @@ export const blocks: Registry["items"] = [
     files: [
       { path: "blocks/newsletter/newsletter-5.tsx", type: "registry:block" },
     ],
-    categories: ["newsletter", "service-plants"],
+    categories: ["newsletter", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "newsletter",
+      14,
+      "sage",
+      "elegant",
+      "deep"
+    ),
   },
   {
     name: "newsletter-6",
@@ -1458,19 +2099,31 @@ export const blocks: Registry["items"] = [
     files: [
       { path: "blocks/newsletter/newsletter-6.tsx", type: "registry:block" },
     ],
-    categories: ["newsletter", "service-plants"],
+    categories: ["newsletter", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "newsletter",
+      14,
+      "sage",
+      "elegant",
+      "deep"
+    ),
   },
-  // Generic FAQ blocks
+
+  // ============================================
+  // ADDITIONAL FAQ BLOCKS (service-plants alternatives)
+  // ============================================
   {
     name: "faq-2",
     type: "registry:block",
     description: "Two column FAQ with questions left, answers right",
     files: [{ path: "blocks/faq/faq-2.tsx", type: "registry:block" }],
-    categories: ["faq", "service-plants"],
+    categories: ["faq", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("service-plants", "faq", 11, "sage", "elegant", "tinted"),
   },
   {
     name: "faq-3",
@@ -1478,27 +2131,30 @@ export const blocks: Registry["items"] = [
     description: "Searchable FAQ with highlight matching",
     registryDependencies: ["input"],
     files: [{ path: "blocks/faq/faq-3.tsx", type: "registry:block" }],
-    categories: ["faq", "service-plants"],
+    categories: ["faq", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("service-plants", "faq", 11, "sage", "elegant", "tinted"),
   },
   {
     name: "faq-4",
     type: "registry:block",
     description: "Card-style accordion FAQ with icons",
     files: [{ path: "blocks/faq/faq-4.tsx", type: "registry:block" }],
-    categories: ["faq", "service-plants"],
+    categories: ["faq", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("service-plants", "faq", 11, "sage", "elegant", "tinted"),
   },
   {
     name: "faq-5",
     type: "registry:block",
     description: "Tabbed categories FAQ with badge counts",
     files: [{ path: "blocks/faq/faq-5.tsx", type: "registry:block" }],
-    categories: ["faq", "service-plants"],
+    categories: ["faq", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("service-plants", "faq", 11, "sage", "elegant", "tinted"),
   },
   {
     name: "faq-6",
@@ -1506,29 +2162,35 @@ export const blocks: Registry["items"] = [
     description: "FAQ with support team CTA and avatars",
     registryDependencies: ["button"],
     files: [{ path: "blocks/faq/faq-6.tsx", type: "registry:block" }],
-    categories: ["faq", "service-plants"],
+    categories: ["faq", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("service-plants", "faq", 11, "sage", "elegant", "tinted"),
   },
-  // Generic Blog blocks
+
+  // ============================================
+  // ADDITIONAL BLOG BLOCKS (service-plants alternatives)
+  // ============================================
   {
     name: "blog-2",
     type: "registry:block",
     description: "Featured post with 3-column grid and read time badges",
     registryDependencies: ["button"],
     files: [{ path: "blocks/blog/blog-2.tsx", type: "registry:block" }],
-    categories: ["blog", "service-plants"],
+    categories: ["blog", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("service-plants", "blog", 12, "sage", "elegant", "tinted"),
   },
   {
     name: "blog-3",
     type: "registry:block",
     description: "Blog list view with author avatars and dates",
     files: [{ path: "blocks/blog/blog-3.tsx", type: "registry:block" }],
-    categories: ["blog", "service-plants"],
+    categories: ["blog", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("service-plants", "blog", 12, "sage", "elegant", "tinted"),
   },
   {
     name: "blog-4",
@@ -1536,18 +2198,20 @@ export const blocks: Registry["items"] = [
     description: "Magazine layout blog with hero, sidebar, grid",
     registryDependencies: ["button"],
     files: [{ path: "blocks/blog/blog-4.tsx", type: "registry:block" }],
-    categories: ["blog", "service-plants"],
+    categories: ["blog", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("service-plants", "blog", 12, "sage", "elegant", "tinted"),
   },
   {
     name: "blog-5",
     type: "registry:block",
     description: "Minimal clean blog cards, text-focused",
     files: [{ path: "blocks/blog/blog-5.tsx", type: "registry:block" }],
-    categories: ["blog", "service-plants"],
+    categories: ["blog", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("service-plants", "blog", 12, "sage", "elegant", "tinted"),
   },
   {
     name: "blog-6",
@@ -1555,20 +2219,32 @@ export const blocks: Registry["items"] = [
     description: "Blog with sidebar (newsletter, categories, recent, tags)",
     registryDependencies: ["button", "input"],
     files: [{ path: "blocks/blog/blog-6.tsx", type: "registry:block" }],
-    categories: ["blog", "service-plants"],
+    categories: ["blog", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("service-plants", "blog", 12, "sage", "elegant", "tinted"),
   },
-  // Generic Contact blocks
+
+  // ============================================
+  // ADDITIONAL CONTACT BLOCKS (service-plants alternatives)
+  // ============================================
   {
     name: "contact-2",
     type: "registry:block",
     description: "Contact form with map placeholder and location info",
     registryDependencies: ["button", "input", "textarea"],
     files: [{ path: "blocks/contact/contact-2.tsx", type: "registry:block" }],
-    categories: ["contact", "service-plants"],
+    categories: ["contact", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "contact",
+      13,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
   },
   {
     name: "contact-3",
@@ -1576,9 +2252,17 @@ export const blocks: Registry["items"] = [
     description: "Multi-channel contact with email, phone, chat cards",
     registryDependencies: ["button"],
     files: [{ path: "blocks/contact/contact-3.tsx", type: "registry:block" }],
-    categories: ["contact", "service-plants"],
+    categories: ["contact", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "contact",
+      13,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
   },
   {
     name: "contact-4",
@@ -1586,9 +2270,17 @@ export const blocks: Registry["items"] = [
     description: "Simple centered contact form with subject dropdown",
     registryDependencies: ["button", "input", "textarea", "select"],
     files: [{ path: "blocks/contact/contact-4.tsx", type: "registry:block" }],
-    categories: ["contact", "service-plants"],
+    categories: ["contact", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "contact",
+      13,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
   },
   {
     name: "contact-5",
@@ -1596,9 +2288,17 @@ export const blocks: Registry["items"] = [
     description: "Split dark/light contact panel layout",
     registryDependencies: ["button", "input", "textarea"],
     files: [{ path: "blocks/contact/contact-5.tsx", type: "registry:block" }],
-    categories: ["contact", "service-plants"],
+    categories: ["contact", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "contact",
+      13,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
   },
   {
     name: "contact-6",
@@ -1606,28 +2306,41 @@ export const blocks: Registry["items"] = [
     description: "Office cards contact with multiple global locations",
     registryDependencies: ["button"],
     files: [{ path: "blocks/contact/contact-6.tsx", type: "registry:block" }],
-    categories: ["contact", "service-plants"],
+    categories: ["contact", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "contact",
+      13,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
   },
-  // Generic Logos blocks
+
+  // ============================================
+  // ADDITIONAL LOGOS BLOCKS (service-plants alternatives)
+  // ============================================
   {
     name: "logos-2",
     type: "registry:block",
     description: "Marquee logo cloud with infinite scroll animation",
     files: [{ path: "blocks/logos/logos-2.tsx", type: "registry:block" }],
-    categories: ["logos", "service-plants"],
+    categories: ["logos", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("service-plants", "logos", 3, "sage", "elegant", "deep"),
   },
   {
     name: "logos-3",
     type: "registry:block",
     description: "Grid logos with labels and descriptions",
     files: [{ path: "blocks/logos/logos-3.tsx", type: "registry:block" }],
-    categories: ["logos", "service-plants"],
+    categories: ["logos", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("service-plants", "logos", 3, "sage", "elegant", "deep"),
   },
   {
     name: "logos-4",
@@ -1635,18 +2348,20 @@ export const blocks: Registry["items"] = [
     description: "Featured partners with case study links",
     registryDependencies: ["button"],
     files: [{ path: "blocks/logos/logos-4.tsx", type: "registry:block" }],
-    categories: ["logos", "service-plants"],
+    categories: ["logos", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("service-plants", "logos", 3, "sage", "elegant", "deep"),
   },
   {
     name: "logos-5",
     type: "registry:block",
     description: "Logos with stats and industry breakdown",
     files: [{ path: "blocks/logos/logos-5.tsx", type: "registry:block" }],
-    categories: ["logos", "service-plants"],
+    categories: ["logos", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("service-plants", "logos", 3, "sage", "elegant", "deep"),
   },
   {
     name: "logos-6",
@@ -1654,11 +2369,15 @@ export const blocks: Registry["items"] = [
     description: "Testimonial combo logos with short quotes",
     registryDependencies: ["button"],
     files: [{ path: "blocks/logos/logos-6.tsx", type: "registry:block" }],
-    categories: ["logos", "service-plants"],
+    categories: ["logos", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("service-plants", "logos", 3, "sage", "elegant", "deep"),
   },
-  // Generic Testimonials blocks
+
+  // ============================================
+  // ADDITIONAL TESTIMONIALS BLOCKS (service-plants alternatives)
+  // ============================================
   {
     name: "testimonials-3",
     type: "registry:block",
@@ -1670,9 +2389,17 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["testimonials", "service-plants"],
+    categories: ["testimonials", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "testimonials",
+      7,
+      "sage",
+      "elegant",
+      "deep"
+    ),
   },
   {
     name: "testimonials-4",
@@ -1684,9 +2411,17 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["testimonials", "service-plants"],
+    categories: ["testimonials", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "testimonials",
+      7,
+      "sage",
+      "elegant",
+      "deep"
+    ),
   },
   {
     name: "testimonials-5",
@@ -1698,9 +2433,17 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["testimonials", "service-plants"],
+    categories: ["testimonials", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "testimonials",
+      7,
+      "sage",
+      "elegant",
+      "deep"
+    ),
   },
   {
     name: "testimonials-6",
@@ -1713,9 +2456,17 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["testimonials", "service-plants"],
+    categories: ["testimonials", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "testimonials",
+      7,
+      "sage",
+      "elegant",
+      "deep"
+    ),
   },
   {
     name: "testimonials-7",
@@ -1727,20 +2478,39 @@ export const blocks: Registry["items"] = [
         type: "registry:block",
       },
     ],
-    categories: ["testimonials", "service-plants"],
+    categories: ["testimonials", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "testimonials",
+      7,
+      "sage",
+      "elegant",
+      "deep"
+    ),
   },
-  // Generic Pricing blocks
+
+  // ============================================
+  // ADDITIONAL PRICING BLOCKS (service-plants alternatives)
+  // ============================================
   {
     name: "pricing-3",
     type: "registry:block",
     description: "Feature comparison table pricing",
     registryDependencies: ["button"],
     files: [{ path: "blocks/pricing/pricing-3.tsx", type: "registry:block" }],
-    categories: ["pricing", "service-plants"],
+    categories: ["pricing", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "pricing",
+      6,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
   },
   {
     name: "pricing-4",
@@ -1748,9 +2518,17 @@ export const blocks: Registry["items"] = [
     description: "Monthly/yearly toggle pricing with savings badge",
     registryDependencies: ["button", "switch"],
     files: [{ path: "blocks/pricing/pricing-4.tsx", type: "registry:block" }],
-    categories: ["pricing", "service-plants"],
+    categories: ["pricing", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "pricing",
+      6,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
   },
   {
     name: "pricing-5",
@@ -1758,9 +2536,17 @@ export const blocks: Registry["items"] = [
     description: "Enterprise focus pricing with standard and custom tiers",
     registryDependencies: ["button"],
     files: [{ path: "blocks/pricing/pricing-5.tsx", type: "registry:block" }],
-    categories: ["pricing", "service-plants"],
+    categories: ["pricing", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "pricing",
+      6,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
   },
   {
     name: "pricing-6",
@@ -1768,9 +2554,17 @@ export const blocks: Registry["items"] = [
     description: "Usage-based pricing with calculator slider",
     registryDependencies: ["button", "slider"],
     files: [{ path: "blocks/pricing/pricing-6.tsx", type: "registry:block" }],
-    categories: ["pricing", "service-plants"],
+    categories: ["pricing", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "pricing",
+      6,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
   },
   {
     name: "pricing-7",
@@ -1778,28 +2572,41 @@ export const blocks: Registry["items"] = [
     description: "Horizontal pricing cards with icons",
     registryDependencies: ["button"],
     files: [{ path: "blocks/pricing/pricing-7.tsx", type: "registry:block" }],
-    categories: ["pricing", "service-plants"],
+    categories: ["pricing", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc(
+      "service-plants",
+      "pricing",
+      6,
+      "sage",
+      "elegant",
+      "tinted"
+    ),
   },
-  // Generic Team blocks
+
+  // ============================================
+  // ADDITIONAL TEAM BLOCKS (service-plants alternatives)
+  // ============================================
   {
     name: "team-3",
     type: "registry:block",
     description: "Team cards with social links on hover",
     files: [{ path: "blocks/team/team-3.tsx", type: "registry:block" }],
-    categories: ["team", "service-plants"],
+    categories: ["team", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("service-plants", "team", 9, "sage", "elegant", "tinted"),
   },
   {
     name: "team-4",
     type: "registry:block",
     description: "Leadership section with smaller team grid",
     files: [{ path: "blocks/team/team-4.tsx", type: "registry:block" }],
-    categories: ["team", "service-plants"],
+    categories: ["team", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("service-plants", "team", 9, "sage", "elegant", "tinted"),
   },
   {
     name: "team-5",
@@ -1807,72 +2614,83 @@ export const blocks: Registry["items"] = [
     description: "Carousel team with thumbnail navigation",
     registryDependencies: ["button"],
     files: [{ path: "blocks/team/team-5.tsx", type: "registry:block" }],
-    categories: ["team", "service-plants"],
+    categories: ["team", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("service-plants", "team", 9, "sage", "elegant", "tinted"),
   },
   {
     name: "team-6",
     type: "registry:block",
     description: "About page style team with story and values",
     files: [{ path: "blocks/team/team-6.tsx", type: "registry:block" }],
-    categories: ["team", "service-plants"],
+    categories: ["team", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("service-plants", "team", 9, "sage", "elegant", "tinted"),
   },
   {
     name: "team-7",
     type: "registry:block",
     description: "Minimal list team by department",
     files: [{ path: "blocks/team/team-7.tsx", type: "registry:block" }],
-    categories: ["team", "service-plants"],
+    categories: ["team", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("service-plants", "team", 9, "sage", "elegant", "tinted"),
   },
-  // Generic Stats blocks
+
+  // ============================================
+  // ADDITIONAL STATS BLOCKS (service-plants alternatives)
+  // ============================================
   {
     name: "stats-3",
     type: "registry:block",
     description: "Large counter stats with dark background",
     files: [{ path: "blocks/stats/stats-3.tsx", type: "registry:block" }],
-    categories: ["stats", "service-plants"],
+    categories: ["stats", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("service-plants", "stats", 10, "sage", "elegant", "deep"),
   },
   {
     name: "stats-4",
     type: "registry:block",
     description: "Stats cards with icons and change indicators",
     files: [{ path: "blocks/stats/stats-4.tsx", type: "registry:block" }],
-    categories: ["stats", "service-plants"],
+    categories: ["stats", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("service-plants", "stats", 10, "sage", "elegant", "deep"),
   },
   {
     name: "stats-5",
     type: "registry:block",
     description: "Timeline milestone stats",
     files: [{ path: "blocks/stats/stats-5.tsx", type: "registry:block" }],
-    categories: ["stats", "service-plants"],
+    categories: ["stats", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("service-plants", "stats", 10, "sage", "elegant", "deep"),
   },
   {
     name: "stats-6",
     type: "registry:block",
     description: "Before/after comparison stats",
     files: [{ path: "blocks/stats/stats-6.tsx", type: "registry:block" }],
-    categories: ["stats", "service-plants"],
+    categories: ["stats", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("service-plants", "stats", 10, "sage", "elegant", "deep"),
   },
   {
     name: "stats-7",
     type: "registry:block",
     description: "Infographic style stats with bar chart",
     files: [{ path: "blocks/stats/stats-7.tsx", type: "registry:block" }],
-    categories: ["stats", "service-plants"],
+    categories: ["stats", "landing"],
     tier: "free",
     readiness: "production",
+    blockConfig: bc("service-plants", "stats", 10, "sage", "elegant", "deep"),
   },
 ]

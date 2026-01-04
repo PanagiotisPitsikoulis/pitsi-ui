@@ -29,8 +29,7 @@
   },
   "categories": [
     "template",
-    "application",
-    "app-gym-tracker"
+    "application"
   ],
   "tier": "free",
   "readiness": "beta"

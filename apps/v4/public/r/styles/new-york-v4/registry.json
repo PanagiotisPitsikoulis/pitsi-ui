@@ -218,6 +218,45 @@
       "readiness": "production"
     },
     {
+      "name": "button-neobrutalist",
+      "type": "registry:ui",
+      "description": "A bold button with hard shadows and sharp edges for neobrutalist designs.",
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/button-neobrutalist.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "core-components"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "hero-button-neobrutalist",
+      "type": "registry:ui",
+      "description": "A bold call-to-action button with hard shadows and arrow icon for neobrutalist hero sections.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/hero-button-neobrutalist.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "core-components"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
       "name": "card",
       "type": "registry:ui",
       "files": [
@@ -1524,6 +1563,26 @@
       "readiness": "production"
     },
     {
+      "name": "block-toggles",
+      "type": "registry:ui",
+      "description": "Toggle buttons for switching between alternative blocks in templates.",
+      "registryDependencies": [
+        "utils",
+        "block-selection-context"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/block-toggles.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "core-components"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
       "name": "background-image-parallax",
       "type": "registry:ui",
       "description": "Background image with parallax effect - moves slower than foreground for depth.",
@@ -2537,10 +2596,19 @@
       ],
       "categories": [
         "header",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "header",
+        "order": 1,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted",
+        "forceLight": true
+      }
     },
     {
       "name": "hero-1",
@@ -2562,134 +2630,44 @@
       ],
       "categories": [
         "hero",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted",
+        "forceLight": true
+      }
     },
     {
-      "name": "hero-2",
+      "name": "logos-1",
       "type": "registry:block",
-      "description": "Travel agency hero section with parallax effects and knockout text",
-      "dependencies": [
-        "motion/react"
-      ],
-      "registryDependencies": [
-        "button",
-        "hero-button",
-        "spacer"
-      ],
+      "description": "Plant shop logo cloud section",
       "files": [
         {
-          "path": "registry/new-york-v4/blocks/hero/hero-2.tsx",
+          "path": "registry/new-york-v4/blocks/logos/logos-1.tsx",
           "type": "registry:block"
         }
       ],
       "categories": [
-        "hero",
-        "service-travel"
+        "logos",
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
-    },
-    {
-      "name": "hero-3",
-      "type": "registry:block",
-      "description": "Yacht charter hero section with parallax effects and knockout text",
-      "dependencies": [
-        "motion/react"
-      ],
-      "registryDependencies": [
-        "button",
-        "hero-button",
-        "spacer"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/hero/hero-3.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "hero",
-        "service-boat"
-      ],
-      "tier": "free",
-      "readiness": "production"
-    },
-    {
-      "name": "hero-4",
-      "type": "registry:block",
-      "description": "Split layout fitness hero with image left and content right, parallax effects",
-      "dependencies": [
-        "motion/react"
-      ],
-      "registryDependencies": [
-        "button",
-        "hero-button",
-        "spacer"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/hero/hero-4.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "hero",
-        "service-fitness"
-      ],
-      "tier": "free",
-      "readiness": "production"
-    },
-    {
-      "name": "hero-5",
-      "type": "registry:block",
-      "description": "Full-bleed parallax fitness hero with dark overlay and centered content, video background style",
-      "dependencies": [
-        "motion/react"
-      ],
-      "registryDependencies": [
-        "button",
-        "hero-button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/hero/hero-5.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "hero",
-        "service-fitness"
-      ],
-      "tier": "free",
-      "readiness": "production"
-    },
-    {
-      "name": "hero-6",
-      "type": "registry:block",
-      "description": "Stats-focused fitness hero with grid layout, credibility stats row, and parallax side image",
-      "dependencies": [
-        "motion/react"
-      ],
-      "registryDependencies": [
-        "button",
-        "hero-button",
-        "spacer"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/hero/hero-6.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "hero",
-        "service-fitness"
-      ],
-      "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "logos",
+        "order": 3,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
     },
     {
       "name": "features-1",
@@ -2707,10 +2685,18 @@
       ],
       "categories": [
         "features",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "features",
+        "order": 4,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "features-2",
@@ -2727,10 +2713,18 @@
       ],
       "categories": [
         "features",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "features",
+        "order": 4,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "features-3",
@@ -2747,10 +2741,18 @@
       ],
       "categories": [
         "features",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "features",
+        "order": 4,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "features-4",
@@ -2767,10 +2769,18 @@
       ],
       "categories": [
         "features",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "features",
+        "order": 4,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "features-5",
@@ -2787,10 +2797,18 @@
       ],
       "categories": [
         "features",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "features",
+        "order": 4,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "products-1",
@@ -2807,10 +2825,18 @@
       ],
       "categories": [
         "products",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "products",
+        "order": 5,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "pricing-1",
@@ -2831,10 +2857,18 @@
       ],
       "categories": [
         "pricing",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "pricing",
+        "order": 6,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "testimonials-1",
@@ -2851,10 +2885,18 @@
       ],
       "categories": [
         "testimonials",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "testimonials",
+        "order": 7,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
     },
     {
       "name": "gallery-1",
@@ -2868,10 +2910,18 @@
       ],
       "categories": [
         "gallery",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "gallery",
+        "order": 8,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "team-1",
@@ -2885,10 +2935,18 @@
       ],
       "categories": [
         "team",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "team",
+        "order": 9,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "stats-1",
@@ -2902,27 +2960,18 @@
       ],
       "categories": [
         "stats",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
-    },
-    {
-      "name": "logos-1",
-      "type": "registry:block",
-      "description": "Plant shop logo cloud section",
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/logos/logos-1.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "logos",
-        "service-plants"
-      ],
-      "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "stats",
+        "order": 10,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
     },
     {
       "name": "faq-1",
@@ -2939,10 +2988,18 @@
       ],
       "categories": [
         "faq",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "faq",
+        "order": 11,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "blog-1",
@@ -2956,10 +3013,18 @@
       ],
       "categories": [
         "blog",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "blog",
+        "order": 12,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "contact-1",
@@ -2983,10 +3048,18 @@
       ],
       "categories": [
         "contact",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "contact",
+        "order": 13,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "newsletter-1",
@@ -3004,10 +3077,18 @@
       ],
       "categories": [
         "newsletter",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "newsletter",
+        "order": 14,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
     },
     {
       "name": "cta-1",
@@ -3024,10 +3105,18 @@
       ],
       "categories": [
         "cta",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "cta",
+        "order": 15,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "footer-1",
@@ -3049,10 +3138,273 @@
       ],
       "categories": [
         "footer",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "footer",
+        "order": 20,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-2",
+      "type": "registry:block",
+      "description": "Travel agency hero section with parallax effects and knockout text",
+      "dependencies": [
+        "motion/react"
+      ],
+      "registryDependencies": [
+        "button",
+        "hero-button",
+        "spacer"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted",
+        "forceLight": true
+      }
+    },
+    {
+      "name": "hero-3",
+      "type": "registry:block",
+      "description": "Yacht charter hero section with parallax effects and knockout text",
+      "dependencies": [
+        "motion/react"
+      ],
+      "registryDependencies": [
+        "button",
+        "hero-button",
+        "spacer"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-boat",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "azure",
+        "typography": "classic",
+        "tint": "tinted",
+        "forceLight": true
+      }
+    },
+    {
+      "name": "hero-4",
+      "type": "registry:block",
+      "description": "Split layout fitness hero with image left and content right, parallax effects",
+      "dependencies": [
+        "motion/react"
+      ],
+      "registryDependencies": [
+        "button",
+        "hero-button",
+        "spacer"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-fitness",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "neon",
+        "typography": "futuristic",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-5",
+      "type": "registry:block",
+      "description": "Full-bleed parallax fitness hero with dark overlay and centered content, video background style",
+      "dependencies": [
+        "motion/react"
+      ],
+      "registryDependencies": [
+        "button-neobrutalist",
+        "hero-button-neobrutalist",
+        "hero-button",
+        "spacer"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-fitness",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "neon",
+        "typography": "futuristic",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-6",
+      "type": "registry:block",
+      "description": "Stats-focused fitness hero with grid layout, credibility stats row, and parallax side image",
+      "dependencies": [
+        "motion/react"
+      ],
+      "registryDependencies": [
+        "button",
+        "hero-button",
+        "spacer"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-fitness",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "neon",
+        "typography": "futuristic",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-7",
+      "type": "registry:block",
+      "description": "Bento grid fitness hero with pill navbar, two-column layout, and side image",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-fitness",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "neon",
+        "typography": "futuristic",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-8",
+      "type": "registry:block",
+      "description": "Bento grid fitness hero with stats, reversed layout, and larger image area",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-fitness",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "neon",
+        "typography": "futuristic",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-9",
+      "type": "registry:block",
+      "description": "Asymmetric bento grid fitness hero with dual images and prominent title",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-fitness",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "neon",
+        "typography": "futuristic",
+        "tint": "tinted"
+      }
     },
     {
       "name": "features-6",
@@ -3069,10 +3421,18 @@
       ],
       "categories": [
         "features",
-        "service-fitness"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-fitness",
+        "blockType": "features",
+        "order": 4,
+        "palette": "neon",
+        "typography": "futuristic",
+        "tint": "tinted"
+      }
     },
     {
       "name": "features-7",
@@ -3090,10 +3450,46 @@
       ],
       "categories": [
         "features",
-        "service-fitness"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-fitness",
+        "blockType": "features",
+        "order": 4,
+        "palette": "neon",
+        "typography": "futuristic",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "features-8",
+      "type": "registry:block",
+      "description": "Studio location with hours, contact info, amenities, and map",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/features/features-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "features",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-fitness",
+        "blockType": "features",
+        "order": 4,
+        "palette": "neon",
+        "typography": "futuristic",
+        "tint": "tinted"
+      }
     },
     {
       "name": "team-2",
@@ -3110,10 +3506,18 @@
       ],
       "categories": [
         "team",
-        "service-fitness"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-fitness",
+        "blockType": "team",
+        "order": 9,
+        "palette": "neon",
+        "typography": "futuristic",
+        "tint": "tinted"
+      }
     },
     {
       "name": "pricing-2",
@@ -3131,10 +3535,18 @@
       ],
       "categories": [
         "pricing",
-        "service-fitness"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-fitness",
+        "blockType": "pricing",
+        "order": 6,
+        "palette": "neon",
+        "typography": "futuristic",
+        "tint": "tinted"
+      }
     },
     {
       "name": "stats-2",
@@ -3151,10 +3563,18 @@
       ],
       "categories": [
         "stats",
-        "service-fitness"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-fitness",
+        "blockType": "stats",
+        "order": 10,
+        "palette": "neon",
+        "typography": "futuristic",
+        "tint": "deep"
+      }
     },
     {
       "name": "testimonials-2",
@@ -3171,30 +3591,18 @@
       ],
       "categories": [
         "testimonials",
-        "service-fitness"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
-    },
-    {
-      "name": "features-8",
-      "type": "registry:block",
-      "description": "Studio location with hours, contact info, amenities, and map",
-      "registryDependencies": [
-        "button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/features/features-8.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "features",
-        "service-fitness"
-      ],
-      "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-fitness",
+        "blockType": "testimonials",
+        "order": 7,
+        "palette": "neon",
+        "typography": "futuristic",
+        "tint": "deep"
+      }
     },
     {
       "name": "footer-2",
@@ -3212,10 +3620,18 @@
       ],
       "categories": [
         "footer",
-        "service-fitness"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-fitness",
+        "blockType": "footer",
+        "order": 20,
+        "palette": "neon",
+        "typography": "futuristic",
+        "tint": "tinted"
+      }
     },
     {
       "name": "auth-1",
@@ -3236,7 +3652,15 @@
         "auth"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "standalone",
+        "blockType": "auth",
+        "order": 50,
+        "palette": "slate",
+        "typography": "modern",
+        "tint": "tinted"
+      }
     },
     {
       "name": "auth-2",
@@ -3258,7 +3682,15 @@
         "auth"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "standalone",
+        "blockType": "auth",
+        "order": 50,
+        "palette": "slate",
+        "typography": "modern",
+        "tint": "tinted"
+      }
     },
     {
       "name": "auth-3",
@@ -3279,7 +3711,15 @@
         "auth"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "standalone",
+        "blockType": "auth",
+        "order": 50,
+        "palette": "slate",
+        "typography": "modern",
+        "tint": "tinted"
+      }
     },
     {
       "name": "auth-4",
@@ -3300,7 +3740,15 @@
         "auth"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "standalone",
+        "blockType": "auth",
+        "order": 50,
+        "palette": "slate",
+        "typography": "modern",
+        "tint": "tinted"
+      }
     },
     {
       "name": "auth-5",
@@ -3321,7 +3769,15 @@
         "auth"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "standalone",
+        "blockType": "auth",
+        "order": 50,
+        "palette": "slate",
+        "typography": "modern",
+        "tint": "tinted"
+      }
     },
     {
       "name": "auth-6",
@@ -3343,7 +3799,15 @@
         "auth"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "standalone",
+        "blockType": "auth",
+        "order": 50,
+        "palette": "slate",
+        "typography": "modern",
+        "tint": "tinted"
+      }
     },
     {
       "name": "service-plants",
@@ -3439,7 +3903,12 @@
       "description": "Boutique fitness studio landing page with high-energy black & white design",
       "registryDependencies": [
         "header-1",
+        "hero-4",
         "hero-5",
+        "hero-6",
+        "hero-7",
+        "hero-8",
+        "hero-9",
         "features-6",
         "features-7",
         "team-2",
@@ -3487,11 +3956,18 @@
         }
       ],
       "categories": [
-        "application",
-        "app-gym-tracker"
+        "application"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "blockConfig": {
+        "template": "app-gym-tracker",
+        "blockType": "shell",
+        "order": 0,
+        "palette": "sage",
+        "typography": "modern",
+        "tint": "base"
+      }
     },
     {
       "name": "app-gym-today-1",
@@ -3512,11 +3988,18 @@
         }
       ],
       "categories": [
-        "application",
-        "app-gym-tracker"
+        "application"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "blockConfig": {
+        "template": "app-gym-tracker",
+        "blockType": "view",
+        "order": 1,
+        "palette": "sage",
+        "typography": "modern",
+        "tint": "base"
+      }
     },
     {
       "name": "app-gym-log-1",
@@ -3538,11 +4021,18 @@
         }
       ],
       "categories": [
-        "application",
-        "app-gym-tracker"
+        "application"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "blockConfig": {
+        "template": "app-gym-tracker",
+        "blockType": "view",
+        "order": 2,
+        "palette": "sage",
+        "typography": "modern",
+        "tint": "base"
+      }
     },
     {
       "name": "app-gym-history-1",
@@ -3563,11 +4053,18 @@
         }
       ],
       "categories": [
-        "application",
-        "app-gym-tracker"
+        "application"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "blockConfig": {
+        "template": "app-gym-tracker",
+        "blockType": "view",
+        "order": 3,
+        "palette": "sage",
+        "typography": "modern",
+        "tint": "base"
+      }
     },
     {
       "name": "app-gym-gains-1",
@@ -3587,11 +4084,18 @@
         }
       ],
       "categories": [
-        "application",
-        "app-gym-tracker"
+        "application"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "blockConfig": {
+        "template": "app-gym-tracker",
+        "blockType": "view",
+        "order": 4,
+        "palette": "sage",
+        "typography": "modern",
+        "tint": "base"
+      }
     },
     {
       "name": "app-gym-library-1",
@@ -3612,11 +4116,18 @@
         }
       ],
       "categories": [
-        "application",
-        "app-gym-tracker"
+        "application"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "blockConfig": {
+        "template": "app-gym-tracker",
+        "blockType": "view",
+        "order": 5,
+        "palette": "sage",
+        "typography": "modern",
+        "tint": "base"
+      }
     },
     {
       "name": "app-gym-profile-1",
@@ -3643,11 +4154,18 @@
         }
       ],
       "categories": [
-        "application",
-        "app-gym-tracker"
+        "application"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "blockConfig": {
+        "template": "app-gym-tracker",
+        "blockType": "view",
+        "order": 6,
+        "palette": "sage",
+        "typography": "modern",
+        "tint": "base"
+      }
     },
     {
       "name": "app-gym-tracker",
@@ -3678,8 +4196,7 @@
       },
       "categories": [
         "template",
-        "application",
-        "app-gym-tracker"
+        "application"
       ],
       "tier": "free",
       "readiness": "beta"
@@ -3704,11 +4221,18 @@
         }
       ],
       "categories": [
-        "application",
-        "app-quiz"
+        "application"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "blockConfig": {
+        "template": "app-quiz",
+        "blockType": "shell",
+        "order": 0,
+        "palette": "violet",
+        "typography": "playful",
+        "tint": "base"
+      }
     },
     {
       "name": "app-quiz-dashboard-1",
@@ -3730,11 +4254,18 @@
         }
       ],
       "categories": [
-        "application",
-        "app-quiz"
+        "application"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "blockConfig": {
+        "template": "app-quiz",
+        "blockType": "view",
+        "order": 1,
+        "palette": "violet",
+        "typography": "playful",
+        "tint": "base"
+      }
     },
     {
       "name": "app-quiz-browse-1",
@@ -3758,11 +4289,18 @@
         }
       ],
       "categories": [
-        "application",
-        "app-quiz"
+        "application"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "blockConfig": {
+        "template": "app-quiz",
+        "blockType": "view",
+        "order": 2,
+        "palette": "violet",
+        "typography": "playful",
+        "tint": "base"
+      }
     },
     {
       "name": "app-quiz-active-1",
@@ -3784,11 +4322,18 @@
         }
       ],
       "categories": [
-        "application",
-        "app-quiz"
+        "application"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "blockConfig": {
+        "template": "app-quiz",
+        "blockType": "view",
+        "order": 3,
+        "palette": "violet",
+        "typography": "playful",
+        "tint": "base"
+      }
     },
     {
       "name": "app-quiz-results-1",
@@ -3811,11 +4356,18 @@
         }
       ],
       "categories": [
-        "application",
-        "app-quiz"
+        "application"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "blockConfig": {
+        "template": "app-quiz",
+        "blockType": "view",
+        "order": 4,
+        "palette": "violet",
+        "typography": "playful",
+        "tint": "base"
+      }
     },
     {
       "name": "app-quiz-settings-1",
@@ -3843,11 +4395,18 @@
         }
       ],
       "categories": [
-        "application",
-        "app-quiz"
+        "application"
       ],
       "tier": "free",
-      "readiness": "beta"
+      "readiness": "beta",
+      "blockConfig": {
+        "template": "app-quiz",
+        "blockType": "view",
+        "order": 5,
+        "palette": "violet",
+        "typography": "playful",
+        "tint": "base"
+      }
     },
     {
       "name": "app-quiz",
@@ -3877,8 +4436,7 @@
       },
       "categories": [
         "template",
-        "application",
-        "app-quiz"
+        "application"
       ],
       "tier": "free",
       "readiness": "beta"
@@ -3907,7 +4465,15 @@
         "maps"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "standalone",
+        "blockType": "maps",
+        "order": 60,
+        "palette": "slate",
+        "typography": "modern",
+        "tint": "tinted"
+      }
     },
     {
       "name": "maps-2",
@@ -3933,7 +4499,15 @@
         "contact"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "standalone",
+        "blockType": "maps",
+        "order": 60,
+        "palette": "slate",
+        "typography": "modern",
+        "tint": "tinted"
+      }
     },
     {
       "name": "maps-3",
@@ -3964,7 +4538,15 @@
         "maps"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "standalone",
+        "blockType": "maps",
+        "order": 60,
+        "palette": "slate",
+        "typography": "modern",
+        "tint": "tinted"
+      }
     },
     {
       "name": "maps-4",
@@ -3994,7 +4576,15 @@
         "application"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "standalone",
+        "blockType": "maps",
+        "order": 60,
+        "palette": "slate",
+        "typography": "modern",
+        "tint": "tinted"
+      }
     },
     {
       "name": "maps-5",
@@ -4024,7 +4614,15 @@
         "maps"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "standalone",
+        "blockType": "maps",
+        "order": 60,
+        "palette": "slate",
+        "typography": "modern",
+        "tint": "tinted"
+      }
     },
     {
       "name": "header-2",
@@ -4041,10 +4639,19 @@
       ],
       "categories": [
         "header",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "header",
+        "order": 1,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted",
+        "forceLight": true
+      }
     },
     {
       "name": "header-3",
@@ -4061,10 +4668,19 @@
       ],
       "categories": [
         "header",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "header",
+        "order": 1,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted",
+        "forceLight": true
+      }
     },
     {
       "name": "header-4",
@@ -4081,10 +4697,19 @@
       ],
       "categories": [
         "header",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "header",
+        "order": 1,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted",
+        "forceLight": true
+      }
     },
     {
       "name": "header-5",
@@ -4101,10 +4726,19 @@
       ],
       "categories": [
         "header",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "header",
+        "order": 1,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted",
+        "forceLight": true
+      }
     },
     {
       "name": "header-6",
@@ -4123,10 +4757,19 @@
       ],
       "categories": [
         "header",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "header",
+        "order": 1,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted",
+        "forceLight": true
+      }
     },
     {
       "name": "header-7",
@@ -4143,10 +4786,19 @@
       ],
       "categories": [
         "header",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "header",
+        "order": 1,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted",
+        "forceLight": true
+      }
     },
     {
       "name": "header-8",
@@ -4163,10 +4815,19 @@
       ],
       "categories": [
         "header",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "header",
+        "order": 1,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted",
+        "forceLight": true
+      }
     },
     {
       "name": "footer-3",
@@ -4180,10 +4841,18 @@
       ],
       "categories": [
         "footer",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "footer",
+        "order": 20,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "footer-4",
@@ -4201,10 +4870,18 @@
       ],
       "categories": [
         "footer",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "footer",
+        "order": 20,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "footer-5",
@@ -4222,10 +4899,18 @@
       ],
       "categories": [
         "footer",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "footer",
+        "order": 20,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "footer-6",
@@ -4239,10 +4924,18 @@
       ],
       "categories": [
         "footer",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "footer",
+        "order": 20,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "footer-7",
@@ -4260,10 +4953,18 @@
       ],
       "categories": [
         "footer",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "footer",
+        "order": 20,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "footer-8",
@@ -4277,10 +4978,18 @@
       ],
       "categories": [
         "footer",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "footer",
+        "order": 20,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "cta-2",
@@ -4297,10 +5006,18 @@
       ],
       "categories": [
         "cta",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "cta",
+        "order": 15,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "cta-3",
@@ -4317,10 +5034,18 @@
       ],
       "categories": [
         "cta",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "cta",
+        "order": 15,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "cta-4",
@@ -4337,10 +5062,18 @@
       ],
       "categories": [
         "cta",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "cta",
+        "order": 15,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "cta-5",
@@ -4357,10 +5090,18 @@
       ],
       "categories": [
         "cta",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "cta",
+        "order": 15,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "cta-6",
@@ -4377,10 +5118,18 @@
       ],
       "categories": [
         "cta",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "cta",
+        "order": 15,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "gallery-2",
@@ -4397,10 +5146,18 @@
       ],
       "categories": [
         "gallery",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "gallery",
+        "order": 8,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "gallery-3",
@@ -4417,10 +5174,18 @@
       ],
       "categories": [
         "gallery",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "gallery",
+        "order": 8,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "gallery-4",
@@ -4434,10 +5199,18 @@
       ],
       "categories": [
         "gallery",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "gallery",
+        "order": 8,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "gallery-5",
@@ -4455,10 +5228,18 @@
       ],
       "categories": [
         "gallery",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "gallery",
+        "order": 8,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "gallery-6",
@@ -4472,10 +5253,18 @@
       ],
       "categories": [
         "gallery",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "gallery",
+        "order": 8,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "products-2",
@@ -4492,10 +5281,18 @@
       ],
       "categories": [
         "products",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "products",
+        "order": 5,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "products-3",
@@ -4512,10 +5309,18 @@
       ],
       "categories": [
         "products",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "products",
+        "order": 5,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "products-4",
@@ -4532,10 +5337,18 @@
       ],
       "categories": [
         "products",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "products",
+        "order": 5,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "products-5",
@@ -4552,10 +5365,18 @@
       ],
       "categories": [
         "products",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "products",
+        "order": 5,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "products-6",
@@ -4572,10 +5393,18 @@
       ],
       "categories": [
         "products",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "products",
+        "order": 5,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "newsletter-2",
@@ -4593,10 +5422,18 @@
       ],
       "categories": [
         "newsletter",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "newsletter",
+        "order": 14,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
     },
     {
       "name": "newsletter-3",
@@ -4614,10 +5451,18 @@
       ],
       "categories": [
         "newsletter",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "newsletter",
+        "order": 14,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
     },
     {
       "name": "newsletter-4",
@@ -4635,10 +5480,18 @@
       ],
       "categories": [
         "newsletter",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "newsletter",
+        "order": 14,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
     },
     {
       "name": "newsletter-5",
@@ -4656,10 +5509,18 @@
       ],
       "categories": [
         "newsletter",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "newsletter",
+        "order": 14,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
     },
     {
       "name": "newsletter-6",
@@ -4677,10 +5538,18 @@
       ],
       "categories": [
         "newsletter",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "newsletter",
+        "order": 14,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
     },
     {
       "name": "faq-2",
@@ -4694,10 +5563,18 @@
       ],
       "categories": [
         "faq",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "faq",
+        "order": 11,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "faq-3",
@@ -4714,10 +5591,18 @@
       ],
       "categories": [
         "faq",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "faq",
+        "order": 11,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "faq-4",
@@ -4731,10 +5616,18 @@
       ],
       "categories": [
         "faq",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "faq",
+        "order": 11,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "faq-5",
@@ -4748,10 +5641,18 @@
       ],
       "categories": [
         "faq",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "faq",
+        "order": 11,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "faq-6",
@@ -4768,10 +5669,18 @@
       ],
       "categories": [
         "faq",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "faq",
+        "order": 11,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "blog-2",
@@ -4788,10 +5697,18 @@
       ],
       "categories": [
         "blog",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "blog",
+        "order": 12,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "blog-3",
@@ -4805,10 +5722,18 @@
       ],
       "categories": [
         "blog",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "blog",
+        "order": 12,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "blog-4",
@@ -4825,10 +5750,18 @@
       ],
       "categories": [
         "blog",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "blog",
+        "order": 12,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "blog-5",
@@ -4842,10 +5775,18 @@
       ],
       "categories": [
         "blog",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "blog",
+        "order": 12,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "blog-6",
@@ -4863,10 +5804,18 @@
       ],
       "categories": [
         "blog",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "blog",
+        "order": 12,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "contact-2",
@@ -4885,10 +5834,18 @@
       ],
       "categories": [
         "contact",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "contact",
+        "order": 13,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "contact-3",
@@ -4905,10 +5862,18 @@
       ],
       "categories": [
         "contact",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "contact",
+        "order": 13,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "contact-4",
@@ -4928,10 +5893,18 @@
       ],
       "categories": [
         "contact",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "contact",
+        "order": 13,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "contact-5",
@@ -4950,10 +5923,18 @@
       ],
       "categories": [
         "contact",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "contact",
+        "order": 13,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "contact-6",
@@ -4970,10 +5951,18 @@
       ],
       "categories": [
         "contact",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "contact",
+        "order": 13,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "logos-2",
@@ -4987,10 +5976,18 @@
       ],
       "categories": [
         "logos",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "logos",
+        "order": 3,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
     },
     {
       "name": "logos-3",
@@ -5004,10 +6001,18 @@
       ],
       "categories": [
         "logos",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "logos",
+        "order": 3,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
     },
     {
       "name": "logos-4",
@@ -5024,10 +6029,18 @@
       ],
       "categories": [
         "logos",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "logos",
+        "order": 3,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
     },
     {
       "name": "logos-5",
@@ -5041,10 +6054,18 @@
       ],
       "categories": [
         "logos",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "logos",
+        "order": 3,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
     },
     {
       "name": "logos-6",
@@ -5061,10 +6082,18 @@
       ],
       "categories": [
         "logos",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "logos",
+        "order": 3,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
     },
     {
       "name": "testimonials-3",
@@ -5081,10 +6110,18 @@
       ],
       "categories": [
         "testimonials",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "testimonials",
+        "order": 7,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
     },
     {
       "name": "testimonials-4",
@@ -5098,10 +6135,18 @@
       ],
       "categories": [
         "testimonials",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "testimonials",
+        "order": 7,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
     },
     {
       "name": "testimonials-5",
@@ -5115,10 +6160,18 @@
       ],
       "categories": [
         "testimonials",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "testimonials",
+        "order": 7,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
     },
     {
       "name": "testimonials-6",
@@ -5135,10 +6188,18 @@
       ],
       "categories": [
         "testimonials",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "testimonials",
+        "order": 7,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
     },
     {
       "name": "testimonials-7",
@@ -5152,10 +6213,18 @@
       ],
       "categories": [
         "testimonials",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "testimonials",
+        "order": 7,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
     },
     {
       "name": "pricing-3",
@@ -5172,10 +6241,18 @@
       ],
       "categories": [
         "pricing",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "pricing",
+        "order": 6,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "pricing-4",
@@ -5193,10 +6270,18 @@
       ],
       "categories": [
         "pricing",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "pricing",
+        "order": 6,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "pricing-5",
@@ -5213,10 +6298,18 @@
       ],
       "categories": [
         "pricing",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "pricing",
+        "order": 6,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "pricing-6",
@@ -5234,10 +6327,18 @@
       ],
       "categories": [
         "pricing",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "pricing",
+        "order": 6,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "pricing-7",
@@ -5254,10 +6355,18 @@
       ],
       "categories": [
         "pricing",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "pricing",
+        "order": 6,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "team-3",
@@ -5271,10 +6380,18 @@
       ],
       "categories": [
         "team",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "team",
+        "order": 9,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "team-4",
@@ -5288,10 +6405,18 @@
       ],
       "categories": [
         "team",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "team",
+        "order": 9,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "team-5",
@@ -5308,10 +6433,18 @@
       ],
       "categories": [
         "team",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "team",
+        "order": 9,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "team-6",
@@ -5325,10 +6458,18 @@
       ],
       "categories": [
         "team",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "team",
+        "order": 9,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "team-7",
@@ -5342,10 +6483,18 @@
       ],
       "categories": [
         "team",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "team",
+        "order": 9,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
     },
     {
       "name": "stats-3",
@@ -5359,10 +6508,18 @@
       ],
       "categories": [
         "stats",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "stats",
+        "order": 10,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
     },
     {
       "name": "stats-4",
@@ -5376,10 +6533,18 @@
       ],
       "categories": [
         "stats",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "stats",
+        "order": 10,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
     },
     {
       "name": "stats-5",
@@ -5393,10 +6558,18 @@
       ],
       "categories": [
         "stats",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "stats",
+        "order": 10,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
     },
     {
       "name": "stats-6",
@@ -5410,10 +6583,18 @@
       ],
       "categories": [
         "stats",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "stats",
+        "order": 10,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
     },
     {
       "name": "stats-7",
@@ -5427,10 +6608,18 @@
       ],
       "categories": [
         "stats",
-        "service-plants"
+        "landing"
       ],
       "tier": "free",
-      "readiness": "production"
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "stats",
+        "order": 10,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
     },
     {
       "name": "utils",
@@ -5540,6 +6729,61 @@
       "files": [
         {
           "path": "registry/new-york-v4/lib/block-decorations.tsx",
+          "type": "registry:lib"
+        }
+      ],
+      "readiness": "production"
+    },
+    {
+      "name": "palettes",
+      "type": "registry:lib",
+      "description": "Color palette definitions for block theming with light and dark mode support.",
+      "files": [
+        {
+          "path": "registry/new-york-v4/lib/palettes.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "readiness": "production"
+    },
+    {
+      "name": "typography",
+      "type": "registry:lib",
+      "description": "Typography preset definitions with display and body font configurations.",
+      "files": [
+        {
+          "path": "registry/new-york-v4/lib/typography.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "readiness": "production"
+    },
+    {
+      "name": "templates",
+      "type": "registry:lib",
+      "description": "Runtime template helpers for blocks-first architecture with block selection utilities.",
+      "registryDependencies": [
+        "palettes",
+        "typography"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/lib/templates.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "readiness": "production"
+    },
+    {
+      "name": "block-selection-context",
+      "type": "registry:lib",
+      "description": "React context for managing block selections in templates with alternatives.",
+      "registryDependencies": [
+        "templates"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/lib/block-selection-context.tsx",
           "type": "registry:lib"
         }
       ],
@@ -6645,6 +7889,42 @@
       "files": [
         {
           "path": "registry/new-york-v4/examples/hero-button-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "core-components"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "button-neobrutalist-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "button-neobrutalist"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/button-neobrutalist-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "core-components"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "hero-button-neobrutalist-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "hero-button-neobrutalist"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/hero-button-neobrutalist-demo.tsx",
           "type": "registry:example"
         }
       ],

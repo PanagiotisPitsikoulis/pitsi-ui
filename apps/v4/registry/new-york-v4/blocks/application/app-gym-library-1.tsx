@@ -215,7 +215,7 @@ export function AppGymLibrary1() {
                 {exs.map((ex) => (
                   <div
                     key={ex.name}
-                    className="bg-card flex items-center gap-4 rounded-xl p-4 shadow-sm transition-all hover:shadow-md"
+                    className="bg-muted flex items-center gap-4 rounded-xl p-4 transition-all"
                   >
                     <div
                       className="flex size-10 shrink-0 items-center justify-center rounded-lg"

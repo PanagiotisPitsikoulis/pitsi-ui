@@ -20,9 +20,16 @@
     }
   ],
   "categories": [
-    "application",
-    "app-quiz"
+    "application"
   ],
   "tier": "free",
-  "readiness": "beta"
+  "readiness": "beta",
+  "blockConfig": {
+    "template": "app-quiz",
+    "blockType": "shell",
+    "order": 0,
+    "palette": "violet",
+    "typography": "playful",
+    "tint": "base"
+  }
 }

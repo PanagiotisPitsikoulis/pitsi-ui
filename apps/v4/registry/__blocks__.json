@@ -2,167 +2,182 @@
   {
     "name": "header-1",
     "description": "Plant shop header with navigation and CTA button",
-    "categories": ["header", "service-plants"]
+    "categories": ["header", "landing"]
   },
   {
     "name": "hero-1",
     "description": "Plant shop hero section with parallax effects and knockout text",
-    "categories": ["hero", "service-plants"]
-  },
-  {
-    "name": "hero-2",
-    "description": "Travel agency hero section with parallax effects and knockout text",
-    "categories": ["hero", "service-travel"]
-  },
-  {
-    "name": "hero-3",
-    "description": "Yacht charter hero section with parallax effects and knockout text",
-    "categories": ["hero", "service-boat"]
-  },
-  {
-    "name": "hero-4",
-    "description": "Split layout fitness hero with image left and content right, parallax effects",
-    "categories": ["hero", "service-fitness"]
-  },
-  {
-    "name": "hero-5",
-    "description": "Full-bleed parallax fitness hero with dark overlay and centered content, video background style",
-    "categories": ["hero", "service-fitness"]
-  },
-  {
-    "name": "hero-6",
-    "description": "Stats-focused fitness hero with grid layout, credibility stats row, and parallax side image",
-    "categories": ["hero", "service-fitness"]
-  },
-  {
-    "name": "features-1",
-    "description": "Plant shop features section with icons and center image",
-    "categories": ["features", "service-plants"]
-  },
-  {
-    "name": "features-2",
-    "description": "Plant shop features section variant 2",
-    "categories": ["features", "service-plants"]
-  },
-  {
-    "name": "features-3",
-    "description": "Plant shop features section variant 3 with circle background",
-    "categories": ["features", "service-plants"]
-  },
-  {
-    "name": "features-4",
-    "description": "Plant shop features section variant 4",
-    "categories": ["features", "service-plants"]
-  },
-  {
-    "name": "features-5",
-    "description": "Plant shop features section variant 5",
-    "categories": ["features", "service-plants"]
-  },
-  {
-    "name": "products-1",
-    "description": "Plant shop products grid showcasing best sellers",
-    "categories": ["products", "service-plants"]
-  },
-  {
-    "name": "pricing-1",
-    "description": "Plant shop pricing section with animated cards",
-    "categories": ["pricing", "service-plants"]
-  },
-  {
-    "name": "testimonials-1",
-    "description": "Plant shop testimonials with stacked cards effect",
-    "categories": ["testimonials", "service-plants"]
-  },
-  {
-    "name": "gallery-1",
-    "description": "Plant shop gallery grid with decorative elements",
-    "categories": ["gallery", "service-plants"]
-  },
-  {
-    "name": "team-1",
-    "description": "Plant shop team section with stacked avatars",
-    "categories": ["team", "service-plants"]
-  },
-  {
-    "name": "stats-1",
-    "description": "Plant shop statistics section",
-    "categories": ["stats", "service-plants"]
+    "categories": ["hero", "landing"]
   },
   {
     "name": "logos-1",
     "description": "Plant shop logo cloud section",
-    "categories": ["logos", "service-plants"]
+    "categories": ["logos", "landing"]
+  },
+  {
+    "name": "features-1",
+    "description": "Plant shop features section with icons and center image",
+    "categories": ["features", "landing"]
+  },
+  {
+    "name": "features-2",
+    "description": "Plant shop features section variant 2",
+    "categories": ["features", "landing"]
+  },
+  {
+    "name": "features-3",
+    "description": "Plant shop features section variant 3 with circle background",
+    "categories": ["features", "landing"]
+  },
+  {
+    "name": "features-4",
+    "description": "Plant shop features section variant 4",
+    "categories": ["features", "landing"]
+  },
+  {
+    "name": "features-5",
+    "description": "Plant shop features section variant 5",
+    "categories": ["features", "landing"]
+  },
+  {
+    "name": "products-1",
+    "description": "Plant shop products grid showcasing best sellers",
+    "categories": ["products", "landing"]
+  },
+  {
+    "name": "pricing-1",
+    "description": "Plant shop pricing section with animated cards",
+    "categories": ["pricing", "landing"]
+  },
+  {
+    "name": "testimonials-1",
+    "description": "Plant shop testimonials with stacked cards effect",
+    "categories": ["testimonials", "landing"]
+  },
+  {
+    "name": "gallery-1",
+    "description": "Plant shop gallery grid with decorative elements",
+    "categories": ["gallery", "landing"]
+  },
+  {
+    "name": "team-1",
+    "description": "Plant shop team section with stacked avatars",
+    "categories": ["team", "landing"]
+  },
+  {
+    "name": "stats-1",
+    "description": "Plant shop statistics section",
+    "categories": ["stats", "landing"]
   },
   {
     "name": "faq-1",
     "description": "Plant shop FAQ section with accordion",
-    "categories": ["faq", "service-plants"]
+    "categories": ["faq", "landing"]
   },
   {
     "name": "blog-1",
     "description": "Plant shop blog section with article cards",
-    "categories": ["blog", "service-plants"]
+    "categories": ["blog", "landing"]
   },
   {
     "name": "contact-1",
     "description": "Plant shop contact form section",
-    "categories": ["contact", "service-plants"]
+    "categories": ["contact", "landing"]
   },
   {
     "name": "newsletter-1",
     "description": "Plant shop newsletter subscription section",
-    "categories": ["newsletter", "service-plants"]
+    "categories": ["newsletter", "landing"]
   },
   {
     "name": "cta-1",
     "description": "Plant shop call-to-action section",
-    "categories": ["cta", "service-plants"]
+    "categories": ["cta", "landing"]
   },
   {
     "name": "footer-1",
     "description": "Plant shop footer with multiple columns and newsletter",
-    "categories": ["footer", "service-plants"]
+    "categories": ["footer", "landing"]
+  },
+  {
+    "name": "hero-2",
+    "description": "Travel agency hero section with parallax effects and knockout text",
+    "categories": ["hero", "landing"]
+  },
+  {
+    "name": "hero-3",
+    "description": "Yacht charter hero section with parallax effects and knockout text",
+    "categories": ["hero", "landing"]
+  },
+  {
+    "name": "hero-4",
+    "description": "Split layout fitness hero with image left and content right, parallax effects",
+    "categories": ["hero", "landing"]
+  },
+  {
+    "name": "hero-5",
+    "description": "Full-bleed parallax fitness hero with dark overlay and centered content, video background style",
+    "categories": ["hero", "landing"]
+  },
+  {
+    "name": "hero-6",
+    "description": "Stats-focused fitness hero with grid layout, credibility stats row, and parallax side image",
+    "categories": ["hero", "landing"]
+  },
+  {
+    "name": "hero-7",
+    "description": "Bento grid fitness hero with pill navbar, two-column layout, and side image",
+    "categories": ["hero", "landing"]
+  },
+  {
+    "name": "hero-8",
+    "description": "Bento grid fitness hero with stats, reversed layout, and larger image area",
+    "categories": ["hero", "landing"]
+  },
+  {
+    "name": "hero-9",
+    "description": "Asymmetric bento grid fitness hero with dual images and prominent title",
+    "categories": ["hero", "landing"]
   },
   {
     "name": "features-6",
     "description": "Fitness class types grid with intensity indicators and hover effects",
-    "categories": ["features", "service-fitness"]
+    "categories": ["features", "landing"]
   },
   {
     "name": "features-7",
     "description": "Weekly class schedule with day tabs, booking buttons, and spots indicator",
-    "categories": ["features", "service-fitness"]
-  },
-  {
-    "name": "team-2",
-    "description": "Coach profiles with specialties, certifications, and social links",
-    "categories": ["team", "service-fitness"]
-  },
-  {
-    "name": "pricing-2",
-    "description": "Fitness membership pricing with tiers, features, and popular badge",
-    "categories": ["pricing", "service-fitness"]
-  },
-  {
-    "name": "stats-2",
-    "description": "Animated gym statistics with number counters and highlight section",
-    "categories": ["stats", "service-fitness"]
-  },
-  {
-    "name": "testimonials-2",
-    "description": "Member testimonials with transformation stats and star ratings",
-    "categories": ["testimonials", "service-fitness"]
+    "categories": ["features", "landing"]
   },
   {
     "name": "features-8",
     "description": "Studio location with hours, contact info, amenities, and map",
-    "categories": ["features", "service-fitness"]
+    "categories": ["features", "landing"]
+  },
+  {
+    "name": "team-2",
+    "description": "Coach profiles with specialties, certifications, and social links",
+    "categories": ["team", "landing"]
+  },
+  {
+    "name": "pricing-2",
+    "description": "Fitness membership pricing with tiers, features, and popular badge",
+    "categories": ["pricing", "landing"]
+  },
+  {
+    "name": "stats-2",
+    "description": "Animated gym statistics with number counters and highlight section",
+    "categories": ["stats", "landing"]
+  },
+  {
+    "name": "testimonials-2",
+    "description": "Member testimonials with transformation stats and star ratings",
+    "categories": ["testimonials", "landing"]
   },
   {
     "name": "footer-2",
     "description": "Fitness footer with newsletter, navigation columns, and social links",
-    "categories": ["footer", "service-fitness"]
+    "categories": ["footer", "landing"]
   },
   {
     "name": "auth-1",
@@ -217,77 +232,77 @@
   {
     "name": "app-gym-shell-1",
     "description": "Two-sidebar gym tracker shell with navigation and stats",
-    "categories": ["application", "app-gym-tracker"]
+    "categories": ["application"]
   },
   {
     "name": "app-gym-today-1",
     "description": "Today view with personalized greeting, week progress, and upcoming sets",
-    "categories": ["application", "app-gym-tracker"]
+    "categories": ["application"]
   },
   {
     "name": "app-gym-log-1",
     "description": "Active workout logging with set tracking and timer",
-    "categories": ["application", "app-gym-tracker"]
+    "categories": ["application"]
   },
   {
     "name": "app-gym-history-1",
     "description": "Calendar history view with workout indicators and details",
-    "categories": ["application", "app-gym-tracker"]
+    "categories": ["application"]
   },
   {
     "name": "app-gym-gains-1",
     "description": "Progress tracking with sparkline charts and PR history",
-    "categories": ["application", "app-gym-tracker"]
+    "categories": ["application"]
   },
   {
     "name": "app-gym-library-1",
     "description": "Exercise library with search, categories, and history",
-    "categories": ["application", "app-gym-tracker"]
+    "categories": ["application"]
   },
   {
     "name": "app-gym-profile-1",
     "description": "Profile and settings with preferences and stats",
-    "categories": ["application", "app-gym-tracker"]
+    "categories": ["application"]
   },
   {
     "name": "app-gym-tracker",
     "description": "Complete gym progressive overload tracker with two sidebars",
-    "categories": ["template", "application", "app-gym-tracker"]
+    "categories": ["template", "application"]
   },
   {
     "name": "app-quiz-shell-1",
     "description": "Application shell with sidebar navigation for quiz app",
-    "categories": ["application", "app-quiz"]
+    "categories": ["application"]
   },
   {
     "name": "app-quiz-dashboard-1",
     "description": "Quiz dashboard with stats, weekly accuracy chart, and recent quizzes",
-    "categories": ["application", "app-quiz"]
+    "categories": ["application"]
   },
   {
     "name": "app-quiz-browse-1",
     "description": "Quiz browser with categories and difficulty filters",
-    "categories": ["application", "app-quiz"]
+    "categories": ["application"]
   },
   {
     "name": "app-quiz-active-1",
     "description": "Active quiz interface with timer and question display",
-    "categories": ["application", "app-quiz"]
+    "categories": ["application"]
   },
   {
     "name": "app-quiz-results-1",
     "description": "Quiz results with score and question breakdown",
-    "categories": ["application", "app-quiz"]
+    "categories": ["application"]
   },
   {
     "name": "app-quiz-settings-1",
     "description": "Quiz settings with profile and preferences",
-    "categories": ["application", "app-quiz"]
+    "categories": ["application"]
   },
   {
     "name": "app-quiz",
     "description": "Complete quiz application template",
-    "categories": ["template", "application", "app-quiz"]
+    "categories": ["template", "application"]
   },
   {
     "name": "maps-1",
@@ -317,366 +332,366 @@
   {
     "name": "header-2",
     "description": "Centered logo header with navigation split left/right",
-    "categories": ["header", "service-plants"]
+    "categories": ["header", "landing"]
   },
   {
     "name": "header-3",
     "description": "Transparent overlay header that becomes solid on scroll",
-    "categories": ["header", "service-plants"]
+    "categories": ["header", "landing"]
   },
   {
     "name": "header-4",
     "description": "Mega menu header with dropdown panels",
-    "categories": ["header", "service-plants"]
+    "categories": ["header", "landing"]
   },
   {
     "name": "header-5",
     "description": "Mobile-first hamburger header with full-screen overlay",
-    "categories": ["header", "service-plants"]
+    "categories": ["header", "landing"]
   },
   {
     "name": "header-6",
     "description": "Header with integrated search/command palette",
-    "categories": ["header", "service-plants"]
+    "categories": ["header", "landing"]
   },
   {
     "name": "header-7",
     "description": "Sticky shrinking header that shrinks on scroll",
-    "categories": ["header", "service-plants"]
+    "categories": ["header", "landing"]
   },
   {
     "name": "header-8",
     "description": "Double row header with top bar and main nav",
-    "categories": ["header", "service-plants"]
+    "categories": ["header", "landing"]
   },
   {
     "name": "footer-3",
     "description": "Minimal single row footer",
-    "categories": ["footer", "service-plants"]
+    "categories": ["footer", "landing"]
   },
   {
     "name": "footer-4",
     "description": "Big CTA footer with ready to get started section",
-    "categories": ["footer", "service-plants"]
+    "categories": ["footer", "landing"]
   },
   {
     "name": "footer-5",
     "description": "Dark gradient footer with large brand statement",
-    "categories": ["footer", "service-plants"]
+    "categories": ["footer", "landing"]
   },
   {
     "name": "footer-6",
     "description": "App download footer with store badges and QR code",
-    "categories": ["footer", "service-plants"]
+    "categories": ["footer", "landing"]
   },
   {
     "name": "footer-7",
     "description": "Comprehensive sitemap-style footer",
-    "categories": ["footer", "service-plants"]
+    "categories": ["footer", "landing"]
   },
   {
     "name": "footer-8",
     "description": "Social-focused footer with large icons and follower counts",
-    "categories": ["footer", "service-plants"]
+    "categories": ["footer", "landing"]
   },
   {
     "name": "cta-2",
     "description": "Split layout CTA with image and gradient background",
-    "categories": ["cta", "service-plants"]
+    "categories": ["cta", "landing"]
   },
   {
     "name": "cta-3",
     "description": "Full-width CTA banner with countdown timer",
-    "categories": ["cta", "service-plants"]
+    "categories": ["cta", "landing"]
   },
   {
     "name": "cta-4",
     "description": "Card style CTA with centered content",
-    "categories": ["cta", "service-plants"]
+    "categories": ["cta", "landing"]
   },
   {
     "name": "cta-5",
     "description": "Floating action bar CTA that appears on scroll",
-    "categories": ["cta", "service-plants"]
+    "categories": ["cta", "landing"]
   },
   {
     "name": "cta-6",
     "description": "Exit intent modal overlay CTA",
-    "categories": ["cta", "service-plants"]
+    "categories": ["cta", "landing"]
   },
   {
     "name": "gallery-2",
     "description": "Masonry gallery with lightbox",
-    "categories": ["gallery", "service-plants"]
+    "categories": ["gallery", "landing"]
   },
   {
     "name": "gallery-3",
     "description": "Carousel gallery with thumbnail navigation",
-    "categories": ["gallery", "service-plants"]
+    "categories": ["gallery", "landing"]
   },
   {
     "name": "gallery-4",
     "description": "Filterable gallery with category tabs",
-    "categories": ["gallery", "service-plants"]
+    "categories": ["gallery", "landing"]
   },
   {
     "name": "gallery-5",
     "description": "Grid gallery with full-screen lightbox modal",
-    "categories": ["gallery", "service-plants"]
+    "categories": ["gallery", "landing"]
   },
   {
     "name": "gallery-6",
     "description": "Before/after comparison slider gallery",
-    "categories": ["gallery", "service-plants"]
+    "categories": ["gallery", "landing"]
   },
   {
     "name": "products-2",
     "description": "Product card grid with rating, price, add to cart",
-    "categories": ["products", "service-plants"]
+    "categories": ["products", "landing"]
   },
   {
     "name": "products-3",
     "description": "Featured hero product with grid below",
-    "categories": ["products", "service-plants"]
+    "categories": ["products", "landing"]
   },
   {
     "name": "products-4",
     "description": "Horizontal product carousel with quick add",
-    "categories": ["products", "service-plants"]
+    "categories": ["products", "landing"]
   },
   {
     "name": "products-5",
     "description": "Product list view with large images and stock status",
-    "categories": ["products", "service-plants"]
+    "categories": ["products", "landing"]
   },
   {
     "name": "products-6",
     "description": "Product comparison layout with features",
-    "categories": ["products", "service-plants"]
+    "categories": ["products", "landing"]
   },
   {
     "name": "newsletter-2",
     "description": "Inline single horizontal row newsletter",
-    "categories": ["newsletter", "service-plants"]
+    "categories": ["newsletter", "landing"]
   },
   {
     "name": "newsletter-3",
     "description": "Newsletter with benefits icons and social proof",
-    "categories": ["newsletter", "service-plants"]
+    "categories": ["newsletter", "landing"]
   },
   {
     "name": "newsletter-4",
     "description": "Split panel newsletter with image",
-    "categories": ["newsletter", "service-plants"]
+    "categories": ["newsletter", "landing"]
   },
   {
     "name": "newsletter-5",
     "description": "Popup card style newsletter with close button",
-    "categories": ["newsletter", "service-plants"]
+    "categories": ["newsletter", "landing"]
   },
   {
     "name": "newsletter-6",
     "description": "Dark themed newsletter with email icon",
-    "categories": ["newsletter", "service-plants"]
+    "categories": ["newsletter", "landing"]
   },
   {
     "name": "faq-2",
     "description": "Two column FAQ with questions left, answers right",
-    "categories": ["faq", "service-plants"]
+    "categories": ["faq", "landing"]
   },
   {
     "name": "faq-3",
     "description": "Searchable FAQ with highlight matching",
-    "categories": ["faq", "service-plants"]
+    "categories": ["faq", "landing"]
   },
   {
     "name": "faq-4",
     "description": "Card-style accordion FAQ with icons",
-    "categories": ["faq", "service-plants"]
+    "categories": ["faq", "landing"]
   },
   {
     "name": "faq-5",
     "description": "Tabbed categories FAQ with badge counts",
-    "categories": ["faq", "service-plants"]
+    "categories": ["faq", "landing"]
   },
   {
     "name": "faq-6",
     "description": "FAQ with support team CTA and avatars",
-    "categories": ["faq", "service-plants"]
+    "categories": ["faq", "landing"]
   },
   {
     "name": "blog-2",
     "description": "Featured post with 3-column grid and read time badges",
-    "categories": ["blog", "service-plants"]
+    "categories": ["blog", "landing"]
   },
   {
     "name": "blog-3",
     "description": "Blog list view with author avatars and dates",
-    "categories": ["blog", "service-plants"]
+    "categories": ["blog", "landing"]
   },
   {
     "name": "blog-4",
     "description": "Magazine layout blog with hero, sidebar, grid",
-    "categories": ["blog", "service-plants"]
+    "categories": ["blog", "landing"]
   },
   {
     "name": "blog-5",
     "description": "Minimal clean blog cards, text-focused",
-    "categories": ["blog", "service-plants"]
+    "categories": ["blog", "landing"]
   },
   {
     "name": "blog-6",
     "description": "Blog with sidebar (newsletter, categories, recent, tags)",
-    "categories": ["blog", "service-plants"]
+    "categories": ["blog", "landing"]
   },
   {
     "name": "contact-2",
     "description": "Contact form with map placeholder and location info",
-    "categories": ["contact", "service-plants"]
+    "categories": ["contact", "landing"]
   },
   {
     "name": "contact-3",
     "description": "Multi-channel contact with email, phone, chat cards",
-    "categories": ["contact", "service-plants"]
+    "categories": ["contact", "landing"]
   },
   {
     "name": "contact-4",
     "description": "Simple centered contact form with subject dropdown",
-    "categories": ["contact", "service-plants"]
+    "categories": ["contact", "landing"]
   },
   {
     "name": "contact-5",
     "description": "Split dark/light contact panel layout",
-    "categories": ["contact", "service-plants"]
+    "categories": ["contact", "landing"]
   },
   {
     "name": "contact-6",
     "description": "Office cards contact with multiple global locations",
-    "categories": ["contact", "service-plants"]
+    "categories": ["contact", "landing"]
   },
   {
     "name": "logos-2",
     "description": "Marquee logo cloud with infinite scroll animation",
-    "categories": ["logos", "service-plants"]
+    "categories": ["logos", "landing"]
   },
   {
     "name": "logos-3",
     "description": "Grid logos with labels and descriptions",
-    "categories": ["logos", "service-plants"]
+    "categories": ["logos", "landing"]
   },
   {
     "name": "logos-4",
     "description": "Featured partners with case study links",
-    "categories": ["logos", "service-plants"]
+    "categories": ["logos", "landing"]
   },
   {
     "name": "logos-5",
     "description": "Logos with stats and industry breakdown",
-    "categories": ["logos", "service-plants"]
+    "categories": ["logos", "landing"]
   },
   {
     "name": "logos-6",
     "description": "Testimonial combo logos with short quotes",
-    "categories": ["logos", "service-plants"]
+    "categories": ["logos", "landing"]
   },
   {
     "name": "testimonials-3",
     "description": "Sliding carousel testimonials with navigation",
-    "categories": ["testimonials", "service-plants"]
+    "categories": ["testimonials", "landing"]
   },
   {
     "name": "testimonials-4",
     "description": "Video testimonial cards with play overlay",
-    "categories": ["testimonials", "service-plants"]
+    "categories": ["testimonials", "landing"]
   },
   {
     "name": "testimonials-5",
     "description": "Rating-focused testimonials with aggregate score",
-    "categories": ["testimonials", "service-plants"]
+    "categories": ["testimonials", "landing"]
   },
   {
     "name": "testimonials-6",
     "description": "Case study testimonial cards with metrics",
-    "categories": ["testimonials", "service-plants"]
+    "categories": ["testimonials", "landing"]
   },
   {
     "name": "testimonials-7",
     "description": "Social proof wall with tweet-style cards",
-    "categories": ["testimonials", "service-plants"]
+    "categories": ["testimonials", "landing"]
   },
   {
     "name": "pricing-3",
     "description": "Feature comparison table pricing",
-    "categories": ["pricing", "service-plants"]
+    "categories": ["pricing", "landing"]
   },
   {
     "name": "pricing-4",
     "description": "Monthly/yearly toggle pricing with savings badge",
-    "categories": ["pricing", "service-plants"]
+    "categories": ["pricing", "landing"]
   },
   {
     "name": "pricing-5",
     "description": "Enterprise focus pricing with standard and custom tiers",
-    "categories": ["pricing", "service-plants"]
+    "categories": ["pricing", "landing"]
   },
   {
     "name": "pricing-6",
     "description": "Usage-based pricing with calculator slider",
-    "categories": ["pricing", "service-plants"]
+    "categories": ["pricing", "landing"]
   },
   {
     "name": "pricing-7",
     "description": "Horizontal pricing cards with icons",
-    "categories": ["pricing", "service-plants"]
+    "categories": ["pricing", "landing"]
   },
   {
     "name": "team-3",
     "description": "Team cards with social links on hover",
-    "categories": ["team", "service-plants"]
+    "categories": ["team", "landing"]
   },
   {
     "name": "team-4",
     "description": "Leadership section with smaller team grid",
-    "categories": ["team", "service-plants"]
+    "categories": ["team", "landing"]
   },
   {
     "name": "team-5",
     "description": "Carousel team with thumbnail navigation",
-    "categories": ["team", "service-plants"]
+    "categories": ["team", "landing"]
   },
   {
     "name": "team-6",
     "description": "About page style team with story and values",
-    "categories": ["team", "service-plants"]
+    "categories": ["team", "landing"]
   },
   {
     "name": "team-7",
     "description": "Minimal list team by department",
-    "categories": ["team", "service-plants"]
+    "categories": ["team", "landing"]
   },
   {
     "name": "stats-3",
     "description": "Large counter stats with dark background",
-    "categories": ["stats", "service-plants"]
+    "categories": ["stats", "landing"]
   },
   {
     "name": "stats-4",
     "description": "Stats cards with icons and change indicators",
-    "categories": ["stats", "service-plants"]
+    "categories": ["stats", "landing"]
   },
   {
     "name": "stats-5",
     "description": "Timeline milestone stats",
-    "categories": ["stats", "service-plants"]
+    "categories": ["stats", "landing"]
   },
   {
     "name": "stats-6",
     "description": "Before/after comparison stats",
-    "categories": ["stats", "service-plants"]
+    "categories": ["stats", "landing"]
   },
   {
     "name": "stats-7",
     "description": "Infographic style stats with bar chart",
-    "categories": ["stats", "service-plants"]
+    "categories": ["stats", "landing"]
   }
 ]

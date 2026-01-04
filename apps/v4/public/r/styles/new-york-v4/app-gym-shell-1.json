@@ -22,9 +22,16 @@
     }
   ],
   "categories": [
-    "application",
-    "app-gym-tracker"
+    "application"
   ],
   "tier": "free",
-  "readiness": "beta"
+  "readiness": "beta",
+  "blockConfig": {
+    "template": "app-gym-tracker",
+    "blockType": "shell",
+    "order": 0,
+    "palette": "sage",
+    "typography": "modern",
+    "tint": "base"
+  }
 }

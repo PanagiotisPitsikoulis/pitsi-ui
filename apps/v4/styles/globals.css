@@ -187,8 +187,8 @@ body {
   --card-foreground: oklch(0.99 0 0);
   --popover: oklch(0.18 0 0);
   --popover-foreground: oklch(0.99 0 0);
-  --primary: oklch(0.92 0 0);
-  --primary-foreground: oklch(0.19 0 0);
+  /* primary and primary-foreground are set by BlockThemeWrapper inline styles */
+  /* and should inherit from parent theme, not be overridden here */
   --secondary: oklch(0.22 0 0);
   --secondary-foreground: oklch(0.99 0 0);
   --muted: oklch(0.2 0 0);
@@ -226,8 +226,8 @@ body {
   --selection: oklch(0.92 0 0);
   --selection-foreground: oklch(0.19 0 0);
   --page: oklch(0.08 0 0);
-  --brand: oklch(0.75 0.12 220);
-  --brand-complementary: oklch(0.75 0.12 40);
+  /* brand and brand-complementary are set by BlockThemeWrapper inline styles */
+  /* and should inherit from parent, not be overridden here */
   --shadow-2xs:
     0 2px 6px 1px rgba(0, 0, 0, 0.4), 0 4px 12px 2px rgba(0, 0, 0, 0.3);
   --shadow-xs:
@@ -266,6 +266,12 @@ body {
 
 .display {
   font-family: var(--font-display), sans-serif;
+  font-weight: var(--font-display-weight, 700);
+}
+
+.font-body {
+  font-family: var(--font-body), sans-serif;
+  font-weight: var(--font-body-weight, 400);
 }
 
 /* Force copy buttons to use background color */

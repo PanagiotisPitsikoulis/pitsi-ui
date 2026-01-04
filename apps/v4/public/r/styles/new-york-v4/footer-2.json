@@ -16,8 +16,16 @@
   ],
   "categories": [
     "footer",
-    "service-fitness"
+    "landing"
   ],
   "tier": "free",
-  "readiness": "production"
+  "readiness": "production",
+  "blockConfig": {
+    "template": "service-fitness",
+    "blockType": "footer",
+    "order": 20,
+    "palette": "neon",
+    "typography": "futuristic",
+    "tint": "tinted"
+  }
 }

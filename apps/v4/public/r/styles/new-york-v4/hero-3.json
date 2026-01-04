@@ -20,8 +20,17 @@
   ],
   "categories": [
     "hero",
-    "service-boat"
+    "landing"
   ],
   "tier": "free",
-  "readiness": "production"
+  "readiness": "production",
+  "blockConfig": {
+    "template": "service-boat",
+    "blockType": "hero",
+    "order": 2,
+    "palette": "azure",
+    "typography": "classic",
+    "tint": "tinted",
+    "forceLight": true
+  }
 }

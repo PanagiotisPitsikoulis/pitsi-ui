@@ -1,24 +1,20 @@
 "use client"
 
-import { useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { motion, useScroll, useTransform } from "motion/react"
 
 import { type HeroBlockProps } from "@/lib/blocks/hero.types"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
-import { HeroButton } from "@/registry/new-york-v4/ui/hero-button"
-import { Spacer } from "@/registry/new-york-v4/ui/spacer"
-import { KnockoutText } from "@/app/(app)/(content)/(blocks)/_block_components"
-import { useScrollContainer } from "@/app/(app)/(content)/(blocks)/_components"
+
+import { HeroButton } from "../../ui/hero-button"
 
 // Hero 4 defaults - Fitness/Personal Training theme
 const hero4Defaults = {
   badge: "Transform Your Body",
   title: "Unlock Your\nFull Potential",
   description:
-    "Personalized training programs. Expert guidance.\nResults that last a lifetime.",
+    "Personalized training programs. Expert guidance. Results that last a lifetime.",
   primaryCta: { label: "Start Training", href: "#" },
   secondaryCta: {
     label: "View Programs",
@@ -26,30 +22,21 @@ const hero4Defaults = {
     variant: "outline" as const,
   },
   image: {
-    src: "/placeholders/blocks/service-fitness/subject/1.webp",
+    src: "/elements/subject/gym/3.webp",
     alt: "Personal trainer in action",
-    width: 800,
-    height: 1000,
-    priority: true,
   },
-  backgroundImage: {
-    src: "/placeholders/blocks/service-fitness/assets/decoration-1.svg",
-    alt: "",
+  nav: {
+    logo: "ELITE",
+    links: [
+      { label: "Programs", href: "#" },
+      { label: "Trainers", href: "#" },
+      { label: "Pricing", href: "#" },
+      { label: "About", href: "#" },
+    ],
   },
-  decorationImages: [
-    {
-      src: "/placeholders/blocks/service-fitness/assets/item-1.webp",
-      alt: "Fitness decoration",
-      width: 300,
-      height: 300,
-    },
-  ],
 }
 
 export function Hero4({ content = {}, classNames = {} }: HeroBlockProps) {
-  const sectionRef = useRef<HTMLElement>(null)
-  const scrollContainer = useScrollContainer()
-
   // Merge content with defaults
   const {
     badge = hero4Defaults.badge,
@@ -58,182 +45,118 @@ export function Hero4({ content = {}, classNames = {} }: HeroBlockProps) {
     primaryCta = hero4Defaults.primaryCta,
     secondaryCta = hero4Defaults.secondaryCta,
     image = hero4Defaults.image,
-    backgroundImage = hero4Defaults.backgroundImage,
-    decorationImages = hero4Defaults.decorationImages,
-  } = content
-
-  // Track scroll progress relative to the section
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    container: scrollContainer || undefined,
-    offset: ["start end", "end start"],
-  })
-
-  // Image scale effect - slight zoom out as user scrolls (1.05 to 1)
-  const imageScale = useTransform(scrollYProgress, [0, 1], [1.05, 1])
-
-  // Subtle parallax on the image (moves slower than scroll)
-  const imageY = useTransform(scrollYProgress, [0, 1], [0, 50])
-
-  // Decoration rotation as user scrolls
-  const decorationRotation = useTransform(scrollYProgress, [0, 1], [0, 15])
+    nav = hero4Defaults.nav,
+  } = content as typeof hero4Defaults
 
   return (
     <section
-      ref={sectionRef}
       className={cn(
-        "relative -mt-20 flex min-h-[calc(80svh+5rem)] flex-col overflow-x-clip lg:flex-row",
+        "relative flex min-h-[100svh] flex-col overflow-hidden",
         classNames.root
       )}
     >
-      {/* Background decoration - extends up behind header */}
-      {backgroundImage && (
-        <div
-          className={cn(
-            "pointer-events-none absolute top-0 right-0 bottom-0 left-0 z-0 opacity-30",
-            classNames.background
-          )}
-          style={{
-            backgroundImage: `url('${backgroundImage.src}')`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
-          aria-hidden="true"
-        />
-      )}
+      {/* Pill Navbar */}
+      <div className="container px-4 pt-6">
+        <nav className="bg-muted flex items-center justify-between rounded-full px-4 py-2">
+          <Link href="/" className="pl-2 text-lg font-bold tracking-tight">
+            {nav.logo}
+          </Link>
+          <div className="flex items-center gap-1">
+            {nav.links.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="text-muted-foreground hover:text-foreground px-4 py-2 text-sm font-medium transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+          <HeroButton>Get Started</HeroButton>
+        </nav>
+      </div>
 
-      {/* Left side - Image */}
-      <div className="relative z-10 flex w-full items-center justify-center overflow-hidden pt-20 lg:w-1/2 lg:pt-0">
-        {image && (
-          <motion.div
-            className={cn(
-              "relative h-[400px] w-full lg:h-full",
-              classNames.image?.wrapper
+      {/* Full-width Bento Layout */}
+      <div className="container flex-1 px-4 py-6">
+        <div className="bg-muted relative flex h-full min-h-[35rem] flex-col overflow-hidden rounded-3xl lg:flex-row">
+          {/* Content Side */}
+          <div className="relative z-10 flex flex-1 flex-col justify-center p-8 lg:w-1/2 lg:p-12">
+            {/* Badge */}
+            {badge && (
+              <p
+                className={cn(
+                  "text-muted-foreground mb-4 text-sm font-medium tracking-widest uppercase",
+                  classNames.header?.badge
+                )}
+              >
+                {badge}
+              </p>
             )}
-            style={{ scale: imageScale, y: imageY }}
-          >
+
+            {/* Main headline */}
+            <h1
+              className={cn(
+                "display text-4xl leading-[1.1] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl",
+                classNames.header?.title
+              )}
+            >
+              {title.split("\n").map((line, i) => (
+                <span key={i}>
+                  {line}
+                  {i < title.split("\n").length - 1 && <br />}
+                </span>
+              ))}
+            </h1>
+
+            {/* Subheading */}
+            {description && (
+              <p
+                className={cn(
+                  "text-muted-foreground mt-6 text-lg md:text-xl",
+                  classNames.header?.description
+                )}
+              >
+                {description}
+              </p>
+            )}
+
+            {/* Buttons */}
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              {primaryCta && (
+                <Link
+                  href={primaryCta.href}
+                  className={classNames.cta?.primary}
+                >
+                  <HeroButton>{primaryCta.label}</HeroButton>
+                </Link>
+              )}
+              {secondaryCta && (
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className={cn(
+                    "dark text-foreground",
+                    classNames.cta?.secondary
+                  )}
+                >
+                  <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
+                </Button>
+              )}
+            </div>
+          </div>
+
+          {/* Image Side */}
+          <div className="relative min-h-[20rem] lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
             <Image
-              draggable={false}
               src={image.src}
               alt={image.alt}
               fill
-              priority={image.priority}
-              className={cn(
-                "pointer-events-none object-cover object-center select-none",
-                classNames.image?.img
-              )}
+              className="object-cover object-top"
+              priority
             />
-            {/* Gradient overlay for text readability on mobile */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent lg:hidden" />
-          </motion.div>
-        )}
-
-        {/* Decoration element */}
-        {decorationImages?.[0] && (
-          <motion.div
-            className={cn(
-              "pointer-events-none absolute bottom-8 left-8 z-20 hidden lg:block",
-              classNames.decoration
-            )}
-            style={{
-              rotate: decorationRotation,
-            }}
-          >
-            <Image
-              draggable={false}
-              src={decorationImages[0].src}
-              alt={decorationImages[0].alt}
-              width={decorationImages[0].width ?? 300}
-              height={decorationImages[0].height ?? 300}
-              className="pointer-events-none object-contain select-none"
-            />
-          </motion.div>
-        )}
-      </div>
-
-      {/* Right side - Content */}
-      <div
-        className={cn(
-          "relative z-10 flex w-full flex-col justify-center px-6 py-16 lg:w-1/2 lg:px-16 lg:py-0",
-          classNames.container
-        )}
-      >
-        {/* Tagline */}
-        {badge && (
-          <p
-            className={cn(
-              "text-brand relative z-10 mb-6 text-sm font-medium tracking-[0.3em] uppercase",
-              classNames.header?.badge
-            )}
-          >
-            {badge}
-          </p>
-        )}
-
-        {/* Typography block with knockout effect */}
-        <KnockoutText padX={40} padY={50} intensity={1}>
-          {/* Main headline */}
-          <h1
-            className={cn(
-              "display text-4xl leading-[0.9] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl",
-              classNames.header?.title
-            )}
-          >
-            {title.split("\n").map((line, i) => (
-              <span key={i}>
-                {line}
-                {i < title.split("\n").length - 1 && <br />}
-              </span>
-            ))}
-          </h1>
-
-          {/* Subheading */}
-          {description && (
-            <p
-              className={cn(
-                "mt-8 text-lg text-white/80 md:text-xl lg:text-2xl",
-                classNames.header?.description
-              )}
-            >
-              {description.split("\n").map((line, i) => (
-                <span key={i}>
-                  {line}
-                  {i < description.split("\n").length - 1 && <br />}
-                </span>
-              ))}
-            </p>
-          )}
-        </KnockoutText>
-
-        {/* Buttons - above blend layer */}
-        <div
-          className={cn(
-            "relative z-10 mt-10 flex flex-row gap-3",
-            classNames.cta?.root
-          )}
-        >
-          {primaryCta && (
-            <Link href={primaryCta.href} className={classNames.cta?.primary}>
-              <HeroButton>{primaryCta.label}</HeroButton>
-            </Link>
-          )}
-          {secondaryCta && (
-            <Button
-              variant={secondaryCta.variant ?? "outline"}
-              size="lg"
-              className={cn(
-                "bg-background text-foreground rounded-full px-8",
-                classNames.cta?.secondary
-              )}
-              asChild
-            >
-              <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
-            </Button>
-          )}
+          </div>
         </div>
-
-        <Spacer className="hidden lg:block" size={"xl"} />
       </div>
     </section>
   )

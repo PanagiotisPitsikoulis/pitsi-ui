@@ -15,8 +15,16 @@
   ],
   "categories": [
     "stats",
-    "service-fitness"
+    "landing"
   ],
   "tier": "free",
-  "readiness": "production"
+  "readiness": "production",
+  "blockConfig": {
+    "template": "service-fitness",
+    "blockType": "stats",
+    "order": 10,
+    "palette": "neon",
+    "typography": "futuristic",
+    "tint": "deep"
+  }
 }

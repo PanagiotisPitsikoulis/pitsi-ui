@@ -101,4 +101,58 @@ export const lib: Registry["items"] = [
     ],
     readiness: "production",
   },
+  {
+    name: "palettes",
+    type: "registry:lib",
+    description:
+      "Color palette definitions for block theming with light and dark mode support.",
+    files: [
+      {
+        path: "lib/palettes.ts",
+        type: "registry:lib",
+      },
+    ],
+    readiness: "production",
+  },
+  {
+    name: "typography",
+    type: "registry:lib",
+    description:
+      "Typography preset definitions with display and body font configurations.",
+    files: [
+      {
+        path: "lib/typography.ts",
+        type: "registry:lib",
+      },
+    ],
+    readiness: "production",
+  },
+  {
+    name: "templates",
+    type: "registry:lib",
+    description:
+      "Runtime template helpers for blocks-first architecture with block selection utilities.",
+    registryDependencies: ["palettes", "typography"],
+    files: [
+      {
+        path: "lib/templates.ts",
+        type: "registry:lib",
+      },
+    ],
+    readiness: "production",
+  },
+  {
+    name: "block-selection-context",
+    type: "registry:lib",
+    description:
+      "React context for managing block selections in templates with alternatives.",
+    registryDependencies: ["templates"],
+    files: [
+      {
+        path: "lib/block-selection-context.tsx",
+        type: "registry:lib",
+      },
+    ],
+    readiness: "production",
+  },
 ]

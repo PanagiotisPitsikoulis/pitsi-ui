@@ -66,6 +66,21 @@ export const registryItemPoweredBySchema = z.object({
   url: z.string().url().optional(),
 })
 
+// Block configuration for blocks-first architecture
+// Each block defines its template, palette, typography, and display settings
+export const blockConfigSchema = z
+  .object({
+    template: z.string(), // Which template this block belongs to
+    blockType: z.string(), // Type for grouping (hero, cta, features, etc.)
+    order: z.number(), // Position in template (lower = earlier)
+    palette: z.string(), // Color palette (neon, sage, azure, etc.)
+    typography: z.string(), // Typography preset (futuristic, elegant, modern, etc.)
+    tint: z.enum(["base", "tinted", "deep"]).optional(),
+    forceLight: z.boolean().optional(),
+    forceDark: z.boolean().optional(),
+  })
+  .optional()
+
 export const registryItemSchema = z.object({
   $schema: z.string().optional(),
   extends: z.string().optional(),
@@ -88,6 +103,7 @@ export const registryItemSchema = z.object({
   tier: z.enum(["free", "pro"]).optional(),
   readiness: z.enum(["alpha", "beta", "production"]).optional().default("alpha"),
   poweredBy: z.array(registryItemPoweredBySchema).optional(),
+  blockConfig: blockConfigSchema,
 })
 
 export type RegistryItem = z.infer<typeof registryItemSchema>

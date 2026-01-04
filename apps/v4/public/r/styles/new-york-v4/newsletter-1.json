@@ -16,8 +16,16 @@
   ],
   "categories": [
     "newsletter",
-    "service-plants"
+    "landing"
   ],
   "tier": "free",
-  "readiness": "production"
+  "readiness": "production",
+  "blockConfig": {
+    "template": "service-plants",
+    "blockType": "newsletter",
+    "order": 14,
+    "palette": "sage",
+    "typography": "elegant",
+    "tint": "deep"
+  }
 }

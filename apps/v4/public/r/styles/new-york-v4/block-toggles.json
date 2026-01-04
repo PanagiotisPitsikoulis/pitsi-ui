@@ -1,0 +1,22 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "block-toggles",
+  "type": "registry:ui",
+  "description": "Toggle buttons for switching between alternative blocks in templates.",
+  "registryDependencies": [
+    "utils",
+    "block-selection-context"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/ui/block-toggles.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\n\nimport { COMPUTED_TEMPLATES } from \"@/registry/__blocks-metadata__\"\nimport { useBlockSelection } from \"@/registry/new-york-v4/lib/block-selection-context\"\nimport { cn } from \"@/registry/new-york-v4/lib/utils\"\n\ninterface BlockToggleProps {\n  blockType: string\n  className?: string\n}\n\n/**\n * Toggle button group for switching between alternative blocks of the same type\n */\nexport function BlockToggle({ blockType, className }: BlockToggleProps) {\n  const { state, selectBlock, getSelectedBlockForType } = useBlockSelection()\n\n  if (!state) return null\n\n  const template = COMPUTED_TEMPLATES[state.templateSlug]\n  if (!template) return null\n\n  const blocks = template.blockGroups[blockType]\n  if (!blocks || blocks.length <= 1) return null\n\n  const selectedBlock = getSelectedBlockForType(blockType)\n\n  return (\n    <div\n      className={cn(\n        \"bg-muted/50 inline-flex items-center gap-1 rounded-full p-1 backdrop-blur-sm\",\n        className\n      )}\n    >\n      {blocks.map((blockName, index) => (\n        <button\n          key={blockName}\n          onClick={() => selectBlock(blockType, blockName)}\n          className={cn(\n            \"flex size-7 items-center justify-center rounded-full text-xs font-medium transition-all\",\n            selectedBlock === blockName\n              ? \"bg-background text-foreground shadow-sm\"\n              : \"text-muted-foreground hover:text-foreground\"\n          )}\n          aria-label={`Select ${blockName}`}\n          aria-pressed={selectedBlock === blockName}\n        >\n          {index + 1}\n        </button>\n      ))}\n    </div>\n  )\n}\n\ninterface BlockTogglesToolbarProps {\n  className?: string\n  position?: \"top-left\" | \"top-right\" | \"bottom-left\" | \"bottom-right\"\n}\n\n/**\n * Floating toolbar with all block toggles for the current template\n */\nexport function BlockTogglesToolbar({\n  className,\n  position = \"top-right\",\n}: BlockTogglesToolbarProps) {\n  const { state } = useBlockSelection()\n\n  if (!state || state.blockTypesWithAlternatives.length === 0) return null\n\n  const positionClasses = {\n    \"top-left\": \"top-4 left-4\",\n    \"top-right\": \"top-4 right-4\",\n    \"bottom-left\": \"bottom-4 left-4\",\n    \"bottom-right\": \"bottom-4 right-4\",\n  }\n\n  return (\n    <div\n      className={cn(\n        \"fixed z-50 flex flex-col gap-2\",\n        positionClasses[position],\n        className\n      )}\n    >\n      {state.blockTypesWithAlternatives.map((blockType) => (\n        <div key={blockType} className=\"flex items-center gap-2\">\n          <span className=\"bg-background/80 text-muted-foreground rounded px-2 py-0.5 text-xs font-medium capitalize backdrop-blur-sm\">\n            {blockType}\n          </span>\n          <BlockToggle blockType={blockType} />\n        </div>\n      ))}\n    </div>\n  )\n}\n\ninterface InlineBlockTogglesProps {\n  className?: string\n}\n\n/**\n * Inline version of block toggles for embedding in block viewer UI\n */\nexport function InlineBlockToggles({ className }: InlineBlockTogglesProps) {\n  const { state } = useBlockSelection()\n\n  if (!state || state.blockTypesWithAlternatives.length === 0) return null\n\n  return (\n    <div className={cn(\"flex flex-wrap items-center gap-3\", className)}>\n      {state.blockTypesWithAlternatives.map((blockType) => (\n        <div key={blockType} className=\"flex items-center gap-1.5\">\n          <span className=\"text-muted-foreground text-xs font-medium capitalize\">\n            {blockType}:\n          </span>\n          <BlockToggle blockType={blockType} />\n        </div>\n      ))}\n    </div>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "core-components"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

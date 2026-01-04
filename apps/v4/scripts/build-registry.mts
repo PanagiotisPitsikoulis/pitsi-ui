@@ -218,6 +218,42 @@ async function buildBlocksIndex() {
   await exec(`prettier --write registry/__blocks__.json`)
 }
 
+// BlockConfig interface for type safety
+interface BlockConfigType {
+  template: string
+  blockType: string
+  order: number
+  palette: string
+  typography: string
+  tint?: "base" | "tinted" | "deep"
+  forceLight?: boolean
+  forceDark?: boolean
+}
+
+// Computed template interfaces
+interface ComputedTemplateBlockType {
+  name: string
+  blockType: string
+  order: number
+  palette: string
+  typography: string
+  tint?: "base" | "tinted" | "deep"
+  forceLight?: boolean
+  forceDark?: boolean
+}
+
+interface ComputedTemplateType {
+  slug: string
+  name: string
+  description: string
+  palette: string
+  typography: string
+  heroBlock: string
+  type: "service" | "application"
+  blocks: ComputedTemplateBlockType[]
+  blockGroups: Record<string, string[]>
+}
+
 async function buildBlocksMetadata(styles: Style[]) {
   // Structure: { category: blockNames[] }
   const categoryStructure: Record<string, string[]> = {}
@@ -229,6 +265,13 @@ async function buildBlocksMetadata(styles: Style[]) {
     heroBlock: string
     type: "service" | "application"
   }> = []
+
+  // Blocks-first: Collect blocks by template for computing templates
+  const blocksByTemplate: Record<string, {
+    block: ComputedTemplateBlockType
+    description: string
+    categories: string[]
+  }[]> = {}
 
   for (const style of styles) {
     const { registry: importedRegistry } = await import(
@@ -256,6 +299,28 @@ async function buildBlocksMetadata(styles: Style[]) {
         categoryStructure[mainCategory] = []
       }
       categoryStructure[mainCategory].push(item.name)
+
+      // Collect blocks with blockConfig for template computation
+      const blockConfig = (item as unknown as { blockConfig?: BlockConfigType }).blockConfig
+      if (blockConfig && blockConfig.template && blockConfig.template !== "standalone") {
+        if (!blocksByTemplate[blockConfig.template]) {
+          blocksByTemplate[blockConfig.template] = []
+        }
+        blocksByTemplate[blockConfig.template].push({
+          block: {
+            name: item.name,
+            blockType: blockConfig.blockType,
+            order: blockConfig.order,
+            palette: blockConfig.palette,
+            typography: blockConfig.typography,
+            tint: blockConfig.tint,
+            forceLight: blockConfig.forceLight,
+            forceDark: blockConfig.forceDark,
+          },
+          description: item.description || "",
+          categories: categories,
+        })
+      }
 
       // Check if this is a template item
       if (categories.includes("template")) {
@@ -285,6 +350,57 @@ async function buildBlocksMetadata(styles: Style[]) {
           type: templateType,
         })
       }
+    }
+  }
+
+  // Compute templates from blocks
+  const computedTemplates: Record<string, ComputedTemplateType> = {}
+
+  for (const [templateSlug, blockInfos] of Object.entries(blocksByTemplate)) {
+    // Sort blocks by order
+    const sortedBlocks = blockInfos.sort((a, b) => a.block.order - b.block.order)
+
+    // Find the hero block (first block with blockType "hero" or "view")
+    const heroBlockInfo = sortedBlocks.find(
+      (b) => b.block.blockType === "hero" || b.block.blockType === "view"
+    )
+
+    // Get palette and typography from first block (all blocks in template should have same)
+    const firstBlock = sortedBlocks[0]?.block
+    const palette = firstBlock?.palette || "slate"
+    const typography = firstBlock?.typography || "modern"
+
+    // Format display name
+    const displayName = templateSlug
+      .split("-")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ")
+
+    // Determine template type from slug
+    const templateType: "service" | "application" = templateSlug.startsWith("app-")
+      ? "application"
+      : "service"
+
+    // Group blocks by type for toggle UI
+    const blockGroups: Record<string, string[]> = {}
+    for (const blockInfo of sortedBlocks) {
+      const blockType = blockInfo.block.blockType
+      if (!blockGroups[blockType]) {
+        blockGroups[blockType] = []
+      }
+      blockGroups[blockType].push(blockInfo.block.name)
+    }
+
+    computedTemplates[templateSlug] = {
+      slug: templateSlug,
+      name: displayName,
+      description: sortedBlocks[0]?.description || `${displayName} template`,
+      palette,
+      typography,
+      heroBlock: heroBlockInfo?.block.name || sortedBlocks[0]?.block.name || templateSlug,
+      type: templateType,
+      blocks: sortedBlocks.map((b) => b.block),
+      blockGroups,
     }
   }
 
@@ -340,6 +456,47 @@ export function getServiceTemplatesFromRegistry(): RegistryTemplateMetadata[] {
 export function getApplicationTemplatesFromRegistry(): RegistryTemplateMetadata[] {
   return TEMPLATE_METADATA.filter((t) => t.type === "application")
 }
+
+/**
+ * Computed templates from blocks-first architecture
+ * Each template aggregates blocks that belong to it via blockConfig
+ */
+export interface ComputedTemplateBlock {
+  name: string
+  blockType: string
+  order: number
+  palette: string
+  typography: string
+  tint?: "base" | "tinted" | "deep"
+  forceLight?: boolean
+  forceDark?: boolean
+}
+
+export interface ComputedTemplate {
+  slug: string
+  name: string
+  description: string
+  palette: string
+  typography: string
+  heroBlock: string
+  type: "service" | "application"
+  blocks: ComputedTemplateBlock[]
+  blockGroups: Record<string, string[]> // blockType -> block names (for toggle UI)
+}
+
+export const COMPUTED_TEMPLATES: Record<string, ComputedTemplate> = ${JSON.stringify(computedTemplates, null, 2)}
+
+export function getComputedTemplate(slug: string): ComputedTemplate | null {
+  return COMPUTED_TEMPLATES[slug] || null
+}
+
+export function getAllComputedTemplates(): ComputedTemplate[] {
+  return Object.values(COMPUTED_TEMPLATES)
+}
+
+export function getBlocksByTemplateAndType(slug: string, blockType: string): string[] {
+  return COMPUTED_TEMPLATES[slug]?.blockGroups[blockType] || []
+}
 `
 
   const outputPath = path.join(process.cwd(), "registry/__blocks-metadata__.ts")
@@ -357,6 +514,7 @@ export function getApplicationTemplatesFromRegistry(): RegistryTemplateMetadata[
     .flatMap(subcats => Object.values(subcats))
     .flat().length
   console.log(`📊 Built blocks metadata: ${Object.keys(categoryStructure).length} categories, ${totalBlocks} blocks`)
+  console.log(`📦 Computed ${Object.keys(computedTemplates).length} templates from blocks-first architecture`)
 }
 
 async function buildStylesIndex() {

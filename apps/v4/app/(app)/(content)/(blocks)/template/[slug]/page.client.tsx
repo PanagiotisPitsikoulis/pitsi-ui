@@ -143,13 +143,15 @@ function TypographyDisplay({ slug }: { slug: string }) {
     </Tooltip>
   )
 }
-import { getTemplateBlocks, type TemplateSlug } from "../../blocks"
 import {
-  getTemplatePalette,
-  getTemplateHeroOptions,
-  getTemplateDefaultHero,
-  type BlockConfig,
-} from "../../template-config"
+  getTemplateBlocks,
+  getComputedTemplatePalette,
+  getComputedHeroOptions,
+  getComputedDefaultHero,
+  getTemplateBlockGroups,
+  type TemplateSlug,
+} from "../../blocks"
+import { type ComputedTemplateBlock } from "@/registry/__blocks-metadata__"
 
 interface TemplateViewerClientProps {
   slug: string
@@ -158,7 +160,7 @@ interface TemplateViewerClientProps {
     name: string
     description: string
   }
-  templateBlocks: BlockConfig[]
+  templateBlocks: ComputedTemplateBlock[]
   blocksMetadata: BlockMetadata[]
 }
 
@@ -182,8 +184,8 @@ export function TemplateViewerClient({
   const mainRef = useRef<HTMLDivElement>(null)
 
   // Hero selection
-  const heroOptions = getTemplateHeroOptions(slug)
-  const defaultHero = getTemplateDefaultHero(slug) || heroOptions[0]
+  const heroOptions = getComputedHeroOptions(slug)
+  const defaultHero = getComputedDefaultHero(slug) || heroOptions[0]
   const selectedHero = searchParams.get("hero") || defaultHero
 
   const handleHeroChange = useCallback(
@@ -199,7 +201,7 @@ export function TemplateViewerClient({
     [defaultHero, pathname, router, searchParams]
   )
 
-  const blocks = getTemplateBlocks(slug as TemplateSlug, selectedHero)
+  const blocks = getTemplateBlocks(slug as TemplateSlug, selectedHero ? { hero: selectedHero } : undefined)
   const isDev = process.env.NODE_ENV === "development"
   const { theme, setTheme, resolvedTheme } = useTheme()
   const { copyToClipboard: copyInstallCommand, isCopied: isInstallCopied } = useCopyToClipboard()
@@ -401,7 +403,7 @@ export function TemplateViewerClient({
 
             {/* Theme and Typography displays */}
             <div className="hidden items-center gap-1 lg:flex">
-              <ThemeDisplay palette={getTemplatePalette(slug)} />
+              <ThemeDisplay palette={getComputedTemplatePalette(slug)} />
               <TypographyDisplay slug={slug} />
             </div>
 
@@ -525,23 +527,25 @@ export function TemplateViewerClient({
         <div className="container">
           <div
             ref={mainRef}
-            className="bg-muted/30 h-[calc(100vh-var(--header-height)-120px)] min-h-[500px] overflow-hidden rounded-2xl border"
+            className="bg-muted/30 h-[calc(100vh-var(--header-height)-80px)] min-h-[600px] overflow-hidden rounded-2xl border"
           >
             <div className="h-full overflow-auto">
-              <BlockThemeWrapper palette={getTemplatePalette(slug)} tint={DEFAULT_TINT} fonts={fonts}>
+              <BlockThemeWrapper palette={getComputedTemplatePalette(slug)} tint={DEFAULT_TINT} fonts={fonts}>
                 <ScrollContainerProvider value={mainRef}>
                   {blocks.map(
-                    ({ name, type, Component, tint, forceDark, forceLight }, index) => {
+                    ({ name, type, Component, tint, forceDark, forceLight, palette, typography }, index) => {
                       const skipAlternatingBg =
                         type === "hero" || type === "header" || forceDark || forceLight
                       const skipPadding =
                         type === "hero" || type === "header" || type === "footer"
                       const blockTint = tint || DEFAULT_TINT
+                      // Use block's palette if available, fallback to template palette
+                      const blockPalette = (palette || getComputedTemplatePalette(slug)) as ColorPalette
 
                       return (
                         <BlockThemeWrapper
                           key={name}
-                          palette={getTemplatePalette(slug)}
+                          palette={blockPalette}
                           tint={blockTint}
                           forceDark={forceDark}
                           forceLight={forceLight}

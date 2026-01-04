@@ -204,8 +204,7 @@ export function AppGymLog1({ onFinish }: AppGymLog1Props) {
               <div
                 key={exercise.id}
                 className={cn(
-                  "bg-card overflow-hidden rounded-xl shadow-sm transition-all",
-                  isExpanded && "shadow-md"
+                  "bg-muted overflow-hidden rounded-xl transition-all"
                 )}
               >
                 {/* Exercise Header */}

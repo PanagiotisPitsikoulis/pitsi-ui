@@ -532,7 +532,7 @@ export function BlockViewerClient({
 
         {/* Preview Container */}
         <div className="container">
-          <div className="bg-muted/30 h-[calc(100vh-var(--header-height)-120px)] min-h-[500px] overflow-hidden rounded-2xl border">
+          <div className="bg-muted/30 h-[calc(100vh-var(--header-height)-80px)] min-h-[600px] overflow-hidden rounded-2xl border">
             {/* Preview Mode - uses iframe for isolation */}
             {viewMode === "preview" && (
               <div className="relative h-full w-full">

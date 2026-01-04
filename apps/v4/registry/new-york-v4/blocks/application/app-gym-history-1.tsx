@@ -83,7 +83,7 @@ export function AppGymHistory1() {
         </div>
 
         {/* Volume Trend */}
-        <div className="bg-card rounded-xl p-4 shadow-sm">
+        <div className="bg-muted rounded-xl p-4">
           <p className="text-muted-foreground mb-3 text-[10px] font-medium tracking-wider uppercase">
             Weekly Volume Trend
           </p>
@@ -109,7 +109,7 @@ export function AppGymHistory1() {
         </div>
 
         {/* Calendar */}
-        <div className="bg-card rounded-xl p-5 shadow-sm">
+        <div className="bg-muted rounded-xl p-5">
           {/* Month Navigation */}
           <div className="mb-4 flex items-center justify-between">
             <Button
@@ -222,7 +222,7 @@ export function AppGymHistory1() {
 
         {/* Selected Day Details */}
         {selectedWorkout && (
-          <div className="bg-card rounded-xl p-5 shadow-sm">
+          <div className="bg-muted rounded-xl p-5">
             <div className="mb-3 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <div

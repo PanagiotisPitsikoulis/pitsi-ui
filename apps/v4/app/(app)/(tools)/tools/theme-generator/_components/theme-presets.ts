@@ -169,6 +169,11 @@ const palettes: ColorPalette[] = [
     light: { brand: "#5cb870", brandComplementary: "#b85c9c", tint: "#f8fcf9" },
     dark: { brand: "#8ed498", brandComplementary: "#d48ec0", tint: "#1a321e" },
   },
+  {
+    name: "Neon",
+    light: { brand: "#7fff00", brandComplementary: "#ff00ff", tint: "#f0fff0" },
+    dark: { brand: "#7fff00", brandComplementary: "#ff00ff", tint: "#0a1a0a" },
+  },
 ]
 
 // Helper to create base theme (neutral with brand colors and subtle tint)
@@ -217,36 +222,39 @@ function createBaseTheme(palette: ColorPalette): ThemeStyles {
 
 // Helper to create tinted theme (brand as primary, but neutral backgrounds)
 function createTintedTheme(palette: ColorPalette): ThemeStyles {
+  // Neon needs black foreground for contrast with bright green
+  const isNeon = palette.name === "Neon"
+
   return {
     light: {
       ...lightBase,
       // Primary is the brand color - this is what makes "tinted" special
       primary: palette.light.brand,
-      "primary-foreground": "#ffffff",
+      "primary-foreground": isNeon ? "#0a0a0a" : "#ffffff",
       // Sidebar gets brand styling
       "sidebar-primary": palette.light.brand,
-      "sidebar-primary-foreground": "#ffffff",
+      "sidebar-primary-foreground": isNeon ? "#0a0a0a" : "#ffffff",
       // Keep brand colors
       brand: palette.light.brand,
       "brand-complementary": palette.light.brandComplementary,
       ring: palette.light.brand,
       selection: palette.light.brand,
-      "selection-foreground": "#ffffff",
+      "selection-foreground": isNeon ? "#0a0a0a" : "#ffffff",
     },
     dark: {
       ...darkBase,
       // Primary is the brand color
       primary: palette.dark.brand,
-      "primary-foreground": "#1f1f1f",
+      "primary-foreground": isNeon ? "#0a0a0a" : "#1f1f1f",
       // Sidebar gets brand styling
       "sidebar-primary": palette.dark.brand,
-      "sidebar-primary-foreground": "#1f1f1f",
+      "sidebar-primary-foreground": isNeon ? "#0a0a0a" : "#1f1f1f",
       // Keep brand colors
       brand: palette.dark.brand,
       "brand-complementary": palette.dark.brandComplementary,
       ring: palette.dark.brand,
       selection: palette.dark.brand,
-      "selection-foreground": "#1f1f1f",
+      "selection-foreground": isNeon ? "#0a0a0a" : "#1f1f1f",
     },
   }
 }

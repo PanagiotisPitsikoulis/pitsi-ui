@@ -12,8 +12,16 @@
   ],
   "categories": [
     "testimonials",
-    "service-plants"
+    "landing"
   ],
   "tier": "free",
-  "readiness": "production"
+  "readiness": "production",
+  "blockConfig": {
+    "template": "service-plants",
+    "blockType": "testimonials",
+    "order": 7,
+    "palette": "sage",
+    "typography": "elegant",
+    "tint": "deep"
+  }
 }

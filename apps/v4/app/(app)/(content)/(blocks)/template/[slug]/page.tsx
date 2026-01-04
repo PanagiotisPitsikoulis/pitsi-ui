@@ -3,11 +3,14 @@ import { notFound } from "next/navigation"
 
 import { getActiveStyle } from "@/registry/styles"
 import blocksData from "@/registry/__blocks__.json"
+import {
+  COMPUTED_TEMPLATES,
+  type ComputedTemplateBlock,
+} from "@/registry/__blocks-metadata__"
 
 import {
   getTemplateMetadata,
   getApplicationTemplateConfig,
-  getTemplateConfig,
   ALL_TEMPLATE_SLUGS,
 } from "../../template-config"
 
@@ -73,11 +76,10 @@ export default async function TemplateViewerPage({
     )
   }
 
-  // Otherwise, it's a service template
-  const template = getTemplateMetadata(slug)
-  const templateConfig = getTemplateConfig(slug)
+  // Otherwise, it's a service template from computed templates
+  const computedTemplate = COMPUTED_TEMPLATES[slug]
 
-  if (!template || !templateConfig) {
+  if (!computedTemplate) {
     notFound()
   }
 
@@ -85,8 +87,8 @@ export default async function TemplateViewerPage({
     <TemplateViewerClient
       slug={slug}
       styleName={activeStyle.name}
-      template={{ name: template.name, description: template.description }}
-      templateBlocks={templateConfig.blocks}
+      template={{ name: computedTemplate.name, description: computedTemplate.description }}
+      templateBlocks={computedTemplate.blocks}
       blocksMetadata={blocksData}
     />
   )

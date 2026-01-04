@@ -22,8 +22,16 @@
   ],
   "categories": [
     "contact",
-    "service-plants"
+    "landing"
   ],
   "tier": "free",
-  "readiness": "production"
+  "readiness": "production",
+  "blockConfig": {
+    "template": "service-plants",
+    "blockType": "contact",
+    "order": 13,
+    "palette": "sage",
+    "typography": "elegant",
+    "tint": "tinted"
+  }
 }

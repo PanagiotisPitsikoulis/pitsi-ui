@@ -4,6 +4,7 @@ import * as React from "react"
 import { useTheme } from "next-themes"
 
 import { cn } from "@/lib/utils"
+import { palettes } from "@/registry/new-york-v4/lib/palettes"
 
 // ============================================================================
 // Theme Types
@@ -386,16 +387,20 @@ export function getPaletteThemeStyles(
   tint: TintLevel = DEFAULT_TINT,
   mode: "light" | "dark" = "light"
 ): React.CSSProperties {
-  const colors = paletteColors[palette]
+  // Get mode-specific colors from palettes.ts
+  const paletteData = palettes[palette]
+  const colors = paletteData ? paletteData[mode] : paletteColors[palette]
   const baseStyles = mode === "light" ? { ...lightBase } : { ...darkBase }
 
   // Apply brand colors for non-slate palettes
-  if (palette !== "slate") {
+  if (palette !== "slate" && colors) {
     baseStyles.brand = colors.brand
     baseStyles["brand-complementary"] = colors.complementary
     // Also set primary to brand color for colored palettes
     baseStyles.primary = colors.brand
-    baseStyles["primary-foreground"] = mode === "light" ? "#0a0a0a" : "#fafafa"
+    // Neon palette uses black text in both modes due to bright green
+    baseStyles["primary-foreground"] =
+      palette === "neon" ? "#0a0a0a" : mode === "light" ? "#0a0a0a" : "#fafafa"
   }
 
   // Apply deep backgrounds
@@ -528,6 +533,7 @@ export function BlockThemeWrapper({
         className
       )}
       style={style}
+      data-palette={palette}
     >
       {children}
     </div>

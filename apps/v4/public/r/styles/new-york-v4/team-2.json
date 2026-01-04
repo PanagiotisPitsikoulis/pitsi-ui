@@ -15,8 +15,16 @@
   ],
   "categories": [
     "team",
-    "service-fitness"
+    "landing"
   ],
   "tier": "free",
-  "readiness": "production"
+  "readiness": "production",
+  "blockConfig": {
+    "template": "service-fitness",
+    "blockType": "team",
+    "order": 9,
+    "palette": "neon",
+    "typography": "futuristic",
+    "tint": "tinted"
+  }
 }
