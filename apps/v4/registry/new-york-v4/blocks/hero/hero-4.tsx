@@ -9,7 +9,7 @@ import { Button } from "@/registry/new-york-v4/ui/button"
 
 import { HeroButton } from "../../ui/hero-button"
 
-// Hero 4 defaults - Fitness/Personal Training theme
+// Hero 4 defaults - Fitness/Personal Training theme (no header - applied at template level)
 const hero4Defaults = {
   badge: "Transform Your Body",
   title: "Unlock Your\nFull Potential",
@@ -25,19 +25,9 @@ const hero4Defaults = {
     src: "/elements/subject/gym/3.webp",
     alt: "Personal trainer in action",
   },
-  nav: {
-    logo: "ELITE",
-    links: [
-      { label: "Programs", href: "#" },
-      { label: "Trainers", href: "#" },
-      { label: "Pricing", href: "#" },
-      { label: "About", href: "#" },
-    ],
-  },
 }
 
 export function Hero4({ content = {}, classNames = {} }: HeroBlockProps) {
-  // Merge content with defaults
   const {
     badge = hero4Defaults.badge,
     title = hero4Defaults.title,
@@ -45,37 +35,15 @@ export function Hero4({ content = {}, classNames = {} }: HeroBlockProps) {
     primaryCta = hero4Defaults.primaryCta,
     secondaryCta = hero4Defaults.secondaryCta,
     image = hero4Defaults.image,
-    nav = hero4Defaults.nav,
   } = content as typeof hero4Defaults
 
   return (
     <section
       className={cn(
-        "relative flex min-h-[100svh] flex-col overflow-hidden",
+        "relative flex min-h-[calc(100svh-5rem)] flex-col overflow-hidden",
         classNames.root
       )}
     >
-      {/* Pill Navbar */}
-      <div className="container px-4 pt-6">
-        <nav className="bg-muted flex items-center justify-between rounded-full px-4 py-2">
-          <Link href="/" className="pl-2 text-lg font-bold tracking-tight">
-            {nav.logo}
-          </Link>
-          <div className="flex items-center gap-1">
-            {nav.links.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-muted-foreground hover:text-foreground px-4 py-2 text-sm font-medium transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-          <HeroButton>Get Started</HeroButton>
-        </nav>
-      </div>
-
       {/* Full-width Bento Layout */}
       <div className="container flex-1 px-4 py-6">
         <div className="bg-muted relative flex h-full min-h-[35rem] flex-col overflow-hidden rounded-3xl lg:flex-row">

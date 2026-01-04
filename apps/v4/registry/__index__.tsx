@@ -207,46 +207,6 @@ export const Index: Record<string, Record<string, any>> = {
       tier: "free",
       readiness: "production",
     },
-    "button-neobrutalist": {
-      name: "button-neobrutalist",
-      description: "A bold button with hard shadows and sharp edges for neobrutalist designs.",
-      type: "registry:ui",
-      registryDependencies: undefined,
-      files: [{
-        path: "registry/new-york-v4/ui/button-neobrutalist.tsx",
-        type: "registry:ui",
-        target: ""
-      }],
-      component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/ui/button-neobrutalist.tsx")
-        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "button-neobrutalist"
-        return { default: mod.default || mod[exportName] }
-      }),
-      categories: ["core-components"],
-      meta: undefined,
-      tier: "free",
-      readiness: "production",
-    },
-    "hero-button-neobrutalist": {
-      name: "hero-button-neobrutalist",
-      description: "A bold call-to-action button with hard shadows and arrow icon for neobrutalist hero sections.",
-      type: "registry:ui",
-      registryDependencies: undefined,
-      files: [{
-        path: "registry/new-york-v4/ui/hero-button-neobrutalist.tsx",
-        type: "registry:ui",
-        target: ""
-      }],
-      component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/ui/hero-button-neobrutalist.tsx")
-        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "hero-button-neobrutalist"
-        return { default: mod.default || mod[exportName] }
-      }),
-      categories: ["core-components"],
-      meta: undefined,
-      tier: "free",
-      readiness: "production",
-    },
     "card": {
       name: "card",
       description: "",
@@ -2607,6 +2567,106 @@ export const Index: Record<string, Record<string, any>> = {
       tier: "free",
       readiness: "production",
     },
+    "hero-10": {
+      name: "hero-10",
+      description: "Plants bento hero with split layout and pill navbar",
+      type: "registry:block",
+      registryDependencies: ["button","hero-button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/hero/hero-10.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/hero/hero-10.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "hero-10"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["hero","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "hero-11": {
+      name: "hero-11",
+      description: "Plants bento hero with 2-column grid and pill navbar",
+      type: "registry:block",
+      registryDependencies: ["button","hero-button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/hero/hero-11.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/hero/hero-11.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "hero-11"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["hero","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "hero-12": {
+      name: "hero-12",
+      description: "Plants bento hero with reversed layout, stats, and pill navbar",
+      type: "registry:block",
+      registryDependencies: ["button","hero-button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/hero/hero-12.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/hero/hero-12.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "hero-12"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["hero","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "hero-13": {
+      name: "hero-13",
+      description: "Plants bento hero with 3-column asymmetric grid and pill navbar",
+      type: "registry:block",
+      registryDependencies: ["button","hero-button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/hero/hero-13.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/hero/hero-13.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "hero-13"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["hero","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "hero-14": {
+      name: "hero-14",
+      description: "Plants bento hero with 4-column stat cards and pill navbar",
+      type: "registry:block",
+      registryDependencies: ["button","hero-button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/hero/hero-14.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/hero/hero-14.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "hero-14"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["hero","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
     "logos-1": {
       name: "logos-1",
       description: "Plant shop logo cloud section",
@@ -2987,6 +3047,106 @@ export const Index: Record<string, Record<string, any>> = {
       tier: "free",
       readiness: "production",
     },
+    "hero-15": {
+      name: "hero-15",
+      description: "Travel bento hero with split layout and pill navbar",
+      type: "registry:block",
+      registryDependencies: ["button","hero-button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/hero/hero-15.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/hero/hero-15.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "hero-15"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["hero","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "hero-16": {
+      name: "hero-16",
+      description: "Travel bento hero with 2-column grid and pill navbar",
+      type: "registry:block",
+      registryDependencies: ["button","hero-button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/hero/hero-16.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/hero/hero-16.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "hero-16"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["hero","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "hero-17": {
+      name: "hero-17",
+      description: "Travel bento hero with reversed layout, stats, and pill navbar",
+      type: "registry:block",
+      registryDependencies: ["button","hero-button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/hero/hero-17.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/hero/hero-17.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "hero-17"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["hero","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "hero-18": {
+      name: "hero-18",
+      description: "Travel bento hero with 3-column asymmetric grid and pill navbar",
+      type: "registry:block",
+      registryDependencies: ["button","hero-button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/hero/hero-18.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/hero/hero-18.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "hero-18"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["hero","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "hero-19": {
+      name: "hero-19",
+      description: "Travel bento hero with 4-column stat cards and pill navbar",
+      type: "registry:block",
+      registryDependencies: ["button","hero-button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/hero/hero-19.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/hero/hero-19.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "hero-19"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["hero","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
     "hero-3": {
       name: "hero-3",
       description: "Yacht charter hero section with parallax effects and knockout text",
@@ -3003,6 +3163,126 @@ export const Index: Record<string, Record<string, any>> = {
         return { default: mod.default || mod[exportName] }
       }),
       categories: ["hero","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "hero-20": {
+      name: "hero-20",
+      description: "Boat bento hero with split layout and pill navbar",
+      type: "registry:block",
+      registryDependencies: ["button","hero-button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/hero/hero-20.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/hero/hero-20.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "hero-20"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["hero","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "hero-21": {
+      name: "hero-21",
+      description: "Boat bento hero with 2-column grid and pill navbar",
+      type: "registry:block",
+      registryDependencies: ["button","hero-button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/hero/hero-21.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/hero/hero-21.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "hero-21"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["hero","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "hero-22": {
+      name: "hero-22",
+      description: "Boat bento hero with reversed layout, stats, and pill navbar",
+      type: "registry:block",
+      registryDependencies: ["button","hero-button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/hero/hero-22.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/hero/hero-22.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "hero-22"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["hero","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "hero-23": {
+      name: "hero-23",
+      description: "Boat bento hero with 3-column asymmetric grid and pill navbar",
+      type: "registry:block",
+      registryDependencies: ["button","hero-button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/hero/hero-23.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/hero/hero-23.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "hero-23"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["hero","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "hero-24": {
+      name: "hero-24",
+      description: "Boat bento hero with 4-column stat cards and pill navbar",
+      type: "registry:block",
+      registryDependencies: ["button","hero-button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/hero/hero-24.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/hero/hero-24.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "hero-24"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["hero","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "header-9": {
+      name: "header-9",
+      description: "Pill navbar header with rounded background and centered navigation",
+      type: "registry:block",
+      registryDependencies: ["hero-button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/header/header-9.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/header/header-9.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "header-9"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["header","landing"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3031,7 +3311,7 @@ export const Index: Record<string, Record<string, any>> = {
       name: "hero-5",
       description: "Full-bleed parallax fitness hero with dark overlay and centered content, video background style",
       type: "registry:block",
-      registryDependencies: ["button-neobrutalist","hero-button-neobrutalist","hero-button","spacer"],
+      registryDependencies: ["button","hero-button","spacer"],
       files: [{
         path: "registry/new-york-v4/blocks/hero/hero-5.tsx",
         type: "registry:block",
@@ -3411,7 +3691,7 @@ export const Index: Record<string, Record<string, any>> = {
       name: "service-plants",
       description: "Complete plant shop landing page template with all sections",
       type: "registry:block",
-      registryDependencies: ["header-1","hero-1","logos-1","features-1","features-2","features-3","features-4","features-5","products-1","pricing-1","testimonials-1","gallery-1","team-1","stats-1","faq-1","blog-1","contact-1","newsletter-1","cta-1","footer-1"],
+      registryDependencies: ["header-1","hero-1","hero-10","hero-11","hero-12","hero-13","hero-14","logos-1","features-1","features-2","features-3","features-4","features-5","products-1","pricing-1","testimonials-1","gallery-1","team-1","stats-1","faq-1","blog-1","contact-1","newsletter-1","cta-1","footer-1"],
       files: [{
         path: "registry/new-york-v4/blocks/service/service-plants.tsx",
         type: "registry:block",
@@ -3431,7 +3711,7 @@ export const Index: Record<string, Record<string, any>> = {
       name: "service-travel",
       description: "Stunning travel agency landing page template for tour operators",
       type: "registry:block",
-      registryDependencies: ["hero-2"],
+      registryDependencies: ["hero-2","hero-15","hero-16","hero-17","hero-18","hero-19"],
       files: [{
         path: "registry/new-york-v4/blocks/service/service-travel.tsx",
         type: "registry:block",
@@ -3451,7 +3731,7 @@ export const Index: Record<string, Record<string, any>> = {
       name: "service-boat",
       description: "Luxury yacht charter landing page template for marine services",
       type: "registry:block",
-      registryDependencies: ["hero-3"],
+      registryDependencies: ["hero-3","hero-20","hero-21","hero-22","hero-23","hero-24"],
       files: [{
         path: "registry/new-york-v4/blocks/service/service-boat.tsx",
         type: "registry:block",
@@ -3471,7 +3751,7 @@ export const Index: Record<string, Record<string, any>> = {
       name: "service-fitness",
       description: "Boutique fitness studio landing page with high-energy black & white design",
       type: "registry:block",
-      registryDependencies: ["header-1","hero-4","hero-5","hero-6","hero-7","hero-8","hero-9","features-6","features-7","team-2","stats-2","pricing-2","testimonials-2","features-8","footer-2"],
+      registryDependencies: ["header-9","hero-4","hero-5","hero-6","hero-7","hero-8","hero-9","features-6","features-7","team-2","stats-2","pricing-2","testimonials-2","features-8","footer-2"],
       files: [{
         path: "registry/new-york-v4/blocks/service/service-fitness.tsx",
         type: "registry:block",
@@ -6440,46 +6720,6 @@ export const Index: Record<string, Record<string, any>> = {
       component: React.lazy(async () => {
         const mod = await import("@/registry/new-york-v4/examples/hero-button-demo.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "hero-button-demo"
-        return { default: mod.default || mod[exportName] }
-      }),
-      categories: ["core-components"],
-      meta: undefined,
-      tier: "free",
-      readiness: "production",
-    },
-    "button-neobrutalist-demo": {
-      name: "button-neobrutalist-demo",
-      description: "",
-      type: "registry:example",
-      registryDependencies: ["button-neobrutalist"],
-      files: [{
-        path: "registry/new-york-v4/examples/button-neobrutalist-demo.tsx",
-        type: "registry:example",
-        target: ""
-      }],
-      component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/examples/button-neobrutalist-demo.tsx")
-        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "button-neobrutalist-demo"
-        return { default: mod.default || mod[exportName] }
-      }),
-      categories: ["core-components"],
-      meta: undefined,
-      tier: "free",
-      readiness: "production",
-    },
-    "hero-button-neobrutalist-demo": {
-      name: "hero-button-neobrutalist-demo",
-      description: "",
-      type: "registry:example",
-      registryDependencies: ["hero-button-neobrutalist"],
-      files: [{
-        path: "registry/new-york-v4/examples/hero-button-neobrutalist-demo.tsx",
-        type: "registry:example",
-        target: ""
-      }],
-      component: React.lazy(async () => {
-        const mod = await import("@/registry/new-york-v4/examples/hero-button-neobrutalist-demo.tsx")
-        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "hero-button-neobrutalist-demo"
         return { default: mod.default || mod[exportName] }
       }),
       categories: ["core-components"],

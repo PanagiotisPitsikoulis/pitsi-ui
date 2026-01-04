@@ -450,34 +450,6 @@ export const examples: Registry["items"] = [
     readiness: "production",
   },
   {
-    name: "button-neobrutalist-demo",
-    type: "registry:example",
-    registryDependencies: ["button-neobrutalist"],
-    files: [
-      {
-        path: "examples/button-neobrutalist-demo.tsx",
-        type: "registry:example",
-      },
-    ],
-    tier: "free",
-    categories: ["core-components"],
-    readiness: "production",
-  },
-  {
-    name: "hero-button-neobrutalist-demo",
-    type: "registry:example",
-    registryDependencies: ["hero-button-neobrutalist"],
-    files: [
-      {
-        path: "examples/hero-button-neobrutalist-demo.tsx",
-        type: "registry:example",
-      },
-    ],
-    tier: "free",
-    categories: ["core-components"],
-    readiness: "production",
-  },
-  {
     name: "button-group-size",
     type: "registry:example",
     registryDependencies: ["button-group"],

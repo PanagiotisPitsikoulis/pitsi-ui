@@ -43,3 +43,4 @@ export {
   type BlockMetadata,
 } from "./template-blocks-section"
 export { HeroSwitcher } from "./hero-switcher"
+export { BlockSelectorOverlay } from "./block-selector-overlay"

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "hero-20",
+  "type": "registry:block",
+  "description": "Boat bento hero with split layout and pill navbar",
+  "registryDependencies": [
+    "button",
+    "hero-button"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/hero/hero-20.tsx",
+      "content": "\"use client\"\n\nimport Image from \"next/image\"\nimport Link from \"next/link\"\n\nimport { type HeroBlockProps } from \"@/lib/blocks/hero.types\"\nimport { cn } from \"@/lib/utils\"\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\n\nimport { HeroButton } from \"../../ui/hero-button\"\n\n// Hero 20 defaults - Boat/Yacht theme (Split layout)\nconst hero20Defaults = {\n  badge: \"Luxury Charters\",\n  title: \"Sail Into\\nLuxury\",\n  description:\n    \"Premium yacht experiences. Professional crew. Crystal waters await.\",\n  primaryCta: { label: \"View Fleet\", href: \"#\" },\n  secondaryCta: {\n    label: \"Charter Info\",\n    href: \"#\",\n    variant: \"outline\" as const,\n  },\n  image: {\n    src: \"/elements/subject/boat/1.webp\",\n    alt: \"Luxury yacht\",\n  },\n  nav: {\n    logo: \"AZURE\",\n    links: [\n      { label: \"Fleet\", href: \"#\" },\n      { label: \"Charters\", href: \"#\" },\n      { label: \"About\", href: \"#\" },\n      { label: \"Contact\", href: \"#\" },\n    ],\n  },\n}\n\nexport function Hero20({ content = {}, classNames = {} }: HeroBlockProps) {\n  const {\n    badge = hero20Defaults.badge,\n    title = hero20Defaults.title,\n    description = hero20Defaults.description,\n    primaryCta = hero20Defaults.primaryCta,\n    secondaryCta = hero20Defaults.secondaryCta,\n    image = hero20Defaults.image,\n    nav = hero20Defaults.nav,\n  } = content as typeof hero20Defaults\n\n  return (\n    <section\n      className={cn(\n        \"relative flex min-h-[100svh] flex-col overflow-hidden\",\n        classNames.root\n      )}\n    >\n      {/* Pill Navbar */}\n      <div className=\"container px-4 pt-6\">\n        <nav className=\"bg-muted flex items-center justify-between rounded-full px-4 py-2\">\n          <Link href=\"/\" className=\"pl-2 text-lg font-bold tracking-tight\">\n            {nav.logo}\n          </Link>\n          <div className=\"flex items-center gap-1\">\n            {nav.links.map((link) => (\n              <Link\n                key={link.label}\n                href={link.href}\n                className=\"text-muted-foreground hover:text-foreground px-4 py-2 text-sm font-medium transition-colors\"\n              >\n                {link.label}\n              </Link>\n            ))}\n          </div>\n          <HeroButton>Book Charter</HeroButton>\n        </nav>\n      </div>\n\n      {/* Full-width Bento Layout */}\n      <div className=\"container flex-1 px-4 py-6\">\n        <div className=\"bg-muted relative flex h-full min-h-[35rem] flex-col overflow-hidden rounded-3xl lg:flex-row\">\n          {/* Content Side */}\n          <div className=\"relative z-10 flex flex-1 flex-col justify-center p-8 lg:w-1/2 lg:p-12\">\n            {badge && (\n              <p\n                className={cn(\n                  \"text-muted-foreground mb-4 text-sm font-medium tracking-widest uppercase\",\n                  classNames.header?.badge\n                )}\n              >\n                {badge}\n              </p>\n            )}\n\n            <h1\n              className={cn(\n                \"display text-4xl leading-[1.1] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl\",\n                classNames.header?.title\n              )}\n            >\n              {title.split(\"\\n\").map((line, i) => (\n                <span key={i}>\n                  {line}\n                  {i < title.split(\"\\n\").length - 1 && <br />}\n                </span>\n              ))}\n            </h1>\n\n            {description && (\n              <p\n                className={cn(\n                  \"text-muted-foreground mt-6 text-lg md:text-xl\",\n                  classNames.header?.description\n                )}\n              >\n                {description}\n              </p>\n            )}\n\n            <div className=\"mt-8 flex flex-wrap items-center gap-3\">\n              {primaryCta && (\n                <Link\n                  href={primaryCta.href}\n                  className={classNames.cta?.primary}\n                >\n                  <HeroButton>{primaryCta.label}</HeroButton>\n                </Link>\n              )}\n              {secondaryCta && (\n                <Button\n                  asChild\n                  variant=\"outline\"\n                  size=\"lg\"\n                  className={cn(\"text-foreground\", classNames.cta?.secondary)}\n                >\n                  <Link href={secondaryCta.href}>{secondaryCta.label}</Link>\n                </Button>\n              )}\n            </div>\n          </div>\n\n          {/* Image Side */}\n          <div className=\"relative min-h-[20rem] lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2\">\n            <Image\n              src={image.src}\n              alt={image.alt}\n              fill\n              className=\"object-cover object-top\"\n              priority\n            />\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "hero",
+    "landing"
+  ],
+  "tier": "free",
+  "readiness": "production",
+  "blockConfig": {
+    "template": "service-boat",
+    "blockType": "hero",
+    "order": 2,
+    "palette": "azure",
+    "typography": "classic",
+    "tint": "tinted"
+  }
+}

@@ -164,38 +164,6 @@ export const ui: Registry["items"] = [
     readiness: "production",
   },
   {
-    name: "button-neobrutalist",
-    type: "registry:ui",
-    description:
-      "A bold button with hard shadows and sharp edges for neobrutalist designs.",
-    dependencies: ["@radix-ui/react-slot", "class-variance-authority"],
-    files: [
-      {
-        path: "ui/button-neobrutalist.tsx",
-        type: "registry:ui",
-      },
-    ],
-    tier: "free",
-    categories: ["core-components"],
-    readiness: "production",
-  },
-  {
-    name: "hero-button-neobrutalist",
-    type: "registry:ui",
-    description:
-      "A bold call-to-action button with hard shadows and arrow icon for neobrutalist hero sections.",
-    dependencies: ["class-variance-authority"],
-    files: [
-      {
-        path: "ui/hero-button-neobrutalist.tsx",
-        type: "registry:ui",
-      },
-    ],
-    tier: "free",
-    categories: ["core-components"],
-    readiness: "production",
-  },
-  {
     name: "card",
     type: "registry:ui",
     files: [

@@ -1,0 +1,147 @@
+"use client"
+
+import Image from "next/image"
+import Link from "next/link"
+
+import { type HeroBlockProps } from "@/lib/blocks/hero.types"
+import { cn } from "@/lib/utils"
+import { Button } from "@/registry/new-york-v4/ui/button"
+
+import { HeroButton } from "../../ui/hero-button"
+
+// Hero 11 defaults - Plants/Garden theme (2-column bento)
+const hero11Defaults = {
+  badge: "Premium Plants",
+  title: "Grow Your\nGreen Oasis",
+  description:
+    "Hand-picked houseplants delivered to your door. Expert care tips included.",
+  primaryCta: { label: "Browse Collection", href: "#" },
+  secondaryCta: {
+    label: "Learn More",
+    href: "#",
+    variant: "outline" as const,
+  },
+  image: {
+    src: "/elements/subject/plants/2.webp",
+    alt: "Lush indoor plants",
+  },
+  nav: {
+    logo: "BLOOM",
+    links: [
+      { label: "Plants", href: "#" },
+      { label: "Care", href: "#" },
+      { label: "About", href: "#" },
+      { label: "Contact", href: "#" },
+    ],
+  },
+}
+
+export function Hero11({ content = {}, classNames = {} }: HeroBlockProps) {
+  const {
+    title = hero11Defaults.title,
+    description = hero11Defaults.description,
+    primaryCta = hero11Defaults.primaryCta,
+    secondaryCta = hero11Defaults.secondaryCta,
+    image = hero11Defaults.image,
+    nav = hero11Defaults.nav,
+  } = content as typeof hero11Defaults
+
+  return (
+    <section
+      className={cn(
+        "relative flex min-h-[100svh] flex-col overflow-hidden",
+        classNames.root
+      )}
+    >
+      {/* Pill Navbar */}
+      <div className="container px-4 pt-6">
+        <nav className="bg-muted flex items-center justify-between rounded-full px-4 py-2">
+          <Link href="/" className="pl-2 text-lg font-bold tracking-tight">
+            {nav.logo}
+          </Link>
+          <div className="flex items-center gap-1">
+            {nav.links.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="text-muted-foreground hover:text-foreground px-4 py-2 text-sm font-medium transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+          <HeroButton>Shop Now</HeroButton>
+        </nav>
+      </div>
+
+      {/* Bento Grid Layout */}
+      <div className="container flex-1 px-4 py-6">
+        <div className="grid h-full gap-4 lg:grid-cols-2">
+          {/* Left Column - Text + Buttons Cards */}
+          <div className="flex flex-col gap-4">
+            {/* Text Card */}
+            <div className="bg-muted flex flex-1 flex-col justify-center rounded-3xl p-10">
+              <h1
+                className={cn(
+                  "display text-4xl leading-[1.1] tracking-tight sm:text-5xl md:text-6xl",
+                  classNames.header?.title
+                )}
+              >
+                {title.split("\n").map((line, i) => (
+                  <span key={i}>
+                    {line}
+                    {i < title.split("\n").length - 1 && <br />}
+                  </span>
+                ))}
+              </h1>
+
+              {description && (
+                <p
+                  className={cn(
+                    "text-muted-foreground mt-6 text-lg md:text-xl",
+                    classNames.header?.description
+                  )}
+                >
+                  {description}
+                </p>
+              )}
+            </div>
+
+            {/* Buttons Card */}
+            <div className="bg-muted flex items-center gap-3 rounded-3xl p-6">
+              {primaryCta && (
+                <Link
+                  href={primaryCta.href}
+                  className={classNames.cta?.primary}
+                >
+                  <HeroButton>{primaryCta.label}</HeroButton>
+                </Link>
+              )}
+              {secondaryCta && (
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className={cn("text-foreground", classNames.cta?.secondary)}
+                >
+                  <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
+                </Button>
+              )}
+            </div>
+          </div>
+
+          {/* Right Card - Image */}
+          <div className="bg-muted relative min-h-[25rem] overflow-hidden rounded-3xl lg:min-h-[35rem]">
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              className="mt-10 object-cover object-top"
+              priority
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}

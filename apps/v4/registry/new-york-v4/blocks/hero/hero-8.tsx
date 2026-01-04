@@ -9,7 +9,7 @@ import { Button } from "@/registry/new-york-v4/ui/button"
 
 import { HeroButton } from "../../ui/hero-button"
 
-// Hero 8 defaults - Fitness/Elite Training theme
+// Hero 8 defaults - Fitness/Elite Training theme (no header - applied at template level)
 const hero8Defaults = {
   badge: "Elite Training",
   title: "Push Beyond\nYour Limits",
@@ -25,15 +25,6 @@ const hero8Defaults = {
     src: "/elements/subject/gym/3.webp",
     alt: "Intense fitness training session",
   },
-  nav: {
-    logo: "ELITE",
-    links: [
-      { label: "Programs", href: "#" },
-      { label: "Trainers", href: "#" },
-      { label: "Pricing", href: "#" },
-      { label: "About", href: "#" },
-    ],
-  },
   stats: [
     { value: "500+", label: "Members" },
     { value: "50+", label: "Classes" },
@@ -42,45 +33,22 @@ const hero8Defaults = {
 }
 
 export function Hero8({ content = {}, classNames = {} }: HeroBlockProps) {
-  // Merge content with defaults
   const {
     title = hero8Defaults.title,
     description = hero8Defaults.description,
     primaryCta = hero8Defaults.primaryCta,
     secondaryCta = hero8Defaults.secondaryCta,
     image = hero8Defaults.image,
-    nav = hero8Defaults.nav,
     stats = hero8Defaults.stats,
   } = content as typeof hero8Defaults
 
   return (
     <section
       className={cn(
-        "relative flex min-h-[100svh] flex-col overflow-hidden",
+        "relative flex min-h-[calc(100svh-5rem)] flex-col overflow-hidden",
         classNames.root
       )}
     >
-      {/* Pill Navbar */}
-      <div className="container px-4 pt-6">
-        <nav className="bg-muted flex items-center justify-between rounded-full px-4 py-2">
-          <Link href="/" className="pl-2 text-lg font-bold tracking-tight">
-            {nav.logo}
-          </Link>
-          <div className="flex items-center gap-1">
-            {nav.links.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-muted-foreground hover:text-foreground px-4 py-2 text-sm font-medium transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-          <HeroButton>Get Started</HeroButton>
-        </nav>
-      </div>
-
       {/* Bento Grid Layout - Reversed */}
       <div className="container flex-1 px-4 py-6">
         <div className="grid h-full gap-4 lg:grid-cols-5">

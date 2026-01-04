@@ -4,7 +4,12 @@
   "type": "registry:block",
   "description": "Stunning travel agency landing page template for tour operators",
   "registryDependencies": [
-    "hero-2"
+    "hero-2",
+    "hero-15",
+    "hero-16",
+    "hero-17",
+    "hero-18",
+    "hero-19"
   ],
   "files": [
     {

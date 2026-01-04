@@ -92,6 +92,63 @@ export const blocks: Registry["items"] = [
     ),
   },
   {
+    name: "hero-10",
+    type: "registry:block",
+    description: "Plants bento hero with split layout and pill navbar",
+    registryDependencies: ["button", "hero-button"],
+    files: [{ path: "blocks/hero/hero-10.tsx", type: "registry:block" }],
+    categories: ["hero", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc("service-plants", "hero", 2, "sage", "elegant", "tinted"),
+  },
+  {
+    name: "hero-11",
+    type: "registry:block",
+    description: "Plants bento hero with 2-column grid and pill navbar",
+    registryDependencies: ["button", "hero-button"],
+    files: [{ path: "blocks/hero/hero-11.tsx", type: "registry:block" }],
+    categories: ["hero", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc("service-plants", "hero", 2, "sage", "elegant", "tinted"),
+  },
+  {
+    name: "hero-12",
+    type: "registry:block",
+    description:
+      "Plants bento hero with reversed layout, stats, and pill navbar",
+    registryDependencies: ["button", "hero-button"],
+    files: [{ path: "blocks/hero/hero-12.tsx", type: "registry:block" }],
+    categories: ["hero", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc("service-plants", "hero", 2, "sage", "elegant", "tinted"),
+  },
+  {
+    name: "hero-13",
+    type: "registry:block",
+    description:
+      "Plants bento hero with 3-column asymmetric grid and pill navbar",
+    registryDependencies: ["button", "hero-button"],
+    files: [{ path: "blocks/hero/hero-13.tsx", type: "registry:block" }],
+    categories: ["hero", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc("service-plants", "hero", 2, "sage", "elegant", "tinted"),
+  },
+  {
+    name: "hero-14",
+    type: "registry:block",
+    description: "Plants bento hero with 4-column stat cards and pill navbar",
+    registryDependencies: ["button", "hero-button"],
+    files: [{ path: "blocks/hero/hero-14.tsx", type: "registry:block" }],
+    categories: ["hero", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc("service-plants", "hero", 2, "sage", "elegant", "tinted"),
+  },
+  {
     name: "logos-1",
     type: "registry:block",
     description: "Plant shop logo cloud section",
@@ -491,6 +548,63 @@ export const blocks: Registry["items"] = [
       true
     ),
   },
+  {
+    name: "hero-15",
+    type: "registry:block",
+    description: "Travel bento hero with split layout and pill navbar",
+    registryDependencies: ["button", "hero-button"],
+    files: [{ path: "blocks/hero/hero-15.tsx", type: "registry:block" }],
+    categories: ["hero", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc("service-travel", "hero", 2, "azure", "modern", "tinted"),
+  },
+  {
+    name: "hero-16",
+    type: "registry:block",
+    description: "Travel bento hero with 2-column grid and pill navbar",
+    registryDependencies: ["button", "hero-button"],
+    files: [{ path: "blocks/hero/hero-16.tsx", type: "registry:block" }],
+    categories: ["hero", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc("service-travel", "hero", 2, "azure", "modern", "tinted"),
+  },
+  {
+    name: "hero-17",
+    type: "registry:block",
+    description:
+      "Travel bento hero with reversed layout, stats, and pill navbar",
+    registryDependencies: ["button", "hero-button"],
+    files: [{ path: "blocks/hero/hero-17.tsx", type: "registry:block" }],
+    categories: ["hero", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc("service-travel", "hero", 2, "azure", "modern", "tinted"),
+  },
+  {
+    name: "hero-18",
+    type: "registry:block",
+    description:
+      "Travel bento hero with 3-column asymmetric grid and pill navbar",
+    registryDependencies: ["button", "hero-button"],
+    files: [{ path: "blocks/hero/hero-18.tsx", type: "registry:block" }],
+    categories: ["hero", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc("service-travel", "hero", 2, "azure", "modern", "tinted"),
+  },
+  {
+    name: "hero-19",
+    type: "registry:block",
+    description: "Travel bento hero with 4-column stat cards and pill navbar",
+    registryDependencies: ["button", "hero-button"],
+    files: [{ path: "blocks/hero/hero-19.tsx", type: "registry:block" }],
+    categories: ["hero", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc("service-travel", "hero", 2, "azure", "modern", "tinted"),
+  },
 
   // ============================================
   // SERVICE-BOAT TEMPLATE (azure + classic)
@@ -521,10 +635,85 @@ export const blocks: Registry["items"] = [
       true
     ),
   },
+  {
+    name: "hero-20",
+    type: "registry:block",
+    description: "Boat bento hero with split layout and pill navbar",
+    registryDependencies: ["button", "hero-button"],
+    files: [{ path: "blocks/hero/hero-20.tsx", type: "registry:block" }],
+    categories: ["hero", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc("service-boat", "hero", 2, "azure", "classic", "tinted"),
+  },
+  {
+    name: "hero-21",
+    type: "registry:block",
+    description: "Boat bento hero with 2-column grid and pill navbar",
+    registryDependencies: ["button", "hero-button"],
+    files: [{ path: "blocks/hero/hero-21.tsx", type: "registry:block" }],
+    categories: ["hero", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc("service-boat", "hero", 2, "azure", "classic", "tinted"),
+  },
+  {
+    name: "hero-22",
+    type: "registry:block",
+    description: "Boat bento hero with reversed layout, stats, and pill navbar",
+    registryDependencies: ["button", "hero-button"],
+    files: [{ path: "blocks/hero/hero-22.tsx", type: "registry:block" }],
+    categories: ["hero", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc("service-boat", "hero", 2, "azure", "classic", "tinted"),
+  },
+  {
+    name: "hero-23",
+    type: "registry:block",
+    description:
+      "Boat bento hero with 3-column asymmetric grid and pill navbar",
+    registryDependencies: ["button", "hero-button"],
+    files: [{ path: "blocks/hero/hero-23.tsx", type: "registry:block" }],
+    categories: ["hero", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc("service-boat", "hero", 2, "azure", "classic", "tinted"),
+  },
+  {
+    name: "hero-24",
+    type: "registry:block",
+    description: "Boat bento hero with 4-column stat cards and pill navbar",
+    registryDependencies: ["button", "hero-button"],
+    files: [{ path: "blocks/hero/hero-24.tsx", type: "registry:block" }],
+    categories: ["hero", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc("service-boat", "hero", 2, "azure", "classic", "tinted"),
+  },
 
   // ============================================
   // SERVICE-FITNESS TEMPLATE (neon + futuristic)
   // ============================================
+  {
+    name: "header-9",
+    type: "registry:block",
+    description:
+      "Pill navbar header with rounded background and centered navigation",
+    registryDependencies: ["hero-button"],
+    files: [{ path: "blocks/header/header-9.tsx", type: "registry:block" }],
+    categories: ["header", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: bc(
+      "service-fitness",
+      "header",
+      1,
+      "neon",
+      "futuristic",
+      "tinted"
+    ),
+  },
   {
     name: "hero-4",
     type: "registry:block",
@@ -556,12 +745,7 @@ export const blocks: Registry["items"] = [
     description:
       "Full-bleed parallax fitness hero with dark overlay and centered content, video background style",
     dependencies: ["motion/react"],
-    registryDependencies: [
-      "button-neobrutalist",
-      "hero-button-neobrutalist",
-      "hero-button",
-      "spacer",
-    ],
+    registryDependencies: ["button", "hero-button", "spacer"],
     files: [
       {
         path: "blocks/hero/hero-5.tsx",
@@ -981,6 +1165,11 @@ export const blocks: Registry["items"] = [
     registryDependencies: [
       "header-1",
       "hero-1",
+      "hero-10",
+      "hero-11",
+      "hero-12",
+      "hero-13",
+      "hero-14",
       "logos-1",
       "features-1",
       "features-2",
@@ -1018,7 +1207,14 @@ export const blocks: Registry["items"] = [
     type: "registry:block",
     description:
       "Stunning travel agency landing page template for tour operators",
-    registryDependencies: ["hero-2"],
+    registryDependencies: [
+      "hero-2",
+      "hero-15",
+      "hero-16",
+      "hero-17",
+      "hero-18",
+      "hero-19",
+    ],
     files: [
       {
         path: "blocks/service/service-travel.tsx",
@@ -1037,7 +1233,14 @@ export const blocks: Registry["items"] = [
     type: "registry:block",
     description:
       "Luxury yacht charter landing page template for marine services",
-    registryDependencies: ["hero-3"],
+    registryDependencies: [
+      "hero-3",
+      "hero-20",
+      "hero-21",
+      "hero-22",
+      "hero-23",
+      "hero-24",
+    ],
     files: [
       {
         path: "blocks/service/service-boat.tsx",
@@ -1057,7 +1260,7 @@ export const blocks: Registry["items"] = [
     description:
       "Boutique fitness studio landing page with high-energy black & white design",
     registryDependencies: [
-      "header-1",
+      "header-9",
       "hero-4",
       "hero-5",
       "hero-6",

@@ -9,7 +9,7 @@ import { Button } from "@/registry/new-york-v4/ui/button"
 
 import { HeroButton } from "../../ui/hero-button"
 
-// Hero 6 defaults - Fitness/Stats theme
+// Hero 6 defaults - Fitness/Stats theme (no header - applied at template level)
 const hero6Defaults = {
   badge: "Proven Results",
   title: "Train Smarter\nGet Stronger",
@@ -25,15 +25,6 @@ const hero6Defaults = {
     src: "/elements/subject/gym/3.webp",
     alt: "Fitness training with results",
   },
-  nav: {
-    logo: "ELITE",
-    links: [
-      { label: "Programs", href: "#" },
-      { label: "Trainers", href: "#" },
-      { label: "Pricing", href: "#" },
-      { label: "About", href: "#" },
-    ],
-  },
   stats: [
     { value: "500+", label: "Clients" },
     { value: "98%", label: "Goal Achievement" },
@@ -42,7 +33,6 @@ const hero6Defaults = {
 }
 
 export function Hero6({ content = {}, classNames = {} }: HeroBlockProps) {
-  // Merge content with defaults
   const {
     badge = hero6Defaults.badge,
     title = hero6Defaults.title,
@@ -50,38 +40,16 @@ export function Hero6({ content = {}, classNames = {} }: HeroBlockProps) {
     primaryCta = hero6Defaults.primaryCta,
     secondaryCta = hero6Defaults.secondaryCta,
     image = hero6Defaults.image,
-    nav = hero6Defaults.nav,
     stats = hero6Defaults.stats,
   } = content as typeof hero6Defaults
 
   return (
     <section
       className={cn(
-        "relative flex min-h-[100svh] flex-col overflow-hidden",
+        "relative flex min-h-[calc(100svh-5rem)] flex-col overflow-hidden",
         classNames.root
       )}
     >
-      {/* Pill Navbar */}
-      <div className="container px-4 pt-6">
-        <nav className="bg-muted flex items-center justify-between rounded-full px-4 py-2">
-          <Link href="/" className="pl-2 text-lg font-bold tracking-tight">
-            {nav.logo}
-          </Link>
-          <div className="flex items-center gap-1">
-            {nav.links.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-muted-foreground hover:text-foreground px-4 py-2 text-sm font-medium transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-          <HeroButton>Get Started</HeroButton>
-        </nav>
-      </div>
-
       {/* Bento Grid with Stats Feature */}
       <div className="container flex-1 px-4 py-6">
         <div className="grid h-full gap-4 lg:grid-cols-4 lg:grid-rows-[auto_1fr]">

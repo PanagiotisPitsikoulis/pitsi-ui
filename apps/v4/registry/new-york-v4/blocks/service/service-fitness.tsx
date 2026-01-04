@@ -12,7 +12,7 @@ import { Features6 } from "../features/features-6"
 import { Features7 } from "../features/features-7"
 import { Features8 } from "../features/features-8"
 import { Footer2 } from "../footer/footer-2"
-import { Header1 } from "../header/header-1"
+import { Header9 } from "../header/header-9"
 import { Hero5 } from "../hero/hero-5"
 import { Pricing2 } from "../pricing/pricing-2"
 import { Stats2 } from "../stats/stats-2"
@@ -30,7 +30,7 @@ const blocks: Array<{
   forceLight?: boolean
   type: string
 }> = [
-  { Component: Header1, tint: "tinted", forceDark: true, type: "header" },
+  { Component: Header9, tint: "tinted", forceDark: true, type: "header" },
   { Component: Hero5, tint: "deep", forceDark: true, type: "hero" },
   { Component: Features6, tint: "deep", forceDark: true, type: "features" },
   { Component: Features7, tint: "deep", forceDark: true, type: "features" },

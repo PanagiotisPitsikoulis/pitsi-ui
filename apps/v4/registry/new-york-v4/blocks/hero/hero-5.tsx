@@ -5,13 +5,12 @@ import Link from "next/link"
 
 import { type HeroBlockProps } from "@/lib/blocks/hero.types"
 import { cn } from "@/lib/utils"
-import { ButtonNeobrutalist } from "@/registry/new-york-v4/ui/button-neobrutalist"
-import { HeroButtonNeobrutalist } from "@/registry/new-york-v4/ui/hero-button-neobrutalist"
+import { Button } from "@/registry/new-york-v4/ui/button"
 import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 
 import { HeroButton } from "../../ui/hero-button"
 
-// Hero 5 defaults - Fitness/Elite Training theme
+// Hero 5 defaults - Fitness/Elite Training theme (no header - applied at template level)
 const hero5Defaults = {
   badge: "Elite Training",
   title: "Push Beyond\nYour Limits",
@@ -27,56 +26,24 @@ const hero5Defaults = {
     src: "/elements/subject/gym/3.webp",
     alt: "Intense fitness training session",
   },
-  nav: {
-    logo: "ELITE",
-    links: [
-      { label: "Programs", href: "#" },
-      { label: "Trainers", href: "#" },
-      { label: "Pricing", href: "#" },
-      { label: "About", href: "#" },
-    ],
-  },
 }
 
 export function Hero5({ content = {}, classNames = {} }: HeroBlockProps) {
-  // Merge content with defaults
   const {
     title = hero5Defaults.title,
     description = hero5Defaults.description,
     primaryCta = hero5Defaults.primaryCta,
     secondaryCta = hero5Defaults.secondaryCta,
     image = hero5Defaults.image,
-    nav = hero5Defaults.nav,
   } = content as typeof hero5Defaults
 
   return (
     <section
       className={cn(
-        "relative min-h-[100svh] overflow-hidden lg:max-h-[100svh]",
+        "relative min-h-[calc(100svh-5rem)] overflow-hidden lg:max-h-[calc(100svh-5rem)]",
         classNames.root
       )}
     >
-      {/* Pill Navbar */}
-      <div className="container px-4 pt-6">
-        <nav className="bg-muted flex items-center justify-between rounded-full px-4 py-2">
-          <Link href="/" className="pl-2 text-lg font-bold tracking-tight">
-            {nav.logo}
-          </Link>
-          <div className="flex items-center gap-1">
-            {nav.links.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-muted-foreground hover:text-foreground px-4 py-2 text-sm font-medium transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-          <HeroButton>Get Started</HeroButton>
-        </nav>
-      </div>
-
       <Spacer size={"lg"} />
 
       <div className="container px-4">
@@ -121,20 +88,19 @@ export function Hero5({ content = {}, classNames = {} }: HeroBlockProps) {
             )}
           >
             {primaryCta && (
-              <Link href={primaryCta.href} className={classNames.cta?.primary}>
-                <HeroButtonNeobrutalist>
-                  {primaryCta.label}
-                </HeroButtonNeobrutalist>
-              </Link>
+              <Button size="lg" asChild className={classNames.cta?.primary}>
+                <Link href={primaryCta.href}>{primaryCta.label}</Link>
+              </Button>
             )}
             {secondaryCta && (
-              <ButtonNeobrutalist
+              <Button
                 variant="outline"
                 size="lg"
-                className={cn("dark", classNames.cta?.secondary)}
+                asChild
+                className={classNames.cta?.secondary}
               >
                 <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
-              </ButtonNeobrutalist>
+              </Button>
             )}
           </div>
         </div>

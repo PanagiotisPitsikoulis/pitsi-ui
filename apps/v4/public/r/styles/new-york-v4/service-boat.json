@@ -4,7 +4,12 @@
   "type": "registry:block",
   "description": "Luxury yacht charter landing page template for marine services",
   "registryDependencies": [
-    "hero-3"
+    "hero-3",
+    "hero-20",
+    "hero-21",
+    "hero-22",
+    "hero-23",
+    "hero-24"
   ],
   "files": [
     {

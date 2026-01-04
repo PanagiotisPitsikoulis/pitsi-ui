@@ -65,6 +65,7 @@
     "registry:capture:blocks": "bun run --bun --filter v4 registry:capture:blocks",
     "registry:capture:debug": "bun run --bun --filter v4 registry:capture:debug",
     "registry:capture:full": "bun run --bun --filter v4 registry:capture:full",
+    "registry:capture:workflow": "bun run --filter v4 registry:capture:workflow",
     "readiness": "bun run --bun --filter v4 readiness",
     "readiness:list": "bun run --bun --filter v4 readiness:list",
     "readiness:update": "bun run --bun --filter v4 readiness:update",

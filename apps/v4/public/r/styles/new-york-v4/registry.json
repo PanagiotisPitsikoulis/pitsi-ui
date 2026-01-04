@@ -218,45 +218,6 @@
       "readiness": "production"
     },
     {
-      "name": "button-neobrutalist",
-      "type": "registry:ui",
-      "description": "A bold button with hard shadows and sharp edges for neobrutalist designs.",
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/ui/button-neobrutalist.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "categories": [
-        "core-components"
-      ],
-      "tier": "free",
-      "readiness": "production"
-    },
-    {
-      "name": "hero-button-neobrutalist",
-      "type": "registry:ui",
-      "description": "A bold call-to-action button with hard shadows and arrow icon for neobrutalist hero sections.",
-      "dependencies": [
-        "class-variance-authority"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/ui/hero-button-neobrutalist.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "categories": [
-        "core-components"
-      ],
-      "tier": "free",
-      "readiness": "production"
-    },
-    {
       "name": "card",
       "type": "registry:ui",
       "files": [
@@ -2645,6 +2606,151 @@
       }
     },
     {
+      "name": "hero-10",
+      "type": "registry:block",
+      "description": "Plants bento hero with split layout and pill navbar",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-11",
+      "type": "registry:block",
+      "description": "Plants bento hero with 2-column grid and pill navbar",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-12",
+      "type": "registry:block",
+      "description": "Plants bento hero with reversed layout, stats, and pill navbar",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-13",
+      "type": "registry:block",
+      "description": "Plants bento hero with 3-column asymmetric grid and pill navbar",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-14",
+      "type": "registry:block",
+      "description": "Plants bento hero with 4-column stat cards and pill navbar",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
       "name": "logos-1",
       "type": "registry:block",
       "description": "Plant shop logo cloud section",
@@ -3186,6 +3292,151 @@
       }
     },
     {
+      "name": "hero-15",
+      "type": "registry:block",
+      "description": "Travel bento hero with split layout and pill navbar",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-16",
+      "type": "registry:block",
+      "description": "Travel bento hero with 2-column grid and pill navbar",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-17",
+      "type": "registry:block",
+      "description": "Travel bento hero with reversed layout, stats, and pill navbar",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-17.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-18",
+      "type": "registry:block",
+      "description": "Travel bento hero with 3-column asymmetric grid and pill navbar",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-18.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-19",
+      "type": "registry:block",
+      "description": "Travel bento hero with 4-column stat cards and pill navbar",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-19.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
       "name": "hero-3",
       "type": "registry:block",
       "description": "Yacht charter hero section with parallax effects and knockout text",
@@ -3217,6 +3468,179 @@
         "typography": "classic",
         "tint": "tinted",
         "forceLight": true
+      }
+    },
+    {
+      "name": "hero-20",
+      "type": "registry:block",
+      "description": "Boat bento hero with split layout and pill navbar",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-20.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-boat",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "azure",
+        "typography": "classic",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-21",
+      "type": "registry:block",
+      "description": "Boat bento hero with 2-column grid and pill navbar",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-21.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-boat",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "azure",
+        "typography": "classic",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-22",
+      "type": "registry:block",
+      "description": "Boat bento hero with reversed layout, stats, and pill navbar",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-22.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-boat",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "azure",
+        "typography": "classic",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-23",
+      "type": "registry:block",
+      "description": "Boat bento hero with 3-column asymmetric grid and pill navbar",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-23.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-boat",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "azure",
+        "typography": "classic",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-24",
+      "type": "registry:block",
+      "description": "Boat bento hero with 4-column stat cards and pill navbar",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-24.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-boat",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "azure",
+        "typography": "classic",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "header-9",
+      "type": "registry:block",
+      "description": "Pill navbar header with rounded background and centered navigation",
+      "registryDependencies": [
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/header/header-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "header",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-fitness",
+        "blockType": "header",
+        "order": 1,
+        "palette": "neon",
+        "typography": "futuristic",
+        "tint": "tinted"
       }
     },
     {
@@ -3260,8 +3684,7 @@
         "motion/react"
       ],
       "registryDependencies": [
-        "button-neobrutalist",
-        "hero-button-neobrutalist",
+        "button",
         "hero-button",
         "spacer"
       ],
@@ -3816,6 +4239,11 @@
       "registryDependencies": [
         "header-1",
         "hero-1",
+        "hero-10",
+        "hero-11",
+        "hero-12",
+        "hero-13",
+        "hero-14",
         "logos-1",
         "features-1",
         "features-2",
@@ -3856,7 +4284,12 @@
       "type": "registry:block",
       "description": "Stunning travel agency landing page template for tour operators",
       "registryDependencies": [
-        "hero-2"
+        "hero-2",
+        "hero-15",
+        "hero-16",
+        "hero-17",
+        "hero-18",
+        "hero-19"
       ],
       "files": [
         {
@@ -3879,7 +4312,12 @@
       "type": "registry:block",
       "description": "Luxury yacht charter landing page template for marine services",
       "registryDependencies": [
-        "hero-3"
+        "hero-3",
+        "hero-20",
+        "hero-21",
+        "hero-22",
+        "hero-23",
+        "hero-24"
       ],
       "files": [
         {
@@ -3902,7 +4340,7 @@
       "type": "registry:block",
       "description": "Boutique fitness studio landing page with high-energy black & white design",
       "registryDependencies": [
-        "header-1",
+        "header-9",
         "hero-4",
         "hero-5",
         "hero-6",
@@ -7889,42 +8327,6 @@
       "files": [
         {
           "path": "registry/new-york-v4/examples/hero-button-demo.tsx",
-          "type": "registry:example"
-        }
-      ],
-      "categories": [
-        "core-components"
-      ],
-      "tier": "free",
-      "readiness": "production"
-    },
-    {
-      "name": "button-neobrutalist-demo",
-      "type": "registry:example",
-      "registryDependencies": [
-        "button-neobrutalist"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/examples/button-neobrutalist-demo.tsx",
-          "type": "registry:example"
-        }
-      ],
-      "categories": [
-        "core-components"
-      ],
-      "tier": "free",
-      "readiness": "production"
-    },
-    {
-      "name": "hero-button-neobrutalist-demo",
-      "type": "registry:example",
-      "registryDependencies": [
-        "hero-button-neobrutalist"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/examples/hero-button-neobrutalist-demo.tsx",
           "type": "registry:example"
         }
       ],

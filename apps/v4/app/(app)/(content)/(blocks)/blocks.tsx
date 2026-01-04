@@ -226,3 +226,13 @@ export function getComputedDefaultHero(slug: string): string | null {
   const options = getComputedHeroOptions(slug)
   return options[0] || COMPUTED_TEMPLATES[slug]?.heroBlock || null
 }
+
+// Get block groups that have multiple variants (2+ options)
+export function getTemplateBlockGroupsWithVariants(
+  slug: string
+): Record<string, string[]> {
+  const groups = getTemplateBlockGroups(slug)
+  return Object.fromEntries(
+    Object.entries(groups).filter(([_, options]) => options.length > 1)
+  )
+}

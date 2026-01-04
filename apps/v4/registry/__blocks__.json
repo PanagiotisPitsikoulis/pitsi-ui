@@ -10,6 +10,31 @@
     "categories": ["hero", "landing"]
   },
   {
+    "name": "hero-10",
+    "description": "Plants bento hero with split layout and pill navbar",
+    "categories": ["hero", "landing"]
+  },
+  {
+    "name": "hero-11",
+    "description": "Plants bento hero with 2-column grid and pill navbar",
+    "categories": ["hero", "landing"]
+  },
+  {
+    "name": "hero-12",
+    "description": "Plants bento hero with reversed layout, stats, and pill navbar",
+    "categories": ["hero", "landing"]
+  },
+  {
+    "name": "hero-13",
+    "description": "Plants bento hero with 3-column asymmetric grid and pill navbar",
+    "categories": ["hero", "landing"]
+  },
+  {
+    "name": "hero-14",
+    "description": "Plants bento hero with 4-column stat cards and pill navbar",
+    "categories": ["hero", "landing"]
+  },
+  {
     "name": "logos-1",
     "description": "Plant shop logo cloud section",
     "categories": ["logos", "landing"]
@@ -105,9 +130,64 @@
     "categories": ["hero", "landing"]
   },
   {
+    "name": "hero-15",
+    "description": "Travel bento hero with split layout and pill navbar",
+    "categories": ["hero", "landing"]
+  },
+  {
+    "name": "hero-16",
+    "description": "Travel bento hero with 2-column grid and pill navbar",
+    "categories": ["hero", "landing"]
+  },
+  {
+    "name": "hero-17",
+    "description": "Travel bento hero with reversed layout, stats, and pill navbar",
+    "categories": ["hero", "landing"]
+  },
+  {
+    "name": "hero-18",
+    "description": "Travel bento hero with 3-column asymmetric grid and pill navbar",
+    "categories": ["hero", "landing"]
+  },
+  {
+    "name": "hero-19",
+    "description": "Travel bento hero with 4-column stat cards and pill navbar",
+    "categories": ["hero", "landing"]
+  },
+  {
     "name": "hero-3",
     "description": "Yacht charter hero section with parallax effects and knockout text",
     "categories": ["hero", "landing"]
+  },
+  {
+    "name": "hero-20",
+    "description": "Boat bento hero with split layout and pill navbar",
+    "categories": ["hero", "landing"]
+  },
+  {
+    "name": "hero-21",
+    "description": "Boat bento hero with 2-column grid and pill navbar",
+    "categories": ["hero", "landing"]
+  },
+  {
+    "name": "hero-22",
+    "description": "Boat bento hero with reversed layout, stats, and pill navbar",
+    "categories": ["hero", "landing"]
+  },
+  {
+    "name": "hero-23",
+    "description": "Boat bento hero with 3-column asymmetric grid and pill navbar",
+    "categories": ["hero", "landing"]
+  },
+  {
+    "name": "hero-24",
+    "description": "Boat bento hero with 4-column stat cards and pill navbar",
+    "categories": ["hero", "landing"]
+  },
+  {
+    "name": "header-9",
+    "description": "Pill navbar header with rounded background and centered navigation",
+    "categories": ["header", "landing"]
   },
   {
     "name": "hero-4",

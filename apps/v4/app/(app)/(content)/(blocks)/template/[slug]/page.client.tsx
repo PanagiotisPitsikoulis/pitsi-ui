@@ -1,6 +1,6 @@
 "use client"
 
-import { Suspense, useCallback, useEffect, useRef, useState } from "react"
+import { Suspense, useCallback, useEffect, useMemo, useRef, useState } from "react"
 import Link from "next/link"
 import { useRouter, useSearchParams, usePathname } from "next/navigation"
 import {
@@ -40,11 +40,11 @@ import { type Style } from "@/registry/styles"
 
 import {
   BlockContainer,
+  BlockSelectorOverlay,
   BlockThemeWrapper,
   DEFAULT_TINT,
   DevBlockOverlay,
   getTemplateFonts,
-  HeroSwitcher,
   ScrollContainerProvider,
   TemplateBlocksSection,
   type BlockMetadata,
@@ -146,9 +146,8 @@ function TypographyDisplay({ slug }: { slug: string }) {
 import {
   getTemplateBlocks,
   getComputedTemplatePalette,
-  getComputedHeroOptions,
-  getComputedDefaultHero,
   getTemplateBlockGroups,
+  getTemplateBlockGroupsWithVariants,
   type TemplateSlug,
 } from "../../blocks"
 import { type ComputedTemplateBlock } from "@/registry/__blocks-metadata__"
@@ -182,26 +181,37 @@ export function TemplateViewerClient({
   const [devOverlayEnabled, setDevOverlayEnabled] = useState(false)
   const hoveredBlockRef = useRef<string | null>(null)
   const mainRef = useRef<HTMLDivElement>(null)
+  const [overlayOpen, setOverlayOpen] = useState(false)
 
-  // Hero selection
-  const heroOptions = getComputedHeroOptions(slug)
-  const defaultHero = getComputedDefaultHero(slug) || heroOptions[0]
-  const selectedHero = searchParams.get("hero") || defaultHero
+  // Block selection - get all block groups with variants
+  const blockGroups = getTemplateBlockGroups(slug)
+  const blockGroupsWithVariants = getTemplateBlockGroupsWithVariants(slug)
 
-  const handleHeroChange = useCallback(
-    (hero: string) => {
+  // Build selected blocks from URL params
+  const selectedBlocks = useMemo(() => {
+    const selections: Record<string, string> = {}
+    for (const [blockType, options] of Object.entries(blockGroups)) {
+      const param = searchParams.get(blockType)
+      selections[blockType] = param || options[0] // Default to first
+    }
+    return selections
+  }, [searchParams, blockGroups])
+
+  const handleBlockSelect = useCallback(
+    (blockType: string, blockName: string) => {
       const params = new URLSearchParams(searchParams.toString())
-      if (hero === defaultHero) {
-        params.delete("hero")
+      const defaultBlock = blockGroups[blockType]?.[0]
+      if (blockName === defaultBlock) {
+        params.delete(blockType)
       } else {
-        params.set("hero", hero)
+        params.set(blockType, blockName)
       }
       router.push(`${pathname}?${params.toString()}`, { scroll: false })
     },
-    [defaultHero, pathname, router, searchParams]
+    [blockGroups, pathname, router, searchParams]
   )
 
-  const blocks = getTemplateBlocks(slug as TemplateSlug, selectedHero ? { hero: selectedHero } : undefined)
+  const blocks = getTemplateBlocks(slug as TemplateSlug, selectedBlocks)
   const isDev = process.env.NODE_ENV === "development"
   const { theme, setTheme, resolvedTheme } = useTheme()
   const { copyToClipboard: copyInstallCommand, isCopied: isInstallCopied } = useCopyToClipboard()
@@ -333,14 +343,14 @@ export function TemplateViewerClient({
             {/* Back button */}
             <Tooltip>
               <TooltipTrigger asChild>
-                <button
-                  onClick={() => router.back()}
+                <Link
+                  href="/blocks"
                   className="text-muted-foreground hover:bg-background/50 hover:text-foreground flex size-9 items-center justify-center rounded-full transition-colors"
                 >
                   <ArrowLeft className="size-4" />
-                </button>
+                </Link>
               </TooltipTrigger>
-              <TooltipContent side="bottom" className="text-xs">Back</TooltipContent>
+              <TooltipContent side="bottom" className="text-xs">Back to blocks</TooltipContent>
             </Tooltip>
 
             {/* Separator */}
@@ -388,14 +398,21 @@ export function TemplateViewerClient({
               <TooltipContent side="bottom" className="text-xs">Refresh</TooltipContent>
             </Tooltip>
 
-            {/* Hero switcher */}
-            {heroOptions.length > 1 && (
-              <HeroSwitcher
-                heroOptions={heroOptions}
-                selectedHero={selectedHero}
-                onHeroChange={handleHeroChange}
-                defaultHero={defaultHero}
-              />
+            {/* Customize blocks button */}
+            {Object.keys(blockGroupsWithVariants).length > 0 && (
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <button
+                    onClick={() => setOverlayOpen(true)}
+                    className="text-muted-foreground hover:bg-background/50 hover:text-foreground flex size-9 items-center justify-center rounded-full transition-colors"
+                  >
+                    <Layers className="size-4" />
+                  </button>
+                </TooltipTrigger>
+                <TooltipContent side="bottom" className="text-xs">
+                  Customize Blocks
+                </TooltipContent>
+              </Tooltip>
             )}
 
             {/* Separator */}
@@ -587,6 +604,15 @@ export function TemplateViewerClient({
           />
         </div>
       </div>
+
+      {/* Block Selector Overlay */}
+      <BlockSelectorOverlay
+        open={overlayOpen}
+        onClose={() => setOverlayOpen(false)}
+        blockGroups={blockGroupsWithVariants}
+        selectedBlocks={selectedBlocks}
+        onBlockSelect={handleBlockSelect}
+      />
     </TooltipProvider>
   )
 }

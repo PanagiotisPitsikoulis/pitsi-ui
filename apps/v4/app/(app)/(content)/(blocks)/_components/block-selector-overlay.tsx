@@ -1,0 +1,206 @@
+"use client"
+
+import { useCallback, useEffect, useState } from "react"
+import { Check } from "@/lib/icons"
+
+import { cn } from "@/lib/utils"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/registry/new-york-v4/ui/dialog"
+import { ScrollArea } from "@/registry/new-york-v4/ui/scroll-area"
+import { BLOCK_TYPES, type BlockType } from "../blocks"
+
+interface BlockSelectorOverlayProps {
+  open: boolean
+  onClose: () => void
+  blockGroups: Record<string, string[]>
+  selectedBlocks: Record<string, string>
+  onBlockSelect: (blockType: string, blockName: string) => void
+}
+
+// Block type display names
+const blockTypeLabels: Record<string, string> = {
+  header: "Header",
+  hero: "Hero",
+  logos: "Logos",
+  features: "Features",
+  showcase: "Showcase",
+  bento: "Bento",
+  products: "Products",
+  pricing: "Pricing",
+  testimonials: "Testimonials",
+  gallery: "Gallery",
+  team: "Team",
+  stats: "Stats",
+  faq: "FAQ",
+  blog: "Blog",
+  contact: "Contact",
+  newsletter: "Newsletter",
+  cta: "CTA",
+  footer: "Footer",
+}
+
+export function BlockSelectorOverlay({
+  open,
+  onClose,
+  blockGroups,
+  selectedBlocks,
+  onBlockSelect,
+}: BlockSelectorOverlayProps) {
+  // Get ordered block types that have variants
+  const blockTypesWithVariants = BLOCK_TYPES.filter(
+    (type) => blockGroups[type]?.length > 1
+  )
+
+  const [activeType, setActiveType] = useState<BlockType | null>(
+    blockTypesWithVariants[0] || null
+  )
+
+  // Reset active type when blockGroups change
+  useEffect(() => {
+    if (blockTypesWithVariants.length > 0 && !blockTypesWithVariants.includes(activeType as BlockType)) {
+      setActiveType(blockTypesWithVariants[0])
+    }
+  }, [blockTypesWithVariants, activeType])
+
+  const handleBlockClick = useCallback(
+    (blockName: string) => {
+      if (activeType) {
+        onBlockSelect(activeType, blockName)
+      }
+    },
+    [activeType, onBlockSelect]
+  )
+
+  const activeVariants = activeType ? blockGroups[activeType] || [] : []
+
+  return (
+    <Dialog open={open} onOpenChange={(isOpen) => !isOpen && onClose()}>
+      <DialogContent className="max-w-2xl gap-0 overflow-hidden p-0">
+        <DialogHeader className="space-y-1 border-b px-6 py-4">
+          <DialogTitle>Customize Blocks</DialogTitle>
+          <DialogDescription>
+            Select different block variants for your template
+          </DialogDescription>
+        </DialogHeader>
+
+        <div className="flex">
+          {/* Left Sidebar - Block Types */}
+          <div className="w-44 shrink-0 border-r bg-muted/30">
+            <ScrollArea className="h-[360px]">
+              <div className="space-y-0.5 p-2">
+                {blockTypesWithVariants.map((type) => {
+                  const variants = blockGroups[type] || []
+                  const isActive = activeType === type
+                  const selectedVariant = selectedBlocks[type]
+                  const isDefault = selectedVariant === variants[0]
+
+                  return (
+                    <button
+                      key={type}
+                      onClick={() => setActiveType(type)}
+                      className={cn(
+                        "flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-sm transition-colors",
+                        isActive
+                          ? "bg-background shadow-sm"
+                          : "hover:bg-background/60"
+                      )}
+                    >
+                      <div className="flex flex-col gap-0.5">
+                        <span className={cn(
+                          "font-medium",
+                          isActive ? "text-foreground" : "text-muted-foreground"
+                        )}>
+                          {blockTypeLabels[type] || type}
+                        </span>
+                        {!isDefault && (
+                          <span className="text-[10px] text-primary">
+                            customized
+                          </span>
+                        )}
+                      </div>
+                      <span
+                        className={cn(
+                          "tabular-nums text-xs",
+                          isActive ? "text-muted-foreground" : "text-muted-foreground/60"
+                        )}
+                      >
+                        {variants.length}
+                      </span>
+                    </button>
+                  )
+                })}
+              </div>
+            </ScrollArea>
+          </div>
+
+          {/* Right Side - Variant Grid */}
+          <div className="flex-1 bg-background">
+            <ScrollArea className="h-[360px]">
+              <div className="p-4">
+                {activeType && activeVariants.length > 0 ? (
+                  <>
+                    <p className="mb-3 text-xs text-muted-foreground">
+                      {blockTypeLabels[activeType]} variants
+                    </p>
+                    <div className="grid grid-cols-3 gap-2">
+                      {activeVariants.map((blockName, index) => {
+                        const isSelected = selectedBlocks[activeType] === blockName
+                        const isDefault = index === 0
+
+                        return (
+                          <button
+                            key={blockName}
+                            onClick={() => handleBlockClick(blockName)}
+                            className={cn(
+                              "group relative flex aspect-[4/3] flex-col items-center justify-center rounded-lg border bg-muted/50 text-center transition-all",
+                              isSelected
+                                ? "border-primary bg-primary/5 ring-1 ring-primary"
+                                : "border-border hover:border-primary/50 hover:bg-muted"
+                            )}
+                          >
+                            {/* Selected checkmark */}
+                            {isSelected && (
+                              <div className="absolute right-1.5 top-1.5 flex size-4 items-center justify-center rounded-full bg-primary">
+                                <Check className="size-2.5 text-primary-foreground" />
+                              </div>
+                            )}
+
+                            {/* Variant number */}
+                            <span className={cn(
+                              "text-lg font-semibold",
+                              isSelected ? "text-primary" : "text-muted-foreground"
+                            )}>
+                              {index + 1}
+                            </span>
+
+                            {/* Default label */}
+                            {isDefault && (
+                              <span className="text-[10px] text-muted-foreground">
+                                default
+                              </span>
+                            )}
+                          </button>
+                        )
+                      })}
+                    </div>
+                  </>
+                ) : (
+                  <div className="flex h-full items-center justify-center py-20">
+                    <p className="text-sm text-muted-foreground">
+                      Select a block type
+                    </p>
+                  </div>
+                )}
+              </div>
+            </ScrollArea>
+          </div>
+        </div>
+      </DialogContent>
+    </Dialog>
+  )
+}

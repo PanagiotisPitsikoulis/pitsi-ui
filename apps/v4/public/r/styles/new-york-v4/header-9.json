@@ -1,0 +1,30 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "header-9",
+  "type": "registry:block",
+  "description": "Pill navbar header with rounded background and centered navigation",
+  "registryDependencies": [
+    "hero-button"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/header/header-9.tsx",
+      "content": "\"use client\"\n\nimport Link from \"next/link\"\n\nimport {\n  headerDefaults,\n  type HeaderBlockProps,\n} from \"@/lib/blocks/header.types\"\nimport { cn } from \"@/lib/utils\"\n\nimport { HeroButton } from \"../../ui/hero-button\"\n\n// Block-specific defaults for fitness pill navbar\nconst header9Defaults = {\n  logo: {\n    text: \"ELITE\",\n    href: \"/\",\n  },\n  navigation: [\n    { label: \"Programs\", href: \"#\" },\n    { label: \"Trainers\", href: \"#\" },\n    { label: \"Pricing\", href: \"#\" },\n    { label: \"About\", href: \"#\" },\n  ],\n  cta: { label: \"Get Started\", href: \"#\" },\n}\n\nexport function Header9({ content = {}, classNames = {} }: HeaderBlockProps) {\n  const {\n    logo = header9Defaults.logo,\n    navigation = header9Defaults.navigation,\n    cta = header9Defaults.cta,\n  } = content\n\n  return (\n    <header className={cn(\"sticky top-0 z-50\", classNames.root)}>\n      <div className={cn(\"container px-4 pt-6\", classNames.container)}>\n        <nav className=\"bg-muted flex items-center justify-between rounded-full px-4 py-2\">\n          <Link\n            href={logo?.href ?? \"/\"}\n            className={cn(\n              \"pl-2 text-lg font-bold tracking-tight\",\n              classNames.logo\n            )}\n          >\n            {logo?.text}\n          </Link>\n          <div\n            className={cn(\n              \"hidden items-center gap-1 md:flex\",\n              classNames.nav?.root\n            )}\n          >\n            {navigation.map((link, i) => (\n              <Link\n                key={i}\n                href={link.href}\n                className={cn(\n                  \"text-muted-foreground hover:text-foreground px-4 py-2 text-sm font-medium transition-colors\",\n                  classNames.nav?.link\n                )}\n              >\n                {link.label}\n              </Link>\n            ))}\n          </div>\n          {cta && (\n            <Link href={cta.href} className={classNames.cta}>\n              <HeroButton>{cta.label}</HeroButton>\n            </Link>\n          )}\n        </nav>\n      </div>\n    </header>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "header",
+    "landing"
+  ],
+  "tier": "free",
+  "readiness": "production",
+  "blockConfig": {
+    "template": "service-fitness",
+    "blockType": "header",
+    "order": 1,
+    "palette": "neon",
+    "typography": "futuristic",
+    "tint": "tinted"
+  }
+}

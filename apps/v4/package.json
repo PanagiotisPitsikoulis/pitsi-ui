@@ -17,6 +17,8 @@
     "registry:capture:force": "bun --bun ./scripts/capture-registry.mts --force",
     "registry:capture:blocks": "bun --bun ./scripts/capture-registry.mts --blocks-only",
     "registry:capture:debug": "bun --bun ./scripts/capture-registry.mts --show-browser --verbose --force",
+    "registry:capture:workflow": "bun ./scripts/capture-workflow.mts",
+    "registry:capture:workflow:changed": "bun ./scripts/capture-workflow-changed.mts",
     "validate:registries": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/validate-registries.mts",
     "readiness": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/manage-readiness.mts",
     "readiness:list": "bun run readiness list",
