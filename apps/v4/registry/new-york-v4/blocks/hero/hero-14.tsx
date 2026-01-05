@@ -9,36 +9,26 @@ import { Button } from "@/registry/new-york-v4/ui/button"
 
 import { HeroButton } from "../../ui/hero-button"
 
-// Hero 14 defaults - Plants/Garden theme (4-column with stat cards)
+// Hero 14 - Overlapping Cards (Layered with depth - Plants theme)
 const hero14Defaults = {
   badge: "Trusted Growers",
   title: "Ethically\nSourced Plants",
   description:
-    "Every plant comes with a care guarantee. We're committed to sustainability.",
+    "Every plant comes with a care guarantee. We're committed to sustainability and quality.",
   primaryCta: { label: "Shop Plants", href: "#" },
   secondaryCta: {
     label: "Our Promise",
     href: "#",
     variant: "outline" as const,
   },
-  image: {
-    src: "/elements/subject/plants/6.webp",
+  mainImage: {
+    src: "/elements/landscape/plants/4.webp",
     alt: "Sustainable plants",
   },
-  nav: {
-    logo: "BLOOM",
-    links: [
-      { label: "Plants", href: "#" },
-      { label: "Care", href: "#" },
-      { label: "About", href: "#" },
-      { label: "Contact", href: "#" },
-    ],
+  overlayImage: {
+    src: "/elements/portrait/animals/3.webp",
+    alt: "Pet-friendly plants",
   },
-  stats: [
-    { value: "100%", label: "Organic" },
-    { value: "30 Day", label: "Guarantee" },
-    { value: "Free", label: "Shipping" },
-  ],
 }
 
 export function Hero14({ content = {}, classNames = {} }: HeroBlockProps) {
@@ -48,48 +38,25 @@ export function Hero14({ content = {}, classNames = {} }: HeroBlockProps) {
     description = hero14Defaults.description,
     primaryCta = hero14Defaults.primaryCta,
     secondaryCta = hero14Defaults.secondaryCta,
-    image = hero14Defaults.image,
-    nav = hero14Defaults.nav,
-    stats = hero14Defaults.stats,
+    mainImage = hero14Defaults.mainImage,
+    overlayImage = hero14Defaults.overlayImage,
   } = content as typeof hero14Defaults
 
   return (
     <section
       className={cn(
-        "relative flex min-h-[100svh] flex-col overflow-hidden",
+        "relative flex min-h-[calc(100svh-5rem)] flex-col overflow-hidden",
         classNames.root
       )}
     >
-      {/* Pill Navbar */}
-      <div className="container px-4 pt-6">
-        <nav className="bg-muted flex items-center justify-between rounded-full px-4 py-2">
-          <Link href="/" className="pl-2 text-lg font-bold tracking-tight">
-            {nav.logo}
-          </Link>
-          <div className="flex items-center gap-1">
-            {nav.links.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-muted-foreground hover:text-foreground px-4 py-2 text-sm font-medium transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-          <HeroButton>Shop Now</HeroButton>
-        </nav>
-      </div>
-
-      {/* Bento Grid with Stats Feature */}
       <div className="container flex-1 px-4 py-6">
-        <div className="grid h-full gap-4 lg:grid-cols-4 lg:grid-rows-[auto_1fr]">
-          {/* Title Card - Spans 2 columns */}
-          <div className="bg-muted flex flex-col justify-center rounded-3xl p-8 lg:col-span-2 lg:p-10">
+        <div className="grid h-full min-h-[calc(100svh-8rem)] items-center gap-8 lg:grid-cols-2">
+          {/* Left - Text Content */}
+          <div className="flex flex-col justify-center py-8 lg:py-12">
             {badge && (
               <p
                 className={cn(
-                  "text-muted-foreground mb-4 text-sm font-medium tracking-widest uppercase",
+                  "text-brand mb-4 text-sm font-semibold tracking-widest uppercase",
                   classNames.header?.badge
                 )}
               >
@@ -98,7 +65,7 @@ export function Hero14({ content = {}, classNames = {} }: HeroBlockProps) {
             )}
             <h1
               className={cn(
-                "display text-4xl leading-[1.1] tracking-tight sm:text-5xl md:text-6xl",
+                "display text-4xl leading-[1.1] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl",
                 classNames.header?.title
               )}
             >
@@ -109,36 +76,19 @@ export function Hero14({ content = {}, classNames = {} }: HeroBlockProps) {
                 </span>
               ))}
             </h1>
-          </div>
 
-          {/* Stats Cards - Individual cards for each stat */}
-          {stats.slice(0, 2).map((stat, i) => (
-            <div
-              key={i}
-              className="bg-muted flex flex-col items-center justify-center rounded-3xl p-6 text-center"
-            >
-              <div className="display text-4xl font-bold md:text-5xl">
-                {stat.value}
-              </div>
-              <div className="text-muted-foreground mt-2 text-sm font-medium">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-
-          {/* Description + Buttons Card */}
-          <div className="bg-muted flex flex-col justify-between rounded-3xl p-8">
             {description && (
               <p
                 className={cn(
-                  "text-muted-foreground text-base md:text-lg",
+                  "text-muted-foreground mt-6 max-w-md text-lg md:text-xl",
                   classNames.header?.description
                 )}
               >
                 {description}
               </p>
             )}
-            <div className="mt-6 flex flex-wrap items-center gap-3">
+
+            <div className="mt-8 flex flex-wrap items-center gap-3">
               {primaryCta && (
                 <Link
                   href={primaryCta.href}
@@ -160,27 +110,36 @@ export function Hero14({ content = {}, classNames = {} }: HeroBlockProps) {
             </div>
           </div>
 
-          {/* Third Stat Card */}
-          {stats[2] && (
-            <div className="bg-muted flex flex-col items-center justify-center rounded-3xl p-6 text-center">
-              <div className="display text-4xl font-bold md:text-5xl">
-                {stats[2].value}
-              </div>
-              <div className="text-muted-foreground mt-2 text-sm font-medium">
-                {stats[2].label}
-              </div>
+          {/* Right - Overlapping Cards */}
+          <div className="relative flex min-h-[30rem] items-center justify-center lg:min-h-[35rem]">
+            {/* Main Background Card */}
+            <div className="bg-muted absolute top-0 right-0 h-[85%] w-[90%] overflow-hidden rounded-3xl shadow-xl lg:w-[85%]">
+              <Image
+                src={mainImage.src}
+                alt={mainImage.alt}
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
-          )}
 
-          {/* Image Card - Spans 2 columns */}
-          <div className="bg-muted relative min-h-[20rem] overflow-hidden rounded-3xl lg:col-span-2">
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              className="object-cover object-top"
-              priority
-            />
+            {/* Overlay Floating Card */}
+            <div className="border-background absolute bottom-0 left-0 h-[60%] w-[65%] overflow-hidden rounded-3xl border-4 shadow-2xl lg:w-[55%]">
+              <Image
+                src={overlayImage.src}
+                alt={overlayImage.alt}
+                fill
+                className="object-cover object-top"
+              />
+            </div>
+
+            {/* Accent Card - Brand color */}
+            <div className="bg-brand/10 border-brand/20 absolute -right-4 bottom-20 z-10 rounded-2xl border p-4 shadow-lg backdrop-blur-sm lg:bottom-28 lg:p-6">
+              <div className="display text-brand text-2xl font-bold lg:text-3xl">
+                100%
+              </div>
+              <div className="text-muted-foreground text-sm">Organic</div>
+            </div>
           </div>
         </div>
       </div>

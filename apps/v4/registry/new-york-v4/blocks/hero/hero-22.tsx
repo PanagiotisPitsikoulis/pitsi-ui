@@ -9,7 +9,7 @@ import { Button } from "@/registry/new-york-v4/ui/button"
 
 import { HeroButton } from "../../ui/hero-button"
 
-// Hero 22 defaults - Boat/Yacht theme (Reversed with stats)
+// Hero 22 - Banner + Stats Bar (Boat theme)
 const hero22Defaults = {
   badge: "Elite Marine",
   title: "Navigate\nIn Style",
@@ -22,124 +22,88 @@ const hero22Defaults = {
     variant: "outline" as const,
   },
   image: {
-    src: "/elements/subject/boat/3.webp",
+    src: "/elements/landscape/sea/8.webp",
     alt: "Elite yacht",
-  },
-  nav: {
-    logo: "AZURE",
-    links: [
-      { label: "Fleet", href: "#" },
-      { label: "Charters", href: "#" },
-      { label: "About", href: "#" },
-      { label: "Contact", href: "#" },
-    ],
   },
   stats: [
     { value: "50+", label: "Luxury Yachts" },
     { value: "25k+", label: "Nautical Miles" },
     { value: "100%", label: "Satisfaction" },
+    { value: "5-Star", label: "Service" },
   ],
 }
 
 export function Hero22({ content = {}, classNames = {} }: HeroBlockProps) {
   const {
+    badge = hero22Defaults.badge,
     title = hero22Defaults.title,
     description = hero22Defaults.description,
     primaryCta = hero22Defaults.primaryCta,
     secondaryCta = hero22Defaults.secondaryCta,
     image = hero22Defaults.image,
-    nav = hero22Defaults.nav,
     stats = hero22Defaults.stats,
   } = content as typeof hero22Defaults
 
   return (
     <section
       className={cn(
-        "relative flex min-h-[100svh] flex-col overflow-hidden",
+        "relative flex min-h-[calc(100svh-5rem)] flex-col overflow-hidden",
         classNames.root
       )}
     >
-      {/* Pill Navbar */}
-      <div className="container px-4 pt-6">
-        <nav className="bg-muted flex items-center justify-between rounded-full px-4 py-2">
-          <Link href="/" className="pl-2 text-lg font-bold tracking-tight">
-            {nav.logo}
-          </Link>
-          <div className="flex items-center gap-1">
-            {nav.links.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-muted-foreground hover:text-foreground px-4 py-2 text-sm font-medium transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-          <HeroButton>Book Charter</HeroButton>
-        </nav>
-      </div>
-
-      {/* Bento Grid Layout - Reversed */}
-      <div className="container flex-1 px-4 py-6">
-        <div className="grid h-full gap-4 lg:grid-cols-5">
-          {/* Left Card - Image (wider) */}
-          <div className="bg-muted relative min-h-[25rem] overflow-hidden rounded-3xl lg:col-span-3 lg:min-h-[35rem]">
+      <div className="container flex flex-1 flex-col px-4 py-6">
+        {/* Main Banner Area */}
+        <div className="relative flex flex-1 flex-col overflow-hidden rounded-3xl lg:flex-row">
+          {/* Image Side */}
+          <div className="absolute inset-0">
             <Image
               src={image.src}
               alt={image.alt}
               fill
-              className="mt-10 object-cover object-top"
+              className="object-cover"
               priority
             />
+            <div className="from-background/90 via-background/60 absolute inset-0 bg-gradient-to-r to-transparent" />
           </div>
 
-          {/* Right Column - Text + Stats + Buttons */}
-          <div className="flex flex-col gap-4 lg:col-span-2">
-            {/* Text Card */}
-            <div className="bg-muted flex flex-1 flex-col justify-center rounded-3xl p-8">
-              <h1
+          {/* Content */}
+          <div className="relative z-10 flex flex-1 flex-col justify-center p-8 lg:max-w-2xl lg:p-12">
+            {badge && (
+              <p
                 className={cn(
-                  "display text-3xl leading-[1.1] tracking-tight sm:text-4xl md:text-5xl",
-                  classNames.header?.title
+                  "text-brand mb-4 text-sm font-semibold tracking-widest uppercase",
+                  classNames.header?.badge
                 )}
               >
-                {title.split("\n").map((line, i) => (
-                  <span key={i}>
-                    {line}
-                    {i < title.split("\n").length - 1 && <br />}
-                  </span>
-                ))}
-              </h1>
-
-              {description && (
-                <p
-                  className={cn(
-                    "text-muted-foreground mt-4 text-base md:text-lg",
-                    classNames.header?.description
-                  )}
-                >
-                  {description}
-                </p>
+                {badge}
+              </p>
+            )}
+            <h1
+              className={cn(
+                "display text-4xl leading-[1.1] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl",
+                classNames.header?.title
               )}
-            </div>
-
-            {/* Stats Card */}
-            <div className="bg-muted flex items-center justify-between rounded-3xl p-6">
-              {stats.map((stat, i) => (
-                <div key={i} className="text-center">
-                  <div className="display text-2xl font-bold md:text-3xl">
-                    {stat.value}
-                  </div>
-                  <div className="text-muted-foreground text-sm">
-                    {stat.label}
-                  </div>
-                </div>
+            >
+              {title.split("\n").map((line, i) => (
+                <span key={i}>
+                  {line}
+                  {i < title.split("\n").length - 1 && <br />}
+                </span>
               ))}
-            </div>
+            </h1>
 
-            {/* Buttons Card */}
-            <div className="bg-muted flex items-center gap-3 rounded-3xl p-6">
+            {description && (
+              <p
+                className={cn(
+                  "text-muted-foreground mt-6 text-lg md:text-xl",
+                  classNames.header?.description
+                )}
+              >
+                {description}
+              </p>
+            )}
+
+            <div className="mt-8 flex flex-wrap items-center gap-3">
               {primaryCta && (
                 <Link
                   href={primaryCta.href}
@@ -160,6 +124,18 @@ export function Hero22({ content = {}, classNames = {} }: HeroBlockProps) {
               )}
             </div>
           </div>
+        </div>
+
+        {/* Stats Bar - Pinned at bottom */}
+        <div className="bg-muted mt-4 grid grid-cols-2 gap-4 rounded-3xl p-6 md:grid-cols-4">
+          {stats.map((stat, i) => (
+            <div key={i} className="text-center">
+              <div className="display text-2xl font-bold md:text-3xl">
+                {stat.value}
+              </div>
+              <div className="text-muted-foreground text-sm">{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

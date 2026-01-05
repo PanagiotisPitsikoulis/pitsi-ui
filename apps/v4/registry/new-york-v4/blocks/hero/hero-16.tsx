@@ -9,7 +9,7 @@ import { Button } from "@/registry/new-york-v4/ui/button"
 
 import { HeroButton } from "../../ui/hero-button"
 
-// Hero 16 defaults - Travel theme (2-column bento)
+// Hero 16 - Portrait Stack (Vertical Image on Left, Text Stacked on Right - Travel theme)
 const hero16Defaults = {
   badge: "Adventure Awaits",
   title: "Discover Your\nNext Journey",
@@ -21,66 +21,56 @@ const hero16Defaults = {
     href: "#",
     variant: "outline" as const,
   },
-  image: {
-    src: "/elements/subject/travel/2.webp",
+  portraitImage: {
+    src: "/elements/landscape/sea/1.webp",
     alt: "Scenic travel destination",
-  },
-  nav: {
-    logo: "VOYAGE",
-    links: [
-      { label: "Destinations", href: "#" },
-      { label: "Tours", href: "#" },
-      { label: "About", href: "#" },
-      { label: "Contact", href: "#" },
-    ],
   },
 }
 
 export function Hero16({ content = {}, classNames = {} }: HeroBlockProps) {
   const {
+    badge = hero16Defaults.badge,
     title = hero16Defaults.title,
     description = hero16Defaults.description,
     primaryCta = hero16Defaults.primaryCta,
     secondaryCta = hero16Defaults.secondaryCta,
-    image = hero16Defaults.image,
-    nav = hero16Defaults.nav,
+    portraitImage = hero16Defaults.portraitImage,
   } = content as typeof hero16Defaults
 
   return (
     <section
       className={cn(
-        "relative flex min-h-[100svh] flex-col overflow-hidden",
+        "relative flex min-h-[calc(100svh-5rem)] flex-col overflow-hidden",
         classNames.root
       )}
     >
-      {/* Pill Navbar */}
-      <div className="container px-4 pt-6">
-        <nav className="bg-muted flex items-center justify-between rounded-full px-4 py-2">
-          <Link href="/" className="pl-2 text-lg font-bold tracking-tight">
-            {nav.logo}
-          </Link>
-          <div className="flex items-center gap-1">
-            {nav.links.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-muted-foreground hover:text-foreground px-4 py-2 text-sm font-medium transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-          <HeroButton>Book Now</HeroButton>
-        </nav>
-      </div>
-
-      {/* Bento Grid Layout */}
       <div className="container flex-1 px-4 py-6">
-        <div className="grid h-full gap-4 lg:grid-cols-2">
-          {/* Left Column - Text + Buttons Cards */}
+        <div className="grid h-full min-h-[calc(100svh-8rem)] gap-4 lg:grid-cols-2">
+          {/* Left - Full Height Portrait Image */}
+          <div className="bg-muted relative min-h-[25rem] overflow-hidden rounded-3xl lg:min-h-full">
+            <Image
+              src={portraitImage.src}
+              alt={portraitImage.alt}
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+
+          {/* Right - Stacked Text Content */}
           <div className="flex flex-col gap-4">
-            {/* Text Card */}
-            <div className="bg-muted flex flex-1 flex-col justify-center rounded-3xl p-10">
+            {/* Badge + Title Card */}
+            <div className="bg-muted flex flex-1 flex-col justify-center rounded-3xl p-8 lg:p-12">
+              {badge && (
+                <p
+                  className={cn(
+                    "text-brand mb-4 text-sm font-semibold tracking-widest uppercase",
+                    classNames.header?.badge
+                  )}
+                >
+                  {badge}
+                </p>
+              )}
               <h1
                 className={cn(
                   "display text-4xl leading-[1.1] tracking-tight sm:text-5xl md:text-6xl",
@@ -94,11 +84,14 @@ export function Hero16({ content = {}, classNames = {} }: HeroBlockProps) {
                   </span>
                 ))}
               </h1>
+            </div>
 
+            {/* Description Card */}
+            <div className="bg-muted flex flex-col justify-center rounded-3xl p-8">
               {description && (
                 <p
                   className={cn(
-                    "text-muted-foreground mt-6 text-lg md:text-xl",
+                    "text-muted-foreground text-lg md:text-xl",
                     classNames.header?.description
                   )}
                 >
@@ -128,17 +121,6 @@ export function Hero16({ content = {}, classNames = {} }: HeroBlockProps) {
                 </Button>
               )}
             </div>
-          </div>
-
-          {/* Right Card - Image */}
-          <div className="bg-muted relative min-h-[25rem] overflow-hidden rounded-3xl lg:min-h-[35rem]">
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              className="mt-10 object-cover object-top"
-              priority
-            />
           </div>
         </div>
       </div>

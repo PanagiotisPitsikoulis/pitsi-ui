@@ -9,27 +9,30 @@ import { Button } from "@/registry/new-york-v4/ui/button"
 
 import { HeroButton } from "../../ui/hero-button"
 
-// Hero 6 defaults - Fitness/Stats theme (no header - applied at template level)
+// Hero 6 - Image Collage (1 Large + 2 Accent Images)
 const hero6Defaults = {
   badge: "Proven Results",
   title: "Train Smarter\nGet Stronger",
   description:
-    "Evidence-based coaching. Measurable progress. Your transformation starts with data.",
+    "Evidence-based coaching. Measurable progress. Your transformation starts here.",
   primaryCta: { label: "Start Now", href: "#" },
   secondaryCta: {
     label: "See Results",
     href: "#",
     variant: "outline" as const,
   },
-  image: {
-    src: "/elements/subject/gym/3.webp",
-    alt: "Fitness training with results",
+  mainImage: {
+    src: "/elements/subject/gym/4.webp",
+    alt: "Main fitness training",
   },
-  stats: [
-    { value: "500+", label: "Clients" },
-    { value: "98%", label: "Goal Achievement" },
-    { value: "10+", label: "Years Experience" },
-  ],
+  accentImage1: {
+    src: "/elements/portrait/gym/3.webp",
+    alt: "Training session",
+  },
+  accentImage2: {
+    src: "/elements/subject/gym/5.webp",
+    alt: "Gym equipment",
+  },
 }
 
 export function Hero6({ content = {}, classNames = {} }: HeroBlockProps) {
@@ -39,8 +42,9 @@ export function Hero6({ content = {}, classNames = {} }: HeroBlockProps) {
     description = hero6Defaults.description,
     primaryCta = hero6Defaults.primaryCta,
     secondaryCta = hero6Defaults.secondaryCta,
-    image = hero6Defaults.image,
-    stats = hero6Defaults.stats,
+    mainImage = hero6Defaults.mainImage,
+    accentImage1 = hero6Defaults.accentImage1,
+    accentImage2 = hero6Defaults.accentImage2,
   } = content as typeof hero6Defaults
 
   return (
@@ -50,15 +54,14 @@ export function Hero6({ content = {}, classNames = {} }: HeroBlockProps) {
         classNames.root
       )}
     >
-      {/* Bento Grid with Stats Feature */}
       <div className="container flex-1 px-4 py-6">
-        <div className="grid h-full gap-4 lg:grid-cols-4 lg:grid-rows-[auto_1fr]">
-          {/* Title Card - Spans 2 columns */}
-          <div className="bg-muted flex flex-col justify-center rounded-3xl p-8 lg:col-span-2 lg:p-10">
+        <div className="grid h-full min-h-[calc(100svh-8rem)] gap-4 lg:grid-cols-3 lg:grid-rows-2">
+          {/* Text Content Card - Top Left */}
+          <div className="bg-muted flex flex-col justify-center rounded-3xl p-8 lg:row-span-2 lg:p-10">
             {badge && (
               <p
                 className={cn(
-                  "text-muted-foreground mb-4 text-sm font-medium tracking-widest uppercase",
+                  "text-brand mb-4 text-sm font-semibold tracking-widest uppercase",
                   classNames.header?.badge
                 )}
               >
@@ -67,7 +70,7 @@ export function Hero6({ content = {}, classNames = {} }: HeroBlockProps) {
             )}
             <h1
               className={cn(
-                "display text-4xl leading-[1.1] tracking-tight sm:text-5xl md:text-6xl",
+                "display text-4xl leading-[1.1] tracking-tight sm:text-5xl",
                 classNames.header?.title
               )}
             >
@@ -78,36 +81,19 @@ export function Hero6({ content = {}, classNames = {} }: HeroBlockProps) {
                 </span>
               ))}
             </h1>
-          </div>
 
-          {/* Stats Cards - Individual cards for each stat */}
-          {stats.slice(0, 2).map((stat, i) => (
-            <div
-              key={i}
-              className="bg-muted flex flex-col items-center justify-center rounded-3xl p-6 text-center"
-            >
-              <div className="display text-4xl font-bold md:text-5xl">
-                {stat.value}
-              </div>
-              <div className="text-muted-foreground mt-2 text-sm font-medium">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-
-          {/* Description + Buttons Card */}
-          <div className="bg-muted flex flex-col justify-between rounded-3xl p-8">
             {description && (
               <p
                 className={cn(
-                  "text-muted-foreground text-base md:text-lg",
+                  "text-muted-foreground mt-6 text-base md:text-lg",
                   classNames.header?.description
                 )}
               >
                 {description}
               </p>
             )}
-            <div className="mt-6 flex flex-wrap items-center gap-3">
+
+            <div className="mt-8 flex flex-wrap items-center gap-3">
               {primaryCta && (
                 <Link
                   href={primaryCta.href}
@@ -121,10 +107,7 @@ export function Hero6({ content = {}, classNames = {} }: HeroBlockProps) {
                   asChild
                   variant="outline"
                   size="lg"
-                  className={cn(
-                    "dark text-foreground",
-                    classNames.cta?.secondary
-                  )}
+                  className={cn("text-foreground", classNames.cta?.secondary)}
                 >
                   <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
                 </Button>
@@ -132,26 +115,34 @@ export function Hero6({ content = {}, classNames = {} }: HeroBlockProps) {
             </div>
           </div>
 
-          {/* Third Stat Card */}
-          {stats[2] && (
-            <div className="bg-muted flex flex-col items-center justify-center rounded-3xl p-6 text-center">
-              <div className="display text-4xl font-bold md:text-5xl">
-                {stats[2].value}
-              </div>
-              <div className="text-muted-foreground mt-2 text-sm font-medium">
-                {stats[2].label}
-              </div>
-            </div>
-          )}
-
-          {/* Image Card - Spans 2 columns */}
+          {/* Main Large Image - Top Right, spans 2 columns */}
           <div className="bg-muted relative min-h-[20rem] overflow-hidden rounded-3xl lg:col-span-2">
             <Image
-              src={image.src}
-              alt={image.alt}
+              src={mainImage.src}
+              alt={mainImage.alt}
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+
+          {/* Accent Image 1 - Bottom Middle */}
+          <div className="bg-muted relative min-h-[15rem] overflow-hidden rounded-3xl">
+            <Image
+              src={accentImage1.src}
+              alt={accentImage1.alt}
               fill
               className="object-cover object-top"
-              priority
+            />
+          </div>
+
+          {/* Accent Image 2 - Bottom Right */}
+          <div className="bg-muted relative min-h-[15rem] overflow-hidden rounded-3xl">
+            <Image
+              src={accentImage2.src}
+              alt={accentImage2.alt}
+              fill
+              className="object-cover"
             />
           </div>
         </div>

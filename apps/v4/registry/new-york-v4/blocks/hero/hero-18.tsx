@@ -9,7 +9,7 @@ import { Button } from "@/registry/new-york-v4/ui/button"
 
 import { HeroButton } from "../../ui/hero-button"
 
-// Hero 18 defaults - Travel theme (3-column asymmetric)
+// Hero 18 - Banner + Stats Bar (Travel theme)
 const hero18Defaults = {
   badge: "Premium Travel",
   title: "Escape To\nParadise",
@@ -22,71 +22,65 @@ const hero18Defaults = {
     variant: "outline" as const,
   },
   image: {
-    src: "/elements/subject/travel/4.webp",
+    src: "/elements/landscape/sea/4.webp",
     alt: "Paradise destination",
   },
-  secondaryImage: {
-    src: "/elements/subject/travel/5.webp",
-    alt: "Travel experience",
-  },
-  nav: {
-    logo: "VOYAGE",
-    links: [
-      { label: "Destinations", href: "#" },
-      { label: "Tours", href: "#" },
-      { label: "About", href: "#" },
-      { label: "Contact", href: "#" },
-    ],
-  },
+  stats: [
+    { value: "150+", label: "Destinations" },
+    { value: "50k+", label: "Travelers" },
+    { value: "99%", label: "Satisfaction" },
+    { value: "24/7", label: "Support" },
+  ],
 }
 
 export function Hero18({ content = {}, classNames = {} }: HeroBlockProps) {
   const {
+    badge = hero18Defaults.badge,
     title = hero18Defaults.title,
     description = hero18Defaults.description,
     primaryCta = hero18Defaults.primaryCta,
     secondaryCta = hero18Defaults.secondaryCta,
     image = hero18Defaults.image,
-    secondaryImage = hero18Defaults.secondaryImage,
-    nav = hero18Defaults.nav,
+    stats = hero18Defaults.stats,
   } = content as typeof hero18Defaults
 
   return (
     <section
       className={cn(
-        "relative flex min-h-[100svh] flex-col overflow-hidden",
+        "relative flex min-h-[calc(100svh-5rem)] flex-col overflow-hidden",
         classNames.root
       )}
     >
-      {/* Pill Navbar */}
-      <div className="container px-4 pt-6">
-        <nav className="bg-muted flex items-center justify-between rounded-full px-4 py-2">
-          <Link href="/" className="pl-2 text-lg font-bold tracking-tight">
-            {nav.logo}
-          </Link>
-          <div className="flex items-center gap-1">
-            {nav.links.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-muted-foreground hover:text-foreground px-4 py-2 text-sm font-medium transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
+      <div className="container flex flex-1 flex-col px-4 py-6">
+        {/* Main Banner Area */}
+        <div className="relative flex flex-1 flex-col overflow-hidden rounded-3xl lg:flex-row">
+          {/* Image Side */}
+          <div className="absolute inset-0">
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="from-background/90 via-background/60 absolute inset-0 bg-gradient-to-r to-transparent" />
           </div>
-          <HeroButton>Book Now</HeroButton>
-        </nav>
-      </div>
 
-      {/* Asymmetric Bento Grid */}
-      <div className="container flex-1 px-4 py-6">
-        <div className="grid h-full gap-4 lg:grid-cols-3 lg:grid-rows-[1fr_auto]">
-          {/* Title Card - Spans 2 columns */}
-          <div className="bg-muted flex flex-col justify-center rounded-3xl p-10 lg:col-span-2">
+          {/* Content */}
+          <div className="relative z-10 flex flex-1 flex-col justify-center p-8 lg:max-w-2xl lg:p-12">
+            {badge && (
+              <p
+                className={cn(
+                  "text-brand mb-4 text-sm font-semibold tracking-widest uppercase",
+                  classNames.header?.badge
+                )}
+              >
+                {badge}
+              </p>
+            )}
             <h1
               className={cn(
-                "display text-4xl leading-[1.1] tracking-tight sm:text-5xl md:text-7xl",
+                "display text-4xl leading-[1.1] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl",
                 classNames.header?.title
               )}
             >
@@ -97,32 +91,19 @@ export function Hero18({ content = {}, classNames = {} }: HeroBlockProps) {
                 </span>
               ))}
             </h1>
-          </div>
 
-          {/* Small Image Card */}
-          <div className="bg-muted relative min-h-[15rem] overflow-hidden rounded-3xl">
-            <Image
-              src={secondaryImage.src}
-              alt={secondaryImage.alt}
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-
-          {/* Description + Buttons Card */}
-          <div className="bg-muted flex flex-col justify-between rounded-3xl p-8">
             {description && (
               <p
                 className={cn(
-                  "text-muted-foreground text-base md:text-lg",
+                  "text-muted-foreground mt-6 text-lg md:text-xl",
                   classNames.header?.description
                 )}
               >
                 {description}
               </p>
             )}
-            <div className="mt-6 flex flex-wrap items-center gap-3">
+
+            <div className="mt-8 flex flex-wrap items-center gap-3">
               {primaryCta && (
                 <Link
                   href={primaryCta.href}
@@ -143,17 +124,18 @@ export function Hero18({ content = {}, classNames = {} }: HeroBlockProps) {
               )}
             </div>
           </div>
+        </div>
 
-          {/* Main Image Card - Spans 2 columns */}
-          <div className="bg-muted relative min-h-[20rem] overflow-hidden rounded-3xl lg:col-span-2">
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              className="object-cover object-top"
-              priority
-            />
-          </div>
+        {/* Stats Bar - Pinned at bottom */}
+        <div className="bg-muted mt-4 grid grid-cols-2 gap-4 rounded-3xl p-6 md:grid-cols-4">
+          {stats.map((stat, i) => (
+            <div key={i} className="text-center">
+              <div className="display text-2xl font-bold md:text-3xl">
+                {stat.value}
+              </div>
+              <div className="text-muted-foreground text-sm">{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

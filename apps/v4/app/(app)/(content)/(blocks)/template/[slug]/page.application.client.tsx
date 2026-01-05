@@ -43,7 +43,7 @@ import {
   TemplateBlocksSection,
   type BlockMetadata,
 } from "../../_components"
-import type { BlockConfig } from "../../template-config"
+import type { BlockConfig } from "../../blocks"
 
 interface ApplicationTemplateViewerClientProps {
   slug: string

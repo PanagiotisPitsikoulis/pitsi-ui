@@ -44,7 +44,7 @@ import {
   BlockThemeWrapper,
   DEFAULT_TINT,
   DevBlockOverlay,
-  getTemplateFonts,
+  getFontsByTypography,
   ScrollContainerProvider,
   TemplateBlocksSection,
   type BlockMetadata,
@@ -65,20 +65,6 @@ const paletteColors: Record<ColorPalette, { brand: string; complementary: string
   coral: { brand: "#f97316", complementary: "#06b6d4" },
   forest: { brand: "#166534", complementary: "#ea580c" },
   neon: { brand: "#00ff00", complementary: "#ff00ff" },
-}
-
-// Font preset to template mapping (reverse lookup)
-const templateFontPresets: Record<string, FontPreset> = {
-  "service-plants": "elegant",
-  "service-travel": "modern",
-  "service-boat": "classic",
-  "service-fitness": "futuristic",
-  "app-gym-tracker": "modern",
-  "app-quiz": "playful",
-}
-
-function getTemplateFontPreset(slug: string): FontPreset {
-  return templateFontPresets[slug] || "modern"
 }
 
 function ThemeDisplay({ palette }: { palette: ColorPalette }) {
@@ -119,9 +105,7 @@ function ThemeDisplay({ palette }: { palette: ColorPalette }) {
   )
 }
 
-function TypographyDisplay({ slug }: { slug: string }) {
-  const preset = getTemplateFontPreset(slug)
-
+function TypographyDisplay({ preset }: { preset: string }) {
   return (
     <Tooltip>
       <TooltipTrigger asChild>
@@ -145,7 +129,6 @@ function TypographyDisplay({ slug }: { slug: string }) {
 }
 import {
   getTemplateBlocks,
-  getComputedTemplatePalette,
   getTemplateBlockGroups,
   getTemplateBlockGroupsWithVariants,
   type TemplateSlug,
@@ -221,8 +204,11 @@ export function TemplateViewerClient({
   const ThemeIcon =
     resolvedTheme === "dark" ? Moon : resolvedTheme === "light" ? Sun : Monitor
 
-  // Get fonts for this template
-  const fonts = getTemplateFonts(slug)
+  // Get palette and typography from first block (for display purposes)
+  const firstBlock = blocks[0]
+  const firstBlockPalette = (firstBlock?.palette || "slate") as ColorPalette
+  const firstBlockTypography = (firstBlock?.typography || "modern") as FontPreset
+  const fonts = getFontsByTypography(firstBlock?.typography)
 
   const openInEditor = useCallback(async (filePath: string) => {
     try {
@@ -420,8 +406,8 @@ export function TemplateViewerClient({
 
             {/* Theme and Typography displays */}
             <div className="hidden items-center gap-1 lg:flex">
-              <ThemeDisplay palette={getComputedTemplatePalette(slug)} />
-              <TypographyDisplay slug={slug} />
+              <ThemeDisplay palette={firstBlockPalette} />
+              <TypographyDisplay preset={firstBlockTypography} />
             </div>
 
             {/* Right side: Actions */}
@@ -547,7 +533,7 @@ export function TemplateViewerClient({
             className="bg-muted/30 h-[calc(100vh-var(--header-height)-80px)] min-h-[600px] overflow-hidden rounded-2xl border"
           >
             <div className="h-full overflow-auto">
-              <BlockThemeWrapper palette={getComputedTemplatePalette(slug)} tint={DEFAULT_TINT} fonts={fonts}>
+              <BlockThemeWrapper palette={firstBlockPalette} tint={DEFAULT_TINT} fonts={fonts}>
                 <ScrollContainerProvider value={mainRef}>
                   {blocks.map(
                     ({ name, type, Component, tint, forceDark, forceLight, palette, typography }, index) => {
@@ -556,8 +542,9 @@ export function TemplateViewerClient({
                       const skipPadding =
                         type === "hero" || type === "header" || type === "footer"
                       const blockTint = tint || DEFAULT_TINT
-                      // Use block's palette if available, fallback to template palette
-                      const blockPalette = (palette || getComputedTemplatePalette(slug)) as ColorPalette
+                      // Use block's palette and typography
+                      const blockPalette = (palette || "slate") as ColorPalette
+                      const blockFonts = getFontsByTypography(typography)
 
                       return (
                         <BlockThemeWrapper
@@ -566,7 +553,7 @@ export function TemplateViewerClient({
                           tint={blockTint}
                           forceDark={forceDark}
                           forceLight={forceLight}
-                          fonts={fonts}
+                          fonts={blockFonts}
                         >
                           <DevBlockOverlay
                             blockKey={name}

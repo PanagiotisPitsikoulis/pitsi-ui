@@ -9,7 +9,7 @@ import { Button } from "@/registry/new-york-v4/ui/button"
 
 import { HeroButton } from "../../ui/hero-button"
 
-// Hero 19 defaults - Travel theme (4-column with stat cards)
+// Hero 19 - Sidebar Navigation Style (Travel theme)
 const hero19Defaults = {
   badge: "Trusted Agency",
   title: "Adventure\nAwaits You",
@@ -22,22 +22,14 @@ const hero19Defaults = {
     variant: "outline" as const,
   },
   image: {
-    src: "/elements/subject/travel/6.webp",
+    src: "/elements/landscape/sea/5.webp",
     alt: "Adventure destination",
   },
-  nav: {
-    logo: "VOYAGE",
-    links: [
-      { label: "Destinations", href: "#" },
-      { label: "Tours", href: "#" },
-      { label: "About", href: "#" },
-      { label: "Contact", href: "#" },
-    ],
-  },
-  stats: [
-    { value: "24/7", label: "Support" },
-    { value: "100%", label: "Secure" },
-    { value: "Free", label: "Cancellation" },
+  navItems: [
+    { label: "Beaches", active: true },
+    { label: "Mountains", active: false },
+    { label: "Cities", active: false },
+    { label: "Islands", active: false },
   ],
 }
 
@@ -49,138 +41,109 @@ export function Hero19({ content = {}, classNames = {} }: HeroBlockProps) {
     primaryCta = hero19Defaults.primaryCta,
     secondaryCta = hero19Defaults.secondaryCta,
     image = hero19Defaults.image,
-    nav = hero19Defaults.nav,
-    stats = hero19Defaults.stats,
+    navItems = hero19Defaults.navItems,
   } = content as typeof hero19Defaults
 
   return (
     <section
       className={cn(
-        "relative flex min-h-[100svh] flex-col overflow-hidden",
+        "relative flex min-h-[calc(100svh-5rem)] flex-col overflow-hidden",
         classNames.root
       )}
     >
-      {/* Pill Navbar */}
-      <div className="container px-4 pt-6">
-        <nav className="bg-muted flex items-center justify-between rounded-full px-4 py-2">
-          <Link href="/" className="pl-2 text-lg font-bold tracking-tight">
-            {nav.logo}
-          </Link>
-          <div className="flex items-center gap-1">
-            {nav.links.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-muted-foreground hover:text-foreground px-4 py-2 text-sm font-medium transition-colors"
+      <div className="container flex-1 px-4 py-6">
+        <div className="grid h-full min-h-[calc(100svh-8rem)] gap-4 lg:grid-cols-[auto_1fr]">
+          {/* Left - Vertical Navigation Sidebar */}
+          <div className="bg-muted flex flex-row gap-2 rounded-3xl p-4 lg:w-20 lg:flex-col lg:items-center lg:py-8">
+            {navItems.map((item, i) => (
+              <button
+                key={i}
+                className={cn(
+                  "flex-1 rounded-xl px-4 py-3 text-sm font-medium transition-colors lg:w-full lg:flex-none lg:py-4",
+                  item.active
+                    ? "bg-brand text-brand-foreground"
+                    : "hover:bg-muted-foreground/10 text-muted-foreground"
+                )}
               >
-                {link.label}
-              </Link>
+                <span className="lg:hidden">{item.label}</span>
+                <span className="hidden lg:block lg:[text-orientation:mixed] lg:[writing-mode:vertical-lr]">
+                  {item.label}
+                </span>
+              </button>
             ))}
           </div>
-          <HeroButton>Book Now</HeroButton>
-        </nav>
-      </div>
 
-      {/* Bento Grid with Stats Feature */}
-      <div className="container flex-1 px-4 py-6">
-        <div className="grid h-full gap-4 lg:grid-cols-4 lg:grid-rows-[auto_1fr]">
-          {/* Title Card - Spans 2 columns */}
-          <div className="bg-muted flex flex-col justify-center rounded-3xl p-8 lg:col-span-2 lg:p-10">
-            {badge && (
-              <p
+          {/* Right - Main Content Area */}
+          <div className="grid gap-4 lg:grid-cols-2">
+            {/* Text Content */}
+            <div className="bg-muted flex flex-col justify-center rounded-3xl p-8 lg:p-10">
+              {badge && (
+                <p
+                  className={cn(
+                    "text-brand mb-4 text-sm font-semibold tracking-widest uppercase",
+                    classNames.header?.badge
+                  )}
+                >
+                  {badge}
+                </p>
+              )}
+              <h1
                 className={cn(
-                  "text-muted-foreground mb-4 text-sm font-medium tracking-widest uppercase",
-                  classNames.header?.badge
+                  "display text-4xl leading-[1.1] tracking-tight sm:text-5xl md:text-6xl",
+                  classNames.header?.title
                 )}
               >
-                {badge}
-              </p>
-            )}
-            <h1
-              className={cn(
-                "display text-4xl leading-[1.1] tracking-tight sm:text-5xl md:text-6xl",
-                classNames.header?.title
+                {title.split("\n").map((line, i) => (
+                  <span key={i}>
+                    {line}
+                    {i < title.split("\n").length - 1 && <br />}
+                  </span>
+                ))}
+              </h1>
+
+              {description && (
+                <p
+                  className={cn(
+                    "text-muted-foreground mt-6 text-lg",
+                    classNames.header?.description
+                  )}
+                >
+                  {description}
+                </p>
               )}
-            >
-              {title.split("\n").map((line, i) => (
-                <span key={i}>
-                  {line}
-                  {i < title.split("\n").length - 1 && <br />}
-                </span>
-              ))}
-            </h1>
-          </div>
 
-          {/* Stats Cards - Individual cards for each stat */}
-          {stats.slice(0, 2).map((stat, i) => (
-            <div
-              key={i}
-              className="bg-muted flex flex-col items-center justify-center rounded-3xl p-6 text-center"
-            >
-              <div className="display text-4xl font-bold md:text-5xl">
-                {stat.value}
-              </div>
-              <div className="text-muted-foreground mt-2 text-sm font-medium">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-
-          {/* Description + Buttons Card */}
-          <div className="bg-muted flex flex-col justify-between rounded-3xl p-8">
-            {description && (
-              <p
-                className={cn(
-                  "text-muted-foreground text-base md:text-lg",
-                  classNames.header?.description
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                {primaryCta && (
+                  <Link
+                    href={primaryCta.href}
+                    className={classNames.cta?.primary}
+                  >
+                    <HeroButton>{primaryCta.label}</HeroButton>
+                  </Link>
                 )}
-              >
-                {description}
-              </p>
-            )}
-            <div className="mt-6 flex flex-wrap items-center gap-3">
-              {primaryCta && (
-                <Link
-                  href={primaryCta.href}
-                  className={classNames.cta?.primary}
-                >
-                  <HeroButton>{primaryCta.label}</HeroButton>
-                </Link>
-              )}
-              {secondaryCta && (
-                <Button
-                  asChild
-                  variant="outline"
-                  size="lg"
-                  className={cn("text-foreground", classNames.cta?.secondary)}
-                >
-                  <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
-                </Button>
-              )}
-            </div>
-          </div>
-
-          {/* Third Stat Card */}
-          {stats[2] && (
-            <div className="bg-muted flex flex-col items-center justify-center rounded-3xl p-6 text-center">
-              <div className="display text-4xl font-bold md:text-5xl">
-                {stats[2].value}
-              </div>
-              <div className="text-muted-foreground mt-2 text-sm font-medium">
-                {stats[2].label}
+                {secondaryCta && (
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className={cn("text-foreground", classNames.cta?.secondary)}
+                  >
+                    <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
+                  </Button>
+                )}
               </div>
             </div>
-          )}
 
-          {/* Image Card - Spans 2 columns */}
-          <div className="bg-muted relative min-h-[20rem] overflow-hidden rounded-3xl lg:col-span-2">
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              className="object-cover object-top"
-              priority
-            />
+            {/* Image */}
+            <div className="bg-muted relative min-h-[25rem] overflow-hidden rounded-3xl">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
           </div>
         </div>
       </div>

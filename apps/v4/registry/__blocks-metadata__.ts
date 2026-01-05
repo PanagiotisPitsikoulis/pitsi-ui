@@ -262,8 +262,6 @@ export interface ComputedTemplate {
   slug: string
   name: string
   description: string
-  palette: string
-  typography: string
   heroBlock: string
   type: "service" | "application"
   blocks: ComputedTemplateBlock[]
@@ -275,8 +273,6 @@ export const COMPUTED_TEMPLATES: Record<string, ComputedTemplate> = {
     slug: "service-plants",
     name: "Service Plants",
     description: "Plant shop header with navigation and CTA button",
-    palette: "sage",
-    typography: "elegant",
     heroBlock: "hero-1",
     type: "service",
     blocks: [
@@ -1163,8 +1159,6 @@ export const COMPUTED_TEMPLATES: Record<string, ComputedTemplate> = {
     name: "Service Travel",
     description:
       "Travel agency hero section with parallax effects and knockout text",
-    palette: "azure",
-    typography: "modern",
     heroBlock: "hero-2",
     type: "service",
     blocks: [
@@ -1227,8 +1221,6 @@ export const COMPUTED_TEMPLATES: Record<string, ComputedTemplate> = {
     name: "Service Boat",
     description:
       "Yacht charter hero section with parallax effects and knockout text",
-    palette: "azure",
-    typography: "classic",
     heroBlock: "hero-3",
     type: "service",
     blocks: [
@@ -1291,8 +1283,6 @@ export const COMPUTED_TEMPLATES: Record<string, ComputedTemplate> = {
     name: "Service Fitness",
     description:
       "Pill navbar header with rounded background and centered navigation",
-    palette: "neon",
-    typography: "futuristic",
     heroBlock: "hero-4",
     type: "service",
     blocks: [
@@ -1432,8 +1422,6 @@ export const COMPUTED_TEMPLATES: Record<string, ComputedTemplate> = {
     slug: "app-gym-tracker",
     name: "App Gym Tracker",
     description: "Two-sidebar gym tracker shell with navigation and stats",
-    palette: "sage",
-    typography: "modern",
     heroBlock: "app-gym-today-1",
     type: "application",
     blocks: [
@@ -1510,8 +1498,6 @@ export const COMPUTED_TEMPLATES: Record<string, ComputedTemplate> = {
     slug: "app-quiz",
     name: "App Quiz",
     description: "Application shell with sidebar navigation for quiz app",
-    palette: "violet",
-    typography: "playful",
     heroBlock: "app-quiz-dashboard-1",
     type: "application",
     blocks: [

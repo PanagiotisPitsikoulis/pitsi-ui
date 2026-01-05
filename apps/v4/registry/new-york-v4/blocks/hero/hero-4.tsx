@@ -9,7 +9,7 @@ import { Button } from "@/registry/new-york-v4/ui/button"
 
 import { HeroButton } from "../../ui/hero-button"
 
-// Hero 4 defaults - Fitness/Personal Training theme (no header - applied at template level)
+// Hero 4 - Full-Bleed Background + Floating Glassmorphism Card
 const hero4Defaults = {
   badge: "Transform Your Body",
   title: "Unlock Your\nFull Potential",
@@ -21,9 +21,9 @@ const hero4Defaults = {
     href: "#",
     variant: "outline" as const,
   },
-  image: {
-    src: "/elements/subject/gym/3.webp",
-    alt: "Personal trainer in action",
+  backgroundImage: {
+    src: "/elements/portrait/gym/1.webp",
+    alt: "Gym atmosphere",
   },
 }
 
@@ -34,7 +34,7 @@ export function Hero4({ content = {}, classNames = {} }: HeroBlockProps) {
     description = hero4Defaults.description,
     primaryCta = hero4Defaults.primaryCta,
     secondaryCta = hero4Defaults.secondaryCta,
-    image = hero4Defaults.image,
+    backgroundImage = hero4Defaults.backgroundImage,
   } = content as typeof hero4Defaults
 
   return (
@@ -44,85 +44,79 @@ export function Hero4({ content = {}, classNames = {} }: HeroBlockProps) {
         classNames.root
       )}
     >
-      {/* Full-width Bento Layout */}
-      <div className="container flex-1 px-4 py-6">
-        <div className="bg-muted relative flex h-full min-h-[35rem] flex-col overflow-hidden rounded-3xl lg:flex-row">
-          {/* Content Side */}
-          <div className="relative z-10 flex flex-1 flex-col justify-center p-8 lg:w-1/2 lg:p-12">
-            {/* Badge */}
-            {badge && (
-              <p
-                className={cn(
-                  "text-muted-foreground mb-4 text-sm font-medium tracking-widest uppercase",
-                  classNames.header?.badge
-                )}
-              >
-                {badge}
-              </p>
-            )}
+      {/* Full-bleed background image */}
+      <div className="absolute inset-0">
+        <Image
+          src={backgroundImage.src}
+          alt={backgroundImage.alt}
+          fill
+          className="object-cover"
+          priority
+        />
+        {/* Gradient overlay for text readability */}
+        <div className="from-background/95 via-background/70 absolute inset-0 bg-gradient-to-r to-transparent" />
+      </div>
 
-            {/* Main headline */}
-            <h1
+      {/* Content container */}
+      <div className="relative z-10 container flex flex-1 items-center px-4 py-12">
+        {/* Floating glassmorphism card */}
+        <div className="bg-background/80 max-w-xl rounded-3xl p-8 shadow-2xl backdrop-blur-xl md:p-12">
+          {/* Badge */}
+          {badge && (
+            <p
               className={cn(
-                "display text-4xl leading-[1.1] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl",
-                classNames.header?.title
+                "text-brand mb-4 text-sm font-semibold tracking-widest uppercase",
+                classNames.header?.badge
               )}
             >
-              {title.split("\n").map((line, i) => (
-                <span key={i}>
-                  {line}
-                  {i < title.split("\n").length - 1 && <br />}
-                </span>
-              ))}
-            </h1>
+              {badge}
+            </p>
+          )}
 
-            {/* Subheading */}
-            {description && (
-              <p
-                className={cn(
-                  "text-muted-foreground mt-6 text-lg md:text-xl",
-                  classNames.header?.description
-                )}
-              >
-                {description}
-              </p>
+          {/* Main headline */}
+          <h1
+            className={cn(
+              "display text-4xl leading-[1.1] tracking-tight sm:text-5xl md:text-6xl",
+              classNames.header?.title
             )}
+          >
+            {title.split("\n").map((line, i) => (
+              <span key={i}>
+                {line}
+                {i < title.split("\n").length - 1 && <br />}
+              </span>
+            ))}
+          </h1>
 
-            {/* Buttons */}
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              {primaryCta && (
-                <Link
-                  href={primaryCta.href}
-                  className={classNames.cta?.primary}
-                >
-                  <HeroButton>{primaryCta.label}</HeroButton>
-                </Link>
+          {/* Subheading */}
+          {description && (
+            <p
+              className={cn(
+                "text-muted-foreground mt-6 text-lg",
+                classNames.header?.description
               )}
-              {secondaryCta && (
-                <Button
-                  asChild
-                  variant="outline"
-                  size="lg"
-                  className={cn(
-                    "dark text-foreground",
-                    classNames.cta?.secondary
-                  )}
-                >
-                  <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
-                </Button>
-              )}
-            </div>
-          </div>
+            >
+              {description}
+            </p>
+          )}
 
-          {/* Image Side */}
-          <div className="relative min-h-[20rem] lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              className="object-cover object-top"
-              priority
-            />
+          {/* Buttons */}
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            {primaryCta && (
+              <Link href={primaryCta.href} className={classNames.cta?.primary}>
+                <HeroButton>{primaryCta.label}</HeroButton>
+              </Link>
+            )}
+            {secondaryCta && (
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className={cn("text-foreground", classNames.cta?.secondary)}
+              >
+                <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
+              </Button>
+            )}
           </div>
         </div>
       </div>

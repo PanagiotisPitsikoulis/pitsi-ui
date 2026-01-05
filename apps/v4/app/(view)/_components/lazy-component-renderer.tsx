@@ -13,15 +13,13 @@ import {
   BlockContainer,
   BlockThemeWrapper,
   DEFAULT_TINT,
-  getTemplateFonts,
+  getFontsByTypography,
 } from "@/app/(app)/(content)/(blocks)/_components"
 import { ScrollContainerProvider } from "@/app/(app)/(content)/(blocks)/_components/scroll-container-context"
-import { getBlockSettings } from "@/app/(app)/(content)/(blocks)/blocks"
 import {
+  getBlockSettings,
   getShellForBlock,
-  getTemplatePalette,
-  isApplicationTemplate,
-} from "@/app/(app)/(content)/(blocks)/template-config"
+} from "@/app/(app)/(content)/(blocks)/blocks"
 
 interface LazyComponentRendererProps {
   name: string
@@ -80,6 +78,10 @@ function ApplicationBlockWrapper({
   ViewComponent: React.ComponentType
 }) {
   const shellInfo = getShellForBlock(name)
+  // Get palette/typography from the current view block's settings
+  const viewSettings = getBlockSettings(name)
+  const palette = (viewSettings.palette || "slate") as import("@/registry/new-york-v4/lib/block-theme").ColorPalette
+  const fonts = getFontsByTypography(viewSettings.typography)
 
   if (!shellInfo) {
     // Not an application view, render component directly
@@ -93,10 +95,9 @@ function ApplicationBlockWrapper({
   const shellItem = styleIndex?.[shell as keyof typeof styleIndex]
 
   if (!shellItem?.component) {
-    // Shell not found, render view standalone with template theming
-    const fonts = getTemplateFonts(template.slug)
+    // Shell not found, render view standalone with block's theming
     return (
-      <BlockThemeWrapper palette={template.palette} tint="base" fonts={fonts}>
+      <BlockThemeWrapper palette={palette} tint="base" fonts={fonts}>
         <div className="bg-background min-h-screen">
           <Suspense fallback={<div className="flex-1" />}>
             <ViewComponent />
@@ -129,10 +130,9 @@ function ApplicationBlockWrapper({
     shortcut: nav.shortcut,
   }))
 
-  // Wrap shell with BlockThemeWrapper to apply template's palette
-  const fonts = getTemplateFonts(template.slug)
+  // Wrap shell with BlockThemeWrapper to apply view block's palette and typography
   return (
-    <BlockThemeWrapper palette={template.palette} tint="base" fonts={fonts}>
+    <BlockThemeWrapper palette={palette} tint="base" fonts={fonts}>
       <div className="min-h-screen">
         <ShellComponent
           activeView={name}
@@ -190,9 +190,9 @@ function BlockWrapper({
       blockType === "hero" || blockType === "header" || blockType === "footer"
     // Use the block's configured tint (tinted themes now have neutral backgrounds)
     const blockTint = settings.tint || DEFAULT_TINT
-    // Get palette and fonts from template
-    const palette = getTemplatePalette(settings.templateSlug)
-    const fonts = getTemplateFonts(settings.templateSlug)
+    // Get palette and typography from block settings
+    const palette = (settings.palette || "slate") as import("@/registry/new-york-v4/lib/block-theme").ColorPalette
+    const fonts = getFontsByTypography(settings.typography)
 
     return (
       <ScrollContainerProvider value={containerRef}>

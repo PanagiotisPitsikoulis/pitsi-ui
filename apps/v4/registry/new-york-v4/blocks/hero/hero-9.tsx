@@ -9,36 +9,42 @@ import { Button } from "@/registry/new-york-v4/ui/button"
 
 import { HeroButton } from "../../ui/hero-button"
 
-// Hero 9 defaults - Fitness/Elite Training theme (no header - applied at template level)
+// Hero 9 - Masonry Grid (Variable height Pinterest-style)
 const hero9Defaults = {
-  badge: "Elite Training",
-  title: "Push Beyond\nYour Limits",
+  badge: "Elevate Your Game",
+  title: "Strength\nRedefined",
   description:
-    "World-class coaching. Cutting-edge facilities. Transform your body and mind.",
+    "World-class coaching and cutting-edge facilities to transform your body and mind.",
   primaryCta: { label: "Join Now", href: "#" },
   secondaryCta: {
     label: "Watch Video",
     href: "#",
     variant: "outline" as const,
   },
-  image: {
-    src: "/elements/subject/gym/3.webp",
-    alt: "Intense fitness training session",
-  },
-  secondaryImage: {
-    src: "/elements/subject/gym/2.webp",
-    alt: "Gym equipment",
-  },
+  images: [
+    {
+      src: "/elements/portrait/gym/5.webp",
+      alt: "Training session 1",
+    },
+    {
+      src: "/elements/subject/gym/8.webp",
+      alt: "Gym equipment",
+    },
+    {
+      src: "/elements/portrait/gym/6.webp",
+      alt: "Training session 2",
+    },
+  ],
 }
 
 export function Hero9({ content = {}, classNames = {} }: HeroBlockProps) {
   const {
+    badge = hero9Defaults.badge,
     title = hero9Defaults.title,
     description = hero9Defaults.description,
     primaryCta = hero9Defaults.primaryCta,
     secondaryCta = hero9Defaults.secondaryCta,
-    image = hero9Defaults.image,
-    secondaryImage = hero9Defaults.secondaryImage,
+    images = hero9Defaults.images,
   } = content as typeof hero9Defaults
 
   return (
@@ -48,82 +54,98 @@ export function Hero9({ content = {}, classNames = {} }: HeroBlockProps) {
         classNames.root
       )}
     >
-      {/* Asymmetric Bento Grid */}
       <div className="container flex-1 px-4 py-6">
-        <div className="grid h-full gap-4 lg:grid-cols-3 lg:grid-rows-[1fr_auto]">
-          {/* Title Card - Spans 2 columns */}
-          <div className="bg-muted flex flex-col justify-center rounded-3xl p-10 lg:col-span-2">
-            <h1
-              className={cn(
-                "display text-4xl leading-[1.1] tracking-tight sm:text-5xl md:text-7xl",
-                classNames.header?.title
-              )}
-            >
-              {title.split("\n").map((line, i) => (
-                <span key={i}>
-                  {line}
-                  {i < title.split("\n").length - 1 && <br />}
-                </span>
-              ))}
-            </h1>
-          </div>
-
-          {/* Small Image Card */}
-          <div className="bg-muted relative min-h-[15rem] overflow-hidden rounded-3xl">
+        <div className="grid h-full min-h-[calc(100svh-8rem)] gap-4 lg:grid-cols-4">
+          {/* Column 1 - Tall Image */}
+          <div className="bg-muted relative min-h-[20rem] overflow-hidden rounded-3xl lg:row-span-2 lg:min-h-full">
             <Image
-              src={secondaryImage.src}
-              alt={secondaryImage.alt}
+              src={images[0].src}
+              alt={images[0].alt}
               fill
-              className="object-cover"
+              className="object-cover object-top"
               priority
             />
           </div>
 
-          {/* Description + Buttons Card */}
-          <div className="bg-muted flex flex-col justify-between rounded-3xl p-8">
-            {description && (
-              <p
-                className={cn(
-                  "text-muted-foreground text-base md:text-lg",
-                  classNames.header?.description
-                )}
-              >
-                {description}
-              </p>
-            )}
-            <div className="mt-6 flex flex-wrap items-center gap-3">
-              {primaryCta && (
-                <Link
-                  href={primaryCta.href}
-                  className={classNames.cta?.primary}
-                >
-                  <HeroButton>{primaryCta.label}</HeroButton>
-                </Link>
-              )}
-              {secondaryCta && (
-                <Button
-                  asChild
-                  variant="outline"
-                  size="lg"
+          {/* Column 2 - Text Content */}
+          <div className="flex flex-col gap-4 lg:col-span-2 lg:row-span-2">
+            {/* Title Card */}
+            <div className="bg-muted flex flex-1 flex-col justify-center rounded-3xl p-8 lg:p-10">
+              {badge && (
+                <p
                   className={cn(
-                    "dark text-foreground",
-                    classNames.cta?.secondary
+                    "text-brand mb-4 text-sm font-semibold tracking-widest uppercase",
+                    classNames.header?.badge
                   )}
                 >
-                  <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
-                </Button>
+                  {badge}
+                </p>
               )}
+              <h1
+                className={cn(
+                  "display text-4xl leading-[1.1] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl",
+                  classNames.header?.title
+                )}
+              >
+                {title.split("\n").map((line, i) => (
+                  <span key={i}>
+                    {line}
+                    {i < title.split("\n").length - 1 && <br />}
+                  </span>
+                ))}
+              </h1>
+
+              {description && (
+                <p
+                  className={cn(
+                    "text-muted-foreground mt-6 text-lg md:text-xl",
+                    classNames.header?.description
+                  )}
+                >
+                  {description}
+                </p>
+              )}
+
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                {primaryCta && (
+                  <Link
+                    href={primaryCta.href}
+                    className={classNames.cta?.primary}
+                  >
+                    <HeroButton>{primaryCta.label}</HeroButton>
+                  </Link>
+                )}
+                {secondaryCta && (
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className={cn("text-foreground", classNames.cta?.secondary)}
+                  >
+                    <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
+                  </Button>
+                )}
+              </div>
+            </div>
+
+            {/* Wide Image - Below text */}
+            <div className="bg-muted relative min-h-[12rem] overflow-hidden rounded-3xl">
+              <Image
+                src={images[1].src}
+                alt={images[1].alt}
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
 
-          {/* Main Image Card - Spans 2 columns */}
-          <div className="bg-muted relative min-h-[20rem] overflow-hidden rounded-3xl lg:col-span-2">
+          {/* Column 4 - Tall Image */}
+          <div className="bg-muted relative min-h-[20rem] overflow-hidden rounded-3xl lg:row-span-2 lg:min-h-full">
             <Image
-              src={image.src}
-              alt={image.alt}
+              src={images[2].src}
+              alt={images[2].alt}
               fill
               className="object-cover object-top"
-              priority
             />
           </div>
         </div>

@@ -130,23 +130,25 @@ export function getTemplatesByType(
 }
 
 /**
- * Check if a template uses a specific palette
+ * Check if any block in a template uses a specific palette
  */
 export function templateUsesPalette(
   templateSlug: string,
   palette: string
 ): boolean {
   const template = COMPUTED_TEMPLATES[templateSlug]
-  return template?.palette === palette
+  if (!template) return false
+  return template.blocks.some((block) => block.palette === palette)
 }
 
 /**
- * Check if a template uses a specific typography preset
+ * Check if any block in a template uses a specific typography preset
  */
 export function templateUsesTypography(
   templateSlug: string,
   typography: string
 ): boolean {
   const template = COMPUTED_TEMPLATES[templateSlug]
-  return template?.typography === typography
+  if (!template) return false
+  return template.blocks.some((block) => block.typography === typography)
 }

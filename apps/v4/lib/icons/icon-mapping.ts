@@ -13,449 +13,324 @@
 import {
   // Accessibility icons
   AccessIcon,
-
+  AddToListIcon,
+  Alert01Icon,
   // Alert / Warning icons
   AlertCircleIcon,
-  Alert01Icon,
-  InformationCircleIcon,
-  TriangleIcon,
-
-  // Arrow icons
-  ArrowDown01Icon,
-  ArrowLeft01Icon,
-  ArrowRight01Icon,
-  ArrowUp01Icon,
-  CircleArrowUp01Icon,
-  ArrowUpDownIcon,
-  ArrowUpRight01Icon,
-
-  // Badge icons
-  CheckmarkBadge01Icon,
-  DollarCircleIcon,
-
-  // Bar Chart icons
-  ChartColumnIcon,
-
-  // Bell / Notification icons
-  Notification01Icon,
-
-  // Block icons
-  CubeIcon,
-
-  // Bold / Text icons
-  TextBoldIcon,
-  TextItalicIcon,
-  TextUnderlineIcon,
-  TextFontIcon,
-
-  // Bookmark icons
-  Bookmark01Icon,
-
-  // Book icons
-  BookOpen01Icon,
-
-  // Bath / Bathroom icons
-  Bathtub01Icon,
-
-  // Bed icons
-  BedIcon,
-
-  // Bot / AI / Brain icons
-  BotIcon,
-  Brain01Icon,
-
-  // Box icons
-  BoundingBoxIcon,
-
-  // Calculator icons
-  CalculatorIcon,
-
-  // Calendar icons
-  Calendar01Icon,
-
-  // Camera icons
-  Camera01Icon,
-
-  // Call / Phone icons
-  Call02Icon,
-
-  // Chart icons
-  PieChartIcon,
-  PieChart01Icon,
-  ChartIncreaseIcon,
-
-  // Check icons
-  Tick01Icon,
-  Tick02Icon,
-  CheckmarkCircle01Icon,
-  CheckmarkCircle02Icon,
-
-  // Chevron icons
-  ArrowDown02Icon,
-  ArrowUp02Icon,
-  ArrowLeft02Icon,
-  ArrowRight02Icon,
-  ArrowExpandIcon,
-
-  // Circle icons
-  CircleIcon,
-  DashedLineCircleIcon,
-  HelpCircleIcon,
-
-  // Clipboard icons
-  ClipboardIcon,
-
-  // Clock / Time icons
-  Clock01Icon,
-  Timer01Icon,
-
-  // Code icons
-  CodeIcon,
-
-  // Command icons
-  CommandIcon,
-
-  // Compass icons
-  Compass01Icon,
-
-  // Copy icons
-  Copy01Icon,
-  Copy02Icon,
-
-  // Corner / Turn icons
-  ArrowTurnDownIcon,
-
-  // CPU / Computer icons
-  CpuIcon,
-
-  // Credit Card icons
-  CreditCardIcon,
-
-  // Database icons
-  DatabaseIcon,
-
-  // Download / Upload icons
-  Download01Icon,
-  Upload01Icon,
-
-  // Dumbbell / Gym icons
-  Dumbbell01Icon,
-  WeightIcon,
-
-  // External / Link icons
-  LinkSquare01Icon,
-
-  // Eye / View icons
-  EyeIcon,
-  ViewOffIcon,
-
-  // File icons
-  File01Icon,
-  FileScriptIcon,
-  FileAttachmentIcon,
-
-  // Flame / Fire icons
-  FireIcon,
-
-  // Gift icons
-  GiftIcon,
-
-  // Folder icons
-  Folder01Icon,
-  FolderOpenIcon,
-
-  // Form / Input icons
-  InputTextIcon,
-
-  // Frame icons
-  FramerIcon,
-
-  // Globe icons
-  GlobeIcon,
-
-  // Grid icons
-  Grid02Icon,
-  GridIcon,
-
-  // Grip / Drag icons
-  DragDropVerticalIcon,
-
-
-  // Heart icons
-  HeartAddIcon,
-  HeartCheckIcon,
-
-  // History icons
-  TransactionHistoryIcon,
-
-  // Home icons
-  Home01Icon,
-
-  // Image icons
-  Image01Icon,
-
-  // Inbox icons
-  InboxIcon,
-
-  // Info icons
-  InformationSquareIcon,
-
-  // Inspect icons
-  InspectCodeIcon,
-
-  // Key icons
-  Key01Icon,
-  Key02Icon,
-
-  // Layers icons
-  Layers01Icon,
-  Layers02Icon,
-
-  // Layout icons
-  Layout01Icon,
-  Layout02Icon,
-  DashboardSquare01Icon,
-  GridViewIcon,
-
-  // Leaf / Plant icons
-  Leaf01Icon,
-
-  // Library icons
-  LibraryIcon,
-
-  // Lifebuoy icons
-  LifebuoyIcon,
-
-  // Link icons
-  Link01Icon,
-
-  // List icons
-  ListViewIcon,
-  AddToListIcon,
-
-  // Loader icons
-  Loading01Icon,
-  Loading02Icon,
-
-  // Lock icons
-  LockIcon,
-
-  // Login / Logout icons
-  Login01Icon,
-  Logout01Icon,
-
-  // Mail icons
-  Mail01Icon,
-  MailOpen01Icon,
-
-  // Map icons
-  MapsIcon,
-
-  // Maximize icons
-  Maximize01Icon,
-
-  // Megaphone icons
-  Megaphone01Icon,
-
-  // Message icons
-  Message01Icon,
-  BubbleChatIcon,
-
-  // Minus / Plus icons
-  MinusSignIcon,
-  PlusSignIcon,
-
-  // Monitor icons
-  ComputerIcon,
-
-  // Moon / Sun icons
-  Moon01Icon,
-  Sun01Icon,
-
-  // Menu icons
-  Menu01Icon,
-
-  // More icons
-  MoreHorizontalIcon,
-  MoreVerticalIcon,
-
-  // Location icons
-  Location01Icon,
-  Location04Icon,
-
-  // Navigation icons
-  Navigation01Icon,
-
-  // Octagon icons
-  OctagonIcon,
-
-  // Package icons
-  PackageIcon,
-
-  // Palette / Color icons
-  SwatchIcon,
-  DropperIcon,
-
-  // Panel icons
-  PanelLeftIcon,
-  PanelLeftOpenIcon,
-  PanelLeftCloseIcon,
-
-  // Layout Top icon (for PanelTop)
-  LayoutTopIcon,
-
-  // Pause icons
-  PauseIcon,
-
-  // Pencil / Edit icons
-  PencilEdit01Icon,
-  SquareArrowUp01Icon,
-
-  // Play icons
-  PlayIcon,
-
-  // Square icons
-  SquareIcon,
-
-  // Popcorn icons
-  PopcornIcon,
-
-  // Radio icons
-  RadioIcon,
-
-  // Recycle icons
-  RecycleIcon,
-
-  // Repeat icons
-  RepeatIcon,
-
-  // Redo / Undo icons
-  RedoIcon,
-
-  // Refresh / Rotate icons
-  RefreshIcon,
-  RotateLeft01Icon,
-  RotateClockwiseIcon,
-
-  // Save icons
-  FloppyDiskIcon,
-
-  // Search icons
-  Search01Icon,
-
-  // Send icons
-  MailSend01Icon,
-
-  // Server icons
-  ServerStack01Icon,
-
-  // Settings icons
-  Settings01Icon,
-  Settings02Icon,
-
-  // Share icons
-  Share01Icon,
-  Share02Icon,
-
-  // Shield icons
-  Shield01Icon,
-  ShieldIcon,
-
-  // Shopping icons
-  ShoppingCart01Icon,
-
-  // Shuffle icons
-  ShuffleIcon,
-
-  // Slash icons
-  Cancel01Icon,
-
-  // Slider icons
-  SlidersHorizontalIcon,
-
-  // Smartphone icons
-  SmartPhone01Icon,
-
-  // Smile / Emoji icons
-  SmileIcon,
-  HappyIcon,
-
-  // Sparkle icons
-  SparklesIcon,
-
-  // Star icons
-  StarIcon,
-
-  // Tag icons
-  Tag01Icon,
-
-  // Target icons
-  Target01Icon,
-
-  // Terminal icons
-  CodeSimpleIcon,
-
-  // Trash / Delete icons
-  Delete01Icon,
-  Delete02Icon,
-
-  // Trophy / Award icons
-  Award01Icon,
-
-  // Truck / Delivery icons
-  TruckDeliveryIcon,
-
-  // User icons
-  UserIcon,
-  UserGroupIcon,
-  UserRemove01Icon,
-
-  // Wand / Magic icons
-  MagicWand01Icon,
-
-  // Wave icons
-  AudioWave01Icon,
-
-  // X / Cancel / Close icons
-  Cancel02Icon,
-  CancelCircleIcon,
-
-  // Volume icons
-  VolumeOffIcon,
-
-  // Zap / Lightning icons
-  ZapIcon,
-
   // Archive icons
   ArchiveIcon,
-
+  // Arrow icons
+  ArrowDown01Icon,
+  // Chevron icons
+  ArrowDown02Icon,
+  ArrowExpandIcon,
+  ArrowLeft01Icon,
+  ArrowLeft02Icon,
+  ArrowRight01Icon,
+  ArrowRight02Icon,
+  // Corner / Turn icons
+  ArrowTurnDownIcon,
+  ArrowUp01Icon,
+  ArrowUp02Icon,
+  ArrowUpDownIcon,
+  ArrowUpRight01Icon,
+  // Wave icons
+  AudioWave01Icon,
+  // Trophy / Award icons
+  Award01Icon,
+  // Bath / Bathroom icons
+  Bathtub01Icon,
+  // Bed icons
+  BedIcon,
+  // Bookmark icons
+  Bookmark01Icon,
+  // Book icons
+  BookOpen01Icon,
+  // Bot / AI / Brain icons
+  BotIcon,
+  // Box icons
+  BoundingBoxIcon,
+  Brain01Icon,
+  BubbleChatIcon,
   // Building icons
   Building01Icon,
   Building02Icon,
-
-  // Invoice / Receipt icons
-  InvoiceIcon,
-
-  // Tablet icons
-  Tablet01Icon,
-
-  // News icons
-  NewsIcon,
-
-  // Quote icons
-  QuoteDownIcon,
-
-  // Shopping Bag icons
-  ShoppingBag01Icon,
-
-  // Layout Bottom icon (for PanelBottom)
-  LayoutBottomIcon,
-
+  // Calculator icons
+  CalculatorIcon,
+  // Calendar icons
+  Calendar01Icon,
+  // Call / Phone icons
+  Call02Icon,
+  // Camera icons
+  Camera01Icon,
+  // Slash icons
+  Cancel01Icon,
+  // X / Cancel / Close icons
+  Cancel02Icon,
+  CancelCircleIcon,
+  // Bar Chart icons
+  ChartColumnIcon,
+  ChartIncreaseIcon,
+  // Badge icons
+  CheckmarkBadge01Icon,
+  CheckmarkCircle01Icon,
+  CheckmarkCircle02Icon,
+  CircleArrowUp01Icon,
+  // Circle icons
+  CircleIcon,
+  // Clipboard icons
+  ClipboardIcon,
+  // Clock / Time icons
+  Clock01Icon,
+  // Code icons
+  CodeIcon,
+  // Terminal icons
+  CodeSimpleIcon,
+  // Command icons
+  CommandIcon,
+  // Compass icons
+  Compass01Icon,
+  // Monitor icons
+  ComputerIcon,
+  // Copy icons
+  Copy01Icon,
+  Copy02Icon,
+  // CPU / Computer icons
+  CpuIcon,
+  // Credit Card icons
+  CreditCardIcon,
+  // Block icons
+  CubeIcon,
   // Cursor icons (for MousePointerClick)
   CursorPointer01Icon,
-
+  DashboardSquare01Icon,
+  DashedLineCircleIcon,
+  // Database icons
+  DatabaseIcon,
+  // Trash / Delete icons
+  Delete01Icon,
+  Delete02Icon,
+  DollarCircleIcon,
+  // Download / Upload icons
+  Download01Icon,
+  // Grip / Drag icons
+  DragDropVerticalIcon,
+  DropperIcon,
+  // Dumbbell / Gym icons
+  Dumbbell01Icon,
+  // Eye / View icons
+  EyeIcon,
+  // File icons
+  File01Icon,
+  FileAttachmentIcon,
+  FileScriptIcon,
+  // Flame / Fire icons
+  FireIcon,
+  // Save icons
+  FloppyDiskIcon,
+  // Folder icons
+  Folder01Icon,
+  FolderOpenIcon,
+  // Frame icons
+  FramerIcon,
+  // Gift icons
+  GiftIcon,
+  // Globe icons
+  GlobeIcon,
+  // Grid icons
+  Grid02Icon,
+  GridIcon,
+  GridViewIcon,
+  HappyIcon,
+  // Heart icons
+  HeartAddIcon,
+  HeartCheckIcon,
+  HelpCircleIcon,
+  // Home icons
+  Home01Icon,
+  // Image icons
+  Image01Icon,
   // Image/Gallery icons (for Images)
   Image02Icon,
+  // Inbox icons
+  InboxIcon,
+  InformationCircleIcon,
+  // Info icons
+  InformationSquareIcon,
+  // Form / Input icons
+  InputTextIcon,
+  // Inspect icons
+  InspectCodeIcon,
+  // Invoice / Receipt icons
+  InvoiceIcon,
+  // Key icons
+  Key01Icon,
+  Key02Icon,
+  // Layers icons
+  Layers01Icon,
+  Layers02Icon,
+  // Layout icons
+  Layout01Icon,
+  Layout02Icon,
+  // Layout Bottom icon (for PanelBottom)
+  LayoutBottomIcon,
+  // Layout Top icon (for PanelTop)
+  LayoutTopIcon,
+  // Leaf / Plant icons
+  Leaf01Icon,
+  // Library icons
+  LibraryIcon,
+  // Lifebuoy icons
+  LifebuoyIcon,
+  // Link icons
+  Link01Icon,
+  // External / Link icons
+  LinkSquare01Icon,
+  // List icons
+  ListViewIcon,
+  // Loader icons
+  Loading01Icon,
+  Loading02Icon,
+  // Location icons
+  Location01Icon,
+  Location04Icon,
+  // Lock icons
+  LockIcon,
+  // Login / Logout icons
+  Login01Icon,
+  Logout01Icon,
+  // Wand / Magic icons
+  MagicWand01Icon,
+  // Mail icons
+  Mail01Icon,
+  MailOpen01Icon,
+  // Send icons
+  MailSend01Icon,
+  // Map icons
+  MapsIcon,
+  // Maximize icons
+  Maximize01Icon,
+  // Megaphone icons
+  Megaphone01Icon,
+  // Menu icons
+  Menu01Icon,
+  // Message icons
+  Message01Icon,
+  // Minus / Plus icons
+  MinusSignIcon,
+  // Moon / Sun icons
+  Moon01Icon,
+  // More icons
+  MoreHorizontalIcon,
+  MoreVerticalIcon,
+  MultiplicationSignCircleIcon,
+  MultiplicationSignIcon,
+  // Navigation icons
+  Navigation01Icon,
+  // News icons
+  NewsIcon,
+  // Bell / Notification icons
+  Notification01Icon,
+  // Octagon icons
+  OctagonIcon,
+  // Package icons
+  PackageIcon,
+  PanelLeftCloseIcon,
+  // Panel icons
+  PanelLeftIcon,
+  PanelLeftOpenIcon,
+  // Pause icons
+  PauseIcon,
+  // Pencil / Edit icons
+  PencilEdit01Icon,
+  PieChart01Icon,
+  // Chart icons
+  PieChartIcon,
+  // Play icons
+  PlayIcon,
+  PlusSignIcon,
+  // Popcorn icons
+  PopcornIcon,
+  // Quote icons
+  QuoteDownIcon,
+  // Radio icons
+  RadioIcon,
+  // Recycle icons
+  RecycleIcon,
+  // Redo / Undo icons
+  RedoIcon,
+  // Refresh / Rotate icons
+  RefreshIcon,
+  // Repeat icons
+  RepeatIcon,
+  RotateClockwiseIcon,
+  RotateLeft01Icon,
+  // Search icons
+  Search01Icon,
+  // Server icons
+  ServerStack01Icon,
+  // Settings icons
+  Settings01Icon,
+  Settings02Icon,
+  // Share icons
+  Share01Icon,
+  Share02Icon,
+  // Shield icons
+  Shield01Icon,
+  ShieldIcon,
+  // Shopping Bag icons
+  ShoppingBag01Icon,
+  // Shopping icons
+  ShoppingCart01Icon,
+  // Shuffle icons
+  ShuffleIcon,
+  // Slider icons
+  SlidersHorizontalIcon,
+  // Smartphone icons
+  SmartPhone01Icon,
+  // Smile / Emoji icons
+  SmileIcon,
+  // Sparkle icons
+  SparklesIcon,
+  SquareArrowUp01Icon,
+  // Square icons
+  SquareIcon,
+  // Star icons
+  StarIcon,
+  Sun01Icon,
+  // Palette / Color icons
+  SwatchIcon,
+  // Tablet icons
+  Tablet01Icon,
+  // Tag icons
+  Tag01Icon,
+  // Target icons
+  Target01Icon,
+  // Bold / Text icons
+  TextBoldIcon,
+  TextFontIcon,
+  TextItalicIcon,
+  TextUnderlineIcon,
+  // Check icons
+  Tick01Icon,
+  Tick02Icon,
+  Timer01Icon,
+  // History icons
+  TransactionHistoryIcon,
+  TriangleIcon,
+  // Truck / Delivery icons
+  TruckDeliveryIcon,
+  Upload01Icon,
+  UserGroupIcon,
+  // User icons
+  UserIcon,
+  UserRemove01Icon,
+  ViewOffIcon,
+  // Volume icons
+  VolumeOffIcon,
+  WeightIcon,
+  // Zap / Lightning icons
+  ZapIcon,
 } from "@hugeicons/core-free-icons"
 
 /**
@@ -467,6 +342,172 @@ type IconSvgObject = readonly (readonly [
   string,
   { readonly [key: string]: string | number },
 ])[]
+
+/**
+ * Custom social media icons (not available in hugeicons-free)
+ * These are defined as SVG path data matching the HugeiconsIcon format
+ */
+const InstagramIcon: IconSvgObject = [
+  [
+    "rect",
+    {
+      x: "2",
+      y: "2",
+      width: "20",
+      height: "20",
+      rx: "5",
+      ry: "5",
+      fill: "none",
+      stroke: "currentColor",
+      "stroke-width": "1.5",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+    },
+  ],
+  [
+    "path",
+    {
+      d: "M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z",
+      fill: "none",
+      stroke: "currentColor",
+      "stroke-width": "1.5",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+    },
+  ],
+  [
+    "line",
+    {
+      x1: "17.5",
+      x2: "17.51",
+      y1: "6.5",
+      y2: "6.5",
+      stroke: "currentColor",
+      "stroke-width": "1.5",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+    },
+  ],
+]
+
+const TwitterIcon: IconSvgObject = [
+  [
+    "path",
+    {
+      d: "M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z",
+      fill: "none",
+      stroke: "currentColor",
+      "stroke-width": "1.5",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+    },
+  ],
+]
+
+const YoutubeIcon: IconSvgObject = [
+  [
+    "path",
+    {
+      d: "M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17",
+      fill: "none",
+      stroke: "currentColor",
+      "stroke-width": "1.5",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+    },
+  ],
+  [
+    "path",
+    {
+      d: "m10 15 5-3-5-3z",
+      fill: "none",
+      stroke: "currentColor",
+      "stroke-width": "1.5",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+    },
+  ],
+]
+
+const LinkedinIcon: IconSvgObject = [
+  [
+    "path",
+    {
+      d: "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z",
+      fill: "none",
+      stroke: "currentColor",
+      "stroke-width": "1.5",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+    },
+  ],
+  [
+    "rect",
+    {
+      width: "4",
+      height: "12",
+      x: "2",
+      y: "9",
+      fill: "none",
+      stroke: "currentColor",
+      "stroke-width": "1.5",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+    },
+  ],
+  [
+    "circle",
+    {
+      cx: "4",
+      cy: "4",
+      r: "2",
+      fill: "none",
+      stroke: "currentColor",
+      "stroke-width": "1.5",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+    },
+  ],
+]
+
+const FacebookIcon: IconSvgObject = [
+  [
+    "path",
+    {
+      d: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z",
+      fill: "none",
+      stroke: "currentColor",
+      "stroke-width": "1.5",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+    },
+  ],
+]
+
+const GithubIcon: IconSvgObject = [
+  [
+    "path",
+    {
+      d: "M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4",
+      fill: "none",
+      stroke: "currentColor",
+      "stroke-width": "1.5",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+    },
+  ],
+  [
+    "path",
+    {
+      d: "M9 18c-4.51 2-5-2-7-2",
+      fill: "none",
+      stroke: "currentColor",
+      "stroke-width": "1.5",
+      "stroke-linecap": "round",
+      "stroke-linejoin": "round",
+    },
+  ],
+]
 
 /**
  * Mapping from Lucide icon names to Hugeicons SVG data.
@@ -915,9 +956,9 @@ export const iconMapping = {
   Waves: AudioWave01Icon,
 
   // X / Cancel / Close icons
-  X: Cancel02Icon,
-  XCircle: CancelCircleIcon,
-  XIcon: Cancel02Icon,
+  X: MultiplicationSignIcon,
+  XCircle: MultiplicationSignCircleIcon,
+  XIcon: MultiplicationSignIcon,
 
   // Volume icons
   VolumeOffIcon: VolumeOffIcon,
@@ -955,6 +996,17 @@ export const iconMapping = {
 
   // Send icon (not MailSend)
   Send: MailSend01Icon,
+
+  // Social Media icons (custom SVG definitions)
+  Instagram: InstagramIcon,
+  Twitter: TwitterIcon,
+  Youtube: YoutubeIcon,
+  YouTube: YoutubeIcon,
+  Linkedin: LinkedinIcon,
+  LinkedIn: LinkedinIcon,
+  Facebook: FacebookIcon,
+  Github: GithubIcon,
+  GitHub: GithubIcon,
 } as const
 
 /**

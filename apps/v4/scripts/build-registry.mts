@@ -246,8 +246,6 @@ interface ComputedTemplateType {
   slug: string
   name: string
   description: string
-  palette: string
-  typography: string
   heroBlock: string
   type: "service" | "application"
   blocks: ComputedTemplateBlockType[]
@@ -365,11 +363,6 @@ async function buildBlocksMetadata(styles: Style[]) {
       (b) => b.block.blockType === "hero" || b.block.blockType === "view"
     )
 
-    // Get palette and typography from first block (all blocks in template should have same)
-    const firstBlock = sortedBlocks[0]?.block
-    const palette = firstBlock?.palette || "slate"
-    const typography = firstBlock?.typography || "modern"
-
     // Format display name
     const displayName = templateSlug
       .split("-")
@@ -395,8 +388,6 @@ async function buildBlocksMetadata(styles: Style[]) {
       slug: templateSlug,
       name: displayName,
       description: sortedBlocks[0]?.description || `${displayName} template`,
-      palette,
-      typography,
       heroBlock: heroBlockInfo?.block.name || sortedBlocks[0]?.block.name || templateSlug,
       type: templateType,
       blocks: sortedBlocks.map((b) => b.block),
@@ -476,8 +467,6 @@ export interface ComputedTemplate {
   slug: string
   name: string
   description: string
-  palette: string
-  typography: string
   heroBlock: string
   type: "service" | "application"
   blocks: ComputedTemplateBlock[]

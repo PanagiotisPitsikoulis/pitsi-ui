@@ -12,7 +12,7 @@ import {
   getTemplateMetadata,
   getApplicationTemplateConfig,
   ALL_TEMPLATE_SLUGS,
-} from "../../template-config"
+} from "../../blocks.server"
 
 import { TemplateViewerClient } from "./page.client"
 import { ApplicationTemplateViewerClient } from "./page.application.client"

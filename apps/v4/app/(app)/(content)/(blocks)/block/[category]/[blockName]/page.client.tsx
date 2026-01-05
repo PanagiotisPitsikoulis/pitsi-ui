@@ -3,7 +3,6 @@
 import * as React from "react"
 import { Suspense, useEffect, useRef, useState } from "react"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
 import {
   ArrowLeft,
   Check,
@@ -49,15 +48,21 @@ import { type Style } from "@/registry/styles"
 
 import {
   BlockContainer,
+  BlockSelectorOverlay,
   BlockThemeWrapper,
   DEFAULT_TINT,
-  getTemplateFonts,
+  getFontsByTypography,
   ScrollContainerProvider,
   RelatedBlocksSection,
   type BlockItem,
 } from "../../../_components"
-import { getTemplateBlocks, type TemplateSlug } from "../../../blocks"
-import { getTemplatePalette } from "../../../template-config"
+import {
+  getTemplateBlocks,
+  getTemplateBlockGroups,
+  getTemplateBlockGroupsWithVariants,
+  getBlockSettings,
+  type TemplateSlug,
+} from "../../../blocks"
 import { type ColorPalette } from "@/registry/new-york-v4/lib/block-theme"
 import { type FontPreset } from "../../../_components/template-fonts"
 
@@ -74,20 +79,6 @@ const paletteColors: Record<ColorPalette, { brand: string; complementary: string
   coral: { brand: "#f97316", complementary: "#06b6d4" },
   forest: { brand: "#166534", complementary: "#ea580c" },
   neon: { brand: "#00ff00", complementary: "#ff00ff" },
-}
-
-// Font preset to template mapping (reverse lookup)
-const templateFontPresets: Record<string, FontPreset> = {
-  "service-plants": "elegant",
-  "service-travel": "modern",
-  "service-boat": "classic",
-  "service-fitness": "futuristic",
-  "app-gym-tracker": "modern",
-  "app-quiz": "playful",
-}
-
-function getTemplateFontPreset(slug: string): FontPreset {
-  return templateFontPresets[slug] || "modern"
 }
 
 function ThemeDisplay({ palette }: { palette: ColorPalette }) {
@@ -128,9 +119,7 @@ function ThemeDisplay({ palette }: { palette: ColorPalette }) {
   )
 }
 
-function TypographyDisplay({ slug }: { slug: string }) {
-  const preset = getTemplateFontPreset(slug)
-
+function TypographyDisplay({ preset }: { preset: string }) {
   return (
     <Tooltip>
       <TooltipTrigger asChild>
@@ -182,12 +171,12 @@ export function BlockViewerClient({
   highlightedFiles,
   blocks,
 }: BlockViewerClientProps) {
-  const router = useRouter()
   const [viewMode, setViewMode] = useState<ViewMode>("preview")
   const [activeFile, setActiveFile] = useState<string | null>(
     highlightedFiles?.[0]?.target ?? null
   )
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [overlayOpen, setOverlayOpen] = useState(false)
   const { theme, setTheme, resolvedTheme } = useTheme()
   const { copyToClipboard, isCopied } = useCopyToClipboard()
   const { copyToClipboard: copyCommandToClipboard, isCopied: isCommandCopied } =
@@ -195,6 +184,32 @@ export function BlockViewerClient({
   const mainRef = useRef<HTMLDivElement>(null)
   const hasScrolled = useRef(false)
   const [iframeKey, setIframeKey] = useState(0)
+
+  // Block selection state for template mode
+  const [selectedBlocks, setSelectedBlocks] = useState<Record<string, string>>({})
+  const blockGroups = templateSlug ? getTemplateBlockGroups(templateSlug) : {}
+  const blockGroupsWithVariants = templateSlug ? getTemplateBlockGroupsWithVariants(templateSlug) : {}
+
+  // Initialize selected blocks with defaults
+  React.useEffect(() => {
+    if (templateSlug && Object.keys(selectedBlocks).length === 0) {
+      const defaults: Record<string, string> = {}
+      for (const [blockType, options] of Object.entries(blockGroups)) {
+        defaults[blockType] = options[0]
+      }
+      setSelectedBlocks(defaults)
+    }
+  }, [templateSlug, blockGroups, selectedBlocks])
+
+  const handleBlockSelect = React.useCallback(
+    (blockType: string, blockName: string) => {
+      setSelectedBlocks((prev) => ({
+        ...prev,
+        [blockType]: blockName,
+      }))
+    },
+    []
+  )
 
   // Dev-only features
   const isDev = process.env.NODE_ENV === "development"
@@ -231,13 +246,18 @@ export function BlockViewerClient({
   // Build add command
   const addCommand = `npx pitsi@latest add ${blockName}`
 
-  // Get template blocks if in template mode
+  // Get template blocks if in template mode (with selected variants)
   const templateBlocks = templateSlug
-    ? getTemplateBlocks(templateSlug as TemplateSlug)
+    ? getTemplateBlocks(templateSlug as TemplateSlug, selectedBlocks)
     : []
 
-  // Get fonts for template
-  const fonts = templateSlug ? getTemplateFonts(templateSlug) : undefined
+  // Get current block's settings for palette and typography
+  const blockSettings = getBlockSettings(blockName)
+  const blockPalette = (blockSettings.palette || "slate") as ColorPalette
+  const blockTypographyPreset = (blockSettings.typography || "modern") as FontPreset
+
+  // Get fonts from current block's typography
+  const fonts = getFontsByTypography(blockSettings.typography)
 
   // Scroll to block when entering template mode
   useEffect(() => {
@@ -292,14 +312,14 @@ export function BlockViewerClient({
             {/* Left side: Back button and View tabs */}
             <Tooltip>
               <TooltipTrigger asChild>
-                <button
-                  onClick={() => router.back()}
+                <Link
+                  href="/blocks"
                   className="text-muted-foreground hover:bg-background/50 hover:text-foreground flex size-9 items-center justify-center rounded-full transition-colors"
                 >
                   <ArrowLeft className="size-4" />
-                </button>
+                </Link>
               </TooltipTrigger>
-              <TooltipContent side="bottom" className="text-xs">Back</TooltipContent>
+              <TooltipContent side="bottom" className="text-xs">Back to blocks</TooltipContent>
             </Tooltip>
 
             {/* Separator */}
@@ -397,8 +417,8 @@ export function BlockViewerClient({
             {/* Theme and Typography displays */}
             {templateSlug && (
               <div className="hidden items-center gap-1 lg:flex">
-                <ThemeDisplay palette={getTemplatePalette(templateSlug)} />
-                <TypographyDisplay slug={templateSlug} />
+                <ThemeDisplay palette={blockPalette} />
+                <TypographyDisplay preset={blockTypographyPreset} />
               </div>
             )}
 
@@ -528,6 +548,54 @@ export function BlockViewerClient({
               )}
             </div>
           </div>
+
+          {/* Template Mode Secondary Toolbar */}
+          {viewMode === "template" && templateSlug && (
+            <div className="container mt-2 flex items-center gap-2 rounded-full bg-muted/50 p-1.5">
+              {/* View full template link */}
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    href={`/template/${templateSlug}`}
+                    className="text-muted-foreground hover:bg-background/50 hover:text-foreground flex h-8 items-center gap-2 rounded-full px-3 text-sm transition-colors"
+                  >
+                    <Maximize className="size-3.5" />
+                    <span>View Template</span>
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent side="bottom" className="text-xs">
+                  Open full template page
+                </TooltipContent>
+              </Tooltip>
+
+              {/* Customize blocks button */}
+              {Object.keys(blockGroupsWithVariants).length > 0 && (
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <button
+                      onClick={() => setOverlayOpen(true)}
+                      className="text-muted-foreground hover:bg-background/50 hover:text-foreground flex h-8 items-center gap-2 rounded-full px-3 text-sm transition-colors"
+                    >
+                      <Layers className="size-3.5" />
+                      <span>Customize Blocks</span>
+                    </button>
+                  </TooltipTrigger>
+                  <TooltipContent side="bottom" className="text-xs">
+                    Switch block variants
+                  </TooltipContent>
+                </Tooltip>
+              )}
+
+              {/* Spacer */}
+              <div className="flex-1" />
+
+              {/* Theme and Typography displays */}
+              <div className="hidden items-center gap-1 lg:flex">
+                <ThemeDisplay palette={blockPalette} />
+                <TypographyDisplay preset={blockTypographyPreset} />
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Preview Container */}
@@ -555,11 +623,11 @@ export function BlockViewerClient({
 
               {/* Template Mode */}
               {viewMode === "template" && templateSlug && (
-                <BlockThemeWrapper palette={getTemplatePalette(templateSlug)} tint={DEFAULT_TINT} fonts={fonts}>
+                <BlockThemeWrapper palette={blockPalette} tint={DEFAULT_TINT} fonts={fonts}>
                   <ScrollContainerProvider value={mainRef}>
                     {templateBlocks.map(
                       (
-                        { name, type, Component, tint, forceDark, forceLight },
+                        { name, type, Component, tint, forceDark, forceLight, palette: itemPalette, typography: itemTypography },
                         index
                       ) => {
                         const skipAlternatingBg =
@@ -571,15 +639,18 @@ export function BlockViewerClient({
                           type === "hero" || type === "header" || type === "footer"
                         const blockTint = tint || DEFAULT_TINT
                         const isCurrentBlock = name === blockName
+                        // Get this block's individual palette and fonts
+                        const itemBlockPalette = (itemPalette || "slate") as ColorPalette
+                        const itemFonts = getFontsByTypography(itemTypography)
 
                         return (
                           <BlockThemeWrapper
                             key={name}
-                            palette={getTemplatePalette(templateSlug)}
+                            palette={itemBlockPalette}
                             tint={blockTint}
                             forceDark={forceDark}
                             forceLight={forceLight}
-                            fonts={fonts}
+                            fonts={itemFonts}
                           >
                             <div
                               id={name}
@@ -730,6 +801,17 @@ export function BlockViewerClient({
           />
         </div>
       </div>
+
+      {/* Block Selector Overlay for template mode */}
+      {templateSlug && (
+        <BlockSelectorOverlay
+          open={overlayOpen}
+          onClose={() => setOverlayOpen(false)}
+          blockGroups={blockGroupsWithVariants}
+          selectedBlocks={selectedBlocks}
+          onBlockSelect={handleBlockSelect}
+        />
+      )}
     </TooltipProvider>
   )
 }

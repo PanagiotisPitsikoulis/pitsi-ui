@@ -11,7 +11,7 @@ import { getActiveStyle } from "@/registry/styles"
 import {
   getTemplateForBlock,
   getBlockIndex,
-} from "@/app/(app)/(content)/(blocks)/template-config"
+} from "@/app/(app)/(content)/(blocks)/blocks.server"
 import blocksData from "@/registry/__blocks__.json"
 import { BlockViewerClient } from "../page.client"
 

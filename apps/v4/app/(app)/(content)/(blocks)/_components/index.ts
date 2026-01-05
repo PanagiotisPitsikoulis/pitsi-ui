@@ -24,11 +24,8 @@ export {
   type FontPreset,
   // Constants
   fontPresets,
-  // Legacy API
-  templateFonts,
-  getTemplateFonts,
-  getTemplateFontStyles,
-  getAllFontFamilies,
+  // API
+  getFontsByTypography,
 } from "./template-fonts"
 export {
   ScrollContainerProvider,

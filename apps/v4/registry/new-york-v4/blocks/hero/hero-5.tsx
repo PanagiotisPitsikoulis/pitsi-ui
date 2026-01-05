@@ -6,118 +6,122 @@ import Link from "next/link"
 import { type HeroBlockProps } from "@/lib/blocks/hero.types"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
-import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 
 import { HeroButton } from "../../ui/hero-button"
 
-// Hero 5 defaults - Fitness/Elite Training theme (no header - applied at template level)
+// Hero 5 - Portrait Stack (Vertical Image on Left, Text Stacked on Right)
 const hero5Defaults = {
   badge: "Elite Training",
   title: "Push Beyond\nYour Limits",
   description:
-    "World-class coaching. Cutting-edge facilities.\nTransform your body and mind.",
+    "World-class coaching and cutting-edge facilities to transform your body and mind.",
   primaryCta: { label: "Join Now", href: "#" },
   secondaryCta: {
     label: "Watch Video",
     href: "#",
     variant: "outline" as const,
   },
-  image: {
-    src: "/elements/subject/gym/3.webp",
+  portraitImage: {
+    src: "/elements/portrait/gym/2.webp",
     alt: "Intense fitness training session",
   },
 }
 
 export function Hero5({ content = {}, classNames = {} }: HeroBlockProps) {
   const {
+    badge = hero5Defaults.badge,
     title = hero5Defaults.title,
     description = hero5Defaults.description,
     primaryCta = hero5Defaults.primaryCta,
     secondaryCta = hero5Defaults.secondaryCta,
-    image = hero5Defaults.image,
+    portraitImage = hero5Defaults.portraitImage,
   } = content as typeof hero5Defaults
 
   return (
     <section
       className={cn(
-        "relative min-h-[calc(100svh-5rem)] overflow-hidden lg:max-h-[calc(100svh-5rem)]",
+        "relative flex min-h-[calc(100svh-5rem)] flex-col overflow-hidden",
         classNames.root
       )}
     >
-      <Spacer size={"lg"} />
-
-      <div className="container px-4">
-        <div className="bg-muted flex items-end justify-center gap-10 rounded-3xl p-10">
-          {/* Main headline */}
-          <h1
-            className={cn(
-              "display text-4xl leading-[1.1] tracking-tight sm:text-5xl md:text-7xl",
-              classNames.header?.title
-            )}
-          >
-            {title.split("\n").map((line, i) => (
-              <span key={i}>
-                {line}
-                {i < title.split("\n").length - 1 && <br />}
-              </span>
-            ))}
-          </h1>
-
-          {/* Subheading */}
-          {description && (
-            <p
-              className={cn(
-                "mt-8 text-lg md:text-2xl",
-                classNames.header?.description
-              )}
-            >
-              {description.split("\n").map((line, i) => (
-                <span key={i}>
-                  {line}
-                  {i < description.split("\n").length - 1 && <br />}
-                </span>
-              ))}
-            </p>
-          )}
-
-          {/* Buttons */}
-          <div
-            className={cn(
-              "relative z-10 mt-10 flex flex-row gap-3",
-              classNames.cta?.root
-            )}
-          >
-            {primaryCta && (
-              <Button size="lg" asChild className={classNames.cta?.primary}>
-                <Link href={primaryCta.href}>{primaryCta.label}</Link>
-              </Button>
-            )}
-            {secondaryCta && (
-              <Button
-                variant="outline"
-                size="lg"
-                asChild
-                className={classNames.cta?.secondary}
-              >
-                <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
-              </Button>
-            )}
+      <div className="container flex-1 px-4 py-6">
+        <div className="grid h-full min-h-[calc(100svh-8rem)] gap-4 lg:grid-cols-2">
+          {/* Left - Full Height Portrait Image */}
+          <div className="bg-muted relative min-h-[25rem] overflow-hidden rounded-3xl lg:min-h-full">
+            <Image
+              src={portraitImage.src}
+              alt={portraitImage.alt}
+              fill
+              className="object-cover object-top"
+              priority
+            />
           </div>
-        </div>
-      </div>
 
-      <Spacer size={"lg"} />
+          {/* Right - Stacked Text Content */}
+          <div className="flex flex-col gap-4">
+            {/* Badge + Title Card */}
+            <div className="bg-muted flex flex-1 flex-col justify-center rounded-3xl p-8 lg:p-12">
+              {badge && (
+                <p
+                  className={cn(
+                    "text-brand mb-4 text-sm font-semibold tracking-widest uppercase",
+                    classNames.header?.badge
+                  )}
+                >
+                  {badge}
+                </p>
+              )}
+              <h1
+                className={cn(
+                  "display text-4xl leading-[1.1] tracking-tight sm:text-5xl md:text-6xl",
+                  classNames.header?.title
+                )}
+              >
+                {title.split("\n").map((line, i) => (
+                  <span key={i}>
+                    {line}
+                    {i < title.split("\n").length - 1 && <br />}
+                  </span>
+                ))}
+              </h1>
+            </div>
 
-      {/* Hero Image - Below text */}
-      <div className="container px-4">
-        <div className="bg-muted relative aspect-[16/9] w-full overflow-visible rounded-3xl">
-          <Image
-            src={image.src}
-            alt={image.alt}
-            fill
-            className="object-cover object-top lg:-mt-32"
-            priority
-          />
+            {/* Description Card */}
+            <div className="bg-muted flex flex-col justify-center rounded-3xl p-8">
+              {description && (
+                <p
+                  className={cn(
+                    "text-muted-foreground text-lg md:text-xl",
+                    classNames.header?.description
+                  )}
+                >
+                  {description}
+                </p>
+              )}
+            </div>
+
+            {/* Buttons Card */}
+            <div className="bg-muted flex items-center gap-3 rounded-3xl p-6">
+              {primaryCta && (
+                <Link
+                  href={primaryCta.href}
+                  className={classNames.cta?.primary}
+                >
+                  <HeroButton>{primaryCta.label}</HeroButton>
+                </Link>
+              )}
+              {secondaryCta && (
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className={cn("text-foreground", classNames.cta?.secondary)}
+                >
+                  <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
+                </Button>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </section>

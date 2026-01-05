@@ -1,258 +1,236 @@
 "use client"
 
-import { useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { motion, useScroll, useTransform } from "motion/react"
 
 import { type HeroBlockProps } from "@/lib/blocks/hero.types"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
-import { HeroButton } from "@/registry/new-york-v4/ui/hero-button"
-import { Spacer } from "@/registry/new-york-v4/ui/spacer"
-import { KnockoutText } from "@/app/(app)/(content)/(blocks)/_block_components"
-import { useScrollContainer } from "@/app/(app)/(content)/(blocks)/_components"
 
-// Hero 2 defaults - Travel theme
+import { HeroButton } from "../../ui/hero-button"
+
+// Hero 2 - Photo Stack Gallery (Travel theme)
 const hero2Defaults = {
-  badge: "Travel Specialists",
-  title: "Discover the World's\nHidden Treasures",
+  badge: "Adventure Awaits",
+  title: "Explore The\nWorld With Us",
   description:
-    "Curated travel experiences. Expert guides.\nUnforgettable memories await.",
-  primaryCta: { label: "Plan Your Trip", href: "#" },
+    "From tropical beaches to mountain peaks. Your next adventure starts here.",
+  primaryCta: { label: "Start Planning", href: "#" },
   secondaryCta: {
     label: "View Destinations",
     href: "#",
     variant: "outline" as const,
   },
-  image: {
-    src: "/placeholders/blocks/service-travel/subject/1.webp",
-    alt: "Traveler exploring scenic destination",
-    width: 900,
-    height: 1080,
-    priority: true,
-  },
-  backgroundImage: {
-    src: "/placeholders/blocks/service-travel/assets/decoration-1.svg",
-    alt: "",
-  },
-  decorationImages: [
+  photos: [
     {
-      src: "/placeholders/blocks/service-travel/assets/item-1.webp",
-      alt: "Compass decoration",
-      width: 400,
-      height: 400,
+      src: "/elements/landscape/sea/1.webp",
+      alt: "Crystal clear ocean waters",
+      rotation: -6,
     },
+    {
+      src: "/elements/landscape/plane/2.webp",
+      alt: "Airplane flying over clouds",
+      rotation: 4,
+    },
+    {
+      src: "/elements/landscape/sea/3.webp",
+      alt: "Sunset over the sea",
+      rotation: -3,
+    },
+    {
+      src: "/elements/landscape/plane/5.webp",
+      alt: "Scenic aerial view",
+      rotation: 5,
+    },
+    {
+      src: "/elements/landscape/sea/5.webp",
+      alt: "Tropical beach paradise",
+      rotation: -4,
+    },
+  ],
+  stats: [
+    { value: "120+", label: "Destinations" },
+    { value: "50k+", label: "Happy Travelers" },
+    { value: "15+", label: "Years Experience" },
   ],
 }
 
 export function Hero2({ content = {}, classNames = {} }: HeroBlockProps) {
-  const sectionRef = useRef<HTMLElement>(null)
-  const scrollContainer = useScrollContainer()
-
-  // Merge content with defaults
   const {
     badge = hero2Defaults.badge,
     title = hero2Defaults.title,
     description = hero2Defaults.description,
     primaryCta = hero2Defaults.primaryCta,
     secondaryCta = hero2Defaults.secondaryCta,
-    image = hero2Defaults.image,
-    backgroundImage = hero2Defaults.backgroundImage,
-    decorationImages = hero2Defaults.decorationImages,
-  } = content
-
-  // Track scroll progress relative to the section
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    container: scrollContainer || undefined,
-    offset: ["start end", "end start"],
-  })
-
-  // Hero image slides right as user scrolls (0 to 100px)
-  const heroImageX = useTransform(scrollYProgress, [0, 1], [0, 100])
-
-  // Compass decoration rotates as user scrolls (0deg to 25deg)
-  const compassRotation = useTransform(scrollYProgress, [0, 1], [0, 25])
+    photos = hero2Defaults.photos,
+    stats = hero2Defaults.stats,
+  } = content as typeof hero2Defaults
 
   return (
     <section
-      ref={sectionRef}
       className={cn(
-        "relative -mt-20 flex min-h-[calc(70svh+5rem)] flex-col items-center overflow-x-clip px-6 pt-48 pb-16 lg:pt-56 lg:pb-48",
+        "relative flex min-h-[calc(100svh-5rem)] flex-col overflow-hidden",
         classNames.root
       )}
     >
-      {/* Background decoration - extends up behind header */}
-      {backgroundImage && (
-        <div
-          className={cn(
-            "pointer-events-none absolute top-0 right-0 bottom-0 left-0 z-0 opacity-40",
-            classNames.background
-          )}
-          style={{
-            backgroundImage: `url('${backgroundImage.src}')`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
-          aria-hidden="true"
-        />
-      )}
-
-      {/* Hero image - desktop: absolute right, slides right on scroll */}
-      {image && (
-        <motion.div
-          className={cn(
-            "pointer-events-none absolute -right-32 -bottom-32 z-0 hidden lg:block",
-            classNames.image?.wrapper
-          )}
-          style={{ x: heroImageX }}
-        >
-          <Image
-            draggable={false}
-            src={image.src}
-            alt={image.alt}
-            width={image.width ?? 900}
-            height={image.height ?? 1080}
-            priority={image.priority}
-            className={cn(
-              "pointer-events-none object-contain select-none",
-              classNames.image?.img
+      <div className="container flex flex-1 flex-col px-4 py-6">
+        <div className="grid h-full min-h-[calc(100svh-8rem)] gap-6 lg:grid-cols-2">
+          {/* Left - Text Content */}
+          <div className="flex flex-col justify-center py-8 lg:py-12">
+            {badge && (
+              <p
+                className={cn(
+                  "text-brand mb-4 text-sm font-semibold tracking-widest uppercase",
+                  classNames.header?.badge
+                )}
+              >
+                {badge}
+              </p>
             )}
-          />
-        </motion.div>
-      )}
-
-      {/* Top left compass decoration - rotates on scroll */}
-      {decorationImages?.[0] && (
-        <motion.div
-          className={cn(
-            "pointer-events-none absolute z-20 hidden lg:block",
-            classNames.decoration
-          )}
-          style={{
-            top: "8rem",
-            left: "-6rem",
-            rotate: compassRotation,
-          }}
-        >
-          <Image
-            draggable={false}
-            src={decorationImages[0].src}
-            alt={decorationImages[0].alt}
-            width={decorationImages[0].width ?? 400}
-            height={decorationImages[0].height ?? 400}
-            className="pointer-events-none object-contain select-none"
-          />
-        </motion.div>
-      )}
-
-      {/* Content */}
-      <div
-        className={cn(
-          "relative flex flex-col items-center",
-          classNames.container
-        )}
-      >
-        {/* Tagline */}
-        {badge && (
-          <p
-            className={cn(
-              "text-brand relative z-10 mb-6 text-sm font-medium tracking-[0.3em] uppercase",
-              classNames.header?.badge
-            )}
-          >
-            {badge}
-          </p>
-        )}
-
-        {/* Typography block with knockout effect */}
-        <KnockoutText padX={40} padY={50} intensity={1}>
-          {/* Main headline */}
-          <h1
-            className={cn(
-              "display text-center text-4xl leading-[0.9] tracking-tight text-white sm:text-5xl md:text-7xl",
-              classNames.header?.title
-            )}
-          >
-            {title.split("\n").map((line, i) => (
-              <span key={i}>
-                {line}
-                {i < title.split("\n").length - 1 && <br />}
-              </span>
-            ))}
-          </h1>
-
-          {/* Subheading */}
-          {description && (
-            <p
+            <h1
               className={cn(
-                "mt-8 text-center text-lg text-white/80 md:text-2xl",
-                classNames.header?.description
+                "display text-4xl leading-[1.1] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl",
+                classNames.header?.title
               )}
             >
-              {description.split("\n").map((line, i) => (
+              {title.split("\n").map((line, i) => (
                 <span key={i}>
                   {line}
-                  {i < description.split("\n").length - 1 && <br />}
+                  {i < title.split("\n").length - 1 && <br />}
                 </span>
               ))}
-            </p>
-          )}
-        </KnockoutText>
+            </h1>
 
-        {/* Buttons - above blend layer */}
-        <div
-          className={cn(
-            "relative z-10 mt-10 flex flex-row gap-3",
-            classNames.cta?.root
-          )}
-        >
-          {primaryCta && (
-            <Link href={primaryCta.href} className={classNames.cta?.primary}>
-              <HeroButton>{primaryCta.label}</HeroButton>
-            </Link>
-          )}
-          {secondaryCta && (
-            <Button
-              variant={secondaryCta.variant ?? "outline"}
-              size="lg"
-              className={cn(
-                "bg-background text-foreground rounded-full px-8",
-                classNames.cta?.secondary
+            {description && (
+              <p
+                className={cn(
+                  "text-muted-foreground mt-6 max-w-md text-lg md:text-xl",
+                  classNames.header?.description
+                )}
+              >
+                {description}
+              </p>
+            )}
+
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              {primaryCta && (
+                <Link
+                  href={primaryCta.href}
+                  className={classNames.cta?.primary}
+                >
+                  <HeroButton>{primaryCta.label}</HeroButton>
+                </Link>
               )}
-              asChild
-            >
-              <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
-            </Button>
-          )}
+              {secondaryCta && (
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className={cn("text-foreground", classNames.cta?.secondary)}
+                >
+                  <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
+                </Button>
+              )}
+            </div>
+
+            {/* Stats Row */}
+            <div className="mt-12 flex gap-8 border-t pt-8">
+              {stats.map((stat, i) => (
+                <div key={i}>
+                  <div className="text-brand text-2xl font-bold md:text-3xl">
+                    {stat.value}
+                  </div>
+                  <div className="text-muted-foreground text-sm">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right - Photo Stack Gallery */}
+          <div className="relative flex items-center justify-center py-8 lg:py-0">
+            {/* Photo stack container */}
+            <div className="relative h-[400px] w-full max-w-lg lg:h-[500px]">
+              {/* Large main photo - center */}
+              <div
+                className="bg-background absolute top-1/2 left-1/2 z-30 h-[280px] w-[380px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-2xl p-2 shadow-2xl lg:h-[320px] lg:w-[420px]"
+                style={{ transform: "translate(-50%, -50%) rotate(-2deg)" }}
+              >
+                <div className="relative h-full w-full overflow-hidden rounded-xl">
+                  <Image
+                    src={photos[0].src}
+                    alt={photos[0].alt}
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+              </div>
+
+              {/* Top left photo */}
+              <div
+                className="bg-background absolute top-0 left-0 z-20 h-[160px] w-[200px] overflow-hidden rounded-xl p-1.5 shadow-xl lg:h-[180px] lg:w-[220px]"
+                style={{ transform: `rotate(${photos[1].rotation}deg)` }}
+              >
+                <div className="relative h-full w-full overflow-hidden rounded-lg">
+                  <Image
+                    src={photos[1].src}
+                    alt={photos[1].alt}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Top right photo */}
+              <div
+                className="bg-background absolute top-4 right-0 z-10 h-[140px] w-[180px] overflow-hidden rounded-xl p-1.5 shadow-xl lg:h-[160px] lg:w-[200px]"
+                style={{ transform: `rotate(${photos[2].rotation}deg)` }}
+              >
+                <div className="relative h-full w-full overflow-hidden rounded-lg">
+                  <Image
+                    src={photos[2].src}
+                    alt={photos[2].alt}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Bottom left photo */}
+              <div
+                className="bg-background absolute bottom-8 left-4 z-20 h-[130px] w-[170px] overflow-hidden rounded-xl p-1.5 shadow-xl lg:h-[150px] lg:w-[190px]"
+                style={{ transform: `rotate(${photos[3].rotation}deg)` }}
+              >
+                <div className="relative h-full w-full overflow-hidden rounded-lg">
+                  <Image
+                    src={photos[3].src}
+                    alt={photos[3].alt}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Bottom right photo */}
+              <div
+                className="bg-background absolute right-2 bottom-0 z-10 h-[150px] w-[190px] overflow-hidden rounded-xl p-1.5 shadow-xl lg:h-[170px] lg:w-[210px]"
+                style={{ transform: `rotate(${photos[4].rotation}deg)` }}
+              >
+                <div className="relative h-full w-full overflow-hidden rounded-lg">
+                  <Image
+                    src={photos[4].src}
+                    alt={photos[4].alt}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      {/* Hero image - mobile only - extends beyond section */}
-      {image && (
-        <div
-          className={cn(
-            "relative z-10 mt-8 h-[500px] w-full overflow-visible lg:hidden",
-            classNames.image?.root
-          )}
-        >
-          <Image
-            draggable={false}
-            src={image.src}
-            alt={image.alt}
-            width={image.width ?? 900}
-            height={image.height ?? 1080}
-            className="pointer-events-none absolute top-0 left-1/2 h-[700px] w-auto -translate-x-1/2 object-contain select-none"
-          />
-        </div>
-      )}
-
-      <Spacer className="hidden lg:block" size={"3xl"} />
     </section>
   )
 }
-
-// Re-export for backwards compatibility
-export { Hero2 as HeroServiceTravel }

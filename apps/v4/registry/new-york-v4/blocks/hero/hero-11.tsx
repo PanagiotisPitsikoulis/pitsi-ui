@@ -9,106 +9,148 @@ import { Button } from "@/registry/new-york-v4/ui/button"
 
 import { HeroButton } from "../../ui/hero-button"
 
-// Hero 11 defaults - Plants/Garden theme (2-column bento)
+// Hero 11 - Floating Plants Gallery (Plants with transparent backgrounds)
 const hero11Defaults = {
   badge: "Premium Plants",
-  title: "Grow Your\nGreen Oasis",
+  title: "Bring Nature\nIndoors",
   description:
-    "Hand-picked houseplants delivered to your door. Expert care tips included.",
-  primaryCta: { label: "Browse Collection", href: "#" },
+    "Hand-picked houseplants delivered to your door. Expert care tips included with every order.",
+  primaryCta: { label: "Shop Plants", href: "#" },
   secondaryCta: {
-    label: "Learn More",
+    label: "Care Guide",
     href: "#",
     variant: "outline" as const,
   },
-  image: {
-    src: "/elements/subject/plants/2.webp",
-    alt: "Lush indoor plants",
+  // Large hero plant subject (transparent background)
+  heroPlant: {
+    src: "/elements/subject/plants/1.webp",
+    alt: "Beautiful indoor plant",
   },
-  nav: {
-    logo: "BLOOM",
-    links: [
-      { label: "Plants", href: "#" },
-      { label: "Care", href: "#" },
-      { label: "About", href: "#" },
-      { label: "Contact", href: "#" },
-    ],
-  },
+  // Floating plant accents
+  floatingPlants: [
+    {
+      src: "/elements/subject/plants/2.webp",
+      alt: "Potted plant",
+      position: { top: "8%", left: "5%" },
+      size: 140,
+      rotation: -8,
+    },
+    {
+      src: "/elements/subject/plants/3.webp",
+      alt: "Succulent",
+      position: { top: "5%", right: "8%" },
+      size: 100,
+      rotation: 12,
+    },
+    {
+      src: "/elements/subject/plants/4.webp",
+      alt: "Fern",
+      position: { bottom: "25%", left: "3%" },
+      size: 120,
+      rotation: 5,
+    },
+    {
+      src: "/elements/subject/plants/item-1.webp",
+      alt: "Plant pot",
+      position: { bottom: "10%", right: "5%" },
+      size: 110,
+      rotation: -10,
+    },
+  ],
+  features: [
+    { label: "Free Shipping", value: "On orders $50+" },
+    { label: "Care Included", value: "Expert tips" },
+    { label: "30-Day Guarantee", value: "Happy plants" },
+  ],
 }
 
 export function Hero11({ content = {}, classNames = {} }: HeroBlockProps) {
   const {
+    badge = hero11Defaults.badge,
     title = hero11Defaults.title,
     description = hero11Defaults.description,
     primaryCta = hero11Defaults.primaryCta,
     secondaryCta = hero11Defaults.secondaryCta,
-    image = hero11Defaults.image,
-    nav = hero11Defaults.nav,
+    heroPlant = hero11Defaults.heroPlant,
+    floatingPlants = hero11Defaults.floatingPlants,
+    features = hero11Defaults.features,
   } = content as typeof hero11Defaults
 
   return (
     <section
       className={cn(
-        "relative flex min-h-[100svh] flex-col overflow-hidden",
+        "relative flex min-h-[calc(100svh-5rem)] flex-col overflow-hidden",
         classNames.root
       )}
     >
-      {/* Pill Navbar */}
-      <div className="container px-4 pt-6">
-        <nav className="bg-muted flex items-center justify-between rounded-full px-4 py-2">
-          <Link href="/" className="pl-2 text-lg font-bold tracking-tight">
-            {nav.logo}
-          </Link>
-          <div className="flex items-center gap-1">
-            {nav.links.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-muted-foreground hover:text-foreground px-4 py-2 text-sm font-medium transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
+      {/* Soft Green Gradient Background */}
+      <div className="from-brand/5 pointer-events-none absolute inset-0 bg-gradient-to-br via-transparent to-transparent" />
+
+      {/* Floating Plant Accents */}
+      <div className="pointer-events-none absolute inset-0 hidden lg:block">
+        {floatingPlants.map((plant, i) => (
+          <div
+            key={i}
+            className="absolute transition-transform duration-500"
+            style={{
+              ...plant.position,
+              width: plant.size,
+              height: plant.size,
+              transform: `rotate(${plant.rotation}deg)`,
+            }}
+          >
+            <Image
+              src={plant.src}
+              alt={plant.alt}
+              fill
+              className="object-contain drop-shadow-xl"
+            />
           </div>
-          <HeroButton>Shop Now</HeroButton>
-        </nav>
+        ))}
       </div>
 
-      {/* Bento Grid Layout */}
-      <div className="container flex-1 px-4 py-6">
-        <div className="grid h-full gap-4 lg:grid-cols-2">
-          {/* Left Column - Text + Buttons Cards */}
-          <div className="flex flex-col gap-4">
-            {/* Text Card */}
-            <div className="bg-muted flex flex-1 flex-col justify-center rounded-3xl p-10">
-              <h1
-                className={cn(
-                  "display text-4xl leading-[1.1] tracking-tight sm:text-5xl md:text-6xl",
-                  classNames.header?.title
-                )}
-              >
-                {title.split("\n").map((line, i) => (
-                  <span key={i}>
-                    {line}
-                    {i < title.split("\n").length - 1 && <br />}
-                  </span>
-                ))}
-              </h1>
-
-              {description && (
-                <p
+      <div className="relative z-10 container flex-1 px-4 py-6">
+        <div className="grid h-full min-h-[calc(100svh-8rem)] items-center gap-8 lg:grid-cols-2">
+          {/* Left - Text Content */}
+          <div className="flex flex-col justify-center py-8 lg:py-12">
+            {badge && (
+              <div className="mb-6 inline-block">
+                <span
                   className={cn(
-                    "text-muted-foreground mt-6 text-lg md:text-xl",
-                    classNames.header?.description
+                    "bg-brand/10 text-brand rounded-full px-4 py-1.5 text-sm font-semibold tracking-widest uppercase",
+                    classNames.header?.badge
                   )}
                 >
-                  {description}
-                </p>
+                  {badge}
+                </span>
+              </div>
+            )}
+            <h1
+              className={cn(
+                "display text-4xl leading-[1.1] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl",
+                classNames.header?.title
               )}
-            </div>
+            >
+              {title.split("\n").map((line, i) => (
+                <span key={i}>
+                  {line}
+                  {i < title.split("\n").length - 1 && <br />}
+                </span>
+              ))}
+            </h1>
 
-            {/* Buttons Card */}
-            <div className="bg-muted flex items-center gap-3 rounded-3xl p-6">
+            {description && (
+              <p
+                className={cn(
+                  "text-muted-foreground mt-6 max-w-md text-lg md:text-xl",
+                  classNames.header?.description
+                )}
+              >
+                {description}
+              </p>
+            )}
+
+            <div className="mt-8 flex flex-wrap items-center gap-3">
               {primaryCta && (
                 <Link
                   href={primaryCta.href}
@@ -128,19 +170,53 @@ export function Hero11({ content = {}, classNames = {} }: HeroBlockProps) {
                 </Button>
               )}
             </div>
+
+            {/* Feature Grid */}
+            <div className="mt-12 grid grid-cols-3 gap-4">
+              {features.map((feature, i) => (
+                <div key={i} className="border-brand/20 border-l-2 pl-4">
+                  <div className="text-foreground text-sm font-semibold">
+                    {feature.label}
+                  </div>
+                  <div className="text-muted-foreground text-xs">
+                    {feature.value}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Right Card - Image */}
-          <div className="bg-muted relative min-h-[25rem] overflow-hidden rounded-3xl lg:min-h-[35rem]">
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              className="mt-10 object-cover object-top"
-              priority
-            />
+          {/* Right - Large Hero Plant */}
+          <div className="relative flex min-h-[30rem] items-center justify-center lg:min-h-[35rem]">
+            <div className="relative h-full w-full max-w-md lg:max-w-lg">
+              <Image
+                src={heroPlant.src}
+                alt={heroPlant.alt}
+                fill
+                className="object-contain drop-shadow-2xl"
+                priority
+              />
+            </div>
           </div>
         </div>
+      </div>
+
+      {/* Mobile: Show floating plants at bottom */}
+      <div className="relative z-10 flex justify-center gap-6 overflow-x-auto px-4 pb-8 lg:hidden">
+        {floatingPlants.slice(0, 3).map((plant, i) => (
+          <div
+            key={i}
+            className="relative h-20 w-20 flex-shrink-0"
+            style={{ transform: `rotate(${plant.rotation / 2}deg)` }}
+          >
+            <Image
+              src={plant.src}
+              alt={plant.alt}
+              fill
+              className="object-contain drop-shadow-lg"
+            />
+          </div>
+        ))}
       </div>
     </section>
   )

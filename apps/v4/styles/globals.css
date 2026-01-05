@@ -264,7 +264,8 @@ body {
   box-shadow: none !important;
 }
 
-.display {
+.display,
+.font-display {
   font-family: var(--font-display), sans-serif;
   font-weight: var(--font-display-weight, 700);
 }

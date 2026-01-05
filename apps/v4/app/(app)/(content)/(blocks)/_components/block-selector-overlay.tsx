@@ -104,21 +104,23 @@ export function BlockSelectorOverlay({
                       key={type}
                       onClick={() => setActiveType(type)}
                       className={cn(
-                        "flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-sm transition-colors",
+                        "group flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-sm transition-colors",
                         isActive
                           ? "bg-background shadow-sm"
-                          : "hover:bg-background/60"
+                          : ""
                       )}
                     >
                       <div className="flex flex-col gap-0.5">
                         <span className={cn(
-                          "font-medium",
-                          isActive ? "text-foreground" : "text-muted-foreground"
+                          "font-medium transition-colors",
+                          isActive
+                            ? "text-foreground"
+                            : "text-muted-foreground group-hover:text-foreground"
                         )}>
                           {blockTypeLabels[type] || type}
                         </span>
                         {!isDefault && (
-                          <span className="text-[10px] text-primary">
+                          <span className="text-[10px] text-brand">
                             customized
                           </span>
                         )}
@@ -159,13 +161,13 @@ export function BlockSelectorOverlay({
                             className={cn(
                               "group relative flex aspect-[4/3] flex-col items-center justify-center rounded-lg border bg-muted/50 text-center transition-all",
                               isSelected
-                                ? "border-primary bg-primary/5 ring-1 ring-primary"
-                                : "border-border hover:border-primary/50 hover:bg-muted"
+                                ? "border-brand bg-brand/5 ring-1 ring-brand"
+                                : "border-border hover:border-brand/50 hover:bg-muted"
                             )}
                           >
                             {/* Selected checkmark */}
                             {isSelected && (
-                              <div className="absolute right-1.5 top-1.5 flex size-4 items-center justify-center rounded-full bg-primary">
+                              <div className="absolute right-1.5 top-1.5 flex size-4 items-center justify-center rounded-full bg-brand">
                                 <Check className="size-2.5 text-primary-foreground" />
                               </div>
                             )}
@@ -173,7 +175,7 @@ export function BlockSelectorOverlay({
                             {/* Variant number */}
                             <span className={cn(
                               "text-lg font-semibold",
-                              isSelected ? "text-primary" : "text-muted-foreground"
+                              isSelected ? "text-brand" : "text-muted-foreground"
                             )}>
                               {index + 1}
                             </span>
