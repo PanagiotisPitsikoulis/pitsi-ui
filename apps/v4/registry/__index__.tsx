@@ -467,6 +467,26 @@ export const Index: Record<string, Record<string, any>> = {
       tier: "free",
       readiness: "production",
     },
+    "filter-bar": {
+      name: "filter-bar",
+      description: "A filter bar with search input and icon-based filter dropdowns",
+      type: "registry:ui",
+      registryDependencies: ["dropdown-menu","input","tooltip"],
+      files: [{
+        path: "registry/new-york-v4/ui/filter-bar.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/ui/filter-bar.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "filter-bar"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
     "flex": {
       name: "flex",
       description: "",

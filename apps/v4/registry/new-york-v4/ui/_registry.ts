@@ -350,6 +350,22 @@ export const ui: Registry["items"] = [
     readiness: "production",
   },
   {
+    name: "filter-bar",
+    type: "registry:ui",
+    description:
+      "A filter bar with search input and icon-based filter dropdowns",
+    registryDependencies: ["dropdown-menu", "input", "tooltip"],
+    files: [
+      {
+        path: "ui/filter-bar.tsx",
+        type: "registry:ui",
+      },
+    ],
+    categories: ["application"],
+    tier: "free",
+    readiness: "production",
+  },
+  {
     name: "flex",
     type: "registry:ui",
     dependencies: ["class-variance-authority"],
