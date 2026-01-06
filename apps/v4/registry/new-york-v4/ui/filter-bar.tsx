@@ -3,7 +3,7 @@
 import * as React from "react"
 
 import { ChevronDown, Search, X } from "@/lib/icons"
-import { cn } from "@/registry/new-york-v4/lib/utils"
+import { cn } from "@/lib/utils"
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -93,6 +93,8 @@ function FilterDropdown({
         <TooltipTrigger asChild>
           <DropdownMenuTrigger asChild>
             <button
+              type="button"
+              data-slot="filter-dropdown-trigger"
               className={cn(
                 "flex h-8 items-center gap-0.5 rounded-full px-2 transition-colors",
                 hasSelection
@@ -110,6 +112,7 @@ function FilterDropdown({
       <DropdownMenuContent align="start" className="max-h-64 overflow-auto">
         {hasSelection && (
           <button
+            type="button"
             onClick={onClear}
             className="text-muted-foreground hover:text-foreground flex w-full items-center gap-2 px-2 py-1.5 text-sm"
           >
@@ -150,6 +153,7 @@ function FilterBar({
 
   return (
     <div
+      data-slot="filter-bar"
       className={cn(
         "bg-muted flex flex-wrap items-center gap-1.5 rounded-full px-2 py-2",
         className
@@ -192,6 +196,7 @@ function FilterBar({
         <>
           <div className="bg-border mx-1 h-5 w-px shrink-0" />
           <button
+            type="button"
             onClick={onClearAll}
             className="text-muted-foreground hover:text-foreground hover:bg-background/80 flex h-8 shrink-0 items-center gap-1.5 rounded-full px-3 text-sm transition-colors"
           >
