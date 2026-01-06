@@ -1,0 +1,168 @@
+---
+title: Filter Bar
+description: A composable filter bar with search input and icon-based filter dropdowns.
+component: true
+---
+
+<ComponentPreview name="filter-bar-demo" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx pitsi@latest add filter-bar
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @radix-ui/react-dropdown-menu @radix-ui/react-tooltip
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="filter-bar" title="components/ui/filter-bar.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { FilterBar, type FilterConfig } from "@/components/ui/filter-bar"
+```
+
+```tsx
+const filters: FilterConfig[] = [
+  {
+    key: "status",
+    label: "Status",
+    icon: CheckCircle,
+    options: ["active", "pending", "completed"],
+    selected: selectedStatus,
+  },
+]
+
+<FilterBar
+  filters={filters}
+  searchValue={search}
+  onSearchChange={setSearch}
+  onFilterToggle={handleToggle}
+  onFilterClear={handleClear}
+  onClearAll={handleClearAll}
+/>
+```
+
+## Examples
+
+### With Search
+
+The filter bar includes an optional search input. Pass `onSearchChange` to enable it.
+
+```tsx
+<FilterBar
+  filters={filters}
+  searchValue={search}
+  searchPlaceholder="Search items..."
+  onSearchChange={setSearch}
+  onFilterToggle={handleToggle}
+  onFilterClear={handleClear}
+/>
+```
+
+### Without Search
+
+Omit `onSearchChange` to hide the search input.
+
+```tsx
+<FilterBar
+  filters={filters}
+  onFilterToggle={handleToggle}
+  onFilterClear={handleClear}
+/>
+```
+
+### With URL State
+
+Use with Next.js router for URL-based filtering:
+
+```tsx
+"use client"
+
+import { useSearchParams, useRouter, usePathname } from "next/navigation"
+
+function MyFilters() {
+  const router = useRouter()
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
+
+  const getSelected = (key: string) => {
+    const value = searchParams.get(key)
+    return value ? value.split(",") : []
+  }
+
+  const updateFilter = (key: string, values: string[]) => {
+    const params = new URLSearchParams(searchParams.toString())
+    if (values.length > 0) {
+      params.set(key, values.join(","))
+    } else {
+      params.delete(key)
+    }
+    router.push(`${pathname}?${params.toString()}`, { scroll: false })
+  }
+
+  const handleToggle = (key: string, value: string) => {
+    const current = getSelected(key)
+    const updated = current.includes(value)
+      ? current.filter((v) => v !== value)
+      : [...current, value]
+    updateFilter(key, updated)
+  }
+
+  // ... rest of implementation
+}
+```
+
+## API Reference
+
+### FilterBar
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `filters` | `FilterConfig[]` | Required | Array of filter configurations |
+| `searchValue` | `string` | `""` | Current search input value |
+| `searchPlaceholder` | `string` | `"Search..."` | Placeholder text for search input |
+| `onSearchChange` | `(value: string) => void` | - | Callback when search changes. Omit to hide search. |
+| `onFilterToggle` | `(key: string, value: string) => void` | Required | Callback when filter option is toggled |
+| `onFilterClear` | `(key: string) => void` | Required | Callback when filter is cleared |
+| `onClearAll` | `() => void` | - | Callback when all filters are cleared |
+| `className` | `string` | - | Additional CSS classes |
+
+### FilterConfig
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `key` | `string` | Unique identifier for the filter |
+| `label` | `string` | Label shown in tooltip |
+| `icon` | `ComponentType` | Icon component to display |
+| `options` | `string[]` | Available filter options |
+| `selected` | `string[]` | Currently selected values |
