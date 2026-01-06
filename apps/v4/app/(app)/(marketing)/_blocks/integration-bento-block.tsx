@@ -1,8 +1,8 @@
 "use client"
 
 import { ReactNode } from "react"
-import { LucideIcon } from "@/lib/icons"
 
+import { LucideIcon } from "@/lib/icons"
 import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 
 export interface IntegrationItem {

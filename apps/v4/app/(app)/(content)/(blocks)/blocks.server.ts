@@ -122,11 +122,8 @@ export function getBlockSettings(blockName: string): {
   }
 }
 
-
 // Get block groups (block types with multiple options) for a template
-export function getTemplateBlockGroups(
-  slug: string
-): Record<string, string[]> {
+export function getTemplateBlockGroups(slug: string): Record<string, string[]> {
   return COMPUTED_TEMPLATES[slug]?.blockGroups || {}
 }
 
@@ -236,16 +233,18 @@ export function getShellForBlock(blockName: string): {
       const shell = shellBlocks[0]
       if (shell) {
         // Build navigation from view blocks
-        const navigation: NavigationItem[] = viewBlocks.map((viewName, index) => {
-          const parts = viewName.replace(/-\d+$/, "").split("-")
-          const label = parts[parts.length - 1] || "View"
-          return {
-            name: viewName,
-            label: label.charAt(0).toUpperCase() + label.slice(1),
-            icon: getIconForView(label),
-            shortcut: String(index + 1),
+        const navigation: NavigationItem[] = viewBlocks.map(
+          (viewName, index) => {
+            const parts = viewName.replace(/-\d+$/, "").split("-")
+            const label = parts[parts.length - 1] || "View"
+            return {
+              name: viewName,
+              label: label.charAt(0).toUpperCase() + label.slice(1),
+              icon: getIconForView(label),
+              shortcut: String(index + 1),
+            }
           }
-        })
+        )
 
         return {
           shell,

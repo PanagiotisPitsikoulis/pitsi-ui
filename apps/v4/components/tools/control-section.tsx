@@ -1,8 +1,8 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { ChevronDown, ChevronUp } from "@/lib/icons"
 
+import { ChevronDown, ChevronUp } from "@/lib/icons"
 import { cn } from "@/lib/utils"
 
 interface ControlSectionProps {
@@ -49,7 +49,12 @@ function ControlSection({
   }
 
   return (
-    <div className={cn("mb-4 overflow-hidden rounded-lg border shadow-xs", className)}>
+    <div
+      className={cn(
+        "mb-4 overflow-hidden rounded-lg border shadow-xs",
+        className
+      )}
+    >
       <button
         type="button"
         className="bg-background flex w-full cursor-pointer items-center justify-between p-3"

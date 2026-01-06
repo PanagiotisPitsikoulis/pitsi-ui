@@ -3,8 +3,8 @@ import { NextResponse } from "next/server"
 import { auth } from "@/lib/server/auth"
 import {
   getMaxMembers,
-  getTeamMembers,
   getMemberByEmail,
+  getTeamMembers,
   inviteTeamMember,
 } from "@/lib/server/team"
 
@@ -67,10 +67,7 @@ export async function POST(req: Request) {
     const { email } = body
 
     if (!email || typeof email !== "string") {
-      return NextResponse.json(
-        { error: "Email is required" },
-        { status: 400 }
-      )
+      return NextResponse.json({ error: "Email is required" }, { status: 400 })
     }
 
     // Check if user is trying to invite themselves

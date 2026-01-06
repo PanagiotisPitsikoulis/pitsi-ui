@@ -2,14 +2,8 @@
 
 import Link from "next/link"
 import { usePathname, useSearchParams } from "next/navigation"
-import {
-  Bookmark,
-  Box,
-  Clock,
-  Layers,
-  Waves,
-} from "@/lib/icons"
 
+import { Bookmark, Box, Clock, Layers, Waves } from "@/lib/icons"
 import { cn } from "@/lib/utils"
 import {
   Tooltip,
@@ -25,8 +19,18 @@ const FILTER_ITEMS = [
 ]
 
 const NAV_LINKS = [
-  { id: "components", label: "Components", icon: Box, href: "/docs/components" },
-  { id: "animations", label: "Animations", icon: Waves, href: "/docs/animations" },
+  {
+    id: "components",
+    label: "Components",
+    icon: Box,
+    href: "/docs/components",
+  },
+  {
+    id: "animations",
+    label: "Animations",
+    icon: Waves,
+    href: "/docs/animations",
+  },
 ]
 
 export function ComponentsFilter() {
@@ -34,7 +38,8 @@ export function ComponentsFilter() {
   const searchParams = useSearchParams()
   const currentFilter = searchParams.get("filter")
 
-  const isNavActive = (href: string) => pathname === href || pathname.startsWith(href + "/")
+  const isNavActive = (href: string) =>
+    pathname === href || pathname.startsWith(href + "/")
 
   const getFilterHref = (filter: string | null) => {
     if (filter) {
@@ -44,7 +49,7 @@ export function ComponentsFilter() {
   }
 
   return (
-    <div className="flex items-center gap-1 rounded-full bg-muted p-1.5">
+    <div className="bg-muted flex items-center gap-1 rounded-full p-1.5">
       <TooltipProvider delayDuration={0}>
         {/* Nav Links */}
         {NAV_LINKS.map((item) => {
@@ -74,12 +79,14 @@ export function ComponentsFilter() {
         })}
 
         {/* Separator */}
-        <div className="mx-1 h-5 w-px bg-border" />
+        <div className="bg-border mx-1 h-5 w-px" />
 
         {/* Filter toggles */}
         {FILTER_ITEMS.map((item) => {
           const Icon = item.icon
-          const active = item.filter === currentFilter || (item.filter === null && !currentFilter)
+          const active =
+            item.filter === currentFilter ||
+            (item.filter === null && !currentFilter)
 
           return (
             <Tooltip key={item.id}>

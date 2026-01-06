@@ -1,5 +1,5 @@
-import type { SpacingState, SpacingValue } from "./spacing-types"
 import { calculateSpacingValues } from "./spacing-presets"
+import type { SpacingState, SpacingValue } from "./spacing-types"
 
 export function generateSpacingCSS(state: SpacingState): string {
   const values = calculateSpacingValues(state)

@@ -1,8 +1,14 @@
 "use client"
 
 import { useCallback, useEffect, useMemo, useState } from "react"
+import {
+  parseAsFloat,
+  parseAsInteger,
+  parseAsString,
+  parseAsStringLiteral,
+  useQueryState,
+} from "nuqs"
 
-import { STORAGE_KEYS, useLocalStorage } from "@/lib/local-storage"
 import {
   ArrowRight,
   Bookmark,
@@ -17,14 +23,7 @@ import {
   Sun,
   Type,
 } from "@/lib/icons"
-import {
-  parseAsFloat,
-  parseAsInteger,
-  parseAsString,
-  parseAsStringLiteral,
-  useQueryState,
-} from "nuqs"
-
+import { STORAGE_KEYS, useLocalStorage } from "@/lib/local-storage"
 import { cn } from "@/lib/utils"
 import { Deck, DeckCards, DeckEmpty, DeckItem } from "@/components/kibo-ui/deck"
 import {
@@ -58,13 +57,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/registry/new-york-v4/ui/select"
+import { Skeleton } from "@/registry/new-york-v4/ui/skeleton"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/registry/new-york-v4/ui/tooltip"
-import { Skeleton } from "@/registry/new-york-v4/ui/skeleton"
 
 import {
   generateFontImports,
@@ -95,30 +94,126 @@ function TypographyIcon({ className }: { className?: string }) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="M118.08 82.02V94.27L98.0801 104.27V92.02L106.71 87.71L118.08 82.02Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M93.6101 77.1899L91.3901 78.2999L79.3901 84.2999V65.9199L83.3801 68.2299L90.0701 72.0899V75.1499L91.3901 75.9099L93.6101 77.1899Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M107.23 78.8199L98.7001 83.0799L90.0701 87.3999V90.4599L79.3901 84.2999L91.3901 78.2999L93.6101 77.1899L98.0801 79.7699L103.86 76.8799L107.23 78.8199Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M118.08 57.52V69.77L98.0801 79.77V67.52L99.3901 66.87L109.55 61.79L118.08 57.52Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M71.3899 66.46V75.65L63.3799 79.65V70.46L70.5899 66.86L71.3899 66.46Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M48.9602 48.3496L48.6802 48.4897L44.7002 50.4796V45.8896L48.6802 48.1896L48.9602 48.3496Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M83.3799 42.0796V46.1196L71.3899 52.1096V57.2696L70.5799 57.6696L63.3799 61.2696V52.0796L64.6999 51.4196L66.3199 50.6096L74.8499 46.3496L75.3699 46.0896L83.3799 42.0796Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M83.3799 42.0797L75.3699 46.0897L74.8499 46.3497L66.3199 50.6097L64.6999 51.4197L63.3799 52.0797L59.3799 45.1797L66.5899 41.5697L70.8499 39.4397L79.3799 35.1797L83.3799 42.0797Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M27.06 26.5198L22 23.5998L2 12.0498V48.7998L10 53.4198V44.2298L18.53 49.1598L20.68 50.3998V59.5898L28.68 64.2098V27.4598L27.06 26.5198ZM20.68 41.2098L10 35.0498V25.8598L18.53 30.7798L20.68 32.0198V41.2098Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M20.68 32.0198V41.2098L10 35.0498L18.53 30.7798L20.68 32.0198Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M18.53 30.7799L10 35.0499V25.8599L18.53 30.7799Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M48.6802 17.46V26.09L39.6402 30.61L36.6902 32.08V60.21L28.6802 64.21V27.46L31.6302 25.99L40.1602 21.72L48.6802 17.46Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M48.68 17.4598L40.16 21.7198L31.63 25.9898L28.68 27.4598L27.06 26.5198L22 23.5998L2 12.0498L22 2.0498L48.68 17.4598Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M18.53 49.16L10 53.42V44.23L18.53 49.16Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M79.3799 35.1796L70.8499 39.4396L66.5899 41.5696L59.3799 45.1796L57.4899 44.0896L56.6899 43.6296L48.6799 38.9996L36.6899 32.0796L39.6399 30.6096L48.6799 26.0896L56.6899 22.0796L79.3799 35.1796Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M71.3899 75.6499V75.9299L59.3799 81.9299L63.3799 79.6499L71.3899 75.6499Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M63.3799 61.2696V52.0796L59.3799 45.1796L57.4899 44.0896L56.6899 43.6296L48.6799 38.9996L36.6899 32.0796V68.8296L59.3799 81.9296L63.3799 79.6496V70.4596L59.3799 63.5496L62.1399 61.9796L63.3799 61.2696ZM55.3699 70.4296L44.6999 64.2696V59.6696L48.9699 62.1396L55.3699 65.8396V70.4296ZM55.3699 56.6496L48.6799 52.7796L44.6999 50.4796V45.8896L48.6799 48.1896L48.9599 48.3496L55.3699 52.0496V56.6496Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M55.3702 65.8396V70.4296L44.7002 64.2696L48.9702 62.1396L55.3702 65.8396Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M48.9702 62.1399L44.7002 64.2699V59.6699L48.9702 62.1399Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M55.3702 52.0496V56.6496L48.6802 52.7796L44.7002 50.4796L48.6802 48.4896L48.9602 48.3496L55.3702 52.0496Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M71.3899 57.27V66.46L70.5899 66.86L63.3799 70.46L59.3799 63.55L62.1399 61.98L63.3799 61.27L70.5799 57.67L71.3899 57.27Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M90.0701 75.1499V72.0899L83.3801 68.2299L79.3901 65.9199V84.2999L90.0701 90.4599V87.3999L98.0801 92.0199V104.27L71.3901 88.8599V52.1099L76.1701 54.8699L82.1401 58.3199L91.3901 63.6599L98.0801 67.5199V79.7699L93.6101 77.1899L91.3901 75.9099L90.0701 75.1499Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M118.08 57.5199L109.55 61.7899L99.3901 66.8699L98.0801 67.5199L91.3901 63.6599L82.1401 58.3199L76.1701 54.8699L71.3901 52.1099L83.3801 46.1199L91.3901 42.1099L118.08 57.5199Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M118.08 82.0199L106.71 87.7099L98.0798 92.0199L90.0698 87.3999L98.6998 83.0799L107.23 78.8199L110.07 77.3999L118.08 82.0199Z" stroke="currentColor" strokeLinejoin="round"/>
+      <path
+        d="M118.08 82.02V94.27L98.0801 104.27V92.02L106.71 87.71L118.08 82.02Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M93.6101 77.1899L91.3901 78.2999L79.3901 84.2999V65.9199L83.3801 68.2299L90.0701 72.0899V75.1499L91.3901 75.9099L93.6101 77.1899Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M107.23 78.8199L98.7001 83.0799L90.0701 87.3999V90.4599L79.3901 84.2999L91.3901 78.2999L93.6101 77.1899L98.0801 79.7699L103.86 76.8799L107.23 78.8199Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M118.08 57.52V69.77L98.0801 79.77V67.52L99.3901 66.87L109.55 61.79L118.08 57.52Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M71.3899 66.46V75.65L63.3799 79.65V70.46L70.5899 66.86L71.3899 66.46Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M48.9602 48.3496L48.6802 48.4897L44.7002 50.4796V45.8896L48.6802 48.1896L48.9602 48.3496Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M83.3799 42.0796V46.1196L71.3899 52.1096V57.2696L70.5799 57.6696L63.3799 61.2696V52.0796L64.6999 51.4196L66.3199 50.6096L74.8499 46.3496L75.3699 46.0896L83.3799 42.0796Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M83.3799 42.0797L75.3699 46.0897L74.8499 46.3497L66.3199 50.6097L64.6999 51.4197L63.3799 52.0797L59.3799 45.1797L66.5899 41.5697L70.8499 39.4397L79.3799 35.1797L83.3799 42.0797Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M27.06 26.5198L22 23.5998L2 12.0498V48.7998L10 53.4198V44.2298L18.53 49.1598L20.68 50.3998V59.5898L28.68 64.2098V27.4598L27.06 26.5198ZM20.68 41.2098L10 35.0498V25.8598L18.53 30.7798L20.68 32.0198V41.2098Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M20.68 32.0198V41.2098L10 35.0498L18.53 30.7798L20.68 32.0198Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M18.53 30.7799L10 35.0499V25.8599L18.53 30.7799Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M48.6802 17.46V26.09L39.6402 30.61L36.6902 32.08V60.21L28.6802 64.21V27.46L31.6302 25.99L40.1602 21.72L48.6802 17.46Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M48.68 17.4598L40.16 21.7198L31.63 25.9898L28.68 27.4598L27.06 26.5198L22 23.5998L2 12.0498L22 2.0498L48.68 17.4598Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M18.53 49.16L10 53.42V44.23L18.53 49.16Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M79.3799 35.1796L70.8499 39.4396L66.5899 41.5696L59.3799 45.1796L57.4899 44.0896L56.6899 43.6296L48.6799 38.9996L36.6899 32.0796L39.6399 30.6096L48.6799 26.0896L56.6899 22.0796L79.3799 35.1796Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M71.3899 75.6499V75.9299L59.3799 81.9299L63.3799 79.6499L71.3899 75.6499Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M63.3799 61.2696V52.0796L59.3799 45.1796L57.4899 44.0896L56.6899 43.6296L48.6799 38.9996L36.6899 32.0796V68.8296L59.3799 81.9296L63.3799 79.6496V70.4596L59.3799 63.5496L62.1399 61.9796L63.3799 61.2696ZM55.3699 70.4296L44.6999 64.2696V59.6696L48.9699 62.1396L55.3699 65.8396V70.4296ZM55.3699 56.6496L48.6799 52.7796L44.6999 50.4796V45.8896L48.6799 48.1896L48.9599 48.3496L55.3699 52.0496V56.6496Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M55.3702 65.8396V70.4296L44.7002 64.2696L48.9702 62.1396L55.3702 65.8396Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M48.9702 62.1399L44.7002 64.2699V59.6699L48.9702 62.1399Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M55.3702 52.0496V56.6496L48.6802 52.7796L44.7002 50.4796L48.6802 48.4896L48.9602 48.3496L55.3702 52.0496Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M71.3899 57.27V66.46L70.5899 66.86L63.3799 70.46L59.3799 63.55L62.1399 61.98L63.3799 61.27L70.5799 57.67L71.3899 57.27Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M90.0701 75.1499V72.0899L83.3801 68.2299L79.3901 65.9199V84.2999L90.0701 90.4599V87.3999L98.0801 92.0199V104.27L71.3901 88.8599V52.1099L76.1701 54.8699L82.1401 58.3199L91.3901 63.6599L98.0801 67.5199V79.7699L93.6101 77.1899L91.3901 75.9099L90.0701 75.1499Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M118.08 57.5199L109.55 61.7899L99.3901 66.8699L98.0801 67.5199L91.3901 63.6599L82.1401 58.3199L76.1701 54.8699L71.3901 52.1099L83.3801 46.1199L91.3901 42.1099L118.08 57.5199Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M118.08 82.0199L106.71 87.7099L98.0798 92.0199L90.0698 87.3999L98.6998 83.0799L107.23 78.8199L110.07 77.3999L118.08 82.0199Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
     </svg>
   )
 }
@@ -140,7 +235,7 @@ function TypeScaleVisualization({
         .slice(0, 8)
         .map(({ name, size, cssSize, isHeading }) => (
           <div key={name} className="flex items-baseline gap-2">
-            <span className="w-8 text-right font-mono text-[10px] text-muted-foreground">
+            <span className="text-muted-foreground w-8 text-right font-mono text-[10px]">
               {name}
             </span>
             <span
@@ -153,7 +248,7 @@ function TypeScaleVisualization({
             >
               {previewText}
             </span>
-            <span className="font-mono text-[10px] text-muted-foreground">
+            <span className="text-muted-foreground font-mono text-[10px]">
               {cssSize}
             </span>
           </div>
@@ -172,13 +267,13 @@ function TypographyPreview({ state }: { state: TypographyState }) {
       {/* Type Scale */}
       <div>
         <h3 className="mb-4 text-sm font-medium">Type Scale</h3>
-        <div className="space-y-3 rounded-lg border bg-card p-4">
+        <div className="bg-card space-y-3 rounded-lg border p-4">
           {scale
             .slice()
             .reverse()
             .map(({ name, size, cssSize, isHeading, lineHeight }) => (
               <div key={name} className="flex items-baseline gap-3">
-                <span className="w-10 shrink-0 text-right font-mono text-xs text-muted-foreground">
+                <span className="text-muted-foreground w-10 shrink-0 text-right font-mono text-xs">
                   {name}
                 </span>
                 <span
@@ -186,13 +281,15 @@ function TypographyPreview({ state }: { state: TypographyState }) {
                   style={{
                     fontSize: cssSize,
                     fontFamily: isHeading ? state.headingFont : state.bodyFont,
-                    fontWeight: isHeading ? state.headingWeight : state.bodyWeight,
+                    fontWeight: isHeading
+                      ? state.headingWeight
+                      : state.bodyWeight,
                     lineHeight,
                   }}
                 >
                   The quick brown fox
                 </span>
-                <span className="shrink-0 font-mono text-xs text-muted-foreground">
+                <span className="text-muted-foreground shrink-0 font-mono text-xs">
                   {Math.round(size)}px
                 </span>
               </div>
@@ -203,7 +300,7 @@ function TypographyPreview({ state }: { state: TypographyState }) {
       {/* Blog Post Preview */}
       <div>
         <h3 className="mb-4 text-sm font-medium">Blog Post</h3>
-        <article className="space-y-4 rounded-lg border bg-card p-6">
+        <article className="bg-card space-y-4 rounded-lg border p-6">
           <h1
             style={{
               fontSize: getSize("4xl"),
@@ -234,10 +331,10 @@ function TypographyPreview({ state }: { state: TypographyState }) {
               lineHeight: state.bodyLineHeight,
             }}
           >
-            Typography is the art and technique of arranging type to make written
-            language legible, readable, and appealing when displayed. The
-            arrangement of type involves selecting typefaces, point sizes, line
-            lengths, line-spacing, and letter-spacing.
+            Typography is the art and technique of arranging type to make
+            written language legible, readable, and appealing when displayed.
+            The arrangement of type involves selecting typefaces, point sizes,
+            line lengths, line-spacing, and letter-spacing.
           </p>
           <h2
             style={{
@@ -281,8 +378,8 @@ function TypographyPreview({ state }: { state: TypographyState }) {
               lineHeight: state.bodyLineHeight,
             }}
           >
-            The most common ratios include Minor Third (1.2), Major Third (1.25),
-            Perfect Fourth (1.333), and the Golden Ratio (1.618).
+            The most common ratios include Minor Third (1.2), Major Third
+            (1.25), Perfect Fourth (1.333), and the Golden Ratio (1.618).
           </p>
         </article>
       </div>
@@ -290,7 +387,7 @@ function TypographyPreview({ state }: { state: TypographyState }) {
       {/* Card Preview */}
       <div>
         <h3 className="mb-4 text-sm font-medium">Card</h3>
-        <div className="max-w-sm rounded-lg border bg-card p-5">
+        <div className="bg-card max-w-sm rounded-lg border p-5">
           <h4
             style={{
               fontSize: getSize("lg"),
@@ -302,7 +399,7 @@ function TypographyPreview({ state }: { state: TypographyState }) {
             Card Title
           </h4>
           <p
-            className="mt-1 text-muted-foreground"
+            className="text-muted-foreground mt-1"
             style={{
               fontSize: getSize("sm"),
               fontFamily: state.bodyFont,
@@ -314,7 +411,7 @@ function TypographyPreview({ state }: { state: TypographyState }) {
           </p>
           <div className="mt-4 flex gap-2">
             <div
-              className="rounded bg-primary px-3 py-1.5 text-primary-foreground"
+              className="bg-primary text-primary-foreground rounded px-3 py-1.5"
               style={{
                 fontSize: getSize("sm"),
                 fontFamily: state.bodyFont,
@@ -412,7 +509,9 @@ export default function TypographyComposerClient({
     "tab",
     parseAsStringLiteral(tabTypes).withDefault("scale")
   )
-  const [savedItems, setSavedItems, isHydrated] = useLocalStorage<SavedTypography[]>(STORAGE_KEYS.TYPOGRAPHY_COMPOSER, [])
+  const [savedItems, setSavedItems, isHydrated] = useLocalStorage<
+    SavedTypography[]
+  >(STORAGE_KEYS.TYPOGRAPHY_COMPOSER, [])
   const [isDark, setIsDark] = useState(false)
 
   const darkModeStyles = isDark
@@ -746,7 +845,7 @@ export default function TypographyComposerClient({
                           key={key}
                           className="overflow-hidden p-0 shadow-sm"
                         >
-                          <div className="flex size-full flex-col bg-background p-4">
+                          <div className="bg-background flex size-full flex-col p-4">
                             <div className="mb-3 flex-1 overflow-hidden">
                               <TypeScaleVisualization
                                 state={preset.state}
@@ -757,7 +856,7 @@ export default function TypographyComposerClient({
                               <h3 className="text-sm font-semibold">
                                 {preset.label}
                               </h3>
-                              <p className="text-[10px] text-muted-foreground">
+                              <p className="text-muted-foreground text-[10px]">
                                 {preset.description}
                               </p>
                             </div>
@@ -905,11 +1004,20 @@ export default function TypographyComposerClient({
                       updateState("bodyFont", newState.bodyFont)
                       updateState("bodyWeight", newState.bodyWeight)
                       updateState("bodyLineHeight", newState.bodyLineHeight)
-                      updateState("bodyLetterSpacing", newState.bodyLetterSpacing)
+                      updateState(
+                        "bodyLetterSpacing",
+                        newState.bodyLetterSpacing
+                      )
                       updateState("headingFont", newState.headingFont)
                       updateState("headingWeight", newState.headingWeight)
-                      updateState("headingLineHeight", newState.headingLineHeight)
-                      updateState("headingLetterSpacing", newState.headingLetterSpacing)
+                      updateState(
+                        "headingLineHeight",
+                        newState.headingLineHeight
+                      )
+                      updateState(
+                        "headingLetterSpacing",
+                        newState.headingLetterSpacing
+                      )
                       updateState("stepsUp", newState.stepsUp)
                       updateState("stepsDown", newState.stepsDown)
                     }}
@@ -1008,7 +1116,11 @@ export default function TypographyComposerClient({
                         </SelectTrigger>
                         <SelectContent>
                           {POPULAR_FONTS.map((font) => (
-                            <SelectItem key={font} value={font} className="text-xs">
+                            <SelectItem
+                              key={font}
+                              value={font}
+                              className="text-xs"
+                            >
                               {font}
                             </SelectItem>
                           ))}
@@ -1075,7 +1187,11 @@ export default function TypographyComposerClient({
                         </SelectTrigger>
                         <SelectContent>
                           {POPULAR_FONTS.map((font) => (
-                            <SelectItem key={font} value={font} className="text-xs">
+                            <SelectItem
+                              key={font}
+                              value={font}
+                              className="text-xs"
+                            >
                               {font}
                             </SelectItem>
                           ))}
@@ -1143,7 +1259,9 @@ export default function TypographyComposerClient({
                     onLoad={loadItem}
                     onRename={renameItem}
                     onDelete={deleteItem}
-                    emptyIcon={<TypographyIcon className="size-40 text-brand" />}
+                    emptyIcon={
+                      <TypographyIcon className="text-brand size-40" />
+                    }
                     emptyText="No saved scales yet"
                     emptySubtext="Click the save button to save your current scale"
                     renderPreview={(item) => (
@@ -1244,7 +1362,7 @@ export default function TypographyComposerClient({
           <ToolLayoutPreviewContent className={cn(isDark && "dark")}>
             <div
               className={cn(
-                "h-full overflow-auto bg-background text-foreground",
+                "bg-background text-foreground h-full overflow-auto",
                 isDark && "dark"
               )}
               style={darkModeStyles}

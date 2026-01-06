@@ -70,7 +70,8 @@ export function useLocalStorage<T>(
 
   const setValue = useCallback((value: T | ((prev: T) => T)) => {
     setState((prev) => {
-      const nextValue = typeof value === "function" ? (value as (prev: T) => T)(prev) : value
+      const nextValue =
+        typeof value === "function" ? (value as (prev: T) => T)(prev) : value
       return nextValue
     })
   }, [])

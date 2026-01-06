@@ -1,4 +1,9 @@
-import type { BlockBaseClassNames, BlockCTA, BlockImage, BlockNavItem } from "./types"
+import type {
+  BlockBaseClassNames,
+  BlockCTA,
+  BlockImage,
+  BlockNavItem,
+} from "./types"
 
 // ============================================================================
 // Header Content Types

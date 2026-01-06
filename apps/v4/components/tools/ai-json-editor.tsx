@@ -1,8 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { Bot, Copy, Check, RotateCcw } from "@/lib/icons"
 
+import { Bot, Check, Copy, RotateCcw } from "@/lib/icons"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
@@ -96,9 +96,7 @@ export function AIJsonEditor<T>({
       <Dialog open={open} onOpenChange={setOpen}>
         <Tooltip>
           <TooltipTrigger asChild>
-            <DialogTrigger asChild>
-              {trigger || defaultTrigger}
-            </DialogTrigger>
+            <DialogTrigger asChild>{trigger || defaultTrigger}</DialogTrigger>
           </TooltipTrigger>
           <TooltipContent>{tooltip}</TooltipContent>
         </Tooltip>
@@ -110,7 +108,9 @@ export function AIJsonEditor<T>({
 
           <div className="space-y-3">
             <div className="flex items-center justify-between">
-              <p className="text-sm text-muted-foreground">JSON Configuration</p>
+              <p className="text-muted-foreground text-sm">
+                JSON Configuration
+              </p>
               <div className="flex items-center gap-1">
                 <TooltipProvider delayDuration={0}>
                   <Tooltip>
@@ -156,14 +156,14 @@ export function AIJsonEditor<T>({
               placeholder="Paste your JSON here..."
             />
 
-            {error && (
-              <p className="text-sm text-destructive">{error}</p>
-            )}
+            {error && <p className="text-destructive text-sm">{error}</p>}
 
             {hints.length > 0 && (
-              <div className="rounded-lg border bg-muted/50 p-3">
-                <p className="text-xs font-medium text-foreground mb-1">AI can help you:</p>
-                <ul className="text-xs text-muted-foreground space-y-0.5">
+              <div className="bg-muted/50 rounded-lg border p-3">
+                <p className="text-foreground mb-1 text-xs font-medium">
+                  AI can help you:
+                </p>
+                <ul className="text-muted-foreground space-y-0.5 text-xs">
                   {hints.map((hint, i) => (
                     <li key={i}>• {hint}</li>
                   ))}

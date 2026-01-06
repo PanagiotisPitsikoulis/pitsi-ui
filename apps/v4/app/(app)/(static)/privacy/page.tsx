@@ -1,11 +1,15 @@
 import { Metadata } from "next"
 import { cacheLife } from "next/cache"
 
-import { LegalPage, type LegalPageContent } from "@/components/documentation/legal/legal-page"
+import {
+  LegalPage,
+  type LegalPageContent,
+} from "@/components/documentation/legal/legal-page"
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "Privacy Policy for pitsi/ui - Learn how we collect, use, and protect your information.",
+  description:
+    "Privacy Policy for pitsi/ui - Learn how we collect, use, and protect your information.",
 }
 
 const privacyContent: LegalPageContent = {

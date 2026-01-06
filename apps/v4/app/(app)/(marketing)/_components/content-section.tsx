@@ -6,11 +6,10 @@ import Link from "next/link"
 import { motion, useScroll, useTransform } from "motion/react"
 
 import { useAnimationState } from "@/hooks/use-animation-state"
+import { LayoutGrid, LayoutGridItem } from "@/components/layout/layout-grid"
 import { HeroButton } from "@/registry/new-york-v4/ui/hero-button"
 import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 import { Spinner } from "@/registry/new-york-v4/ui/spinner"
-
-import { LayoutGrid, LayoutGridItem } from "@/components/layout/layout-grid"
 
 interface ContentSectionProps {
   registryCounts: {
@@ -489,9 +488,15 @@ export function ContentSection({ registryCounts }: ContentSectionProps) {
   const tab2Opacity = useTransform(scrollYProgress, [0.63, 0.66, 1], [0, 1, 1])
 
   // Pointer events - only active tab is interactive
-  const tab0PointerEvents = useTransform(scrollYProgress, (v) => v < 0.33 ? "auto" : "none")
-  const tab1PointerEvents = useTransform(scrollYProgress, (v) => v >= 0.33 && v < 0.66 ? "auto" : "none")
-  const tab2PointerEvents = useTransform(scrollYProgress, (v) => v >= 0.66 ? "auto" : "none")
+  const tab0PointerEvents = useTransform(scrollYProgress, (v) =>
+    v < 0.33 ? "auto" : "none"
+  )
+  const tab1PointerEvents = useTransform(scrollYProgress, (v) =>
+    v >= 0.33 && v < 0.66 ? "auto" : "none"
+  )
+  const tab2PointerEvents = useTransform(scrollYProgress, (v) =>
+    v >= 0.66 ? "auto" : "none"
+  )
 
   // Progress circle (cycles 0-1 for each tab segment)
   const progress0 = useTransform(scrollYProgress, [0, 0.33], [0, 1])
@@ -499,7 +504,11 @@ export function ContentSection({ registryCounts }: ContentSectionProps) {
   const progress2 = useTransform(scrollYProgress, [0.66, 1], [0, 1])
 
   const tabOpacities = [tab0Opacity, tab1Opacity, tab2Opacity]
-  const tabPointerEvents = [tab0PointerEvents, tab1PointerEvents, tab2PointerEvents]
+  const tabPointerEvents = [
+    tab0PointerEvents,
+    tab1PointerEvents,
+    tab2PointerEvents,
+  ]
   const progressValues = [progress0, progress1, progress2]
 
   // Creative animations - scale with dramatic zoom
@@ -574,12 +583,12 @@ export function ContentSection({ registryCounts }: ContentSectionProps) {
   return (
     <>
       {/* Mobile: Simple stacked sections */}
-      <section className="md:hidden py-16">
+      <section className="py-16 md:hidden">
         <div className="container px-6">
           {tabs.map((tab) => (
             <div key={tab.id} className="mb-12 last:mb-0">
               {/* Tab Card - matching desktop style */}
-              <div className="bg-background relative flex flex-col gap-4 rounded-xl border border-border/50 p-5 shadow-sm">
+              <div className="bg-background border-border/50 relative flex flex-col gap-4 rounded-xl border p-5 shadow-sm">
                 <div className="flex items-center gap-4">
                   <div className="shrink-0">
                     <tab.Icon className="text-brand size-12" />
@@ -595,7 +604,12 @@ export function ContentSection({ registryCounts }: ContentSectionProps) {
                 </div>
                 {/* View All Link */}
                 <Link href={tab.href} className="w-full">
-                  <HeroButton variant="secondary" className="w-full justify-center">View all {tab.label}</HeroButton>
+                  <HeroButton
+                    variant="secondary"
+                    className="w-full justify-center"
+                  >
+                    View all {tab.label}
+                  </HeroButton>
                 </Link>
               </div>
 
@@ -609,7 +623,7 @@ export function ContentSection({ registryCounts }: ContentSectionProps) {
                     name={itemName}
                     type={getItemType(tab.id)}
                     aspectClass={tab.aspectClass}
-                    className="rounded-xl border border-border/50 shadow-sm"
+                    className="border-border/50 rounded-xl border shadow-sm"
                   />
                 ))}
               </div>
@@ -619,14 +633,17 @@ export function ContentSection({ registryCounts }: ContentSectionProps) {
       </section>
 
       {/* Desktop: Scroll-jacking animation */}
-      <section ref={containerRef} className="relative hidden md:block h-[350vh] pt-24">
+      <section
+        ref={containerRef}
+        className="relative hidden h-[350vh] pt-24 md:block"
+      >
         <div className="sticky top-20 pt-2">
           <div className="container px-6">
             {/* Desktop: 3 tab cards in 6-column grid */}
             <LayoutGrid className="grid">
               {tabs.map((tab, index) => (
                 <LayoutGridItem key={tab.id} span={6} spanMd={2}>
-                  <div className="bg-background relative flex flex-col border-y border-l border-border/50 p-6 shadow-sm first:rounded-l-xl last:rounded-r-xl last:border-r lg:p-8">
+                  <div className="bg-background border-border/50 relative flex flex-col border-y border-l p-6 shadow-sm first:rounded-l-xl last:rounded-r-xl last:border-r lg:p-8">
                     <div className="flex items-center gap-5">
                       <motion.div
                         className="shrink-0"
@@ -659,9 +676,7 @@ export function ContentSection({ registryCounts }: ContentSectionProps) {
               {tabs.map((tab, tabIndex) => (
                 <motion.div
                   key={tab.id}
-                  className={
-                    tabIndex === 0 ? "relative" : "absolute inset-0"
-                  }
+                  className={tabIndex === 0 ? "relative" : "absolute inset-0"}
                   style={{
                     opacity: tabOpacities[tabIndex],
                     pointerEvents: tabPointerEvents[tabIndex],
@@ -675,25 +690,28 @@ export function ContentSection({ registryCounts }: ContentSectionProps) {
                         name={tab.items[0]}
                         type={getItemType(tab.id)}
                         aspectClass={tab.aspectClass}
-                        className="rounded-xl border border-border/50 shadow-sm"
+                        className="border-border/50 rounded-xl border shadow-sm"
                       />
                       <RegistryItemPreview
                         name={tab.items[3]}
                         type={getItemType(tab.id)}
                         aspectClass={tab.aspectClass}
-                        className="rounded-xl border border-border/50 shadow-sm"
+                        className="border-border/50 rounded-xl border shadow-sm"
                       />
                     </div>
 
                     {/* Middle column - pill at top */}
                     <div className="flex flex-col gap-6">
                       <div className="flex items-center justify-center pt-6 pb-2">
-                        <div className="flex items-center gap-2 rounded-full border bg-background py-1.5 pl-1.5 pr-3">
+                        <div className="bg-background flex items-center gap-2 rounded-full border py-1.5 pr-3 pl-1.5">
                           <Link href={tab.href}>
                             <HeroButton>View all {tab.label}</HeroButton>
                           </Link>
                           <div className="relative shrink-0">
-                            <svg className="size-7 -rotate-90" viewBox="0 0 28 28">
+                            <svg
+                              className="size-7 -rotate-90"
+                              viewBox="0 0 28 28"
+                            >
                               <circle
                                 cx="14"
                                 cy="14"
@@ -724,13 +742,13 @@ export function ContentSection({ registryCounts }: ContentSectionProps) {
                         name={tab.items[1]}
                         type={getItemType(tab.id)}
                         aspectClass={tab.aspectClass}
-                        className="rounded-xl border border-border/50 shadow-sm"
+                        className="border-border/50 rounded-xl border shadow-sm"
                       />
                       <RegistryItemPreview
                         name={tab.items[4]}
                         type={getItemType(tab.id)}
                         aspectClass={tab.aspectClass}
-                        className="rounded-xl border border-border/50 shadow-sm"
+                        className="border-border/50 rounded-xl border shadow-sm"
                       />
                     </div>
 
@@ -740,13 +758,13 @@ export function ContentSection({ registryCounts }: ContentSectionProps) {
                         name={tab.items[2]}
                         type={getItemType(tab.id)}
                         aspectClass={tab.aspectClass}
-                        className="rounded-xl border border-border/50 shadow-sm"
+                        className="border-border/50 rounded-xl border shadow-sm"
                       />
                       <RegistryItemPreview
                         name={tab.items[5]}
                         type={getItemType(tab.id)}
                         aspectClass={tab.aspectClass}
-                        className="rounded-xl border border-border/50 shadow-sm"
+                        className="border-border/50 rounded-xl border shadow-sm"
                       />
                     </div>
                   </div>

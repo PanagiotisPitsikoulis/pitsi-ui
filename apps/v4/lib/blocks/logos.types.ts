@@ -49,10 +49,25 @@ export interface LogosBlockProps {
 export const logosDefaults: LogosContent = {
   title: "Trusted by Leading Brands",
   logos: [
-    { name: "Company 1", image: { src: "/placeholders/logo-1.svg", alt: "Company 1 logo" } },
-    { name: "Company 2", image: { src: "/placeholders/logo-2.svg", alt: "Company 2 logo" } },
-    { name: "Company 3", image: { src: "/placeholders/logo-3.svg", alt: "Company 3 logo" } },
-    { name: "Company 4", image: { src: "/placeholders/logo-4.svg", alt: "Company 4 logo" } },
-    { name: "Company 5", image: { src: "/placeholders/logo-5.svg", alt: "Company 5 logo" } },
+    {
+      name: "Company 1",
+      image: { src: "/placeholders/logo-1.svg", alt: "Company 1 logo" },
+    },
+    {
+      name: "Company 2",
+      image: { src: "/placeholders/logo-2.svg", alt: "Company 2 logo" },
+    },
+    {
+      name: "Company 3",
+      image: { src: "/placeholders/logo-3.svg", alt: "Company 3 logo" },
+    },
+    {
+      name: "Company 4",
+      image: { src: "/placeholders/logo-4.svg", alt: "Company 4 logo" },
+    },
+    {
+      name: "Company 5",
+      image: { src: "/placeholders/logo-5.svg", alt: "Company 5 logo" },
+    },
   ],
 }

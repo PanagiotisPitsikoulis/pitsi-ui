@@ -1,7 +1,7 @@
 import { Suspense } from "react"
 import Link from "next/link"
-import { LogIn } from "@/lib/icons"
 
+import { LogIn } from "@/lib/icons"
 import { getCurrentUser } from "@/lib/server/user"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Skeleton } from "@/registry/new-york-v4/ui/skeleton"

@@ -29,7 +29,6 @@ export function rehypeComponent() {
   return async (tree: UnistTree) => {
     const activeStyle = await getActiveStyle()
 
-    
     const nodesToProcess: Array<{
       node: UnistNode
       type: "source" | "preview"
@@ -39,7 +38,6 @@ export function rehypeComponent() {
     }> = []
 
     visit(tree, (node: UnistNode) => {
-      
       const { value: srcPath } =
         (getNodeAttributeByName(node, "src") as {
           name: string
@@ -81,7 +79,6 @@ export function rehypeComponent() {
       }
     })
 
-    
     await Promise.all(
       nodesToProcess.map(async ({ node, type, name, srcPath, fileName }) => {
         try {
@@ -90,7 +87,6 @@ export function rehypeComponent() {
           if (srcPath) {
             src = path.join(process.cwd(), srcPath)
           } else if (name) {
-            
             const component = (await queryRegistry({
               name,
               style: type === "preview" ? activeStyle.name : undefined,
@@ -130,11 +126,9 @@ export function rehypeComponent() {
             return
           }
 
-
           if (!src) {
             return
           }
-
 
           const filePath = src
           if (!fs.existsSync(filePath)) {
@@ -143,13 +137,9 @@ export function rehypeComponent() {
           }
           let source = fs.readFileSync(filePath, "utf8")
 
-          
-          
-          
           source = source.replaceAll(`@/registry/new-york-v4/`, "@/components/")
           source = source.replaceAll("export default", "export")
 
-          
           node.children?.push(
             u("element", {
               tagName: "pre",

@@ -2,14 +2,13 @@
 
 import { ReactNode } from "react"
 
+import { StripeBgGuides } from "@/components/layout/striped-bg-guides"
 import { ParallaxImage } from "@/registry/new-york-v4/animations/background-image-parallax/background-image-parallax"
 import {
   HorizontalScrollContainer,
   HorizontalSlide,
 } from "@/registry/new-york-v4/animations/text-parallax/text-parallax"
 import { Spacer } from "@/registry/new-york-v4/ui/spacer"
-
-import { StripeBgGuides } from "@/components/layout/striped-bg-guides"
 
 export interface DesignShowcaseBlockProps {
   intro: {
@@ -54,10 +53,7 @@ export function DesignShowcaseBlock({
   return (
     <div id="design" className={`relative overflow-hidden ${className ?? ""}`}>
       {showStripeBg && (
-        <StripeBgGuides
-          className="absolute inset-0 z-0"
-          contained
-        />
+        <StripeBgGuides className="absolute inset-0 z-0" contained />
       )}
 
       {/* Intro Section with Parallax */}
@@ -71,7 +67,7 @@ export function DesignShowcaseBlock({
           offset={["start end", "end start"]}
         >
           <div className="relative z-10 container flex flex-col items-center px-6 text-center">
-            <p className="text-sm font-medium tracking-widest uppercase text-white/80">
+            <p className="text-sm font-medium tracking-widest text-white/80 uppercase">
               {intro.tagline}
             </p>
             <Spacer size="md" sizeMobile="sm" />

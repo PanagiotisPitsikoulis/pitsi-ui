@@ -1,8 +1,12 @@
 import type { MetadataRoute } from "next"
 
 import { getAllCategories, getBlockIdsByCategory } from "@/lib/blocks"
-import { getBlogPostSlugs, getBlogCategories, getTotalPages } from "@/lib/blog/source"
-import { BASE_URL, staticPages, createSitemapEntry } from "@/lib/sitemap/config"
+import {
+  getBlogCategories,
+  getBlogPostSlugs,
+  getTotalPages,
+} from "@/lib/blog/source"
+import { BASE_URL, createSitemapEntry, staticPages } from "@/lib/sitemap/config"
 import { source } from "@/lib/source"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -39,7 +43,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     const categoryPages = getTotalPages(category)
     for (let i = 2; i <= categoryPages; i++) {
-      entries.push(createSitemapEntry(`/blog/category/${category}/page/${i}`, 0.4))
+      entries.push(
+        createSitemapEntry(`/blog/category/${category}/page/${i}`, 0.4)
+      )
     }
   })
 

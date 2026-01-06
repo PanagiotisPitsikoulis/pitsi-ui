@@ -2,8 +2,8 @@
 
 import React, { memo, useMemo } from "react"
 import { createPortal } from "react-dom"
-import { Inspect, SquarePen } from "@/lib/icons"
 
+import { Inspect, SquarePen } from "@/lib/icons"
 import { cn } from "@/lib/utils"
 import {
   HoverCard,

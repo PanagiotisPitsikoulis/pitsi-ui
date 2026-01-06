@@ -1,18 +1,20 @@
 import { Suspense } from "react"
 import { Metadata } from "next"
 
+import { Spacer } from "@/registry/new-york-v4/ui/spacer"
+
 import {
   CTASection,
-  ReviewsSection,
-  StripeBgGuides,
   DynamicPricingSection,
   PricingCardsSection, // Used as fallback
+  ReviewsSection,
+  StripeBgGuides,
 } from "../(marketing)/_components"
-import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 
 export const metadata: Metadata = {
   title: "Pricing - Pitsi UI",
-  description: "Flexible pricing plans to suit your needs, from hobby to enterprise.",
+  description:
+    "Flexible pricing plans to suit your needs, from hobby to enterprise.",
 }
 
 function PricingHero() {
@@ -44,7 +46,7 @@ export default function PricingPage() {
       <StripeBgGuides columnCount={6} animated={false} />
       <PricingHero />
       <Suspense fallback={<PricingCardsSection user={null} />}>
-          <DynamicPricingSection />
+        <DynamicPricingSection />
       </Suspense>
       <CTASection />
       <ReviewsSection />

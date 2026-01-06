@@ -85,7 +85,9 @@ export function ItemDecoration({
           rotation !== 0 && `rotate-[${rotation}deg]`,
           imageClassName
         )}
-        style={rotation !== 0 ? { transform: `rotate(${rotation}deg)` } : undefined}
+        style={
+          rotation !== 0 ? { transform: `rotate(${rotation}deg)` } : undefined
+        }
       />
     </div>
   )

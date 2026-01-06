@@ -3,6 +3,8 @@
 import { useCallback, useEffect, useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
+import { useTheme } from "next-themes"
+
 import {
   ArrowLeft,
   Check,
@@ -19,8 +21,6 @@ import {
   Sun,
   Terminal,
 } from "@/lib/icons"
-import { useTheme } from "next-themes"
-
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard"
 import {
   DropdownMenu,
@@ -39,10 +39,7 @@ import {
 } from "@/registry/new-york-v4/ui/tooltip"
 import { type Style } from "@/registry/styles"
 
-import {
-  TemplateBlocksSection,
-  type BlockMetadata,
-} from "../../_components"
+import { TemplateBlocksSection, type BlockMetadata } from "../../_components"
 import type { BlockConfig } from "../../blocks"
 
 interface ApplicationTemplateViewerClientProps {
@@ -73,7 +70,8 @@ export function ApplicationTemplateViewerClient({
   const router = useRouter()
   const isDev = process.env.NODE_ENV === "development"
   const { theme, setTheme, resolvedTheme } = useTheme()
-  const { copyToClipboard: copyInstallCommand, isCopied: isInstallCopied } = useCopyToClipboard()
+  const { copyToClipboard: copyInstallCommand, isCopied: isInstallCopied } =
+    useCopyToClipboard()
   const [iframeKey, setIframeKey] = useState(0)
   const installCommand = `npx pitsi@latest add ${slug}`
 
@@ -147,7 +145,7 @@ export function ApplicationTemplateViewerClient({
       <div className="flex min-h-[calc(100vh-var(--header-height))] flex-col gap-3 overflow-x-hidden p-3">
         {/* Top Toolbar */}
         <div>
-          <div className="container flex items-center gap-1 rounded-full bg-muted p-1.5">
+          <div className="bg-muted container flex items-center gap-1 rounded-full p-1.5">
             {/* Back button */}
             <Tooltip>
               <TooltipTrigger asChild>
@@ -158,26 +156,28 @@ export function ApplicationTemplateViewerClient({
                   <ArrowLeft className="size-4" />
                 </button>
               </TooltipTrigger>
-              <TooltipContent side="bottom" className="text-xs">Back</TooltipContent>
+              <TooltipContent side="bottom" className="text-xs">
+                Back
+              </TooltipContent>
             </Tooltip>
 
             {/* Separator */}
-            <div className="mx-1 h-5 w-px bg-border" />
+            <div className="bg-border mx-1 h-5 w-px" />
 
             {/* Preview (always active) */}
             <Tooltip>
               <TooltipTrigger asChild>
-                <button
-                  className="bg-background text-foreground flex size-9 items-center justify-center rounded-full shadow-sm transition-colors"
-                >
+                <button className="bg-background text-foreground flex size-9 items-center justify-center rounded-full shadow-sm transition-colors">
                   <Eye className="size-4" />
                 </button>
               </TooltipTrigger>
-              <TooltipContent side="bottom" className="text-xs">Preview</TooltipContent>
+              <TooltipContent side="bottom" className="text-xs">
+                Preview
+              </TooltipContent>
             </Tooltip>
 
             {/* Separator */}
-            <div className="mx-1 hidden h-5 w-px bg-border lg:block" />
+            <div className="bg-border mx-1 hidden h-5 w-px lg:block" />
 
             {/* Fullscreen button */}
             <Tooltip>
@@ -190,7 +190,9 @@ export function ApplicationTemplateViewerClient({
                   <Maximize className="size-4" />
                 </Link>
               </TooltipTrigger>
-              <TooltipContent side="bottom" className="text-xs">Open in new tab</TooltipContent>
+              <TooltipContent side="bottom" className="text-xs">
+                Open in new tab
+              </TooltipContent>
             </Tooltip>
 
             {/* Refresh button */}
@@ -203,7 +205,9 @@ export function ApplicationTemplateViewerClient({
                   <RotateCw className="size-4" />
                 </button>
               </TooltipTrigger>
-              <TooltipContent side="bottom" className="text-xs">Refresh</TooltipContent>
+              <TooltipContent side="bottom" className="text-xs">
+                Refresh
+              </TooltipContent>
             </Tooltip>
 
             {/* Right side: Actions */}
@@ -213,12 +217,18 @@ export function ApplicationTemplateViewerClient({
                 onClick={() => copyInstallCommand(installCommand)}
                 className="bg-background text-foreground hover:bg-muted flex h-9 items-center gap-2 rounded-full px-3 font-mono text-xs shadow-sm transition-colors"
               >
-                {isInstallCopied ? <Check className="size-3.5" /> : <Terminal className="size-3.5" />}
-                <span className="hidden md:inline">{isInstallCopied ? "Copied!" : installCommand}</span>
+                {isInstallCopied ? (
+                  <Check className="size-3.5" />
+                ) : (
+                  <Terminal className="size-3.5" />
+                )}
+                <span className="hidden md:inline">
+                  {isInstallCopied ? "Copied!" : installCommand}
+                </span>
               </button>
 
               {/* Separator */}
-              <div className="mx-1 h-5 w-px bg-border" />
+              <div className="bg-border mx-1 h-5 w-px" />
 
               {/* Theme toggle */}
               <DropdownMenu>
@@ -228,10 +238,15 @@ export function ApplicationTemplateViewerClient({
                       <ThemeIcon className="size-4" />
                     </DropdownMenuTrigger>
                   </TooltipTrigger>
-                  <TooltipContent side="bottom" className="text-xs">Theme</TooltipContent>
+                  <TooltipContent side="bottom" className="text-xs">
+                    Theme
+                  </TooltipContent>
                 </Tooltip>
                 <DropdownMenuContent align="end">
-                  <DropdownMenuRadioGroup value={theme} onValueChange={setTheme}>
+                  <DropdownMenuRadioGroup
+                    value={theme}
+                    onValueChange={setTheme}
+                  >
                     <DropdownMenuRadioItem value="light">
                       <Sun className="mr-2 size-4" />
                       Light
@@ -252,7 +267,7 @@ export function ApplicationTemplateViewerClient({
               {isDev && (
                 <>
                   {/* Separator */}
-                  <div className="mx-1 h-5 w-px bg-border" />
+                  <div className="bg-border mx-1 h-5 w-px" />
 
                   {/* Assets */}
                   <Tooltip>
@@ -294,7 +309,9 @@ export function ApplicationTemplateViewerClient({
                         <Palette className="size-4" />
                       </button>
                     </TooltipTrigger>
-                    <TooltipContent side="bottom" className="text-xs">Theme file</TooltipContent>
+                    <TooltipContent side="bottom" className="text-xs">
+                      Theme file
+                    </TooltipContent>
                   </Tooltip>
 
                   {/* Blocks dropdown */}
@@ -305,27 +322,38 @@ export function ApplicationTemplateViewerClient({
                           <Code2 className="size-4" />
                         </DropdownMenuTrigger>
                       </TooltipTrigger>
-                      <TooltipContent side="bottom" className="text-xs">Open blocks</TooltipContent>
+                      <TooltipContent side="bottom" className="text-xs">
+                        Open blocks
+                      </TooltipContent>
                     </Tooltip>
                     <DropdownMenuContent align="end" className="w-56">
                       {/* Main app component */}
                       <DropdownMenuItem onClick={() => openBlock(slug)}>
                         <FolderOpen className="mr-2 size-4" />
                         <span className="font-mono text-xs">{slug}</span>
-                        <span className="text-muted-foreground ml-auto text-xs">main</span>
+                        <span className="text-muted-foreground ml-auto text-xs">
+                          main
+                        </span>
                       </DropdownMenuItem>
                       {/* Shell component */}
                       <DropdownMenuItem onClick={() => openBlock(shell)}>
                         <FolderOpen className="mr-2 size-4" />
                         <span className="font-mono text-xs">{shell}</span>
-                        <span className="text-muted-foreground ml-auto text-xs">shell</span>
+                        <span className="text-muted-foreground ml-auto text-xs">
+                          shell
+                        </span>
                       </DropdownMenuItem>
                       <DropdownMenuSeparator />
                       {/* View components */}
                       {templateBlocks.map((block) => (
-                        <DropdownMenuItem key={block.name} onClick={() => openBlock(block.name)}>
+                        <DropdownMenuItem
+                          key={block.name}
+                          onClick={() => openBlock(block.name)}
+                        >
                           <FolderOpen className="mr-2 size-4" />
-                          <span className="font-mono text-xs">{block.name}</span>
+                          <span className="font-mono text-xs">
+                            {block.name}
+                          </span>
                         </DropdownMenuItem>
                       ))}
                     </DropdownMenuContent>

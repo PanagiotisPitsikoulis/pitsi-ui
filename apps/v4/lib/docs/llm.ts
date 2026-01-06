@@ -9,7 +9,9 @@ async function queryWithRetry(
   for (let attempt = 0; attempt < retries; attempt++) {
     try {
       const result = await queryRegistry({ name, style })
-      return result as { files?: Array<{ path?: string; content?: string }> } | null
+      return result as {
+        files?: Array<{ path?: string; content?: string }>
+      } | null
     } catch (error) {
       if (attempt === retries - 1) {
         throw error

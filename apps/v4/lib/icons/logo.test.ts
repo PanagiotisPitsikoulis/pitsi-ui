@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest"
+import { describe, expect, it } from "vitest"
 
 import { LOGO_SVG_PATH, PITSI_DIAGONAL_ICON } from "@/lib/icons/logo"
 
@@ -45,7 +45,9 @@ describe("logo icons", () => {
     })
 
     it("should have xmlns attribute", () => {
-      expect(PITSI_DIAGONAL_ICON).toContain('xmlns="http://www.w3.org/2000/svg"')
+      expect(PITSI_DIAGONAL_ICON).toContain(
+        'xmlns="http://www.w3.org/2000/svg"'
+      )
     })
 
     it("should have viewBox attribute", () => {

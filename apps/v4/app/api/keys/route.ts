@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from "next/server"
 
-import { createApiKey, deleteApiKey, getUserApiKeys } from "@/lib/server/api-keys"
+import {
+  createApiKey,
+  deleteApiKey,
+  getUserApiKeys,
+} from "@/lib/server/api-keys"
 import { getCurrentUser } from "@/lib/server/user"
 
 export async function GET() {

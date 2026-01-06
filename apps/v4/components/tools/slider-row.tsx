@@ -95,7 +95,11 @@ function SliderRow({
           min={min}
           max={max}
           step={step}
-          className={cn("w-full", brandColors && "[&_[data-slot=slider-range]]:bg-brand [&_[data-slot=slider-thumb]]:border-brand")}
+          className={cn(
+            "w-full",
+            brandColors &&
+              "[&_[data-slot=slider-range]]:bg-brand [&_[data-slot=slider-thumb]]:border-brand"
+          )}
         />
       </div>
     )
@@ -103,7 +107,12 @@ function SliderRow({
 
   // Default: inline layout
   return (
-    <div className={cn("grid grid-cols-[1fr_auto_1fr] items-center gap-3", className)}>
+    <div
+      className={cn(
+        "grid grid-cols-[1fr_auto_1fr] items-center gap-3",
+        className
+      )}
+    >
       <Label className="text-sm font-medium">{label}</Label>
       <Slider
         value={[localValue]}

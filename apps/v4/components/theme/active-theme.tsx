@@ -8,6 +8,7 @@ import {
   useEffect,
   useState,
 } from "react"
+
 const DEFAULT_THEME = "default"
 
 type ThemeContextType = {

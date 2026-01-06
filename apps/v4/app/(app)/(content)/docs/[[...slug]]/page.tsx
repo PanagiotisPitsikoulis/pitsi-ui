@@ -1,5 +1,5 @@
-import { notFound } from "next/navigation"
 import { cacheLife } from "next/cache"
+import { notFound } from "next/navigation"
 import { mdxComponents } from "@/mdx-components"
 import fm from "front-matter"
 import { findNeighbour } from "fumadocs-core/page-tree"

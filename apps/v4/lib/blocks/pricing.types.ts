@@ -76,7 +76,12 @@ export const pricingDefaults: PricingContent = {
       price: "$29",
       period: "/month",
       description: "Perfect for new plant parents",
-      features: ["1 medium plant", "Care guide included", "Standard pot", "Email support"],
+      features: [
+        "1 medium plant",
+        "Care guide included",
+        "Standard pot",
+        "Email support",
+      ],
       cta: { label: "Get Started", href: "#" },
     },
     {

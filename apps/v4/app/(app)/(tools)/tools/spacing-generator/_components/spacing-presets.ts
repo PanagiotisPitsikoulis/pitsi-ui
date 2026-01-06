@@ -160,7 +160,8 @@ export function calculateSpacingValues(state: SpacingState): SpacingValue[] {
     }
   } else if (scale === "geometric") {
     for (let i = 1; i <= steps; i++) {
-      const value = Math.round(baseSize * Math.pow(multiplier, i - 1) * 100) / 100
+      const value =
+        Math.round(baseSize * Math.pow(multiplier, i - 1) * 100) / 100
       values.push({
         name: String(i),
         value,

@@ -17,7 +17,7 @@ const Circle = forwardRef<
     <div
       ref={ref}
       className={cn(
-        "z-10 flex size-10 items-center justify-center rounded-full border border-border bg-background p-2 shadow-sm",
+        "border-border bg-background z-10 flex size-10 items-center justify-center rounded-full border p-2 shadow-sm",
         className
       )}
     >
@@ -78,7 +78,11 @@ function NextLogo({ className }: { className?: string }) {
           y2="160.5"
         >
           <stop stopColor="var(--background, white)" />
-          <stop offset="1" stopColor="var(--background, white)" stopOpacity="0" />
+          <stop
+            offset="1"
+            stopColor="var(--background, white)"
+            stopOpacity="0"
+          />
         </linearGradient>
         <linearGradient
           gradientUnits="userSpaceOnUse"
@@ -89,7 +93,11 @@ function NextLogo({ className }: { className?: string }) {
           y2="106.875"
         >
           <stop stopColor="var(--background, white)" />
-          <stop offset="1" stopColor="var(--background, white)" stopOpacity="0" />
+          <stop
+            offset="1"
+            stopColor="var(--background, white)"
+            stopOpacity="0"
+          />
         </linearGradient>
       </defs>
     </svg>
@@ -148,14 +156,14 @@ export function FullStackBlocksIllustration() {
         {/* Left - pitsi/ui logo */}
         <div className="flex flex-col justify-center">
           <Circle ref={centerRef} className="size-14">
-            <AppLogo className="size-7 text-foreground" />
+            <AppLogo className="text-foreground size-7" />
           </Circle>
         </div>
 
         {/* Right column - stacked icons */}
         <div className="flex flex-col justify-center gap-2">
           <Circle ref={div1Ref}>
-            <NextLogo className="size-5 text-foreground" />
+            <NextLogo className="text-foreground size-5" />
           </Circle>
           <Circle ref={div2Ref}>
             <DrizzleLogo className="size-4" />

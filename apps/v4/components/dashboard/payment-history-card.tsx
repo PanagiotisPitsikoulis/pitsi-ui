@@ -13,7 +13,9 @@ export function PaymentHistoryCard() {
     <Card>
       <CardHeader>
         <CardTitle>Payment History</CardTitle>
-        <CardDescription>View your invoices in the Invoices tab</CardDescription>
+        <CardDescription>
+          View your invoices in the Invoices tab
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <p className="text-muted-foreground text-sm">

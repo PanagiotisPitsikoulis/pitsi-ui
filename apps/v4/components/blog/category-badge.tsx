@@ -1,4 +1,4 @@
-import { type BlogCategory, categoryLabels } from "@/lib/blog/source"
+import { categoryLabels, type BlogCategory } from "@/lib/blog/source"
 import { Badge } from "@/registry/new-york-v4/ui/badge"
 
 interface CategoryBadgeProps {

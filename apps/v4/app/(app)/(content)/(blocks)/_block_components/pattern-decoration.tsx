@@ -2,7 +2,13 @@
 
 import { cn } from "@/lib/utils"
 
-export type PatternType = "dots" | "grid" | "lines" | "diagonal" | "cross" | "noise"
+export type PatternType =
+  | "dots"
+  | "grid"
+  | "lines"
+  | "diagonal"
+  | "cross"
+  | "noise"
 export type PatternSize = "sm" | "md" | "lg"
 
 export interface PatternDecorationProps {
@@ -32,7 +38,8 @@ const fadeClasses: Record<string, string> = {
   bottom: "[mask-image:linear-gradient(to_top,transparent,black_20%)]",
   left: "[mask-image:linear-gradient(to_right,transparent,black_20%)]",
   right: "[mask-image:linear-gradient(to_left,transparent,black_20%)]",
-  radial: "[mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_70%)]",
+  radial:
+    "[mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_70%)]",
 }
 
 function getPatternStyle(
@@ -98,9 +105,10 @@ export function PatternDecoration({
   className,
   fade = "none",
 }: PatternDecorationProps) {
-  const patternColor = color.startsWith("#") || color.startsWith("rgb")
-    ? color
-    : `var(--${color.replace("text-", "").replace("bg-", "")}, currentColor)`
+  const patternColor =
+    color.startsWith("#") || color.startsWith("rgb")
+      ? color
+      : `var(--${color.replace("text-", "").replace("bg-", "")}, currentColor)`
 
   return (
     <div

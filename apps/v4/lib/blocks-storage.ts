@@ -54,10 +54,9 @@ const MAX_RECENT_ITEMS = 10
  * Hook for managing saved blocks
  */
 export function useSavedBlocks() {
-  const [savedBlocks, setSavedBlocks, isHydrated] = useLocalStorage<SavedBlock[]>(
-    STORAGE_KEYS.BLOCKS_SAVED,
-    []
-  )
+  const [savedBlocks, setSavedBlocks, isHydrated] = useLocalStorage<
+    SavedBlock[]
+  >(STORAGE_KEYS.BLOCKS_SAVED, [])
 
   const saveBlock = useCallback(
     (name: string, category: string) => {
@@ -109,10 +108,9 @@ export function useSavedBlocks() {
  * Hook for managing recently viewed blocks
  */
 export function useRecentBlocks() {
-  const [recentBlocks, setRecentBlocks, isHydrated] = useLocalStorage<RecentBlock[]>(
-    STORAGE_KEYS.BLOCKS_RECENT,
-    []
-  )
+  const [recentBlocks, setRecentBlocks, isHydrated] = useLocalStorage<
+    RecentBlock[]
+  >(STORAGE_KEYS.BLOCKS_RECENT, [])
 
   const addRecentBlock = useCallback(
     (name: string, category: string) => {
@@ -144,10 +142,9 @@ export function useRecentBlocks() {
  * Hook for managing saved templates
  */
 export function useSavedTemplates() {
-  const [savedTemplates, setSavedTemplates, isHydrated] = useLocalStorage<SavedTemplate[]>(
-    STORAGE_KEYS.TEMPLATES_SAVED,
-    []
-  )
+  const [savedTemplates, setSavedTemplates, isHydrated] = useLocalStorage<
+    SavedTemplate[]
+  >(STORAGE_KEYS.TEMPLATES_SAVED, [])
 
   const saveTemplate = useCallback(
     (slug: string, name: string) => {
@@ -198,10 +195,9 @@ export function useSavedTemplates() {
  * Hook for managing recently viewed templates
  */
 export function useRecentTemplates() {
-  const [recentTemplates, setRecentTemplates, isHydrated] = useLocalStorage<RecentTemplate[]>(
-    STORAGE_KEYS.TEMPLATES_RECENT,
-    []
-  )
+  const [recentTemplates, setRecentTemplates, isHydrated] = useLocalStorage<
+    RecentTemplate[]
+  >(STORAGE_KEYS.TEMPLATES_RECENT, [])
 
   const addRecentTemplate = useCallback(
     (slug: string, name: string) => {
@@ -230,10 +226,9 @@ export function useRecentTemplates() {
  * Hook for managing saved components
  */
 export function useSavedComponents() {
-  const [savedComponents, setSavedComponents, isHydrated] = useLocalStorage<SavedComponent[]>(
-    STORAGE_KEYS.COMPONENTS_SAVED,
-    []
-  )
+  const [savedComponents, setSavedComponents, isHydrated] = useLocalStorage<
+    SavedComponent[]
+  >(STORAGE_KEYS.COMPONENTS_SAVED, [])
 
   const saveComponent = useCallback(
     (name: string) => {
@@ -284,10 +279,9 @@ export function useSavedComponents() {
  * Hook for managing recently viewed components
  */
 export function useRecentComponents() {
-  const [recentComponents, setRecentComponents, isHydrated] = useLocalStorage<RecentComponent[]>(
-    STORAGE_KEYS.COMPONENTS_RECENT,
-    []
-  )
+  const [recentComponents, setRecentComponents, isHydrated] = useLocalStorage<
+    RecentComponent[]
+  >(STORAGE_KEYS.COMPONENTS_RECENT, [])
 
   const addRecentComponent = useCallback(
     (name: string) => {
@@ -316,10 +310,9 @@ export function useRecentComponents() {
  * Hook for managing saved animations
  */
 export function useSavedAnimations() {
-  const [savedAnimations, setSavedAnimations, isHydrated] = useLocalStorage<SavedAnimation[]>(
-    STORAGE_KEYS.ANIMATIONS_SAVED,
-    []
-  )
+  const [savedAnimations, setSavedAnimations, isHydrated] = useLocalStorage<
+    SavedAnimation[]
+  >(STORAGE_KEYS.ANIMATIONS_SAVED, [])
 
   const saveAnimation = useCallback(
     (name: string) => {
@@ -370,10 +363,9 @@ export function useSavedAnimations() {
  * Hook for managing recently viewed animations
  */
 export function useRecentAnimations() {
-  const [recentAnimations, setRecentAnimations, isHydrated] = useLocalStorage<RecentAnimation[]>(
-    STORAGE_KEYS.ANIMATIONS_RECENT,
-    []
-  )
+  const [recentAnimations, setRecentAnimations, isHydrated] = useLocalStorage<
+    RecentAnimation[]
+  >(STORAGE_KEYS.ANIMATIONS_RECENT, [])
 
   const addRecentAnimation = useCallback(
     (name: string) => {

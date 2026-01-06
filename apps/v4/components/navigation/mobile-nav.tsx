@@ -18,7 +18,11 @@ import {
 const QUICK_LINKS = [
   { name: "Get Started", href: "/docs" },
   { name: "Changelog", href: "/changelog" },
-  { name: "GitHub", href: "https://github.com/PanagiotisPitsikoulis/pitsi-ui", external: true },
+  {
+    name: "GitHub",
+    href: "https://github.com/PanagiotisPitsikoulis/pitsi-ui",
+    external: true,
+  },
 ]
 
 export function MobileNav({
@@ -188,7 +192,7 @@ function NavSection({
 }) {
   return (
     <div className="flex flex-col gap-3">
-      <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+      <h3 className="text-muted-foreground text-xs font-semibold tracking-wider uppercase">
         {title}
       </h3>
       {children}
@@ -219,7 +223,7 @@ function MobileLink({
         rel="noopener noreferrer"
         onClick={() => onOpenChange?.(false)}
         className={cn(
-          "py-1.5 text-sm font-medium text-foreground/80 transition-colors hover:text-foreground",
+          "text-foreground/80 hover:text-foreground py-1.5 text-sm font-medium transition-colors",
           className
         )}
         {...props}
@@ -237,7 +241,7 @@ function MobileLink({
         onOpenChange?.(false)
       }}
       className={cn(
-        "py-1.5 text-sm font-medium text-foreground/80 transition-colors hover:text-foreground",
+        "text-foreground/80 hover:text-foreground py-1.5 text-sm font-medium transition-colors",
         className
       )}
       {...props}

@@ -1,7 +1,14 @@
 "use client"
 
-import { ArrowDown, ArrowUp, Copy, GripVertical, Pencil, Trash2, Upload } from "@/lib/icons"
-
+import {
+  ArrowDown,
+  ArrowUp,
+  Copy,
+  GripVertical,
+  Pencil,
+  Trash2,
+  Upload,
+} from "@/lib/icons"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Input } from "@/registry/new-york-v4/ui/input"
@@ -121,22 +128,27 @@ function SavedItemsList<T extends SavedItemBase>({
       {items.map((item, index) => (
         <div
           key={item.id}
-          className="group flex items-center gap-2 rounded-lg border bg-background p-2 shadow-xs"
+          className="group bg-background flex items-center gap-2 rounded-lg border p-2 shadow-xs"
         >
           {showGripIcon && (
-            <GripVertical className="size-4 shrink-0 text-muted-foreground" />
+            <GripVertical className="text-muted-foreground size-4 shrink-0" />
           )}
           {renderPreview && (
-            <div className="shrink-0">
-              {renderPreview(item)}
-            </div>
+            <div className="shrink-0">{renderPreview(item)}</div>
           )}
           <Input
             value={item.name}
             onChange={(e) => onRename(item.id, e.target.value)}
             className="h-7 min-w-0 flex-1 border-none bg-transparent px-1 text-sm font-medium shadow-none focus-visible:ring-0"
           />
-          <div className={cn("flex items-center gap-0.5 transition-opacity", alwaysShowActions ? "opacity-100" : "opacity-0 group-hover:opacity-100")}>
+          <div
+            className={cn(
+              "flex items-center gap-0.5 transition-opacity",
+              alwaysShowActions
+                ? "opacity-100"
+                : "opacity-0 group-hover:opacity-100"
+            )}
+          >
             {showLoadButton && (
               <TooltipProvider delayDuration={0}>
                 <Tooltip>

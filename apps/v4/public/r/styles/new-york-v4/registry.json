@@ -2539,603 +2539,104 @@
       "readiness": "beta"
     },
     {
-      "name": "header-1",
+      "name": "app-gym-gains-1",
       "type": "registry:block",
-      "description": "Plant shop header with navigation and CTA button",
+      "description": "Progress tracking with sparkline charts and PR history",
       "dependencies": [
         "@hugeicons/react",
         "@hugeicons/core-free-icons"
       ],
       "registryDependencies": [
-        "button"
+        "utils"
       ],
       "files": [
         {
-          "path": "registry/new-york-v4/blocks/header/header-1.tsx",
+          "path": "registry/new-york-v4/blocks/application/app-gym-gains-1.tsx",
           "type": "registry:block"
         }
       ],
       "categories": [
-        "header",
-        "landing"
+        "application"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "beta",
       "blockConfig": {
-        "template": "service-plants",
-        "blockType": "header",
-        "order": 1,
+        "template": "app-gym-tracker",
+        "blockType": "view",
+        "order": 4,
         "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted",
-        "forceLight": true
+        "typography": "modern",
+        "tint": "base"
       }
     },
     {
-      "name": "hero-1",
+      "name": "app-gym-history-1",
       "type": "registry:block",
-      "description": "Plant shop hero section with parallax effects and knockout text",
+      "description": "Calendar history view with workout indicators and details",
       "dependencies": [
-        "motion/react"
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
       ],
       "registryDependencies": [
         "button",
-        "hero-button",
-        "spacer"
+        "utils"
       ],
       "files": [
         {
-          "path": "registry/new-york-v4/blocks/hero/hero-1.tsx",
+          "path": "registry/new-york-v4/blocks/application/app-gym-history-1.tsx",
           "type": "registry:block"
         }
       ],
       "categories": [
-        "hero",
-        "landing"
+        "application"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "beta",
       "blockConfig": {
-        "template": "service-plants",
-        "blockType": "hero",
-        "order": 2,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted",
-        "forceLight": true
-      }
-    },
-    {
-      "name": "hero-10",
-      "type": "registry:block",
-      "description": "Plants bento hero with split layout and pill navbar",
-      "registryDependencies": [
-        "button",
-        "hero-button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/hero/hero-10.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "hero",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "hero",
-        "order": 2,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "hero-11",
-      "type": "registry:block",
-      "description": "Plants bento hero with 2-column grid and pill navbar",
-      "registryDependencies": [
-        "button",
-        "hero-button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/hero/hero-11.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "hero",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "hero",
-        "order": 2,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "hero-12",
-      "type": "registry:block",
-      "description": "Plants bento hero with reversed layout, stats, and pill navbar",
-      "registryDependencies": [
-        "button",
-        "hero-button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/hero/hero-12.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "hero",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "hero",
-        "order": 2,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "hero-13",
-      "type": "registry:block",
-      "description": "Plants bento hero with 3-column asymmetric grid and pill navbar",
-      "registryDependencies": [
-        "button",
-        "hero-button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/hero/hero-13.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "hero",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "hero",
-        "order": 2,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "hero-14",
-      "type": "registry:block",
-      "description": "Plants bento hero with 4-column stat cards and pill navbar",
-      "registryDependencies": [
-        "button",
-        "hero-button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/hero/hero-14.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "hero",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "hero",
-        "order": 2,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "logos-1",
-      "type": "registry:block",
-      "description": "Plant shop logo cloud section",
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/logos/logos-1.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "logos",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "logos",
+        "template": "app-gym-tracker",
+        "blockType": "view",
         "order": 3,
         "palette": "sage",
-        "typography": "elegant",
-        "tint": "deep"
+        "typography": "modern",
+        "tint": "base"
       }
     },
     {
-      "name": "features-1",
+      "name": "app-gym-library-1",
       "type": "registry:block",
-      "description": "Plant shop features section with icons and center image",
+      "description": "Exercise library with search, categories, and history",
       "dependencies": [
         "@hugeicons/react",
         "@hugeicons/core-free-icons"
       ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/features/features-1.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "features",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "features",
-        "order": 4,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "features-2",
-      "type": "registry:block",
-      "description": "Plant shop features section variant 2",
-      "dependencies": [
-        "motion/react"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/features/features-2.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "features",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "features",
-        "order": 4,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "features-3",
-      "type": "registry:block",
-      "description": "Plant shop features section variant 3 with circle background",
-      "dependencies": [
-        "motion/react"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/features/features-3.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "features",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "features",
-        "order": 4,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "features-4",
-      "type": "registry:block",
-      "description": "Plant shop features section variant 4",
-      "dependencies": [
-        "motion/react"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/features/features-4.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "features",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "features",
-        "order": 4,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "features-5",
-      "type": "registry:block",
-      "description": "Plant shop features section variant 5",
-      "dependencies": [
-        "motion/react"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/features/features-5.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "features",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "features",
-        "order": 4,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "products-1",
-      "type": "registry:block",
-      "description": "Plant shop products grid showcasing best sellers",
       "registryDependencies": [
-        "button"
+        "input",
+        "utils"
       ],
       "files": [
         {
-          "path": "registry/new-york-v4/blocks/products/products-1.tsx",
+          "path": "registry/new-york-v4/blocks/application/app-gym-library-1.tsx",
           "type": "registry:block"
         }
       ],
       "categories": [
-        "products",
-        "landing"
+        "application"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "beta",
       "blockConfig": {
-        "template": "service-plants",
-        "blockType": "products",
+        "template": "app-gym-tracker",
+        "blockType": "view",
         "order": 5,
         "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
+        "typography": "modern",
+        "tint": "base"
       }
     },
     {
-      "name": "pricing-1",
+      "name": "app-gym-log-1",
       "type": "registry:block",
-      "description": "Plant shop pricing section with animated cards",
-      "dependencies": [
-        "motion/react"
-      ],
-      "registryDependencies": [
-        "button",
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/pricing/pricing-1.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "pricing",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "pricing",
-        "order": 6,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "testimonials-1",
-      "type": "registry:block",
-      "description": "Plant shop testimonials with stacked cards effect",
-      "registryDependencies": [
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/testimonials/testimonials-1.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "testimonials",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "testimonials",
-        "order": 7,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "deep"
-      }
-    },
-    {
-      "name": "gallery-1",
-      "type": "registry:block",
-      "description": "Plant shop gallery grid with decorative elements",
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/gallery/gallery-1.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "gallery",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "gallery",
-        "order": 8,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "team-1",
-      "type": "registry:block",
-      "description": "Plant shop team section with stacked avatars",
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/team/team-1.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "team",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "team",
-        "order": 9,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "stats-1",
-      "type": "registry:block",
-      "description": "Plant shop statistics section",
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/stats/stats-1.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "stats",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "stats",
-        "order": 10,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "deep"
-      }
-    },
-    {
-      "name": "faq-1",
-      "type": "registry:block",
-      "description": "Plant shop FAQ section with accordion",
-      "registryDependencies": [
-        "accordion"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/faq/faq-1.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "faq",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "faq",
-        "order": 11,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "blog-1",
-      "type": "registry:block",
-      "description": "Plant shop blog section with article cards",
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/blog/blog-1.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "blog",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "blog",
-        "order": 12,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "contact-1",
-      "type": "registry:block",
-      "description": "Plant shop contact form section",
+      "description": "Active workout logging with set tracking and timer",
       "dependencies": [
         "@hugeicons/react",
         "@hugeicons/core-free-icons"
@@ -3143,917 +2644,338 @@
       "registryDependencies": [
         "button",
         "input",
-        "textarea",
-        "label"
+        "utils"
       ],
       "files": [
         {
-          "path": "registry/new-york-v4/blocks/contact/contact-1.tsx",
+          "path": "registry/new-york-v4/blocks/application/app-gym-log-1.tsx",
           "type": "registry:block"
         }
       ],
       "categories": [
-        "contact",
-        "landing"
+        "application"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "beta",
       "blockConfig": {
-        "template": "service-plants",
-        "blockType": "contact",
-        "order": 13,
+        "template": "app-gym-tracker",
+        "blockType": "view",
+        "order": 2,
         "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
+        "typography": "modern",
+        "tint": "base"
       }
     },
     {
-      "name": "newsletter-1",
+      "name": "app-gym-profile-1",
       "type": "registry:block",
-      "description": "Plant shop newsletter subscription section",
+      "description": "Profile and settings with preferences and stats",
+      "dependencies": [
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
+      ],
       "registryDependencies": [
+        "avatar",
         "button",
-        "input"
+        "input",
+        "label",
+        "select",
+        "separator",
+        "switch",
+        "utils"
       ],
       "files": [
         {
-          "path": "registry/new-york-v4/blocks/newsletter/newsletter-1.tsx",
+          "path": "registry/new-york-v4/blocks/application/app-gym-profile-1.tsx",
           "type": "registry:block"
         }
       ],
       "categories": [
-        "newsletter",
-        "landing"
+        "application"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "beta",
       "blockConfig": {
-        "template": "service-plants",
-        "blockType": "newsletter",
-        "order": 14,
+        "template": "app-gym-tracker",
+        "blockType": "view",
+        "order": 6,
         "palette": "sage",
-        "typography": "elegant",
-        "tint": "deep"
+        "typography": "modern",
+        "tint": "base"
       }
     },
     {
-      "name": "cta-1",
+      "name": "app-gym-shell-1",
       "type": "registry:block",
-      "description": "Plant shop call-to-action section",
+      "description": "Two-sidebar gym tracker shell with navigation and stats",
+      "dependencies": [
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
+      ],
       "registryDependencies": [
-        "button"
+        "sidebar",
+        "avatar",
+        "button",
+        "separator",
+        "utils"
       ],
       "files": [
         {
-          "path": "registry/new-york-v4/blocks/cta/cta-1.tsx",
+          "path": "registry/new-york-v4/blocks/application/app-gym-shell-1.tsx",
           "type": "registry:block"
         }
       ],
       "categories": [
-        "cta",
-        "landing"
+        "application"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "beta",
       "blockConfig": {
-        "template": "service-plants",
-        "blockType": "cta",
-        "order": 15,
+        "template": "app-gym-tracker",
+        "blockType": "shell",
+        "order": 0,
         "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
+        "typography": "modern",
+        "tint": "base"
       }
     },
     {
-      "name": "footer-1",
+      "name": "app-gym-today-1",
       "type": "registry:block",
-      "description": "Plant shop footer with multiple columns and newsletter",
+      "description": "Today view with personalized greeting, week progress, and upcoming sets",
       "dependencies": [
         "@hugeicons/react",
         "@hugeicons/core-free-icons"
       ],
       "registryDependencies": [
         "button",
-        "input"
+        "utils"
       ],
       "files": [
         {
-          "path": "registry/new-york-v4/blocks/footer/footer-1.tsx",
+          "path": "registry/new-york-v4/blocks/application/app-gym-today-1.tsx",
           "type": "registry:block"
         }
       ],
       "categories": [
-        "footer",
-        "landing"
+        "application"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "beta",
       "blockConfig": {
-        "template": "service-plants",
-        "blockType": "footer",
-        "order": 20,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "hero-2",
-      "type": "registry:block",
-      "description": "Travel agency hero section with parallax effects and knockout text",
-      "dependencies": [
-        "motion/react"
-      ],
-      "registryDependencies": [
-        "button",
-        "hero-button",
-        "spacer"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/hero/hero-2.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "hero",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-travel",
-        "blockType": "hero",
-        "order": 2,
-        "palette": "azure",
-        "typography": "modern",
-        "tint": "tinted",
-        "forceLight": true
-      }
-    },
-    {
-      "name": "hero-15",
-      "type": "registry:block",
-      "description": "Travel bento hero with split layout and pill navbar",
-      "registryDependencies": [
-        "button",
-        "hero-button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/hero/hero-15.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "hero",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-travel",
-        "blockType": "hero",
-        "order": 2,
-        "palette": "azure",
-        "typography": "modern",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "hero-16",
-      "type": "registry:block",
-      "description": "Travel bento hero with 2-column grid and pill navbar",
-      "registryDependencies": [
-        "button",
-        "hero-button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/hero/hero-16.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "hero",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-travel",
-        "blockType": "hero",
-        "order": 2,
-        "palette": "azure",
-        "typography": "modern",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "hero-17",
-      "type": "registry:block",
-      "description": "Travel bento hero with reversed layout, stats, and pill navbar",
-      "registryDependencies": [
-        "button",
-        "hero-button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/hero/hero-17.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "hero",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-travel",
-        "blockType": "hero",
-        "order": 2,
-        "palette": "azure",
-        "typography": "modern",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "hero-18",
-      "type": "registry:block",
-      "description": "Travel bento hero with 3-column asymmetric grid and pill navbar",
-      "registryDependencies": [
-        "button",
-        "hero-button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/hero/hero-18.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "hero",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-travel",
-        "blockType": "hero",
-        "order": 2,
-        "palette": "azure",
-        "typography": "modern",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "hero-19",
-      "type": "registry:block",
-      "description": "Travel bento hero with 4-column stat cards and pill navbar",
-      "registryDependencies": [
-        "button",
-        "hero-button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/hero/hero-19.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "hero",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-travel",
-        "blockType": "hero",
-        "order": 2,
-        "palette": "azure",
-        "typography": "modern",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "hero-3",
-      "type": "registry:block",
-      "description": "Yacht charter hero section with parallax effects and knockout text",
-      "dependencies": [
-        "motion/react"
-      ],
-      "registryDependencies": [
-        "button",
-        "hero-button",
-        "spacer"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/hero/hero-3.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "hero",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-boat",
-        "blockType": "hero",
-        "order": 2,
-        "palette": "azure",
-        "typography": "classic",
-        "tint": "tinted",
-        "forceLight": true
-      }
-    },
-    {
-      "name": "hero-20",
-      "type": "registry:block",
-      "description": "Boat bento hero with split layout and pill navbar",
-      "registryDependencies": [
-        "button",
-        "hero-button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/hero/hero-20.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "hero",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-boat",
-        "blockType": "hero",
-        "order": 2,
-        "palette": "azure",
-        "typography": "classic",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "hero-21",
-      "type": "registry:block",
-      "description": "Boat bento hero with 2-column grid and pill navbar",
-      "registryDependencies": [
-        "button",
-        "hero-button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/hero/hero-21.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "hero",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-boat",
-        "blockType": "hero",
-        "order": 2,
-        "palette": "azure",
-        "typography": "classic",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "hero-22",
-      "type": "registry:block",
-      "description": "Boat bento hero with reversed layout, stats, and pill navbar",
-      "registryDependencies": [
-        "button",
-        "hero-button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/hero/hero-22.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "hero",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-boat",
-        "blockType": "hero",
-        "order": 2,
-        "palette": "azure",
-        "typography": "classic",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "hero-23",
-      "type": "registry:block",
-      "description": "Boat bento hero with 3-column asymmetric grid and pill navbar",
-      "registryDependencies": [
-        "button",
-        "hero-button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/hero/hero-23.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "hero",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-boat",
-        "blockType": "hero",
-        "order": 2,
-        "palette": "azure",
-        "typography": "classic",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "hero-24",
-      "type": "registry:block",
-      "description": "Boat bento hero with 4-column stat cards and pill navbar",
-      "registryDependencies": [
-        "button",
-        "hero-button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/hero/hero-24.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "hero",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-boat",
-        "blockType": "hero",
-        "order": 2,
-        "palette": "azure",
-        "typography": "classic",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "header-9",
-      "type": "registry:block",
-      "description": "Pill navbar header with rounded background and centered navigation",
-      "registryDependencies": [
-        "hero-button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/header/header-9.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "header",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-fitness",
-        "blockType": "header",
+        "template": "app-gym-tracker",
+        "blockType": "view",
         "order": 1,
-        "palette": "neon",
-        "typography": "futuristic",
-        "tint": "tinted"
+        "palette": "sage",
+        "typography": "modern",
+        "tint": "base"
       }
     },
     {
-      "name": "hero-4",
+      "name": "app-quiz-active-1",
       "type": "registry:block",
-      "description": "Split layout fitness hero with image left and content right, parallax effects",
+      "description": "Active quiz interface with timer and question display",
       "dependencies": [
-        "motion/react"
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
       ],
       "registryDependencies": [
         "button",
-        "hero-button",
-        "spacer"
+        "card",
+        "utils"
       ],
       "files": [
         {
-          "path": "registry/new-york-v4/blocks/hero/hero-4.tsx",
+          "path": "registry/new-york-v4/blocks/application/app-quiz-active-1.tsx",
           "type": "registry:block"
         }
       ],
       "categories": [
-        "hero",
-        "landing"
+        "application"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "beta",
       "blockConfig": {
-        "template": "service-fitness",
-        "blockType": "hero",
-        "order": 2,
-        "palette": "neon",
-        "typography": "futuristic",
-        "tint": "tinted"
+        "template": "app-quiz",
+        "blockType": "view",
+        "order": 3,
+        "palette": "violet",
+        "typography": "playful",
+        "tint": "base"
       }
     },
     {
-      "name": "hero-5",
+      "name": "app-quiz-browse-1",
       "type": "registry:block",
-      "description": "Full-bleed parallax fitness hero with dark overlay and centered content, video background style",
+      "description": "Quiz browser with categories and difficulty filters",
       "dependencies": [
-        "motion/react"
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
       ],
       "registryDependencies": [
+        "badge",
         "button",
-        "hero-button",
-        "spacer"
+        "card",
+        "input",
+        "utils"
       ],
       "files": [
         {
-          "path": "registry/new-york-v4/blocks/hero/hero-5.tsx",
+          "path": "registry/new-york-v4/blocks/application/app-quiz-browse-1.tsx",
           "type": "registry:block"
         }
       ],
       "categories": [
-        "hero",
-        "landing"
+        "application"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "beta",
       "blockConfig": {
-        "template": "service-fitness",
-        "blockType": "hero",
+        "template": "app-quiz",
+        "blockType": "view",
         "order": 2,
-        "palette": "neon",
-        "typography": "futuristic",
-        "tint": "tinted"
+        "palette": "violet",
+        "typography": "playful",
+        "tint": "base"
       }
     },
     {
-      "name": "hero-6",
+      "name": "app-quiz-dashboard-1",
       "type": "registry:block",
-      "description": "Stats-focused fitness hero with grid layout, credibility stats row, and parallax side image",
+      "description": "Quiz dashboard with stats, weekly accuracy chart, and recent quizzes",
       "dependencies": [
-        "motion/react"
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
       ],
       "registryDependencies": [
         "button",
-        "hero-button",
-        "spacer"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/hero/hero-6.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "hero",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-fitness",
-        "blockType": "hero",
-        "order": 2,
-        "palette": "neon",
-        "typography": "futuristic",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "hero-7",
-      "type": "registry:block",
-      "description": "Bento grid fitness hero with pill navbar, two-column layout, and side image",
-      "registryDependencies": [
-        "button",
-        "hero-button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/hero/hero-7.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "hero",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-fitness",
-        "blockType": "hero",
-        "order": 2,
-        "palette": "neon",
-        "typography": "futuristic",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "hero-8",
-      "type": "registry:block",
-      "description": "Bento grid fitness hero with stats, reversed layout, and larger image area",
-      "registryDependencies": [
-        "button",
-        "hero-button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/hero/hero-8.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "hero",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-fitness",
-        "blockType": "hero",
-        "order": 2,
-        "palette": "neon",
-        "typography": "futuristic",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "hero-9",
-      "type": "registry:block",
-      "description": "Asymmetric bento grid fitness hero with dual images and prominent title",
-      "registryDependencies": [
-        "button",
-        "hero-button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/hero/hero-9.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "hero",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-fitness",
-        "blockType": "hero",
-        "order": 2,
-        "palette": "neon",
-        "typography": "futuristic",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "features-6",
-      "type": "registry:block",
-      "description": "Fitness class types grid with intensity indicators and hover effects",
-      "registryDependencies": [
+        "card",
         "utils"
       ],
       "files": [
         {
-          "path": "registry/new-york-v4/blocks/features/features-6.tsx",
+          "path": "registry/new-york-v4/blocks/application/app-quiz-dashboard-1.tsx",
           "type": "registry:block"
         }
       ],
       "categories": [
-        "features",
-        "landing"
+        "application"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "beta",
       "blockConfig": {
-        "template": "service-fitness",
-        "blockType": "features",
+        "template": "app-quiz",
+        "blockType": "view",
+        "order": 1,
+        "palette": "violet",
+        "typography": "playful",
+        "tint": "base"
+      }
+    },
+    {
+      "name": "app-quiz-results-1",
+      "type": "registry:block",
+      "description": "Quiz results with score and question breakdown",
+      "dependencies": [
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "card",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/application/app-quiz-results-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "application"
+      ],
+      "tier": "free",
+      "readiness": "beta",
+      "blockConfig": {
+        "template": "app-quiz",
+        "blockType": "view",
         "order": 4,
-        "palette": "neon",
-        "typography": "futuristic",
-        "tint": "tinted"
+        "palette": "violet",
+        "typography": "playful",
+        "tint": "base"
       }
     },
     {
-      "name": "features-7",
+      "name": "app-quiz-settings-1",
       "type": "registry:block",
-      "description": "Weekly class schedule with day tabs, booking buttons, and spots indicator",
+      "description": "Quiz settings with profile and preferences",
+      "dependencies": [
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
+      ],
       "registryDependencies": [
+        "avatar",
         "button",
+        "card",
+        "input",
+        "label",
+        "select",
+        "separator",
+        "switch",
         "utils"
       ],
       "files": [
         {
-          "path": "registry/new-york-v4/blocks/features/features-7.tsx",
+          "path": "registry/new-york-v4/blocks/application/app-quiz-settings-1.tsx",
           "type": "registry:block"
         }
       ],
       "categories": [
-        "features",
-        "landing"
+        "application"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "beta",
       "blockConfig": {
-        "template": "service-fitness",
-        "blockType": "features",
-        "order": 4,
-        "palette": "neon",
-        "typography": "futuristic",
-        "tint": "tinted"
+        "template": "app-quiz",
+        "blockType": "view",
+        "order": 5,
+        "palette": "violet",
+        "typography": "playful",
+        "tint": "base"
       }
     },
     {
-      "name": "features-8",
+      "name": "app-quiz-shell-1",
       "type": "registry:block",
-      "description": "Studio location with hours, contact info, amenities, and map",
+      "description": "Application shell with sidebar navigation for quiz app",
+      "dependencies": [
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
+      ],
       "registryDependencies": [
-        "button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/features/features-8.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "features",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-fitness",
-        "blockType": "features",
-        "order": 4,
-        "palette": "neon",
-        "typography": "futuristic",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "team-2",
-      "type": "registry:block",
-      "description": "Coach profiles with specialties, certifications, and social links",
-      "registryDependencies": [
+        "sidebar",
+        "avatar",
         "utils"
       ],
       "files": [
         {
-          "path": "registry/new-york-v4/blocks/team/team-2.tsx",
+          "path": "registry/new-york-v4/blocks/application/app-quiz-shell-1.tsx",
           "type": "registry:block"
         }
       ],
       "categories": [
-        "team",
-        "landing"
+        "application"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "beta",
       "blockConfig": {
-        "template": "service-fitness",
-        "blockType": "team",
-        "order": 9,
-        "palette": "neon",
-        "typography": "futuristic",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "pricing-2",
-      "type": "registry:block",
-      "description": "Fitness membership pricing with tiers, features, and popular badge",
-      "registryDependencies": [
-        "button",
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/pricing/pricing-2.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "pricing",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-fitness",
-        "blockType": "pricing",
-        "order": 6,
-        "palette": "neon",
-        "typography": "futuristic",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "stats-2",
-      "type": "registry:block",
-      "description": "Animated gym statistics with number counters and highlight section",
-      "registryDependencies": [
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/stats/stats-2.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "stats",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-fitness",
-        "blockType": "stats",
-        "order": 10,
-        "palette": "neon",
-        "typography": "futuristic",
-        "tint": "deep"
-      }
-    },
-    {
-      "name": "testimonials-2",
-      "type": "registry:block",
-      "description": "Member testimonials with transformation stats and star ratings",
-      "registryDependencies": [
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/testimonials/testimonials-2.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "testimonials",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-fitness",
-        "blockType": "testimonials",
-        "order": 7,
-        "palette": "neon",
-        "typography": "futuristic",
-        "tint": "deep"
-      }
-    },
-    {
-      "name": "footer-2",
-      "type": "registry:block",
-      "description": "Fitness footer with newsletter, navigation columns, and social links",
-      "registryDependencies": [
-        "button",
-        "input"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/footer/footer-2.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "footer",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-fitness",
-        "blockType": "footer",
-        "order": 20,
-        "palette": "neon",
-        "typography": "futuristic",
-        "tint": "tinted"
+        "template": "app-quiz",
+        "blockType": "shell",
+        "order": 0,
+        "palette": "violet",
+        "typography": "playful",
+        "tint": "base"
       }
     },
     {
@@ -4233,833 +3155,1315 @@
       }
     },
     {
-      "name": "service-plants",
+      "name": "blog-1",
       "type": "registry:block",
-      "description": "Complete plant shop landing page template with all sections",
-      "registryDependencies": [
-        "header-1",
-        "hero-1",
-        "hero-10",
-        "hero-11",
-        "hero-12",
-        "hero-13",
-        "hero-14",
-        "logos-1",
-        "features-1",
-        "features-2",
-        "features-3",
-        "features-4",
-        "features-5",
-        "products-1",
-        "pricing-1",
-        "testimonials-1",
-        "gallery-1",
-        "team-1",
-        "stats-1",
-        "faq-1",
-        "blog-1",
-        "contact-1",
-        "newsletter-1",
-        "cta-1",
-        "footer-1"
-      ],
+      "description": "Plant shop blog section with article cards",
       "files": [
         {
-          "path": "registry/new-york-v4/blocks/service/service-plants.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "meta": {
-        "heroBlock": "hero-1"
-      },
-      "categories": [
-        "template",
-        "service"
-      ],
-      "tier": "free",
-      "readiness": "production"
-    },
-    {
-      "name": "service-travel",
-      "type": "registry:block",
-      "description": "Stunning travel agency landing page template for tour operators",
-      "registryDependencies": [
-        "hero-2",
-        "hero-15",
-        "hero-16",
-        "hero-17",
-        "hero-18",
-        "hero-19"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/service/service-travel.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "meta": {
-        "heroBlock": "hero-2"
-      },
-      "categories": [
-        "template",
-        "service"
-      ],
-      "tier": "free",
-      "readiness": "beta"
-    },
-    {
-      "name": "service-boat",
-      "type": "registry:block",
-      "description": "Luxury yacht charter landing page template for marine services",
-      "registryDependencies": [
-        "hero-3",
-        "hero-20",
-        "hero-21",
-        "hero-22",
-        "hero-23",
-        "hero-24"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/service/service-boat.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "meta": {
-        "heroBlock": "hero-3"
-      },
-      "categories": [
-        "template",
-        "service"
-      ],
-      "tier": "free",
-      "readiness": "beta"
-    },
-    {
-      "name": "service-fitness",
-      "type": "registry:block",
-      "description": "Boutique fitness studio landing page with high-energy black & white design",
-      "registryDependencies": [
-        "header-9",
-        "hero-4",
-        "hero-5",
-        "hero-6",
-        "hero-7",
-        "hero-8",
-        "hero-9",
-        "features-6",
-        "features-7",
-        "team-2",
-        "stats-2",
-        "pricing-2",
-        "testimonials-2",
-        "features-8",
-        "footer-2"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/service/service-fitness.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "meta": {
-        "heroBlock": "hero-5"
-      },
-      "categories": [
-        "template",
-        "service"
-      ],
-      "tier": "free",
-      "readiness": "production"
-    },
-    {
-      "name": "app-gym-shell-1",
-      "type": "registry:block",
-      "description": "Two-sidebar gym tracker shell with navigation and stats",
-      "dependencies": [
-        "@hugeicons/react",
-        "@hugeicons/core-free-icons"
-      ],
-      "registryDependencies": [
-        "sidebar",
-        "avatar",
-        "button",
-        "separator",
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/application/app-gym-shell-1.tsx",
+          "path": "registry/new-york-v4/blocks/blog/blog-1.tsx",
           "type": "registry:block"
         }
       ],
       "categories": [
-        "application"
-      ],
-      "tier": "free",
-      "readiness": "beta",
-      "blockConfig": {
-        "template": "app-gym-tracker",
-        "blockType": "shell",
-        "order": 0,
-        "palette": "sage",
-        "typography": "modern",
-        "tint": "base"
-      }
-    },
-    {
-      "name": "app-gym-today-1",
-      "type": "registry:block",
-      "description": "Today view with personalized greeting, week progress, and upcoming sets",
-      "dependencies": [
-        "@hugeicons/react",
-        "@hugeicons/core-free-icons"
-      ],
-      "registryDependencies": [
-        "button",
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/application/app-gym-today-1.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "application"
-      ],
-      "tier": "free",
-      "readiness": "beta",
-      "blockConfig": {
-        "template": "app-gym-tracker",
-        "blockType": "view",
-        "order": 1,
-        "palette": "sage",
-        "typography": "modern",
-        "tint": "base"
-      }
-    },
-    {
-      "name": "app-gym-log-1",
-      "type": "registry:block",
-      "description": "Active workout logging with set tracking and timer",
-      "dependencies": [
-        "@hugeicons/react",
-        "@hugeicons/core-free-icons"
-      ],
-      "registryDependencies": [
-        "button",
-        "input",
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/application/app-gym-log-1.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "application"
-      ],
-      "tier": "free",
-      "readiness": "beta",
-      "blockConfig": {
-        "template": "app-gym-tracker",
-        "blockType": "view",
-        "order": 2,
-        "palette": "sage",
-        "typography": "modern",
-        "tint": "base"
-      }
-    },
-    {
-      "name": "app-gym-history-1",
-      "type": "registry:block",
-      "description": "Calendar history view with workout indicators and details",
-      "dependencies": [
-        "@hugeicons/react",
-        "@hugeicons/core-free-icons"
-      ],
-      "registryDependencies": [
-        "button",
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/application/app-gym-history-1.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "application"
-      ],
-      "tier": "free",
-      "readiness": "beta",
-      "blockConfig": {
-        "template": "app-gym-tracker",
-        "blockType": "view",
-        "order": 3,
-        "palette": "sage",
-        "typography": "modern",
-        "tint": "base"
-      }
-    },
-    {
-      "name": "app-gym-gains-1",
-      "type": "registry:block",
-      "description": "Progress tracking with sparkline charts and PR history",
-      "dependencies": [
-        "@hugeicons/react",
-        "@hugeicons/core-free-icons"
-      ],
-      "registryDependencies": [
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/application/app-gym-gains-1.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "application"
-      ],
-      "tier": "free",
-      "readiness": "beta",
-      "blockConfig": {
-        "template": "app-gym-tracker",
-        "blockType": "view",
-        "order": 4,
-        "palette": "sage",
-        "typography": "modern",
-        "tint": "base"
-      }
-    },
-    {
-      "name": "app-gym-library-1",
-      "type": "registry:block",
-      "description": "Exercise library with search, categories, and history",
-      "dependencies": [
-        "@hugeicons/react",
-        "@hugeicons/core-free-icons"
-      ],
-      "registryDependencies": [
-        "input",
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/application/app-gym-library-1.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "application"
-      ],
-      "tier": "free",
-      "readiness": "beta",
-      "blockConfig": {
-        "template": "app-gym-tracker",
-        "blockType": "view",
-        "order": 5,
-        "palette": "sage",
-        "typography": "modern",
-        "tint": "base"
-      }
-    },
-    {
-      "name": "app-gym-profile-1",
-      "type": "registry:block",
-      "description": "Profile and settings with preferences and stats",
-      "dependencies": [
-        "@hugeicons/react",
-        "@hugeicons/core-free-icons"
-      ],
-      "registryDependencies": [
-        "avatar",
-        "button",
-        "input",
-        "label",
-        "select",
-        "separator",
-        "switch",
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/application/app-gym-profile-1.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "application"
-      ],
-      "tier": "free",
-      "readiness": "beta",
-      "blockConfig": {
-        "template": "app-gym-tracker",
-        "blockType": "view",
-        "order": 6,
-        "palette": "sage",
-        "typography": "modern",
-        "tint": "base"
-      }
-    },
-    {
-      "name": "app-gym-tracker",
-      "type": "registry:block",
-      "description": "Complete gym progressive overload tracker with two sidebars",
-      "dependencies": [
-        "@hugeicons/react",
-        "@hugeicons/core-free-icons"
-      ],
-      "registryDependencies": [
-        "app-gym-shell-1",
-        "app-gym-today-1",
-        "app-gym-log-1",
-        "app-gym-history-1",
-        "app-gym-gains-1",
-        "app-gym-library-1",
-        "app-gym-profile-1"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/application/app-gym-tracker.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "meta": {
-        "heroBlock": "app-gym-today-1",
-        "iframeHeight": "800px"
-      },
-      "categories": [
-        "template",
-        "application"
-      ],
-      "tier": "free",
-      "readiness": "beta"
-    },
-    {
-      "name": "app-quiz-shell-1",
-      "type": "registry:block",
-      "description": "Application shell with sidebar navigation for quiz app",
-      "dependencies": [
-        "@hugeicons/react",
-        "@hugeicons/core-free-icons"
-      ],
-      "registryDependencies": [
-        "sidebar",
-        "avatar",
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/application/app-quiz-shell-1.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "application"
-      ],
-      "tier": "free",
-      "readiness": "beta",
-      "blockConfig": {
-        "template": "app-quiz",
-        "blockType": "shell",
-        "order": 0,
-        "palette": "violet",
-        "typography": "playful",
-        "tint": "base"
-      }
-    },
-    {
-      "name": "app-quiz-dashboard-1",
-      "type": "registry:block",
-      "description": "Quiz dashboard with stats, weekly accuracy chart, and recent quizzes",
-      "dependencies": [
-        "@hugeicons/react",
-        "@hugeicons/core-free-icons"
-      ],
-      "registryDependencies": [
-        "button",
-        "card",
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/application/app-quiz-dashboard-1.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "application"
-      ],
-      "tier": "free",
-      "readiness": "beta",
-      "blockConfig": {
-        "template": "app-quiz",
-        "blockType": "view",
-        "order": 1,
-        "palette": "violet",
-        "typography": "playful",
-        "tint": "base"
-      }
-    },
-    {
-      "name": "app-quiz-browse-1",
-      "type": "registry:block",
-      "description": "Quiz browser with categories and difficulty filters",
-      "dependencies": [
-        "@hugeicons/react",
-        "@hugeicons/core-free-icons"
-      ],
-      "registryDependencies": [
-        "badge",
-        "button",
-        "card",
-        "input",
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/application/app-quiz-browse-1.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "application"
-      ],
-      "tier": "free",
-      "readiness": "beta",
-      "blockConfig": {
-        "template": "app-quiz",
-        "blockType": "view",
-        "order": 2,
-        "palette": "violet",
-        "typography": "playful",
-        "tint": "base"
-      }
-    },
-    {
-      "name": "app-quiz-active-1",
-      "type": "registry:block",
-      "description": "Active quiz interface with timer and question display",
-      "dependencies": [
-        "@hugeicons/react",
-        "@hugeicons/core-free-icons"
-      ],
-      "registryDependencies": [
-        "button",
-        "card",
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/application/app-quiz-active-1.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "application"
-      ],
-      "tier": "free",
-      "readiness": "beta",
-      "blockConfig": {
-        "template": "app-quiz",
-        "blockType": "view",
-        "order": 3,
-        "palette": "violet",
-        "typography": "playful",
-        "tint": "base"
-      }
-    },
-    {
-      "name": "app-quiz-results-1",
-      "type": "registry:block",
-      "description": "Quiz results with score and question breakdown",
-      "dependencies": [
-        "@hugeicons/react",
-        "@hugeicons/core-free-icons"
-      ],
-      "registryDependencies": [
-        "badge",
-        "button",
-        "card",
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/application/app-quiz-results-1.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "application"
-      ],
-      "tier": "free",
-      "readiness": "beta",
-      "blockConfig": {
-        "template": "app-quiz",
-        "blockType": "view",
-        "order": 4,
-        "palette": "violet",
-        "typography": "playful",
-        "tint": "base"
-      }
-    },
-    {
-      "name": "app-quiz-settings-1",
-      "type": "registry:block",
-      "description": "Quiz settings with profile and preferences",
-      "dependencies": [
-        "@hugeicons/react",
-        "@hugeicons/core-free-icons"
-      ],
-      "registryDependencies": [
-        "avatar",
-        "button",
-        "card",
-        "input",
-        "label",
-        "select",
-        "separator",
-        "switch",
-        "utils"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/application/app-quiz-settings-1.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "application"
-      ],
-      "tier": "free",
-      "readiness": "beta",
-      "blockConfig": {
-        "template": "app-quiz",
-        "blockType": "view",
-        "order": 5,
-        "palette": "violet",
-        "typography": "playful",
-        "tint": "base"
-      }
-    },
-    {
-      "name": "app-quiz",
-      "type": "registry:block",
-      "description": "Complete quiz application template",
-      "dependencies": [
-        "@hugeicons/react",
-        "@hugeicons/core-free-icons"
-      ],
-      "registryDependencies": [
-        "app-quiz-shell-1",
-        "app-quiz-dashboard-1",
-        "app-quiz-browse-1",
-        "app-quiz-active-1",
-        "app-quiz-results-1",
-        "app-quiz-settings-1"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/application/app-quiz.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "meta": {
-        "heroBlock": "app-quiz-dashboard-1",
-        "iframeHeight": "800px"
-      },
-      "categories": [
-        "template",
-        "application"
-      ],
-      "tier": "free",
-      "readiness": "beta"
-    },
-    {
-      "name": "maps-1",
-      "type": "registry:block",
-      "description": "Basic interactive map with multiple office location markers and popups",
-      "dependencies": [
-        "maplibre-gl",
-        "next-themes"
-      ],
-      "registryDependencies": [
-        "map"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/maps/maps-1.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "meta": {
-        "iframeHeight": "550px"
-      },
-      "categories": [
-        "maps"
+        "blog",
+        "landing"
       ],
       "tier": "free",
       "readiness": "production",
       "blockConfig": {
-        "template": "standalone",
-        "blockType": "maps",
-        "order": 60,
-        "palette": "slate",
-        "typography": "modern",
+        "template": "service-plants",
+        "blockType": "blog",
+        "order": 12,
+        "palette": "sage",
+        "typography": "elegant",
         "tint": "tinted"
       }
     },
     {
-      "name": "maps-2",
+      "name": "blog-2",
       "type": "registry:block",
-      "description": "Contact page map with business info sidebar and location pin",
-      "dependencies": [
-        "maplibre-gl",
-        "next-themes",
-        "@hugeicons/react",
-        "@hugeicons/core-free-icons"
-      ],
+      "description": "Featured post with 3-column grid and read time badges",
       "registryDependencies": [
-        "map"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/maps/maps-2.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "maps",
-        "contact"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "standalone",
-        "blockType": "maps",
-        "order": 60,
-        "palette": "slate",
-        "typography": "modern",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "maps-3",
-      "type": "registry:block",
-      "description": "Store locator with searchable sidebar list and interactive map",
-      "dependencies": [
-        "maplibre-gl",
-        "next-themes",
-        "@hugeicons/react",
-        "@hugeicons/core-free-icons"
-      ],
-      "registryDependencies": [
-        "map",
-        "button",
-        "input",
-        "scroll-area"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/maps/maps-3.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "meta": {
-        "iframeHeight": "650px"
-      },
-      "categories": [
-        "maps"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "standalone",
-        "blockType": "maps",
-        "order": 60,
-        "palette": "slate",
-        "typography": "modern",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "maps-4",
-      "type": "registry:block",
-      "description": "Delivery tracking map with route visualization and status timeline",
-      "dependencies": [
-        "maplibre-gl",
-        "next-themes",
-        "@hugeicons/react",
-        "@hugeicons/core-free-icons"
-      ],
-      "registryDependencies": [
-        "map",
-        "badge"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/maps/maps-4.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "meta": {
-        "iframeHeight": "550px"
-      },
-      "categories": [
-        "maps",
-        "application"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "standalone",
-        "blockType": "maps",
-        "order": 60,
-        "palette": "slate",
-        "typography": "modern",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "maps-5",
-      "type": "registry:block",
-      "description": "Real estate property listings map with price markers and detailed popups",
-      "dependencies": [
-        "maplibre-gl",
-        "next-themes",
-        "@hugeicons/react",
-        "@hugeicons/core-free-icons"
-      ],
-      "registryDependencies": [
-        "map",
-        "badge",
         "button"
       ],
       "files": [
         {
-          "path": "registry/new-york-v4/blocks/maps/maps-5.tsx",
+          "path": "registry/new-york-v4/blocks/blog/blog-2.tsx",
           "type": "registry:block"
         }
       ],
-      "meta": {
-        "iframeHeight": "650px"
-      },
       "categories": [
-        "maps"
+        "blog",
+        "landing"
       ],
       "tier": "free",
       "readiness": "production",
       "blockConfig": {
-        "template": "standalone",
-        "blockType": "maps",
-        "order": 60,
-        "palette": "slate",
-        "typography": "modern",
+        "template": "service-plants",
+        "blockType": "blog",
+        "order": 12,
+        "palette": "sage",
+        "typography": "elegant",
         "tint": "tinted"
+      }
+    },
+    {
+      "name": "blog-3",
+      "type": "registry:block",
+      "description": "Blog list view with author avatars and dates",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/blog/blog-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "blog",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "blog",
+        "order": 12,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "blog-4",
+      "type": "registry:block",
+      "description": "Magazine layout blog with hero, sidebar, grid",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/blog/blog-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "blog",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "blog",
+        "order": 12,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "blog-5",
+      "type": "registry:block",
+      "description": "Minimal clean blog cards, text-focused",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/blog/blog-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "blog",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "blog",
+        "order": 12,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "blog-6",
+      "type": "registry:block",
+      "description": "Blog with sidebar (newsletter, categories, recent, tags)",
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/blog/blog-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "blog",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "blog",
+        "order": 12,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "contact-1",
+      "type": "registry:block",
+      "description": "Plant shop contact form section",
+      "dependencies": [
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "textarea",
+        "label"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/contact/contact-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "contact",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "contact",
+        "order": 13,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "contact-2",
+      "type": "registry:block",
+      "description": "Contact form with map placeholder and location info",
+      "registryDependencies": [
+        "button",
+        "input",
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/contact/contact-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "contact",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "contact",
+        "order": 13,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "contact-3",
+      "type": "registry:block",
+      "description": "Multi-channel contact with email, phone, chat cards",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/contact/contact-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "contact",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "contact",
+        "order": 13,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "contact-4",
+      "type": "registry:block",
+      "description": "Simple centered contact form with subject dropdown",
+      "registryDependencies": [
+        "button",
+        "input",
+        "textarea",
+        "select"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/contact/contact-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "contact",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "contact",
+        "order": 13,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "contact-5",
+      "type": "registry:block",
+      "description": "Split dark/light contact panel layout",
+      "registryDependencies": [
+        "button",
+        "input",
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/contact/contact-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "contact",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "contact",
+        "order": 13,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "contact-6",
+      "type": "registry:block",
+      "description": "Office cards contact with multiple global locations",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/contact/contact-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "contact",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "contact",
+        "order": 13,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "cta-1",
+      "type": "registry:block",
+      "description": "Plant shop call-to-action section",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/cta/cta-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "cta",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "cta",
+        "order": 15,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "cta-2",
+      "type": "registry:block",
+      "description": "Split layout CTA with image and gradient background",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/cta/cta-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "cta",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "cta",
+        "order": 15,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "cta-3",
+      "type": "registry:block",
+      "description": "Full-width CTA banner with countdown timer",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/cta/cta-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "cta",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "cta",
+        "order": 15,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "cta-4",
+      "type": "registry:block",
+      "description": "Card style CTA with centered content",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/cta/cta-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "cta",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "cta",
+        "order": 15,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "cta-5",
+      "type": "registry:block",
+      "description": "Floating action bar CTA that appears on scroll",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/cta/cta-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "cta",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "cta",
+        "order": 15,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "cta-6",
+      "type": "registry:block",
+      "description": "Exit intent modal overlay CTA",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/cta/cta-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "cta",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "cta",
+        "order": 15,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "faq-1",
+      "type": "registry:block",
+      "description": "Plant shop FAQ section with accordion",
+      "registryDependencies": [
+        "accordion"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/faq/faq-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "faq",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "faq",
+        "order": 11,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "faq-2",
+      "type": "registry:block",
+      "description": "Two column FAQ with questions left, answers right",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/faq/faq-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "faq",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "faq",
+        "order": 11,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "faq-3",
+      "type": "registry:block",
+      "description": "Searchable FAQ with highlight matching",
+      "registryDependencies": [
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/faq/faq-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "faq",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "faq",
+        "order": 11,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "faq-4",
+      "type": "registry:block",
+      "description": "Card-style accordion FAQ with icons",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/faq/faq-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "faq",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "faq",
+        "order": 11,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "faq-5",
+      "type": "registry:block",
+      "description": "Tabbed categories FAQ with badge counts",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/faq/faq-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "faq",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "faq",
+        "order": 11,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "faq-6",
+      "type": "registry:block",
+      "description": "FAQ with support team CTA and avatars",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/faq/faq-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "faq",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "faq",
+        "order": 11,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "features-1",
+      "type": "registry:block",
+      "description": "Plant shop features section with icons and center image",
+      "dependencies": [
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/features/features-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "features",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "features",
+        "order": 4,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "features-2",
+      "type": "registry:block",
+      "description": "Plant shop features section variant 2",
+      "dependencies": [
+        "motion/react"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/features/features-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "features",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "features",
+        "order": 4,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "features-3",
+      "type": "registry:block",
+      "description": "Plant shop features section variant 3 with circle background",
+      "dependencies": [
+        "motion/react"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/features/features-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "features",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "features",
+        "order": 4,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "features-4",
+      "type": "registry:block",
+      "description": "Plant shop features section variant 4",
+      "dependencies": [
+        "motion/react"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/features/features-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "features",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "features",
+        "order": 4,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "features-5",
+      "type": "registry:block",
+      "description": "Plant shop features section variant 5",
+      "dependencies": [
+        "motion/react"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/features/features-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "features",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "features",
+        "order": 4,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "features-6",
+      "type": "registry:block",
+      "description": "Fitness class types grid with intensity indicators and hover effects",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/features/features-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "features",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-fitness",
+        "blockType": "features",
+        "order": 4,
+        "palette": "neon",
+        "typography": "futuristic",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "features-7",
+      "type": "registry:block",
+      "description": "Weekly class schedule with day tabs, booking buttons, and spots indicator",
+      "registryDependencies": [
+        "button",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/features/features-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "features",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-fitness",
+        "blockType": "features",
+        "order": 4,
+        "palette": "neon",
+        "typography": "futuristic",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "features-8",
+      "type": "registry:block",
+      "description": "Studio location with hours, contact info, amenities, and map",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/features/features-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "features",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-fitness",
+        "blockType": "features",
+        "order": 4,
+        "palette": "neon",
+        "typography": "futuristic",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "footer-1",
+      "type": "registry:block",
+      "description": "Plant shop footer with multiple columns and newsletter",
+      "dependencies": [
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
+      ],
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/footer/footer-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "footer",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "footer",
+        "order": 20,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "footer-2",
+      "type": "registry:block",
+      "description": "Fitness footer with newsletter, navigation columns, and social links",
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/footer/footer-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "footer",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-fitness",
+        "blockType": "footer",
+        "order": 20,
+        "palette": "neon",
+        "typography": "futuristic",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "footer-3",
+      "type": "registry:block",
+      "description": "Minimal single row footer",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/footer/footer-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "footer",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "footer",
+        "order": 20,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "footer-4",
+      "type": "registry:block",
+      "description": "Big CTA footer with ready to get started section",
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/footer/footer-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "footer",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "footer",
+        "order": 20,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "footer-5",
+      "type": "registry:block",
+      "description": "Dark gradient footer with large brand statement",
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/footer/footer-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "footer",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "footer",
+        "order": 20,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "footer-6",
+      "type": "registry:block",
+      "description": "App download footer with store badges and QR code",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/footer/footer-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "footer",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "footer",
+        "order": 20,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "footer-7",
+      "type": "registry:block",
+      "description": "Comprehensive sitemap-style footer",
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/footer/footer-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "footer",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "footer",
+        "order": 20,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "footer-8",
+      "type": "registry:block",
+      "description": "Social-focused footer with large icons and follower counts",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/footer/footer-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "footer",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "footer",
+        "order": 20,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "gallery-1",
+      "type": "registry:block",
+      "description": "Plant shop gallery grid with decorative elements",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/gallery/gallery-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "gallery",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "gallery",
+        "order": 8,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "gallery-2",
+      "type": "registry:block",
+      "description": "Masonry gallery with lightbox",
+      "registryDependencies": [
+        "dialog"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/gallery/gallery-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "gallery",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "gallery",
+        "order": 8,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "gallery-3",
+      "type": "registry:block",
+      "description": "Carousel gallery with thumbnail navigation",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/gallery/gallery-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "gallery",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "gallery",
+        "order": 8,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "gallery-4",
+      "type": "registry:block",
+      "description": "Filterable gallery with category tabs",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/gallery/gallery-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "gallery",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "gallery",
+        "order": 8,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "gallery-5",
+      "type": "registry:block",
+      "description": "Grid gallery with full-screen lightbox modal",
+      "registryDependencies": [
+        "button",
+        "dialog"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/gallery/gallery-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "gallery",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "gallery",
+        "order": 8,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "gallery-6",
+      "type": "registry:block",
+      "description": "Before/after comparison slider gallery",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/gallery/gallery-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "gallery",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "gallery",
+        "order": 8,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "header-1",
+      "type": "registry:block",
+      "description": "Plant shop header with navigation and CTA button",
+      "dependencies": [
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/header/header-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "header",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "header",
+        "order": 1,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted",
+        "forceLight": true
       }
     },
     {
@@ -5268,580 +4672,1122 @@
       }
     },
     {
-      "name": "footer-3",
+      "name": "header-9",
       "type": "registry:block",
-      "description": "Minimal single row footer",
+      "description": "Pill navbar header with rounded background and centered navigation",
+      "registryDependencies": [
+        "hero-button"
+      ],
       "files": [
         {
-          "path": "registry/new-york-v4/blocks/footer/footer-3.tsx",
+          "path": "registry/new-york-v4/blocks/header/header-9.tsx",
           "type": "registry:block"
         }
       ],
       "categories": [
-        "footer",
+        "header",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-fitness",
+        "blockType": "header",
+        "order": 1,
+        "palette": "neon",
+        "typography": "futuristic",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-1",
+      "type": "registry:block",
+      "description": "Plant shop hero section with parallax effects and knockout text",
+      "dependencies": [
+        "motion/react"
+      ],
+      "registryDependencies": [
+        "button",
+        "hero-button",
+        "spacer"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
         "landing"
       ],
       "tier": "free",
       "readiness": "production",
       "blockConfig": {
         "template": "service-plants",
-        "blockType": "footer",
-        "order": 20,
+        "blockType": "hero",
+        "order": 2,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted",
+        "forceLight": true
+      }
+    },
+    {
+      "name": "hero-10",
+      "type": "registry:block",
+      "description": "Plants bento hero with split layout and pill navbar",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "hero",
+        "order": 2,
         "palette": "sage",
         "typography": "elegant",
         "tint": "tinted"
       }
     },
     {
-      "name": "footer-4",
+      "name": "hero-11",
       "type": "registry:block",
-      "description": "Big CTA footer with ready to get started section",
+      "description": "Plants bento hero with 2-column grid and pill navbar",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-12",
+      "type": "registry:block",
+      "description": "Plants bento hero with reversed layout, stats, and pill navbar",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-13",
+      "type": "registry:block",
+      "description": "Plants bento hero with 3-column asymmetric grid and pill navbar",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-14",
+      "type": "registry:block",
+      "description": "Plants bento hero with 4-column stat cards and pill navbar",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-15",
+      "type": "registry:block",
+      "description": "Travel bento hero with split layout and pill navbar",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-16",
+      "type": "registry:block",
+      "description": "Travel bento hero with 2-column grid and pill navbar",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-17",
+      "type": "registry:block",
+      "description": "Travel bento hero with reversed layout, stats, and pill navbar",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-17.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-18",
+      "type": "registry:block",
+      "description": "Travel bento hero with 3-column asymmetric grid and pill navbar",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-18.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-19",
+      "type": "registry:block",
+      "description": "Travel bento hero with 4-column stat cards and pill navbar",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-19.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-2",
+      "type": "registry:block",
+      "description": "Travel agency hero section with parallax effects and knockout text",
+      "dependencies": [
+        "motion/react"
+      ],
+      "registryDependencies": [
+        "button",
+        "hero-button",
+        "spacer"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted",
+        "forceLight": true
+      }
+    },
+    {
+      "name": "hero-20",
+      "type": "registry:block",
+      "description": "Boat bento hero with split layout and pill navbar",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-20.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-boat",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "azure",
+        "typography": "classic",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-21",
+      "type": "registry:block",
+      "description": "Boat bento hero with 2-column grid and pill navbar",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-21.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-boat",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "azure",
+        "typography": "classic",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-22",
+      "type": "registry:block",
+      "description": "Boat bento hero with reversed layout, stats, and pill navbar",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-22.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-boat",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "azure",
+        "typography": "classic",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-23",
+      "type": "registry:block",
+      "description": "Boat bento hero with 3-column asymmetric grid and pill navbar",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-23.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-boat",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "azure",
+        "typography": "classic",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-24",
+      "type": "registry:block",
+      "description": "Boat bento hero with 4-column stat cards and pill navbar",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-24.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-boat",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "azure",
+        "typography": "classic",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-3",
+      "type": "registry:block",
+      "description": "Yacht charter hero section with parallax effects and knockout text",
+      "dependencies": [
+        "motion/react"
+      ],
+      "registryDependencies": [
+        "button",
+        "hero-button",
+        "spacer"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-boat",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "azure",
+        "typography": "classic",
+        "tint": "tinted",
+        "forceLight": true
+      }
+    },
+    {
+      "name": "hero-4",
+      "type": "registry:block",
+      "description": "Split layout fitness hero with image left and content right, parallax effects",
+      "dependencies": [
+        "motion/react"
+      ],
+      "registryDependencies": [
+        "button",
+        "hero-button",
+        "spacer"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-fitness",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "neon",
+        "typography": "futuristic",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-5",
+      "type": "registry:block",
+      "description": "Full-bleed parallax fitness hero with dark overlay and centered content, video background style",
+      "dependencies": [
+        "motion/react"
+      ],
+      "registryDependencies": [
+        "button",
+        "hero-button",
+        "spacer"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-fitness",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "neon",
+        "typography": "futuristic",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-6",
+      "type": "registry:block",
+      "description": "Stats-focused fitness hero with grid layout, credibility stats row, and parallax side image",
+      "dependencies": [
+        "motion/react"
+      ],
+      "registryDependencies": [
+        "button",
+        "hero-button",
+        "spacer"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-fitness",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "neon",
+        "typography": "futuristic",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-7",
+      "type": "registry:block",
+      "description": "Bento grid fitness hero with pill navbar, two-column layout, and side image",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-fitness",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "neon",
+        "typography": "futuristic",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-8",
+      "type": "registry:block",
+      "description": "Bento grid fitness hero with stats, reversed layout, and larger image area",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-fitness",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "neon",
+        "typography": "futuristic",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "hero-9",
+      "type": "registry:block",
+      "description": "Asymmetric bento grid fitness hero with dual images and prominent title",
+      "registryDependencies": [
+        "button",
+        "hero-button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/hero/hero-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "hero",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-fitness",
+        "blockType": "hero",
+        "order": 2,
+        "palette": "neon",
+        "typography": "futuristic",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "logos-1",
+      "type": "registry:block",
+      "description": "Plant shop logo cloud section",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/logos/logos-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "logos",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "logos",
+        "order": 3,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "logos-2",
+      "type": "registry:block",
+      "description": "Marquee logo cloud with infinite scroll animation",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/logos/logos-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "logos",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "logos",
+        "order": 3,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "logos-3",
+      "type": "registry:block",
+      "description": "Grid logos with labels and descriptions",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/logos/logos-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "logos",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "logos",
+        "order": 3,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "logos-4",
+      "type": "registry:block",
+      "description": "Featured partners with case study links",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/logos/logos-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "logos",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "logos",
+        "order": 3,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "logos-5",
+      "type": "registry:block",
+      "description": "Logos with stats and industry breakdown",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/logos/logos-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "logos",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "logos",
+        "order": 3,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "logos-6",
+      "type": "registry:block",
+      "description": "Testimonial combo logos with short quotes",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/logos/logos-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "logos",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "logos",
+        "order": 3,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "maps-1",
+      "type": "registry:block",
+      "description": "Basic interactive map with multiple office location markers and popups",
+      "dependencies": [
+        "maplibre-gl",
+        "next-themes"
+      ],
+      "registryDependencies": [
+        "map"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/maps/maps-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "iframeHeight": "550px"
+      },
+      "categories": [
+        "maps"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "standalone",
+        "blockType": "maps",
+        "order": 60,
+        "palette": "slate",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "maps-2",
+      "type": "registry:block",
+      "description": "Contact page map with business info sidebar and location pin",
+      "dependencies": [
+        "maplibre-gl",
+        "next-themes",
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
+      ],
+      "registryDependencies": [
+        "map"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/maps/maps-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "maps",
+        "contact"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "standalone",
+        "blockType": "maps",
+        "order": 60,
+        "palette": "slate",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "maps-3",
+      "type": "registry:block",
+      "description": "Store locator with searchable sidebar list and interactive map",
+      "dependencies": [
+        "maplibre-gl",
+        "next-themes",
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
+      ],
+      "registryDependencies": [
+        "map",
+        "button",
+        "input",
+        "scroll-area"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/maps/maps-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "iframeHeight": "650px"
+      },
+      "categories": [
+        "maps"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "standalone",
+        "blockType": "maps",
+        "order": 60,
+        "palette": "slate",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "maps-4",
+      "type": "registry:block",
+      "description": "Delivery tracking map with route visualization and status timeline",
+      "dependencies": [
+        "maplibre-gl",
+        "next-themes",
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
+      ],
+      "registryDependencies": [
+        "map",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/maps/maps-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "iframeHeight": "550px"
+      },
+      "categories": [
+        "maps",
+        "application"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "standalone",
+        "blockType": "maps",
+        "order": 60,
+        "palette": "slate",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "maps-5",
+      "type": "registry:block",
+      "description": "Real estate property listings map with price markers and detailed popups",
+      "dependencies": [
+        "maplibre-gl",
+        "next-themes",
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
+      ],
+      "registryDependencies": [
+        "map",
+        "badge",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/maps/maps-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "iframeHeight": "650px"
+      },
+      "categories": [
+        "maps"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "standalone",
+        "blockType": "maps",
+        "order": 60,
+        "palette": "slate",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "newsletter-1",
+      "type": "registry:block",
+      "description": "Plant shop newsletter subscription section",
       "registryDependencies": [
         "button",
         "input"
       ],
       "files": [
         {
-          "path": "registry/new-york-v4/blocks/footer/footer-4.tsx",
+          "path": "registry/new-york-v4/blocks/newsletter/newsletter-1.tsx",
           "type": "registry:block"
         }
       ],
       "categories": [
-        "footer",
+        "newsletter",
         "landing"
       ],
       "tier": "free",
       "readiness": "production",
       "blockConfig": {
         "template": "service-plants",
-        "blockType": "footer",
-        "order": 20,
+        "blockType": "newsletter",
+        "order": 14,
         "palette": "sage",
         "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "footer-5",
-      "type": "registry:block",
-      "description": "Dark gradient footer with large brand statement",
-      "registryDependencies": [
-        "button",
-        "input"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/footer/footer-5.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "footer",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "footer",
-        "order": 20,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "footer-6",
-      "type": "registry:block",
-      "description": "App download footer with store badges and QR code",
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/footer/footer-6.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "footer",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "footer",
-        "order": 20,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "footer-7",
-      "type": "registry:block",
-      "description": "Comprehensive sitemap-style footer",
-      "registryDependencies": [
-        "button",
-        "input"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/footer/footer-7.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "footer",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "footer",
-        "order": 20,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "footer-8",
-      "type": "registry:block",
-      "description": "Social-focused footer with large icons and follower counts",
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/footer/footer-8.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "footer",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "footer",
-        "order": 20,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "cta-2",
-      "type": "registry:block",
-      "description": "Split layout CTA with image and gradient background",
-      "registryDependencies": [
-        "button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/cta/cta-2.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "cta",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "cta",
-        "order": 15,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "cta-3",
-      "type": "registry:block",
-      "description": "Full-width CTA banner with countdown timer",
-      "registryDependencies": [
-        "button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/cta/cta-3.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "cta",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "cta",
-        "order": 15,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "cta-4",
-      "type": "registry:block",
-      "description": "Card style CTA with centered content",
-      "registryDependencies": [
-        "button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/cta/cta-4.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "cta",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "cta",
-        "order": 15,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "cta-5",
-      "type": "registry:block",
-      "description": "Floating action bar CTA that appears on scroll",
-      "registryDependencies": [
-        "button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/cta/cta-5.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "cta",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "cta",
-        "order": 15,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "cta-6",
-      "type": "registry:block",
-      "description": "Exit intent modal overlay CTA",
-      "registryDependencies": [
-        "button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/cta/cta-6.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "cta",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "cta",
-        "order": 15,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "gallery-2",
-      "type": "registry:block",
-      "description": "Masonry gallery with lightbox",
-      "registryDependencies": [
-        "dialog"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/gallery/gallery-2.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "gallery",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "gallery",
-        "order": 8,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "gallery-3",
-      "type": "registry:block",
-      "description": "Carousel gallery with thumbnail navigation",
-      "registryDependencies": [
-        "button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/gallery/gallery-3.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "gallery",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "gallery",
-        "order": 8,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "gallery-4",
-      "type": "registry:block",
-      "description": "Filterable gallery with category tabs",
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/gallery/gallery-4.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "gallery",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "gallery",
-        "order": 8,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "gallery-5",
-      "type": "registry:block",
-      "description": "Grid gallery with full-screen lightbox modal",
-      "registryDependencies": [
-        "button",
-        "dialog"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/gallery/gallery-5.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "gallery",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "gallery",
-        "order": 8,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "gallery-6",
-      "type": "registry:block",
-      "description": "Before/after comparison slider gallery",
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/gallery/gallery-6.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "gallery",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "gallery",
-        "order": 8,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "products-2",
-      "type": "registry:block",
-      "description": "Product card grid with rating, price, add to cart",
-      "registryDependencies": [
-        "button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/products/products-2.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "products",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "products",
-        "order": 5,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "products-3",
-      "type": "registry:block",
-      "description": "Featured hero product with grid below",
-      "registryDependencies": [
-        "button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/products/products-3.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "products",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "products",
-        "order": 5,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "products-4",
-      "type": "registry:block",
-      "description": "Horizontal product carousel with quick add",
-      "registryDependencies": [
-        "button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/products/products-4.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "products",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "products",
-        "order": 5,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "products-5",
-      "type": "registry:block",
-      "description": "Product list view with large images and stock status",
-      "registryDependencies": [
-        "button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/products/products-5.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "products",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "products",
-        "order": 5,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "products-6",
-      "type": "registry:block",
-      "description": "Product comparison layout with features",
-      "registryDependencies": [
-        "button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/products/products-6.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "products",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "products",
-        "order": 5,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
+        "tint": "deep"
       }
     },
     {
@@ -5990,678 +5936,64 @@
       }
     },
     {
-      "name": "faq-2",
+      "name": "pricing-1",
       "type": "registry:block",
-      "description": "Two column FAQ with questions left, answers right",
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/faq/faq-2.tsx",
-          "type": "registry:block"
-        }
+      "description": "Plant shop pricing section with animated cards",
+      "dependencies": [
+        "motion/react"
       ],
-      "categories": [
-        "faq",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "faq",
-        "order": 11,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "faq-3",
-      "type": "registry:block",
-      "description": "Searchable FAQ with highlight matching",
-      "registryDependencies": [
-        "input"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/faq/faq-3.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "faq",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "faq",
-        "order": 11,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "faq-4",
-      "type": "registry:block",
-      "description": "Card-style accordion FAQ with icons",
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/faq/faq-4.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "faq",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "faq",
-        "order": 11,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "faq-5",
-      "type": "registry:block",
-      "description": "Tabbed categories FAQ with badge counts",
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/faq/faq-5.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "faq",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "faq",
-        "order": 11,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "faq-6",
-      "type": "registry:block",
-      "description": "FAQ with support team CTA and avatars",
-      "registryDependencies": [
-        "button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/faq/faq-6.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "faq",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "faq",
-        "order": 11,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "blog-2",
-      "type": "registry:block",
-      "description": "Featured post with 3-column grid and read time badges",
-      "registryDependencies": [
-        "button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/blog/blog-2.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "blog",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "blog",
-        "order": 12,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "blog-3",
-      "type": "registry:block",
-      "description": "Blog list view with author avatars and dates",
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/blog/blog-3.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "blog",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "blog",
-        "order": 12,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "blog-4",
-      "type": "registry:block",
-      "description": "Magazine layout blog with hero, sidebar, grid",
-      "registryDependencies": [
-        "button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/blog/blog-4.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "blog",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "blog",
-        "order": 12,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "blog-5",
-      "type": "registry:block",
-      "description": "Minimal clean blog cards, text-focused",
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/blog/blog-5.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "blog",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "blog",
-        "order": 12,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "blog-6",
-      "type": "registry:block",
-      "description": "Blog with sidebar (newsletter, categories, recent, tags)",
       "registryDependencies": [
         "button",
-        "input"
+        "utils"
       ],
       "files": [
         {
-          "path": "registry/new-york-v4/blocks/blog/blog-6.tsx",
+          "path": "registry/new-york-v4/blocks/pricing/pricing-1.tsx",
           "type": "registry:block"
         }
       ],
       "categories": [
-        "blog",
+        "pricing",
         "landing"
       ],
       "tier": "free",
       "readiness": "production",
       "blockConfig": {
         "template": "service-plants",
-        "blockType": "blog",
-        "order": 12,
+        "blockType": "pricing",
+        "order": 6,
         "palette": "sage",
         "typography": "elegant",
         "tint": "tinted"
       }
     },
     {
-      "name": "contact-2",
+      "name": "pricing-2",
       "type": "registry:block",
-      "description": "Contact form with map placeholder and location info",
+      "description": "Fitness membership pricing with tiers, features, and popular badge",
       "registryDependencies": [
         "button",
-        "input",
-        "textarea"
+        "utils"
       ],
       "files": [
         {
-          "path": "registry/new-york-v4/blocks/contact/contact-2.tsx",
+          "path": "registry/new-york-v4/blocks/pricing/pricing-2.tsx",
           "type": "registry:block"
         }
       ],
       "categories": [
-        "contact",
+        "pricing",
         "landing"
       ],
       "tier": "free",
       "readiness": "production",
       "blockConfig": {
-        "template": "service-plants",
-        "blockType": "contact",
-        "order": 13,
-        "palette": "sage",
-        "typography": "elegant",
+        "template": "service-fitness",
+        "blockType": "pricing",
+        "order": 6,
+        "palette": "neon",
+        "typography": "futuristic",
         "tint": "tinted"
-      }
-    },
-    {
-      "name": "contact-3",
-      "type": "registry:block",
-      "description": "Multi-channel contact with email, phone, chat cards",
-      "registryDependencies": [
-        "button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/contact/contact-3.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "contact",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "contact",
-        "order": 13,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "contact-4",
-      "type": "registry:block",
-      "description": "Simple centered contact form with subject dropdown",
-      "registryDependencies": [
-        "button",
-        "input",
-        "textarea",
-        "select"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/contact/contact-4.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "contact",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "contact",
-        "order": 13,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "contact-5",
-      "type": "registry:block",
-      "description": "Split dark/light contact panel layout",
-      "registryDependencies": [
-        "button",
-        "input",
-        "textarea"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/contact/contact-5.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "contact",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "contact",
-        "order": 13,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "contact-6",
-      "type": "registry:block",
-      "description": "Office cards contact with multiple global locations",
-      "registryDependencies": [
-        "button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/contact/contact-6.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "contact",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "contact",
-        "order": 13,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
-    },
-    {
-      "name": "logos-2",
-      "type": "registry:block",
-      "description": "Marquee logo cloud with infinite scroll animation",
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/logos/logos-2.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "logos",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "logos",
-        "order": 3,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "deep"
-      }
-    },
-    {
-      "name": "logos-3",
-      "type": "registry:block",
-      "description": "Grid logos with labels and descriptions",
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/logos/logos-3.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "logos",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "logos",
-        "order": 3,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "deep"
-      }
-    },
-    {
-      "name": "logos-4",
-      "type": "registry:block",
-      "description": "Featured partners with case study links",
-      "registryDependencies": [
-        "button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/logos/logos-4.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "logos",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "logos",
-        "order": 3,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "deep"
-      }
-    },
-    {
-      "name": "logos-5",
-      "type": "registry:block",
-      "description": "Logos with stats and industry breakdown",
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/logos/logos-5.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "logos",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "logos",
-        "order": 3,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "deep"
-      }
-    },
-    {
-      "name": "logos-6",
-      "type": "registry:block",
-      "description": "Testimonial combo logos with short quotes",
-      "registryDependencies": [
-        "button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/logos/logos-6.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "logos",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "logos",
-        "order": 3,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "deep"
-      }
-    },
-    {
-      "name": "testimonials-3",
-      "type": "registry:block",
-      "description": "Sliding carousel testimonials with navigation",
-      "registryDependencies": [
-        "button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/testimonials/testimonials-3.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "testimonials",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "testimonials",
-        "order": 7,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "deep"
-      }
-    },
-    {
-      "name": "testimonials-4",
-      "type": "registry:block",
-      "description": "Video testimonial cards with play overlay",
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/testimonials/testimonials-4.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "testimonials",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "testimonials",
-        "order": 7,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "deep"
-      }
-    },
-    {
-      "name": "testimonials-5",
-      "type": "registry:block",
-      "description": "Rating-focused testimonials with aggregate score",
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/testimonials/testimonials-5.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "testimonials",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "testimonials",
-        "order": 7,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "deep"
-      }
-    },
-    {
-      "name": "testimonials-6",
-      "type": "registry:block",
-      "description": "Case study testimonial cards with metrics",
-      "registryDependencies": [
-        "button"
-      ],
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/testimonials/testimonials-6.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "testimonials",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "testimonials",
-        "order": 7,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "deep"
-      }
-    },
-    {
-      "name": "testimonials-7",
-      "type": "registry:block",
-      "description": "Social proof wall with tweet-style cards",
-      "files": [
-        {
-          "path": "registry/new-york-v4/blocks/testimonials/testimonials-7.tsx",
-          "type": "registry:block"
-        }
-      ],
-      "categories": [
-        "testimonials",
-        "landing"
-      ],
-      "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "testimonials",
-        "order": 7,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "deep"
       }
     },
     {
@@ -6807,6 +6139,405 @@
       }
     },
     {
+      "name": "products-1",
+      "type": "registry:block",
+      "description": "Plant shop products grid showcasing best sellers",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/products/products-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "products",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "products",
+        "order": 5,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "products-2",
+      "type": "registry:block",
+      "description": "Product card grid with rating, price, add to cart",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/products/products-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "products",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "products",
+        "order": 5,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "products-3",
+      "type": "registry:block",
+      "description": "Featured hero product with grid below",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/products/products-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "products",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "products",
+        "order": 5,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "products-4",
+      "type": "registry:block",
+      "description": "Horizontal product carousel with quick add",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/products/products-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "products",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "products",
+        "order": 5,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "products-5",
+      "type": "registry:block",
+      "description": "Product list view with large images and stock status",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/products/products-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "products",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "products",
+        "order": 5,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "products-6",
+      "type": "registry:block",
+      "description": "Product comparison layout with features",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/products/products-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "products",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "products",
+        "order": 5,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "stats-1",
+      "type": "registry:block",
+      "description": "Plant shop statistics section",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/stats/stats-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "stats",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "stats",
+        "order": 10,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "stats-2",
+      "type": "registry:block",
+      "description": "Animated gym statistics with number counters and highlight section",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/stats/stats-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "stats",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-fitness",
+        "blockType": "stats",
+        "order": 10,
+        "palette": "neon",
+        "typography": "futuristic",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "stats-3",
+      "type": "registry:block",
+      "description": "Large counter stats with dark background",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/stats/stats-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "stats",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "stats",
+        "order": 10,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "stats-4",
+      "type": "registry:block",
+      "description": "Stats cards with icons and change indicators",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/stats/stats-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "stats",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "stats",
+        "order": 10,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "stats-5",
+      "type": "registry:block",
+      "description": "Timeline milestone stats",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/stats/stats-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "stats",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "stats",
+        "order": 10,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "stats-6",
+      "type": "registry:block",
+      "description": "Before/after comparison stats",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/stats/stats-6.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "stats",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "stats",
+        "order": 10,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "stats-7",
+      "type": "registry:block",
+      "description": "Infographic style stats with bar chart",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/stats/stats-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "stats",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "stats",
+        "order": 10,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "team-1",
+      "type": "registry:block",
+      "description": "Plant shop team section with stacked avatars",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/team/team-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "team",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "team",
+        "order": 9,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "team-2",
+      "type": "registry:block",
+      "description": "Coach profiles with specialties, certifications, and social links",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/team/team-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "team",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-fitness",
+        "blockType": "team",
+        "order": 9,
+        "palette": "neon",
+        "typography": "futuristic",
+        "tint": "tinted"
+      }
+    },
+    {
       "name": "team-3",
       "type": "registry:block",
       "description": "Team cards with social links on hover",
@@ -6935,129 +6666,398 @@
       }
     },
     {
-      "name": "stats-3",
+      "name": "testimonials-1",
       "type": "registry:block",
-      "description": "Large counter stats with dark background",
+      "description": "Plant shop testimonials with stacked cards effect",
+      "registryDependencies": [
+        "utils"
+      ],
       "files": [
         {
-          "path": "registry/new-york-v4/blocks/stats/stats-3.tsx",
+          "path": "registry/new-york-v4/blocks/testimonials/testimonials-1.tsx",
           "type": "registry:block"
         }
       ],
       "categories": [
-        "stats",
+        "testimonials",
         "landing"
       ],
       "tier": "free",
       "readiness": "production",
       "blockConfig": {
         "template": "service-plants",
-        "blockType": "stats",
-        "order": 10,
+        "blockType": "testimonials",
+        "order": 7,
         "palette": "sage",
         "typography": "elegant",
         "tint": "deep"
       }
     },
     {
-      "name": "stats-4",
+      "name": "testimonials-2",
       "type": "registry:block",
-      "description": "Stats cards with icons and change indicators",
+      "description": "Member testimonials with transformation stats and star ratings",
+      "registryDependencies": [
+        "utils"
+      ],
       "files": [
         {
-          "path": "registry/new-york-v4/blocks/stats/stats-4.tsx",
+          "path": "registry/new-york-v4/blocks/testimonials/testimonials-2.tsx",
           "type": "registry:block"
         }
       ],
       "categories": [
-        "stats",
+        "testimonials",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-fitness",
+        "blockType": "testimonials",
+        "order": 7,
+        "palette": "neon",
+        "typography": "futuristic",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "testimonials-3",
+      "type": "registry:block",
+      "description": "Sliding carousel testimonials with navigation",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/testimonials/testimonials-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "testimonials",
         "landing"
       ],
       "tier": "free",
       "readiness": "production",
       "blockConfig": {
         "template": "service-plants",
-        "blockType": "stats",
-        "order": 10,
+        "blockType": "testimonials",
+        "order": 7,
         "palette": "sage",
         "typography": "elegant",
         "tint": "deep"
       }
     },
     {
-      "name": "stats-5",
+      "name": "testimonials-4",
       "type": "registry:block",
-      "description": "Timeline milestone stats",
+      "description": "Video testimonial cards with play overlay",
       "files": [
         {
-          "path": "registry/new-york-v4/blocks/stats/stats-5.tsx",
+          "path": "registry/new-york-v4/blocks/testimonials/testimonials-4.tsx",
           "type": "registry:block"
         }
       ],
       "categories": [
-        "stats",
+        "testimonials",
         "landing"
       ],
       "tier": "free",
       "readiness": "production",
       "blockConfig": {
         "template": "service-plants",
-        "blockType": "stats",
-        "order": 10,
+        "blockType": "testimonials",
+        "order": 7,
         "palette": "sage",
         "typography": "elegant",
         "tint": "deep"
       }
     },
     {
-      "name": "stats-6",
+      "name": "testimonials-5",
       "type": "registry:block",
-      "description": "Before/after comparison stats",
+      "description": "Rating-focused testimonials with aggregate score",
       "files": [
         {
-          "path": "registry/new-york-v4/blocks/stats/stats-6.tsx",
+          "path": "registry/new-york-v4/blocks/testimonials/testimonials-5.tsx",
           "type": "registry:block"
         }
       ],
       "categories": [
-        "stats",
+        "testimonials",
         "landing"
       ],
       "tier": "free",
       "readiness": "production",
       "blockConfig": {
         "template": "service-plants",
-        "blockType": "stats",
-        "order": 10,
+        "blockType": "testimonials",
+        "order": 7,
         "palette": "sage",
         "typography": "elegant",
         "tint": "deep"
       }
     },
     {
-      "name": "stats-7",
+      "name": "testimonials-6",
       "type": "registry:block",
-      "description": "Infographic style stats with bar chart",
+      "description": "Case study testimonial cards with metrics",
+      "registryDependencies": [
+        "button"
+      ],
       "files": [
         {
-          "path": "registry/new-york-v4/blocks/stats/stats-7.tsx",
+          "path": "registry/new-york-v4/blocks/testimonials/testimonials-6.tsx",
           "type": "registry:block"
         }
       ],
       "categories": [
-        "stats",
+        "testimonials",
         "landing"
       ],
       "tier": "free",
       "readiness": "production",
       "blockConfig": {
         "template": "service-plants",
-        "blockType": "stats",
-        "order": 10,
+        "blockType": "testimonials",
+        "order": 7,
         "palette": "sage",
         "typography": "elegant",
         "tint": "deep"
       }
+    },
+    {
+      "name": "testimonials-7",
+      "type": "registry:block",
+      "description": "Social proof wall with tweet-style cards",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/testimonials/testimonials-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "testimonials",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "testimonials",
+        "order": 7,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "service-plants",
+      "type": "registry:block",
+      "description": "Complete plant shop landing page template with all sections",
+      "registryDependencies": [
+        "header-1",
+        "hero-1",
+        "hero-10",
+        "hero-11",
+        "hero-12",
+        "hero-13",
+        "hero-14",
+        "logos-1",
+        "features-1",
+        "features-2",
+        "features-3",
+        "features-4",
+        "features-5",
+        "products-1",
+        "pricing-1",
+        "testimonials-1",
+        "gallery-1",
+        "team-1",
+        "stats-1",
+        "faq-1",
+        "blog-1",
+        "contact-1",
+        "newsletter-1",
+        "cta-1",
+        "footer-1"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/service/service-plants.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "heroBlock": "hero-1"
+      },
+      "categories": [
+        "template",
+        "service"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "service-travel",
+      "type": "registry:block",
+      "description": "Stunning travel agency landing page template for tour operators",
+      "registryDependencies": [
+        "hero-2",
+        "hero-15",
+        "hero-16",
+        "hero-17",
+        "hero-18",
+        "hero-19"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/service/service-travel.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "heroBlock": "hero-2"
+      },
+      "categories": [
+        "template",
+        "service"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "service-boat",
+      "type": "registry:block",
+      "description": "Luxury yacht charter landing page template for marine services",
+      "registryDependencies": [
+        "hero-3",
+        "hero-20",
+        "hero-21",
+        "hero-22",
+        "hero-23",
+        "hero-24"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/service/service-boat.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "heroBlock": "hero-3"
+      },
+      "categories": [
+        "template",
+        "service"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "service-fitness",
+      "type": "registry:block",
+      "description": "Boutique fitness studio landing page with high-energy black & white design",
+      "registryDependencies": [
+        "header-9",
+        "hero-4",
+        "hero-5",
+        "hero-6",
+        "hero-7",
+        "hero-8",
+        "hero-9",
+        "features-6",
+        "features-7",
+        "team-2",
+        "stats-2",
+        "pricing-2",
+        "testimonials-2",
+        "features-8",
+        "footer-2"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/service/service-fitness.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "heroBlock": "hero-5"
+      },
+      "categories": [
+        "template",
+        "service"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "app-gym-tracker",
+      "type": "registry:block",
+      "description": "Complete gym progressive overload tracker with two sidebars",
+      "dependencies": [
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
+      ],
+      "registryDependencies": [
+        "app-gym-shell-1",
+        "app-gym-today-1",
+        "app-gym-log-1",
+        "app-gym-history-1",
+        "app-gym-gains-1",
+        "app-gym-library-1",
+        "app-gym-profile-1"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/application/app-gym-tracker.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "heroBlock": "app-gym-today-1",
+        "iframeHeight": "800px"
+      },
+      "categories": [
+        "template",
+        "application"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
+      "name": "app-quiz",
+      "type": "registry:block",
+      "description": "Complete quiz application template",
+      "dependencies": [
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
+      ],
+      "registryDependencies": [
+        "app-quiz-shell-1",
+        "app-quiz-dashboard-1",
+        "app-quiz-browse-1",
+        "app-quiz-active-1",
+        "app-quiz-results-1",
+        "app-quiz-settings-1"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/application/app-quiz.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "meta": {
+        "heroBlock": "app-quiz-dashboard-1",
+        "iframeHeight": "800px"
+      },
+      "categories": [
+        "template",
+        "application"
+      ],
+      "tier": "free",
+      "readiness": "beta"
     },
     {
       "name": "utils",

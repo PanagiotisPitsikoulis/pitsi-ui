@@ -3,8 +3,8 @@ import { redirect } from "next/navigation"
 
 import { getUserApiKeys } from "@/lib/server/api-keys"
 import { getCurrentUser } from "@/lib/server/user"
-
 import { PageHeader } from "@/components/dashboard"
+
 import { ApiKeysClient } from "./client"
 
 const title = "API Keys"

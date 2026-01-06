@@ -58,7 +58,7 @@ export function KnockoutText({
         <div
           key={i}
           className={cn(
-            "pointer-events-none absolute rounded-[100%] bg-background",
+            "bg-background pointer-events-none absolute rounded-[100%]",
             blurClasses[blur]
           )}
           style={{

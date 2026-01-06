@@ -3,6 +3,7 @@
 import * as React from "react"
 import { useRef, useState } from "react"
 
+import { StripeBgGuides } from "@/components/layout/striped-bg-guides"
 import { ParallaxImage } from "@/registry/new-york-v4/animations/background-image-parallax/background-image-parallax"
 import { TextGradientOpacity } from "@/registry/new-york-v4/animations/text-gradient-opacity/text-gradient-opacity"
 import {
@@ -10,8 +11,6 @@ import {
   HorizontalSlide,
 } from "@/registry/new-york-v4/animations/text-parallax/text-parallax"
 import { Spinner } from "@/registry/new-york-v4/ui/spinner"
-
-import { StripeBgGuides } from "@/components/layout/striped-bg-guides"
 
 // Featured blocks for the design showcase grid
 const DESIGN_BLOCKS = [
@@ -105,11 +104,14 @@ function RegistryBlockPreview({
 
 export function DesignSection() {
   return (
-    <div id="design" className="bg-background relative isolate flex flex-col overflow-hidden">
+    <div
+      id="design"
+      className="bg-background relative isolate flex flex-col overflow-hidden"
+    >
       <StripeBgGuides contained glowOpacity={0.8} />
 
       {/* Intro Section */}
-      <div className="relative flex min-h-[32rem] md:min-h-svh flex-col items-center justify-start gap-6 pt-16 pb-[10vh] text-center">
+      <div className="relative flex min-h-[32rem] flex-col items-center justify-start gap-6 pt-16 pb-[10vh] text-center md:min-h-svh">
         <ParallaxImage
           src="/marketing/man-sky.webp"
           alt="Museum"
@@ -154,7 +156,7 @@ export function DesignSection() {
       </div>
 
       {/* Horizontal Parallax - The Problem */}
-      <HorizontalScrollContainer className="bg-background relative flex min-h-[50vh] md:min-h-[80vh] flex-col justify-center overflow-hidden py-12 md:py-24">
+      <HorizontalScrollContainer className="bg-background relative flex min-h-[50vh] flex-col justify-center overflow-hidden py-12 md:min-h-[80vh] md:py-24">
         <HorizontalSlide
           direction="left"
           distance={400}
@@ -170,9 +172,7 @@ export function DesignSection() {
             <h2 className="display text-foreground mx-auto max-w-4xl text-4xl leading-tight tracking-tight md:text-6xl lg:text-7xl">
               You&apos;re not a designer.
               <br />
-              <span className="text-foreground">
-                That&apos;s the point.
-              </span>
+              <span className="text-foreground">That&apos;s the point.</span>
             </h2>
           </div>
         </div>
@@ -181,13 +181,14 @@ export function DesignSection() {
           distance={400}
           className="text-foreground/5 display text-[20vw] leading-none font-bold tracking-tighter whitespace-nowrap"
         >
-          SOMETHING&apos;S WRONG • CAN&apos;T TELL WHAT • SOMETHING&apos;S WRONG •
+          SOMETHING&apos;S WRONG • CAN&apos;T TELL WHAT • SOMETHING&apos;S WRONG
+          •
         </HorizontalSlide>
       </HorizontalScrollContainer>
 
       {/* Text Gradient Opacity - The Solution */}
-      <div className="bg-muted relative min-h-[40vh] md:min-h-[70vh] overflow-hidden">
-        <div className="relative flex min-h-[40vh] md:min-h-[70vh] items-center py-12 md:py-24">
+      <div className="bg-muted relative min-h-[40vh] overflow-hidden md:min-h-[70vh]">
+        <div className="relative flex min-h-[40vh] items-center py-12 md:min-h-[70vh] md:py-24">
           <div className="container px-6">
             <p className="text-brand mb-6 text-xs font-medium tracking-widest uppercase">
               Every Pixel Already Considered
@@ -201,7 +202,7 @@ export function DesignSection() {
       </div>
 
       {/* Final CTA */}
-      <HorizontalScrollContainer className="bg-muted relative flex min-h-[50vh] md:min-h-[80vh] flex-col justify-center overflow-hidden py-12 md:py-24">
+      <HorizontalScrollContainer className="bg-muted relative flex min-h-[50vh] flex-col justify-center overflow-hidden py-12 md:min-h-[80vh] md:py-24">
         <HorizontalSlide
           direction="left"
           distance={400}
@@ -217,9 +218,7 @@ export function DesignSection() {
             <h2 className="display text-foreground mx-auto max-w-4xl text-4xl leading-tight tracking-tight md:text-6xl lg:text-7xl">
               Ship work you&apos;re proud of.
               <br />
-              <span className="text-foreground">
-                Finally.
-              </span>
+              <span className="text-foreground">Finally.</span>
             </h2>
           </div>
         </div>
@@ -236,22 +235,22 @@ export function DesignSection() {
       <div className="relative z-50 overflow-hidden py-10 md:py-20">
         <div className="container px-6">
           {/* Design Explained */}
-          <div className="grid grid-cols-6 gap-6 mb-10 md:mb-16">
+          <div className="mb-10 grid grid-cols-6 gap-6 md:mb-16">
             <div className="relative col-span-6 flex gap-3 rounded-lg border-dashed md:col-span-2 md:block md:border-l md:p-5">
               <div>
-                <h3 className="capitalize font-medium md:mb-2 md:text-xl">
+                <h3 className="font-medium capitalize md:mb-2 md:text-xl">
                   Typography
                   <span className="bg-brand absolute -left-px hidden h-6 w-px md:inline-block"></span>
                 </h3>
                 <p className="text-muted-foreground text-sm md:text-base">
-                  Carefully crafted type scales, line heights, and letter spacing
-                  that make your content effortlessly readable.
+                  Carefully crafted type scales, line heights, and letter
+                  spacing that make your content effortlessly readable.
                 </p>
               </div>
             </div>
             <div className="relative col-span-6 flex gap-3 rounded-lg border-dashed md:col-span-2 md:block md:border-l md:p-5">
               <div>
-                <h3 className="capitalize font-medium md:mb-2 md:text-xl">
+                <h3 className="font-medium capitalize md:mb-2 md:text-xl">
                   Spacing & Rhythm
                   <span className="bg-brand absolute -left-px hidden h-6 w-px md:inline-block"></span>
                 </h3>
@@ -263,13 +262,13 @@ export function DesignSection() {
             </div>
             <div className="relative col-span-6 flex gap-3 rounded-lg border-dashed md:col-span-2 md:block md:border-l md:p-5">
               <div>
-                <h3 className="capitalize font-medium md:mb-2 md:text-xl">
+                <h3 className="font-medium capitalize md:mb-2 md:text-xl">
                   Color & Contrast
                   <span className="bg-brand absolute -left-px hidden h-6 w-px md:inline-block"></span>
                 </h3>
                 <p className="text-muted-foreground text-sm md:text-base">
-                  Accessible color palettes with perfect contrast ratios.
-                  Light and dark modes that actually look good.
+                  Accessible color palettes with perfect contrast ratios. Light
+                  and dark modes that actually look good.
                 </p>
               </div>
             </div>

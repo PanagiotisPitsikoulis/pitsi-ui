@@ -1,10 +1,9 @@
 "use client"
 
-import { Globe } from "@/lib/icons"
 import React from "react"
 
+import { Globe } from "@/lib/icons"
 import { cn } from "@/lib/utils"
-
 import { Avatar, AvatarImage } from "@/registry/new-york-v4/ui/avatar"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
@@ -24,13 +23,23 @@ export interface HeroMaintenanceBlockProps {
 }
 
 const defaultHeadline = "Simplifying maintenance for efficient code management."
-const defaultDescription = "Our platform streamlines development by automating issue tracking, documentation, and knowledge management."
+const defaultDescription =
+  "Our platform streamlines development by automating issue tracking, documentation, and knowledge management."
 const defaultCtaLabel = "Request early access"
 const defaultCtaIcon = <Globe className="size-4" />
 const defaultAvatars: HeroMaintenanceAvatar[] = [
-  { src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-1.webp", alt: "placeholder" },
-  { src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-6.webp", alt: "placeholder" },
-  { src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-3.webp", alt: "placeholder" },
+  {
+    src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-1.webp",
+    alt: "placeholder",
+  },
+  {
+    src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-6.webp",
+    alt: "placeholder",
+  },
+  {
+    src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-3.webp",
+    alt: "placeholder",
+  },
 ]
 const defaultTrustText = "Trusted by 2000+ developers worldwide"
 
@@ -46,7 +55,7 @@ export function HeroMaintenanceBlock({
   return (
     <section className={cn("relative py-32", className)}>
       <div className="container px-4 sm:px-6 md:px-8">
-        <div className="absolute inset-0 -z-10 h-full w-full bg-[radial-gradient(var(--muted-foreground)_1px,transparent_1px)] opacity-35 [background-size:14px_14px]"></div>
+        <div className="absolute inset-0 -z-10 h-full w-full bg-[radial-gradient(var(--muted-foreground)_1px,transparent_1px)] [background-size:14px_14px] opacity-35"></div>
         <h1 className="text-5xl font-bold tracking-tight md:text-6xl lg:text-7xl xl:text-8xl">
           {headline}
         </h1>

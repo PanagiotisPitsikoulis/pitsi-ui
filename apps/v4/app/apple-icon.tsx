@@ -12,29 +12,27 @@ export const contentType = "image/png"
 // Image generation
 export default function AppleIcon() {
   return new ImageResponse(
-    (
-      <div
-        style={{
-          background: "white",
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          borderRadius: "30%",
-        }}
+    <div
+      style={{
+        background: "white",
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        borderRadius: "30%",
+      }}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        width="140"
+        height="140"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          width="140"
-          height="140"
-        >
-          <path d={LOGO_SVG_PATH} />
-        </svg>
-      </div>
-    ),
+        <path d={LOGO_SVG_PATH} />
+      </svg>
+    </div>,
     { ...size }
   )
 }

@@ -6,7 +6,11 @@ import { Label } from "@/registry/new-york-v4/ui/label"
 const themes = [
   { id: "light", label: "Light", className: "bg-background" },
   { id: "dark", label: "Dark", className: "bg-foreground" },
-  { id: "system", label: "System", className: "from-background to-foreground bg-gradient-to-br" },
+  {
+    id: "system",
+    label: "System",
+    className: "from-background to-foreground bg-gradient-to-br",
+  },
 ] as const
 
 interface ThemeSelectorProps {

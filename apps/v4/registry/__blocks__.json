@@ -1,263 +1,68 @@
 [
   {
-    "name": "header-1",
-    "description": "Plant shop header with navigation and CTA button",
-    "categories": ["header", "landing"]
+    "name": "app-gym-gains-1",
+    "description": "Progress tracking with sparkline charts and PR history",
+    "categories": ["application"]
   },
   {
-    "name": "hero-1",
-    "description": "Plant shop hero section with parallax effects and knockout text",
-    "categories": ["hero", "landing"]
+    "name": "app-gym-history-1",
+    "description": "Calendar history view with workout indicators and details",
+    "categories": ["application"]
   },
   {
-    "name": "hero-10",
-    "description": "Plants bento hero with split layout and pill navbar",
-    "categories": ["hero", "landing"]
+    "name": "app-gym-library-1",
+    "description": "Exercise library with search, categories, and history",
+    "categories": ["application"]
   },
   {
-    "name": "hero-11",
-    "description": "Plants bento hero with 2-column grid and pill navbar",
-    "categories": ["hero", "landing"]
+    "name": "app-gym-log-1",
+    "description": "Active workout logging with set tracking and timer",
+    "categories": ["application"]
   },
   {
-    "name": "hero-12",
-    "description": "Plants bento hero with reversed layout, stats, and pill navbar",
-    "categories": ["hero", "landing"]
+    "name": "app-gym-profile-1",
+    "description": "Profile and settings with preferences and stats",
+    "categories": ["application"]
   },
   {
-    "name": "hero-13",
-    "description": "Plants bento hero with 3-column asymmetric grid and pill navbar",
-    "categories": ["hero", "landing"]
+    "name": "app-gym-shell-1",
+    "description": "Two-sidebar gym tracker shell with navigation and stats",
+    "categories": ["application"]
   },
   {
-    "name": "hero-14",
-    "description": "Plants bento hero with 4-column stat cards and pill navbar",
-    "categories": ["hero", "landing"]
+    "name": "app-gym-today-1",
+    "description": "Today view with personalized greeting, week progress, and upcoming sets",
+    "categories": ["application"]
   },
   {
-    "name": "logos-1",
-    "description": "Plant shop logo cloud section",
-    "categories": ["logos", "landing"]
+    "name": "app-quiz-active-1",
+    "description": "Active quiz interface with timer and question display",
+    "categories": ["application"]
   },
   {
-    "name": "features-1",
-    "description": "Plant shop features section with icons and center image",
-    "categories": ["features", "landing"]
+    "name": "app-quiz-browse-1",
+    "description": "Quiz browser with categories and difficulty filters",
+    "categories": ["application"]
   },
   {
-    "name": "features-2",
-    "description": "Plant shop features section variant 2",
-    "categories": ["features", "landing"]
+    "name": "app-quiz-dashboard-1",
+    "description": "Quiz dashboard with stats, weekly accuracy chart, and recent quizzes",
+    "categories": ["application"]
   },
   {
-    "name": "features-3",
-    "description": "Plant shop features section variant 3 with circle background",
-    "categories": ["features", "landing"]
+    "name": "app-quiz-results-1",
+    "description": "Quiz results with score and question breakdown",
+    "categories": ["application"]
   },
   {
-    "name": "features-4",
-    "description": "Plant shop features section variant 4",
-    "categories": ["features", "landing"]
+    "name": "app-quiz-settings-1",
+    "description": "Quiz settings with profile and preferences",
+    "categories": ["application"]
   },
   {
-    "name": "features-5",
-    "description": "Plant shop features section variant 5",
-    "categories": ["features", "landing"]
-  },
-  {
-    "name": "products-1",
-    "description": "Plant shop products grid showcasing best sellers",
-    "categories": ["products", "landing"]
-  },
-  {
-    "name": "pricing-1",
-    "description": "Plant shop pricing section with animated cards",
-    "categories": ["pricing", "landing"]
-  },
-  {
-    "name": "testimonials-1",
-    "description": "Plant shop testimonials with stacked cards effect",
-    "categories": ["testimonials", "landing"]
-  },
-  {
-    "name": "gallery-1",
-    "description": "Plant shop gallery grid with decorative elements",
-    "categories": ["gallery", "landing"]
-  },
-  {
-    "name": "team-1",
-    "description": "Plant shop team section with stacked avatars",
-    "categories": ["team", "landing"]
-  },
-  {
-    "name": "stats-1",
-    "description": "Plant shop statistics section",
-    "categories": ["stats", "landing"]
-  },
-  {
-    "name": "faq-1",
-    "description": "Plant shop FAQ section with accordion",
-    "categories": ["faq", "landing"]
-  },
-  {
-    "name": "blog-1",
-    "description": "Plant shop blog section with article cards",
-    "categories": ["blog", "landing"]
-  },
-  {
-    "name": "contact-1",
-    "description": "Plant shop contact form section",
-    "categories": ["contact", "landing"]
-  },
-  {
-    "name": "newsletter-1",
-    "description": "Plant shop newsletter subscription section",
-    "categories": ["newsletter", "landing"]
-  },
-  {
-    "name": "cta-1",
-    "description": "Plant shop call-to-action section",
-    "categories": ["cta", "landing"]
-  },
-  {
-    "name": "footer-1",
-    "description": "Plant shop footer with multiple columns and newsletter",
-    "categories": ["footer", "landing"]
-  },
-  {
-    "name": "hero-2",
-    "description": "Travel agency hero section with parallax effects and knockout text",
-    "categories": ["hero", "landing"]
-  },
-  {
-    "name": "hero-15",
-    "description": "Travel bento hero with split layout and pill navbar",
-    "categories": ["hero", "landing"]
-  },
-  {
-    "name": "hero-16",
-    "description": "Travel bento hero with 2-column grid and pill navbar",
-    "categories": ["hero", "landing"]
-  },
-  {
-    "name": "hero-17",
-    "description": "Travel bento hero with reversed layout, stats, and pill navbar",
-    "categories": ["hero", "landing"]
-  },
-  {
-    "name": "hero-18",
-    "description": "Travel bento hero with 3-column asymmetric grid and pill navbar",
-    "categories": ["hero", "landing"]
-  },
-  {
-    "name": "hero-19",
-    "description": "Travel bento hero with 4-column stat cards and pill navbar",
-    "categories": ["hero", "landing"]
-  },
-  {
-    "name": "hero-3",
-    "description": "Yacht charter hero section with parallax effects and knockout text",
-    "categories": ["hero", "landing"]
-  },
-  {
-    "name": "hero-20",
-    "description": "Boat bento hero with split layout and pill navbar",
-    "categories": ["hero", "landing"]
-  },
-  {
-    "name": "hero-21",
-    "description": "Boat bento hero with 2-column grid and pill navbar",
-    "categories": ["hero", "landing"]
-  },
-  {
-    "name": "hero-22",
-    "description": "Boat bento hero with reversed layout, stats, and pill navbar",
-    "categories": ["hero", "landing"]
-  },
-  {
-    "name": "hero-23",
-    "description": "Boat bento hero with 3-column asymmetric grid and pill navbar",
-    "categories": ["hero", "landing"]
-  },
-  {
-    "name": "hero-24",
-    "description": "Boat bento hero with 4-column stat cards and pill navbar",
-    "categories": ["hero", "landing"]
-  },
-  {
-    "name": "header-9",
-    "description": "Pill navbar header with rounded background and centered navigation",
-    "categories": ["header", "landing"]
-  },
-  {
-    "name": "hero-4",
-    "description": "Split layout fitness hero with image left and content right, parallax effects",
-    "categories": ["hero", "landing"]
-  },
-  {
-    "name": "hero-5",
-    "description": "Full-bleed parallax fitness hero with dark overlay and centered content, video background style",
-    "categories": ["hero", "landing"]
-  },
-  {
-    "name": "hero-6",
-    "description": "Stats-focused fitness hero with grid layout, credibility stats row, and parallax side image",
-    "categories": ["hero", "landing"]
-  },
-  {
-    "name": "hero-7",
-    "description": "Bento grid fitness hero with pill navbar, two-column layout, and side image",
-    "categories": ["hero", "landing"]
-  },
-  {
-    "name": "hero-8",
-    "description": "Bento grid fitness hero with stats, reversed layout, and larger image area",
-    "categories": ["hero", "landing"]
-  },
-  {
-    "name": "hero-9",
-    "description": "Asymmetric bento grid fitness hero with dual images and prominent title",
-    "categories": ["hero", "landing"]
-  },
-  {
-    "name": "features-6",
-    "description": "Fitness class types grid with intensity indicators and hover effects",
-    "categories": ["features", "landing"]
-  },
-  {
-    "name": "features-7",
-    "description": "Weekly class schedule with day tabs, booking buttons, and spots indicator",
-    "categories": ["features", "landing"]
-  },
-  {
-    "name": "features-8",
-    "description": "Studio location with hours, contact info, amenities, and map",
-    "categories": ["features", "landing"]
-  },
-  {
-    "name": "team-2",
-    "description": "Coach profiles with specialties, certifications, and social links",
-    "categories": ["team", "landing"]
-  },
-  {
-    "name": "pricing-2",
-    "description": "Fitness membership pricing with tiers, features, and popular badge",
-    "categories": ["pricing", "landing"]
-  },
-  {
-    "name": "stats-2",
-    "description": "Animated gym statistics with number counters and highlight section",
-    "categories": ["stats", "landing"]
-  },
-  {
-    "name": "testimonials-2",
-    "description": "Member testimonials with transformation stats and star ratings",
-    "categories": ["testimonials", "landing"]
-  },
-  {
-    "name": "footer-2",
-    "description": "Fitness footer with newsletter, navigation columns, and social links",
-    "categories": ["footer", "landing"]
+    "name": "app-quiz-shell-1",
+    "description": "Application shell with sidebar navigation for quiz app",
+    "categories": ["application"]
   },
   {
     "name": "auth-1",
@@ -290,124 +95,239 @@
     "categories": ["auth"]
   },
   {
-    "name": "service-plants",
-    "description": "Complete plant shop landing page template with all sections",
-    "categories": ["template", "service"]
+    "name": "blog-1",
+    "description": "Plant shop blog section with article cards",
+    "categories": ["blog", "landing"]
   },
   {
-    "name": "service-travel",
-    "description": "Stunning travel agency landing page template for tour operators",
-    "categories": ["template", "service"]
+    "name": "blog-2",
+    "description": "Featured post with 3-column grid and read time badges",
+    "categories": ["blog", "landing"]
   },
   {
-    "name": "service-boat",
-    "description": "Luxury yacht charter landing page template for marine services",
-    "categories": ["template", "service"]
+    "name": "blog-3",
+    "description": "Blog list view with author avatars and dates",
+    "categories": ["blog", "landing"]
   },
   {
-    "name": "service-fitness",
-    "description": "Boutique fitness studio landing page with high-energy black & white design",
-    "categories": ["template", "service"]
+    "name": "blog-4",
+    "description": "Magazine layout blog with hero, sidebar, grid",
+    "categories": ["blog", "landing"]
   },
   {
-    "name": "app-gym-shell-1",
-    "description": "Two-sidebar gym tracker shell with navigation and stats",
-    "categories": ["application"]
+    "name": "blog-5",
+    "description": "Minimal clean blog cards, text-focused",
+    "categories": ["blog", "landing"]
   },
   {
-    "name": "app-gym-today-1",
-    "description": "Today view with personalized greeting, week progress, and upcoming sets",
-    "categories": ["application"]
+    "name": "blog-6",
+    "description": "Blog with sidebar (newsletter, categories, recent, tags)",
+    "categories": ["blog", "landing"]
   },
   {
-    "name": "app-gym-log-1",
-    "description": "Active workout logging with set tracking and timer",
-    "categories": ["application"]
+    "name": "contact-1",
+    "description": "Plant shop contact form section",
+    "categories": ["contact", "landing"]
   },
   {
-    "name": "app-gym-history-1",
-    "description": "Calendar history view with workout indicators and details",
-    "categories": ["application"]
+    "name": "contact-2",
+    "description": "Contact form with map placeholder and location info",
+    "categories": ["contact", "landing"]
   },
   {
-    "name": "app-gym-gains-1",
-    "description": "Progress tracking with sparkline charts and PR history",
-    "categories": ["application"]
+    "name": "contact-3",
+    "description": "Multi-channel contact with email, phone, chat cards",
+    "categories": ["contact", "landing"]
   },
   {
-    "name": "app-gym-library-1",
-    "description": "Exercise library with search, categories, and history",
-    "categories": ["application"]
+    "name": "contact-4",
+    "description": "Simple centered contact form with subject dropdown",
+    "categories": ["contact", "landing"]
   },
   {
-    "name": "app-gym-profile-1",
-    "description": "Profile and settings with preferences and stats",
-    "categories": ["application"]
+    "name": "contact-5",
+    "description": "Split dark/light contact panel layout",
+    "categories": ["contact", "landing"]
   },
   {
-    "name": "app-gym-tracker",
-    "description": "Complete gym progressive overload tracker with two sidebars",
-    "categories": ["template", "application"]
+    "name": "contact-6",
+    "description": "Office cards contact with multiple global locations",
+    "categories": ["contact", "landing"]
   },
   {
-    "name": "app-quiz-shell-1",
-    "description": "Application shell with sidebar navigation for quiz app",
-    "categories": ["application"]
+    "name": "cta-1",
+    "description": "Plant shop call-to-action section",
+    "categories": ["cta", "landing"]
   },
   {
-    "name": "app-quiz-dashboard-1",
-    "description": "Quiz dashboard with stats, weekly accuracy chart, and recent quizzes",
-    "categories": ["application"]
+    "name": "cta-2",
+    "description": "Split layout CTA with image and gradient background",
+    "categories": ["cta", "landing"]
   },
   {
-    "name": "app-quiz-browse-1",
-    "description": "Quiz browser with categories and difficulty filters",
-    "categories": ["application"]
+    "name": "cta-3",
+    "description": "Full-width CTA banner with countdown timer",
+    "categories": ["cta", "landing"]
   },
   {
-    "name": "app-quiz-active-1",
-    "description": "Active quiz interface with timer and question display",
-    "categories": ["application"]
+    "name": "cta-4",
+    "description": "Card style CTA with centered content",
+    "categories": ["cta", "landing"]
   },
   {
-    "name": "app-quiz-results-1",
-    "description": "Quiz results with score and question breakdown",
-    "categories": ["application"]
+    "name": "cta-5",
+    "description": "Floating action bar CTA that appears on scroll",
+    "categories": ["cta", "landing"]
   },
   {
-    "name": "app-quiz-settings-1",
-    "description": "Quiz settings with profile and preferences",
-    "categories": ["application"]
+    "name": "cta-6",
+    "description": "Exit intent modal overlay CTA",
+    "categories": ["cta", "landing"]
   },
   {
-    "name": "app-quiz",
-    "description": "Complete quiz application template",
-    "categories": ["template", "application"]
+    "name": "faq-1",
+    "description": "Plant shop FAQ section with accordion",
+    "categories": ["faq", "landing"]
   },
   {
-    "name": "maps-1",
-    "description": "Basic interactive map with multiple office location markers and popups",
-    "categories": ["maps"]
+    "name": "faq-2",
+    "description": "Two column FAQ with questions left, answers right",
+    "categories": ["faq", "landing"]
   },
   {
-    "name": "maps-2",
-    "description": "Contact page map with business info sidebar and location pin",
-    "categories": ["maps", "contact"]
+    "name": "faq-3",
+    "description": "Searchable FAQ with highlight matching",
+    "categories": ["faq", "landing"]
   },
   {
-    "name": "maps-3",
-    "description": "Store locator with searchable sidebar list and interactive map",
-    "categories": ["maps"]
+    "name": "faq-4",
+    "description": "Card-style accordion FAQ with icons",
+    "categories": ["faq", "landing"]
   },
   {
-    "name": "maps-4",
-    "description": "Delivery tracking map with route visualization and status timeline",
-    "categories": ["maps", "application"]
+    "name": "faq-5",
+    "description": "Tabbed categories FAQ with badge counts",
+    "categories": ["faq", "landing"]
   },
   {
-    "name": "maps-5",
-    "description": "Real estate property listings map with price markers and detailed popups",
-    "categories": ["maps"]
+    "name": "faq-6",
+    "description": "FAQ with support team CTA and avatars",
+    "categories": ["faq", "landing"]
+  },
+  {
+    "name": "features-1",
+    "description": "Plant shop features section with icons and center image",
+    "categories": ["features", "landing"]
+  },
+  {
+    "name": "features-2",
+    "description": "Plant shop features section variant 2",
+    "categories": ["features", "landing"]
+  },
+  {
+    "name": "features-3",
+    "description": "Plant shop features section variant 3 with circle background",
+    "categories": ["features", "landing"]
+  },
+  {
+    "name": "features-4",
+    "description": "Plant shop features section variant 4",
+    "categories": ["features", "landing"]
+  },
+  {
+    "name": "features-5",
+    "description": "Plant shop features section variant 5",
+    "categories": ["features", "landing"]
+  },
+  {
+    "name": "features-6",
+    "description": "Fitness class types grid with intensity indicators and hover effects",
+    "categories": ["features", "landing"]
+  },
+  {
+    "name": "features-7",
+    "description": "Weekly class schedule with day tabs, booking buttons, and spots indicator",
+    "categories": ["features", "landing"]
+  },
+  {
+    "name": "features-8",
+    "description": "Studio location with hours, contact info, amenities, and map",
+    "categories": ["features", "landing"]
+  },
+  {
+    "name": "footer-1",
+    "description": "Plant shop footer with multiple columns and newsletter",
+    "categories": ["footer", "landing"]
+  },
+  {
+    "name": "footer-2",
+    "description": "Fitness footer with newsletter, navigation columns, and social links",
+    "categories": ["footer", "landing"]
+  },
+  {
+    "name": "footer-3",
+    "description": "Minimal single row footer",
+    "categories": ["footer", "landing"]
+  },
+  {
+    "name": "footer-4",
+    "description": "Big CTA footer with ready to get started section",
+    "categories": ["footer", "landing"]
+  },
+  {
+    "name": "footer-5",
+    "description": "Dark gradient footer with large brand statement",
+    "categories": ["footer", "landing"]
+  },
+  {
+    "name": "footer-6",
+    "description": "App download footer with store badges and QR code",
+    "categories": ["footer", "landing"]
+  },
+  {
+    "name": "footer-7",
+    "description": "Comprehensive sitemap-style footer",
+    "categories": ["footer", "landing"]
+  },
+  {
+    "name": "footer-8",
+    "description": "Social-focused footer with large icons and follower counts",
+    "categories": ["footer", "landing"]
+  },
+  {
+    "name": "gallery-1",
+    "description": "Plant shop gallery grid with decorative elements",
+    "categories": ["gallery", "landing"]
+  },
+  {
+    "name": "gallery-2",
+    "description": "Masonry gallery with lightbox",
+    "categories": ["gallery", "landing"]
+  },
+  {
+    "name": "gallery-3",
+    "description": "Carousel gallery with thumbnail navigation",
+    "categories": ["gallery", "landing"]
+  },
+  {
+    "name": "gallery-4",
+    "description": "Filterable gallery with category tabs",
+    "categories": ["gallery", "landing"]
+  },
+  {
+    "name": "gallery-5",
+    "description": "Grid gallery with full-screen lightbox modal",
+    "categories": ["gallery", "landing"]
+  },
+  {
+    "name": "gallery-6",
+    "description": "Before/after comparison slider gallery",
+    "categories": ["gallery", "landing"]
+  },
+  {
+    "name": "header-1",
+    "description": "Plant shop header with navigation and CTA button",
+    "categories": ["header", "landing"]
   },
   {
     "name": "header-2",
@@ -445,209 +365,134 @@
     "categories": ["header", "landing"]
   },
   {
-    "name": "footer-3",
-    "description": "Minimal single row footer",
-    "categories": ["footer", "landing"]
+    "name": "header-9",
+    "description": "Pill navbar header with rounded background and centered navigation",
+    "categories": ["header", "landing"]
   },
   {
-    "name": "footer-4",
-    "description": "Big CTA footer with ready to get started section",
-    "categories": ["footer", "landing"]
+    "name": "hero-1",
+    "description": "Plant shop hero section with parallax effects and knockout text",
+    "categories": ["hero", "landing"]
   },
   {
-    "name": "footer-5",
-    "description": "Dark gradient footer with large brand statement",
-    "categories": ["footer", "landing"]
+    "name": "hero-10",
+    "description": "Plants bento hero with split layout and pill navbar",
+    "categories": ["hero", "landing"]
   },
   {
-    "name": "footer-6",
-    "description": "App download footer with store badges and QR code",
-    "categories": ["footer", "landing"]
+    "name": "hero-11",
+    "description": "Plants bento hero with 2-column grid and pill navbar",
+    "categories": ["hero", "landing"]
   },
   {
-    "name": "footer-7",
-    "description": "Comprehensive sitemap-style footer",
-    "categories": ["footer", "landing"]
+    "name": "hero-12",
+    "description": "Plants bento hero with reversed layout, stats, and pill navbar",
+    "categories": ["hero", "landing"]
   },
   {
-    "name": "footer-8",
-    "description": "Social-focused footer with large icons and follower counts",
-    "categories": ["footer", "landing"]
+    "name": "hero-13",
+    "description": "Plants bento hero with 3-column asymmetric grid and pill navbar",
+    "categories": ["hero", "landing"]
   },
   {
-    "name": "cta-2",
-    "description": "Split layout CTA with image and gradient background",
-    "categories": ["cta", "landing"]
+    "name": "hero-14",
+    "description": "Plants bento hero with 4-column stat cards and pill navbar",
+    "categories": ["hero", "landing"]
   },
   {
-    "name": "cta-3",
-    "description": "Full-width CTA banner with countdown timer",
-    "categories": ["cta", "landing"]
+    "name": "hero-15",
+    "description": "Travel bento hero with split layout and pill navbar",
+    "categories": ["hero", "landing"]
   },
   {
-    "name": "cta-4",
-    "description": "Card style CTA with centered content",
-    "categories": ["cta", "landing"]
+    "name": "hero-16",
+    "description": "Travel bento hero with 2-column grid and pill navbar",
+    "categories": ["hero", "landing"]
   },
   {
-    "name": "cta-5",
-    "description": "Floating action bar CTA that appears on scroll",
-    "categories": ["cta", "landing"]
+    "name": "hero-17",
+    "description": "Travel bento hero with reversed layout, stats, and pill navbar",
+    "categories": ["hero", "landing"]
   },
   {
-    "name": "cta-6",
-    "description": "Exit intent modal overlay CTA",
-    "categories": ["cta", "landing"]
+    "name": "hero-18",
+    "description": "Travel bento hero with 3-column asymmetric grid and pill navbar",
+    "categories": ["hero", "landing"]
   },
   {
-    "name": "gallery-2",
-    "description": "Masonry gallery with lightbox",
-    "categories": ["gallery", "landing"]
+    "name": "hero-19",
+    "description": "Travel bento hero with 4-column stat cards and pill navbar",
+    "categories": ["hero", "landing"]
   },
   {
-    "name": "gallery-3",
-    "description": "Carousel gallery with thumbnail navigation",
-    "categories": ["gallery", "landing"]
+    "name": "hero-2",
+    "description": "Travel agency hero section with parallax effects and knockout text",
+    "categories": ["hero", "landing"]
   },
   {
-    "name": "gallery-4",
-    "description": "Filterable gallery with category tabs",
-    "categories": ["gallery", "landing"]
+    "name": "hero-20",
+    "description": "Boat bento hero with split layout and pill navbar",
+    "categories": ["hero", "landing"]
   },
   {
-    "name": "gallery-5",
-    "description": "Grid gallery with full-screen lightbox modal",
-    "categories": ["gallery", "landing"]
+    "name": "hero-21",
+    "description": "Boat bento hero with 2-column grid and pill navbar",
+    "categories": ["hero", "landing"]
   },
   {
-    "name": "gallery-6",
-    "description": "Before/after comparison slider gallery",
-    "categories": ["gallery", "landing"]
+    "name": "hero-22",
+    "description": "Boat bento hero with reversed layout, stats, and pill navbar",
+    "categories": ["hero", "landing"]
   },
   {
-    "name": "products-2",
-    "description": "Product card grid with rating, price, add to cart",
-    "categories": ["products", "landing"]
+    "name": "hero-23",
+    "description": "Boat bento hero with 3-column asymmetric grid and pill navbar",
+    "categories": ["hero", "landing"]
   },
   {
-    "name": "products-3",
-    "description": "Featured hero product with grid below",
-    "categories": ["products", "landing"]
+    "name": "hero-24",
+    "description": "Boat bento hero with 4-column stat cards and pill navbar",
+    "categories": ["hero", "landing"]
   },
   {
-    "name": "products-4",
-    "description": "Horizontal product carousel with quick add",
-    "categories": ["products", "landing"]
+    "name": "hero-3",
+    "description": "Yacht charter hero section with parallax effects and knockout text",
+    "categories": ["hero", "landing"]
   },
   {
-    "name": "products-5",
-    "description": "Product list view with large images and stock status",
-    "categories": ["products", "landing"]
+    "name": "hero-4",
+    "description": "Split layout fitness hero with image left and content right, parallax effects",
+    "categories": ["hero", "landing"]
   },
   {
-    "name": "products-6",
-    "description": "Product comparison layout with features",
-    "categories": ["products", "landing"]
+    "name": "hero-5",
+    "description": "Full-bleed parallax fitness hero with dark overlay and centered content, video background style",
+    "categories": ["hero", "landing"]
   },
   {
-    "name": "newsletter-2",
-    "description": "Inline single horizontal row newsletter",
-    "categories": ["newsletter", "landing"]
+    "name": "hero-6",
+    "description": "Stats-focused fitness hero with grid layout, credibility stats row, and parallax side image",
+    "categories": ["hero", "landing"]
   },
   {
-    "name": "newsletter-3",
-    "description": "Newsletter with benefits icons and social proof",
-    "categories": ["newsletter", "landing"]
+    "name": "hero-7",
+    "description": "Bento grid fitness hero with pill navbar, two-column layout, and side image",
+    "categories": ["hero", "landing"]
   },
   {
-    "name": "newsletter-4",
-    "description": "Split panel newsletter with image",
-    "categories": ["newsletter", "landing"]
+    "name": "hero-8",
+    "description": "Bento grid fitness hero with stats, reversed layout, and larger image area",
+    "categories": ["hero", "landing"]
   },
   {
-    "name": "newsletter-5",
-    "description": "Popup card style newsletter with close button",
-    "categories": ["newsletter", "landing"]
+    "name": "hero-9",
+    "description": "Asymmetric bento grid fitness hero with dual images and prominent title",
+    "categories": ["hero", "landing"]
   },
   {
-    "name": "newsletter-6",
-    "description": "Dark themed newsletter with email icon",
-    "categories": ["newsletter", "landing"]
-  },
-  {
-    "name": "faq-2",
-    "description": "Two column FAQ with questions left, answers right",
-    "categories": ["faq", "landing"]
-  },
-  {
-    "name": "faq-3",
-    "description": "Searchable FAQ with highlight matching",
-    "categories": ["faq", "landing"]
-  },
-  {
-    "name": "faq-4",
-    "description": "Card-style accordion FAQ with icons",
-    "categories": ["faq", "landing"]
-  },
-  {
-    "name": "faq-5",
-    "description": "Tabbed categories FAQ with badge counts",
-    "categories": ["faq", "landing"]
-  },
-  {
-    "name": "faq-6",
-    "description": "FAQ with support team CTA and avatars",
-    "categories": ["faq", "landing"]
-  },
-  {
-    "name": "blog-2",
-    "description": "Featured post with 3-column grid and read time badges",
-    "categories": ["blog", "landing"]
-  },
-  {
-    "name": "blog-3",
-    "description": "Blog list view with author avatars and dates",
-    "categories": ["blog", "landing"]
-  },
-  {
-    "name": "blog-4",
-    "description": "Magazine layout blog with hero, sidebar, grid",
-    "categories": ["blog", "landing"]
-  },
-  {
-    "name": "blog-5",
-    "description": "Minimal clean blog cards, text-focused",
-    "categories": ["blog", "landing"]
-  },
-  {
-    "name": "blog-6",
-    "description": "Blog with sidebar (newsletter, categories, recent, tags)",
-    "categories": ["blog", "landing"]
-  },
-  {
-    "name": "contact-2",
-    "description": "Contact form with map placeholder and location info",
-    "categories": ["contact", "landing"]
-  },
-  {
-    "name": "contact-3",
-    "description": "Multi-channel contact with email, phone, chat cards",
-    "categories": ["contact", "landing"]
-  },
-  {
-    "name": "contact-4",
-    "description": "Simple centered contact form with subject dropdown",
-    "categories": ["contact", "landing"]
-  },
-  {
-    "name": "contact-5",
-    "description": "Split dark/light contact panel layout",
-    "categories": ["contact", "landing"]
-  },
-  {
-    "name": "contact-6",
-    "description": "Office cards contact with multiple global locations",
-    "categories": ["contact", "landing"]
+    "name": "logos-1",
+    "description": "Plant shop logo cloud section",
+    "categories": ["logos", "landing"]
   },
   {
     "name": "logos-2",
@@ -675,29 +520,69 @@
     "categories": ["logos", "landing"]
   },
   {
-    "name": "testimonials-3",
-    "description": "Sliding carousel testimonials with navigation",
-    "categories": ["testimonials", "landing"]
+    "name": "maps-1",
+    "description": "Basic interactive map with multiple office location markers and popups",
+    "categories": ["maps"]
   },
   {
-    "name": "testimonials-4",
-    "description": "Video testimonial cards with play overlay",
-    "categories": ["testimonials", "landing"]
+    "name": "maps-2",
+    "description": "Contact page map with business info sidebar and location pin",
+    "categories": ["maps", "contact"]
   },
   {
-    "name": "testimonials-5",
-    "description": "Rating-focused testimonials with aggregate score",
-    "categories": ["testimonials", "landing"]
+    "name": "maps-3",
+    "description": "Store locator with searchable sidebar list and interactive map",
+    "categories": ["maps"]
   },
   {
-    "name": "testimonials-6",
-    "description": "Case study testimonial cards with metrics",
-    "categories": ["testimonials", "landing"]
+    "name": "maps-4",
+    "description": "Delivery tracking map with route visualization and status timeline",
+    "categories": ["maps", "application"]
   },
   {
-    "name": "testimonials-7",
-    "description": "Social proof wall with tweet-style cards",
-    "categories": ["testimonials", "landing"]
+    "name": "maps-5",
+    "description": "Real estate property listings map with price markers and detailed popups",
+    "categories": ["maps"]
+  },
+  {
+    "name": "newsletter-1",
+    "description": "Plant shop newsletter subscription section",
+    "categories": ["newsletter", "landing"]
+  },
+  {
+    "name": "newsletter-2",
+    "description": "Inline single horizontal row newsletter",
+    "categories": ["newsletter", "landing"]
+  },
+  {
+    "name": "newsletter-3",
+    "description": "Newsletter with benefits icons and social proof",
+    "categories": ["newsletter", "landing"]
+  },
+  {
+    "name": "newsletter-4",
+    "description": "Split panel newsletter with image",
+    "categories": ["newsletter", "landing"]
+  },
+  {
+    "name": "newsletter-5",
+    "description": "Popup card style newsletter with close button",
+    "categories": ["newsletter", "landing"]
+  },
+  {
+    "name": "newsletter-6",
+    "description": "Dark themed newsletter with email icon",
+    "categories": ["newsletter", "landing"]
+  },
+  {
+    "name": "pricing-1",
+    "description": "Plant shop pricing section with animated cards",
+    "categories": ["pricing", "landing"]
+  },
+  {
+    "name": "pricing-2",
+    "description": "Fitness membership pricing with tiers, features, and popular badge",
+    "categories": ["pricing", "landing"]
   },
   {
     "name": "pricing-3",
@@ -725,29 +610,44 @@
     "categories": ["pricing", "landing"]
   },
   {
-    "name": "team-3",
-    "description": "Team cards with social links on hover",
-    "categories": ["team", "landing"]
+    "name": "products-1",
+    "description": "Plant shop products grid showcasing best sellers",
+    "categories": ["products", "landing"]
   },
   {
-    "name": "team-4",
-    "description": "Leadership section with smaller team grid",
-    "categories": ["team", "landing"]
+    "name": "products-2",
+    "description": "Product card grid with rating, price, add to cart",
+    "categories": ["products", "landing"]
   },
   {
-    "name": "team-5",
-    "description": "Carousel team with thumbnail navigation",
-    "categories": ["team", "landing"]
+    "name": "products-3",
+    "description": "Featured hero product with grid below",
+    "categories": ["products", "landing"]
   },
   {
-    "name": "team-6",
-    "description": "About page style team with story and values",
-    "categories": ["team", "landing"]
+    "name": "products-4",
+    "description": "Horizontal product carousel with quick add",
+    "categories": ["products", "landing"]
   },
   {
-    "name": "team-7",
-    "description": "Minimal list team by department",
-    "categories": ["team", "landing"]
+    "name": "products-5",
+    "description": "Product list view with large images and stock status",
+    "categories": ["products", "landing"]
+  },
+  {
+    "name": "products-6",
+    "description": "Product comparison layout with features",
+    "categories": ["products", "landing"]
+  },
+  {
+    "name": "stats-1",
+    "description": "Plant shop statistics section",
+    "categories": ["stats", "landing"]
+  },
+  {
+    "name": "stats-2",
+    "description": "Animated gym statistics with number counters and highlight section",
+    "categories": ["stats", "landing"]
   },
   {
     "name": "stats-3",
@@ -773,5 +673,105 @@
     "name": "stats-7",
     "description": "Infographic style stats with bar chart",
     "categories": ["stats", "landing"]
+  },
+  {
+    "name": "team-1",
+    "description": "Plant shop team section with stacked avatars",
+    "categories": ["team", "landing"]
+  },
+  {
+    "name": "team-2",
+    "description": "Coach profiles with specialties, certifications, and social links",
+    "categories": ["team", "landing"]
+  },
+  {
+    "name": "team-3",
+    "description": "Team cards with social links on hover",
+    "categories": ["team", "landing"]
+  },
+  {
+    "name": "team-4",
+    "description": "Leadership section with smaller team grid",
+    "categories": ["team", "landing"]
+  },
+  {
+    "name": "team-5",
+    "description": "Carousel team with thumbnail navigation",
+    "categories": ["team", "landing"]
+  },
+  {
+    "name": "team-6",
+    "description": "About page style team with story and values",
+    "categories": ["team", "landing"]
+  },
+  {
+    "name": "team-7",
+    "description": "Minimal list team by department",
+    "categories": ["team", "landing"]
+  },
+  {
+    "name": "testimonials-1",
+    "description": "Plant shop testimonials with stacked cards effect",
+    "categories": ["testimonials", "landing"]
+  },
+  {
+    "name": "testimonials-2",
+    "description": "Member testimonials with transformation stats and star ratings",
+    "categories": ["testimonials", "landing"]
+  },
+  {
+    "name": "testimonials-3",
+    "description": "Sliding carousel testimonials with navigation",
+    "categories": ["testimonials", "landing"]
+  },
+  {
+    "name": "testimonials-4",
+    "description": "Video testimonial cards with play overlay",
+    "categories": ["testimonials", "landing"]
+  },
+  {
+    "name": "testimonials-5",
+    "description": "Rating-focused testimonials with aggregate score",
+    "categories": ["testimonials", "landing"]
+  },
+  {
+    "name": "testimonials-6",
+    "description": "Case study testimonial cards with metrics",
+    "categories": ["testimonials", "landing"]
+  },
+  {
+    "name": "testimonials-7",
+    "description": "Social proof wall with tweet-style cards",
+    "categories": ["testimonials", "landing"]
+  },
+  {
+    "name": "service-plants",
+    "description": "Complete plant shop landing page template with all sections",
+    "categories": ["template", "service"]
+  },
+  {
+    "name": "service-travel",
+    "description": "Stunning travel agency landing page template for tour operators",
+    "categories": ["template", "service"]
+  },
+  {
+    "name": "service-boat",
+    "description": "Luxury yacht charter landing page template for marine services",
+    "categories": ["template", "service"]
+  },
+  {
+    "name": "service-fitness",
+    "description": "Boutique fitness studio landing page with high-energy black & white design",
+    "categories": ["template", "service"]
+  },
+  {
+    "name": "app-gym-tracker",
+    "description": "Complete gym progressive overload tracker with two sidebars",
+    "categories": ["template", "application"]
+  },
+  {
+    "name": "app-quiz",
+    "description": "Complete quiz application template",
+    "categories": ["template", "application"]
   }
 ]

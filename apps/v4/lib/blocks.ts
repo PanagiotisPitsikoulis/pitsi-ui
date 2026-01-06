@@ -1,3 +1,6 @@
+// Heavy functions that need the full registry are imported lazily
+import type { RegistryItem } from "./registry"
+
 // Block utility functions
 // Re-export lightweight metadata functions (no heavy registry import)
 // These are used by navigation components (site-header, site-footer)
@@ -12,9 +15,6 @@ export {
   getApplicationTemplatesFromRegistry,
   type RegistryTemplateMetadata,
 } from "@/registry/__blocks-metadata__"
-
-// Heavy functions that need the full registry are imported lazily
-import type { RegistryItem } from "./registry"
 
 export async function getAllBlocks(): Promise<RegistryItem[]> {
   const { queryRegistry } = await import("./registry")

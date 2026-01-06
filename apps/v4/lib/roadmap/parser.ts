@@ -1,7 +1,11 @@
 import fs from "fs"
 import path from "path"
 
-export type RoadmapStatus = "completed" | "in-progress" | "planned" | "exploring"
+export type RoadmapStatus =
+  | "completed"
+  | "in-progress"
+  | "planned"
+  | "exploring"
 
 export interface RoadmapItem {
   quarter: string
@@ -12,7 +16,8 @@ export interface RoadmapItem {
 function parseStatus(header: string): RoadmapStatus | null {
   const lower = header.toLowerCase()
   if (lower.includes("completed")) return "completed"
-  if (lower.includes("in progress") || lower.includes("in-progress")) return "in-progress"
+  if (lower.includes("in progress") || lower.includes("in-progress"))
+    return "in-progress"
   if (lower.includes("planned")) return "planned"
   if (lower.includes("exploring")) return "exploring"
   return null

@@ -2,19 +2,18 @@
 
 import type { ComponentType } from "react"
 
-import { Index } from "@/registry/__index__"
 import { COMPUTED_TEMPLATES } from "@/registry/__blocks-metadata__"
+import { Index } from "@/registry/__index__"
 
 import type { TintLevel } from "./_components"
+// Import types we need from server
+import type { BlockType } from "./blocks.server"
 
 // Re-export everything from server-safe utilities
 export * from "./blocks.server"
 
 // Registry style name
 const STYLE_NAME = "new-york-v4"
-
-// Import types we need from server
-import type { BlockType } from "./blocks.server"
 
 // Get a lazy block component from the registry Index (client-only)
 export function getBlockComponent(blockName: string): ComponentType | null {

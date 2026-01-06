@@ -1,6 +1,6 @@
 import Link from "next/link"
-import { Lock, LogIn } from "@/lib/icons"
 
+import { Lock, LogIn } from "@/lib/icons"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 interface DocsPaywallProps {

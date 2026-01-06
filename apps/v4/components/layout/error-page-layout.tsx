@@ -1,10 +1,9 @@
 import { ReactNode } from "react"
 
-import { Spacer } from "@/registry/new-york-v4/ui/spacer"
-
 import { LayoutGrid, LayoutGridItem } from "@/components/layout/layout-grid"
 import { StripeBgGuides } from "@/components/layout/striped-bg-guides"
 import { BackLink } from "@/components/navigation/back-link"
+import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 
 interface ErrorPageLayoutProps {
   statusLabel: string
@@ -50,9 +49,7 @@ export function ErrorPageLayout({
           <LayoutGridItem span={6} spanLg={3} className="lg:col-start-4">
             <div className="flex flex-col gap-6">
               {content}
-              <div className="flex flex-col gap-4 sm:flex-row">
-                {actions}
-              </div>
+              <div className="flex flex-col gap-4 sm:flex-row">{actions}</div>
             </div>
           </LayoutGridItem>
         </LayoutGrid>

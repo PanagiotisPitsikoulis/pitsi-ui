@@ -66,32 +66,38 @@ export const featuresDefaults: FeaturesContent = {
     {
       icon: "Sparkles",
       title: "Expert Selection of Plants",
-      description: "Each plant is hand-picked by our horticulturists for health and beauty.",
+      description:
+        "Each plant is hand-picked by our horticulturists for health and beauty.",
     },
     {
       icon: "Package",
       title: "Safe Delivery to Your House",
-      description: "Specially packaged to arrive healthy and ready to thrive in your home.",
+      description:
+        "Specially packaged to arrive healthy and ready to thrive in your home.",
     },
     {
       icon: "Heart",
       title: "30-Day Plant Health Guarantee",
-      description: "Not thriving? We'll replace it free within 30 days of delivery.",
+      description:
+        "Not thriving? We'll replace it free within 30 days of delivery.",
     },
     {
       icon: "Truck",
       title: "Free Shipping on All Orders",
-      description: "Complimentary shipping on all orders over $50, delivered with care.",
+      description:
+        "Complimentary shipping on all orders over $50, delivered with care.",
     },
     {
       icon: "Leaf",
       title: "Rare and Unique Varieties",
-      description: "Hard-to-find cultivars and rare specimens sourced from specialty growers.",
+      description:
+        "Hard-to-find cultivars and rare specimens sourced from specialty growers.",
     },
     {
       icon: "RefreshCcw",
       title: "Hassle-Free Easy Returns",
-      description: "Hassle-free returns and exchanges if your plant doesn't meet expectations.",
+      description:
+        "Hassle-free returns and exchanges if your plant doesn't meet expectations.",
     },
   ],
   image: {

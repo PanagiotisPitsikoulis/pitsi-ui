@@ -1,9 +1,9 @@
 "use client"
 
-import { ArrowUpRight } from "@/lib/icons"
-import Image from "next/image"
 import React from "react"
+import Image from "next/image"
 
+import { ArrowUpRight } from "@/lib/icons"
 import { cn } from "@/lib/utils"
 
 export interface TeamMember {
@@ -31,10 +31,13 @@ export interface AboutTeamBlockProps {
 const defaultProfile = {
   title: "SaaS Startup",
   subtitle: "Building the future of productivity",
-  image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/photos/futuristic-device-design-qcufu.png",
+  image:
+    "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/photos/futuristic-device-design-qcufu.png",
   bio: "We're a team of passionate innovators building cutting-edge SaaS solutions that help businesses streamline their operations and boost productivity. Our mission is to create software that not only solves today's problems but anticipates tomorrow's challenges.",
-  vision: "We believe in the power of technology to transform how businesses operate. Our goal is to build intuitive, scalable solutions that grow with our customers and adapt to their evolving needs.",
-  outro: "Join thousands of businesses that trust our platform to power their success. Let's build something amazing together.",
+  vision:
+    "We believe in the power of technology to transform how businesses operate. Our goal is to build intuitive, scalable solutions that grow with our customers and adapt to their evolving needs.",
+  outro:
+    "Join thousands of businesses that trust our platform to power their success. Let's build something amazing together.",
   team: [
     { id: "01", name: "Sarah Chen", role: "CEO & Co-founder" },
     { id: "02", name: "Marcus Rodriguez", role: "CTO & Co-founder" },
@@ -44,7 +47,8 @@ const defaultProfile = {
     { id: "06", name: "Alex Johnson", role: "Head of Marketing" },
     { id: "07", name: "Rachel Green", role: "Head of Sales" },
   ],
-  mainImage: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/bw12.jpeg",
+  mainImage:
+    "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/bw12.jpeg",
   contactLabel: "Contact Us",
 }
 
@@ -60,7 +64,7 @@ export function AboutTeamBlock({
             <div className="sticky top-20 md:p-6">
               <div className="mb-8">
                 <div className="mb-6 flex items-center gap-4">
-                  <div className="relative h-16 w-16 rounded-lg overflow-hidden">
+                  <div className="relative h-16 w-16 overflow-hidden rounded-lg">
                     <Image
                       src={profile.image}
                       alt={profile.title}
@@ -86,7 +90,7 @@ export function AboutTeamBlock({
                     <span className="border-border border-b-2 pb-0.5 transition-colors">
                       {profile.contactLabel}
                     </span>
-                    <ArrowUpRight className="ml-1 h-6 w-5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                    <ArrowUpRight className="ml-1 h-6 w-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </a>
                 </div>
               </nav>
@@ -98,7 +102,7 @@ export function AboutTeamBlock({
               <h1 className="mb-12 text-7xl font-semibold">About Us</h1>
 
               <div className="space-y-12">
-                <p className="w-full text-2xl font-medium leading-[36px] md:max-w-2xl">
+                <p className="w-full text-2xl leading-[36px] font-medium md:max-w-2xl">
                   {profile.bio}
                 </p>
 
@@ -107,7 +111,7 @@ export function AboutTeamBlock({
                   <p className="leading-relaxed">{profile.vision}</p>
                 </div>
 
-                <div className="my-12 relative aspect-video rounded-2xl overflow-hidden">
+                <div className="relative my-12 aspect-video overflow-hidden rounded-2xl">
                   <Image
                     src={profile.mainImage}
                     alt="Team office"

@@ -4,7 +4,6 @@ import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 
 import type { PlanType } from "@/lib/server/db/schema"
-
 import {
   LoadingCard,
   TeamInfoCard,

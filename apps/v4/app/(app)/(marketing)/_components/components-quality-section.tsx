@@ -5,19 +5,23 @@ import { QualitySectionBlock } from "../_blocks/quality-section-block"
 const qualityFeatures = [
   {
     title: "WCAG 2.1 AA",
-    description: "All components meet accessibility standards for color contrast, focus states, and keyboard navigation.",
+    description:
+      "All components meet accessibility standards for color contrast, focus states, and keyboard navigation.",
   },
   {
     title: "Radix Primitives",
-    description: "Built on battle-tested headless components that handle complex accessibility patterns.",
+    description:
+      "Built on battle-tested headless components that handle complex accessibility patterns.",
   },
   {
     title: "Type Safe",
-    description: "Full TypeScript support with strict types, autocomplete, and documentation in your IDE.",
+    description:
+      "Full TypeScript support with strict types, autocomplete, and documentation in your IDE.",
   },
   {
     title: "Tree Shakeable",
-    description: "Import only what you use. No bloated bundles, no unnecessary code.",
+    description:
+      "Import only what you use. No bloated bundles, no unnecessary code.",
   },
 ]
 

@@ -87,7 +87,11 @@ export function DirectoryAddButton({
         />
         <div data-rehype-pretty-code-title>components.json</div>
         <pre className="bg-background no-scrollbar min-w-0 overflow-x-auto px-4 py-3.5 outline-none has-[[data-highlighted-line]]:px-0 has-[[data-line-numbers]]:px-0 has-[[data-slot=tabs]]:p-0">
-          <code className="bg-background" data-line-numbers data-language="json">
+          <code
+            className="bg-background"
+            data-line-numbers
+            data-language="json"
+          >
             <span data-line>{"{"}</span>
             <span data-line>{'  "registries": {'}</span>
             <span

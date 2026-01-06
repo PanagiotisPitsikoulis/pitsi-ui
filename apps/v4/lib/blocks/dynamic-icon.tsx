@@ -2,7 +2,10 @@
 
 import { HugeiconsIcon } from "@hugeicons/react"
 
-import { iconMapping, type IconName as MappedIconName } from "@/lib/icons/icon-mapping"
+import {
+  iconMapping,
+  type IconName as MappedIconName,
+} from "@/lib/icons/icon-mapping"
 
 /**
  * Renders an icon by name

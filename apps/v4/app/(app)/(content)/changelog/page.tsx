@@ -6,12 +6,10 @@ import {
   getChangelogEntries,
   getChangeType,
 } from "@/lib/changelog/parser"
-
+import { ChangelogContent } from "@/components/changelog"
 import { UploadIcon } from "@/components/icons/hero-icons"
 import { ContentPageLayout } from "@/components/layout/content-page-layout"
 import { ContentPageSidebar } from "@/components/layout/content-page-sidebar"
-
-import { ChangelogContent } from "@/components/changelog"
 
 const title = "Changelog"
 const description =

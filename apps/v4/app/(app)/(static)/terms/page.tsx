@@ -1,11 +1,15 @@
 import { Metadata } from "next"
 import { cacheLife } from "next/cache"
 
-import { LegalPage, type LegalPageContent } from "@/components/documentation/legal/legal-page"
+import {
+  LegalPage,
+  type LegalPageContent,
+} from "@/components/documentation/legal/legal-page"
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: "Terms of Service for pitsi/ui - Read our terms and conditions for using our services.",
+  description:
+    "Terms of Service for pitsi/ui - Read our terms and conditions for using our services.",
 }
 
 const termsContent: LegalPageContent = {

@@ -34,6 +34,7 @@ Notice how the jumps get bigger as you go up? That's intentional—small sizes n
 Font weight is underutilized for hierarchy. A bold 16px heading can stand out more than a regular 20px heading, while taking up less space and feeling more integrated with the surrounding text.
 
 Our weight hierarchy:
+
 - **900 (Black)**: Display text, hero headings only
 - **700 (Bold)**: Primary headings, emphasis
 - **600 (Semibold)**: Secondary headings, subheads
@@ -46,9 +47,9 @@ Our weight hierarchy:
 Not all text needs to be the same darkness. Use color to create hierarchy without changing size or weight:
 
 ```css
---text-primary: oklch(0.13 0 0);   /* Main content */
+--text-primary: oklch(0.13 0 0); /* Main content */
 --text-secondary: oklch(0.45 0 0); /* Supporting text */
---text-muted: oklch(0.65 0 0);     /* Tertiary info */
+--text-muted: oklch(0.65 0 0); /* Tertiary info */
 ```
 
 ### 4. Spacing
@@ -64,6 +65,7 @@ Wider letter spacing makes text feel more prominent (good for headings in all ca
 The magic happens when you combine these tools thoughtfully:
 
 **Hero Headline**
+
 ```css
 font-size: 48px;
 font-weight: 900;
@@ -72,6 +74,7 @@ color: var(--text-primary);
 ```
 
 **Section Heading**
+
 ```css
 font-size: 24px;
 font-weight: 700;
@@ -80,6 +83,7 @@ color: var(--text-primary);
 ```
 
 **Card Title**
+
 ```css
 font-size: 16px;
 font-weight: 600;
@@ -87,6 +91,7 @@ color: var(--text-primary);
 ```
 
 **Card Description**
+
 ```css
 font-size: 14px;
 font-weight: 400;
@@ -94,6 +99,7 @@ color: var(--text-secondary);
 ```
 
 **Metadata**
+
 ```css
 font-size: 12px;
 font-weight: 500;

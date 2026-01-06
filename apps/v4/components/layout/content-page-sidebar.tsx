@@ -1,8 +1,7 @@
 import { ReactNode } from "react"
 
-import { Spacer } from "@/registry/new-york-v4/ui/spacer"
-
 import { BackLink } from "@/components/navigation/back-link"
+import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 
 interface ContentPageSidebarProps {
   backHref?: string
@@ -32,7 +31,9 @@ export function ContentPageSidebar({
         {title}
       </h1>
       <Spacer size="lg" sizeMobile="md" />
-      <p className="text-muted-foreground text-base md:text-lg">{description}</p>
+      <p className="text-muted-foreground text-base md:text-lg">
+        {description}
+      </p>
       <Spacer size="6xl" sizeMobile="2xl" />
       <div className="flex justify-center">{icon}</div>
     </>

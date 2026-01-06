@@ -1,18 +1,17 @@
 "use client"
 
+import React, { useCallback, useMemo } from "react"
+import Image from "next/image"
 import Autoplay from "embla-carousel-autoplay"
 import { AnimatePresence, motion } from "framer-motion"
-import Image from "next/image"
-import React, { useCallback, useMemo } from "react"
 
 import { cn } from "@/lib/utils"
 import { useIsMobile } from "@/hooks/use-mobile"
-
 import {
   Carousel,
-  type CarouselApi,
   CarouselContent,
   CarouselItem,
+  type CarouselApi,
 } from "@/registry/new-york-v4/ui/carousel"
 
 export interface HeroCarouselItem {
@@ -32,49 +31,57 @@ export interface HeroCarouselBlockProps {
 const defaultItems: HeroCarouselItem[] = [
   {
     id: 1,
-    image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/person1.jpeg",
+    image:
+      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/person1.jpeg",
     name: "Joan Doe",
   },
   {
     id: 2,
-    image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/person2.jpeg",
+    image:
+      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/person2.jpeg",
     name: "Jane Smith",
   },
   {
     id: 3,
-    image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/person3.jpeg",
+    image:
+      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/person3.jpeg",
     name: "John Johnson",
   },
   {
     id: 4,
-    image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/person4.jpeg",
+    image:
+      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/person4.jpeg",
     name: "Sarah William",
   },
   {
     id: 5,
-    image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/person5.jpeg",
+    image:
+      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/person5.jpeg",
     name: "Michael Brown",
   },
   {
     id: 6,
-    image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/bw3.jpeg",
+    image:
+      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/bw3.jpeg",
     name: "Emily Davis",
   },
   {
     id: 7,
-    image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/bw11.jpeg",
+    image:
+      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/bw11.jpeg",
     name: "Joson White",
   },
 ]
 
 const defaultHeadline = (
   <>
-    <span className="font-playfair italic">The only</span> App you'll ever
-    need to stay <span className="font-playfair italic">inspired</span>
+    <span className="font-playfair italic">The only</span> App you'll ever need
+    to stay <span className="font-playfair italic">inspired</span>
   </>
 )
 
-const defaultDescription = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum animi, ipsam provident optio delectus neque aliquid cumque. Beatae, odio!"
+const defaultDescription =
+  "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum animi, ipsam provident optio delectus neque aliquid cumque. Beatae, odio!"
 
 export function HeroCarouselBlock({
   headline = defaultHeadline,
@@ -140,9 +147,7 @@ export function HeroCarouselBlock({
         <h1 className="text-foreground max-w-3xl text-5xl font-medium tracking-tighter md:px-9 md:text-6xl">
           {headline}
         </h1>
-        <p className="text-muted-foreground/80 mt-5 max-w-xl">
-          {description}
-        </p>
+        <p className="text-muted-foreground/80 mt-5 max-w-xl">{description}</p>
 
         <Carousel
           className="max-w-5xl"
@@ -180,7 +185,7 @@ export function HeroCarouselBlock({
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="absolute bottom-0 right-0 flex w-full translate-y-full flex-col items-center justify-center gap-2">
+          <div className="absolute right-0 bottom-0 flex w-full translate-y-full flex-col items-center justify-center gap-2">
             <div className="flex gap-2">{scrollbarBars}</div>
             <AnimatePresence mode="popLayout" initial={false}>
               <motion.p

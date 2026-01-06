@@ -1,6 +1,6 @@
-import type { TypographyState } from "./typography-types"
-import { calculateTypeScale } from "./typography-presets"
 import { getRatioName } from "./scale-ratios"
+import { calculateTypeScale } from "./typography-presets"
+import type { TypographyState } from "./typography-types"
 
 export function generateTypographyCSS(state: TypographyState): string {
   const scale = calculateTypeScale(state)
@@ -24,7 +24,9 @@ export function generateTypographyCSS(state: TypographyState): string {
   lines.push(`  /* Line Heights */`)
   lines.push(`  --leading-tight: ${state.headingLineHeight};`)
   lines.push(`  --leading-normal: ${state.bodyLineHeight};`)
-  lines.push(`  --leading-relaxed: ${(state.bodyLineHeight + 0.25).toFixed(2)};`)
+  lines.push(
+    `  --leading-relaxed: ${(state.bodyLineHeight + 0.25).toFixed(2)};`
+  )
   lines.push(``)
   lines.push(`  /* Letter Spacing */`)
   lines.push(`  --tracking-tight: ${state.headingLetterSpacing}em;`)
@@ -61,7 +63,9 @@ export function generateTailwindV4Typography(state: TypographyState): string {
   lines.push(`  /* Line Heights */`)
   lines.push(`  --leading-tight: ${state.headingLineHeight};`)
   lines.push(`  --leading-normal: ${state.bodyLineHeight};`)
-  lines.push(`  --leading-relaxed: ${(state.bodyLineHeight + 0.25).toFixed(2)};`)
+  lines.push(
+    `  --leading-relaxed: ${(state.bodyLineHeight + 0.25).toFixed(2)};`
+  )
   lines.push(`}`)
 
   return lines.join("\n")
@@ -70,7 +74,9 @@ export function generateTailwindV4Typography(state: TypographyState): string {
 export function generateFontImports(state: TypographyState): string {
   const fonts = new Set([state.bodyFont, state.headingFont])
   const weights = new Set([state.bodyWeight, state.headingWeight])
-  const weightsStr = Array.from(weights).sort((a, b) => a - b).join(";")
+  const weightsStr = Array.from(weights)
+    .sort((a, b) => a - b)
+    .join(";")
 
   const imports = Array.from(fonts).map((font) => {
     const fontName = font.replace(/ /g, "+")
@@ -88,7 +94,9 @@ export function generateTypographyJSON(state: TypographyState): string {
       body: state.bodyFont,
       heading: state.headingFont,
     },
-    scale: Object.fromEntries(scale.map(({ name, cssSize }) => [name, cssSize])),
+    scale: Object.fromEntries(
+      scale.map(({ name, cssSize }) => [name, cssSize])
+    ),
     lineHeights: {
       tight: state.headingLineHeight,
       normal: state.bodyLineHeight,

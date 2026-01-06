@@ -1,5 +1,5 @@
-import { describe, it, expect, vi, beforeEach } from "vitest"
 import va from "@vercel/analytics"
+import { beforeEach, describe, expect, it, vi } from "vitest"
 
 import { trackEvent, type Event } from "@/lib/events"
 

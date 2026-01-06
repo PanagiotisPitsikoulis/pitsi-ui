@@ -1,6 +1,7 @@
 import { Metadata } from "next"
 
 import { getAllCategories, getCategoryBlockCounts } from "@/lib/blocks"
+
 import { BlocksLayoutClient } from "./layout-client"
 
 const title = "Building Blocks for the Web"
@@ -40,7 +41,10 @@ export default async function BlocksLayout({
   const blockCounts = getCategoryBlockCounts()
 
   // Calculate total count
-  const totalCount = Object.values(blockCounts).reduce((sum, count) => sum + count, 0)
+  const totalCount = Object.values(blockCounts).reduce(
+    (sum, count) => sum + count,
+    0
+  )
 
   // Build category links with "all" first
   const categoryLinks = [

@@ -83,7 +83,10 @@ export async function generateDocsMetadata({
       },
     }
   } catch (error) {
-    console.warn(`Failed to generate docs metadata for ${slug.join("/")}:`, error)
+    console.warn(
+      `Failed to generate docs metadata for ${slug.join("/")}:`,
+      error
+    )
     return { title: "Documentation" }
   }
 }
@@ -174,7 +177,10 @@ export async function generateDocsItemMetadata({
       },
     }
   } catch (error) {
-    console.warn(`Failed to generate docs item metadata for ${itemName}:`, error)
+    console.warn(
+      `Failed to generate docs item metadata for ${itemName}:`,
+      error
+    )
     return {
       title: `${type === "components" ? "Component" : "Animation"} Not Found`,
     }

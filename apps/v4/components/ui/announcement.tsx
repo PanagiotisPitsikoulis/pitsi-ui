@@ -1,6 +1,6 @@
 import Link from "next/link"
-import { ArrowRight } from "@/lib/icons"
 
+import { ArrowRight } from "@/lib/icons"
 import { Badge } from "@/registry/new-york-v4/ui/badge"
 
 export function Announcement() {

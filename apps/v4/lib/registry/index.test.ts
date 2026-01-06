@@ -1,16 +1,16 @@
 // @ts-nocheck
-import { describe, it, expect } from "vitest"
+import type { RegistryItem } from "pitsi/schema"
+import { describe, expect, it } from "vitest"
 
 import {
+  createFileTreeForRegistryItemFiles,
   fixFilePaths,
   fixImport,
+  getAllRegistryItems,
   getBlockMainCategory,
   getBlockSubcategory,
   queryRegistry,
-  getAllRegistryItems,
-  createFileTreeForRegistryItemFiles,
 } from "@/lib/registry"
-import type { RegistryItem } from "pitsi/schema"
 
 describe("registry-utils", () => {
   describe("fixFilePaths", () => {
@@ -75,7 +75,9 @@ import { useToast } from "@/registry/new-york-v4/hooks/use-toast"`
 
       const result = fixImport(code)
 
-      expect(result).toContain(`import { Button } from "@/components/ui/button"`)
+      expect(result).toContain(
+        `import { Button } from "@/components/ui/button"`
+      )
       expect(result).toContain(`import { cn } from "@/lib/utils"`)
       expect(result).toContain(`import { useToast } from "@/hooks/use-toast"`)
     })
@@ -403,7 +405,9 @@ import { clsx } from "clsx"`
             types: ["registry:block"],
             returnType: "subcategories",
           })
-        ).rejects.toThrow('returnType "subcategories" requires mainCategory option')
+        ).rejects.toThrow(
+          'returnType "subcategories" requires mainCategory option'
+        )
       })
     })
 

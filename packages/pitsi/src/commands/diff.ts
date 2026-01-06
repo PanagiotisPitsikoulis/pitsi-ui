@@ -3,8 +3,8 @@ import path from "path"
 import {
   fetchTree,
   getItemTargetPath,
-  getRegistryBaseColor,
   getpitsiRegistryIndex,
+  getRegistryBaseColor,
 } from "@/src/registry/api"
 import { registryIndexSchema } from "@/src/schema"
 import { Config, getConfig } from "@/src/utils/get-config"

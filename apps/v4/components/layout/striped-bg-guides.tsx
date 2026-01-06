@@ -75,7 +75,10 @@ export function StripeBgGuides({
   }, [columnCount, responsive, windowWidth, minColumnWidth])
 
   const getRandomColumns = useCallback(() => {
-    const newActiveColumns = Array.from({ length: columnCount_ }, () => Math.random() < 0.5)
+    const newActiveColumns = Array.from(
+      { length: columnCount_ },
+      () => Math.random() < 0.5
+    )
     const activeCount = newActiveColumns.filter(Boolean).length
     if (activeCount > maxActiveColumns) {
       const indicesToDeactivate = newActiveColumns
@@ -99,7 +102,9 @@ export function StripeBgGuides({
   }, [columnCount_, randomize, animated, getRandomColumns])
 
   // State for randomized columns (only used when randomize && animated)
-  const [randomizedColumns, setRandomizedColumns] = useState<boolean[] | null>(null)
+  const [randomizedColumns, setRandomizedColumns] = useState<boolean[] | null>(
+    null
+  )
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth)

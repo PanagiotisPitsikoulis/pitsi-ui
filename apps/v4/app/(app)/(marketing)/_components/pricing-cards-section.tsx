@@ -3,8 +3,8 @@
 import { useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { Check, Loader2 } from "@/lib/icons"
 
+import { Check, Loader2 } from "@/lib/icons"
 import type { PlanType } from "@/lib/server/db/schema"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Spacer } from "@/registry/new-york-v4/ui/spacer"
@@ -156,10 +156,10 @@ function PricingCard({
 }) {
   return (
     <div
-      className={`relative flex flex-col rounded-3xl border border-border p-6 text-left md:p-8 ${className ?? ""}`}
+      className={`border-border relative flex flex-col rounded-3xl border p-6 text-left md:p-8 ${className ?? ""}`}
     >
       {badge && (
-        <div className="absolute -top-3 left-1/2 z-10 -translate-x-1/2 rounded-full bg-foreground px-4 py-1.5 text-xs font-medium text-background">
+        <div className="bg-foreground text-background absolute -top-3 left-1/2 z-10 -translate-x-1/2 rounded-full px-4 py-1.5 text-xs font-medium">
           {badge}
         </div>
       )}
@@ -182,7 +182,9 @@ function PricingCard({
       <ul className="flex-1 space-y-3">
         {featureList.map((feature, i) => (
           <li key={i} className="flex items-start gap-3">
-            <Check className={`mt-0.5 size-4 shrink-0 ${featured ? "text-brand" : ""}`} />
+            <Check
+              className={`mt-0.5 size-4 shrink-0 ${featured ? "text-brand" : ""}`}
+            />
             <span className="text-sm">{feature}</span>
           </li>
         ))}
@@ -257,7 +259,7 @@ export function PricingCardsSection({
           <div className="grid w-full grid-cols-6 gap-6">
             {/* Free Plan */}
             <PricingCard
-              className="col-span-6 border-dashed bg-page shadow-none md:col-span-2"
+              className="bg-page col-span-6 border-dashed shadow-none md:col-span-2"
               name="Free"
               price="€0"
               priceLabel="forever"
@@ -276,7 +278,7 @@ export function PricingCardsSection({
 
             {/* Pro Plan */}
             <PricingCard
-              className="col-span-6 bg-background shadow-sm md:col-span-2"
+              className="bg-background col-span-6 shadow-sm md:col-span-2"
               name="Pro"
               price="€149"
               priceLabel="one-time"
@@ -299,7 +301,7 @@ export function PricingCardsSection({
 
             {/* Exclusive Plan */}
             <PricingCard
-              className="col-span-6 border-dashed bg-page shadow-none md:col-span-2"
+              className="bg-page col-span-6 border-dashed shadow-none md:col-span-2"
               name="Exclusive"
               price="€499"
               priceLabel="one-time"
@@ -343,7 +345,7 @@ export function PricingCardsSection({
 
           {/* Startup Plan */}
           <PricingCard
-            className="col-span-6 bg-background shadow-sm md:col-span-2"
+            className="bg-background col-span-6 shadow-sm md:col-span-2"
             name="Startup"
             price="€999"
             originalPrice="€4,990"
@@ -367,7 +369,7 @@ export function PricingCardsSection({
 
           {/* Unlimited Plan */}
           <PricingCard
-            className="col-span-6 border-dashed bg-page shadow-none md:col-span-2"
+            className="bg-page col-span-6 border-dashed shadow-none md:col-span-2"
             name="Unlimited"
             price="€1,999"
             originalPrice="€14,970"

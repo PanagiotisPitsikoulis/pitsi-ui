@@ -15,5 +15,7 @@ export default async function AnimationsListPage() {
   "use cache"
   cacheLife("max")
 
-  return <DocsListPage type="animations" categoryUrls={ANIMATION_CATEGORY_URLS} />
+  return (
+    <DocsListPage type="animations" categoryUrls={ANIMATION_CATEGORY_URLS} />
+  )
 }

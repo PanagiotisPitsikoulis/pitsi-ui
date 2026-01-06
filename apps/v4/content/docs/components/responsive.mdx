@@ -4,7 +4,10 @@ description: A component that renders different content on mobile and desktop sc
 component: true
 ---
 
-<ComponentPreview name="responsive-demo" description="Renders different content based on screen size." />
+<ComponentPreview
+  name="responsive-demo"
+  description="Renders different content based on screen size."
+/>
 
 ## Installation
 
@@ -45,10 +48,7 @@ import { Responsive } from "@/components/ui/responsive"
 ```
 
 ```tsx showLineNumbers
-<Responsive
-  mobile={<MobileNavigation />}
-  desktop={<DesktopNavigation />}
-/>
+<Responsive mobile={<MobileNavigation />} desktop={<DesktopNavigation />} />
 ```
 
 ## Examples

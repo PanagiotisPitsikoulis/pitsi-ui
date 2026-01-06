@@ -1,4 +1,4 @@
-import { readdir, readFile, writeFile, unlink, stat } from "fs/promises"
+import { readdir, readFile, stat, unlink, writeFile } from "fs/promises"
 import path from "path"
 import sharp from "sharp"
 
@@ -116,20 +116,14 @@ async function updateReferences(images: ImageFile[]): Promise<number> {
       // Match patterns like: /path/to/image.jpg, /path/to/image.png, etc.
       const patterns = [
         // Full path from public root: /marketing/image.jpg
-        new RegExp(
-          `(["'\`])${escapeRegex(image.relativePath)}\\1`,
-          "g"
-        ),
+        new RegExp(`(["'\`])${escapeRegex(image.relativePath)}\\1`, "g"),
         // Without leading slash: marketing/image.jpg
         new RegExp(
           `(["'\`])${escapeRegex(image.relativePath.slice(1))}\\1`,
           "g"
         ),
         // With public prefix: /public/marketing/image.jpg
-        new RegExp(
-          `(["'\`])/public${escapeRegex(image.relativePath)}\\1`,
-          "g"
-        ),
+        new RegExp(`(["'\`])/public${escapeRegex(image.relativePath)}\\1`, "g"),
       ]
 
       for (const pattern of patterns) {
@@ -151,7 +145,9 @@ async function updateReferences(images: ImageFile[]): Promise<number> {
     if (fileUpdated) {
       await writeFile(filePath, content)
       totalUpdates++
-      console.log(`  ✓ Updated references in: ${path.relative(APP_DIR, filePath)}`)
+      console.log(
+        `  ✓ Updated references in: ${path.relative(APP_DIR, filePath)}`
+      )
     }
   }
 
@@ -171,7 +167,7 @@ async function deleteOriginalImages(images: ImageFile[]): Promise<void> {
 
 async function main() {
   console.log("\n🖼️  Image to WebP Conversion Script\n")
-  console.log("=" .repeat(50))
+  console.log("=".repeat(50))
 
   // Step 1: Find images to convert
   console.log("\n📂 Finding images to convert...")

@@ -5,9 +5,9 @@ import { useRouter } from "next/navigation"
 import { type DialogProps } from "@radix-ui/react-dialog"
 import { IconArrowRight } from "@tabler/icons-react"
 import { useDocsSearch } from "fumadocs-core/search/client"
-import { CornerDownLeft, LayoutDashboard, Search } from "@/lib/icons"
 
 import { trackEvent } from "@/lib/events"
+import { CornerDownLeft, LayoutDashboard, Search } from "@/lib/icons"
 import { source } from "@/lib/source"
 import { cn } from "@/lib/utils"
 import { useConfig } from "@/hooks/use-config"
@@ -301,7 +301,8 @@ export function CommandMenu({
                   >
                     <LayoutDashboard />
                     <span>
-                      {category.name.charAt(0).toUpperCase() + category.name.slice(1)}
+                      {category.name.charAt(0).toUpperCase() +
+                        category.name.slice(1)}
                     </span>
                     <span className="text-muted-foreground ml-auto font-mono text-xs font-normal tabular-nums">
                       {category.count}

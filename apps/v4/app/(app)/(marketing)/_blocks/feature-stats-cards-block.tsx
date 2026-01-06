@@ -1,11 +1,10 @@
 "use client"
 
-import { Calendar, Target, Trophy, Users, LucideIcon } from "@/lib/icons"
-import Image from "next/image"
 import React from "react"
+import Image from "next/image"
 
+import { Calendar, LucideIcon, Target, Trophy, Users } from "@/lib/icons"
 import { cn } from "@/lib/utils"
-
 import { Badge } from "@/registry/new-york-v4/ui/badge"
 import { Separator } from "@/registry/new-york-v4/ui/separator"
 
@@ -39,7 +38,8 @@ const defaultBadge = {
 }
 
 const defaultHeadline = "Boost Productivity with Core Tools"
-const defaultDescription = "Our platform offers dynamic tools for project management, helping teams work smarter and achieve success with ease. We focus on delivering user-friendly solutions that enhance collaboration and streamline operations."
+const defaultDescription =
+  "Our platform offers dynamic tools for project management, helping teams work smarter and achieve success with ease. We focus on delivering user-friendly solutions that enhance collaboration and streamline operations."
 
 const defaultStats: StatItem[] = [
   { value: "4.2M+", label: "Installs" },
@@ -48,23 +48,27 @@ const defaultStats: StatItem[] = [
   { value: "40+", label: "Countries" },
 ]
 
-const defaultImage = "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
+const defaultImage =
+  "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
 
 const defaultCards: FeatureCard[] = [
   {
     icon: <Calendar className="h-auto w-6" />,
     title: "Why Select Us?",
-    description: "We provide a full set of management tools, including ways to collaborate easily.",
+    description:
+      "We provide a full set of management tools, including ways to collaborate easily.",
   },
   {
     icon: <Target className="h-auto w-6" />,
     title: "Our Purpose",
-    description: "Our goal is to simplify workflows and help teams achieve more with ease.",
+    description:
+      "Our goal is to simplify workflows and help teams achieve more with ease.",
   },
   {
     icon: <Users className="h-auto w-6" />,
     title: "About Us",
-    description: "Our team is dedicated to offering high-quality solutions with passion.",
+    description:
+      "Our team is dedicated to offering high-quality solutions with passion.",
   },
 ]
 
@@ -126,7 +130,7 @@ export function FeatureStatsCardsBlock({
               </div>
             </div>
           </div>
-          <div className="relative ml-auto max-h-[450px] w-full aspect-video rounded-xl overflow-hidden">
+          <div className="relative ml-auto aspect-video max-h-[450px] w-full overflow-hidden rounded-xl">
             <Image
               src={image}
               alt="placeholder"

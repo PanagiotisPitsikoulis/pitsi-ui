@@ -56,7 +56,10 @@ export function generateViewMetadata({
       },
     }
   } catch (error) {
-    console.warn(`Failed to generate view metadata for ${styleName}/${name}:`, error)
+    console.warn(
+      `Failed to generate view metadata for ${styleName}/${name}:`,
+      error
+    )
     return {}
   }
 }

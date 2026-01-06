@@ -9,7 +9,9 @@ let _initError: Error | null = null
 
 function initDb(): ReturnType<typeof drizzle> | null {
   if (!process.env.DATABASE_URL) {
-    console.warn("DATABASE_URL is not set - database features will be unavailable")
+    console.warn(
+      "DATABASE_URL is not set - database features will be unavailable"
+    )
     _initError = new Error("DATABASE_URL is not set")
     return null
   }

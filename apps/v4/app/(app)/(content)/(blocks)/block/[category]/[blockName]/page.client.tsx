@@ -3,6 +3,11 @@
 import * as React from "react"
 import { Suspense, useEffect, useRef, useState } from "react"
 import Link from "next/link"
+import { useTheme } from "next-themes"
+import { registryItemFileSchema, type RegistryItem } from "pitsi/schema"
+import { z } from "zod"
+
+import { trackEvent } from "@/lib/events"
 import {
   ArrowLeft,
   Check,
@@ -20,16 +25,12 @@ import {
   Sun,
   Terminal,
 } from "@/lib/icons"
-import { useTheme } from "next-themes"
-import { registryItemFileSchema, type RegistryItem } from "pitsi/schema"
-import { z } from "zod"
-
-import { trackEvent } from "@/lib/events"
 import { type FileTree } from "@/lib/registry"
 import { cn } from "@/lib/utils"
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard"
 import { FileTreeSidebar } from "@/components/documentation/blocks/shared/file-tree"
 import { getIconForLanguageExtension } from "@/components/shared/icons"
+import { type ColorPalette } from "@/registry/new-york-v4/lib/block-theme"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   DropdownMenu,
@@ -52,22 +53,24 @@ import {
   BlockThemeWrapper,
   DEFAULT_TINT,
   getFontsByTypography,
-  ScrollContainerProvider,
   RelatedBlocksSection,
+  ScrollContainerProvider,
   type BlockItem,
 } from "../../../_components"
+import { type FontPreset } from "../../../_components/template-fonts"
 import {
-  getTemplateBlocks,
+  getBlockSettings,
   getTemplateBlockGroups,
   getTemplateBlockGroupsWithVariants,
-  getBlockSettings,
+  getTemplateBlocks,
   type TemplateSlug,
 } from "../../../blocks"
-import { type ColorPalette } from "@/registry/new-york-v4/lib/block-theme"
-import { type FontPreset } from "../../../_components/template-fonts"
 
 // Palette colors for theme display
-const paletteColors: Record<ColorPalette, { brand: string; complementary: string }> = {
+const paletteColors: Record<
+  ColorPalette,
+  { brand: string; complementary: string }
+> = {
   slate: { brand: "#777777", complementary: "#999999" },
   azure: { brand: "#3b82f6", complementary: "#f97316" },
   violet: { brand: "#8b5cf6", complementary: "#22c55e" },
@@ -91,23 +94,23 @@ function ThemeDisplay({ palette }: { palette: ColorPalette }) {
       <TooltipTrigger asChild>
         <Link
           href={`/tools/theme-generator?palette=${palette}`}
-          className="flex h-9 items-center gap-2 rounded-full bg-background px-3 shadow-sm"
+          className="bg-background flex h-9 items-center gap-2 rounded-full px-3 shadow-sm"
         >
           <div className="flex items-center -space-x-1.5">
             <span
-              className="inline-block size-4 rounded-full border-2 border-background shadow-sm"
+              className="border-background inline-block size-4 rounded-full border-2 shadow-sm"
               style={{ backgroundColor: colors.brand }}
             />
             <span
-              className="inline-block size-4 rounded-full border-2 border-background shadow-sm"
+              className="border-background inline-block size-4 rounded-full border-2 shadow-sm"
               style={{ backgroundColor: colors.complementary }}
             />
             <span
-              className="inline-block size-4 rounded-full border-2 border-background shadow-sm"
+              className="border-background inline-block size-4 rounded-full border-2 shadow-sm"
               style={{ backgroundColor: primaryColor }}
             />
           </div>
-          <span className="text-xs font-medium capitalize text-foreground">
+          <span className="text-foreground text-xs font-medium capitalize">
             {palette}
           </span>
         </Link>
@@ -125,12 +128,10 @@ function TypographyDisplay({ preset }: { preset: string }) {
       <TooltipTrigger asChild>
         <Link
           href={`/tools/typography-composer?preset=${preset}`}
-          className="flex h-9 items-center gap-1.5 rounded-full bg-background px-3 shadow-sm"
+          className="bg-background flex h-9 items-center gap-1.5 rounded-full px-3 shadow-sm"
         >
-          <span className="text-sm font-semibold text-foreground">
-            Aa
-          </span>
-          <span className="text-xs font-medium capitalize text-foreground">
+          <span className="text-foreground text-sm font-semibold">Aa</span>
+          <span className="text-foreground text-xs font-medium capitalize">
             {preset}
           </span>
         </Link>
@@ -186,9 +187,13 @@ export function BlockViewerClient({
   const [iframeKey, setIframeKey] = useState(0)
 
   // Block selection state for template mode
-  const [selectedBlocks, setSelectedBlocks] = useState<Record<string, string>>({})
+  const [selectedBlocks, setSelectedBlocks] = useState<Record<string, string>>(
+    {}
+  )
   const blockGroups = templateSlug ? getTemplateBlockGroups(templateSlug) : {}
-  const blockGroupsWithVariants = templateSlug ? getTemplateBlockGroupsWithVariants(templateSlug) : {}
+  const blockGroupsWithVariants = templateSlug
+    ? getTemplateBlockGroupsWithVariants(templateSlug)
+    : {}
 
   // Initialize selected blocks with defaults
   React.useEffect(() => {
@@ -254,7 +259,8 @@ export function BlockViewerClient({
   // Get current block's settings for palette and typography
   const blockSettings = getBlockSettings(blockName)
   const blockPalette = (blockSettings.palette || "slate") as ColorPalette
-  const blockTypographyPreset = (blockSettings.typography || "modern") as FontPreset
+  const blockTypographyPreset = (blockSettings.typography ||
+    "modern") as FontPreset
 
   // Get fonts from current block's typography
   const fonts = getFontsByTypography(blockSettings.typography)
@@ -308,7 +314,7 @@ export function BlockViewerClient({
       <div className="flex min-h-[calc(100vh-var(--header-height))] flex-col gap-3 overflow-x-hidden p-3">
         {/* Top Toolbar */}
         <div>
-          <div className="container flex items-center gap-1 rounded-full bg-muted p-1.5">
+          <div className="bg-muted container flex items-center gap-1 rounded-full p-1.5">
             {/* Left side: Back button and View tabs */}
             <Tooltip>
               <TooltipTrigger asChild>
@@ -319,11 +325,13 @@ export function BlockViewerClient({
                   <ArrowLeft className="size-4" />
                 </Link>
               </TooltipTrigger>
-              <TooltipContent side="bottom" className="text-xs">Back to blocks</TooltipContent>
+              <TooltipContent side="bottom" className="text-xs">
+                Back to blocks
+              </TooltipContent>
             </Tooltip>
 
             {/* Separator */}
-            <div className="mx-1 h-5 w-px bg-border" />
+            <div className="bg-border mx-1 h-5 w-px" />
 
             {/* View mode toggles */}
             <Tooltip>
@@ -340,7 +348,9 @@ export function BlockViewerClient({
                   <Eye className="size-4" />
                 </button>
               </TooltipTrigger>
-              <TooltipContent side="bottom" className="text-xs">Preview</TooltipContent>
+              <TooltipContent side="bottom" className="text-xs">
+                Preview
+              </TooltipContent>
             </Tooltip>
 
             {templateSlug && (
@@ -358,7 +368,9 @@ export function BlockViewerClient({
                     <Layers className="size-4" />
                   </button>
                 </TooltipTrigger>
-                <TooltipContent side="bottom" className="text-xs">Template</TooltipContent>
+                <TooltipContent side="bottom" className="text-xs">
+                  Template
+                </TooltipContent>
               </Tooltip>
             )}
 
@@ -376,11 +388,13 @@ export function BlockViewerClient({
                   <Code2 className="size-4" />
                 </button>
               </TooltipTrigger>
-              <TooltipContent side="bottom" className="text-xs">Code</TooltipContent>
+              <TooltipContent side="bottom" className="text-xs">
+                Code
+              </TooltipContent>
             </Tooltip>
 
             {/* Separator */}
-            <div className="mx-1 hidden h-5 w-px bg-border lg:block" />
+            <div className="bg-border mx-1 hidden h-5 w-px lg:block" />
 
             {/* Fullscreen button */}
             <Tooltip>
@@ -393,7 +407,9 @@ export function BlockViewerClient({
                   <Maximize className="size-4" />
                 </Link>
               </TooltipTrigger>
-              <TooltipContent side="bottom" className="text-xs">Open in new tab</TooltipContent>
+              <TooltipContent side="bottom" className="text-xs">
+                Open in new tab
+              </TooltipContent>
             </Tooltip>
 
             {/* Refresh button */}
@@ -407,12 +423,16 @@ export function BlockViewerClient({
                     <RotateCw className="size-4" />
                   </button>
                 </TooltipTrigger>
-                <TooltipContent side="bottom" className="text-xs">Refresh</TooltipContent>
+                <TooltipContent side="bottom" className="text-xs">
+                  Refresh
+                </TooltipContent>
               </Tooltip>
             )}
 
             {/* Separator before theme displays */}
-            {templateSlug && <div className="mx-1 hidden h-5 w-px bg-border lg:block" />}
+            {templateSlug && (
+              <div className="bg-border mx-1 hidden h-5 w-px lg:block" />
+            )}
 
             {/* Theme and Typography displays */}
             {templateSlug && (
@@ -429,8 +449,14 @@ export function BlockViewerClient({
                 onClick={() => copyCommandToClipboard(addCommand)}
                 className="bg-background text-foreground flex h-9 items-center gap-2 rounded-full px-3 font-mono text-xs shadow-sm transition-colors"
               >
-                {isCommandCopied ? <Check className="size-3.5" /> : <Terminal className="size-3.5" />}
-                <span className="hidden md:inline">npx pitsi add {blockName}</span>
+                {isCommandCopied ? (
+                  <Check className="size-3.5" />
+                ) : (
+                  <Terminal className="size-3.5" />
+                )}
+                <span className="hidden md:inline">
+                  npx pitsi add {blockName}
+                </span>
               </button>
 
               {/* Copy code */}
@@ -456,7 +482,11 @@ export function BlockViewerClient({
                         : "text-muted-foreground hover:bg-background/50 hover:text-foreground"
                     )}
                   >
-                    {isCopied ? <Check className="size-4" /> : <Clipboard className="size-4" />}
+                    {isCopied ? (
+                      <Check className="size-4" />
+                    ) : (
+                      <Clipboard className="size-4" />
+                    )}
                   </button>
                 </TooltipTrigger>
                 <TooltipContent side="bottom" className="text-xs">
@@ -465,7 +495,7 @@ export function BlockViewerClient({
               </Tooltip>
 
               {/* Separator */}
-              <div className="mx-1 h-5 w-px bg-border" />
+              <div className="bg-border mx-1 h-5 w-px" />
 
               {/* Theme toggle */}
               <DropdownMenu>
@@ -475,10 +505,15 @@ export function BlockViewerClient({
                       <ThemeIcon className="size-4" />
                     </DropdownMenuTrigger>
                   </TooltipTrigger>
-                  <TooltipContent side="bottom" className="text-xs">Theme</TooltipContent>
+                  <TooltipContent side="bottom" className="text-xs">
+                    Theme
+                  </TooltipContent>
                 </Tooltip>
                 <DropdownMenuContent align="end">
-                  <DropdownMenuRadioGroup value={theme} onValueChange={setTheme}>
+                  <DropdownMenuRadioGroup
+                    value={theme}
+                    onValueChange={setTheme}
+                  >
                     <DropdownMenuRadioItem value="light">
                       <Sun className="mr-2 size-4" />
                       Light
@@ -499,7 +534,7 @@ export function BlockViewerClient({
               {isDev && (
                 <>
                   {/* Separator */}
-                  <div className="mx-1 h-5 w-px bg-border" />
+                  <div className="bg-border mx-1 h-5 w-px" />
 
                   <Tooltip>
                     <TooltipTrigger asChild>
@@ -518,7 +553,9 @@ export function BlockViewerClient({
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <button
-                        onClick={() => openInEditor(BLOCK_COMPONENTS_PATH, true)}
+                        onClick={() =>
+                          openInEditor(BLOCK_COMPONENTS_PATH, true)
+                        }
                         className="text-muted-foreground hover:bg-background/50 hover:text-foreground flex size-9 items-center justify-center rounded-full transition-colors"
                       >
                         <Layers className="size-4" />
@@ -551,7 +588,7 @@ export function BlockViewerClient({
 
           {/* Template Mode Secondary Toolbar */}
           {viewMode === "template" && templateSlug && (
-            <div className="container mt-2 flex items-center gap-2 rounded-full bg-muted/50 p-1.5">
+            <div className="bg-muted/50 container mt-2 flex items-center gap-2 rounded-full p-1.5">
               {/* View full template link */}
               <Tooltip>
                 <TooltipTrigger asChild>
@@ -620,14 +657,26 @@ export function BlockViewerClient({
                 viewMode !== "template" && viewMode !== "code" && "hidden"
               )}
             >
-
               {/* Template Mode */}
               {viewMode === "template" && templateSlug && (
-                <BlockThemeWrapper palette={blockPalette} tint={DEFAULT_TINT} fonts={fonts}>
+                <BlockThemeWrapper
+                  palette={blockPalette}
+                  tint={DEFAULT_TINT}
+                  fonts={fonts}
+                >
                   <ScrollContainerProvider value={mainRef}>
                     {templateBlocks.map(
                       (
-                        { name, type, Component, tint, forceDark, forceLight, palette: itemPalette, typography: itemTypography },
+                        {
+                          name,
+                          type,
+                          Component,
+                          tint,
+                          forceDark,
+                          forceLight,
+                          palette: itemPalette,
+                          typography: itemTypography,
+                        },
                         index
                       ) => {
                         const skipAlternatingBg =
@@ -636,11 +685,14 @@ export function BlockViewerClient({
                           forceDark ||
                           forceLight
                         const skipPadding =
-                          type === "hero" || type === "header" || type === "footer"
+                          type === "hero" ||
+                          type === "header" ||
+                          type === "footer"
                         const blockTint = tint || DEFAULT_TINT
                         const isCurrentBlock = name === blockName
                         // Get this block's individual palette and fonts
-                        const itemBlockPalette = (itemPalette || "slate") as ColorPalette
+                        const itemBlockPalette = (itemPalette ||
+                          "slate") as ColorPalette
                         const itemFonts = getFontsByTypography(itemTypography)
 
                         return (
@@ -678,114 +730,116 @@ export function BlockViewerClient({
                 </BlockThemeWrapper>
               )}
 
-            {/* Code Mode */}
-            {viewMode === "code" && (
-              <div className="bg-background h-full overflow-auto p-6 pb-12">
-                <div>
-                  {/* Install command header */}
-                  <div className="bg-background mb-4 flex items-center gap-3 rounded-xl border px-4 py-3">
-                    <Terminal className="text-muted-foreground size-4" />
-                    <code className="flex-1 font-mono text-sm">{addCommand}</code>
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="size-7"
-                      onClick={() => copyCommandToClipboard(addCommand)}
-                    >
-                      {isCommandCopied ? (
-                        <Check className="size-3.5" />
-                      ) : (
-                        <Clipboard className="size-3.5" />
-                      )}
-                    </Button>
-                  </div>
-
-                  {/* Code viewer */}
-                  <div className="overflow-hidden rounded-xl border shadow-xs">
-                    <div className="flex items-center justify-between border-b px-4 py-2">
-                      <span className="text-muted-foreground text-sm font-medium">
-                        Code
-                      </span>
+              {/* Code Mode */}
+              {viewMode === "code" && (
+                <div className="bg-background h-full overflow-auto p-6 pb-12">
+                  <div>
+                    {/* Install command header */}
+                    <div className="bg-background mb-4 flex items-center gap-3 rounded-xl border px-4 py-3">
+                      <Terminal className="text-muted-foreground size-4" />
+                      <code className="flex-1 font-mono text-sm">
+                        {addCommand}
+                      </code>
+                      <Button
+                        variant="outline"
+                        size="icon"
+                        className="size-7"
+                        onClick={() => copyCommandToClipboard(addCommand)}
+                      >
+                        {isCommandCopied ? (
+                          <Check className="size-3.5" />
+                        ) : (
+                          <Clipboard className="size-3.5" />
+                        )}
+                      </Button>
                     </div>
 
-                    <div className="bg-code text-code-foreground relative flex h-[500px] overflow-hidden">
-                      {/* Sidebar - collapsible on mobile */}
-                      <div
-                        className={cn(
-                          "bg-code absolute inset-y-0 left-0 z-40 w-72 transition-transform md:relative md:translate-x-0",
-                          sidebarOpen ? "translate-x-0" : "-translate-x-full"
-                        )}
-                      >
-                        {tree && (
-                          <FileTreeSidebar
-                            tree={tree}
-                            activeFile={activeFile}
-                            setActiveFile={setActiveFile}
-                          />
-                        )}
+                    {/* Code viewer */}
+                    <div className="overflow-hidden rounded-xl border shadow-xs">
+                      <div className="flex items-center justify-between border-b px-4 py-2">
+                        <span className="text-muted-foreground text-sm font-medium">
+                          Code
+                        </span>
                       </div>
 
-                      {/* Overlay for mobile */}
-                      {sidebarOpen && (
+                      <div className="bg-code text-code-foreground relative flex h-[500px] overflow-hidden">
+                        {/* Sidebar - collapsible on mobile */}
                         <div
-                          className="absolute inset-0 z-30 bg-black/50 md:hidden"
-                          onClick={() => setSidebarOpen(false)}
-                        />
-                      )}
-
-                      <figure
-                        data-rehype-pretty-code-figure=""
-                        className="!mx-0 mt-0 flex min-w-0 flex-1 flex-col !rounded-none border-none"
-                      >
-                        <figcaption
-                          className="text-code-foreground [&_svg]:text-code-foreground flex h-12 shrink-0 items-center gap-2 border-b px-4 [&_svg]:size-4 [&_svg]:opacity-70"
-                          data-language={language}
+                          className={cn(
+                            "bg-code absolute inset-y-0 left-0 z-40 w-72 transition-transform md:relative md:translate-x-0",
+                            sidebarOpen ? "translate-x-0" : "-translate-x-full"
+                          )}
                         >
-                          {getIconForLanguageExtension(language)}
-                          <span className="line-clamp-1">{file?.target}</span>
-                          <div className="ml-auto flex items-center gap-2">
-                            <Button
-                              size="icon"
-                              variant="outline"
-                              className="bg-background size-7 border shadow-sm md:hidden"
-                              onClick={() => setSidebarOpen(!sidebarOpen)}
-                            >
-                              <Folder />
-                            </Button>
-                            <Button
-                              variant="outline"
-                              size="icon"
-                              className="size-7"
-                              onClick={() => {
-                                if (fileForCopy?.content) {
-                                  copyToClipboard(fileForCopy.content)
-                                  trackEvent({
-                                    name: "copy_block_code",
-                                    properties: {
-                                      name: blockName,
-                                      file: file?.path ?? "",
-                                    },
-                                  })
-                                }
-                              }}
-                            >
-                              {isCopied ? <Check /> : <Clipboard />}
-                            </Button>
-                          </div>
-                        </figcaption>
-                        <div
-                          key={file?.path}
-                          dangerouslySetInnerHTML={{
-                            __html: file?.highlightedContent ?? "",
-                          }}
-                          className="overflow-y-auto pb-8"
-                        />
-                      </figure>
+                          {tree && (
+                            <FileTreeSidebar
+                              tree={tree}
+                              activeFile={activeFile}
+                              setActiveFile={setActiveFile}
+                            />
+                          )}
+                        </div>
+
+                        {/* Overlay for mobile */}
+                        {sidebarOpen && (
+                          <div
+                            className="absolute inset-0 z-30 bg-black/50 md:hidden"
+                            onClick={() => setSidebarOpen(false)}
+                          />
+                        )}
+
+                        <figure
+                          data-rehype-pretty-code-figure=""
+                          className="!mx-0 mt-0 flex min-w-0 flex-1 flex-col !rounded-none border-none"
+                        >
+                          <figcaption
+                            className="text-code-foreground [&_svg]:text-code-foreground flex h-12 shrink-0 items-center gap-2 border-b px-4 [&_svg]:size-4 [&_svg]:opacity-70"
+                            data-language={language}
+                          >
+                            {getIconForLanguageExtension(language)}
+                            <span className="line-clamp-1">{file?.target}</span>
+                            <div className="ml-auto flex items-center gap-2">
+                              <Button
+                                size="icon"
+                                variant="outline"
+                                className="bg-background size-7 border shadow-sm md:hidden"
+                                onClick={() => setSidebarOpen(!sidebarOpen)}
+                              >
+                                <Folder />
+                              </Button>
+                              <Button
+                                variant="outline"
+                                size="icon"
+                                className="size-7"
+                                onClick={() => {
+                                  if (fileForCopy?.content) {
+                                    copyToClipboard(fileForCopy.content)
+                                    trackEvent({
+                                      name: "copy_block_code",
+                                      properties: {
+                                        name: blockName,
+                                        file: file?.path ?? "",
+                                      },
+                                    })
+                                  }
+                                }}
+                              >
+                                {isCopied ? <Check /> : <Clipboard />}
+                              </Button>
+                            </div>
+                          </figcaption>
+                          <div
+                            key={file?.path}
+                            dangerouslySetInnerHTML={{
+                              __html: file?.highlightedContent ?? "",
+                            }}
+                            className="overflow-y-auto pb-8"
+                          />
+                        </figure>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            )}
+              )}
             </div>
           </div>
         </div>

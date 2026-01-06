@@ -13,7 +13,12 @@ export interface TemplateFonts {
 // Font Presets
 // ============================================================================
 
-export type FontPreset = "modern" | "elegant" | "classic" | "playful" | "futuristic"
+export type FontPreset =
+  | "modern"
+  | "elegant"
+  | "classic"
+  | "playful"
+  | "futuristic"
 
 export const fontPresets: Record<FontPreset, TemplateFonts> = {
   modern: {
@@ -53,7 +58,9 @@ export const fontPresets: Record<FontPreset, TemplateFonts> = {
 // ============================================================================
 
 // Get font preset by typography name (e.g., "futuristic", "elegant")
-export function getFontsByTypography(typography: string | undefined): FontPreset {
+export function getFontsByTypography(
+  typography: string | undefined
+): FontPreset {
   if (!typography) return "modern"
   // If it's a valid preset name, return it
   if (typography in fontPresets) {

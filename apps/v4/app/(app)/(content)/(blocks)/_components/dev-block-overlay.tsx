@@ -1,8 +1,9 @@
 "use client"
 
 import { useState } from "react"
-import { Code2, Copy, FolderOpen } from "@/lib/icons"
 import { toast } from "sonner"
+
+import { Code2, Copy, FolderOpen } from "@/lib/icons"
 
 interface DevBlockOverlayProps {
   blockKey: string
@@ -93,7 +94,7 @@ export function DevBlockOverlay({
           <div className="absolute inset-0 border-2 border-dashed border-blue-500/50 bg-blue-500/5" />
 
           {/* Label and buttons */}
-          <div className="pointer-events-auto absolute right-2 top-2 flex flex-col items-end gap-2">
+          <div className="pointer-events-auto absolute top-2 right-2 flex flex-col items-end gap-2">
             <div className="flex items-center gap-2">
               <div className="flex items-center gap-2 rounded-md bg-blue-600 px-3 py-1.5 font-mono text-xs text-white shadow-lg">
                 <Code2 className="size-3" />

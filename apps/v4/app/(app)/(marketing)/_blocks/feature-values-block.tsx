@@ -23,7 +23,8 @@ const defaultHeadlineAccent = "All Platforms"
 const defaultValues: FeatureValueItem[] = [
   {
     title: "CSS Variables",
-    description: "Standard CSS custom properties. Works everywhere, no build step required.",
+    description:
+      "Standard CSS custom properties. Works everywhere, no build step required.",
   },
   {
     title: "Tailwind v4",
@@ -31,11 +32,13 @@ const defaultValues: FeatureValueItem[] = [
   },
   {
     title: "Figma Variables",
-    description: "Copy directly to Figma. Maintain design-dev parity effortlessly.",
+    description:
+      "Copy directly to Figma. Maintain design-dev parity effortlessly.",
   },
   {
     title: "JSON Schema",
-    description: "Structured data for any tooling. Build your own integrations.",
+    description:
+      "Structured data for any tooling. Build your own integrations.",
   },
 ]
 
@@ -62,8 +65,12 @@ export function FeatureValuesBlock({
           </div>
           {values.map((value, index) => (
             <div key={index}>
-              <h3 className="mb-2 text-lg font-medium md:text-xl">{value.title}</h3>
-              <p className="text-muted-foreground text-sm md:text-base">{value.description}</p>
+              <h3 className="mb-2 text-lg font-medium md:text-xl">
+                {value.title}
+              </h3>
+              <p className="text-muted-foreground text-sm md:text-base">
+                {value.description}
+              </p>
             </div>
           ))}
         </div>

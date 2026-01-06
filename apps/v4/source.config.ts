@@ -58,4 +58,3 @@ export const blog = defineCollections({
     readTime: z.string().optional(),
   }),
 })
-

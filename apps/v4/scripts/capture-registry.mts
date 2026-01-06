@@ -92,13 +92,26 @@ async function getChangedRegistryItems(): Promise<Set<string>> {
 
     // Filter to registry files and extract item names
     for (const file of changedFiles) {
-      // Match files in registry/new-york-v4/{blocks,examples,ui,animations,internal}/.../*.tsx
-      const registryMatch = file.match(
+      // Match .tsx files in registry/new-york-v4/{blocks,examples,ui,animations,internal}/.../*.tsx
+      const tsxMatch = file.match(
         /registry\/new-york-v4\/(blocks|examples|ui|animations|internal)\/.*?([^/]+)\.tsx$/
       )
 
-      if (registryMatch) {
-        const itemName = registryMatch[2]
+      if (tsxMatch) {
+        const itemName = tsxMatch[2]
+        // Skip _registry files and index files
+        if (!itemName.startsWith("_") && itemName !== "index") {
+          changedNames.add(itemName)
+        }
+      }
+
+      // Match .config.ts files in registry/new-york-v4/{blocks,examples,ui,animations,internal}/.../*.config.ts
+      const configMatch = file.match(
+        /registry\/new-york-v4\/(blocks|examples|ui|animations|internal)\/.*?([^/]+)\.config\.ts$/
+      )
+
+      if (configMatch) {
+        const itemName = configMatch[2]
         // Skip _registry files and index files
         if (!itemName.startsWith("_") && itemName !== "index") {
           changedNames.add(itemName)
@@ -269,6 +282,15 @@ function needsCapture(item: RegistryItemInfo): boolean {
     // If source is newer than either screenshot, recapture
     if (sourceMtime > lightMtime || sourceMtime > darkMtime) {
       return true
+    }
+
+    // Also check config file mtime if it exists
+    const configPath = item.sourcePath.replace(".tsx", ".config.ts")
+    if (existsSync(configPath)) {
+      const configMtime = statSync(configPath).mtime
+      if (configMtime > lightMtime || configMtime > darkMtime) {
+        return true
+      }
     }
 
     return false

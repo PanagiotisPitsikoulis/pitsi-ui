@@ -1,6 +1,6 @@
 "use client"
 
-import { Suspense, lazy, ComponentType } from "react"
+import { ComponentType, lazy, Suspense } from "react"
 import Link from "next/link"
 
 import { cn } from "@/lib/utils"
@@ -8,11 +8,11 @@ import { HeroButton } from "@/registry/new-york-v4/ui/hero-button"
 import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 
 import {
-  ThemeIcon,
-  TypographyIcon,
-  SpacingIcon,
   EasingIcon,
   ShadowIcon,
+  SpacingIcon,
+  ThemeIcon,
+  TypographyIcon,
 } from "./icons"
 
 // Lazy load tool components
@@ -144,14 +144,12 @@ export function ToolShowcaseSection({
           {/* Text Content - aligned to grid */}
           <div className="relative lg:w-5/12">
             {/* Background Icon Decoration */}
-            <div
-              className="text-brand/10 pointer-events-none absolute -right-10 top-0 -z-10"
-            >
+            <div className="text-brand/10 pointer-events-none absolute top-0 -right-10 -z-10">
               <ToolIcon className="size-48 md:size-64" />
             </div>
 
             <div>
-              <p className="text-brand text-sm font-semibold uppercase tracking-wider">
+              <p className="text-brand text-sm font-semibold tracking-wider uppercase">
                 {tool.name}
               </p>
               <Spacer size="sm" />
@@ -159,7 +157,9 @@ export function ToolShowcaseSection({
                 {tool.tagline}
               </h2>
               <Spacer size="lg" />
-              <p className="text-muted-foreground text-lg">{tool.description}</p>
+              <p className="text-muted-foreground text-lg">
+                {tool.description}
+              </p>
               <Spacer size="lg" />
               <div className="flex flex-wrap gap-3">
                 <Link href={tool.href}>
@@ -173,12 +173,12 @@ export function ToolShowcaseSection({
           <div
             className={cn(
               "relative lg:w-full",
-              isReversed ? "lg:-ml-64 lg:-translate-x-16" : "lg:-mr-64 lg:translate-x-16"
+              isReversed
+                ? "lg:-ml-64 lg:-translate-x-16"
+                : "lg:-mr-64 lg:translate-x-16"
             )}
           >
-            <div
-              className="bg-background text-foreground dark relative min-h-[400px] overflow-hidden rounded-3xl border md:min-h-[500px]"
-            >
+            <div className="bg-background text-foreground dark relative min-h-[400px] overflow-hidden rounded-3xl border md:min-h-[500px]">
               {/* Invisible overlay to block interactions */}
               <div className="absolute inset-0 z-10" />
               <Suspense

@@ -1,9 +1,18 @@
 import { Metadata } from "next"
 import { redirect } from "next/navigation"
-import { FileText } from "@/lib/icons"
+import { eq } from "drizzle-orm"
 
+import { FileText } from "@/lib/icons"
 import { db } from "@/lib/server/db"
 import { user as userTable } from "@/lib/server/db/schema"
+import { stripe } from "@/lib/server/stripe"
+import { getCurrentUser } from "@/lib/server/user"
+import {
+  EmptyStateCard,
+  InvoicesListCard,
+  PageHeader,
+  PaymentsListCard,
+} from "@/components/dashboard"
 
 const title = "Invoices"
 const description = "View and download your payment history"
@@ -31,16 +40,6 @@ export const metadata: Metadata = {
     ],
   },
 }
-import { stripe } from "@/lib/server/stripe"
-import { getCurrentUser } from "@/lib/server/user"
-import { eq } from "drizzle-orm"
-
-import {
-  EmptyStateCard,
-  InvoicesListCard,
-  PageHeader,
-  PaymentsListCard,
-} from "@/components/dashboard"
 
 async function getInvoices(stripeCustomerId: string | null) {
   if (!stripeCustomerId) {

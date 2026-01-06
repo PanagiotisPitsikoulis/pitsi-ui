@@ -1,21 +1,20 @@
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 
-import { getActiveStyle } from "@/registry/styles"
 import blocksData from "@/registry/__blocks__.json"
 import {
   COMPUTED_TEMPLATES,
   type ComputedTemplateBlock,
 } from "@/registry/__blocks-metadata__"
+import { getActiveStyle } from "@/registry/styles"
 
 import {
-  getTemplateMetadata,
-  getApplicationTemplateConfig,
   ALL_TEMPLATE_SLUGS,
+  getApplicationTemplateConfig,
+  getTemplateMetadata,
 } from "../../blocks.server"
-
-import { TemplateViewerClient } from "./page.client"
 import { ApplicationTemplateViewerClient } from "./page.application.client"
+import { TemplateViewerClient } from "./page.client"
 
 export async function generateMetadata({
   params,
@@ -40,11 +39,19 @@ export async function generateMetadata({
     title,
     description,
     openGraph: {
-      images: [{ url: `/og?title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}` }],
+      images: [
+        {
+          url: `/og?title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
-      images: [{ url: `/og?title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}` }],
+      images: [
+        {
+          url: `/og?title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}`,
+        },
+      ],
     },
   }
 }
@@ -68,7 +75,10 @@ export default async function TemplateViewerPage({
       <ApplicationTemplateViewerClient
         slug={slug}
         styleName={activeStyle.name}
-        template={{ name: appTemplate.metadata.name, description: appTemplate.metadata.description }}
+        template={{
+          name: appTemplate.metadata.name,
+          description: appTemplate.metadata.description,
+        }}
         templateBlocks={appTemplate.views}
         shell={appTemplate.shell}
         blocksMetadata={blocksData}
@@ -87,7 +97,10 @@ export default async function TemplateViewerPage({
     <TemplateViewerClient
       slug={slug}
       styleName={activeStyle.name}
-      template={{ name: computedTemplate.name, description: computedTemplate.description }}
+      template={{
+        name: computedTemplate.name,
+        description: computedTemplate.description,
+      }}
       templateBlocks={computedTemplate.blocks}
       blocksMetadata={blocksData}
     />

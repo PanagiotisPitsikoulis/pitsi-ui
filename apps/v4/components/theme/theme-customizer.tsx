@@ -228,7 +228,11 @@ function CustomizerCode({ themeName }: { themeName: string }) {
                 <span className="sr-only">Copy</span>
                 {hasCopied ? <IconCheck /> : <IconCopy />}
               </Button>
-              <code className="bg-background" data-line-numbers data-language="css">
+              <code
+                className="bg-background"
+                data-line-numbers
+                data-language="css"
+              >
                 <span data-line className="line text-code-foreground">
                   &nbsp;:root &#123;
                 </span>
@@ -308,7 +312,11 @@ function CustomizerCode({ themeName }: { themeName: string }) {
                 <span className="sr-only">Copy</span>
                 {hasCopied ? <IconCheck /> : <IconCopy />}
               </Button>
-              <code className="bg-background" data-line-numbers data-language="css">
+              <code
+                className="bg-background"
+                data-line-numbers
+                data-language="css"
+              >
                 <span data-line className="line text-code-foreground">
                   &nbsp;:root &#123;
                 </span>
@@ -389,7 +397,11 @@ function CustomizerCode({ themeName }: { themeName: string }) {
                 <span className="sr-only">Copy</span>
                 {hasCopied ? <IconCheck /> : <IconCopy />}
               </Button>
-              <code className="bg-background" data-line-numbers data-language="css">
+              <code
+                className="bg-background"
+                data-line-numbers
+                data-language="css"
+              >
                 <span data-line className="line">
                   @layer base &#123;
                 </span>

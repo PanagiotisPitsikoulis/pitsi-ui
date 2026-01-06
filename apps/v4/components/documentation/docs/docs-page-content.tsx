@@ -53,7 +53,7 @@ export function DocsPageContent({
         <div
           className={`mx-auto flex w-full min-w-0 flex-1 flex-col gap-8 px-4 py-6 text-neutral-800 md:px-0 lg:py-8 dark:text-neutral-300 ${hasToc ? "max-w-2xl" : "max-w-6xl"}`}
         >
-          <div className="rounded-3xl bg-muted p-4 sm:p-5">
+          <div className="bg-muted rounded-3xl p-4 sm:p-5">
             <div className="flex flex-col gap-3">
               <div className="flex items-start justify-between gap-4">
                 <h1 className="scroll-m-20 text-3xl font-semibold tracking-tight sm:text-2xl">

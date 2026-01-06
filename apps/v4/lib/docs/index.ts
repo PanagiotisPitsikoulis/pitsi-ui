@@ -27,7 +27,6 @@ export interface PageSource {
   } | null
 }
 
-
 export function buildComponentsDataFromPageTree(
   folder: any | undefined,
   componentCategoryMap: Map<string, string[]>,
@@ -43,15 +42,12 @@ export function buildComponentsDataFromPageTree(
       (c: any) => c.type === "page" && (!excludeUrl || c.url !== excludeUrl)
     )
     .map((c: any) => {
-      
       const urlParts = c.url.split("/").filter(Boolean)
       const registryName = urlParts[urlParts.length - 1] || ""
 
-      
       const categories = componentCategoryMap.get(registryName) || []
 
-      
-      const slug = urlParts.slice(1) 
+      const slug = urlParts.slice(1)
       const componentPage = source.getPage(slug)
       const description = componentPage?.data.description
 
@@ -72,7 +68,6 @@ export interface TocEntry {
   depth: number
 }
 
-
 export function buildEnhancedTocWithCategories(
   toc: TocEntry[],
   allComponents: ComponentData[],
@@ -83,11 +78,9 @@ export function buildEnhancedTocWithCategories(
     return toc
   }
 
-  
   const componentsByCategory: Record<string, ComponentData[]> = {}
 
   allComponents.forEach((item) => {
-    
     const primaryCategory =
       item.categories && item.categories.length > 0
         ? item.categories[0]
@@ -99,7 +92,6 @@ export function buildEnhancedTocWithCategories(
     componentsByCategory[primaryCategory].push(item)
   })
 
-  
   const CATEGORY_URLS: Record<string, string> = {
     "core-components": "#core-components",
     primitives: "#primitives",
@@ -107,20 +99,16 @@ export function buildEnhancedTocWithCategories(
     animations: "#animations",
   }
 
-  
   const newToc: TocEntry[] = []
 
   toc.forEach((entry) => {
-    
     newToc.push(entry)
 
-    
     const matchingCategory = Object.keys(CATEGORY_URLS).find(
       (category) => CATEGORY_URLS[category] === entry.url
     )
 
     if (matchingCategory && componentsByCategory[matchingCategory]) {
-      
       componentsByCategory[matchingCategory].forEach((item) => {
         newToc.push({
           title: typeof item.name === "string" ? item.name : item.$id,

@@ -1,10 +1,9 @@
 "use client"
 
-import Image from "next/image"
 import React from "react"
+import Image from "next/image"
 
 import { cn } from "@/lib/utils"
-
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 export interface HeroMobileAppBlockProps {
@@ -18,11 +17,15 @@ export interface HeroMobileAppBlockProps {
 }
 
 const defaultHeadline = "Master your monetary matters"
-const defaultDescription = "Minimize financial stress and build wealth with our intuitive, AI-enhanced budgeting tool. Our platform analyzes your spending and offers insights for smarter financial decisions."
+const defaultDescription =
+  "Minimize financial stress and build wealth with our intuitive, AI-enhanced budgeting tool. Our platform analyzes your spending and offers insights for smarter financial decisions."
 const defaultCtaLabel = "Get started now"
-const defaultCtaIcon = "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/hero49/download.svg"
-const defaultIphoneImage = "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/hero49/iphone.png"
-const defaultScreenImage = "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-7-tall.svg"
+const defaultCtaIcon =
+  "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/hero49/download.svg"
+const defaultIphoneImage =
+  "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/hero49/iphone.png"
+const defaultScreenImage =
+  "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-7-tall.svg"
 
 export function HeroMobileAppBlock({
   headline = defaultHeadline,
@@ -55,7 +58,7 @@ export function HeroMobileAppBlock({
         </div>
         <div className="relative translate-x-[14.7%]">
           {/* Image inside Iphone */}
-          <div className="left-[36.5%]! h-[67%]! w-[31%]! bg-muted absolute top-[12%] -translate-x-[52%] overflow-hidden rounded-[10px]">
+          <div className="bg-muted absolute top-[12%] left-[36.5%]! h-[67%]! w-[31%]! -translate-x-[52%] overflow-hidden rounded-[10px]">
             <Image
               className="min-h-full min-w-full object-cover"
               src={screenImage}

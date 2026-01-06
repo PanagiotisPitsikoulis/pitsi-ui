@@ -87,7 +87,7 @@ export function BgDecoration({
   return (
     <div
       className={cn(
-        "pointer-events-none absolute left-0 right-0",
+        "pointer-events-none absolute right-0 left-0",
         positionClasses[position],
         className
       )}

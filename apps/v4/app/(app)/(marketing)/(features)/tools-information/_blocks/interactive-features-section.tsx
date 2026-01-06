@@ -1,7 +1,6 @@
 "use client"
 
 import { Code2, Eye, Save, Shuffle } from "@/lib/icons"
-
 import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 
 const interactiveFeatures = [
@@ -31,7 +30,7 @@ export function InteractiveFeaturesSection() {
   return (
     <section className="container px-6">
       <div className="text-center">
-        <p className="text-brand text-sm font-semibold uppercase tracking-wider">
+        <p className="text-brand text-sm font-semibold tracking-wider uppercase">
           Features
         </p>
         <Spacer size="sm" />

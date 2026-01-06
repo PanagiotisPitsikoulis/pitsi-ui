@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation"
 import { cacheLife } from "next/cache"
+import { redirect } from "next/navigation"
 
 export async function generateStaticParams() {
   // Only generate for /blocks (no slug)

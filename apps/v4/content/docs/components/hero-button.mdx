@@ -4,7 +4,11 @@ description: A call-to-action button with an arrow icon, perfect for hero sectio
 component: true
 ---
 
-<ComponentPreview name="hero-button-demo" description="A hero button" className="mb-4" />
+<ComponentPreview
+  name="hero-button-demo"
+  description="A hero button"
+  className="mb-4"
+/>
 
 ```tsx showLineNumbers
 <HeroButton>Start Copy Pasting</HeroButton>
@@ -75,7 +79,7 @@ Use the `asChild` prop to render as a link.
 ```tsx
 import Link from "next/link"
 
-<HeroButton asChild>
+;<HeroButton asChild>
   <Link href="/docs">Get Started</Link>
 </HeroButton>
 ```

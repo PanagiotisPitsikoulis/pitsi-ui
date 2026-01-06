@@ -1,9 +1,9 @@
 "use client"
 
 import * as React from "react"
-import { LayoutGrid } from "@/lib/icons"
 
 import { trackEvent } from "@/lib/events"
+import { LayoutGrid } from "@/lib/icons"
 import { cn } from "@/lib/utils"
 import { useLayout } from "@/hooks/use-layout"
 import { Button } from "@/registry/new-york-v4/ui/button"

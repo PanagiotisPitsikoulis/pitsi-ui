@@ -182,14 +182,24 @@ export async function DocsListPage({
           className={`mx-auto hidden h-16 w-full items-center gap-2 px-4 sm:flex md:px-0 ${hasToc ? "max-w-2xl" : "max-w-6xl"}`}
         >
           {neighbours.previous && (
-            <Button variant="outline" size="sm" className="rounded-full" asChild>
+            <Button
+              variant="outline"
+              size="sm"
+              className="rounded-full"
+              asChild
+            >
               <Link href={neighbours.previous.url}>
                 <IconArrowLeft /> {neighbours.previous.name}
               </Link>
             </Button>
           )}
           {neighbours.next && (
-            <Button variant="outline" size="sm" className="ml-auto rounded-full" asChild>
+            <Button
+              variant="outline"
+              size="sm"
+              className="ml-auto rounded-full"
+              asChild
+            >
               <Link href={neighbours.next.url}>
                 {neighbours.next.name} <IconArrowRight />
               </Link>

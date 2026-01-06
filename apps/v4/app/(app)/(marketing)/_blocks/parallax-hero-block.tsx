@@ -1,14 +1,13 @@
 "use client"
 
-import Link from "next/link"
 import { ReactNode } from "react"
+import Link from "next/link"
 
+import { LayoutGrid, LayoutGridItem } from "@/components/layout/layout-grid"
 import { ParallaxImage } from "@/registry/new-york-v4/animations/background-image-parallax/background-image-parallax"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { HeroButton } from "@/registry/new-york-v4/ui/hero-button"
 import { Spacer } from "@/registry/new-york-v4/ui/spacer"
-
-import { LayoutGrid, LayoutGridItem } from "@/components/layout/layout-grid"
 
 export interface ParallaxHeroBlockProps {
   headline: ReactNode
@@ -47,7 +46,10 @@ export function ParallaxHeroBlock({
   className,
 }: ParallaxHeroBlockProps) {
   return (
-    <div id="hero" className={`relative -mt-[56px] overflow-hidden ${className ?? ""}`}>
+    <div
+      id="hero"
+      className={`relative -mt-[56px] overflow-hidden ${className ?? ""}`}
+    >
       {/* Gradient header overlay */}
       <div className="from-background absolute inset-x-0 top-0 z-10 h-32 bg-gradient-to-b to-transparent" />
 
@@ -170,7 +172,7 @@ export function ParallaxHeroBlock({
             <ParallaxImage
               src={images.lightDesktop}
               alt="Desktop hero preview"
-              className="rounded-4xl h-full"
+              className="h-full rounded-4xl"
               imageClassName="absolute inset-0 h-[120%] w-full"
               range={["-10%", "10%"]}
               offset={["start end", "end start"]}
@@ -211,7 +213,7 @@ export function ParallaxHeroBlock({
             <ParallaxImage
               src={images.lightMobile ?? images.lightDesktop}
               alt="Mobile hero preview"
-              className="rounded-4xl h-full"
+              className="h-full rounded-4xl"
               imageClassName="absolute inset-0 h-[120%] w-full"
               range={["-10%", "10%"]}
               offset={["start end", "end start"]}

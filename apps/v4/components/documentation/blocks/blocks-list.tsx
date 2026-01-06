@@ -3,9 +3,9 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
-import { Bookmark, Clock, ExternalLink, MoreVertical } from "@/lib/icons"
 
-import { useSavedBlocks, useRecentBlocks } from "@/lib/blocks-storage"
+import { useRecentBlocks, useSavedBlocks } from "@/lib/blocks-storage"
+import { Bookmark, Clock, ExternalLink, MoreVertical } from "@/lib/icons"
 import { cn } from "@/lib/utils"
 import { ReadinessBadge } from "@/components/ui/readiness-badge"
 import { TierBadge } from "@/components/ui/tier-badge"
@@ -64,7 +64,8 @@ const CATEGORY_DESCRIPTIONS: Record<string, string> = {
   showcase: "Product showcases and feature highlights",
   bento: "Bento grid layouts for modern content presentation",
   application: "Full application interfaces and dashboard layouts",
-  template: "Complete page templates combining multiple blocks into cohesive designs",
+  template:
+    "Complete page templates combining multiple blocks into cohesive designs",
 }
 
 function BlockPreview({
@@ -78,7 +79,7 @@ function BlockPreview({
   const darkSrc = `/r/styles/${styleName}/${name}-dark.webp`
 
   return (
-    <div className="relative h-full w-full overflow-hidden bg-page">
+    <div className="bg-page relative h-full w-full overflow-hidden">
       {/* Light mode image */}
       <Image
         src={lightSrc}
@@ -101,7 +102,11 @@ function BlockPreview({
   )
 }
 
-function BlockCard({ block, isBlockSaved, toggleSaveBlock }: {
+function BlockCard({
+  block,
+  isBlockSaved,
+  toggleSaveBlock,
+}: {
   block: BlockItem
   isBlockSaved: (name: string) => boolean
   toggleSaveBlock: (name: string, category: string) => void
@@ -113,9 +118,9 @@ function BlockCard({ block, isBlockSaved, toggleSaveBlock }: {
   return (
     <div className="group/card relative flex scroll-mt-20 flex-col gap-4">
       <Link href={block.href}>
-        <div className="overflow-hidden rounded-2xl shadow-sm dark:border dark:border-border">
+        <div className="dark:border-border overflow-hidden rounded-2xl shadow-sm dark:border">
           <div className="bg-background relative">
-            <div className="opacity-0 group-hover/card:opacity-100 transition-opacity duration-200">
+            <div className="opacity-0 transition-opacity duration-200 group-hover/card:opacity-100">
               <ReadinessBadge readiness={block.readiness as any} />
               <TierBadge tier={(block.tier ?? "free") as any} />
             </div>
@@ -124,10 +129,7 @@ function BlockCard({ block, isBlockSaved, toggleSaveBlock }: {
                 data-align="center"
                 className="preview relative flex aspect-[16/10] w-full items-center justify-center overflow-hidden"
               >
-                <BlockPreview
-                  name={block.name}
-                  styleName={block.styleName}
-                />
+                <BlockPreview name={block.name} styleName={block.styleName} />
               </div>
             </div>
           </div>
@@ -141,7 +143,7 @@ function BlockCard({ block, isBlockSaved, toggleSaveBlock }: {
             </span>
           </Link>
           <DropdownMenu>
-            <DropdownMenuTrigger className="flex size-8 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">
+            <DropdownMenuTrigger className="text-muted-foreground hover:bg-muted hover:text-foreground flex size-8 items-center justify-center rounded-md transition-colors">
               <MoreVertical className="size-4" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
@@ -183,7 +185,12 @@ function formatBlockName(name: string): string {
 export function BlocksList({ blocks, category }: BlocksListProps) {
   const searchParams = useSearchParams()
   const filter = searchParams.get("filter")
-  const { savedBlocks, isBlockSaved, toggleSaveBlock, isHydrated: savedHydrated } = useSavedBlocks()
+  const {
+    savedBlocks,
+    isBlockSaved,
+    toggleSaveBlock,
+    isHydrated: savedHydrated,
+  } = useSavedBlocks()
   const { recentBlocks, isHydrated: recentHydrated } = useRecentBlocks()
 
   // Filter blocks based on search params
@@ -205,7 +212,11 @@ export function BlocksList({ blocks, category }: BlocksListProps) {
   })
 
   // Show loading state while hydrating
-  if (filter && ((filter === "saved" && !savedHydrated) || (filter === "recent" && !recentHydrated))) {
+  if (
+    filter &&
+    ((filter === "saved" && !savedHydrated) ||
+      (filter === "recent" && !recentHydrated))
+  ) {
     return (
       <div className="container">
         <div className="flex min-h-[300px] items-center justify-center">
@@ -217,20 +228,27 @@ export function BlocksList({ blocks, category }: BlocksListProps) {
 
   // Show empty state
   if (filteredBlocks.length === 0) {
-    const Icon = filter === "saved" ? Bookmark : filter === "recent" ? Clock : null
-    const title = filter === "saved" ? "No saved blocks" : filter === "recent" ? "No recently viewed blocks" : "No blocks"
-    const description = filter === "saved"
-      ? "Save blocks by clicking the menu on any block card"
-      : filter === "recent"
-        ? "Blocks you view will appear here"
-        : "No blocks available"
+    const Icon =
+      filter === "saved" ? Bookmark : filter === "recent" ? Clock : null
+    const title =
+      filter === "saved"
+        ? "No saved blocks"
+        : filter === "recent"
+          ? "No recently viewed blocks"
+          : "No blocks"
+    const description =
+      filter === "saved"
+        ? "Save blocks by clicking the menu on any block card"
+        : filter === "recent"
+          ? "Blocks you view will appear here"
+          : "No blocks available"
 
     return (
       <div className="container">
         <div className="flex min-h-[300px] flex-col items-center justify-center gap-4 text-center">
           {Icon && (
-            <div className="flex size-16 items-center justify-center rounded-full bg-muted">
-              <Icon className="size-8 text-muted-foreground" />
+            <div className="bg-muted flex size-16 items-center justify-center rounded-full">
+              <Icon className="text-muted-foreground size-8" />
             </div>
           )}
           <div>
@@ -247,17 +265,22 @@ export function BlocksList({ blocks, category }: BlocksListProps) {
 
   if (showGrouped) {
     // Group blocks by their category
-    const blocksByCategory = filteredBlocks.reduce<Record<string, BlockItem[]>>((acc, block) => {
-      const cat = block.blockCategory || block.href.split("/")[2] || "other"
-      if (!acc[cat]) {
-        acc[cat] = []
-      }
-      acc[cat].push(block)
-      return acc
-    }, {})
+    const blocksByCategory = filteredBlocks.reduce<Record<string, BlockItem[]>>(
+      (acc, block) => {
+        const cat = block.blockCategory || block.href.split("/")[2] || "other"
+        if (!acc[cat]) {
+          acc[cat] = []
+        }
+        acc[cat].push(block)
+        return acc
+      },
+      {}
+    )
 
     // Sort categories alphabetically
-    const sortedCategories = Object.keys(blocksByCategory).sort((a, b) => a.localeCompare(b))
+    const sortedCategories = Object.keys(blocksByCategory).sort((a, b) =>
+      a.localeCompare(b)
+    )
 
     return (
       <div className="container space-y-12">
@@ -265,9 +288,13 @@ export function BlocksList({ blocks, category }: BlocksListProps) {
           <div key={cat}>
             <div className="mb-6 flex items-start justify-between gap-4">
               <div className="flex flex-col gap-1">
-                <h2 className="text-lg font-semibold">{formatCategoryName(cat)}</h2>
+                <h2 className="text-lg font-semibold">
+                  {formatCategoryName(cat)}
+                </h2>
                 {CATEGORY_DESCRIPTIONS[cat] && (
-                  <p className="text-muted-foreground text-sm">{CATEGORY_DESCRIPTIONS[cat]}</p>
+                  <p className="text-muted-foreground text-sm">
+                    {CATEGORY_DESCRIPTIONS[cat]}
+                  </p>
                 )}
               </div>
               <Link

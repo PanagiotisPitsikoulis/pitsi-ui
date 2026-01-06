@@ -1,9 +1,9 @@
 "use client"
 
 import { useRef, useState } from "react"
-import { ArrowRight, Check, ChevronDown, Copy, RotateCcw } from "@/lib/icons"
 import { motion, useScroll, useTransform } from "motion/react"
 
+import { ArrowRight, Check, ChevronDown, Copy, RotateCcw } from "@/lib/icons"
 import { PixelatedImage } from "@/components/effects"
 import { Deck, DeckCards, DeckEmpty, DeckItem } from "@/components/kibo-ui/deck"
 import { Button } from "@/registry/new-york-v4/ui/button"
@@ -87,7 +87,7 @@ function AIEditorPreview() {
 
   return (
     <div className="bg-background flex w-full max-w-sm flex-col overflow-hidden rounded-3xl border p-6 shadow-lg">
-      <div className="flex items-center justify-between mb-4">
+      <div className="mb-4 flex items-center justify-between">
         <h3 className="text-base font-semibold">Edit with AI</h3>
         <Button variant="ghost" size="icon" className="size-8">
           <Copy className="size-4" />
@@ -97,10 +97,10 @@ function AIEditorPreview() {
       <Textarea
         value={jsonValue}
         readOnly
-        className="flex-1 font-mono text-xs min-h-[140px] border-none bg-muted/50 shadow-none"
+        className="bg-muted/50 min-h-[140px] flex-1 border-none font-mono text-xs shadow-none"
       />
 
-      <div className="flex justify-end gap-2 mt-4">
+      <div className="mt-4 flex justify-end gap-2">
         <Button variant="outline" size="sm">
           Cancel
         </Button>
@@ -147,7 +147,8 @@ const shadowPresets = [
 // Preset Selector Preview - Shows swipable deck with combobox overlay
 function PresetSelectorPreview() {
   const [deckIndex, setDeckIndex] = useState(0)
-  const currentPreset = shadowPresets[Math.min(deckIndex, shadowPresets.length - 1)]
+  const currentPreset =
+    shadowPresets[Math.min(deckIndex, shadowPresets.length - 1)]
   const isAtEnd = deckIndex >= shadowPresets.length
 
   return (
@@ -220,7 +221,9 @@ function PresetSelectorPreview() {
         </DeckCards>
         <DeckEmpty className="rounded-3xl border bg-white">
           <div className="text-center">
-            <p className="text-sm font-medium text-gray-900">All presets explored!</p>
+            <p className="text-sm font-medium text-gray-900">
+              All presets explored!
+            </p>
             <Button
               variant="outline"
               size="sm"

@@ -23,7 +23,9 @@ export function getMaxMembers(planType: string): number {
   return 0
 }
 
-export async function getTeamMembers(teamOwnerId: string): Promise<TeamMember[]> {
+export async function getTeamMembers(
+  teamOwnerId: string
+): Promise<TeamMember[]> {
   try {
     const members = await db
       .select({

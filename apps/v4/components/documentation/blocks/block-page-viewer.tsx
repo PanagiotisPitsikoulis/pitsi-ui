@@ -2,6 +2,11 @@
 
 import * as React from "react"
 import Link from "next/link"
+import { registryItemFileSchema, type RegistryItem } from "pitsi/schema"
+import { ImperativePanelHandle } from "react-resizable-panels"
+import { z } from "zod"
+
+import { trackEvent } from "@/lib/events"
 import {
   Check,
   Clipboard,
@@ -12,11 +17,6 @@ import {
   Smartphone,
   Tablet,
 } from "@/lib/icons"
-import { registryItemFileSchema, type RegistryItem } from "pitsi/schema"
-import { ImperativePanelHandle } from "react-resizable-panels"
-import { z } from "zod"
-
-import { trackEvent } from "@/lib/events"
 import { createFileTreeForRegistryItemFiles } from "@/lib/registry"
 import { cn } from "@/lib/utils"
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard"
@@ -177,7 +177,6 @@ function PreviewToolbar({ styleName }: { styleName: Style["name"] }) {
             </Button>
           </ToggleGroup>
         </div>
-
       </div>
     </div>
   )
@@ -279,7 +278,8 @@ function PreviewSection({ styleName }: { styleName: Style["name"] }) {
 }
 
 function CodeSection() {
-  const { activeFile, setActiveFile, highlightedFiles, item, tree } = useBlockPageViewer()
+  const { activeFile, setActiveFile, highlightedFiles, item, tree } =
+    useBlockPageViewer()
   const [sidebarOpen, setSidebarOpen] = React.useState(false)
   const { copyToClipboard, isCopied } = useCopyToClipboard()
 

@@ -124,12 +124,12 @@ describe("resolveRegistryNamespaces", () => {
       ])
       .mockResolvedValueOnce([
         {
-        name: "button",
-        type: "registry:ui",
-        files: [],
-        dependencies: [],
-        readiness: "alpha",
-      },
+          name: "button",
+          type: "registry:ui",
+          files: [],
+          dependencies: [],
+          readiness: "alpha",
+        },
       ])
       .mockResolvedValueOnce([
         {

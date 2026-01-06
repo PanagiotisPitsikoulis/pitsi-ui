@@ -1,8 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { ChevronRight, File, Folder } from "@/lib/icons"
 
+import { ChevronRight, File, Folder } from "@/lib/icons"
 import { FileTree as FileTreeType } from "@/lib/registry"
 import {
   Collapsible,
@@ -96,7 +96,11 @@ function TreeItem({ item, index, activeFile, setActiveFile }: TreeItemProps) {
   )
 }
 
-export function FileTreeSidebar({ tree, activeFile, setActiveFile }: FileTreeProps) {
+export function FileTreeSidebar({
+  tree,
+  activeFile,
+  setActiveFile,
+}: FileTreeProps) {
   if (!tree || tree.length === 0) {
     return null
   }

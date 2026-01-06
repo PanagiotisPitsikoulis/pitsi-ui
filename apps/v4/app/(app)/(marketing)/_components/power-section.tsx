@@ -1,7 +1,7 @@
 "use client"
 
-import Image from "next/image"
 import { useState } from "react"
+import Image from "next/image"
 
 import {
   Accordion,
@@ -272,7 +272,11 @@ export function PowerSection() {
         {/* Accordion - 2 columns on lg */}
         <div className="col-span-6 text-left lg:col-span-2">
           <div className="border-border bg-background overflow-hidden rounded-4xl border shadow-sm lg:h-[500px]">
-            <Accordion type="single" className="h-full w-full overflow-y-auto" defaultValue="item-1">
+            <Accordion
+              type="single"
+              className="h-full w-full overflow-y-auto"
+              defaultValue="item-1"
+            >
               {tabsData.map((tab) => (
                 <AccordionItem
                   key={tab.id}
@@ -297,7 +301,7 @@ export function PowerSection() {
                       {tab.description}
                     </p>
                     <div className="mt-4 lg:hidden">
-                      <div className="relative h-full max-h-60 w-full rounded-2xl border overflow-hidden aspect-video">
+                      <div className="relative aspect-video h-full max-h-60 w-full overflow-hidden rounded-2xl border">
                         <Image
                           src={tab.imageSrc}
                           alt={tab.title}

@@ -75,8 +75,12 @@ export const blogDefaults: BlogContent = {
   posts: [
     {
       title: "How to Choose the Perfect Plant for Your Space",
-      excerpt: "A guide to finding the right plant based on lighting and lifestyle.",
-      image: { src: "/placeholders/blocks/service-plants/assets/item-1.webp", alt: "Plant selection guide" },
+      excerpt:
+        "A guide to finding the right plant based on lighting and lifestyle.",
+      image: {
+        src: "/placeholders/blocks/service-plants/assets/item-1.webp",
+        alt: "Plant selection guide",
+      },
       author: { name: "Sarah Green" },
       date: "Dec 15, 2024",
       category: "Guides",
@@ -86,7 +90,10 @@ export const blogDefaults: BlogContent = {
     {
       title: "Winter Plant Care Essentials",
       excerpt: "Keep your indoor plants healthy during the colder months.",
-      image: { src: "/placeholders/blocks/service-plants/assets/item-2.webp", alt: "Winter plant care" },
+      image: {
+        src: "/placeholders/blocks/service-plants/assets/item-2.webp",
+        alt: "Winter plant care",
+      },
       author: { name: "Mike Chen" },
       date: "Dec 10, 2024",
       category: "Care Tips",
@@ -96,7 +103,10 @@ export const blogDefaults: BlogContent = {
     {
       title: "Creating a Jungle Corner",
       excerpt: "Transform any corner into a lush plant paradise.",
-      image: { src: "/placeholders/blocks/service-plants/assets/item-3.webp", alt: "Jungle corner setup" },
+      image: {
+        src: "/placeholders/blocks/service-plants/assets/item-3.webp",
+        alt: "Jungle corner setup",
+      },
       author: { name: "Emma Wilson" },
       date: "Dec 5, 2024",
       category: "Design",

@@ -27,7 +27,13 @@ export const staticPages = [
 export type SitemapEntry = {
   url: string
   lastModified: Date
-  changeFrequency: "weekly" | "daily" | "monthly" | "yearly" | "always" | "never"
+  changeFrequency:
+    | "weekly"
+    | "daily"
+    | "monthly"
+    | "yearly"
+    | "always"
+    | "never"
   priority: number
 }
 

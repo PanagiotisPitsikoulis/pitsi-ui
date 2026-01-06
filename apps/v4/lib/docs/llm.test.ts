@@ -1,8 +1,9 @@
 // @ts-nocheck
-import { describe, it, expect, vi, beforeEach, afterEach } from "vitest"
+import fs from "fs"
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest"
+
 import { processMdxForLLMs } from "@/lib/docs/llm"
 import * as registryUtils from "@/lib/registry"
-import fs from "fs"
 
 // Mock fs module
 vi.mock("fs", () => ({
@@ -201,7 +202,6 @@ End text.`
 
       const result = await processMdxForLLMs(content, "new-york-v4")
 
-      
       expect(result).toBe(content)
     })
 
@@ -254,8 +254,6 @@ End text.`
 
       const result = await processMdxForLLMs(content, "new-york-v4")
 
-      
-      
       expect(result).toContain("export function Good")
       expect(consoleSpy).toHaveBeenCalled()
 
@@ -318,10 +316,9 @@ npm install test
 
       const result = await processMdxForLLMs(content, "new-york-v4")
 
-      
       expect(result).toContain('const example = "should be preserved"')
       expect(result).toContain("npm install test")
-      
+
       expect(result).not.toContain("<ComponentPreview")
     })
 
@@ -334,7 +331,9 @@ npm install test
         files: [{ path: "test.tsx", type: "registry:example" }],
       })
 
-      vi.mocked(fs.readFileSync).mockReturnValue("export default function T() {}")
+      vi.mocked(fs.readFileSync).mockReturnValue(
+        "export default function T() {}"
+      )
 
       await processMdxForLLMs(content, "custom-style" as any)
 

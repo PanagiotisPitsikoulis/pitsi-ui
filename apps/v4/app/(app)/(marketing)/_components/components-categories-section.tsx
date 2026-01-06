@@ -1,4 +1,5 @@
 import Image from "next/image"
+
 import {
   AlertCircle,
   FormInput,
@@ -7,19 +8,20 @@ import {
   Navigation,
   PanelTop,
 } from "@/lib/icons"
-
 import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 
 const categories = [
   {
     Icon: FormInput,
     title: "Forms",
-    description: "Input, Select, Checkbox, Switch, Slider, and more form controls.",
+    description:
+      "Input, Select, Checkbox, Switch, Slider, and more form controls.",
   },
   {
     Icon: Navigation,
     title: "Navigation",
-    description: "Tabs, Breadcrumb, Menu, Command palette for seamless navigation.",
+    description:
+      "Tabs, Breadcrumb, Menu, Command palette for seamless navigation.",
   },
   {
     Icon: PanelTop,
@@ -55,7 +57,9 @@ function CategoryCard({
   className?: string
 }) {
   return (
-    <div className={`group border-border bg-background relative z-10 flex h-[16rem] flex-col overflow-hidden rounded-4xl border shadow-sm md:h-[18rem] ${className ?? ""}`}>
+    <div
+      className={`group border-border bg-background relative z-10 flex h-[16rem] flex-col overflow-hidden rounded-4xl border shadow-sm md:h-[18rem] ${className ?? ""}`}
+    >
       <div className="flex flex-1 items-center justify-center overflow-hidden p-6">
         <Icon className="text-brand size-16 md:size-20" strokeWidth={1.5} />
       </div>
@@ -75,7 +79,9 @@ function IconOnly({
   className?: string
 }) {
   return (
-    <div className={`relative z-10 hidden h-[16rem] items-center justify-center md:h-[18rem] lg:flex ${className ?? ""}`}>
+    <div
+      className={`relative z-10 hidden h-[16rem] items-center justify-center md:h-[18rem] lg:flex ${className ?? ""}`}
+    >
       <Icon className="text-brand size-28 md:size-36" strokeWidth={1} />
     </div>
   )
@@ -83,7 +89,10 @@ function IconOnly({
 
 export function ComponentsCategoriesSection() {
   return (
-    <div id="categories" className="container flex flex-col items-center justify-center px-6 py-16 text-center md:py-24">
+    <div
+      id="categories"
+      className="container flex flex-col items-center justify-center px-6 py-16 text-center md:py-24"
+    >
       <p className="text-brand text-sm font-medium tracking-widest uppercase">
         Component Categories
       </p>
@@ -111,7 +120,7 @@ export function ComponentsCategoriesSection() {
         </div>
 
         {/* Center element - Form Demo - spans 2 cols */}
-        <div className="col-span-6 border-border bg-background relative hidden h-full w-full flex-col overflow-hidden rounded-4xl border shadow-2xl lg:col-span-2 lg:flex">
+        <div className="border-border bg-background relative col-span-6 hidden h-full w-full flex-col overflow-hidden rounded-4xl border shadow-2xl lg:col-span-2 lg:flex">
           {/* Form Header */}
           <div className="border-b px-6 py-4">
             <div className="bg-foreground/80 h-4 w-32 rounded" />
@@ -158,7 +167,7 @@ export function ComponentsCategoriesSection() {
 
             {/* Slider */}
             <div>
-              <div className="flex items-center justify-between mb-2">
+              <div className="mb-2 flex items-center justify-between">
                 <div className="bg-muted h-3 w-16 rounded" />
                 <div className="bg-muted h-3 w-8 rounded" />
               </div>

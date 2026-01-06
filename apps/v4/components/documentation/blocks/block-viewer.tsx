@@ -2,6 +2,11 @@
 
 import * as React from "react"
 import Link from "next/link"
+import { registryItemFileSchema, type RegistryItem } from "pitsi/schema"
+import { ImperativePanelHandle } from "react-resizable-panels"
+import { z } from "zod"
+
+import { trackEvent } from "@/lib/events"
 import {
   Check,
   Clipboard,
@@ -13,11 +18,6 @@ import {
   Tablet,
   Terminal,
 } from "@/lib/icons"
-import { registryItemFileSchema, type RegistryItem } from "pitsi/schema"
-import { ImperativePanelHandle } from "react-resizable-panels"
-import { z } from "zod"
-
-import { trackEvent } from "@/lib/events"
 import { createFileTreeForRegistryItemFiles } from "@/lib/registry"
 import { cn } from "@/lib/utils"
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard"
@@ -144,7 +144,10 @@ function BlockViewerToolbar({ styleName }: { styleName: Style["name"] }) {
             </TabsTrigger>
           </TabsList>
         </Tabs>
-        <Separator orientation="vertical" className="!bg-border/50 hidden !h-4 lg:block" />
+        <Separator
+          orientation="vertical"
+          className="!bg-border/50 hidden !h-4 lg:block"
+        />
         <Button
           size="icon"
           variant="ghost"
@@ -194,7 +197,10 @@ function BlockViewerToolbar({ styleName }: { styleName: Style["name"] }) {
             >
               <Smartphone />
             </ToggleGroupItem>
-            <Separator orientation="vertical" className="!bg-border/50 mx-0.5 !h-4" />
+            <Separator
+              orientation="vertical"
+              className="!bg-border/50 mx-0.5 !h-4"
+            />
             <Button
               size="icon"
               variant="ghost"

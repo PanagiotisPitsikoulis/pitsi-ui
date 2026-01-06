@@ -8,10 +8,7 @@ interface BrandLogoLinkProps {
 
 export function BrandLogoLink({ className }: BrandLogoLinkProps) {
   return (
-    <Link
-      href="/"
-      className="flex items-center gap-2 self-center font-medium"
-    >
+    <Link href="/" className="flex items-center gap-2 self-center font-medium">
       <div className="bg-primary text-primary-foreground flex size-6 items-center justify-center rounded-md">
         <Icons.logo className="size-4" />
       </div>

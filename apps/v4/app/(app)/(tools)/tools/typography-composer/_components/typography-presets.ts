@@ -163,7 +163,17 @@ export const typographyPresets: Record<string, TypographyPreset> = {
 
 // Calculate type scale values
 export function calculateTypeScale(state: TypographyState): TypeScaleValue[] {
-  const { baseSize, scaleRatio, unit, stepsUp, stepsDown, headingLineHeight, headingLetterSpacing, bodyLineHeight, bodyLetterSpacing } = state
+  const {
+    baseSize,
+    scaleRatio,
+    unit,
+    stepsUp,
+    stepsDown,
+    headingLineHeight,
+    headingLetterSpacing,
+    bodyLineHeight,
+    bodyLetterSpacing,
+  } = state
   const values: TypeScaleValue[] = []
 
   // Steps down (small text)
@@ -174,7 +184,10 @@ export function calculateTypeScale(state: TypographyState): TypeScaleValue[] {
     values.push({
       name,
       size: roundedSize,
-      cssSize: unit === "rem" ? `${(roundedSize / 16).toFixed(3)}rem` : `${roundedSize}px`,
+      cssSize:
+        unit === "rem"
+          ? `${(roundedSize / 16).toFixed(3)}rem`
+          : `${roundedSize}px`,
       lineHeight: bodyLineHeight,
       letterSpacing: bodyLetterSpacing,
       isHeading: false,
@@ -185,7 +198,8 @@ export function calculateTypeScale(state: TypographyState): TypeScaleValue[] {
   values.push({
     name: "base",
     size: baseSize,
-    cssSize: unit === "rem" ? `${(baseSize / 16).toFixed(3)}rem` : `${baseSize}px`,
+    cssSize:
+      unit === "rem" ? `${(baseSize / 16).toFixed(3)}rem` : `${baseSize}px`,
     lineHeight: bodyLineHeight,
     letterSpacing: bodyLetterSpacing,
     isHeading: false,
@@ -199,7 +213,10 @@ export function calculateTypeScale(state: TypographyState): TypeScaleValue[] {
     values.push({
       name: headingNames[i - 1] || `${i}xl`,
       size: roundedSize,
-      cssSize: unit === "rem" ? `${(roundedSize / 16).toFixed(3)}rem` : `${roundedSize}px`,
+      cssSize:
+        unit === "rem"
+          ? `${(roundedSize / 16).toFixed(3)}rem`
+          : `${roundedSize}px`,
       lineHeight: headingLineHeight,
       letterSpacing: headingLetterSpacing,
       isHeading: true,

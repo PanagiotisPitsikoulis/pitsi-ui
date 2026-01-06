@@ -16,7 +16,7 @@ export interface ImageOverlayProps {
 export function ImageOverlay({ opacity = 20, className }: ImageOverlayProps) {
   return (
     <div
-      className={cn("absolute inset-0 z-10 bg-background", className)}
+      className={cn("bg-background absolute inset-0 z-10", className)}
       style={{ opacity: opacity / 100 }}
       aria-hidden="true"
     />

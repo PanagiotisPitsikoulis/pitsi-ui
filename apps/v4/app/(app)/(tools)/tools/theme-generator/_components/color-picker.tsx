@@ -6,12 +6,12 @@ import Color from "color"
 import { colorFormatter, convertToHex } from "@/lib/colors"
 import { cn } from "@/lib/utils"
 import {
-  ColorPicker as KiboColorPicker,
   ColorPickerEyeDropper,
   ColorPickerFormat,
   ColorPickerHue,
   ColorPickerOutput,
   ColorPickerSelection,
+  ColorPicker as KiboColorPicker,
 } from "@/components/kibo-ui/color-picker"
 import {
   InputGroup,
@@ -57,7 +57,14 @@ function debounce<T extends (...args: Parameters<T>) => void>(
 
 const DEBOUNCE_DELAY = 150
 
-export function ColorPicker({ color, onChange, label, name, highlighted, infoButton }: ColorPickerProps) {
+export function ColorPicker({
+  color,
+  onChange,
+  label,
+  name,
+  highlighted,
+  infoButton,
+}: ColorPickerProps) {
   const [localValue, setLocalValue] = useState(color)
   const [isPickerOpen, setIsPickerOpen] = useState(false)
   const textInputRef = useRef<HTMLInputElement>(null)
@@ -126,7 +133,7 @@ export function ColorPicker({ color, onChange, label, name, highlighted, infoBut
     <div
       id={`color-${name}`}
       className={cn(
-        "mb-3 rounded-lg p-2 -mx-2 transition-all duration-300",
+        "-mx-2 mb-3 rounded-lg p-2 transition-all duration-300",
         highlighted && "bg-brand/10 ring-brand ring-2"
       )}
     >
@@ -144,13 +151,16 @@ export function ColorPicker({ color, onChange, label, name, highlighted, infoBut
             <button
               type="button"
               id={inputId}
-              className="relative flex size-8 shrink-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-input"
+              className="border-input relative flex size-8 shrink-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border"
               style={{ backgroundColor: localValue }}
             />
           </PopoverTrigger>
           <PopoverContent className="w-64 p-3" align="start">
             {isPickerOpen && (
-              <KiboColorPicker defaultValue={safeHexColor} onChange={handleKiboColorChange}>
+              <KiboColorPicker
+                defaultValue={safeHexColor}
+                onChange={handleKiboColorChange}
+              >
                 <ColorPickerSelection className="mb-3 h-32 rounded-md" />
                 <ColorPickerHue className="mb-3" />
                 <div className="flex items-center gap-2">

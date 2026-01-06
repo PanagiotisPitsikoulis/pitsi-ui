@@ -1,0 +1,19 @@
+import type { RegistryItemConfig } from "@/registry/types"
+
+export const registryConfig: RegistryItemConfig = {
+  name: "testimonials-6",
+  type: "registry:block",
+  description: "Case study testimonial cards with metrics",
+  registryDependencies: ["button"],
+  categories: ["testimonials", "landing"],
+  tier: "free",
+  readiness: "production",
+  blockConfig: {
+    template: "service-plants",
+    blockType: "testimonials",
+    order: 7,
+    palette: "sage",
+    typography: "elegant",
+    tint: "deep",
+  },
+}

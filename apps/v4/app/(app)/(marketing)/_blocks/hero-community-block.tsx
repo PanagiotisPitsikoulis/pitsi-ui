@@ -1,11 +1,10 @@
 "use client"
 
-import { Minus } from "@/lib/icons"
-import Image from "next/image"
 import React from "react"
+import Image from "next/image"
 
+import { Minus } from "@/lib/icons"
 import { cn } from "@/lib/utils"
-
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 export interface HeroCommunityBlockProps {
@@ -39,12 +38,16 @@ const defaultBadge = {
   linkText: "Take a tour",
 }
 const defaultHeadline = "Community & business data, centralized"
-const defaultDescription = "Showcase the value of your community to the business. Talkbase sets the stage for successful cross-collaboration among community teams working with customer, marketing, sales, and product development."
+const defaultDescription =
+  "Showcase the value of your community to the business. Talkbase sets the stage for successful cross-collaboration among community teams working with customer, marketing, sales, and product development."
 const defaultPrimaryCta = { label: "Get started for free" }
 const defaultSecondaryCta = { label: "Book a demo" }
-const defaultMainImage = "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
-const defaultLeftImage = "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-2.svg"
-const defaultRightImage = "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-3.svg"
+const defaultMainImage =
+  "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
+const defaultLeftImage =
+  "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-2.svg"
+const defaultRightImage =
+  "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-3.svg"
 
 export function HeroCommunityBlock({
   badge = defaultBadge,
@@ -71,7 +74,7 @@ export function HeroCommunityBlock({
             {badge.linkText}
           </span>
         </a>
-        <h1 className="mx-auto max-w-4xl text-balance text-4xl font-semibold lg:text-6xl">
+        <h1 className="mx-auto max-w-4xl text-4xl font-semibold text-balance lg:text-6xl">
           {headline}
         </h1>
         <p className="text-muted-foreground mx-auto max-w-4xl lg:text-xl">
@@ -104,9 +107,9 @@ export function HeroCommunityBlock({
         </div>
       </div>
       <div className="relative px-8">
-        <div className="bg-linear-to-b from-muted absolute inset-0 top-1/2 h-full w-full to-transparent to-50%"></div>
+        <div className="from-muted absolute inset-0 top-1/2 h-full w-full bg-linear-to-b to-transparent to-50%"></div>
         <div className="relative mx-auto max-w-5xl">
-          <div className="relative mt-20 max-h-[580px] w-full aspect-video rounded-lg overflow-hidden shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]">
+          <div className="relative mt-20 aspect-video max-h-[580px] w-full overflow-hidden rounded-lg shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]">
             <Image
               src={mainImage}
               alt="placeholder"
@@ -114,7 +117,7 @@ export function HeroCommunityBlock({
               className="object-cover"
             />
           </div>
-          <div className="absolute -left-3 top-1/2 hidden max-h-56 h-56 w-40 -translate-y-1/2 rounded-lg overflow-hidden shadow-md md:block xl:-left-10">
+          <div className="absolute top-1/2 -left-3 hidden h-56 max-h-56 w-40 -translate-y-1/2 overflow-hidden rounded-lg shadow-md md:block xl:-left-10">
             <Image
               src={leftImage}
               alt="placeholder"
@@ -122,7 +125,7 @@ export function HeroCommunityBlock({
               className="object-cover"
             />
           </div>
-          <div className="bg-muted absolute -right-3 top-1/3 hidden h-24 w-24 -translate-y-1/2 rounded-lg overflow-hidden shadow-md md:block xl:-right-10">
+          <div className="bg-muted absolute top-1/3 -right-3 hidden h-24 w-24 -translate-y-1/2 overflow-hidden rounded-lg shadow-md md:block xl:-right-10">
             <Image
               src={rightImage}
               alt="placeholder"

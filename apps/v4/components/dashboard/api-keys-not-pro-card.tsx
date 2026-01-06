@@ -1,8 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { Key, Sparkles } from "@/lib/icons"
 
+import { Key, Sparkles } from "@/lib/icons"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Card,

@@ -1,4 +1,4 @@
-import { readdir, stat, unlink, rename } from "fs/promises"
+import { readdir, rename, stat, unlink } from "fs/promises"
 import path from "path"
 import sharp from "sharp"
 

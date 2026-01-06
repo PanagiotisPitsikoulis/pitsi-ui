@@ -38,7 +38,7 @@ function GrainImage({
       {/* Grain overlay */}
       <div
         className={cn(
-          "absolute inset-0 pointer-events-none",
+          "pointer-events-none absolute inset-0",
           animated && "animate-grain"
         )}
         style={{

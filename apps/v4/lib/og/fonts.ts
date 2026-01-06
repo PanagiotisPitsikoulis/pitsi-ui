@@ -12,9 +12,15 @@ export async function loadOGFonts(): Promise<OGFont[]> {
       { base64Font: mono },
       { base64Font: semibold },
     ] = await Promise.all([
-      import("@/app/og/geist-regular-otf.json").then((mod) => mod.default || mod),
-      import("@/app/og/geistmono-regular-otf.json").then((mod) => mod.default || mod),
-      import("@/app/og/geist-semibold-otf.json").then((mod) => mod.default || mod),
+      import("@/app/og/geist-regular-otf.json").then(
+        (mod) => mod.default || mod
+      ),
+      import("@/app/og/geistmono-regular-otf.json").then(
+        (mod) => mod.default || mod
+      ),
+      import("@/app/og/geist-semibold-otf.json").then(
+        (mod) => mod.default || mod
+      ),
     ])
 
     return [

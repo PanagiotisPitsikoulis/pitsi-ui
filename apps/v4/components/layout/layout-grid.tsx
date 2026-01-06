@@ -23,9 +23,7 @@ export function LayoutGrid({
   as: Component = "div",
 }: LayoutGridProps) {
   return (
-    <Component
-      className={cn("grid grid-cols-6 gap-6", className)}
-    >
+    <Component className={cn("grid grid-cols-6 gap-6", className)}>
       {children}
     </Component>
   )

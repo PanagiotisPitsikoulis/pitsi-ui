@@ -47,8 +47,9 @@ npm install motion
 ## Usage
 
 ```tsx
-import { AnimatedBeam } from "@/components/ui/animated-beam"
 import { useRef } from "react"
+
+import { AnimatedBeam } from "@/components/ui/animated-beam"
 
 function BeamDemo() {
   const containerRef = useRef(null)
@@ -71,24 +72,24 @@ function BeamDemo() {
 
 ## Props
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `containerRef` | `RefObject<HTMLElement>` | Required | Reference to the container element |
-| `fromRef` | `RefObject<HTMLElement>` | Required | Reference to the source element |
-| `toRef` | `RefObject<HTMLElement>` | Required | Reference to the target element |
-| `curvature` | `number` | `0` | Curvature of the beam path |
-| `reverse` | `boolean` | `false` | Reverse the animation direction |
-| `duration` | `number` | `4-7 (random)` | Animation duration in seconds |
-| `delay` | `number` | `0` | Animation delay in seconds |
-| `pathColor` | `string` | `"gray"` | Color of the static path |
-| `pathWidth` | `number` | `2` | Width of the path |
-| `pathOpacity` | `number` | `0.2` | Opacity of the static path |
-| `gradientStartColor` | `string` | `"#ffaa40"` | Start color of the gradient |
-| `gradientStopColor` | `string` | `"#9c40ff"` | End color of the gradient |
-| `startXOffset` | `number` | `0` | X offset for the start point |
-| `startYOffset` | `number` | `0` | Y offset for the start point |
-| `endXOffset` | `number` | `0` | X offset for the end point |
-| `endYOffset` | `number` | `0` | Y offset for the end point |
+| Prop                 | Type                     | Default        | Description                        |
+| -------------------- | ------------------------ | -------------- | ---------------------------------- |
+| `containerRef`       | `RefObject<HTMLElement>` | Required       | Reference to the container element |
+| `fromRef`            | `RefObject<HTMLElement>` | Required       | Reference to the source element    |
+| `toRef`              | `RefObject<HTMLElement>` | Required       | Reference to the target element    |
+| `curvature`          | `number`                 | `0`            | Curvature of the beam path         |
+| `reverse`            | `boolean`                | `false`        | Reverse the animation direction    |
+| `duration`           | `number`                 | `4-7 (random)` | Animation duration in seconds      |
+| `delay`              | `number`                 | `0`            | Animation delay in seconds         |
+| `pathColor`          | `string`                 | `"gray"`       | Color of the static path           |
+| `pathWidth`          | `number`                 | `2`            | Width of the path                  |
+| `pathOpacity`        | `number`                 | `0.2`          | Opacity of the static path         |
+| `gradientStartColor` | `string`                 | `"#ffaa40"`    | Start color of the gradient        |
+| `gradientStopColor`  | `string`                 | `"#9c40ff"`    | End color of the gradient          |
+| `startXOffset`       | `number`                 | `0`            | X offset for the start point       |
+| `startYOffset`       | `number`                 | `0`            | Y offset for the start point       |
+| `endXOffset`         | `number`                 | `0`            | X offset for the end point         |
+| `endYOffset`         | `number`                 | `0`            | Y offset for the end point         |
 
 ## Examples
 

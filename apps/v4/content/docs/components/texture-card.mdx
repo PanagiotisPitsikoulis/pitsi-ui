@@ -43,11 +43,11 @@ npx pitsi@latest add texture-card
 ```tsx
 import {
   TextureCard,
+  TextureCardContent,
+  TextureCardDescription,
+  TextureCardFooter,
   TextureCardHeader,
   TextureCardTitle,
-  TextureCardDescription,
-  TextureCardContent,
-  TextureCardFooter,
   TextureSeparator,
 } from "@/components/ui/texture-card"
 
@@ -59,9 +59,7 @@ function Example() {
         <TextureCardDescription>Card description</TextureCardDescription>
       </TextureCardHeader>
       <TextureSeparator />
-      <TextureCardContent>
-        Card content goes here
-      </TextureCardContent>
+      <TextureCardContent>Card content goes here</TextureCardContent>
       <TextureSeparator />
       <TextureCardFooter>
         <button>Action</button>

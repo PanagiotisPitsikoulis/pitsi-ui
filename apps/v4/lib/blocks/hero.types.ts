@@ -56,7 +56,8 @@ export interface HeroBlockProps {
 export const heroDefaults: HeroContent = {
   badge: "Plant Care Specialists",
   title: "Transform Your Space\nInto a Living Sanctuary",
-  description: "Handpicked plants. Personalized care.\nFree delivery on orders over $50.",
+  description:
+    "Handpicked plants. Personalized care.\nFree delivery on orders over $50.",
   primaryCta: { label: "Explore Collection", href: "#" },
   secondaryCta: { label: "Plant Quiz", href: "#", variant: "outline" },
   image: {

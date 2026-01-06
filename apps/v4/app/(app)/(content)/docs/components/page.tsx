@@ -19,5 +19,7 @@ export default async function ComponentsListPage() {
   "use cache"
   cacheLife("max")
 
-  return <DocsListPage type="components" categoryUrls={COMPONENT_CATEGORY_URLS} />
+  return (
+    <DocsListPage type="components" categoryUrls={COMPONENT_CATEGORY_URLS} />
+  )
 }

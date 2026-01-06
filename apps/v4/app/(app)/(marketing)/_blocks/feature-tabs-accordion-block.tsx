@@ -1,12 +1,18 @@
 "use client"
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs"
-import { Blocks, ChartPie, ChevronRight, Layout, Target, LucideIcon } from "@/lib/icons"
-import Image from "next/image"
 import React from "react"
+import Image from "next/image"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs"
 
+import {
+  Blocks,
+  ChartPie,
+  ChevronRight,
+  Layout,
+  LucideIcon,
+  Target,
+} from "@/lib/icons"
 import { cn } from "@/lib/utils"
-
 import {
   Accordion,
   AccordionContent,
@@ -33,38 +39,50 @@ const defaultFeatures: FeatureTabItem[] = [
   {
     id: 1,
     header: "Task Coordination",
-    excerpt: "Easily manage and organize tasks to improve your workflow efficiency.",
+    excerpt:
+      "Easily manage and organize tasks to improve your workflow efficiency.",
     icon: <Target className="h-auto w-5" />,
     title: "Master Task Coordination",
-    description: "Learn to easily manage and organize tasks to improve workflow efficiency. Explore how this simplifies task coordination for better results.",
-    image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg",
+    description:
+      "Learn to easily manage and organize tasks to improve workflow efficiency. Explore how this simplifies task coordination for better results.",
+    image:
+      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg",
   },
   {
     id: 2,
     header: "Team Collaboration",
-    excerpt: "Boost teamwork with intuitive communication and collaboration tools.",
+    excerpt:
+      "Boost teamwork with intuitive communication and collaboration tools.",
     icon: <Layout className="h-auto w-5" />,
     title: "Effective Team Collaboration",
-    description: "Improve team collaboration and communication with intuitive tools. Learn how to streamline teamwork and achieve project success with ease.",
-    image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-2.svg",
+    description:
+      "Improve team collaboration and communication with intuitive tools. Learn how to streamline teamwork and achieve project success with ease.",
+    image:
+      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-2.svg",
   },
   {
     id: 3,
     header: "Resource Management",
-    excerpt: "Maximize resource use for greater efficiency and project success.",
+    excerpt:
+      "Maximize resource use for greater efficiency and project success.",
     icon: <Blocks className="h-auto w-5" />,
     title: "Efficient Resource Management",
-    description: "Maximize resource management and efficiency. Discover how to effectively utilize resources for greater productivity and project outcomes.",
-    image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-3.svg",
+    description:
+      "Maximize resource management and efficiency. Discover how to effectively utilize resources for greater productivity and project outcomes.",
+    image:
+      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-3.svg",
   },
   {
     id: 4,
     header: "System Integration",
-    excerpt: "Integrate your tools seamlessly for a smoother, more efficient workflow.",
+    excerpt:
+      "Integrate your tools seamlessly for a smoother, more efficient workflow.",
     icon: <ChartPie className="h-auto w-5" />,
     title: "Streamlined System Integration",
-    description: "Integrate systems and tools seamlessly for smoother workflows. Learn how to improve interoperability for more efficient processes.",
-    image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-4.svg",
+    description:
+      "Integrate systems and tools seamlessly for smoother workflows. Learn how to improve interoperability for more efficient processes.",
+    image:
+      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-4.svg",
   },
 ]
 
@@ -87,21 +105,27 @@ export function FeatureTabsAccordionBlock({
               className="bg-muted data-[state=open]:bg-background border-b-0 px-7 py-4"
             >
               <AccordionTrigger className="data-[state=active]:bg-background group relative items-start text-left hover:no-underline">
-                <span className="bg-primary absolute -left-7 -top-4 bottom-0 h-full w-[3px] transition-opacity duration-300 group-data-[state=closed]:opacity-0"></span>
+                <span className="bg-primary absolute -top-4 bottom-0 -left-7 h-full w-[3px] transition-opacity duration-300 group-data-[state=closed]:opacity-0"></span>
                 <div className="flex flex-col gap-2.5">
                   <div className="flex items-center gap-1.5">
                     {feature.icon}
-                    <span className="text-sm font-medium">{feature.header}</span>
+                    <span className="text-sm font-medium">
+                      {feature.header}
+                    </span>
                   </div>
-                  <p className="text-muted-foreground text-sm">{feature.excerpt}</p>
+                  <p className="text-muted-foreground text-sm">
+                    {feature.excerpt}
+                  </p>
                 </div>
               </AccordionTrigger>
               <AccordionContent className="bg-muted/50 flex flex-col gap-7 rounded-xl border p-5 data-[state=inactive]:hidden">
                 <div>
                   <h2 className="mb-2 font-medium">{feature.title}</h2>
-                  <p className="text-muted-foreground text-sm">{feature.description}</p>
+                  <p className="text-muted-foreground text-sm">
+                    {feature.description}
+                  </p>
                 </div>
-                <div className="relative aspect-video max-h-[450px] rounded-xl border overflow-hidden">
+                <div className="relative aspect-video max-h-[450px] overflow-hidden rounded-xl border">
                   <Image
                     src={feature.image}
                     alt="placeholder"
@@ -126,7 +150,7 @@ export function FeatureTabsAccordionBlock({
                 value={feature.id.toString()}
                 className="bg-muted data-[state=active]:bg-background group relative flex flex-col gap-2.5 px-6 py-9 transition-colors duration-300 xl:py-10"
               >
-                <span className="bg-primary absolute bottom-0 left-0 top-0 h-full w-[3px] transition-opacity duration-300 group-data-[state=inactive]:opacity-0"></span>
+                <span className="bg-primary absolute top-0 bottom-0 left-0 h-full w-[3px] transition-opacity duration-300 group-data-[state=inactive]:opacity-0"></span>
                 <div className="flex w-full items-center justify-between">
                   <div className="flex items-center gap-1.5">
                     {feature.icon}
@@ -134,7 +158,9 @@ export function FeatureTabsAccordionBlock({
                   </div>
                   <ChevronRight className="h-auto w-4" />
                 </div>
-                <p className="text-muted-foreground text-left">{feature.excerpt}</p>
+                <p className="text-muted-foreground text-left">
+                  {feature.excerpt}
+                </p>
               </TabsTrigger>
             ))}
           </TabsList>
@@ -148,7 +174,7 @@ export function FeatureTabsAccordionBlock({
                 <h2 className="mb-2 text-2xl font-medium">{feature.title}</h2>
                 <p className="text-muted-foreground">{feature.description}</p>
               </div>
-              <div className="relative aspect-video max-h-[450px] rounded-xl overflow-hidden">
+              <div className="relative aspect-video max-h-[450px] overflow-hidden rounded-xl">
                 <Image
                   src={feature.image}
                   alt="placeholder"

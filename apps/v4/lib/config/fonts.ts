@@ -1,7 +1,7 @@
 import {
   DM_Sans,
-  Fraunces,
   Geist_Mono as FontMono,
+  Fraunces,
   Inter,
   Nunito,
   Orbitron,

@@ -23,10 +23,7 @@ export async function POST(req: Request) {
 
     // Validate plan type
     if (!["pro", "exclusive", "team", "enterprise"].includes(requestedPlan)) {
-      return NextResponse.json(
-        { error: "Invalid plan type" },
-        { status: 400 }
-      )
+      return NextResponse.json({ error: "Invalid plan type" }, { status: 400 })
     }
 
     // Plan hierarchy: free < pro < exclusive < team < enterprise
@@ -37,7 +34,9 @@ export async function POST(req: Request) {
     // Check if user already has this plan or a higher one
     if (requestedPlanIndex <= currentPlanIndex) {
       return NextResponse.json(
-        { error: `You already have the ${userPlanType.charAt(0).toUpperCase() + userPlanType.slice(1)} plan or higher` },
+        {
+          error: `You already have the ${userPlanType.charAt(0).toUpperCase() + userPlanType.slice(1)} plan or higher`,
+        },
         { status: 400 }
       )
     }

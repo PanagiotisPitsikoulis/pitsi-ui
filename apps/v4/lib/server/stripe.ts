@@ -43,7 +43,8 @@ export const PLANS = {
     name: "Team Plan",
     price: 99900, // 999 euros in cents
     currency: "eur",
-    description: "One-time purchase for lifetime Team access with up to 10 members",
+    description:
+      "One-time purchase for lifetime Team access with up to 10 members",
     maxMembers: 10,
   },
   enterprise: {

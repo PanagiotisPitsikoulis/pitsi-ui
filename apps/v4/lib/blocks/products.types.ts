@@ -75,7 +75,10 @@ export const productsDefaults: ProductsContent = {
     {
       name: "Monstera Deliciosa",
       price: "$45",
-      image: { src: "/placeholders/blocks/service-plants/assets/item-1.webp", alt: "Monstera Deliciosa" },
+      image: {
+        src: "/placeholders/blocks/service-plants/assets/item-1.webp",
+        alt: "Monstera Deliciosa",
+      },
       description: "The iconic Swiss cheese plant",
       href: "#",
       rating: 5,
@@ -84,7 +87,10 @@ export const productsDefaults: ProductsContent = {
     {
       name: "Fiddle Leaf Fig",
       price: "$65",
-      image: { src: "/placeholders/blocks/service-plants/assets/item-2.webp", alt: "Fiddle Leaf Fig" },
+      image: {
+        src: "/placeholders/blocks/service-plants/assets/item-2.webp",
+        alt: "Fiddle Leaf Fig",
+      },
       description: "Statement plant for any room",
       href: "#",
       rating: 4,
@@ -93,7 +99,10 @@ export const productsDefaults: ProductsContent = {
     {
       name: "Snake Plant",
       price: "$35",
-      image: { src: "/placeholders/blocks/service-plants/assets/item-3.webp", alt: "Snake Plant" },
+      image: {
+        src: "/placeholders/blocks/service-plants/assets/item-3.webp",
+        alt: "Snake Plant",
+      },
       description: "Nearly indestructible beauty",
       href: "#",
       rating: 5,
@@ -103,7 +112,10 @@ export const productsDefaults: ProductsContent = {
     {
       name: "Pothos",
       price: "$25",
-      image: { src: "/placeholders/blocks/service-plants/assets/item-4.webp", alt: "Pothos" },
+      image: {
+        src: "/placeholders/blocks/service-plants/assets/item-4.webp",
+        alt: "Pothos",
+      },
       description: "Perfect for beginners",
       href: "#",
       rating: 5,

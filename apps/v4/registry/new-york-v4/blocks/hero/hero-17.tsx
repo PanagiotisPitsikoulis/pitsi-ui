@@ -177,7 +177,7 @@ export function Hero17({ content = {}, classNames = {} }: HeroBlockProps) {
 
           {/* Destination Preview Cards */}
           <div className="mt-12">
-            <p className="text-muted-foreground mb-4 text-sm font-medium uppercase tracking-wider">
+            <p className="text-muted-foreground mb-4 text-sm font-medium tracking-wider uppercase">
               Popular Destinations
             </p>
             <div className="flex gap-3">

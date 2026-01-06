@@ -28,7 +28,6 @@ export const transformers = [
           node.properties["__bun__"] = raw.replace("npx", "bunx --bun")
         }
 
-        
         if (raw.startsWith("npm create")) {
           node.properties["__npm__"] = raw
           node.properties["__yarn__"] = raw.replace("npm create", "yarn create")
@@ -36,7 +35,6 @@ export const transformers = [
           node.properties["__bun__"] = raw.replace("npm create", "bun create")
         }
 
-        
         if (raw.startsWith("npx")) {
           node.properties["__npm__"] = raw
           node.properties["__yarn__"] = raw.replace("npx", "yarn")
@@ -44,7 +42,6 @@ export const transformers = [
           node.properties["__bun__"] = raw.replace("npx", "bunx --bun")
         }
 
-        
         if (raw.startsWith("npm run")) {
           node.properties["__npm__"] = raw
           node.properties["__yarn__"] = raw.replace("npm run", "yarn")
@@ -65,7 +62,10 @@ function escapeHtml(text: string): string {
     .replace(/'/g, "&#039;")
 }
 
-export async function highlightCode(code: string, language: string = "tsx"): Promise<string> {
+export async function highlightCode(
+  code: string,
+  language: string = "tsx"
+): Promise<string> {
   try {
     const html = await codeToHtml(code, {
       lang: language,

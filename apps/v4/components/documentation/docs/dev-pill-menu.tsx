@@ -1,8 +1,8 @@
 "use client"
 
 import { useEffect } from "react"
-import { FileCode, FileText, Layers } from "@/lib/icons"
 
+import { FileCode, FileText, Layers } from "@/lib/icons"
 import {
   Tooltip,
   TooltipContent,
@@ -73,7 +73,7 @@ export function DevPillMenu({ itemName, type }: DevPillMenuProps) {
   if (!isDev) return null
 
   return (
-    <div className="flex items-center gap-1 rounded-full bg-muted p-1.5">
+    <div className="bg-muted flex items-center gap-1 rounded-full p-1.5">
       <TooltipProvider delayDuration={0}>
         {/* Open Demo Code */}
         <Tooltip>

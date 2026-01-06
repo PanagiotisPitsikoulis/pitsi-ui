@@ -39,10 +39,7 @@ npm install next-themes @remixicon/react
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource
-  name="theme-toggle"
-  title="components/ui/theme-toggle.tsx"
-/>
+<ComponentSource name="theme-toggle" title="components/ui/theme-toggle.tsx" />
 
 <Step>Update the import paths to match your project setup.</Step>
 
@@ -51,7 +48,11 @@ npm install next-themes @remixicon/react
 ```tsx showLineNumbers title="app/layout.tsx"
 import { ThemeProvider } from "next-themes"
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
@@ -103,9 +104,9 @@ Use the `mode` prop to show only light and dark options without system.
 
 Extends all props from `HTMLDivElement`.
 
-| Prop    | Type                            | Default                | Description                                      |
-| ------- | ------------------------------- | ---------------------- | ------------------------------------------------ |
-| `mode`  | `"light-dark"` \| `"light-dark-system"` | `"light-dark-system"` | Whether to show system option or just light/dark |
+| Prop   | Type                                    | Default               | Description                                      |
+| ------ | --------------------------------------- | --------------------- | ------------------------------------------------ |
+| `mode` | `"light-dark"` \| `"light-dark-system"` | `"light-dark-system"` | Whether to show system option or just light/dark |
 
 ## Features
 

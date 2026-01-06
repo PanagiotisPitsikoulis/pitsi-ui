@@ -1,7 +1,7 @@
 "use client"
 
-import Image from "next/image"
 import React from "react"
+import Image from "next/image"
 
 import { cn } from "@/lib/utils"
 
@@ -25,27 +25,34 @@ export interface FeatureBentoCardsBlockProps {
 const defaultTagline = "What Sets Us Apart"
 const defaultHeadline = "Professional Grade"
 const defaultHeadlineAccent = "Design Tools"
-const defaultDescription = "Industry-inspired presets. Mathematical foundations. Real component previews."
+const defaultDescription =
+  "Industry-inspired presets. Mathematical foundations. Real component previews."
 const defaultCards: FeatureBentoCard[] = [
   {
     tag: "APPLE • STRIPE • SHOPIFY",
     title: "Industry-Inspired Presets",
-    description: "Not random values. Every preset is derived from real design systems — macOS shadows, Stripe's blue-tinted depth, Material Design spacing.",
-    image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-1.svg",
+    description:
+      "Not random values. Every preset is derived from real design systems — macOS shadows, Stripe's blue-tinted depth, Material Design spacing.",
+    image:
+      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-1.svg",
     layout: "full",
   },
   {
     tag: "REAL COMPONENTS",
     title: "See It In Context",
-    description: "Preview on actual UI — modals, cards, navbars. Not abstract boxes.",
-    image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-2.svg",
+    description:
+      "Preview on actual UI — modals, cards, navbars. Not abstract boxes.",
+    image:
+      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-2.svg",
     layout: "third",
   },
   {
     tag: "MULTI-FORMAT EXPORT",
     title: "One Design, All Platforms",
-    description: "CSS, Tailwind v4, Figma, Framer Motion, JSON. Export once, use everywhere.",
-    image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-3.svg",
+    description:
+      "CSS, Tailwind v4, Figma, Framer Motion, JSON. Export once, use everywhere.",
+    image:
+      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-3.svg",
     layout: "half",
   },
 ]
@@ -115,7 +122,7 @@ export function FeatureBentoCardsBlock({
                   key={index}
                   className="bg-background overflow-hidden rounded-3xl border shadow-xs lg:col-span-3"
                 >
-                  <div className="relative max-h-72 w-full border-b aspect-video">
+                  <div className="relative aspect-video max-h-72 w-full border-b">
                     <Image
                       src={card.image}
                       alt={card.title}
@@ -145,7 +152,7 @@ export function FeatureBentoCardsBlock({
                 key={index}
                 className="bg-background grid overflow-hidden rounded-3xl border shadow-xs sm:grid-cols-2 lg:col-span-4"
               >
-                <div className="relative aspect-video h-full max-h-96 w-full border-b sm:aspect-auto lg:max-h-none lg:border-b-0 lg:border-r">
+                <div className="relative aspect-video h-full max-h-96 w-full border-b sm:aspect-auto lg:max-h-none lg:border-r lg:border-b-0">
                   <Image
                     src={card.image}
                     alt={card.title}

@@ -4,14 +4,14 @@ import { memo } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
-import { Bookmark, Clock, MoreVertical } from "@/lib/icons"
 
 import {
-  useSavedComponents,
+  useRecentAnimations,
   useRecentComponents,
   useSavedAnimations,
-  useRecentAnimations,
+  useSavedComponents,
 } from "@/lib/blocks-storage"
+import { Bookmark, Clock, MoreVertical } from "@/lib/icons"
 import { cn } from "@/lib/utils"
 import { ReadinessBadge } from "@/components/ui/readiness-badge"
 import { TierBadge } from "@/components/ui/tier-badge"
@@ -62,7 +62,7 @@ const ComponentPreviewContent = memo(function ComponentPreviewContent({
   const darkSrc = `/r/styles/${styleName}/${previewName}-dark.webp`
 
   return (
-    <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-background">
+    <div className="bg-background relative flex h-full w-full items-center justify-center overflow-hidden">
       {/* Light mode image */}
       <Image
         src={lightSrc}
@@ -107,7 +107,7 @@ const ComponentCard = memo(function ComponentCard({
       <Link href={item.url}>
         <div className="overflow-hidden rounded-3xl shadow-sm dark:border">
           <div className="bg-background relative">
-            <div className="opacity-0 group-hover/card:opacity-100 transition-opacity duration-200">
+            <div className="opacity-0 transition-opacity duration-200 group-hover/card:opacity-100">
               <ReadinessBadge readiness={item.readiness as any} />
               <TierBadge tier={(item.tier ?? "free") as any} />
             </div>
@@ -133,7 +133,7 @@ const ComponentCard = memo(function ComponentCard({
             </span>
           </Link>
           <DropdownMenu>
-            <DropdownMenuTrigger className="flex size-8 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">
+            <DropdownMenuTrigger className="text-muted-foreground hover:bg-muted hover:text-foreground flex size-8 items-center justify-center rounded-md transition-colors">
               <MoreVertical className="size-4" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
@@ -250,8 +250,8 @@ export const ComponentsListPaginated = memo(function ComponentsListPaginated({
       <div className="relative mt-6 pb-8">
         <div className="flex min-h-[300px] flex-col items-center justify-center gap-4 text-center">
           {Icon && (
-            <div className="flex size-16 items-center justify-center rounded-full bg-muted">
-              <Icon className="size-8 text-muted-foreground" />
+            <div className="bg-muted flex size-16 items-center justify-center rounded-full">
+              <Icon className="text-muted-foreground size-8" />
             </div>
           )}
           <div>

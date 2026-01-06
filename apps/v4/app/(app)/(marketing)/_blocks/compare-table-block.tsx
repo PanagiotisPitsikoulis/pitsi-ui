@@ -1,10 +1,9 @@
 "use client"
 
-import { ArrowRight } from "@/lib/icons"
 import React from "react"
 
+import { ArrowRight } from "@/lib/icons"
 import { cn } from "@/lib/utils"
-
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 export interface CompareRowValue {
@@ -107,12 +106,12 @@ export function CompareTableBlock({
           <div className="grid grid-cols-4 items-center gap-4 md:grid-cols-8">
             <div className="col-span-4 md:col-span-2"></div>
             <div className="col-span-2 ml-0 md:col-span-3 md:ml-32 lg:ml-40 xl:ml-48 2xl:ml-56">
-              <h4 className="text-muted-foreground text-xs font-bold uppercase tracking-wider md:text-sm">
+              <h4 className="text-muted-foreground text-xs font-bold tracking-wider uppercase md:text-sm">
                 {optionALabel}
               </h4>
             </div>
             <div className="col-span-2 ml-0 md:col-span-3 md:ml-32 lg:ml-40 xl:ml-48 2xl:ml-56">
-              <h4 className="text-xs font-bold uppercase tracking-wider md:text-sm">
+              <h4 className="text-xs font-bold tracking-wider uppercase md:text-sm">
                 {optionBLabel}
               </h4>
             </div>
@@ -174,7 +173,10 @@ export function CompareTableBlock({
           <div className="flex flex-col space-y-4">
             <div className="space-y-2">
               {footnotes.map((note, index) => (
-                <p key={index} className="text-muted-foreground text-xs md:text-sm">
+                <p
+                  key={index}
+                  className="text-muted-foreground text-xs md:text-sm"
+                >
                   {note}
                 </p>
               ))}

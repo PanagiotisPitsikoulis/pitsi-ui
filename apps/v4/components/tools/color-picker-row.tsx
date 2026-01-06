@@ -27,7 +27,12 @@ interface ColorPickerRowProps {
   className?: string
 }
 
-function ColorPickerRow({ label, color, onChange, className }: ColorPickerRowProps) {
+function ColorPickerRow({
+  label,
+  color,
+  onChange,
+  className,
+}: ColorPickerRowProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   const safeHexColor = useMemo(() => {
@@ -48,7 +53,12 @@ function ColorPickerRow({ label, color, onChange, className }: ColorPickerRowPro
   )
 
   return (
-    <div className={cn("grid grid-cols-[1fr_auto_1fr] items-center gap-3", className)}>
+    <div
+      className={cn(
+        "grid grid-cols-[1fr_auto_1fr] items-center gap-3",
+        className
+      )}
+    >
       <Label className="text-sm font-medium">{label}</Label>
       <Popover open={isOpen} onOpenChange={setIsOpen}>
         <PopoverTrigger asChild>
@@ -60,7 +70,10 @@ function ColorPickerRow({ label, color, onChange, className }: ColorPickerRowPro
         </PopoverTrigger>
         <PopoverContent className="w-64 p-3" align="start">
           {isOpen && (
-            <ColorPicker defaultValue={safeHexColor} onChange={handleColorChange}>
+            <ColorPicker
+              defaultValue={safeHexColor}
+              onChange={handleColorChange}
+            >
               <ColorPickerSelection className="mb-3 h-32 rounded-md" />
               <ColorPickerHue className="mb-3" />
               <div className="flex items-center gap-2">

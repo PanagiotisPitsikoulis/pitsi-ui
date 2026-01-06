@@ -16,7 +16,7 @@ const Circle = forwardRef<
     <div
       ref={ref}
       className={cn(
-        "z-10 flex size-10 items-center justify-center rounded-xl border border-border bg-card p-2 shadow-sm",
+        "border-border bg-card z-10 flex size-10 items-center justify-center rounded-xl border p-2 shadow-sm",
         className
       )}
     >
@@ -93,9 +93,9 @@ export function CMSIntegrationIllustration() {
         {/* Left - Sanity */}
         <div className="flex flex-col items-center gap-1">
           <Circle ref={sanityRef}>
-            <SanityLogo className="size-5 text-foreground" />
+            <SanityLogo className="text-foreground size-5" />
           </Circle>
-          <span className="text-[8px] font-medium text-muted-foreground">
+          <span className="text-muted-foreground text-[8px] font-medium">
             Sanity
           </span>
         </div>
@@ -103,17 +103,17 @@ export function CMSIntegrationIllustration() {
         {/* Center - App Logo */}
         <Circle
           ref={centerRef}
-          className="size-14 rounded-2xl border-border bg-card"
+          className="border-border bg-card size-14 rounded-2xl"
         >
-          <AppLogo className="size-7 text-foreground" />
+          <AppLogo className="text-foreground size-7" />
         </Circle>
 
         {/* Right - Payload */}
         <div className="flex flex-col items-center gap-1">
           <Circle ref={payloadRef}>
-            <PayloadLogo className="size-5 text-foreground" />
+            <PayloadLogo className="text-foreground size-5" />
           </Circle>
-          <span className="text-[8px] font-medium text-muted-foreground">
+          <span className="text-muted-foreground text-[8px] font-medium">
             Payload
           </span>
         </div>
@@ -135,7 +135,6 @@ export function CMSIntegrationIllustration() {
         gradientStopColor={BRAND_COLOR}
         reverse
       />
-
     </div>
   )
 }

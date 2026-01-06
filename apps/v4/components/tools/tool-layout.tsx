@@ -1,8 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { Eye, Settings2 } from "@/lib/icons"
 
+import { Eye, Settings2 } from "@/lib/icons"
 import { cn } from "@/lib/utils"
 import { LayoutGrid, LayoutGridItem } from "@/components/layout/layout-grid"
 import { StripeBgGuides } from "@/components/layout/striped-bg-guides"
@@ -29,7 +29,9 @@ interface MobileViewContextValue {
   toggleMobileView: () => void
 }
 
-const MobileViewContext = React.createContext<MobileViewContextValue | null>(null)
+const MobileViewContext = React.createContext<MobileViewContextValue | null>(
+  null
+)
 
 function useMobileView() {
   const context = React.useContext(MobileViewContext)
@@ -99,9 +101,7 @@ function ToolLayoutContainer({
   return (
     <div className={cn("relative z-10 container px-6", className)}>
       <Spacer size="lg" sizeMobile="md" />
-      <LayoutGrid className="items-start">
-        {children}
-      </LayoutGrid>
+      <LayoutGrid className="items-start">{children}</LayoutGrid>
     </div>
   )
 }
@@ -122,10 +122,7 @@ function ToolLayoutSidebar({ children, className }: ToolLayoutSidebarProps) {
     <LayoutGridItem
       span={6}
       spanLg={2}
-      className={cn(
-        mobileView === "preview" && "hidden lg:block",
-        className
-      )}
+      className={cn(mobileView === "preview" && "hidden lg:block", className)}
     >
       <div className="flex h-full flex-col space-y-4 overflow-hidden">
         {children}
@@ -255,7 +252,10 @@ function ToolLayoutTabsList({
 }: ToolLayoutTabsListProps) {
   return (
     <ScrollArea className="w-full">
-      <TabsList className={cn("inline-flex h-10 w-max min-w-full gap-2", className)} {...props}>
+      <TabsList
+        className={cn("inline-flex h-10 w-max min-w-full gap-2", className)}
+        {...props}
+      >
         {children}
       </TabsList>
       <ScrollBar orientation="horizontal" className="h-1.5" />
@@ -281,7 +281,10 @@ function ToolLayoutTabsTrigger({
   ...props
 }: ToolLayoutTabsTriggerProps) {
   return (
-    <TabsTrigger className={cn("flex-1 py-2 shadow-none", className)} {...props}>
+    <TabsTrigger
+      className={cn("flex-1 py-2 shadow-none", className)}
+      {...props}
+    >
       {Icon && <Icon className="size-4" />}
       {children}
     </TabsTrigger>
@@ -348,11 +351,7 @@ function ToolLayoutPreview({ children, className }: ToolLayoutPreviewProps) {
       <div className="flex flex-col gap-3">
         {/* Mobile close button - only shown when preview is visible on mobile */}
         <div className="flex items-center justify-end lg:hidden">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={toggleMobileView}
-          >
+          <Button variant="outline" size="sm" onClick={toggleMobileView}>
             <Settings2 className="size-4" />
             Controls
           </Button>

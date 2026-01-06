@@ -14,7 +14,9 @@ export async function DocsItemLayout({
 }) {
   try {
     // First check if item requires pro tier
-    const item = (await queryRegistry({ name: itemName })) as RegistryItem | null
+    const item = (await queryRegistry({
+      name: itemName,
+    })) as RegistryItem | null
 
     // Free tier items are accessible to everyone - no user check needed
     if (item?.tier !== "pro") {

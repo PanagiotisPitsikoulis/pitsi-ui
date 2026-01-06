@@ -19,15 +19,19 @@ That's why children's products use extreme rounding. Why harsh, industrial desig
 ## Finding Your Radius
 
 ### Sharp (0-2px)
+
 Creates a technical, precise feeling. Common in developer tools, enterprise software, and brutalist designs. Says "efficient" and "no-nonsense."
 
 ### Subtle (4-6px)
+
 The sweet spot for most professional applications. Takes the edge off without feeling soft. This is where pitsi/ui lives by default.
 
 ### Rounded (8-12px)
+
 Friendlier, more consumer-oriented. Common in social apps, productivity tools, and modern SaaS. Approachable without being childish.
 
 ### Pill (full radius)
+
 Maximum friendliness. Works great for buttons and tags, but can feel unprofessional if overused. Best reserved for CTAs and badges.
 
 ## Consistency is Everything
@@ -37,11 +41,11 @@ Here's the rule: pick a radius and stick to it. Nothing looks more amateur than 
 We use a simple scale:
 
 ```css
---radius-sm: 0.375rem;  /* 6px */
---radius-md: 0.5rem;    /* 8px */
---radius-lg: 0.75rem;   /* 12px */
---radius-xl: 1rem;      /* 16px */
---radius-full: 9999px;  /* Pill */
+--radius-sm: 0.375rem; /* 6px */
+--radius-md: 0.5rem; /* 8px */
+--radius-lg: 0.75rem; /* 12px */
+--radius-xl: 1rem; /* 16px */
+--radius-full: 9999px; /* Pill */
 ```
 
 Each step up is reserved for specific contexts—cards get `md`, modals get `lg`, avatars get `full`.

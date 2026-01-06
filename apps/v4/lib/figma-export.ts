@@ -45,9 +45,7 @@ export function generateFigmaColorVariables(
   const figmaColors: Record<string, FigmaColor> = {}
 
   // Filter only color properties (exclude radius, etc.)
-  const colorKeys = Object.keys(styles).filter(
-    (key) => !key.includes("radius")
-  )
+  const colorKeys = Object.keys(styles).filter((key) => !key.includes("radius"))
 
   for (const key of colorKeys) {
     const value = styles[key]

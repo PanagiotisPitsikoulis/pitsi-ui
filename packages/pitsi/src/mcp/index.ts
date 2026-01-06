@@ -186,8 +186,8 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
                 For example: \`${await npxpitsi(
                   "view @pitsi"
                 )}\` or \`${await npxpitsi(
-                "view @pitsi @acme"
-              )}\` to view multiple registries.
+                  "view @pitsi @acme"
+                )}\` to view multiple registries.
                 `,
             },
           ],

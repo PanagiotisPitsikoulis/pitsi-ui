@@ -1,9 +1,9 @@
 "use client"
 
 import { memo, useEffect, useState } from "react"
-import { Check, Copy } from "@/lib/icons"
 import { codeToHtml } from "shiki"
 
+import { Check, Copy } from "@/lib/icons"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { ScrollArea } from "@/registry/new-york-v4/ui/scroll-area"
@@ -118,8 +118,8 @@ export const CodeBlock = memo(function CodeBlock({
         <div
           className={cn(
             "w-full p-3 font-mono text-xs leading-relaxed",
-            "[&_pre]:!bg-transparent [&_pre]:whitespace-pre-wrap [&_pre]:break-all",
-            "[&_code]:!bg-transparent [&_code]:whitespace-pre-wrap [&_code]:break-all"
+            "[&_pre]:!bg-transparent [&_pre]:break-all [&_pre]:whitespace-pre-wrap",
+            "[&_code]:!bg-transparent [&_code]:break-all [&_code]:whitespace-pre-wrap"
           )}
           dangerouslySetInnerHTML={{ __html: highlightedCode }}
         />

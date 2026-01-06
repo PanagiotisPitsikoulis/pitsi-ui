@@ -1,8 +1,14 @@
 "use client"
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
+import {
+  parseAsFloat,
+  parseAsInteger,
+  parseAsString,
+  parseAsStringLiteral,
+  useQueryState,
+} from "nuqs"
 
-import { STORAGE_KEYS, useLocalStorage } from "@/lib/local-storage"
 import {
   ArrowRight,
   Bookmark,
@@ -19,14 +25,7 @@ import {
   Settings,
   Shuffle,
 } from "@/lib/icons"
-import {
-  parseAsFloat,
-  parseAsInteger,
-  parseAsString,
-  parseAsStringLiteral,
-  useQueryState,
-} from "nuqs"
-
+import { STORAGE_KEYS, useLocalStorage } from "@/lib/local-storage"
 import { cn } from "@/lib/utils"
 import { Deck, DeckCards, DeckEmpty, DeckItem } from "@/components/kibo-ui/deck"
 import {
@@ -49,14 +48,6 @@ import {
   ToolLayoutTabsList,
   ToolLayoutTabsTrigger,
 } from "@/components/tools"
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/registry/new-york-v4/ui/dialog"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Command,
@@ -66,12 +57,21 @@ import {
   CommandItem,
   CommandList,
 } from "@/registry/new-york-v4/ui/command"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/registry/new-york-v4/ui/dialog"
 import { Input } from "@/registry/new-york-v4/ui/input"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/registry/new-york-v4/ui/popover"
+import { Skeleton } from "@/registry/new-york-v4/ui/skeleton"
 import { Slider } from "@/registry/new-york-v4/ui/slider"
 import {
   Tooltip,
@@ -79,8 +79,13 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/registry/new-york-v4/ui/tooltip"
-import { Skeleton } from "@/registry/new-york-v4/ui/skeleton"
 
+import { defaultBezier, easingPresets } from "./_components/easing-presets"
+import type {
+  CubicBezier,
+  EasingPreset,
+  SavedEasing,
+} from "./_components/easing-types"
 import {
   bezierToCSS,
   generateEasingCSS,
@@ -88,13 +93,10 @@ import {
   generateFramerMotionEasing,
   generateTailwindV4Easing,
 } from "./_components/generate-css"
-import type {
-  CubicBezier,
-  EasingPreset,
-  SavedEasing,
-} from "./_components/easing-types"
-import { defaultBezier, easingPresets } from "./_components/easing-presets"
-import { previewComponents, type PreviewType } from "./_components/preview-components"
+import {
+  previewComponents,
+  type PreviewType,
+} from "./_components/preview-components"
 
 function EasingIcon({ className }: { className?: string }) {
   return (
@@ -106,19 +108,71 @@ function EasingIcon({ className }: { className?: string }) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="M22.5604 59.7502V69.1803L6.11035 59.6903V50.2502L22.5604 59.7502Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M91.8801 78.2502C91.3001 74.3002 90.2801 70.3203 88.8101 66.2903C87.4701 62.6103 85.7599 58.9003 83.6699 55.1503C83.3999 54.6603 83.1201 54.1703 82.8401 53.6803C80.5501 49.7303 78.09 46.1503 75.45 42.9403C70.72 37.1703 65.4201 32.5902 59.5601 29.2102C55.8101 27.0402 52.29 25.6302 49 24.9702C44.74 24.1002 40.8701 24.4903 37.4001 26.1603L36.8401 26.4403C36.6301 26.5403 36.43 26.6503 36.23 26.7703C36.11 26.8403 35.9801 26.9202 35.8601 27.0002C33.4101 28.4902 31.44 30.5103 29.98 33.0503C29.08 34.5803 28.3701 36.3102 27.8601 38.2202C27.6101 39.0802 27.41 39.9703 27.25 40.9103C26.86 43.0603 26.6699 45.4102 26.6699 47.9702C26.6699 48.0602 26.6699 48.1602 26.6699 48.2502C26.6699 48.8402 26.68 49.4403 26.7 50.0403C26.8 52.4403 27.06 54.8503 27.49 57.2803C27.97 60.0603 28.6701 62.8503 29.5901 65.6603C31.1601 70.4903 33.38 75.3502 36.22 80.2602C42.59 91.2502 50.37 99.4003 59.55 104.7C68.19 109.68 75.6101 110.68 81.8101 107.7L82.04 107.59C82.31 107.46 82.5701 107.32 82.8301 107.17C86.1001 105.33 88.5301 102.59 90.1301 98.9403C91.6701 95.4503 92.4399 91.1103 92.4399 85.9503C92.4399 83.4003 92.2501 80.8302 91.8701 78.2502H91.8801ZM71.1101 88.6803L68.9199 89.9303L64.05 81.4802L55.45 66.5902V45.7102L63.6699 50.4602V67.4403L74.78 86.5902L71.1101 88.6803Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M63.6702 50.4602V62.4802L55.4502 66.5902V45.7102L63.6702 50.4602Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M74.7803 86.5902L71.1104 88.6803L68.9202 89.9303L64.0503 81.4802L55.4502 66.5902L63.6702 62.4802V67.4403L74.7803 86.5902Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M42.5605 12.0002V21.4403L33.8105 25.8203L25.0405 30.2003L22.5605 31.4403V22.0002L42.5605 12.0002Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M42.5604 12.0002L22.5604 22.0002L22.0004 21.6803L19.5104 20.2402L6.11035 12.5103L26.1105 2.51025L42.5604 12.0002Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M22.5604 22.0002V31.4403L10.7504 24.6202L6.11035 21.9403V12.5103L19.5104 20.2402L22.0004 21.6803L22.5604 22.0002Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M35.8601 27.0001C33.4101 28.4901 31.44 30.5102 29.98 33.0502C29.08 34.5802 28.3701 36.3101 27.8601 38.2201L22.5601 40.8701L2 29.0001L10.75 24.6201L22.5601 31.4402L25.04 30.2002L33.8101 25.8202L35.8601 27.0001Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M27.2498 40.9103C26.8598 43.0603 26.6697 45.4102 26.6697 47.9702C26.6697 48.0602 26.6697 48.1602 26.6697 48.2502L26.0999 48.5403L22.5498 50.3103V40.8702L27.8499 38.2202C27.5999 39.0802 27.3997 39.9703 27.2397 40.9103H27.2498Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M27.5004 57.2802L22.5604 59.7501L6.11035 50.2501L14.8705 45.8701L22.5604 50.3102L26.1105 48.5402L26.6803 48.2501C26.6803 48.8401 26.6903 49.4402 26.7103 50.0402C26.8103 52.4402 27.0704 54.8502 27.5004 57.2802Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M22.5601 40.8702V50.3103L14.8701 45.8702L2 38.4403V29.0002L22.5601 40.8702Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M29.6006 65.6603L22.5605 69.1803V59.7502L27.5005 57.2803C27.9805 60.0603 28.6806 62.8503 29.6006 65.6603Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M112.45 75.9504C112.45 86.4804 109.25 93.5603 102.84 97.1703C102.64 97.2803 102.44 97.3903 102.25 97.4903L101.85 97.6904L82.0503 107.59C82.3203 107.46 82.5803 107.32 82.8403 107.17C86.1103 105.33 88.5404 102.59 90.1404 98.9404C91.6804 95.4504 92.4502 91.1104 92.4502 85.9504C92.4502 83.4004 92.2604 80.8303 91.8804 78.2503C91.3004 74.3003 90.2803 70.3203 88.8103 66.2903C87.4703 62.6103 85.7602 58.9003 83.6702 55.1503C83.4002 54.6603 83.1203 54.1704 82.8403 53.6804C80.5503 49.7304 78.0902 46.1504 75.4502 42.9404C70.7202 37.1704 65.4203 32.5903 59.5603 29.2103C55.8103 27.0403 52.2902 25.6303 49.0002 24.9703C44.7402 24.1003 40.8704 24.4903 37.4004 26.1603L57.0803 16.3204L57.3704 16.1703C63.5204 13.2103 70.9203 14.2203 79.5603 19.2103C88.6803 24.4703 96.4403 32.6304 102.84 43.6804C109.25 54.7304 112.45 65.4904 112.45 75.9504Z" stroke="currentColor" strokeLinejoin="round"/>
+      <path
+        d="M22.5604 59.7502V69.1803L6.11035 59.6903V50.2502L22.5604 59.7502Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M91.8801 78.2502C91.3001 74.3002 90.2801 70.3203 88.8101 66.2903C87.4701 62.6103 85.7599 58.9003 83.6699 55.1503C83.3999 54.6603 83.1201 54.1703 82.8401 53.6803C80.5501 49.7303 78.09 46.1503 75.45 42.9403C70.72 37.1703 65.4201 32.5902 59.5601 29.2102C55.8101 27.0402 52.29 25.6302 49 24.9702C44.74 24.1002 40.8701 24.4903 37.4001 26.1603L36.8401 26.4403C36.6301 26.5403 36.43 26.6503 36.23 26.7703C36.11 26.8403 35.9801 26.9202 35.8601 27.0002C33.4101 28.4902 31.44 30.5103 29.98 33.0503C29.08 34.5803 28.3701 36.3102 27.8601 38.2202C27.6101 39.0802 27.41 39.9703 27.25 40.9103C26.86 43.0603 26.6699 45.4102 26.6699 47.9702C26.6699 48.0602 26.6699 48.1602 26.6699 48.2502C26.6699 48.8402 26.68 49.4403 26.7 50.0403C26.8 52.4403 27.06 54.8503 27.49 57.2803C27.97 60.0603 28.6701 62.8503 29.5901 65.6603C31.1601 70.4903 33.38 75.3502 36.22 80.2602C42.59 91.2502 50.37 99.4003 59.55 104.7C68.19 109.68 75.6101 110.68 81.8101 107.7L82.04 107.59C82.31 107.46 82.5701 107.32 82.8301 107.17C86.1001 105.33 88.5301 102.59 90.1301 98.9403C91.6701 95.4503 92.4399 91.1103 92.4399 85.9503C92.4399 83.4003 92.2501 80.8302 91.8701 78.2502H91.8801ZM71.1101 88.6803L68.9199 89.9303L64.05 81.4802L55.45 66.5902V45.7102L63.6699 50.4602V67.4403L74.78 86.5902L71.1101 88.6803Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M63.6702 50.4602V62.4802L55.4502 66.5902V45.7102L63.6702 50.4602Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M74.7803 86.5902L71.1104 88.6803L68.9202 89.9303L64.0503 81.4802L55.4502 66.5902L63.6702 62.4802V67.4403L74.7803 86.5902Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M42.5605 12.0002V21.4403L33.8105 25.8203L25.0405 30.2003L22.5605 31.4403V22.0002L42.5605 12.0002Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M42.5604 12.0002L22.5604 22.0002L22.0004 21.6803L19.5104 20.2402L6.11035 12.5103L26.1105 2.51025L42.5604 12.0002Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M22.5604 22.0002V31.4403L10.7504 24.6202L6.11035 21.9403V12.5103L19.5104 20.2402L22.0004 21.6803L22.5604 22.0002Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M35.8601 27.0001C33.4101 28.4901 31.44 30.5102 29.98 33.0502C29.08 34.5802 28.3701 36.3101 27.8601 38.2201L22.5601 40.8701L2 29.0001L10.75 24.6201L22.5601 31.4402L25.04 30.2002L33.8101 25.8202L35.8601 27.0001Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M27.2498 40.9103C26.8598 43.0603 26.6697 45.4102 26.6697 47.9702C26.6697 48.0602 26.6697 48.1602 26.6697 48.2502L26.0999 48.5403L22.5498 50.3103V40.8702L27.8499 38.2202C27.5999 39.0802 27.3997 39.9703 27.2397 40.9103H27.2498Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M27.5004 57.2802L22.5604 59.7501L6.11035 50.2501L14.8705 45.8701L22.5604 50.3102L26.1105 48.5402L26.6803 48.2501C26.6803 48.8401 26.6903 49.4402 26.7103 50.0402C26.8103 52.4402 27.0704 54.8502 27.5004 57.2802Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M22.5601 40.8702V50.3103L14.8701 45.8702L2 38.4403V29.0002L22.5601 40.8702Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M29.6006 65.6603L22.5605 69.1803V59.7502L27.5005 57.2803C27.9805 60.0603 28.6806 62.8503 29.6006 65.6603Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M112.45 75.9504C112.45 86.4804 109.25 93.5603 102.84 97.1703C102.64 97.2803 102.44 97.3903 102.25 97.4903L101.85 97.6904L82.0503 107.59C82.3203 107.46 82.5803 107.32 82.8403 107.17C86.1103 105.33 88.5404 102.59 90.1404 98.9404C91.6804 95.4504 92.4502 91.1104 92.4502 85.9504C92.4502 83.4004 92.2604 80.8303 91.8804 78.2503C91.3004 74.3003 90.2803 70.3203 88.8103 66.2903C87.4703 62.6103 85.7602 58.9003 83.6702 55.1503C83.4002 54.6603 83.1203 54.1704 82.8403 53.6804C80.5503 49.7304 78.0902 46.1504 75.4502 42.9404C70.7202 37.1704 65.4203 32.5903 59.5603 29.2103C55.8103 27.0403 52.2902 25.6303 49.0002 24.9703C44.7402 24.1003 40.8704 24.4903 37.4004 26.1603L57.0803 16.3204L57.3704 16.1703C63.5204 13.2103 70.9203 14.2203 79.5603 19.2103C88.6803 24.4703 96.4403 32.6304 102.84 43.6804C109.25 54.7304 112.45 65.4904 112.45 75.9504Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
     </svg>
   )
 }
@@ -146,8 +200,14 @@ function BezierCurveEditor({
   const fromSVG = (clientX: number, clientY: number) => {
     if (!svgRef.current) return { x: 0, y: 0 }
     const rect = svgRef.current.getBoundingClientRect()
-    const x = Math.max(0, Math.min(1, (clientX - rect.left - padding) / innerSize))
-    const y = Math.max(-0.5, Math.min(1.5, 1 - (clientY - rect.top - padding) / innerSize))
+    const x = Math.max(
+      0,
+      Math.min(1, (clientX - rect.left - padding) / innerSize)
+    )
+    const y = Math.max(
+      -0.5,
+      Math.min(1.5, 1 - (clientY - rect.top - padding) / innerSize)
+    )
     return { x, y }
   }
 
@@ -161,9 +221,17 @@ function BezierCurveEditor({
       if (!dragging) return
       const pos = fromSVG(e.clientX, e.clientY)
       if (dragging === "p1") {
-        onChange({ ...bezier, x1: Math.round(pos.x * 100) / 100, y1: Math.round(pos.y * 100) / 100 })
+        onChange({
+          ...bezier,
+          x1: Math.round(pos.x * 100) / 100,
+          y1: Math.round(pos.y * 100) / 100,
+        })
       } else {
-        onChange({ ...bezier, x2: Math.round(pos.x * 100) / 100, y2: Math.round(pos.y * 100) / 100 })
+        onChange({
+          ...bezier,
+          x2: Math.round(pos.x * 100) / 100,
+          y2: Math.round(pos.y * 100) / 100,
+        })
       }
     },
     [dragging, bezier, onChange]
@@ -256,12 +324,7 @@ function BezierCurveEditor({
       />
 
       {/* Bezier curve */}
-      <path
-        d={pathD}
-        fill="none"
-        className="stroke-brand"
-        strokeWidth={2.5}
-      />
+      <path d={pathD} fill="none" className="stroke-brand" strokeWidth={2.5} />
 
       {/* Start and end points */}
       <circle cx={p0.x} cy={p0.y} r={4} className="fill-muted-foreground" />
@@ -273,7 +336,7 @@ function BezierCurveEditor({
         cy={p1.y}
         r={8}
         className={cn(
-          "cursor-grab fill-brand stroke-background stroke-2",
+          "fill-brand stroke-background cursor-grab stroke-2",
           dragging === "p1" && "cursor-grabbing"
         )}
         onMouseDown={handleMouseDown("p1")}
@@ -285,7 +348,7 @@ function BezierCurveEditor({
         cy={p2.y}
         r={8}
         className={cn(
-          "cursor-grab fill-brand stroke-background stroke-2",
+          "fill-brand stroke-background cursor-grab stroke-2",
           dragging === "p2" && "cursor-grabbing"
         )}
         onMouseDown={handleMouseDown("p2")}
@@ -465,25 +528,50 @@ export default function EasingComposerClient({
   hasBackgroundDecoration = true,
 }: EasingComposerClientProps) {
   // URL state
-  const [x1, setX1] = useQueryState("x1", parseAsFloat.withDefault(defaultBezier.x1))
-  const [y1, setY1] = useQueryState("y1", parseAsFloat.withDefault(defaultBezier.y1))
-  const [x2, setX2] = useQueryState("x2", parseAsFloat.withDefault(defaultBezier.x2))
-  const [y2, setY2] = useQueryState("y2", parseAsFloat.withDefault(defaultBezier.y2))
-  const [duration, setDuration] = useQueryState("dur", parseAsInteger.withDefault(500))
-  const [currentPreset, setCurrentPreset] = useQueryState("preset", parseAsString.withDefault("smooth"))
+  const [x1, setX1] = useQueryState(
+    "x1",
+    parseAsFloat.withDefault(defaultBezier.x1)
+  )
+  const [y1, setY1] = useQueryState(
+    "y1",
+    parseAsFloat.withDefault(defaultBezier.y1)
+  )
+  const [x2, setX2] = useQueryState(
+    "x2",
+    parseAsFloat.withDefault(defaultBezier.x2)
+  )
+  const [y2, setY2] = useQueryState(
+    "y2",
+    parseAsFloat.withDefault(defaultBezier.y2)
+  )
+  const [duration, setDuration] = useQueryState(
+    "dur",
+    parseAsInteger.withDefault(500)
+  )
+  const [currentPreset, setCurrentPreset] = useQueryState(
+    "preset",
+    parseAsString.withDefault("smooth")
+  )
   const [sidebarTab, setSidebarTab] = useQueryState(
     "tab",
     parseAsStringLiteral(sidebarTabs).withDefault("curve")
   )
   // Local state
-  const [savedItems, setSavedItems, isHydrated] = useLocalStorage<SavedEasing[]>(STORAGE_KEYS.EASING_COMPOSER, [])
+  const [savedItems, setSavedItems, isHydrated] = useLocalStorage<
+    SavedEasing[]
+  >(STORAGE_KEYS.EASING_COMPOSER, [])
   const [selectedPreview, setSelectedPreview] = useState<PreviewType>("card")
   const [isPlaying, setIsPlaying] = useState(true)
 
   const presetKeys = useMemo(() => Object.keys(presets), [presets])
-  const [deckIndex, setDeckIndex] = useState(Math.max(0, presetKeys.indexOf(currentPreset)))
+  const [deckIndex, setDeckIndex] = useState(
+    Math.max(0, presetKeys.indexOf(currentPreset))
+  )
 
-  const bezier: CubicBezier = useMemo(() => ({ x1, y1, x2, y2 }), [x1, y1, x2, y2])
+  const bezier: CubicBezier = useMemo(
+    () => ({ x1, y1, x2, y2 }),
+    [x1, y1, x2, y2]
+  )
 
   const updateBezier = useCallback(
     (newBezier: CubicBezier) => {
@@ -551,8 +639,14 @@ export default function EasingComposerClient({
 
   // Generated code
   const generatedCSS = useMemo(() => generateEasingCSS(bezier), [bezier])
-  const generatedTailwind = useMemo(() => generateTailwindV4Easing(bezier), [bezier])
-  const generatedFramer = useMemo(() => generateFramerMotionEasing(bezier), [bezier])
+  const generatedTailwind = useMemo(
+    () => generateTailwindV4Easing(bezier),
+    [bezier]
+  )
+  const generatedFramer = useMemo(
+    () => generateFramerMotionEasing(bezier),
+    [bezier]
+  )
   const generatedJSON = useMemo(() => generateEasingJSON(bezier), [bezier])
 
   return (
@@ -570,7 +664,9 @@ export default function EasingComposerClient({
           <ToolLayoutCard>
             <ToolLayoutTabs
               value={sidebarTab}
-              onValueChange={(v) => setSidebarTab(v as typeof sidebarTabs[number])}
+              onValueChange={(v) =>
+                setSidebarTab(v as (typeof sidebarTabs)[number])
+              }
             >
               <ToolLayoutTabsList>
                 <ToolLayoutTabsTrigger value="explore" icon={Compass}>
@@ -604,16 +700,18 @@ export default function EasingComposerClient({
                         <DeckItem
                           key={key}
                           className="overflow-hidden rounded-3xl p-0 shadow-xs"
-                          style={{
-                            "--background": "oklch(1 0 0)",
-                            "--foreground": "oklch(0.145 0 0)",
-                            "--card": "oklch(1 0 0)",
-                            "--card-foreground": "oklch(0.145 0 0)",
-                            "--muted": "oklch(0.965 0 0)",
-                            "--muted-foreground": "oklch(0.45 0 0)",
-                            "--border": "oklch(0.922 0 0)",
-                            "--brand": "oklch(0.646 0.222 41.116)",
-                          } as React.CSSProperties}
+                          style={
+                            {
+                              "--background": "oklch(1 0 0)",
+                              "--foreground": "oklch(0.145 0 0)",
+                              "--card": "oklch(1 0 0)",
+                              "--card-foreground": "oklch(0.145 0 0)",
+                              "--muted": "oklch(0.965 0 0)",
+                              "--muted-foreground": "oklch(0.45 0 0)",
+                              "--border": "oklch(0.922 0 0)",
+                              "--brand": "oklch(0.646 0.222 41.116)",
+                            } as React.CSSProperties
+                          }
                         >
                           <div className="relative flex size-full flex-col bg-[oklch(1_0_0)] text-[oklch(0.145_0_0)]">
                             {/* Info button */}
@@ -630,23 +728,38 @@ export default function EasingComposerClient({
                               <DialogContent className="sm:max-w-md">
                                 <DialogHeader>
                                   <DialogTitle className="flex items-center gap-2">
-                                    <PresetCurvePreview bezier={preset.bezier} />
+                                    <PresetCurvePreview
+                                      bezier={preset.bezier}
+                                    />
                                     {preset.label}
                                   </DialogTitle>
-                                  <DialogDescription>{preset.description}</DialogDescription>
+                                  <DialogDescription>
+                                    {preset.description}
+                                  </DialogDescription>
                                 </DialogHeader>
-                                <div className="rounded-lg border bg-muted/50 p-3">
-                                  <p className="text-xs font-medium text-foreground">Curve values:</p>
-                                  <code className="mt-1 block text-xs text-muted-foreground font-mono">
-                                    cubic-bezier({preset.bezier.x1}, {preset.bezier.y1}, {preset.bezier.x2}, {preset.bezier.y2})
+                                <div className="bg-muted/50 rounded-lg border p-3">
+                                  <p className="text-foreground text-xs font-medium">
+                                    Curve values:
+                                  </p>
+                                  <code className="text-muted-foreground mt-1 block font-mono text-xs">
+                                    cubic-bezier({preset.bezier.x1},{" "}
+                                    {preset.bezier.y1}, {preset.bezier.x2},{" "}
+                                    {preset.bezier.y2})
                                   </code>
-                                  <p className="mt-2 text-xs font-medium text-foreground">Best for:</p>
-                                  <p className="text-xs text-muted-foreground">
-                                    {preset.category === "standard" && "General purpose UI animations and transitions"}
-                                    {preset.category === "emphasis" && "Drawing attention to important elements"}
-                                    {preset.category === "material" && "Material Design style interactions"}
-                                    {preset.category === "expressive" && "Playful and dynamic interfaces"}
-                                    {preset.category === "smooth" && "Subtle, elegant transitions"}
+                                  <p className="text-foreground mt-2 text-xs font-medium">
+                                    Best for:
+                                  </p>
+                                  <p className="text-muted-foreground text-xs">
+                                    {preset.category === "standard" &&
+                                      "General purpose UI animations and transitions"}
+                                    {preset.category === "emphasis" &&
+                                      "Drawing attention to important elements"}
+                                    {preset.category === "material" &&
+                                      "Material Design style interactions"}
+                                    {preset.category === "expressive" &&
+                                      "Playful and dynamic interfaces"}
+                                    {preset.category === "smooth" &&
+                                      "Subtle, elegant transitions"}
                                   </p>
                                 </div>
                               </DialogContent>
@@ -659,7 +772,9 @@ export default function EasingComposerClient({
                               </div>
                             </div>
                             <div className="border-t bg-[oklch(1_0_0)] p-4 text-center">
-                              <h3 className="text-lg font-semibold">{preset.label}</h3>
+                              <h3 className="text-lg font-semibold">
+                                {preset.label}
+                              </h3>
                               <p className="text-sm text-[oklch(0.45_0_0)]">
                                 Swipe to navigate
                               </p>
@@ -670,7 +785,9 @@ export default function EasingComposerClient({
                     </DeckCards>
                     <DeckEmpty>
                       <div className="text-center">
-                        <p className="text-sm font-medium">All presets explored!</p>
+                        <p className="text-sm font-medium">
+                          All presets explored!
+                        </p>
                         <Button
                           variant="outline"
                           size="sm"
@@ -700,7 +817,8 @@ export default function EasingComposerClient({
                               onClick={() => {
                                 const prevIndex = deckIndex - 1
                                 setDeckIndex(prevIndex)
-                                if (presetKeys[prevIndex]) applyPreset(presetKeys[prevIndex])
+                                if (presetKeys[prevIndex])
+                                  applyPreset(presetKeys[prevIndex])
                               }}
                             >
                               <RotateCcw className="size-5" />
@@ -720,7 +838,8 @@ export default function EasingComposerClient({
                               onClick={() => {
                                 const newIndex = deckIndex + 1
                                 setDeckIndex(newIndex)
-                                if (presetKeys[newIndex]) applyPreset(presetKeys[newIndex])
+                                if (presetKeys[newIndex])
+                                  applyPreset(presetKeys[newIndex])
                               }}
                             >
                               <ArrowRight className="size-5" />
@@ -794,7 +913,7 @@ export default function EasingComposerClient({
                 </div>
 
                 {/* Bezier curve editor card */}
-                <div className="mt-4 rounded-xl border bg-background p-4 shadow-sm">
+                <div className="bg-background mt-4 rounded-xl border p-4 shadow-sm">
                   <div className="flex justify-center">
                     <BezierCurveEditor
                       bezier={bezier}
@@ -803,7 +922,7 @@ export default function EasingComposerClient({
                     />
                   </div>
                   <div className="mt-3 text-center">
-                    <code className="text-xs font-mono text-muted-foreground">
+                    <code className="text-muted-foreground font-mono text-xs">
                       cubic-bezier({x1}, {y1}, {x2}, {y2})
                     </code>
                   </div>
@@ -812,12 +931,18 @@ export default function EasingComposerClient({
                 {/* Control Points */}
                 <div className="mt-4 space-y-3">
                   {/* P1 */}
-                  <div className="rounded-lg border bg-card p-3">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium">Start Control (P1)</span>
+                  <div className="bg-card rounded-lg border p-3">
+                    <div className="mb-2 flex items-center justify-between">
+                      <span className="text-sm font-medium">
+                        Start Control (P1)
+                      </span>
                       <Dialog>
                         <DialogTrigger asChild>
-                          <Button variant="ghost" size="icon" className="size-6 text-muted-foreground hover:text-foreground">
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            className="text-muted-foreground hover:text-foreground size-6"
+                          >
                             <Info className="size-3.5" />
                           </Button>
                         </DialogTrigger>
@@ -825,15 +950,24 @@ export default function EasingComposerClient({
                           <DialogHeader>
                             <DialogTitle>Start Control Point (P1)</DialogTitle>
                             <DialogDescription>
-                              Controls how the animation begins. The X value (0-1) determines when the curve starts to accelerate, while the Y value controls the initial velocity.
+                              Controls how the animation begins. The X value
+                              (0-1) determines when the curve starts to
+                              accelerate, while the Y value controls the initial
+                              velocity.
                             </DialogDescription>
                           </DialogHeader>
-                          <div className="rounded-lg border bg-muted/50 p-3">
-                            <p className="text-xs font-medium text-foreground">Tips:</p>
-                            <ul className="mt-1 space-y-1 text-xs text-muted-foreground">
-                              <li>• Low X = quick start, high X = delayed start</li>
+                          <div className="bg-muted/50 rounded-lg border p-3">
+                            <p className="text-foreground text-xs font-medium">
+                              Tips:
+                            </p>
+                            <ul className="text-muted-foreground mt-1 space-y-1 text-xs">
+                              <li>
+                                • Low X = quick start, high X = delayed start
+                              </li>
                               <li>• Y &gt; 1 = overshoot at the beginning</li>
-                              <li>• Y &lt; 0 = anticipation (slight reverse first)</li>
+                              <li>
+                                • Y &lt; 0 = anticipation (slight reverse first)
+                              </li>
                             </ul>
                           </div>
                         </DialogContent>
@@ -841,11 +975,16 @@ export default function EasingComposerClient({
                     </div>
                     <div className="grid grid-cols-2 gap-3">
                       <div className="space-y-1.5">
-                        <label className="text-[10px] font-medium text-muted-foreground uppercase tracking-wide">X</label>
+                        <label className="text-muted-foreground text-[10px] font-medium tracking-wide uppercase">
+                          X
+                        </label>
                         <div className="flex items-center gap-2">
                           <Slider
                             value={[x1]}
-                            onValueChange={([v]) => { setX1(v); setCurrentPreset("custom") }}
+                            onValueChange={([v]) => {
+                              setX1(v)
+                              setCurrentPreset("custom")
+                            }}
                             min={0}
                             max={1}
                             step={0.01}
@@ -854,20 +993,28 @@ export default function EasingComposerClient({
                           <Input
                             type="number"
                             value={x1}
-                            onChange={(e) => { setX1(parseFloat(e.target.value) || 0); setCurrentPreset("custom") }}
+                            onChange={(e) => {
+                              setX1(parseFloat(e.target.value) || 0)
+                              setCurrentPreset("custom")
+                            }}
                             min={0}
                             max={1}
                             step={0.01}
-                            className="h-7 w-16 text-xs font-mono"
+                            className="h-7 w-16 font-mono text-xs"
                           />
                         </div>
                       </div>
                       <div className="space-y-1.5">
-                        <label className="text-[10px] font-medium text-muted-foreground uppercase tracking-wide">Y</label>
+                        <label className="text-muted-foreground text-[10px] font-medium tracking-wide uppercase">
+                          Y
+                        </label>
                         <div className="flex items-center gap-2">
                           <Slider
                             value={[y1]}
-                            onValueChange={([v]) => { setY1(v); setCurrentPreset("custom") }}
+                            onValueChange={([v]) => {
+                              setY1(v)
+                              setCurrentPreset("custom")
+                            }}
                             min={-0.5}
                             max={1.5}
                             step={0.01}
@@ -876,11 +1023,14 @@ export default function EasingComposerClient({
                           <Input
                             type="number"
                             value={y1}
-                            onChange={(e) => { setY1(parseFloat(e.target.value) || 0); setCurrentPreset("custom") }}
+                            onChange={(e) => {
+                              setY1(parseFloat(e.target.value) || 0)
+                              setCurrentPreset("custom")
+                            }}
                             min={-0.5}
                             max={1.5}
                             step={0.01}
-                            className="h-7 w-16 text-xs font-mono"
+                            className="h-7 w-16 font-mono text-xs"
                           />
                         </div>
                       </div>
@@ -888,12 +1038,18 @@ export default function EasingComposerClient({
                   </div>
 
                   {/* P2 */}
-                  <div className="rounded-lg border bg-card p-3">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium">End Control (P2)</span>
+                  <div className="bg-card rounded-lg border p-3">
+                    <div className="mb-2 flex items-center justify-between">
+                      <span className="text-sm font-medium">
+                        End Control (P2)
+                      </span>
                       <Dialog>
                         <DialogTrigger asChild>
-                          <Button variant="ghost" size="icon" className="size-6 text-muted-foreground hover:text-foreground">
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            className="text-muted-foreground hover:text-foreground size-6"
+                          >
                             <Info className="size-3.5" />
                           </Button>
                         </DialogTrigger>
@@ -901,13 +1057,19 @@ export default function EasingComposerClient({
                           <DialogHeader>
                             <DialogTitle>End Control Point (P2)</DialogTitle>
                             <DialogDescription>
-                              Controls how the animation ends. The X value determines when deceleration begins, while the Y value controls the final approach.
+                              Controls how the animation ends. The X value
+                              determines when deceleration begins, while the Y
+                              value controls the final approach.
                             </DialogDescription>
                           </DialogHeader>
-                          <div className="rounded-lg border bg-muted/50 p-3">
-                            <p className="text-xs font-medium text-foreground">Tips:</p>
-                            <ul className="mt-1 space-y-1 text-xs text-muted-foreground">
-                              <li>• Low X = early slowdown, high X = late slowdown</li>
+                          <div className="bg-muted/50 rounded-lg border p-3">
+                            <p className="text-foreground text-xs font-medium">
+                              Tips:
+                            </p>
+                            <ul className="text-muted-foreground mt-1 space-y-1 text-xs">
+                              <li>
+                                • Low X = early slowdown, high X = late slowdown
+                              </li>
                               <li>• Y &gt; 1 = overshoot before settling</li>
                               <li>• Y &lt; 0 = bounce back effect</li>
                             </ul>
@@ -917,11 +1079,16 @@ export default function EasingComposerClient({
                     </div>
                     <div className="grid grid-cols-2 gap-3">
                       <div className="space-y-1.5">
-                        <label className="text-[10px] font-medium text-muted-foreground uppercase tracking-wide">X</label>
+                        <label className="text-muted-foreground text-[10px] font-medium tracking-wide uppercase">
+                          X
+                        </label>
                         <div className="flex items-center gap-2">
                           <Slider
                             value={[x2]}
-                            onValueChange={([v]) => { setX2(v); setCurrentPreset("custom") }}
+                            onValueChange={([v]) => {
+                              setX2(v)
+                              setCurrentPreset("custom")
+                            }}
                             min={0}
                             max={1}
                             step={0.01}
@@ -930,20 +1097,28 @@ export default function EasingComposerClient({
                           <Input
                             type="number"
                             value={x2}
-                            onChange={(e) => { setX2(parseFloat(e.target.value) || 0); setCurrentPreset("custom") }}
+                            onChange={(e) => {
+                              setX2(parseFloat(e.target.value) || 0)
+                              setCurrentPreset("custom")
+                            }}
                             min={0}
                             max={1}
                             step={0.01}
-                            className="h-7 w-16 text-xs font-mono"
+                            className="h-7 w-16 font-mono text-xs"
                           />
                         </div>
                       </div>
                       <div className="space-y-1.5">
-                        <label className="text-[10px] font-medium text-muted-foreground uppercase tracking-wide">Y</label>
+                        <label className="text-muted-foreground text-[10px] font-medium tracking-wide uppercase">
+                          Y
+                        </label>
                         <div className="flex items-center gap-2">
                           <Slider
                             value={[y2]}
-                            onValueChange={([v]) => { setY2(v); setCurrentPreset("custom") }}
+                            onValueChange={([v]) => {
+                              setY2(v)
+                              setCurrentPreset("custom")
+                            }}
                             min={-0.5}
                             max={1.5}
                             step={0.01}
@@ -952,11 +1127,14 @@ export default function EasingComposerClient({
                           <Input
                             type="number"
                             value={y2}
-                            onChange={(e) => { setY2(parseFloat(e.target.value) || 0); setCurrentPreset("custom") }}
+                            onChange={(e) => {
+                              setY2(parseFloat(e.target.value) || 0)
+                              setCurrentPreset("custom")
+                            }}
                             min={-0.5}
                             max={1.5}
                             step={0.01}
-                            className="h-7 w-16 text-xs font-mono"
+                            className="h-7 w-16 font-mono text-xs"
                           />
                         </div>
                       </div>
@@ -964,12 +1142,16 @@ export default function EasingComposerClient({
                   </div>
 
                   {/* Duration */}
-                  <div className="rounded-lg border bg-card p-3">
-                    <div className="flex items-center justify-between mb-2">
+                  <div className="bg-card rounded-lg border p-3">
+                    <div className="mb-2 flex items-center justify-between">
                       <span className="text-sm font-medium">Duration</span>
                       <Dialog>
                         <DialogTrigger asChild>
-                          <Button variant="ghost" size="icon" className="size-6 text-muted-foreground hover:text-foreground">
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            className="text-muted-foreground hover:text-foreground size-6"
+                          >
                             <Info className="size-3.5" />
                           </Button>
                         </DialogTrigger>
@@ -977,12 +1159,16 @@ export default function EasingComposerClient({
                           <DialogHeader>
                             <DialogTitle>Animation Duration</DialogTitle>
                             <DialogDescription>
-                              The total time for the animation to complete. Shorter durations feel snappy, longer ones feel more dramatic.
+                              The total time for the animation to complete.
+                              Shorter durations feel snappy, longer ones feel
+                              more dramatic.
                             </DialogDescription>
                           </DialogHeader>
-                          <div className="rounded-lg border bg-muted/50 p-3">
-                            <p className="text-xs font-medium text-foreground">Guidelines:</p>
-                            <ul className="mt-1 space-y-1 text-xs text-muted-foreground">
+                          <div className="bg-muted/50 rounded-lg border p-3">
+                            <p className="text-foreground text-xs font-medium">
+                              Guidelines:
+                            </p>
+                            <ul className="text-muted-foreground mt-1 space-y-1 text-xs">
                               <li>• 100-200ms: Micro-interactions, hovers</li>
                               <li>• 200-400ms: Standard UI transitions</li>
                               <li>• 400-700ms: Page transitions, modals</li>
@@ -1004,11 +1190,13 @@ export default function EasingComposerClient({
                       <Input
                         type="number"
                         value={duration}
-                        onChange={(e) => setDuration(parseInt(e.target.value) || 100)}
+                        onChange={(e) =>
+                          setDuration(parseInt(e.target.value) || 100)
+                        }
                         min={100}
                         max={10000}
                         step={50}
-                        className="h-7 w-20 text-xs font-mono"
+                        className="h-7 w-20 font-mono text-xs"
                       />
                     </div>
                   </div>
@@ -1029,7 +1217,7 @@ export default function EasingComposerClient({
                     onLoad={loadItem}
                     onRename={renameItem}
                     onDelete={deleteItem}
-                    emptyIcon={<EasingIcon className="size-40 text-brand" />}
+                    emptyIcon={<EasingIcon className="text-brand size-40" />}
                     emptyText="No saved easings"
                     emptySubtext="Click the save button to save your current easing"
                     renderPreview={(item) => (
@@ -1069,7 +1257,9 @@ export default function EasingComposerClient({
                     size="sm"
                     className="h-7 gap-1 text-xs"
                     onClick={() => {
-                      const blob = new Blob([generatedJSON], { type: "application/json" })
+                      const blob = new Blob([generatedJSON], {
+                        type: "application/json",
+                      })
                       const url = URL.createObjectURL(blob)
                       const a = document.createElement("a")
                       a.href = url
@@ -1100,12 +1290,16 @@ export default function EasingComposerClient({
             <ToolLayoutPreviewTitle>Preview</ToolLayoutPreviewTitle>
             <div className="flex items-center gap-2">
               <PreviewNavigation
-                items={(Object.keys(previewComponents) as PreviewType[]).map((key) => ({
-                  key,
-                  label: previewComponents[key].label,
-                }))}
+                items={(Object.keys(previewComponents) as PreviewType[]).map(
+                  (key) => ({
+                    key,
+                    label: previewComponents[key].label,
+                  })
+                )}
                 value={selectedPreview}
-                onValueChange={(value) => setSelectedPreview(value as PreviewType)}
+                onValueChange={(value) =>
+                  setSelectedPreview(value as PreviewType)
+                }
               />
               <TooltipProvider delayDuration={0}>
                 <Tooltip>
@@ -1116,10 +1310,16 @@ export default function EasingComposerClient({
                       className="size-8 shrink-0"
                       onClick={() => setIsPlaying(!isPlaying)}
                     >
-                      {isPlaying ? <Pause className="size-4" fill="currentColor" /> : <Play className="size-4" fill="currentColor" />}
+                      {isPlaying ? (
+                        <Pause className="size-4" fill="currentColor" />
+                      ) : (
+                        <Play className="size-4" fill="currentColor" />
+                      )}
                     </Button>
                   </TooltipTrigger>
-                  <TooltipContent>{isPlaying ? "Pause animation" : "Play animation"}</TooltipContent>
+                  <TooltipContent>
+                    {isPlaying ? "Pause animation" : "Play animation"}
+                  </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
             </div>
@@ -1127,20 +1327,23 @@ export default function EasingComposerClient({
 
           <ToolLayoutPreviewContent>
             {(() => {
-              const PreviewComponent = previewComponents[selectedPreview].component
+              const PreviewComponent =
+                previewComponents[selectedPreview].component
               return (
                 <div
-                  className="h-full dark"
-                  style={{
-                    "--background": "oklch(0.145 0 0)",
-                    "--foreground": "oklch(0.985 0 0)",
-                    "--card": "oklch(0.205 0 0)",
-                    "--card-foreground": "oklch(0.985 0 0)",
-                    "--muted": "oklch(0.269 0 0)",
-                    "--muted-foreground": "oklch(0.708 0 0)",
-                    "--border": "oklch(1 0 0 / 10%)",
-                    colorScheme: "dark",
-                  } as React.CSSProperties}
+                  className="dark h-full"
+                  style={
+                    {
+                      "--background": "oklch(0.145 0 0)",
+                      "--foreground": "oklch(0.985 0 0)",
+                      "--card": "oklch(0.205 0 0)",
+                      "--card-foreground": "oklch(0.985 0 0)",
+                      "--muted": "oklch(0.269 0 0)",
+                      "--muted-foreground": "oklch(0.708 0 0)",
+                      "--border": "oklch(1 0 0 / 10%)",
+                      colorScheme: "dark",
+                    } as React.CSSProperties
+                  }
                 >
                   <PreviewComponent
                     easingCSS={bezierToCSS(bezier)}

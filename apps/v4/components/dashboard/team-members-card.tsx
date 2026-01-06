@@ -1,8 +1,7 @@
 "use client"
 
-import { Loader2, Trash2, Users } from "@/lib/icons"
-
 import { formatDate } from "@/lib/format"
+import { Loader2, Trash2, Users } from "@/lib/icons"
 import type { PlanType } from "@/lib/server/db/schema"
 import { Badge } from "@/registry/new-york-v4/ui/badge"
 import { Button } from "@/registry/new-york-v4/ui/button"
@@ -93,7 +92,9 @@ export function TeamMembersCard({
                 icon={<UserAvatar initial={member.memberEmail[0]} />}
                 badge={
                   <Badge
-                    variant={member.status === "active" ? "default" : "secondary"}
+                    variant={
+                      member.status === "active" ? "default" : "secondary"
+                    }
                   >
                     {member.status === "active" ? "Active" : "Pending"}
                   </Badge>

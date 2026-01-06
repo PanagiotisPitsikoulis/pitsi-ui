@@ -80,7 +80,8 @@ function ApplicationBlockWrapper({
   const shellInfo = getShellForBlock(name)
   // Get palette/typography from the current view block's settings
   const viewSettings = getBlockSettings(name)
-  const palette = (viewSettings.palette || "slate") as import("@/registry/new-york-v4/lib/block-theme").ColorPalette
+  const palette = (viewSettings.palette ||
+    "slate") as import("@/registry/new-york-v4/lib/block-theme").ColorPalette
   const fonts = getFontsByTypography(viewSettings.typography)
 
   if (!shellInfo) {
@@ -191,7 +192,8 @@ function BlockWrapper({
     // Use the block's configured tint (tinted themes now have neutral backgrounds)
     const blockTint = settings.tint || DEFAULT_TINT
     // Get palette and typography from block settings
-    const palette = (settings.palette || "slate") as import("@/registry/new-york-v4/lib/block-theme").ColorPalette
+    const palette = (settings.palette ||
+      "slate") as import("@/registry/new-york-v4/lib/block-theme").ColorPalette
     const fonts = getFontsByTypography(settings.typography)
 
     return (

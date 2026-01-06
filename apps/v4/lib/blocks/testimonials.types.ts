@@ -61,19 +61,22 @@ export const testimonialsDefaults: TestimonialsContent = {
   title: "Loved by Plant Parents",
   testimonials: [
     {
-      quote: "The quality of plants is incredible. Each one arrived in perfect condition.",
+      quote:
+        "The quality of plants is incredible. Each one arrived in perfect condition.",
       author: "Sarah M.",
       role: "Interior Designer",
       rating: 5,
     },
     {
-      quote: "Best plant subscription I've tried. The care guides are so helpful!",
+      quote:
+        "Best plant subscription I've tried. The care guides are so helpful!",
       author: "James K.",
       role: "Home Gardener",
       rating: 5,
     },
     {
-      quote: "My apartment has never looked better. Customer service is top-notch.",
+      quote:
+        "My apartment has never looked better. Customer service is top-notch.",
       author: "Emily R.",
       role: "Plant Enthusiast",
       rating: 5,

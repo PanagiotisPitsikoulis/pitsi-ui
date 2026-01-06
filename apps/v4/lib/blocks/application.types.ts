@@ -81,7 +81,12 @@ export interface AppShellBlockProps {
 export const appShellDefaults: AppShellContent = {
   appName: "My App",
   navigation: [
-    { name: "dashboard", label: "Dashboard", icon: "LayoutDashboard", shortcut: "1" },
+    {
+      name: "dashboard",
+      label: "Dashboard",
+      icon: "LayoutDashboard",
+      shortcut: "1",
+    },
     { name: "settings", label: "Settings", icon: "Settings", shortcut: "2" },
   ],
   user: {

@@ -2,11 +2,9 @@ import { Metadata } from "next"
 import { cacheLife } from "next/cache"
 
 import { getRoadmapEntries } from "@/lib/roadmap/parser"
-
 import { RoadmapIcon } from "@/components/icons/hero-icons"
 import { ContentPageLayout } from "@/components/layout/content-page-layout"
 import { ContentPageSidebar } from "@/components/layout/content-page-sidebar"
-
 import { RoadmapContent } from "@/components/roadmap"
 
 const title = "Roadmap"

@@ -9,7 +9,10 @@ interface AccentColorPickerProps {
   onChange?: (color: string) => void
 }
 
-export function AccentColorPicker({ value = "blue", onChange }: AccentColorPickerProps) {
+export function AccentColorPicker({
+  value = "blue",
+  onChange,
+}: AccentColorPickerProps) {
   return (
     <div className="space-y-2">
       <Label>Accent Color</Label>

@@ -49,7 +49,8 @@ export interface CtaBlockProps {
 export const ctaDefaults: CtaContent = {
   badge: "Get Started",
   title: "Ready to Transform Your Space?",
-  description: "Join thousands of happy plant parents and start your green journey today.",
+  description:
+    "Join thousands of happy plant parents and start your green journey today.",
   primaryCta: { label: "Shop Now", href: "#" },
   secondaryCta: { label: "Learn More", href: "#", variant: "outline" },
 }

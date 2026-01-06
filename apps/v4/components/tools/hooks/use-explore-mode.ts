@@ -12,10 +12,7 @@ interface UseExploreModeOptions<T> {
 /**
  * Hook for managing explore/carousel mode navigation
  */
-function useExploreMode<T>(
-  items: T[],
-  options: UseExploreModeOptions<T> = {}
-) {
+function useExploreMode<T>(items: T[], options: UseExploreModeOptions<T> = {}) {
   const { onSelect } = options
 
   const [currentIndex, setCurrentIndex] = useState(0)

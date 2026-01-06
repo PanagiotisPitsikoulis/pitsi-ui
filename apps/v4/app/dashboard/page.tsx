@@ -1,9 +1,14 @@
 import { Metadata } from "next"
 import { redirect } from "next/navigation"
-import { Calendar, Key, Sparkles } from "@/lib/icons"
+import { eq } from "drizzle-orm"
 
+import { Calendar, Key, Sparkles } from "@/lib/icons"
 import { getUserApiKeys } from "@/lib/server/api-keys"
 import { db } from "@/lib/server/db"
+import { user as userTable } from "@/lib/server/db/schema"
+import { getCurrentUser } from "@/lib/server/user"
+import { PageHeader, StatCard, UpgradeProCard } from "@/components/dashboard"
+import { Badge } from "@/registry/new-york-v4/ui/badge"
 
 const title = "Dashboard"
 const description = "Manage your pitsi/ui account and settings"
@@ -31,12 +36,6 @@ export const metadata: Metadata = {
     ],
   },
 }
-import { user as userTable } from "@/lib/server/db/schema"
-import { getCurrentUser } from "@/lib/server/user"
-import { Badge } from "@/registry/new-york-v4/ui/badge"
-import { eq } from "drizzle-orm"
-
-import { PageHeader, StatCard, UpgradeProCard } from "@/components/dashboard"
 
 export default async function DashboardPage() {
   const user = await getCurrentUser()

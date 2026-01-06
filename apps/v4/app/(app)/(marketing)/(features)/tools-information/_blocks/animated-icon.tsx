@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useState, useEffect } from "react"
+import { useEffect, useRef, useState } from "react"
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react"
 
 import { cn } from "@/lib/utils"
@@ -42,8 +42,16 @@ export function AnimatedIcon({
   const rotateY = useTransform(springX, [-100, 100], [-8, 8])
 
   // Transform mouse position to translation (icons move towards cursor)
-  const translateX = useTransform(springX, [-100, 100], [-20 * moveStrength, 20 * moveStrength])
-  const translateY = useTransform(springY, [-100, 100], [-20 * moveStrength, 20 * moveStrength])
+  const translateX = useTransform(
+    springX,
+    [-100, 100],
+    [-20 * moveStrength, 20 * moveStrength]
+  )
+  const translateY = useTransform(
+    springY,
+    [-100, 100],
+    [-20 * moveStrength, 20 * moveStrength]
+  )
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {

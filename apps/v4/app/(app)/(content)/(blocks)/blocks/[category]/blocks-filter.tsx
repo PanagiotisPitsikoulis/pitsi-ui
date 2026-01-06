@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { usePathname, useSearchParams } from "next/navigation"
+
 import {
   Bookmark,
   Box,
@@ -14,20 +15,19 @@ import {
   Type,
   Waves,
 } from "@/lib/icons"
-
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/registry/new-york-v4/ui/tooltip"
+import { cn } from "@/lib/utils"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/registry/new-york-v4/ui/dropdown-menu"
-import { cn } from "@/lib/utils"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/registry/new-york-v4/ui/tooltip"
 
 const FILTER_ITEMS = [
   { id: "all", label: "All Blocks", icon: Layers, filter: null },
@@ -36,17 +36,57 @@ const FILTER_ITEMS = [
 ]
 
 const NAV_LINKS = [
-  { id: "components", label: "Components", icon: Box, href: "/docs/components" },
-  { id: "animations", label: "Animations", icon: Waves, href: "/docs/animations" },
-  { id: "installation", label: "Installation", icon: Download, href: "/docs/installation" },
+  {
+    id: "components",
+    label: "Components",
+    icon: Box,
+    href: "/docs/components",
+  },
+  {
+    id: "animations",
+    label: "Animations",
+    icon: Waves,
+    href: "/docs/animations",
+  },
+  {
+    id: "installation",
+    label: "Installation",
+    icon: Download,
+    href: "/docs/installation",
+  },
 ]
 
 const TOOLS = [
-  { id: "theme-generator", label: "Theme Generator", icon: Palette, href: "/tools/theme-generator" },
-  { id: "shadow-composer", label: "Shadow Composer", icon: Layers, href: "/tools/shadow-composer" },
-  { id: "easing-composer", label: "Easing Composer", icon: Waves, href: "/tools/easing-composer" },
-  { id: "spacing-generator", label: "Spacing Generator", icon: SlidersHorizontal, href: "/tools/spacing-generator" },
-  { id: "typography-composer", label: "Typography Composer", icon: Type, href: "/tools/typography-composer" },
+  {
+    id: "theme-generator",
+    label: "Theme Generator",
+    icon: Palette,
+    href: "/tools/theme-generator",
+  },
+  {
+    id: "shadow-composer",
+    label: "Shadow Composer",
+    icon: Layers,
+    href: "/tools/shadow-composer",
+  },
+  {
+    id: "easing-composer",
+    label: "Easing Composer",
+    icon: Waves,
+    href: "/tools/easing-composer",
+  },
+  {
+    id: "spacing-generator",
+    label: "Spacing Generator",
+    icon: SlidersHorizontal,
+    href: "/tools/spacing-generator",
+  },
+  {
+    id: "typography-composer",
+    label: "Typography Composer",
+    icon: Type,
+    href: "/tools/typography-composer",
+  },
 ]
 
 export function BlocksFilter() {
@@ -54,7 +94,8 @@ export function BlocksFilter() {
   const searchParams = useSearchParams()
   const currentFilter = searchParams.get("filter")
 
-  const isNavActive = (href: string) => pathname === href || pathname.startsWith(href + "/")
+  const isNavActive = (href: string) =>
+    pathname === href || pathname.startsWith(href + "/")
 
   const getFilterHref = (filter: string | null) => {
     if (filter) {
@@ -65,12 +106,14 @@ export function BlocksFilter() {
 
   return (
     <div className="container">
-      <div className="flex items-center gap-1 rounded-full bg-muted p-1.5">
+      <div className="bg-muted flex items-center gap-1 rounded-full p-1.5">
         <TooltipProvider delayDuration={0}>
           {/* Filter toggles */}
           {FILTER_ITEMS.map((item) => {
             const Icon = item.icon
-            const active = item.filter === currentFilter || (item.filter === null && !currentFilter)
+            const active =
+              item.filter === currentFilter ||
+              (item.filter === null && !currentFilter)
 
             return (
               <Tooltip key={item.id}>
@@ -95,7 +138,7 @@ export function BlocksFilter() {
           })}
 
           {/* Separator */}
-          <div className="mx-1 h-5 w-px bg-border" />
+          <div className="bg-border mx-1 h-5 w-px" />
 
           {/* Nav Links */}
           {NAV_LINKS.map((item) => {

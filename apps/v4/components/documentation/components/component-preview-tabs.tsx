@@ -41,7 +41,7 @@ export function ComponentPreviewTabs({
     >
       <div data-slot="preview" className="relative">
         {(readiness || tier) && (
-          <div className="absolute right-3 top-3 z-10 flex items-center gap-2">
+          <div className="absolute top-3 right-3 z-10 flex items-center gap-2">
             <ReadinessBadge readiness={readiness} />
             <TierBadge tier={tier} />
           </div>

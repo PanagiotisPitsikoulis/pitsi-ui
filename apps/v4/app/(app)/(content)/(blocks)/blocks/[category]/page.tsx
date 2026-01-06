@@ -69,7 +69,10 @@ export default async function CategoryPage({
       <div className="flex flex-col gap-8">
         {/* Full Pages Section + Filter */}
         <div className="flex flex-col gap-4">
-          <FullPagesSection templates={templates} styleName={activeStyle.name} />
+          <FullPagesSection
+            templates={templates}
+            styleName={activeStyle.name}
+          />
           <BlocksFilter />
         </div>
 

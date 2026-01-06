@@ -1,4 +1,4 @@
-import type { ThemeStyles, ThemeStyleProps } from "./theme-types"
+import type { ThemeStyleProps, ThemeStyles } from "./theme-types"
 
 export interface ThemePreset {
   label: string

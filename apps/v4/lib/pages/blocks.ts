@@ -39,7 +39,9 @@ export async function generateBlockMetadata({
   blockName: string
 }): Promise<Metadata> {
   try {
-    const item = (await queryRegistry({ name: blockName })) as RegistryItem | null
+    const item = (await queryRegistry({
+      name: blockName,
+    })) as RegistryItem | null
 
     const title = item?.name || formatName(blockName)
     const description =
@@ -88,7 +90,10 @@ export async function generateCategoryStaticParams() {
     }
 
     // Include "all" category first
-    return [{ category: "all" }, ...categories.map((category) => ({ category }))]
+    return [
+      { category: "all" },
+      ...categories.map((category) => ({ category })),
+    ]
   } catch (error) {
     console.warn("Failed to generate category static params:", error)
     return [{ category: "all" }, { category: "header" }]

@@ -1,8 +1,14 @@
 "use client"
 
 import { useCallback, useMemo, useState } from "react"
+import {
+  parseAsFloat,
+  parseAsInteger,
+  parseAsString,
+  parseAsStringLiteral,
+  useQueryState,
+} from "nuqs"
 
-import { STORAGE_KEYS, useLocalStorage } from "@/lib/local-storage"
 import {
   ArrowRight,
   Bookmark,
@@ -16,14 +22,7 @@ import {
   Shuffle,
   Sun,
 } from "@/lib/icons"
-import {
-  parseAsFloat,
-  parseAsInteger,
-  parseAsString,
-  parseAsStringLiteral,
-  useQueryState,
-} from "nuqs"
-
+import { STORAGE_KEYS, useLocalStorage } from "@/lib/local-storage"
 import { cn } from "@/lib/utils"
 import { Deck, DeckCards, DeckEmpty, DeckItem } from "@/components/kibo-ui/deck"
 import {
@@ -58,13 +57,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/registry/new-york-v4/ui/select"
+import { Skeleton } from "@/registry/new-york-v4/ui/skeleton"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/registry/new-york-v4/ui/tooltip"
-import { Skeleton } from "@/registry/new-york-v4/ui/skeleton"
 
 import {
   generateSpacingCSS,
@@ -93,13 +92,41 @@ function SpacingIcon({ className }: { className?: string }) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="M73.96 53.54L44.27 36.4L29.4299 27.83L22 23.55L2 12V80.14L76.23 122.99V54.85L73.96 53.54ZM24.27 84.47L9.42993 75.9V24.8L22 32.06L24.27 33.37V84.47ZM68.8 110.18L53.96 101.61V50.51L68.8 59.08V110.18Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M68.8 94.1899V110.18L53.96 101.61L66.05 95.5699L68.8 94.1899Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M68.8 59.08V94.19L66.05 95.57L53.96 101.61V50.51L68.8 59.08Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M24.2698 68.48V84.47L9.42969 75.9L21.9998 69.62L24.2698 68.48Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M24.2698 33.37V68.48L21.9998 69.62L9.42969 75.9V24.8L21.9998 32.06L24.2698 33.37Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M96.2295 44.85V112.99L76.2295 122.99V54.85L88.3196 48.8L96.2295 44.85Z" stroke="currentColor" strokeLinejoin="round"/>
-      <path d="M96.23 44.85L88.3201 48.8L76.23 54.85L73.96 53.54L44.27 36.4L29.4299 27.83L22 23.55L2 12L22 2L96.23 44.85Z" stroke="currentColor" strokeLinejoin="round"/>
+      <path
+        d="M73.96 53.54L44.27 36.4L29.4299 27.83L22 23.55L2 12V80.14L76.23 122.99V54.85L73.96 53.54ZM24.27 84.47L9.42993 75.9V24.8L22 32.06L24.27 33.37V84.47ZM68.8 110.18L53.96 101.61V50.51L68.8 59.08V110.18Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M68.8 94.1899V110.18L53.96 101.61L66.05 95.5699L68.8 94.1899Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M68.8 59.08V94.19L66.05 95.57L53.96 101.61V50.51L68.8 59.08Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M24.2698 68.48V84.47L9.42969 75.9L21.9998 69.62L24.2698 68.48Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M24.2698 33.37V68.48L21.9998 69.62L9.42969 75.9V24.8L21.9998 32.06L24.2698 33.37Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M96.2295 44.85V112.99L76.2295 122.99V54.85L88.3196 48.8L96.2295 44.85Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M96.23 44.85L88.3201 48.8L76.23 54.85L73.96 53.54L44.27 36.4L29.4299 27.83L22 23.55L2 12L22 2L96.23 44.85Z"
+        stroke="currentColor"
+        strokeLinejoin="round"
+      />
     </svg>
   )
 }
@@ -118,17 +145,17 @@ function ScaleVisualization({
     <div className="space-y-1.5">
       {values.slice(0, 13).map(({ name, value, cssValue }) => (
         <div key={name} className="flex items-center gap-2">
-          <span className="w-6 text-right font-mono text-xs text-muted-foreground">
+          <span className="text-muted-foreground w-6 text-right font-mono text-xs">
             {name}
           </span>
           <div
-            className="h-3 rounded-sm bg-primary transition-all"
+            className="bg-primary h-3 rounded-sm transition-all"
             style={{
               width: maxValue > 0 ? `${(value / maxValue) * maxWidth}px` : 0,
               minWidth: value > 0 ? 4 : 0,
             }}
           />
-          <span className="font-mono text-xs text-muted-foreground">
+          <span className="text-muted-foreground font-mono text-xs">
             {cssValue}
           </span>
         </div>
@@ -152,14 +179,14 @@ function SpacingPreview({ state }: { state: SpacingState }) {
       {/* Card Example */}
       <div>
         <h3 className="mb-4 text-sm font-medium">Card with Padding</h3>
-        <div className="inline-block rounded-lg border bg-card">
+        <div className="bg-card inline-block rounded-lg border">
           <div
-            className="rounded-lg bg-primary/10"
+            className="bg-primary/10 rounded-lg"
             style={{ padding: getSpacing(4) }}
           >
-            <div className="rounded bg-card p-4">
+            <div className="bg-card rounded p-4">
               <p className="text-sm font-medium">Card Content</p>
-              <p className="text-xs text-muted-foreground">
+              <p className="text-muted-foreground text-xs">
                 Using spacing-4 ({getSpacing(4)}) padding
               </p>
             </div>
@@ -170,20 +197,14 @@ function SpacingPreview({ state }: { state: SpacingState }) {
       {/* Stack Example */}
       <div>
         <h3 className="mb-4 text-sm font-medium">Vertical Stack (gap)</h3>
-        <div
-          className="flex flex-col"
-          style={{ gap: getSpacing(3) }}
-        >
+        <div className="flex flex-col" style={{ gap: getSpacing(3) }}>
           {[1, 2, 3].map((i) => (
-            <div
-              key={i}
-              className="rounded-lg border bg-card px-4 py-2"
-            >
+            <div key={i} className="bg-card rounded-lg border px-4 py-2">
               <p className="text-sm">Item {i}</p>
             </div>
           ))}
         </div>
-        <p className="mt-2 text-xs text-muted-foreground">
+        <p className="text-muted-foreground mt-2 text-xs">
           Gap: spacing-3 ({getSpacing(3)})
         </p>
       </div>
@@ -191,20 +212,17 @@ function SpacingPreview({ state }: { state: SpacingState }) {
       {/* Grid Example */}
       <div>
         <h3 className="mb-4 text-sm font-medium">Grid Layout</h3>
-        <div
-          className="grid grid-cols-3"
-          style={{ gap: getSpacing(4) }}
-        >
+        <div className="grid grid-cols-3" style={{ gap: getSpacing(4) }}>
           {[1, 2, 3, 4, 5, 6].map((i) => (
             <div
               key={i}
-              className="flex aspect-square items-center justify-center rounded-lg border bg-card"
+              className="bg-card flex aspect-square items-center justify-center rounded-lg border"
             >
-              <span className="text-xs text-muted-foreground">{i}</span>
+              <span className="text-muted-foreground text-xs">{i}</span>
             </div>
           ))}
         </div>
-        <p className="mt-2 text-xs text-muted-foreground">
+        <p className="text-muted-foreground mt-2 text-xs">
           Gap: spacing-4 ({getSpacing(4)})
         </p>
       </div>
@@ -212,19 +230,16 @@ function SpacingPreview({ state }: { state: SpacingState }) {
       {/* Form Example */}
       <div>
         <h3 className="mb-4 text-sm font-medium">Form Layout</h3>
-        <div
-          className="flex max-w-xs flex-col"
-          style={{ gap: getSpacing(4) }}
-        >
+        <div className="flex max-w-xs flex-col" style={{ gap: getSpacing(4) }}>
           <div style={{ marginBottom: getSpacing(1) }}>
             <label className="mb-1.5 block text-sm font-medium">Label</label>
-            <div className="h-9 rounded-md border bg-background" />
+            <div className="bg-background h-9 rounded-md border" />
           </div>
           <div style={{ marginBottom: getSpacing(1) }}>
             <label className="mb-1.5 block text-sm font-medium">Label</label>
-            <div className="h-9 rounded-md border bg-background" />
+            <div className="bg-background h-9 rounded-md border" />
           </div>
-          <div className="h-9 rounded-md bg-primary" />
+          <div className="bg-primary h-9 rounded-md" />
         </div>
       </div>
     </div>
@@ -290,7 +305,9 @@ export default function SpacingGeneratorClient({
         "--border": "oklch(1 0 0 / 10%)",
       } as React.CSSProperties)
     : {}
-  const [savedItems, setSavedItems, isHydrated] = useLocalStorage<SavedSpacing[]>(STORAGE_KEYS.SPACING_GENERATOR, [])
+  const [savedItems, setSavedItems, isHydrated] = useLocalStorage<
+    SavedSpacing[]
+  >(STORAGE_KEYS.SPACING_GENERATOR, [])
 
   // Derived state object for calculations
   const state: SpacingState = useMemo(
@@ -335,7 +352,15 @@ export default function SpacingGeneratorClient({
       }
       setCurrentPreset("custom")
     },
-    [setBaseSize, setScale, setMultiplier, setUnit, setSteps, setPrefix, setCurrentPreset]
+    [
+      setBaseSize,
+      setScale,
+      setMultiplier,
+      setUnit,
+      setSteps,
+      setPrefix,
+      setCurrentPreset,
+    ]
   )
 
   const applyPreset = useCallback(
@@ -356,7 +381,17 @@ export default function SpacingGeneratorClient({
         }
       }
     },
-    [presets, presetKeys, setBaseSize, setScale, setMultiplier, setUnit, setSteps, setPrefix, setCurrentPreset]
+    [
+      presets,
+      presetKeys,
+      setBaseSize,
+      setScale,
+      setMultiplier,
+      setUnit,
+      setSteps,
+      setPrefix,
+      setCurrentPreset,
+    ]
   )
 
   const randomize = useCallback(() => {
@@ -374,7 +409,16 @@ export default function SpacingGeneratorClient({
     setPrefix(initialState.prefix)
     setCurrentPreset("tailwind")
     setDeckIndex(0)
-  }, [initialState, setBaseSize, setScale, setMultiplier, setUnit, setSteps, setPrefix, setCurrentPreset])
+  }, [
+    initialState,
+    setBaseSize,
+    setScale,
+    setMultiplier,
+    setUnit,
+    setSteps,
+    setPrefix,
+    setCurrentPreset,
+  ])
 
   const saveItem = useCallback(() => {
     const newItem: SavedSpacing = {
@@ -408,7 +452,15 @@ export default function SpacingGeneratorClient({
       setPrefix(s.prefix)
       setCurrentPreset("custom")
     },
-    [setBaseSize, setScale, setMultiplier, setUnit, setSteps, setPrefix, setCurrentPreset]
+    [
+      setBaseSize,
+      setScale,
+      setMultiplier,
+      setUnit,
+      setSteps,
+      setPrefix,
+      setCurrentPreset,
+    ]
   )
 
   const generatedCSS = useMemo(() => generateSpacingCSS(state), [state])
@@ -469,7 +521,7 @@ export default function SpacingGeneratorClient({
                           key={key}
                           className="overflow-hidden p-0 shadow-sm"
                         >
-                          <div className="flex size-full flex-col bg-background p-4">
+                          <div className="bg-background flex size-full flex-col p-4">
                             <div className="mb-4 flex-1">
                               <ScaleVisualization
                                 state={preset.state}
@@ -480,7 +532,7 @@ export default function SpacingGeneratorClient({
                               <h3 className="text-sm font-semibold">
                                 {preset.label}
                               </h3>
-                              <p className="text-[10px] text-muted-foreground">
+                              <p className="text-muted-foreground text-[10px]">
                                 {preset.description}
                               </p>
                             </div>
@@ -490,7 +542,9 @@ export default function SpacingGeneratorClient({
                     </DeckCards>
                     <DeckEmpty>
                       <div className="text-center">
-                        <p className="text-sm font-medium">All presets explored!</p>
+                        <p className="text-sm font-medium">
+                          All presets explored!
+                        </p>
                         <Button
                           variant="outline"
                           size="sm"
@@ -758,7 +812,7 @@ export default function SpacingGeneratorClient({
                     onLoad={loadItem}
                     onRename={renameItem}
                     onDelete={deleteItem}
-                    emptyIcon={<SpacingIcon className="size-40 text-brand" />}
+                    emptyIcon={<SpacingIcon className="text-brand size-40" />}
                     emptyText="No saved scales yet"
                     emptySubtext="Click the save button to save your current scale"
                     renderPreview={(item) => (
@@ -766,7 +820,7 @@ export default function SpacingGeneratorClient({
                         {[1, 2, 3, 4].map((i) => (
                           <div
                             key={i}
-                            className="h-4 rounded-sm bg-primary"
+                            className="bg-primary h-4 rounded-sm"
                             style={{ width: 4 * i }}
                           />
                         ))}
@@ -856,7 +910,7 @@ export default function SpacingGeneratorClient({
           <ToolLayoutPreviewContent className={cn(isDark && "dark")}>
             <div
               className={cn(
-                "h-full overflow-auto bg-background text-foreground",
+                "bg-background text-foreground h-full overflow-auto",
                 isDark && "dark"
               )}
               style={darkModeStyles}

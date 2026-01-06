@@ -29,7 +29,10 @@ const APP_ROOT = path.resolve(__dirname, "../..")
 let _allItemsArray: RegistryItem[] | null = null
 let _itemsByName: Map<string, RegistryItem> | null = null
 let _itemsByType: Map<RegistryItemType, RegistryItem[]> | null = null
-let _blockCategories: Map<string, { main: string | null; sub: string | null }> | null = null
+let _blockCategories: Map<
+  string,
+  { main: string | null; sub: string | null }
+> | null = null
 
 // Cached ts-morph Project instance
 let _cachedProject: Project | null = null
@@ -99,7 +102,10 @@ function extractSubcategoryFromPath(filePath: string): string | null {
   return match ? match[1] : null
 }
 
-function buildBlockCategoriesMap(): Map<string, { main: string | null; sub: string | null }> {
+function buildBlockCategoriesMap(): Map<
+  string,
+  { main: string | null; sub: string | null }
+> {
   if (_blockCategories) return _blockCategories
 
   const map = new Map<string, { main: string | null; sub: string | null }>()
@@ -296,7 +302,8 @@ export async function queryRegistry(
 
     if (excludeNamePrefix.length > 0) {
       items = items.filter(
-        (item) => !excludeNamePrefix.some((prefix) => item.name.startsWith(prefix))
+        (item) =>
+          !excludeNamePrefix.some((prefix) => item.name.startsWith(prefix))
       )
     }
 
@@ -327,7 +334,10 @@ export async function queryRegistry(
         const categorySet = new Set<string>()
         const blockCats = buildBlockCategoriesMap()
         for (const item of items) {
-          if (item.type === "registry:block" || item.type === "registry:internal") {
+          if (
+            item.type === "registry:block" ||
+            item.type === "registry:internal"
+          ) {
             const cat = blockCats.get(item.name)?.main
             if (cat) categorySet.add(cat)
           } else {
@@ -358,7 +368,10 @@ export async function queryRegistry(
         const counts: Record<string, number> = {}
         const blockCats = buildBlockCategoriesMap()
         for (const item of items) {
-          if (item.type === "registry:block" || item.type === "registry:internal") {
+          if (
+            item.type === "registry:block" ||
+            item.type === "registry:internal"
+          ) {
             const cat = blockCats.get(item.name)?.main
             if (cat) counts[cat] = (counts[cat] || 0) + 1
           } else {
@@ -373,7 +386,9 @@ export async function queryRegistry(
       case "subcategoryCounts": {
         if (!mainCategory) {
           return Promise.reject(
-            new Error('returnType "subcategoryCounts" requires mainCategory option')
+            new Error(
+              'returnType "subcategoryCounts" requires mainCategory option'
+            )
           )
         }
         const subcategoryCounts: Record<string, number> = {}
@@ -381,7 +396,8 @@ export async function queryRegistry(
         for (const item of items) {
           const cached = blockCats.get(item.name)
           if (cached?.main === mainCategory && cached.sub) {
-            subcategoryCounts[cached.sub] = (subcategoryCounts[cached.sub] || 0) + 1
+            subcategoryCounts[cached.sub] =
+              (subcategoryCounts[cached.sub] || 0) + 1
           }
         }
         return subcategoryCounts
@@ -455,7 +471,10 @@ async function getRegistryItemWithContent(
   }
 }
 
-async function getFileContent(file: { path: string; type?: string }): Promise<string | null> {
+async function getFileContent(file: {
+  path: string
+  type?: string
+}): Promise<string | null> {
   try {
     const raw = await fs.readFile(file.path, "utf-8")
     const project = getProject()
@@ -491,7 +510,11 @@ function getFileTarget(file: z.infer<typeof registryItemFileSchema>) {
   let target = file.target
   if (!target || target === "") {
     const fileName = file.path.split("/").pop()
-    if (["registry:block", "registry:component", "registry:example"].includes(file.type!)) {
+    if (
+      ["registry:block", "registry:component", "registry:example"].includes(
+        file.type!
+      )
+    ) {
       target = `components/${fileName}`
     } else if (file.type === "registry:ui") {
       target = `components/ui/${fileName}`
@@ -504,7 +527,9 @@ function getFileTarget(file: z.infer<typeof registryItemFileSchema>) {
   return target ?? ""
 }
 
-export function fixFilePaths(files: z.infer<typeof registryItemSchema>["files"]) {
+export function fixFilePaths(
+  files: z.infer<typeof registryItemSchema>["files"]
+) {
   if (!files || files.length === 0) return []
 
   const firstFilePathDir = path.dirname(files[0].path)
@@ -588,7 +613,9 @@ export function createFileTreeForRegistryItemFiles(
       let node = currentLevel.find((n) => n.name === part)
 
       if (!node) {
-        node = isFile ? { name: part, path: filePath } : { name: part, children: [] }
+        node = isFile
+          ? { name: part, path: filePath }
+          : { name: part, children: [] }
         currentLevel.push(node)
       } else if (isFile) {
         node.path = filePath

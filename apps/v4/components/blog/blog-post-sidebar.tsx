@@ -1,8 +1,7 @@
 import { type BlogCategory } from "@/lib/blog/source"
 import { formatDate } from "@/lib/format"
-import { Spacer } from "@/registry/new-york-v4/ui/spacer"
-
 import { BackLink } from "@/components/navigation/back-link"
+import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 
 import { CategoryBadge } from "./category-badge"
 
@@ -35,7 +34,9 @@ export function BlogPostSidebar({
         {title}
       </h1>
       <Spacer size="md" sizeMobile="sm" />
-      <p className="text-muted-foreground text-base md:text-lg">{description}</p>
+      <p className="text-muted-foreground text-base md:text-lg">
+        {description}
+      </p>
       <Spacer size="md" sizeMobile="sm" />
       {readTime && (
         <span className="text-muted-foreground text-sm">{readTime}</span>

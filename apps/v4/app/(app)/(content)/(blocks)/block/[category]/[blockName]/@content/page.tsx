@@ -7,12 +7,13 @@ import {
   getRegistryItem,
 } from "@/lib/registry"
 import { TrackBlockView } from "@/components/documentation/blocks/track-block-view"
+import blocksData from "@/registry/__blocks__.json"
 import { getActiveStyle } from "@/registry/styles"
 import {
-  getTemplateForBlock,
   getBlockIndex,
+  getTemplateForBlock,
 } from "@/app/(app)/(content)/(blocks)/blocks.server"
-import blocksData from "@/registry/__blocks__.json"
+
 import { BlockViewerClient } from "../page.client"
 
 export default async function BlockContentPage({

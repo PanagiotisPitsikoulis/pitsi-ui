@@ -1,4 +1,5 @@
-import { describe, it, expect } from "vitest"
+import { describe, expect, it } from "vitest"
+
 import { getUserInitials } from "@/lib/utils/user"
 
 describe("user utils", () => {
@@ -60,7 +61,6 @@ describe("user utils", () => {
     it("should handle names with extra spaces", () => {
       const result = getUserInitials("John  Doe")
 
-      
       const initials = getUserInitials("John  Doe")
       expect(initials).toBeDefined()
       expect(initials.length).toBeGreaterThan(0)

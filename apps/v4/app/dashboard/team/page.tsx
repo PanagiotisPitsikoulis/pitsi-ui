@@ -2,8 +2,8 @@ import { Metadata } from "next"
 import { redirect } from "next/navigation"
 
 import { getCurrentUser } from "@/lib/server/user"
-
 import { PageHeader } from "@/components/dashboard"
+
 import { TeamClient } from "./client"
 
 const title = "Team"

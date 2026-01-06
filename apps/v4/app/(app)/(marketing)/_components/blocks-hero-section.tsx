@@ -17,7 +17,13 @@ const stats = [
   { value: "Weekly", label: "Updates" },
 ]
 
-const tags = ["Marketing", "E-commerce", "Dashboards", "Authentication", "Portfolio"]
+const tags = [
+  "Marketing",
+  "E-commerce",
+  "Dashboards",
+  "Authentication",
+  "Portfolio",
+]
 
 export function BlocksHeroSection() {
   return (
@@ -32,7 +38,11 @@ export function BlocksHeroSection() {
       }
       subheadline="Marketing, e-commerce, dashboards, auth flows—all with one command. Build entire pages in minutes, not days."
       primaryCta={{ label: "Browse Blocks", href: "/blocks" }}
-      secondaryCta={{ label: "Get Pro Access", href: "#pricing", isAnchor: true }}
+      secondaryCta={{
+        label: "Get Pro Access",
+        href: "#pricing",
+        isAnchor: true,
+      }}
       stats={stats}
       previewBlocks={HERO_BLOCKS}
       tags={tags}

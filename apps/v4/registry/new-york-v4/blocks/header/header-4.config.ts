@@ -1,0 +1,20 @@
+import type { RegistryItemConfig } from "@/registry/types"
+
+export const registryConfig: RegistryItemConfig = {
+  name: "header-4",
+  type: "registry:block",
+  description: "Mega menu header with dropdown panels",
+  registryDependencies: ["button"],
+  categories: ["header", "landing"],
+  tier: "free",
+  readiness: "production",
+  blockConfig: {
+    template: "service-plants",
+    blockType: "header",
+    order: 1,
+    palette: "sage",
+    typography: "elegant",
+    tint: "tinted",
+    forceLight: true,
+  },
+}

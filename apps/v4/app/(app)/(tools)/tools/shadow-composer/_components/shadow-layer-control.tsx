@@ -2,8 +2,8 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react"
 import Color from "color"
-import { Trash2 } from "@/lib/icons"
 
+import { Trash2 } from "@/lib/icons"
 import { cn } from "@/lib/utils"
 import {
   ColorPicker,
@@ -22,7 +22,10 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/registry/new-york-v4/ui/popover"
-import { RadioGroup, RadioGroupItem } from "@/registry/new-york-v4/ui/radio-group"
+import {
+  RadioGroup,
+  RadioGroupItem,
+} from "@/registry/new-york-v4/ui/radio-group"
 import { Separator } from "@/registry/new-york-v4/ui/separator"
 import { Slider } from "@/registry/new-york-v4/ui/slider"
 
@@ -45,7 +48,14 @@ interface SliderRowProps {
   step?: number
 }
 
-function SliderRow({ label, value, onChange, min, max, step = 1 }: SliderRowProps) {
+function SliderRow({
+  label,
+  value,
+  onChange,
+  min,
+  max,
+  step = 1,
+}: SliderRowProps) {
   const [localValue, setLocalValue] = useState(value)
 
   useEffect(() => {
@@ -80,7 +90,7 @@ function SliderRow({ label, value, onChange, min, max, step = 1 }: SliderRowProp
         min={min}
         max={max}
         step={step}
-        className="w-24 [&_[data-slot=slider-range]]:bg-brand [&_[data-slot=slider-thumb]]:border-brand"
+        className="[&_[data-slot=slider-range]]:bg-brand [&_[data-slot=slider-thumb]]:border-brand w-24"
       />
       <Input
         type="number"
@@ -134,7 +144,10 @@ function ColorPickerRow({ label, color, onChange }: ColorPickerRowProps) {
         </PopoverTrigger>
         <PopoverContent className="w-64 p-3" align="start">
           {isOpen && (
-            <ColorPicker defaultValue={safeHexColor} onChange={handleColorChange}>
+            <ColorPicker
+              defaultValue={safeHexColor}
+              onChange={handleColorChange}
+            >
               <ColorPickerSelection className="mb-3 h-32 rounded-md" />
               <ColorPickerHue className="mb-3" />
               <div className="flex items-center gap-2">
@@ -180,17 +193,27 @@ export function ShadowLayerControl({
         <div className="flex items-center gap-4">
           <RadioGroup
             value={layer.type}
-            onValueChange={(value) => updateLayer("type", value as "outer" | "inset")}
+            onValueChange={(value) =>
+              updateLayer("type", value as "outer" | "inset")
+            }
             className="flex gap-4"
           >
             <div className="flex items-center gap-2">
-              <RadioGroupItem value="outer" id={`type-outer-${layer.id}`} className="text-brand [&_[data-slot=radio-group-indicator]_svg]:fill-brand" />
+              <RadioGroupItem
+                value="outer"
+                id={`type-outer-${layer.id}`}
+                className="text-brand [&_[data-slot=radio-group-indicator]_svg]:fill-brand"
+              />
               <Label htmlFor={`type-outer-${layer.id}`} className="text-sm">
                 Outer
               </Label>
             </div>
             <div className="flex items-center gap-2">
-              <RadioGroupItem value="inset" id={`type-inset-${layer.id}`} className="text-brand [&_[data-slot=radio-group-indicator]_svg]:fill-brand" />
+              <RadioGroupItem
+                value="inset"
+                id={`type-inset-${layer.id}`}
+                className="text-brand [&_[data-slot=radio-group-indicator]_svg]:fill-brand"
+              />
               <Label htmlFor={`type-inset-${layer.id}`} className="text-sm">
                 Inset
               </Label>

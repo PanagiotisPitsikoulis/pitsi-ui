@@ -1,4 +1,9 @@
-import type { BlockBaseClassNames, BlockImage, BlockLink, BlockSocialLink } from "./types"
+import type {
+  BlockBaseClassNames,
+  BlockImage,
+  BlockLink,
+  BlockSocialLink,
+} from "./types"
 
 // ============================================================================
 // Footer Content Types

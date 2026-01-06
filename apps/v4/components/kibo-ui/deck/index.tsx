@@ -1,43 +1,44 @@
-"use client";
+"use client"
 
-import { useControllableState } from "@radix-ui/react-use-controllable-state";
-import {
-  motion,
-  type PanInfo,
-  useMotionValue,
-  useTransform,
-} from "motion/react";
 import {
   Children,
   cloneElement,
-  type HTMLAttributes,
-  type ReactElement,
   useCallback,
   useEffect,
   useRef,
   useState,
-} from "react";
-import { cn } from "@/lib/utils/index";
+  type HTMLAttributes,
+  type ReactElement,
+} from "react"
+import { useControllableState } from "@radix-ui/react-use-controllable-state"
+import {
+  motion,
+  useMotionValue,
+  useTransform,
+  type PanInfo,
+} from "motion/react"
 
-export type DeckProps = HTMLAttributes<HTMLDivElement>;
+import { cn } from "@/lib/utils/index"
+
+export type DeckProps = HTMLAttributes<HTMLDivElement>
 
 export const Deck = ({ className, ...props }: DeckProps) => (
   <div className={cn("relative isolate", className)} {...props} />
-);
+)
 
 export type DeckCardsProps = HTMLAttributes<HTMLDivElement> & {
-  onSwipe?: (index: number, direction: "left" | "right") => void;
-  onSwipeEnd?: (index: number, direction: "left" | "right") => void;
-  threshold?: number;
-  stackSize?: number;
-  perspective?: number;
-  scale?: number;
-  currentIndex?: number;
-  defaultCurrentIndex?: number;
-  onCurrentIndexChange?: (index: number) => void;
-  animateOnIndexChange?: boolean;
-  indexChangeDirection?: "left" | "right";
-};
+  onSwipe?: (index: number, direction: "left" | "right") => void
+  onSwipeEnd?: (index: number, direction: "left" | "right") => void
+  threshold?: number
+  stackSize?: number
+  perspective?: number
+  scale?: number
+  currentIndex?: number
+  defaultCurrentIndex?: number
+  onCurrentIndexChange?: (index: number) => void
+  animateOnIndexChange?: boolean
+  indexChangeDirection?: "left" | "right"
+}
 
 export const DeckCards = ({
   children,
@@ -55,98 +56,98 @@ export const DeckCards = ({
   indexChangeDirection = "left",
   ...props
 }: DeckCardsProps) => {
-  const childrenArray = Children.toArray(children) as ReactElement[];
+  const childrenArray = Children.toArray(children) as ReactElement[]
   const [currentIndex, setCurrentIndex] = useControllableState({
     prop: currentIndexProp,
     defaultProp: defaultCurrentIndex,
     onChange: onCurrentIndexChange,
-  });
+  })
   const [exitDirection, setExitDirection] = useState<"left" | "right" | null>(
     null
-  );
-  const [displayIndex, setDisplayIndex] = useState(currentIndex);
-  const isInternalChangeRef = useRef(false);
-  const prevIndexRef = useRef(currentIndex);
+  )
+  const [displayIndex, setDisplayIndex] = useState(currentIndex)
+  const isInternalChangeRef = useRef(false)
+  const prevIndexRef = useRef(currentIndex)
 
   // Detect external currentIndex changes and trigger animation
   useEffect(() => {
-    const prevIndex = prevIndexRef.current;
+    const prevIndex = prevIndexRef.current
 
     // Skip initial mount and internal changes
     if (prevIndex === currentIndex || isInternalChangeRef.current) {
-      isInternalChangeRef.current = false;
-      prevIndexRef.current = currentIndex;
-      setDisplayIndex(currentIndex);
-      return;
+      isInternalChangeRef.current = false
+      prevIndexRef.current = currentIndex
+      setDisplayIndex(currentIndex)
+      return
     }
 
     // Only animate if the option is enabled and we have cards to show
     if (animateOnIndexChange && prevIndex < childrenArray.length) {
-      setExitDirection(indexChangeDirection);
+      setExitDirection(indexChangeDirection)
 
       // Update display index after animation completes
       setTimeout(() => {
-        setExitDirection(null);
-        setDisplayIndex(currentIndex);
-      }, 300);
+        setExitDirection(null)
+        setDisplayIndex(currentIndex)
+      }, 300)
     } else {
       // No animation, update display index immediately
-      setDisplayIndex(currentIndex);
+      setDisplayIndex(currentIndex)
     }
 
-    prevIndexRef.current = currentIndex;
+    prevIndexRef.current = currentIndex
   }, [
     currentIndex,
     animateOnIndexChange,
     indexChangeDirection,
     childrenArray.length,
-  ]);
+  ])
 
   const handleSwipe = useCallback(
     (direction: "left" | "right") => {
       if (direction === "left") {
         // Going back - check if we can go back
         if (displayIndex <= 0) {
-          return;
+          return
         }
-        onSwipe?.(displayIndex, "left");
-        onSwipeEnd?.(displayIndex, direction);
+        onSwipe?.(displayIndex, "left")
+        onSwipeEnd?.(displayIndex, direction)
 
         // For back navigation, instantly show previous card (no exit animation)
-        isInternalChangeRef.current = true;
-        const newIndex = displayIndex - 1;
-        setCurrentIndex(newIndex);
-        setDisplayIndex(newIndex);
+        isInternalChangeRef.current = true
+        const newIndex = displayIndex - 1
+        setCurrentIndex(newIndex)
+        setDisplayIndex(newIndex)
       } else {
         // Going forward
         if (displayIndex >= childrenArray.length) {
-          return;
+          return
         }
 
-        setExitDirection(direction);
-        onSwipe?.(displayIndex, "right");
-        onSwipeEnd?.(displayIndex, direction);
+        setExitDirection(direction)
+        onSwipe?.(displayIndex, "right")
+        onSwipeEnd?.(displayIndex, direction)
 
         // Move to next card after animation
         setTimeout(() => {
-          isInternalChangeRef.current = true;
-          const newIndex = displayIndex + 1;
-          setCurrentIndex(newIndex);
-          setDisplayIndex(newIndex);
-          setExitDirection(null);
-        }, 300);
+          isInternalChangeRef.current = true
+          const newIndex = displayIndex + 1
+          setCurrentIndex(newIndex)
+          setDisplayIndex(newIndex)
+          setExitDirection(null)
+        }, 300)
       }
     },
     [displayIndex, childrenArray.length, onSwipe, onSwipeEnd, setCurrentIndex]
-  );
+  )
 
   const visibleCards = childrenArray.slice(
     displayIndex,
     displayIndex + stackSize
-  );
+  )
 
   if (displayIndex >= childrenArray.length) {
-    return null;
+    return null
   }
 
   return (
@@ -156,11 +157,11 @@ export const DeckCards = ({
       {...props}
     >
       {visibleCards.map((child, index) => {
-        const isTopCard = !index;
-        const zIndex = stackSize - index;
-        const scaleValue = 1 - index * scale;
-        const yOffset = index * 4;
-        const cardKey = `${displayIndex}-${child.key ?? index}`;
+        const isTopCard = !index
+        const zIndex = stackSize - index
+        const scaleValue = 1 - index * scale
+        const yOffset = index * 4
+        const cardKey = `${displayIndex}-${child.key ?? index}`
 
         if (isTopCard) {
           return (
@@ -177,11 +178,11 @@ export const DeckCards = ({
             >
               {child}
             </DeckCard>
-          );
+          )
         }
 
-        const nextCardScale = index === 1 && exitDirection ? 1 : scaleValue;
-        const nextCardY = index === 1 && exitDirection ? 0 : yOffset;
+        const nextCardScale = index === 1 && exitDirection ? 1 : scaleValue
+        const nextCardY = index === 1 && exitDirection ? 0 : yOffset
 
         return (
           <motion.div
@@ -200,19 +201,19 @@ export const DeckCards = ({
           >
             {child}
           </motion.div>
-        );
+        )
       })}
     </div>
-  );
-};
+  )
+}
 
 type DeckCardProps = {
-  children: ReactElement;
-  onSwipe: (direction: "left" | "right") => void;
-  threshold: number;
-  style?: object;
-  exitDirection: "left" | "right" | null;
-};
+  children: ReactElement
+  onSwipe: (direction: "left" | "right") => void
+  threshold: number
+  style?: object
+  exitDirection: "left" | "right" | null
+}
 
 const DeckCard = ({
   children,
@@ -221,34 +222,34 @@ const DeckCard = ({
   style,
   exitDirection,
 }: DeckCardProps) => {
-  const x = useMotionValue(0);
-  const rotate = useTransform(x, [-200, 200], [-25, 25]);
+  const x = useMotionValue(0)
+  const rotate = useTransform(x, [-200, 200], [-25, 25])
   const opacity = useTransform(
     x,
     [-200, -threshold, 0, threshold, 200],
     [0, 1, 1, 1, 0]
-  );
+  )
 
   const handleDragEnd = (_: unknown, info: PanInfo) => {
-    const swipeThreshold = threshold;
+    const swipeThreshold = threshold
 
     if (Math.abs(info.offset.x) > swipeThreshold) {
-      const direction = info.offset.x > 0 ? "right" : "left";
-      onSwipe(direction);
+      const direction = info.offset.x > 0 ? "right" : "left"
+      onSwipe(direction)
     }
-  };
+  }
 
-  let exitX = 0;
+  let exitX = 0
 
   if (exitDirection === "left") {
-    exitX = -500;
+    exitX = -500
   } else if (exitDirection === "right") {
-    exitX = 500;
+    exitX = 500
   }
 
   const castedChildren = children as ReactElement<
     HTMLAttributes<HTMLDivElement>
-  >;
+  >
 
   return (
     <motion.div
@@ -273,22 +274,22 @@ const DeckCard = ({
         ),
       })}
     </motion.div>
-  );
-};
+  )
+}
 
-export type DeckItemProps = HTMLAttributes<HTMLDivElement>;
+export type DeckItemProps = HTMLAttributes<HTMLDivElement>
 
 export const DeckItem = ({ className, ...props }: DeckItemProps) => (
   <div
     className={cn(
-      "flex h-full w-full items-center justify-center border bg-card text-card-foreground shadow-lg",
+      "bg-card text-card-foreground flex h-full w-full items-center justify-center border shadow-lg",
       className
     )}
     {...props}
   />
-);
+)
 
-export type DeckEmptyProps = HTMLAttributes<HTMLDivElement>;
+export type DeckEmptyProps = HTMLAttributes<HTMLDivElement>
 
 export const DeckEmpty = ({
   children,
@@ -297,11 +298,11 @@ export const DeckEmpty = ({
 }: HTMLAttributes<HTMLDivElement>) => (
   <div
     className={cn(
-      "absolute inset-0 flex items-center justify-center rounded-3xl text-muted-foreground",
+      "text-muted-foreground absolute inset-0 flex items-center justify-center rounded-3xl",
       className
     )}
     {...props}
   >
     {children ?? <p className="text-sm">No more cards</p>}
   </div>
-);
+)

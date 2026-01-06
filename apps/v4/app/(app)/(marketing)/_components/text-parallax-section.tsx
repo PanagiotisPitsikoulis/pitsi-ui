@@ -16,12 +16,7 @@ const Phrase = ({ src }: { src: string }) => {
     <div className="flex items-center gap-5 px-5">
       <p className="text-foreground text-[7.5vw]">Front End Developer</p>
       <span className="relative aspect-[4/2] h-[7.5vw] overflow-hidden rounded-full">
-        <Image
-          src={src}
-          alt="decorative"
-          fill
-          className="object-cover"
-        />
+        <Image src={src} alt="decorative" fill className="object-cover" />
       </span>
     </div>
   )

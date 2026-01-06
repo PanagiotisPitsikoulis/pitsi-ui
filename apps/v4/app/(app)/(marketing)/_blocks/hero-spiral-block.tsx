@@ -1,10 +1,9 @@
 "use client"
 
-import { ArrowRight } from "@/lib/icons"
 import React from "react"
 
+import { ArrowRight } from "@/lib/icons"
 import { cn } from "@/lib/utils"
-
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 export interface HeroSpiralBlockProps {
@@ -26,7 +25,8 @@ export interface HeroSpiralBlockProps {
 
 const defaultBadge = "New Release"
 const defaultHeadline = "Welcome to Our Website"
-const defaultDescription = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitia fugiat omnis! Porro facilis quo animi consequatur. Explicabo."
+const defaultDescription =
+  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitia fugiat omnis! Porro facilis quo animi consequatur. Explicabo."
 
 export function HeroSpiralBlock({
   badge = defaultBadge,
@@ -42,7 +42,7 @@ export function HeroSpiralBlock({
         <div className="grid items-center gap-8 lg:grid-cols-2">
           <div className="flex flex-col items-center py-32 text-center lg:mx-auto lg:items-start lg:px-0 lg:text-left">
             <p>{badge}</p>
-            <h1 className="my-6 text-pretty text-4xl font-bold lg:text-6xl">
+            <h1 className="my-6 text-4xl font-bold text-pretty lg:text-6xl">
               {headline}
             </h1>
             <p className="text-muted-foreground mb-8 max-w-xl lg:text-xl">
@@ -80,7 +80,7 @@ export function HeroSpiralBlock({
               </Button>
             </div>
           </div>
-          <div className="aspect-3/4 relative">
+          <div className="relative aspect-3/4">
             <div className="absolute inset-0 flex items-center justify-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -106,9 +106,9 @@ export function HeroSpiralBlock({
                 })}
               </svg>
             </div>
-            <div className="aspect-5/6 border-border bg-accent absolute left-[8%] top-[10%] flex w-[38%] justify-center rounded-lg border"></div>
-            <div className="border-border bg-accent absolute right-[12%] top-[20%] flex aspect-square w-[20%] justify-center rounded-lg border"></div>
-            <div className="aspect-5/6 border-border bg-accent absolute bottom-[24%] right-[24%] flex w-[38%] justify-center rounded-lg border"></div>
+            <div className="border-border bg-accent absolute top-[10%] left-[8%] flex aspect-5/6 w-[38%] justify-center rounded-lg border"></div>
+            <div className="border-border bg-accent absolute top-[20%] right-[12%] flex aspect-square w-[20%] justify-center rounded-lg border"></div>
+            <div className="border-border bg-accent absolute right-[24%] bottom-[24%] flex aspect-5/6 w-[38%] justify-center rounded-lg border"></div>
           </div>
         </div>
       </div>

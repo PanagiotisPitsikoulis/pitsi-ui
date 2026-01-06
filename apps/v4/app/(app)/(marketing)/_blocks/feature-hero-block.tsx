@@ -1,7 +1,7 @@
 "use client"
 
-import Link from "next/link"
 import { ReactNode } from "react"
+import Link from "next/link"
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { HeroButton } from "@/registry/new-york-v4/ui/hero-button"
@@ -47,7 +47,10 @@ export function FeatureHeroBlock({
   className,
 }: FeatureHeroBlockProps) {
   return (
-    <div id="hero" className={`relative -mt-[56px] overflow-hidden ${className ?? ""}`}>
+    <div
+      id="hero"
+      className={`relative -mt-[56px] overflow-hidden ${className ?? ""}`}
+    >
       {/* Gradient header overlay */}
       <div className="from-background absolute inset-x-0 top-0 z-10 h-32 bg-gradient-to-b to-transparent" />
 
@@ -55,7 +58,7 @@ export function FeatureHeroBlock({
       {backgroundVariant === "gradient" && (
         <div className="absolute inset-0 overflow-hidden">
           <div className="bg-brand/5 dark:bg-brand/10 absolute top-1/4 -left-20 h-[400px] w-[400px] rotate-45 rounded-3xl blur-3xl" />
-          <div className="bg-brand/3 dark:bg-brand/5 absolute -bottom-20 right-1/4 h-[300px] w-[300px] rotate-12 rounded-3xl blur-3xl" />
+          <div className="bg-brand/3 dark:bg-brand/5 absolute right-1/4 -bottom-20 h-[300px] w-[300px] rotate-12 rounded-3xl blur-3xl" />
           <div className="bg-brand/5 dark:bg-brand/10 absolute top-1/2 right-10 h-[200px] w-[200px] -rotate-12 rounded-3xl blur-2xl" />
         </div>
       )}
@@ -74,7 +77,9 @@ export function FeatureHeroBlock({
         {eyebrow && (
           <>
             <div className="bg-brand/10 text-brand inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-medium">
-              {eyebrow.showDot && <span className="bg-brand size-1.5 rounded-full" />}
+              {eyebrow.showDot && (
+                <span className="bg-brand size-1.5 rounded-full" />
+              )}
               {eyebrow.text}
             </div>
             <Spacer size={"lg"} sizeMobile={"md"} />

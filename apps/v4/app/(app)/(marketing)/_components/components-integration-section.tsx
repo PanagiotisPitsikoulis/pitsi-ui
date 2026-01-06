@@ -1,9 +1,4 @@
-import {
-  Code2,
-  Moon,
-  Palette,
-  Terminal,
-} from "@/lib/icons"
+import { Code2, Moon, Palette, Terminal } from "@/lib/icons"
 
 import { IntegrationBentoBlock } from "../_blocks/integration-bento-block"
 
@@ -11,25 +6,32 @@ const integrations = [
   {
     icon: Code2,
     title: "Radix Primitives",
-    description: "Built on battle-tested headless components that handle complex accessibility patterns for you.",
+    description:
+      "Built on battle-tested headless components that handle complex accessibility patterns for you.",
     size: "large" as const,
     visual: (
-      <div className="flex flex-wrap gap-2 mt-4">
-        {["Dialog", "Popover", "Tabs", "Select", "Menu", "Toast"].map((name) => (
-          <div key={name} className="bg-muted rounded-lg px-3 py-1.5 text-xs font-medium">
-            {name}
-          </div>
-        ))}
+      <div className="mt-4 flex flex-wrap gap-2">
+        {["Dialog", "Popover", "Tabs", "Select", "Menu", "Toast"].map(
+          (name) => (
+            <div
+              key={name}
+              className="bg-muted rounded-lg px-3 py-1.5 text-xs font-medium"
+            >
+              {name}
+            </div>
+          )
+        )}
       </div>
     ),
   },
   {
     icon: Terminal,
     title: "CLI Integration",
-    description: "Add components with a single command. Dependencies resolved automatically.",
+    description:
+      "Add components with a single command. Dependencies resolved automatically.",
     size: "small" as const,
     visual: (
-      <div className="bg-zinc-900 dark:bg-zinc-950 rounded-lg p-3 mt-4 font-mono text-xs">
+      <div className="mt-4 rounded-lg bg-zinc-900 p-3 font-mono text-xs dark:bg-zinc-950">
         <span className="text-green-400">$</span>{" "}
         <span className="text-white">npx pitsi add button</span>
       </div>
@@ -38,11 +40,18 @@ const integrations = [
   {
     icon: Palette,
     title: "Theme System",
-    description: "CSS variables for complete control. Customize colors, spacing, and more.",
+    description:
+      "CSS variables for complete control. Customize colors, spacing, and more.",
     size: "small" as const,
     visual: (
-      <div className="flex gap-2 mt-4">
-        {["bg-brand", "bg-blue-500", "bg-green-500", "bg-purple-500", "bg-orange-500"].map((color, i) => (
+      <div className="mt-4 flex gap-2">
+        {[
+          "bg-brand",
+          "bg-blue-500",
+          "bg-green-500",
+          "bg-purple-500",
+          "bg-orange-500",
+        ].map((color, i) => (
           <div key={i} className={`${color} size-8 rounded-lg shadow-sm`} />
         ))}
       </div>
@@ -51,7 +60,8 @@ const integrations = [
   {
     icon: Moon,
     title: "Dark Mode",
-    description: "Every component looks great in both light and dark themes out of the box.",
+    description:
+      "Every component looks great in both light and dark themes out of the box.",
     size: "large" as const,
     visual: (
       <div className="mt-4 flex gap-3">
@@ -59,9 +69,9 @@ const integrations = [
           <div className="bg-foreground/80 h-3 w-16 rounded" />
           <div className="bg-muted mt-2 h-2 w-full rounded" />
         </div>
-        <div className="bg-zinc-900 flex-1 rounded-lg border border-zinc-700 p-3">
-          <div className="bg-white/80 h-3 w-16 rounded" />
-          <div className="bg-zinc-700 mt-2 h-2 w-full rounded" />
+        <div className="flex-1 rounded-lg border border-zinc-700 bg-zinc-900 p-3">
+          <div className="h-3 w-16 rounded bg-white/80" />
+          <div className="mt-2 h-2 w-full rounded bg-zinc-700" />
         </div>
       </div>
     ),

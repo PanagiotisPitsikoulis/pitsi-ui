@@ -33,7 +33,10 @@ export function ShowcaseSectionBlock({
   className,
 }: ShowcaseSectionBlockProps) {
   return (
-    <div id="showcase" className={`relative overflow-hidden ${className ?? ""}`}>
+    <div
+      id="showcase"
+      className={`relative overflow-hidden ${className ?? ""}`}
+    >
       {/* Parallax Text Section */}
       <div className="relative py-24 md:py-32">
         <div className="container flex flex-col items-center px-6 text-center">
@@ -108,7 +111,9 @@ export function ShowcaseSectionBlock({
 function ScrollPhrase({ text }: { text: string }) {
   return (
     <div className="flex items-center gap-5 px-5">
-      <p className="text-muted-foreground/30 text-[7vw] md:text-[5vw]">{text}</p>
+      <p className="text-muted-foreground/30 text-[7vw] md:text-[5vw]">
+        {text}
+      </p>
     </div>
   )
 }

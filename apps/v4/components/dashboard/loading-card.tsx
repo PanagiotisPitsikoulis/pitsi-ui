@@ -1,9 +1,5 @@
 import { Loader2 } from "@/lib/icons"
-
-import {
-  Card,
-  CardContent,
-} from "@/registry/new-york-v4/ui/card"
+import { Card, CardContent } from "@/registry/new-york-v4/ui/card"
 
 export function LoadingCard() {
   return (

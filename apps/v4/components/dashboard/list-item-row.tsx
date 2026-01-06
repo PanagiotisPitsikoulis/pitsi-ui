@@ -8,7 +8,13 @@ interface ListItemRowProps {
   actions?: ReactNode
 }
 
-export function ListItemRow({ title, subtitle, icon, badge, actions }: ListItemRowProps) {
+export function ListItemRow({
+  title,
+  subtitle,
+  icon,
+  badge,
+  actions,
+}: ListItemRowProps) {
   return (
     <div className="flex items-center justify-between rounded-lg border p-3">
       <div className="flex items-center gap-3">

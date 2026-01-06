@@ -87,7 +87,7 @@ export function SignupForm({
                   type="button"
                   onClick={() => handleSocialSignIn("github")}
                   disabled={isLoading}
-                  className="hover:bg-transparent hover:text-muted-foreground"
+                  className="hover:text-muted-foreground hover:bg-transparent"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path
@@ -102,7 +102,7 @@ export function SignupForm({
                   type="button"
                   onClick={() => handleSocialSignIn("google")}
                   disabled={isLoading}
-                  className="hover:bg-transparent hover:text-muted-foreground"
+                  className="hover:text-muted-foreground hover:bg-transparent"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path

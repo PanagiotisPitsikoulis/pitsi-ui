@@ -12,7 +12,8 @@ export interface ImageOverlayGradientProps {
 }
 
 const gradientClasses: Record<GradientDirection, string> = {
-  bottom: "bg-gradient-to-t from-background/50 via-background/10 to-transparent",
+  bottom:
+    "bg-gradient-to-t from-background/50 via-background/10 to-transparent",
   top: "bg-gradient-to-b from-background/50 via-background/10 to-transparent",
   left: "bg-gradient-to-r from-background/50 via-background/10 to-transparent",
   right: "bg-gradient-to-l from-background/50 via-background/10 to-transparent",

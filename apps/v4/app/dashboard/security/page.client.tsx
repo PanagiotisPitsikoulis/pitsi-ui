@@ -1,13 +1,12 @@
 "use client"
 
-import { Separator } from "@/registry/new-york-v4/ui/separator"
-
 import {
   PageHeader,
   PasswordForm,
   SettingsCard,
   TwoFactorSection,
 } from "@/components/dashboard"
+import { Separator } from "@/registry/new-york-v4/ui/separator"
 
 export default function SecurityPageClient() {
   return (

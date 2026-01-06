@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+
 import {
   Bell,
   CreditCard,
@@ -13,7 +14,6 @@ import {
   User,
   Users,
 } from "@/lib/icons"
-
 import {
   Sidebar,
   SidebarContent,

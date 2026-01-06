@@ -432,23 +432,23 @@ describe("searchRegistries", () => {
           homepage: "https://one.com",
           items: [
             {
-          name: "item1",
-          type: "registry:ui",
-          description: "Item 1",
-          readiness: "alpha",
-        },
+              name: "item1",
+              type: "registry:ui",
+              description: "Item 1",
+              readiness: "alpha",
+            },
             {
-          name: "item2",
-          type: "registry:ui",
-          description: "Item 2",
-          readiness: "alpha",
-        },
+              name: "item2",
+              type: "registry:ui",
+              description: "Item 2",
+              readiness: "alpha",
+            },
             {
-          name: "item3",
-          type: "registry:ui",
-          description: "Item 3",
-          readiness: "alpha",
-        },
+              name: "item3",
+              type: "registry:ui",
+              description: "Item 3",
+              readiness: "alpha",
+            },
           ],
         }
       }
@@ -458,17 +458,17 @@ describe("searchRegistries", () => {
           homepage: "https://two.com",
           items: [
             {
-          name: "item4",
-          type: "registry:ui",
-          description: "Item 4",
-          readiness: "alpha",
-        },
+              name: "item4",
+              type: "registry:ui",
+              description: "Item 4",
+              readiness: "alpha",
+            },
             {
-          name: "item5",
-          type: "registry:ui",
-          description: "Item 5",
-          readiness: "alpha",
-        },
+              name: "item5",
+              type: "registry:ui",
+              description: "Item 5",
+              readiness: "alpha",
+            },
           ],
         }
       }

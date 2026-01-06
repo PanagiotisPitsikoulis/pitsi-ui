@@ -2,9 +2,9 @@ import Image from "next/image"
 import Link from "next/link"
 
 import {
-  type BlogCategory,
   categoryLabels,
   getBlogCategories,
+  type BlogCategory,
 } from "@/lib/blog/source"
 import { formatDate } from "@/lib/format"
 import { cn } from "@/lib/utils"
@@ -84,7 +84,7 @@ export function BlogList({ posts, currentCategory }: BlogListProps) {
                   </div>
 
                   {/* Title and description */}
-                  <h2 className="display mb-1 text-xl tracking-tight transition-colors group-hover:text-brand md:text-2xl">
+                  <h2 className="display group-hover:text-brand mb-1 text-xl tracking-tight transition-colors md:text-2xl">
                     {post.title}
                   </h2>
                   <p className="text-muted-foreground text-sm">

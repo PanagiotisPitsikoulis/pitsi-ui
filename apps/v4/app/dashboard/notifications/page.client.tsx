@@ -2,9 +2,12 @@
 
 import { useState } from "react"
 
+import {
+  NotificationToggle,
+  PageHeader,
+  SettingsCard,
+} from "@/components/dashboard"
 import { Separator } from "@/registry/new-york-v4/ui/separator"
-
-import { NotificationToggle, PageHeader, SettingsCard } from "@/components/dashboard"
 
 export default function NotificationsPageClient() {
   const [emailNotifications, setEmailNotifications] = useState(true)

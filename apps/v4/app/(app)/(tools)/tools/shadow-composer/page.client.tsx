@@ -2,7 +2,7 @@
 
 import { useCallback, useMemo, useState } from "react"
 
-import { STORAGE_KEYS, useLocalStorage } from "@/lib/local-storage"
+import { generateFigmaShadowEffects } from "@/lib/figma-export"
 import {
   ArrowRight,
   Bookmark,
@@ -17,8 +17,7 @@ import {
   Save,
   Shuffle,
 } from "@/lib/icons"
-
-import { generateFigmaShadowEffects } from "@/lib/figma-export"
+import { STORAGE_KEYS, useLocalStorage } from "@/lib/local-storage"
 import { Deck, DeckCards, DeckEmpty, DeckItem } from "@/components/kibo-ui/deck"
 import {
   AIJsonEditor,
@@ -27,18 +26,18 @@ import {
   SavedItemsList,
   ToolLayout,
   ToolLayoutBackground,
-  ToolLayoutContainer,
-  ToolLayoutSidebar,
-  ToolLayoutHeader,
   ToolLayoutCard,
-  ToolLayoutTabs,
-  ToolLayoutTabsList,
-  ToolLayoutTabsTrigger,
-  ToolLayoutTabsContent,
+  ToolLayoutContainer,
+  ToolLayoutHeader,
   ToolLayoutPreview,
+  ToolLayoutPreviewContent,
   ToolLayoutPreviewHeader,
   ToolLayoutPreviewTitle,
-  ToolLayoutPreviewContent,
+  ToolLayoutSidebar,
+  ToolLayoutTabs,
+  ToolLayoutTabsContent,
+  ToolLayoutTabsList,
+  ToolLayoutTabsTrigger,
 } from "@/components/tools"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
@@ -54,13 +53,13 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/registry/new-york-v4/ui/popover"
+import { Skeleton } from "@/registry/new-york-v4/ui/skeleton"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/registry/new-york-v4/ui/tooltip"
-import { Skeleton } from "@/registry/new-york-v4/ui/skeleton"
 
 import {
   previewComponents,
@@ -237,8 +236,7 @@ function PresetSelector({
           <TooltipContent>Random shadow</TooltipContent>
         </Tooltip>
       </TooltipProvider>
-
-      </>
+    </>
   )
 }
 
@@ -255,7 +253,9 @@ export default function ShadowComposerPageClient({
   const [sidebarTab, setSidebarTab] = useState<
     "explore" | "shadows" | "saved" | "export"
   >("shadows")
-  const [savedShadows, setSavedShadows, isHydrated] = useLocalStorage<SavedShadow[]>(STORAGE_KEYS.SHADOW_COMPOSER, [])
+  const [savedShadows, setSavedShadows, isHydrated] = useLocalStorage<
+    SavedShadow[]
+  >(STORAGE_KEYS.SHADOW_COMPOSER, [])
   const [selectedPreview, setSelectedPreview] = useState<PreviewType>("navbar")
 
   const presetKeys = useMemo(() => Object.keys(presets), [presets])
@@ -369,9 +369,7 @@ export default function ShadowComposerPageClient({
             <ToolLayoutTabs
               value={sidebarTab}
               onValueChange={(v) =>
-                setSidebarTab(
-                  v as "explore" | "shadows" | "saved" | "export"
-                )
+                setSidebarTab(v as "explore" | "shadows" | "saved" | "export")
               }
             >
               <ToolLayoutTabsList>
@@ -391,211 +389,207 @@ export default function ShadowComposerPageClient({
 
               <ToolLayoutTabsContent value="explore" scrollable={false}>
                 <div className="flex h-full flex-col items-center justify-center">
-                      <Deck className="h-80 w-full max-w-xs">
-                        <DeckCards
-                          currentIndex={deckIndex}
-                          onCurrentIndexChange={(index) => {
-                            if (presetKeys[index]) {
-                              applyPreset(presetKeys[index])
+                  <Deck className="h-80 w-full max-w-xs">
+                    <DeckCards
+                      currentIndex={deckIndex}
+                      onCurrentIndexChange={(index) => {
+                        if (presetKeys[index]) {
+                          applyPreset(presetKeys[index])
+                        }
+                      }}
+                    >
+                      {Object.entries(presets).map(([key, preset]) => {
+                        const previewLayers = preset.layers.map((l, i) => ({
+                          ...l,
+                          id: `preview-${i}`,
+                        }))
+                        const previewCSS = shadowsToCSS(previewLayers)
+                        return (
+                          <DeckItem
+                            key={key}
+                            className="overflow-hidden rounded-3xl p-0 shadow-xs"
+                            style={
+                              {
+                                "--background": "oklch(1 0 0)",
+                                "--foreground": "oklch(0.145 0 0)",
+                                "--card": "oklch(1 0 0)",
+                                "--card-foreground": "oklch(0.145 0 0)",
+                                "--muted": "oklch(0.965 0 0)",
+                                "--muted-foreground": "oklch(0.45 0 0)",
+                                "--border": "oklch(0.922 0 0)",
+                              } as React.CSSProperties
+                            }
+                          >
+                            <div className="flex size-full flex-col bg-[oklch(1_0_0)] text-[oklch(0.145_0_0)]">
+                              <div className="relative flex flex-1 items-center justify-center p-6">
+                                <div className="absolute size-48 rounded-full bg-[oklch(0.965_0_0)] blur-3xl" />
+                                <div
+                                  className="relative size-16 rounded-xl bg-[oklch(1_0_0)]"
+                                  style={{ boxShadow: previewCSS }}
+                                />
+                              </div>
+                              <div className="border-t bg-[oklch(1_0_0)] p-4 text-center">
+                                <h3 className="text-lg font-semibold">
+                                  {preset.label}
+                                </h3>
+                                <p className="text-sm text-[oklch(0.45_0_0)]">
+                                  Swipe to navigate
+                                </p>
+                              </div>
+                            </div>
+                          </DeckItem>
+                        )
+                      })}
+                    </DeckCards>
+                    <DeckEmpty>
+                      <div className="text-center">
+                        <p className="text-sm font-medium">
+                          All shadows explored!
+                        </p>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="mt-2"
+                          onClick={() => {
+                            if (presetKeys[0]) {
+                              applyPreset(presetKeys[0])
                             }
                           }}
                         >
-                          {Object.entries(presets).map(
-                            ([key, preset]) => {
-                              const previewLayers = preset.layers.map(
-                                (l, i) => ({
-                                  ...l,
-                                  id: `preview-${i}`,
-                                })
-                              )
-                              const previewCSS = shadowsToCSS(previewLayers)
-                              return (
-                                <DeckItem
-                                  key={key}
-                                  className="overflow-hidden rounded-3xl p-0 shadow-xs"
-                                  style={{
-                                    "--background": "oklch(1 0 0)",
-                                    "--foreground": "oklch(0.145 0 0)",
-                                    "--card": "oklch(1 0 0)",
-                                    "--card-foreground": "oklch(0.145 0 0)",
-                                    "--muted": "oklch(0.965 0 0)",
-                                    "--muted-foreground": "oklch(0.45 0 0)",
-                                    "--border": "oklch(0.922 0 0)",
-                                  } as React.CSSProperties}
-                                >
-                                  <div className="flex size-full flex-col bg-[oklch(1_0_0)] text-[oklch(0.145_0_0)]">
-                                    <div className="relative flex flex-1 items-center justify-center p-6">
-                                      <div className="absolute size-48 rounded-full bg-[oklch(0.965_0_0)] blur-3xl" />
-                                      <div
-                                        className="relative size-16 rounded-xl bg-[oklch(1_0_0)]"
-                                        style={{ boxShadow: previewCSS }}
-                                      />
-                                    </div>
-                                    <div className="border-t bg-[oklch(1_0_0)] p-4 text-center">
-                                      <h3 className="text-lg font-semibold">
-                                        {preset.label}
-                                      </h3>
-                                      <p className="text-sm text-[oklch(0.45_0_0)]">
-                                        Swipe to navigate
-                                      </p>
-                                    </div>
-                                  </div>
-                                </DeckItem>
-                              )
-                            }
-                          )}
-                        </DeckCards>
-                        <DeckEmpty>
-                          <div className="text-center">
-                            <p className="text-sm font-medium">
-                              All shadows explored!
-                            </p>
+                          <RotateCcw className="mr-1.5 size-3.5" />
+                          Start over
+                        </Button>
+                      </div>
+                    </DeckEmpty>
+                  </Deck>
+                  {/* Navigation buttons */}
+                  {deckIndex < presetKeys.length && (
+                    <div className="mt-6 flex items-center gap-3">
+                      <TooltipProvider delayDuration={0}>
+                        <Tooltip>
+                          <TooltipTrigger asChild>
                             <Button
                               variant="outline"
-                              size="sm"
-                              className="mt-2"
+                              size="icon"
+                              className="size-12 rounded-full shadow-none"
+                              disabled={deckIndex === 0}
                               onClick={() => {
-                                if (presetKeys[0]) {
-                                  applyPreset(presetKeys[0])
+                                const prevIndex = deckIndex - 1
+                                if (presetKeys[prevIndex]) {
+                                  applyPreset(presetKeys[prevIndex])
                                 }
                               }}
                             >
-                              <RotateCcw className="mr-1.5 size-3.5" />
-                              Start over
+                              <RotateCcw className="size-5" />
                             </Button>
-                          </div>
-                        </DeckEmpty>
-                      </Deck>
-                      {/* Navigation buttons */}
-                      {deckIndex < presetKeys.length && (
-                        <div className="mt-6 flex items-center gap-3">
-                          <TooltipProvider delayDuration={0}>
-                            <Tooltip>
-                              <TooltipTrigger asChild>
-                                <Button
-                                  variant="outline"
-                                  size="icon"
-                                  className="size-12 rounded-full shadow-none"
-                                  disabled={deckIndex === 0}
-                                  onClick={() => {
-                                    const prevIndex = deckIndex - 1
-                                    if (presetKeys[prevIndex]) {
-                                      applyPreset(presetKeys[prevIndex])
-                                    }
-                                  }}
-                                >
-                                  <RotateCcw className="size-5" />
-                                </Button>
-                              </TooltipTrigger>
-                              <TooltipContent>Back</TooltipContent>
-                            </Tooltip>
-                          </TooltipProvider>
-                          <TooltipProvider delayDuration={0}>
-                            <Tooltip>
-                              <TooltipTrigger asChild>
-                                <Button
-                                  variant="outline"
-                                  size="icon"
-                                  className="size-12 rounded-full shadow-none"
-                                  disabled={deckIndex >= presetKeys.length - 1}
-                                  onClick={() => {
-                                    if (presetKeys[deckIndex + 1]) {
-                                      applyPreset(presetKeys[deckIndex + 1])
-                                    }
-                                  }}
-                                >
-                                  <ArrowRight className="size-5" />
-                                </Button>
-                              </TooltipTrigger>
-                              <TooltipContent>Next</TooltipContent>
-                            </Tooltip>
-                          </TooltipProvider>
-                        </div>
-                      )}
+                          </TooltipTrigger>
+                          <TooltipContent>Back</TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+                      <TooltipProvider delayDuration={0}>
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <Button
+                              variant="outline"
+                              size="icon"
+                              className="size-12 rounded-full shadow-none"
+                              disabled={deckIndex >= presetKeys.length - 1}
+                              onClick={() => {
+                                if (presetKeys[deckIndex + 1]) {
+                                  applyPreset(presetKeys[deckIndex + 1])
+                                }
+                              }}
+                            >
+                              <ArrowRight className="size-5" />
+                            </Button>
+                          </TooltipTrigger>
+                          <TooltipContent>Next</TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+                    </div>
+                  )}
                 </div>
               </ToolLayoutTabsContent>
 
               <ToolLayoutTabsContent value="shadows">
-                        {/* Preset selector & controls */}
-                        <div className="no-scrollbar -mx-4 flex items-center gap-1 overflow-x-auto px-4">
-                          <PresetSelector
-                            presets={presets}
-                            currentPreset={currentPreset}
-                            onSelect={applyPreset}
-                            onSave={saveShadow}
-                            savedShadows={savedShadows}
-                            onLoadSavedShadow={loadShadow}
-                          />
+                {/* Preset selector & controls */}
+                <div className="no-scrollbar -mx-4 flex items-center gap-1 overflow-x-auto px-4">
+                  <PresetSelector
+                    presets={presets}
+                    currentPreset={currentPreset}
+                    onSelect={applyPreset}
+                    onSave={saveShadow}
+                    savedShadows={savedShadows}
+                    onLoadSavedShadow={loadShadow}
+                  />
 
-                          <TooltipProvider delayDuration={0}>
-                            <Tooltip>
-                              <TooltipTrigger asChild>
-                                <Button
-                                  variant="outline"
-                                  size="icon"
-                                  onClick={resetShadow}
-                                  className="size-8 shrink-0 shadow-none"
-                                >
-                                  <RotateCcw className="size-4" />
-                                </Button>
-                              </TooltipTrigger>
-                              <TooltipContent>Reset to defaults</TooltipContent>
-                            </Tooltip>
-                          </TooltipProvider>
+                  <TooltipProvider delayDuration={0}>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Button
+                          variant="outline"
+                          size="icon"
+                          onClick={resetShadow}
+                          className="size-8 shrink-0 shadow-none"
+                        >
+                          <RotateCcw className="size-4" />
+                        </Button>
+                      </TooltipTrigger>
+                      <TooltipContent>Reset to defaults</TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
 
-                          <AIJsonEditor
-                            value={layers}
-                            onChange={setLayers}
-                            title="Edit Shadow JSON"
-                            description="Edit the shadow layers directly or use ChatGPT to modify"
-                            tooltip="Edit with AI"
-                            hints={[
-                              "Add more shadow layers for depth",
-                              "Adjust blur and spread values",
-                              "Create inner shadows (inset: true)",
-                              "Make shadows more subtle or dramatic",
-                            ]}
-                            trigger={
-                              <Button
-                                variant="outline"
-                                size="icon"
-                                className="size-8 shrink-0 shadow-none"
-                              >
-                                <Bot className="size-4" />
-                              </Button>
-                            }
-                          />
-                        </div>
+                  <AIJsonEditor
+                    value={layers}
+                    onChange={setLayers}
+                    title="Edit Shadow JSON"
+                    description="Edit the shadow layers directly or use ChatGPT to modify"
+                    tooltip="Edit with AI"
+                    hints={[
+                      "Add more shadow layers for depth",
+                      "Adjust blur and spread values",
+                      "Create inner shadows (inset: true)",
+                      "Make shadows more subtle or dramatic",
+                    ]}
+                    trigger={
+                      <Button
+                        variant="outline"
+                        size="icon"
+                        className="size-8 shrink-0 shadow-none"
+                      >
+                        <Bot className="size-4" />
+                      </Button>
+                    }
+                  />
+                </div>
 
-                        {/* Shadow Layers */}
-                        <div className="space-y-4">
-                          {layers.map((layer, index) => (
-                            <div
-                              key={layer.id}
-                              className="bg-background overflow-hidden rounded-lg border p-4 shadow-xs"
-                            >
-                              <ShadowLayerControl
-                                layer={layer}
-                                index={index}
-                                onChange={(updated) =>
-                                  updateLayer(index, updated)
-                                }
-                                onDelete={() => deleteLayer(index)}
-                                canDelete={layers.length > 1}
-                              />
-                            </div>
-                          ))}
+                {/* Shadow Layers */}
+                <div className="space-y-4">
+                  {layers.map((layer, index) => (
+                    <div
+                      key={layer.id}
+                      className="bg-background overflow-hidden rounded-lg border p-4 shadow-xs"
+                    >
+                      <ShadowLayerControl
+                        layer={layer}
+                        index={index}
+                        onChange={(updated) => updateLayer(index, updated)}
+                        onDelete={() => deleteLayer(index)}
+                        canDelete={layers.length > 1}
+                      />
+                    </div>
+                  ))}
 
-                          {/* Add Layer Button */}
-                          <Button
-                            variant="outline"
-                            className="w-full shadow-2xs"
-                            onClick={addLayer}
-                          >
-                            <Plus className="mr-2 size-4" />
-                            Add Shadow Layer
-                          </Button>
-                        </div>
+                  {/* Add Layer Button */}
+                  <Button
+                    variant="outline"
+                    className="w-full shadow-2xs"
+                    onClick={addLayer}
+                  >
+                    <Plus className="mr-2 size-4" />
+                    Add Shadow Layer
+                  </Button>
+                </div>
               </ToolLayoutTabsContent>
 
               <ToolLayoutTabsContent value="saved" scrollable={false}>
@@ -687,16 +681,15 @@ export default function ShadowComposerPageClient({
                 (key) => ({ key, label: previewComponents[key].label })
               )}
               value={selectedPreview}
-              onValueChange={(value) => setSelectedPreview(value as PreviewType)}
+              onValueChange={(value) =>
+                setSelectedPreview(value as PreviewType)
+              }
             />
           </ToolLayoutPreviewHeader>
 
           {/* Preview - always light mode */}
           <ToolLayoutPreviewContent forceLightMode>
-            <PreviewComponent
-              shadowStyle={shadowCSS}
-              className="h-full"
-            />
+            <PreviewComponent shadowStyle={shadowCSS} className="h-full" />
           </ToolLayoutPreviewContent>
         </ToolLayoutPreview>
       </ToolLayoutContainer>

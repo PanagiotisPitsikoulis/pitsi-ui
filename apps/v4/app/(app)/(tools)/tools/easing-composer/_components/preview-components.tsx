@@ -1,9 +1,9 @@
 "use client"
 
-import Image from "next/image"
 import { useEffect, useState } from "react"
-import { Heart, X, ChevronRight, ChevronLeft, Bell } from "@/lib/icons"
+import Image from "next/image"
 
+import { Bell, ChevronLeft, ChevronRight, Heart, X } from "@/lib/icons"
 import { cn } from "@/lib/utils"
 
 interface PreviewProps {
@@ -23,15 +23,40 @@ const artImages = [
 ]
 
 // Animated carousel with sliding cards
-export function CardSlidePreview({ easingCSS, duration, className, isPlaying = true }: PreviewProps) {
+export function CardSlidePreview({
+  easingCSS,
+  duration,
+  className,
+  isPlaying = true,
+}: PreviewProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [translateX, setTranslateX] = useState(0)
 
   const cards = [
-    { image: artImages[0], title: "Featured Artwork", subtitle: "Abstract collection", likes: "2.4k" },
-    { image: artImages[1], title: "New Release", subtitle: "Contemporary art", likes: "1.8k" },
-    { image: artImages[2], title: "Trending Now", subtitle: "Modern masters", likes: "3.2k" },
-    { image: artImages[3], title: "Editor's Pick", subtitle: "Curated selection", likes: "956" },
+    {
+      image: artImages[0],
+      title: "Featured Artwork",
+      subtitle: "Abstract collection",
+      likes: "2.4k",
+    },
+    {
+      image: artImages[1],
+      title: "New Release",
+      subtitle: "Contemporary art",
+      likes: "1.8k",
+    },
+    {
+      image: artImages[2],
+      title: "Trending Now",
+      subtitle: "Modern masters",
+      likes: "3.2k",
+    },
+    {
+      image: artImages[3],
+      title: "Editor's Pick",
+      subtitle: "Curated selection",
+      likes: "956",
+    },
   ]
 
   useEffect(() => {
@@ -53,14 +78,16 @@ export function CardSlidePreview({ easingCSS, duration, className, isPlaying = t
   }
 
   return (
-    <div className={cn("relative h-full overflow-hidden bg-background", className)}>
+    <div
+      className={cn("bg-background relative h-full overflow-hidden", className)}
+    >
       {/* Background blur */}
       <div className="absolute inset-0">
         <Image
           src={cards[currentIndex].image}
           alt=""
           fill
-          className="object-cover blur-2xl opacity-30 scale-110"
+          className="scale-110 object-cover opacity-30 blur-2xl"
           sizes="400px"
           style={{
             transition: `opacity ${duration}ms ${easingCSS}`,
@@ -69,8 +96,8 @@ export function CardSlidePreview({ easingCSS, duration, className, isPlaying = t
       </div>
 
       {/* Carousel container */}
-      <div className="absolute inset-0 flex items-center justify-center p-6 overflow-hidden">
-        <div className="relative w-72 h-80 overflow-hidden">
+      <div className="absolute inset-0 flex items-center justify-center overflow-hidden p-6">
+        <div className="relative h-80 w-72 overflow-hidden">
           <div
             className="flex h-full"
             style={{
@@ -80,19 +107,38 @@ export function CardSlidePreview({ easingCSS, duration, className, isPlaying = t
             }}
           >
             {cards.map((card, i) => (
-              <div key={i} className="h-full shrink-0" style={{ width: `${100 / cards.length}%` }}>
-                <div className="h-full w-full overflow-hidden rounded-2xl border bg-card shadow-2xl mx-auto" style={{ maxWidth: "288px" }}>
+              <div
+                key={i}
+                className="h-full shrink-0"
+                style={{ width: `${100 / cards.length}%` }}
+              >
+                <div
+                  className="bg-card mx-auto h-full w-full overflow-hidden rounded-2xl border shadow-2xl"
+                  style={{ maxWidth: "288px" }}
+                >
                   <div className="relative h-44">
-                    <Image src={card.image} alt="" fill className="object-cover" sizes="288px" />
+                    <Image
+                      src={card.image}
+                      alt=""
+                      fill
+                      className="object-cover"
+                      sizes="288px"
+                    />
                   </div>
                   <div className="p-4">
-                    <h3 className="font-semibold text-foreground">{card.title}</h3>
-                    <p className="mt-1 text-sm text-muted-foreground">{card.subtitle}</p>
+                    <h3 className="text-foreground font-semibold">
+                      {card.title}
+                    </h3>
+                    <p className="text-muted-foreground mt-1 text-sm">
+                      {card.subtitle}
+                    </p>
                     <div className="mt-3 flex items-center gap-2">
-                      <div className="size-8 rounded-full bg-brand/10 flex items-center justify-center">
-                        <Heart className="size-4 text-brand" />
+                      <div className="bg-brand/10 flex size-8 items-center justify-center rounded-full">
+                        <Heart className="text-brand size-4" />
                       </div>
-                      <span className="text-xs text-muted-foreground">{card.likes} likes</span>
+                      <span className="text-muted-foreground text-xs">
+                        {card.likes} likes
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -103,14 +149,16 @@ export function CardSlidePreview({ easingCSS, duration, className, isPlaying = t
       </div>
 
       {/* Navigation dots */}
-      <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+      <div className="absolute right-0 bottom-4 left-0 flex justify-center gap-2">
         {cards.map((_, i) => (
           <button
             key={i}
             onClick={() => goTo(i)}
             className={cn(
               "size-2 rounded-full",
-              i === currentIndex ? "bg-brand w-6" : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
+              i === currentIndex
+                ? "bg-brand w-6"
+                : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
             )}
             style={{
               transition: `all ${duration / 2}ms ${easingCSS}`,
@@ -122,22 +170,27 @@ export function CardSlidePreview({ easingCSS, duration, className, isPlaying = t
       {/* Arrow buttons */}
       <button
         onClick={() => goTo((currentIndex - 1 + cards.length) % cards.length)}
-        className="absolute left-3 top-1/2 -translate-y-1/2 size-8 rounded-full bg-background/80 backdrop-blur flex items-center justify-center border shadow-sm hover:bg-background"
+        className="bg-background/80 hover:bg-background absolute top-1/2 left-3 flex size-8 -translate-y-1/2 items-center justify-center rounded-full border shadow-sm backdrop-blur"
       >
-        <ChevronLeft className="size-4 text-foreground" />
+        <ChevronLeft className="text-foreground size-4" />
       </button>
       <button
         onClick={() => goTo((currentIndex + 1) % cards.length)}
-        className="absolute right-3 top-1/2 -translate-y-1/2 size-8 rounded-full bg-background/80 backdrop-blur flex items-center justify-center border shadow-sm hover:bg-background"
+        className="bg-background/80 hover:bg-background absolute top-1/2 right-3 flex size-8 -translate-y-1/2 items-center justify-center rounded-full border shadow-sm backdrop-blur"
       >
-        <ChevronRight className="size-4 text-foreground" />
+        <ChevronRight className="text-foreground size-4" />
       </button>
     </div>
   )
 }
 
 // Modal that fades and scales in
-export function ModalFadePreview({ easingCSS, duration, className, isPlaying = true }: PreviewProps) {
+export function ModalFadePreview({
+  easingCSS,
+  duration,
+  className,
+  isPlaying = true,
+}: PreviewProps) {
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
@@ -148,10 +201,13 @@ export function ModalFadePreview({ easingCSS, duration, className, isPlaying = t
 
     const showTimer = setTimeout(() => setIsVisible(true), 300)
 
-    const interval = setInterval(() => {
-      setIsVisible(false)
-      setTimeout(() => setIsVisible(true), duration + 500)
-    }, (duration * 2) + 1500)
+    const interval = setInterval(
+      () => {
+        setIsVisible(false)
+        setTimeout(() => setIsVisible(true), duration + 500)
+      },
+      duration * 2 + 1500
+    )
 
     return () => {
       clearTimeout(showTimer)
@@ -160,17 +216,28 @@ export function ModalFadePreview({ easingCSS, duration, className, isPlaying = t
   }, [duration, isPlaying])
 
   return (
-    <div className={cn("relative h-full overflow-hidden bg-background", className)}>
+    <div
+      className={cn("bg-background relative h-full overflow-hidden", className)}
+    >
       {/* Background content */}
       <div className="absolute inset-0 p-6">
         <div className="mb-4 flex items-center justify-between">
-          <span className="text-lg font-semibold text-foreground">Gallery</span>
-          <Bell className="size-5 text-muted-foreground" />
+          <span className="text-foreground text-lg font-semibold">Gallery</span>
+          <Bell className="text-muted-foreground size-5" />
         </div>
         <div className="grid grid-cols-2 gap-3">
           {artImages.slice(0, 4).map((src, i) => (
-            <div key={i} className="relative aspect-square overflow-hidden rounded-lg">
-              <Image src={src} alt="" fill className="object-cover" sizes="150px" />
+            <div
+              key={i}
+              className="relative aspect-square overflow-hidden rounded-lg"
+            >
+              <Image
+                src={src}
+                alt=""
+                fill
+                className="object-cover"
+                sizes="150px"
+              />
             </div>
           ))}
         </div>
@@ -194,24 +261,26 @@ export function ModalFadePreview({ easingCSS, duration, className, isPlaying = t
           transition: `opacity ${duration}ms ${easingCSS}, transform ${duration}ms ${easingCSS}`,
         }}
       >
-        <div className="w-full max-w-xs rounded-2xl bg-card p-6 shadow-2xl">
+        <div className="bg-card w-full max-w-xs rounded-2xl p-6 shadow-2xl">
           <div className="flex items-start justify-between">
-            <div className="size-10 rounded-full bg-brand/10 flex items-center justify-center">
-              <Heart className="size-5 text-brand" />
+            <div className="bg-brand/10 flex size-10 items-center justify-center rounded-full">
+              <Heart className="text-brand size-5" />
             </div>
-            <button className="rounded-full p-1 hover:bg-muted">
-              <X className="size-4 text-muted-foreground" />
+            <button className="hover:bg-muted rounded-full p-1">
+              <X className="text-muted-foreground size-4" />
             </button>
           </div>
-          <h3 className="mt-4 text-lg font-semibold text-foreground">Save to Collection</h3>
-          <p className="mt-2 text-sm text-muted-foreground">
+          <h3 className="text-foreground mt-4 text-lg font-semibold">
+            Save to Collection
+          </h3>
+          <p className="text-muted-foreground mt-2 text-sm">
             Add this artwork to your favorites with smooth animation.
           </p>
           <div className="mt-4 flex gap-2">
-            <button className="flex-1 rounded-lg bg-muted px-4 py-2 text-sm font-medium text-foreground">
+            <button className="bg-muted text-foreground flex-1 rounded-lg px-4 py-2 text-sm font-medium">
               Cancel
             </button>
-            <button className="flex-1 rounded-lg bg-brand px-4 py-2 text-sm font-medium text-brand-foreground">
+            <button className="bg-brand text-brand-foreground flex-1 rounded-lg px-4 py-2 text-sm font-medium">
               Save
             </button>
           </div>
@@ -222,7 +291,12 @@ export function ModalFadePreview({ easingCSS, duration, className, isPlaying = t
 }
 
 // Bottom drawer that slides up
-export function DrawerSlidePreview({ easingCSS, duration, className, isPlaying = true }: PreviewProps) {
+export function DrawerSlidePreview({
+  easingCSS,
+  duration,
+  className,
+  isPlaying = true,
+}: PreviewProps) {
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
@@ -233,10 +307,13 @@ export function DrawerSlidePreview({ easingCSS, duration, className, isPlaying =
 
     const showTimer = setTimeout(() => setIsVisible(true), 300)
 
-    const interval = setInterval(() => {
-      setIsVisible(false)
-      setTimeout(() => setIsVisible(true), duration + 500)
-    }, (duration * 2) + 1500)
+    const interval = setInterval(
+      () => {
+        setIsVisible(false)
+        setTimeout(() => setIsVisible(true), duration + 500)
+      },
+      duration * 2 + 1500
+    )
 
     return () => {
       clearTimeout(showTimer)
@@ -245,15 +322,23 @@ export function DrawerSlidePreview({ easingCSS, duration, className, isPlaying =
   }, [duration, isPlaying])
 
   return (
-    <div className={cn("relative h-full overflow-hidden bg-background", className)}>
+    <div
+      className={cn("bg-background relative h-full overflow-hidden", className)}
+    >
       {/* Background - full image */}
       <div className="absolute inset-0">
-        <Image src={artImages[2]} alt="" fill className="object-cover" sizes="400px" />
+        <Image
+          src={artImages[2]}
+          alt=""
+          fill
+          className="object-cover"
+          sizes="400px"
+        />
       </div>
 
       {/* Bottom drawer */}
       <div
-        className="absolute inset-x-0 bottom-0 rounded-t-3xl bg-card shadow-2xl"
+        className="bg-card absolute inset-x-0 bottom-0 rounded-t-3xl shadow-2xl"
         style={{
           transform: isVisible ? "translateY(0)" : "translateY(100%)",
           transition: `transform ${duration}ms ${easingCSS}`,
@@ -261,25 +346,33 @@ export function DrawerSlidePreview({ easingCSS, duration, className, isPlaying =
       >
         {/* Handle */}
         <div className="flex justify-center pt-3">
-          <div className="h-1 w-12 rounded-full bg-muted-foreground/30" />
+          <div className="bg-muted-foreground/30 h-1 w-12 rounded-full" />
         </div>
 
         <div className="p-6">
-          <h3 className="text-xl font-semibold text-foreground">Ethereal Dreams</h3>
-          <p className="mt-1 text-sm text-muted-foreground">Oil on canvas · Maria Chen</p>
+          <h3 className="text-foreground text-xl font-semibold">
+            Ethereal Dreams
+          </h3>
+          <p className="text-muted-foreground mt-1 text-sm">
+            Oil on canvas · Maria Chen
+          </p>
 
           <div className="mt-4 flex items-center gap-4">
-            <span className="text-lg font-semibold text-foreground">$12,400</span>
-            <span className="text-sm text-muted-foreground">2024</span>
-            <span className="rounded-full bg-muted px-2 py-0.5 text-xs text-muted-foreground">Abstract</span>
+            <span className="text-foreground text-lg font-semibold">
+              $12,400
+            </span>
+            <span className="text-muted-foreground text-sm">2024</span>
+            <span className="bg-muted text-muted-foreground rounded-full px-2 py-0.5 text-xs">
+              Abstract
+            </span>
           </div>
 
           <div className="mt-4 flex gap-2">
-            <button className="flex-1 rounded-xl bg-brand py-3 text-sm font-medium text-brand-foreground">
+            <button className="bg-brand text-brand-foreground flex-1 rounded-xl py-3 text-sm font-medium">
               Purchase
             </button>
-            <button className="rounded-xl bg-muted p-3">
-              <Heart className="size-5 text-foreground" />
+            <button className="bg-muted rounded-xl p-3">
+              <Heart className="text-foreground size-5" />
             </button>
           </div>
         </div>
@@ -289,7 +382,12 @@ export function DrawerSlidePreview({ easingCSS, duration, className, isPlaying =
 }
 
 // List items with staggered animation
-export function ListStaggerPreview({ easingCSS, duration, className, isPlaying = true }: PreviewProps) {
+export function ListStaggerPreview({
+  easingCSS,
+  duration,
+  className,
+  isPlaying = true,
+}: PreviewProps) {
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
@@ -300,10 +398,13 @@ export function ListStaggerPreview({ easingCSS, duration, className, isPlaying =
 
     const showTimer = setTimeout(() => setIsVisible(true), 300)
 
-    const interval = setInterval(() => {
-      setIsVisible(false)
-      setTimeout(() => setIsVisible(true), duration + 800)
-    }, (duration * 2) + 2000)
+    const interval = setInterval(
+      () => {
+        setIsVisible(false)
+        setTimeout(() => setIsVisible(true), duration + 800)
+      },
+      duration * 2 + 2000
+    )
 
     return () => {
       clearTimeout(showTimer)
@@ -319,28 +420,39 @@ export function ListStaggerPreview({ easingCSS, duration, className, isPlaying =
   ]
 
   return (
-    <div className={cn("relative h-full overflow-hidden bg-background p-6", className)}>
-      <h3 className="mb-4 text-lg font-semibold text-foreground">Notifications</h3>
+    <div
+      className={cn(
+        "bg-background relative h-full overflow-hidden p-6",
+        className
+      )}
+    >
+      <h3 className="text-foreground mb-4 text-lg font-semibold">
+        Notifications
+      </h3>
 
       <div className="space-y-3">
         {items.map((item, i) => (
           <div
             key={i}
-            className="flex items-center gap-3 rounded-xl border bg-card p-4"
+            className="bg-card flex items-center gap-3 rounded-xl border p-4"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? "translateX(0)" : "translateX(-30px)",
               transition: `opacity ${duration}ms ${easingCSS} ${i * 80}ms, transform ${duration}ms ${easingCSS} ${i * 80}ms`,
             }}
           >
-            <div className="size-10 rounded-full bg-brand/10 flex items-center justify-center shrink-0">
-              <Bell className="size-4 text-brand" />
+            <div className="bg-brand/10 flex size-10 shrink-0 items-center justify-center rounded-full">
+              <Bell className="text-brand size-4" />
             </div>
-            <div className="flex-1 min-w-0">
-              <p className="font-medium text-foreground truncate">{item.title}</p>
-              <p className="text-sm text-muted-foreground truncate">{item.subtitle}</p>
+            <div className="min-w-0 flex-1">
+              <p className="text-foreground truncate font-medium">
+                {item.title}
+              </p>
+              <p className="text-muted-foreground truncate text-sm">
+                {item.subtitle}
+              </p>
             </div>
-            <ChevronRight className="size-4 text-muted-foreground shrink-0" />
+            <ChevronRight className="text-muted-foreground size-4 shrink-0" />
           </div>
         ))}
       </div>
@@ -360,22 +472,26 @@ export const previewComponents: Record<
 > = {
   card: {
     label: "Carousel",
-    description: "Animated card carousel with smooth sliding transitions. Great for showcasing content galleries and featured items.",
+    description:
+      "Animated card carousel with smooth sliding transitions. Great for showcasing content galleries and featured items.",
     component: CardSlidePreview,
   },
   modal: {
     label: "Modal",
-    description: "Dialog that fades and scales into view with a backdrop overlay. Perfect for confirmations and focused interactions.",
+    description:
+      "Dialog that fades and scales into view with a backdrop overlay. Perfect for confirmations and focused interactions.",
     component: ModalFadePreview,
   },
   drawer: {
     label: "Drawer",
-    description: "Bottom sheet that slides up from the screen edge. Ideal for mobile-friendly actions and detail views.",
+    description:
+      "Bottom sheet that slides up from the screen edge. Ideal for mobile-friendly actions and detail views.",
     component: DrawerSlidePreview,
   },
   list: {
     label: "List",
-    description: "Staggered list animation where items appear sequentially. Creates a cascading reveal effect for notifications and feeds.",
+    description:
+      "Staggered list animation where items appear sequentially. Creates a cascading reveal effect for notifications and feeds.",
     component: ListStaggerPreview,
   },
 }

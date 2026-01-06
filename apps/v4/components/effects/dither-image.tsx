@@ -39,9 +39,21 @@ function DitherImage({
           <filter id={filterId} x="0%" y="0%" width="100%" height="100%">
             {/* Increase contrast */}
             <feComponentTransfer>
-              <feFuncR type="linear" slope={contrast} intercept={-(contrast - 1) / 2} />
-              <feFuncG type="linear" slope={contrast} intercept={-(contrast - 1) / 2} />
-              <feFuncB type="linear" slope={contrast} intercept={-(contrast - 1) / 2} />
+              <feFuncR
+                type="linear"
+                slope={contrast}
+                intercept={-(contrast - 1) / 2}
+              />
+              <feFuncG
+                type="linear"
+                slope={contrast}
+                intercept={-(contrast - 1) / 2}
+              />
+              <feFuncB
+                type="linear"
+                slope={contrast}
+                intercept={-(contrast - 1) / 2}
+              />
             </feComponentTransfer>
             {/* Create halftone/dither pattern */}
             <feConvolveMatrix
@@ -72,14 +84,16 @@ function DitherImage({
         style={{
           backgroundImage: `url(${src})`,
           filter: `url(#${filterId})`,
-          ...(preserveColors ? {} : { filter: `url(#${filterId}) grayscale(1)` }),
+          ...(preserveColors
+            ? {}
+            : { filter: `url(#${filterId}) grayscale(1)` }),
         }}
         role="img"
         aria-label={alt}
       />
       {/* Optional: Pixel grid overlay for enhanced dither look */}
       <div
-        className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-20"
+        className="pointer-events-none absolute inset-0 opacity-20 mix-blend-overlay"
         style={{
           backgroundImage: `
             linear-gradient(to right, transparent ${patternSize - 0.5}px, rgba(0,0,0,0.1) ${patternSize}px),

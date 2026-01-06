@@ -25,7 +25,9 @@ export function TeamInfoCard() {
         <div className="space-y-2">
           <h4 className="font-medium">Invitation process</h4>
           <ul className="text-muted-foreground space-y-1 text-sm">
-            <li>• If the email is already registered, they get instant access</li>
+            <li>
+              • If the email is already registered, they get instant access
+            </li>
             <li>• If not, they&apos;ll get access when they sign up</li>
             <li>• You can remove members at any time</li>
           </ul>

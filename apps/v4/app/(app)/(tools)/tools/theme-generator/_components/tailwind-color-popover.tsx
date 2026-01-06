@@ -1,9 +1,9 @@
 "use client"
 
 import { useCallback, useState } from "react"
-import { Check, LayoutGrid, List, Palette } from "@/lib/icons"
 
 import { colorsEqual } from "@/lib/colors"
+import { Check, LayoutGrid, List, Palette } from "@/lib/icons"
 import { TAILWIND_PALETTE } from "@/lib/tailwind-colors"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"

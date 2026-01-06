@@ -85,7 +85,10 @@ export const teamMember = pgTable("team_member", {
     .references(() => user.id),
   memberEmail: text("memberEmail").notNull(),
   memberUserId: text("memberUserId").references(() => user.id), // Linked when user signs up
-  status: text("status").$type<"pending" | "active">().default("pending").notNull(),
+  status: text("status")
+    .$type<"pending" | "active">()
+    .default("pending")
+    .notNull(),
   invitedAt: timestamp("invitedAt").notNull(),
   acceptedAt: timestamp("acceptedAt"),
 })

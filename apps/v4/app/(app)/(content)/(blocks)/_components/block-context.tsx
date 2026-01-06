@@ -43,9 +43,7 @@ export function BlockProvider({ index, children }: BlockProviderProps) {
   // When container is muted (darker), cards should be background/card
   // Cards include a subtle shadow for depth
   const cardBg =
-    containerBg === "page"
-      ? "bg-card shadow-sm"
-      : "bg-background shadow-sm"
+    containerBg === "page" ? "bg-card shadow-sm" : "bg-background shadow-sm"
   const surfaceBg = containerBg === "page" ? "bg-muted" : "bg-background"
 
   const value: BlockContextValue = {
@@ -56,9 +54,5 @@ export function BlockProvider({ index, children }: BlockProviderProps) {
     surfaceBg,
   }
 
-  return (
-    <BlockContext.Provider value={value}>
-      {children}
-    </BlockContext.Provider>
-  )
+  return <BlockContext.Provider value={value}>{children}</BlockContext.Provider>
 }

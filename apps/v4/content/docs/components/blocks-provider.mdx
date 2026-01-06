@@ -32,7 +32,10 @@ npx pitsi@latest add blocks-provider
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource name="blocks-provider" title="components/ui/blocks-provider.tsx" />
+<ComponentSource
+  name="blocks-provider"
+  title="components/ui/blocks-provider.tsx"
+/>
 
 <Step>Copy the supporting library files.</Step>
 
@@ -69,29 +72,29 @@ export default function Page() {
 
 ## Props
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| slug | string | "default" | Template theme slug (e.g., "service-plants", "ai", "art") |
-| tint | "base" \| "tinted" \| "deep" | "base" | Color intensity level |
-| forceDark | boolean | false | Force dark mode regardless of system preference |
-| forceLight | boolean | false | Force light mode regardless of system preference |
-| transparent | boolean | false | Make background transparent |
-| className | string | - | Additional CSS classes |
+| Prop        | Type                         | Default   | Description                                               |
+| ----------- | ---------------------------- | --------- | --------------------------------------------------------- |
+| slug        | string                       | "default" | Template theme slug (e.g., "service-plants", "ai", "art") |
+| tint        | "base" \| "tinted" \| "deep" | "base"    | Color intensity level                                     |
+| forceDark   | boolean                      | false     | Force dark mode regardless of system preference           |
+| forceLight  | boolean                      | false     | Force light mode regardless of system preference          |
+| transparent | boolean                      | false     | Make background transparent                               |
+| className   | string                       | -         | Additional CSS classes                                    |
 
 ## Template Slugs
 
 Available template slugs and their color palettes:
 
-| Category | Slugs | Palette |
-|----------|-------|---------|
-| AI & Technology | `ai`, `ai-sci-fi`, `product-scifi` | azure, indigo, cyan |
-| Creative & Art | `art`, `service-fashion`, `service-tattoo` | violet, rose, coral |
-| Food & Beverage | `food-pizza`, `food-juice`, `service-coffee-shop` | coral, amber |
-| Products | `product-coffee`, `product-plants`, `product-skincare` | amber, sage, rose |
-| Health & Wellness | `service-gym`, `service-psychologist` | coral, sage |
-| Beauty | `service-barber`, `service-makeup` | amber, rose |
-| Lifestyle | `boat`, `service-travel`, `service-hospitality` | azure, amber |
-| Professional | `service-real-estate`, `service-marketing` | indigo, violet |
+| Category          | Slugs                                                  | Palette             |
+| ----------------- | ------------------------------------------------------ | ------------------- |
+| AI & Technology   | `ai`, `ai-sci-fi`, `product-scifi`                     | azure, indigo, cyan |
+| Creative & Art    | `art`, `service-fashion`, `service-tattoo`             | violet, rose, coral |
+| Food & Beverage   | `food-pizza`, `food-juice`, `service-coffee-shop`      | coral, amber        |
+| Products          | `product-coffee`, `product-plants`, `product-skincare` | amber, sage, rose   |
+| Health & Wellness | `service-gym`, `service-psychologist`                  | coral, sage         |
+| Beauty            | `service-barber`, `service-makeup`                     | amber, rose         |
+| Lifestyle         | `boat`, `service-travel`, `service-hospitality`        | azure, amber        |
+| Professional      | `service-real-estate`, `service-marketing`             | indigo, violet      |
 
 ## Tint Levels
 
@@ -110,7 +113,7 @@ Animated floating shapes for visual interest:
 ```tsx
 import { FloatingDecoration } from "@/components/ui/blocks-provider"
 
-<FloatingDecoration
+;<FloatingDecoration
   shape="circle"
   size="md"
   position="top-right"
@@ -127,12 +130,7 @@ Background patterns:
 ```tsx
 import { PatternDecoration } from "@/components/ui/blocks-provider"
 
-<PatternDecoration
-  pattern="dots"
-  size="md"
-  opacity={10}
-  fade="radial"
-/>
+;<PatternDecoration pattern="dots" size="md" opacity={10} fade="radial" />
 ```
 
 ### Overlay
@@ -142,7 +140,7 @@ Dark, light, or gradient overlays:
 ```tsx
 import { Overlay } from "@/components/ui/blocks-provider"
 
-<Overlay variant="gradient-bottom" opacity={60} />
+;<Overlay variant="gradient-bottom" opacity={60} />
 ```
 
 ### BgDecoration
@@ -152,7 +150,7 @@ Background gradient decorations:
 ```tsx
 import { BgDecoration } from "@/components/ui/blocks-provider"
 
-<BgDecoration variant="glow" opacity={30} position="top" />
+;<BgDecoration variant="glow" opacity={30} position="top" />
 ```
 
 ### KnockoutText
@@ -162,7 +160,7 @@ Makes text readable over any background:
 ```tsx
 import { KnockoutText } from "@/components/ui/blocks-provider"
 
-<KnockoutText blur="3xl" intensity={2}>
+;<KnockoutText blur="3xl" intensity={2}>
   <h1>Readable Text</h1>
 </KnockoutText>
 ```

@@ -1,16 +1,18 @@
 import { ReactNode } from "react"
 
-import { Spacer } from "@/registry/new-york-v4/ui/spacer"
-
 import { LayoutGrid, LayoutGridItem } from "@/components/layout/layout-grid"
 import { StripeBgGuides } from "@/components/layout/striped-bg-guides"
+import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 
 interface ContentPageLayoutProps {
   sidebar: ReactNode
   children: ReactNode
 }
 
-export function ContentPageLayout({ sidebar, children }: ContentPageLayoutProps) {
+export function ContentPageLayout({
+  sidebar,
+  children,
+}: ContentPageLayoutProps) {
   return (
     <div className="relative -mt-[56px] min-h-screen overflow-x-clip">
       <StripeBgGuides columnCount={6} animated={false} />

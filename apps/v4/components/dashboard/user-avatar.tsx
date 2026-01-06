@@ -12,7 +12,11 @@ const sizeClasses = {
   lg: "size-20 text-xl",
 }
 
-export function UserAvatar({ initial, size = "sm", className }: UserAvatarProps) {
+export function UserAvatar({
+  initial,
+  size = "sm",
+  className,
+}: UserAvatarProps) {
   return (
     <div
       className={cn(

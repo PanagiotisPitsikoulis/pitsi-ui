@@ -18,12 +18,7 @@ export interface ReviewsMarqueeBlockProps {
   className?: string
 }
 
-function ReviewCard({
-  img,
-  name,
-  username,
-  body,
-}: Review) {
+function ReviewCard({ img, name, username, body }: Review) {
   return (
     <figure
       className={cn(
@@ -33,7 +28,13 @@ function ReviewCard({
     >
       <div className="flex flex-row items-center gap-2">
         <div className="relative size-8 overflow-hidden rounded-full">
-          <Image src={img} alt={name} fill className="object-cover" sizes="32px" />
+          <Image
+            src={img}
+            alt={name}
+            fill
+            className="object-cover"
+            sizes="32px"
+          />
         </div>
         <div className="flex flex-col">
           <figcaption className="text-sm font-medium">{name}</figcaption>
@@ -62,12 +63,21 @@ export function ReviewsMarqueeBlock({
         className
       )}
     >
-      <Marquee pauseOnHover className="[--duration:var(--marquee-duration)]" style={{ "--marquee-duration": duration } as React.CSSProperties}>
+      <Marquee
+        pauseOnHover
+        className="[--duration:var(--marquee-duration)]"
+        style={{ "--marquee-duration": duration } as React.CSSProperties}
+      >
         {firstRow.map((review) => (
           <ReviewCard key={review.username} {...review} />
         ))}
       </Marquee>
-      <Marquee reverse pauseOnHover className="[--duration:var(--marquee-duration)]" style={{ "--marquee-duration": duration } as React.CSSProperties}>
+      <Marquee
+        reverse
+        pauseOnHover
+        className="[--duration:var(--marquee-duration)]"
+        style={{ "--marquee-duration": duration } as React.CSSProperties}
+      >
         {secondRow.map((review) => (
           <ReviewCard key={review.username} {...review} />
         ))}

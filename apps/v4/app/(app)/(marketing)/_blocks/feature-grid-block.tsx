@@ -37,8 +37,12 @@ export function FeatureGridBlock({
 }: FeatureGridBlockProps) {
   // Split features for left/right columns if centerContent is provided
   const hasCenter = !!centerContent
-  const leftFeatures = hasCenter ? features.slice(0, Math.ceil(features.length / 2)) : features
-  const rightFeatures = hasCenter ? features.slice(Math.ceil(features.length / 2)) : []
+  const leftFeatures = hasCenter
+    ? features.slice(0, Math.ceil(features.length / 2))
+    : features
+  const rightFeatures = hasCenter
+    ? features.slice(Math.ceil(features.length / 2))
+    : []
 
   return (
     <div
@@ -66,7 +70,9 @@ export function FeatureGridBlock({
         <div className="grid w-full grid-cols-6 gap-6">
           {/* Left column */}
           <div className="col-span-6 flex flex-col gap-6 lg:col-span-2">
-            {leftFeatures.map((feature, index) => renderFeatureItem(feature, index))}
+            {leftFeatures.map((feature, index) =>
+              renderFeatureItem(feature, index)
+            )}
           </div>
 
           {/* Center content */}
@@ -76,7 +82,9 @@ export function FeatureGridBlock({
 
           {/* Right column */}
           <div className="col-span-6 flex flex-col gap-6 lg:col-span-2">
-            {rightFeatures.map((feature, index) => renderFeatureItem(feature, index + leftFeatures.length))}
+            {rightFeatures.map((feature, index) =>
+              renderFeatureItem(feature, index + leftFeatures.length)
+            )}
           </div>
         </div>
       ) : (

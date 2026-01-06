@@ -1,5 +1,4 @@
 import { LucideIcon } from "@/lib/icons"
-
 import {
   Card,
   CardContent,
@@ -14,7 +13,12 @@ interface StatCardProps {
   icon: LucideIcon
 }
 
-export function StatCard({ title, value, description, icon: Icon }: StatCardProps) {
+export function StatCard({
+  title,
+  value,
+  description,
+  icon: Icon,
+}: StatCardProps) {
   return (
     <Card>
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">

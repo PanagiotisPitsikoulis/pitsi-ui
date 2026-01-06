@@ -1,11 +1,6 @@
 import Link from "next/link"
-import {
-  Accessibility,
-  CheckCircle2,
-  Code2,
-  Layers,
-} from "@/lib/icons"
 
+import { Accessibility, CheckCircle2, Code2, Layers } from "@/lib/icons"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { HeroButton } from "@/registry/new-york-v4/ui/hero-button"
 import { Spacer } from "@/registry/new-york-v4/ui/spacer"
@@ -22,7 +17,7 @@ function FloatingPrimitive({
 }) {
   return (
     <div
-      className={`bg-card/90 rounded-xl border shadow-lg backdrop-blur-sm animate-float ${className}`}
+      className={`bg-card/90 animate-float rounded-xl border shadow-lg backdrop-blur-sm ${className}`}
       style={{ animationDelay: `${delay}ms` }}
     >
       {children}
@@ -40,7 +35,7 @@ export function ComponentsHeroSection() {
       <div className="absolute inset-0 overflow-hidden">
         {/* Geometric shapes */}
         <div className="bg-brand/5 dark:bg-brand/10 absolute top-1/4 -left-20 h-[400px] w-[400px] rotate-45 rounded-3xl blur-3xl" />
-        <div className="bg-brand/3 dark:bg-brand/5 absolute -bottom-20 right-1/4 h-[300px] w-[300px] rotate-12 rounded-3xl blur-3xl" />
+        <div className="bg-brand/3 dark:bg-brand/5 absolute right-1/4 -bottom-20 h-[300px] w-[300px] rotate-12 rounded-3xl blur-3xl" />
         <div className="bg-brand/5 dark:bg-brand/10 absolute top-1/2 right-10 h-[200px] w-[200px] -rotate-12 rounded-3xl blur-2xl" />
       </div>
 
@@ -65,8 +60,8 @@ export function ComponentsHeroSection() {
         <Spacer size={"2xl"} sizeMobile={"md"} />
 
         <p className="text-muted-foreground max-w-2xl text-center text-lg md:text-2xl">
-          Radix primitives. Full accessibility. Zero compromises.
-          Build faster with battle-tested components.
+          Radix primitives. Full accessibility. Zero compromises. Build faster
+          with battle-tested components.
         </p>
 
         {/* Buttons */}
@@ -75,7 +70,12 @@ export function ComponentsHeroSection() {
           <Link href="/docs/components">
             <HeroButton>View Components</HeroButton>
           </Link>
-          <Button asChild size={"lg"} variant={"outline"} className="rounded-full">
+          <Button
+            asChild
+            size={"lg"}
+            variant={"outline"}
+            className="rounded-full"
+          >
             <Link href="/docs">Documentation</Link>
           </Button>
         </div>
@@ -111,7 +111,10 @@ export function ComponentsHeroSection() {
           <div className="hidden md:block">
             <div className="relative h-[24rem]">
               {/* Button primitive */}
-              <FloatingPrimitive className="absolute left-0 top-0 p-4" delay={0}>
+              <FloatingPrimitive
+                className="absolute top-0 left-0 p-4"
+                delay={0}
+              >
                 <div className="flex items-center gap-2">
                   <div className="bg-brand h-10 w-24 rounded-lg" />
                   <div className="bg-muted h-10 w-24 rounded-lg" />
@@ -119,7 +122,10 @@ export function ComponentsHeroSection() {
               </FloatingPrimitive>
 
               {/* Input primitive */}
-              <FloatingPrimitive className="absolute right-0 top-4 p-4" delay={200}>
+              <FloatingPrimitive
+                className="absolute top-4 right-0 p-4"
+                delay={200}
+              >
                 <div className="space-y-2">
                   <div className="bg-muted h-3 w-16 rounded" />
                   <div className="h-10 w-48 rounded-lg border" />
@@ -127,7 +133,10 @@ export function ComponentsHeroSection() {
               </FloatingPrimitive>
 
               {/* Card primitive */}
-              <FloatingPrimitive className="absolute left-1/4 top-20 p-4" delay={400}>
+              <FloatingPrimitive
+                className="absolute top-20 left-1/4 p-4"
+                delay={400}
+              >
                 <div className="w-56 space-y-3">
                   <div className="flex items-center gap-3">
                     <div className="bg-brand size-10 rounded-full" />
@@ -141,7 +150,10 @@ export function ComponentsHeroSection() {
               </FloatingPrimitive>
 
               {/* Select primitive */}
-              <FloatingPrimitive className="absolute right-1/4 top-32 p-4" delay={600}>
+              <FloatingPrimitive
+                className="absolute top-32 right-1/4 p-4"
+                delay={600}
+              >
                 <div className="space-y-2">
                   <div className="bg-muted h-3 w-12 rounded" />
                   <div className="flex h-10 w-40 items-center justify-between rounded-lg border px-3">
@@ -152,7 +164,10 @@ export function ComponentsHeroSection() {
               </FloatingPrimitive>
 
               {/* Toggle primitive */}
-              <FloatingPrimitive className="absolute left-8 bottom-16 p-4" delay={800}>
+              <FloatingPrimitive
+                className="absolute bottom-16 left-8 p-4"
+                delay={800}
+              >
                 <div className="flex items-center gap-3">
                   <div className="bg-brand h-6 w-10 rounded-full" />
                   <div className="bg-muted h-3 w-20 rounded" />
@@ -160,7 +175,10 @@ export function ComponentsHeroSection() {
               </FloatingPrimitive>
 
               {/* Dialog primitive */}
-              <FloatingPrimitive className="absolute right-8 bottom-8 p-4" delay={1000}>
+              <FloatingPrimitive
+                className="absolute right-8 bottom-8 p-4"
+                delay={1000}
+              >
                 <div className="w-48 space-y-3">
                   <div className="bg-foreground/80 h-4 w-28 rounded" />
                   <div className="bg-muted h-2 w-full rounded" />
@@ -190,7 +208,7 @@ export function ComponentsHeroSection() {
             <FloatingPrimitive className="col-span-2 p-3" delay={200}>
               <div className="flex items-center gap-3">
                 <div className="bg-brand size-8 rounded-full" />
-                <div className="space-y-1 flex-1">
+                <div className="flex-1 space-y-1">
                   <div className="bg-foreground/80 h-2 w-20 rounded" />
                   <div className="bg-muted h-2 w-16 rounded" />
                 </div>

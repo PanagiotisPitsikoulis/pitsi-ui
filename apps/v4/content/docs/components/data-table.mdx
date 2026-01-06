@@ -837,8 +837,8 @@ Here are some components you can use to build your data tables. This is from the
 Make any column header sortable and hideable.
 
 ```tsx showLineNumbers title="components/data-table-column-header.tsx"
-import { ArrowUpDown, EyeOff } from "lucide-react"
 import { Column } from "@tanstack/react-table"
+import { ArrowUpDown, EyeOff } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -850,8 +850,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
-interface DataTableColumnHeaderProps<TData, TValue>
-  extends React.HTMLAttributes<HTMLDivElement> {
+interface DataTableColumnHeaderProps<
+  TData,
+  TValue,
+> extends React.HTMLAttributes<HTMLDivElement> {
   column: Column<TData, TValue>
   title: string
 }
@@ -872,7 +874,7 @@ export function DataTableColumnHeader<TData, TValue>({
           <Button
             variant="ghost"
             size="sm"
-            className="-ml-3 h-8 data-[state=open]:bg-accent"
+            className="data-[state=open]:bg-accent -ml-3 h-8"
           >
             <span>{title}</span>
             {column.getIsSorted() === "desc" ? (
@@ -921,13 +923,13 @@ export const columns = [
 Add pagination controls to your table including page size and selection count.
 
 ```tsx showLineNumbers title="components/data-table-pagination.tsx"
+import { Table } from "@tanstack/react-table"
 import {
   ChevronLeft,
   ChevronRight,
   ChevronsLeft,
   ChevronsRight,
 } from "lucide-react"
-import { Table } from "@tanstack/react-table"
 
 import { Button } from "@/components/ui/button"
 import {

@@ -1,8 +1,8 @@
 "use client"
 
 import Image from "next/image"
-import { Heart, Share2 } from "@/lib/icons"
 
+import { Heart, Share2 } from "@/lib/icons"
 import { cn } from "@/lib/utils"
 
 interface PreviewProps {
@@ -36,12 +36,14 @@ export function NavbarPreview({ shadowStyle, className }: PreviewProps) {
   ]
 
   return (
-    <div className={cn("flex h-full flex-col bg-background", className)}>
+    <div className={cn("bg-background flex h-full flex-col", className)}>
       <div
-        className="relative z-10 bg-background px-5 py-4"
+        className="bg-background relative z-10 px-5 py-4"
         style={{ boxShadow: shadowStyle }}
       >
-        <span className="text-foreground text-base font-normal">Artistry — Gallery</span>
+        <span className="text-foreground text-base font-normal">
+          Artistry — Gallery
+        </span>
       </div>
       <div className="mt-[-20px] flex-1 overflow-hidden px-4 py-3">
         <div className="flex gap-3">
@@ -58,7 +60,10 @@ export function NavbarPreview({ shadowStyle, className }: PreviewProps) {
                 return (
                   <div
                     key={rowIndex}
-                    className={cn("relative shrink-0 overflow-hidden rounded-sm", heightClass)}
+                    className={cn(
+                      "relative shrink-0 overflow-hidden rounded-sm",
+                      heightClass
+                    )}
                   >
                     <Image
                       src={src}
@@ -81,7 +86,7 @@ export function NavbarPreview({ shadowStyle, className }: PreviewProps) {
 // Split layout with sidebar over image
 export function SideMenuPreview({ shadowStyle, className }: PreviewProps) {
   return (
-    <div className={cn("relative h-full bg-background", className)}>
+    <div className={cn("bg-background relative h-full", className)}>
       {/* Background image */}
       <Image
         src="/placeholders/art/12.webp"
@@ -92,7 +97,7 @@ export function SideMenuPreview({ shadowStyle, className }: PreviewProps) {
       />
       {/* Sidebar overlay */}
       <div
-        className="absolute inset-y-0 left-0 flex w-44 flex-col justify-center gap-4 bg-background p-6"
+        className="bg-background absolute inset-y-0 left-0 flex w-44 flex-col justify-center gap-4 p-6"
         style={{ boxShadow: shadowStyle }}
       >
         {["Collection", "Artists", "Exhibits", "Visit"].map((item) => (
@@ -115,7 +120,9 @@ export function BottomDrawerPreview({ shadowStyle, className }: PreviewProps) {
   ]
 
   return (
-    <div className={cn("relative flex h-full flex-col bg-background", className)}>
+    <div
+      className={cn("bg-background relative flex h-full flex-col", className)}
+    >
       {/* Masonry grid */}
       <div className="mb-[-20px] flex-1 overflow-hidden px-4 py-3">
         <div className="flex gap-3">
@@ -131,7 +138,10 @@ export function BottomDrawerPreview({ shadowStyle, className }: PreviewProps) {
                 return (
                   <div
                     key={rowIndex}
-                    className={cn("relative shrink-0 overflow-hidden rounded-sm", heightClass)}
+                    className={cn(
+                      "relative shrink-0 overflow-hidden rounded-sm",
+                      heightClass
+                    )}
                   >
                     <Image
                       src={src}
@@ -149,24 +159,28 @@ export function BottomDrawerPreview({ shadowStyle, className }: PreviewProps) {
       </div>
       {/* Bottom drawer overlay - Google Maps style */}
       <div
-        className="relative z-10 bg-background px-5 pb-6 pt-3"
+        className="bg-background relative z-10 px-5 pt-3 pb-6"
         style={{ boxShadow: shadowStyle }}
       >
         {/* Handle */}
-        <div className="mx-auto mb-4 h-1 w-10 rounded-full bg-muted-foreground/30" />
+        <div className="bg-muted-foreground/30 mx-auto mb-4 h-1 w-10 rounded-full" />
 
         {/* Title row */}
         <div className="flex items-start justify-between">
           <div>
-            <h3 className="text-foreground text-lg font-semibold">Ethereal Dreams</h3>
-            <p className="text-muted-foreground text-sm">Oil on canvas by Maria Chen</p>
+            <h3 className="text-foreground text-lg font-semibold">
+              Ethereal Dreams
+            </h3>
+            <p className="text-muted-foreground text-sm">
+              Oil on canvas by Maria Chen
+            </p>
           </div>
           <div className="flex gap-2">
-            <div className="flex size-9 items-center justify-center rounded-full bg-muted">
-              <Heart className="size-4 text-foreground" />
+            <div className="bg-muted flex size-9 items-center justify-center rounded-full">
+              <Heart className="text-foreground size-4" />
             </div>
-            <div className="flex size-9 items-center justify-center rounded-full bg-muted">
-              <Share2 className="size-4 text-foreground" />
+            <div className="bg-muted flex size-9 items-center justify-center rounded-full">
+              <Share2 className="text-foreground size-4" />
             </div>
           </div>
         </div>
@@ -178,7 +192,6 @@ export function BottomDrawerPreview({ shadowStyle, className }: PreviewProps) {
           <span className="text-muted-foreground">·</span>
           <span className="text-muted-foreground">Abstract</span>
         </div>
-
       </div>
     </div>
   )
@@ -187,10 +200,12 @@ export function BottomDrawerPreview({ shadowStyle, className }: PreviewProps) {
 // Modal centered over split layout
 export function ModalPreview({ shadowStyle, className }: PreviewProps) {
   return (
-    <div className={cn("relative flex h-full bg-background", className)}>
+    <div className={cn("bg-background relative flex h-full", className)}>
       {/* Left side - light background */}
       <div className="flex w-1/2 flex-col p-6">
-        <span className="text-foreground text-lg font-semibold tracking-tight">NOVA</span>
+        <span className="text-foreground text-lg font-semibold tracking-tight">
+          NOVA
+        </span>
         <span className="text-muted-foreground mt-auto text-sm">Gallery</span>
       </div>
       {/* Right side - image with padding */}
@@ -207,15 +222,27 @@ export function ModalPreview({ shadowStyle, className }: PreviewProps) {
       </div>
       {/* Modal overlapping both sides */}
       <div
-        className="absolute left-1/2 top-1/2 z-10 w-64 -translate-x-1/2 -translate-y-1/2 bg-background p-6"
+        className="bg-background absolute top-1/2 left-1/2 z-10 w-64 -translate-x-1/2 -translate-y-1/2 p-6"
         style={{ boxShadow: shadowStyle }}
       >
-        <svg className="text-foreground mb-4 size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg
+          className="text-foreground mb-4 size-6"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
           <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z" />
           <path d="m15 5 4 4" />
         </svg>
-        <h3 className="text-foreground text-base font-medium">Join our exclusive collector's preview.</h3>
-        <p className="text-muted-foreground mt-2 text-sm">Be first to see new artworks</p>
+        <h3 className="text-foreground text-base font-medium">
+          Join our exclusive collector's preview.
+        </h3>
+        <p className="text-muted-foreground mt-2 text-sm">
+          Be first to see new artworks
+        </p>
       </div>
     </div>
   )

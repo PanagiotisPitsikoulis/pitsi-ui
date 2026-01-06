@@ -1,13 +1,12 @@
 "use client"
 
-import { Separator } from "@/registry/new-york-v4/ui/separator"
-
 import {
   AccentColorPicker,
   PageHeader,
   SettingsCard,
   ThemeSelector,
 } from "@/components/dashboard"
+import { Separator } from "@/registry/new-york-v4/ui/separator"
 
 export default function AppearancePageClient() {
   return (

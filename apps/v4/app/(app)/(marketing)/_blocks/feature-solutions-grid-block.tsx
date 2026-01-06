@@ -1,7 +1,7 @@
 "use client"
 
-import Image from "next/image"
 import React from "react"
+import Image from "next/image"
 
 import { cn } from "@/lib/utils"
 
@@ -24,44 +24,53 @@ export interface FeatureSolutionsGridBlockProps {
 const defaultTagline = "Deep Customization"
 const defaultHeadline = "Every Detail"
 const defaultHeadlineAccent = "Under Your Control"
-const defaultDescription = "Professional tools with mathematical foundations. From industry presets to granular controls."
+const defaultDescription =
+  "Professional tools with mathematical foundations. From industry presets to granular controls."
 
 const defaultItems: SolutionItem[] = [
   {
     type: "image",
-    image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-1.svg",
+    image:
+      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-1.svg",
   },
   {
     type: "card",
     title: "Multi-Layer Shadows",
-    description: "Up to 5 shadow layers with individual control. Blur, spread, offset, opacity — all fine-tunable.",
+    description:
+      "Up to 5 shadow layers with individual control. Blur, spread, offset, opacity — all fine-tunable.",
   },
   {
     type: "image",
-    image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-2.svg",
+    image:
+      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-2.svg",
   },
   {
     type: "card",
     title: "48 Easing Presets",
-    description: "From Apple's spring curves to Material Design's motion. Every preset mathematically derived.",
+    description:
+      "From Apple's spring curves to Material Design's motion. Every preset mathematically derived.",
   },
   {
     type: "image",
-    image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-3.svg",
+    image:
+      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-3.svg",
   },
   {
     type: "card",
     title: "Typography Scales",
-    description: "Major Third, Perfect Fourth, Golden Ratio. Mathematical scales for perfect harmony.",
+    description:
+      "Major Third, Perfect Fourth, Golden Ratio. Mathematical scales for perfect harmony.",
   },
   {
     type: "image",
-    image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-1.svg",
+    image:
+      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-1.svg",
   },
   {
     type: "card",
     title: "Color Intelligence",
-    description: "OKLCH perceptual uniformity. 40+ semantic tokens. Automatic contrast ratios.",
+    description:
+      "OKLCH perceptual uniformity. 40+ semantic tokens. Automatic contrast ratios.",
   },
 ]
 
@@ -105,12 +114,12 @@ export function FeatureSolutionsGridBlock({
           </p>
         </div>
         <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {items.map((item, index) => (
+          {items.map((item, index) =>
             item.type === "image" ? (
               <div
                 key={index}
                 className={cn(
-                  "relative aspect-square size-full rounded-3xl overflow-hidden",
+                  "relative aspect-square size-full overflow-hidden rounded-3xl",
                   getOrderClass(index)
                 )}
               >
@@ -129,13 +138,15 @@ export function FeatureSolutionsGridBlock({
                   getOrderClass(index)
                 )}
               >
-                <h3 className="text-xl font-medium lg:text-2xl">{item.title}</h3>
+                <h3 className="text-xl font-medium lg:text-2xl">
+                  {item.title}
+                </h3>
                 <p className="text-muted-foreground text-sm lg:text-base">
                   {item.description}
                 </p>
               </div>
             )
-          ))}
+          )}
         </div>
       </div>
     </section>

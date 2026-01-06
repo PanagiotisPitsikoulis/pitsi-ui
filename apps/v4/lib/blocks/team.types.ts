@@ -60,7 +60,8 @@ export interface TeamBlockProps {
 export const teamDefaults: TeamContent = {
   badge: "Our Team",
   title: "Meet the Plant Experts",
-  description: "Passionate horticulturists dedicated to bringing nature into your home.",
+  description:
+    "Passionate horticulturists dedicated to bringing nature into your home.",
   members: [
     {
       name: "Sarah Green",

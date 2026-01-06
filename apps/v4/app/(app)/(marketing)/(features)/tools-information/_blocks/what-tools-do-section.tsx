@@ -1,9 +1,9 @@
 "use client"
 
 import { useRef, useState } from "react"
-import { Check, ChevronDown } from "@/lib/icons"
 import { motion, useScroll, useTransform } from "motion/react"
 
+import { Check, ChevronDown } from "@/lib/icons"
 import { PixelatedImage } from "@/components/effects"
 import { CodeBlock, SliderRow } from "@/components/tools"
 import { ScrollArea } from "@/registry/new-york-v4/ui/scroll-area"
@@ -28,7 +28,7 @@ function ParallaxBentoCard({
   return (
     <div
       ref={ref}
-      className="h-[340px] overflow-hidden rounded-[2rem] border shadow-sm relative"
+      className="relative h-[340px] overflow-hidden rounded-[2rem] border shadow-sm"
     >
       {/* Parallax pixelated background */}
       <motion.div
@@ -42,7 +42,7 @@ function ParallaxBentoCard({
         />
       </motion.div>
       {/* Content overlay */}
-      <div className="relative flex h-full items-center justify-center overflow-hidden p-4 z-10">
+      <div className="relative z-10 flex h-full items-center justify-center overflow-hidden p-4">
         {children}
       </div>
     </div>
@@ -53,14 +53,38 @@ function ParallaxBentoCard({
 const themePresets = [
   { key: "slate", label: "Slate", colors: ["#2d2d2d", "#777777", "#fefefe"] },
   { key: "azure", label: "Azure", colors: ["#5c8ac4", "#c4915c", "#f8fafc"] },
-  { key: "azure-tinted", label: "Azure Tinted", colors: ["#5c8ac4", "#ffffff", "#f8fafc"] },
-  { key: "azure-deep", label: "Azure Deep", colors: ["#8eb3d4", "#d4b38e", "#1a2332"] },
+  {
+    key: "azure-tinted",
+    label: "Azure Tinted",
+    colors: ["#5c8ac4", "#ffffff", "#f8fafc"],
+  },
+  {
+    key: "azure-deep",
+    label: "Azure Deep",
+    colors: ["#8eb3d4", "#d4b38e", "#1a2332"],
+  },
   { key: "violet", label: "Violet", colors: ["#8c6dc4", "#8cb85c", "#faf8fc"] },
-  { key: "violet-tinted", label: "Violet Tinted", colors: ["#8c6dc4", "#ffffff", "#faf8fc"] },
-  { key: "violet-deep", label: "Violet Deep", colors: ["#b097d4", "#b0d48e", "#251a32"] },
+  {
+    key: "violet-tinted",
+    label: "Violet Tinted",
+    colors: ["#8c6dc4", "#ffffff", "#faf8fc"],
+  },
+  {
+    key: "violet-deep",
+    label: "Violet Deep",
+    colors: ["#b097d4", "#b0d48e", "#251a32"],
+  },
   { key: "rose", label: "Rose", colors: ["#c45c7e", "#5cb89e", "#fcf8fa"] },
-  { key: "rose-tinted", label: "Rose Tinted", colors: ["#c45c7e", "#ffffff", "#fcf8fa"] },
-  { key: "rose-deep", label: "Rose Deep", colors: ["#d48ea8", "#8ed4c2", "#321a25"] },
+  {
+    key: "rose-tinted",
+    label: "Rose Tinted",
+    colors: ["#c45c7e", "#ffffff", "#fcf8fa"],
+  },
+  {
+    key: "rose-deep",
+    label: "Rose Deep",
+    colors: ["#d48ea8", "#8ed4c2", "#321a25"],
+  },
   { key: "sage", label: "Sage", colors: ["#5cb87e", "#a85cb8", "#f8fcf9"] },
   { key: "amber", label: "Amber", colors: ["#c4a15c", "#5c6dc4", "#fcfbf8"] },
   { key: "cyan", label: "Cyan", colors: ["#5cb4b8", "#c4665c", "#f8fcfc"] },
@@ -75,21 +99,23 @@ function ThemePresetsPreview() {
 
   return (
     <div className="flex min-h-[260px] items-center justify-center">
-      <div className="w-[220px] overflow-hidden rounded-3xl border bg-background shadow-lg">
+      <div className="bg-background w-[220px] overflow-hidden rounded-3xl border shadow-lg">
         <button className="flex w-full items-center justify-between gap-2 border-b px-4 py-3 text-left">
           <div className="flex items-center gap-2">
             <div className="flex -space-x-1">
               {themePresets[selectedIndex].colors.map((color, i) => (
                 <div
                   key={i}
-                  className="size-4 rounded-full border-2 border-background"
+                  className="border-background size-4 rounded-full border-2"
                   style={{ backgroundColor: color }}
                 />
               ))}
             </div>
-            <span className="text-sm font-medium">{themePresets[selectedIndex].label}</span>
+            <span className="text-sm font-medium">
+              {themePresets[selectedIndex].label}
+            </span>
           </div>
-          <ChevronDown className="size-4 text-muted-foreground" />
+          <ChevronDown className="text-muted-foreground size-4" />
         </button>
         <ScrollArea className="h-[180px]">
           <div className="p-1.5">
@@ -105,13 +131,17 @@ function ThemePresetsPreview() {
                   {preset.colors.map((color, i) => (
                     <div
                       key={i}
-                      className="size-4 rounded-full border-2 border-background"
+                      className="border-background size-4 rounded-full border-2"
                       style={{ backgroundColor: color }}
                     />
                   ))}
                 </div>
-                <span className="flex-1 text-sm font-medium">{preset.label}</span>
-                {index === selectedIndex && <Check className="size-3.5 opacity-70" />}
+                <span className="flex-1 text-sm font-medium">
+                  {preset.label}
+                </span>
+                {index === selectedIndex && (
+                  <Check className="size-3.5 opacity-70" />
+                )}
               </button>
             ))}
           </div>
@@ -131,7 +161,7 @@ function ShadowControlsPreview() {
   const shadowValue = `${offsetX}px ${offsetY}px ${blur}px rgba(0,0,0,${opacity})`
 
   return (
-    <div className="w-full h-full flex flex-col bg-background rounded-3xl border p-6 shadow-lg">
+    <div className="bg-background flex h-full w-full flex-col rounded-3xl border p-6 shadow-lg">
       <div className="flex flex-1 items-center justify-center">
         <div
           className="size-14 rounded-2xl bg-white"
@@ -148,7 +178,7 @@ function ShadowControlsPreview() {
           step={1}
           unit="px"
         />
-                <SliderRow
+        <SliderRow
           label="Offset X"
           value={offsetX}
           onChange={setOffsetX}
@@ -251,9 +281,9 @@ function ExportCodePreview() {
   const [activeTab, setActiveTab] = useState(2)
 
   return (
-    <div className="w-full h-full flex flex-col">
+    <div className="flex h-full w-full flex-col">
       {/* Floating tabs */}
-      <div className="flex gap-0.5 p-1 bg-background/80 backdrop-blur rounded-lg w-fit mx-auto mb-2">
+      <div className="bg-background/80 mx-auto mb-2 flex w-fit gap-0.5 rounded-lg p-1 backdrop-blur">
         {exportTabs.map((tab, index) => (
           <button
             key={tab.key}
@@ -269,7 +299,7 @@ function ExportCodePreview() {
         ))}
       </div>
       {/* Code block */}
-      <div className="flex-1 w-full overflow-hidden">
+      <div className="w-full flex-1 overflow-hidden">
         <CodeBlock
           code={exportTabs[activeTab].code}
           language={exportTabs[activeTab].language}
@@ -307,7 +337,7 @@ export function WhatToolsDoSection() {
   return (
     <section className="container px-6">
       <div className="text-center">
-        <p className="text-brand text-sm font-semibold uppercase tracking-wider">
+        <p className="text-brand text-sm font-semibold tracking-wider uppercase">
           Capabilities
         </p>
         <Spacer size="sm" />

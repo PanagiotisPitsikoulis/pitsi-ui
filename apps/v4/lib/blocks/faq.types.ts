@@ -1,4 +1,8 @@
-import type { BlockBaseClassNames, BlockHeaderClassNames, BlockSectionHeader } from "./types"
+import type {
+  BlockBaseClassNames,
+  BlockHeaderClassNames,
+  BlockSectionHeader,
+} from "./types"
 
 // ============================================================================
 // FAQ Content Types

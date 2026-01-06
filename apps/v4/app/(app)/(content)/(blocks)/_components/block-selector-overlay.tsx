@@ -1,8 +1,8 @@
 "use client"
 
 import { useCallback, useEffect, useState } from "react"
-import { Check } from "@/lib/icons"
 
+import { Check } from "@/lib/icons"
 import { cn } from "@/lib/utils"
 import {
   Dialog,
@@ -12,6 +12,7 @@ import {
   DialogTitle,
 } from "@/registry/new-york-v4/ui/dialog"
 import { ScrollArea } from "@/registry/new-york-v4/ui/scroll-area"
+
 import { BLOCK_TYPES, type BlockType } from "../blocks"
 
 interface BlockSelectorOverlayProps {
@@ -62,7 +63,10 @@ export function BlockSelectorOverlay({
 
   // Reset active type when blockGroups change
   useEffect(() => {
-    if (blockTypesWithVariants.length > 0 && !blockTypesWithVariants.includes(activeType as BlockType)) {
+    if (
+      blockTypesWithVariants.length > 0 &&
+      !blockTypesWithVariants.includes(activeType as BlockType)
+    ) {
       setActiveType(blockTypesWithVariants[0])
     }
   }, [blockTypesWithVariants, activeType])
@@ -90,7 +94,7 @@ export function BlockSelectorOverlay({
 
         <div className="flex">
           {/* Left Sidebar - Block Types */}
-          <div className="w-44 shrink-0 border-r bg-muted/30">
+          <div className="bg-muted/30 w-44 shrink-0 border-r">
             <ScrollArea className="h-[360px]">
               <div className="space-y-0.5 p-2">
                 {blockTypesWithVariants.map((type) => {
@@ -105,30 +109,32 @@ export function BlockSelectorOverlay({
                       onClick={() => setActiveType(type)}
                       className={cn(
                         "group flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-sm transition-colors",
-                        isActive
-                          ? "bg-background shadow-sm"
-                          : ""
+                        isActive ? "bg-background shadow-sm" : ""
                       )}
                     >
                       <div className="flex flex-col gap-0.5">
-                        <span className={cn(
-                          "font-medium transition-colors",
-                          isActive
-                            ? "text-foreground"
-                            : "text-muted-foreground group-hover:text-foreground"
-                        )}>
+                        <span
+                          className={cn(
+                            "font-medium transition-colors",
+                            isActive
+                              ? "text-foreground"
+                              : "text-muted-foreground group-hover:text-foreground"
+                          )}
+                        >
                           {blockTypeLabels[type] || type}
                         </span>
                         {!isDefault && (
-                          <span className="text-[10px] text-brand">
+                          <span className="text-brand text-[10px]">
                             customized
                           </span>
                         )}
                       </div>
                       <span
                         className={cn(
-                          "tabular-nums text-xs",
-                          isActive ? "text-muted-foreground" : "text-muted-foreground/60"
+                          "text-xs tabular-nums",
+                          isActive
+                            ? "text-muted-foreground"
+                            : "text-muted-foreground/60"
                         )}
                       >
                         {variants.length}
@@ -141,17 +147,18 @@ export function BlockSelectorOverlay({
           </div>
 
           {/* Right Side - Variant Grid */}
-          <div className="flex-1 bg-background">
+          <div className="bg-background flex-1">
             <ScrollArea className="h-[360px]">
               <div className="p-4">
                 {activeType && activeVariants.length > 0 ? (
                   <>
-                    <p className="mb-3 text-xs text-muted-foreground">
+                    <p className="text-muted-foreground mb-3 text-xs">
                       {blockTypeLabels[activeType]} variants
                     </p>
                     <div className="grid grid-cols-3 gap-2">
                       {activeVariants.map((blockName, index) => {
-                        const isSelected = selectedBlocks[activeType] === blockName
+                        const isSelected =
+                          selectedBlocks[activeType] === blockName
                         const isDefault = index === 0
 
                         return (
@@ -159,30 +166,34 @@ export function BlockSelectorOverlay({
                             key={blockName}
                             onClick={() => handleBlockClick(blockName)}
                             className={cn(
-                              "group relative flex aspect-[4/3] flex-col items-center justify-center rounded-lg border bg-muted/50 text-center transition-all",
+                              "group bg-muted/50 relative flex aspect-[4/3] flex-col items-center justify-center rounded-lg border text-center transition-all",
                               isSelected
-                                ? "border-brand bg-brand/5 ring-1 ring-brand"
+                                ? "border-brand bg-brand/5 ring-brand ring-1"
                                 : "border-border hover:border-brand/50 hover:bg-muted"
                             )}
                           >
                             {/* Selected checkmark */}
                             {isSelected && (
-                              <div className="absolute right-1.5 top-1.5 flex size-4 items-center justify-center rounded-full bg-brand">
-                                <Check className="size-2.5 text-primary-foreground" />
+                              <div className="bg-brand absolute top-1.5 right-1.5 flex size-4 items-center justify-center rounded-full">
+                                <Check className="text-primary-foreground size-2.5" />
                               </div>
                             )}
 
                             {/* Variant number */}
-                            <span className={cn(
-                              "text-lg font-semibold",
-                              isSelected ? "text-brand" : "text-muted-foreground"
-                            )}>
+                            <span
+                              className={cn(
+                                "text-lg font-semibold",
+                                isSelected
+                                  ? "text-brand"
+                                  : "text-muted-foreground"
+                              )}
+                            >
                               {index + 1}
                             </span>
 
                             {/* Default label */}
                             {isDefault && (
-                              <span className="text-[10px] text-muted-foreground">
+                              <span className="text-muted-foreground text-[10px]">
                                 default
                               </span>
                             )}
@@ -193,7 +204,7 @@ export function BlockSelectorOverlay({
                   </>
                 ) : (
                   <div className="flex h-full items-center justify-center py-20">
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-muted-foreground text-sm">
                       Select a block type
                     </p>
                   </div>

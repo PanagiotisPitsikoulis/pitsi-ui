@@ -72,7 +72,13 @@ export interface BlockNavItem extends BlockLink {
  * Social media link
  */
 export interface BlockSocialLink {
-  platform: "twitter" | "facebook" | "instagram" | "linkedin" | "github" | "youtube"
+  platform:
+    | "twitter"
+    | "facebook"
+    | "instagram"
+    | "linkedin"
+    | "github"
+    | "youtube"
   href: string
   label?: string
 }

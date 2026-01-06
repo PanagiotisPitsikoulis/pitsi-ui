@@ -1,9 +1,8 @@
 import { ReactNode } from "react"
 
-import { type BlogCategory, categoryLabels } from "@/lib/blog/source"
-import { Spacer } from "@/registry/new-york-v4/ui/spacer"
-
+import { categoryLabels, type BlogCategory } from "@/lib/blog/source"
 import { BackLink } from "@/components/navigation/back-link"
+import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 
 interface BlogListSidebarProps {
   category?: BlogCategory
@@ -11,7 +10,11 @@ interface BlogListSidebarProps {
   icon: ReactNode
 }
 
-export function BlogListSidebar({ category, page, icon }: BlogListSidebarProps) {
+export function BlogListSidebar({
+  category,
+  page,
+  icon,
+}: BlogListSidebarProps) {
   const pageTitle = category ? `${categoryLabels[category]} Articles` : "Blog"
   const pageSubtitle = category
     ? `Browse ${categoryLabels[category].toLowerCase()} articles from the pitsi/ui team.`
@@ -31,7 +34,9 @@ export function BlogListSidebar({ category, page, icon }: BlogListSidebarProps) 
         )}
       </h1>
       <Spacer size="lg" sizeMobile="md" />
-      <p className="text-muted-foreground text-base md:text-lg">{pageSubtitle}</p>
+      <p className="text-muted-foreground text-base md:text-lg">
+        {pageSubtitle}
+      </p>
       <Spacer size="6xl" sizeMobile="2xl" />
       <div className="flex justify-center">{icon}</div>
     </>

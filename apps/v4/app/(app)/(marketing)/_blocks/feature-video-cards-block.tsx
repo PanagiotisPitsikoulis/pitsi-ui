@@ -1,13 +1,12 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { Play } from "@/lib/icons"
-import Image from "next/image"
 import React from "react"
+import Image from "next/image"
+import { motion } from "framer-motion"
 
+import { Play } from "@/lib/icons"
 import { cn } from "@/lib/utils"
 import { useIsMobile } from "@/hooks/use-mobile"
-
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Card } from "@/registry/new-york-v4/ui/card"
 import {
@@ -33,28 +32,34 @@ export interface FeatureVideoCardsBlockProps {
   className?: string
 }
 
-const defaultImageSrc = "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/bw6.jpeg"
+const defaultImageSrc =
+  "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/bw6.jpeg"
 const defaultImageAlt = "Creative agency studio preview"
-const defaultVideoUrl = "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/man-1.mp4"
+const defaultVideoUrl =
+  "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/man-1.mp4"
 const defaultVideoCaption = "Discover our story"
 const defaultVideoSecondaryCaption = "(1:47 Sec)"
 
 const defaultCards: FeatureVideoCard[] = [
   {
     title: "Innovative strategies that drive real growth",
-    image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-2.svg",
+    image:
+      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-2.svg",
   },
   {
     title: "User-centric design built on research and insight",
-    image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-3.svg",
+    image:
+      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-3.svg",
   },
   {
     title: "End-to-end support from concept to delivery",
-    image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-4.svg",
+    image:
+      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-4.svg",
   },
   {
     title: "Global partnerships built on trust and transparency",
-    image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-5.svg",
+    image:
+      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-5.svg",
   },
 ]
 
@@ -108,7 +113,7 @@ export function FeatureVideoCardsBlock({
                   />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <h3 className="text-md font-medium leading-tight">
+                  <h3 className="text-md leading-tight font-medium">
                     {card.title}
                   </h3>
                 </div>
@@ -149,7 +154,7 @@ export function FeatureVideoCardsBlock({
                   />
                 </motion.div>
               </motion.div>
-              <div className="absolute inset-0 flex items-center justify-center bg-opacity-20">
+              <div className="bg-opacity-20 absolute inset-0 flex items-center justify-center">
                 <motion.div
                   className="flex flex-col items-center justify-center gap-2 md:flex-row"
                   variants={{

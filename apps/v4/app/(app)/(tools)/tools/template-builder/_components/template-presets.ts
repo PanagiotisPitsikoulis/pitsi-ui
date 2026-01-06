@@ -4,7 +4,8 @@ export const templatePresets: TemplatePreset[] = [
   {
     id: "saas-landing",
     label: "SaaS Landing",
-    description: "Modern SaaS product page with hero, features, pricing, and testimonials",
+    description:
+      "Modern SaaS product page with hero, features, pricing, and testimonials",
     category: "saas",
     sections: [
       "marketing-hero-section-hero-section-with-customer-logos",

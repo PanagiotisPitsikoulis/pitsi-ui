@@ -4,7 +4,12 @@ import { cn } from "@/lib/utils"
 
 export type FloatingShape = "circle" | "ring" | "blob" | "square" | "diamond"
 export type FloatingSize = "sm" | "md" | "lg" | "xl"
-export type FloatingPosition = "top-left" | "top-right" | "bottom-left" | "bottom-right" | "center"
+export type FloatingPosition =
+  | "top-left"
+  | "top-right"
+  | "bottom-left"
+  | "bottom-right"
+  | "center"
 
 export interface FloatingDecorationProps {
   /** Shape of the decoration */

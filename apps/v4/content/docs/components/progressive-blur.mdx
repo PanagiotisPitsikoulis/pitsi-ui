@@ -38,7 +38,10 @@ npm install motion
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource name="progressive-blur" title="components/ui/progressive-blur.tsx" />
+<ComponentSource
+  name="progressive-blur"
+  title="components/ui/progressive-blur.tsx"
+/>
 
 <Step>Update the import paths to match your project setup.</Step>
 
@@ -67,12 +70,12 @@ import { ProgressiveBlur } from "@/components/ui/progressive-blur"
 
 ## Props
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `direction` | `"top" \| "bottom" \| "left" \| "right"` | `"bottom"` | The direction of the blur gradient |
-| `blurIntensity` | `number` | `8` | The maximum blur intensity in pixels |
-| `blurLayers` | `number` | `8` | The number of blur layers |
-| `className` | `string` | - | Additional CSS classes |
+| Prop            | Type                                     | Default    | Description                          |
+| --------------- | ---------------------------------------- | ---------- | ------------------------------------ |
+| `direction`     | `"top" \| "bottom" \| "left" \| "right"` | `"bottom"` | The direction of the blur gradient   |
+| `blurIntensity` | `number`                                 | `8`        | The maximum blur intensity in pixels |
+| `blurLayers`    | `number`                                 | `8`        | The number of blur layers            |
+| `className`     | `string`                                 | -          | Additional CSS classes               |
 
 ## Examples
 

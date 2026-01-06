@@ -53,7 +53,7 @@ function HeroSection() {
   return (
     <section className="relative">
       <StripeBgGuides />
-      <div className="container relative z-10">
+      <div className="relative z-10 container">
         <h1>Welcome</h1>
       </div>
     </section>
@@ -63,24 +63,24 @@ function HeroSection() {
 
 ## Props
 
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `columnCount` | `number` | `4` | Number of columns/lines |
-| `solidLines` | `number[]` | `[]` | Indices of lines to render as solid |
-| `hiddenLines` | `number[]` | `[]` | Indices of lines to hide |
-| `animated` | `boolean` | `true` | Enable glow animations |
-| `animationDuration` | `number` | `62` | Duration of one animation cycle |
-| `animationDelay` | `number` | `0.8` | Delay between each line's animation |
-| `glowColor` | `string` | `"hsl(var(--accent))"` | Color of the glow effect |
-| `glowSize` | `string` | `"10vh"` | Size of the glow |
-| `glowOpacity` | `number` | `0.4` | Opacity of the glow |
-| `randomize` | `boolean` | `true` | Randomize which lines are active |
-| `randomInterval` | `number` | `9000` | Interval for randomization (ms) |
-| `direction` | `"top-to-bottom" \| "bottom-to-top" \| "both" \| "random"` | `"both"` | Animation direction |
-| `easing` | `"linear" \| "easeIn" \| "easeOut" \| "easeInOut" \| "spring"` | `"spring"` | Animation easing |
-| `maxActiveColumns` | `number` | `3` | Maximum active animated columns |
-| `contained` | `boolean` | `false` | Use absolute instead of fixed positioning |
-| `zIndex` | `number` | `-1` | z-index of the container |
+| Prop                | Type                                                           | Default                | Description                               |
+| ------------------- | -------------------------------------------------------------- | ---------------------- | ----------------------------------------- |
+| `columnCount`       | `number`                                                       | `4`                    | Number of columns/lines                   |
+| `solidLines`        | `number[]`                                                     | `[]`                   | Indices of lines to render as solid       |
+| `hiddenLines`       | `number[]`                                                     | `[]`                   | Indices of lines to hide                  |
+| `animated`          | `boolean`                                                      | `true`                 | Enable glow animations                    |
+| `animationDuration` | `number`                                                       | `62`                   | Duration of one animation cycle           |
+| `animationDelay`    | `number`                                                       | `0.8`                  | Delay between each line's animation       |
+| `glowColor`         | `string`                                                       | `"hsl(var(--accent))"` | Color of the glow effect                  |
+| `glowSize`          | `string`                                                       | `"10vh"`               | Size of the glow                          |
+| `glowOpacity`       | `number`                                                       | `0.4`                  | Opacity of the glow                       |
+| `randomize`         | `boolean`                                                      | `true`                 | Randomize which lines are active          |
+| `randomInterval`    | `number`                                                       | `9000`                 | Interval for randomization (ms)           |
+| `direction`         | `"top-to-bottom" \| "bottom-to-top" \| "both" \| "random"`     | `"both"`               | Animation direction                       |
+| `easing`            | `"linear" \| "easeIn" \| "easeOut" \| "easeInOut" \| "spring"` | `"spring"`             | Animation easing                          |
+| `maxActiveColumns`  | `number`                                                       | `3`                    | Maximum active animated columns           |
+| `contained`         | `boolean`                                                      | `false`                | Use absolute instead of fixed positioning |
+| `zIndex`            | `number`                                                       | `-1`                   | z-index of the container                  |
 
 ## Examples
 
@@ -114,9 +114,5 @@ function HeroSection() {
 ### Custom Column Configuration
 
 ```tsx
-<StripeBgGuides
-  columnCount={6}
-  solidLines={[1, 6]}
-  hiddenLines={[3, 4]}
-/>
+<StripeBgGuides columnCount={6} solidLines={[1, 6]} hiddenLines={[3, 4]} />
 ```

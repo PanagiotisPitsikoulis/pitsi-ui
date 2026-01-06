@@ -1,9 +1,9 @@
 "use client"
 
 import Link from "next/link"
-import { LogOut, Settings, User } from "@/lib/icons"
 
 import { signOut } from "@/lib/client/auth"
+import { LogOut, Settings, User } from "@/lib/icons"
 import { getUserInitials } from "@/lib/utils/user"
 import {
   Avatar,

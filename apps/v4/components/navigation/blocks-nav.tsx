@@ -3,6 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
+
 import {
   BarChart3,
   Building2,
@@ -12,9 +13,9 @@ import {
   Grid3X3,
   HelpCircle,
   Images,
+  Layers,
   Layout,
   LayoutGrid,
-  Layers,
   Mail,
   Monitor,
   MousePointerClick,
@@ -28,7 +29,6 @@ import {
   Users,
   type LucideIcon,
 } from "@/lib/icons"
-
 import { cn } from "@/lib/utils"
 import {
   Command,
@@ -126,7 +126,8 @@ export function BlocksSearch({
 }) {
   const router = useRouter()
   const [open, setOpen] = React.useState(false)
-  const { activeCategory, allItems, currentLabel } = useBlocksNavState(categoryLinks)
+  const { activeCategory, allItems, currentLabel } =
+    useBlocksNavState(categoryLinks)
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -146,7 +147,10 @@ export function BlocksSearch({
           <ChevronsUpDown className="size-4 shrink-0 opacity-50" />
         </button>
       </PopoverTrigger>
-      <PopoverContent className="w-[--radix-popover-trigger-width] p-0" align="start">
+      <PopoverContent
+        className="w-[--radix-popover-trigger-width] p-0"
+        align="start"
+      >
         <Command>
           <CommandInput placeholder="Search blocks..." />
           <CommandList>
@@ -164,7 +168,9 @@ export function BlocksSearch({
                   <Check
                     className={cn(
                       "mr-2 size-4",
-                      activeCategory === item.category ? "opacity-100" : "opacity-0"
+                      activeCategory === item.category
+                        ? "opacity-100"
+                        : "opacity-0"
                     )}
                   />
                   {(() => {
@@ -172,7 +178,9 @@ export function BlocksSearch({
                     return <Icon className="size-4 shrink-0" />
                   })()}
                   {item.label}
-                  <span className="text-muted-foreground ml-auto text-xs">{item.count}</span>
+                  <span className="text-muted-foreground ml-auto text-xs">
+                    {item.count}
+                  </span>
                 </CommandItem>
               ))}
             </CommandGroup>
@@ -190,7 +198,8 @@ export function BlocksNav({
 }) {
   const router = useRouter()
   const [open, setOpen] = React.useState(false)
-  const { activeCategory, allItems, currentLabel } = useBlocksNavState(categoryLinks)
+  const { activeCategory, allItems, currentLabel } =
+    useBlocksNavState(categoryLinks)
 
   return (
     <Sidebar
@@ -217,7 +226,10 @@ export function BlocksNav({
                   <ChevronsUpDown className="size-4 shrink-0 opacity-50" />
                 </button>
               </PopoverTrigger>
-              <PopoverContent className="w-[--radix-popover-trigger-width] p-0" align="start">
+              <PopoverContent
+                className="w-[--radix-popover-trigger-width] p-0"
+                align="start"
+              >
                 <Command>
                   <CommandInput placeholder="Search blocks..." />
                   <CommandList>
@@ -235,7 +247,9 @@ export function BlocksNav({
                           <Check
                             className={cn(
                               "mr-2 size-4",
-                              activeCategory === item.category ? "opacity-100" : "opacity-0"
+                              activeCategory === item.category
+                                ? "opacity-100"
+                                : "opacity-0"
                             )}
                           />
                           {(() => {
@@ -243,7 +257,9 @@ export function BlocksNav({
                             return <Icon className="size-4 shrink-0" />
                           })()}
                           {item.label}
-                          <span className="text-muted-foreground ml-auto text-xs">{item.count}</span>
+                          <span className="text-muted-foreground ml-auto text-xs">
+                            {item.count}
+                          </span>
                         </CommandItem>
                       ))}
                     </CommandGroup>

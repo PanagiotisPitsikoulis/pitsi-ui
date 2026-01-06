@@ -1,5 +1,5 @@
-import Link from "next/link"
 import { ReactNode } from "react"
+import Link from "next/link"
 
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { HeroButton } from "@/registry/new-york-v4/ui/hero-button"

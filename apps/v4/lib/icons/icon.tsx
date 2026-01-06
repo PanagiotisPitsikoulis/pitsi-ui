@@ -26,7 +26,9 @@ export type LucideIcon = React.ForwardRefExoticComponent<
  * Parse Tailwind size-* classes to pixel values
  * Tailwind size-* uses 4px increments (size-4 = 16px, size-6 = 24px)
  */
-function parseSizeFromClassName(className: string | undefined): number | undefined {
+function parseSizeFromClassName(
+  className: string | undefined
+): number | undefined {
   if (!className) return undefined
 
   // Match size-N or size-N.N patterns (e.g., size-4, size-3.5)

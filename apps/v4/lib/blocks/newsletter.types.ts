@@ -1,4 +1,8 @@
-import type { BlockBaseClassNames, BlockHeaderClassNames, BlockSectionHeader } from "./types"
+import type {
+  BlockBaseClassNames,
+  BlockHeaderClassNames,
+  BlockSectionHeader,
+} from "./types"
 
 // ============================================================================
 // Newsletter Content Types
@@ -50,7 +54,8 @@ export interface NewsletterBlockProps {
 export const newsletterDefaults: NewsletterContent = {
   badge: "Newsletter",
   title: "Stay in the Loop",
-  description: "Get plant care tips, new arrivals, and exclusive offers delivered to your inbox.",
+  description:
+    "Get plant care tips, new arrivals, and exclusive offers delivered to your inbox.",
   form: {
     placeholder: "Enter your email",
     submitLabel: "Subscribe",

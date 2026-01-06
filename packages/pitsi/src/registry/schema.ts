@@ -101,7 +101,10 @@ export const registryItemSchema = z.object({
   docs: z.string().optional(),
   categories: z.array(z.string()).optional(),
   tier: z.enum(["free", "pro"]).optional(),
-  readiness: z.enum(["alpha", "beta", "production"]).optional().default("alpha"),
+  readiness: z
+    .enum(["alpha", "beta", "production"])
+    .optional()
+    .default("alpha"),
   poweredBy: z.array(registryItemPoweredBySchema).optional(),
   blockConfig: blockConfigSchema,
 })

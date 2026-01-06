@@ -1,7 +1,6 @@
 "use client"
 
 import { ArrowLeft, ArrowRight, ChevronDown } from "@/lib/icons"
-
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Popover,
@@ -63,11 +62,11 @@ export function PreviewNavigation({
           ))}
         </PopoverContent>
       </Popover>
-      <div className="flex items-center shadow-sm rounded-md">
+      <div className="flex items-center rounded-md shadow-sm">
         <Button
           variant="outline"
           size="icon"
-          className="size-8 shrink-0 rounded-r-none bg-background"
+          className="bg-background size-8 shrink-0 rounded-r-none"
           onClick={goToPrevious}
           disabled={items.length <= 1}
         >
@@ -76,7 +75,7 @@ export function PreviewNavigation({
         <Button
           variant="outline"
           size="icon"
-          className="-ml-px size-8 shrink-0 rounded-l-none bg-background"
+          className="bg-background -ml-px size-8 shrink-0 rounded-l-none"
           onClick={goToNext}
           disabled={items.length <= 1}
         >

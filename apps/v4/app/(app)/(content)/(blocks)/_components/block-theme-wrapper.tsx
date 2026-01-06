@@ -4,8 +4,8 @@ import React, { useEffect, useState } from "react"
 import { useTheme } from "next-themes"
 
 import { cn } from "@/lib/utils"
-import { themePresets } from "@/app/(app)/(tools)/tools/theme-generator/_components/theme-presets"
 import { type ColorPalette } from "@/registry/new-york-v4/lib/block-theme"
+import { themePresets } from "@/app/(app)/(tools)/tools/theme-generator/_components/theme-presets"
 
 import { fontPresets, type FontPreset } from "./template-fonts"
 
@@ -109,7 +109,12 @@ export function getThemeStyles(options: {
   mode?: "light" | "dark"
   fonts?: FontPreset | CustomFonts
 }): React.CSSProperties {
-  const { palette = "azure", tint = DEFAULT_TINT, mode = "light", fonts } = options
+  const {
+    palette = "azure",
+    tint = DEFAULT_TINT,
+    mode = "light",
+    fonts,
+  } = options
   const colorStyles = getPaletteThemeStyles(palette, tint, mode)
   const fontStyles = getFontStyles(fonts)
   return { ...colorStyles, ...fontStyles }

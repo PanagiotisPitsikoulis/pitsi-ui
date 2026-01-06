@@ -24,9 +24,11 @@ export interface OverlayProps {
 const variantClasses: Record<OverlayVariant, string> = {
   dark: "bg-black",
   light: "bg-white",
-  "gradient-bottom": "bg-gradient-to-t from-black/80 via-black/30 to-transparent",
+  "gradient-bottom":
+    "bg-gradient-to-t from-black/80 via-black/30 to-transparent",
   "gradient-top": "bg-gradient-to-b from-black/80 via-black/30 to-transparent",
-  "gradient-radial": "bg-[radial-gradient(circle_at_center,transparent_0%,black_70%)]",
+  "gradient-radial":
+    "bg-[radial-gradient(circle_at_center,transparent_0%,black_70%)]",
   vignette: "bg-[radial-gradient(ellipse_at_center,transparent_0%,black_50%)]",
 }
 

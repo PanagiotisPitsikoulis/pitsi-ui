@@ -1,8 +1,18 @@
 "use client"
 
-import { Suspense, useCallback, useEffect, useMemo, useRef, useState } from "react"
+import {
+  Suspense,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react"
 import Link from "next/link"
-import { useRouter, useSearchParams, usePathname } from "next/navigation"
+import { usePathname, useRouter, useSearchParams } from "next/navigation"
+import { useTheme } from "next-themes"
+import { toast } from "sonner"
+
 import {
   ArrowLeft,
   Check,
@@ -18,11 +28,10 @@ import {
   Sun,
   Terminal,
 } from "@/lib/icons"
-import { useTheme } from "next-themes"
-import { toast } from "sonner"
-
 import { cn } from "@/lib/utils"
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard"
+import { type ComputedTemplateBlock } from "@/registry/__blocks-metadata__"
+import { type ColorPalette } from "@/registry/new-york-v4/lib/block-theme"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -49,11 +58,19 @@ import {
   TemplateBlocksSection,
   type BlockMetadata,
 } from "../../_components"
-import { type ColorPalette } from "@/registry/new-york-v4/lib/block-theme"
 import { type FontPreset } from "../../_components/template-fonts"
+import {
+  getTemplateBlockGroups,
+  getTemplateBlockGroupsWithVariants,
+  getTemplateBlocks,
+  type TemplateSlug,
+} from "../../blocks"
 
 // Palette colors for theme display
-const paletteColors: Record<ColorPalette, { brand: string; complementary: string }> = {
+const paletteColors: Record<
+  ColorPalette,
+  { brand: string; complementary: string }
+> = {
   slate: { brand: "#777777", complementary: "#999999" },
   azure: { brand: "#3b82f6", complementary: "#f97316" },
   violet: { brand: "#8b5cf6", complementary: "#22c55e" },
@@ -77,23 +94,23 @@ function ThemeDisplay({ palette }: { palette: ColorPalette }) {
       <TooltipTrigger asChild>
         <Link
           href={`/tools/theme-generator?palette=${palette}`}
-          className="flex h-9 items-center gap-2 rounded-full bg-background px-3 shadow-sm"
+          className="bg-background flex h-9 items-center gap-2 rounded-full px-3 shadow-sm"
         >
           <div className="flex items-center -space-x-1.5">
             <span
-              className="inline-block size-4 rounded-full border-2 border-background shadow-sm"
+              className="border-background inline-block size-4 rounded-full border-2 shadow-sm"
               style={{ backgroundColor: colors.brand }}
             />
             <span
-              className="inline-block size-4 rounded-full border-2 border-background shadow-sm"
+              className="border-background inline-block size-4 rounded-full border-2 shadow-sm"
               style={{ backgroundColor: colors.complementary }}
             />
             <span
-              className="inline-block size-4 rounded-full border-2 border-background shadow-sm"
+              className="border-background inline-block size-4 rounded-full border-2 shadow-sm"
               style={{ backgroundColor: primaryColor }}
             />
           </div>
-          <span className="text-xs font-medium capitalize text-foreground">
+          <span className="text-foreground text-xs font-medium capitalize">
             {palette}
           </span>
         </Link>
@@ -111,12 +128,10 @@ function TypographyDisplay({ preset }: { preset: string }) {
       <TooltipTrigger asChild>
         <Link
           href={`/tools/typography-composer?preset=${preset}`}
-          className="flex h-9 items-center gap-1.5 rounded-full bg-background px-3 shadow-sm"
+          className="bg-background flex h-9 items-center gap-1.5 rounded-full px-3 shadow-sm"
         >
-          <span className="text-sm font-semibold text-foreground">
-            Aa
-          </span>
-          <span className="text-xs font-medium capitalize text-foreground">
+          <span className="text-foreground text-sm font-semibold">Aa</span>
+          <span className="text-foreground text-xs font-medium capitalize">
             {preset}
           </span>
         </Link>
@@ -127,13 +142,6 @@ function TypographyDisplay({ preset }: { preset: string }) {
     </Tooltip>
   )
 }
-import {
-  getTemplateBlocks,
-  getTemplateBlockGroups,
-  getTemplateBlockGroupsWithVariants,
-  type TemplateSlug,
-} from "../../blocks"
-import { type ComputedTemplateBlock } from "@/registry/__blocks-metadata__"
 
 interface TemplateViewerClientProps {
   slug: string
@@ -197,7 +205,8 @@ export function TemplateViewerClient({
   const blocks = getTemplateBlocks(slug as TemplateSlug, selectedBlocks)
   const isDev = process.env.NODE_ENV === "development"
   const { theme, setTheme, resolvedTheme } = useTheme()
-  const { copyToClipboard: copyInstallCommand, isCopied: isInstallCopied } = useCopyToClipboard()
+  const { copyToClipboard: copyInstallCommand, isCopied: isInstallCopied } =
+    useCopyToClipboard()
   const [iframeKey, setIframeKey] = useState(0)
   const installCommand = `npx pitsi@latest add ${slug}`
 
@@ -207,7 +216,8 @@ export function TemplateViewerClient({
   // Get palette and typography from first block (for display purposes)
   const firstBlock = blocks[0]
   const firstBlockPalette = (firstBlock?.palette || "slate") as ColorPalette
-  const firstBlockTypography = (firstBlock?.typography || "modern") as FontPreset
+  const firstBlockTypography = (firstBlock?.typography ||
+    "modern") as FontPreset
   const fonts = getFontsByTypography(firstBlock?.typography)
 
   const openInEditor = useCallback(async (filePath: string) => {
@@ -315,7 +325,9 @@ export function TemplateViewerClient({
   if (blocks.length === 0) {
     return (
       <div className="bg-background flex min-h-screen items-center justify-center">
-        <p className="text-muted-foreground">No blocks found for this template</p>
+        <p className="text-muted-foreground">
+          No blocks found for this template
+        </p>
       </div>
     )
   }
@@ -325,7 +337,7 @@ export function TemplateViewerClient({
       <div className="flex min-h-[calc(100vh-var(--header-height))] flex-col gap-3 overflow-x-hidden p-3">
         {/* Top Toolbar */}
         <div>
-          <div className="container flex items-center gap-1 rounded-full bg-muted p-1.5">
+          <div className="bg-muted container flex items-center gap-1 rounded-full p-1.5">
             {/* Back button */}
             <Tooltip>
               <TooltipTrigger asChild>
@@ -336,26 +348,28 @@ export function TemplateViewerClient({
                   <ArrowLeft className="size-4" />
                 </Link>
               </TooltipTrigger>
-              <TooltipContent side="bottom" className="text-xs">Back to blocks</TooltipContent>
+              <TooltipContent side="bottom" className="text-xs">
+                Back to blocks
+              </TooltipContent>
             </Tooltip>
 
             {/* Separator */}
-            <div className="mx-1 h-5 w-px bg-border" />
+            <div className="bg-border mx-1 h-5 w-px" />
 
             {/* Preview (always active for template) */}
             <Tooltip>
               <TooltipTrigger asChild>
-                <button
-                  className="bg-background text-foreground flex size-9 items-center justify-center rounded-full shadow-sm transition-colors"
-                >
+                <button className="bg-background text-foreground flex size-9 items-center justify-center rounded-full shadow-sm transition-colors">
                   <Eye className="size-4" />
                 </button>
               </TooltipTrigger>
-              <TooltipContent side="bottom" className="text-xs">Preview</TooltipContent>
+              <TooltipContent side="bottom" className="text-xs">
+                Preview
+              </TooltipContent>
             </Tooltip>
 
             {/* Separator */}
-            <div className="mx-1 hidden h-5 w-px bg-border lg:block" />
+            <div className="bg-border mx-1 hidden h-5 w-px lg:block" />
 
             {/* Fullscreen button */}
             <Tooltip>
@@ -368,7 +382,9 @@ export function TemplateViewerClient({
                   <Maximize className="size-4" />
                 </Link>
               </TooltipTrigger>
-              <TooltipContent side="bottom" className="text-xs">Open in new tab</TooltipContent>
+              <TooltipContent side="bottom" className="text-xs">
+                Open in new tab
+              </TooltipContent>
             </Tooltip>
 
             {/* Refresh button */}
@@ -381,7 +397,9 @@ export function TemplateViewerClient({
                   <RotateCw className="size-4" />
                 </button>
               </TooltipTrigger>
-              <TooltipContent side="bottom" className="text-xs">Refresh</TooltipContent>
+              <TooltipContent side="bottom" className="text-xs">
+                Refresh
+              </TooltipContent>
             </Tooltip>
 
             {/* Customize blocks button */}
@@ -402,7 +420,7 @@ export function TemplateViewerClient({
             )}
 
             {/* Separator */}
-            <div className="mx-1 hidden h-5 w-px bg-border lg:block" />
+            <div className="bg-border mx-1 hidden h-5 w-px lg:block" />
 
             {/* Theme and Typography displays */}
             <div className="hidden items-center gap-1 lg:flex">
@@ -417,12 +435,18 @@ export function TemplateViewerClient({
                 onClick={() => copyInstallCommand(installCommand)}
                 className="bg-background text-foreground hover:bg-muted flex h-9 items-center gap-2 rounded-full px-3 font-mono text-xs shadow-sm transition-colors"
               >
-                {isInstallCopied ? <Check className="size-3.5" /> : <Terminal className="size-3.5" />}
-                <span className="hidden md:inline">{isInstallCopied ? "Copied!" : installCommand}</span>
+                {isInstallCopied ? (
+                  <Check className="size-3.5" />
+                ) : (
+                  <Terminal className="size-3.5" />
+                )}
+                <span className="hidden md:inline">
+                  {isInstallCopied ? "Copied!" : installCommand}
+                </span>
               </button>
 
               {/* Separator */}
-              <div className="mx-1 h-5 w-px bg-border" />
+              <div className="bg-border mx-1 h-5 w-px" />
 
               {/* Theme toggle */}
               <DropdownMenu>
@@ -432,10 +456,15 @@ export function TemplateViewerClient({
                       <ThemeIcon className="size-4" />
                     </DropdownMenuTrigger>
                   </TooltipTrigger>
-                  <TooltipContent side="bottom" className="text-xs">Theme</TooltipContent>
+                  <TooltipContent side="bottom" className="text-xs">
+                    Theme
+                  </TooltipContent>
                 </Tooltip>
                 <DropdownMenuContent align="end">
-                  <DropdownMenuRadioGroup value={theme} onValueChange={setTheme}>
+                  <DropdownMenuRadioGroup
+                    value={theme}
+                    onValueChange={setTheme}
+                  >
                     <DropdownMenuRadioItem value="light">
                       <Sun className="mr-2 size-4" />
                       Light
@@ -456,7 +485,7 @@ export function TemplateViewerClient({
               {isDev && (
                 <>
                   {/* Separator */}
-                  <div className="mx-1 h-5 w-px bg-border" />
+                  <div className="bg-border mx-1 h-5 w-px" />
 
                   {/* Assets */}
                   <Tooltip>
@@ -498,7 +527,9 @@ export function TemplateViewerClient({
                         <Palette className="size-4" />
                       </button>
                     </TooltipTrigger>
-                    <TooltipContent side="bottom" className="text-xs">Theme file</TooltipContent>
+                    <TooltipContent side="bottom" className="text-xs">
+                      Theme file
+                    </TooltipContent>
                   </Tooltip>
 
                   {/* Dev overlay toggle */}
@@ -533,14 +564,35 @@ export function TemplateViewerClient({
             className="bg-muted/30 h-[calc(100vh-var(--header-height)-80px)] min-h-[600px] overflow-hidden rounded-2xl border"
           >
             <div className="h-full overflow-auto">
-              <BlockThemeWrapper palette={firstBlockPalette} tint={DEFAULT_TINT} fonts={fonts}>
+              <BlockThemeWrapper
+                palette={firstBlockPalette}
+                tint={DEFAULT_TINT}
+                fonts={fonts}
+              >
                 <ScrollContainerProvider value={mainRef}>
                   {blocks.map(
-                    ({ name, type, Component, tint, forceDark, forceLight, palette, typography }, index) => {
+                    (
+                      {
+                        name,
+                        type,
+                        Component,
+                        tint,
+                        forceDark,
+                        forceLight,
+                        palette,
+                        typography,
+                      },
+                      index
+                    ) => {
                       const skipAlternatingBg =
-                        type === "hero" || type === "header" || forceDark || forceLight
+                        type === "hero" ||
+                        type === "header" ||
+                        forceDark ||
+                        forceLight
                       const skipPadding =
-                        type === "hero" || type === "header" || type === "footer"
+                        type === "hero" ||
+                        type === "header" ||
+                        type === "footer"
                       const blockTint = tint || DEFAULT_TINT
                       // Use block's palette and typography
                       const blockPalette = (palette || "slate") as ColorPalette

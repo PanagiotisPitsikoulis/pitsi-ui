@@ -1,9 +1,9 @@
 "use client"
 
-import Link from "next/link"
 import { ReactNode } from "react"
-import { LucideIcon } from "@/lib/icons"
+import Link from "next/link"
 
+import { LucideIcon } from "@/lib/icons"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 

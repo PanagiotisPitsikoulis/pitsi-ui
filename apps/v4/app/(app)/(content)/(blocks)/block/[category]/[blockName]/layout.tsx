@@ -1,8 +1,8 @@
 import { ReactNode } from "react"
 
 import {
-  generateBlockStaticParams,
   generateBlockMetadata,
+  generateBlockStaticParams,
 } from "@/lib/pages/blocks"
 import { queryRegistry, type RegistryItem } from "@/lib/registry-utils"
 import { getCurrentUser } from "@/lib/server/user"
