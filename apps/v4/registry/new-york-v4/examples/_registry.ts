@@ -1066,6 +1066,20 @@ export const examples: Registry["items"] = [
     readiness: "production",
   },
   {
+    name: "filter-bar-demo",
+    type: "registry:example",
+    registryDependencies: ["filter-bar"],
+    files: [
+      {
+        path: "examples/filter-bar-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    tier: "free",
+    categories: ["core-components"],
+    readiness: "production",
+  },
+  {
     name: "field-input",
     type: "registry:example",
     registryDependencies: ["field"],
