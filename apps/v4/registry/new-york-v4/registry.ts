@@ -4,7 +4,6 @@ import { z } from "zod"
 import { themes } from "../themes"
 import { animations } from "./animations/_registry"
 import { blocks } from "./blocks/_registry"
-import { templates } from "./blocks/_templates"
 import { examples } from "./examples/_registry"
 import { hooks } from "./hooks/_registry"
 import { internal } from "./internal/_registry"
@@ -46,7 +45,6 @@ export const registry = {
       ...ui,
       ...animations,
       ...blocks,
-      ...templates,
       ...lib,
       ...hooks,
       ...themes,

@@ -323,16 +323,22 @@ interface ComputedTemplateType {
 }
 
 async function buildBlocksMetadata(styles: Style[]) {
+  // Import template configs from _template-configs.ts
+  const { templateConfigs } = await import(
+    `../registry/new-york-v4/blocks/_template-configs.ts`
+  )
+
   // Structure: { category: blockNames[] }
   const categoryStructure: Record<string, string[]> = {}
-  // Template metadata
-  const templateMetadata: Array<{
-    slug: string
-    name: string
-    description: string
-    heroBlock: string
-    type: "service" | "application"
-  }> = []
+
+  // Build template metadata from template configs (not registry)
+  const templateMetadata = templateConfigs.map((config: { slug: string; name: string; description: string; heroBlock: string; type: "service" | "application" }) => ({
+    slug: config.slug,
+    name: config.name,
+    description: config.description,
+    heroBlock: config.heroBlock,
+    type: config.type,
+  }))
 
   // Blocks-first: Collect blocks by template for computing templates
   const blocksByTemplate: Record<string, {
@@ -359,6 +365,9 @@ async function buildBlocksMetadata(styles: Style[]) {
       // Use categories from registry entry directly
       const categories = item.categories || []
       if (categories.length === 0) continue
+
+      // Skip "template" category - templates are no longer registry items
+      if (categories.includes("template")) continue
 
       // Use the first category as the main category
       const mainCategory = categories[0]
@@ -389,42 +398,20 @@ async function buildBlocksMetadata(styles: Style[]) {
           categories: categories,
         })
       }
-
-      // Check if this is a template item
-      if (categories.includes("template")) {
-        // Format display name from slug (e.g., "service-plants" -> "Service Plants")
-        const displayName = item.name
-          .split("-")
-          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-          .join(" ")
-
-        // Get heroBlock from meta, or derive from first hero dependency
-        let heroBlock = (item.meta as Record<string, unknown>)?.heroBlock as string | undefined
-        if (!heroBlock && item.registryDependencies) {
-          // Find first hero block in dependencies
-          heroBlock = item.registryDependencies.find((dep) =>
-            dep.startsWith("hero-") || dep.startsWith("app-")
-          )
-        }
-
-        // Determine template type
-        const templateType = categories.includes("application") ? "application" : "service"
-
-        templateMetadata.push({
-          slug: item.name,
-          name: displayName,
-          description: item.description || "",
-          heroBlock: heroBlock || item.name,
-          type: templateType,
-        })
-      }
     }
   }
 
-  // Compute templates from blocks
+  // Compute templates from template configs
   const computedTemplates: Record<string, ComputedTemplateType> = {}
 
-  for (const [templateSlug, blockInfos] of Object.entries(blocksByTemplate)) {
+  for (const config of templateConfigs) {
+    const blockInfos = blocksByTemplate[config.slug] || []
+
+    // Warn if no blocks found for this template
+    if (blockInfos.length === 0) {
+      console.warn(`  Warning: No blocks found for template "${config.slug}"`)
+    }
+
     // Sort blocks by order
     const sortedBlocks = blockInfos.sort((a, b) => a.block.order - b.block.order)
 
@@ -432,17 +419,6 @@ async function buildBlocksMetadata(styles: Style[]) {
     const heroBlockInfo = sortedBlocks.find(
       (b) => b.block.blockType === "hero" || b.block.blockType === "view"
     )
-
-    // Format display name
-    const displayName = templateSlug
-      .split("-")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ")
-
-    // Determine template type from slug
-    const templateType: "service" | "application" = templateSlug.startsWith("app-")
-      ? "application"
-      : "service"
 
     // Group blocks by type for toggle UI
     const blockGroups: Record<string, string[]> = {}
@@ -454,14 +430,22 @@ async function buildBlocksMetadata(styles: Style[]) {
       blockGroups[blockType].push(blockInfo.block.name)
     }
 
-    computedTemplates[templateSlug] = {
-      slug: templateSlug,
-      name: displayName,
-      description: sortedBlocks[0]?.description || `${displayName} template`,
-      heroBlock: heroBlockInfo?.block.name || sortedBlocks[0]?.block.name || templateSlug,
-      type: templateType,
+    computedTemplates[config.slug] = {
+      slug: config.slug,
+      name: config.name,
+      description: config.description,
+      heroBlock: heroBlockInfo?.block.name || config.heroBlock,
+      type: config.type,
       blocks: sortedBlocks.map((b) => b.block),
       blockGroups,
+    }
+  }
+
+  // Warn about orphan blocks (blocks referencing unknown templates)
+  const validTemplateSlugs = new Set(templateConfigs.map((c: { slug: string }) => c.slug))
+  for (const templateSlug of Object.keys(blocksByTemplate)) {
+    if (!validTemplateSlugs.has(templateSlug)) {
+      console.warn(`  Warning: Blocks reference unknown template "${templateSlug}"`)
     }
   }
 
@@ -494,7 +478,7 @@ export function getCategoryBlockCounts(): Record<string, number> {
 
 /**
  * Template metadata for Full Pages section
- * Includes all registry items with "template" category
+ * Computed from _template-configs.ts (not registry items)
  */
 export interface RegistryTemplateMetadata {
   slug: string
@@ -569,9 +553,7 @@ export function getBlocksByTemplateAndType(slug: string, blockType: string): str
     })
   })
 
-  const totalBlocks = Object.values(categoryStructure)
-    .flatMap(subcats => Object.values(subcats))
-    .flat().length
+  const totalBlocks = Object.values(categoryStructure).flat().length
   console.log(`📊 Built blocks metadata: ${Object.keys(categoryStructure).length} categories, ${totalBlocks} blocks`)
   console.log(`📦 Computed ${Object.keys(computedTemplates).length} templates from blocks-first architecture`)
 }

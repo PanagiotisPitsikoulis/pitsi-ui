@@ -743,35 +743,5 @@
     "name": "testimonials-7",
     "description": "Social proof wall with tweet-style cards",
     "categories": ["testimonials", "landing"]
-  },
-  {
-    "name": "service-plants",
-    "description": "Complete plant shop landing page template with all sections",
-    "categories": ["template", "service"]
-  },
-  {
-    "name": "service-travel",
-    "description": "Stunning travel agency landing page template for tour operators",
-    "categories": ["template", "service"]
-  },
-  {
-    "name": "service-boat",
-    "description": "Luxury yacht charter landing page template for marine services",
-    "categories": ["template", "service"]
-  },
-  {
-    "name": "service-fitness",
-    "description": "Boutique fitness studio landing page with high-energy black & white design",
-    "categories": ["template", "service"]
-  },
-  {
-    "name": "app-gym-tracker",
-    "description": "Complete gym progressive overload tracker with two sidebars",
-    "categories": ["template", "application"]
-  },
-  {
-    "name": "app-quiz",
-    "description": "Complete quiz application template",
-    "categories": ["template", "application"]
   }
 ]
