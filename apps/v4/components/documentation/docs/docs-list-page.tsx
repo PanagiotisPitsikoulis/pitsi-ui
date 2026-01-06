@@ -8,6 +8,7 @@ import { type DocsItemType } from "@/lib/pages/docs"
 import { queryRegistry, type RegistryItem } from "@/lib/registry-utils"
 import { source } from "@/lib/source"
 import { absoluteUrl } from "@/lib/utils"
+import { AnimationsAdvancedFilter } from "@/app/(app)/(content)/docs/animations/animations-advanced-filter"
 import { ComponentsAdvancedFilter } from "@/app/(app)/(content)/docs/components/components-advanced-filter"
 import { ComponentsFilter } from "@/components/documentation/components/components-filter"
 import { ComponentsList } from "@/components/documentation/components/components-list"
@@ -39,11 +40,18 @@ export async function DocsListPage({
   // Fetch items data
   const folder = source.pageTree.children.find((p) => p.$id === type)
 
-  const registryItems = (await queryRegistry({
+  // Query registry items based on page type
+  const allUIItems = (await queryRegistry({
     types: ["registry:ui"],
   })) as RegistryItem[]
 
-  // Build maps for component metadata
+  // Filter items based on page type (animations vs components)
+  const registryItems =
+    type === "animations"
+      ? allUIItems.filter((item) => item.categories?.includes("animations"))
+      : allUIItems.filter((item) => !item.categories?.includes("animations"))
+
+  // Build maps for item metadata
   const componentMetadataMap = new Map<
     string,
     {
@@ -199,6 +207,9 @@ export async function DocsListPage({
                 <ComponentsFilter />
                 {type === "components" && (
                   <ComponentsAdvancedFilter filterOptions={filterOptions} />
+                )}
+                {type === "animations" && (
+                  <AnimationsAdvancedFilter filterOptions={filterOptions} />
                 )}
               </div>
             )}
