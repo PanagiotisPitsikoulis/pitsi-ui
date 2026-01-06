@@ -28,6 +28,7 @@ interface ComponentItem {
   url: string
   name: string | React.ReactNode
   registryName?: string
+  categories?: string[]
   description?: string
   readiness?: string
   tier?: string
@@ -163,6 +164,17 @@ export const ComponentsListPaginated = memo(function ComponentsListPaginated({
   const searchParams = useSearchParams()
   const filter = searchParams.get("filter")
 
+  // Advanced filter params
+  const categoryFilter = searchParams.get("category")
+  const tierFilter = searchParams.get("tier")
+  const readinessFilter = searchParams.get("readiness")
+  const searchQuery = searchParams.get("q")
+
+  // Parse comma-separated filter values
+  const selectedCategories = categoryFilter ? categoryFilter.split(",") : []
+  const selectedTiers = tierFilter ? tierFilter.split(",") : []
+  const selectedReadiness = readinessFilter ? readinessFilter.split(",") : []
+
   // Use appropriate hooks based on type
   const {
     savedComponents,
@@ -199,15 +211,58 @@ export const ComponentsListPaginated = memo(function ComponentsListPaginated({
 
   // Filter items based on search params
   const filteredItems = items.filter((item) => {
-    if (!filter) return true
     const registryName = item.registryName || item.$id
 
+    // Basic filter (saved/recent)
     if (filter === "saved") {
-      return savedItems.some((s) => s.name === registryName)
+      if (!savedItems.some((s) => s.name === registryName)) return false
     }
 
     if (filter === "recent") {
-      return recentItems.some((r) => r.name === registryName)
+      if (!recentItems.some((r) => r.name === registryName)) return false
+    }
+
+    // Advanced filters (for components only)
+    if (type === "component") {
+      // Category filter
+      if (selectedCategories.length > 0) {
+        const itemCategories = item.categories || []
+        if (!selectedCategories.some((cat) => itemCategories.includes(cat))) {
+          return false
+        }
+      }
+
+      // Tier filter
+      if (selectedTiers.length > 0) {
+        const itemTier = item.tier || "free"
+        if (!selectedTiers.includes(itemTier)) {
+          return false
+        }
+      }
+
+      // Readiness filter
+      if (selectedReadiness.length > 0) {
+        const itemReadiness = item.readiness || "production"
+        if (!selectedReadiness.includes(itemReadiness)) {
+          return false
+        }
+      }
+
+      // Search query filter
+      if (searchQuery) {
+        const query = searchQuery.toLowerCase()
+        const name =
+          typeof item.name === "string" ? item.name.toLowerCase() : ""
+        const description = item.description?.toLowerCase() || ""
+        const id = item.$id.toLowerCase()
+        if (
+          !name.includes(query) &&
+          !description.includes(query) &&
+          !id.includes(query)
+        ) {
+          return false
+        }
+      }
     }
 
     return true
@@ -228,6 +283,13 @@ export const ComponentsListPaginated = memo(function ComponentsListPaginated({
     )
   }
 
+  // Check if any advanced filters are active
+  const hasAdvancedFilters =
+    selectedCategories.length > 0 ||
+    selectedTiers.length > 0 ||
+    selectedReadiness.length > 0 ||
+    !!searchQuery
+
   // Show empty state
   if (filteredItems.length === 0) {
     const Icon =
@@ -238,13 +300,17 @@ export const ComponentsListPaginated = memo(function ComponentsListPaginated({
         ? `No saved ${itemType}`
         : filter === "recent"
           ? `No recently viewed ${itemType}`
-          : `No ${itemType}`
+          : hasAdvancedFilters
+            ? `No matching ${itemType}`
+            : `No ${itemType}`
     const description =
       filter === "saved"
         ? `Save ${itemType} by clicking the menu on any card`
         : filter === "recent"
           ? `${type === "component" ? "Components" : "Animations"} you view will appear here`
-          : `No ${itemType} available`
+          : hasAdvancedFilters
+            ? `Try adjusting your filters or search query`
+            : `No ${itemType} available`
 
     return (
       <div className="relative mt-6 pb-8">

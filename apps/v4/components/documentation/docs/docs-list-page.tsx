@@ -8,6 +8,7 @@ import { type DocsItemType } from "@/lib/pages/docs"
 import { queryRegistry, type RegistryItem } from "@/lib/registry-utils"
 import { source } from "@/lib/source"
 import { absoluteUrl } from "@/lib/utils"
+import { ComponentsAdvancedFilter } from "@/app/(app)/(content)/docs/components/components-advanced-filter"
 import { ComponentsFilter } from "@/components/documentation/components/components-filter"
 import { ComponentsList } from "@/components/documentation/components/components-list"
 import { DocsCopyPage } from "@/components/documentation/docs/docs-copy-page"
@@ -42,10 +43,38 @@ export async function DocsListPage({
     types: ["registry:ui"],
   })) as RegistryItem[]
 
-  const categoryMap = new Map<string, string[]>()
+  // Build maps for component metadata
+  const componentMetadataMap = new Map<
+    string,
+    {
+      categories: string[]
+      tier: string | undefined
+      readiness: string | undefined
+    }
+  >()
   registryItems.forEach((item) => {
-    categoryMap.set(item.name, item.categories || [])
+    componentMetadataMap.set(item.name, {
+      categories: item.categories || [],
+      tier: item.tier,
+      readiness: item.readiness,
+    })
   })
+
+  // Extract unique filter options from registry items
+  const categoriesSet = new Set<string>()
+  const tiersSet = new Set<string>()
+  const readinessSet = new Set<string>()
+  registryItems.forEach((item) => {
+    item.categories?.forEach((cat: string) => categoriesSet.add(cat))
+    if (item.tier) tiersSet.add(item.tier)
+    if (item.readiness) readinessSet.add(item.readiness)
+  })
+
+  const filterOptions = {
+    categories: Array.from(categoriesSet).sort(),
+    tiers: Array.from(tiersSet).sort(),
+    readinessOptions: Array.from(readinessSet).sort(),
+  }
 
   const itemsData =
     folder?.type === "folder"
@@ -57,7 +86,11 @@ export async function DocsListPage({
           .map((c) => {
             const urlParts = c.url.split("/").filter(Boolean)
             const registryName = urlParts[urlParts.length - 1] || ""
-            const categories = categoryMap.get(registryName) || []
+            const metadata = componentMetadataMap.get(registryName) || {
+              categories: [],
+              tier: undefined,
+              readiness: undefined,
+            }
             const slug = urlParts.slice(1)
             const itemPage = source.getPage(slug)
             const description = itemPage?.data.description
@@ -67,7 +100,9 @@ export async function DocsListPage({
               url: c.url,
               name: c.name,
               registryName,
-              categories,
+              categories: metadata.categories,
+              tier: metadata.tier,
+              readiness: metadata.readiness,
               description,
             }
           })
@@ -160,7 +195,12 @@ export async function DocsListPage({
               )}
             </div>
             {(type === "components" || type === "animations") && (
-              <ComponentsFilter />
+              <div className="flex flex-col gap-2">
+                <ComponentsFilter />
+                {type === "components" && (
+                  <ComponentsAdvancedFilter filterOptions={filterOptions} />
+                )}
+              </div>
             )}
           </div>
           <div className="w-full flex-1 *:data-[slot=alert]:first:mt-0">

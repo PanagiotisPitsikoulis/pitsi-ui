@@ -10,6 +10,8 @@ interface ComponentItem {
   registryName?: string
   categories?: string[]
   description?: string
+  tier?: string
+  readiness?: string
 }
 
 interface ComponentsListProps {
