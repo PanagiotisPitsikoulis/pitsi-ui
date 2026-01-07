@@ -1,22 +1,13 @@
 "use client"
 
-import {
-  Suspense,
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react"
+import { useCallback, useEffect, useMemo, useState } from "react"
 import Link from "next/link"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { useTheme } from "next-themes"
-import { toast } from "sonner"
 
 import {
   ArrowLeft,
   Check,
-  Code2,
   Eye,
   ImageIcon,
   Layers,
@@ -48,13 +39,7 @@ import {
 import { type Style } from "@/registry/styles"
 
 import {
-  BlockContainer,
   BlockSelectorOverlay,
-  BlockThemeWrapper,
-  DEFAULT_TINT,
-  DevBlockOverlay,
-  getFontsByTypography,
-  ScrollContainerProvider,
   TemplateBlocksSection,
   type BlockMetadata,
 } from "../../_components"
@@ -169,9 +154,6 @@ export function TemplateViewerClient({
   const router = useRouter()
   const searchParams = useSearchParams()
   const pathname = usePathname()
-  const [devOverlayEnabled, setDevOverlayEnabled] = useState(false)
-  const hoveredBlockRef = useRef<string | null>(null)
-  const mainRef = useRef<HTMLDivElement>(null)
   const [overlayOpen, setOverlayOpen] = useState(false)
 
   // Block selection - get all block groups with variants
@@ -218,7 +200,6 @@ export function TemplateViewerClient({
   const firstBlockPalette = (firstBlock?.palette || "slate") as ColorPalette
   const firstBlockTypography = (firstBlock?.typography ||
     "modern") as FontPreset
-  const fonts = getFontsByTypography(firstBlock?.typography)
 
   const openInEditor = useCallback(async (filePath: string) => {
     try {
@@ -250,45 +231,14 @@ export function TemplateViewerClient({
     [openInEditor]
   )
 
-  const openCurrentBlock = useCallback(() => {
-    const blockKey = hoveredBlockRef.current
-    if (!blockKey) return
-    const blockType = blockKey.replace(/-\d+$/, "")
-    const codePath = `${REGISTRY_BLOCKS_PATH}/${blockType}/${blockKey}.tsx`
-    openInEditor(codePath)
-  }, [openInEditor])
-
-  const copyCurrentBlockPath = useCallback(async () => {
-    const blockKey = hoveredBlockRef.current
-    if (!blockKey) return
-    const blockType = blockKey.replace(/-\d+$/, "")
-    const codePath = `${REGISTRY_BLOCKS_PATH}/${blockType}/${blockKey}.tsx`
-    try {
-      await navigator.clipboard.writeText(codePath)
-      toast.success("Copied to clipboard")
-    } catch (error) {
-      console.error("Failed to copy:", error)
-      toast.error("Failed to copy")
-    }
-  }, [])
-
-  const onBlockHover = useCallback((blockKey: string | null) => {
-    hoveredBlockRef.current = blockKey
-  }, [])
-
-  // Keyboard shortcuts
+  // Keyboard shortcuts for dev tools
   useEffect(() => {
     if (!isDev) return
 
     const handleKeyDown = (e: KeyboardEvent) => {
-      // Only handle if Cmd (Mac) or Ctrl (Windows) is pressed
       if (!e.metaKey && !e.ctrlKey) return
 
       switch (e.key.toLowerCase()) {
-        case "d":
-          e.preventDefault()
-          setDevOverlayEnabled((prev) => !prev)
-          break
         case "i":
           e.preventDefault()
           openAssets()
@@ -297,30 +247,12 @@ export function TemplateViewerClient({
           e.preventDefault()
           openComponents()
           break
-        case "g":
-          e.preventDefault()
-          openCurrentBlock()
-          break
-        case "c":
-          // Only copy if dev overlay is on and hovering a block
-          if (devOverlayEnabled && hoveredBlockRef.current) {
-            e.preventDefault()
-            copyCurrentBlockPath()
-          }
-          break
       }
     }
 
     window.addEventListener("keydown", handleKeyDown)
     return () => window.removeEventListener("keydown", handleKeyDown)
-  }, [
-    isDev,
-    devOverlayEnabled,
-    openAssets,
-    openComponents,
-    openCurrentBlock,
-    copyCurrentBlockPath,
-  ])
+  }, [isDev, openAssets, openComponents])
 
   if (blocks.length === 0) {
     return (
@@ -531,105 +463,20 @@ export function TemplateViewerClient({
                       Theme file
                     </TooltipContent>
                   </Tooltip>
-
-                  {/* Dev overlay toggle */}
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <button
-                        onClick={() => setDevOverlayEnabled(!devOverlayEnabled)}
-                        className={cn(
-                          "flex size-9 items-center justify-center rounded-full transition-colors",
-                          devOverlayEnabled
-                            ? "bg-background text-foreground shadow-sm"
-                            : "text-muted-foreground hover:bg-background/50 hover:text-foreground"
-                        )}
-                      >
-                        <Code2 className="size-4" />
-                      </button>
-                    </TooltipTrigger>
-                    <TooltipContent side="bottom" className="text-xs">
-                      Dev overlay <kbd className="ml-1 text-[10px]">⌘D</kbd>
-                    </TooltipContent>
-                  </Tooltip>
                 </>
               )}
             </div>
           </div>
         </div>
 
-        {/* Preview Container */}
+        {/* Preview Container - iframe for isolation */}
         <div className="container">
-          <div
-            ref={mainRef}
-            className="bg-muted/30 h-[calc(100vh-var(--header-height)-80px)] min-h-[600px] overflow-hidden rounded-2xl border"
-          >
-            <div className="h-full overflow-auto">
-              <BlockThemeWrapper
-                palette={firstBlockPalette}
-                tint={DEFAULT_TINT}
-                fonts={fonts}
-              >
-                <ScrollContainerProvider value={mainRef}>
-                  {blocks.map(
-                    (
-                      {
-                        name,
-                        type,
-                        Component,
-                        tint,
-                        forceDark,
-                        forceLight,
-                        palette,
-                        typography,
-                      },
-                      index
-                    ) => {
-                      const skipAlternatingBg =
-                        type === "hero" ||
-                        type === "header" ||
-                        forceDark ||
-                        forceLight
-                      const skipPadding =
-                        type === "hero" ||
-                        type === "header" ||
-                        type === "footer"
-                      const blockTint = tint || DEFAULT_TINT
-                      // Use block's palette and typography
-                      const blockPalette = (palette || "slate") as ColorPalette
-                      const blockFonts = getFontsByTypography(typography)
-
-                      return (
-                        <BlockThemeWrapper
-                          key={name}
-                          palette={blockPalette}
-                          tint={blockTint}
-                          forceDark={forceDark}
-                          forceLight={forceLight}
-                          fonts={blockFonts}
-                        >
-                          <DevBlockOverlay
-                            blockKey={name}
-                            enabled={devOverlayEnabled}
-                            onHover={onBlockHover}
-                          >
-                            <BlockContainer
-                              index={index}
-                              tint={blockTint}
-                              forceBg={skipAlternatingBg ? "none" : undefined}
-                              noPadding={skipPadding}
-                            >
-                              <Suspense fallback={null}>
-                                <Component />
-                              </Suspense>
-                            </BlockContainer>
-                          </DevBlockOverlay>
-                        </BlockThemeWrapper>
-                      )
-                    }
-                  )}
-                </ScrollContainerProvider>
-              </BlockThemeWrapper>
-            </div>
+          <div className="bg-muted/30 h-[calc(100vh-var(--header-height)-80px)] min-h-[600px] overflow-hidden rounded-2xl border">
+            <iframe
+              key={iframeKey}
+              src={`/view/template/${styleName}/${slug}${searchParams.toString() ? `?${searchParams.toString()}` : ""}`}
+              className="h-full w-full border-0"
+            />
           </div>
         </div>
 
