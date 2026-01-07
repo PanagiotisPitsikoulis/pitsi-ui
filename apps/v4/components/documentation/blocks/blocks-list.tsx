@@ -27,6 +27,9 @@ interface BlockItem {
   styleName: string
   blockCategory?: string // The block's actual category
   templateSlug?: string // Associated template slug
+  palette?: string // Block's palette (from metadata)
+  typography?: string // Block's typography (from metadata)
+  template?: string // Block's template slug (from metadata)
 }
 
 interface BlocksListProps {
@@ -193,19 +196,63 @@ export function BlocksList({ blocks, category }: BlocksListProps) {
   } = useSavedBlocks()
   const { recentBlocks, isHydrated: recentHydrated } = useRecentBlocks()
 
+  // Get advanced filter values from search params
+  const searchQuery = searchParams.get("q")?.toLowerCase() || ""
+  const paletteFilter = searchParams.get("palette")?.split(",") || []
+  const typographyFilter = searchParams.get("typography")?.split(",") || []
+  const templateFilter = searchParams.get("template")?.split(",") || []
+  const tierFilter = searchParams.get("tier")?.split(",") || []
+  const readinessFilter = searchParams.get("readiness")?.split(",") || []
+
   // Filter blocks based on search params
   // Note: We filter by block name only, not category, because:
   // - The blocks array is already filtered by category from the page
   // - Recent/saved data stores the URL category (e.g., "hero") not template category
   const filteredBlocks = blocks.filter((block) => {
-    if (!filter) return true
-
+    // Apply saved/recent filter first
     if (filter === "saved") {
-      return savedBlocks.some((s) => s.name === block.name)
+      if (!savedBlocks.some((s) => s.name === block.name)) return false
+    }
+    if (filter === "recent") {
+      if (!recentBlocks.some((r) => r.name === block.name)) return false
     }
 
-    if (filter === "recent") {
-      return recentBlocks.some((r) => r.name === block.name)
+    // Apply search query filter
+    if (searchQuery) {
+      const matchesName = block.name.toLowerCase().includes(searchQuery)
+      const matchesDescription = block.description
+        ?.toLowerCase()
+        .includes(searchQuery)
+      if (!matchesName && !matchesDescription) return false
+    }
+
+    // Apply palette filter
+    if (paletteFilter.length > 0 && paletteFilter[0] !== "") {
+      if (!block.palette || !paletteFilter.includes(block.palette)) return false
+    }
+
+    // Apply typography filter
+    if (typographyFilter.length > 0 && typographyFilter[0] !== "") {
+      if (!block.typography || !typographyFilter.includes(block.typography))
+        return false
+    }
+
+    // Apply template filter
+    if (templateFilter.length > 0 && templateFilter[0] !== "") {
+      if (!block.template || !templateFilter.includes(block.template))
+        return false
+    }
+
+    // Apply tier filter
+    if (tierFilter.length > 0 && tierFilter[0] !== "") {
+      const blockTier = block.tier || "free"
+      if (!tierFilter.includes(blockTier)) return false
+    }
+
+    // Apply readiness filter
+    if (readinessFilter.length > 0 && readinessFilter[0] !== "") {
+      const blockReadiness = block.readiness || "production"
+      if (!readinessFilter.includes(blockReadiness)) return false
     }
 
     return true
