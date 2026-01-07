@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { usePathname, useSearchParams } from "next/navigation"
 
-import { Bookmark, Box, Clock, Layers, Waves } from "@/lib/icons"
+import { AppWindow, Bookmark, Box, Clock, Layers, Waves } from "@/lib/icons"
 import { cn } from "@/lib/utils"
 import {
   Tooltip,
@@ -13,9 +13,10 @@ import {
 } from "@/registry/new-york-v4/ui/tooltip"
 
 const FILTER_ITEMS = [
-  { id: "all", label: "All", icon: Layers, filter: null },
-  { id: "saved", label: "Saved", icon: Bookmark, filter: "saved" },
-  { id: "recent", label: "Recently Viewed", icon: Clock, filter: "recent" },
+  { id: "all", label: "All", icon: Layers, filter: null, category: null },
+  { id: "application", label: "Application", icon: AppWindow, filter: null, category: "application" },
+  { id: "saved", label: "Saved", icon: Bookmark, filter: "saved", category: null },
+  { id: "recent", label: "Recently Viewed", icon: Clock, filter: "recent", category: null },
 ]
 
 const NAV_LINKS = [
@@ -37,15 +38,21 @@ export function ComponentsFilter() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
   const currentFilter = searchParams.get("filter")
+  const currentCategory = searchParams.get("category")
 
   const isNavActive = (href: string) =>
     pathname === href || pathname.startsWith(href + "/")
 
-  const getFilterHref = (filter: string | null) => {
+  const getFilterHref = (filter: string | null, category: string | null) => {
+    const params = new URLSearchParams()
     if (filter) {
-      return `${pathname}?filter=${filter}`
+      params.set("filter", filter)
     }
-    return pathname
+    if (category) {
+      params.set("category", category)
+    }
+    const queryString = params.toString()
+    return queryString ? `${pathname}?${queryString}` : pathname
   }
 
   return (
@@ -84,15 +91,25 @@ export function ComponentsFilter() {
         {/* Filter toggles */}
         {FILTER_ITEMS.map((item) => {
           const Icon = item.icon
-          const active =
-            item.filter === currentFilter ||
-            (item.filter === null && !currentFilter)
+          const isActive = () => {
+            // For "all" - active when no filter and no category
+            if (item.filter === null && item.category === null) {
+              return !currentFilter && !currentCategory
+            }
+            // For category filter (application) - active when category matches
+            if (item.category) {
+              return currentCategory === item.category && !currentFilter
+            }
+            // For saved/recent filters
+            return item.filter === currentFilter
+          }
+          const active = isActive()
 
           return (
             <Tooltip key={item.id}>
               <TooltipTrigger asChild>
                 <Link
-                  href={getFilterHref(item.filter)}
+                  href={getFilterHref(item.filter, item.category)}
                   className={cn(
                     "flex size-9 items-center justify-center rounded-full transition-colors",
                     active

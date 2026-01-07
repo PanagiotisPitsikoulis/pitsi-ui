@@ -1,0 +1,137 @@
+---
+title: Preview Card
+description: A versatile card component for displaying items with image previews, titles, descriptions, and action menus.
+featured: false
+component: true
+---
+
+<ComponentPreview name="preview-card-demo" description="Preview card variants" />
+
+## Installation
+
+<CodeTabs>
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+
+```bash
+npx pitsi add preview-card
+```
+
+  </TabsContent>
+  <TabsContent value="manual">
+
+<Steps>
+  <Step>Copy the component source:</Step>
+</Steps>
+
+<ComponentSource name="preview-card" title="components/ui/preview-card.tsx" />
+
+  </TabsContent>
+</CodeTabs>
+
+## Usage
+
+```tsx
+import {
+  PreviewCard,
+  PreviewCardContent,
+  PreviewCardDescription,
+  PreviewCardHeader,
+  PreviewCardImage,
+  PreviewCardMenu,
+  PreviewCardMenuItem,
+  PreviewCardTitle,
+} from "@/components/ui/preview-card"
+
+export function Example() {
+  return (
+    <PreviewCard>
+      <PreviewCardImage
+        href="/item/1"
+        lightSrc="/images/item-light.png"
+        darkSrc="/images/item-dark.png"
+        alt="Item preview"
+        aspectRatio="landscape"
+        objectFit="cover"
+      />
+      <PreviewCardContent>
+        <PreviewCardHeader>
+          <PreviewCardTitle href="/item/1">Item Title</PreviewCardTitle>
+          <PreviewCardMenu>
+            <PreviewCardMenuItem>Save</PreviewCardMenuItem>
+          </PreviewCardMenu>
+        </PreviewCardHeader>
+        <PreviewCardDescription>
+          A description of the item
+        </PreviewCardDescription>
+      </PreviewCardContent>
+    </PreviewCard>
+  )
+}
+```
+
+## Variants
+
+### Aspect Ratios
+
+The `PreviewCardImage` component supports multiple aspect ratios:
+
+- `landscape` (16:10) - Ideal for blocks and page sections
+- `wide` (4:3) - Good for component previews
+- `square` (1:1) - Square thumbnails
+- `portrait` (3:4) - Vertical content
+
+### Object Fit
+
+Control how images fill the preview area:
+
+- `cover` - Image covers the entire area (may crop)
+- `contain` - Image fits within the area (may have empty space)
+
+### Rounded Corners
+
+- `default` - Standard rounded corners (rounded-2xl)
+- `lg` - Larger rounded corners (rounded-3xl)
+
+## Props
+
+### PreviewCard
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `size` | `"default" \| "compact"` | `"default"` | Card size variant |
+
+### PreviewCardImage
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `href` | `string` | - | Optional link URL |
+| `lightSrc` | `string` | - | Light mode image source |
+| `darkSrc` | `string` | - | Dark mode image source |
+| `alt` | `string` | - | Image alt text |
+| `badges` | `ReactNode` | - | Badges to show on hover |
+| `aspectRatio` | `"landscape" \| "wide" \| "square" \| "portrait"` | `"landscape"` | Image aspect ratio |
+| `objectFit` | `"cover" \| "contain"` | `"cover"` | How image fills container |
+| `rounded` | `"default" \| "lg"` | `"default"` | Corner rounding |
+
+### PreviewCardTitle
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `href` | `string` | - | Optional link URL |
+
+### PreviewCardDescription
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `lineClamp` | `1 \| 2 \| 3` | `2` | Max lines to display |
+
+### PreviewCardMenu
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `trigger` | `ReactNode` | More icon | Custom trigger element |
+| `align` | `"start" \| "center" \| "end"` | `"end"` | Menu alignment |

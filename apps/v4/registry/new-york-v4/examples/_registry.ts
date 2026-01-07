@@ -2030,6 +2030,20 @@ export const examples: Registry["items"] = [
     readiness: "production",
   },
   {
+    name: "preview-card-demo",
+    type: "registry:example",
+    registryDependencies: ["preview-card"],
+    files: [
+      {
+        path: "examples/preview-card-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    tier: "free",
+    categories: ["application"],
+    readiness: "beta",
+  },
+  {
     name: "progressive-blur-demo",
     type: "registry:example",
     registryDependencies: ["progressive-blur"],

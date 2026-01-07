@@ -11,6 +11,7 @@ const COMPONENT_CATEGORY_URLS = {
   "core-components": "#core-components",
   primitives: "#primitives",
   sectorial: "#sectorial",
+  application: "#application",
   layout: "#layout",
   providers: "#providers",
 }

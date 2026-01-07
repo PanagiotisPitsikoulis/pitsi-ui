@@ -719,6 +719,28 @@
       "readiness": "production"
     },
     {
+      "name": "preview-card",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/preview-card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "application"
+      ],
+      "tier": "free",
+      "readiness": "beta"
+    },
+    {
       "name": "progress",
       "type": "registry:ui",
       "dependencies": [
@@ -10565,6 +10587,24 @@
       ],
       "tier": "free",
       "readiness": "production"
+    },
+    {
+      "name": "preview-card-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "preview-card"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/preview-card-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "application"
+      ],
+      "tier": "free",
+      "readiness": "beta"
     },
     {
       "name": "progressive-blur-demo",

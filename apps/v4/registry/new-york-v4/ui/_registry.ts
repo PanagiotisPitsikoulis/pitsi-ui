@@ -549,6 +549,21 @@ export const ui: Registry["items"] = [
     readiness: "production",
   },
   {
+    name: "preview-card",
+    type: "registry:ui",
+    dependencies: ["class-variance-authority"],
+    registryDependencies: ["utils", "dropdown-menu"],
+    files: [
+      {
+        path: "ui/preview-card.tsx",
+        type: "registry:ui",
+      },
+    ],
+    tier: "free",
+    categories: ["application"],
+    readiness: "beta",
+  },
+  {
     name: "progress",
     type: "registry:ui",
     dependencies: ["@radix-ui/react-progress"],

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "preview-card-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "preview-card"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/preview-card-demo.tsx",
+      "content": "import { Bookmark } from \"lucide-react\"\n\nimport {\n  PreviewCard,\n  PreviewCardContent,\n  PreviewCardDescription,\n  PreviewCardHeader,\n  PreviewCardImage,\n  PreviewCardMenu,\n  PreviewCardMenuItem,\n  PreviewCardTitle,\n} from \"@/registry/new-york-v4/ui/preview-card\"\n\nexport default function PreviewCardDemo() {\n  return (\n    <div className=\"grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-2\">\n      {/* Block-style card (16:10, cover) */}\n      <PreviewCard>\n        <PreviewCardImage\n          href=\"#\"\n          lightSrc=\"https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg\"\n          darkSrc=\"https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg\"\n          alt=\"Hero block preview\"\n          aspectRatio=\"landscape\"\n          objectFit=\"cover\"\n          rounded=\"default\"\n        />\n        <PreviewCardContent>\n          <PreviewCardHeader>\n            <PreviewCardTitle href=\"#\">Hero 1</PreviewCardTitle>\n            <PreviewCardMenu>\n              <PreviewCardMenuItem className=\"gap-2\">\n                <Bookmark className=\"size-4\" />\n                Save this block\n              </PreviewCardMenuItem>\n            </PreviewCardMenu>\n          </PreviewCardHeader>\n          <PreviewCardDescription lineClamp={1}>\n            A stunning hero section with gradient background and call-to-action\n            buttons\n          </PreviewCardDescription>\n        </PreviewCardContent>\n      </PreviewCard>\n\n      {/* Component-style card (4:3, contain) */}\n      <PreviewCard>\n        <PreviewCardImage\n          href=\"#\"\n          lightSrc=\"https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-2.svg\"\n          darkSrc=\"https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-2.svg\"\n          alt=\"Button component preview\"\n          aspectRatio=\"wide\"\n          objectFit=\"contain\"\n          rounded=\"lg\"\n        />\n        <PreviewCardContent>\n          <PreviewCardHeader>\n            <PreviewCardTitle href=\"#\">Button</PreviewCardTitle>\n            <PreviewCardMenu>\n              <PreviewCardMenuItem className=\"gap-2\">\n                <Bookmark className=\"size-4\" />\n                Save\n              </PreviewCardMenuItem>\n            </PreviewCardMenu>\n          </PreviewCardHeader>\n          <PreviewCardDescription>\n            A versatile button component with multiple variants and sizes\n          </PreviewCardDescription>\n        </PreviewCardContent>\n      </PreviewCard>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "application"
+  ],
+  "tier": "free",
+  "readiness": "beta"
+}

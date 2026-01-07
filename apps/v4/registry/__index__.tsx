@@ -747,6 +747,26 @@ export const Index: Record<string, Record<string, any>> = {
       tier: "free",
       readiness: "production",
     },
+    "preview-card": {
+      name: "preview-card",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: ["utils","dropdown-menu"],
+      files: [{
+        path: "registry/new-york-v4/ui/preview-card.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/ui/preview-card.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "preview-card"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
     "progress": {
       name: "progress",
       description: "",
@@ -9106,6 +9126,26 @@ export const Index: Record<string, Record<string, any>> = {
       meta: undefined,
       tier: "free",
       readiness: "production",
+    },
+    "preview-card-demo": {
+      name: "preview-card-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["preview-card"],
+      files: [{
+        path: "registry/new-york-v4/examples/preview-card-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/preview-card-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "preview-card-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
     },
     "progressive-blur-demo": {
       name: "progressive-blur-demo",
