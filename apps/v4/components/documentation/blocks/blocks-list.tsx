@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useSearchParams } from "next/navigation"
+import { parseAsArrayOf, parseAsString, useQueryStates } from "nuqs"
 
 import { useRecentBlocks, useSavedBlocks } from "@/lib/blocks-storage"
 import { Bookmark, Clock, ExternalLink, MoreVertical } from "@/lib/icons"
@@ -185,9 +185,19 @@ function formatBlockName(name: string): string {
     .join(" ")
 }
 
+// Define parsers for nuqs (same as BlocksAdvancedFilter for consistency)
+const filterParsers = {
+  filter: parseAsString.withDefault(""),
+  q: parseAsString.withDefault(""),
+  palette: parseAsArrayOf(parseAsString).withDefault([]),
+  typography: parseAsArrayOf(parseAsString).withDefault([]),
+  template: parseAsArrayOf(parseAsString).withDefault([]),
+  tier: parseAsArrayOf(parseAsString).withDefault([]),
+  readiness: parseAsArrayOf(parseAsString).withDefault([]),
+}
+
 export function BlocksList({ blocks, category }: BlocksListProps) {
-  const searchParams = useSearchParams()
-  const filter = searchParams.get("filter")
+  const [filterState] = useQueryStates(filterParsers)
   const {
     savedBlocks,
     isBlockSaved,
@@ -196,13 +206,14 @@ export function BlocksList({ blocks, category }: BlocksListProps) {
   } = useSavedBlocks()
   const { recentBlocks, isHydrated: recentHydrated } = useRecentBlocks()
 
-  // Get advanced filter values from search params
-  const searchQuery = searchParams.get("q")?.toLowerCase() || ""
-  const paletteFilter = searchParams.get("palette")?.split(",") || []
-  const typographyFilter = searchParams.get("typography")?.split(",") || []
-  const templateFilter = searchParams.get("template")?.split(",") || []
-  const tierFilter = searchParams.get("tier")?.split(",") || []
-  const readinessFilter = searchParams.get("readiness")?.split(",") || []
+  // Get filter values from nuqs state
+  const filter = filterState.filter
+  const searchQuery = filterState.q.toLowerCase()
+  const paletteFilter = filterState.palette
+  const typographyFilter = filterState.typography
+  const templateFilter = filterState.template
+  const tierFilter = filterState.tier
+  const readinessFilter = filterState.readiness
 
   // Filter blocks based on search params
   // Note: We filter by block name only, not category, because:
@@ -227,30 +238,30 @@ export function BlocksList({ blocks, category }: BlocksListProps) {
     }
 
     // Apply palette filter
-    if (paletteFilter.length > 0 && paletteFilter[0] !== "") {
+    if (paletteFilter.length > 0) {
       if (!block.palette || !paletteFilter.includes(block.palette)) return false
     }
 
     // Apply typography filter
-    if (typographyFilter.length > 0 && typographyFilter[0] !== "") {
+    if (typographyFilter.length > 0) {
       if (!block.typography || !typographyFilter.includes(block.typography))
         return false
     }
 
     // Apply template filter
-    if (templateFilter.length > 0 && templateFilter[0] !== "") {
+    if (templateFilter.length > 0) {
       if (!block.template || !templateFilter.includes(block.template))
         return false
     }
 
     // Apply tier filter
-    if (tierFilter.length > 0 && tierFilter[0] !== "") {
+    if (tierFilter.length > 0) {
       const blockTier = block.tier || "free"
       if (!tierFilter.includes(blockTier)) return false
     }
 
     // Apply readiness filter
-    if (readinessFilter.length > 0 && readinessFilter[0] !== "") {
+    if (readinessFilter.length > 0) {
       const blockReadiness = block.readiness || "production"
       if (!readinessFilter.includes(blockReadiness)) return false
     }

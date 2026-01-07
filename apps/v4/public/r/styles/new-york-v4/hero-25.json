@@ -1,0 +1,31 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "hero-25",
+  "type": "registry:block",
+  "description": "Component library hero with code preview and minimal design",
+  "registryDependencies": [
+    "button",
+    "hero-button"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/hero/hero-25.tsx",
+      "content": "\"use client\"\n\nimport Link from \"next/link\"\n\nimport { type HeroBlockProps } from \"@/lib/blocks/hero.types\"\nimport { cn } from \"@/lib/utils\"\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\nimport { HeroButton } from \"@/registry/new-york-v4/ui/hero-button\"\n\nconst hero25Defaults = {\n  badge: \"Open Source\",\n  title: \"Beautiful components\\nbuilt with Radix UI\\nand Tailwind CSS\",\n  description:\n    \"Accessible and customizable components that you can copy and paste into your apps. Free. Open Source. Use them to build your own component library.\",\n  primaryCta: { label: \"Get Started\", href: \"/docs\" },\n  secondaryCta: {\n    label: \"Components\",\n    href: \"/docs/components\",\n    variant: \"outline\" as const,\n  },\n}\n\nexport function Hero25({ content = {}, classNames = {} }: HeroBlockProps) {\n  const {\n    badge = hero25Defaults.badge,\n    title = hero25Defaults.title,\n    description = hero25Defaults.description,\n    primaryCta = hero25Defaults.primaryCta,\n    secondaryCta = hero25Defaults.secondaryCta,\n  } = content as typeof hero25Defaults\n\n  return (\n    <section\n      className={cn(\n        \"relative flex min-h-[calc(80svh-5rem)] flex-col items-center justify-center overflow-hidden px-6 py-24\",\n        classNames.root\n      )}\n    >\n      {/* Subtle gradient background */}\n      <div className=\"from-brand/5 via-background to-background pointer-events-none absolute inset-0 bg-gradient-to-b\" />\n\n      {/* Grid pattern */}\n      <div\n        className=\"pointer-events-none absolute inset-0 opacity-[0.02]\"\n        style={{\n          backgroundImage: `linear-gradient(var(--foreground) 1px, transparent 1px), linear-gradient(90deg, var(--foreground) 1px, transparent 1px)`,\n          backgroundSize: \"60px 60px\",\n        }}\n      />\n\n      {/* Content */}\n      <div\n        className={cn(\n          \"relative z-10 mx-auto max-w-4xl text-center\",\n          classNames.container\n        )}\n      >\n        {/* Badge */}\n        {badge && (\n          <div className=\"mb-6 inline-flex items-center gap-2\">\n            <span className=\"bg-brand/10 text-brand rounded-full px-3 py-1 text-sm font-medium\">\n              {badge}\n            </span>\n          </div>\n        )}\n\n        {/* Title */}\n        <h1\n          className={cn(\n            \"display text-4xl leading-[1.1] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl\",\n            classNames.header?.title\n          )}\n        >\n          {title.split(\"\\n\").map((line, i) => (\n            <span key={i}>\n              {line}\n              {i < title.split(\"\\n\").length - 1 && <br />}\n            </span>\n          ))}\n        </h1>\n\n        {/* Description */}\n        {description && (\n          <p\n            className={cn(\n              \"text-muted-foreground mx-auto mt-6 max-w-2xl text-lg md:text-xl\",\n              classNames.header?.description\n            )}\n          >\n            {description}\n          </p>\n        )}\n\n        {/* CTAs */}\n        <div className=\"mt-10 flex flex-wrap items-center justify-center gap-4\">\n          {primaryCta && (\n            <Link href={primaryCta.href}>\n              <HeroButton>{primaryCta.label}</HeroButton>\n            </Link>\n          )}\n          {secondaryCta && (\n            <Button\n              asChild\n              variant=\"outline\"\n              size=\"lg\"\n              className=\"rounded-full px-6\"\n            >\n              <Link href={secondaryCta.href}>{secondaryCta.label}</Link>\n            </Button>\n          )}\n        </div>\n\n        {/* Code preview hint */}\n        <div className=\"bg-muted/50 border-border mt-16 inline-flex items-center gap-2 rounded-lg border px-4 py-2 font-mono text-sm\">\n          <span className=\"text-muted-foreground\">$</span>\n          <span>npx pitsi add button</span>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "hero",
+    "landing"
+  ],
+  "tier": "free",
+  "readiness": "production",
+  "blockConfig": {
+    "template": "service-library",
+    "blockType": "hero",
+    "order": 1,
+    "palette": "slate",
+    "typography": "modern",
+    "tint": "base"
+  }
+}

@@ -185,6 +185,11 @@
     "categories": ["cta", "landing"]
   },
   {
+    "name": "cta-7",
+    "description": "Component library CTA with gradient card",
+    "categories": ["cta", "landing"]
+  },
+  {
     "name": "faq-1",
     "description": "Plant shop FAQ section with accordion",
     "categories": ["faq", "landing"]
@@ -215,8 +220,33 @@
     "categories": ["faq", "landing"]
   },
   {
+    "name": "faq-7",
+    "description": "Component library FAQ with accordion",
+    "categories": ["faq", "landing"]
+  },
+  {
     "name": "features-1",
     "description": "Plant shop features section with icons and center image",
+    "categories": ["features", "landing"]
+  },
+  {
+    "name": "features-10",
+    "description": "Accordion features with image preview (image left)",
+    "categories": ["features", "landing"]
+  },
+  {
+    "name": "features-11",
+    "description": "Accordion features with image preview (image right)",
+    "categories": ["features", "landing"]
+  },
+  {
+    "name": "features-12",
+    "description": "Accordion features with header and extended list",
+    "categories": ["features", "landing"]
+  },
+  {
+    "name": "features-13",
+    "description": "Accordion features showcasing blocks and patterns",
     "categories": ["features", "landing"]
   },
   {
@@ -252,6 +282,11 @@
   {
     "name": "features-8",
     "description": "Studio location with hours, contact info, amenities, and map",
+    "categories": ["features", "landing"]
+  },
+  {
+    "name": "features-9",
+    "description": "Component library features grid with icons",
     "categories": ["features", "landing"]
   },
   {
@@ -292,6 +327,11 @@
   {
     "name": "footer-8",
     "description": "Social-focused footer with large icons and follower counts",
+    "categories": ["footer", "landing"]
+  },
+  {
+    "name": "footer-9",
+    "description": "Component library footer with links and socials",
     "categories": ["footer", "landing"]
   },
   {
@@ -455,6 +495,11 @@
     "categories": ["hero", "landing"]
   },
   {
+    "name": "hero-25",
+    "description": "Component library hero with code preview and minimal design",
+    "categories": ["hero", "landing"]
+  },
+  {
     "name": "hero-3",
     "description": "Yacht charter hero section with parallax effects and knockout text",
     "categories": ["hero", "landing"]
@@ -610,6 +655,11 @@
     "categories": ["pricing", "landing"]
   },
   {
+    "name": "pricing-8",
+    "description": "Component library pricing with free and pro tiers",
+    "categories": ["pricing", "landing"]
+  },
+  {
     "name": "products-1",
     "description": "Plant shop products grid showcasing best sellers",
     "categories": ["products", "landing"]
@@ -672,6 +722,11 @@
   {
     "name": "stats-7",
     "description": "Infographic style stats with bar chart",
+    "categories": ["stats", "landing"]
+  },
+  {
+    "name": "stats-8",
+    "description": "Component library stats section with large numbers",
     "categories": ["stats", "landing"]
   },
   {
@@ -742,6 +797,11 @@
   {
     "name": "testimonials-7",
     "description": "Social proof wall with tweet-style cards",
+    "categories": ["testimonials", "landing"]
+  },
+  {
+    "name": "testimonials-8",
+    "description": "Developer testimonials grid for component library",
     "categories": ["testimonials", "landing"]
   }
 ]

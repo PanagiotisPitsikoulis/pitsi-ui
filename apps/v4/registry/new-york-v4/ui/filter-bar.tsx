@@ -163,13 +163,13 @@ function FilterBar({
       {showSearch && (
         <>
           <div className="relative w-56">
-            <Search className="text-muted-foreground pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2" />
+            <Search className="text-muted-foreground pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2" />
             <Input
               type="search"
               placeholder={searchPlaceholder}
               value={searchValue}
               onChange={(e) => onSearchChange(e.target.value)}
-              className="h-8 rounded-full border-0 bg-background pl-9 pr-3 shadow-none focus-visible:ring-0"
+              className="bg-background h-8 rounded-full border-0 pr-3 pl-9 shadow-none focus-visible:ring-0"
             />
           </div>
           <div className="bg-border mx-1 h-5 w-px" />

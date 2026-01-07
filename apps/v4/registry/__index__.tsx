@@ -3287,6 +3287,26 @@ export const Index: Record<string, Record<string, any>> = {
       tier: "free",
       readiness: "production",
     },
+    "cta-7": {
+      name: "cta-7",
+      description: "Component library CTA with gradient card",
+      type: "registry:block",
+      registryDependencies: ["button","hero-button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/cta/cta-7.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/cta/cta-7.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "cta-7"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["cta","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
     "faq-1": {
       name: "faq-1",
       description: "Plant shop FAQ section with accordion",
@@ -3407,6 +3427,26 @@ export const Index: Record<string, Record<string, any>> = {
       tier: "free",
       readiness: "production",
     },
+    "faq-7": {
+      name: "faq-7",
+      description: "Component library FAQ with accordion",
+      type: "registry:block",
+      registryDependencies: ["accordion"],
+      files: [{
+        path: "registry/new-york-v4/blocks/faq/faq-7.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/faq/faq-7.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "faq-7"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["faq","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
     "features-1": {
       name: "features-1",
       description: "Plant shop features section with icons and center image",
@@ -3420,6 +3460,86 @@ export const Index: Record<string, Record<string, any>> = {
       component: React.lazy(async () => {
         const mod = await import("@/registry/new-york-v4/blocks/features/features-1.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "features-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["features","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "features-10": {
+      name: "features-10",
+      description: "Accordion features with image preview (image left)",
+      type: "registry:block",
+      registryDependencies: ["accordion","button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/features/features-10.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/features/features-10.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "features-10"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["features","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "features-11": {
+      name: "features-11",
+      description: "Accordion features with image preview (image right)",
+      type: "registry:block",
+      registryDependencies: ["accordion","button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/features/features-11.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/features/features-11.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "features-11"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["features","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "features-12": {
+      name: "features-12",
+      description: "Accordion features with header and extended list",
+      type: "registry:block",
+      registryDependencies: ["accordion","button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/features/features-12.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/features/features-12.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "features-12"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["features","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "features-13": {
+      name: "features-13",
+      description: "Accordion features showcasing blocks and patterns",
+      type: "registry:block",
+      registryDependencies: ["accordion","button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/features/features-13.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/features/features-13.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "features-13"
         return { default: mod.default || mod[exportName] }
       }),
       categories: ["features","landing"],
@@ -3560,6 +3680,26 @@ export const Index: Record<string, Record<string, any>> = {
       component: React.lazy(async () => {
         const mod = await import("@/registry/new-york-v4/blocks/features/features-8.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "features-8"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["features","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "features-9": {
+      name: "features-9",
+      description: "Component library features grid with icons",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/features/features-9.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/features/features-9.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "features-9"
         return { default: mod.default || mod[exportName] }
       }),
       categories: ["features","landing"],
@@ -3720,6 +3860,26 @@ export const Index: Record<string, Record<string, any>> = {
       component: React.lazy(async () => {
         const mod = await import("@/registry/new-york-v4/blocks/footer/footer-8.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "footer-8"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["footer","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "footer-9": {
+      name: "footer-9",
+      description: "Component library footer with links and socials",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/footer/footer-9.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/footer/footer-9.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "footer-9"
         return { default: mod.default || mod[exportName] }
       }),
       categories: ["footer","landing"],
@@ -4367,6 +4527,26 @@ export const Index: Record<string, Record<string, any>> = {
       tier: "free",
       readiness: "production",
     },
+    "hero-25": {
+      name: "hero-25",
+      description: "Component library hero with code preview and minimal design",
+      type: "registry:block",
+      registryDependencies: ["button","hero-button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/hero/hero-25.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/hero/hero-25.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "hero-25"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["hero","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
     "hero-3": {
       name: "hero-3",
       description: "Yacht charter hero section with parallax effects and knockout text",
@@ -4987,6 +5167,26 @@ export const Index: Record<string, Record<string, any>> = {
       tier: "free",
       readiness: "production",
     },
+    "pricing-8": {
+      name: "pricing-8",
+      description: "Component library pricing with free and pro tiers",
+      type: "registry:block",
+      registryDependencies: ["button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/pricing/pricing-8.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/pricing/pricing-8.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "pricing-8"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["pricing","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
     "products-1": {
       name: "products-1",
       description: "Plant shop products grid showcasing best sellers",
@@ -5240,6 +5440,26 @@ export const Index: Record<string, Record<string, any>> = {
       component: React.lazy(async () => {
         const mod = await import("@/registry/new-york-v4/blocks/stats/stats-7.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "stats-7"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["stats","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "stats-8": {
+      name: "stats-8",
+      description: "Component library stats section with large numbers",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/stats/stats-8.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/stats/stats-8.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "stats-8"
         return { default: mod.default || mod[exportName] }
       }),
       categories: ["stats","landing"],
@@ -5520,6 +5740,26 @@ export const Index: Record<string, Record<string, any>> = {
       component: React.lazy(async () => {
         const mod = await import("@/registry/new-york-v4/blocks/testimonials/testimonials-7.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "testimonials-7"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["testimonials","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "testimonials-8": {
+      name: "testimonials-8",
+      description: "Developer testimonials grid for component library",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/testimonials/testimonials-8.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/testimonials/testimonials-8.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "testimonials-8"
         return { default: mod.default || mod[exportName] }
       }),
       categories: ["testimonials","landing"],
@@ -7720,6 +7960,26 @@ export const Index: Record<string, Record<string, any>> = {
       component: React.lazy(async () => {
         const mod = await import("@/registry/new-york-v4/examples/field-responsive.tsx")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "field-responsive"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["core-components"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "filter-bar-demo": {
+      name: "filter-bar-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["filter-bar"],
+      files: [{
+        path: "registry/new-york-v4/examples/filter-bar-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/filter-bar-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "filter-bar-demo"
         return { default: mod.default || mod[exportName] }
       }),
       categories: ["core-components"],

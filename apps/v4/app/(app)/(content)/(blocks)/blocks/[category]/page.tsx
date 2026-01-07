@@ -83,8 +83,10 @@ export default async function CategoryPage({
             templates={templates}
             styleName={activeStyle.name}
           />
-          <BlocksFilter />
-          <BlocksAdvancedFilter filterOptions={filterOptions} />
+          <div className="flex flex-col gap-2">
+            <BlocksFilter />
+            <BlocksAdvancedFilter filterOptions={filterOptions} />
+          </div>
         </div>
 
         {/* Blocks List */}
@@ -138,8 +140,10 @@ export default async function CategoryPage({
       {/* Full Pages Section + Filter */}
       <div className="flex flex-col gap-6">
         <FullPagesSection templates={templates} styleName={activeStyle.name} />
-        <BlocksFilter />
-        <BlocksAdvancedFilter filterOptions={filterOptions} />
+        <div className="flex flex-col gap-2">
+          <BlocksFilter />
+          <BlocksAdvancedFilter filterOptions={filterOptions} />
+        </div>
       </div>
 
       {/* Blocks List */}

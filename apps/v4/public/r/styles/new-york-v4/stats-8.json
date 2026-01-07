@@ -1,0 +1,27 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "stats-8",
+  "type": "registry:block",
+  "description": "Component library stats section with large numbers",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/stats/stats-8.tsx",
+      "content": "\"use client\"\n\nimport { type StatsBlockProps } from \"@/lib/blocks/stats.types\"\nimport { cn } from \"@/lib/utils\"\n\nconst stats8Defaults = {\n  badge: \"Trusted by developers\",\n  title: \"Built for scale\",\n  stats: [\n    { value: \"100+\", label: \"Components\" },\n    { value: \"50K+\", label: \"Downloads\" },\n    { value: \"10K+\", label: \"GitHub Stars\" },\n    { value: \"500+\", label: \"Contributors\" },\n  ],\n}\n\nexport function Stats8({ content = {}, classNames = {} }: StatsBlockProps) {\n  const {\n    badge = stats8Defaults.badge,\n    title = stats8Defaults.title,\n    stats = stats8Defaults.stats,\n  } = content as typeof stats8Defaults\n\n  return (\n    <section className={cn(\"py-24\", classNames.root)}>\n      <div className={cn(\"container px-6\", classNames.container)}>\n        {/* Header */}\n        <div className={cn(\"mb-16 text-center\", classNames.header?.root)}>\n          {badge && (\n            <p\n              className={cn(\n                \"text-brand mb-4 text-sm font-medium tracking-wider uppercase\",\n                classNames.header?.badge\n              )}\n            >\n              {badge}\n            </p>\n          )}\n          <h2\n            className={cn(\n              \"text-3xl font-bold tracking-tight md:text-4xl\",\n              classNames.header?.title\n            )}\n          >\n            {title}\n          </h2>\n        </div>\n\n        {/* Stats grid */}\n        <div\n          className={cn(\n            \"grid grid-cols-2 gap-8 md:grid-cols-4\",\n            classNames.grid\n          )}\n        >\n          {stats.map((stat, idx) => (\n            <div key={idx} className={cn(\"text-center\", classNames.stat?.root)}>\n              <div\n                className={cn(\n                  \"text-brand text-4xl font-bold md:text-5xl\",\n                  classNames.stat?.value\n                )}\n              >\n                {stat.value}\n              </div>\n              <div\n                className={cn(\n                  \"text-muted-foreground mt-2 text-sm font-medium\",\n                  classNames.stat?.label\n                )}\n              >\n                {stat.label}\n              </div>\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "stats",
+    "landing"
+  ],
+  "tier": "free",
+  "readiness": "production",
+  "blockConfig": {
+    "template": "service-library",
+    "blockType": "stats",
+    "order": 3,
+    "palette": "slate",
+    "typography": "modern",
+    "tint": "tinted"
+  }
+}

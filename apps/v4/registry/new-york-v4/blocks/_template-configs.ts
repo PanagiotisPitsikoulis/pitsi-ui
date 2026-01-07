@@ -49,4 +49,11 @@ export const templateConfigs: TemplateConfig[] = [
     heroBlock: "app-quiz-dashboard-1",
     type: "application",
   },
+  {
+    slug: "service-library",
+    name: "Component Library",
+    description: "Modern component library documentation and marketing site",
+    heroBlock: "hero-25",
+    type: "service",
+  },
 ]

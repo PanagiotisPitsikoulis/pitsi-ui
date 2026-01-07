@@ -1,0 +1,31 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "footer-9",
+  "type": "registry:block",
+  "description": "Component library footer with links and socials",
+  "dependencies": [
+    "@hugeicons/react",
+    "@hugeicons/core-free-icons"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/footer/footer-9.tsx",
+      "content": "\"use client\"\n\nimport Link from \"next/link\"\n\nimport { DynamicIcon } from \"@/lib/blocks/dynamic-icon\"\nimport { type FooterBlockProps } from \"@/lib/blocks/footer.types\"\nimport { cn } from \"@/lib/utils\"\n\nconst footer9Defaults = {\n  logo: {\n    text: \"pitsi/ui\",\n  },\n  description: \"Beautiful, accessible components for modern web applications.\",\n  sections: [\n    {\n      title: \"Documentation\",\n      links: [\n        { label: \"Getting Started\", href: \"/docs\" },\n        { label: \"Components\", href: \"/docs/components\" },\n        { label: \"Blocks\", href: \"/blocks\" },\n        { label: \"Examples\", href: \"/examples\" },\n      ],\n    },\n    {\n      title: \"Resources\",\n      links: [\n        { label: \"GitHub\", href: \"https://github.com\" },\n        { label: \"Discord\", href: \"https://discord.com\" },\n        { label: \"Twitter\", href: \"https://twitter.com\" },\n        { label: \"Blog\", href: \"/blog\" },\n      ],\n    },\n    {\n      title: \"Legal\",\n      links: [\n        { label: \"Privacy\", href: \"/privacy\" },\n        { label: \"Terms\", href: \"/terms\" },\n        { label: \"License\", href: \"/license\" },\n      ],\n    },\n  ],\n  socials: [\n    { icon: \"Github01Icon\", href: \"https://github.com\", label: \"GitHub\" },\n    { icon: \"NewTwitterIcon\", href: \"https://twitter.com\", label: \"Twitter\" },\n    { icon: \"DiscordIcon\", href: \"https://discord.com\", label: \"Discord\" },\n  ],\n  copyright: \"© 2024 pitsi/ui. All rights reserved.\",\n}\n\nexport function Footer9({ content = {}, classNames = {} }: FooterBlockProps) {\n  const {\n    logo = footer9Defaults.logo,\n    description = footer9Defaults.description,\n    sections = footer9Defaults.sections,\n    socials = footer9Defaults.socials,\n    copyright = footer9Defaults.copyright,\n  } = content as typeof footer9Defaults\n\n  return (\n    <footer className={cn(\"border-border border-t py-16\", classNames.root)}>\n      <div className={cn(\"container px-6\", classNames.container)}>\n        <div className=\"grid gap-12 md:grid-cols-2 lg:grid-cols-5\">\n          {/* Brand */}\n          <div className=\"lg:col-span-2\">\n            {logo?.text && (\n              <Link href=\"/\" className=\"text-foreground text-xl font-bold\">\n                {logo.text}\n              </Link>\n            )}\n            {description && (\n              <p\n                className={cn(\n                  \"text-muted-foreground mt-4 max-w-sm text-sm\",\n                  classNames.description\n                )}\n              >\n                {description}\n              </p>\n            )}\n            {/* Socials */}\n            {socials && socials.length > 0 && (\n              <div className=\"mt-6 flex gap-4\">\n                {socials.map((social, idx) => (\n                  <Link\n                    key={idx}\n                    href={social.href}\n                    className=\"text-muted-foreground hover:text-foreground transition-colors\"\n                    aria-label={social.label}\n                  >\n                    <DynamicIcon name={social.icon} className=\"h-5 w-5\" />\n                  </Link>\n                ))}\n              </div>\n            )}\n          </div>\n\n          {/* Link sections */}\n          {sections.map((section, idx) => (\n            <div key={idx}>\n              <h3\n                className={cn(\n                  \"text-foreground mb-4 text-sm font-semibold\",\n                  classNames.section?.title\n                )}\n              >\n                {section.title}\n              </h3>\n              <ul className=\"space-y-3\">\n                {section.links.map((link, linkIdx) => (\n                  <li key={linkIdx}>\n                    <Link\n                      href={link.href}\n                      className={cn(\n                        \"text-muted-foreground hover:text-foreground text-sm transition-colors\",\n                        classNames.section?.link\n                      )}\n                    >\n                      {link.label}\n                    </Link>\n                  </li>\n                ))}\n              </ul>\n            </div>\n          ))}\n        </div>\n\n        {/* Copyright */}\n        <div className=\"border-border mt-12 border-t pt-8\">\n          <p\n            className={cn(\n              \"text-muted-foreground text-center text-sm\",\n              classNames.copyright\n            )}\n          >\n            {copyright}\n          </p>\n        </div>\n      </div>\n    </footer>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "footer",
+    "landing"
+  ],
+  "tier": "free",
+  "readiness": "production",
+  "blockConfig": {
+    "template": "service-library",
+    "blockType": "footer",
+    "order": 8,
+    "palette": "slate",
+    "typography": "modern",
+    "tint": "base"
+  }
+}

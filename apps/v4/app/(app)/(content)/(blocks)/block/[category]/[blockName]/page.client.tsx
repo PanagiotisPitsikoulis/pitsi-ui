@@ -588,7 +588,7 @@ export function BlockViewerClient({
 
           {/* Template Mode Secondary Toolbar */}
           {viewMode === "template" && templateSlug && (
-            <div className="bg-muted/50 container mt-2 flex items-center gap-2 rounded-full p-1.5">
+            <div className="bg-muted container mt-2 flex items-center gap-1 rounded-full p-1.5">
               {/* View full template link */}
               <Tooltip>
                 <TooltipTrigger asChild>
@@ -626,11 +626,54 @@ export function BlockViewerClient({
               {/* Spacer */}
               <div className="flex-1" />
 
-              {/* Theme and Typography displays */}
-              <div className="hidden items-center gap-1 lg:flex">
-                <ThemeDisplay palette={blockPalette} />
-                <TypographyDisplay preset={blockTypographyPreset} />
-              </div>
+              {/* Dev-only tools in template mode */}
+              {isDev && (
+                <div className="flex items-center gap-1">
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <button
+                        onClick={() => openInEditor(BLOCK_CODE_PATH)}
+                        className="text-muted-foreground hover:bg-background/50 hover:text-foreground flex size-8 items-center justify-center rounded-full transition-colors"
+                      >
+                        <FileCode className="size-4" />
+                      </button>
+                    </TooltipTrigger>
+                    <TooltipContent side="bottom" className="text-xs">
+                      Open Block <kbd className="ml-1 text-[10px]">⌘G</kbd>
+                    </TooltipContent>
+                  </Tooltip>
+
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <button
+                        onClick={() => openInEditor(BLOCK_COMPONENTS_PATH, true)}
+                        className="text-muted-foreground hover:bg-background/50 hover:text-foreground flex size-8 items-center justify-center rounded-full transition-colors"
+                      >
+                        <Layers className="size-4" />
+                      </button>
+                    </TooltipTrigger>
+                    <TooltipContent side="bottom" className="text-xs">
+                      Components <kbd className="ml-1 text-[10px]">⌘K</kbd>
+                    </TooltipContent>
+                  </Tooltip>
+
+                  {ASSETS_PATH && (
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <button
+                          onClick={() => openInEditor(ASSETS_PATH, true)}
+                          className="text-muted-foreground hover:bg-background/50 hover:text-foreground flex size-8 items-center justify-center rounded-full transition-colors"
+                        >
+                          <ImageIcon className="size-4" />
+                        </button>
+                      </TooltipTrigger>
+                      <TooltipContent side="bottom" className="text-xs">
+                        Assets <kbd className="ml-1 text-[10px]">⌘I</kbd>
+                      </TooltipContent>
+                    </Tooltip>
+                  )}
+                </div>
+              )}
             </div>
           )}
         </div>

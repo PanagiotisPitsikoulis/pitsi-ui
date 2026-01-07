@@ -899,6 +899,29 @@ export const blocks: Registry["items"] = [
     ],
   },
   {
+    name: "cta-7",
+    type: "registry:block",
+    description: "Component library CTA with gradient card",
+    registryDependencies: ["button", "hero-button"],
+    categories: ["cta", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "cta",
+      order: 7,
+      palette: "slate",
+      typography: "modern",
+      tint: "base",
+    },
+    files: [
+      {
+        path: "blocks/cta/cta-7.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
     name: "faq-1",
     type: "registry:block",
     description: "Plant shop FAQ section with accordion",
@@ -1034,6 +1057,29 @@ export const blocks: Registry["items"] = [
     ],
   },
   {
+    name: "faq-7",
+    type: "registry:block",
+    description: "Component library FAQ with accordion",
+    registryDependencies: ["accordion"],
+    categories: ["faq", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "faq",
+      order: 6,
+      palette: "slate",
+      typography: "modern",
+      tint: "base",
+    },
+    files: [
+      {
+        path: "blocks/faq/faq-7.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
     name: "features-1",
     type: "registry:block",
     description: "Plant shop features section with icons and center image",
@@ -1052,6 +1098,98 @@ export const blocks: Registry["items"] = [
     files: [
       {
         path: "blocks/features/features-1.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "features-10",
+    type: "registry:block",
+    description: "Accordion features with image preview (image left)",
+    registryDependencies: ["accordion", "button"],
+    categories: ["features", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "features",
+      order: 3,
+      palette: "slate",
+      typography: "modern",
+      tint: "base",
+    },
+    files: [
+      {
+        path: "blocks/features/features-10.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "features-11",
+    type: "registry:block",
+    description: "Accordion features with image preview (image right)",
+    registryDependencies: ["accordion", "button"],
+    categories: ["features", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "features",
+      order: 4,
+      palette: "slate",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/features/features-11.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "features-12",
+    type: "registry:block",
+    description: "Accordion features with header and extended list",
+    registryDependencies: ["accordion", "button"],
+    categories: ["features", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "features",
+      order: 5,
+      palette: "slate",
+      typography: "modern",
+      tint: "base",
+    },
+    files: [
+      {
+        path: "blocks/features/features-12.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "features-13",
+    type: "registry:block",
+    description: "Accordion features showcasing blocks and patterns",
+    registryDependencies: ["accordion", "button"],
+    categories: ["features", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "features",
+      order: 6,
+      palette: "slate",
+      typography: "modern",
+      tint: "base",
+    },
+    files: [
+      {
+        path: "blocks/features/features-13.tsx",
         type: "registry:block",
       },
     ],
@@ -1215,6 +1353,29 @@ export const blocks: Registry["items"] = [
     files: [
       {
         path: "blocks/features/features-8.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "features-9",
+    type: "registry:block",
+    description: "Component library features grid with icons",
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
+    categories: ["features", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "features",
+      order: 2,
+      palette: "slate",
+      typography: "modern",
+      tint: "base",
+    },
+    files: [
+      {
+        path: "blocks/features/features-9.tsx",
         type: "registry:block",
       },
     ],
@@ -1398,6 +1559,29 @@ export const blocks: Registry["items"] = [
     files: [
       {
         path: "blocks/footer/footer-8.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "footer-9",
+    type: "registry:block",
+    description: "Component library footer with links and socials",
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
+    categories: ["footer", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "footer",
+      order: 8,
+      palette: "slate",
+      typography: "modern",
+      tint: "base",
+    },
+    files: [
+      {
+        path: "blocks/footer/footer-9.tsx",
         type: "registry:block",
       },
     ],
@@ -2152,6 +2336,29 @@ export const blocks: Registry["items"] = [
     files: [
       {
         path: "blocks/hero/hero-24.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "hero-25",
+    type: "registry:block",
+    description: "Component library hero with code preview and minimal design",
+    registryDependencies: ["button", "hero-button"],
+    categories: ["hero", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "hero",
+      order: 1,
+      palette: "slate",
+      typography: "modern",
+      tint: "base",
+    },
+    files: [
+      {
+        path: "blocks/hero/hero-25.tsx",
         type: "registry:block",
       },
     ],
@@ -2921,6 +3128,30 @@ export const blocks: Registry["items"] = [
     ],
   },
   {
+    name: "pricing-8",
+    type: "registry:block",
+    description: "Component library pricing with free and pro tiers",
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
+    registryDependencies: ["button"],
+    categories: ["pricing", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "pricing",
+      order: 5,
+      palette: "slate",
+      typography: "modern",
+      tint: "base",
+    },
+    files: [
+      {
+        path: "blocks/pricing/pricing-8.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
     name: "products-1",
     type: "registry:block",
     description: "Plant shop products grid showcasing best sellers",
@@ -3210,6 +3441,28 @@ export const blocks: Registry["items"] = [
     files: [
       {
         path: "blocks/stats/stats-7.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "stats-8",
+    type: "registry:block",
+    description: "Component library stats section with large numbers",
+    categories: ["stats", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "stats",
+      order: 3,
+      palette: "slate",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/stats/stats-8.tsx",
         type: "registry:block",
       },
     ],
@@ -3526,6 +3779,28 @@ export const blocks: Registry["items"] = [
     files: [
       {
         path: "blocks/testimonials/testimonials-7.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "testimonials-8",
+    type: "registry:block",
+    description: "Developer testimonials grid for component library",
+    categories: ["testimonials", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "testimonials",
+      order: 4,
+      palette: "slate",
+      typography: "modern",
+      tint: "base",
+    },
+    files: [
+      {
+        path: "blocks/testimonials/testimonials-8.tsx",
         type: "registry:block",
       },
     ],
