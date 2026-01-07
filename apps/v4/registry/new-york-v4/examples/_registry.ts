@@ -772,6 +772,20 @@ export const examples: Registry["items"] = [
     readiness: "production",
   },
   {
+    name: "collapsible-gallery-demo",
+    type: "registry:example",
+    registryDependencies: ["collapsible-gallery"],
+    files: [
+      {
+        path: "examples/collapsible-gallery-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    tier: "free",
+    categories: ["application"],
+    readiness: "production",
+  },
+  {
     name: "combobox-demo",
     type: "registry:example",
     registryDependencies: ["command"],

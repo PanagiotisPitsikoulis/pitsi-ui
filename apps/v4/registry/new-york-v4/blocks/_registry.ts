@@ -15,6 +15,54 @@ export interface BlockConfig {
 
 export const blocks: Registry["items"] = [
   {
+    name: "app-auth-1",
+    type: "registry:block",
+    description:
+      "Authentication page for sign in and sign up with social login and email/password form",
+    registryDependencies: ["button", "card", "input", "label", "separator"],
+    categories: ["application", "auth"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "application",
+      order: 2,
+      palette: "neutral",
+      typography: "modern",
+      tint: "base",
+    },
+    files: [
+      {
+        path: "blocks/application/app-auth-1.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "app-dashboard-1",
+    type: "registry:block",
+    description:
+      "Dashboard page with sidebar navigation, stats cards, and upgrade prompt",
+    registryDependencies: ["badge", "button", "card"],
+    categories: ["application", "dashboard"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "application",
+      order: 1,
+      palette: "neutral",
+      typography: "modern",
+      tint: "base",
+    },
+    files: [
+      {
+        path: "blocks/application/app-dashboard-1.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
     name: "app-gym-gains-1",
     type: "registry:block",
     description: "Progress tracking with sparkline charts and PR history",
@@ -1405,6 +1453,30 @@ export const blocks: Registry["items"] = [
     ],
   },
   {
+    name: "footer-10",
+    type: "registry:block",
+    description:
+      "Comprehensive multi-column footer with sections for documentation, pages, changelog, connect, legal, account, blocks, components, animations, and theme toggle",
+    registryDependencies: ["button", "dropdown-menu"],
+    categories: ["footer", "landing", "application"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "footer",
+      order: 99,
+      palette: "neutral",
+      typography: "modern",
+      tint: "base",
+    },
+    files: [
+      {
+        path: "blocks/footer/footer-10.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
     name: "footer-2",
     type: "registry:block",
     description:
@@ -1742,6 +1814,30 @@ export const blocks: Registry["items"] = [
     files: [
       {
         path: "blocks/header/header-1.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "header-10",
+    type: "registry:block",
+    description:
+      "Scroll-aware sticky header with transparent to solid background transition, logo, navigation, search, and user actions",
+    registryDependencies: ["button", "popover"],
+    categories: ["header", "landing", "application"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "header",
+      order: 1,
+      palette: "neutral",
+      typography: "modern",
+      tint: "base",
+    },
+    files: [
+      {
+        path: "blocks/header/header-10.tsx",
         type: "registry:block",
       },
     ],
@@ -2960,6 +3056,198 @@ export const blocks: Registry["items"] = [
     files: [
       {
         path: "blocks/newsletter/newsletter-6.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "page-404-1",
+    type: "registry:block",
+    description:
+      "404 Not Found page with two-column layout, helpful message, and navigation buttons",
+    registryDependencies: ["button", "spacer"],
+    categories: ["pages", "error"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "pages",
+      order: 11,
+      palette: "neutral",
+      typography: "modern",
+      tint: "base",
+    },
+    files: [
+      {
+        path: "blocks/pages/page-404-1.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "page-blog-1",
+    type: "registry:block",
+    description:
+      "Blog listing page with sidebar, category filtering, and article cards",
+    registryDependencies: ["badge", "spacer"],
+    categories: ["pages", "landing", "blog"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "pages",
+      order: 4,
+      palette: "neutral",
+      typography: "modern",
+      tint: "base",
+    },
+    files: [
+      {
+        path: "blocks/pages/page-blog-1.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "page-changelog-1",
+    type: "registry:block",
+    description:
+      "Changelog page with sidebar, icon decoration, and versioned release entries",
+    registryDependencies: ["badge", "spacer"],
+    categories: ["pages", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "pages",
+      order: 3,
+      palette: "neutral",
+      typography: "modern",
+      tint: "base",
+    },
+    files: [
+      {
+        path: "blocks/pages/page-changelog-1.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "page-error-1",
+    type: "registry:block",
+    description:
+      "Error page with two-column layout, error message, error digest display, and action buttons",
+    registryDependencies: ["button", "spacer"],
+    categories: ["pages", "error"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "pages",
+      order: 10,
+      palette: "neutral",
+      typography: "modern",
+      tint: "base",
+    },
+    files: [
+      {
+        path: "blocks/pages/page-error-1.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "page-legal-1",
+    type: "registry:block",
+    description:
+      "Legal page template for privacy policy, terms of service, and other legal content with two-column layout",
+    registryDependencies: ["spacer"],
+    categories: ["pages", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "pages",
+      order: 12,
+      palette: "neutral",
+      typography: "modern",
+      tint: "base",
+    },
+    files: [
+      {
+        path: "blocks/pages/page-legal-1.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "page-pricing-1",
+    type: "registry:block",
+    description:
+      "Pricing page with hero section, license type toggle, and tiered pricing cards",
+    registryDependencies: ["button", "spacer"],
+    categories: ["pages", "landing", "pricing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "pages",
+      order: 2,
+      palette: "neutral",
+      typography: "modern",
+      tint: "base",
+    },
+    files: [
+      {
+        path: "blocks/pages/page-pricing-1.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "page-roadmap-1",
+    type: "registry:block",
+    description:
+      "Roadmap page with sidebar, status filtering, search, and milestone items",
+    registryDependencies: ["badge", "input", "spacer"],
+    categories: ["pages", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "pages",
+      order: 5,
+      palette: "neutral",
+      typography: "modern",
+      tint: "base",
+    },
+    files: [
+      {
+        path: "blocks/pages/page-roadmap-1.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "page-tools-1",
+    type: "registry:block",
+    description:
+      "Tools listing page with hero section, isometric icons, and card grid layout",
+    registryDependencies: ["button", "hero-button", "spacer"],
+    categories: ["pages", "landing"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "pages",
+      order: 1,
+      palette: "neutral",
+      typography: "modern",
+      tint: "base",
+    },
+    files: [
+      {
+        path: "blocks/pages/page-tools-1.tsx",
         type: "registry:block",
       },
     ],

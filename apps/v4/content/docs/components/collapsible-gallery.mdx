@@ -1,0 +1,92 @@
+---
+title: Collapsible Gallery
+description: A collapsible gallery component that displays items in a horizontal scroll when collapsed and a grid when expanded.
+featured: false
+component: true
+---
+
+<ComponentPreview name="collapsible-gallery-demo" description="A collapsible gallery with property cards" />
+
+## Installation
+
+<CodeTabs>
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+
+```bash
+npx pitsi add collapsible-gallery
+```
+
+  </TabsContent>
+  <TabsContent value="manual">
+
+<Steps>
+  <Step>Install the collapsible component first:</Step>
+</Steps>
+
+```bash
+npx pitsi add collapsible
+```
+
+<Steps>
+  <Step>Copy the component source:</Step>
+</Steps>
+
+<ComponentSource name="collapsible-gallery" title="components/ui/collapsible-gallery.tsx" />
+
+  </TabsContent>
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { CollapsibleGallery } from "@/components/ui/collapsible-gallery"
+
+const items = [
+  { id: "1", title: "Item 1", image: "/image1.jpg" },
+  { id: "2", title: "Item 2", image: "/image2.jpg" },
+  { id: "3", title: "Item 3", image: "/image3.jpg" },
+]
+
+export default function Example() {
+  return (
+    <CollapsibleGallery
+      title="Gallery"
+      items={items}
+      renderItem={(item) => (
+        <div className="flex flex-col gap-2">
+          <img src={item.image} alt={item.title} className="rounded-lg" />
+          <span>{item.title}</span>
+        </div>
+      )}
+      keyExtractor={(item) => item.id}
+    />
+  )
+}
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `title` | `string` | - | Title displayed in the header |
+| `items` | `T[]` | - | Array of items to display |
+| `renderItem` | `(item: T, index: number) => ReactNode` | - | Render function for each item |
+| `keyExtractor` | `(item: T, index: number) => string` | - | Function to extract unique key for each item |
+| `itemWidth` | `number` | `280` | Width of each item in collapsed horizontal scroll mode |
+| `gridCols` | `{ default?: number; md?: number; lg?: number }` | `{ default: 1, md: 2, lg: 3 }` | Number of grid columns in expanded mode |
+| `expandText` | `string` | `"View all"` | Text for expand button |
+| `collapseText` | `string` | `"Collapse"` | Text for collapse button |
+| `className` | `string` | - | Additional class name for the root element |
+| `defaultOpen` | `boolean` | `false` | Whether the gallery starts expanded |
+
+## Features
+
+- **Collapsed state**: Items display in a horizontal scrollable row
+- **Expanded state**: Items display in a responsive grid
+- **Customizable**: Full control over item rendering via render prop
+- **Responsive**: Grid columns adjust based on screen size
+- **Accessible**: Built on Radix UI Collapsible primitive

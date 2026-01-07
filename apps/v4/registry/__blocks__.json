@@ -1,5 +1,15 @@
 [
   {
+    "name": "app-auth-1",
+    "description": "Authentication page for sign in and sign up with social login and email/password form",
+    "categories": ["application", "auth"]
+  },
+  {
+    "name": "app-dashboard-1",
+    "description": "Dashboard page with sidebar navigation, stats cards, and upgrade prompt",
+    "categories": ["application", "dashboard"]
+  },
+  {
     "name": "app-gym-gains-1",
     "description": "Progress tracking with sparkline charts and PR history",
     "categories": ["application"]
@@ -295,6 +305,11 @@
     "categories": ["footer", "landing"]
   },
   {
+    "name": "footer-10",
+    "description": "Comprehensive multi-column footer with sections for documentation, pages, changelog, connect, legal, account, blocks, components, animations, and theme toggle",
+    "categories": ["footer", "landing", "application"]
+  },
+  {
     "name": "footer-2",
     "description": "Fitness footer with newsletter, navigation columns, and social links",
     "categories": ["footer", "landing"]
@@ -368,6 +383,11 @@
     "name": "header-1",
     "description": "Plant shop header with navigation and CTA button",
     "categories": ["header", "landing"]
+  },
+  {
+    "name": "header-10",
+    "description": "Scroll-aware sticky header with transparent to solid background transition, logo, navigation, search, and user actions",
+    "categories": ["header", "landing", "application"]
   },
   {
     "name": "header-2",
@@ -618,6 +638,46 @@
     "name": "newsletter-6",
     "description": "Dark themed newsletter with email icon",
     "categories": ["newsletter", "landing"]
+  },
+  {
+    "name": "page-404-1",
+    "description": "404 Not Found page with two-column layout, helpful message, and navigation buttons",
+    "categories": ["pages", "error"]
+  },
+  {
+    "name": "page-blog-1",
+    "description": "Blog listing page with sidebar, category filtering, and article cards",
+    "categories": ["pages", "landing", "blog"]
+  },
+  {
+    "name": "page-changelog-1",
+    "description": "Changelog page with sidebar, icon decoration, and versioned release entries",
+    "categories": ["pages", "landing"]
+  },
+  {
+    "name": "page-error-1",
+    "description": "Error page with two-column layout, error message, error digest display, and action buttons",
+    "categories": ["pages", "error"]
+  },
+  {
+    "name": "page-legal-1",
+    "description": "Legal page template for privacy policy, terms of service, and other legal content with two-column layout",
+    "categories": ["pages", "landing"]
+  },
+  {
+    "name": "page-pricing-1",
+    "description": "Pricing page with hero section, license type toggle, and tiered pricing cards",
+    "categories": ["pages", "landing", "pricing"]
+  },
+  {
+    "name": "page-roadmap-1",
+    "description": "Roadmap page with sidebar, status filtering, search, and milestone items",
+    "categories": ["pages", "landing"]
+  },
+  {
+    "name": "page-tools-1",
+    "description": "Tools listing page with hero section, isometric icons, and card grid layout",
+    "categories": ["pages", "landing"]
   },
   {
     "name": "pricing-1",

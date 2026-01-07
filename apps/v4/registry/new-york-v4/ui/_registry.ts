@@ -239,6 +239,20 @@ export const ui: Registry["items"] = [
     readiness: "production",
   },
   {
+    name: "collapsible-gallery",
+    type: "registry:ui",
+    registryDependencies: ["collapsible"],
+    files: [
+      {
+        path: "ui/collapsible-gallery.tsx",
+        type: "registry:ui",
+      },
+    ],
+    tier: "free",
+    categories: ["application"],
+    readiness: "production",
+  },
+  {
     name: "command",
     type: "registry:ui",
     dependencies: ["cmdk"],
