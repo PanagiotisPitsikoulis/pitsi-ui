@@ -598,6 +598,8 @@ export const iconMapping = {
   // Check icons
   Check: Tick01Icon,
   CheckIcon: Tick02Icon,
+  Tick01Icon: Tick01Icon,
+  Tick02Icon: Tick02Icon,
   CheckCircle: CheckmarkCircle01Icon,
   CheckCircle2: CheckmarkCircle02Icon,
   CheckCircle2Icon: CheckmarkCircle01Icon,
