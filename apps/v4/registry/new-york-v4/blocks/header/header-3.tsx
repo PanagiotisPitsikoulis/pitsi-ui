@@ -1,11 +1,11 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
-import { motion, useScroll, useTransform } from "motion/react"
 
 import { type HeaderBlockProps } from "@/lib/blocks/header.types"
 import { cn } from "@/lib/utils"
+import { ScrollScale } from "@/registry/new-york-v4/animations/scroll-scale/scroll-scale"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 const header3Defaults = {
@@ -31,16 +31,6 @@ export function Header3({ content = {}, classNames = {} }: HeaderBlockProps) {
   } = content
 
   const [isScrolled, setIsScrolled] = useState(false)
-  const headerRef = useRef<HTMLElement>(null)
-
-  // Track scroll progress for scale animation
-  const { scrollY } = useScroll()
-
-  // Scale transforms - header shrinks as user scrolls
-  const headerScale = useTransform(scrollY, [0, 100], [1, 0.95])
-  const headerHeight = useTransform(scrollY, [0, 100], [80, 64])
-  const logoScale = useTransform(scrollY, [0, 100], [1, 0.85])
-  const navGap = useTransform(scrollY, [0, 100], [32, 20])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,68 +41,84 @@ export function Header3({ content = {}, classNames = {} }: HeaderBlockProps) {
   }, [])
 
   return (
-    <motion.header
-      ref={headerRef}
-      style={{ height: headerHeight }}
+    <header
       className={cn(
-        "fixed top-0 right-0 left-0 z-50 transition-colors duration-300",
+        "fixed top-0 right-0 left-0 z-50 transition-all duration-300",
         isScrolled
-          ? "bg-background/95 border-border border-b shadow-sm"
-          : "bg-transparent",
+          ? "bg-background/95 border-border h-16 border-b shadow-sm"
+          : "bg-transparent h-20",
         classNames.root
       )}
     >
-      <motion.div
-        style={{ scale: headerScale }}
+      <div
         className={cn(
-          "container flex h-full items-center justify-between px-6",
+          "container flex h-full items-center justify-between px-6 transition-transform duration-300",
+          isScrolled ? "scale-95" : "scale-100",
           classNames.container
         )}
       >
-        {/* Logo with scale animation */}
-        <motion.div style={{ scale: logoScale }}>
+        {/* Logo with ScrollScale animation */}
+        <ScrollScale
+          scrollBased={false}
+          delay={0}
+          duration={0.6}
+          startScale={0.9}
+          endScale={1}
+        >
           <Link
             href={logo?.href ?? "#"}
             className={cn(
-              "text-2xl font-bold transition-colors",
-              isScrolled ? "text-foreground" : "text-foreground",
+              "text-2xl font-bold transition-all duration-300",
+              isScrolled ? "text-foreground scale-85" : "text-foreground",
               classNames.logo
             )}
           >
             {logo?.text}
           </Link>
-        </motion.div>
+        </ScrollScale>
 
         {/* Navigation */}
-        <motion.nav
-          style={{ gap: navGap }}
+        <nav
           className={cn(
-            "hidden items-center md:flex",
+            "hidden items-center md:flex transition-all duration-300",
+            isScrolled ? "gap-5" : "gap-8",
             classNames.nav?.root
           )}
         >
           {navigation.map((item, i) => (
-            <Link
+            <ScrollScale
               key={i}
-              href={item.href}
-              className={cn(
-                "text-sm font-medium transition-all duration-300",
-                isScrolled
-                  ? "text-muted-foreground hover:text-foreground"
-                  : "text-muted-foreground hover:text-foreground",
-                classNames.nav?.link
-              )}
+              scrollBased={false}
+              delay={0.05 * i}
+              duration={0.5}
+              startScale={0.9}
+              endScale={1}
             >
-              {item.label}
-            </Link>
+              <Link
+                href={item.href}
+                className={cn(
+                  "text-sm font-medium transition-all duration-300",
+                  "text-muted-foreground hover:text-foreground",
+                  classNames.nav?.link
+                )}
+              >
+                {item.label}
+              </Link>
+            </ScrollScale>
           ))}
-        </motion.nav>
+        </nav>
 
-        {/* CTA */}
+        {/* CTA with ScrollScale */}
         {cta && (
-          <motion.div style={{ scale: logoScale }}>
+          <ScrollScale
+            scrollBased={false}
+            delay={0.2}
+            duration={0.6}
+            startScale={0.9}
+            endScale={1}
+          >
             <Button
-              variant={isScrolled ? "default" : "default"}
+              variant="default"
               size={isScrolled ? "sm" : "default"}
               className={cn(
                 "bg-brand hover:bg-brand/90 transition-all",
@@ -122,10 +128,10 @@ export function Header3({ content = {}, classNames = {} }: HeaderBlockProps) {
             >
               <Link href={cta.href}>{cta.label}</Link>
             </Button>
-          </motion.div>
+          </ScrollScale>
         )}
-      </motion.div>
-    </motion.header>
+      </div>
+    </header>
   )
 }
 

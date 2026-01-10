@@ -2,11 +2,12 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { AnimatePresence, motion } from "motion/react"
+import { motion } from "motion/react"
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { type HeaderBlockProps } from "@/lib/blocks/header.types"
 import { cn } from "@/lib/utils"
+import { SlideDown } from "@/registry/new-york-v4/animations/slide-down/slide-down"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 const header4Defaults = {
@@ -137,47 +138,33 @@ export function Header4({ content = {}, classNames = {} }: HeaderBlockProps) {
               </Link>
 
               {/* Mega Menu Dropdown with SlideDown animation */}
-              <AnimatePresence>
-                {item.children && openMenu === item.label && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{
-                      duration: 0.3,
-                      ease: [0.25, 0.4, 0.25, 1],
-                    }}
-                    className="bg-background border-border absolute top-full left-0 w-80 rounded-lg border p-4 shadow-lg"
-                  >
-                    <div className="grid gap-1">
-                      {item.children.map((child, j) => (
-                        <motion.div
-                          key={j}
-                          initial={{ opacity: 0, y: -8 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{
-                            duration: 0.3,
-                            delay: j * 0.05,
-                            ease: [0.25, 0.4, 0.25, 1],
-                          }}
+              {item.children && openMenu === item.label && (
+                <div className="bg-background border-border absolute top-full left-0 w-80 rounded-lg border p-4 shadow-lg">
+                  <div className="grid gap-1">
+                    {item.children.map((child, j) => (
+                      <SlideDown
+                        key={j}
+                        scrollBased={false}
+                        delay={j * 0.05}
+                        duration={0.3}
+                        distance={10}
+                      >
+                        <Link
+                          href={child.href}
+                          className="hover:bg-muted group rounded-md p-3 transition-colors block"
                         >
-                          <Link
-                            href={child.href}
-                            className="hover:bg-muted group rounded-md p-3 transition-colors block"
-                          >
-                            <div className="text-foreground group-hover:text-brand text-sm font-medium transition-colors">
-                              {child.label}
-                            </div>
-                            <div className="text-muted-foreground text-xs">
-                              {child.description}
-                            </div>
-                          </Link>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                          <div className="text-foreground group-hover:text-brand text-sm font-medium transition-colors">
+                            {child.label}
+                          </div>
+                          <div className="text-muted-foreground text-xs">
+                            {child.description}
+                          </div>
+                        </Link>
+                      </SlideDown>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </nav>

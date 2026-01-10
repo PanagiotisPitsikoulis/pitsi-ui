@@ -6,6 +6,7 @@ import { motion, useScroll, useTransform } from "motion/react"
 
 import { type HeaderBlockProps } from "@/lib/blocks/header.types"
 import { cn } from "@/lib/utils"
+import { StickyFooter } from "@/registry/new-york-v4/animations/sticky-footer/sticky-footer"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 const header7Defaults = {
@@ -32,14 +33,11 @@ export function Header7({ content = {}, classNames = {} }: HeaderBlockProps) {
   const headerRef = useRef<HTMLElement>(null)
   const [isScrolled, setIsScrolled] = useState(false)
 
-  // Use scroll for sticky reveal effect (inverted StickyFooter behavior)
+  // Use scroll for progress indicator (sticky behavior from StickyFooter inverted)
   const { scrollY } = useScroll()
 
-  // Header height and padding transform based on scroll
-  const headerHeight = useTransform(scrollY, [0, 100], [80, 56])
-  const headerPadding = useTransform(scrollY, [0, 100], [24, 16])
-  const logoSize = useTransform(scrollY, [0, 100], [1.5, 1.125])
-  const navSpacing = useTransform(scrollY, [0, 100], [32, 16])
+  // Progress indicator transform
+  const progressScaleX = useTransform(scrollY, [0, 1000], [0, 1])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,84 +48,84 @@ export function Header7({ content = {}, classNames = {} }: HeaderBlockProps) {
   }, [])
 
   return (
-    <motion.header
-      ref={headerRef}
-      style={{ height: headerHeight }}
+    <StickyFooter
       className={cn(
-        "bg-background border-border sticky top-0 z-50 border-b transition-shadow duration-300",
-        isScrolled && "shadow-sm",
+        "bg-background border-border sticky top-0 z-50 border-b transition-all duration-300",
+        isScrolled ? "h-14 shadow-sm" : "h-20",
         classNames.root
       )}
     >
-      <motion.div
-        style={{ paddingLeft: headerPadding, paddingRight: headerPadding }}
-        className={cn(
-          "container mx-auto flex h-full items-center justify-between",
-          classNames.container
-        )}
-      >
-        {/* Logo with size animation */}
-        <motion.div style={{ fontSize: logoSize }} className="leading-none">
-          <Link
-            href={logo?.href ?? "#"}
-            className={cn(
-              "font-bold transition-colors",
-              classNames.logo
-            )}
-            style={{ fontSize: "inherit" }}
-          >
-            {logo?.text}
-          </Link>
-        </motion.div>
-
-        {/* Navigation with spacing animation */}
-        <motion.nav
-          style={{ gap: navSpacing }}
+      <header ref={headerRef} className="relative h-full w-full">
+        <div
           className={cn(
-            "hidden items-center md:flex",
-            classNames.nav?.root
+            "container mx-auto flex h-full items-center justify-between transition-all duration-300",
+            isScrolled ? "px-4" : "px-6",
+            classNames.container
           )}
         >
-          {navigation.map((item, i) => (
+          {/* Logo with size animation */}
+          <div className="leading-none">
             <Link
-              key={i}
-              href={item.href}
+              href={logo?.href ?? "#"}
               className={cn(
-                "text-muted-foreground hover:text-foreground relative font-medium transition-all duration-300",
-                isScrolled ? "text-sm" : "text-base",
-                // Underline hover effect
-                "after:bg-brand after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 hover:after:w-full",
-                classNames.nav?.link
+                "font-bold transition-all duration-300",
+                isScrolled ? "text-lg" : "text-xl",
+                classNames.logo
               )}
             >
-              {item.label}
+              {logo?.text}
             </Link>
-          ))}
-        </motion.nav>
+          </div>
 
-        {/* CTA with size transition */}
-        {cta && (
-          <Button
-            size={isScrolled ? "sm" : "default"}
+          {/* Navigation with spacing animation */}
+          <nav
             className={cn(
-              "bg-brand hover:bg-brand/90 transition-all duration-300",
-              classNames.cta
+              "hidden items-center md:flex transition-all duration-300",
+              isScrolled ? "gap-4" : "gap-8",
+              classNames.nav?.root
             )}
-            asChild
           >
-            <Link href={cta.href}>{cta.label}</Link>
-          </Button>
-        )}
-      </motion.div>
+            {navigation.map((item, i) => (
+              <Link
+                key={i}
+                href={item.href}
+                className={cn(
+                  "text-muted-foreground hover:text-foreground relative font-medium transition-all duration-300",
+                  isScrolled ? "text-sm" : "text-base",
+                  // Underline hover effect
+                  "after:bg-brand after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 hover:after:w-full",
+                  classNames.nav?.link
+                )}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
 
-      {/* Progress indicator bar at bottom of header */}
-      <motion.div
-        className="bg-brand absolute bottom-0 left-0 h-0.5 origin-left"
-        style={{
-          scaleX: useTransform(scrollY, [0, 1000], [0, 1]),
-        }}
-      />
-    </motion.header>
+          {/* CTA with size transition */}
+          {cta && (
+            <Button
+              size={isScrolled ? "sm" : "default"}
+              className={cn(
+                "bg-brand hover:bg-brand/90 transition-all duration-300",
+                classNames.cta
+              )}
+              asChild
+            >
+              <Link href={cta.href}>{cta.label}</Link>
+            </Button>
+          )}
+        </div>
+
+        {/* Progress indicator bar at bottom of header */}
+        <motion.div
+          className="bg-brand absolute bottom-0 left-0 h-0.5 origin-left"
+          style={{
+            scaleX: progressScaleX,
+          }}
+        />
+      </header>
+    </StickyFooter>
   )
 }
 
