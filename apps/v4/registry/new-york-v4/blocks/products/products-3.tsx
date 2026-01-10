@@ -5,6 +5,7 @@ import Link from "next/link"
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
+import { ZoomParallax } from "@/registry/new-york-v4/animations/zoom-parallax/zoom-parallax"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 interface ProductsBlockProps {
@@ -36,39 +37,39 @@ interface ProductsBlockProps {
 const products3Defaults = {
   title: "New Arrivals",
   featured: {
-    name: "Premium Wireless Earbuds",
+    name: "Giant Bird of Paradise",
     description:
-      "Experience crystal-clear audio with active noise cancellation and 30-hour battery life.",
-    price: 299,
-    image: "/elements/landscape/plants/1.webp",
+      "A stunning statement plant that brings tropical elegance to any space. Perfect for bright corners and spacious rooms.",
+    price: 189,
+    image: "/elements/subject/plants/item-1.webp",
     badge: "New",
     href: "#",
   },
   products: [
     {
-      name: "Smart Fitness Band",
-      price: 149,
-      image: "/elements/landscape/plants/2.webp",
+      name: "Rubber Plant",
+      price: 49,
+      image: "/elements/subject/plants/item-2.webp",
       badge: "Bestseller",
       href: "#",
     },
     {
-      name: "Wireless Charger",
-      price: 49,
-      image: "/elements/landscape/plants/3.webp",
+      name: "Peace Lily",
+      price: 35,
+      image: "/elements/subject/plants/item-3.webp",
       href: "#",
     },
     {
-      name: "USB-C Hub",
-      price: 79,
-      image: "/elements/landscape/plants/4.webp",
+      name: "Calathea Orbifolia",
+      price: 55,
+      image: "/elements/subject/plants/item-4.webp",
       href: "#",
     },
     {
-      name: "Mechanical Keyboard",
-      price: 199,
-      image: "/elements/landscape/plants/5.webp",
-      badge: "Hot",
+      name: "ZZ Plant",
+      price: 42,
+      image: "/elements/subject/plants/item-1.webp",
+      badge: "Low Light",
       href: "#",
     },
   ],
@@ -111,62 +112,78 @@ export function Products3({
         </div>
 
         <div className="grid gap-6 lg:grid-cols-2">
-          {/* Featured Product */}
-          <Link
-            href={featured.href}
-            className="bg-background group relative overflow-hidden rounded-2xl p-6 lg:row-span-2"
+          {/* Featured Product with ZoomParallax Hero Effect */}
+          <ZoomParallax
+            scaleRange={[0.95, 1]}
+            animateOpacity={false}
+            className="lg:row-span-2"
           >
-            {featured.badge && (
-              <span className="bg-primary text-primary-foreground absolute top-6 left-6 z-10 rounded-full px-3 py-1 text-xs font-semibold">
-                {featured.badge}
-              </span>
-            )}
-            <div className="relative mb-6 aspect-square overflow-hidden rounded-xl">
-              <Image
-                src={featured.image}
-                alt={featured.name}
-                fill
-                className="object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-            </div>
-            <h3 className="text-foreground mb-2 text-2xl font-bold">
-              {featured.name}
-            </h3>
-            <p className="text-muted-foreground mb-4">{featured.description}</p>
-            <div className="flex items-center justify-between">
-              <span className="text-foreground text-2xl font-bold">
-                ${featured.price}
-              </span>
-              <Button>Shop Now</Button>
-            </div>
-          </Link>
+            <Link
+              href={featured.href}
+              className="bg-background group relative block h-full overflow-hidden rounded-2xl p-6"
+            >
+              {featured.badge && (
+                <span className="bg-primary text-primary-foreground absolute top-6 left-6 z-10 rounded-full px-3 py-1 text-xs font-semibold">
+                  {featured.badge}
+                </span>
+              )}
+              <div className="relative mb-6 aspect-square overflow-hidden rounded-xl">
+                <Image
+                  src={featured.image}
+                  alt={featured.name}
+                  fill
+                  className="object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <h3 className="text-foreground mb-2 text-2xl font-bold">
+                {featured.name}
+              </h3>
+              <p className="text-muted-foreground mb-4">
+                {featured.description}
+              </p>
+              <div className="flex items-center justify-between">
+                <span className="text-foreground text-2xl font-bold">
+                  ${featured.price}
+                </span>
+                <Button>Shop Now</Button>
+              </div>
+            </Link>
+          </ZoomParallax>
 
           {/* Product Grid */}
           <div className="grid gap-6 sm:grid-cols-2">
             {products.map((product, i) => (
-              <Link
+              <ZoomParallax
                 key={i}
-                href={product.href}
-                className="bg-background group overflow-hidden rounded-xl p-4"
+                scaleRange={[0.92, 1]}
+                animateOpacity={false}
+                offset={["start 90%", "start 40%"]}
               >
-                {product.badge && (
-                  <span className="bg-primary text-primary-foreground mb-2 inline-block rounded-full px-2 py-0.5 text-xs font-semibold">
-                    {product.badge}
-                  </span>
-                )}
-                <div className="relative mb-4 aspect-square overflow-hidden rounded-lg">
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-                <h4 className="text-foreground font-medium">{product.name}</h4>
-                <p className="text-foreground mt-1 font-bold">
-                  ${product.price}
-                </p>
-              </Link>
+                <Link
+                  href={product.href}
+                  className="bg-background group block overflow-hidden rounded-xl p-4"
+                >
+                  {product.badge && (
+                    <span className="bg-primary text-primary-foreground mb-2 inline-block rounded-full px-2 py-0.5 text-xs font-semibold">
+                      {product.badge}
+                    </span>
+                  )}
+                  <div className="relative mb-4 aspect-square overflow-hidden rounded-lg">
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      className="object-contain p-2 transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
+                  <h4 className="text-foreground font-medium">
+                    {product.name}
+                  </h4>
+                  <p className="text-foreground mt-1 font-bold">
+                    ${product.price}
+                  </p>
+                </Link>
+              </ZoomParallax>
             ))}
           </div>
         </div>
