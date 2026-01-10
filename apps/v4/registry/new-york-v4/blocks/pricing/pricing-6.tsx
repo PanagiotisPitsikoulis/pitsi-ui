@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import { motion, AnimatePresence } from "motion/react"
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
@@ -136,21 +137,45 @@ export function Pricing6({ content = {}, classNames = {} }: PricingBlockProps) {
               Estimated monthly cost
             </p>
             <div className="flex items-baseline justify-center gap-2">
-              <span className="text-foreground text-6xl font-bold">
-                ${price}
-              </span>
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={price}
+                  initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -20, scale: 0.9 }}
+                  transition={{ duration: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
+                  className="text-foreground text-6xl font-bold"
+                >
+                  ${price}
+                </motion.span>
+              </AnimatePresence>
               <span className="text-muted-foreground">/month</span>
             </div>
-            {usage <= 1000 && (
-              <p className="text-primary mt-2 text-sm font-medium">
-                First 1,000 calls are free!
-              </p>
-            )}
-            {usage > 1000 && (
-              <p className="text-muted-foreground mt-2 text-sm">
-                ${currentTier.perUnit.toFixed(3)} per additional call
-              </p>
-            )}
+            <AnimatePresence mode="wait">
+              {usage <= 1000 ? (
+                <motion.p
+                  key="free"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="text-primary mt-2 text-sm font-medium"
+                >
+                  First 1,000 calls are free!
+                </motion.p>
+              ) : (
+                <motion.p
+                  key="paid"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="text-muted-foreground mt-2 text-sm"
+                >
+                  ${currentTier.perUnit.toFixed(3)} per additional call
+                </motion.p>
+              )}
+            </AnimatePresence>
           </div>
 
           {/* Features */}

@@ -4,6 +4,7 @@ import Link from "next/link"
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
+import { ZoomParallax } from "@/registry/new-york-v4/animations/zoom-parallax/zoom-parallax"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 interface PricingBlockProps {
@@ -119,15 +120,19 @@ export function Pricing7({ content = {}, classNames = {} }: PricingBlockProps) {
 
         <div className="space-y-6">
           {plans.map((plan, i) => (
-            <div
+            <ZoomParallax
               key={i}
-              className={cn(
-                "flex flex-col gap-6 rounded-2xl p-6 md:flex-row md:items-center md:p-8",
-                plan.highlighted
-                  ? "bg-primary text-primary-foreground"
-                  : "border-border border"
-              )}
+              scaleRange={[0.95, 1]}
+              animateOpacity={false}
             >
+              <div
+                className={cn(
+                  "flex flex-col gap-6 rounded-2xl p-6 md:flex-row md:items-center md:p-8",
+                  plan.highlighted
+                    ? "bg-primary text-primary-foreground"
+                    : "border-border border"
+                )}
+              >
               {/* Icon & Info */}
               <div className="flex items-start gap-4 md:w-1/4">
                 <div
@@ -234,6 +239,7 @@ export function Pricing7({ content = {}, classNames = {} }: PricingBlockProps) {
                 </Button>
               </div>
             </div>
+          </ZoomParallax>
           ))}
         </div>
       </div>

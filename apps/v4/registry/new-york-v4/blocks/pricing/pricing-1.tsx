@@ -10,6 +10,7 @@ import {
   type PricingBlockProps,
 } from "@/lib/blocks/pricing.types"
 import { cn } from "@/lib/utils"
+import { ScrollScale } from "@/registry/new-york-v4/animations/scroll-scale/scroll-scale"
 import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
@@ -100,25 +101,35 @@ export function Pricing1({ content = {}, classNames = {} }: PricingBlockProps) {
                 : classNames.plan
 
               return (
-                <motion.div
+                <ScrollScale
                   key={i}
-                  className={cn(
-                    "relative w-full max-w-sm rounded-3xl p-10",
-                    // Positioning for desktop
-                    isLeft && "lg:z-0 lg:-mr-6 lg:origin-right",
-                    isRight && "lg:z-0 lg:-ml-6 lg:origin-left",
-                    isMiddle && "lg:z-10 lg:scale-105",
-                    // Styling
-                    plan.highlighted
-                      ? "bg-primary text-primary-foreground shadow-xl"
-                      : cn(cardBg, "shadow-lg"),
-                    planClassNames?.root
-                  )}
-                  style={{
-                    rotate: isLeft ? leftRotation : isRight ? rightRotation : 0,
-                    x: isLeft ? leftX : isRight ? rightX : 0,
-                  }}
+                  delay={i * 0.1}
+                  startScale={0.85}
+                  endScale={1}
+                  scrollBased={false}
                 >
+                  <motion.div
+                    className={cn(
+                      "relative w-full max-w-sm rounded-3xl p-10",
+                      // Positioning for desktop
+                      isLeft && "lg:z-0 lg:-mr-6 lg:origin-right",
+                      isRight && "lg:z-0 lg:-ml-6 lg:origin-left",
+                      isMiddle && "lg:z-10 lg:scale-105",
+                      // Styling
+                      plan.highlighted
+                        ? "bg-primary text-primary-foreground shadow-xl"
+                        : cn(cardBg, "shadow-lg"),
+                      planClassNames?.root
+                    )}
+                    style={{
+                      rotate: isLeft
+                        ? leftRotation
+                        : isRight
+                          ? rightRotation
+                          : 0,
+                      x: isLeft ? leftX : isRight ? rightX : 0,
+                    }}
+                  >
                   {plan.highlighted && (
                     <Image
                       draggable={false}
@@ -210,21 +221,22 @@ export function Pricing1({ content = {}, classNames = {} }: PricingBlockProps) {
                       </li>
                     ))}
                   </ul>
-                  {plan.cta && (
-                    <Button
-                      className={cn(
-                        "w-full rounded-full",
-                        plan.highlighted &&
-                          "bg-background text-foreground hover:bg-background/90",
-                        planClassNames?.cta
-                      )}
-                      variant={plan.highlighted ? "secondary" : "default"}
-                      asChild
-                    >
-                      <Link href={plan.cta.href}>{plan.cta.label}</Link>
-                    </Button>
-                  )}
-                </motion.div>
+                    {plan.cta && (
+                      <Button
+                        className={cn(
+                          "w-full rounded-full",
+                          plan.highlighted &&
+                            "bg-background text-foreground hover:bg-background/90",
+                          planClassNames?.cta
+                        )}
+                        variant={plan.highlighted ? "secondary" : "default"}
+                        asChild
+                      >
+                        <Link href={plan.cta.href}>{plan.cta.label}</Link>
+                      </Button>
+                    )}
+                  </motion.div>
+                </ScrollScale>
               )
             })}
           </div>

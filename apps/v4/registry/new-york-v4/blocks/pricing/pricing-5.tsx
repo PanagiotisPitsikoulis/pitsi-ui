@@ -4,6 +4,7 @@ import Link from "next/link"
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
+import Aurora from "@/registry/new-york-v4/animations/aurora/aurora"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 interface PricingBlockProps {
@@ -149,44 +150,55 @@ export function Pricing5({ content = {}, classNames = {} }: PricingBlockProps) {
           </div>
 
           {/* Enterprise Plan */}
-          <div className="bg-foreground text-background flex flex-col rounded-2xl p-8">
-            <div className="mb-6 flex items-center gap-3">
-              <div className="bg-background/10 flex h-12 w-12 items-center justify-center rounded-full">
-                <DynamicIcon
-                  name="Building2"
-                  className="text-background h-6 w-6"
-                />
+          <div className="bg-foreground text-background relative flex flex-col overflow-hidden rounded-2xl p-8">
+            {/* Aurora background effect */}
+            <div className="pointer-events-none absolute inset-0 opacity-30">
+              <Aurora
+                colorStops={["#6B8E6B", "#A3C9A3", "#6B8E6B"]}
+                amplitude={0.8}
+                blend={0.6}
+                speed={0.5}
+              />
+            </div>
+            <div className="relative z-10">
+              <div className="mb-6 flex items-center gap-3">
+                <div className="bg-background/10 flex h-12 w-12 items-center justify-center rounded-full">
+                  <DynamicIcon
+                    name="Building2"
+                    className="text-background h-6 w-6"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold">{enterprise.name}</h3>
+                  <p className="text-background/70 text-sm">
+                    {enterprise.description}
+                  </p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-xl font-semibold">{enterprise.name}</h3>
-                <p className="text-background/70 text-sm">
-                  {enterprise.description}
+
+              <div className="mb-6">
+                <span className="text-3xl font-bold">Custom Pricing</span>
+                <p className="text-background/70 mt-1 text-sm">
+                  Tailored to your organization&apos;s needs
                 </p>
               </div>
+
+              <ul className="mb-8 flex-1 space-y-3">
+                {enterprise.features.map((feature, i) => (
+                  <li key={i} className="flex items-center gap-3 text-sm">
+                    <DynamicIcon
+                      name="Check"
+                      className="text-background h-5 w-5 shrink-0"
+                    />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
+              <Button variant="secondary" className="w-full" asChild>
+                <Link href={enterprise.cta.href}>{enterprise.cta.label}</Link>
+              </Button>
             </div>
-
-            <div className="mb-6">
-              <span className="text-3xl font-bold">Custom Pricing</span>
-              <p className="text-background/70 mt-1 text-sm">
-                Tailored to your organization&apos;s needs
-              </p>
-            </div>
-
-            <ul className="mb-8 flex-1 space-y-3">
-              {enterprise.features.map((feature, i) => (
-                <li key={i} className="flex items-center gap-3 text-sm">
-                  <DynamicIcon
-                    name="Check"
-                    className="text-background h-5 w-5 shrink-0"
-                  />
-                  {feature}
-                </li>
-              ))}
-            </ul>
-
-            <Button variant="secondary" className="w-full" asChild>
-              <Link href={enterprise.cta.href}>{enterprise.cta.label}</Link>
-            </Button>
           </div>
         </div>
       </div>

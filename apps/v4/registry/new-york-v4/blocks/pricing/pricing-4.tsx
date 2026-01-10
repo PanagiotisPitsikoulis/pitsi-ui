@@ -5,6 +5,7 @@ import Link from "next/link"
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
+import StickerPeel from "@/registry/new-york-v4/animations/sticker-peel/sticker-peel"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Switch } from "@/registry/new-york-v4/ui/switch"
 
@@ -116,7 +117,7 @@ export function Pricing4({ content = {}, classNames = {} }: PricingBlockProps) {
           </p>
 
           {/* Toggle */}
-          <div className="flex items-center justify-center gap-4">
+          <div className="relative flex items-center justify-center gap-4">
             <span
               className={cn(
                 "text-sm font-medium",
@@ -139,6 +140,17 @@ export function Pricing4({ content = {}, classNames = {} }: PricingBlockProps) {
                 {yearlySavings}
               </span>
             )}
+            {/* Decorative sticker */}
+            <div className="pointer-events-auto absolute -right-32 -top-8 hidden lg:block">
+              <StickerPeel
+                imageSrc="/elements/decoration-small/plants/1.svg"
+                width={80}
+                rotate={-15}
+                peelDirection={45}
+                shadowIntensity={0.3}
+                lightingIntensity={0.05}
+              />
+            </div>
           </div>
         </div>
 

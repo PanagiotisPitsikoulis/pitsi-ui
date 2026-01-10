@@ -4,6 +4,7 @@ import Link from "next/link"
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
+import { ScrollFade } from "@/registry/new-york-v4/animations/scroll-fade/scroll-fade"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 interface PricingBlockProps {
@@ -149,36 +150,43 @@ export function Pricing3({ content = {}, classNames = {} }: PricingBlockProps) {
             {/* Features */}
             <tbody>
               {features.map((feature, i) => (
-                <tr key={i} className="border-border border-t">
-                  <td className="text-foreground p-4 font-medium">
-                    {feature.name}
-                  </td>
-                  {feature.tiers.map((value, j) => (
-                    <td
-                      key={j}
-                      className={cn(
-                        "p-4 text-center",
-                        plans[j]?.highlighted && "bg-primary/5"
-                      )}
-                    >
-                      {typeof value === "boolean" ? (
-                        value ? (
-                          <DynamicIcon
-                            name="Check"
-                            className="text-primary mx-auto h-5 w-5"
-                          />
-                        ) : (
-                          <DynamicIcon
-                            name="X"
-                            className="text-muted-foreground/50 mx-auto h-5 w-5"
-                          />
-                        )
-                      ) : (
-                        <span className="text-foreground">{value}</span>
-                      )}
+                <ScrollFade
+                  key={i}
+                  delay={i * 0.05}
+                  scrollBased={false}
+                  className="contents"
+                >
+                  <tr className="border-border border-t">
+                    <td className="text-foreground p-4 font-medium">
+                      {feature.name}
                     </td>
-                  ))}
-                </tr>
+                    {feature.tiers.map((value, j) => (
+                      <td
+                        key={j}
+                        className={cn(
+                          "p-4 text-center",
+                          plans[j]?.highlighted && "bg-primary/5"
+                        )}
+                      >
+                        {typeof value === "boolean" ? (
+                          value ? (
+                            <DynamicIcon
+                              name="Check"
+                              className="text-primary mx-auto h-5 w-5"
+                            />
+                          ) : (
+                            <DynamicIcon
+                              name="X"
+                              className="text-muted-foreground/50 mx-auto h-5 w-5"
+                            />
+                          )
+                        ) : (
+                          <span className="text-foreground">{value}</span>
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                </ScrollFade>
               ))}
             </tbody>
           </table>
