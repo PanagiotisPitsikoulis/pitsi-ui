@@ -1,10 +1,10 @@
 "use client"
 
-import Image from "next/image"
 import Link from "next/link"
 
 import { type HeroBlockProps } from "@/lib/blocks/hero.types"
 import { cn } from "@/lib/utils"
+import { ParallaxImage } from "@/registry/new-york-v4/animations/background-image-parallax/background-image-parallax"
 import { ScrollFade } from "@/registry/new-york-v4/animations/scroll-fade/scroll-fade"
 import { HeroText } from "@/registry/new-york-v4/lib/hero-text"
 import { Button } from "@/registry/new-york-v4/ui/button"
@@ -53,18 +53,18 @@ export function Hero20({ content = {}, classNames = {} }: HeroBlockProps) {
         classNames.root
       )}
     >
-      {/* Full-bleed background image */}
-      <div className="absolute inset-0">
-        <Image
-          src={backgroundImage.src}
-          alt={backgroundImage.alt}
-          fill
-          className="object-cover"
-          priority
-        />
+      {/* Full-bleed background image with parallax scroll effect */}
+      <ParallaxImage
+        src={backgroundImage.src}
+        alt={backgroundImage.alt}
+        className="absolute inset-0"
+        range={["-10%", "10%"]}
+        offset={["start start", "end start"]}
+        scrollBased={true}
+      >
         {/* Gradient overlay for text readability - no blur, solid gradient */}
         <div className="from-background via-background/80 absolute inset-0 bg-gradient-to-r to-transparent" />
-      </div>
+      </ParallaxImage>
 
       {/* Content container */}
       <div className="relative z-10 container flex flex-1 items-center px-4 py-12">

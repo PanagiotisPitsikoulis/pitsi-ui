@@ -9,6 +9,7 @@ import { type HeroBlockProps } from "@/lib/blocks/hero.types"
 import { cn } from "@/lib/utils"
 import LiquidChrome from "@/registry/new-york-v4/animations/liquid-chrome/liquid-chrome"
 import Noise from "@/registry/new-york-v4/animations/noise/noise"
+import { HeroText } from "@/registry/new-york-v4/lib/hero-text"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { HeroButton } from "@/registry/new-york-v4/ui/hero-button"
 import { Spacer } from "@/registry/new-york-v4/ui/spacer"
@@ -208,37 +209,24 @@ export function Hero3({ content = {}, classNames = {} }: HeroBlockProps) {
 
         {/* Typography block with knockout effect */}
         <KnockoutText padX={40} padY={50} intensity={1}>
-          {/* Main headline */}
-          <h1
-            className={cn(
-              "display text-center text-4xl leading-[0.9] tracking-tight text-white sm:text-5xl md:text-7xl",
-              classNames.header?.title
-            )}
-          >
-            {title.split("\n").map((line, i) => (
-              <span key={i}>
-                {line}
-                {i < title.split("\n").length - 1 && <br />}
-              </span>
-            ))}
-          </h1>
-
-          {/* Subheading */}
-          {description && (
-            <p
-              className={cn(
-                "mt-8 text-center text-lg text-white/80 md:text-2xl",
+          <HeroText
+            badge={undefined}
+            title={title}
+            description={description}
+            align="center"
+            size="large"
+            classNames={{
+              root: classNames.header?.root,
+              title: cn(
+                "text-white leading-[0.9]",
+                classNames.header?.title
+              ),
+              description: cn(
+                "text-white/80 md:text-2xl max-w-none",
                 classNames.header?.description
-              )}
-            >
-              {description.split("\n").map((line, i) => (
-                <span key={i}>
-                  {line}
-                  {i < description.split("\n").length - 1 && <br />}
-                </span>
-              ))}
-            </p>
-          )}
+              ),
+            }}
+          />
         </KnockoutText>
 
         {/* Buttons - above blend layer */}
