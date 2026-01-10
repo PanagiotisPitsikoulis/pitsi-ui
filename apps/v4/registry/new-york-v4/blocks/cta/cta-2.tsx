@@ -1,24 +1,24 @@
 "use client"
 
-import Image from "next/image"
 import Link from "next/link"
 
 import { type CtaBlockProps } from "@/lib/blocks/cta.types"
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
+import { ParallaxImage } from "@/registry/new-york-v4/animations/background-image-parallax/background-image-parallax"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 const cta2Defaults = {
-  title: "Transform Your Workflow",
+  title: "Transform Your Space",
   description:
-    "Join thousands of teams who have already streamlined their processes and boosted productivity by 40%.",
+    "Join thousands of plant lovers who have already transformed their homes with our curated collection.",
   image: {
     src: "/elements/landscape/plants/1.webp",
-    alt: "Team collaboration",
+    alt: "Plants in natural setting",
   },
-  primaryCta: { label: "Get Started Free", href: "#" },
-  secondaryCta: { label: "Watch Demo", href: "#" },
-  features: ["No credit card required", "14-day free trial", "Cancel anytime"],
+  primaryCta: { label: "Shop Plants", href: "#" },
+  secondaryCta: { label: "Learn More", href: "#" },
+  features: ["Free shipping over $50", "30-day guarantee", "Expert plant care"],
 }
 
 export function Cta2({ content = {}, classNames = {} }: CtaBlockProps) {
@@ -33,7 +33,7 @@ export function Cta2({ content = {}, classNames = {} }: CtaBlockProps) {
   return (
     <section
       className={cn(
-        "bg-gradient-to-br from-violet-600 to-indigo-700",
+        "bg-gradient-to-br from-[#52796f] to-[#344e41]",
         classNames.root
       )}
     >
@@ -41,15 +41,15 @@ export function Cta2({ content = {}, classNames = {} }: CtaBlockProps) {
         className={cn("container px-6 py-16 md:py-24", classNames.container)}
       >
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          {/* Image */}
+          {/* Image with Parallax */}
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl lg:order-2">
             {image && (
-              <Image
-                draggable={false}
+              <ParallaxImage
                 src={image.src}
                 alt={image.alt}
-                fill
-                className="object-cover"
+                className="absolute inset-0 -top-[10%] h-[120%]"
+                range={["-5%", "5%"]}
+                offset={["start end", "end start"]}
               />
             )}
           </div>
@@ -77,7 +77,7 @@ export function Cta2({ content = {}, classNames = {} }: CtaBlockProps) {
               {primaryCta && (
                 <Button
                   size="lg"
-                  className="group bg-white text-violet-700 hover:bg-white/90"
+                  className="group bg-white text-[#344e41] hover:bg-white/90"
                   asChild
                 >
                   <Link href={primaryCta.href}>
@@ -105,7 +105,7 @@ export function Cta2({ content = {}, classNames = {} }: CtaBlockProps) {
               {cta2Defaults.features.map((feature, i) => (
                 <div key={i} className="flex items-center gap-2">
                   <svg
-                    className="h-4 w-4 text-green-400"
+                    className="h-4 w-4 text-[#84a98c]"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"

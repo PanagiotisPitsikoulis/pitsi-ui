@@ -5,16 +5,18 @@ import Link from "next/link"
 import { type CtaBlockProps } from "@/lib/blocks/cta.types"
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
+import CircularText from "@/registry/new-york-v4/animations/circular-text/circular-text"
 import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 const cta3Defaults = {
   badge: "Limited Time Offer",
-  title: "Get 50% Off Your First Year",
+  title: "Spring Plant Sale",
   description:
-    "Don't miss this exclusive opportunity to supercharge your business at half the price.",
-  primaryCta: { label: "Claim Your Discount", href: "#" },
-  secondaryCta: { label: "Learn More", href: "#" },
+    "Don't miss our biggest sale of the year. Up to 40% off on select plants and accessories.",
+  primaryCta: { label: "Shop Sale", href: "#" },
+  secondaryCta: { label: "View All Plants", href: "#" },
+  circularText: "SPRING SALE * LIMITED TIME * SHOP NOW * ",
   timer: {
     days: 2,
     hours: 14,
@@ -40,8 +42,8 @@ export function Cta3({ content = {}, classNames = {} }: CtaBlockProps) {
       >
         <div className="mx-auto max-w-4xl text-center">
           {/* Badge */}
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-yellow-500 px-4 py-1.5 text-sm font-semibold text-black">
-            <DynamicIcon name="Zap" className="h-4 w-4" />
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-[#84a98c] px-4 py-1.5 text-sm font-semibold text-white">
+            <DynamicIcon name="Leaf" className="h-4 w-4" />
             {cta3Defaults.badge}
           </div>
 
@@ -63,23 +65,47 @@ export function Cta3({ content = {}, classNames = {} }: CtaBlockProps) {
             }}
           />
 
-          {/* Countdown Timer */}
-          <div className="mb-10 flex items-center justify-center gap-4">
-            {[
-              { value: timer.days, label: "Days" },
-              { value: timer.hours, label: "Hours" },
-              { value: timer.minutes, label: "Min" },
-              { value: timer.seconds, label: "Sec" },
-            ].map((item, i) => (
-              <div key={i} className="text-center">
-                <div className="bg-background text-foreground flex h-16 w-16 items-center justify-center rounded-lg text-2xl font-bold md:h-20 md:w-20 md:text-3xl">
-                  {item.value.toString().padStart(2, "0")}
-                </div>
-                <div className="text-background/50 mt-2 text-xs uppercase">
-                  {item.label}
+          {/* Circular Text Countdown Display */}
+          <div className="mb-10 flex items-center justify-center">
+            <div className="relative flex items-center justify-center">
+              <CircularText
+                text={cta3Defaults.circularText}
+                spinDuration={20}
+                onHover="speedUp"
+                className="text-[#84a98c]"
+              />
+              {/* Center countdown display */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="flex items-baseline gap-1 text-center">
+                  <div className="flex flex-col items-center">
+                    <span className="text-background text-3xl font-bold">
+                      {timer.days.toString().padStart(2, "0")}
+                    </span>
+                    <span className="text-background/50 text-[10px] uppercase">
+                      Days
+                    </span>
+                  </div>
+                  <span className="text-background/50 mb-3 text-xl">:</span>
+                  <div className="flex flex-col items-center">
+                    <span className="text-background text-3xl font-bold">
+                      {timer.hours.toString().padStart(2, "0")}
+                    </span>
+                    <span className="text-background/50 text-[10px] uppercase">
+                      Hrs
+                    </span>
+                  </div>
+                  <span className="text-background/50 mb-3 text-xl">:</span>
+                  <div className="flex flex-col items-center">
+                    <span className="text-background text-3xl font-bold">
+                      {timer.minutes.toString().padStart(2, "0")}
+                    </span>
+                    <span className="text-background/50 text-[10px] uppercase">
+                      Min
+                    </span>
+                  </div>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
 
           {/* CTAs */}
@@ -87,7 +113,7 @@ export function Cta3({ content = {}, classNames = {} }: CtaBlockProps) {
             {primaryCta && (
               <Button
                 size="lg"
-                className="group bg-yellow-500 text-black hover:bg-yellow-400"
+                className="group bg-[#84a98c] text-white hover:bg-[#52796f]"
                 asChild
               >
                 <Link href={primaryCta.href}>

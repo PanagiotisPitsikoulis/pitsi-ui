@@ -4,6 +4,7 @@ import Image from "next/image"
 
 import { ctaDefaults, type CtaBlockProps } from "@/lib/blocks/cta.types"
 import { cn } from "@/lib/utils"
+import Aurora from "@/registry/new-york-v4/animations/aurora/aurora"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { ImageOverlay } from "@/app/(app)/(content)/(blocks)/_block_components"
 import { BlockThemeWrapper } from "@/app/(app)/(content)/(blocks)/_components"
@@ -20,6 +21,8 @@ const blockDefaults = {
     label: "Subscribe",
     href: "#",
   },
+  // Sage palette aurora colors
+  auroraColors: ["#84a98c", "#52796f", "#cad2c5"],
 }
 
 export function Cta1({ content = {}, classNames = {} }: CtaBlockProps) {
@@ -29,13 +32,14 @@ export function Cta1({ content = {}, classNames = {} }: CtaBlockProps) {
     description = blockDefaults.description ?? ctaDefaults.description,
     image = blockDefaults.image ?? ctaDefaults.image,
     primaryCta = blockDefaults.primaryCta ?? ctaDefaults.primaryCta,
-  } = content
+    auroraColors = blockDefaults.auroraColors,
+  } = content as typeof blockDefaults
 
   return (
     <section className={classNames.root}>
       <div className={cn("container px-6", classNames.container)}>
         <BlockThemeWrapper
-          slug="service-plants"
+          palette="sage"
           tint="deep"
           forceDark
           className={cn(
@@ -43,6 +47,16 @@ export function Cta1({ content = {}, classNames = {} }: CtaBlockProps) {
             classNames.content
           )}
         >
+          {/* Aurora background animation with sage palette */}
+          <div className="pointer-events-none absolute inset-0">
+            <Aurora
+              colorStops={auroraColors}
+              amplitude={1.0}
+              blend={0.5}
+              speed={0.6}
+            />
+          </div>
+
           {image && (
             <>
               <Image
@@ -51,11 +65,11 @@ export function Cta1({ content = {}, classNames = {} }: CtaBlockProps) {
                 alt={image.alt}
                 fill
                 className={cn(
-                  "pointer-events-none object-cover select-none",
+                  "pointer-events-none object-cover select-none opacity-40",
                   classNames.image?.img
                 )}
               />
-              <ImageOverlay opacity={50} />
+              <ImageOverlay opacity={30} />
             </>
           )}
           <div className="relative z-20 flex flex-col items-center px-8 py-16 md:py-24">
