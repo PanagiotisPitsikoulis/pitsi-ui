@@ -1,16 +1,17 @@
 "use client"
 
-import Image from "next/image"
 import Link from "next/link"
 
 import { type HeroBlockProps } from "@/lib/blocks/hero.types"
 import { cn } from "@/lib/utils"
+import GridDistortion from "@/registry/new-york-v4/animations/grid-distortion/grid-distortion"
+import { ScrollFade } from "@/registry/new-york-v4/animations/scroll-fade/scroll-fade"
 import { HeroText } from "@/registry/new-york-v4/lib/hero-text"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 import { HeroButton } from "../../ui/hero-button"
 
-// Hero 6 - Image Collage (1 Large + 2 Accent Images)
+// Hero 6 - GridDistortion on Featured Image + ScrollFade Content
 const hero6Defaults = {
   badge: "Proven Results",
   title: "Train Smarter\nGet Stronger",
@@ -26,14 +27,17 @@ const hero6Defaults = {
     src: "/elements/subject/gym/4.webp",
     alt: "Main fitness training",
   },
-  accentImage1: {
-    src: "/elements/portrait/gym/3.webp",
-    alt: "Training session",
+  gridDistortionConfig: {
+    grid: 15,
+    mouse: 0.15,
+    strength: 0.2,
+    relaxation: 0.9,
   },
-  accentImage2: {
-    src: "/elements/subject/gym/5.webp",
-    alt: "Gym equipment",
-  },
+  stats: [
+    { value: "98%", label: "Success Rate" },
+    { value: "10K+", label: "Transformations" },
+    { value: "50+", label: "Expert Trainers" },
+  ],
 }
 
 export function Hero6({ content = {}, classNames = {} }: HeroBlockProps) {
@@ -44,81 +48,91 @@ export function Hero6({ content = {}, classNames = {} }: HeroBlockProps) {
     primaryCta = hero6Defaults.primaryCta,
     secondaryCta = hero6Defaults.secondaryCta,
     mainImage = hero6Defaults.mainImage,
-    accentImage1 = hero6Defaults.accentImage1,
-    accentImage2 = hero6Defaults.accentImage2,
+    gridDistortionConfig = hero6Defaults.gridDistortionConfig,
+    stats = hero6Defaults.stats,
   } = content as typeof hero6Defaults
 
   return (
     <section
       className={cn(
-        "relative flex min-h-[calc(100svh-5rem)] flex-col overflow-hidden",
+        "bg-background relative flex min-h-[calc(100svh-5rem)] flex-col overflow-hidden",
         classNames.root
       )}
     >
       <div className="container flex-1 px-4 py-6">
-        <div className="grid h-full min-h-[calc(100svh-8rem)] gap-4 lg:grid-cols-3 lg:grid-rows-2">
-          {/* Text Content Card - Top Left */}
-          <div className="bg-muted flex flex-col justify-center rounded-3xl p-8 lg:row-span-2 lg:p-10">
-            <HeroText
-              badge={badge}
-              title={title}
-              description={description}
-              size="large"
-              classNames={classNames.header}
-            />
+        <div className="grid h-full min-h-[calc(100svh-8rem)] gap-6 lg:grid-cols-2">
+          {/* Left: Text Content with ScrollFade */}
+          <ScrollFade scrollBased={false} delay={0.2}>
+            <div className="flex flex-col justify-center py-8 lg:py-12">
+              <HeroText
+                badge={badge}
+                title={title}
+                description={description}
+                size="large"
+                classNames={classNames.header}
+              />
 
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              {primaryCta && (
-                <Link
-                  href={primaryCta.href}
-                  className={classNames.cta?.primary}
-                >
-                  <HeroButton>{primaryCta.label}</HeroButton>
-                </Link>
-              )}
-              {secondaryCta && (
-                <Button
-                  asChild
-                  variant="outline"
-                  size="lg"
-                  className={cn("text-foreground", classNames.cta?.secondary)}
-                >
-                  <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
-                </Button>
-              )}
+              {/* Buttons */}
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                {primaryCta && (
+                  <Link
+                    href={primaryCta.href}
+                    className={classNames.cta?.primary}
+                  >
+                    <HeroButton>{primaryCta.label}</HeroButton>
+                  </Link>
+                )}
+                {secondaryCta && (
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className={cn("text-foreground", classNames.cta?.secondary)}
+                  >
+                    <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
+                  </Button>
+                )}
+              </div>
+
+              {/* Stats Grid with Distortion Effect */}
+              <div className="mt-12 grid grid-cols-3 gap-4">
+                {stats.map((stat, i) => (
+                  <ScrollFade key={i} scrollBased={false} delay={0.3 + i * 0.1}>
+                    <div className="bg-muted border-brand/20 rounded-2xl border p-4 text-center transition-colors hover:border-brand/50">
+                      <div className="display text-brand text-2xl font-bold md:text-3xl">
+                        {stat.value}
+                      </div>
+                      <div className="text-muted-foreground mt-1 text-sm">
+                        {stat.label}
+                      </div>
+                    </div>
+                  </ScrollFade>
+                ))}
+              </div>
             </div>
-          </div>
+          </ScrollFade>
 
-          {/* Main Large Image - Top Right, spans 2 columns */}
-          <div className="bg-muted relative min-h-[20rem] overflow-hidden rounded-3xl lg:col-span-2">
-            <Image
-              src={mainImage.src}
-              alt={mainImage.alt}
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-
-          {/* Accent Image 1 - Bottom Middle */}
-          <div className="bg-muted relative min-h-[15rem] overflow-hidden rounded-3xl">
-            <Image
-              src={accentImage1.src}
-              alt={accentImage1.alt}
-              fill
-              className="object-cover object-top"
-            />
-          </div>
-
-          {/* Accent Image 2 - Bottom Right */}
-          <div className="bg-muted relative min-h-[15rem] overflow-hidden rounded-3xl">
-            <Image
-              src={accentImage2.src}
-              alt={accentImage2.alt}
-              fill
-              className="object-cover"
-            />
-          </div>
+          {/* Right: GridDistortion Image */}
+          <ScrollFade scrollBased={false} delay={0.4}>
+            <div className="relative min-h-[25rem] overflow-hidden rounded-3xl lg:min-h-full">
+              <GridDistortion
+                grid={gridDistortionConfig.grid}
+                mouse={gridDistortionConfig.mouse}
+                strength={gridDistortionConfig.strength}
+                relaxation={gridDistortionConfig.relaxation}
+                imageSrc={mainImage.src}
+                className="h-full w-full"
+              />
+              {/* Gradient overlay for depth */}
+              <div className="from-background/30 pointer-events-none absolute inset-0 bg-gradient-to-t via-transparent to-transparent" />
+              {/* Corner accent */}
+              <div className="bg-brand absolute right-4 bottom-4 rounded-full px-4 py-2">
+                <span className="text-sm font-semibold text-foreground">
+                  Interactive
+                </span>
+              </div>
+            </div>
+          </ScrollFade>
         </div>
       </div>
     </section>
