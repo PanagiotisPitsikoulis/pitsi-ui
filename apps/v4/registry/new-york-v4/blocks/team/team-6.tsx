@@ -3,6 +3,10 @@
 import Image from "next/image"
 
 import { cn } from "@/lib/utils"
+import {
+  SmoothParallaxContainer,
+  SmoothParallaxLayer,
+} from "@/registry/new-york-v4/animations/smooth-parallax-scroll/smooth-parallax-scroll"
 
 interface TeamBlockProps {
   content?: {
@@ -86,25 +90,31 @@ export function Team6({ content = {}, classNames = {} }: TeamBlockProps) {
       <div
         className={cn("container px-6 py-16 md:py-24", classNames.container)}
       >
-        {/* Story Section */}
-        <div className="mb-20 grid items-center gap-12 lg:grid-cols-2">
-          <div>
-            <h2 className="text-foreground mb-6 text-3xl font-bold md:text-4xl">
-              {story.title}
-            </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed whitespace-pre-line">
-              {story.content}
-            </p>
+        {/* Story Section with SmoothParallaxScroll */}
+        <SmoothParallaxContainer height="150vh" className="mb-20">
+          <div className="grid items-center gap-12 px-4 lg:grid-cols-2">
+            <SmoothParallaxLayer yRange={[-100, 0]} zIndex={1}>
+              <div>
+                <h2 className="text-foreground mb-6 text-3xl font-bold md:text-4xl">
+                  {story.title}
+                </h2>
+                <p className="text-muted-foreground text-lg leading-relaxed whitespace-pre-line">
+                  {story.content}
+                </p>
+              </div>
+            </SmoothParallaxLayer>
+            <SmoothParallaxLayer yRange={[-200, 0]} zIndex={2}>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+                <Image
+                  src={story.image}
+                  alt="Our story"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </SmoothParallaxLayer>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-            <Image
-              src={story.image}
-              alt="Our story"
-              fill
-              className="object-cover"
-            />
-          </div>
-        </div>
+        </SmoothParallaxContainer>
 
         {/* Values */}
         <div className="mb-20">

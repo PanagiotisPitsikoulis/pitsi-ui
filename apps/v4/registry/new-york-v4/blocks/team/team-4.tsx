@@ -4,6 +4,10 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { cn } from "@/lib/utils"
+import {
+  CardsParallaxContainer,
+  ParallaxCard,
+} from "@/registry/new-york-v4/animations/cards-parallax/cards-parallax"
 import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 
 interface TeamBlockProps {
@@ -112,17 +116,24 @@ export function Team4({ content = {}, classNames = {} }: TeamBlockProps) {
           classNames={classNames.header}
         />
 
-        {/* Leadership Section */}
-        <div className="mb-16">
+        {/* Leadership Section with CardsParallax */}
+        <CardsParallaxContainer
+          cardCount={leadership.length}
+          className="mb-16"
+        >
           <h3 className="text-foreground mb-8 text-center text-xl font-semibold">
             Leadership
           </h3>
-          <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
-            {leadership.map((leader, i) => (
-              <div
-                key={i}
-                className="bg-background flex flex-col items-center gap-6 rounded-xl p-8 text-center md:flex-row md:text-left"
-              >
+          {leadership.map((leader, i) => (
+            <ParallaxCard
+              key={i}
+              index={i}
+              backgroundColor="hsl(var(--background))"
+              className="mx-auto max-w-4xl"
+              cardOffset={30}
+              scaleStep={0.04}
+            >
+              <div className="flex h-full flex-col items-center gap-6 p-8 text-center md:flex-row md:text-left">
                 <div className="relative h-32 w-32 shrink-0 overflow-hidden rounded-full">
                   <Image
                     src={leader.avatar}
@@ -153,9 +164,9 @@ export function Team4({ content = {}, classNames = {} }: TeamBlockProps) {
                   </Link>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
+            </ParallaxCard>
+          ))}
+        </CardsParallaxContainer>
 
         {/* Team Grid */}
         <div>

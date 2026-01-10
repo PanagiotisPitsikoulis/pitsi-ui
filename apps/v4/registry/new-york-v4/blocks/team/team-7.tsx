@@ -4,6 +4,7 @@ import Link from "next/link"
 import { Linkedin } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import { ScrollFade } from "@/registry/new-york-v4/animations/scroll-fade/scroll-fade"
 import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 
 interface TeamBlockProps {
@@ -89,36 +90,37 @@ export function Team7({ content = {}, classNames = {} }: TeamBlockProps) {
 
         <div className="space-y-12">
           {departments.map((dept, i) => (
-            <div key={i}>
-              <h3 className="text-foreground border-border mb-4 border-b pb-2 font-semibold">
-                {dept.name}
-              </h3>
-              <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-                {dept.members.map((member, j) => (
-                  <li
-                    key={j}
-                    className="group flex items-center justify-between py-2"
-                  >
-                    <div>
-                      <span className="text-foreground font-medium">
-                        {member.name}
-                      </span>
-                      <span className="text-muted-foreground ml-2 text-sm">
-                        — {member.role}
-                      </span>
-                    </div>
-                    {member.linkedin && (
-                      <Link
-                        href={member.linkedin}
-                        className="text-muted-foreground hover:text-foreground opacity-0 transition-all group-hover:opacity-100"
-                      >
-                        <Linkedin className="h-4 w-4" />
-                      </Link>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <ScrollFade key={i} delay={i * 0.1}>
+              <div>
+                <h3 className="text-foreground border-border mb-4 border-b pb-2 font-semibold">
+                  {dept.name}
+                </h3>
+                <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+                  {dept.members.map((member, j) => (
+                    <ScrollFade key={j} delay={j * 0.05}>
+                      <li className="group flex items-center justify-between py-2">
+                        <div>
+                          <span className="text-foreground font-medium">
+                            {member.name}
+                          </span>
+                          <span className="text-muted-foreground ml-2 text-sm">
+                            — {member.role}
+                          </span>
+                        </div>
+                        {member.linkedin && (
+                          <Link
+                            href={member.linkedin}
+                            className="text-muted-foreground hover:text-foreground opacity-0 transition-all group-hover:opacity-100"
+                          >
+                            <Linkedin className="h-4 w-4" />
+                          </Link>
+                        )}
+                      </li>
+                    </ScrollFade>
+                  ))}
+                </ul>
+              </div>
+            </ScrollFade>
           ))}
         </div>
       </div>

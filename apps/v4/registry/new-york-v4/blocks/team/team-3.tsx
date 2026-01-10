@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { cn } from "@/lib/utils"
+import DecayCard from "@/registry/new-york-v4/animations/decay-card/decay-card"
 import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 
 interface TeamBlockProps {
@@ -103,14 +104,15 @@ export function Team3({ content = {}, classNames = {} }: TeamBlockProps) {
               key={i}
               className="border-border group relative overflow-hidden rounded-xl border text-center"
             >
-              {/* Avatar */}
-              <div className="relative aspect-square">
-                <Image
-                  src={member.avatar}
-                  alt={member.name}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
+              {/* Avatar with DecayCard hover effect */}
+              <div className="relative aspect-square overflow-hidden">
+                <DecayCard
+                  width={300}
+                  height={300}
+                  image={member.avatar}
+                >
+                  {null}
+                </DecayCard>
                 {/* Social overlay */}
                 <div className="absolute inset-0 flex items-center justify-center gap-3 bg-black/60 opacity-0 transition-opacity group-hover:opacity-100">
                   {member.social.twitter && (

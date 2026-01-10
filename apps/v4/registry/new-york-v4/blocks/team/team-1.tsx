@@ -5,6 +5,7 @@ import Link from "next/link"
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
+import Stack from "@/registry/new-york-v4/animations/stack/stack"
 import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 
 interface TeamBlockProps {
@@ -217,52 +218,57 @@ export function Team1({ content = {}, classNames = {} }: TeamBlockProps) {
             <VerticalCard name={sideMembers[3].name} position="far-right" />
           )}
 
-          {/* Center Video Card */}
-          <div className="absolute top-1/2 left-1/2 z-20 w-[280px] -translate-x-1/2 -translate-y-1/2 cursor-pointer overflow-hidden rounded-xl shadow-2xl md:w-[420px]">
+          {/* Center Stack Card with draggable avatar stack */}
+          <div className="absolute top-1/2 left-1/2 z-20 w-[280px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-xl shadow-2xl md:w-[420px]">
             <div className="relative aspect-[3/4]">
-              <Image
-                src={centerMember.thumbnail}
-                alt={centerMember.name}
-                fill
-                className="object-cover"
+              <Stack
+                cards={members.map((member) => (
+                  <div key={member.name} className="relative h-full w-full">
+                    <Image
+                      src={member.thumbnail}
+                      alt={member.name}
+                      fill
+                      className="pointer-events-none object-cover"
+                    />
+                    {/* Play Button */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/90 shadow-lg transition-transform hover:scale-110 md:h-16 md:w-16">
+                        <DynamicIcon
+                          name="Play"
+                          className="text-foreground ml-1 h-6 w-6 md:h-7 md:w-7"
+                        />
+                      </div>
+                    </div>
+                    {/* Info Overlay */}
+                    <div className="absolute right-0 bottom-0 left-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 pt-12 md:p-6 md:pt-16">
+                      <h3 className="text-lg font-bold tracking-wide text-white uppercase md:text-xl">
+                        {member.name}
+                      </h3>
+                      <p className="text-xs font-medium tracking-wider text-white/80 uppercase md:text-sm">
+                        {member.role}
+                      </p>
+                      <p className="mt-1 text-xs text-white/60">
+                        {member.timestamp}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+                randomRotation
+                sensitivity={150}
+                mobileClickOnly
+                autoplay
+                autoplayDelay={5000}
+                pauseOnHover
               />
-              {/* Play Button */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/90 shadow-lg backdrop-blur-sm transition-transform hover:scale-110 md:h-16 md:w-16">
-                  <DynamicIcon
-                    name="Play"
-                    className="text-foreground ml-1 h-6 w-6 md:h-7 md:w-7"
-                  />
-                </div>
-              </div>
-              {/* Info Overlay */}
-              <div className="absolute right-0 bottom-0 left-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 pt-12 md:p-6 md:pt-16">
-                <h3 className="text-lg font-bold tracking-wide text-white uppercase md:text-xl">
-                  {centerMember.name}
-                </h3>
-                <p className="text-xs font-medium tracking-wider text-white/80 uppercase md:text-sm">
-                  {centerMember.role}
-                </p>
-                <p className="mt-1 text-xs text-white/60">
-                  {centerMember.timestamp}
-                </p>
-              </div>
             </div>
           </div>
 
-          {/* Navigation Arrows */}
-          <button
-            className="bg-background/80 text-foreground hover:bg-background absolute bottom-4 left-[20%] z-30 flex h-10 w-10 items-center justify-center rounded-full shadow-lg backdrop-blur-sm transition-colors md:bottom-8 md:left-[25%]"
-            aria-label="Previous member"
-          >
-            <DynamicIcon name="ChevronLeft" className="h-5 w-5" />
-          </button>
-          <button
-            className="bg-background/80 text-foreground hover:bg-background absolute right-[20%] bottom-4 z-30 flex h-10 w-10 items-center justify-center rounded-full shadow-lg backdrop-blur-sm transition-colors md:right-[25%] md:bottom-8"
-            aria-label="Next member"
-          >
-            <DynamicIcon name="ChevronRight" className="h-5 w-5" />
-          </button>
+          {/* Navigation hint */}
+          <div className="absolute bottom-4 left-1/2 z-30 -translate-x-1/2 md:bottom-8">
+            <span className="text-foreground/60 text-xs font-medium">
+              Drag or tap to browse team members
+            </span>
+          </div>
         </div>
 
         {/* CTA Button */}
