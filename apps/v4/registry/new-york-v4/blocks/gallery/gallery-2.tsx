@@ -1,12 +1,8 @@
 "use client"
 
-import { useState } from "react"
-import Image from "next/image"
-
-import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
+import FlyingPosters from "@/registry/new-york-v4/animations/flying-posters/flying-posters"
 import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
-import { Button } from "@/registry/new-york-v4/ui/button"
 
 interface GalleryBlockProps {
   content?: {
@@ -51,17 +47,17 @@ const gallery2Defaults = {
       height: "short" as const,
     },
     {
-      src: "/elements/landscape/plants/1.webp",
+      src: "/elements/landscape/plants/6.webp",
       alt: "Project 6",
       height: "tall" as const,
     },
     {
-      src: "/elements/landscape/plants/2.webp",
+      src: "/elements/landscape/plants/7.webp",
       alt: "Project 7",
       height: "short" as const,
     },
     {
-      src: "/elements/landscape/plants/3.webp",
+      src: "/elements/landscape/plants/8.webp",
       alt: "Project 8",
       height: "short" as const,
     },
@@ -75,7 +71,8 @@ export function Gallery2({ content = {}, classNames = {} }: GalleryBlockProps) {
     images = gallery2Defaults.images,
   } = content
 
-  const [selectedImage, setSelectedImage] = useState<number | null>(null)
+  // Transform images to the format FlyingPosters expects (array of strings)
+  const posterItems = images.map((img) => img.src)
 
   return (
     <section className={cn("bg-background", classNames.root)}>
@@ -90,57 +87,17 @@ export function Gallery2({ content = {}, classNames = {} }: GalleryBlockProps) {
           classNames={classNames.header}
         />
 
-        {/* Masonry Grid */}
-        <div className="columns-1 gap-4 sm:columns-2 lg:columns-3 xl:columns-4">
-          {images.map((image, i) => (
-            <div
-              key={i}
-              className="group relative mb-4 cursor-pointer break-inside-avoid overflow-hidden rounded-lg"
-              onClick={() => setSelectedImage(i)}
-            >
-              <div
-                className={cn(
-                  "relative w-full",
-                  image.height === "tall" ? "aspect-[3/4]" : "aspect-[4/3]"
-                )}
-              >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-              <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/20" />
-            </div>
-          ))}
+        {/* FlyingPosters Gallery */}
+        <div className="relative h-[500px] w-full md:h-[600px]">
+          <FlyingPosters
+            items={posterItems}
+            planeWidth={280}
+            planeHeight={280}
+            distortion={2}
+            scrollEase={0.015}
+            className="h-full w-full"
+          />
         </div>
-
-        {/* Lightbox */}
-        {selectedImage !== null && (
-          <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
-            onClick={() => setSelectedImage(null)}
-          >
-            <Button
-              variant="ghost"
-              size="icon"
-              className="absolute top-4 right-4 text-white hover:bg-white/10"
-              onClick={() => setSelectedImage(null)}
-            >
-              <DynamicIcon name="X" className="h-6 w-6" />
-            </Button>
-            <div className="relative max-h-[90vh] max-w-[90vw]">
-              <Image
-                src={images[selectedImage].src}
-                alt={images[selectedImage].alt}
-                width={1200}
-                height={800}
-                className="max-h-[90vh] w-auto rounded-lg object-contain"
-              />
-            </div>
-          </div>
-        )}
       </div>
     </section>
   )

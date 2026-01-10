@@ -4,6 +4,10 @@ import { useRef, useState } from "react"
 import Image from "next/image"
 
 import { cn } from "@/lib/utils"
+import {
+  HoverExpandGallery,
+  ScrollExpand,
+} from "@/registry/new-york-v4/animations/scroll-expand/scroll-expand"
 import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 
 interface GalleryBlockProps {
@@ -128,9 +132,9 @@ function ComparisonSlider({
         className="absolute top-0 bottom-0 z-10 w-1 bg-white shadow-lg"
         style={{ left: `${sliderPosition}%`, transform: "translateX(-50%)" }}
       >
-        <div className="absolute top-1/2 left-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-lg">
+        <div className="bg-primary absolute top-1/2 left-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full shadow-lg">
           <svg
-            className="h-5 w-5 text-gray-600"
+            className="text-primary-foreground h-5 w-5"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -167,6 +171,12 @@ export function Gallery6({ content = {}, classNames = {} }: GalleryBlockProps) {
     comparisons = gallery6Defaults.comparisons,
   } = content
 
+  // Transform comparisons to HoverExpandGallery format for the preview section
+  const galleryImages = comparisons.flatMap((comp) => [
+    { src: comp.before.src, alt: comp.before.alt, label: comp.before.label },
+    { src: comp.after.src, alt: comp.after.alt, label: comp.after.label },
+  ])
+
   return (
     <section className={cn("bg-background", classNames.root)}>
       <div
@@ -180,14 +190,31 @@ export function Gallery6({ content = {}, classNames = {} }: GalleryBlockProps) {
           classNames={classNames.header}
         />
 
-        {/* Comparison Grid */}
+        {/* Hover Expand Gallery Preview */}
+        <div className="mb-12 flex w-full items-center justify-center">
+          <HoverExpandGallery
+            images={galleryImages}
+            direction="horizontal"
+            collapsedSize={4}
+            expandedSize={20}
+            defaultActive={0}
+          />
+        </div>
+
+        {/* Comparison Sliders with ScrollExpand Animation */}
         <div className="grid gap-8 md:grid-cols-2">
           {comparisons.map((comparison, i) => (
-            <ComparisonSlider
+            <ScrollExpand
               key={i}
-              before={comparison.before}
-              after={comparison.after}
-            />
+              marginX="1.5rem"
+              borderRadius="1.5rem"
+              scrollBased={true}
+            >
+              <ComparisonSlider
+                before={comparison.before}
+                after={comparison.after}
+              />
+            </ScrollExpand>
           ))}
         </div>
       </div>

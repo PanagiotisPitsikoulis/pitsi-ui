@@ -7,6 +7,7 @@ import {
   type GalleryBlockProps,
 } from "@/lib/blocks/gallery.types"
 import { cn } from "@/lib/utils"
+import CircularGallery from "@/registry/new-york-v4/animations/circular-gallery/circular-gallery"
 import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 
 // Block-specific defaults that override the generic defaults
@@ -16,11 +17,14 @@ const blockDefaults = {
   description:
     "From cozy apartments to sprawling offices, see how our plants have transformed spaces into thriving green sanctuaries.",
   images: [
-    { src: "/elements/landscape/plants/6.webp", alt: "Gallery 1" },
-    { src: "/elements/landscape/plants/7.webp", alt: "Gallery 2" },
-    { src: "/elements/landscape/plants/8.webp", alt: "Gallery 3" },
-    { src: "/elements/landscape/plants/9.webp", alt: "Gallery 4" },
-    { src: "/elements/landscape/plants/2.webp", alt: "Gallery 5" },
+    { src: "/elements/landscape/plants/6.webp", alt: "Monstera Deliciosa" },
+    { src: "/elements/landscape/plants/7.webp", alt: "Fiddle Leaf Fig" },
+    { src: "/elements/landscape/plants/8.webp", alt: "Snake Plant" },
+    { src: "/elements/landscape/plants/9.webp", alt: "Peace Lily" },
+    { src: "/elements/landscape/plants/2.webp", alt: "Pothos" },
+    { src: "/elements/landscape/plants/1.webp", alt: "Rubber Plant" },
+    { src: "/elements/landscape/plants/3.webp", alt: "ZZ Plant" },
+    { src: "/elements/landscape/plants/4.webp", alt: "Bird of Paradise" },
   ],
 }
 
@@ -32,6 +36,12 @@ export function Gallery1({ content = {}, classNames = {} }: GalleryBlockProps) {
     description = blockDefaults.description ?? galleryDefaults.description,
     images = blockDefaults.images ?? galleryDefaults.images,
   } = content
+
+  // Transform images to the format CircularGallery expects
+  const galleryItems = images.map((img) => ({
+    image: img.src,
+    text: img.alt,
+  }))
 
   return (
     <section className={cn("relative overflow-x-clip", classNames.root)}>
@@ -59,40 +69,22 @@ export function Gallery1({ content = {}, classNames = {} }: GalleryBlockProps) {
           title={title}
           description={description}
           badgeColor="primary"
-          className="mb-16"
+          className="mb-8"
           classNames={classNames.header}
         />
         <div
           className={cn(
-            "grid grid-cols-2 gap-4 md:grid-cols-4",
+            "relative h-[500px] w-full md:h-[600px]",
             classNames.grid
           )}
         >
-          {images.map((image, i) => {
-            // First image is featured (large, spans 2 cols and 2 rows)
-            const isFeatured = i === 0
-            return (
-              <div
-                key={i}
-                className={cn(
-                  "relative aspect-square overflow-clip rounded-2xl",
-                  isFeatured && "col-span-2 row-span-2",
-                  classNames.image?.root
-                )}
-              >
-                <Image
-                  draggable={false}
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className={cn(
-                    "pointer-events-none object-cover transition-transform duration-500 select-none hover:scale-105",
-                    classNames.image?.img
-                  )}
-                />
-              </div>
-            )
-          })}
+          <CircularGallery
+            items={galleryItems}
+            bend={2}
+            textColor="hsl(var(--foreground))"
+            borderRadius={0.05}
+            font="bold 24px sans-serif"
+          />
         </div>
       </div>
     </section>
