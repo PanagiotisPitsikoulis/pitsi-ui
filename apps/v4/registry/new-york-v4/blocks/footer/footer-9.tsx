@@ -5,6 +5,7 @@ import Link from "next/link"
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { type FooterBlockProps } from "@/lib/blocks/footer.types"
 import { cn } from "@/lib/utils"
+import { SlideUp } from "@/registry/new-york-v4/animations/slide-up/slide-up"
 
 const footer9Defaults = {
   logo: {
@@ -60,8 +61,14 @@ export function Footer9({ content = {}, classNames = {} }: FooterBlockProps) {
     <footer className={cn("border-border border-t py-16", classNames.root)}>
       <div className={cn("container px-6", classNames.container)}>
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
-          {/* Brand */}
-          <div className="lg:col-span-2">
+          {/* Brand with SlideUp */}
+          <SlideUp
+            delay={0}
+            duration={0.7}
+            distance={30}
+            scrollBased={true}
+            className="lg:col-span-2"
+          >
             {logo?.text && (
               <Link href="/" className="text-foreground text-xl font-bold">
                 {logo.text}
@@ -92,11 +99,17 @@ export function Footer9({ content = {}, classNames = {} }: FooterBlockProps) {
                 ))}
               </div>
             )}
-          </div>
+          </SlideUp>
 
-          {/* Link sections */}
+          {/* Link sections with staggered SlideUp */}
           {sections.map((section, idx) => (
-            <div key={idx}>
+            <SlideUp
+              key={idx}
+              delay={0.1 * (idx + 1)}
+              duration={0.7}
+              distance={30}
+              scrollBased={true}
+            >
               <h3
                 className={cn(
                   "text-foreground mb-4 text-sm font-semibold",
@@ -120,12 +133,18 @@ export function Footer9({ content = {}, classNames = {} }: FooterBlockProps) {
                   </li>
                 ))}
               </ul>
-            </div>
+            </SlideUp>
           ))}
         </div>
 
-        {/* Copyright */}
-        <div className="border-border mt-12 border-t pt-8">
+        {/* Copyright with SlideUp */}
+        <SlideUp
+          delay={0.4}
+          duration={0.7}
+          distance={20}
+          scrollBased={true}
+          className="border-border mt-12 border-t pt-8"
+        >
           <p
             className={cn(
               "text-muted-foreground text-center text-sm",
@@ -134,8 +153,11 @@ export function Footer9({ content = {}, classNames = {} }: FooterBlockProps) {
           >
             {copyright}
           </p>
-        </div>
+        </SlideUp>
       </div>
     </footer>
   )
 }
+
+// Backward compatibility export
+export default Footer9

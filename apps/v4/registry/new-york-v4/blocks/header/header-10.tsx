@@ -3,13 +3,12 @@
 import * as React from "react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
-import { Github, Menu, Search, User } from "lucide-react"
+import { Github, Search, User } from "lucide-react"
 
-import {
-  headerDefaults,
-  type HeaderBlockProps,
-} from "@/lib/blocks/header.types"
+import { type HeaderBlockProps } from "@/lib/blocks/header.types"
 import { cn } from "@/lib/utils"
+import Noise from "@/registry/new-york-v4/animations/noise/noise"
+import { ScrollFade } from "@/registry/new-york-v4/animations/scroll-fade/scroll-fade"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Popover,
@@ -223,94 +222,104 @@ export function Header10({ content = {}, classNames = {} }: HeaderBlockProps) {
   }, [])
 
   return (
-    <header
-      className={cn(
-        "sticky top-0 z-[99] w-full transition-colors",
-        hasScrolled ? "bg-background" : "bg-transparent",
-        classNames.root
-      )}
-    >
-      <div
+    <ScrollFade scrollBased={false} delay={0.1} duration={0.5}>
+      <header
         className={cn(
-          "container flex h-14 items-center px-6 lg:px-3",
-          classNames.container
+          "sticky top-0 z-[99] w-full transition-colors",
+          hasScrolled ? "bg-background" : "bg-transparent",
+          classNames.root
         )}
       >
-        {/* Mobile Navigation */}
-        <div className="flex lg:hidden">
-          <MobileNav
-            items={navigation}
-            quickLinks={header10Defaults.quickLinks}
-            logoText={logo?.text ?? "Acme"}
-            open={mobileOpen}
-            onOpenChange={setMobileOpen}
-          />
+        {/* Subtle Noise texture overlay */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-[0.03]">
+          <Noise patternAlpha={25} patternRefreshInterval={4} />
         </div>
 
-        {/* Desktop Logo */}
-        <Button
-          asChild
-          variant="ghost"
-          className={cn("hidden h-8 gap-2 px-2 lg:flex", classNames.logo)}
-        >
-          <Link href={logo?.href ?? "/"}>
-            <LogoIcon className="size-5" />
-            <span className="font-semibold tracking-tight">{logo?.text}</span>
-          </Link>
-        </Button>
-
-        {/* Desktop Navigation */}
-        <MainNav
-          items={navigation}
-          className={cn("hidden lg:flex", classNames.nav?.root)}
-        />
-
-        {/* Right Side Actions */}
-        <div className="ml-auto flex items-center gap-1 md:flex-1 md:justify-end md:gap-2">
-          {/* Search Button (Placeholder) */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="hidden h-8 w-8 md:flex"
-          >
-            <Search className="size-4" />
-            <span className="sr-only">Search</span>
-          </Button>
-
-          {/* Mobile Search */}
-          <Button variant="ghost" size="icon" className="h-8 w-8 md:hidden">
-            <Search className="size-4" />
-            <span className="sr-only">Search</span>
-          </Button>
-
-          {/* GitHub Link */}
-          <Button asChild variant="ghost" size="icon" className="h-8 w-8">
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Github className="size-4" />
-              <span className="sr-only">GitHub</span>
-            </a>
-          </Button>
-
-          {/* User Navigation / CTA */}
-          {cta && (
-            <Button
-              asChild
-              variant="ghost"
-              size="sm"
-              className={cn("h-8", classNames.cta)}
-            >
-              <Link href={cta.href}>
-                <User className="mr-2 size-4" />
-                {cta.label}
-              </Link>
-            </Button>
+        <div
+          className={cn(
+            "relative container flex h-14 items-center px-6 lg:px-3",
+            classNames.container
           )}
+        >
+          {/* Mobile Navigation */}
+          <div className="flex lg:hidden">
+            <MobileNav
+              items={navigation}
+              quickLinks={header10Defaults.quickLinks}
+              logoText={logo?.text ?? "Acme"}
+              open={mobileOpen}
+              onOpenChange={setMobileOpen}
+            />
+          </div>
+
+          {/* Desktop Logo */}
+          <Button
+            asChild
+            variant="ghost"
+            className={cn("hidden h-8 gap-2 px-2 lg:flex", classNames.logo)}
+          >
+            <Link href={logo?.href ?? "/"}>
+              <LogoIcon className="size-5" />
+              <span className="font-semibold tracking-tight">{logo?.text}</span>
+            </Link>
+          </Button>
+
+          {/* Desktop Navigation */}
+          <MainNav
+            items={navigation}
+            className={cn("hidden lg:flex", classNames.nav?.root)}
+          />
+
+          {/* Right Side Actions */}
+          <div className="ml-auto flex items-center gap-1 md:flex-1 md:justify-end md:gap-2">
+            {/* Search Button (Placeholder) */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="hidden h-8 w-8 md:flex"
+            >
+              <Search className="size-4" />
+              <span className="sr-only">Search</span>
+            </Button>
+
+            {/* Mobile Search */}
+            <Button variant="ghost" size="icon" className="h-8 w-8 md:hidden">
+              <Search className="size-4" />
+              <span className="sr-only">Search</span>
+            </Button>
+
+            {/* GitHub Link */}
+            <Button asChild variant="ghost" size="icon" className="h-8 w-8">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github className="size-4" />
+                <span className="sr-only">GitHub</span>
+              </a>
+            </Button>
+
+            {/* User Navigation / CTA */}
+            {cta && (
+              <Button
+                asChild
+                variant="ghost"
+                size="sm"
+                className={cn("h-8", classNames.cta)}
+              >
+                <Link href={cta.href}>
+                  <User className="mr-2 size-4" />
+                  {cta.label}
+                </Link>
+              </Button>
+            )}
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </ScrollFade>
   )
 }
+
+// Backward compatibility export
+export default Header10

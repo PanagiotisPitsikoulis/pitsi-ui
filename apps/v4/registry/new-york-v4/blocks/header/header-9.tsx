@@ -2,11 +2,10 @@
 
 import Link from "next/link"
 
-import {
-  headerDefaults,
-  type HeaderBlockProps,
-} from "@/lib/blocks/header.types"
+import { type HeaderBlockProps } from "@/lib/blocks/header.types"
 import { cn } from "@/lib/utils"
+import LetterGlitch from "@/registry/new-york-v4/animations/letter-glitch/letter-glitch"
+import { BorderBeam } from "@/registry/new-york-v4/ui/border-beam"
 
 import { HeroButton } from "../../ui/hero-button"
 
@@ -25,6 +24,9 @@ const header9Defaults = {
   cta: { label: "Get Started", href: "#" },
 }
 
+// Neon fitness colors for LetterGlitch
+const neonColors = ["#00ff88", "#ff00ff", "#00ffff"]
+
 export function Header9({ content = {}, classNames = {} }: HeaderBlockProps) {
   const {
     logo = header9Defaults.logo,
@@ -35,16 +37,39 @@ export function Header9({ content = {}, classNames = {} }: HeaderBlockProps) {
   return (
     <header className={cn("sticky top-0 z-50", classNames.root)}>
       <div className={cn("container px-4 pt-6", classNames.container)}>
-        <nav className="bg-muted flex items-center justify-between rounded-full px-4 py-2">
+        <nav className="bg-muted relative flex items-center justify-between overflow-hidden rounded-full px-4 py-2">
+          {/* BorderBeam animation around the pill navbar */}
+          <BorderBeam
+            size={60}
+            duration={8}
+            colorFrom="#00ff88"
+            colorTo="#ff00ff"
+            borderWidth={2}
+          />
+
+          {/* Logo with LetterGlitch background */}
           <Link
             href={logo?.href ?? "/"}
             className={cn(
-              "pl-2 text-lg font-bold tracking-tight",
+              "relative overflow-hidden rounded-md pl-2 text-lg font-bold tracking-tight",
               classNames.logo
             )}
           >
-            {logo?.text}
+            <span className="relative z-10 mix-blend-difference">
+              {logo?.text}
+            </span>
+            <div className="absolute inset-0 opacity-30">
+              <LetterGlitch
+                glitchColors={neonColors}
+                glitchSpeed={100}
+                centerVignette={false}
+                outerVignette={false}
+                smooth={true}
+                characters="ELITE01"
+              />
+            </div>
           </Link>
+
           <div
             className={cn(
               "hidden items-center gap-1 md:flex",
@@ -74,3 +99,6 @@ export function Header9({ content = {}, classNames = {} }: HeaderBlockProps) {
     </header>
   )
 }
+
+// Backward compatibility export
+export default Header9

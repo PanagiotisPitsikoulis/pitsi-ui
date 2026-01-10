@@ -3,6 +3,8 @@
 import Link from "next/link"
 import { Instagram, Twitter, Youtube } from "lucide-react"
 
+import InfiniteMenu from "@/registry/new-york-v4/animations/infinite-menu/infinite-menu"
+import Iridescence from "@/registry/new-york-v4/animations/iridescence/iridescence"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Input } from "@/registry/new-york-v4/ui/input"
 
@@ -40,11 +42,55 @@ const social = [
   { name: "YouTube", icon: Youtube, href: "#" },
 ]
 
+// InfiniteMenu items for class showcase
+const menuItems = [
+  {
+    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400&fit=crop",
+    link: "#",
+    title: "HIIT",
+    description: "High intensity",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1549576490-b0b4831ef60a?w=400&h=400&fit=crop",
+    link: "#",
+    title: "Boxing",
+    description: "Combat training",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=400&fit=crop",
+    link: "#",
+    title: "Strength",
+    description: "Build muscle",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=400&fit=crop",
+    link: "#",
+    title: "Yoga",
+    description: "Mind & body",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&h=400&fit=crop",
+    link: "#",
+    title: "Spin",
+    description: "Cardio blast",
+  },
+]
+
 export function Footer2() {
   return (
-    <footer className="bg-black">
+    <footer className="relative bg-black">
+      {/* Iridescence Background */}
+      <div className="pointer-events-none absolute inset-0 opacity-20">
+        <Iridescence
+          color={[0.2, 1, 0.6]}
+          speed={0.8}
+          amplitude={0.15}
+          mouseReact={false}
+        />
+      </div>
+
       {/* Newsletter Section */}
-      <div className="border-b border-white/10">
+      <div className="relative border-b border-white/10">
         <div className="container px-6 py-16">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-display text-3xl font-bold text-white md:text-4xl">
@@ -71,8 +117,20 @@ export function Footer2() {
         </div>
       </div>
 
+      {/* InfiniteMenu Class Showcase Section */}
+      <div className="relative border-b border-white/10">
+        <div className="container px-6 py-12">
+          <h3 className="mb-6 text-center text-sm font-semibold tracking-wider text-white uppercase">
+            Explore Our Classes
+          </h3>
+          <div className="mx-auto h-[300px] max-w-3xl">
+            <InfiniteMenu items={menuItems} scale={0.8} />
+          </div>
+        </div>
+      </div>
+
       {/* Main Footer */}
-      <div className="container px-6 py-16">
+      <div className="relative container px-6 py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-6">
           {/* Brand */}
           <div className="lg:col-span-2">
@@ -178,7 +236,7 @@ export function Footer2() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10">
+      <div className="relative border-t border-white/10">
         <div className="container flex flex-col items-center justify-between gap-4 px-6 py-6 md:flex-row">
           <p className="text-sm text-white/40">
             © {new Date().getFullYear()} FUEL Studio. All rights reserved.
@@ -202,3 +260,6 @@ export function Footer2() {
     </footer>
   )
 }
+
+// Backward compatibility export
+export default Footer2

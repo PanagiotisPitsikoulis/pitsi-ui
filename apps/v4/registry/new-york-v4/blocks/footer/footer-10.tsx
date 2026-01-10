@@ -6,6 +6,7 @@ import { useTheme } from "next-themes"
 
 import { type FooterBlockProps } from "@/lib/blocks/footer.types"
 import { cn } from "@/lib/utils"
+import { SmoothScroll } from "@/registry/new-york-v4/animations/smooth-scroll/smooth-scroll"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   DropdownMenu,
@@ -157,7 +158,17 @@ function ThemeToggle({ className }: { className?: string }) {
   )
 }
 
-export function Footer10({ content = {}, classNames = {} }: FooterBlockProps) {
+// Extended props for footer-10 with smooth scroll option
+interface Footer10Props extends FooterBlockProps {
+  /** Enable smooth scroll wrapper for the footer content */
+  enableSmoothScroll?: boolean
+}
+
+export function Footer10({
+  content = {},
+  classNames = {},
+  enableSmoothScroll = false,
+}: Footer10Props) {
   const {
     logo = footer10Defaults.logo,
     copyright = footer10Defaults.copyright,
@@ -168,7 +179,7 @@ export function Footer10({ content = {}, classNames = {} }: FooterBlockProps) {
   const components = footer10Defaults.components
   const animations = footer10Defaults.animations
 
-  return (
+  const footerContent = (
     <footer
       className={cn("relative bg-transparent pt-12 pb-6", classNames.root)}
     >
@@ -354,4 +365,18 @@ export function Footer10({ content = {}, classNames = {} }: FooterBlockProps) {
       </div>
     </footer>
   )
+
+  // Wrap with SmoothScroll if enabled
+  if (enableSmoothScroll) {
+    return (
+      <SmoothScroll speed={0.08} disableOnMobile={true}>
+        {footerContent}
+      </SmoothScroll>
+    )
+  }
+
+  return footerContent
 }
+
+// Backward compatibility export
+export default Footer10
