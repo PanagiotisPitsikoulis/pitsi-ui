@@ -8,6 +8,7 @@ import {
   type FeaturesBlockProps,
 } from "@/lib/blocks/features.types"
 import { cn } from "@/lib/utils"
+import { Carousel_002 } from "@/registry/new-york-v4/animations/card-swipe-carousel/card-swipe-carousel"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 // Extended interfaces for schedule-based features block
@@ -34,6 +35,13 @@ const features7Defaults = {
   ...featuresDefaults,
   badge: "Weekly Schedule",
   title: "Book Your Spot",
+  carouselImages: [
+    { src: "/elements/portrait/gym/1.webp", alt: "Training session 1" },
+    { src: "/elements/portrait/gym/2.webp", alt: "Training session 2" },
+    { src: "/elements/portrait/gym/3.webp", alt: "Training session 3" },
+    { src: "/elements/portrait/gym/5.webp", alt: "Training session 4" },
+    { src: "/elements/portrait/gym/6.webp", alt: "Training session 5" },
+  ],
   weekSchedule: [
     {
       day: "Monday",
@@ -398,8 +406,11 @@ export function Features7({
   content = {},
   classNames = {},
 }: FeaturesBlockProps) {
-  const { badge = features7Defaults.badge, title = features7Defaults.title } =
-    content
+  const {
+    badge = features7Defaults.badge,
+    title = features7Defaults.title,
+    carouselImages = features7Defaults.carouselImages,
+  } = content as typeof features7Defaults
 
   // Use block-specific schedule array
   const weekSchedule =
@@ -411,168 +422,194 @@ export function Features7({
   return (
     <section className={cn("bg-neutral-950 py-24 lg:py-32", classNames.root)}>
       <div className={cn("container px-6", classNames.container)}>
-        {/* Header */}
-        <div
-          className={cn(
-            "mb-12 flex flex-col items-center justify-between gap-6 md:flex-row",
-            classNames.header?.root
-          )}
-        >
+        {/* Two Column Layout */}
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+          {/* Left: CardSwipeCarousel */}
+          <div className="flex items-center justify-center">
+            <div className="relative">
+              <Carousel_002
+                images={carouselImages}
+                loop={true}
+                showPagination={false}
+                showNavigation={false}
+                autoplay={true}
+                spaceBetween={40}
+                className="max-w-[300px]"
+              />
+              {/* Neon glow effect behind carousel */}
+              <div className="pointer-events-none absolute inset-0 -z-10 bg-[#39ff14]/20 blur-3xl" />
+            </div>
+          </div>
+
+          {/* Right: Schedule */}
           <div>
-            {badge && (
-              <p
-                className={cn(
-                  "mb-2 text-sm font-medium tracking-[0.3em] text-white/60 uppercase",
-                  classNames.header?.badge
-                )}
-              >
-                {badge}
-              </p>
-            )}
-            <h2
-              className={cn(
-                "font-display text-4xl font-bold text-white md:text-5xl",
-                classNames.header?.title
-              )}
-            >
-              {title}
-            </h2>
-          </div>
-          <div className="flex items-center gap-2">
-            <Button
-              variant="outline"
-              size="icon"
-              className="border-white/20 bg-transparent text-white hover:bg-white/10"
-              onClick={() => setSelectedDay(Math.max(0, selectedDay - 1))}
-              disabled={selectedDay === 0}
-            >
-              <DynamicIcon name="ChevronLeft" className="h-4 w-4" />
-            </Button>
-            <Button
-              variant="outline"
-              size="icon"
-              className="border-white/20 bg-transparent text-white hover:bg-white/10"
-              onClick={() => setSelectedDay(Math.min(6, selectedDay + 1))}
-              disabled={selectedDay === 6}
-            >
-              <DynamicIcon name="ChevronRight" className="h-4 w-4" />
-            </Button>
-          </div>
-        </div>
-
-        {/* Day Tabs */}
-        <div className="mb-8 flex gap-2 overflow-x-auto pb-2">
-          {weekSchedule.map((day, index) => (
-            <button
-              key={day.day}
-              onClick={() => setSelectedDay(index)}
-              className={cn(
-                "flex min-w-[100px] flex-col items-center rounded-xl px-4 py-3 transition-colors",
-                selectedDay === index
-                  ? "bg-white text-black"
-                  : "bg-white/5 text-white hover:bg-white/10"
-              )}
-            >
-              <span className="text-xs font-medium uppercase opacity-60">
-                {day.shortDay}
-              </span>
-              <span className="text-lg font-bold">{day.date}</span>
-            </button>
-          ))}
-        </div>
-
-        {/* Schedule List */}
-        <div className={cn("space-y-3", classNames.grid)}>
-          {weekSchedule[selectedDay].classes.map((classItem) => (
+            {/* Header */}
             <div
-              key={classItem.id}
               className={cn(
-                "group flex flex-col gap-4 rounded-xl bg-white/5 p-4 transition-colors hover:bg-white/10 md:flex-row md:items-center md:justify-between",
-                classNames.feature?.root
+                "mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between",
+                classNames.header?.root
               )}
             >
-              <div className="flex items-center gap-4">
-                {/* Intensity dot */}
-                <div
-                  className={cn(
-                    "h-2 w-2 shrink-0 rounded-full",
-                    intensityColors[classItem.intensity]
-                  )}
-                />
-
-                {/* Time */}
-                <div className="w-20 shrink-0">
-                  <p className="text-lg font-bold text-white">
-                    {classItem.time}
-                  </p>
-                </div>
-
-                {/* Class info */}
-                <div>
+              <div>
+                {badge && (
                   <p
                     className={cn(
-                      "text-lg font-semibold text-white",
-                      classNames.feature?.title
+                      "mb-2 text-sm font-medium tracking-[0.3em] text-white/60 uppercase",
+                      classNames.header?.badge
                     )}
                   >
-                    {classItem.name}
+                    {badge}
                   </p>
-                  <div
-                    className={cn(
-                      "flex items-center gap-3 text-sm text-white/60",
-                      classNames.feature?.description
-                    )}
-                  >
-                    <span className="flex items-center gap-1">
-                      <DynamicIcon name="User" className="h-3.5 w-3.5" />
-                      {classItem.instructor}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <DynamicIcon name="Clock" className="h-3.5 w-3.5" />
-                      {classItem.duration}
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4">
-                {/* Spots */}
-                <div className="text-right">
-                  <p
-                    className={cn(
-                      "text-sm font-medium",
-                      classItem.spots === 0
-                        ? "text-red-400"
-                        : classItem.spots <= 3
-                          ? "text-amber-400"
-                          : "text-white/60"
-                    )}
-                  >
-                    {classItem.spots === 0
-                      ? "Sold Out"
-                      : `${classItem.spots} spots left`}
-                  </p>
-                </div>
-
-                {/* Book button */}
-                <Button
-                  variant={classItem.spots === 0 ? "outline" : "default"}
-                  size="sm"
-                  disabled={classItem.spots === 0}
+                )}
+                <h2
                   className={cn(
-                    "min-w-[100px]",
-                    classItem.spots === 0
-                      ? "border-white/20 bg-transparent text-white/40"
-                      : "bg-white text-black hover:bg-white/90"
+                    "font-display text-4xl font-bold text-white md:text-5xl",
+                    classNames.header?.title
                   )}
                 >
-                  {classItem.spots === 0 ? "Waitlist" : "Book"}
+                  {title}
+                </h2>
+              </div>
+              <div className="flex items-center gap-2">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="border-white/20 bg-transparent text-white hover:bg-white/10"
+                  onClick={() => setSelectedDay(Math.max(0, selectedDay - 1))}
+                  disabled={selectedDay === 0}
+                >
+                  <DynamicIcon name="ChevronLeft" className="h-4 w-4" />
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="border-white/20 bg-transparent text-white hover:bg-white/10"
+                  onClick={() => setSelectedDay(Math.min(6, selectedDay + 1))}
+                  disabled={selectedDay === 6}
+                >
+                  <DynamicIcon name="ChevronRight" className="h-4 w-4" />
                 </Button>
               </div>
             </div>
-          ))}
+
+            {/* Day Tabs */}
+            <div className="mb-6 flex gap-2 overflow-x-auto pb-2">
+              {weekSchedule.map((day, index) => (
+                <button
+                  key={day.day}
+                  onClick={() => setSelectedDay(index)}
+                  className={cn(
+                    "flex min-w-[80px] flex-col items-center rounded-xl px-3 py-2 transition-colors",
+                    selectedDay === index
+                      ? "bg-white text-black"
+                      : "bg-white/5 text-white hover:bg-white/10"
+                  )}
+                >
+                  <span className="text-xs font-medium uppercase opacity-60">
+                    {day.shortDay}
+                  </span>
+                  <span className="text-base font-bold">{day.date}</span>
+                </button>
+              ))}
+            </div>
+
+            {/* Schedule List */}
+            <div className={cn("space-y-3 max-h-[400px] overflow-y-auto pr-2", classNames.grid)}>
+              {weekSchedule[selectedDay].classes.map((classItem) => (
+                <div
+                  key={classItem.id}
+                  className={cn(
+                    "group flex flex-col gap-4 rounded-xl bg-white/5 p-4 transition-colors hover:bg-white/10 md:flex-row md:items-center md:justify-between",
+                    classNames.feature?.root
+                  )}
+                >
+                  <div className="flex items-center gap-4">
+                    {/* Intensity dot */}
+                    <div
+                      className={cn(
+                        "h-2 w-2 shrink-0 rounded-full",
+                        intensityColors[classItem.intensity]
+                      )}
+                    />
+
+                    {/* Time */}
+                    <div className="w-20 shrink-0">
+                      <p className="text-lg font-bold text-white">
+                        {classItem.time}
+                      </p>
+                    </div>
+
+                    {/* Class info */}
+                    <div>
+                      <p
+                        className={cn(
+                          "text-lg font-semibold text-white",
+                          classNames.feature?.title
+                        )}
+                      >
+                        {classItem.name}
+                      </p>
+                      <div
+                        className={cn(
+                          "flex items-center gap-3 text-sm text-white/60",
+                          classNames.feature?.description
+                        )}
+                      >
+                        <span className="flex items-center gap-1">
+                          <DynamicIcon name="User" className="h-3.5 w-3.5" />
+                          {classItem.instructor}
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <DynamicIcon name="Clock" className="h-3.5 w-3.5" />
+                          {classItem.duration}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-4">
+                    {/* Spots */}
+                    <div className="text-right">
+                      <p
+                        className={cn(
+                          "text-sm font-medium",
+                          classItem.spots === 0
+                            ? "text-red-400"
+                            : classItem.spots <= 3
+                              ? "text-amber-400"
+                              : "text-white/60"
+                        )}
+                      >
+                        {classItem.spots === 0
+                          ? "Sold Out"
+                          : `${classItem.spots} spots left`}
+                      </p>
+                    </div>
+
+                    {/* Book button */}
+                    <Button
+                      variant={classItem.spots === 0 ? "outline" : "default"}
+                      size="sm"
+                      disabled={classItem.spots === 0}
+                      className={cn(
+                        "min-w-[100px]",
+                        classItem.spots === 0
+                          ? "border-white/20 bg-transparent text-white/40"
+                          : "bg-white text-black hover:bg-white/90"
+                      )}
+                    >
+                      {classItem.spots === 0 ? "Waitlist" : "Book"}
+                    </Button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
   )
 }
+
+// Re-export for backwards compatibility
+export { Features7 as FeaturesScheduleCarousel }

@@ -6,6 +6,7 @@ import {
   type FeaturesBlockProps,
 } from "@/lib/blocks/features.types"
 import { cn } from "@/lib/utils"
+import { Carousel_001 } from "@/registry/new-york-v4/animations/perspective-carousel/perspective-carousel"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 // Extended interfaces for location-based features block
@@ -30,6 +31,13 @@ const features8Defaults = {
   title: "Come See\nThe Space",
   description:
     "Our 15,000 sq ft facility is designed to inspire greatness. Book a free tour and experience it yourself.",
+  carouselImages: [
+    { src: "/elements/landscape/gym/1.webp", alt: "Gym facility 1" },
+    { src: "/elements/landscape/gym/2.webp", alt: "Gym facility 2" },
+    { src: "/elements/landscape/gym/3.webp", alt: "Gym facility 3" },
+    { src: "/elements/landscape/gym/4.webp", alt: "Gym facility 4" },
+    { src: "/elements/landscape/gym/5.webp", alt: "Gym facility 5" },
+  ],
   hours: [
     { day: "Monday - Friday", time: "5:00 AM - 10:00 PM" },
     { day: "Saturday", time: "7:00 AM - 8:00 PM" },
@@ -65,7 +73,8 @@ export function Features8({
     badge = features8Defaults.badge,
     title = features8Defaults.title,
     description = features8Defaults.description,
-  } = content
+    carouselImages = features8Defaults.carouselImages,
+  } = content as typeof features8Defaults
 
   // Use block-specific data
   const hours =
@@ -82,6 +91,23 @@ export function Features8({
   return (
     <section className={cn("bg-neutral-950 py-24 lg:py-32", classNames.root)}>
       <div className={cn("container px-6", classNames.container)}>
+        {/* PerspectiveCarousel at top */}
+        <div className="mb-16">
+          <div className="relative">
+            <Carousel_001
+              images={carouselImages}
+              loop={true}
+              showPagination={true}
+              showNavigation={false}
+              autoplay={true}
+              spaceBetween={40}
+              className="mx-auto"
+            />
+            {/* Neon glow effect */}
+            <div className="pointer-events-none absolute inset-0 -z-10 bg-[#39ff14]/10 blur-3xl" />
+          </div>
+        </div>
+
         <div
           className={cn(
             "grid gap-12 lg:grid-cols-2 lg:gap-16",
@@ -229,25 +255,6 @@ export function Features8({
               </div>
             </div>
 
-            {/* Hours */}
-            <div className="mt-10">
-              <div className="mb-4 flex items-center gap-2">
-                <DynamicIcon name="Clock" className="h-5 w-5 text-white/60" />
-                <h3 className="font-semibold text-white">Studio Hours</h3>
-              </div>
-              <div className="space-y-2">
-                {hours.map((item) => (
-                  <div
-                    key={item.day}
-                    className="flex justify-between border-b border-white/10 py-2"
-                  >
-                    <span className="text-white/60">{item.day}</span>
-                    <span className="font-medium text-white">{item.time}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
             {/* CTA */}
             <div className="mt-10 flex flex-wrap gap-4">
               <Button
@@ -266,45 +273,24 @@ export function Features8({
             </div>
           </div>
 
-          {/* Map / Image area */}
+          {/* Hours & Amenities */}
           <div className="flex flex-col gap-6">
-            {/* Map placeholder */}
-            <div className="relative flex-1 overflow-hidden rounded-2xl bg-neutral-900">
-              <div className="absolute inset-0 flex items-center justify-center">
-                {/* Stylized map placeholder */}
-                <div className="relative h-full w-full">
-                  {/* Grid pattern */}
-                  <div
-                    className="absolute inset-0 opacity-10"
-                    style={{
-                      backgroundImage:
-                        "linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)",
-                      backgroundSize: "40px 40px",
-                    }}
-                  />
-                  {/* Location pin */}
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                    <div className="relative">
-                      <div className="absolute -inset-8 animate-ping rounded-full bg-white/20" />
-                      <div className="relative flex h-16 w-16 items-center justify-center rounded-full bg-white">
-                        <DynamicIcon
-                          name="MapPin"
-                          className="h-8 w-8 text-black"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  {/* Fake streets */}
-                  <div className="absolute top-1/3 right-0 left-0 h-px bg-white/20" />
-                  <div className="absolute right-0 bottom-1/4 left-0 h-px bg-white/20" />
-                  <div className="absolute top-0 bottom-0 left-1/4 w-px bg-white/20" />
-                  <div className="absolute top-0 right-1/3 bottom-0 w-px bg-white/20" />
-                </div>
+            {/* Hours */}
+            <div className="rounded-2xl bg-white/5 p-6">
+              <div className="mb-4 flex items-center gap-2">
+                <DynamicIcon name="Clock" className="h-5 w-5 text-white/60" />
+                <h3 className="font-semibold text-white">Studio Hours</h3>
               </div>
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-900 to-transparent p-6">
-                <p className="text-center text-sm text-white/60">
-                  Interactive map coming soon
-                </p>
+              <div className="space-y-2">
+                {hours.map((item) => (
+                  <div
+                    key={item.day}
+                    className="flex justify-between border-b border-white/10 py-2"
+                  >
+                    <span className="text-white/60">{item.day}</span>
+                    <span className="font-medium text-white">{item.time}</span>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -319,7 +305,7 @@ export function Features8({
               <div className="grid grid-cols-2 gap-3">
                 {amenities.map((amenity) => (
                   <div key={amenity} className="flex items-center gap-2">
-                    <div className="h-1.5 w-1.5 rounded-full bg-white" />
+                    <div className="h-1.5 w-1.5 rounded-full bg-[#39ff14]" />
                     <span className="text-sm text-white/70">{amenity}</span>
                   </div>
                 ))}
@@ -331,3 +317,6 @@ export function Features8({
     </section>
   )
 }
+
+// Re-export for backwards compatibility
+export { Features8 as FeaturesLocationCarousel }

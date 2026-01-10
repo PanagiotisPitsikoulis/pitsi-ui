@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image"
 import Link from "next/link"
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
@@ -9,7 +8,8 @@ import {
   type FeaturesBlockProps,
 } from "@/lib/blocks/features.types"
 import { cn } from "@/lib/utils"
-import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
+import GridDistortion from "@/registry/new-york-v4/animations/grid-distortion/grid-distortion"
+import LetterGlitch from "@/registry/new-york-v4/animations/letter-glitch/letter-glitch"
 
 // Extended feature item for fitness classes
 interface ClassItem {
@@ -28,6 +28,17 @@ const features6Defaults = {
   title: "Find Your Fight",
   description:
     "From high-intensity sweat sessions to mindful movement, we've got a class for every goal.",
+  glitchConfig: {
+    glitchColors: ["#39ff14", "#00ff41", "#0dff00"],
+    glitchSpeed: 50,
+    characters: "FITNESSGYMPOWER01",
+  },
+  gridDistortionConfig: {
+    grid: 12,
+    mouse: 0.12,
+    strength: 0.15,
+    relaxation: 0.9,
+  },
   classes: [
     {
       title: "HIIT",
@@ -98,7 +109,9 @@ export function Features6({
     badge = features6Defaults.badge,
     title = features6Defaults.title,
     description = features6Defaults.description,
-  } = content
+    glitchConfig = features6Defaults.glitchConfig,
+    gridDistortionConfig = features6Defaults.gridDistortionConfig,
+  } = content as typeof features6Defaults
 
   // Use block-specific classes array
   const classes =
@@ -106,15 +119,52 @@ export function Features6({
   return (
     <section className={cn("bg-black py-24 lg:py-32", classNames.root)}>
       <div className={cn("container px-6", classNames.container)}>
-        {/* Header */}
-        <BlockHeader
-          badge={badge}
-          title={title}
-          description={description}
-          classNames={classNames.header}
-        />
+        {/* Header with LetterGlitch background */}
+        <div className={cn("mb-16 text-center", classNames.header?.root)}>
+          {badge && (
+            <p
+              className={cn(
+                "mb-4 text-sm font-medium tracking-[0.3em] text-white/60 uppercase",
+                classNames.header?.badge
+              )}
+            >
+              {badge}
+            </p>
+          )}
+          {/* Title with LetterGlitch background */}
+          <div className="relative mx-auto h-24 max-w-2xl overflow-hidden rounded-xl md:h-32">
+            <LetterGlitch
+              glitchColors={glitchConfig.glitchColors}
+              glitchSpeed={glitchConfig.glitchSpeed}
+              characters={glitchConfig.characters}
+              centerVignette={false}
+              outerVignette={true}
+              smooth={true}
+            />
+            <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+              <h2
+                className={cn(
+                  "font-display text-4xl font-bold text-white drop-shadow-lg md:text-5xl lg:text-6xl",
+                  classNames.header?.title
+                )}
+              >
+                {title}
+              </h2>
+            </div>
+          </div>
+          {description && (
+            <p
+              className={cn(
+                "mx-auto mt-6 max-w-2xl text-lg text-white/60",
+                classNames.header?.description
+              )}
+            >
+              {description}
+            </p>
+          )}
+        </div>
 
-        {/* Classes Grid */}
+        {/* Classes Grid with GridDistortion */}
         <div
           className={cn(
             "grid gap-6 md:grid-cols-2 lg:grid-cols-3",
@@ -130,16 +180,18 @@ export function Features6({
                 classNames.feature?.root
               )}
             >
-              {/* Background Image */}
+              {/* Background with GridDistortion */}
               {classItem.image && (
                 <div className="absolute inset-0">
-                  <Image
-                    src={classItem.image}
-                    alt={classItem.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  <GridDistortion
+                    grid={gridDistortionConfig.grid}
+                    mouse={gridDistortionConfig.mouse}
+                    strength={gridDistortionConfig.strength}
+                    relaxation={gridDistortionConfig.relaxation}
+                    imageSrc={classItem.image}
+                    className="h-full w-full"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
                 </div>
               )}
 
@@ -201,3 +253,6 @@ export function Features6({
     </section>
   )
 }
+
+// Re-export for backwards compatibility
+export { Features6 as FeaturesClassesGrid }
