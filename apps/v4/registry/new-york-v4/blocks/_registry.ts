@@ -4384,8 +4384,8 @@ export const blocks: Registry["items"] = [
     name: "testimonials-2",
     type: "registry:block",
     description:
-      "Member testimonials with transformation stats and star ratings",
-    registryDependencies: ["utils"],
+      "Member testimonials with transformation stats, FlyingPosters background, and LetterGlitch header",
+    registryDependencies: ["utils", "flying-posters", "letter-glitch"],
     categories: ["testimonials", "landing"],
     tier: "free",
     readiness: "production",
