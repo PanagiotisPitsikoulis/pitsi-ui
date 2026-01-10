@@ -39,6 +39,8 @@ export interface CollapsibleGalleryProps<T> {
   className?: string
   /** Default open state */
   defaultOpen?: boolean
+  /** Custom render function for expanded content (overrides default grid) */
+  renderExpandedContent?: () => React.ReactNode
 }
 
 /* -----------------------------------------------------------------------------
@@ -56,6 +58,7 @@ function CollapsibleGallery<T>({
   collapseText = "Collapse",
   className,
   defaultOpen = false,
+  renderExpandedContent,
 }: CollapsibleGalleryProps<T>) {
   // Build grid classes
   const gridClassName = cn(
@@ -100,13 +103,19 @@ function CollapsibleGallery<T>({
           </div>
         </div>
 
-        {/* Expanded: Grid */}
+        {/* Expanded: Grid or custom content */}
         <CollapsibleContent>
-          <div className={gridClassName}>
-            {items.map((item, index) => (
-              <div key={keyExtractor(item, index)}>{renderItem(item, index)}</div>
-            ))}
-          </div>
+          {renderExpandedContent ? (
+            renderExpandedContent()
+          ) : (
+            <div className={gridClassName}>
+              {items.map((item, index) => (
+                <div key={keyExtractor(item, index)}>
+                  {renderItem(item, index)}
+                </div>
+              ))}
+            </div>
+          )}
         </CollapsibleContent>
       </Collapsible>
     </div>

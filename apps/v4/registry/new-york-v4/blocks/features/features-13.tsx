@@ -5,6 +5,7 @@ import Image from "next/image"
 
 import { type FeaturesBlockProps } from "@/lib/blocks/features.types"
 import { cn } from "@/lib/utils"
+import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 import {
   Accordion,
   AccordionContent,
@@ -109,16 +110,11 @@ export function Features13({
     <section className={cn("py-24", classNames.root)}>
       <div className={cn("container px-6", classNames.container)}>
         {/* Header */}
-        <div className="mx-auto mb-12 max-w-2xl text-center">
-          {badge && (
-            <p className="text-brand mb-4 text-sm font-medium tracking-wider uppercase">
-              {badge}
-            </p>
-          )}
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-            {title}
-          </h2>
-        </div>
+        <BlockHeader
+          badge={badge}
+          title={title}
+          classNames={classNames.header}
+        />
 
         <div className="grid w-full grid-cols-6 gap-6">
           {/* Accordion - 2 columns on lg (LEFT) */}

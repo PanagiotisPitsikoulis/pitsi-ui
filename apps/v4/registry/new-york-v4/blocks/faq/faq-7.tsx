@@ -1,7 +1,8 @@
 "use client"
 
-import { type FAQBlockProps } from "@/lib/blocks/faq.types"
+import { type FaqBlockProps } from "@/lib/blocks/faq.types"
 import { cn } from "@/lib/utils"
+import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 import {
   Accordion,
   AccordionContent,
@@ -42,7 +43,7 @@ const faq7Defaults = {
   ],
 }
 
-export function Faq7({ content = {}, classNames = {} }: FAQBlockProps) {
+export function Faq7({ content = {}, classNames = {} }: FaqBlockProps) {
   const {
     badge = faq7Defaults.badge,
     title = faq7Defaults.title,
@@ -54,41 +55,14 @@ export function Faq7({ content = {}, classNames = {} }: FAQBlockProps) {
     <section className={cn("py-24", classNames.root)}>
       <div className={cn("container px-6", classNames.container)}>
         {/* Header */}
-        <div
-          className={cn(
-            "mx-auto mb-16 max-w-2xl text-center",
-            classNames.header?.root
-          )}
-        >
-          {badge && (
-            <p
-              className={cn(
-                "text-brand mb-4 text-sm font-medium tracking-wider uppercase",
-                classNames.header?.badge
-              )}
-            >
-              {badge}
-            </p>
-          )}
-          <h2
-            className={cn(
-              "text-3xl font-bold tracking-tight md:text-4xl",
-              classNames.header?.title
-            )}
-          >
-            {title}
-          </h2>
-          {description && (
-            <p
-              className={cn(
-                "text-muted-foreground mt-4 text-lg",
-                classNames.header?.description
-              )}
-            >
-              {description}
-            </p>
-          )}
-        </div>
+        <BlockHeader
+          badge={badge}
+          title={title}
+          description={description}
+          spacing="none"
+          className="mx-auto mb-16 max-w-2xl"
+          classNames={classNames.header}
+        />
 
         {/* FAQ accordion */}
         <div className="mx-auto max-w-2xl">

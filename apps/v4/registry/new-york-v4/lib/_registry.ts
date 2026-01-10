@@ -45,6 +45,21 @@ export const lib: Registry["items"] = [
     readiness: "production",
   },
   {
+    name: "qr-code",
+    type: "registry:lib",
+    description:
+      "QR code component with label and description, styled for the design system.",
+    dependencies: ["qrcode.react", "class-variance-authority"],
+    registryDependencies: ["utils"],
+    files: [
+      {
+        path: "lib/qr-code.tsx",
+        type: "registry:lib",
+      },
+    ],
+    readiness: "production",
+  },
+  {
     name: "recursive-clone-children",
     type: "registry:lib",
     description:
@@ -136,6 +151,36 @@ export const lib: Registry["items"] = [
     files: [
       {
         path: "lib/templates.ts",
+        type: "registry:lib",
+      },
+    ],
+    readiness: "production",
+  },
+  {
+    name: "block-header",
+    type: "registry:lib",
+    description:
+      "Reusable section header component for blocks with badge, title, and description.",
+    dependencies: ["class-variance-authority"],
+    registryDependencies: ["utils", "polymorphic"],
+    files: [
+      {
+        path: "lib/block-header.tsx",
+        type: "registry:lib",
+      },
+    ],
+    readiness: "production",
+  },
+  {
+    name: "hero-text",
+    type: "registry:lib",
+    description:
+      "Polymorphic hero text component with badge, title, and description for hero sections.",
+    dependencies: ["class-variance-authority"],
+    registryDependencies: ["utils", "polymorphic"],
+    files: [
+      {
+        path: "lib/hero-text.tsx",
         type: "registry:lib",
       },
     ],

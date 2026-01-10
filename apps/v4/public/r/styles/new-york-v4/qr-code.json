@@ -1,0 +1,21 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "qr-code",
+  "type": "registry:lib",
+  "description": "QR code component with label and description, styled for the design system.",
+  "dependencies": [
+    "qrcode.react",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/lib/qr-code.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\nimport { QRCodeSVG } from \"qrcode.react\"\n\nimport { cn } from \"@/lib/utils\"\n\n// =============================================================================\n// Types\n// =============================================================================\n\nexport interface QRCodeClassNames {\n  root?: string\n  code?: string\n  label?: string\n  description?: string\n}\n\n// =============================================================================\n// Variants\n// =============================================================================\n\nconst qrCodeContainerVariants = cva(\n  \"bg-background flex flex-col items-center rounded-lg p-4\",\n  {\n    variants: {\n      variant: {\n        default: \"\",\n        card: \"border border-border shadow-sm\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n    },\n  }\n)\n\n// =============================================================================\n// Component\n// =============================================================================\n\nexport interface QRCodeProps\n  extends\n    Omit<React.HTMLAttributes<HTMLDivElement>, \"children\">,\n    VariantProps<typeof qrCodeContainerVariants> {\n  /** The URL or data to encode in the QR code */\n  value: string\n  /** Size of the QR code in pixels */\n  size?: number\n  /** Label text displayed below the QR code */\n  label?: string\n  /** Description text displayed below the label */\n  description?: string\n  /** Class names for sub-elements */\n  classNames?: QRCodeClassNames\n  /** Background color of the QR code */\n  bgColor?: string\n  /** Foreground color of the QR code */\n  fgColor?: string\n  /** Error correction level */\n  level?: \"L\" | \"M\" | \"Q\" | \"H\"\n  /** Include margin around the QR code */\n  includeMargin?: boolean\n}\n\nexport function QRCode({\n  value,\n  size = 96,\n  label,\n  description,\n  variant,\n  classNames,\n  className,\n  bgColor = \"#ffffff\",\n  fgColor = \"#000000\",\n  level = \"M\",\n  includeMargin = false,\n  ...props\n}: QRCodeProps) {\n  return (\n    <div\n      className={cn(\n        qrCodeContainerVariants({ variant }),\n        className,\n        classNames?.root\n      )}\n      {...props}\n    >\n      <div className={cn(\"mb-2 overflow-hidden rounded\", classNames?.code)}>\n        <QRCodeSVG\n          value={value}\n          size={size}\n          bgColor={bgColor}\n          fgColor={fgColor}\n          level={level}\n          includeMargin={includeMargin}\n        />\n      </div>\n      {label && (\n        <div\n          className={cn(\n            \"text-foreground text-xs font-medium\",\n            classNames?.label\n          )}\n        >\n          {label}\n        </div>\n      )}\n      {description && (\n        <div\n          className={cn(\n            \"text-muted-foreground text-xs\",\n            classNames?.description\n          )}\n        >\n          {description}\n        </div>\n      )}\n    </div>\n  )\n}\n\nQRCode.displayName = \"QRCode\"\n\nexport { qrCodeContainerVariants }\n",
+      "type": "registry:lib"
+    }
+  ],
+  "readiness": "production"
+}

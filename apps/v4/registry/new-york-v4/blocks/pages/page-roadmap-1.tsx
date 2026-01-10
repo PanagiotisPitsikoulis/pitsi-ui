@@ -19,7 +19,7 @@ function StripedBackground({ className }: { className?: string }) {
         className
       )}
     >
-      <div className="container relative mx-auto h-full px-6">
+      <div className="relative container mx-auto h-full px-6">
         <div className="absolute inset-0 flex justify-between">
           {Array.from({ length: 7 }).map((_, i) => (
             <div key={i} className="bg-border/30 h-full w-px" />
@@ -47,10 +47,38 @@ function RoadmapIcon({ className }: { className?: string }) {
         strokeLinejoin="round"
         fill="none"
       />
-      <circle cx="40" cy="60" r="8" stroke="currentColor" strokeWidth="3" fill="none" />
-      <circle cx="100" cy="60" r="8" stroke="currentColor" strokeWidth="3" fill="none" />
-      <circle cx="100" cy="100" r="8" stroke="currentColor" strokeWidth="3" fill="none" />
-      <circle cx="160" cy="100" r="8" stroke="currentColor" strokeWidth="3" fill="none" />
+      <circle
+        cx="40"
+        cy="60"
+        r="8"
+        stroke="currentColor"
+        strokeWidth="3"
+        fill="none"
+      />
+      <circle
+        cx="100"
+        cy="60"
+        r="8"
+        stroke="currentColor"
+        strokeWidth="3"
+        fill="none"
+      />
+      <circle
+        cx="100"
+        cy="100"
+        r="8"
+        stroke="currentColor"
+        strokeWidth="3"
+        fill="none"
+      />
+      <circle
+        cx="160"
+        cy="100"
+        r="8"
+        stroke="currentColor"
+        strokeWidth="3"
+        fill="none"
+      />
       <circle cx="160" cy="160" r="8" fill="currentColor" />
     </svg>
   )
@@ -156,10 +184,7 @@ export function PageRoadmap1({
 
   return (
     <div
-      className={cn(
-        "relative -mt-14 min-h-screen overflow-x-clip",
-        className
-      )}
+      className={cn("relative -mt-14 min-h-screen overflow-x-clip", className)}
     >
       <StripedBackground />
 
@@ -187,7 +212,7 @@ export function PageRoadmap1({
               <Spacer size="md" sizeMobile="sm" />
 
               {/* Title */}
-              <h1 className="text-4xl font-bold leading-[0.9] tracking-tight md:text-5xl lg:text-6xl">
+              <h1 className="text-4xl leading-[0.9] font-bold tracking-tight md:text-5xl lg:text-6xl">
                 {title}
               </h1>
 
@@ -225,7 +250,13 @@ export function PageRoadmap1({
               {/* Tags */}
               <div className="flex flex-wrap gap-2">
                 {(
-                  ["all", "completed", "in-progress", "planned", "exploring"] as const
+                  [
+                    "all",
+                    "completed",
+                    "in-progress",
+                    "planned",
+                    "exploring",
+                  ] as const
                 ).map((filter) => (
                   <button
                     key={filter}
@@ -246,7 +277,9 @@ export function PageRoadmap1({
             {/* Roadmap Items */}
             <div className="space-y-12">
               {filteredItems.length === 0 ? (
-                <p className="text-muted-foreground">No items match your search.</p>
+                <p className="text-muted-foreground">
+                  No items match your search.
+                </p>
               ) : (
                 filteredItems.map((item, index) => (
                   <article key={index} className="relative">
@@ -266,8 +299,8 @@ export function PageRoadmap1({
                         {statusLabels[item.status]}
                       </h2>
                       <p className="text-muted-foreground text-sm">
-                        {item.items.length} item{item.items.length !== 1 ? "s" : ""}{" "}
-                        in this milestone
+                        {item.items.length} item
+                        {item.items.length !== 1 ? "s" : ""} in this milestone
                       </p>
                     </div>
 

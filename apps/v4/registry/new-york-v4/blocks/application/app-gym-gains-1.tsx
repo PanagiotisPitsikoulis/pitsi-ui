@@ -102,7 +102,7 @@ export function AppGymGains1() {
       <div className="mx-auto max-w-3xl space-y-6">
         {/* Header */}
         <div>
-          <h1 className="text-foreground text-2xl font-bold tracking-tight">
+          <h1 className="display text-foreground text-2xl font-bold tracking-tight">
             Gains
           </h1>
           <p className="text-muted-foreground mt-1 text-sm">
@@ -117,7 +117,9 @@ export function AppGymGains1() {
               <p className="text-muted-foreground text-[10px] font-medium tracking-wider uppercase">
                 12 Week Progression
               </p>
-              <h2 className="mt-1 text-xl font-bold">{selected.name}</h2>
+              <h2 className="display mt-1 text-xl font-bold">
+                {selected.name}
+              </h2>
             </div>
             <div className="text-right">
               <div className="flex items-baseline gap-1">

@@ -5,6 +5,7 @@ import Image from "next/image"
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { teamDefaults, type TeamBlockProps } from "@/lib/blocks/team.types"
 import { cn } from "@/lib/utils"
+import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 
 // Extended trainer item for fitness theme
 interface Trainer {
@@ -91,36 +92,22 @@ export function Team2({ content = {}, classNames = {} }: TeamBlockProps) {
     <section className={cn("bg-black py-24 lg:py-32", classNames.root)}>
       <div className={cn("container px-6", classNames.container)}>
         {/* Header */}
-        <div className={cn("mb-16 text-center", classNames.header?.root)}>
-          {badge && (
-            <p
-              className={cn(
-                "mb-4 text-sm font-medium tracking-[0.3em] text-white/60 uppercase",
-                classNames.header?.badge
-              )}
-            >
-              {badge}
-            </p>
-          )}
-          <h2
-            className={cn(
+        <BlockHeader
+          badge={badge}
+          title={title}
+          description={description}
+          spacing="none"
+          className="mb-16"
+          classNames={{
+            ...classNames.header,
+            badge: cn("text-white/60", classNames.header?.badge),
+            title: cn(
               "font-display text-4xl font-bold text-white md:text-5xl lg:text-6xl",
               classNames.header?.title
-            )}
-          >
-            {title}
-          </h2>
-          {description && (
-            <p
-              className={cn(
-                "mx-auto mt-6 max-w-2xl text-lg text-white/60",
-                classNames.header?.description
-              )}
-            >
-              {description}
-            </p>
-          )}
-        </div>
+            ),
+            description: cn("text-white/60", classNames.header?.description),
+          }}
+        />
 
         {/* Trainers Grid */}
         <div

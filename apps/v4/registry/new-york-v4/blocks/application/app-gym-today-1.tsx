@@ -87,7 +87,7 @@ export function AppGymToday1({ onLogWorkout }: AppGymToday1Props) {
       <div className="mx-auto max-w-3xl space-y-8">
         {/* Header */}
         <div>
-          <h1 className="text-foreground text-3xl font-bold tracking-tight">
+          <h1 className="display text-foreground text-3xl font-bold tracking-tight">
             {greeting}, John
           </h1>
           <p className="text-muted-foreground mt-1">

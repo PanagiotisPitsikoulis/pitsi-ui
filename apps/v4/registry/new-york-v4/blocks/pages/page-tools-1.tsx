@@ -181,13 +181,7 @@ const pageTools1Defaults = {
 }
 
 // Tool Icon Renderer
-function ToolIcon({
-  icon,
-  className,
-}: {
-  icon: string
-  className?: string
-}) {
+function ToolIcon({ icon, className }: { icon: string; className?: string }) {
   switch (icon) {
     case "theme":
       return <ThemeIcon className={className} />
@@ -242,7 +236,7 @@ function StripedBackground({
         className
       )}
     >
-      <div className="container relative mx-auto h-full px-6">
+      <div className="relative container mx-auto h-full px-6">
         <div className="absolute inset-0 flex justify-between">
           {Array.from({ length: columnCount + 1 }).map((_, i) => (
             <div key={i} className="bg-border/30 h-full w-px" />

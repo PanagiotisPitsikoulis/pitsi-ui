@@ -29,7 +29,7 @@ export const typographyPresets: Record<string, TypographyPreset> = {
     name: "Elegant",
     slug: "elegant",
     fonts: {
-      display: "var(--font-fraunces)",
+      display: "var(--font-cormorant)",
       body: "var(--font-dm-sans)",
       displayWeight: "600",
       bodyWeight: "400",

@@ -17,7 +17,7 @@ function StripedBackground({ className }: { className?: string }) {
         className
       )}
     >
-      <div className="container relative mx-auto h-full px-6">
+      <div className="relative container mx-auto h-full px-6">
         <div className="absolute inset-0 flex justify-between">
           {Array.from({ length: 7 }).map((_, i) => (
             <div key={i} className="bg-border/30 h-full w-px" />
@@ -111,8 +111,14 @@ const pageChangelog1Defaults = {
       version: "2.0.0",
       changeType: "major" as ChangeType,
       changes: [
-        { type: "major" as ChangeType, description: "Complete redesign of the component library" },
-        { type: "major" as ChangeType, description: "New theming system with CSS variables" },
+        {
+          type: "major" as ChangeType,
+          description: "Complete redesign of the component library",
+        },
+        {
+          type: "major" as ChangeType,
+          description: "New theming system with CSS variables",
+        },
         { type: "minor" as ChangeType, description: "Added 20 new components" },
       ],
     },
@@ -121,16 +127,28 @@ const pageChangelog1Defaults = {
       changeType: "minor" as ChangeType,
       changes: [
         { type: "minor" as ChangeType, description: "Added dark mode support" },
-        { type: "minor" as ChangeType, description: "Improved accessibility across all components" },
-        { type: "patch" as ChangeType, description: "Fixed button hover states" },
+        {
+          type: "minor" as ChangeType,
+          description: "Improved accessibility across all components",
+        },
+        {
+          type: "patch" as ChangeType,
+          description: "Fixed button hover states",
+        },
       ],
     },
     {
       version: "1.4.2",
       changeType: "patch" as ChangeType,
       changes: [
-        { type: "patch" as ChangeType, description: "Fixed modal close animation" },
-        { type: "patch" as ChangeType, description: "Resolved tooltip positioning issues" },
+        {
+          type: "patch" as ChangeType,
+          description: "Fixed modal close animation",
+        },
+        {
+          type: "patch" as ChangeType,
+          description: "Resolved tooltip positioning issues",
+        },
       ],
     },
   ] as ChangelogEntry[],
@@ -158,10 +176,7 @@ export function PageChangelog1({
 }: PageChangelog1Props) {
   return (
     <div
-      className={cn(
-        "relative -mt-14 min-h-screen overflow-x-clip",
-        className
-      )}
+      className={cn("relative -mt-14 min-h-screen overflow-x-clip", className)}
     >
       <StripedBackground />
 
@@ -189,7 +204,7 @@ export function PageChangelog1({
               <Spacer size="md" sizeMobile="sm" />
 
               {/* Title */}
-              <h1 className="text-4xl font-bold leading-[0.9] tracking-tight md:text-5xl lg:text-6xl">
+              <h1 className="text-4xl leading-[0.9] font-bold tracking-tight md:text-5xl lg:text-6xl">
                 {title}
               </h1>
 
@@ -212,7 +227,9 @@ export function PageChangelog1({
           {/* Right Column - Content */}
           <div className="col-span-6 lg:col-span-3 lg:col-start-4">
             {entries.length === 0 ? (
-              <p className="text-muted-foreground">No changelog entries found.</p>
+              <p className="text-muted-foreground">
+                No changelog entries found.
+              </p>
             ) : (
               <div className="space-y-12">
                 {entries.map((entry) => (
@@ -246,7 +263,9 @@ export function PageChangelog1({
                         >
                           <span className="bg-muted-foreground mt-1.5 size-1.5 shrink-0 rounded-full" />
                           <span className="flex flex-col gap-1">
-                            <span className="text-foreground">{change.description}</span>
+                            <span className="text-foreground">
+                              {change.description}
+                            </span>
                             {change.commit && (
                               <a
                                 href={`${commitBaseUrl}${change.commit}`}

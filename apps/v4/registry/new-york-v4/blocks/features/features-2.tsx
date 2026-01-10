@@ -4,6 +4,7 @@ import Image from "next/image"
 
 import { type FeaturesBlockProps } from "@/lib/blocks/features.types"
 import { cn } from "@/lib/utils"
+import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 import { ImageOverlayGradient } from "@/app/(app)/(content)/(blocks)/_block_components"
 import { BlockThemeWrapper } from "@/app/(app)/(content)/(blocks)/_components"
 
@@ -43,26 +44,11 @@ export function Features2({
   return (
     <section className={cn("overflow-x-clip", classNames.root)}>
       <div className={cn("container px-6", classNames.container)}>
-        <div className={cn("mb-20 text-center", classNames.header?.root)}>
-          {badge && (
-            <p
-              className={cn(
-                "text-brand mb-2 text-sm font-medium tracking-[0.3em] uppercase",
-                classNames.header?.badge
-              )}
-            >
-              {badge}
-            </p>
-          )}
-          <h2
-            className={cn(
-              "font-display text-foreground text-3xl font-bold md:text-5xl",
-              classNames.header?.title
-            )}
-          >
-            {title}
-          </h2>
-        </div>
+        <BlockHeader
+          badge={badge}
+          title={title}
+          classNames={classNames.header}
+        />
 
         <div className={cn("grid gap-6 md:grid-cols-2", classNames.grid)}>
           {features.map((feature, idx) => (

@@ -3,13 +3,8 @@
 import Image from "next/image"
 import Link from "next/link"
 
-import { ChevronDown } from "@/lib/icons"
 import { getBlocksByCategory } from "@/registry/__blocks-metadata__"
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/registry/new-york-v4/ui/collapsible"
+import { CollapsibleGallery } from "@/registry/new-york-v4/ui/collapsible-gallery"
 
 export interface BlockItem {
   name: string
@@ -108,72 +103,44 @@ export function RelatedBlocksSection({
   })
 
   return (
-    <div className="bg-muted rounded-xl p-6">
-      <Collapsible className="group/collapsible">
-        {/* Header */}
-        <div className="mb-4 flex items-center justify-between">
-          <h2 className="text-muted-foreground text-sm font-medium">
-            Related Blocks
-          </h2>
-          <CollapsibleTrigger className="text-muted-foreground hover:text-foreground flex items-center gap-1 text-sm transition-colors">
-            <span className="group-data-[state=open]/collapsible:hidden">
-              View all
-            </span>
-            <span className="group-data-[state=closed]/collapsible:hidden">
-              Collapse
-            </span>
-            <ChevronDown className="size-4 transition-transform duration-200 group-data-[state=open]/collapsible:rotate-180" />
-          </CollapsibleTrigger>
-        </div>
-
-        {/* Collapsed: Horizontal scroll (flat list) */}
-        <div className="relative -mx-4 px-4 group-data-[state=open]/collapsible:hidden">
-          <div className="no-scrollbar flex gap-8 overflow-x-auto pb-2">
-            {relatedBlocks.map((block) => (
-              <BlockCard
-                key={block.name}
-                block={block}
-                styleName={styleName}
-                compact
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Expanded: Grouped by category */}
-        <CollapsibleContent>
-          <div className="space-y-8">
-            {sortedCategories.map((cat) => (
-              <div key={cat}>
-                <h3 className="text-foreground mb-4 text-sm font-medium">
-                  {formatCategoryName(cat)}
-                </h3>
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                  {blocksByCategory[cat].map((block) => (
-                    <BlockCard
-                      key={block.name}
-                      block={block}
-                      styleName={styleName}
-                    />
-                  ))}
-                </div>
+    <CollapsibleGallery
+      title="Related Blocks"
+      items={relatedBlocks}
+      renderItem={(block) => (
+        <BlockCard block={block} styleName={styleName} />
+      )}
+      keyExtractor={(block) => block.name}
+      itemWidth={220}
+      renderExpandedContent={() => (
+        <div className="space-y-8">
+          {sortedCategories.map((cat) => (
+            <div key={cat}>
+              <h3 className="text-foreground mb-4 text-sm font-medium">
+                {formatCategoryName(cat)}
+              </h3>
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {blocksByCategory[cat].map((block) => (
+                  <BlockCard
+                    key={block.name}
+                    block={block}
+                    styleName={styleName}
+                  />
+                ))}
               </div>
-            ))}
-          </div>
-        </CollapsibleContent>
-      </Collapsible>
-    </div>
+            </div>
+          ))}
+        </div>
+      )}
+    />
   )
 }
 
 function BlockCard({
   block,
   styleName,
-  compact = false,
 }: {
   block: BlockItem
   styleName: string
-  compact?: boolean
 }) {
   // Get the category from the block's categories (first one is the type)
   const blockCategory = block.categories[0] || "blocks"
@@ -181,9 +148,7 @@ function BlockCard({
   return (
     <Link
       href={`/block/${blockCategory}/${block.name}`}
-      className={`group/card relative flex scroll-mt-20 flex-col gap-3 ${
-        compact ? "w-[220px] shrink-0" : ""
-      }`}
+      className="group/card relative flex scroll-mt-20 flex-col gap-3"
     >
       <div className="dark:border-border overflow-hidden rounded-xl shadow-sm dark:border">
         <div className="bg-background relative">
@@ -198,11 +163,7 @@ function BlockCard({
                   alt={`${block.name} preview`}
                   fill
                   className="object-cover object-top dark:hidden"
-                  sizes={
-                    compact
-                      ? "220px"
-                      : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  }
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   priority={false}
                 />
                 <Image
@@ -210,11 +171,7 @@ function BlockCard({
                   alt={`${block.name} preview`}
                   fill
                   className="hidden object-cover object-top dark:block"
-                  sizes={
-                    compact
-                      ? "220px"
-                      : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  }
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   priority={false}
                 />
               </div>

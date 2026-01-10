@@ -26,7 +26,7 @@ function StripedBackground({ className }: { className?: string }) {
         className
       )}
     >
-      <div className="container relative mx-auto h-full px-6">
+      <div className="relative container mx-auto h-full px-6">
         <div className="absolute inset-0 flex justify-between">
           {Array.from({ length: 7 }).map((_, i) => (
             <div key={i} className="bg-border/30 h-full w-px" />
@@ -118,7 +118,11 @@ interface AppAuth1Props {
   forgotPasswordHref?: string | null
   socialProviders?: SocialProvider[]
   successRedirect?: string
-  onSubmit?: (data: { email: string; password: string; name?: string }) => Promise<void>
+  onSubmit?: (data: {
+    email: string
+    password: string
+    name?: string
+  }) => Promise<void>
   onSocialLogin?: (provider: string) => Promise<void>
   className?: string
 }
@@ -138,7 +142,8 @@ export function AppAuth1({
   onSocialLogin,
   className,
 }: AppAuth1Props) {
-  const defaults = variant === "signin" ? pageAuth1Defaults.signin : pageAuth1Defaults.signup
+  const defaults =
+    variant === "signin" ? pageAuth1Defaults.signin : pageAuth1Defaults.signup
 
   const finalTitle = title || defaults.title
   const finalDescription = description || defaults.description
@@ -147,7 +152,10 @@ export function AppAuth1({
   const finalAltText = altText || defaults.altText
   const finalAltLinkText = altLinkText || defaults.altLinkText
   const finalAltLinkHref = altLinkHref || defaults.altLinkHref
-  const finalForgotPasswordHref = forgotPasswordHref !== undefined ? forgotPasswordHref : defaults.forgotPasswordHref
+  const finalForgotPasswordHref =
+    forgotPasswordHref !== undefined
+      ? forgotPasswordHref
+      : defaults.forgotPasswordHref
 
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
@@ -162,10 +170,17 @@ export function AppAuth1({
 
     try {
       if (onSubmit) {
-        await onSubmit({ email, password, ...(variant === "signup" ? { name } : {}) })
+        await onSubmit({
+          email,
+          password,
+          ...(variant === "signup" ? { name } : {}),
+        })
       }
     } catch (err: any) {
-      setError(err?.message || `Failed to ${variant === "signin" ? "sign in" : "sign up"}. Please try again.`)
+      setError(
+        err?.message ||
+          `Failed to ${variant === "signin" ? "sign in" : "sign up"}. Please try again.`
+      )
     } finally {
       setIsLoading(false)
     }
@@ -215,7 +230,10 @@ export function AppAuth1({
                       className="hover:text-muted-foreground hover:bg-transparent"
                     >
                       {provider.icon}
-                      {variant === "signin" ? "Login with" : "Sign up with"} {provider.name}
+                      {variant === "signin"
+                        ? "Login with"
+                        : "Sign up with"}{" "}
+                      {provider.name}
                     </Button>
                   ))}
                 </div>
@@ -289,7 +307,11 @@ export function AppAuth1({
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     disabled={isLoading}
-                    placeholder={variant === "signup" ? "Create a strong password" : undefined}
+                    placeholder={
+                      variant === "signup"
+                        ? "Create a strong password"
+                        : undefined
+                    }
                   />
                   {variant === "signup" && (
                     <p className="text-muted-foreground text-xs">

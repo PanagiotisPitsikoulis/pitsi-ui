@@ -5,9 +5,34 @@
     "categories": ["application", "auth"]
   },
   {
+    "name": "app-block-viewer-1",
+    "description": "Block viewer with resizable preview, code panel, file tree, and device toggles",
+    "categories": ["application", "docs"]
+  },
+  {
+    "name": "app-blog-list-1",
+    "description": "Blog listing page with category sidebar, search, and pagination",
+    "categories": ["application", "blog"]
+  },
+  {
+    "name": "app-blog-post-1",
+    "description": "Blog post viewer with table of contents, author card, and share buttons",
+    "categories": ["application", "blog"]
+  },
+  {
+    "name": "app-component-preview-1",
+    "description": "Component preview with code tabs, readiness badges, and copy functionality",
+    "categories": ["application", "docs"]
+  },
+  {
     "name": "app-dashboard-1",
     "description": "Dashboard page with sidebar navigation, stats cards, and upgrade prompt",
     "categories": ["application", "dashboard"]
+  },
+  {
+    "name": "app-docs-viewer-1",
+    "description": "Documentation page viewer with table of contents, navigation, and copy functionality",
+    "categories": ["application", "docs"]
   },
   {
     "name": "app-gym-gains-1",
@@ -75,6 +100,16 @@
     "categories": ["application"]
   },
   {
+    "name": "app-settings-1",
+    "description": "Settings page with sidebar navigation, profile form, notifications, and appearance options",
+    "categories": ["application", "dashboard"]
+  },
+  {
+    "name": "app-tool-layout-1",
+    "description": "Interactive tool layout with sidebar controls, preview panel, and mobile view toggle",
+    "categories": ["application", "tools"]
+  },
+  {
     "name": "auth-1",
     "description": "Centered login form with social sign-in options",
     "categories": ["auth"]
@@ -133,6 +168,31 @@
     "name": "blog-6",
     "description": "Blog with sidebar (newsletter, categories, recent, tags)",
     "categories": ["blog", "landing"]
+  },
+  {
+    "name": "blog-post-1",
+    "description": "Full blog post page with featured image, author bio, table of contents, and related posts for plant shop",
+    "categories": ["blog-post", "pages"]
+  },
+  {
+    "name": "blog-post-2",
+    "description": "Full blog post page with featured image, author bio, table of contents, and related posts for travel site",
+    "categories": ["blog-post", "pages"]
+  },
+  {
+    "name": "blog-post-3",
+    "description": "Full blog post page with featured image, author bio, table of contents, and related posts for yacht/boat site",
+    "categories": ["blog-post", "pages"]
+  },
+  {
+    "name": "blog-post-4",
+    "description": "Full blog post page with featured image, author bio, table of contents, and related posts for fitness site",
+    "categories": ["blog-post", "pages"]
+  },
+  {
+    "name": "blog-post-5",
+    "description": "Full blog post page with featured image, author bio, table of contents, and related posts for library site",
+    "categories": ["blog-post", "pages"]
   },
   {
     "name": "contact-1",
@@ -748,6 +808,31 @@
     "name": "products-6",
     "description": "Product comparison layout with features",
     "categories": ["products", "landing"]
+  },
+  {
+    "name": "search-1",
+    "description": "Search page with category filters and results grid for plant shop",
+    "categories": ["search", "pages"]
+  },
+  {
+    "name": "search-2",
+    "description": "Search page with category filters and results grid for travel site",
+    "categories": ["search", "pages"]
+  },
+  {
+    "name": "search-3",
+    "description": "Search page with category filters and results grid for yacht/boat site",
+    "categories": ["search", "pages"]
+  },
+  {
+    "name": "search-4",
+    "description": "Search page with category filters and results grid for fitness site",
+    "categories": ["search", "pages"]
+  },
+  {
+    "name": "search-5",
+    "description": "Search page with category filters and results list for library site",
+    "categories": ["search", "pages"]
   },
   {
     "name": "stats-1",

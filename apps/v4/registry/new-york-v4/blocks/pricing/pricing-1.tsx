@@ -10,6 +10,7 @@ import {
   type PricingBlockProps,
 } from "@/lib/blocks/pricing.types"
 import { cn } from "@/lib/utils"
+import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   useBlockContext,
@@ -76,36 +77,12 @@ export function Pricing1({ content = {}, classNames = {} }: PricingBlockProps) {
         <div
           className={cn("relative z-10 container px-6", classNames.container)}
         >
-          <div className={cn("mb-20 text-center", classNames.header?.root)}>
-            {badge && (
-              <p
-                className={cn(
-                  "text-primary mb-4 text-sm font-medium tracking-[0.3em] uppercase",
-                  classNames.header?.badge
-                )}
-              >
-                {badge}
-              </p>
-            )}
-            <h2
-              className={cn(
-                "font-display text-foreground mb-4 text-3xl font-bold md:text-5xl",
-                classNames.header?.title
-              )}
-            >
-              {title}
-            </h2>
-            {description && (
-              <p
-                className={cn(
-                  "text-muted-foreground mx-auto max-w-2xl text-lg",
-                  classNames.header?.description
-                )}
-              >
-                {description}
-              </p>
-            )}
-          </div>
+          <BlockHeader
+            badge={badge}
+            title={title}
+            description={description}
+            classNames={classNames.header}
+          />
           <div
             className={cn(
               "mx-auto flex max-w-5xl flex-col items-center justify-center gap-8 lg:flex-row lg:gap-0",

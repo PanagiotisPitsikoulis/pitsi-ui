@@ -74,7 +74,7 @@ export function AppGymHistory1() {
       <div className="mx-auto max-w-3xl space-y-6">
         {/* Header */}
         <div>
-          <h1 className="text-foreground text-2xl font-bold tracking-tight">
+          <h1 className="display text-foreground text-2xl font-bold tracking-tight">
             History
           </h1>
           <p className="text-muted-foreground mt-1 text-sm">
@@ -127,7 +127,7 @@ export function AppGymHistory1() {
             >
               <ChevronLeft className="size-4" />
             </Button>
-            <h2 className="text-lg font-semibold">{monthName}</h2>
+            <h2 className="display text-lg font-semibold">{monthName}</h2>
             <Button
               variant="ghost"
               size="icon"
@@ -231,7 +231,7 @@ export function AppGymHistory1() {
                     typeColors[selectedWorkout.type]
                   )}
                 />
-                <h3 className="font-semibold">
+                <h3 className="display font-semibold">
                   {typeLabels[selectedWorkout.type]} Day
                 </h3>
               </div>

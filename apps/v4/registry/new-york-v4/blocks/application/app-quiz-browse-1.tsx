@@ -119,7 +119,7 @@ export function AppQuizBrowse1({ onStartQuiz }: QuizBrowseProps) {
     <div className="p-4">
       <div className="mx-auto max-w-5xl space-y-4">
         <div>
-          <h1 className="text-foreground text-3xl font-bold tracking-tight">
+          <h1 className="display text-foreground text-3xl font-bold tracking-tight">
             Quizzes
           </h1>
           <p className="text-muted-foreground">Browse and start a new quiz</p>

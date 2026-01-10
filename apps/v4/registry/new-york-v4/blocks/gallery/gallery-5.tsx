@@ -5,6 +5,7 @@ import Image from "next/image"
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
+import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 interface GalleryBlockProps {
@@ -62,24 +63,12 @@ export function Gallery5({ content = {}, classNames = {} }: GalleryBlockProps) {
         className={cn("container px-6 py-16 md:py-24", classNames.container)}
       >
         {/* Header */}
-        <div className="mb-12 text-center">
-          <h2
-            className={cn(
-              "text-foreground mb-4 text-3xl font-bold md:text-4xl",
-              classNames.header?.title
-            )}
-          >
-            {title}
-          </h2>
-          <p
-            className={cn(
-              "text-muted-foreground mx-auto max-w-2xl",
-              classNames.header?.description
-            )}
-          >
-            {description}
-          </p>
-        </div>
+        <BlockHeader
+          title={title}
+          description={description}
+          spacing="compact"
+          classNames={classNames.header}
+        />
 
         {/* Uniform Grid */}
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3">

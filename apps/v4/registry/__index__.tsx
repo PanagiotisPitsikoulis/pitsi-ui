@@ -307,6 +307,26 @@ export const Index: Record<string, Record<string, any>> = {
       tier: "free",
       readiness: "production",
     },
+    "collapsible-gallery": {
+      name: "collapsible-gallery",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: ["collapsible"],
+      files: [{
+        path: "registry/new-york-v4/ui/collapsible-gallery.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/ui/collapsible-gallery.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "collapsible-gallery"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
     "command": {
       name: "command",
       description: "",
@@ -2587,6 +2607,86 @@ export const Index: Record<string, Record<string, any>> = {
       tier: "free",
       readiness: "production",
     },
+    "app-block-viewer-1": {
+      name: "app-block-viewer-1",
+      description: "Block viewer with resizable preview, code panel, file tree, and device toggles",
+      type: "registry:block",
+      registryDependencies: ["badge","button","resizable","separator","tabs","toggle-group"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-block-viewer-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-block-viewer-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-block-viewer-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","docs"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "app-blog-list-1": {
+      name: "app-blog-list-1",
+      description: "Blog listing page with category sidebar, search, and pagination",
+      type: "registry:block",
+      registryDependencies: ["badge","button","card","input"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-blog-list-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-blog-list-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-blog-list-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","blog"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "app-blog-post-1": {
+      name: "app-blog-post-1",
+      description: "Blog post viewer with table of contents, author card, and share buttons",
+      type: "registry:block",
+      registryDependencies: ["avatar","badge","button","separator"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-blog-post-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-blog-post-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-blog-post-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","blog"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "app-component-preview-1": {
+      name: "app-component-preview-1",
+      description: "Component preview with code tabs, readiness badges, and copy functionality",
+      type: "registry:block",
+      registryDependencies: ["badge","button","tabs"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-component-preview-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-component-preview-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-component-preview-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","docs"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
     "app-dashboard-1": {
       name: "app-dashboard-1",
       description: "Dashboard page with sidebar navigation, stats cards, and upgrade prompt",
@@ -2603,6 +2703,26 @@ export const Index: Record<string, Record<string, any>> = {
         return { default: mod.default || mod[exportName] }
       }),
       categories: ["application","dashboard"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "app-docs-viewer-1": {
+      name: "app-docs-viewer-1",
+      description: "Documentation page viewer with table of contents, navigation, and copy functionality",
+      type: "registry:block",
+      registryDependencies: ["button","sheet"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-docs-viewer-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-docs-viewer-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-docs-viewer-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","docs"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -2867,6 +2987,46 @@ export const Index: Record<string, Record<string, any>> = {
       tier: "free",
       readiness: "beta",
     },
+    "app-settings-1": {
+      name: "app-settings-1",
+      description: "Settings page with sidebar navigation, profile form, notifications, and appearance options",
+      type: "registry:block",
+      registryDependencies: ["avatar","button","card","input","label","select","separator","switch","textarea"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-settings-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-settings-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-settings-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","dashboard"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "app-tool-layout-1": {
+      name: "app-tool-layout-1",
+      description: "Interactive tool layout with sidebar controls, preview panel, and mobile view toggle",
+      type: "registry:block",
+      registryDependencies: ["button","card","label","scroll-area","separator","slider","switch","tabs"],
+      files: [{
+        path: "registry/new-york-v4/blocks/application/app-tool-layout-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/application/app-tool-layout-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "app-tool-layout-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application","tools"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
     "auth-1": {
       name: "auth-1",
       description: "Centered login form with social sign-in options",
@@ -3103,6 +3263,106 @@ export const Index: Record<string, Record<string, any>> = {
         return { default: mod.default || mod[exportName] }
       }),
       categories: ["blog","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "blog-post-1": {
+      name: "blog-post-1",
+      description: "Full blog post page with featured image, author bio, table of contents, and related posts for plant shop",
+      type: "registry:block",
+      registryDependencies: ["button","badge","avatar"],
+      files: [{
+        path: "registry/new-york-v4/blocks/blog-post/blog-post-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/blog-post/blog-post-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "blog-post-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["blog-post","pages"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "blog-post-2": {
+      name: "blog-post-2",
+      description: "Full blog post page with featured image, author bio, table of contents, and related posts for travel site",
+      type: "registry:block",
+      registryDependencies: ["button","badge","avatar"],
+      files: [{
+        path: "registry/new-york-v4/blocks/blog-post/blog-post-2.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/blog-post/blog-post-2.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "blog-post-2"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["blog-post","pages"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "blog-post-3": {
+      name: "blog-post-3",
+      description: "Full blog post page with featured image, author bio, table of contents, and related posts for yacht/boat site",
+      type: "registry:block",
+      registryDependencies: ["button","badge","avatar"],
+      files: [{
+        path: "registry/new-york-v4/blocks/blog-post/blog-post-3.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/blog-post/blog-post-3.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "blog-post-3"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["blog-post","pages"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "blog-post-4": {
+      name: "blog-post-4",
+      description: "Full blog post page with featured image, author bio, table of contents, and related posts for fitness site",
+      type: "registry:block",
+      registryDependencies: ["button","badge","avatar"],
+      files: [{
+        path: "registry/new-york-v4/blocks/blog-post/blog-post-4.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/blog-post/blog-post-4.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "blog-post-4"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["blog-post","pages"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "blog-post-5": {
+      name: "blog-post-5",
+      description: "Full blog post page with featured image, author bio, table of contents, and related posts for library site",
+      type: "registry:block",
+      registryDependencies: ["button","badge","avatar"],
+      files: [{
+        path: "registry/new-york-v4/blocks/blog-post/blog-post-5.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/blog-post/blog-post-5.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "blog-post-5"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["blog-post","pages"],
       meta: undefined,
       tier: "free",
       readiness: "production",
@@ -3891,7 +4151,7 @@ export const Index: Record<string, Record<string, any>> = {
       name: "footer-6",
       description: "App download footer with store badges and QR code",
       type: "registry:block",
-      registryDependencies: undefined,
+      registryDependencies: ["qr-code"],
       files: [{
         path: "registry/new-york-v4/blocks/footer/footer-6.tsx",
         type: "registry:block",
@@ -5567,6 +5827,106 @@ export const Index: Record<string, Record<string, any>> = {
       tier: "free",
       readiness: "production",
     },
+    "search-1": {
+      name: "search-1",
+      description: "Search page with category filters and results grid for plant shop",
+      type: "registry:block",
+      registryDependencies: ["button","badge","input"],
+      files: [{
+        path: "registry/new-york-v4/blocks/search/search-1.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/search/search-1.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "search-1"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["search","pages"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "search-2": {
+      name: "search-2",
+      description: "Search page with category filters and results grid for travel site",
+      type: "registry:block",
+      registryDependencies: ["button","badge","input"],
+      files: [{
+        path: "registry/new-york-v4/blocks/search/search-2.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/search/search-2.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "search-2"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["search","pages"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "search-3": {
+      name: "search-3",
+      description: "Search page with category filters and results grid for yacht/boat site",
+      type: "registry:block",
+      registryDependencies: ["button","badge","input"],
+      files: [{
+        path: "registry/new-york-v4/blocks/search/search-3.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/search/search-3.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "search-3"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["search","pages"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "search-4": {
+      name: "search-4",
+      description: "Search page with category filters and results grid for fitness site",
+      type: "registry:block",
+      registryDependencies: ["button","badge","input"],
+      files: [{
+        path: "registry/new-york-v4/blocks/search/search-4.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/search/search-4.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "search-4"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["search","pages"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "search-5": {
+      name: "search-5",
+      description: "Search page with category filters and results list for library site",
+      type: "registry:block",
+      registryDependencies: ["button","badge","input"],
+      files: [{
+        path: "registry/new-york-v4/blocks/search/search-5.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/search/search-5.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "search-5"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["search","pages"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
     "stats-1": {
       name: "stats-1",
       description: "Plant shop statistics section",
@@ -6087,6 +6447,26 @@ export const Index: Record<string, Record<string, any>> = {
       tier: undefined,
       readiness: "production",
     },
+    "qr-code": {
+      name: "qr-code",
+      description: "QR code component with label and description, styled for the design system.",
+      type: "registry:lib",
+      registryDependencies: ["utils"],
+      files: [{
+        path: "registry/new-york-v4/lib/qr-code.tsx",
+        type: "registry:lib",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/lib/qr-code.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "qr-code"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: undefined,
+      meta: undefined,
+      tier: undefined,
+      readiness: "production",
+    },
     "recursive-clone-children": {
       name: "recursive-clone-children",
       description: "Recursively clone React children and inject props into components by display name.",
@@ -6220,6 +6600,46 @@ export const Index: Record<string, Record<string, any>> = {
       component: React.lazy(async () => {
         const mod = await import("@/registry/new-york-v4/lib/templates.ts")
         const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "templates"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: undefined,
+      meta: undefined,
+      tier: undefined,
+      readiness: "production",
+    },
+    "block-header": {
+      name: "block-header",
+      description: "Reusable section header component for blocks with badge, title, and description.",
+      type: "registry:lib",
+      registryDependencies: ["utils","polymorphic"],
+      files: [{
+        path: "registry/new-york-v4/lib/block-header.tsx",
+        type: "registry:lib",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/lib/block-header.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "block-header"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: undefined,
+      meta: undefined,
+      tier: undefined,
+      readiness: "production",
+    },
+    "hero-text": {
+      name: "hero-text",
+      description: "Polymorphic hero text component with badge, title, and description for hero sections.",
+      type: "registry:lib",
+      registryDependencies: ["utils","polymorphic"],
+      files: [{
+        path: "registry/new-york-v4/lib/hero-text.tsx",
+        type: "registry:lib",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/lib/hero-text.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "hero-text"
         return { default: mod.default || mod[exportName] }
       }),
       categories: undefined,
@@ -7583,6 +8003,26 @@ export const Index: Record<string, Record<string, any>> = {
         return { default: mod.default || mod[exportName] }
       }),
       categories: ["core-components"],
+      meta: undefined,
+      tier: "free",
+      readiness: "production",
+    },
+    "collapsible-gallery-demo": {
+      name: "collapsible-gallery-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["collapsible-gallery"],
+      files: [{
+        path: "registry/new-york-v4/examples/collapsible-gallery-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/examples/collapsible-gallery-demo.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "collapsible-gallery-demo"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["application"],
       meta: undefined,
       tier: "free",
       readiness: "production",

@@ -4,6 +4,7 @@ import Link from "next/link"
 
 import { type FooterBlockProps } from "@/lib/blocks/footer.types"
 import { cn } from "@/lib/utils"
+import { QRCode } from "@/registry/new-york-v4/lib/qr-code"
 
 const footer6Defaults = {
   logo: {
@@ -16,6 +17,7 @@ const footer6Defaults = {
     android: { href: "#", label: "Get it on Google Play" },
   },
   qrCode: {
+    href: "https://example.com/download",
     label: "Scan to download",
     description: "Point your camera at the code",
   },
@@ -109,31 +111,12 @@ export function Footer6({ content = {}, classNames = {} }: FooterBlockProps) {
               </div>
 
               {/* QR Code */}
-              <div className="bg-background flex flex-col items-center rounded-lg p-4">
-                <div className="bg-foreground mb-2 h-24 w-24 rounded">
-                  {/* QR Code placeholder */}
-                  <svg
-                    className="text-background h-full w-full p-2"
-                    viewBox="0 0 100 100"
-                    fill="currentColor"
-                  >
-                    <rect x="10" y="10" width="30" height="30" />
-                    <rect x="60" y="10" width="30" height="30" />
-                    <rect x="10" y="60" width="30" height="30" />
-                    <rect x="45" y="45" width="10" height="10" />
-                    <rect x="60" y="60" width="10" height="10" />
-                    <rect x="80" y="60" width="10" height="10" />
-                    <rect x="60" y="80" width="10" height="10" />
-                    <rect x="80" y="80" width="10" height="10" />
-                  </svg>
-                </div>
-                <div className="text-foreground text-xs font-medium">
-                  {footer6Defaults.qrCode.label}
-                </div>
-                <div className="text-muted-foreground text-xs">
-                  {footer6Defaults.qrCode.description}
-                </div>
-              </div>
+              <QRCode
+                value={footer6Defaults.qrCode.href}
+                size={96}
+                label={footer6Defaults.qrCode.label}
+                description={footer6Defaults.qrCode.description}
+              />
             </div>
           </div>
 

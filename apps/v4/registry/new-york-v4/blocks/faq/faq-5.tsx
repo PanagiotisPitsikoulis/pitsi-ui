@@ -4,6 +4,7 @@ import { useState } from "react"
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
+import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 
 interface FaqBlockProps {
   content?: {
@@ -109,14 +110,12 @@ export function Faq5({ content = {}, classNames = {} }: FaqBlockProps) {
         className={cn("container px-6 py-16 md:py-24", classNames.container)}
       >
         {/* Header */}
-        <h2
-          className={cn(
-            "text-foreground mb-8 text-center text-3xl font-bold md:text-4xl",
-            classNames.header?.title
-          )}
-        >
-          {title}
-        </h2>
+        <BlockHeader
+          title={title}
+          spacing="none"
+          className="mb-8"
+          classNames={classNames.header}
+        />
 
         {/* Category Tabs */}
         <div className="mb-10 flex flex-wrap justify-center gap-2">

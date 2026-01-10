@@ -6,6 +6,7 @@ import Link from "next/link"
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
+import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 interface FaqBlockProps {
@@ -79,24 +80,12 @@ export function Faq6({ content = {}, classNames = {} }: FaqBlockProps) {
       >
         <div className="mx-auto max-w-3xl">
           {/* Header */}
-          <div className="mb-12 text-center">
-            <h2
-              className={cn(
-                "text-foreground mb-4 text-3xl font-bold md:text-4xl",
-                classNames.header?.title
-              )}
-            >
-              {title}
-            </h2>
-            <p
-              className={cn(
-                "text-muted-foreground",
-                classNames.header?.description
-              )}
-            >
-              {description}
-            </p>
-          </div>
+          <BlockHeader
+            title={title}
+            description={description}
+            spacing="compact"
+            classNames={classNames.header}
+          />
 
           {/* Questions */}
           <div className="mb-12 space-y-3">

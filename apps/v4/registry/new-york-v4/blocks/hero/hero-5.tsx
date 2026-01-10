@@ -5,6 +5,7 @@ import Link from "next/link"
 
 import { type HeroBlockProps } from "@/lib/blocks/hero.types"
 import { cn } from "@/lib/utils"
+import { HeroText } from "@/registry/new-york-v4/lib/hero-text"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 import { HeroButton } from "../../ui/hero-button"
@@ -61,43 +62,22 @@ export function Hero5({ content = {}, classNames = {} }: HeroBlockProps) {
           <div className="flex flex-col gap-4">
             {/* Badge + Title Card */}
             <div className="bg-muted flex flex-1 flex-col justify-center rounded-3xl p-8 lg:p-12">
-              {badge && (
-                <p
-                  className={cn(
-                    "text-brand mb-4 text-sm font-semibold tracking-widest uppercase",
-                    classNames.header?.badge
-                  )}
-                >
-                  {badge}
-                </p>
-              )}
-              <h1
-                className={cn(
-                  "display text-4xl leading-[1.1] tracking-tight sm:text-5xl md:text-6xl",
-                  classNames.header?.title
-                )}
-              >
-                {title.split("\n").map((line, i) => (
-                  <span key={i}>
-                    {line}
-                    {i < title.split("\n").length - 1 && <br />}
-                  </span>
-                ))}
-              </h1>
+              <HeroText
+                badge={badge}
+                title={title}
+                size="large"
+                classNames={classNames.header}
+              />
             </div>
 
             {/* Description Card */}
             <div className="bg-muted flex flex-col justify-center rounded-3xl p-8">
-              {description && (
-                <p
-                  className={cn(
-                    "text-muted-foreground text-lg md:text-xl",
-                    classNames.header?.description
-                  )}
-                >
-                  {description}
-                </p>
-              )}
+              <HeroText
+                description={description}
+                title=""
+                size="large"
+                classNames={classNames.header}
+              />
             </div>
 
             {/* Buttons Card */}

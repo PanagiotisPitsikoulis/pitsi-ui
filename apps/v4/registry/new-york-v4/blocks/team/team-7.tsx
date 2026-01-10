@@ -4,6 +4,7 @@ import Link from "next/link"
 import { Linkedin } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 
 interface TeamBlockProps {
   content?: {
@@ -78,24 +79,13 @@ export function Team7({ content = {}, classNames = {} }: TeamBlockProps) {
       <div
         className={cn("container px-6 py-16 md:py-24", classNames.container)}
       >
-        <div className="mb-12">
-          <h2
-            className={cn(
-              "text-foreground mb-4 text-3xl font-bold md:text-4xl",
-              classNames.header?.title
-            )}
-          >
-            {title}
-          </h2>
-          <p
-            className={cn(
-              "text-muted-foreground max-w-2xl",
-              classNames.header?.description
-            )}
-          >
-            {description}
-          </p>
-        </div>
+        <BlockHeader
+          title={title}
+          description={description}
+          align="left"
+          spacing="compact"
+          classNames={classNames.header}
+        />
 
         <div className="space-y-12">
           {departments.map((dept, i) => (

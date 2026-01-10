@@ -33,7 +33,7 @@ export function AppGymProfile1() {
       <div className="mx-auto max-w-3xl space-y-8">
         {/* Header */}
         <div>
-          <h1 className="text-foreground text-2xl font-bold tracking-tight">
+          <h1 className="display text-foreground text-2xl font-bold tracking-tight">
             Profile
           </h1>
           <p className="text-muted-foreground mt-1 text-sm">
@@ -87,7 +87,7 @@ export function AppGymProfile1() {
         {/* Preferences */}
         <div className="bg-muted rounded-xl">
           <div className="p-6">
-            <h2 className="font-semibold">Preferences</h2>
+            <h2 className="display font-semibold">Preferences</h2>
             <p className="text-muted-foreground mt-1 text-sm">
               Customize your workout experience
             </p>
@@ -168,7 +168,7 @@ export function AppGymProfile1() {
 
         {/* Stats */}
         <div className="bg-muted rounded-xl p-6">
-          <h2 className="font-semibold">Your Stats</h2>
+          <h2 className="display font-semibold">Your Stats</h2>
           <p className="text-muted-foreground mt-1 text-sm">
             All-time training statistics
           </p>

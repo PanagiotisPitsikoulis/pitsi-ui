@@ -39,6 +39,109 @@ export const blocks: Registry["items"] = [
     ],
   },
   {
+    name: "app-block-viewer-1",
+    type: "registry:block",
+    description:
+      "Block viewer with resizable preview, code panel, file tree, and device toggles",
+    registryDependencies: [
+      "badge",
+      "button",
+      "resizable",
+      "separator",
+      "tabs",
+      "toggle-group",
+    ],
+    categories: ["application", "docs"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "application",
+      order: 5,
+      palette: "neutral",
+      typography: "modern",
+      tint: "base",
+    },
+    files: [
+      {
+        path: "blocks/application/app-block-viewer-1.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "app-blog-list-1",
+    type: "registry:block",
+    description:
+      "Blog listing page with category sidebar, search, and pagination",
+    registryDependencies: ["badge", "button", "card", "input"],
+    categories: ["application", "blog"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "application",
+      order: 6,
+      palette: "neutral",
+      typography: "modern",
+      tint: "base",
+    },
+    files: [
+      {
+        path: "blocks/application/app-blog-list-1.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "app-blog-post-1",
+    type: "registry:block",
+    description:
+      "Blog post viewer with table of contents, author card, and share buttons",
+    registryDependencies: ["avatar", "badge", "button", "separator"],
+    categories: ["application", "blog"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "application",
+      order: 7,
+      palette: "neutral",
+      typography: "modern",
+      tint: "base",
+    },
+    files: [
+      {
+        path: "blocks/application/app-blog-post-1.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "app-component-preview-1",
+    type: "registry:block",
+    description:
+      "Component preview with code tabs, readiness badges, and copy functionality",
+    registryDependencies: ["badge", "button", "tabs"],
+    categories: ["application", "docs"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "application",
+      order: 4,
+      palette: "neutral",
+      typography: "modern",
+      tint: "base",
+    },
+    files: [
+      {
+        path: "blocks/application/app-component-preview-1.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
     name: "app-dashboard-1",
     type: "registry:block",
     description:
@@ -58,6 +161,30 @@ export const blocks: Registry["items"] = [
     files: [
       {
         path: "blocks/application/app-dashboard-1.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "app-docs-viewer-1",
+    type: "registry:block",
+    description:
+      "Documentation page viewer with table of contents, navigation, and copy functionality",
+    registryDependencies: ["button", "sheet"],
+    categories: ["application", "docs"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "application",
+      order: 3,
+      palette: "neutral",
+      typography: "modern",
+      tint: "base",
+    },
+    files: [
+      {
+        path: "blocks/application/app-docs-viewer-1.tsx",
         type: "registry:block",
       },
     ],
@@ -396,6 +523,73 @@ export const blocks: Registry["items"] = [
     ],
   },
   {
+    name: "app-settings-1",
+    type: "registry:block",
+    description:
+      "Settings page with sidebar navigation, profile form, notifications, and appearance options",
+    registryDependencies: [
+      "avatar",
+      "button",
+      "card",
+      "input",
+      "label",
+      "select",
+      "separator",
+      "switch",
+      "textarea",
+    ],
+    categories: ["application", "dashboard"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "application",
+      order: 9,
+      palette: "neutral",
+      typography: "modern",
+      tint: "base",
+    },
+    files: [
+      {
+        path: "blocks/application/app-settings-1.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "app-tool-layout-1",
+    type: "registry:block",
+    description:
+      "Interactive tool layout with sidebar controls, preview panel, and mobile view toggle",
+    registryDependencies: [
+      "button",
+      "card",
+      "label",
+      "scroll-area",
+      "separator",
+      "slider",
+      "switch",
+      "tabs",
+    ],
+    categories: ["application", "tools"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "application",
+      order: 8,
+      palette: "neutral",
+      typography: "modern",
+      tint: "base",
+    },
+    files: [
+      {
+        path: "blocks/application/app-tool-layout-1.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
     name: "auth-1",
     type: "registry:block",
     description: "Centered login form with social sign-in options",
@@ -665,6 +859,131 @@ export const blocks: Registry["items"] = [
     files: [
       {
         path: "blocks/blog/blog-6.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "blog-post-1",
+    type: "registry:block",
+    description:
+      "Full blog post page with featured image, author bio, table of contents, and related posts for plant shop",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button", "badge", "avatar"],
+    categories: ["blog-post", "pages"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-plants",
+      blockType: "blog-post",
+      order: 1,
+      palette: "sage",
+      typography: "elegant",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/blog-post/blog-post-1.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "blog-post-2",
+    type: "registry:block",
+    description:
+      "Full blog post page with featured image, author bio, table of contents, and related posts for travel site",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button", "badge", "avatar"],
+    categories: ["blog-post", "pages"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "blog-post",
+      order: 1,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/blog-post/blog-post-2.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "blog-post-3",
+    type: "registry:block",
+    description:
+      "Full blog post page with featured image, author bio, table of contents, and related posts for yacht/boat site",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button", "badge", "avatar"],
+    categories: ["blog-post", "pages"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-boat",
+      blockType: "blog-post",
+      order: 1,
+      palette: "azure",
+      typography: "classic",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/blog-post/blog-post-3.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "blog-post-4",
+    type: "registry:block",
+    description:
+      "Full blog post page with featured image, author bio, table of contents, and related posts for fitness site",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button", "badge", "avatar"],
+    categories: ["blog-post", "pages"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-fitness",
+      blockType: "blog-post",
+      order: 1,
+      palette: "neon",
+      typography: "futuristic",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/blog-post/blog-post-4.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "blog-post-5",
+    type: "registry:block",
+    description:
+      "Full blog post page with featured image, author bio, table of contents, and related posts for library site",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button", "badge", "avatar"],
+    categories: ["blog-post", "pages"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "blog-post",
+      order: 1,
+      palette: "slate",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/blog-post/blog-post-5.tsx",
         type: "registry:block",
       },
     ],
@@ -1572,6 +1891,7 @@ export const blocks: Registry["items"] = [
     name: "footer-6",
     type: "registry:block",
     description: "App download footer with store badges and QR code",
+    registryDependencies: ["qr-code"],
     categories: ["footer", "landing"],
     tier: "free",
     readiness: "production",
@@ -3573,6 +3893,131 @@ export const blocks: Registry["items"] = [
     files: [
       {
         path: "blocks/products/products-6.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "search-1",
+    type: "registry:block",
+    description:
+      "Search page with category filters and results grid for plant shop",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button", "badge", "input"],
+    categories: ["search", "pages"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-plants",
+      blockType: "search",
+      order: 1,
+      palette: "sage",
+      typography: "elegant",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/search/search-1.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "search-2",
+    type: "registry:block",
+    description:
+      "Search page with category filters and results grid for travel site",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button", "badge", "input"],
+    categories: ["search", "pages"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "search",
+      order: 1,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/search/search-2.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "search-3",
+    type: "registry:block",
+    description:
+      "Search page with category filters and results grid for yacht/boat site",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button", "badge", "input"],
+    categories: ["search", "pages"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-boat",
+      blockType: "search",
+      order: 1,
+      palette: "azure",
+      typography: "classic",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/search/search-3.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "search-4",
+    type: "registry:block",
+    description:
+      "Search page with category filters and results grid for fitness site",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button", "badge", "input"],
+    categories: ["search", "pages"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-fitness",
+      blockType: "search",
+      order: 1,
+      palette: "neon",
+      typography: "futuristic",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/search/search-4.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "search-5",
+    type: "registry:block",
+    description:
+      "Search page with category filters and results list for library site",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button", "badge", "input"],
+    categories: ["search", "pages"],
+    tier: "free",
+    readiness: "production",
+    blockConfig: {
+      template: "service-library",
+      blockType: "search",
+      order: 1,
+      palette: "slate",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/search/search-5.tsx",
         type: "registry:block",
       },
     ],

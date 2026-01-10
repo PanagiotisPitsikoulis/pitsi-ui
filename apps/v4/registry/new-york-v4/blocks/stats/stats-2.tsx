@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react"
 
 import { statsDefaults, type StatsBlockProps } from "@/lib/blocks/stats.types"
 import { cn } from "@/lib/utils"
+import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 
 // Extended stat item with numeric value for animation
 interface Stats2Item {
@@ -109,26 +110,11 @@ export function Stats2({ content = {}, classNames = {} }: StatsBlockProps) {
     <section className={cn("bg-white py-24 lg:py-32", classNames.root)}>
       <div className={cn("container px-6", classNames.container)}>
         {/* Header */}
-        <div className={cn("mb-16 text-center", classNames.header?.root)}>
-          {badge && (
-            <p
-              className={cn(
-                "mb-4 text-sm font-medium tracking-[0.3em] text-black/60 uppercase",
-                classNames.header?.badge
-              )}
-            >
-              {badge}
-            </p>
-          )}
-          <h2
-            className={cn(
-              "font-display text-4xl font-bold text-black md:text-5xl lg:text-6xl",
-              classNames.header?.title
-            )}
-          >
-            {title}
-          </h2>
-        </div>
+        <BlockHeader
+          badge={badge}
+          title={title}
+          classNames={classNames.header}
+        />
 
         {/* Stats Grid */}
         <div

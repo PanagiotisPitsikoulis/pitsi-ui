@@ -110,7 +110,7 @@ export function Testimonials6({
         <div className="mb-12 text-center">
           <h2
             className={cn(
-              "text-foreground mb-4 text-3xl font-bold md:text-4xl",
+              "text-foreground display mb-4 text-3xl font-bold md:text-6xl",
               classNames.header?.title
             )}
           >
@@ -130,7 +130,7 @@ export function Testimonials6({
           {caseStudies.map((study, i) => (
             <div
               key={i}
-              className="border-border group flex flex-col rounded-xl border p-6 transition-shadow hover:shadow-lg"
+              className="border-background group flex flex-col rounded-xl border p-6 shadow-lg transition-shadow"
             >
               {/* Company Header */}
               <div className="mb-6">
@@ -182,7 +182,7 @@ export function Testimonials6({
               </div>
 
               {/* CTA */}
-              <Button variant="outline" className="group/btn w-full" asChild>
+              <Button variant="default" className="group/btn w-full" asChild>
                 <Link href={study.href}>
                   Read full story
                   <DynamicIcon

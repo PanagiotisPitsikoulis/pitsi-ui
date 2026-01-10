@@ -96,7 +96,7 @@ function FilterDropdown({
               type="button"
               data-slot="filter-dropdown-trigger"
               className={cn(
-                "flex h-8 items-center gap-0.5 rounded-full px-2 transition-colors focus-visible:outline-none focus-visible:ring-0",
+                "flex h-8 items-center gap-0.5 rounded-full px-2 transition-colors focus-visible:ring-0 focus-visible:outline-none",
                 hasSelection
                   ? "bg-primary text-primary-foreground"
                   : "bg-background text-muted-foreground hover:bg-background/80 hover:text-foreground"

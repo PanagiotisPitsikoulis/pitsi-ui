@@ -2,8 +2,9 @@
 
 import Link from "next/link"
 
-import { type CTABlockProps } from "@/lib/blocks/cta.types"
+import { type CtaBlockProps } from "@/lib/blocks/cta.types"
 import { cn } from "@/lib/utils"
+import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { HeroButton } from "@/registry/new-york-v4/ui/hero-button"
 
@@ -14,7 +15,7 @@ const cta7Defaults = {
   secondaryCta: { label: "View on GitHub", href: "https://github.com" },
 }
 
-export function Cta7({ content = {}, classNames = {} }: CTABlockProps) {
+export function Cta7({ content = {}, classNames = {} }: CtaBlockProps) {
   const {
     title = cta7Defaults.title,
     description = cta7Defaults.description,
@@ -35,24 +36,15 @@ export function Cta7({ content = {}, classNames = {} }: CTABlockProps) {
           <div className="from-brand/20 pointer-events-none absolute inset-0 bg-gradient-to-br via-transparent to-transparent" />
 
           <div className="relative z-10">
-            <h2
-              className={cn(
-                "text-3xl font-bold tracking-tight md:text-4xl",
-                classNames.title
-              )}
-            >
-              {title}
-            </h2>
-            {description && (
-              <p
-                className={cn(
-                  "text-muted-foreground mx-auto mt-4 max-w-lg text-lg",
-                  classNames.description
-                )}
-              >
-                {description}
-              </p>
-            )}
+            <BlockHeader
+              title={title}
+              description={description}
+              spacing="none"
+              classNames={{
+                title: classNames.title,
+                description: cn("max-w-lg", classNames.description),
+              }}
+            />
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               {primaryCta && (

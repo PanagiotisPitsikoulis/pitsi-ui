@@ -72,7 +72,7 @@ function DashboardSidebar({
     >
       <nav className="space-y-6 py-4">
         <div>
-          <h3 className="text-muted-foreground mb-2 px-2 text-xs font-medium uppercase tracking-wider">
+          <h3 className="text-muted-foreground mb-2 px-2 text-xs font-medium tracking-wider uppercase">
             Dashboard
           </h3>
           <ul className="space-y-1">
@@ -95,7 +95,7 @@ function DashboardSidebar({
           </ul>
         </div>
         <div>
-          <h3 className="text-muted-foreground mb-2 px-2 text-xs font-medium uppercase tracking-wider">
+          <h3 className="text-muted-foreground mb-2 px-2 text-xs font-medium tracking-wider uppercase">
             Settings
           </h3>
           <ul className="space-y-1">
@@ -135,7 +135,7 @@ function PageHeader({
   return (
     <div className="flex flex-col gap-1">
       <div className="flex items-center gap-3">
-        <h1 className="text-2xl font-bold tracking-tight">{title}</h1>
+        <h1 className="display text-2xl font-bold tracking-tight">{title}</h1>
         {badge}
       </div>
       <p className="text-muted-foreground text-sm">{description}</p>

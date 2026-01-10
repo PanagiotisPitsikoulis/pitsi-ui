@@ -8,6 +8,7 @@ import {
   type TestimonialsBlockProps,
 } from "@/lib/blocks/testimonials.types"
 import { cn } from "@/lib/utils"
+import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 
 // Extended testimonial item with transformation stats (fitness-specific)
 interface Testimonials2Item {
@@ -94,36 +95,12 @@ export function Testimonials2({
     <section className={cn("bg-black py-24 lg:py-32", classNames.root)}>
       <div className={cn("container px-6", classNames.container)}>
         {/* Header */}
-        <div className={cn("mb-16 text-center", classNames.header?.root)}>
-          {badge && (
-            <p
-              className={cn(
-                "mb-4 text-sm font-medium tracking-[0.3em] text-white/60 uppercase",
-                classNames.header?.badge
-              )}
-            >
-              {badge}
-            </p>
-          )}
-          <h2
-            className={cn(
-              "font-display text-4xl font-bold text-white md:text-5xl lg:text-6xl",
-              classNames.header?.title
-            )}
-          >
-            {title}
-          </h2>
-          {description && (
-            <p
-              className={cn(
-                "mx-auto mt-6 max-w-2xl text-lg text-white/60",
-                classNames.header?.description
-              )}
-            >
-              {description}
-            </p>
-          )}
-        </div>
+        <BlockHeader
+          badge={badge}
+          title={title}
+          description={description}
+          classNames={classNames.header}
+        />
 
         {/* Testimonials Grid */}
         <div className={cn("grid gap-6 md:grid-cols-2", classNames.grid)}>

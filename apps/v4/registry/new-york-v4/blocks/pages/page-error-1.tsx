@@ -17,7 +17,7 @@ function StripedBackground({ className }: { className?: string }) {
         className
       )}
     >
-      <div className="container relative mx-auto h-full px-6">
+      <div className="relative container mx-auto h-full px-6">
         <div className="absolute inset-0 flex justify-between">
           {Array.from({ length: 7 }).map((_, i) => (
             <div key={i} className="bg-border/30 h-full w-px" />
@@ -111,10 +111,7 @@ export function PageError1({
 }: PageError1Props) {
   return (
     <div
-      className={cn(
-        "relative -mt-14 min-h-screen overflow-x-clip",
-        className
-      )}
+      className={cn("relative -mt-14 min-h-screen overflow-x-clip", className)}
     >
       <StripedBackground />
 
@@ -144,7 +141,7 @@ export function PageError1({
               <Spacer size="sm" sizeMobile="xs" />
 
               {/* Title */}
-              <h1 className="text-3xl font-bold leading-[1.1] tracking-tight md:text-4xl lg:text-5xl">
+              <h1 className="text-3xl leading-[1.1] font-bold tracking-tight md:text-4xl lg:text-5xl">
                 {title}
               </h1>
 
@@ -162,7 +159,9 @@ export function PageError1({
             <div className="flex flex-col gap-6">
               {/* Error Message */}
               <div>
-                <p className="text-muted-foreground leading-relaxed">{message}</p>
+                <p className="text-muted-foreground leading-relaxed">
+                  {message}
+                </p>
                 {errorDigest && (
                   <p className="text-muted-foreground mt-4 font-mono text-sm">
                     Error ID: {errorDigest}
@@ -182,10 +181,17 @@ export function PageError1({
                   </Button>
                 ) : (
                   <Button asChild size="lg" className="min-w-40">
-                    <Link href={primaryCta.href || "#"}>{primaryCta.label}</Link>
+                    <Link href={primaryCta.href || "#"}>
+                      {primaryCta.label}
+                    </Link>
                   </Button>
                 )}
-                <Button asChild variant="outline" size="lg" className="min-w-40">
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="min-w-40"
+                >
                   <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
                 </Button>
               </div>

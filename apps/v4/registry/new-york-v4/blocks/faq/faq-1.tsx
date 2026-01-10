@@ -2,6 +2,7 @@
 
 import { faqDefaults, type FaqBlockProps } from "@/lib/blocks/faq.types"
 import { cn } from "@/lib/utils"
+import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 import {
   Accordion,
   AccordionContent,
@@ -75,26 +76,12 @@ export function Faq1({ content = {}, classNames = {} }: FaqBlockProps) {
         aria-hidden="true"
       />
       <div className={cn("relative z-10 container px-6", classNames.container)}>
-        <div className={cn("mb-20 text-center", classNames.header?.root)}>
-          {badge && (
-            <p
-              className={cn(
-                "text-primary mb-4 text-sm font-medium tracking-[0.3em] uppercase",
-                classNames.header?.badge
-              )}
-            >
-              {badge}
-            </p>
-          )}
-          <h2
-            className={cn(
-              "font-display text-foreground text-3xl font-bold md:text-5xl",
-              classNames.header?.title
-            )}
-          >
-            {title}
-          </h2>
-        </div>
+        <BlockHeader
+          badge={badge}
+          title={title}
+          badgeColor="primary"
+          classNames={classNames.header}
+        />
         <div className="mx-auto max-w-2xl">
           <Accordion
             type="single"

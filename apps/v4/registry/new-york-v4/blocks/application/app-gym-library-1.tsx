@@ -162,7 +162,7 @@ export function AppGymLibrary1() {
       <div className="mx-auto max-w-3xl space-y-6">
         {/* Header */}
         <div>
-          <h1 className="text-foreground text-2xl font-bold tracking-tight">
+          <h1 className="display text-foreground text-2xl font-bold tracking-tight">
             Library
           </h1>
           <p className="text-muted-foreground mt-1 text-sm">

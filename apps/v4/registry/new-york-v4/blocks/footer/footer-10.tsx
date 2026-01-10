@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Moon, Sun, Monitor } from "lucide-react"
+import { Monitor, Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 
 import { type FooterBlockProps } from "@/lib/blocks/footer.types"
@@ -181,7 +181,9 @@ export function Footer10({ content = {}, classNames = {} }: FooterBlockProps) {
           <div className="grid grid-cols-2 gap-6 text-[13px] leading-relaxed tracking-[-0.15px] md:grid-cols-6">
             {/* Documentation */}
             <div className="flex flex-col items-start">
-              <h6 className="mb-2 font-medium">{sections.documentation.title}</h6>
+              <h6 className="mb-2 font-medium">
+                {sections.documentation.title}
+              </h6>
               {sections.documentation.links.map((link) => (
                 <div key={link.href} className="py-px">
                   <Link

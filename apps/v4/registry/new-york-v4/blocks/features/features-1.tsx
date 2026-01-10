@@ -8,6 +8,7 @@ import {
   type FeaturesBlockProps,
 } from "@/lib/blocks/features.types"
 import { cn } from "@/lib/utils"
+import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 
 export function Features1({
   content = {},
@@ -27,26 +28,11 @@ export function Features1({
   return (
     <section className={classNames.root}>
       <div className={cn("container px-6", classNames.container)}>
-        <div className={cn("mb-20 text-center", classNames.header?.root)}>
-          {badge && (
-            <p
-              className={cn(
-                "text-brand mb-2 text-sm font-medium tracking-[0.3em] uppercase",
-                classNames.header?.badge
-              )}
-            >
-              {badge}
-            </p>
-          )}
-          <h2
-            className={cn(
-              "font-display text-foreground text-3xl font-bold md:text-5xl",
-              classNames.header?.title
-            )}
-          >
-            {title}
-          </h2>
-        </div>
+        <BlockHeader
+          badge={badge}
+          title={title}
+          classNames={classNames.header}
+        />
 
         <div className={cn("grid w-full grid-cols-6 gap-6", classNames.grid)}>
           {/* Left column - spans 2 cols - right aligned */}

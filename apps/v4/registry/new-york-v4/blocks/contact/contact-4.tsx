@@ -1,6 +1,7 @@
 "use client"
 
 import { cn } from "@/lib/utils"
+import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Input } from "@/registry/new-york-v4/ui/input"
 import {
@@ -52,24 +53,13 @@ export function Contact4({ content = {}, classNames = {} }: ContactBlockProps) {
         className={cn("container px-6 py-16 md:py-24", classNames.container)}
       >
         <div className="mx-auto max-w-xl">
-          <div className="mb-8 text-center">
-            <h2
-              className={cn(
-                "text-foreground mb-4 text-3xl font-bold md:text-4xl",
-                classNames.header?.title
-              )}
-            >
-              {title}
-            </h2>
-            <p
-              className={cn(
-                "text-muted-foreground",
-                classNames.header?.description
-              )}
-            >
-              {description}
-            </p>
-          </div>
+          <BlockHeader
+            title={title}
+            description={description}
+            spacing="compact"
+            className="mb-8"
+            classNames={classNames.header}
+          />
 
           <form className="space-y-5">
             <div className="grid gap-4 sm:grid-cols-2">

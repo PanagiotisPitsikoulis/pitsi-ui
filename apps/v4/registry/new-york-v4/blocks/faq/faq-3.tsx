@@ -4,6 +4,7 @@ import { useState } from "react"
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
+import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 import { Input } from "@/registry/new-york-v4/ui/input"
 
 interface FaqBlockProps {
@@ -92,38 +93,27 @@ export function Faq3({ content = {}, classNames = {} }: FaqBlockProps) {
         className={cn("container px-6 py-16 md:py-24", classNames.container)}
       >
         {/* Header */}
-        <div className="mx-auto mb-12 max-w-2xl text-center">
-          <h2
-            className={cn(
-              "text-foreground mb-4 text-3xl font-bold md:text-4xl",
-              classNames.header?.title
-            )}
-          >
-            {title}
-          </h2>
-          <p
-            className={cn(
-              "text-muted-foreground mb-8",
-              classNames.header?.description
-            )}
-          >
-            {description}
-          </p>
+        <BlockHeader
+          title={title}
+          description={description}
+          spacing="compact"
+          className="mx-auto max-w-2xl"
+          classNames={classNames.header}
+        />
 
-          {/* Search */}
-          <div className="relative">
-            <DynamicIcon
-              name="Search"
-              className="text-muted-foreground absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2"
-            />
-            <Input
-              type="text"
-              placeholder="Search for answers..."
-              className="h-12 pl-12"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-          </div>
+        {/* Search */}
+        <div className="relative mx-auto mb-12 max-w-2xl">
+          <DynamicIcon
+            name="Search"
+            className="text-muted-foreground absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2"
+          />
+          <Input
+            type="text"
+            placeholder="Search for answers..."
+            className="h-12 pl-12"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
         </div>
 
         {/* Questions */}

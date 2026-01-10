@@ -5,11 +5,16 @@ import Link from "next/link"
 
 import { type HeroBlockProps } from "@/lib/blocks/hero.types"
 import { cn } from "@/lib/utils"
+import {
+  HorizontalScrollContainer,
+  HorizontalSlide,
+} from "@/registry/new-york-v4/animations/text-parallax/text-parallax"
+import { HeroText } from "@/registry/new-york-v4/lib/hero-text"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 import { HeroButton } from "../../ui/hero-button"
 
-// Hero 13 - Split Diagonal (Angled Division - Plants theme)
+// Hero 13 - Text Parallax (Sliding text with image split)
 const hero13Defaults = {
   badge: "Premium Plants",
   title: "Living Art\nFor Your Home",
@@ -25,6 +30,7 @@ const hero13Defaults = {
     src: "/elements/landscape/plants/3.webp",
     alt: "Statement plants",
   },
+  slidingWords: ["Plants", "Nature", "Life", "Growth"],
 }
 
 export function Hero13({ content = {}, classNames = {} }: HeroBlockProps) {
@@ -35,6 +41,7 @@ export function Hero13({ content = {}, classNames = {} }: HeroBlockProps) {
     primaryCta = hero13Defaults.primaryCta,
     secondaryCta = hero13Defaults.secondaryCta,
     image = hero13Defaults.image,
+    slidingWords = hero13Defaults.slidingWords,
   } = content as typeof hero13Defaults
 
   return (
@@ -44,73 +51,17 @@ export function Hero13({ content = {}, classNames = {} }: HeroBlockProps) {
         classNames.root
       )}
     >
-      {/* Background Image with Diagonal Clip */}
-      <div
-        className="absolute inset-0"
-        style={{
-          clipPath: "polygon(40% 0, 100% 0, 100% 100%, 25% 100%)",
-        }}
-      >
-        <Image
-          src={image.src}
-          alt={image.alt}
-          fill
-          className="object-cover"
-          priority
-        />
-        {/* Subtle gradient overlay */}
-        <div className="from-background/40 absolute inset-0 bg-gradient-to-r to-transparent" />
-      </div>
-
-      {/* Diagonal Accent Line */}
-      <div
-        className="bg-brand/20 absolute inset-0"
-        style={{
-          clipPath: "polygon(38% 0, 42% 0, 27% 100%, 23% 100%)",
-        }}
-      />
-
-      {/* Content */}
-      <div className="relative z-10 container flex flex-1 items-center px-4 py-12">
-        <div className="max-w-lg">
-          {/* Badge */}
-          {badge && (
-            <p
-              className={cn(
-                "text-brand mb-4 text-sm font-semibold tracking-widest uppercase",
-                classNames.header?.badge
-              )}
-            >
-              {badge}
-            </p>
-          )}
-
-          {/* Main headline */}
-          <h1
-            className={cn(
-              "display text-4xl leading-[1.1] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl",
-              classNames.header?.title
-            )}
-          >
-            {title.split("\n").map((line, i) => (
-              <span key={i}>
-                {line}
-                {i < title.split("\n").length - 1 && <br />}
-              </span>
-            ))}
-          </h1>
-
-          {/* Description */}
-          {description && (
-            <p
-              className={cn(
-                "text-muted-foreground mt-6 text-lg md:text-xl",
-                classNames.header?.description
-              )}
-            >
-              {description}
-            </p>
-          )}
+      {/* Two-column layout */}
+      <div className="container relative z-10 grid flex-1 lg:grid-cols-2">
+        {/* Left - Text Content */}
+        <div className="flex flex-col justify-center px-4 py-12 lg:pr-12">
+          <HeroText
+            badge={badge}
+            title={title}
+            description={description}
+            size="large"
+            classNames={classNames.header}
+          />
 
           {/* Buttons */}
           <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -131,6 +82,46 @@ export function Hero13({ content = {}, classNames = {} }: HeroBlockProps) {
             )}
           </div>
         </div>
+
+        {/* Right - Image */}
+        <div className="relative hidden min-h-[30rem] lg:block">
+          <Image
+            src={image.src}
+            alt={image.alt}
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+      </div>
+
+      {/* Sliding Text Banner */}
+      <HorizontalScrollContainer className="border-brand/10 bg-brand/5 relative z-20 border-y py-6">
+        <HorizontalSlide direction="left" distance={200}>
+          <div className="flex items-center gap-8">
+            {[...slidingWords, ...slidingWords, ...slidingWords].map(
+              (word, i) => (
+                <span
+                  key={i}
+                  className="font-display text-brand/80 text-4xl font-bold tracking-tight md:text-6xl"
+                >
+                  {word}
+                  <span className="text-brand mx-4">•</span>
+                </span>
+              )
+            )}
+          </div>
+        </HorizontalSlide>
+      </HorizontalScrollContainer>
+
+      {/* Mobile Image */}
+      <div className="relative h-64 lg:hidden">
+        <Image
+          src={image.src}
+          alt={image.alt}
+          fill
+          className="object-cover"
+        />
       </div>
     </section>
   )

@@ -4,6 +4,7 @@ export const registryConfig: RegistryItemConfig = {
   name: "footer-6",
   type: "registry:block",
   description: "App download footer with store badges and QR code",
+  registryDependencies: ["qr-code"],
   categories: ["footer", "landing"],
   tier: "free",
   readiness: "production",

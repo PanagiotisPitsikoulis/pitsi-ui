@@ -3,7 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
-import { Menu, Search, Github, User } from "lucide-react"
+import { Github, Menu, Search, User } from "lucide-react"
 
 import {
   headerDefaults,

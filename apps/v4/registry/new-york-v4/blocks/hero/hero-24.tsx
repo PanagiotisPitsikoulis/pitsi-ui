@@ -5,6 +5,7 @@ import Link from "next/link"
 
 import { type HeroBlockProps } from "@/lib/blocks/hero.types"
 import { cn } from "@/lib/utils"
+import { HeroText } from "@/registry/new-york-v4/lib/hero-text"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 import { HeroButton } from "../../ui/hero-button"
@@ -47,35 +48,14 @@ export function Hero24({ content = {}, classNames = {} }: HeroBlockProps) {
       <div className="container flex flex-1 flex-col px-4 py-6">
         {/* Centered Text Content */}
         <div className="flex flex-col items-center py-12 text-center">
-          {badge && (
-            <p
-              className={cn(
-                "text-brand mb-4 text-sm font-semibold tracking-widest uppercase",
-                classNames.header?.badge
-              )}
-            >
-              {badge}
-            </p>
-          )}
-          <h1
-            className={cn(
-              "display max-w-4xl text-4xl leading-[1.1] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl",
-              classNames.header?.title
-            )}
-          >
-            {title}
-          </h1>
-
-          {description && (
-            <p
-              className={cn(
-                "text-muted-foreground mx-auto mt-6 max-w-2xl text-lg md:text-xl",
-                classNames.header?.description
-              )}
-            >
-              {description}
-            </p>
-          )}
+          <HeroText
+            badge={badge}
+            title={title}
+            description={description}
+            size="large"
+            align="center"
+            classNames={classNames.header}
+          />
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             {primaryCta && (

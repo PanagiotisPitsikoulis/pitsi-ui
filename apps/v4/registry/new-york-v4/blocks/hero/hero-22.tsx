@@ -5,6 +5,7 @@ import Link from "next/link"
 
 import { type HeroBlockProps } from "@/lib/blocks/hero.types"
 import { cn } from "@/lib/utils"
+import { HeroText } from "@/registry/new-york-v4/lib/hero-text"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 import { HeroButton } from "../../ui/hero-button"
@@ -68,40 +69,13 @@ export function Hero22({ content = {}, classNames = {} }: HeroBlockProps) {
 
           {/* Content */}
           <div className="relative z-10 flex flex-1 flex-col justify-center p-8 lg:max-w-2xl lg:p-12">
-            {badge && (
-              <p
-                className={cn(
-                  "text-brand mb-4 text-sm font-semibold tracking-widest uppercase",
-                  classNames.header?.badge
-                )}
-              >
-                {badge}
-              </p>
-            )}
-            <h1
-              className={cn(
-                "display text-4xl leading-[1.1] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl",
-                classNames.header?.title
-              )}
-            >
-              {title.split("\n").map((line, i) => (
-                <span key={i}>
-                  {line}
-                  {i < title.split("\n").length - 1 && <br />}
-                </span>
-              ))}
-            </h1>
-
-            {description && (
-              <p
-                className={cn(
-                  "text-muted-foreground mt-6 text-lg md:text-xl",
-                  classNames.header?.description
-                )}
-              >
-                {description}
-              </p>
-            )}
+            <HeroText
+              badge={badge}
+              title={title}
+              description={description}
+              size="large"
+              classNames={classNames.header}
+            />
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
               {primaryCta && (

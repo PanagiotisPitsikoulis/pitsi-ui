@@ -4,6 +4,7 @@ import { useState } from "react"
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
+import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Input } from "@/registry/new-york-v4/ui/input"
 
@@ -78,22 +79,18 @@ export function Newsletter5({
                 </svg>
               </div>
 
-              <h3
-                className={cn(
-                  "text-foreground mb-2 text-xl font-bold",
-                  classNames.header?.title
-                )}
-              >
-                {title}
-              </h3>
-              <p
-                className={cn(
-                  "text-muted-foreground mb-6 text-sm",
-                  classNames.header?.description
-                )}
-              >
-                {description}
-              </p>
+              <BlockHeader
+                title={title}
+                description={description}
+                titleAs="h3"
+                spacing="none"
+                className="mb-6"
+                classNames={{
+                  ...classNames.header,
+                  title: cn("text-xl", classNames.header?.title),
+                  description: cn("text-sm", classNames.header?.description),
+                }}
+              />
 
               <div className="space-y-3">
                 <Input

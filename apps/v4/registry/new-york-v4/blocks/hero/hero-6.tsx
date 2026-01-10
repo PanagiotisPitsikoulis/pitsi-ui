@@ -5,6 +5,7 @@ import Link from "next/link"
 
 import { type HeroBlockProps } from "@/lib/blocks/hero.types"
 import { cn } from "@/lib/utils"
+import { HeroText } from "@/registry/new-york-v4/lib/hero-text"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 import { HeroButton } from "../../ui/hero-button"
@@ -58,40 +59,13 @@ export function Hero6({ content = {}, classNames = {} }: HeroBlockProps) {
         <div className="grid h-full min-h-[calc(100svh-8rem)] gap-4 lg:grid-cols-3 lg:grid-rows-2">
           {/* Text Content Card - Top Left */}
           <div className="bg-muted flex flex-col justify-center rounded-3xl p-8 lg:row-span-2 lg:p-10">
-            {badge && (
-              <p
-                className={cn(
-                  "text-brand mb-4 text-sm font-semibold tracking-widest uppercase",
-                  classNames.header?.badge
-                )}
-              >
-                {badge}
-              </p>
-            )}
-            <h1
-              className={cn(
-                "display text-4xl leading-[1.1] tracking-tight sm:text-5xl",
-                classNames.header?.title
-              )}
-            >
-              {title.split("\n").map((line, i) => (
-                <span key={i}>
-                  {line}
-                  {i < title.split("\n").length - 1 && <br />}
-                </span>
-              ))}
-            </h1>
-
-            {description && (
-              <p
-                className={cn(
-                  "text-muted-foreground mt-6 text-base md:text-lg",
-                  classNames.header?.description
-                )}
-              >
-                {description}
-              </p>
-            )}
+            <HeroText
+              badge={badge}
+              title={title}
+              description={description}
+              size="large"
+              classNames={classNames.header}
+            />
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
               {primaryCta && (

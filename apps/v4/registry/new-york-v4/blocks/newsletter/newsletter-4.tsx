@@ -3,6 +3,7 @@
 import Image from "next/image"
 
 import { cn } from "@/lib/utils"
+import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Input } from "@/registry/new-york-v4/ui/input"
 
@@ -63,22 +64,14 @@ export function Newsletter4({
 
           {/* Content */}
           <div className="lg:order-1">
-            <h2
-              className={cn(
-                "text-foreground mb-4 text-3xl font-bold md:text-4xl",
-                classNames.header?.title
-              )}
-            >
-              {title}
-            </h2>
-            <p
-              className={cn(
-                "text-muted-foreground mb-8 text-lg",
-                classNames.header?.description
-              )}
-            >
-              {description}
-            </p>
+            <BlockHeader
+              title={title}
+              description={description}
+              align="left"
+              spacing="none"
+              className="mb-8"
+              classNames={classNames.header}
+            />
 
             <div className="space-y-4">
               <Input

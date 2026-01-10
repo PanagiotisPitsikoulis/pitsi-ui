@@ -2,6 +2,7 @@
 
 import { type StatsBlockProps } from "@/lib/blocks/stats.types"
 import { cn } from "@/lib/utils"
+import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 
 const stats8Defaults = {
   badge: "Trusted by developers",
@@ -25,26 +26,11 @@ export function Stats8({ content = {}, classNames = {} }: StatsBlockProps) {
     <section className={cn("py-24", classNames.root)}>
       <div className={cn("container px-6", classNames.container)}>
         {/* Header */}
-        <div className={cn("mb-16 text-center", classNames.header?.root)}>
-          {badge && (
-            <p
-              className={cn(
-                "text-brand mb-4 text-sm font-medium tracking-wider uppercase",
-                classNames.header?.badge
-              )}
-            >
-              {badge}
-            </p>
-          )}
-          <h2
-            className={cn(
-              "text-3xl font-bold tracking-tight md:text-4xl",
-              classNames.header?.title
-            )}
-          >
-            {title}
-          </h2>
-        </div>
+        <BlockHeader
+          badge={badge}
+          title={title}
+          classNames={classNames.header}
+        />
 
         {/* Stats grid */}
         <div

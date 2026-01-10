@@ -17,7 +17,7 @@ function StripedBackground({ className }: { className?: string }) {
         className
       )}
     >
-      <div className="container relative mx-auto h-full px-6">
+      <div className="relative container mx-auto h-full px-6">
         <div className="absolute inset-0 flex justify-between">
           {Array.from({ length: 7 }).map((_, i) => (
             <div key={i} className="bg-border/30 h-full w-px" />
@@ -47,10 +47,38 @@ function BlogIcon({ className }: { className?: string }) {
         strokeWidth="3"
         fill="none"
       />
-      <line x1="55" y1="70" x2="145" y2="70" stroke="currentColor" strokeWidth="3" />
-      <line x1="55" y1="95" x2="125" y2="95" stroke="currentColor" strokeWidth="2" />
-      <line x1="55" y1="115" x2="135" y2="115" stroke="currentColor" strokeWidth="2" />
-      <line x1="55" y1="135" x2="105" y2="135" stroke="currentColor" strokeWidth="2" />
+      <line
+        x1="55"
+        y1="70"
+        x2="145"
+        y2="70"
+        stroke="currentColor"
+        strokeWidth="3"
+      />
+      <line
+        x1="55"
+        y1="95"
+        x2="125"
+        y2="95"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+      <line
+        x1="55"
+        y1="115"
+        x2="135"
+        y2="115"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+      <line
+        x1="55"
+        y1="135"
+        x2="105"
+        y2="135"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
     </svg>
   )
 }
@@ -152,10 +180,7 @@ export function PageBlog1({
 
   return (
     <div
-      className={cn(
-        "relative -mt-14 min-h-screen overflow-x-clip",
-        className
-      )}
+      className={cn("relative -mt-14 min-h-screen overflow-x-clip", className)}
     >
       <StripedBackground />
 
@@ -183,7 +208,7 @@ export function PageBlog1({
               <Spacer size="md" sizeMobile="sm" />
 
               {/* Title */}
-              <h1 className="text-4xl font-bold leading-[0.9] tracking-tight md:text-5xl lg:text-6xl">
+              <h1 className="text-4xl leading-[0.9] font-bold tracking-tight md:text-5xl lg:text-6xl">
                 {title}
               </h1>
 
@@ -250,8 +275,8 @@ export function PageBlog1({
                             {formatDate(post.date)}
                           </time>
                           <Badge variant="outline" className="text-xs">
-                            {categories.find((c) => c.id === post.category)?.label ||
-                              post.category}
+                            {categories.find((c) => c.id === post.category)
+                              ?.label || post.category}
                           </Badge>
                           {post.readTime && (
                             <span className="text-muted-foreground text-xs">
@@ -284,7 +309,9 @@ export function PageBlog1({
                 ))
               ) : (
                 <div className="py-12 text-center">
-                  <p className="text-muted-foreground text-lg">No articles found</p>
+                  <p className="text-muted-foreground text-lg">
+                    No articles found
+                  </p>
                   <p className="text-muted-foreground mt-2 text-sm">
                     {currentCategory
                       ? "No articles in this category yet."

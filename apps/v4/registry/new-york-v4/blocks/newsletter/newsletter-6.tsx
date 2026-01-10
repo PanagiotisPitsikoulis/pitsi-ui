@@ -2,6 +2,7 @@
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
+import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Input } from "@/registry/new-york-v4/ui/input"
 
@@ -48,22 +49,20 @@ export function Newsletter6({
             <DynamicIcon name="Mail" className="text-background h-8 w-8" />
           </div>
 
-          <h2
-            className={cn(
-              "text-background mb-4 text-3xl font-bold md:text-4xl",
-              classNames.header?.title
-            )}
-          >
-            {title}
-          </h2>
-          <p
-            className={cn(
-              "text-background/70 mb-8 text-lg",
-              classNames.header?.description
-            )}
-          >
-            {description}
-          </p>
+          <BlockHeader
+            title={title}
+            description={description}
+            spacing="none"
+            className="mb-8"
+            classNames={{
+              ...classNames.header,
+              title: cn("text-background", classNames.header?.title),
+              description: cn(
+                "text-background/70",
+                classNames.header?.description
+              ),
+            }}
+          />
 
           {/* Form */}
           <div className="mx-auto flex max-w-md flex-col gap-3 sm:flex-row">

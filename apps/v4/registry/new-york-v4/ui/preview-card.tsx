@@ -28,20 +28,17 @@ const previewCardVariants = cva(
   }
 )
 
-const previewContainerVariants = cva(
-  "overflow-hidden shadow-sm dark:border",
-  {
-    variants: {
-      rounded: {
-        default: "rounded-2xl",
-        lg: "rounded-3xl",
-      },
+const previewContainerVariants = cva("overflow-hidden shadow-sm dark:border", {
+  variants: {
+    rounded: {
+      default: "rounded-2xl",
+      lg: "rounded-3xl",
     },
-    defaultVariants: {
-      rounded: "default",
-    },
-  }
-)
+  },
+  defaultVariants: {
+    rounded: "default",
+  },
+})
 
 const previewImageVariants = cva(
   "preview relative flex w-full items-center justify-center overflow-hidden",
@@ -70,7 +67,8 @@ const previewImageVariants = cva(
 // ============================================================================
 
 export interface PreviewCardProps
-  extends React.HTMLAttributes<HTMLDivElement>,
+  extends
+    React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof previewCardVariants> {
   asChild?: boolean
 }
@@ -91,7 +89,8 @@ PreviewCard.displayName = "PreviewCard"
 // ============================================================================
 
 export interface PreviewCardImageProps
-  extends VariantProps<typeof previewContainerVariants>,
+  extends
+    VariantProps<typeof previewContainerVariants>,
     VariantProps<typeof previewImageVariants> {
   href?: string
   lightSrc: string
@@ -102,7 +101,10 @@ export interface PreviewCardImageProps
   imageClassName?: string
 }
 
-const PreviewCardImage = React.forwardRef<HTMLDivElement, PreviewCardImageProps>(
+const PreviewCardImage = React.forwardRef<
+  HTMLDivElement,
+  PreviewCardImageProps
+>(
   (
     {
       href,
@@ -173,8 +175,7 @@ PreviewCardImage.displayName = "PreviewCardImage"
 // PreviewCardContent
 // ============================================================================
 
-export interface PreviewCardContentProps
-  extends React.HTMLAttributes<HTMLDivElement> {}
+export interface PreviewCardContentProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 const PreviewCardContent = React.forwardRef<
   HTMLDivElement,
@@ -192,8 +193,7 @@ PreviewCardContent.displayName = "PreviewCardContent"
 // PreviewCardHeader
 // ============================================================================
 
-export interface PreviewCardHeaderProps
-  extends React.HTMLAttributes<HTMLDivElement> {}
+export interface PreviewCardHeaderProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 const PreviewCardHeader = React.forwardRef<
   HTMLDivElement,
@@ -211,41 +211,40 @@ PreviewCardHeader.displayName = "PreviewCardHeader"
 // PreviewCardTitle
 // ============================================================================
 
-export interface PreviewCardTitleProps
-  extends React.HTMLAttributes<HTMLSpanElement> {
+export interface PreviewCardTitleProps extends React.HTMLAttributes<HTMLSpanElement> {
   href?: string
 }
 
-const PreviewCardTitle = React.forwardRef<HTMLSpanElement, PreviewCardTitleProps>(
-  ({ className, href, children, ...props }, ref) => {
-    const title = (
-      <span
-        ref={ref}
-        className={cn(
-          "group-hover/preview-card:text-primary text-base font-medium transition-colors group-hover/preview-card:underline",
-          className
-        )}
-        {...props}
-      >
-        {children}
-      </span>
-    )
+const PreviewCardTitle = React.forwardRef<
+  HTMLSpanElement,
+  PreviewCardTitleProps
+>(({ className, href, children, ...props }, ref) => {
+  const title = (
+    <span
+      ref={ref}
+      className={cn(
+        "group-hover/preview-card:text-primary text-base font-medium transition-colors group-hover/preview-card:underline",
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </span>
+  )
 
-    if (href) {
-      return <Link href={href}>{title}</Link>
-    }
-
-    return title
+  if (href) {
+    return <Link href={href}>{title}</Link>
   }
-)
+
+  return title
+})
 PreviewCardTitle.displayName = "PreviewCardTitle"
 
 // ============================================================================
 // PreviewCardDescription
 // ============================================================================
 
-export interface PreviewCardDescriptionProps
-  extends React.HTMLAttributes<HTMLParagraphElement> {
+export interface PreviewCardDescriptionProps extends React.HTMLAttributes<HTMLParagraphElement> {
   lineClamp?: 1 | 2 | 3
 }
 
@@ -271,14 +270,17 @@ PreviewCardDescription.displayName = "PreviewCardDescription"
 // PreviewCardActions
 // ============================================================================
 
-export interface PreviewCardActionsProps
-  extends React.HTMLAttributes<HTMLDivElement> {}
+export interface PreviewCardActionsProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 const PreviewCardActions = React.forwardRef<
   HTMLDivElement,
   PreviewCardActionsProps
 >(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn("flex items-center gap-1", className)} {...props} />
+  <div
+    ref={ref}
+    className={cn("flex items-center gap-1", className)}
+    {...props}
+  />
 ))
 PreviewCardActions.displayName = "PreviewCardActions"
 

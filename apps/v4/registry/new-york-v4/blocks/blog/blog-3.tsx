@@ -5,6 +5,7 @@ import Link from "next/link"
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
+import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 
 interface BlogBlockProps {
   content?: {
@@ -89,24 +90,12 @@ export function Blog3({ content = {}, classNames = {} }: BlogBlockProps) {
       <div
         className={cn("container px-6 py-16 md:py-24", classNames.container)}
       >
-        <div className="mb-12 text-center">
-          <h2
-            className={cn(
-              "text-foreground mb-4 text-3xl font-bold md:text-4xl",
-              classNames.header?.title
-            )}
-          >
-            {title}
-          </h2>
-          <p
-            className={cn(
-              "text-muted-foreground",
-              classNames.header?.description
-            )}
-          >
-            {description}
-          </p>
-        </div>
+        <BlockHeader
+          title={title}
+          description={description}
+          spacing="compact"
+          classNames={classNames.header}
+        />
 
         <div className="space-y-6">
           {posts.map((post, i) => (

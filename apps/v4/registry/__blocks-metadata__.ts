@@ -9,7 +9,12 @@
 export const BLOCK_CATEGORIES: Record<string, string[]> = {
   application: [
     "app-auth-1",
+    "app-block-viewer-1",
+    "app-blog-list-1",
+    "app-blog-post-1",
+    "app-component-preview-1",
     "app-dashboard-1",
+    "app-docs-viewer-1",
     "app-gym-gains-1",
     "app-gym-history-1",
     "app-gym-library-1",
@@ -23,9 +28,18 @@ export const BLOCK_CATEGORIES: Record<string, string[]> = {
     "app-quiz-results-1",
     "app-quiz-settings-1",
     "app-quiz-shell-1",
+    "app-settings-1",
+    "app-tool-layout-1",
   ],
   auth: ["auth-1", "auth-2", "auth-3", "auth-4", "auth-5", "auth-6"],
   blog: ["blog-1", "blog-2", "blog-3", "blog-4", "blog-5", "blog-6"],
+  "blog-post": [
+    "blog-post-1",
+    "blog-post-2",
+    "blog-post-3",
+    "blog-post-4",
+    "blog-post-5",
+  ],
   contact: [
     "contact-1",
     "contact-2",
@@ -148,6 +162,7 @@ export const BLOCK_CATEGORIES: Record<string, string[]> = {
     "products-5",
     "products-6",
   ],
+  search: ["search-1", "search-2", "search-3", "search-4", "search-5"],
   stats: [
     "stats-1",
     "stats-2",
@@ -297,6 +312,14 @@ export const COMPUTED_TEMPLATES: Record<string, ComputedTemplate> = {
     type: "service",
     blocks: [
       {
+        name: "blog-post-1",
+        blockType: "blog-post",
+        order: 1,
+        palette: "sage",
+        typography: "elegant",
+        tint: "tinted",
+      },
+      {
         name: "header-1",
         blockType: "header",
         order: 1,
@@ -367,6 +390,14 @@ export const COMPUTED_TEMPLATES: Record<string, ComputedTemplate> = {
         typography: "elegant",
         tint: "tinted",
         forceLight: true,
+      },
+      {
+        name: "search-1",
+        blockType: "search",
+        order: 1,
+        palette: "sage",
+        typography: "elegant",
+        tint: "tinted",
       },
       {
         name: "hero-1",
@@ -1091,6 +1122,7 @@ export const COMPUTED_TEMPLATES: Record<string, ComputedTemplate> = {
       },
     ],
     blockGroups: {
+      "blog-post": ["blog-post-1"],
       header: [
         "header-1",
         "header-2",
@@ -1101,6 +1133,7 @@ export const COMPUTED_TEMPLATES: Record<string, ComputedTemplate> = {
         "header-7",
         "header-8",
       ],
+      search: ["search-1"],
       hero: ["hero-1", "hero-10", "hero-11", "hero-12", "hero-13", "hero-14"],
       logos: ["logos-1", "logos-2", "logos-3", "logos-4", "logos-5", "logos-6"],
       features: [
@@ -1182,6 +1215,22 @@ export const COMPUTED_TEMPLATES: Record<string, ComputedTemplate> = {
     type: "service",
     blocks: [
       {
+        name: "blog-post-2",
+        blockType: "blog-post",
+        order: 1,
+        palette: "azure",
+        typography: "modern",
+        tint: "tinted",
+      },
+      {
+        name: "search-2",
+        blockType: "search",
+        order: 1,
+        palette: "azure",
+        typography: "modern",
+        tint: "tinted",
+      },
+      {
         name: "hero-15",
         blockType: "hero",
         order: 2,
@@ -1232,6 +1281,8 @@ export const COMPUTED_TEMPLATES: Record<string, ComputedTemplate> = {
       },
     ],
     blockGroups: {
+      "blog-post": ["blog-post-2"],
+      search: ["search-2"],
       hero: ["hero-15", "hero-16", "hero-17", "hero-18", "hero-19", "hero-2"],
     },
   },
@@ -1242,6 +1293,22 @@ export const COMPUTED_TEMPLATES: Record<string, ComputedTemplate> = {
     heroBlock: "hero-20",
     type: "service",
     blocks: [
+      {
+        name: "blog-post-3",
+        blockType: "blog-post",
+        order: 1,
+        palette: "azure",
+        typography: "classic",
+        tint: "tinted",
+      },
+      {
+        name: "search-3",
+        blockType: "search",
+        order: 1,
+        palette: "azure",
+        typography: "classic",
+        tint: "tinted",
+      },
       {
         name: "hero-20",
         blockType: "hero",
@@ -1293,6 +1360,8 @@ export const COMPUTED_TEMPLATES: Record<string, ComputedTemplate> = {
       },
     ],
     blockGroups: {
+      "blog-post": ["blog-post-3"],
+      search: ["search-3"],
       hero: ["hero-20", "hero-21", "hero-22", "hero-23", "hero-24", "hero-3"],
     },
   },
@@ -1304,8 +1373,24 @@ export const COMPUTED_TEMPLATES: Record<string, ComputedTemplate> = {
     type: "service",
     blocks: [
       {
+        name: "blog-post-4",
+        blockType: "blog-post",
+        order: 1,
+        palette: "neon",
+        typography: "futuristic",
+        tint: "tinted",
+      },
+      {
         name: "header-9",
         blockType: "header",
+        order: 1,
+        palette: "neon",
+        typography: "futuristic",
+        tint: "tinted",
+      },
+      {
+        name: "search-4",
+        blockType: "search",
         order: 1,
         palette: "neon",
         typography: "futuristic",
@@ -1425,7 +1510,9 @@ export const COMPUTED_TEMPLATES: Record<string, ComputedTemplate> = {
       },
     ],
     blockGroups: {
+      "blog-post": ["blog-post-4"],
       header: ["header-9"],
+      search: ["search-4"],
       hero: ["hero-4", "hero-5", "hero-6", "hero-7", "hero-8", "hero-9"],
       features: ["features-6", "features-7", "features-8"],
       pricing: ["pricing-2"],
@@ -1594,6 +1681,14 @@ export const COMPUTED_TEMPLATES: Record<string, ComputedTemplate> = {
         tint: "base",
       },
       {
+        name: "blog-post-5",
+        blockType: "blog-post",
+        order: 1,
+        palette: "slate",
+        typography: "modern",
+        tint: "tinted",
+      },
+      {
         name: "header-10",
         blockType: "header",
         order: 1,
@@ -1618,6 +1713,14 @@ export const COMPUTED_TEMPLATES: Record<string, ComputedTemplate> = {
         tint: "base",
       },
       {
+        name: "search-5",
+        blockType: "search",
+        order: 1,
+        palette: "slate",
+        typography: "modern",
+        tint: "tinted",
+      },
+      {
         name: "app-auth-1",
         blockType: "application",
         order: 2,
@@ -1637,6 +1740,14 @@ export const COMPUTED_TEMPLATES: Record<string, ComputedTemplate> = {
         name: "page-pricing-1",
         blockType: "pages",
         order: 2,
+        palette: "neutral",
+        typography: "modern",
+        tint: "base",
+      },
+      {
+        name: "app-docs-viewer-1",
+        blockType: "application",
+        order: 3,
         palette: "neutral",
         typography: "modern",
         tint: "base",
@@ -1666,6 +1777,14 @@ export const COMPUTED_TEMPLATES: Record<string, ComputedTemplate> = {
         tint: "tinted",
       },
       {
+        name: "app-component-preview-1",
+        blockType: "application",
+        order: 4,
+        palette: "neutral",
+        typography: "modern",
+        tint: "base",
+      },
+      {
         name: "features-11",
         blockType: "features",
         order: 4,
@@ -1686,6 +1805,14 @@ export const COMPUTED_TEMPLATES: Record<string, ComputedTemplate> = {
         blockType: "testimonials",
         order: 4,
         palette: "slate",
+        typography: "modern",
+        tint: "base",
+      },
+      {
+        name: "app-block-viewer-1",
+        blockType: "application",
+        order: 5,
+        palette: "neutral",
         typography: "modern",
         tint: "base",
       },
@@ -1714,6 +1841,14 @@ export const COMPUTED_TEMPLATES: Record<string, ComputedTemplate> = {
         tint: "base",
       },
       {
+        name: "app-blog-list-1",
+        blockType: "application",
+        order: 6,
+        palette: "neutral",
+        typography: "modern",
+        tint: "base",
+      },
+      {
         name: "faq-7",
         blockType: "faq",
         order: 6,
@@ -1730,6 +1865,14 @@ export const COMPUTED_TEMPLATES: Record<string, ComputedTemplate> = {
         tint: "base",
       },
       {
+        name: "app-blog-post-1",
+        blockType: "application",
+        order: 7,
+        palette: "neutral",
+        typography: "modern",
+        tint: "base",
+      },
+      {
         name: "cta-7",
         blockType: "cta",
         order: 7,
@@ -1738,10 +1881,26 @@ export const COMPUTED_TEMPLATES: Record<string, ComputedTemplate> = {
         tint: "base",
       },
       {
+        name: "app-tool-layout-1",
+        blockType: "application",
+        order: 8,
+        palette: "neutral",
+        typography: "modern",
+        tint: "base",
+      },
+      {
         name: "footer-9",
         blockType: "footer",
         order: 8,
         palette: "slate",
+        typography: "modern",
+        tint: "base",
+      },
+      {
+        name: "app-settings-1",
+        blockType: "application",
+        order: 9,
+        palette: "neutral",
         typography: "modern",
         tint: "base",
       },
@@ -1779,7 +1938,18 @@ export const COMPUTED_TEMPLATES: Record<string, ComputedTemplate> = {
       },
     ],
     blockGroups: {
-      application: ["app-dashboard-1", "app-auth-1"],
+      application: [
+        "app-dashboard-1",
+        "app-auth-1",
+        "app-docs-viewer-1",
+        "app-component-preview-1",
+        "app-block-viewer-1",
+        "app-blog-list-1",
+        "app-blog-post-1",
+        "app-tool-layout-1",
+        "app-settings-1",
+      ],
+      "blog-post": ["blog-post-5"],
       header: ["header-10"],
       hero: ["hero-25"],
       pages: [
@@ -1792,6 +1962,7 @@ export const COMPUTED_TEMPLATES: Record<string, ComputedTemplate> = {
         "page-404-1",
         "page-legal-1",
       ],
+      search: ["search-5"],
       features: [
         "features-9",
         "features-10",

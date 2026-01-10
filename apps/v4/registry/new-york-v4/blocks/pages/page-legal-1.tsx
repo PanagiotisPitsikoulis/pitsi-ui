@@ -16,7 +16,7 @@ function StripedBackground({ className }: { className?: string }) {
         className
       )}
     >
-      <div className="container relative mx-auto h-full px-6">
+      <div className="relative container mx-auto h-full px-6">
         <div className="absolute inset-0 flex justify-between">
           {Array.from({ length: 7 }).map((_, i) => (
             <div key={i} className="bg-border/30 h-full w-px" />
@@ -176,7 +176,8 @@ export function PageLegal1({
   className,
 }: PageLegal1Props) {
   // Set defaults based on variant
-  const defaultTitle = variant === "privacy" ? "Privacy Policy" : "Terms of Service"
+  const defaultTitle =
+    variant === "privacy" ? "Privacy Policy" : "Terms of Service"
   const defaultDescription =
     variant === "privacy"
       ? "How we collect, use, and protect your personal information."
@@ -189,10 +190,7 @@ export function PageLegal1({
 
   return (
     <div
-      className={cn(
-        "relative -mt-14 min-h-screen overflow-x-clip",
-        className
-      )}
+      className={cn("relative -mt-14 min-h-screen overflow-x-clip", className)}
     >
       <StripedBackground />
 
@@ -222,7 +220,7 @@ export function PageLegal1({
               <Spacer size="sm" sizeMobile="xs" />
 
               {/* Title */}
-              <h1 className="text-3xl font-bold leading-[1.1] tracking-tight md:text-4xl lg:text-5xl">
+              <h1 className="text-3xl leading-[1.1] font-bold tracking-tight md:text-4xl lg:text-5xl">
                 {finalTitle}
               </h1>
 

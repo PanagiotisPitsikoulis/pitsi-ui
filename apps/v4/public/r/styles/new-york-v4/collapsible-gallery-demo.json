@@ -1,0 +1,20 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "collapsible-gallery-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "collapsible-gallery"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/collapsible-gallery-demo.tsx",
+      "content": "import { CollapsibleGallery } from \"@/registry/new-york-v4/ui/collapsible-gallery\"\n\nconst items = [\n  {\n    id: \"1\",\n    title: \"Mountain Retreat\",\n    description: \"A peaceful cabin in the mountains\",\n    image:\n      \"https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=400&h=300&fit=crop\",\n  },\n  {\n    id: \"2\",\n    title: \"Beach House\",\n    description: \"Modern beachfront property\",\n    image:\n      \"https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=400&h=300&fit=crop\",\n  },\n  {\n    id: \"3\",\n    title: \"City Loft\",\n    description: \"Urban living at its finest\",\n    image:\n      \"https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&h=300&fit=crop\",\n  },\n  {\n    id: \"4\",\n    title: \"Forest Cabin\",\n    description: \"Secluded retreat in nature\",\n    image:\n      \"https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=400&h=300&fit=crop\",\n  },\n  {\n    id: \"5\",\n    title: \"Lake House\",\n    description: \"Waterfront living with stunning views\",\n    image:\n      \"https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=400&h=300&fit=crop\",\n  },\n]\n\nfunction ItemCard({ item }: { item: (typeof items)[0] }) {\n  return (\n    <div className=\"group flex flex-col gap-3\">\n      <div className=\"bg-muted aspect-[4/3] overflow-hidden rounded-lg\">\n        <img\n          src={item.image}\n          alt={item.title}\n          className=\"h-full w-full object-cover transition-transform duration-300 group-hover:scale-105\"\n        />\n      </div>\n      <div className=\"flex flex-col gap-0.5\">\n        <span className=\"group-hover:text-primary text-sm font-medium transition-colors\">\n          {item.title}\n        </span>\n        <p className=\"text-muted-foreground text-xs\">{item.description}</p>\n      </div>\n    </div>\n  )\n}\n\nexport default function CollapsibleGalleryDemo() {\n  return (\n    <div className=\"w-full max-w-4xl\">\n      <CollapsibleGallery\n        title=\"Featured Properties\"\n        items={items}\n        renderItem={(item) => <ItemCard item={item} />}\n        keyExtractor={(item) => item.id}\n        itemWidth={200}\n        gridCols={{ default: 2, md: 3, lg: 4 }}\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ],
+  "categories": [
+    "application"
+  ],
+  "tier": "free",
+  "readiness": "production"
+}

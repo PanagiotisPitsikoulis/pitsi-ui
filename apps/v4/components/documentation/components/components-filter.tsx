@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { usePathname, useSearchParams } from "next/navigation"
 
-import { AppWindow, Bookmark, Box, Clock, Layers, Waves } from "@/lib/icons"
+import { Bookmark, Box, Clock, Layers, LayoutGrid, Waves } from "@/lib/icons"
 import { cn } from "@/lib/utils"
 import {
   Tooltip,
@@ -14,7 +14,7 @@ import {
 
 const FILTER_ITEMS = [
   { id: "all", label: "All", icon: Layers, filter: null, category: null },
-  { id: "application", label: "Application", icon: AppWindow, filter: null, category: "application" },
+  { id: "application", label: "Application", icon: LayoutGrid, filter: null, category: "application" },
   { id: "saved", label: "Saved", icon: Bookmark, filter: "saved", category: null },
   { id: "recent", label: "Recently Viewed", icon: Clock, filter: "recent", category: null },
 ]

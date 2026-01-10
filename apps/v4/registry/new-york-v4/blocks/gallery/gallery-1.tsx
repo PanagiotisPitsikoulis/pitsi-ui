@@ -7,6 +7,7 @@ import {
   type GalleryBlockProps,
 } from "@/lib/blocks/gallery.types"
 import { cn } from "@/lib/utils"
+import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 
 // Block-specific defaults that override the generic defaults
 const blockDefaults = {
@@ -53,36 +54,14 @@ export function Gallery1({ content = {}, classNames = {} }: GalleryBlockProps) {
         className="pointer-events-none absolute -right-64 -bottom-64 z-20 hidden select-none md:block"
       />
       <div className={cn("relative z-10 container px-6", classNames.container)}>
-        <div className={cn("mb-16 text-center", classNames.header?.root)}>
-          {badge && (
-            <p
-              className={cn(
-                "text-primary mb-4 text-sm font-medium tracking-[0.3em] uppercase",
-                classNames.header?.badge
-              )}
-            >
-              {badge}
-            </p>
-          )}
-          <h2
-            className={cn(
-              "font-display text-foreground text-3xl font-bold md:text-5xl",
-              classNames.header?.title
-            )}
-          >
-            {title}
-          </h2>
-          {description && (
-            <p
-              className={cn(
-                "text-muted-foreground mx-auto mt-4 max-w-2xl text-lg",
-                classNames.header?.description
-              )}
-            >
-              {description}
-            </p>
-          )}
-        </div>
+        <BlockHeader
+          badge={badge}
+          title={title}
+          description={description}
+          badgeColor="primary"
+          className="mb-16"
+          classNames={classNames.header}
+        />
         <div
           className={cn(
             "grid grid-cols-2 gap-4 md:grid-cols-4",

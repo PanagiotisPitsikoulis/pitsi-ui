@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
@@ -9,18 +10,13 @@ interface TestimonialsBlockProps {
   content?: {
     title?: string
     description?: string
-    posts?: Array<{
-      content: string
-      author: {
-        name: string
-        handle: string
-        avatar: string
-        verified: boolean
-      }
-      likes: number
-      retweets: number
-      replies: number
-      date: string
+    ctaLabel?: string
+    ctaHref?: string
+    videos?: Array<{
+      thumbnail: string
+      name: string
+      role: string
+      timestamp: string
     }>
   }
   classNames?: {
@@ -31,122 +27,141 @@ interface TestimonialsBlockProps {
 }
 
 const testimonials7Defaults = {
-  title: "What People Are Saying",
-  description: "Join thousands of happy customers sharing their experience.",
-  posts: [
+  title: "Over 1000+ people trust us",
+  description:
+    "Card gives you the blocks & components you need to create a truly professional website, landing page or admin panel for your SaaS.",
+  ctaLabel: "See all reviews by our customers",
+  ctaHref: "#",
+  videos: [
     {
-      content:
-        "Just switched to @company and wow, the difference is night and day. Why didn't I do this sooner? 🚀",
-      author: {
-        name: "Sarah Johnson",
-        handle: "@sarahj_dev",
-        avatar: "/avatars/01.webp",
-        verified: true,
-      },
-      likes: 234,
-      retweets: 45,
-      replies: 12,
-      date: "2h",
+      thumbnail: "/elements/portrait/person/5.webp",
+      name: "Smokee",
+      role: "Creative Director",
+      timestamp: "1 day ago",
     },
     {
-      content:
-        "Finally a tool that just works. No complicated setup, no learning curve. Just pure productivity. ✨",
-      author: {
-        name: "Mike Chen",
-        handle: "@mikechen",
-        avatar: "/avatars/02.webp",
-        verified: false,
-      },
-      likes: 189,
-      retweets: 28,
-      replies: 8,
-      date: "5h",
+      thumbnail: "/elements/portrait/person/6.webp",
+      name: "Kaity",
+      role: "Product Designer",
+      timestamp: "3 hours ago",
     },
     {
-      content:
-        "Customer support replied in 5 minutes. FIVE MINUTES. On a Sunday. 🤯 @company you've got a customer for life.",
-      author: {
-        name: "Emily Rodriguez",
-        handle: "@emilyrod",
-        avatar: "/avatars/03.webp",
-        verified: true,
-      },
-      likes: 567,
-      retweets: 89,
-      replies: 34,
-      date: "1d",
+      thumbnail: "/elements/portrait/person/1.webp",
+      name: "Ania",
+      role: "Fashion Director",
+      timestamp: "2 hours ago",
     },
     {
-      content:
-        "Our team productivity is up 40% since we started using this. The analytics dashboard alone is worth the price.",
-      author: {
-        name: "David Park",
-        handle: "@davidp_cto",
-        avatar: "/avatars/04.webp",
-        verified: true,
-      },
-      likes: 412,
-      retweets: 67,
-      replies: 21,
-      date: "2d",
+      thumbnail: "/elements/portrait/person/7.webp",
+      name: "Oakes",
+      role: "Brand Strategist",
+      timestamp: "5 hours ago",
     },
     {
-      content:
-        "I've recommended @company to at least 10 people this week. It's that good. 💯",
-      author: {
-        name: "Lisa Wang",
-        handle: "@lisawang",
-        avatar: "/avatars/05.webp",
-        verified: false,
-      },
-      likes: 156,
-      retweets: 23,
-      replies: 5,
-      date: "3d",
-    },
-    {
-      content:
-        "The attention to detail in this product is incredible. Every feature feels thoughtfully designed.",
-      author: {
-        name: "James Wilson",
-        handle: "@jameswilson",
-        avatar: "/avatars/06.webp",
-        verified: false,
-      },
-      likes: 298,
-      retweets: 41,
-      replies: 15,
-      date: "3d",
-    },
-    {
-      content:
-        "Just had the smoothest onboarding experience ever. From signup to fully operational in under an hour!",
-      author: {
-        name: "Amanda Foster",
-        handle: "@amandaf",
-        avatar: "/avatars/07.webp",
-        verified: true,
-      },
-      likes: 378,
-      retweets: 52,
-      replies: 19,
-      date: "4d",
-    },
-    {
-      content:
-        "Been using @company for 6 months now. Still discovering new features that make my life easier. 🙌",
-      author: {
-        name: "Kevin Anderson",
-        handle: "@kevina_tech",
-        avatar: "/avatars/08.webp",
-        verified: false,
-      },
-      likes: 201,
-      retweets: 34,
-      replies: 9,
-      date: "5d",
+      thumbnail: "/elements/portrait/person/8.webp",
+      name: "Lauren",
+      role: "Marketing Lead",
+      timestamp: "1 week ago",
     },
   ],
+}
+
+function GeometricPattern({ className }: { className?: string }) {
+  return (
+    <svg
+      className={cn("absolute inset-0 h-full w-full", className)}
+      viewBox="0 0 100 300"
+      preserveAspectRatio="xMidYMid slice"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="100" height="300" fill="#0a0a0a" />
+      {/* Constellation lines */}
+      <g stroke="rgba(255,255,255,0.15)" strokeWidth="0.3">
+        <line x1="10" y1="20" x2="45" y2="50" />
+        <line x1="45" y1="50" x2="30" y2="90" />
+        <line x1="30" y1="90" x2="70" y2="120" />
+        <line x1="70" y1="120" x2="50" y2="160" />
+        <line x1="50" y1="160" x2="85" y2="190" />
+        <line x1="85" y1="190" x2="40" y2="230" />
+        <line x1="40" y1="230" x2="60" y2="270" />
+        <line x1="20" y1="60" x2="60" y2="80" />
+        <line x1="60" y1="80" x2="45" y2="130" />
+        <line x1="80" y1="40" x2="70" y2="120" />
+        <line x1="15" y1="150" x2="50" y2="160" />
+        <line x1="90" y1="250" x2="60" y2="270" />
+      </g>
+      {/* Dots at intersections */}
+      <g fill="rgba(255,255,255,0.3)">
+        <circle cx="10" cy="20" r="1.5" />
+        <circle cx="45" cy="50" r="1.5" />
+        <circle cx="30" cy="90" r="1.5" />
+        <circle cx="70" cy="120" r="1.5" />
+        <circle cx="50" cy="160" r="1.5" />
+        <circle cx="85" cy="190" r="1.5" />
+        <circle cx="40" cy="230" r="1.5" />
+        <circle cx="60" cy="270" r="1.5" />
+        <circle cx="20" cy="60" r="1.5" />
+        <circle cx="60" cy="80" r="1.5" />
+        <circle cx="80" cy="40" r="1.5" />
+        <circle cx="15" cy="150" r="1.5" />
+        <circle cx="90" cy="250" r="1.5" />
+        <circle cx="45" cy="130" r="1.5" />
+      </g>
+      {/* Accent colored elements */}
+      <g stroke="rgba(220,38,38,0.4)" strokeWidth="0.3">
+        <line x1="25" y1="40" x2="55" y2="70" />
+        <line x1="75" y1="100" x2="55" y2="140" />
+        <line x1="35" y1="200" x2="65" y2="240" />
+      </g>
+      <g fill="rgba(220,38,38,0.5)">
+        <circle cx="25" cy="40" r="1" />
+        <circle cx="55" cy="70" r="1" />
+        <circle cx="75" cy="100" r="1" />
+        <circle cx="55" cy="140" r="1" />
+        <circle cx="35" cy="200" r="1" />
+        <circle cx="65" cy="240" r="1" />
+      </g>
+    </svg>
+  )
+}
+
+function VerticalCard({
+  name,
+  position,
+}: {
+  name: string
+  position: "far-left" | "left" | "right" | "far-right"
+}) {
+  const positionStyles = {
+    "far-left": "left-0 -translate-x-1/2 md:left-[5%] md:translate-x-0",
+    left: "left-[10%] md:left-[15%]",
+    right: "right-[10%] md:right-[15%]",
+    "far-right": "right-0 translate-x-1/2 md:right-[5%] md:translate-x-0",
+  }
+
+  return (
+    <div
+      className={cn(
+        "absolute top-1/2 z-10 h-[280px] w-[60px] -translate-y-1/2 overflow-hidden rounded-lg shadow-xl md:h-[360px] md:w-[70px]",
+        positionStyles[position]
+      )}
+    >
+      <GeometricPattern />
+      <div className="absolute inset-0 flex items-center justify-center">
+        <span
+          className="text-sm font-semibold tracking-[0.3em] text-white uppercase"
+          style={{
+            writingMode: "vertical-rl",
+            textOrientation: "mixed",
+            transform: "rotate(180deg)",
+          }}
+        >
+          {name}
+        </span>
+      </div>
+    </div>
+  )
 }
 
 export function Testimonials7({
@@ -156,18 +171,34 @@ export function Testimonials7({
   const {
     title = testimonials7Defaults.title,
     description = testimonials7Defaults.description,
-    posts = testimonials7Defaults.posts,
+    ctaLabel = testimonials7Defaults.ctaLabel,
+    ctaHref = testimonials7Defaults.ctaHref,
+    videos = testimonials7Defaults.videos,
   } = content
 
+  const centerVideo = videos[2] || videos[0]
+  const sideVideos = [videos[0], videos[1], videos[3], videos[4]].filter(
+    Boolean
+  )
+
   return (
-    <section className={cn("bg-muted", classNames.root)}>
+    <section
+      className={cn(
+        "relative overflow-hidden bg-gradient-to-b from-cyan-100 via-cyan-50 to-amber-50 dark:from-cyan-950 dark:via-cyan-900/50 dark:to-amber-950/30",
+        classNames.root
+      )}
+    >
       <div
-        className={cn("container px-6 py-16 md:py-24", classNames.container)}
+        className={cn(
+          "relative container px-6 py-16 md:py-24",
+          classNames.container
+        )}
       >
-        <div className="mb-12 text-center">
+        {/* Header */}
+        <div className="mb-12 text-center md:mb-16">
           <h2
             className={cn(
-              "text-foreground mb-4 text-3xl font-bold md:text-4xl",
+              "text-foreground mb-4 text-3xl font-bold md:text-4xl lg:text-5xl",
               classNames.header?.title
             )}
           >
@@ -175,7 +206,7 @@ export function Testimonials7({
           </h2>
           <p
             className={cn(
-              "text-muted-foreground mx-auto max-w-2xl",
+              "text-muted-foreground mx-auto max-w-2xl text-sm md:text-base",
               classNames.header?.description
             )}
           >
@@ -183,69 +214,79 @@ export function Testimonials7({
           </p>
         </div>
 
-        {/* Masonry-style grid */}
-        <div className="columns-1 gap-4 md:columns-2 lg:columns-3 xl:columns-4">
-          {posts.map((post, i) => (
-            <div
-              key={i}
-              className="bg-background border-border mb-4 break-inside-avoid rounded-xl border p-4"
-            >
-              {/* Author Header */}
-              <div className="mb-3 flex items-center gap-3">
-                <div className="relative h-10 w-10 overflow-hidden rounded-full">
-                  <Image
-                    src={post.author.avatar}
-                    alt={post.author.name}
-                    fill
-                    className="object-cover"
+        {/* Carousel */}
+        <div className="relative mx-auto mb-12 h-[400px] max-w-5xl md:h-[500px]">
+          {/* Side Cards */}
+          {sideVideos[0] && (
+            <VerticalCard name={sideVideos[0].name} position="far-left" />
+          )}
+          {sideVideos[1] && (
+            <VerticalCard name={sideVideos[1].name} position="left" />
+          )}
+          {sideVideos[2] && (
+            <VerticalCard name={sideVideos[2].name} position="right" />
+          )}
+          {sideVideos[3] && (
+            <VerticalCard name={sideVideos[3].name} position="far-right" />
+          )}
+
+          {/* Center Video Card */}
+          <div className="absolute top-1/2 left-1/2 z-20 w-[280px] -translate-x-1/2 -translate-y-1/2 cursor-pointer overflow-hidden rounded-xl shadow-2xl md:w-[420px]">
+            <div className="relative aspect-[3/4]">
+              <Image
+                src={centerVideo.thumbnail}
+                alt={centerVideo.name}
+                fill
+                className="object-cover"
+              />
+              {/* Play Button */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/90 shadow-lg backdrop-blur-sm transition-transform hover:scale-110 md:h-16 md:w-16">
+                  <DynamicIcon
+                    name="Play"
+                    className="text-foreground ml-1 h-6 w-6 md:h-7 md:w-7"
                   />
                 </div>
-                <div className="flex-1">
-                  <div className="flex items-center gap-1">
-                    <span className="text-foreground text-sm font-semibold">
-                      {post.author.name}
-                    </span>
-                    {post.author.verified && (
-                      <svg
-                        className="h-4 w-4 text-blue-500"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5c-.145.217-.382.334-.625.334-.143 0-.288-.04-.416-.126l-.115-.094-2.415-2.415c-.293-.293-.293-.768 0-1.06s.768-.294 1.06 0l1.77 1.767 3.825-5.74c.23-.345.696-.436 1.04-.207.346.23.44.696.21 1.04z" />
-                      </svg>
-                    )}
-                  </div>
-                  <span className="text-muted-foreground text-xs">
-                    {post.author.handle}
-                  </span>
-                </div>
-                <span className="text-muted-foreground text-xs">
-                  {post.date}
-                </span>
               </div>
-
-              {/* Content */}
-              <p className="text-foreground mb-3 text-sm leading-relaxed">
-                {post.content}
-              </p>
-
-              {/* Engagement */}
-              <div className="text-muted-foreground flex items-center gap-4 text-xs">
-                <button className="flex items-center gap-1 transition-colors hover:text-red-500">
-                  <DynamicIcon name="Heart" className="h-4 w-4" />
-                  {post.likes}
-                </button>
-                <button className="flex items-center gap-1 transition-colors hover:text-green-500">
-                  <DynamicIcon name="Repeat2" className="h-4 w-4" />
-                  {post.retweets}
-                </button>
-                <button className="hover:text-primary flex items-center gap-1 transition-colors">
-                  <DynamicIcon name="MessageCircle" className="h-4 w-4" />
-                  {post.replies}
-                </button>
+              {/* Info Overlay */}
+              <div className="absolute right-0 bottom-0 left-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 pt-12 md:p-6 md:pt-16">
+                <h3 className="text-lg font-bold tracking-wide text-white uppercase md:text-xl">
+                  {centerVideo.name}
+                </h3>
+                <p className="text-xs font-medium tracking-wider text-white/80 uppercase md:text-sm">
+                  {centerVideo.role}
+                </p>
+                <p className="mt-1 text-xs text-white/60">
+                  {centerVideo.timestamp}
+                </p>
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* Navigation Arrows */}
+          <button
+            className="bg-background/80 text-foreground hover:bg-background absolute bottom-4 left-[20%] z-30 flex h-10 w-10 items-center justify-center rounded-full shadow-lg backdrop-blur-sm transition-colors md:bottom-8 md:left-[25%]"
+            aria-label="Previous testimonial"
+          >
+            <DynamicIcon name="ChevronLeft" className="h-5 w-5" />
+          </button>
+          <button
+            className="bg-background/80 text-foreground hover:bg-background absolute right-[20%] bottom-4 z-30 flex h-10 w-10 items-center justify-center rounded-full shadow-lg backdrop-blur-sm transition-colors md:right-[25%] md:bottom-8"
+            aria-label="Next testimonial"
+          >
+            <DynamicIcon name="ChevronRight" className="h-5 w-5" />
+          </button>
+        </div>
+
+        {/* CTA Button */}
+        <div className="text-center">
+          <Link
+            href={ctaHref}
+            className="border-foreground/20 text-foreground hover:bg-foreground/5 inline-flex items-center gap-2 rounded-full border bg-white/50 px-6 py-3 text-sm font-medium backdrop-blur-sm transition-colors dark:bg-white/10"
+          >
+            {ctaLabel}
+            <DynamicIcon name="ArrowUpRight" className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>

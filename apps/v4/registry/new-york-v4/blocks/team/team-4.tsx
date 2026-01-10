@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { cn } from "@/lib/utils"
+import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 
 interface TeamBlockProps {
   content?: {
@@ -103,24 +104,13 @@ export function Team4({ content = {}, classNames = {} }: TeamBlockProps) {
       <div
         className={cn("container px-6 py-16 md:py-24", classNames.container)}
       >
-        <div className="mb-16 text-center">
-          <h2
-            className={cn(
-              "text-foreground mb-4 text-3xl font-bold md:text-4xl",
-              classNames.header?.title
-            )}
-          >
-            {title}
-          </h2>
-          <p
-            className={cn(
-              "text-muted-foreground mx-auto max-w-2xl",
-              classNames.header?.description
-            )}
-          >
-            {description}
-          </p>
-        </div>
+        <BlockHeader
+          title={title}
+          description={description}
+          spacing="none"
+          className="mb-16"
+          classNames={classNames.header}
+        />
 
         {/* Leadership Section */}
         <div className="mb-16">

@@ -3,6 +3,7 @@
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { type FeaturesBlockProps } from "@/lib/blocks/features.types"
 import { cn } from "@/lib/utils"
+import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 
 const features9Defaults = {
   badge: "Why Choose Us",
@@ -62,41 +63,12 @@ export function Features9({
     <section className={cn("py-24", classNames.root)}>
       <div className={cn("container px-6", classNames.container)}>
         {/* Header */}
-        <div
-          className={cn(
-            "mx-auto mb-16 max-w-2xl text-center",
-            classNames.header?.root
-          )}
-        >
-          {badge && (
-            <p
-              className={cn(
-                "text-brand mb-4 text-sm font-medium tracking-wider uppercase",
-                classNames.header?.badge
-              )}
-            >
-              {badge}
-            </p>
-          )}
-          <h2
-            className={cn(
-              "text-3xl font-bold tracking-tight md:text-4xl",
-              classNames.header?.title
-            )}
-          >
-            {title}
-          </h2>
-          {description && (
-            <p
-              className={cn(
-                "text-muted-foreground mt-4 text-lg",
-                classNames.header?.description
-              )}
-            >
-              {description}
-            </p>
-          )}
-        </div>
+        <BlockHeader
+          badge={badge}
+          title={title}
+          description={description}
+          classNames={classNames.header}
+        />
 
         {/* Features grid */}
         <div

@@ -4,6 +4,7 @@ import Link from "next/link"
 
 import { type HeroBlockProps } from "@/lib/blocks/hero.types"
 import { cn } from "@/lib/utils"
+import { HeroText } from "@/registry/new-york-v4/lib/hero-text"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { HeroButton } from "@/registry/new-york-v4/ui/hero-button"
 
@@ -55,41 +56,14 @@ export function Hero25({ content = {}, classNames = {} }: HeroBlockProps) {
           classNames.container
         )}
       >
-        {/* Badge */}
-        {badge && (
-          <div className="mb-6 inline-flex items-center gap-2">
-            <span className="bg-brand/10 text-brand rounded-full px-3 py-1 text-sm font-medium">
-              {badge}
-            </span>
-          </div>
-        )}
-
-        {/* Title */}
-        <h1
-          className={cn(
-            "display text-4xl leading-[1.1] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl",
-            classNames.header?.title
-          )}
-        >
-          {title.split("\n").map((line, i) => (
-            <span key={i}>
-              {line}
-              {i < title.split("\n").length - 1 && <br />}
-            </span>
-          ))}
-        </h1>
-
-        {/* Description */}
-        {description && (
-          <p
-            className={cn(
-              "text-muted-foreground mx-auto mt-6 max-w-2xl text-lg md:text-xl",
-              classNames.header?.description
-            )}
-          >
-            {description}
-          </p>
-        )}
+        <HeroText
+          badge={badge}
+          title={title}
+          description={description}
+          size="large"
+          align="center"
+          classNames={classNames.header}
+        />
 
         {/* CTAs */}
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">

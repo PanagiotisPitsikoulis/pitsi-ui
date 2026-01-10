@@ -175,7 +175,7 @@ export function AppGymLog1({ onFinish }: AppGymLog1Props) {
         {/* Header */}
         <div className="flex items-start justify-between">
           <div>
-            <h1 className="text-foreground text-2xl font-bold tracking-tight">
+            <h1 className="display text-foreground text-2xl font-bold tracking-tight">
               Push Day
             </h1>
             <p className="text-muted-foreground mt-1 flex items-center gap-2 text-sm">

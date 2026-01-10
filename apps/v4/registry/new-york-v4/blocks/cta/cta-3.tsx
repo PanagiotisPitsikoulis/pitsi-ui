@@ -5,6 +5,7 @@ import Link from "next/link"
 import { type CtaBlockProps } from "@/lib/blocks/cta.types"
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
+import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 const cta3Defaults = {
@@ -44,25 +45,23 @@ export function Cta3({ content = {}, classNames = {} }: CtaBlockProps) {
             {cta3Defaults.badge}
           </div>
 
-          {/* Title */}
-          <h2
-            className={cn(
-              "mb-4 text-4xl font-bold md:text-5xl lg:text-6xl",
-              classNames.header?.title
-            )}
-          >
-            {title}
-          </h2>
-
-          {/* Description */}
-          <p
-            className={cn(
-              "text-background/70 mx-auto mb-8 max-w-2xl text-lg",
-              classNames.header?.description
-            )}
-          >
-            {description}
-          </p>
+          <BlockHeader
+            title={title}
+            description={description}
+            spacing="none"
+            className="mb-8"
+            classNames={{
+              ...classNames.header,
+              title: cn(
+                "text-4xl md:text-5xl lg:text-6xl",
+                classNames.header?.title
+              ),
+              description: cn(
+                "text-background/70",
+                classNames.header?.description
+              ),
+            }}
+          />
 
           {/* Countdown Timer */}
           <div className="mb-10 flex items-center justify-center gap-4">

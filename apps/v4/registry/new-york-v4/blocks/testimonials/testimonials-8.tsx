@@ -4,6 +4,7 @@ import Image from "next/image"
 
 import { type TestimonialsBlockProps } from "@/lib/blocks/testimonials.types"
 import { cn } from "@/lib/utils"
+import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 
 const testimonials8Defaults = {
   badge: "Testimonials",
@@ -50,26 +51,11 @@ export function Testimonials8({
     <section className={cn("py-24", classNames.root)}>
       <div className={cn("container px-6", classNames.container)}>
         {/* Header */}
-        <div className={cn("mb-16 text-center", classNames.header?.root)}>
-          {badge && (
-            <p
-              className={cn(
-                "text-brand mb-4 text-sm font-medium tracking-wider uppercase",
-                classNames.header?.badge
-              )}
-            >
-              {badge}
-            </p>
-          )}
-          <h2
-            className={cn(
-              "text-3xl font-bold tracking-tight md:text-4xl",
-              classNames.header?.title
-            )}
-          >
-            {title}
-          </h2>
-        </div>
+        <BlockHeader
+          badge={badge}
+          title={title}
+          classNames={classNames.header}
+        />
 
         {/* Testimonials grid */}
         <div className={cn("grid gap-8 md:grid-cols-3", classNames.grid)}>

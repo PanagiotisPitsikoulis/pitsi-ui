@@ -103,7 +103,7 @@ export const fontPresets: Record<FontPreset, TemplateFonts> = {
     bodyWeight: "400",
   },
   elegant: {
-    display: "var(--font-fraunces)",
+    display: "var(--font-cormorant)",
     body: "var(--font-dm-sans)",
     displayWeight: "600",
     bodyWeight: "400",

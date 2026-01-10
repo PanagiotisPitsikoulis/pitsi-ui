@@ -313,6 +313,24 @@
       "readiness": "production"
     },
     {
+      "name": "collapsible-gallery",
+      "type": "registry:ui",
+      "registryDependencies": [
+        "collapsible"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/ui/collapsible-gallery.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "categories": [
+        "application"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
       "name": "command",
       "type": "registry:ui",
       "dependencies": [
@@ -2614,6 +2632,131 @@
       }
     },
     {
+      "name": "app-block-viewer-1",
+      "type": "registry:block",
+      "description": "Block viewer with resizable preview, code panel, file tree, and device toggles",
+      "registryDependencies": [
+        "badge",
+        "button",
+        "resizable",
+        "separator",
+        "tabs",
+        "toggle-group"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/application/app-block-viewer-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "application",
+        "docs"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-library",
+        "blockType": "application",
+        "order": 5,
+        "palette": "neutral",
+        "typography": "modern",
+        "tint": "base"
+      }
+    },
+    {
+      "name": "app-blog-list-1",
+      "type": "registry:block",
+      "description": "Blog listing page with category sidebar, search, and pagination",
+      "registryDependencies": [
+        "badge",
+        "button",
+        "card",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/application/app-blog-list-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "application",
+        "blog"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-library",
+        "blockType": "application",
+        "order": 6,
+        "palette": "neutral",
+        "typography": "modern",
+        "tint": "base"
+      }
+    },
+    {
+      "name": "app-blog-post-1",
+      "type": "registry:block",
+      "description": "Blog post viewer with table of contents, author card, and share buttons",
+      "registryDependencies": [
+        "avatar",
+        "badge",
+        "button",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/application/app-blog-post-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "application",
+        "blog"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-library",
+        "blockType": "application",
+        "order": 7,
+        "palette": "neutral",
+        "typography": "modern",
+        "tint": "base"
+      }
+    },
+    {
+      "name": "app-component-preview-1",
+      "type": "registry:block",
+      "description": "Component preview with code tabs, readiness badges, and copy functionality",
+      "registryDependencies": [
+        "badge",
+        "button",
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/application/app-component-preview-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "application",
+        "docs"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-library",
+        "blockType": "application",
+        "order": 4,
+        "palette": "neutral",
+        "typography": "modern",
+        "tint": "base"
+      }
+    },
+    {
       "name": "app-dashboard-1",
       "type": "registry:block",
       "description": "Dashboard page with sidebar navigation, stats cards, and upgrade prompt",
@@ -2638,6 +2781,35 @@
         "template": "service-library",
         "blockType": "application",
         "order": 1,
+        "palette": "neutral",
+        "typography": "modern",
+        "tint": "base"
+      }
+    },
+    {
+      "name": "app-docs-viewer-1",
+      "type": "registry:block",
+      "description": "Documentation page viewer with table of contents, navigation, and copy functionality",
+      "registryDependencies": [
+        "button",
+        "sheet"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/application/app-docs-viewer-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "application",
+        "docs"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-library",
+        "blockType": "application",
+        "order": 3,
         "palette": "neutral",
         "typography": "modern",
         "tint": "base"
@@ -3084,6 +3256,77 @@
       }
     },
     {
+      "name": "app-settings-1",
+      "type": "registry:block",
+      "description": "Settings page with sidebar navigation, profile form, notifications, and appearance options",
+      "registryDependencies": [
+        "avatar",
+        "button",
+        "card",
+        "input",
+        "label",
+        "select",
+        "separator",
+        "switch",
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/application/app-settings-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "application",
+        "dashboard"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-library",
+        "blockType": "application",
+        "order": 9,
+        "palette": "neutral",
+        "typography": "modern",
+        "tint": "base"
+      }
+    },
+    {
+      "name": "app-tool-layout-1",
+      "type": "registry:block",
+      "description": "Interactive tool layout with sidebar controls, preview panel, and mobile view toggle",
+      "registryDependencies": [
+        "button",
+        "card",
+        "label",
+        "scroll-area",
+        "separator",
+        "slider",
+        "switch",
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/application/app-tool-layout-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "application",
+        "tools"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-library",
+        "blockType": "application",
+        "order": 8,
+        "palette": "neutral",
+        "typography": "modern",
+        "tint": "base"
+      }
+    },
+    {
       "name": "auth-1",
       "type": "registry:block",
       "description": "Centered login form with social sign-in options",
@@ -3416,6 +3659,171 @@
         "order": 12,
         "palette": "sage",
         "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "blog-post-1",
+      "type": "registry:block",
+      "description": "Full blog post page with featured image, author bio, table of contents, and related posts for plant shop",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "badge",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/blog-post/blog-post-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "blog-post",
+        "pages"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "blog-post",
+        "order": 1,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "blog-post-2",
+      "type": "registry:block",
+      "description": "Full blog post page with featured image, author bio, table of contents, and related posts for travel site",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "badge",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/blog-post/blog-post-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "blog-post",
+        "pages"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "blog-post",
+        "order": 1,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "blog-post-3",
+      "type": "registry:block",
+      "description": "Full blog post page with featured image, author bio, table of contents, and related posts for yacht/boat site",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "badge",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/blog-post/blog-post-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "blog-post",
+        "pages"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-boat",
+        "blockType": "blog-post",
+        "order": 1,
+        "palette": "azure",
+        "typography": "classic",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "blog-post-4",
+      "type": "registry:block",
+      "description": "Full blog post page with featured image, author bio, table of contents, and related posts for fitness site",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "badge",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/blog-post/blog-post-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "blog-post",
+        "pages"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-fitness",
+        "blockType": "blog-post",
+        "order": 1,
+        "palette": "neon",
+        "typography": "futuristic",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "blog-post-5",
+      "type": "registry:block",
+      "description": "Full blog post page with featured image, author bio, table of contents, and related posts for library site",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "badge",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/blog-post/blog-post-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "blog-post",
+        "pages"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-library",
+        "blockType": "blog-post",
+        "order": 1,
+        "palette": "slate",
+        "typography": "modern",
         "tint": "tinted"
       }
     },
@@ -4535,6 +4943,9 @@
       "name": "footer-6",
       "type": "registry:block",
       "description": "App download footer with store badges and QR code",
+      "registryDependencies": [
+        "qr-code"
+      ],
       "files": [
         {
           "path": "registry/new-york-v4/blocks/footer/footer-6.tsx",
@@ -6999,6 +7410,171 @@
       }
     },
     {
+      "name": "search-1",
+      "type": "registry:block",
+      "description": "Search page with category filters and results grid for plant shop",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "badge",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/search/search-1.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "search",
+        "pages"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-plants",
+        "blockType": "search",
+        "order": 1,
+        "palette": "sage",
+        "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "search-2",
+      "type": "registry:block",
+      "description": "Search page with category filters and results grid for travel site",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "badge",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/search/search-2.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "search",
+        "pages"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "search",
+        "order": 1,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "search-3",
+      "type": "registry:block",
+      "description": "Search page with category filters and results grid for yacht/boat site",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "badge",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/search/search-3.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "search",
+        "pages"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-boat",
+        "blockType": "search",
+        "order": 1,
+        "palette": "azure",
+        "typography": "classic",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "search-4",
+      "type": "registry:block",
+      "description": "Search page with category filters and results grid for fitness site",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "badge",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/search/search-4.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "search",
+        "pages"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-fitness",
+        "blockType": "search",
+        "order": 1,
+        "palette": "neon",
+        "typography": "futuristic",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "search-5",
+      "type": "registry:block",
+      "description": "Search page with category filters and results list for library site",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "badge",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/search/search-5.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "search",
+        "pages"
+      ],
+      "tier": "free",
+      "readiness": "production",
+      "blockConfig": {
+        "template": "service-library",
+        "blockType": "search",
+        "order": 1,
+        "palette": "slate",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
       "name": "stats-1",
       "type": "registry:block",
       "description": "Plant shop statistics section",
@@ -7644,6 +8220,25 @@
       "readiness": "production"
     },
     {
+      "name": "qr-code",
+      "type": "registry:lib",
+      "description": "QR code component with label and description, styled for the design system.",
+      "dependencies": [
+        "qrcode.react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/lib/qr-code.tsx",
+          "type": "registry:lib"
+        }
+      ],
+      "readiness": "production"
+    },
+    {
       "name": "recursive-clone-children",
       "type": "registry:lib",
       "description": "Recursively clone React children and inject props into components by display name.",
@@ -7742,6 +8337,44 @@
       "files": [
         {
           "path": "registry/new-york-v4/lib/templates.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "readiness": "production"
+    },
+    {
+      "name": "block-header",
+      "type": "registry:lib",
+      "description": "Reusable section header component for blocks with badge, title, and description.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils",
+        "polymorphic"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/lib/block-header.tsx",
+          "type": "registry:lib"
+        }
+      ],
+      "readiness": "production"
+    },
+    {
+      "name": "hero-text",
+      "type": "registry:lib",
+      "description": "Polymorphic hero text component with badge, title, and description for hero sections.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils",
+        "polymorphic"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/lib/hero-text.tsx",
           "type": "registry:lib"
         }
       ],
@@ -9289,6 +9922,24 @@
       ],
       "categories": [
         "core-components"
+      ],
+      "tier": "free",
+      "readiness": "production"
+    },
+    {
+      "name": "collapsible-gallery-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "collapsible-gallery"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/examples/collapsible-gallery-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "categories": [
+        "application"
       ],
       "tier": "free",
       "readiness": "production"

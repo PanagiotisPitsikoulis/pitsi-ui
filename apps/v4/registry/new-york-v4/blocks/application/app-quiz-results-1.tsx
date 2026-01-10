@@ -47,7 +47,7 @@ export function AppQuizResults1({
           <div className="bg-muted mx-auto mb-4 flex size-20 items-center justify-center rounded-full">
             <Trophy className="text-muted-foreground size-10" />
           </div>
-          <h1 className="text-foreground text-3xl font-bold tracking-tight">
+          <h1 className="display text-foreground text-3xl font-bold tracking-tight">
             Quiz Complete!
           </h1>
           <p className="text-muted-foreground">

@@ -2,6 +2,7 @@
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
+import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Input } from "@/registry/new-york-v4/ui/input"
 
@@ -48,22 +49,13 @@ export function Newsletter3({
         className={cn("container px-6 py-16 md:py-24", classNames.container)}
       >
         <div className="mx-auto max-w-2xl text-center">
-          <h2
-            className={cn(
-              "text-foreground mb-4 text-3xl font-bold md:text-4xl",
-              classNames.header?.title
-            )}
-          >
-            {title}
-          </h2>
-          <p
-            className={cn(
-              "text-muted-foreground mb-8",
-              classNames.header?.description
-            )}
-          >
-            {description}
-          </p>
+          <BlockHeader
+            title={title}
+            description={description}
+            spacing="none"
+            className="mb-8"
+            classNames={classNames.header}
+          />
 
           {/* Benefits */}
           <div className="mb-8 flex flex-wrap items-center justify-center gap-6">

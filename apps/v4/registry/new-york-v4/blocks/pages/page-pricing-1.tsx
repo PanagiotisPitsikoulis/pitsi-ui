@@ -12,7 +12,8 @@ import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 const pagePricing1Defaults = {
   hero: {
     title: "Simple Pricing\nFor Everyone",
-    description: "Choose a plan that fits your needs.\nScale with your ambition.",
+    description:
+      "Choose a plan that fits your needs.\nScale with your ambition.",
   },
   features: {
     free: [
@@ -99,7 +100,8 @@ const pagePricing1Defaults = {
       },
     ],
   },
-  footer: "Secure payment powered by Stripe. No recurring charges, no hidden fees.",
+  footer:
+    "Secure payment powered by Stripe. No recurring charges, no hidden fees.",
 }
 
 // Striped Background Component
@@ -111,7 +113,7 @@ function StripedBackground({ className }: { className?: string }) {
         className
       )}
     >
-      <div className="container relative mx-auto h-full px-6">
+      <div className="relative container mx-auto h-full px-6">
         <div className="absolute inset-0 flex justify-between">
           {Array.from({ length: 7 }).map((_, i) => (
             <div key={i} className="bg-border/30 h-full w-px" />
@@ -173,7 +175,9 @@ function PricingCard({
               </span>
             )}
             {priceLabel && (
-              <span className="text-muted-foreground text-sm">/{priceLabel}</span>
+              <span className="text-muted-foreground text-sm">
+                /{priceLabel}
+              </span>
             )}
           </div>
         </div>
@@ -228,7 +232,9 @@ export function PagePricing1({
   onCheckout,
   className,
 }: PagePricing1Props) {
-  const [licenseType, setLicenseType] = React.useState<"single" | "team">("single")
+  const [licenseType, setLicenseType] = React.useState<"single" | "team">(
+    "single"
+  )
   const heroContent = { ...pagePricing1Defaults.hero, ...hero }
 
   const getFeatures = (key: string) => {
@@ -244,7 +250,7 @@ export function PagePricing1({
         <div className="from-background absolute inset-x-0 top-0 z-10 h-32 bg-gradient-to-b to-transparent" />
         <div className="relative container flex h-full w-full flex-col items-center justify-center px-6">
           <Spacer size="8xl" sizeMobile="6xl" />
-          <h1 className="text-center text-[2.5rem] font-bold leading-[0.9] tracking-tight sm:text-5xl md:text-8xl whitespace-pre-line">
+          <h1 className="text-center text-[2.5rem] leading-[0.9] font-bold tracking-tight whitespace-pre-line sm:text-5xl md:text-8xl">
             {heroContent.title}
           </h1>
           <Spacer size="2xl" sizeMobile="md" />
@@ -261,7 +267,7 @@ export function PagePricing1({
           Simple Pricing
         </p>
         <Spacer size="md" sizeMobile="sm" />
-        <h2 className="max-w-4xl text-4xl font-bold leading-[1.1] tracking-tight md:text-6xl lg:text-7xl">
+        <h2 className="max-w-4xl text-4xl leading-[1.1] font-bold tracking-tight md:text-6xl lg:text-7xl">
           One Fair Price.
           <br />
           <span className="text-foreground">Lifetime Access.</span>
@@ -304,7 +310,9 @@ export function PagePricing1({
                 key={index}
                 name={plan.name}
                 price={"price" in plan ? plan.price : undefined}
-                originalPrice={"originalPrice" in plan ? plan.originalPrice : undefined}
+                originalPrice={
+                  "originalPrice" in plan ? plan.originalPrice : undefined
+                }
                 priceLabel={"priceLabel" in plan ? plan.priceLabel : undefined}
                 description={plan.description}
                 featureList={
@@ -316,7 +324,9 @@ export function PagePricing1({
                 {"cta" in plan && plan.cta ? (
                   <Button
                     size="lg"
-                    variant={plan.variant === "featured" ? "default" : "secondary"}
+                    variant={
+                      plan.variant === "featured" ? "default" : "secondary"
+                    }
                     className="w-full rounded-xl"
                     onClick={() => onCheckout?.(plan.name)}
                   >

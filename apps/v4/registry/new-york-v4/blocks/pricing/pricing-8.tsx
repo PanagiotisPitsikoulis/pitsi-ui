@@ -5,6 +5,7 @@ import Link from "next/link"
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { type PricingBlockProps } from "@/lib/blocks/pricing.types"
 import { cn } from "@/lib/utils"
+import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 const pricing8Defaults = {
@@ -56,41 +57,12 @@ export function Pricing8({ content = {}, classNames = {} }: PricingBlockProps) {
     <section className={cn("py-24", classNames.root)}>
       <div className={cn("container px-6", classNames.container)}>
         {/* Header */}
-        <div
-          className={cn(
-            "mx-auto mb-16 max-w-2xl text-center",
-            classNames.header?.root
-          )}
-        >
-          {badge && (
-            <p
-              className={cn(
-                "text-brand mb-4 text-sm font-medium tracking-wider uppercase",
-                classNames.header?.badge
-              )}
-            >
-              {badge}
-            </p>
-          )}
-          <h2
-            className={cn(
-              "text-3xl font-bold tracking-tight md:text-4xl",
-              classNames.header?.title
-            )}
-          >
-            {title}
-          </h2>
-          {description && (
-            <p
-              className={cn(
-                "text-muted-foreground mt-4 text-lg",
-                classNames.header?.description
-              )}
-            >
-              {description}
-            </p>
-          )}
-        </div>
+        <BlockHeader
+          badge={badge}
+          title={title}
+          description={description}
+          classNames={classNames.header}
+        />
 
         {/* Pricing cards */}
         <div

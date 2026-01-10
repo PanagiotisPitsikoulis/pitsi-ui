@@ -5,31 +5,36 @@ const items = [
     id: "1",
     title: "Mountain Retreat",
     description: "A peaceful cabin in the mountains",
-    image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=400&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=400&h=300&fit=crop",
   },
   {
     id: "2",
     title: "Beach House",
     description: "Modern beachfront property",
-    image: "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=400&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=400&h=300&fit=crop",
   },
   {
     id: "3",
     title: "City Loft",
     description: "Urban living at its finest",
-    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&h=300&fit=crop",
   },
   {
     id: "4",
     title: "Forest Cabin",
     description: "Secluded retreat in nature",
-    image: "https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=400&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=400&h=300&fit=crop",
   },
   {
     id: "5",
     title: "Lake House",
     description: "Waterfront living with stunning views",
-    image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=400&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=400&h=300&fit=crop",
   },
 ]
 

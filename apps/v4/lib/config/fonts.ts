@@ -1,7 +1,7 @@
 import {
+  Cormorant_Garamond,
   DM_Sans,
   Geist_Mono as FontMono,
-  Fraunces,
   Inter,
   Nunito,
   Orbitron,
@@ -34,9 +34,9 @@ const fontDisplay = Poppins({
 })
 
 // Template-specific fonts - Elegant preset
-const fontFraunces = Fraunces({
+const fontCormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  variable: "--font-fraunces",
+  variable: "--font-cormorant",
   weight: ["400", "500", "600", "700"],
 })
 
@@ -89,7 +89,7 @@ export const fontVariables = cn(
   fontSans.variable,
   fontMono.variable,
   fontDisplay.variable,
-  fontFraunces.variable,
+  fontCormorant.variable,
   fontDMSans.variable,
   fontPlayfair.variable,
   fontSourceSans.variable,

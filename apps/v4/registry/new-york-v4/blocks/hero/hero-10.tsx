@@ -1,15 +1,17 @@
 "use client"
 
-import Image from "next/image"
 import Link from "next/link"
 
 import { type HeroBlockProps } from "@/lib/blocks/hero.types"
 import { cn } from "@/lib/utils"
+import Aurora from "@/registry/new-york-v4/animations/aurora/aurora"
+import { ScrollFade } from "@/registry/new-york-v4/animations/scroll-fade/scroll-fade"
+import { HeroText } from "@/registry/new-york-v4/lib/hero-text"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 import { HeroButton } from "../../ui/hero-button"
 
-// Hero 10 - Full-Bleed Background + Floating Glassmorphism Card (Plants theme)
+// Hero 10 - Aurora Background with Scroll Fade (Plants theme)
 const hero10Defaults = {
   badge: "Premium Plants",
   title: "Bring Nature\nIndoors",
@@ -21,10 +23,7 @@ const hero10Defaults = {
     href: "#",
     variant: "outline" as const,
   },
-  backgroundImage: {
-    src: "/elements/landscape/plants/1.webp",
-    alt: "Lush indoor plant collection",
-  },
+  auroraColors: ["#5cb87e", "#2d5a3f", "#a85cb8"],
 }
 
 export function Hero10({ content = {}, classNames = {} }: HeroBlockProps) {
@@ -34,91 +33,62 @@ export function Hero10({ content = {}, classNames = {} }: HeroBlockProps) {
     description = hero10Defaults.description,
     primaryCta = hero10Defaults.primaryCta,
     secondaryCta = hero10Defaults.secondaryCta,
-    backgroundImage = hero10Defaults.backgroundImage,
+    auroraColors = hero10Defaults.auroraColors,
   } = content as typeof hero10Defaults
 
   return (
     <section
       className={cn(
-        "relative flex min-h-[calc(100svh-5rem)] flex-col overflow-hidden",
+        "bg-background relative flex min-h-[calc(100svh-5rem)] flex-col overflow-hidden",
         classNames.root
       )}
     >
-      {/* Full-bleed background image */}
-      <div className="absolute inset-0">
-        <Image
-          src={backgroundImage.src}
-          alt={backgroundImage.alt}
-          fill
-          className="object-cover"
-          priority
+      {/* Aurora background */}
+      <div className="pointer-events-none absolute inset-0">
+        <Aurora
+          colorStops={auroraColors}
+          amplitude={1.2}
+          blend={0.6}
+          speed={0.8}
         />
-        {/* Gradient overlay for text readability */}
-        <div className="from-background/95 via-background/70 absolute inset-0 bg-gradient-to-r to-transparent" />
       </div>
 
       {/* Content container */}
-      <div className="relative z-10 container flex flex-1 items-center px-4 py-12">
-        {/* Floating glassmorphism card */}
-        <div className="bg-background/80 max-w-xl rounded-3xl p-8 shadow-2xl backdrop-blur-xl md:p-12">
-          {/* Badge */}
-          {badge && (
-            <p
-              className={cn(
-                "text-brand mb-4 text-sm font-semibold tracking-widest uppercase",
-                classNames.header?.badge
+      <div className="relative z-10 container flex flex-1 items-center justify-center px-4 py-12">
+        <ScrollFade scrollBased={false} delay={0.2}>
+          <div className="max-w-2xl text-center">
+            <HeroText
+              badge={badge}
+              title={title}
+              description={description}
+              size="large"
+              align="center"
+              classNames={classNames.header}
+            />
+
+            {/* Buttons */}
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+              {primaryCta && (
+                <Link
+                  href={primaryCta.href}
+                  className={classNames.cta?.primary}
+                >
+                  <HeroButton>{primaryCta.label}</HeroButton>
+                </Link>
               )}
-            >
-              {badge}
-            </p>
-          )}
-
-          {/* Main headline */}
-          <h1
-            className={cn(
-              "display text-4xl leading-[1.1] tracking-tight sm:text-5xl md:text-6xl",
-              classNames.header?.title
-            )}
-          >
-            {title.split("\n").map((line, i) => (
-              <span key={i}>
-                {line}
-                {i < title.split("\n").length - 1 && <br />}
-              </span>
-            ))}
-          </h1>
-
-          {/* Subheading */}
-          {description && (
-            <p
-              className={cn(
-                "text-muted-foreground mt-6 text-lg",
-                classNames.header?.description
+              {secondaryCta && (
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className={cn("text-foreground", classNames.cta?.secondary)}
+                >
+                  <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
+                </Button>
               )}
-            >
-              {description}
-            </p>
-          )}
-
-          {/* Buttons */}
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            {primaryCta && (
-              <Link href={primaryCta.href} className={classNames.cta?.primary}>
-                <HeroButton>{primaryCta.label}</HeroButton>
-              </Link>
-            )}
-            {secondaryCta && (
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className={cn("text-foreground", classNames.cta?.secondary)}
-              >
-                <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
-              </Button>
-            )}
+            </div>
           </div>
-        </div>
+        </ScrollFade>
       </div>
     </section>
   )

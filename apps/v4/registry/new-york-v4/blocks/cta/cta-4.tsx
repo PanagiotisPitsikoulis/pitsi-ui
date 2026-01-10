@@ -5,6 +5,7 @@ import Link from "next/link"
 import { type CtaBlockProps } from "@/lib/blocks/cta.types"
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
+import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 const cta4Defaults = {
@@ -41,25 +42,17 @@ export function Cta4({ content = {}, classNames = {} }: CtaBlockProps) {
               <DynamicIcon name="Sparkles" className="text-primary h-8 w-8" />
             </div>
 
-            {/* Title */}
-            <h2
-              className={cn(
-                "text-foreground mb-4 text-2xl font-bold md:text-3xl",
-                classNames.header?.title
-              )}
-            >
-              {title}
-            </h2>
-
-            {/* Description */}
-            <p
-              className={cn(
-                "text-muted-foreground mx-auto mb-8 max-w-md",
-                classNames.header?.description
-              )}
-            >
-              {description}
-            </p>
+            <BlockHeader
+              title={title}
+              description={description}
+              spacing="none"
+              className="mb-8"
+              classNames={{
+                ...classNames.header,
+                title: cn("text-2xl md:text-3xl", classNames.header?.title),
+                description: cn("max-w-md", classNames.header?.description),
+              }}
+            />
 
             {/* CTAs */}
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">

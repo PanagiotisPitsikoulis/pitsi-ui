@@ -5,11 +5,13 @@ import Link from "next/link"
 
 import { type HeroBlockProps } from "@/lib/blocks/hero.types"
 import { cn } from "@/lib/utils"
+import { ZoomParallax } from "@/registry/new-york-v4/animations/zoom-parallax/zoom-parallax"
+import { HeroText } from "@/registry/new-york-v4/lib/hero-text"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 import { HeroButton } from "../../ui/hero-button"
 
-// Hero 12 - Image Collage (1 Large + 2 Accent Images - Plants theme)
+// Hero 12 - Zoom Parallax Gallery (Bento grid with depth)
 const hero12Defaults = {
   badge: "Premium Plants",
   title: "Nature's\nFinest",
@@ -56,41 +58,14 @@ export function Hero12({ content = {}, classNames = {} }: HeroBlockProps) {
       <div className="container flex-1 px-4 py-6">
         <div className="grid h-full min-h-[calc(100svh-8rem)] gap-4 lg:grid-cols-3 lg:grid-rows-2">
           {/* Text Content Card - Top Left */}
-          <div className="bg-muted flex flex-col justify-center rounded-3xl p-8 lg:row-span-2 lg:p-10">
-            {badge && (
-              <p
-                className={cn(
-                  "text-brand mb-4 text-sm font-semibold tracking-widest uppercase",
-                  classNames.header?.badge
-                )}
-              >
-                {badge}
-              </p>
-            )}
-            <h1
-              className={cn(
-                "display text-4xl leading-[1.1] tracking-tight sm:text-5xl",
-                classNames.header?.title
-              )}
-            >
-              {title.split("\n").map((line, i) => (
-                <span key={i}>
-                  {line}
-                  {i < title.split("\n").length - 1 && <br />}
-                </span>
-              ))}
-            </h1>
-
-            {description && (
-              <p
-                className={cn(
-                  "text-muted-foreground mt-6 text-base md:text-lg",
-                  classNames.header?.description
-                )}
-              >
-                {description}
-              </p>
-            )}
+          <div className="bg-brand/5 border-brand/10 flex flex-col justify-center rounded-3xl border p-8 lg:row-span-2 lg:p-10">
+            <HeroText
+              badge={badge}
+              title={title}
+              description={description}
+              size="large"
+              classNames={classNames.header}
+            />
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
               {primaryCta && (
@@ -115,35 +90,53 @@ export function Hero12({ content = {}, classNames = {} }: HeroBlockProps) {
           </div>
 
           {/* Main Large Image - Top Right, spans 2 columns */}
-          <div className="bg-muted relative min-h-[20rem] overflow-hidden rounded-3xl lg:col-span-2">
-            <Image
-              src={mainImage.src}
-              alt={mainImage.alt}
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
+          <ZoomParallax
+            scaleRange={[0.95, 1.05]}
+            animateOpacity={false}
+            className="lg:col-span-2"
+          >
+            <div className="bg-muted relative min-h-[20rem] overflow-hidden rounded-3xl">
+              <Image
+                src={mainImage.src}
+                alt={mainImage.alt}
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </ZoomParallax>
 
           {/* Accent Image 1 - Bottom Middle */}
-          <div className="bg-muted relative min-h-[15rem] overflow-hidden rounded-3xl">
-            <Image
-              src={accentImage1.src}
-              alt={accentImage1.alt}
-              fill
-              className="object-cover"
-            />
-          </div>
+          <ZoomParallax
+            scaleRange={[0.9, 1.02]}
+            animateOpacity={false}
+            offset={["start 80%", "end 20%"]}
+          >
+            <div className="bg-muted relative min-h-[15rem] overflow-hidden rounded-3xl">
+              <Image
+                src={accentImage1.src}
+                alt={accentImage1.alt}
+                fill
+                className="object-cover"
+              />
+            </div>
+          </ZoomParallax>
 
           {/* Accent Image 2 - Bottom Right */}
-          <div className="bg-muted relative min-h-[15rem] overflow-hidden rounded-3xl">
-            <Image
-              src={accentImage2.src}
-              alt={accentImage2.alt}
-              fill
-              className="object-cover object-top"
-            />
-          </div>
+          <ZoomParallax
+            scaleRange={[0.92, 1.04]}
+            animateOpacity={false}
+            offset={["start 80%", "end 20%"]}
+          >
+            <div className="bg-muted relative min-h-[15rem] overflow-hidden rounded-3xl">
+              <Image
+                src={accentImage2.src}
+                alt={accentImage2.alt}
+                fill
+                className="object-cover object-top"
+              />
+            </div>
+          </ZoomParallax>
         </div>
       </div>
     </section>
