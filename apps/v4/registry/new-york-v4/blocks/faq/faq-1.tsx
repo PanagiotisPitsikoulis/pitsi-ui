@@ -2,6 +2,8 @@
 
 import { faqDefaults, type FaqBlockProps } from "@/lib/blocks/faq.types"
 import { cn } from "@/lib/utils"
+import { ScrollExpand } from "@/registry/new-york-v4/animations/scroll-expand/scroll-expand"
+import { SlideUp } from "@/registry/new-york-v4/animations/slide-up/slide-up"
 import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 import {
   Accordion,
@@ -76,45 +78,53 @@ export function Faq1({ content = {}, classNames = {} }: FaqBlockProps) {
         aria-hidden="true"
       />
       <div className={cn("relative z-10 container px-6", classNames.container)}>
-        <BlockHeader
-          badge={badge}
-          title={title}
-          badgeColor="primary"
-          classNames={classNames.header}
-        />
-        <div className="mx-auto max-w-2xl">
-          <Accordion
-            type="single"
-            collapsible
-            defaultValue="item-0"
-            className={cn("w-full", classNames.accordion)}
-          >
-            {items.map((faq, i) => (
-              <AccordionItem
-                key={i}
-                value={`item-${i}`}
-                className={cn("border-border", classNames.item?.root)}
-              >
-                <AccordionTrigger
-                  className={cn(
-                    "text-foreground hover:text-primary text-left text-lg",
-                    classNames.item?.trigger
-                  )}
+        <SlideUp delay={0} distance={20}>
+          <BlockHeader
+            badge={badge}
+            title={title}
+            badgeColor="primary"
+            classNames={classNames.header}
+          />
+        </SlideUp>
+        <ScrollExpand
+          marginX="2rem"
+          borderRadius="1.5rem"
+          className="mx-auto max-w-2xl"
+        >
+          <div className="bg-card rounded-3xl border border-border p-6 shadow-sm">
+            <Accordion
+              type="single"
+              collapsible
+              defaultValue="item-0"
+              className={cn("w-full", classNames.accordion)}
+            >
+              {items.map((faq, i) => (
+                <AccordionItem
+                  key={i}
+                  value={`item-${i}`}
+                  className={cn("border-border", classNames.item?.root)}
                 >
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent
-                  className={cn(
-                    "text-muted-foreground h-24 text-base",
-                    classNames.item?.content
-                  )}
-                >
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
+                  <AccordionTrigger
+                    className={cn(
+                      "text-foreground hover:text-primary text-left text-lg",
+                      classNames.item?.trigger
+                    )}
+                  >
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent
+                    className={cn(
+                      "text-muted-foreground h-24 text-base",
+                      classNames.item?.content
+                    )}
+                  >
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </ScrollExpand>
       </div>
     </section>
   )

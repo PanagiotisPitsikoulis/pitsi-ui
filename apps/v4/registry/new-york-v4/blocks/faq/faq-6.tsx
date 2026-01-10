@@ -6,6 +6,8 @@ import Link from "next/link"
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
+import { SlideUp } from "@/registry/new-york-v4/animations/slide-up/slide-up"
+import Stack from "@/registry/new-york-v4/animations/stack/stack"
 import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
@@ -61,6 +63,25 @@ const faq6Defaults = {
   supportCta: { label: "Contact Support", href: "#" },
 }
 
+// Card component for Stack animation displaying support team member
+function SupportTeamCard({ person }: { person: { image: string; name: string } }) {
+  return (
+    <div className="bg-card h-full w-full rounded-2xl p-4 shadow-lg">
+      <div className="relative aspect-square w-full overflow-hidden rounded-xl">
+        <Image
+          src={person.image}
+          alt={person.name}
+          fill
+          className="object-cover"
+        />
+      </div>
+      <p className="text-card-foreground mt-3 text-center text-sm font-semibold">
+        {person.name}
+      </p>
+    </div>
+  )
+}
+
 export function Faq6({ content = {}, classNames = {} }: FaqBlockProps) {
   const {
     title = faq6Defaults.title,
@@ -73,6 +94,11 @@ export function Faq6({ content = {}, classNames = {} }: FaqBlockProps) {
 
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
+  // Create cards for the Stack animation
+  const stackCards = faq6Defaults.supportTeam.map((person, index) => (
+    <SupportTeamCard key={index} person={person} />
+  ))
+
   return (
     <section className={cn("bg-background", classNames.root)}>
       <div
@@ -80,73 +106,77 @@ export function Faq6({ content = {}, classNames = {} }: FaqBlockProps) {
       >
         <div className="mx-auto max-w-3xl">
           {/* Header */}
-          <BlockHeader
-            title={title}
-            description={description}
-            spacing="compact"
-            classNames={classNames.header}
-          />
+          <SlideUp delay={0} distance={20}>
+            <BlockHeader
+              title={title}
+              description={description}
+              spacing="compact"
+              classNames={classNames.header}
+            />
+          </SlideUp>
 
           {/* Questions */}
           <div className="mb-12 space-y-3">
             {questions.map((q, i) => (
-              <div
-                key={i}
-                className="border-border overflow-hidden rounded-lg border"
-              >
-                <button
-                  onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                  className="text-foreground hover:bg-muted flex w-full items-center justify-between p-4 text-left font-medium transition-colors"
-                >
-                  {q.question}
-                  <DynamicIcon
-                    name="ChevronDown"
-                    className={cn(
-                      "h-5 w-5 shrink-0 transition-transform",
-                      openIndex === i && "rotate-180"
-                    )}
-                  />
-                </button>
-                {openIndex === i && (
-                  <div className="border-border text-muted-foreground border-t px-4 py-3">
-                    {q.answer}
-                  </div>
-                )}
-              </div>
+              <SlideUp key={i} delay={0.1 + i * 0.05} distance={20}>
+                <div className="border-border overflow-hidden rounded-lg border">
+                  <button
+                    onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                    className="text-foreground hover:bg-muted flex w-full items-center justify-between p-4 text-left font-medium transition-colors"
+                  >
+                    {q.question}
+                    <DynamicIcon
+                      name="ChevronDown"
+                      className={cn(
+                        "h-5 w-5 shrink-0 transition-transform",
+                        openIndex === i && "rotate-180"
+                      )}
+                    />
+                  </button>
+                  {openIndex === i && (
+                    <div className="border-border text-muted-foreground border-t px-4 py-3">
+                      {q.answer}
+                    </div>
+                  )}
+                </div>
+              </SlideUp>
             ))}
           </div>
 
-          {/* Support CTA */}
-          <div className="border-border bg-muted rounded-2xl border p-8 text-center">
-            {/* Support Team Avatars */}
-            <div className="mb-4 flex justify-center -space-x-3">
-              {faq6Defaults.supportTeam.map((person, i) => (
-                <div
-                  key={i}
-                  className="border-background relative h-12 w-12 overflow-hidden rounded-full border-2"
-                >
-                  <Image
-                    src={person.image}
-                    alt={person.name}
-                    fill
-                    className="object-cover"
+          {/* Support CTA with Stack animation */}
+          <SlideUp delay={0.3} distance={25}>
+            <div className="border-border bg-muted rounded-2xl border p-8">
+              <div className="grid gap-8 md:grid-cols-2">
+                {/* Stack of Support Team */}
+                <div className="relative mx-auto h-[200px] w-[180px]">
+                  <Stack
+                    cards={stackCards}
+                    autoplay
+                    autoplayDelay={3000}
+                    pauseOnHover
+                    sendToBackOnClick
+                    mobileClickOnly
+                    sensitivity={150}
                   />
                 </div>
-              ))}
+
+                {/* Support Info */}
+                <div className="flex flex-col items-center justify-center text-center md:items-start md:text-left">
+                  <h3 className="text-foreground mb-2 text-xl font-bold">
+                    {supportTitle}
+                  </h3>
+                  <p className="text-muted-foreground mb-6">{supportDescription}</p>
+
+                  <Button asChild>
+                    <Link href={supportCta.href}>
+                      <DynamicIcon name="MessageCircle" className="mr-2 h-4 w-4" />
+                      {supportCta.label}
+                    </Link>
+                  </Button>
+                </div>
+              </div>
             </div>
-
-            <h3 className="text-foreground mb-2 text-xl font-bold">
-              {supportTitle}
-            </h3>
-            <p className="text-muted-foreground mb-6">{supportDescription}</p>
-
-            <Button asChild>
-              <Link href={supportCta.href}>
-                <DynamicIcon name="MessageCircle" className="mr-2 h-4 w-4" />
-                {supportCta.label}
-              </Link>
-            </Button>
-          </div>
+          </SlideUp>
         </div>
       </div>
     </section>

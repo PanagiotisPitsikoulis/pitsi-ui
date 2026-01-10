@@ -4,6 +4,8 @@ import { useState } from "react"
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
+import { SlideUp } from "@/registry/new-york-v4/animations/slide-up/slide-up"
+import { ZoomParallax } from "@/registry/new-york-v4/animations/zoom-parallax/zoom-parallax"
 import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 
 interface FaqBlockProps {
@@ -66,54 +68,62 @@ export function Faq4({ content = {}, classNames = {} }: FaqBlockProps) {
         className={cn("container px-6 py-16 md:py-24", classNames.container)}
       >
         {/* Header */}
-        <BlockHeader
-          title={title}
-          description={description}
-          spacing="compact"
-          classNames={classNames.header}
-        />
+        <SlideUp delay={0} distance={20}>
+          <BlockHeader
+            title={title}
+            description={description}
+            spacing="compact"
+            classNames={classNames.header}
+          />
+        </SlideUp>
 
-        {/* Card-style Accordions */}
+        {/* Card-style Accordions with ZoomParallax */}
         <div className="mx-auto max-w-3xl space-y-4">
           {questions.map((q, i) => (
-            <div
+            <ZoomParallax
               key={i}
-              className={cn(
-                "bg-background overflow-hidden rounded-xl shadow-sm transition-shadow",
-                openIndex === i && "shadow-md"
-              )}
+              scaleRange={[0.95, 1]}
+              animateOpacity={false}
+              offset={["start end", "end start"]}
             >
-              <button
-                onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="flex w-full items-center gap-4 p-5 text-left"
+              <div
+                className={cn(
+                  "bg-background overflow-hidden rounded-xl shadow-sm transition-shadow",
+                  openIndex === i && "shadow-md"
+                )}
               >
-                <div
-                  className={cn(
-                    "flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-colors",
-                    openIndex === i
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-muted text-muted-foreground"
-                  )}
+                <button
+                  onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                  className="flex w-full items-center gap-4 p-5 text-left"
                 >
-                  <DynamicIcon name="HelpCircle" className="h-5 w-5" />
-                </div>
-                <span className="text-foreground flex-1 font-medium">
-                  {q.question}
-                </span>
-                <DynamicIcon
-                  name="ChevronDown"
-                  className={cn(
-                    "text-muted-foreground h-5 w-5 shrink-0 transition-transform",
-                    openIndex === i && "rotate-180"
-                  )}
-                />
-              </button>
-              {openIndex === i && (
-                <div className="text-muted-foreground border-t px-5 pt-4 pb-5">
-                  <p className="pl-14">{q.answer}</p>
-                </div>
-              )}
-            </div>
+                  <div
+                    className={cn(
+                      "flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-colors",
+                      openIndex === i
+                        ? "bg-primary text-primary-foreground"
+                        : "bg-muted text-muted-foreground"
+                    )}
+                  >
+                    <DynamicIcon name="HelpCircle" className="h-5 w-5" />
+                  </div>
+                  <span className="text-foreground flex-1 font-medium">
+                    {q.question}
+                  </span>
+                  <DynamicIcon
+                    name="ChevronDown"
+                    className={cn(
+                      "text-muted-foreground h-5 w-5 shrink-0 transition-transform",
+                      openIndex === i && "rotate-180"
+                    )}
+                  />
+                </button>
+                {openIndex === i && (
+                  <div className="text-muted-foreground border-t px-5 pt-4 pb-5">
+                    <p className="pl-14">{q.answer}</p>
+                  </div>
+                )}
+              </div>
+            </ZoomParallax>
           ))}
         </div>
       </div>

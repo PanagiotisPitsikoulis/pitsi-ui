@@ -4,7 +4,9 @@ import { useState } from "react"
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
+import { SlideUp } from "@/registry/new-york-v4/animations/slide-up/slide-up"
 import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
+import { Marquee } from "@/registry/new-york-v4/ui/marquee"
 
 interface FaqBlockProps {
   content?: {
@@ -105,75 +107,78 @@ export function Faq5({ content = {}, classNames = {} }: FaqBlockProps) {
     categories.find((c) => c.name === activeCategory)?.questions || []
 
   return (
-    <section className={cn("bg-background", classNames.root)}>
+    <section className={cn("bg-background overflow-hidden", classNames.root)}>
       <div
         className={cn("container px-6 py-16 md:py-24", classNames.container)}
       >
         {/* Header */}
-        <BlockHeader
-          title={title}
-          spacing="none"
-          className="mb-8"
-          classNames={classNames.header}
-        />
+        <SlideUp delay={0} distance={20}>
+          <BlockHeader
+            title={title}
+            spacing="none"
+            className="mb-8"
+            classNames={classNames.header}
+          />
+        </SlideUp>
 
-        {/* Category Tabs */}
-        <div className="mb-10 flex flex-wrap justify-center gap-2">
-          {categories.map((category) => (
-            <button
-              key={category.name}
-              onClick={() => {
-                setActiveCategory(category.name)
-                setOpenIndex(null)
-              }}
-              className={cn(
-                "flex items-center gap-2 rounded-full px-5 py-2 text-sm font-medium transition-all",
-                activeCategory === category.name
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-muted text-muted-foreground hover:bg-muted/80"
-              )}
-            >
-              {category.name}
-              <span
+        {/* Category Tabs with Marquee */}
+        <div className="mb-10">
+          <Marquee pauseOnHover className="[--duration:25s]">
+            {categories.map((category) => (
+              <button
+                key={category.name}
+                onClick={() => {
+                  setActiveCategory(category.name)
+                  setOpenIndex(null)
+                }}
                 className={cn(
-                  "rounded-full px-2 py-0.5 text-xs",
+                  "flex items-center gap-2 rounded-full px-5 py-2 text-sm font-medium transition-all",
                   activeCategory === category.name
-                    ? "bg-primary-foreground/20"
-                    : "bg-muted-foreground/20"
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-muted text-muted-foreground hover:bg-muted/80"
                 )}
               >
-                {category.count}
-              </span>
-            </button>
-          ))}
+                {category.name}
+                <span
+                  className={cn(
+                    "rounded-full px-2 py-0.5 text-xs",
+                    activeCategory === category.name
+                      ? "bg-primary-foreground/20"
+                      : "bg-muted-foreground/20"
+                  )}
+                >
+                  {category.count}
+                </span>
+              </button>
+            ))}
+          </Marquee>
         </div>
 
         {/* Questions */}
         <div className="mx-auto max-w-2xl space-y-3">
           {activeQuestions.map((q, i) => (
-            <div
-              key={i}
-              className="border-border overflow-hidden rounded-lg border"
-            >
-              <button
-                onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="text-foreground hover:bg-muted flex w-full items-center justify-between p-4 text-left font-medium transition-colors"
-              >
-                {q.question}
-                <DynamicIcon
-                  name="ChevronDown"
-                  className={cn(
-                    "h-5 w-5 shrink-0 transition-transform",
-                    openIndex === i && "rotate-180"
-                  )}
-                />
-              </button>
-              {openIndex === i && (
-                <div className="border-border text-muted-foreground border-t px-4 py-3">
-                  {q.answer}
-                </div>
-              )}
-            </div>
+            <SlideUp key={`${activeCategory}-${i}`} delay={0.1 + i * 0.05} distance={20}>
+              <div className="border-border overflow-hidden rounded-lg border">
+                <button
+                  onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                  className="text-foreground hover:bg-muted flex w-full items-center justify-between p-4 text-left font-medium transition-colors"
+                >
+                  {q.question}
+                  <DynamicIcon
+                    name="ChevronDown"
+                    className={cn(
+                      "h-5 w-5 shrink-0 transition-transform",
+                      openIndex === i && "rotate-180"
+                    )}
+                  />
+                </button>
+                {openIndex === i && (
+                  <div className="border-border text-muted-foreground border-t px-4 py-3">
+                    {q.answer}
+                  </div>
+                )}
+              </div>
+            </SlideUp>
           ))}
         </div>
       </div>

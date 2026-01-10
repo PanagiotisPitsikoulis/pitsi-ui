@@ -4,6 +4,8 @@ import { useState } from "react"
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
+import FuzzyText from "@/registry/new-york-v4/animations/fuzzy-text/fuzzy-text"
+import { SlideUp } from "@/registry/new-york-v4/animations/slide-up/slide-up"
 import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 import { Input } from "@/registry/new-york-v4/ui/input"
 
@@ -92,56 +94,73 @@ export function Faq3({ content = {}, classNames = {} }: FaqBlockProps) {
       <div
         className={cn("container px-6 py-16 md:py-24", classNames.container)}
       >
-        {/* Header */}
-        <BlockHeader
-          title={title}
-          description={description}
-          spacing="compact"
-          className="mx-auto max-w-2xl"
-          classNames={classNames.header}
-        />
+        {/* Header with FuzzyText title */}
+        <div className="mx-auto mb-8 max-w-2xl text-center">
+          <div className="mb-4 flex justify-center">
+            <FuzzyText
+              fontSize="clamp(1.875rem, 5vw, 2.5rem)"
+              fontWeight={700}
+              fontFamily="var(--font-heading), system-ui, sans-serif"
+              color="hsl(var(--foreground))"
+              enableHover={true}
+              baseIntensity={0.1}
+              hoverIntensity={0.3}
+              fuzzRange={15}
+              direction="horizontal"
+              className="cursor-pointer"
+            >
+              {title}
+            </FuzzyText>
+          </div>
+          {description && (
+            <p className={cn("text-muted-foreground", classNames.header?.description)}>
+              {description}
+            </p>
+          )}
+        </div>
 
         {/* Search */}
-        <div className="relative mx-auto mb-12 max-w-2xl">
-          <DynamicIcon
-            name="Search"
-            className="text-muted-foreground absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2"
-          />
-          <Input
-            type="text"
-            placeholder="Search for answers..."
-            className="h-12 pl-12"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-        </div>
+        <SlideUp delay={0.1} distance={20}>
+          <div className="relative mx-auto mb-12 max-w-2xl">
+            <DynamicIcon
+              name="Search"
+              className="text-muted-foreground absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2"
+            />
+            <Input
+              type="text"
+              placeholder="Search for answers..."
+              className="h-12 pl-12"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+          </div>
+        </SlideUp>
 
         {/* Questions */}
         <div className="mx-auto max-w-2xl space-y-3">
           {filteredQuestions.map((q, i) => (
-            <div
-              key={i}
-              className="border-border overflow-hidden rounded-lg border"
-            >
-              <button
-                onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="text-foreground hover:bg-muted flex w-full items-center justify-between p-4 text-left font-medium transition-colors"
-              >
-                <span>{highlightText(q.question)}</span>
-                <DynamicIcon
-                  name="ChevronDown"
-                  className={cn(
-                    "h-5 w-5 shrink-0 transition-transform",
-                    openIndex === i && "rotate-180"
-                  )}
-                />
-              </button>
-              {openIndex === i && (
-                <div className="border-border text-muted-foreground border-t px-4 py-3">
-                  {highlightText(q.answer)}
-                </div>
-              )}
-            </div>
+            <SlideUp key={i} delay={0.15 + i * 0.05} distance={20}>
+              <div className="border-border overflow-hidden rounded-lg border">
+                <button
+                  onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                  className="text-foreground hover:bg-muted flex w-full items-center justify-between p-4 text-left font-medium transition-colors"
+                >
+                  <span>{highlightText(q.question)}</span>
+                  <DynamicIcon
+                    name="ChevronDown"
+                    className={cn(
+                      "h-5 w-5 shrink-0 transition-transform",
+                      openIndex === i && "rotate-180"
+                    )}
+                  />
+                </button>
+                {openIndex === i && (
+                  <div className="border-border text-muted-foreground border-t px-4 py-3">
+                    {highlightText(q.answer)}
+                  </div>
+                )}
+              </div>
+            </SlideUp>
           ))}
 
           {filteredQuestions.length === 0 && (

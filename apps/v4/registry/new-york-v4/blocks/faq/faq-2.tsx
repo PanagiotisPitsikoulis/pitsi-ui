@@ -3,6 +3,7 @@
 import { useState } from "react"
 
 import { cn } from "@/lib/utils"
+import { SlideUp } from "@/registry/new-york-v4/animations/slide-up/slide-up"
 import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 
 interface FaqBlockProps {
@@ -97,53 +98,59 @@ export function Faq2({ content = {}, classNames = {} }: FaqBlockProps) {
         className={cn("container px-6 py-16 md:py-24", classNames.container)}
       >
         {/* Header */}
-        <BlockHeader
-          title={title}
-          description={description}
-          spacing="compact"
-          classNames={classNames.header}
-        />
+        <SlideUp delay={0} distance={20}>
+          <BlockHeader
+            title={title}
+            description={description}
+            spacing="compact"
+            classNames={classNames.header}
+          />
+        </SlideUp>
 
         {/* Two Column Layout */}
         <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-2">
           {/* Questions List */}
           <div className="space-y-6">
-            {categories.map((category) => (
-              <div key={category.name}>
-                <h3 className="text-muted-foreground mb-3 text-sm font-semibold uppercase">
-                  {category.name}
-                </h3>
-                <div className="space-y-2">
-                  {category.questions.map((q) => (
-                    <button
-                      key={q.question}
-                      onClick={() => setSelectedQuestion(q.question)}
-                      className={cn(
-                        "w-full rounded-lg px-4 py-3 text-left text-sm font-medium transition-colors",
-                        selectedQuestion === q.question
-                          ? "bg-primary text-primary-foreground"
-                          : "bg-muted text-foreground hover:bg-muted/80"
-                      )}
-                    >
-                      {q.question}
-                    </button>
-                  ))}
+            {categories.map((category, catIndex) => (
+              <SlideUp key={category.name} delay={0.1 + catIndex * 0.1} distance={25}>
+                <div>
+                  <h3 className="text-muted-foreground mb-3 text-sm font-semibold uppercase">
+                    {category.name}
+                  </h3>
+                  <div className="space-y-2">
+                    {category.questions.map((q) => (
+                      <button
+                        key={q.question}
+                        onClick={() => setSelectedQuestion(q.question)}
+                        className={cn(
+                          "w-full rounded-lg px-4 py-3 text-left text-sm font-medium transition-colors",
+                          selectedQuestion === q.question
+                            ? "bg-primary text-primary-foreground"
+                            : "bg-muted text-foreground hover:bg-muted/80"
+                        )}
+                      >
+                        {q.question}
+                      </button>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              </SlideUp>
             ))}
           </div>
 
           {/* Answer Panel */}
-          <div className="border-border rounded-xl border p-6 lg:p-8">
-            {selectedQuestion && (
-              <>
-                <h4 className="text-foreground mb-4 text-lg font-semibold">
-                  {selectedQuestion}
-                </h4>
-                <p className="text-muted-foreground">{selectedAnswer}</p>
-              </>
-            )}
-          </div>
+          <SlideUp delay={0.2} distance={30}>
+            <div className="border-border rounded-xl border p-6 lg:p-8">
+              {selectedQuestion && (
+                <>
+                  <h4 className="text-foreground mb-4 text-lg font-semibold">
+                    {selectedQuestion}
+                  </h4>
+                  <p className="text-muted-foreground">{selectedAnswer}</p>
+                </>
+              )}
+            </div>
+          </SlideUp>
         </div>
       </div>
     </section>
