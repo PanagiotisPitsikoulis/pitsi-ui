@@ -1,10 +1,10 @@
 "use client"
 
-import Image from "next/image"
 import Link from "next/link"
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
+import DecayCard from "@/registry/new-york-v4/animations/decay-card/decay-card"
 
 interface TestimonialsBlockProps {
   content?: {
@@ -184,7 +184,7 @@ export function Testimonials4({
   return (
     <section
       className={cn(
-        "relative overflow-hidden bg-gradient-to-b from-cyan-100 via-cyan-50 to-amber-50 dark:from-cyan-950 dark:via-cyan-900/50 dark:to-amber-950/30",
+        "relative overflow-hidden bg-gradient-to-b from-sage-100 via-sage-50 to-amber-50 dark:from-sage-950 dark:via-sage-900/50 dark:to-amber-950/30",
         classNames.root
       )}
     >
@@ -214,7 +214,7 @@ export function Testimonials4({
           </p>
         </div>
 
-        {/* Carousel */}
+        {/* Carousel with DecayCard */}
         <div className="relative mx-auto mb-12 h-[400px] max-w-5xl md:h-[500px]">
           {/* Side Cards */}
           {sideVideos[0] && (
@@ -230,48 +230,47 @@ export function Testimonials4({
             <VerticalCard name={sideVideos[3].name} position="far-right" />
           )}
 
-          {/* Center Video Card */}
-          <div className="absolute top-1/2 left-1/2 z-20 w-[280px] -translate-x-1/2 -translate-y-1/2 cursor-pointer overflow-hidden rounded-xl shadow-2xl md:w-[420px]">
-            <div className="relative aspect-[3/4]">
-              <Image
-                src={centerVideo.thumbnail}
-                alt={centerVideo.name}
-                fill
-                className="object-cover"
-              />
-              {/* Play Button */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/90 shadow-lg backdrop-blur-sm transition-transform hover:scale-110 md:h-16 md:w-16">
-                  <DynamicIcon
-                    name="Play"
-                    className="text-foreground ml-1 h-6 w-6 md:h-7 md:w-7"
-                  />
+          {/* Center DecayCard Video */}
+          <div className="absolute top-1/2 left-1/2 z-20 -translate-x-1/2 -translate-y-1/2">
+            <DecayCard
+              width={280}
+              height={380}
+              image={centerVideo.thumbnail}
+            >
+              <div className="absolute right-0 bottom-0 left-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 pt-12 md:p-6 md:pt-16">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/90 shadow-lg transition-transform hover:scale-110 md:h-16 md:w-16">
+                    <DynamicIcon
+                      name="Play"
+                      className="text-foreground ml-1 h-6 w-6 md:h-7 md:w-7"
+                    />
+                  </div>
                 </div>
               </div>
-              {/* Info Overlay */}
-              <div className="absolute right-0 bottom-0 left-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 pt-12 md:p-6 md:pt-16">
-                <h3 className="text-lg font-bold tracking-wide text-white uppercase md:text-xl">
-                  {centerVideo.name}
-                </h3>
-                <p className="text-xs font-medium tracking-wider text-white/80 uppercase md:text-sm">
-                  {centerVideo.role}
-                </p>
-                <p className="mt-1 text-xs text-white/60">
-                  {centerVideo.timestamp}
-                </p>
-              </div>
+            </DecayCard>
+            {/* Info Overlay below the card */}
+            <div className="mt-4 text-center">
+              <h3 className="text-foreground text-lg font-bold tracking-wide uppercase md:text-xl">
+                {centerVideo.name}
+              </h3>
+              <p className="text-muted-foreground text-xs font-medium tracking-wider uppercase md:text-sm">
+                {centerVideo.role}
+              </p>
+              <p className="text-muted-foreground/60 mt-1 text-xs">
+                {centerVideo.timestamp}
+              </p>
             </div>
           </div>
 
           {/* Navigation Arrows */}
           <button
-            className="bg-background/80 text-foreground hover:bg-background absolute bottom-4 left-[20%] z-30 flex h-10 w-10 items-center justify-center rounded-full shadow-lg backdrop-blur-sm transition-colors md:bottom-8 md:left-[25%]"
+            className="bg-background/80 text-foreground hover:bg-background absolute bottom-4 left-[20%] z-30 flex h-10 w-10 items-center justify-center rounded-full shadow-lg transition-colors md:bottom-8 md:left-[25%]"
             aria-label="Previous testimonial"
           >
             <DynamicIcon name="ChevronLeft" className="h-5 w-5" />
           </button>
           <button
-            className="bg-background/80 text-foreground hover:bg-background absolute right-[20%] bottom-4 z-30 flex h-10 w-10 items-center justify-center rounded-full shadow-lg backdrop-blur-sm transition-colors md:right-[25%] md:bottom-8"
+            className="bg-background/80 text-foreground hover:bg-background absolute right-[20%] bottom-4 z-30 flex h-10 w-10 items-center justify-center rounded-full shadow-lg transition-colors md:right-[25%] md:bottom-8"
             aria-label="Next testimonial"
           >
             <DynamicIcon name="ChevronRight" className="h-5 w-5" />
@@ -282,7 +281,7 @@ export function Testimonials4({
         <div className="text-center">
           <Link
             href={ctaHref}
-            className="border-foreground/20 text-foreground hover:bg-foreground/5 inline-flex items-center gap-2 rounded-full border bg-white/50 px-6 py-3 text-sm font-medium backdrop-blur-sm transition-colors dark:bg-white/10"
+            className="border-foreground/20 text-foreground hover:bg-foreground/5 inline-flex items-center gap-2 rounded-full border bg-white/50 px-6 py-3 text-sm font-medium transition-colors dark:bg-white/10"
           >
             {ctaLabel}
             <DynamicIcon name="ArrowUpRight" className="h-4 w-4" />

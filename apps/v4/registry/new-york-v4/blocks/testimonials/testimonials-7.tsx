@@ -5,6 +5,7 @@ import Link from "next/link"
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
+import { Marquee } from "@/registry/new-york-v4/ui/marquee"
 
 interface TestimonialsBlockProps {
   content?: {
@@ -12,11 +13,13 @@ interface TestimonialsBlockProps {
     description?: string
     ctaLabel?: string
     ctaHref?: string
-    videos?: Array<{
-      thumbnail: string
-      name: string
+    testimonials?: Array<{
+      quote: string
+      author: string
       role: string
-      timestamp: string
+      company: string
+      avatar: string
+      rating: number
     }>
   }
   classNames?: {
@@ -27,138 +30,126 @@ interface TestimonialsBlockProps {
 }
 
 const testimonials7Defaults = {
-  title: "Over 1000+ people trust us",
+  title: "Trusted by Thousands",
   description:
-    "Card gives you the blocks & components you need to create a truly professional website, landing page or admin panel for your SaaS.",
-  ctaLabel: "See all reviews by our customers",
+    "Join the growing community of satisfied customers who have transformed their businesses with our platform.",
+  ctaLabel: "See all reviews",
   ctaHref: "#",
-  videos: [
+  testimonials: [
     {
-      thumbnail: "/elements/portrait/person/5.webp",
-      name: "Smokee",
-      role: "Creative Director",
-      timestamp: "1 day ago",
+      quote:
+        "This product has completely transformed how we work. Our team productivity has increased by 40%.",
+      author: "Sarah Johnson",
+      role: "CEO",
+      company: "TechStart Inc.",
+      avatar: "/avatars/01.webp",
+      rating: 5,
     },
     {
-      thumbnail: "/elements/portrait/person/6.webp",
-      name: "Kaity",
-      role: "Product Designer",
-      timestamp: "3 hours ago",
+      quote:
+        "The best investment we've made this year. The ROI was visible within the first month.",
+      author: "Michael Chen",
+      role: "CTO",
+      company: "GlobalScale",
+      avatar: "/avatars/02.webp",
+      rating: 5,
     },
     {
-      thumbnail: "/elements/portrait/person/1.webp",
-      name: "Ania",
-      role: "Fashion Director",
-      timestamp: "2 hours ago",
+      quote:
+        "Outstanding customer support and a product that actually delivers on its promises.",
+      author: "Emily Rodriguez",
+      role: "Director of Operations",
+      company: "FastGrowth Co.",
+      avatar: "/avatars/03.webp",
+      rating: 5,
     },
     {
-      thumbnail: "/elements/portrait/person/7.webp",
-      name: "Oakes",
-      role: "Brand Strategist",
-      timestamp: "5 hours ago",
+      quote:
+        "We evaluated dozens of solutions before choosing this one. It's been the right choice.",
+      author: "David Park",
+      role: "VP of Engineering",
+      company: "Enterprise Solutions",
+      avatar: "/avatars/04.webp",
+      rating: 5,
     },
     {
-      thumbnail: "/elements/portrait/person/8.webp",
-      name: "Lauren",
-      role: "Marketing Lead",
-      timestamp: "1 week ago",
+      quote:
+        "The integration was seamless and the results exceeded our expectations significantly.",
+      author: "Anna Schmidt",
+      role: "Product Manager",
+      company: "InnovateTech",
+      avatar: "/avatars/05.webp",
+      rating: 5,
+    },
+    {
+      quote:
+        "Finally a tool that understands what modern teams need. Highly recommended!",
+      author: "James Wilson",
+      role: "Engineering Lead",
+      company: "DevFlow",
+      avatar: "/avatars/07.webp",
+      rating: 5,
+    },
+    {
+      quote:
+        "Our workflow has improved dramatically since we started using this platform.",
+      author: "Lisa Thompson",
+      role: "Operations Director",
+      company: "ScaleOps",
+      avatar: "/avatars/08.webp",
+      rating: 5,
+    },
+    {
+      quote:
+        "The customer success team is amazing. They helped us every step of the way.",
+      author: "Robert Kim",
+      role: "Founder",
+      company: "StartupLabs",
+      avatar: "/avatars/09.webp",
+      rating: 5,
     },
   ],
 }
 
-function GeometricPattern({ className }: { className?: string }) {
-  return (
-    <svg
-      className={cn("absolute inset-0 h-full w-full", className)}
-      viewBox="0 0 100 300"
-      preserveAspectRatio="xMidYMid slice"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <rect width="100" height="300" fill="#0a0a0a" />
-      {/* Constellation lines */}
-      <g stroke="rgba(255,255,255,0.15)" strokeWidth="0.3">
-        <line x1="10" y1="20" x2="45" y2="50" />
-        <line x1="45" y1="50" x2="30" y2="90" />
-        <line x1="30" y1="90" x2="70" y2="120" />
-        <line x1="70" y1="120" x2="50" y2="160" />
-        <line x1="50" y1="160" x2="85" y2="190" />
-        <line x1="85" y1="190" x2="40" y2="230" />
-        <line x1="40" y1="230" x2="60" y2="270" />
-        <line x1="20" y1="60" x2="60" y2="80" />
-        <line x1="60" y1="80" x2="45" y2="130" />
-        <line x1="80" y1="40" x2="70" y2="120" />
-        <line x1="15" y1="150" x2="50" y2="160" />
-        <line x1="90" y1="250" x2="60" y2="270" />
-      </g>
-      {/* Dots at intersections */}
-      <g fill="rgba(255,255,255,0.3)">
-        <circle cx="10" cy="20" r="1.5" />
-        <circle cx="45" cy="50" r="1.5" />
-        <circle cx="30" cy="90" r="1.5" />
-        <circle cx="70" cy="120" r="1.5" />
-        <circle cx="50" cy="160" r="1.5" />
-        <circle cx="85" cy="190" r="1.5" />
-        <circle cx="40" cy="230" r="1.5" />
-        <circle cx="60" cy="270" r="1.5" />
-        <circle cx="20" cy="60" r="1.5" />
-        <circle cx="60" cy="80" r="1.5" />
-        <circle cx="80" cy="40" r="1.5" />
-        <circle cx="15" cy="150" r="1.5" />
-        <circle cx="90" cy="250" r="1.5" />
-        <circle cx="45" cy="130" r="1.5" />
-      </g>
-      {/* Accent colored elements */}
-      <g stroke="rgba(220,38,38,0.4)" strokeWidth="0.3">
-        <line x1="25" y1="40" x2="55" y2="70" />
-        <line x1="75" y1="100" x2="55" y2="140" />
-        <line x1="35" y1="200" x2="65" y2="240" />
-      </g>
-      <g fill="rgba(220,38,38,0.5)">
-        <circle cx="25" cy="40" r="1" />
-        <circle cx="55" cy="70" r="1" />
-        <circle cx="75" cy="100" r="1" />
-        <circle cx="55" cy="140" r="1" />
-        <circle cx="35" cy="200" r="1" />
-        <circle cx="65" cy="240" r="1" />
-      </g>
-    </svg>
-  )
-}
-
-function VerticalCard({
-  name,
-  position,
+function TestimonialCard({
+  testimonial,
 }: {
-  name: string
-  position: "far-left" | "left" | "right" | "far-right"
+  testimonial: (typeof testimonials7Defaults.testimonials)[0]
 }) {
-  const positionStyles = {
-    "far-left": "left-0 -translate-x-1/2 md:left-[5%] md:translate-x-0",
-    left: "left-[10%] md:left-[15%]",
-    right: "right-[10%] md:right-[15%]",
-    "far-right": "right-0 translate-x-1/2 md:right-[5%] md:translate-x-0",
-  }
-
   return (
-    <div
-      className={cn(
-        "absolute top-1/2 z-10 h-[280px] w-[60px] -translate-y-1/2 overflow-hidden rounded-lg shadow-xl md:h-[360px] md:w-[70px]",
-        positionStyles[position]
-      )}
-    >
-      <GeometricPattern />
-      <div className="absolute inset-0 flex items-center justify-center">
-        <span
-          className="text-sm font-semibold tracking-[0.3em] text-white uppercase"
-          style={{
-            writingMode: "vertical-rl",
-            textOrientation: "mixed",
-            transform: "rotate(180deg)",
-          }}
-        >
-          {name}
-        </span>
+    <div className="bg-card w-[320px] shrink-0 rounded-2xl p-6 shadow-md transition-shadow hover:shadow-lg md:w-[380px]">
+      <div className="mb-3 flex gap-1">
+        {[...Array(testimonial.rating)].map((_, i) => (
+          <svg
+            key={i}
+            className="text-warning h-4 w-4"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+        ))}
+      </div>
+      <p className="text-card-foreground mb-4 text-sm leading-relaxed">
+        &ldquo;{testimonial.quote}&rdquo;
+      </p>
+      <div className="flex items-center gap-3">
+        <div className="relative h-10 w-10 overflow-hidden rounded-full">
+          <Image
+            src={testimonial.avatar}
+            alt={testimonial.author}
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div>
+          <p className="text-card-foreground text-sm font-semibold">
+            {testimonial.author}
+          </p>
+          <p className="text-muted-foreground text-xs">
+            {testimonial.role}, {testimonial.company}
+          </p>
+        </div>
       </div>
     </div>
   )
@@ -173,18 +164,17 @@ export function Testimonials7({
     description = testimonials7Defaults.description,
     ctaLabel = testimonials7Defaults.ctaLabel,
     ctaHref = testimonials7Defaults.ctaHref,
-    videos = testimonials7Defaults.videos,
+    testimonials = testimonials7Defaults.testimonials,
   } = content
 
-  const centerVideo = videos[2] || videos[0]
-  const sideVideos = [videos[0], videos[1], videos[3], videos[4]].filter(
-    Boolean
-  )
+  // Split testimonials into two rows for the marquee wall effect
+  const firstRow = testimonials.slice(0, Math.ceil(testimonials.length / 2))
+  const secondRow = testimonials.slice(Math.ceil(testimonials.length / 2))
 
   return (
     <section
       className={cn(
-        "relative overflow-hidden bg-gradient-to-b from-cyan-100 via-cyan-50 to-amber-50 dark:from-cyan-950 dark:via-cyan-900/50 dark:to-amber-950/30",
+        "relative overflow-hidden bg-gradient-to-b from-sage-100 via-sage-50 to-amber-50 dark:from-sage-950 dark:via-sage-900/50 dark:to-amber-950/30",
         classNames.root
       )}
     >
@@ -213,76 +203,35 @@ export function Testimonials7({
             {description}
           </p>
         </div>
+      </div>
 
-        {/* Carousel */}
-        <div className="relative mx-auto mb-12 h-[400px] max-w-5xl md:h-[500px]">
-          {/* Side Cards */}
-          {sideVideos[0] && (
-            <VerticalCard name={sideVideos[0].name} position="far-left" />
-          )}
-          {sideVideos[1] && (
-            <VerticalCard name={sideVideos[1].name} position="left" />
-          )}
-          {sideVideos[2] && (
-            <VerticalCard name={sideVideos[2].name} position="right" />
-          )}
-          {sideVideos[3] && (
-            <VerticalCard name={sideVideos[3].name} position="far-right" />
-          )}
+      {/* Marquee Wall - Full Width */}
+      <div className="relative mb-12 space-y-6">
+        {/* First Row - scrolls left */}
+        <Marquee pauseOnHover className="[--duration:60s]">
+          {firstRow.map((testimonial, i) => (
+            <TestimonialCard key={i} testimonial={testimonial} />
+          ))}
+        </Marquee>
 
-          {/* Center Video Card */}
-          <div className="absolute top-1/2 left-1/2 z-20 w-[280px] -translate-x-1/2 -translate-y-1/2 cursor-pointer overflow-hidden rounded-xl shadow-2xl md:w-[420px]">
-            <div className="relative aspect-[3/4]">
-              <Image
-                src={centerVideo.thumbnail}
-                alt={centerVideo.name}
-                fill
-                className="object-cover"
-              />
-              {/* Play Button */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/90 shadow-lg backdrop-blur-sm transition-transform hover:scale-110 md:h-16 md:w-16">
-                  <DynamicIcon
-                    name="Play"
-                    className="text-foreground ml-1 h-6 w-6 md:h-7 md:w-7"
-                  />
-                </div>
-              </div>
-              {/* Info Overlay */}
-              <div className="absolute right-0 bottom-0 left-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 pt-12 md:p-6 md:pt-16">
-                <h3 className="text-lg font-bold tracking-wide text-white uppercase md:text-xl">
-                  {centerVideo.name}
-                </h3>
-                <p className="text-xs font-medium tracking-wider text-white/80 uppercase md:text-sm">
-                  {centerVideo.role}
-                </p>
-                <p className="mt-1 text-xs text-white/60">
-                  {centerVideo.timestamp}
-                </p>
-              </div>
-            </div>
-          </div>
+        {/* Second Row - scrolls right (reversed) */}
+        <Marquee reverse pauseOnHover className="[--duration:60s]">
+          {secondRow.map((testimonial, i) => (
+            <TestimonialCard key={i} testimonial={testimonial} />
+          ))}
+        </Marquee>
 
-          {/* Navigation Arrows */}
-          <button
-            className="bg-background/80 text-foreground hover:bg-background absolute bottom-4 left-[20%] z-30 flex h-10 w-10 items-center justify-center rounded-full shadow-lg backdrop-blur-sm transition-colors md:bottom-8 md:left-[25%]"
-            aria-label="Previous testimonial"
-          >
-            <DynamicIcon name="ChevronLeft" className="h-5 w-5" />
-          </button>
-          <button
-            className="bg-background/80 text-foreground hover:bg-background absolute right-[20%] bottom-4 z-30 flex h-10 w-10 items-center justify-center rounded-full shadow-lg backdrop-blur-sm transition-colors md:right-[25%] md:bottom-8"
-            aria-label="Next testimonial"
-          >
-            <DynamicIcon name="ChevronRight" className="h-5 w-5" />
-          </button>
-        </div>
+        {/* Gradient overlays for fade effect */}
+        <div className="from-sage-100 pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r to-transparent dark:from-sage-950" />
+        <div className="to-sage-100 pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-transparent dark:to-sage-950" />
+      </div>
 
-        {/* CTA Button */}
+      {/* CTA Section */}
+      <div className={cn("container px-6 pb-16 md:pb-24", classNames.container)}>
         <div className="text-center">
           <Link
             href={ctaHref}
-            className="border-foreground/20 text-foreground hover:bg-foreground/5 inline-flex items-center gap-2 rounded-full border bg-white/50 px-6 py-3 text-sm font-medium backdrop-blur-sm transition-colors dark:bg-white/10"
+            className="border-foreground/20 text-foreground hover:bg-foreground/5 inline-flex items-center gap-2 rounded-full border bg-white/50 px-6 py-3 text-sm font-medium transition-colors dark:bg-white/10"
           >
             {ctaLabel}
             <DynamicIcon name="ArrowUpRight" className="h-4 w-4" />

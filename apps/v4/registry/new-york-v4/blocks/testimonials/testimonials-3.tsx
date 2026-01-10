@@ -1,11 +1,10 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Image from "next/image"
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
-import { Button } from "@/registry/new-york-v4/ui/button"
 
 interface TestimonialsBlockProps {
   content?: {
@@ -63,6 +62,40 @@ const testimonials3Defaults = {
   ],
 }
 
+// Testimonial Card for the Swiper carousel
+function TestimonialSwipeCard({
+  testimonial,
+}: {
+  testimonial: (typeof testimonials3Defaults.testimonials)[0]
+}) {
+  return (
+    <div className="bg-card flex h-full w-full flex-col rounded-3xl p-6 shadow-lg">
+      <DynamicIcon name="Quote" className="text-primary/30 mb-4 h-8 w-8" />
+      <p className="text-card-foreground mb-6 flex-1 text-sm leading-relaxed">
+        &ldquo;{testimonial.quote}&rdquo;
+      </p>
+      <div className="flex items-center gap-3">
+        <div className="relative h-12 w-12 overflow-hidden rounded-full">
+          <Image
+            src={testimonial.avatar}
+            alt={testimonial.author}
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div>
+          <p className="text-card-foreground font-semibold">
+            {testimonial.author}
+          </p>
+          <p className="text-muted-foreground text-xs">
+            {testimonial.role}, {testimonial.company}
+          </p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export function Testimonials3({
   content = {},
   classNames = {},
@@ -72,19 +105,27 @@ export function Testimonials3({
     testimonials = testimonials3Defaults.testimonials,
   } = content
 
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [SwiperComponents, setSwiperComponents] = useState<{
+    Swiper: any
+    SwiperSlide: any
+    modules: any[]
+  } | null>(null)
 
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length)
-  }
-
-  const prevSlide = () => {
-    setCurrentIndex(
-      (prev) => (prev - 1 + testimonials.length) % testimonials.length
-    )
-  }
-
-  const current = testimonials[currentIndex]
+  useEffect(() => {
+    // Dynamic import of Swiper to avoid SSR issues
+    Promise.all([
+      import("swiper/react"),
+      import("swiper/modules"),
+      import("swiper/css"),
+      import("swiper/css/effect-cards"),
+    ]).then(([swiperReact, swiperModules]) => {
+      setSwiperComponents({
+        Swiper: swiperReact.Swiper,
+        SwiperSlide: swiperReact.SwiperSlide,
+        modules: [swiperModules.EffectCards, swiperModules.Autoplay],
+      })
+    })
+  }, [])
 
   return (
     <section className={cn("bg-muted", classNames.root)}>
@@ -101,62 +142,39 @@ export function Testimonials3({
         </h2>
 
         <div className="mx-auto max-w-4xl">
-          {/* Main Testimonial */}
-          <div className="bg-background rounded-2xl p-8 md:p-12">
-            <DynamicIcon
-              name="Quote"
-              className="text-primary/20 mb-6 h-12 w-12"
-            />
-
-            <blockquote className="text-foreground mb-8 text-xl leading-relaxed md:text-2xl">
-              &ldquo;{current.quote}&rdquo;
-            </blockquote>
-
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-4">
-                <div className="relative h-14 w-14 overflow-hidden rounded-full">
-                  <Image
-                    src={current.avatar}
-                    alt={current.author}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div>
-                  <p className="text-foreground font-semibold">
-                    {current.author}
-                  </p>
-                  <p className="text-muted-foreground text-sm">
-                    {current.role}, {current.company}
-                  </p>
-                </div>
-              </div>
-
-              {/* Navigation */}
-              <div className="flex gap-2">
-                <Button variant="outline" size="icon" onClick={prevSlide}>
-                  <DynamicIcon name="ChevronLeft" className="h-5 w-5" />
-                </Button>
-                <Button variant="outline" size="icon" onClick={nextSlide}>
-                  <DynamicIcon name="ChevronRight" className="h-5 w-5" />
-                </Button>
-              </div>
-            </div>
+          {/* Card Swipe Carousel */}
+          <div className="flex items-center justify-center">
+            {!SwiperComponents ? (
+              <div className="bg-card h-[380px] w-[280px] animate-pulse rounded-3xl" />
+            ) : (
+              <SwiperComponents.Swiper
+                spaceBetween={40}
+                autoplay={{
+                  delay: 4000,
+                  disableOnInteraction: false,
+                }}
+                effect="cards"
+                grabCursor={true}
+                loop={true}
+                className="h-[380px] w-[280px]"
+                modules={SwiperComponents.modules}
+              >
+                {testimonials.map((testimonial, index) => (
+                  <SwiperComponents.SwiperSlide
+                    key={index}
+                    className="rounded-3xl"
+                  >
+                    <TestimonialSwipeCard testimonial={testimonial} />
+                  </SwiperComponents.SwiperSlide>
+                ))}
+              </SwiperComponents.Swiper>
+            )}
           </div>
 
-          {/* Dots */}
-          <div className="mt-6 flex justify-center gap-2">
-            {testimonials.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrentIndex(i)}
-                className={cn(
-                  "h-2 w-2 rounded-full transition-colors",
-                  i === currentIndex ? "bg-primary" : "bg-muted-foreground/30"
-                )}
-              />
-            ))}
-          </div>
+          {/* Info text */}
+          <p className="text-muted-foreground mt-8 text-center text-sm">
+            Swipe or drag to see more testimonials
+          </p>
         </div>
       </div>
     </section>
