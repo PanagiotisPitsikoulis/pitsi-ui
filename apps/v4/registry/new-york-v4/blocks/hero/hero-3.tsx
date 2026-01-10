@@ -14,9 +14,6 @@ import { Button } from "@/registry/new-york-v4/ui/button"
 import { HeroButton } from "@/registry/new-york-v4/ui/hero-button"
 import { Spacer } from "@/registry/new-york-v4/ui/spacer"
 
-import { KnockoutText } from "@/app/(app)/(content)/(blocks)/_block_components"
-import { useScrollContainer } from "@/app/(app)/(content)/(blocks)/_components"
-
 // Hero 3 defaults - Boat/Yacht theme with LiquidChrome + Noise
 const hero3Defaults = {
   badge: "Luxury Marine Experiences",
@@ -62,7 +59,6 @@ const hero3Defaults = {
 
 export function Hero3({ content = {}, classNames = {} }: HeroBlockProps) {
   const sectionRef = useRef<HTMLElement>(null)
-  const scrollContainer = useScrollContainer()
 
   // Merge content with defaults
   const {
@@ -81,7 +77,6 @@ export function Hero3({ content = {}, classNames = {} }: HeroBlockProps) {
   // Track scroll progress relative to the section
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    container: scrollContainer || undefined,
     offset: ["start end", "end start"],
   })
 
@@ -208,26 +203,33 @@ export function Hero3({ content = {}, classNames = {} }: HeroBlockProps) {
         )}
 
         {/* Typography block with knockout effect */}
-        <KnockoutText padX={40} padY={50} intensity={1}>
-          <HeroText
-            badge={undefined}
-            title={title}
-            description={description}
-            align="center"
-            size="large"
-            classNames={{
-              root: classNames.header?.root,
-              title: cn(
-                "text-white leading-[0.9]",
-                classNames.header?.title
-              ),
-              description: cn(
-                "text-white/80 md:text-2xl max-w-none",
-                classNames.header?.description
-              ),
+        <div className="relative">
+          {/* Faded background overlay - ellipse with blur for soft edges */}
+          <div
+            className="bg-background pointer-events-none absolute rounded-[100%] blur-3xl"
+            style={{
+              inset: "-200px -160px",
             }}
           />
-        </KnockoutText>
+          {/* Content wrapper with mix-blend-difference */}
+          <div className="relative [&>*]:mix-blend-difference">
+            <HeroText
+              badge={undefined}
+              title={title}
+              description={description}
+              align="center"
+              size="large"
+              classNames={{
+                root: classNames.header?.root,
+                title: cn("text-white leading-[0.9]", classNames.header?.title),
+                description: cn(
+                  "text-white/80 md:text-2xl max-w-none",
+                  classNames.header?.description
+                ),
+              }}
+            />
+          </div>
+        </div>
 
         {/* Buttons - above blend layer */}
         <div
