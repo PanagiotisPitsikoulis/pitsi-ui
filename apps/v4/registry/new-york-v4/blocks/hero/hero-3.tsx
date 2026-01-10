@@ -7,13 +7,16 @@ import { motion, useScroll, useTransform } from "motion/react"
 
 import { type HeroBlockProps } from "@/lib/blocks/hero.types"
 import { cn } from "@/lib/utils"
+import LiquidChrome from "@/registry/new-york-v4/animations/liquid-chrome/liquid-chrome"
+import Noise from "@/registry/new-york-v4/animations/noise/noise"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { HeroButton } from "@/registry/new-york-v4/ui/hero-button"
 import { Spacer } from "@/registry/new-york-v4/ui/spacer"
+
 import { KnockoutText } from "@/app/(app)/(content)/(blocks)/_block_components"
 import { useScrollContainer } from "@/app/(app)/(content)/(blocks)/_components"
 
-// Hero 3 defaults - Boat/Yacht theme
+// Hero 3 defaults - Boat/Yacht theme with LiquidChrome + Noise
 const hero3Defaults = {
   badge: "Luxury Marine Experiences",
   title: "Navigate Your\nPerfect Escape",
@@ -43,6 +46,17 @@ const hero3Defaults = {
       height: 450,
     },
   ],
+  liquidChromeConfig: {
+    baseColor: [0.7, 0.75, 0.8] as [number, number, number], // Silver tones for luxury
+    speed: 0.15,
+    amplitude: 0.4,
+    frequencyX: 2,
+    frequencyY: 1.5,
+  },
+  noiseConfig: {
+    patternAlpha: 10,
+    patternRefreshInterval: 3,
+  },
 }
 
 export function Hero3({ content = {}, classNames = {} }: HeroBlockProps) {
@@ -59,7 +73,9 @@ export function Hero3({ content = {}, classNames = {} }: HeroBlockProps) {
     image = hero3Defaults.image,
     backgroundImage = hero3Defaults.backgroundImage,
     decorationImages = hero3Defaults.decorationImages,
-  } = content
+    liquidChromeConfig = hero3Defaults.liquidChromeConfig,
+    noiseConfig = hero3Defaults.noiseConfig,
+  } = content as typeof hero3Defaults
 
   // Track scroll progress relative to the section
   const { scrollYProgress } = useScroll({
@@ -85,11 +101,31 @@ export function Hero3({ content = {}, classNames = {} }: HeroBlockProps) {
         classNames.root
       )}
     >
+      {/* LiquidChrome Background - Silver tones for luxury aesthetic */}
+      <div className="pointer-events-none absolute inset-0 z-0 opacity-30">
+        <LiquidChrome
+          baseColor={liquidChromeConfig.baseColor}
+          speed={liquidChromeConfig.speed}
+          amplitude={liquidChromeConfig.amplitude}
+          frequencyX={liquidChromeConfig.frequencyX}
+          frequencyY={liquidChromeConfig.frequencyY}
+          interactive={false}
+        />
+      </div>
+
+      {/* Noise overlay for texture */}
+      <div className="pointer-events-none absolute inset-0 z-[1] overflow-hidden opacity-50">
+        <Noise
+          patternAlpha={noiseConfig.patternAlpha}
+          patternRefreshInterval={noiseConfig.patternRefreshInterval}
+        />
+      </div>
+
       {/* Background decoration - wave pattern */}
       {backgroundImage && (
         <div
           className={cn(
-            "pointer-events-none absolute top-0 right-0 bottom-0 left-0 z-0 opacity-40",
+            "pointer-events-none absolute top-0 right-0 bottom-0 left-0 z-[2] opacity-40",
             classNames.background
           )}
           style={{
@@ -106,7 +142,7 @@ export function Hero3({ content = {}, classNames = {} }: HeroBlockProps) {
       {image && (
         <motion.div
           className={cn(
-            "pointer-events-none absolute -bottom-48 -left-36 z-0 hidden lg:block",
+            "pointer-events-none absolute -bottom-48 -left-36 z-[3] hidden lg:block",
             classNames.image?.wrapper
           )}
           style={{ x: heroImageX }}
@@ -154,7 +190,7 @@ export function Hero3({ content = {}, classNames = {} }: HeroBlockProps) {
       {/* Content */}
       <div
         className={cn(
-          "relative flex flex-col items-center",
+          "relative z-10 flex flex-col items-center",
           classNames.container
         )}
       >

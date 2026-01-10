@@ -1,16 +1,17 @@
 "use client"
 
-import Image from "next/image"
 import Link from "next/link"
 
 import { type HeroBlockProps } from "@/lib/blocks/hero.types"
 import { cn } from "@/lib/utils"
+import DomeGallery from "@/registry/new-york-v4/animations/dome-gallery/dome-gallery"
 import { HeroText } from "@/registry/new-york-v4/lib/hero-text"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 import { HeroButton } from "../../ui/hero-button"
 
-// Hero 23 - Sidebar Navigation Style (Boat theme)
+// Hero 23 - Premium 3D Gallery with DomeGallery (Boat theme)
+// Luxury yacht gallery with immersive 3D dome experience
 const hero23Defaults = {
   badge: "Exclusive Voyages",
   title: "Escape To\nThe Horizon",
@@ -22,16 +23,48 @@ const hero23Defaults = {
     href: "#",
     variant: "outline" as const,
   },
-  image: {
-    src: "/elements/landscape/sea/9.webp",
-    alt: "Yacht at horizon",
-  },
-  navItems: [
-    { label: "Yachts", active: true },
-    { label: "Sailing", active: false },
-    { label: "Cruises", active: false },
-    { label: "Events", active: false },
+  galleryImages: [
+    {
+      src: "/elements/landscape/sea/1.webp",
+      alt: "Luxury yacht sunset",
+    },
+    {
+      src: "/elements/landscape/sea/2.webp",
+      alt: "Crystal clear waters",
+    },
+    {
+      src: "/elements/landscape/sea/3.webp",
+      alt: "Yacht deck view",
+    },
+    {
+      src: "/elements/landscape/sea/4.webp",
+      alt: "Mediterranean coast",
+    },
+    {
+      src: "/elements/landscape/sea/5.webp",
+      alt: "Open ocean voyage",
+    },
+    {
+      src: "/elements/landscape/sea/6.webp",
+      alt: "Luxury cabin interior",
+    },
+    {
+      src: "/elements/landscape/sea/7.webp",
+      alt: "Harbor view",
+    },
   ],
+  domeConfig: {
+    fit: 0.6,
+    minRadius: 500,
+    maxVerticalRotationDeg: 8,
+    dragSensitivity: 15,
+    overlayBlurColor: "var(--background)",
+    grayscale: false,
+    imageBorderRadius: "16px",
+    openedImageBorderRadius: "24px",
+    openedImageWidth: "500px",
+    openedImageHeight: "400px",
+  },
 }
 
 export function Hero23({ content = {}, classNames = {} }: HeroBlockProps) {
@@ -41,8 +74,8 @@ export function Hero23({ content = {}, classNames = {} }: HeroBlockProps) {
     description = hero23Defaults.description,
     primaryCta = hero23Defaults.primaryCta,
     secondaryCta = hero23Defaults.secondaryCta,
-    image = hero23Defaults.image,
-    navItems = hero23Defaults.navItems,
+    galleryImages = hero23Defaults.galleryImages,
+    domeConfig = hero23Defaults.domeConfig,
   } = content as typeof hero23Defaults
 
   return (
@@ -52,41 +85,39 @@ export function Hero23({ content = {}, classNames = {} }: HeroBlockProps) {
         classNames.root
       )}
     >
-      <div className="container flex-1 px-4 py-6">
-        <div className="grid h-full min-h-[calc(100svh-8rem)] gap-4 lg:grid-cols-[auto_1fr]">
-          {/* Left - Vertical Navigation Sidebar */}
-          <div className="bg-muted flex flex-row gap-2 rounded-3xl p-4 lg:w-20 lg:flex-col lg:items-center lg:py-8">
-            {navItems.map((item, i) => (
-              <button
-                key={i}
-                className={cn(
-                  "flex-1 rounded-xl px-4 py-3 text-sm font-medium transition-colors lg:w-full lg:flex-none lg:py-4",
-                  item.active
-                    ? "bg-brand text-brand-foreground"
-                    : "hover:bg-muted-foreground/10 text-muted-foreground"
-                )}
-              >
-                <span className="lg:hidden">{item.label}</span>
-                <span className="hidden lg:block lg:[text-orientation:mixed] lg:[writing-mode:vertical-lr]">
-                  {item.label}
-                </span>
-              </button>
-            ))}
-          </div>
+      {/* DomeGallery as background */}
+      <div className="absolute inset-0">
+        <DomeGallery
+          images={galleryImages}
+          fit={domeConfig.fit}
+          minRadius={domeConfig.minRadius}
+          maxVerticalRotationDeg={domeConfig.maxVerticalRotationDeg}
+          dragSensitivity={domeConfig.dragSensitivity}
+          overlayBlurColor={domeConfig.overlayBlurColor}
+          grayscale={domeConfig.grayscale}
+          imageBorderRadius={domeConfig.imageBorderRadius}
+          openedImageBorderRadius={domeConfig.openedImageBorderRadius}
+          openedImageWidth={domeConfig.openedImageWidth}
+          openedImageHeight={domeConfig.openedImageHeight}
+        />
+      </div>
 
-          {/* Right - Main Content Area */}
-          <div className="grid gap-4 lg:grid-cols-2">
-            {/* Text Content */}
-            <div className="bg-muted flex flex-col justify-center rounded-3xl p-8 lg:p-10">
+      {/* Content overlay - positioned at bottom */}
+      <div className="relative z-10 mt-auto">
+        <div className="container px-4 pb-12">
+          <div className="mx-auto max-w-2xl text-center">
+            {/* Semi-transparent card for readability */}
+            <div className="bg-background/95 border-border/30 rounded-3xl border p-8 shadow-2xl md:p-10">
               <HeroText
                 badge={badge}
                 title={title}
                 description={description}
                 size="large"
+                align="center"
                 classNames={classNames.header}
               />
 
-              <div className="mt-8 flex flex-wrap items-center gap-3">
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
                 {primaryCta && (
                   <Link
                     href={primaryCta.href}
@@ -106,17 +137,11 @@ export function Hero23({ content = {}, classNames = {} }: HeroBlockProps) {
                   </Button>
                 )}
               </div>
-            </div>
 
-            {/* Image */}
-            <div className="bg-muted relative min-h-[25rem] overflow-hidden rounded-3xl">
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                className="object-cover"
-                priority
-              />
+              {/* Interaction hint */}
+              <p className="text-muted-foreground mt-6 text-sm">
+                Drag to explore the gallery
+              </p>
             </div>
           </div>
         </div>
@@ -124,3 +149,6 @@ export function Hero23({ content = {}, classNames = {} }: HeroBlockProps) {
     </section>
   )
 }
+
+// Re-export for backwards compatibility
+export { Hero23 as HeroBoatGallery }
