@@ -12,6 +12,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/registry/new-york-v4/ui/accordion"
+import { BorderBeam } from "@/registry/new-york-v4/ui/border-beam"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 const features13Defaults = {
@@ -117,9 +118,16 @@ export function Features13({
         />
 
         <div className="grid w-full grid-cols-6 gap-6">
-          {/* Accordion - 2 columns on lg (LEFT) */}
+          {/* Accordion - 2 columns on lg (LEFT) with BorderBeam */}
           <div className="col-span-6 text-left lg:col-span-2">
-            <div className="border-border bg-background overflow-hidden rounded-4xl border shadow-sm lg:h-[500px]">
+            <div className="border-border bg-background relative overflow-hidden rounded-4xl border shadow-sm lg:h-[500px]">
+              <BorderBeam
+                size={100}
+                duration={8}
+                colorFrom="hsl(var(--brand))"
+                colorTo="hsl(var(--brand) / 0.3)"
+                borderWidth={2}
+              />
               <Accordion
                 type="single"
                 className="h-full w-full overflow-y-auto"
@@ -170,9 +178,17 @@ export function Features13({
             </div>
           </div>
 
-          {/* Image - 4 columns on lg (RIGHT) */}
+          {/* Image - 4 columns on lg (RIGHT) with BorderBeam */}
           <div className="col-span-6 hidden lg:col-span-4 lg:block">
             <div className="border-border bg-background relative z-10 overflow-hidden rounded-4xl border shadow-sm lg:h-[500px]">
+              <BorderBeam
+                size={150}
+                duration={10}
+                colorFrom="hsl(var(--brand))"
+                colorTo="hsl(var(--brand) / 0.3)"
+                borderWidth={2}
+                reverse
+              />
               <div className="bg-background absolute inset-0 z-[1]" />
               <div className="relative z-[2] h-full w-full p-12">
                 <Image

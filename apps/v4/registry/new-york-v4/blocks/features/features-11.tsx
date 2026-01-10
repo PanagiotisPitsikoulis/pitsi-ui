@@ -5,6 +5,7 @@ import Image from "next/image"
 
 import { type FeaturesBlockProps } from "@/lib/blocks/features.types"
 import { cn } from "@/lib/utils"
+import { ZoomParallax } from "@/registry/new-york-v4/animations/zoom-parallax/zoom-parallax"
 import {
   Accordion,
   AccordionContent,
@@ -144,19 +145,25 @@ export function Features11({
             </div>
           </div>
 
-          {/* Image - 4 columns on lg (RIGHT) */}
+          {/* Image - 4 columns on lg (RIGHT) with ZoomParallax */}
           <div className="col-span-6 hidden lg:col-span-4 lg:block">
-            <div className="border-border bg-background relative z-10 overflow-hidden rounded-4xl border shadow-sm lg:h-[500px]">
-              <div className="bg-background absolute inset-0 z-[1]" />
-              <div className="relative z-[2] h-full w-full p-12">
-                <Image
-                  src={activeImage}
-                  alt="Feature preview"
-                  fill
-                  className="object-contain p-12 transition-opacity duration-300"
-                />
+            <ZoomParallax
+              scaleRange={[0.9, 1]}
+              offset={["start end", "end start"]}
+              animateOpacity={false}
+            >
+              <div className="border-border bg-background relative z-10 overflow-hidden rounded-4xl border shadow-sm lg:h-[500px]">
+                <div className="bg-background absolute inset-0 z-[1]" />
+                <div className="relative z-[2] h-full w-full p-12">
+                  <Image
+                    src={activeImage}
+                    alt="Feature preview"
+                    fill
+                    className="object-contain p-12 transition-opacity duration-300"
+                  />
+                </div>
               </div>
-            </div>
+            </ZoomParallax>
           </div>
         </div>
 

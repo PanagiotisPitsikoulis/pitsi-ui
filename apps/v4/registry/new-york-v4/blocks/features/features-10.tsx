@@ -6,6 +6,10 @@ import Image from "next/image"
 import { type FeaturesBlockProps } from "@/lib/blocks/features.types"
 import { cn } from "@/lib/utils"
 import {
+  SmoothParallaxContainer,
+  SmoothParallaxLayer,
+} from "@/registry/new-york-v4/animations/smooth-parallax-scroll/smooth-parallax-scroll"
+import {
   Accordion,
   AccordionContent,
   AccordionItem,
@@ -91,19 +95,27 @@ export function Features10({
     <section className={cn("py-24", classNames.root)}>
       <div className={cn("container px-6", classNames.container)}>
         <div className="grid w-full grid-cols-6 gap-6">
-          {/* Image - 4 columns on lg (LEFT) */}
+          {/* Image - 4 columns on lg (LEFT) with SmoothParallax */}
           <div className="col-span-6 hidden lg:col-span-4 lg:block">
-            <div className="border-border bg-background relative z-10 overflow-hidden rounded-4xl border shadow-sm lg:h-[500px]">
-              <div className="bg-background absolute inset-0 z-[1]" />
-              <div className="relative z-[2] h-full w-full p-12">
-                <Image
-                  src={activeImage}
-                  alt="Feature preview"
-                  fill
-                  className="object-contain p-12 transition-opacity duration-300"
-                />
-              </div>
-            </div>
+            <SmoothParallaxContainer height="600px" className="h-[500px]">
+              <SmoothParallaxLayer
+                yRange={[-50, 50]}
+                className="h-full w-full"
+                zIndex={1}
+              >
+                <div className="border-border bg-background relative z-10 h-full overflow-hidden rounded-4xl border shadow-sm">
+                  <div className="bg-background absolute inset-0 z-[1]" />
+                  <div className="relative z-[2] h-full w-full p-12">
+                    <Image
+                      src={activeImage}
+                      alt="Feature preview"
+                      fill
+                      className="object-contain p-12 transition-opacity duration-300"
+                    />
+                  </div>
+                </div>
+              </SmoothParallaxLayer>
+            </SmoothParallaxContainer>
           </div>
 
           {/* Accordion - 2 columns on lg (RIGHT) */}
