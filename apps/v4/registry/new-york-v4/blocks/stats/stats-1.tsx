@@ -2,6 +2,7 @@
 
 import { statsDefaults, type StatsBlockProps } from "@/lib/blocks/stats.types"
 import { cn } from "@/lib/utils"
+import CircularText from "@/registry/new-york-v4/animations/circular-text/circular-text"
 import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 
 // ============================================================================
@@ -44,17 +45,34 @@ export function Stats1({ content = {}, classNames = {} }: StatsBlockProps) {
           )}
         >
           {stats.map((stat, i) => (
-            <div key={i} className={cn("text-center", classNames.stat?.root)}>
-              <div
-                className={cn(
-                  "text-primary mb-2 text-4xl font-bold md:text-6xl",
-                  classNames.stat?.value
-                )}
-              >
-                {stat.value}
+            <div
+              key={i}
+              className={cn(
+                "flex flex-col items-center justify-center",
+                classNames.stat?.root
+              )}
+            >
+              <div className="relative">
+                <CircularText
+                  text={` ${stat.value} `.repeat(4)}
+                  spinDuration={15 + i * 3}
+                  onHover="slowDown"
+                  className={cn(
+                    "text-primary h-32 w-32 text-lg font-bold md:h-40 md:w-40 md:text-xl",
+                    classNames.stat?.value
+                  )}
+                />
+                <div className="bg-background absolute inset-0 flex items-center justify-center">
+                  <span className="text-primary text-2xl font-bold md:text-3xl">
+                    {stat.value}
+                  </span>
+                </div>
               </div>
               <p
-                className={cn("text-muted-foreground", classNames.stat?.label)}
+                className={cn(
+                  "text-muted-foreground mt-4 text-center",
+                  classNames.stat?.label
+                )}
               >
                 {stat.label}
               </p>
@@ -68,3 +86,4 @@ export function Stats1({ content = {}, classNames = {} }: StatsBlockProps) {
 
 // Re-export for backwards compatibility
 export { Stats1 as StatsServicePlants }
+export default Stats1

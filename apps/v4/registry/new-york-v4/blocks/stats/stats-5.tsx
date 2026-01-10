@@ -1,6 +1,11 @@
 "use client"
 
 import { cn } from "@/lib/utils"
+import {
+  ScrollPathContainer,
+  ScrollLinePath,
+} from "@/registry/new-york-v4/animations/text-along-path/text-along-path"
+import { SlideUp } from "@/registry/new-york-v4/animations/slide-up/slide-up"
 
 interface StatsBlockProps {
   content?: {
@@ -63,6 +68,10 @@ const stats5Defaults = {
   ],
 }
 
+// Vertical timeline path for the scroll animation
+const timelinePath =
+  "M 50 0 Q 50 100 50 200 Q 50 300 50 400 Q 50 500 50 600 Q 50 700 50 800 Q 50 900 50 1000"
+
 export function Stats5({ content = {}, classNames = {} }: StatsBlockProps) {
   const {
     title = stats5Defaults.title,
@@ -75,82 +84,103 @@ export function Stats5({ content = {}, classNames = {} }: StatsBlockProps) {
       <div
         className={cn("container px-6 py-16 md:py-24", classNames.container)}
       >
-        <div className="mb-16 text-center">
-          <h2
-            className={cn(
-              "text-foreground mb-4 text-3xl font-bold md:text-4xl",
-              classNames.header?.title
-            )}
-          >
-            {title}
-          </h2>
-          <p
-            className={cn(
-              "text-muted-foreground mx-auto max-w-2xl",
-              classNames.header?.description
-            )}
-          >
-            {description}
-          </p>
-        </div>
+        <SlideUp delay={0} distance={20}>
+          <div className="mb-16 text-center">
+            <h2
+              className={cn(
+                "text-foreground mb-4 text-3xl font-bold md:text-4xl",
+                classNames.header?.title
+              )}
+            >
+              {title}
+            </h2>
+            <p
+              className={cn(
+                "text-muted-foreground mx-auto max-w-2xl",
+                classNames.header?.description
+              )}
+            >
+              {description}
+            </p>
+          </div>
+        </SlideUp>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Line */}
+        {/* Timeline with ScrollLinePath */}
+        <ScrollPathContainer
+          height="auto"
+          className="relative min-h-fit"
+          scrollBased={true}
+        >
+          {/* Animated Line - visible on md screens */}
+          <div className="pointer-events-none absolute top-0 left-1/2 hidden h-full w-24 -translate-x-1/2 md:block">
+            <ScrollLinePath
+              path={timelinePath}
+              viewBox="0 0 100 1000"
+              strokeColor="hsl(var(--primary))"
+              strokeWidth={4}
+              initialProgress={0}
+              className="h-full w-full"
+            />
+          </div>
+
+          {/* Static background line */}
           <div className="bg-border absolute top-0 left-1/2 hidden h-full w-px -translate-x-1/2 md:block" />
 
-          <div className="space-y-12 md:space-y-0">
+          <div className="relative space-y-12 md:space-y-0">
             {milestones.map((milestone, i) => (
-              <div
-                key={i}
-                className={cn(
-                  "relative grid gap-8 md:grid-cols-2 md:gap-16",
-                  i % 2 === 0 ? "md:text-right" : ""
-                )}
-              >
-                {/* Content */}
+              <SlideUp key={i} delay={0.1 * i} distance={30}>
                 <div
                   className={cn(
-                    "md:py-8",
-                    i % 2 === 0 ? "md:order-1" : "md:order-2"
+                    "relative grid gap-8 md:grid-cols-2 md:gap-16",
+                    i % 2 === 0 ? "md:text-right" : ""
                   )}
                 >
-                  <span className="text-primary text-sm font-semibold">
-                    {milestone.year}
-                  </span>
-                  <h3 className="text-foreground mt-1 text-xl font-bold">
-                    {milestone.title}
-                  </h3>
-                  <p className="text-foreground mt-2 text-4xl font-bold">
-                    {milestone.stat}
-                  </p>
-                  <p className="text-muted-foreground mt-2">
-                    {milestone.description}
-                  </p>
-                </div>
+                  {/* Content */}
+                  <div
+                    className={cn(
+                      "md:py-8",
+                      i % 2 === 0 ? "md:order-1" : "md:order-2"
+                    )}
+                  >
+                    <span className="text-primary text-sm font-semibold">
+                      {milestone.year}
+                    </span>
+                    <h3 className="text-foreground mt-1 text-xl font-bold">
+                      {milestone.title}
+                    </h3>
+                    <p className="text-foreground mt-2 text-4xl font-bold">
+                      {milestone.stat}
+                    </p>
+                    <p className="text-muted-foreground mt-2">
+                      {milestone.description}
+                    </p>
+                  </div>
 
-                {/* Dot */}
-                <div
-                  className={cn(
-                    "absolute top-8 left-1/2 hidden h-4 w-4 -translate-x-1/2 md:block",
-                    i % 2 === 0 ? "md:order-2" : "md:order-1"
-                  )}
-                >
-                  <div className="bg-primary h-4 w-4 rounded-full" />
-                </div>
+                  {/* Dot */}
+                  <div
+                    className={cn(
+                      "absolute top-8 left-1/2 z-10 hidden h-4 w-4 -translate-x-1/2 md:block",
+                      i % 2 === 0 ? "md:order-2" : "md:order-1"
+                    )}
+                  >
+                    <div className="bg-primary h-4 w-4 rounded-full ring-4 ring-background" />
+                  </div>
 
-                {/* Empty space for alternating layout */}
-                <div
-                  className={cn(
-                    "hidden md:block",
-                    i % 2 === 0 ? "md:order-2" : "md:order-1"
-                  )}
-                />
-              </div>
+                  {/* Empty space for alternating layout */}
+                  <div
+                    className={cn(
+                      "hidden md:block",
+                      i % 2 === 0 ? "md:order-2" : "md:order-1"
+                    )}
+                  />
+                </div>
+              </SlideUp>
             ))}
           </div>
-        </div>
+        </ScrollPathContainer>
       </div>
     </section>
   )
 }
+
+export default Stats5
