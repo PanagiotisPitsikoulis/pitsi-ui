@@ -5,6 +5,11 @@ import Link from "next/link"
 
 import { blogDefaults, type BlogBlockProps } from "@/lib/blocks/blog.types"
 import { cn } from "@/lib/utils"
+import {
+  CardsParallaxContainer,
+  ParallaxCard,
+} from "@/registry/new-york-v4/animations/cards-parallax/cards-parallax"
+import { SlideUp } from "@/registry/new-york-v4/animations/slide-up/slide-up"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 // Block-specific defaults that override the generic defaults
@@ -68,6 +73,13 @@ const blockDefaults = {
   },
 }
 
+// Card background colors for the parallax effect (sage palette)
+const cardColors = [
+  "hsl(var(--card))",
+  "hsl(var(--muted))",
+  "hsl(var(--card))",
+]
+
 export function Blog1({ content = {}, classNames = {} }: BlogBlockProps) {
   // Merge content with block-specific defaults, falling back to generic defaults
   const {
@@ -80,135 +92,155 @@ export function Blog1({ content = {}, classNames = {} }: BlogBlockProps) {
   return (
     <section className={classNames.root}>
       <div className={cn("container px-6", classNames.container)}>
-        <div
-          className={cn(
-            "mb-12 flex flex-col md:flex-row md:items-end md:justify-between",
-            classNames.header?.root
-          )}
-        >
-          <div>
-            {badge && (
-              <p
-                className={cn(
-                  "text-primary mb-4 text-sm font-medium tracking-[0.3em] uppercase",
-                  classNames.header?.badge
-                )}
-              >
-                {badge}
-              </p>
+        <SlideUp delay={0} distance={20}>
+          <div
+            className={cn(
+              "mb-12 flex flex-col md:flex-row md:items-end md:justify-between",
+              classNames.header?.root
             )}
-            <h2
-              className={cn(
-                "font-display text-foreground text-3xl font-bold md:text-5xl",
-                classNames.header?.title
-              )}
-            >
-              {title}
-            </h2>
-          </div>
-          {cta && (
-            <Link
-              href={cta.href}
-              className={cn("mt-4 md:mt-0", classNames.cta)}
-            >
-              <Button
-                variant={cta.variant ?? "secondary"}
-                className="bg-page hover:bg-page hover:text-muted-foreground/50 rounded-full"
-              >
-                {cta.label}
-              </Button>
-            </Link>
-          )}
-        </div>
-        <div className={cn("grid gap-8 md:grid-cols-3", classNames.grid)}>
-          {posts.map((post, i) => (
-            <Link
-              href={post.href}
-              key={i}
-              className={cn("group", classNames.post?.root)}
-            >
-              <div
-                className={cn(
-                  "bg-muted relative mb-4 aspect-[4/3] overflow-hidden rounded-2xl",
-                  classNames.post?.image
-                )}
-              >
-                {post.image && (
-                  <Image
-                    draggable={false}
-                    src={post.image.src}
-                    alt={post.image.alt}
-                    fill
-                    className="pointer-events-none object-cover transition-transform duration-500 select-none group-hover:scale-105"
-                  />
-                )}
-              </div>
-              <div
-                className={cn(
-                  "mb-2 flex items-center gap-3",
-                  classNames.post?.meta
-                )}
-              >
-                {post.category && (
-                  <span
-                    className={cn(
-                      "text-primary text-xs font-medium",
-                      classNames.post?.category
-                    )}
-                  >
-                    {post.category}
-                  </span>
-                )}
-                {post.readTime && (
-                  <span className="text-muted-foreground text-xs">
-                    {post.readTime}
-                  </span>
-                )}
-              </div>
-              <h3
-                className={cn(
-                  "text-foreground group-hover:text-primary mb-2 text-lg font-semibold transition-colors",
-                  classNames.post?.title
-                )}
-              >
-                {post.title}
-              </h3>
-              {post.excerpt && (
+          >
+            <div>
+              {badge && (
                 <p
                   className={cn(
-                    "text-muted-foreground mb-4 line-clamp-2 text-sm",
-                    classNames.post?.excerpt
+                    "text-primary mb-4 text-sm font-medium tracking-[0.3em] uppercase",
+                    classNames.header?.badge
                   )}
                 >
-                  {post.excerpt}
+                  {badge}
                 </p>
               )}
-              {post.author && (
+              <h2
+                className={cn(
+                  "font-display text-foreground text-3xl font-bold md:text-5xl",
+                  classNames.header?.title
+                )}
+              >
+                {title}
+              </h2>
+            </div>
+            {cta && (
+              <Link
+                href={cta.href}
+                className={cn("mt-4 md:mt-0", classNames.cta)}
+              >
+                <Button
+                  variant={cta.variant ?? "secondary"}
+                  className="bg-page hover:bg-page hover:text-muted-foreground/50 rounded-full"
+                >
+                  {cta.label}
+                </Button>
+              </Link>
+            )}
+          </div>
+        </SlideUp>
+
+        {/* CardsParallax for posts */}
+        <CardsParallaxContainer
+          cardCount={posts.length}
+          className="min-h-[200vh]"
+        >
+          {posts.map((post, i) => (
+            <ParallaxCard
+              key={i}
+              index={i}
+              backgroundColor={cardColors[i % cardColors.length]}
+              className="border-border flex h-auto min-h-[400px] w-full max-w-3xl flex-col overflow-hidden rounded-3xl border shadow-lg md:flex-row md:min-h-[350px]"
+              cardOffset={30}
+              scaleStep={0.04}
+            >
+              <Link
+                href={post.href}
+                className={cn("group flex flex-1 flex-col md:flex-row", classNames.post?.root)}
+              >
+                {/* Image side */}
                 <div
                   className={cn(
-                    "flex items-center gap-2",
-                    classNames.post?.author
+                    "relative aspect-[4/3] w-full shrink-0 overflow-hidden md:aspect-auto md:w-2/5",
+                    classNames.post?.image
                   )}
                 >
-                  {post.author.avatar && (
-                    <div className="bg-muted relative h-6 w-6 overflow-hidden rounded-full">
-                      <Image
-                        draggable={false}
-                        src={post.author.avatar.src}
-                        alt={post.author.avatar.alt}
-                        fill
-                        className="pointer-events-none object-cover select-none"
-                      />
+                  {post.image && (
+                    <Image
+                      draggable={false}
+                      src={post.image.src}
+                      alt={post.image.alt}
+                      fill
+                      className="pointer-events-none object-cover transition-transform duration-500 select-none group-hover:scale-105"
+                    />
+                  )}
+                </div>
+
+                {/* Content side */}
+                <div className="flex flex-1 flex-col justify-center p-6 md:p-8">
+                  <div
+                    className={cn(
+                      "mb-3 flex items-center gap-3",
+                      classNames.post?.meta
+                    )}
+                  >
+                    {post.category && (
+                      <span
+                        className={cn(
+                          "text-primary text-xs font-medium",
+                          classNames.post?.category
+                        )}
+                      >
+                        {post.category}
+                      </span>
+                    )}
+                    {post.readTime && (
+                      <span className="text-muted-foreground text-xs">
+                        {post.readTime}
+                      </span>
+                    )}
+                  </div>
+                  <h3
+                    className={cn(
+                      "text-foreground group-hover:text-primary mb-3 text-xl font-semibold transition-colors md:text-2xl",
+                      classNames.post?.title
+                    )}
+                  >
+                    {post.title}
+                  </h3>
+                  {post.excerpt && (
+                    <p
+                      className={cn(
+                        "text-muted-foreground mb-4 line-clamp-3 text-sm md:text-base",
+                        classNames.post?.excerpt
+                      )}
+                    >
+                      {post.excerpt}
+                    </p>
+                  )}
+                  {post.author && (
+                    <div
+                      className={cn(
+                        "mt-auto flex items-center gap-2",
+                        classNames.post?.author
+                      )}
+                    >
+                      {post.author.avatar && (
+                        <div className="bg-muted relative h-8 w-8 overflow-hidden rounded-full">
+                          <Image
+                            draggable={false}
+                            src={post.author.avatar.src}
+                            alt={post.author.avatar.alt}
+                            fill
+                            className="pointer-events-none object-cover select-none"
+                          />
+                        </div>
+                      )}
+                      <span className="text-muted-foreground text-sm">
+                        {post.author.name}
+                      </span>
                     </div>
                   )}
-                  <span className="text-muted-foreground text-sm">
-                    {post.author.name}
-                  </span>
                 </div>
-              )}
-            </Link>
+              </Link>
+            </ParallaxCard>
           ))}
-        </div>
+        </CardsParallaxContainer>
       </div>
     </section>
   )

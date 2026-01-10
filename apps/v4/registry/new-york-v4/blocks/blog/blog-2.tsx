@@ -5,6 +5,9 @@ import Link from "next/link"
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
+import { ScrollFade } from "@/registry/new-york-v4/animations/scroll-fade/scroll-fade"
+import { SlideUp } from "@/registry/new-york-v4/animations/slide-up/slide-up"
+import { ZoomParallax } from "@/registry/new-york-v4/animations/zoom-parallax/zoom-parallax"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 interface BlogBlockProps {
@@ -85,84 +88,93 @@ export function Blog2({ content = {}, classNames = {} }: BlogBlockProps) {
       <div
         className={cn("container px-6 py-16 md:py-24", classNames.container)}
       >
-        <div className="mb-12 flex items-center justify-between">
-          <h2
-            className={cn(
-              "text-foreground text-3xl font-bold md:text-4xl",
-              classNames.header?.title
-            )}
-          >
-            {title}
-          </h2>
-          <Button variant="ghost" className="group" asChild>
-            <Link href="#">
-              View All{" "}
-              <DynamicIcon
-                name="ArrowRight"
-                className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
-              />
-            </Link>
-          </Button>
-        </div>
+        <SlideUp delay={0} distance={20}>
+          <div className="mb-12 flex items-center justify-between">
+            <h2
+              className={cn(
+                "text-foreground text-3xl font-bold md:text-4xl",
+                classNames.header?.title
+              )}
+            >
+              {title}
+            </h2>
+            <Button variant="ghost" className="group" asChild>
+              <Link href="#">
+                View All{" "}
+                <DynamicIcon
+                  name="ArrowRight"
+                  className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
+                />
+              </Link>
+            </Button>
+          </div>
+        </SlideUp>
 
         <div className="grid gap-8 lg:grid-cols-2">
-          {/* Featured Post */}
-          <Link href={featured.href} className="group">
-            <div className="relative aspect-[16/10] overflow-hidden rounded-xl">
-              <Image
-                src={featured.image}
-                alt={featured.title}
-                fill
-                className="object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-              <div className="bg-primary text-primary-foreground absolute top-4 left-4 rounded-full px-3 py-1 text-xs font-semibold">
-                {featured.category}
+          {/* Featured Post with ZoomParallax */}
+          <ZoomParallax
+            scaleRange={[0.92, 1]}
+            animateOpacity={false}
+            offset={["start end", "end start"]}
+          >
+            <Link href={featured.href} className="group block">
+              <div className="relative aspect-[16/10] overflow-hidden rounded-xl">
+                <Image
+                  src={featured.image}
+                  alt={featured.title}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="bg-primary text-primary-foreground absolute top-4 left-4 rounded-full px-3 py-1 text-xs font-semibold">
+                  {featured.category}
+                </div>
               </div>
-            </div>
-            <div className="mt-4">
-              <div className="text-muted-foreground mb-2 flex items-center gap-2 text-sm">
-                <DynamicIcon name="Clock" className="h-4 w-4" />
-                {featured.readTime}
+              <div className="mt-4">
+                <div className="text-muted-foreground mb-2 flex items-center gap-2 text-sm">
+                  <DynamicIcon name="Clock" className="h-4 w-4" />
+                  {featured.readTime}
+                </div>
+                <h3 className="text-foreground mb-2 text-xl font-bold group-hover:underline">
+                  {featured.title}
+                </h3>
+                <p className="text-muted-foreground">{featured.excerpt}</p>
               </div>
-              <h3 className="text-foreground mb-2 text-xl font-bold group-hover:underline">
-                {featured.title}
-              </h3>
-              <p className="text-muted-foreground">{featured.excerpt}</p>
-            </div>
-          </Link>
+            </Link>
+          </ZoomParallax>
 
-          {/* Posts Grid */}
+          {/* Posts Grid with ScrollFade */}
           <div className="grid gap-6">
             {posts.map((post, i) => (
-              <Link
-                key={i}
-                href={post.href}
-                className="group grid grid-cols-[120px_1fr] gap-4 sm:grid-cols-[160px_1fr]"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-                <div>
-                  <span className="text-primary text-xs font-semibold">
-                    {post.category}
-                  </span>
-                  <h4 className="text-foreground mt-1 font-semibold group-hover:underline">
-                    {post.title}
-                  </h4>
-                  <p className="text-muted-foreground mt-1 line-clamp-2 text-sm">
-                    {post.excerpt}
-                  </p>
-                  <div className="text-muted-foreground mt-2 flex items-center gap-1 text-xs">
-                    <DynamicIcon name="Clock" className="h-3 w-3" />
-                    {post.readTime}
+              <ScrollFade key={i} delay={0.1 * i} scrollBased={false}>
+                <Link
+                  href={post.href}
+                  className="group grid grid-cols-[120px_1fr] gap-4 sm:grid-cols-[160px_1fr]"
+                >
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
                   </div>
-                </div>
-              </Link>
+                  <div>
+                    <span className="text-primary text-xs font-semibold">
+                      {post.category}
+                    </span>
+                    <h4 className="text-foreground mt-1 font-semibold group-hover:underline">
+                      {post.title}
+                    </h4>
+                    <p className="text-muted-foreground mt-1 line-clamp-2 text-sm">
+                      {post.excerpt}
+                    </p>
+                    <div className="text-muted-foreground mt-2 flex items-center gap-1 text-xs">
+                      <DynamicIcon name="Clock" className="h-3 w-3" />
+                      {post.readTime}
+                    </div>
+                  </div>
+                </Link>
+              </ScrollFade>
             ))}
           </div>
         </div>

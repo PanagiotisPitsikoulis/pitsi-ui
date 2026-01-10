@@ -5,6 +5,8 @@ import Link from "next/link"
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
+import { ScrollFade } from "@/registry/new-york-v4/animations/scroll-fade/scroll-fade"
+import { SlideUp } from "@/registry/new-york-v4/animations/slide-up/slide-up"
 import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 
 interface BlogBlockProps {
@@ -90,54 +92,57 @@ export function Blog3({ content = {}, classNames = {} }: BlogBlockProps) {
       <div
         className={cn("container px-6 py-16 md:py-24", classNames.container)}
       >
-        <BlockHeader
-          title={title}
-          description={description}
-          spacing="compact"
-          classNames={classNames.header}
-        />
+        <SlideUp delay={0} distance={20}>
+          <BlockHeader
+            title={title}
+            description={description}
+            spacing="compact"
+            classNames={classNames.header}
+          />
+        </SlideUp>
 
         <div className="space-y-6">
           {posts.map((post, i) => (
-            <Link
-              key={i}
-              href={post.href}
-              className="bg-background group grid gap-6 overflow-hidden rounded-xl p-4 md:grid-cols-[200px_1fr] md:p-6"
-            >
-              <div className="relative aspect-[4/3] overflow-hidden rounded-lg md:aspect-square">
-                <Image
-                  src={post.image}
-                  alt={post.title}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-              <div className="flex flex-col justify-center">
-                <h3 className="text-foreground mb-2 text-xl font-bold group-hover:underline">
-                  {post.title}
-                </h3>
-                <p className="text-muted-foreground mb-4">{post.excerpt}</p>
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center gap-2">
-                    <div className="relative h-8 w-8 overflow-hidden rounded-full">
-                      <Image
-                        src={post.author.avatar}
-                        alt={post.author.name}
-                        fill
-                        className="object-cover"
-                      />
+            <ScrollFade key={i} delay={0.1 * i} scrollBased>
+              <Link
+                href={post.href}
+                className="bg-background group grid gap-6 overflow-hidden rounded-xl p-4 md:grid-cols-[200px_1fr] md:p-6"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden rounded-lg md:aspect-square">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div className="flex flex-col justify-center">
+                  <h3 className="text-foreground mb-2 text-xl font-bold group-hover:underline">
+                    {post.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-4">{post.excerpt}</p>
+                  <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-2">
+                      <div className="relative h-8 w-8 overflow-hidden rounded-full">
+                        <Image
+                          src={post.author.avatar}
+                          alt={post.author.name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <span className="text-foreground text-sm font-medium">
+                        {post.author.name}
+                      </span>
                     </div>
-                    <span className="text-foreground text-sm font-medium">
-                      {post.author.name}
-                    </span>
-                  </div>
-                  <div className="text-muted-foreground flex items-center gap-1 text-sm">
-                    <DynamicIcon name="Calendar" className="h-4 w-4" />
-                    {post.date}
+                    <div className="text-muted-foreground flex items-center gap-1 text-sm">
+                      <DynamicIcon name="Calendar" className="h-4 w-4" />
+                      {post.date}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </ScrollFade>
           ))}
         </div>
       </div>

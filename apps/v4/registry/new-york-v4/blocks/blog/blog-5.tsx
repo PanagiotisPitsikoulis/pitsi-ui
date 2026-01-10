@@ -4,6 +4,8 @@ import Link from "next/link"
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
+import { SlideUp } from "@/registry/new-york-v4/animations/slide-up/slide-up"
+import { TextGradientOpacity } from "@/registry/new-york-v4/animations/text-gradient-opacity/text-gradient-opacity"
 
 interface BlogBlockProps {
   content?: {
@@ -77,40 +79,41 @@ export function Blog5({ content = {}, classNames = {} }: BlogBlockProps) {
       <div
         className={cn("container px-6 py-16 md:py-24", classNames.container)}
       >
-        <h2
-          className={cn(
-            "text-foreground mb-12 text-3xl font-bold md:text-4xl",
-            classNames.header?.title
-          )}
-        >
-          {title}
-        </h2>
+        {/* Animated title using TextGradientOpacity */}
+        <div className="mb-16">
+          <TextGradientOpacity
+            text={title}
+            className={cn("text-center", classNames.header?.title)}
+            offset={["start 0.95", "start 0.6"]}
+          />
+        </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post, i) => (
-            <Link
-              key={i}
-              href={post.href}
-              className="border-border bg-card group rounded-xl border p-6 transition-shadow hover:shadow-lg"
-            >
-              <div className="text-muted-foreground mb-3 flex items-center gap-2 text-sm">
-                <DynamicIcon name="Calendar" className="h-4 w-4" />
-                {post.date}
-              </div>
-              <h3 className="text-foreground mb-2 text-lg font-bold group-hover:underline">
-                {post.title}
-              </h3>
-              <p className="text-muted-foreground mb-4 text-sm">
-                {post.excerpt}
-              </p>
-              <span className="text-primary inline-flex items-center text-sm font-medium">
-                Read more{" "}
-                <DynamicIcon
-                  name="ArrowRight"
-                  className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"
-                />
-              </span>
-            </Link>
+            <SlideUp key={i} delay={0.1 * i} distance={20}>
+              <Link
+                href={post.href}
+                className="border-border bg-card group rounded-xl border p-6 transition-shadow hover:shadow-lg"
+              >
+                <div className="text-muted-foreground mb-3 flex items-center gap-2 text-sm">
+                  <DynamicIcon name="Calendar" className="h-4 w-4" />
+                  {post.date}
+                </div>
+                <h3 className="text-foreground mb-2 text-lg font-bold group-hover:underline">
+                  {post.title}
+                </h3>
+                <p className="text-muted-foreground mb-4 text-sm">
+                  {post.excerpt}
+                </p>
+                <span className="text-primary inline-flex items-center text-sm font-medium">
+                  Read more{" "}
+                  <DynamicIcon
+                    name="ArrowRight"
+                    className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"
+                  />
+                </span>
+              </Link>
+            </SlideUp>
           ))}
         </div>
       </div>

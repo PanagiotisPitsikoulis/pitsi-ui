@@ -5,6 +5,11 @@ import Link from "next/link"
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { cn } from "@/lib/utils"
+import { SlideUp } from "@/registry/new-york-v4/animations/slide-up/slide-up"
+import {
+  SmoothParallaxContainer,
+  SmoothParallaxLayer,
+} from "@/registry/new-york-v4/animations/smooth-parallax-scroll/smooth-parallax-scroll"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 interface BlogBlockProps {
@@ -108,94 +113,108 @@ export function Blog4({ content = {}, classNames = {} }: BlogBlockProps) {
       <div
         className={cn("container px-6 py-16 md:py-24", classNames.container)}
       >
-        <div className="mb-12 flex items-center justify-between">
-          <h2
-            className={cn(
-              "text-foreground text-3xl font-bold md:text-4xl",
-              classNames.header?.title
-            )}
-          >
-            {title}
-          </h2>
-          <Button variant="outline" className="group" asChild>
-            <Link href="#">
-              Browse All{" "}
-              <DynamicIcon
-                name="ArrowRight"
-                className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
-              />
-            </Link>
-          </Button>
-        </div>
+        <SlideUp delay={0} distance={20}>
+          <div className="mb-12 flex items-center justify-between">
+            <h2
+              className={cn(
+                "text-foreground text-3xl font-bold md:text-4xl",
+                classNames.header?.title
+              )}
+            >
+              {title}
+            </h2>
+            <Button variant="outline" className="group" asChild>
+              <Link href="#">
+                Browse All{" "}
+                <DynamicIcon
+                  name="ArrowRight"
+                  className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
+                />
+              </Link>
+            </Button>
+          </div>
+        </SlideUp>
 
-        {/* Hero + Sidebar */}
-        <div className="mb-8 grid gap-6 lg:grid-cols-[2fr_1fr]">
-          <Link
-            href={hero.href}
-            className="group relative aspect-[16/10] overflow-hidden rounded-xl"
-          >
-            <Image
-              src={hero.image}
-              alt={hero.title}
-              fill
-              className="object-cover transition-transform duration-300 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-            <div className="absolute right-0 bottom-0 left-0 p-6">
-              <span className="mb-2 inline-block rounded-full bg-white px-3 py-1 text-xs font-semibold text-black">
-                {hero.category}
-              </span>
-              <h3 className="mb-2 text-2xl font-bold text-white">
-                {hero.title}
-              </h3>
-              <p className="text-white/80">{hero.excerpt}</p>
-            </div>
-          </Link>
-
-          <div className="flex flex-col gap-4">
-            {sidebar.map((post, i) => (
+        {/* Hero + Sidebar with SmoothParallax */}
+        <SmoothParallaxContainer height="150vh" className="mb-8">
+          <div className="grid h-full w-full max-w-7xl gap-6 px-4 lg:grid-cols-[2fr_1fr]">
+            {/* Hero with parallax movement */}
+            <SmoothParallaxLayer yRange={[-100, 0]} zIndex={1}>
               <Link
-                key={i}
-                href={post.href}
-                className="group relative flex-1 overflow-hidden rounded-xl"
+                href={hero.href}
+                className="group relative block aspect-[16/10] overflow-hidden rounded-xl"
               >
                 <Image
-                  src={post.image}
-                  alt={post.title}
+                  src={hero.image}
+                  alt={hero.title}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                <div className="absolute right-0 bottom-0 left-0 p-4">
-                  <span className="text-xs font-semibold text-white/80">
-                    {post.category}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute right-0 bottom-0 left-0 p-6">
+                  <span className="mb-2 inline-block rounded-full bg-white px-3 py-1 text-xs font-semibold text-black">
+                    {hero.category}
                   </span>
-                  <h4 className="text-sm font-bold text-white">{post.title}</h4>
+                  <h3 className="mb-2 text-2xl font-bold text-white">
+                    {hero.title}
+                  </h3>
+                  <p className="text-white/80">{hero.excerpt}</p>
                 </div>
               </Link>
-            ))}
+            </SmoothParallaxLayer>
+
+            {/* Sidebar with different parallax speed */}
+            <SmoothParallaxLayer yRange={[-50, 0]} zIndex={2}>
+              <div className="flex h-full flex-col gap-4">
+                {sidebar.map((post, i) => (
+                  <Link
+                    key={i}
+                    href={post.href}
+                    className="group relative flex-1 overflow-hidden rounded-xl"
+                  >
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                    <div className="absolute right-0 bottom-0 left-0 p-4">
+                      <span className="text-xs font-semibold text-white/80">
+                        {post.category}
+                      </span>
+                      <h4 className="text-sm font-bold text-white">
+                        {post.title}
+                      </h4>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </SmoothParallaxLayer>
           </div>
-        </div>
+        </SmoothParallaxContainer>
 
         {/* Grid */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {grid.map((post, i) => (
-            <Link key={i} href={post.href} className="group">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
-                <Image
-                  src={post.image}
-                  alt={post.title}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-              <span className="text-primary mt-3 block text-xs font-semibold">
-                {post.category}
-              </span>
-              <h4 className="text-foreground mt-1 font-semibold group-hover:underline">
-                {post.title}
-              </h4>
-            </Link>
+            <SlideUp key={i} delay={0.1 * i} distance={20}>
+              <Link href={post.href} className="group">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <span className="text-primary mt-3 block text-xs font-semibold">
+                  {post.category}
+                </span>
+                <h4 className="text-foreground mt-1 font-semibold group-hover:underline">
+                  {post.title}
+                </h4>
+              </Link>
+            </SlideUp>
           ))}
         </div>
       </div>
