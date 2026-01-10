@@ -5,59 +5,64 @@ import Link from "next/link"
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { type FooterBlockProps } from "@/lib/blocks/footer.types"
 import { cn } from "@/lib/utils"
+import Aurora from "@/registry/new-york-v4/animations/aurora/aurora"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 const footer4Defaults = {
   cta: {
-    title: "Ready to get started?",
-    description: "Join thousands of satisfied customers using our platform.",
-    primaryButton: { label: "Start Free Trial", href: "#" },
-    secondaryButton: { label: "Talk to Sales", href: "#" },
+    title: "Grow Your Green Space",
+    description:
+      "Join thousands of plant enthusiasts creating thriving indoor gardens with our curated collection.",
+    primaryButton: { label: "Shop Plants", href: "#" },
+    secondaryButton: { label: "Care Guides", href: "#" },
   },
   logo: {
-    text: "Company",
+    text: "Green Therapy",
     href: "#",
   },
   columns: [
     {
-      title: "Product",
+      title: "Shop",
       links: [
-        { label: "Features", href: "#" },
-        { label: "Pricing", href: "#" },
-        { label: "Integrations", href: "#" },
-        { label: "Changelog", href: "#" },
+        { label: "Indoor Plants", href: "#" },
+        { label: "Outdoor Plants", href: "#" },
+        { label: "Succulents", href: "#" },
+        { label: "Planters", href: "#" },
+      ],
+    },
+    {
+      title: "Learn",
+      links: [
+        { label: "Care Guides", href: "#" },
+        { label: "Plant Blog", href: "#" },
+        { label: "Workshops", href: "#" },
+        { label: "Plant Quiz", href: "#" },
+      ],
+    },
+    {
+      title: "Support",
+      links: [
+        { label: "Help Center", href: "#" },
+        { label: "Shipping", href: "#" },
+        { label: "Returns", href: "#" },
+        { label: "Contact", href: "#" },
       ],
     },
     {
       title: "Company",
       links: [
-        { label: "About", href: "#" },
-        { label: "Blog", href: "#" },
+        { label: "About Us", href: "#" },
+        { label: "Sustainability", href: "#" },
         { label: "Careers", href: "#" },
         { label: "Press", href: "#" },
       ],
     },
-    {
-      title: "Resources",
-      links: [
-        { label: "Documentation", href: "#" },
-        { label: "Help Center", href: "#" },
-        { label: "Community", href: "#" },
-        { label: "Templates", href: "#" },
-      ],
-    },
-    {
-      title: "Legal",
-      links: [
-        { label: "Privacy", href: "#" },
-        { label: "Terms", href: "#" },
-        { label: "Security", href: "#" },
-        { label: "Cookies", href: "#" },
-      ],
-    },
   ],
-  copyright: "2024 Company. All rights reserved.",
+  copyright: "2024 Green Therapy. All rights reserved.",
 }
+
+// Sage palette colors for Aurora
+const sageAuroraColors = ["#4a7c59", "#6b9b5a", "#2d5a3d"]
 
 export function Footer4({ content = {}, classNames = {} }: FooterBlockProps) {
   const {
@@ -70,20 +75,39 @@ export function Footer4({ content = {}, classNames = {} }: FooterBlockProps) {
 
   return (
     <footer className={cn("bg-background", classNames.root)}>
-      {/* Big CTA Section */}
-      <div className="bg-primary text-primary-foreground">
+      {/* Big CTA Section with Aurora Background */}
+      <div className="relative overflow-hidden">
+        {/* Aurora Background */}
+        <div className="absolute inset-0 opacity-70">
+          <Aurora
+            colorStops={sageAuroraColors}
+            amplitude={1.2}
+            blend={0.6}
+            speed={0.8}
+          />
+        </div>
+
+        {/* Overlay for better text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/40" />
+
+        {/* Content */}
         <div
-          className={cn("container px-6 py-16 md:py-24", classNames.container)}
+          className={cn(
+            "container relative z-10 px-6 py-20 md:py-28",
+            classNames.container
+          )}
         >
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl">
+            <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl lg:text-5xl">
               {cta.title}
             </h2>
-            <p className="text-primary-foreground/80 mb-8 text-lg">
-              {cta.description}
-            </p>
+            <p className="mb-8 text-lg text-white/80">{cta.description}</p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button size="lg" variant="secondary" className="group" asChild>
+              <Button
+                size="lg"
+                className="group bg-white text-green-800 hover:bg-white/90"
+                asChild
+              >
                 <Link href={cta.primaryButton.href}>
                   {cta.primaryButton.label}
                   <DynamicIcon
@@ -95,7 +119,7 @@ export function Footer4({ content = {}, classNames = {} }: FooterBlockProps) {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10"
+                className="border-white/30 bg-transparent text-white hover:bg-white/10"
                 asChild
               >
                 <Link href={cta.secondaryButton.href}>
@@ -113,7 +137,10 @@ export function Footer4({ content = {}, classNames = {} }: FooterBlockProps) {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
             {/* Brand */}
             <div className={cn("lg:col-span-1", classNames.logo)}>
-              <Link href={logo?.href ?? "#"} className="text-xl font-bold">
+              <Link
+                href={logo?.href ?? "#"}
+                className="text-primary text-xl font-bold"
+              >
                 {logo?.text}
               </Link>
             </div>
@@ -129,7 +156,7 @@ export function Footer4({ content = {}, classNames = {} }: FooterBlockProps) {
                     <li key={j}>
                       <Link
                         href={link.href}
-                        className="hover:text-foreground transition-colors"
+                        className="hover:text-primary transition-colors"
                       >
                         {link.label}
                       </Link>
@@ -153,3 +180,6 @@ export function Footer4({ content = {}, classNames = {} }: FooterBlockProps) {
     </footer>
   )
 }
+
+// Backward compatibility export
+export { Footer4 as FooterAuroraPlants }

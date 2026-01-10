@@ -4,38 +4,40 @@ import Link from "next/link"
 
 import { type FooterBlockProps } from "@/lib/blocks/footer.types"
 import { cn } from "@/lib/utils"
+import StickerPeel from "@/registry/new-york-v4/animations/sticker-peel/sticker-peel"
 import { QRCode } from "@/registry/new-york-v4/lib/qr-code"
 
 const footer6Defaults = {
   logo: {
-    text: "AppName",
+    text: "Green Therapy",
     href: "#",
   },
-  tagline: "Download our app and start your journey today.",
+  tagline: "Download our app and start your plant journey today.",
   appStores: {
     ios: { href: "#", label: "Download on the App Store" },
     android: { href: "#", label: "Get it on Google Play" },
   },
   qrCode: {
-    href: "https://example.com/download",
+    href: "https://greentherapy.com/app",
     label: "Scan to download",
     description: "Point your camera at the code",
   },
+  stickerImage: "/elements/decoration-small/plants/leaf-sticker.png",
   columns: [
     {
-      title: "Product",
+      title: "Shop",
       links: [
-        { label: "Features", href: "#" },
-        { label: "Pricing", href: "#" },
-        { label: "Download", href: "#" },
+        { label: "Indoor Plants", href: "#" },
+        { label: "Outdoor Plants", href: "#" },
+        { label: "Planters", href: "#" },
       ],
     },
     {
-      title: "Company",
+      title: "Learn",
       links: [
-        { label: "About", href: "#" },
-        { label: "Blog", href: "#" },
-        { label: "Careers", href: "#" },
+        { label: "Care Guides", href: "#" },
+        { label: "Plant Blog", href: "#" },
+        { label: "Workshops", href: "#" },
       ],
     },
     {
@@ -43,11 +45,11 @@ const footer6Defaults = {
       links: [
         { label: "Help Center", href: "#" },
         { label: "Contact", href: "#" },
-        { label: "Status", href: "#" },
+        { label: "FAQs", href: "#" },
       ],
     },
   ],
-  copyright: "2024 AppName. All rights reserved.",
+  copyright: "2024 Green Therapy. All rights reserved.",
 }
 
 export function Footer6({ content = {}, classNames = {} }: FooterBlockProps) {
@@ -65,7 +67,7 @@ export function Footer6({ content = {}, classNames = {} }: FooterBlockProps) {
           <div>
             <Link
               href={logo?.href ?? "#"}
-              className={cn("text-2xl font-bold", classNames.logo)}
+              className={cn("text-primary text-2xl font-bold", classNames.logo)}
             >
               {logo?.text}
             </Link>
@@ -110,13 +112,31 @@ export function Footer6({ content = {}, classNames = {} }: FooterBlockProps) {
                 </Link>
               </div>
 
-              {/* QR Code */}
-              <QRCode
-                value={footer6Defaults.qrCode.href}
-                size={96}
-                label={footer6Defaults.qrCode.label}
-                description={footer6Defaults.qrCode.description}
-              />
+              {/* QR Code with Sticker */}
+              <div className="relative flex items-start gap-4">
+                <QRCode
+                  value={footer6Defaults.qrCode.href}
+                  size={96}
+                  label={footer6Defaults.qrCode.label}
+                  description={footer6Defaults.qrCode.description}
+                />
+
+                {/* Decorative Sticker with Peel Effect */}
+                <div className="relative h-[120px] w-[120px]">
+                  <StickerPeel
+                    imageSrc={footer6Defaults.stickerImage}
+                    width={100}
+                    rotate={15}
+                    peelBackHoverPct={25}
+                    peelBackActivePct={35}
+                    shadowIntensity={0.4}
+                    lightingIntensity={0.08}
+                    initialPosition="center"
+                    peelDirection={45}
+                    className="left-0 top-0"
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
@@ -132,7 +152,7 @@ export function Footer6({ content = {}, classNames = {} }: FooterBlockProps) {
                     <li key={j}>
                       <Link
                         href={link.href}
-                        className="hover:text-foreground transition-colors"
+                        className="hover:text-primary transition-colors"
                       >
                         {link.label}
                       </Link>
@@ -156,3 +176,6 @@ export function Footer6({ content = {}, classNames = {} }: FooterBlockProps) {
     </footer>
   )
 }
+
+// Backward compatibility export
+export { Footer6 as FooterStickerPlants }

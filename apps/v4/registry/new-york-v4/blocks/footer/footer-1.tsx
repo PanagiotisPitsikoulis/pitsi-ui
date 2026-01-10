@@ -9,6 +9,8 @@ import {
 } from "@/lib/blocks/footer.types"
 import { Leaf } from "@/lib/icons"
 import { cn } from "@/lib/utils"
+import { ScrollFade } from "@/registry/new-york-v4/animations/scroll-fade/scroll-fade"
+import { StickyRevealFooter } from "@/registry/new-york-v4/animations/sticky-footer/sticky-footer"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Input } from "@/registry/new-york-v4/ui/input"
 
@@ -151,151 +153,159 @@ export function Footer1({ content = {}, classNames = {} }: FooterBlockProps) {
   } = content
 
   return (
-    <footer
-      className={cn("border-border bg-background border-t", classNames.root)}
-    >
-      {/* Newsletter Section */}
-      <div className="border-border border-b py-16">
-        <div className={cn("container px-6", classNames.container)}>
-          <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-            <div className="bg-muted mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full">
-              <Leaf className="text-primary h-6 w-6" />
-            </div>
-            <h3 className="text-foreground mb-2 text-2xl font-bold md:text-3xl">
-              {footer1Defaults.newsletter.title}
-            </h3>
-            <p className="text-muted-foreground mb-6 max-w-md">
-              {footer1Defaults.newsletter.description}
-            </p>
-            <div className="flex w-full max-w-md flex-col gap-3 sm:flex-row">
-              <Input
-                type="email"
-                placeholder={footer1Defaults.newsletter.placeholder}
-                className="h-12 flex-1 rounded-full !bg-transparent pl-6"
-              />
-              <Button className="h-12 rounded-full px-8">
-                {footer1Defaults.newsletter.buttonLabel}
-              </Button>
-            </div>
-            <p className="text-muted-foreground mt-4 text-xs">
-              {footer1Defaults.newsletter.note}
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Footer */}
-      <div className="py-16">
-        <div className={cn("container px-6", classNames.container)}>
-          <div className="grid gap-8 md:grid-cols-3 lg:grid-cols-7">
-            {/* Brand Column */}
-            <div className="md:col-span-3 lg:col-span-2">
-              <div
-                className={cn("mb-4 flex items-center gap-2", classNames.logo)}
-              >
-                {logo?.image && (
-                  <Image
-                    draggable={false}
-                    src={logo.image.src}
-                    alt={logo.image.alt}
-                    width={logo.image.width ?? 40}
-                    height={logo.image.height ?? 40}
-                    className="h-10 w-10"
+    <StickyRevealFooter height={900}>
+      <footer
+        className={cn("border-border bg-background border-t h-full", classNames.root)}
+      >
+        {/* Newsletter Section */}
+        <div className="border-border border-b py-16">
+          <div className={cn("container px-6", classNames.container)}>
+            <ScrollFade scrollBased={false} delay={0.1}>
+              <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
+                <div className="bg-muted mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full">
+                  <Leaf className="text-primary h-6 w-6" />
+                </div>
+                <h3 className="text-foreground mb-2 text-2xl font-bold md:text-3xl">
+                  {footer1Defaults.newsletter.title}
+                </h3>
+                <p className="text-muted-foreground mb-6 max-w-md">
+                  {footer1Defaults.newsletter.description}
+                </p>
+                <div className="flex w-full max-w-md flex-col gap-3 sm:flex-row">
+                  <Input
+                    type="email"
+                    placeholder={footer1Defaults.newsletter.placeholder}
+                    className="h-12 flex-1 rounded-full !bg-transparent pl-6"
                   />
-                )}
-                {logo?.text && (
-                  <h3 className="text-foreground text-xl font-bold">
-                    {logo.text}
-                  </h3>
-                )}
+                  <Button className="h-12 rounded-full px-8">
+                    {footer1Defaults.newsletter.buttonLabel}
+                  </Button>
+                </div>
+                <p className="text-muted-foreground mt-4 text-xs">
+                  {footer1Defaults.newsletter.note}
+                </p>
               </div>
-              <p className="text-muted-foreground mb-6 max-w-xs text-sm">
-                {footer1Defaults.brandDescription}
-              </p>
-              <div className="text-muted-foreground space-y-2 text-sm">
-                <p>{footer1Defaults.contactInfo.address}</p>
-                <p>{footer1Defaults.contactInfo.phone}</p>
-                <p>{footer1Defaults.contactInfo.email}</p>
-              </div>
-            </div>
+            </ScrollFade>
+          </div>
+        </div>
 
-            {/* Link Columns */}
-            {columns.map((column, i) => (
-              <div key={i} className={classNames.column?.root}>
-                <h4
+        {/* Main Footer */}
+        <div className="py-16">
+          <div className={cn("container px-6", classNames.container)}>
+            <ScrollFade scrollBased={false} delay={0.2}>
+              <div className="grid gap-8 md:grid-cols-3 lg:grid-cols-7">
+                {/* Brand Column */}
+                <div className="md:col-span-3 lg:col-span-2">
+                  <div
+                    className={cn("mb-4 flex items-center gap-2", classNames.logo)}
+                  >
+                    {logo?.image && (
+                      <Image
+                        draggable={false}
+                        src={logo.image.src}
+                        alt={logo.image.alt}
+                        width={logo.image.width ?? 40}
+                        height={logo.image.height ?? 40}
+                        className="h-10 w-10"
+                      />
+                    )}
+                    {logo?.text && (
+                      <h3 className="text-foreground text-xl font-bold">
+                        {logo.text}
+                      </h3>
+                    )}
+                  </div>
+                  <p className="text-muted-foreground mb-6 max-w-xs text-sm">
+                    {footer1Defaults.brandDescription}
+                  </p>
+                  <div className="text-muted-foreground space-y-2 text-sm">
+                    <p>{footer1Defaults.contactInfo.address}</p>
+                    <p>{footer1Defaults.contactInfo.phone}</p>
+                    <p>{footer1Defaults.contactInfo.email}</p>
+                  </div>
+                </div>
+
+                {/* Link Columns */}
+                {columns.map((column, i) => (
+                  <div key={i} className={classNames.column?.root}>
+                    <h4
+                      className={cn(
+                        "text-foreground mb-4 font-semibold",
+                        classNames.column?.title
+                      )}
+                    >
+                      {column.title}
+                    </h4>
+                    <ul
+                      className={cn(
+                        "text-muted-foreground space-y-3 text-sm",
+                        classNames.column?.links
+                      )}
+                    >
+                      {column.links.map((link, j) => (
+                        <li key={j}>
+                          <Link
+                            href={link.href}
+                            className={cn(
+                              "hover:text-primary transition-colors",
+                              classNames.column?.link
+                            )}
+                          >
+                            {link.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </ScrollFade>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="border-border border-t py-8">
+          <div className={cn("container px-6", classNames.container)}>
+            <ScrollFade scrollBased={false} delay={0.3}>
+              <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
+                <div
                   className={cn(
-                    "text-foreground mb-4 font-semibold",
-                    classNames.column?.title
+                    "text-muted-foreground flex flex-wrap items-center justify-center gap-6 text-sm md:justify-start",
+                    classNames.bottomLinks
                   )}
                 >
-                  {column.title}
-                </h4>
-                <ul
-                  className={cn(
-                    "text-muted-foreground space-y-3 text-sm",
-                    classNames.column?.links
-                  )}
-                >
-                  {column.links.map((link, j) => (
-                    <li key={j}>
-                      <Link
-                        href={link.href}
-                        className={cn(
-                          "hover:text-primary transition-colors",
-                          classNames.column?.link
-                        )}
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
+                  {copyright && <p>&copy; {copyright}</p>}
+                  {bottomLinks?.map((link, i) => (
+                    <Link
+                      key={i}
+                      href={link.href}
+                      className="hover:text-primary transition-colors"
+                    >
+                      {link.label}
+                    </Link>
                   ))}
-                </ul>
+                </div>
+                <div className={cn("flex items-center gap-4", classNames.social)}>
+                  {social?.map((item, i) => (
+                    <Link
+                      key={i}
+                      href={item.href}
+                      className={cn(
+                        "text-muted-foreground hover:text-primary transition-colors",
+                        classNames.socialLink
+                      )}
+                      aria-label={item.platform}
+                    >
+                      {SocialIcons[item.platform]}
+                    </Link>
+                  ))}
+                </div>
               </div>
-            ))}
+            </ScrollFade>
           </div>
         </div>
-      </div>
-
-      {/* Bottom Bar */}
-      <div className="border-border border-t py-8">
-        <div className={cn("container px-6", classNames.container)}>
-          <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
-            <div
-              className={cn(
-                "text-muted-foreground flex flex-wrap items-center justify-center gap-6 text-sm md:justify-start",
-                classNames.bottomLinks
-              )}
-            >
-              {copyright && <p>&copy; {copyright}</p>}
-              {bottomLinks?.map((link, i) => (
-                <Link
-                  key={i}
-                  href={link.href}
-                  className="hover:text-primary transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-            <div className={cn("flex items-center gap-4", classNames.social)}>
-              {social?.map((item, i) => (
-                <Link
-                  key={i}
-                  href={item.href}
-                  className={cn(
-                    "text-muted-foreground hover:text-primary transition-colors",
-                    classNames.socialLink
-                  )}
-                  aria-label={item.platform}
-                >
-                  {SocialIcons[item.platform]}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+      </footer>
+    </StickyRevealFooter>
   )
 }
 
