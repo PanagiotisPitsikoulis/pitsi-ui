@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import { AnimatePresence, motion } from "motion/react"
 
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { type HeaderBlockProps } from "@/lib/blocks/header.types"
@@ -10,70 +11,70 @@ import { Button } from "@/registry/new-york-v4/ui/button"
 
 const header4Defaults = {
   logo: {
-    text: "MegaCorp",
+    text: "Terra Botanica",
     href: "#",
   },
   navigation: [
     {
-      label: "Products",
+      label: "Plants",
       href: "#",
       children: [
         {
-          label: "Analytics",
+          label: "Indoor Plants",
           href: "#",
-          description: "Powerful insights for your data",
+          description: "Lush greenery for your home",
         },
         {
-          label: "Automation",
+          label: "Outdoor Plants",
           href: "#",
-          description: "Streamline your workflows",
+          description: "Garden-ready varieties",
         },
         {
-          label: "Security",
+          label: "Succulents",
           href: "#",
-          description: "Enterprise-grade protection",
+          description: "Low-maintenance beauties",
         },
         {
-          label: "Integrations",
+          label: "Rare Finds",
           href: "#",
-          description: "Connect your favorite tools",
+          description: "Unique collector plants",
         },
       ],
     },
     {
-      label: "Solutions",
+      label: "Care",
       href: "#",
       children: [
-        { label: "For Startups", href: "#", description: "Scale from day one" },
+        { label: "Watering Guide", href: "#", description: "Keep your plants hydrated" },
         {
-          label: "For Enterprise",
+          label: "Light Requirements",
           href: "#",
-          description: "Custom solutions at scale",
+          description: "Find the perfect spot",
         },
         {
-          label: "For Agencies",
+          label: "Soil & Potting",
           href: "#",
-          description: "Manage multiple clients",
+          description: "The foundation of plant health",
         },
       ],
     },
-    { label: "Pricing", href: "#" },
+    { label: "Workshops", href: "#" },
     {
-      label: "Resources",
+      label: "About",
       href: "#",
       children: [
-        { label: "Blog", href: "#", description: "Latest news and updates" },
+        { label: "Our Story", href: "#", description: "How we started" },
         {
-          label: "Documentation",
+          label: "The Team",
           href: "#",
-          description: "Guides and API reference",
+          description: "Meet our plant experts",
         },
-        { label: "Community", href: "#", description: "Join the conversation" },
-        { label: "Webinars", href: "#", description: "Learn from experts" },
+        { label: "Sustainability", href: "#", description: "Our green promise" },
+        { label: "Journal", href: "#", description: "Plant tips and stories" },
       ],
     },
   ],
-  cta: { label: "Start Free Trial", href: "#" },
+  cta: { label: "Visit Nursery", href: "#" },
 }
 
 export function Header4({ content = {}, classNames = {} }: HeaderBlockProps) {
@@ -103,7 +104,7 @@ export function Header4({ content = {}, classNames = {} }: HeaderBlockProps) {
           {logo?.text}
         </Link>
 
-        {/* Navigation with Mega Menus */}
+        {/* Navigation with Mega Menus and SlideDown animation */}
         <nav
           className={cn(
             "hidden items-center gap-1 md:flex",
@@ -126,31 +127,57 @@ export function Header4({ content = {}, classNames = {} }: HeaderBlockProps) {
               >
                 {item.label}
                 {item.children && (
-                  <DynamicIcon name="ChevronDown" className="h-4 w-4" />
+                  <motion.span
+                    animate={{ rotate: openMenu === item.label ? 180 : 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <DynamicIcon name="ChevronDown" className="h-4 w-4" />
+                  </motion.span>
                 )}
               </Link>
 
-              {/* Mega Menu Dropdown */}
-              {item.children && openMenu === item.label && (
-                <div className="bg-background border-border absolute top-full left-0 w-80 rounded-lg border p-4 shadow-lg">
-                  <div className="grid gap-2">
-                    {item.children.map((child, j) => (
-                      <Link
-                        key={j}
-                        href={child.href}
-                        className="hover:bg-muted rounded-md p-3 transition-colors"
-                      >
-                        <div className="text-foreground text-sm font-medium">
-                          {child.label}
-                        </div>
-                        <div className="text-muted-foreground text-xs">
-                          {child.description}
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
+              {/* Mega Menu Dropdown with SlideDown animation */}
+              <AnimatePresence>
+                {item.children && openMenu === item.label && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{
+                      duration: 0.3,
+                      ease: [0.25, 0.4, 0.25, 1],
+                    }}
+                    className="bg-background border-border absolute top-full left-0 w-80 rounded-lg border p-4 shadow-lg"
+                  >
+                    <div className="grid gap-1">
+                      {item.children.map((child, j) => (
+                        <motion.div
+                          key={j}
+                          initial={{ opacity: 0, y: -8 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{
+                            duration: 0.3,
+                            delay: j * 0.05,
+                            ease: [0.25, 0.4, 0.25, 1],
+                          }}
+                        >
+                          <Link
+                            href={child.href}
+                            className="hover:bg-muted group rounded-md p-3 transition-colors block"
+                          >
+                            <div className="text-foreground group-hover:text-brand text-sm font-medium transition-colors">
+                              {child.label}
+                            </div>
+                            <div className="text-muted-foreground text-xs">
+                              {child.description}
+                            </div>
+                          </Link>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           ))}
         </nav>
@@ -164,7 +191,11 @@ export function Header4({ content = {}, classNames = {} }: HeaderBlockProps) {
             Sign in
           </Link>
           {cta && (
-            <Button size="sm" className={classNames.cta} asChild>
+            <Button
+              size="sm"
+              className={cn("bg-brand hover:bg-brand/90", classNames.cta)}
+              asChild
+            >
               <Link href={cta.href}>{cta.label}</Link>
             </Button>
           )}
@@ -173,3 +204,6 @@ export function Header4({ content = {}, classNames = {} }: HeaderBlockProps) {
     </header>
   )
 }
+
+// Re-export for backwards compatibility
+export { Header4 as Header4ServicePlants }

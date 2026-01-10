@@ -1,7 +1,8 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
+import { motion, useScroll, useTransform } from "motion/react"
 
 import { type HeaderBlockProps } from "@/lib/blocks/header.types"
 import { cn } from "@/lib/utils"
@@ -9,17 +10,17 @@ import { Button } from "@/registry/new-york-v4/ui/button"
 
 const header3Defaults = {
   logo: {
-    text: "Brand",
+    text: "Greenhouse",
     href: "#",
   },
   navigation: [
-    { label: "Home", href: "#" },
-    { label: "About", href: "#" },
-    { label: "Services", href: "#" },
-    { label: "Portfolio", href: "#" },
+    { label: "Collection", href: "#" },
+    { label: "Care Tips", href: "#" },
+    { label: "About Us", href: "#" },
+    { label: "Workshops", href: "#" },
     { label: "Contact", href: "#" },
   ],
-  cta: { label: "Book a Call", href: "#" },
+  cta: { label: "Book a Visit", href: "#" },
 }
 
 export function Header3({ content = {}, classNames = {} }: HeaderBlockProps) {
@@ -30,6 +31,16 @@ export function Header3({ content = {}, classNames = {} }: HeaderBlockProps) {
   } = content
 
   const [isScrolled, setIsScrolled] = useState(false)
+  const headerRef = useRef<HTMLElement>(null)
+
+  // Track scroll progress for scale animation
+  const { scrollY } = useScroll()
+
+  // Scale transforms - header shrinks as user scrolls
+  const headerScale = useTransform(scrollY, [0, 100], [1, 0.95])
+  const headerHeight = useTransform(scrollY, [0, 100], [80, 64])
+  const logoScale = useTransform(scrollY, [0, 100], [1, 0.85])
+  const navGap = useTransform(scrollY, [0, 100], [32, 20])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,37 +51,43 @@ export function Header3({ content = {}, classNames = {} }: HeaderBlockProps) {
   }, [])
 
   return (
-    <header
+    <motion.header
+      ref={headerRef}
+      style={{ height: headerHeight }}
       className={cn(
-        "fixed top-0 right-0 left-0 z-50 transition-all duration-300",
+        "fixed top-0 right-0 left-0 z-50 transition-colors duration-300",
         isScrolled
-          ? "bg-background/80 border-border border-b backdrop-blur-lg"
+          ? "bg-background/95 border-border border-b shadow-sm"
           : "bg-transparent",
         classNames.root
       )}
     >
-      <div
+      <motion.div
+        style={{ scale: headerScale }}
         className={cn(
-          "container flex h-20 items-center justify-between px-6",
+          "container flex h-full items-center justify-between px-6",
           classNames.container
         )}
       >
-        {/* Logo */}
-        <Link
-          href={logo?.href ?? "#"}
-          className={cn(
-            "text-2xl font-bold transition-colors",
-            isScrolled ? "text-foreground" : "text-white",
-            classNames.logo
-          )}
-        >
-          {logo?.text}
-        </Link>
+        {/* Logo with scale animation */}
+        <motion.div style={{ scale: logoScale }}>
+          <Link
+            href={logo?.href ?? "#"}
+            className={cn(
+              "text-2xl font-bold transition-colors",
+              isScrolled ? "text-foreground" : "text-foreground",
+              classNames.logo
+            )}
+          >
+            {logo?.text}
+          </Link>
+        </motion.div>
 
         {/* Navigation */}
-        <nav
+        <motion.nav
+          style={{ gap: navGap }}
           className={cn(
-            "hidden items-center gap-8 md:flex",
+            "hidden items-center md:flex",
             classNames.nav?.root
           )}
         >
@@ -79,30 +96,38 @@ export function Header3({ content = {}, classNames = {} }: HeaderBlockProps) {
               key={i}
               href={item.href}
               className={cn(
-                "text-sm font-medium transition-colors",
+                "text-sm font-medium transition-all duration-300",
                 isScrolled
                   ? "text-muted-foreground hover:text-foreground"
-                  : "text-white/80 hover:text-white",
+                  : "text-muted-foreground hover:text-foreground",
                 classNames.nav?.link
               )}
             >
               {item.label}
             </Link>
           ))}
-        </nav>
+        </motion.nav>
 
         {/* CTA */}
         {cta && (
-          <Button
-            variant={isScrolled ? "default" : "secondary"}
-            size="sm"
-            className={cn("transition-all", classNames.cta)}
-            asChild
-          >
-            <Link href={cta.href}>{cta.label}</Link>
-          </Button>
+          <motion.div style={{ scale: logoScale }}>
+            <Button
+              variant={isScrolled ? "default" : "default"}
+              size={isScrolled ? "sm" : "default"}
+              className={cn(
+                "bg-brand hover:bg-brand/90 transition-all",
+                classNames.cta
+              )}
+              asChild
+            >
+              <Link href={cta.href}>{cta.label}</Link>
+            </Button>
+          </motion.div>
         )}
-      </div>
-    </header>
+      </motion.div>
+    </motion.header>
   )
 }
+
+// Re-export for backwards compatibility
+export { Header3 as Header3ServicePlants }

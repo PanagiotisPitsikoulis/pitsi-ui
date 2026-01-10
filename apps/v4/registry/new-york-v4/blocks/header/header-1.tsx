@@ -3,12 +3,10 @@
 import Image from "next/image"
 import Link from "next/link"
 
-import {
-  headerDefaults,
-  type HeaderBlockProps,
-} from "@/lib/blocks/header.types"
+import { type HeaderBlockProps } from "@/lib/blocks/header.types"
 import { ArrowRight } from "@/lib/icons"
 import { cn } from "@/lib/utils"
+import { ScrollFade } from "@/registry/new-york-v4/animations/scroll-fade/scroll-fade"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 // Block-specific defaults that extend the shared defaults
@@ -43,78 +41,88 @@ export function Header1({ content = {}, classNames = {} }: HeaderBlockProps) {
   } = content
 
   return (
-    <header
-      className={cn("sticky top-0 z-50 h-20 bg-transparent", classNames.root)}
-    >
-      <div
-        className={cn(
-          "container flex h-full items-center px-6",
-          classNames.container
-        )}
+    <ScrollFade scrollBased={false} delay={0} duration={0.8}>
+      <header
+        className={cn("sticky top-0 z-50 h-20 bg-transparent", classNames.root)}
       >
-        <div className="flex w-full items-center justify-between">
-          <Link
-            href={logo?.href ?? "#"}
-            className={cn("flex items-center gap-2", classNames.logo)}
-          >
-            {logo?.image && (
-              <Image
-                draggable={false}
-                src={logo.image.src}
-                alt={logo.image.alt}
-                width={logo.image.width ?? 40}
-                height={logo.image.height ?? 40}
-                className="h-10 w-10"
-              />
-            )}
-            {logo?.text && (
-              <span className="text-foreground text-xl font-semibold">
-                {logo.text}
-              </span>
-            )}
-          </Link>
-          <nav
-            className={cn(
-              "hidden items-center gap-8 md:flex",
-              classNames.nav?.root
-            )}
-          >
-            {navigation.map((item, i) => (
-              <Link
-                key={i}
-                href={item.href}
-                className={cn(
-                  "text-muted-foreground hover:text-foreground text-base transition-colors",
-                  classNames.nav?.link
-                )}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-          <div className="flex items-center gap-4">
-            {cta && (
-              <Button
-                size="lg"
-                className={cn(
-                  "group bg-brand-complementary hover:bg-brand-complementary/90 relative overflow-hidden rounded-full pr-12",
-                  classNames.cta
-                )}
-                asChild
-              >
-                <Link href={cta.href}>
-                  {cta.label}
-                  <div className="bg-background text-brand-complementary absolute inset-y-0 right-1 my-auto flex aspect-square size-8 items-center justify-center overflow-hidden rounded-full">
-                    <ArrowRight className="size-4 transition-transform duration-300 ease-out group-hover:translate-x-6" />
-                    <ArrowRight className="absolute size-4 -translate-x-6 transition-transform duration-300 ease-out group-hover:translate-x-0" />
-                  </div>
-                </Link>
-              </Button>
-            )}
+        <div
+          className={cn(
+            "container flex h-full items-center px-6",
+            classNames.container
+          )}
+        >
+          <div className="flex w-full items-center justify-between">
+            <Link
+              href={logo?.href ?? "#"}
+              className={cn("flex items-center gap-2", classNames.logo)}
+            >
+              {logo?.image && (
+                <Image
+                  draggable={false}
+                  src={logo.image.src}
+                  alt={logo.image.alt}
+                  width={logo.image.width ?? 40}
+                  height={logo.image.height ?? 40}
+                  className="h-10 w-10"
+                />
+              )}
+              {logo?.text && (
+                <span className="text-foreground text-xl font-semibold">
+                  {logo.text}
+                </span>
+              )}
+            </Link>
+            <nav
+              className={cn(
+                "hidden items-center gap-8 md:flex",
+                classNames.nav?.root
+              )}
+            >
+              {navigation.map((item, i) => (
+                <ScrollFade
+                  key={i}
+                  scrollBased={false}
+                  delay={0.1 + i * 0.05}
+                  duration={0.6}
+                >
+                  <Link
+                    href={item.href}
+                    className={cn(
+                      "text-muted-foreground hover:text-foreground text-base transition-colors",
+                      classNames.nav?.link
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                </ScrollFade>
+              ))}
+            </nav>
+            <div className="flex items-center gap-4">
+              {cta && (
+                <ScrollFade scrollBased={false} delay={0.4} duration={0.6}>
+                  <Button
+                    size="lg"
+                    className={cn(
+                      "group bg-brand-complementary hover:bg-brand-complementary/90 relative overflow-hidden rounded-full pr-12",
+                      classNames.cta
+                    )}
+                    asChild
+                  >
+                    <Link href={cta.href}>
+                      {cta.label}
+                      <div className="bg-background text-brand-complementary absolute inset-y-0 right-1 my-auto flex aspect-square size-8 items-center justify-center overflow-hidden rounded-full">
+                        <ArrowRight className="size-4 transition-transform duration-300 ease-out group-hover:translate-x-6" />
+                        <ArrowRight className="absolute size-4 -translate-x-6 transition-transform duration-300 ease-out group-hover:translate-x-0" />
+                      </div>
+                    </Link>
+                  </Button>
+                </ScrollFade>
+              )}
+            </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </ScrollFade>
   )
 }
 

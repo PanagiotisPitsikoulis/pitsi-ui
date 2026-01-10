@@ -6,12 +6,19 @@ import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { type HeaderBlockProps } from "@/lib/blocks/header.types"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
+import { Marquee } from "@/registry/new-york-v4/ui/marquee"
 
 const header8Defaults = {
   topBar: {
+    announcements: [
+      "Free shipping on orders over $75",
+      "New arrivals: Rare tropical plants",
+      "Plant care workshop this Saturday",
+      "20% off all succulents this week",
+    ],
     phone: "(555) 123-4567",
-    email: "contact@company.com",
-    location: "New York, NY",
+    email: "hello@plantshop.com",
+    location: "Brooklyn, NY",
     social: [
       { platform: "twitter", href: "#" },
       { platform: "facebook", href: "#" },
@@ -19,18 +26,18 @@ const header8Defaults = {
     ],
   },
   logo: {
-    text: "Company",
+    text: "Plant Shop",
     href: "#",
   },
   navigation: [
-    { label: "Home", href: "#" },
+    { label: "Shop", href: "#" },
+    { label: "Plants", href: "#" },
+    { label: "Care Guide", href: "#" },
+    { label: "Workshops", href: "#" },
     { label: "About", href: "#" },
-    { label: "Services", href: "#" },
-    { label: "Portfolio", href: "#" },
-    { label: "Blog", href: "#" },
     { label: "Contact", href: "#" },
   ],
-  cta: { label: "Get Quote", href: "#" },
+  cta: { label: "Shop Now", href: "#" },
 }
 
 const SocialIcons = {
@@ -62,14 +69,30 @@ export function Header8({ content = {}, classNames = {} }: HeaderBlockProps) {
 
   return (
     <header className={cn("sticky top-0 z-50", classNames.root)}>
-      {/* Top Bar */}
-      <div className="bg-primary text-primary-foreground">
+      {/* Top Bar with Marquee Announcements */}
+      <div className="bg-brand text-brand-foreground overflow-hidden">
         <div
           className={cn(
             "container flex h-10 items-center justify-between px-6",
             classNames.container
           )}
         >
+          {/* Marquee Announcements */}
+          <div className="flex-1 overflow-hidden md:mr-4">
+            <Marquee
+              pauseOnHover
+              className="[--duration:30s] [--gap:3rem]"
+            >
+              {topBar.announcements.map((announcement, i) => (
+                <div key={i} className="flex items-center gap-3 text-xs font-medium">
+                  <DynamicIcon name="Sparkles" className="h-3 w-3" />
+                  <span>{announcement}</span>
+                </div>
+              ))}
+            </Marquee>
+          </div>
+
+          {/* Contact Info (hidden on mobile) */}
           <div className="hidden items-center gap-6 text-xs md:flex">
             <div className="flex items-center gap-2">
               <DynamicIcon name="Phone" className="h-3 w-3" />
@@ -79,12 +102,10 @@ export function Header8({ content = {}, classNames = {} }: HeaderBlockProps) {
               <DynamicIcon name="Mail" className="h-3 w-3" />
               <span>{topBar.email}</span>
             </div>
-            <div className="flex items-center gap-2">
-              <DynamicIcon name="MapPin" className="h-3 w-3" />
-              <span>{topBar.location}</span>
-            </div>
           </div>
-          <div className="flex items-center gap-4">
+
+          {/* Social Links */}
+          <div className="flex items-center gap-3 ml-4">
             {topBar.social.map((item, i) => (
               <Link
                 key={i}
@@ -127,7 +148,8 @@ export function Header8({ content = {}, classNames = {} }: HeaderBlockProps) {
                 key={i}
                 href={item.href}
                 className={cn(
-                  "text-muted-foreground hover:text-foreground text-sm font-medium transition-colors",
+                  "text-muted-foreground hover:text-foreground relative text-sm font-medium transition-colors",
+                  "after:bg-brand after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 hover:after:w-full",
                   classNames.nav?.link
                 )}
               >
@@ -138,7 +160,10 @@ export function Header8({ content = {}, classNames = {} }: HeaderBlockProps) {
 
           {/* CTA */}
           {cta && (
-            <Button className={classNames.cta} asChild>
+            <Button
+              className={cn("bg-brand hover:bg-brand/90", classNames.cta)}
+              asChild
+            >
               <Link href={cta.href}>{cta.label}</Link>
             </Button>
           )}
@@ -147,3 +172,6 @@ export function Header8({ content = {}, classNames = {} }: HeaderBlockProps) {
     </header>
   )
 }
+
+// Re-export for backwards compatibility
+export { Header8 as Header8ServicePlants }
