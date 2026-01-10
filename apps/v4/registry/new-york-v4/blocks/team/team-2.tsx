@@ -5,6 +5,8 @@ import Image from "next/image"
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { teamDefaults, type TeamBlockProps } from "@/lib/blocks/team.types"
 import { cn } from "@/lib/utils"
+import FlyingPosters from "@/registry/new-york-v4/animations/flying-posters/flying-posters"
+import Iridescence from "@/registry/new-york-v4/animations/iridescence/iridescence"
 import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 
 // Extended trainer item for fitness theme
@@ -88,9 +90,21 @@ export function Team2({ content = {}, classNames = {} }: TeamBlockProps) {
   const trainers =
     (content as { trainers?: Trainer[] }).trainers ?? team2Defaults.trainers
 
+  // Extract trainer images for FlyingPosters
+  const trainerImages = trainers.map((trainer) => trainer.image)
+
   return (
-    <section className={cn("bg-black py-24 lg:py-32", classNames.root)}>
-      <div className={cn("container px-6", classNames.container)}>
+    <section className={cn("relative bg-black py-24 lg:py-32", classNames.root)}>
+      {/* Iridescence background effect */}
+      <div className="absolute inset-0 opacity-20">
+        <Iridescence
+          color={[0.13, 0.83, 0.93]}
+          speed={0.5}
+          amplitude={0.05}
+          mouseReact={true}
+        />
+      </div>
+      <div className={cn("container relative px-6", classNames.container)}>
         {/* Header */}
         <BlockHeader
           badge={badge}
@@ -100,7 +114,7 @@ export function Team2({ content = {}, classNames = {} }: TeamBlockProps) {
           className="mb-16"
           classNames={{
             ...classNames.header,
-            badge: cn("text-white/60", classNames.header?.badge),
+            badge: cn("text-cyan-400", classNames.header?.badge),
             title: cn(
               "font-display text-4xl font-bold text-white md:text-5xl lg:text-6xl",
               classNames.header?.title
@@ -147,7 +161,7 @@ export function Team2({ content = {}, classNames = {} }: TeamBlockProps) {
                     {trainer.specialties.map((specialty) => (
                       <span
                         key={specialty}
-                        className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm"
+                        className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs font-medium text-cyan-300"
                       >
                         {specialty}
                       </span>
@@ -165,7 +179,7 @@ export function Team2({ content = {}, classNames = {} }: TeamBlockProps) {
                       <a
                         href={trainer.socials.instagram}
                         className={cn(
-                          "flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition-colors hover:bg-white/20",
+                          "flex h-9 w-9 items-center justify-center rounded-full bg-cyan-500/20 text-cyan-300 transition-colors hover:bg-cyan-500/30",
                           classNames.member?.socialLink
                         )}
                       >
@@ -176,7 +190,7 @@ export function Team2({ content = {}, classNames = {} }: TeamBlockProps) {
                       <a
                         href={trainer.socials.twitter}
                         className={cn(
-                          "flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition-colors hover:bg-white/20",
+                          "flex h-9 w-9 items-center justify-center rounded-full bg-cyan-500/20 text-cyan-300 transition-colors hover:bg-cyan-500/30",
                           classNames.member?.socialLink
                         )}
                       >
@@ -228,6 +242,27 @@ export function Team2({ content = {}, classNames = {} }: TeamBlockProps) {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* FlyingPosters showcase section */}
+        <div className="mt-20">
+          <p className="mb-6 text-center text-sm font-medium tracking-[0.3em] text-cyan-400 uppercase">
+            Our Team in Action
+          </p>
+          <div className="relative mx-auto h-[400px] max-w-4xl overflow-hidden rounded-2xl border border-white/10 bg-black/50 md:h-[500px]">
+            <FlyingPosters
+              items={trainerImages}
+              planeWidth={280}
+              planeHeight={350}
+              distortion={4}
+              scrollEase={0.02}
+              cameraFov={45}
+              cameraZ={18}
+              className="h-full w-full"
+            />
+            {/* Gradient overlay for depth */}
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50" />
+          </div>
         </div>
       </div>
     </section>

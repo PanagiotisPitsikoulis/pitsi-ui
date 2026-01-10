@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react"
 
 import { statsDefaults, type StatsBlockProps } from "@/lib/blocks/stats.types"
 import { cn } from "@/lib/utils"
+import GridDistortion from "@/registry/new-york-v4/animations/grid-distortion/grid-distortion"
+import LetterGlitch from "@/registry/new-york-v4/animations/letter-glitch/letter-glitch"
 import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 
 // Extended stat item with numeric value for animation
@@ -107,8 +109,19 @@ export function Stats2({ content = {}, classNames = {} }: StatsBlockProps) {
       .highlightText ?? stats2Defaults.highlightText
 
   return (
-    <section className={cn("bg-white py-24 lg:py-32", classNames.root)}>
-      <div className={cn("container px-6", classNames.container)}>
+    <section className={cn("relative bg-white py-24 lg:py-32", classNames.root)}>
+      {/* LetterGlitch background */}
+      <div className="absolute inset-0 opacity-[0.03]">
+        <LetterGlitch
+          glitchColors={["#22d3ee", "#a855f7", "#10b981"]}
+          glitchSpeed={100}
+          centerVignette={false}
+          outerVignette={false}
+          smooth={true}
+          characters="FITNESS POWER STRENGTH ENERGY"
+        />
+      </div>
+      <div className={cn("container relative px-6", classNames.container)}>
         {/* Header */}
         <BlockHeader
           badge={badge}
@@ -169,17 +182,32 @@ export function Stats2({ content = {}, classNames = {} }: StatsBlockProps) {
           ))}
         </div>
 
-        {/* Bottom highlight */}
+        {/* Bottom highlight with GridDistortion */}
         {highlightText && (
-          <div className="mt-16 rounded-2xl bg-black p-8 text-center md:p-12">
-            <p className="mb-4 text-sm font-medium tracking-[0.3em] text-white/60 uppercase">
-              Member Achievement
-            </p>
-            <p className="font-display text-3xl font-bold text-white md:text-4xl lg:text-5xl">
-              <span className="text-white/60">{highlightText.prefix}</span>{" "}
-              {highlightText.value}{" "}
-              <span className="text-white/60">{highlightText.suffix}</span>
-            </p>
+          <div className="relative mt-16 overflow-hidden rounded-2xl bg-black">
+            {/* GridDistortion background */}
+            <div className="absolute inset-0 opacity-30">
+              <GridDistortion
+                imageSrc="/placeholders/blocks/service-fitness/gym-bg.webp"
+                grid={12}
+                mouse={0.15}
+                strength={0.2}
+                relaxation={0.85}
+                className="h-full w-full"
+              />
+            </div>
+            <div className="relative p-8 text-center md:p-12">
+              <p className="mb-4 text-sm font-medium tracking-[0.3em] text-cyan-400 uppercase">
+                Member Achievement
+              </p>
+              <p className="font-display text-3xl font-bold text-white md:text-4xl lg:text-5xl">
+                <span className="text-white/60">{highlightText.prefix}</span>{" "}
+                <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                  {highlightText.value}
+                </span>{" "}
+                <span className="text-white/60">{highlightText.suffix}</span>
+              </p>
+            </div>
           </div>
         )}
       </div>

@@ -6,7 +6,9 @@ import {
   type PricingBlockProps,
 } from "@/lib/blocks/pricing.types"
 import { cn } from "@/lib/utils"
+import TextPressure from "@/registry/new-york-v4/animations/text-pressure/text-pressure"
 import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
+import { BorderBeam } from "@/registry/new-york-v4/ui/border-beam"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 // Block-specific defaults (fitness theme)
@@ -78,13 +80,32 @@ export function Pricing2({ content = {}, classNames = {} }: PricingBlockProps) {
   return (
     <section className={cn("bg-neutral-950 py-24 lg:py-32", classNames.root)}>
       <div className={cn("container px-6", classNames.container)}>
-        {/* Header */}
-        <BlockHeader
-          badge={badge}
-          title={title}
-          description={description}
-          classNames={classNames.header}
-        />
+        {/* Animated Title with TextPressure */}
+        <div className="mx-auto mb-16 text-center">
+          {badge && (
+            <span className="mb-4 inline-block rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-1.5 text-xs font-semibold tracking-wider text-cyan-400 uppercase">
+              {badge}
+            </span>
+          )}
+          <div className="mx-auto h-24 w-full max-w-3xl md:h-32 lg:h-40">
+            <TextPressure
+              text={title || "Invest In Yourself"}
+              textColor="#22d3ee"
+              strokeColor="#06b6d4"
+              stroke={true}
+              width={true}
+              weight={true}
+              italic={false}
+              minFontSize={32}
+              className="font-display"
+            />
+          </div>
+          {description && (
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-white/60">
+              {description}
+            </p>
+          )}
+        </div>
 
         {/* Pricing Cards */}
         <div
@@ -102,17 +123,27 @@ export function Pricing2({ content = {}, classNames = {} }: PricingBlockProps) {
               <div
                 key={plan.name}
                 className={cn(
-                  "relative flex flex-col rounded-2xl p-8",
+                  "relative flex flex-col overflow-hidden rounded-2xl p-8",
                   plan.highlighted
                     ? "bg-white text-black"
                     : "bg-white/5 text-white",
                   planClassNames?.root
                 )}
               >
+                {/* BorderBeam animation for highlighted plan */}
+                {plan.highlighted && (
+                  <BorderBeam
+                    size={200}
+                    duration={8}
+                    colorFrom="#22d3ee"
+                    colorTo="#a855f7"
+                    borderWidth={2}
+                  />
+                )}
                 {/* Popular badge */}
                 {plan.highlighted && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <span className="rounded-full bg-black px-4 py-1.5 text-xs font-bold tracking-wider text-white uppercase">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
+                    <span className="rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 px-4 py-1.5 text-xs font-bold tracking-wider text-white uppercase shadow-lg shadow-cyan-500/25">
                       Most Popular
                     </span>
                   </div>
