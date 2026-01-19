@@ -141,7 +141,7 @@ export function Pricing4({ content = {}, classNames = {} }: PricingBlockProps) {
               </span>
             )}
             {/* Decorative sticker */}
-            <div className="pointer-events-auto absolute -right-32 -top-8 hidden lg:block">
+            <div className="pointer-events-auto absolute -top-8 -right-32 hidden lg:block">
               <StickerPeel
                 imageSrc="/elements/decoration-small/plants/1.svg"
                 width={80}

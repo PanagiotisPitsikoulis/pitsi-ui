@@ -80,9 +80,7 @@ export function Stats6({ content = {}, classNames = {} }: StatsBlockProps) {
         sticky={false}
         className="h-auto min-h-fit py-16 md:py-24"
       >
-        <div
-          className={cn("container px-6", classNames.container)}
-        >
+        <div className={cn("container px-6", classNames.container)}>
           <SlideUp delay={0} distance={20}>
             <div className="mb-12 text-center">
               <h2

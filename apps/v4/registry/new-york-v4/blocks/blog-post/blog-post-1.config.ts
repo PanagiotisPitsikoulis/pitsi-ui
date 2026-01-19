@@ -9,13 +9,5 @@ export const registryConfig: RegistryItemConfig = {
   registryDependencies: ["button", "badge", "avatar"],
   categories: ["blog-post", "pages"],
   tier: "free",
-  readiness: "production",
-  blockConfig: {
-    template: "service-plants",
-    blockType: "blog-post",
-    order: 1,
-    palette: "sage",
-    typography: "elegant",
-    tint: "tinted",
-  },
+  readiness: "alpha",
 }

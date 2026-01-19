@@ -5,29 +5,34 @@ import Link from "next/link"
 
 import { type HeroBlockProps } from "@/lib/blocks/hero.types"
 import { cn } from "@/lib/utils"
+import {
+  SmoothParallaxContainer,
+  SmoothParallaxLayer,
+} from "@/registry/new-york-v4/animations/smooth-parallax-scroll/smooth-parallax-scroll"
+import { TextGradientOpacity } from "@/registry/new-york-v4/animations/text-gradient-opacity/text-gradient-opacity"
 import { HeroText } from "@/registry/new-york-v4/lib/hero-text"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 import { HeroButton } from "../../ui/hero-button"
 
-// Hero 17 - Flying Subjects (Planes with transparent backgrounds over landscape)
+// Hero 17 - Smooth Parallax with Text Gradient Opacity (Travel narrative theme)
 const hero17Defaults = {
   badge: "Adventure Awaits",
   title: "Take Flight\nTo Paradise",
   description:
     "Exclusive destinations and curated experiences. Your dream vacation is just a flight away.",
+  narrativeText:
+    "Discover breathtaking landscapes, immerse yourself in new cultures, and create memories that last a lifetime. Every journey begins with a single step.",
   primaryCta: { label: "Book Now", href: "#" },
   secondaryCta: {
     label: "Explore Destinations",
     href: "#",
     variant: "outline" as const,
   },
-  // Background landscape
   backgroundImage: {
     src: "/elements/landscape/sea/4.webp",
     alt: "Beautiful ocean destination",
   },
-  // Floating plane subjects
   flyingPlanes: [
     {
       src: "/elements/subject/plane/1.webp",
@@ -63,6 +68,7 @@ export function Hero17({ content = {}, classNames = {} }: HeroBlockProps) {
     badge = hero17Defaults.badge,
     title = hero17Defaults.title,
     description = hero17Defaults.description,
+    narrativeText = hero17Defaults.narrativeText,
     primaryCta = hero17Defaults.primaryCta,
     secondaryCta = hero17Defaults.secondaryCta,
     backgroundImage = hero17Defaults.backgroundImage,
@@ -90,28 +96,38 @@ export function Hero17({ content = {}, classNames = {} }: HeroBlockProps) {
         <div className="from-background via-background/80 absolute inset-0 bg-gradient-to-r to-transparent" />
       </div>
 
-      {/* Flying Plane Subjects */}
-      <div className="pointer-events-none absolute inset-0 hidden lg:block">
+      {/* Flying Plane Subjects with Parallax */}
+      <SmoothParallaxContainer
+        height="100%"
+        className="pointer-events-none absolute inset-0 hidden lg:block"
+      >
         {flyingPlanes.map((plane, i) => (
-          <div
+          <SmoothParallaxLayer
             key={i}
-            className="absolute transition-transform duration-700"
-            style={{
-              ...plane.position,
-              width: plane.size,
-              height: plane.size,
-              transform: `rotate(${plane.rotation}deg)`,
-            }}
+            yRange={[-(i + 1) * 50, (i + 1) * 30]}
+            zIndex={10 + i}
+            className="absolute"
           >
-            <Image
-              src={plane.src}
-              alt={plane.alt}
-              fill
-              className="object-contain drop-shadow-2xl"
-            />
-          </div>
+            <div
+              className="transition-transform duration-700"
+              style={{
+                ...plane.position,
+                position: "absolute",
+                width: plane.size,
+                height: plane.size,
+                transform: `rotate(${plane.rotation}deg)`,
+              }}
+            >
+              <Image
+                src={plane.src}
+                alt={plane.alt}
+                fill
+                className="object-contain drop-shadow-2xl"
+              />
+            </div>
+          </SmoothParallaxLayer>
         ))}
-      </div>
+      </SmoothParallaxContainer>
 
       {/* Content */}
       <div className="relative z-10 container flex flex-1 items-center px-4 py-12">
@@ -123,6 +139,15 @@ export function Hero17({ content = {}, classNames = {} }: HeroBlockProps) {
             size="large"
             classNames={classNames.header}
           />
+
+          {/* Narrative Text with Gradient Opacity */}
+          <div className="mt-8">
+            <TextGradientOpacity
+              text={narrativeText}
+              className="text-muted-foreground max-w-md text-lg"
+              offset={["start 0.95", "start 0.6"]}
+            />
+          </div>
 
           {/* Buttons */}
           <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -192,3 +217,6 @@ export function Hero17({ content = {}, classNames = {} }: HeroBlockProps) {
     </section>
   )
 }
+
+// Backward compatibility export
+export { Hero17 as HeroTravelNarrative }

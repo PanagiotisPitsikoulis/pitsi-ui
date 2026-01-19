@@ -1,11 +1,11 @@
 "use client"
 
 import { cn } from "@/lib/utils"
-import {
-  ScrollPathContainer,
-  ScrollLinePath,
-} from "@/registry/new-york-v4/animations/text-along-path/text-along-path"
 import { SlideUp } from "@/registry/new-york-v4/animations/slide-up/slide-up"
+import {
+  ScrollLinePath,
+  ScrollPathContainer,
+} from "@/registry/new-york-v4/animations/text-along-path/text-along-path"
 
 interface StatsBlockProps {
   content?: {
@@ -163,7 +163,7 @@ export function Stats5({ content = {}, classNames = {} }: StatsBlockProps) {
                       i % 2 === 0 ? "md:order-2" : "md:order-1"
                     )}
                   >
-                    <div className="bg-primary h-4 w-4 rounded-full ring-4 ring-background" />
+                    <div className="bg-primary ring-background h-4 w-4 rounded-full ring-4" />
                   </div>
 
                   {/* Empty space for alternating layout */}

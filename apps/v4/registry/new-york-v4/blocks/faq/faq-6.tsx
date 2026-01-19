@@ -64,7 +64,11 @@ const faq6Defaults = {
 }
 
 // Card component for Stack animation displaying support team member
-function SupportTeamCard({ person }: { person: { image: string; name: string } }) {
+function SupportTeamCard({
+  person,
+}: {
+  person: { image: string; name: string }
+}) {
   return (
     <div className="bg-card h-full w-full rounded-2xl p-4 shadow-lg">
       <div className="relative aspect-square w-full overflow-hidden rounded-xl">
@@ -165,11 +169,16 @@ export function Faq6({ content = {}, classNames = {} }: FaqBlockProps) {
                   <h3 className="text-foreground mb-2 text-xl font-bold">
                     {supportTitle}
                   </h3>
-                  <p className="text-muted-foreground mb-6">{supportDescription}</p>
+                  <p className="text-muted-foreground mb-6">
+                    {supportDescription}
+                  </p>
 
                   <Button asChild>
                     <Link href={supportCta.href}>
-                      <DynamicIcon name="MessageCircle" className="mr-2 h-4 w-4" />
+                      <DynamicIcon
+                        name="MessageCircle"
+                        className="mr-2 h-4 w-4"
+                      />
                       {supportCta.label}
                     </Link>
                   </Button>

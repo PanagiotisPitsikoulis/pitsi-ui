@@ -23,13 +23,5 @@
     "pages"
   ],
   "tier": "free",
-  "readiness": "production",
-  "blockConfig": {
-    "template": "service-travel",
-    "blockType": "blog-post",
-    "order": 1,
-    "palette": "azure",
-    "typography": "modern",
-    "tint": "tinted"
-  }
+  "readiness": "alpha"
 }

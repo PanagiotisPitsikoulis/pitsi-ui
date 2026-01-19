@@ -4,9 +4,12 @@ import Image from "next/image"
 
 import { type FeaturesBlockProps } from "@/lib/blocks/features.types"
 import { cn } from "@/lib/utils"
+import {
+  CardsParallaxContainer,
+  ParallaxCard,
+  ParallaxCardImage,
+} from "@/registry/new-york-v4/animations/cards-parallax/cards-parallax"
 import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
-import { ImageOverlayGradient } from "@/app/(app)/(content)/(blocks)/_block_components"
-import { BlockThemeWrapper } from "@/app/(app)/(content)/(blocks)/_components"
 
 // Block-specific defaults
 const features2Defaults = {
@@ -27,8 +30,22 @@ const features2Defaults = {
         "Access our comprehensive guides, videos, and expert tips for each species.",
       image: "/elements/landscape/plants/4.webp",
     },
+    {
+      icon: "Leaf",
+      title: "Expert Consultations",
+      description:
+        "One-on-one sessions with certified horticulturists for personalized advice.",
+      image: "/elements/landscape/plants/5.webp",
+    },
   ],
 }
+
+// Card background colors matching botanical theme
+const cardColors = [
+  "hsl(var(--brand))",
+  "hsl(var(--brand) / 0.8)",
+  "hsl(var(--brand) / 0.6)",
+]
 
 export function Features2({
   content = {},
@@ -50,63 +67,65 @@ export function Features2({
           classNames={classNames.header}
         />
 
-        <div className={cn("grid gap-6 md:grid-cols-2", classNames.grid)}>
+        <CardsParallaxContainer
+          cardCount={features.length}
+          className="h-[200vh]"
+        >
           {features.map((feature, idx) => (
-            <div key={idx} className={cn("relative", classNames.feature?.root)}>
-              <BlockThemeWrapper
-                slug="service-plants"
-                tint="deep"
-                forceDark
-                className={cn(
-                  "group relative aspect-[4/3] overflow-hidden rounded-3xl",
-                  classNames.image?.wrapper
-                )}
-              >
-                {feature.image && (
-                  <Image
-                    draggable={false}
-                    src={feature.image}
-                    alt={feature.title}
-                    fill
-                    className={cn(
-                      "pointer-events-none object-cover transition-transform duration-500 select-none group-hover:scale-105",
-                      classNames.image?.img
-                    )}
-                  />
-                )}
-                <ImageOverlayGradient from="bottom" />
-                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute right-0 bottom-0 left-0 z-20 p-8">
-                  <h3
-                    className={cn(
-                      "text-foreground mb-1 text-2xl font-semibold",
-                      classNames.feature?.title
-                    )}
-                  >
-                    {feature.title}
-                  </h3>
-                  <p
-                    className={cn(
-                      "text-foreground/80",
-                      classNames.feature?.description
-                    )}
-                  >
-                    {feature.description}
-                  </p>
+            <ParallaxCard
+              key={idx}
+              index={idx}
+              backgroundColor={cardColors[idx % cardColors.length]}
+              className="text-white"
+            >
+              <div className="flex h-full flex-col">
+                <div className="mb-4 flex items-start justify-between">
+                  <div>
+                    <h3
+                      className={cn(
+                        "text-2xl font-semibold md:text-3xl",
+                        classNames.feature?.title
+                      )}
+                    >
+                      {feature.title}
+                    </h3>
+                    <p
+                      className={cn(
+                        "mt-2 max-w-md text-white/80",
+                        classNames.feature?.description
+                      )}
+                    >
+                      {feature.description}
+                    </p>
+                  </div>
+                  <span className="text-4xl font-light text-white/30">
+                    0{idx + 1}
+                  </span>
                 </div>
-              </BlockThemeWrapper>
-              {idx === 1 && (
-                <Image
-                  draggable={false}
-                  src="/elements/decoration-small/plants/decoration-small-1.svg"
-                  alt=""
-                  width={300}
-                  height={300}
-                  className="absolute -right-24 -bottom-30 z-30 -rotate-90"
-                />
-              )}
-            </div>
+                <div className="relative mt-auto flex-1 overflow-hidden rounded-2xl">
+                  {feature.image && (
+                    <ParallaxCardImage
+                      src={feature.image}
+                      alt={feature.title}
+                      className="h-full w-full"
+                    />
+                  )}
+                </div>
+              </div>
+            </ParallaxCard>
           ))}
+        </CardsParallaxContainer>
+
+        {/* Decoration */}
+        <div className="relative mt-8">
+          <Image
+            draggable={false}
+            src="/elements/decoration-small/plants/decoration-small-1.svg"
+            alt=""
+            width={300}
+            height={300}
+            className="absolute -right-24 -bottom-30 z-30 -rotate-90"
+          />
         </div>
       </div>
     </section>

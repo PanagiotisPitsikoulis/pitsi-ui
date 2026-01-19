@@ -1,0 +1,34 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "footer-14",
+  "type": "registry:block",
+  "description": "Travel footer with Aurora animation CTA section and modern navigation",
+  "dependencies": [
+    "@hugeicons/react",
+    "@hugeicons/core-free-icons"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/footer/footer-14.tsx",
+      "content": "\"use client\"\n\nimport Link from \"next/link\"\n\nimport { DynamicIcon } from \"@/lib/blocks/dynamic-icon\"\nimport { type FooterBlockProps } from \"@/lib/blocks/footer.types\"\nimport { cn } from \"@/lib/utils\"\nimport Aurora from \"@/registry/new-york-v4/animations/aurora/aurora\"\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\n\nconst footer14Defaults = {\n  cta: {\n    title: \"Ready for Your Next Adventure?\",\n    description:\n      \"Let us help you discover the world's most incredible destinations. From pristine beaches to mountain peaks, your dream trip awaits.\",\n    primaryButton: { label: \"Plan Your Trip\", href: \"#\" },\n    secondaryButton: { label: \"View Destinations\", href: \"#\" },\n  },\n  logo: {\n    text: \"Wanderlust\",\n    href: \"#\",\n  },\n  columns: [\n    {\n      title: \"Destinations\",\n      links: [\n        { label: \"Europe\", href: \"#\" },\n        { label: \"Asia\", href: \"#\" },\n        { label: \"Americas\", href: \"#\" },\n        { label: \"Africa\", href: \"#\" },\n      ],\n    },\n    {\n      title: \"Experiences\",\n      links: [\n        { label: \"Adventure Tours\", href: \"#\" },\n        { label: \"Beach Holidays\", href: \"#\" },\n        { label: \"City Breaks\", href: \"#\" },\n        { label: \"Cruises\", href: \"#\" },\n      ],\n    },\n    {\n      title: \"Resources\",\n      links: [\n        { label: \"Travel Guides\", href: \"#\" },\n        { label: \"Visa Info\", href: \"#\" },\n        { label: \"Travel Insurance\", href: \"#\" },\n        { label: \"Blog\", href: \"#\" },\n      ],\n    },\n    {\n      title: \"Company\",\n      links: [\n        { label: \"About Us\", href: \"#\" },\n        { label: \"Careers\", href: \"#\" },\n        { label: \"Contact\", href: \"#\" },\n        { label: \"Press\", href: \"#\" },\n      ],\n    },\n  ],\n  copyright: \"2025 Wanderlust Travel. All rights reserved.\",\n}\n\n// Azure palette colors for Aurora\nconst azureAuroraColors = [\"#0369a1\", \"#0284c7\", \"#0ea5e9\"]\n\nexport function Footer14({ content = {}, classNames = {} }: FooterBlockProps) {\n  const {\n    logo = footer14Defaults.logo,\n    columns = footer14Defaults.columns,\n    copyright = footer14Defaults.copyright,\n  } = content\n\n  const cta = footer14Defaults.cta\n\n  return (\n    <footer className={cn(\"bg-background\", classNames.root)}>\n      {/* Big CTA Section with Aurora Background */}\n      <div className=\"relative overflow-hidden\">\n        {/* Aurora Background */}\n        <div className=\"absolute inset-0 opacity-70\">\n          <Aurora\n            colorStops={azureAuroraColors}\n            amplitude={1.2}\n            blend={0.6}\n            speed={0.8}\n          />\n        </div>\n\n        {/* Overlay for better text contrast */}\n        <div className=\"absolute inset-0 bg-gradient-to-b from-black/20 to-black/40\" />\n\n        {/* Content */}\n        <div\n          className={cn(\n            \"relative z-10 container px-6 py-20 md:py-28\",\n            classNames.container\n          )}\n        >\n          <div className=\"mx-auto max-w-3xl text-center\">\n            <h2 className=\"mb-4 text-3xl font-bold text-white md:text-4xl lg:text-5xl\">\n              {cta.title}\n            </h2>\n            <p className=\"mb-8 text-lg text-white/80\">{cta.description}</p>\n            <div className=\"flex flex-col items-center justify-center gap-4 sm:flex-row\">\n              <Button\n                size=\"lg\"\n                className=\"group bg-white text-sky-800 hover:bg-white/90\"\n                asChild\n              >\n                <Link href={cta.primaryButton.href}>\n                  {cta.primaryButton.label}\n                  <DynamicIcon\n                    name=\"ArrowRight01\"\n                    className=\"ml-2 h-4 w-4 transition-transform group-hover:translate-x-1\"\n                  />\n                </Link>\n              </Button>\n              <Button\n                size=\"lg\"\n                variant=\"outline\"\n                className=\"border-white/30 bg-transparent text-white hover:bg-white/10\"\n                asChild\n              >\n                <Link href={cta.secondaryButton.href}>\n                  {cta.secondaryButton.label}\n                </Link>\n              </Button>\n            </div>\n          </div>\n        </div>\n      </div>\n\n      {/* Main Footer */}\n      <div className=\"border-border border-t py-12\">\n        <div className={cn(\"container px-6\", classNames.container)}>\n          <div className=\"grid gap-8 md:grid-cols-2 lg:grid-cols-5\">\n            {/* Brand */}\n            <div className={cn(\"lg:col-span-1\", classNames.logo)}>\n              <Link\n                href={logo?.href ?? \"#\"}\n                className=\"text-primary text-xl font-bold\"\n              >\n                {logo?.text}\n              </Link>\n            </div>\n\n            {/* Link Columns */}\n            {columns.map((column, i) => (\n              <div key={i}>\n                <h4 className=\"text-foreground mb-4 font-semibold\">\n                  {column.title}\n                </h4>\n                <ul className=\"text-muted-foreground space-y-3 text-sm\">\n                  {column.links.map((link, j) => (\n                    <li key={j}>\n                      <Link\n                        href={link.href}\n                        className=\"hover:text-primary transition-colors\"\n                      >\n                        {link.label}\n                      </Link>\n                    </li>\n                  ))}\n                </ul>\n              </div>\n            ))}\n          </div>\n        </div>\n      </div>\n\n      {/* Bottom Bar */}\n      <div className=\"border-border border-t py-6\">\n        <div className={cn(\"container px-6\", classNames.container)}>\n          <p className=\"text-muted-foreground text-center text-sm\">\n            &copy; {copyright}\n          </p>\n        </div>\n      </div>\n    </footer>\n  )\n}\n\nexport default Footer14\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "footer",
+    "landing"
+  ],
+  "tier": "free",
+  "readiness": "alpha",
+  "blockConfig": {
+    "template": "service-travel",
+    "blockType": "footer",
+    "order": 20,
+    "palette": "azure",
+    "typography": "modern",
+    "tint": "tinted"
+  }
+}

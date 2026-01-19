@@ -1,0 +1,27 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "stats-11",
+  "type": "registry:block",
+  "description": "Travel statistics with horizontal progress bars",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/stats/stats-11.tsx",
+      "content": "\"use client\"\n\nimport { useRef } from \"react\"\nimport { motion, useScroll, useTransform } from \"motion/react\"\n\nimport { type StatsBlockProps } from \"@/lib/blocks/stats.types\"\nimport { cn } from \"@/lib/utils\"\nimport { SlideUp } from \"@/registry/new-york-v4/animations/slide-up/slide-up\"\nimport { BlockHeader } from \"@/registry/new-york-v4/lib/block-header\"\n\ninterface Stats11Item {\n  label: string\n  value: string\n  percentage: number\n  color: string\n}\n\nconst stats11Defaults = {\n  badge: \"Travel Expertise\",\n  title: \"Our Global Reach\",\n  description: \"From local hidden gems to iconic landmarks, we cover it all.\",\n  stats: [\n    {\n      label: \"Europe Coverage\",\n      value: \"45+ Countries\",\n      percentage: 90,\n      color: \"bg-blue-500\",\n    },\n    {\n      label: \"Asia Pacific\",\n      value: \"35+ Countries\",\n      percentage: 75,\n      color: \"bg-emerald-500\",\n    },\n    {\n      label: \"Americas\",\n      value: \"28+ Countries\",\n      percentage: 65,\n      color: \"bg-amber-500\",\n    },\n    {\n      label: \"Africa & Middle East\",\n      value: \"22+ Countries\",\n      percentage: 55,\n      color: \"bg-rose-500\",\n    },\n  ] as Stats11Item[],\n}\n\nfunction AnimatedBar({ stat, index }: { stat: Stats11Item; index: number }) {\n  const ref = useRef<HTMLDivElement>(null)\n  const { scrollYProgress } = useScroll({\n    target: ref,\n    offset: [\"start 90%\", \"start 50%\"],\n  })\n\n  const width = useTransform(\n    scrollYProgress,\n    [0, 1],\n    [\"0%\", `${stat.percentage}%`]\n  )\n\n  return (\n    <div ref={ref} className=\"group\">\n      <div className=\"mb-3 flex items-center justify-between\">\n        <span className=\"text-foreground font-medium\">{stat.label}</span>\n        <span className=\"text-muted-foreground text-sm\">{stat.value}</span>\n      </div>\n      <div className=\"bg-muted h-3 overflow-hidden rounded-full\">\n        <motion.div\n          className={cn(\"h-full rounded-full\", stat.color)}\n          style={{ width }}\n        />\n      </div>\n    </div>\n  )\n}\n\nexport function Stats11({ content = {}, classNames = {} }: StatsBlockProps) {\n  const { badge = stats11Defaults.badge, title = stats11Defaults.title } =\n    content\n\n  const description =\n    (content as { description?: string }).description ??\n    stats11Defaults.description\n  const stats =\n    (content as { stats?: Stats11Item[] }).stats ?? stats11Defaults.stats\n\n  return (\n    <section className={cn(\"py-24\", classNames.root)}>\n      <div className={cn(\"container px-6\", classNames.container)}>\n        <div className=\"mx-auto max-w-4xl\">\n          <BlockHeader\n            badge={badge}\n            title={title}\n            description={description}\n            classNames={classNames.header}\n          />\n\n          <div className={cn(\"space-y-8\", classNames.grid)}>\n            {stats.map((stat, idx) => (\n              <SlideUp key={idx} delay={0.1 * idx} distance={20}>\n                <AnimatedBar stat={stat} index={idx} />\n              </SlideUp>\n            ))}\n          </div>\n\n          <div className=\"mt-16 grid gap-8 sm:grid-cols-3\">\n            <SlideUp delay={0.4} distance={30}>\n              <div className=\"text-center\">\n                <div className=\"text-primary text-4xl font-bold\">150+</div>\n                <div className=\"text-muted-foreground mt-2 text-sm\">\n                  Total Destinations\n                </div>\n              </div>\n            </SlideUp>\n            <SlideUp delay={0.5} distance={30}>\n              <div className=\"text-center\">\n                <div className=\"text-primary text-4xl font-bold\">7</div>\n                <div className=\"text-muted-foreground mt-2 text-sm\">\n                  Continents Covered\n                </div>\n              </div>\n            </SlideUp>\n            <SlideUp delay={0.6} distance={30}>\n              <div className=\"text-center\">\n                <div className=\"text-primary text-4xl font-bold\">24/7</div>\n                <div className=\"text-muted-foreground mt-2 text-sm\">\n                  Travel Support\n                </div>\n              </div>\n            </SlideUp>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n\nexport default Stats11\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "stats",
+    "landing"
+  ],
+  "tier": "free",
+  "readiness": "alpha",
+  "blockConfig": {
+    "template": "service-travel",
+    "blockType": "stats",
+    "order": 10,
+    "palette": "azure",
+    "typography": "modern",
+    "tint": "deep"
+  }
+}

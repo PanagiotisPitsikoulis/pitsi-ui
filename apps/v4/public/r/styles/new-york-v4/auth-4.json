@@ -19,7 +19,7 @@
     "auth"
   ],
   "tier": "free",
-  "readiness": "production",
+  "readiness": "alpha",
   "blockConfig": {
     "template": "standalone",
     "blockType": "auth",

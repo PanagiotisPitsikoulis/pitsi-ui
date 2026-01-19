@@ -94,7 +94,9 @@ export function Team2({ content = {}, classNames = {} }: TeamBlockProps) {
   const trainerImages = trainers.map((trainer) => trainer.image)
 
   return (
-    <section className={cn("relative bg-black py-24 lg:py-32", classNames.root)}>
+    <section
+      className={cn("relative bg-black py-24 lg:py-32", classNames.root)}
+    >
       {/* Iridescence background effect */}
       <div className="absolute inset-0 opacity-20">
         <Iridescence
@@ -104,7 +106,7 @@ export function Team2({ content = {}, classNames = {} }: TeamBlockProps) {
           mouseReact={true}
         />
       </div>
-      <div className={cn("container relative px-6", classNames.container)}>
+      <div className={cn("relative container px-6", classNames.container)}>
         {/* Header */}
         <BlockHeader
           badge={badge}

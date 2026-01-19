@@ -1,0 +1,27 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "stats-12",
+  "type": "registry:block",
+  "description": "Travel statistics with gradient cards and icons",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/stats/stats-12.tsx",
+      "content": "\"use client\"\n\nimport { DynamicIcon } from \"@/lib/blocks/dynamic-icon\"\nimport { type StatsBlockProps } from \"@/lib/blocks/stats.types\"\nimport { cn } from \"@/lib/utils\"\nimport { SlideUp } from \"@/registry/new-york-v4/animations/slide-up/slide-up\"\nimport { BlockHeader } from \"@/registry/new-york-v4/lib/block-header\"\n\ninterface Stats12Item {\n  value: string\n  label: string\n  icon: string\n  gradient: string\n}\n\nconst stats12Defaults = {\n  badge: \"Why Choose Us\",\n  title: \"Numbers That Speak\",\n  stats: [\n    {\n      value: \"150+\",\n      label: \"Dream Destinations\",\n      icon: \"Globe\",\n      gradient: \"from-blue-500 to-cyan-500\",\n    },\n    {\n      value: \"50K+\",\n      label: \"Happy Travelers\",\n      icon: \"Users\",\n      gradient: \"from-emerald-500 to-teal-500\",\n    },\n    {\n      value: \"1200+\",\n      label: \"Tours Completed\",\n      icon: \"Map\",\n      gradient: \"from-amber-500 to-orange-500\",\n    },\n    {\n      value: \"99%\",\n      label: \"Satisfaction Rate\",\n      icon: \"Heart\",\n      gradient: \"from-rose-500 to-pink-500\",\n    },\n  ] as Stats12Item[],\n}\n\nexport function Stats12({ content = {}, classNames = {} }: StatsBlockProps) {\n  const { badge = stats12Defaults.badge, title = stats12Defaults.title } =\n    content\n\n  const stats =\n    (content as { stats?: Stats12Item[] }).stats ?? stats12Defaults.stats\n\n  return (\n    <section className={cn(\"bg-foreground py-24\", classNames.root)}>\n      <div className={cn(\"container px-6\", classNames.container)}>\n        <BlockHeader\n          badge={badge}\n          title={title}\n          classNames={{\n            ...classNames.header,\n            title: cn(\"text-background\", classNames.header?.title),\n            badge: cn(\"text-background/70\", classNames.header?.badge),\n          }}\n        />\n\n        <div\n          className={cn(\n            \"grid gap-6 sm:grid-cols-2 lg:grid-cols-4\",\n            classNames.grid\n          )}\n        >\n          {stats.map((stat, idx) => (\n            <SlideUp key={idx} delay={0.1 + idx * 0.1} distance={40}>\n              <div\n                className={cn(\n                  \"group relative overflow-hidden rounded-2xl p-6 transition-transform hover:-translate-y-1\",\n                  classNames.stat?.root\n                )}\n              >\n                <div\n                  className={cn(\n                    \"absolute inset-0 bg-gradient-to-br opacity-90\",\n                    stat.gradient\n                  )}\n                />\n                <div className=\"absolute inset-0 bg-black/20 opacity-0 transition-opacity group-hover:opacity-100\" />\n\n                <div className=\"relative\">\n                  <div className=\"mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-white/20 backdrop-blur-sm\">\n                    <DynamicIcon\n                      name={stat.icon}\n                      className=\"h-7 w-7 text-white\"\n                    />\n                  </div>\n\n                  <div\n                    className={cn(\n                      \"text-4xl font-bold text-white md:text-5xl\",\n                      classNames.stat?.value\n                    )}\n                  >\n                    {stat.value}\n                  </div>\n\n                  <div\n                    className={cn(\n                      \"mt-2 text-sm font-medium text-white/80\",\n                      classNames.stat?.label\n                    )}\n                  >\n                    {stat.label}\n                  </div>\n                </div>\n              </div>\n            </SlideUp>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n\nexport default Stats12\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "stats",
+    "landing"
+  ],
+  "tier": "free",
+  "readiness": "alpha",
+  "blockConfig": {
+    "template": "service-travel",
+    "blockType": "stats",
+    "order": 10,
+    "palette": "azure",
+    "typography": "modern",
+    "tint": "deep"
+  }
+}

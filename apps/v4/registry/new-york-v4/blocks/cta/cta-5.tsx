@@ -51,7 +51,7 @@ export function Cta5({ content = {}, classNames = {} }: CtaBlockProps) {
             {primaryCta && (
               <Button
                 size="sm"
-                className="group whitespace-nowrap bg-white text-[#344e41] hover:bg-white/90"
+                className="group bg-white whitespace-nowrap text-[#344e41] hover:bg-white/90"
                 asChild
               >
                 <Link href={primaryCta.href}>

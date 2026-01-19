@@ -1,0 +1,30 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "features-14",
+  "type": "registry:block",
+  "description": "Travel agency 3-column grid features with icons",
+  "registryDependencies": [
+    "block-header"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/features/features-14.tsx",
+      "content": "\"use client\"\n\nimport { DynamicIcon } from \"@/lib/blocks/dynamic-icon\"\nimport { type FeaturesBlockProps } from \"@/lib/blocks/features.types\"\nimport { cn } from \"@/lib/utils\"\nimport { SlideUp } from \"@/registry/new-york-v4/animations/slide-up/slide-up\"\nimport { BlockHeader } from \"@/registry/new-york-v4/lib/block-header\"\n\n// Block-specific defaults for travel theme\nconst features14Defaults = {\n  badge: \"Why Choose Us\",\n  title: \"Travel With Confidence\",\n  description:\n    \"We handle every detail so you can focus on making memories. From planning to return, we've got you covered.\",\n  features: [\n    {\n      icon: \"Compass\",\n      title: \"Expert Local Guides\",\n      description:\n        \"Our certified guides bring destinations to life with insider knowledge and authentic experiences.\",\n    },\n    {\n      icon: \"Shield\",\n      title: \"24/7 Support\",\n      description:\n        \"Round-the-clock assistance wherever you are. One call away from solving any travel challenge.\",\n    },\n    {\n      icon: \"Target\",\n      title: \"Best Price Guarantee\",\n      description:\n        \"Found a lower price? We'll match it and give you 10% off your next adventure with us.\",\n    },\n    {\n      icon: \"MapPin\",\n      title: \"Handpicked Destinations\",\n      description:\n        \"Every location is personally vetted by our travel experts for quality and authenticity.\",\n    },\n    {\n      icon: \"Calendar\",\n      title: \"Flexible Booking\",\n      description:\n        \"Plans change. Our flexible policies let you modify or cancel with peace of mind.\",\n    },\n    {\n      icon: \"Heart\",\n      title: \"Sustainable Travel\",\n      description:\n        \"Travel responsibly with our eco-conscious partners and carbon offset programs.\",\n    },\n  ],\n}\n\nexport function Features14({\n  content = {},\n  classNames = {},\n}: FeaturesBlockProps) {\n  const {\n    badge = features14Defaults.badge,\n    title = features14Defaults.title,\n    description = features14Defaults.description,\n    features = features14Defaults.features,\n  } = content\n\n  return (\n    <section className={cn(\"py-24\", classNames.root)}>\n      <div className={cn(\"container px-6\", classNames.container)}>\n        <SlideUp delay={0} duration={0.6} distance={30}>\n          <BlockHeader\n            badge={badge}\n            title={title}\n            description={description}\n            classNames={classNames.header}\n          />\n        </SlideUp>\n\n        <div\n          className={cn(\n            \"grid gap-6 sm:grid-cols-2 lg:grid-cols-3\",\n            classNames.grid\n          )}\n        >\n          {features.map((feature, idx) => (\n            <SlideUp\n              key={idx}\n              delay={0.1 + idx * 0.05}\n              duration={0.6}\n              distance={30}\n            >\n              <div\n                className={cn(\n                  \"bg-card border-border group relative overflow-hidden rounded-3xl border p-6 shadow-sm transition-all hover:shadow-md\",\n                  classNames.feature?.root\n                )}\n              >\n                <div\n                  className={cn(\n                    \"bg-brand/10 group-hover:bg-brand/20 mb-4 flex h-12 w-12 items-center justify-center rounded-2xl transition-colors\",\n                    classNames.feature?.iconWrapper\n                  )}\n                >\n                  <DynamicIcon\n                    name={feature.icon}\n                    className={cn(\n                      \"text-brand h-6 w-6\",\n                      classNames.feature?.icon\n                    )}\n                  />\n                </div>\n                <h3\n                  className={cn(\n                    \"text-foreground mb-2 text-lg font-semibold\",\n                    classNames.feature?.title\n                  )}\n                >\n                  {feature.title}\n                </h3>\n                <p\n                  className={cn(\n                    \"text-muted-foreground text-sm leading-relaxed\",\n                    classNames.feature?.description\n                  )}\n                >\n                  {feature.description}\n                </p>\n              </div>\n            </SlideUp>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n\n// Backward compatibility export\nexport { Features14 as FeaturesTravelGrid }\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "features",
+    "landing"
+  ],
+  "tier": "free",
+  "readiness": "alpha",
+  "blockConfig": {
+    "template": "service-travel",
+    "blockType": "features",
+    "order": 4,
+    "palette": "azure",
+    "typography": "modern",
+    "tint": "tinted"
+  }
+}

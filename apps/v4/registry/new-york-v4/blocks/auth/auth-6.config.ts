@@ -7,7 +7,7 @@ export const registryConfig: RegistryItemConfig = {
   registryDependencies: ["button", "input", "label", "utils"],
   categories: ["auth"],
   tier: "free",
-  readiness: "production",
+  readiness: "alpha",
   blockConfig: {
     template: "standalone",
     blockType: "auth",

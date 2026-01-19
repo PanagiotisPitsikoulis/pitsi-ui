@@ -1,0 +1,27 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "logos-10",
+  "type": "registry:block",
+  "description": "Travel agency featured in press section",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/logos/logos-10.tsx",
+      "content": "\"use client\"\n\nimport Link from \"next/link\"\nimport { Quote } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface LogosBlockProps {\n  content?: {\n    badge?: string\n    title?: string\n    press?: Array<{\n      name: string\n      quote: string\n      href: string\n    }>\n    logos?: Array<{ name: string }>\n  }\n  classNames?: {\n    root?: string\n    container?: string\n    badge?: string\n    title?: string\n  }\n}\n\nconst logos10Defaults = {\n  badge: \"As Seen In\",\n  title: \"Award-winning travel experiences\",\n  press: [\n    {\n      name: \"Travel + Leisure\",\n      quote: \"The best travel agency for luxury adventures\",\n      href: \"#\",\n    },\n    {\n      name: \"Conde Nast Traveler\",\n      quote: \"Redefining the way we explore the world\",\n      href: \"#\",\n    },\n    {\n      name: \"National Geographic\",\n      quote: \"Sustainable travel done right\",\n      href: \"#\",\n    },\n  ],\n  logos: [\n    { name: \"Forbes Travel\" },\n    { name: \"The Telegraph\" },\n    { name: \"Lonely Planet\" },\n    { name: \"Afar Magazine\" },\n    { name: \"Travel Weekly\" },\n  ],\n}\n\nexport function Logos10({ content = {}, classNames = {} }: LogosBlockProps) {\n  const {\n    badge = logos10Defaults.badge,\n    title = logos10Defaults.title,\n    press = logos10Defaults.press,\n    logos = logos10Defaults.logos,\n  } = content\n\n  return (\n    <section className={cn(\"bg-muted\", classNames.root)}>\n      <div\n        className={cn(\"container px-6 py-16 md:py-24\", classNames.container)}\n      >\n        {/* Header */}\n        <div className=\"mb-12 text-center\">\n          {badge && (\n            <span\n              className={cn(\n                \"text-primary mb-3 inline-block text-sm font-medium tracking-widest uppercase\",\n                classNames.badge\n              )}\n            >\n              {badge}\n            </span>\n          )}\n          {title && (\n            <h2\n              className={cn(\n                \"text-foreground text-3xl font-bold md:text-4xl\",\n                classNames.title\n              )}\n            >\n              {title}\n            </h2>\n          )}\n        </div>\n\n        {/* Press Quotes */}\n        <div className=\"mb-12 grid gap-6 md:grid-cols-3\">\n          {press.map((item, i) => (\n            <Link\n              key={i}\n              href={item.href}\n              className=\"bg-background border-border group rounded-xl border p-6 transition-all hover:shadow-lg\"\n            >\n              <Quote className=\"text-primary/30 mb-4 h-8 w-8\" />\n              <p className=\"text-foreground mb-4 text-sm leading-relaxed italic\">\n                &ldquo;{item.quote}&rdquo;\n              </p>\n              <p className=\"text-muted-foreground group-hover:text-primary text-sm font-semibold tracking-wider transition-colors\">\n                {item.name}\n              </p>\n            </Link>\n          ))}\n        </div>\n\n        {/* Logo Row */}\n        <div className=\"border-border border-t pt-10\">\n          <p className=\"text-muted-foreground mb-6 text-center text-xs tracking-widest uppercase\">\n            Also featured in\n          </p>\n          <div className=\"flex flex-wrap items-center justify-center gap-8 md:gap-12\">\n            {logos.map((logo, i) => (\n              <div\n                key={i}\n                className=\"text-muted-foreground/40 hover:text-muted-foreground text-sm font-semibold tracking-wider transition-colors md:text-base\"\n              >\n                {logo.name}\n              </div>\n            ))}\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "logos",
+    "landing"
+  ],
+  "tier": "free",
+  "readiness": "alpha",
+  "blockConfig": {
+    "template": "service-travel",
+    "blockType": "logos",
+    "order": 3,
+    "palette": "azure",
+    "typography": "modern",
+    "tint": "deep"
+  }
+}

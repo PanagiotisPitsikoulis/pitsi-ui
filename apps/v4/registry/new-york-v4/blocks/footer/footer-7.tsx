@@ -105,7 +105,10 @@ export function Footer7({ content = {}, classNames = {} }: FooterBlockProps) {
             <div className="max-w-sm">
               <Link
                 href={logo?.href ?? "#"}
-                className={cn("text-primary text-2xl font-bold", classNames.logo)}
+                className={cn(
+                  "text-primary text-2xl font-bold",
+                  classNames.logo
+                )}
               >
                 {logo?.text}
               </Link>

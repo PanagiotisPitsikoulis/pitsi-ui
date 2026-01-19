@@ -1,0 +1,31 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "newsletter-8",
+  "type": "registry:block",
+  "description": "Full-width travel newsletter banner with dark background",
+  "registryDependencies": [
+    "button",
+    "input"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/newsletter/newsletter-8.tsx",
+      "content": "\"use client\"\n\nimport { DynamicIcon } from \"@/lib/blocks/dynamic-icon\"\nimport { cn } from \"@/lib/utils\"\nimport { SlideUp } from \"@/registry/new-york-v4/animations/slide-up/slide-up\"\nimport { BlockHeader } from \"@/registry/new-york-v4/lib/block-header\"\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\nimport { Input } from \"@/registry/new-york-v4/ui/input\"\n\ninterface NewsletterBlockProps {\n  content?: {\n    title?: string\n    description?: string\n    placeholder?: string\n    buttonLabel?: string\n  }\n  classNames?: {\n    root?: string\n    container?: string\n    header?: { title?: string; description?: string }\n  }\n}\n\nconst newsletter8Defaults = {\n  title: \"Never Miss a Travel Deal\",\n  description:\n    \"Join over 50,000 travelers who receive exclusive deals, destination guides, and travel tips every week.\",\n  placeholder: \"you@example.com\",\n  buttonLabel: \"Subscribe\",\n}\n\nexport function Newsletter8({\n  content = {},\n  classNames = {},\n}: NewsletterBlockProps) {\n  const {\n    title = newsletter8Defaults.title,\n    description = newsletter8Defaults.description,\n    placeholder = newsletter8Defaults.placeholder,\n    buttonLabel = newsletter8Defaults.buttonLabel,\n  } = content\n\n  return (\n    <section className={cn(\"bg-foreground text-background\", classNames.root)}>\n      <div\n        className={cn(\"container px-6 py-16 md:py-24\", classNames.container)}\n      >\n        <SlideUp delay={0} distance={20}>\n          <div className=\"mx-auto max-w-2xl text-center\">\n            {/* Icon */}\n            <div className=\"bg-background/10 mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full\">\n              <DynamicIcon name=\"Globe\" className=\"text-background h-8 w-8\" />\n            </div>\n\n            <BlockHeader\n              title={title}\n              description={description}\n              spacing=\"none\"\n              className=\"mb-8\"\n              classNames={{\n                ...classNames.header,\n                title: cn(\"text-background\", classNames.header?.title),\n                description: cn(\n                  \"text-background/70\",\n                  classNames.header?.description\n                ),\n              }}\n            />\n\n            {/* Form */}\n            <div className=\"mx-auto flex max-w-md flex-col gap-3 sm:flex-row\">\n              <Input\n                type=\"email\"\n                placeholder={placeholder}\n                className=\"border-background/20 bg-background/10 text-background placeholder:text-background/50 h-12 flex-1\"\n              />\n              <Button size=\"lg\" variant=\"secondary\" className=\"h-12 shrink-0\">\n                {buttonLabel}\n              </Button>\n            </div>\n\n            <p className=\"text-background/50 mt-6 text-sm\">\n              We respect your inbox. Unsubscribe anytime.\n            </p>\n          </div>\n        </SlideUp>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "newsletter",
+    "landing"
+  ],
+  "tier": "free",
+  "readiness": "alpha",
+  "blockConfig": {
+    "template": "service-travel",
+    "blockType": "newsletter",
+    "order": 14,
+    "palette": "azure",
+    "typography": "modern",
+    "tint": "deep"
+  }
+}

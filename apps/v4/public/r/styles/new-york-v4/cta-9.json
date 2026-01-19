@@ -1,0 +1,30 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "cta-9",
+  "type": "registry:block",
+  "description": "Travel CTA with split layout and parallax image",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/cta/cta-9.tsx",
+      "content": "\"use client\"\n\nimport Link from \"next/link\"\n\nimport { type CtaBlockProps } from \"@/lib/blocks/cta.types\"\nimport { DynamicIcon } from \"@/lib/blocks/dynamic-icon\"\nimport { cn } from \"@/lib/utils\"\nimport { ParallaxImage } from \"@/registry/new-york-v4/animations/background-image-parallax/background-image-parallax\"\nimport { ScrollFade } from \"@/registry/new-york-v4/animations/scroll-fade/scroll-fade\"\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\n\nconst cta9Defaults = {\n  title: \"Plan Your Dream Vacation\",\n  description:\n    \"From tropical beaches to mountain retreats, we curate unforgettable travel experiences tailored just for you.\",\n  image: {\n    src: \"/elements/landscape/sea/1.webp\",\n    alt: \"Beautiful tropical beach destination\",\n  },\n  primaryCta: { label: \"Book Now\", href: \"#\" },\n  secondaryCta: { label: \"See Packages\", href: \"#\" },\n  features: [\"24/7 Travel Support\", \"Best Price Guarantee\", \"Flexible Booking\"],\n}\n\nexport function Cta9({ content = {}, classNames = {} }: CtaBlockProps) {\n  const {\n    title = cta9Defaults.title,\n    description = cta9Defaults.description,\n    image = cta9Defaults.image,\n    primaryCta = cta9Defaults.primaryCta,\n    secondaryCta = cta9Defaults.secondaryCta,\n  } = content\n\n  return (\n    <section\n      className={cn(\n        \"bg-gradient-to-br from-[#0369a1] to-[#0284c7]\",\n        classNames.root\n      )}\n    >\n      <div\n        className={cn(\"container px-6 py-16 md:py-24\", classNames.container)}\n      >\n        <div className=\"grid items-center gap-12 lg:grid-cols-2\">\n          {/* Image with Parallax */}\n          <div className=\"relative aspect-[4/3] overflow-hidden rounded-2xl lg:order-2\">\n            {image && (\n              <ParallaxImage\n                src={image.src}\n                alt={image.alt}\n                className=\"absolute inset-0 -top-[10%] h-[120%]\"\n                range={[\"-5%\", \"5%\"]}\n                offset={[\"start end\", \"end start\"]}\n              />\n            )}\n          </div>\n\n          {/* Content */}\n          <ScrollFade className=\"lg:order-1\">\n            <h2\n              className={cn(\n                \"mb-6 text-3xl font-bold text-white md:text-4xl lg:text-5xl\",\n                classNames.header?.title\n              )}\n            >\n              {title}\n            </h2>\n            <p\n              className={cn(\n                \"mb-8 text-lg text-white/80\",\n                classNames.header?.description\n              )}\n            >\n              {description}\n            </p>\n\n            <div className=\"mb-8 flex flex-col gap-4 sm:flex-row\">\n              {primaryCta && (\n                <Button\n                  size=\"lg\"\n                  className=\"group bg-white text-[#0369a1] hover:bg-white/90\"\n                  asChild\n                >\n                  <Link href={primaryCta.href}>\n                    {primaryCta.label}\n                    <DynamicIcon\n                      name=\"ArrowRight\"\n                      className=\"ml-2 h-4 w-4 transition-transform group-hover:translate-x-1\"\n                    />\n                  </Link>\n                </Button>\n              )}\n              {secondaryCta && (\n                <Button\n                  size=\"lg\"\n                  variant=\"outline\"\n                  className=\"border-white/30 text-white hover:bg-white/10\"\n                  asChild\n                >\n                  <Link href={secondaryCta.href}>{secondaryCta.label}</Link>\n                </Button>\n              )}\n            </div>\n\n            <div className=\"flex flex-wrap gap-4 text-sm text-white/70\">\n              {cta9Defaults.features.map((feature, i) => (\n                <div key={i} className=\"flex items-center gap-2\">\n                  <svg\n                    className=\"h-4 w-4 text-[#7dd3fc]\"\n                    fill=\"none\"\n                    viewBox=\"0 0 24 24\"\n                    stroke=\"currentColor\"\n                  >\n                    <path\n                      strokeLinecap=\"round\"\n                      strokeLinejoin=\"round\"\n                      strokeWidth={2}\n                      d=\"M5 13l4 4L19 7\"\n                    />\n                  </svg>\n                  {feature}\n                </div>\n              ))}\n            </div>\n          </ScrollFade>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "cta",
+    "landing"
+  ],
+  "tier": "free",
+  "readiness": "alpha",
+  "blockConfig": {
+    "template": "service-travel",
+    "blockType": "cta",
+    "order": 15,
+    "palette": "azure",
+    "typography": "modern",
+    "tint": "tinted"
+  }
+}

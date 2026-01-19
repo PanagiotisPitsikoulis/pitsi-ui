@@ -1,0 +1,30 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "cta-8",
+  "type": "registry:block",
+  "description": "Travel CTA with full-width parallax background image",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/cta/cta-8.tsx",
+      "content": "\"use client\"\n\nimport Image from \"next/image\"\nimport Link from \"next/link\"\n\nimport { type CtaBlockProps } from \"@/lib/blocks/cta.types\"\nimport { DynamicIcon } from \"@/lib/blocks/dynamic-icon\"\nimport { cn } from \"@/lib/utils\"\nimport { SlideUp } from \"@/registry/new-york-v4/animations/slide-up/slide-up\"\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\n\nconst cta8Defaults = {\n  badge: \"Adventure Awaits\",\n  title: \"Book Your Next Adventure\",\n  description:\n    \"Discover breathtaking destinations and create memories that last a lifetime. Let us plan your perfect getaway.\",\n  image: {\n    src: \"/elements/landscape/plane/1.webp\",\n    alt: \"Airplane flying over mountains\",\n  },\n  primaryCta: { label: \"Start Exploring\", href: \"#\" },\n  secondaryCta: { label: \"View Destinations\", href: \"#\" },\n}\n\nexport function Cta8({ content = {}, classNames = {} }: CtaBlockProps) {\n  const {\n    title = cta8Defaults.title,\n    description = cta8Defaults.description,\n    image = cta8Defaults.image,\n    primaryCta = cta8Defaults.primaryCta,\n    secondaryCta = cta8Defaults.secondaryCta,\n  } = content\n\n  return (\n    <section className={cn(\"relative overflow-hidden\", classNames.root)}>\n      {/* Background Image */}\n      {image && (\n        <div className=\"absolute inset-0\">\n          <Image\n            src={image.src}\n            alt={image.alt}\n            fill\n            className=\"object-cover\"\n            draggable={false}\n          />\n          <div className=\"absolute inset-0 bg-gradient-to-r from-[#0369a1]/90 via-[#0284c7]/80 to-[#0ea5e9]/70\" />\n        </div>\n      )}\n\n      <div\n        className={cn(\n          \"relative z-10 container px-6 py-20 md:py-32\",\n          classNames.container\n        )}\n      >\n        <div className=\"mx-auto max-w-3xl text-center\">\n          <SlideUp delay={0}>\n            {/* Badge */}\n            <div className=\"mb-6 inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-1.5 text-sm font-medium text-white backdrop-blur-sm\">\n              <DynamicIcon name=\"Plane\" className=\"h-4 w-4\" />\n              {cta8Defaults.badge}\n            </div>\n          </SlideUp>\n\n          <SlideUp delay={0.1}>\n            <h2\n              className={cn(\n                \"mb-6 text-4xl font-bold text-white md:text-5xl lg:text-6xl\",\n                classNames.header?.title\n              )}\n            >\n              {title}\n            </h2>\n          </SlideUp>\n\n          <SlideUp delay={0.2}>\n            <p\n              className={cn(\n                \"mb-10 text-lg text-white/90 md:text-xl\",\n                classNames.header?.description\n              )}\n            >\n              {description}\n            </p>\n          </SlideUp>\n\n          <SlideUp delay={0.3}>\n            <div className=\"flex flex-col items-center justify-center gap-4 sm:flex-row\">\n              {primaryCta && (\n                <Button\n                  size=\"lg\"\n                  className=\"group bg-white text-[#0369a1] hover:bg-white/90\"\n                  asChild\n                >\n                  <Link href={primaryCta.href}>\n                    {primaryCta.label}\n                    <DynamicIcon\n                      name=\"ArrowRight\"\n                      className=\"ml-2 h-4 w-4 transition-transform group-hover:translate-x-1\"\n                    />\n                  </Link>\n                </Button>\n              )}\n              {secondaryCta && (\n                <Button\n                  size=\"lg\"\n                  variant=\"outline\"\n                  className=\"border-white/30 text-white hover:bg-white/10\"\n                  asChild\n                >\n                  <Link href={secondaryCta.href}>{secondaryCta.label}</Link>\n                </Button>\n              )}\n            </div>\n          </SlideUp>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "cta",
+    "landing"
+  ],
+  "tier": "free",
+  "readiness": "alpha",
+  "blockConfig": {
+    "template": "service-travel",
+    "blockType": "cta",
+    "order": 15,
+    "palette": "azure",
+    "typography": "modern",
+    "tint": "tinted"
+  }
+}

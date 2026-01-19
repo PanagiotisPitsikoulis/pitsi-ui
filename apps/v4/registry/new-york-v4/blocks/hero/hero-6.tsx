@@ -98,7 +98,7 @@ export function Hero6({ content = {}, classNames = {} }: HeroBlockProps) {
               <div className="mt-12 grid grid-cols-3 gap-4">
                 {stats.map((stat, i) => (
                   <ScrollFade key={i} scrollBased={false} delay={0.3 + i * 0.1}>
-                    <div className="bg-muted border-brand/20 rounded-2xl border p-4 text-center transition-colors hover:border-brand/50">
+                    <div className="bg-muted border-brand/20 hover:border-brand/50 rounded-2xl border p-4 text-center transition-colors">
                       <div className="display text-brand text-2xl font-bold md:text-3xl">
                         {stat.value}
                       </div>
@@ -127,7 +127,7 @@ export function Hero6({ content = {}, classNames = {} }: HeroBlockProps) {
               <div className="from-background/30 pointer-events-none absolute inset-0 bg-gradient-to-t via-transparent to-transparent" />
               {/* Corner accent */}
               <div className="bg-brand absolute right-4 bottom-4 rounded-full px-4 py-2">
-                <span className="text-sm font-semibold text-foreground">
+                <span className="text-foreground text-sm font-semibold">
                   Interactive
                 </span>
               </div>

@@ -157,7 +157,11 @@ export function Faq5({ content = {}, classNames = {} }: FaqBlockProps) {
         {/* Questions */}
         <div className="mx-auto max-w-2xl space-y-3">
           {activeQuestions.map((q, i) => (
-            <SlideUp key={`${activeCategory}-${i}`} delay={0.1 + i * 0.05} distance={20}>
+            <SlideUp
+              key={`${activeCategory}-${i}`}
+              delay={0.1 + i * 0.05}
+              distance={20}
+            >
               <div className="border-border overflow-hidden rounded-lg border">
                 <button
                   onClick={() => setOpenIndex(openIndex === i ? null : i)}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "stats-9",
+  "type": "registry:block",
+  "description": "Travel statistics with icons and fade animation",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/stats/stats-9.tsx",
+      "content": "\"use client\"\n\nimport { DynamicIcon } from \"@/lib/blocks/dynamic-icon\"\nimport { type StatsBlockProps } from \"@/lib/blocks/stats.types\"\nimport { cn } from \"@/lib/utils\"\nimport { ScrollFade } from \"@/registry/new-york-v4/animations/scroll-fade/scroll-fade\"\nimport { BlockHeader } from \"@/registry/new-york-v4/lib/block-header\"\n\nconst stats9Defaults = {\n  badge: \"By The Numbers\",\n  title: \"Explore the World With Us\",\n  stats: [\n    { value: \"150+\", label: \"Destinations\", icon: \"Globe\" },\n    { value: \"50K+\", label: \"Happy Travelers\", icon: \"Users\" },\n    { value: \"1200+\", label: \"Tours Completed\", icon: \"Map\" },\n    { value: \"15+\", label: \"Years Experience\", icon: \"Award\" },\n  ],\n}\n\nexport function Stats9({ content = {}, classNames = {} }: StatsBlockProps) {\n  const {\n    badge = stats9Defaults.badge,\n    title = stats9Defaults.title,\n    stats = stats9Defaults.stats,\n  } = content as typeof stats9Defaults\n\n  return (\n    <section className={cn(\"py-24\", classNames.root)}>\n      <div className={cn(\"container px-6\", classNames.container)}>\n        <BlockHeader\n          badge={badge}\n          title={title}\n          classNames={classNames.header}\n        />\n\n        <div\n          className={cn(\n            \"grid grid-cols-2 gap-8 md:grid-cols-4\",\n            classNames.grid\n          )}\n        >\n          {stats.map((stat, idx) => (\n            <ScrollFade key={idx} delay={idx * 0.1}>\n              <div className={cn(\"group text-center\", classNames.stat?.root)}>\n                <div className=\"bg-primary/10 group-hover:bg-primary/20 mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl transition-colors\">\n                  <DynamicIcon\n                    name={stat.icon || \"MapPin\"}\n                    className=\"text-primary h-8 w-8\"\n                  />\n                </div>\n                <div\n                  className={cn(\n                    \"text-primary text-4xl font-bold md:text-5xl\",\n                    classNames.stat?.value\n                  )}\n                >\n                  {stat.value}\n                </div>\n                <div\n                  className={cn(\n                    \"text-muted-foreground mt-2 text-sm font-medium\",\n                    classNames.stat?.label\n                  )}\n                >\n                  {stat.label}\n                </div>\n              </div>\n            </ScrollFade>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n\nexport default Stats9\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "stats",
+    "landing"
+  ],
+  "tier": "free",
+  "readiness": "alpha",
+  "blockConfig": {
+    "template": "service-travel",
+    "blockType": "stats",
+    "order": 10,
+    "palette": "azure",
+    "typography": "modern",
+    "tint": "deep"
+  }
+}

@@ -74,11 +74,7 @@ const blockDefaults = {
 }
 
 // Card background colors for the parallax effect (sage palette)
-const cardColors = [
-  "hsl(var(--card))",
-  "hsl(var(--muted))",
-  "hsl(var(--card))",
-]
+const cardColors = ["hsl(var(--card))", "hsl(var(--muted))", "hsl(var(--card))"]
 
 export function Blog1({ content = {}, classNames = {} }: BlogBlockProps) {
   // Merge content with block-specific defaults, falling back to generic defaults
@@ -145,13 +141,16 @@ export function Blog1({ content = {}, classNames = {} }: BlogBlockProps) {
               key={i}
               index={i}
               backgroundColor={cardColors[i % cardColors.length]}
-              className="border-border flex h-auto min-h-[400px] w-full max-w-3xl flex-col overflow-hidden rounded-3xl border shadow-lg md:flex-row md:min-h-[350px]"
+              className="border-border flex h-auto min-h-[400px] w-full max-w-3xl flex-col overflow-hidden rounded-3xl border shadow-lg md:min-h-[350px] md:flex-row"
               cardOffset={30}
               scaleStep={0.04}
             >
               <Link
                 href={post.href}
-                className={cn("group flex flex-1 flex-col md:flex-row", classNames.post?.root)}
+                className={cn(
+                  "group flex flex-1 flex-col md:flex-row",
+                  classNames.post?.root
+                )}
               >
                 {/* Image side */}
                 <div

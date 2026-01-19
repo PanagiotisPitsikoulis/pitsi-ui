@@ -65,7 +65,7 @@ export function Cta1({ content = {}, classNames = {} }: CtaBlockProps) {
                 alt={image.alt}
                 fill
                 className={cn(
-                  "pointer-events-none object-cover select-none opacity-40",
+                  "pointer-events-none object-cover opacity-40 select-none",
                   classNames.image?.img
                 )}
               />

@@ -133,7 +133,7 @@ export function Footer6({ content = {}, classNames = {} }: FooterBlockProps) {
                     lightingIntensity={0.08}
                     initialPosition="center"
                     peelDirection={45}
-                    className="left-0 top-0"
+                    className="top-0 left-0"
                   />
                 </div>
               </div>

@@ -1,13 +1,11 @@
 "use client"
 
-import Image from "next/image"
-
-import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import {
   featuresDefaults,
   type FeaturesBlockProps,
 } from "@/lib/blocks/features.types"
 import { cn } from "@/lib/utils"
+import CircularGallery from "@/registry/new-york-v4/animations/circular-gallery/circular-gallery"
 import { BlockHeader } from "@/registry/new-york-v4/lib/block-header"
 
 export function Features1({
@@ -19,11 +17,13 @@ export function Features1({
     badge = featuresDefaults.badge,
     title = featuresDefaults.title,
     features = featuresDefaults.features,
-    image = featuresDefaults.image,
   } = content
 
-  const leftFeatures = features.slice(0, 3)
-  const rightFeatures = features.slice(3, 6)
+  // Transform features into gallery items with images
+  const galleryItems = features.slice(0, 6).map((feature, idx) => ({
+    image: `/elements/landscape/plants/${idx + 1}.webp`,
+    text: feature.title,
+  }))
 
   return (
     <section className={classNames.root}>
@@ -34,119 +34,16 @@ export function Features1({
           classNames={classNames.header}
         />
 
-        <div className={cn("grid w-full grid-cols-6 gap-6", classNames.grid)}>
-          {/* Left column - spans 2 cols - right aligned */}
-          <div className="col-span-6 flex flex-col gap-10 lg:col-span-2">
-            {leftFeatures.map((feature, idx) => (
-              <div
-                key={idx}
-                className={cn(
-                  "flex flex-col items-start text-left lg:items-end lg:text-right",
-                  classNames.feature?.root
-                )}
-              >
-                <div
-                  className={cn(
-                    "bg-brand/10 mb-4 flex h-12 w-12 items-center justify-center rounded-xl",
-                    classNames.feature?.iconWrapper
-                  )}
-                >
-                  <DynamicIcon
-                    name={feature.icon}
-                    className={cn(
-                      "text-brand h-6 w-6 stroke-[1.5]",
-                      classNames.feature?.icon
-                    )}
-                  />
-                </div>
-                <h3
-                  className={cn(
-                    "text-foreground mb-1 text-lg font-semibold",
-                    classNames.feature?.title
-                  )}
-                >
-                  {feature.title}
-                </h3>
-                <p
-                  className={cn(
-                    "text-muted-foreground text-sm",
-                    classNames.feature?.description
-                  )}
-                >
-                  {feature.description}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          {/* Center element - Image - spans 2 cols */}
-          {image && (
-            <div
-              className={cn("col-span-6 lg:col-span-2", classNames.image?.root)}
-            >
-              <div
-                className={cn(
-                  "border-border relative h-full min-h-[400px] overflow-hidden rounded-3xl border lg:min-h-0",
-                  classNames.image?.wrapper
-                )}
-              >
-                <Image
-                  draggable={false}
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className={cn(
-                    "pointer-events-none object-cover select-none",
-                    classNames.image?.img
-                  )}
-                />
-              </div>
-            </div>
-          )}
-
-          {/* Right column - spans 2 cols */}
-          <div className="col-span-6 flex flex-col gap-10 lg:col-span-2">
-            {rightFeatures.map((feature, idx) => (
-              <div
-                key={idx}
-                className={cn(
-                  "flex flex-col items-start",
-                  classNames.feature?.root
-                )}
-              >
-                <div
-                  className={cn(
-                    "bg-brand/10 mb-4 flex h-12 w-12 items-center justify-center rounded-xl",
-                    classNames.feature?.iconWrapper
-                  )}
-                >
-                  <DynamicIcon
-                    name={feature.icon}
-                    className={cn(
-                      "text-brand h-6 w-6 stroke-[1.5]",
-                      classNames.feature?.icon
-                    )}
-                  />
-                </div>
-                <h3
-                  className={cn(
-                    "text-foreground mb-1 text-lg font-semibold",
-                    classNames.feature?.title
-                  )}
-                >
-                  {feature.title}
-                </h3>
-                <p
-                  className={cn(
-                    "text-muted-foreground text-sm",
-                    classNames.feature?.description
-                  )}
-                >
-                  {feature.description}
-                </p>
-              </div>
-            ))}
-          </div>
+        <div className={cn("mt-12 h-[500px] w-full", classNames.grid)}>
+          <CircularGallery
+            items={galleryItems}
+            bend={2}
+            textColor="hsl(var(--foreground))"
+            borderRadius={0.08}
+            font="500 16px var(--font-sans)"
+            scrollSpeed={2}
+            scrollEase={0.06}
+          />
         </div>
       </div>
     </section>

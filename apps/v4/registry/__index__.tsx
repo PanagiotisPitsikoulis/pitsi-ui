@@ -2605,7 +2605,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["application","auth"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "app-block-viewer-1": {
       name: "app-block-viewer-1",
@@ -2625,7 +2625,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["application","docs"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "app-blog-list-1": {
       name: "app-blog-list-1",
@@ -2645,7 +2645,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["application","blog"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "app-blog-post-1": {
       name: "app-blog-post-1",
@@ -2665,7 +2665,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["application","blog"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "app-component-preview-1": {
       name: "app-component-preview-1",
@@ -2685,7 +2685,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["application","docs"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "app-dashboard-1": {
       name: "app-dashboard-1",
@@ -2705,7 +2705,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["application","dashboard"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "app-docs-viewer-1": {
       name: "app-docs-viewer-1",
@@ -2725,7 +2725,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["application","docs"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "app-gym-gains-1": {
       name: "app-gym-gains-1",
@@ -2745,7 +2745,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
-      readiness: "beta",
+      readiness: "alpha",
     },
     "app-gym-history-1": {
       name: "app-gym-history-1",
@@ -2765,7 +2765,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
-      readiness: "beta",
+      readiness: "alpha",
     },
     "app-gym-library-1": {
       name: "app-gym-library-1",
@@ -2785,7 +2785,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
-      readiness: "beta",
+      readiness: "alpha",
     },
     "app-gym-log-1": {
       name: "app-gym-log-1",
@@ -2805,7 +2805,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
-      readiness: "beta",
+      readiness: "alpha",
     },
     "app-gym-profile-1": {
       name: "app-gym-profile-1",
@@ -2825,7 +2825,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
-      readiness: "beta",
+      readiness: "alpha",
     },
     "app-gym-shell-1": {
       name: "app-gym-shell-1",
@@ -2845,7 +2845,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
-      readiness: "beta",
+      readiness: "alpha",
     },
     "app-gym-today-1": {
       name: "app-gym-today-1",
@@ -2865,7 +2865,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
-      readiness: "beta",
+      readiness: "alpha",
     },
     "app-quiz-active-1": {
       name: "app-quiz-active-1",
@@ -2885,7 +2885,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
-      readiness: "beta",
+      readiness: "alpha",
     },
     "app-quiz-browse-1": {
       name: "app-quiz-browse-1",
@@ -2905,7 +2905,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
-      readiness: "beta",
+      readiness: "alpha",
     },
     "app-quiz-dashboard-1": {
       name: "app-quiz-dashboard-1",
@@ -2925,7 +2925,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
-      readiness: "beta",
+      readiness: "alpha",
     },
     "app-quiz-results-1": {
       name: "app-quiz-results-1",
@@ -2945,7 +2945,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
-      readiness: "beta",
+      readiness: "alpha",
     },
     "app-quiz-settings-1": {
       name: "app-quiz-settings-1",
@@ -2965,7 +2965,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
-      readiness: "beta",
+      readiness: "alpha",
     },
     "app-quiz-shell-1": {
       name: "app-quiz-shell-1",
@@ -2985,7 +2985,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["application"],
       meta: undefined,
       tier: "free",
-      readiness: "beta",
+      readiness: "alpha",
     },
     "app-settings-1": {
       name: "app-settings-1",
@@ -3005,7 +3005,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["application","dashboard"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "app-tool-layout-1": {
       name: "app-tool-layout-1",
@@ -3025,7 +3025,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["application","tools"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "auth-1": {
       name: "auth-1",
@@ -3045,7 +3045,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["auth"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "auth-2": {
       name: "auth-2",
@@ -3065,7 +3065,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["auth"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "auth-3": {
       name: "auth-3",
@@ -3085,7 +3085,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["auth"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "auth-4": {
       name: "auth-4",
@@ -3105,7 +3105,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["auth"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "auth-5": {
       name: "auth-5",
@@ -3125,7 +3125,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["auth"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "auth-6": {
       name: "auth-6",
@@ -3145,7 +3145,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["auth"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "blog-1": {
       name: "blog-1",
@@ -3167,6 +3167,66 @@ export const Index: Record<string, Record<string, any>> = {
       tier: "free",
       readiness: "production",
     },
+    "blog-10": {
+      name: "blog-10",
+      description: "Minimalist travel tips blog section with text-focused list layout and category filters",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/blog/blog-10.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/blog/blog-10.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "blog-10"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["blog","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "blog-11": {
+      name: "blog-11",
+      description: "Travel stories blog section with masonry-style grid layout and immersive imagery",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/blog/blog-11.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/blog/blog-11.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "blog-11"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["blog","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "blog-12": {
+      name: "blog-12",
+      description: "Travel resources blog section with list layout, sidebar newsletter, and resource categories",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/blog/blog-12.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/blog/blog-12.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "blog-12"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["blog","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
     "blog-2": {
       name: "blog-2",
       description: "Featured post with 3-column grid and read time badges",
@@ -3185,7 +3245,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["blog","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "blog-3": {
       name: "blog-3",
@@ -3205,7 +3265,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["blog","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "blog-4": {
       name: "blog-4",
@@ -3225,7 +3285,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["blog","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "blog-5": {
       name: "blog-5",
@@ -3245,7 +3305,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["blog","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "blog-6": {
       name: "blog-6",
@@ -3265,7 +3325,67 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["blog","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
+    },
+    "blog-7": {
+      name: "blog-7",
+      description: "Travel blog section with featured destination hero and card grid",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/blog/blog-7.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/blog/blog-7.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "blog-7"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["blog","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "blog-8": {
+      name: "blog-8",
+      description: "Travel blog section with horizontal scrolling carousel for packing tips and travel guides",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/blog/blog-8.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/blog/blog-8.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "blog-8"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["blog","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "blog-9": {
+      name: "blog-9",
+      description: "Travel blog section with magazine-style layout featuring large hero and destination guides sidebar",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/blog/blog-9.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/blog/blog-9.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "blog-9"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["blog","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
     },
     "blog-post-1": {
       name: "blog-post-1",
@@ -3285,7 +3405,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["blog-post","pages"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "blog-post-2": {
       name: "blog-post-2",
@@ -3305,7 +3425,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["blog-post","pages"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "blog-post-3": {
       name: "blog-post-3",
@@ -3325,7 +3445,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["blog-post","pages"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "blog-post-4": {
       name: "blog-post-4",
@@ -3345,7 +3465,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["blog-post","pages"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "blog-post-5": {
       name: "blog-post-5",
@@ -3365,7 +3485,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["blog-post","pages"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "contact-1": {
       name: "contact-1",
@@ -3387,6 +3507,66 @@ export const Index: Record<string, Record<string, any>> = {
       tier: "free",
       readiness: "production",
     },
+    "contact-10": {
+      name: "contact-10",
+      description: "Travel agency office locations with global presence",
+      type: "registry:block",
+      registryDependencies: ["button","block-header"],
+      files: [{
+        path: "registry/new-york-v4/blocks/contact/contact-10.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/contact/contact-10.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "contact-10"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["contact","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "contact-11": {
+      name: "contact-11",
+      description: "Travel inquiry form with trip type selection",
+      type: "registry:block",
+      registryDependencies: ["button","input","textarea","block-header","select"],
+      files: [{
+        path: "registry/new-york-v4/blocks/contact/contact-11.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/contact/contact-11.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "contact-11"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["contact","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "contact-12": {
+      name: "contact-12",
+      description: "Travel emergency support and FAQ contact section",
+      type: "registry:block",
+      registryDependencies: ["button","input","block-header","accordion"],
+      files: [{
+        path: "registry/new-york-v4/blocks/contact/contact-12.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/contact/contact-12.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "contact-12"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["contact","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
     "contact-2": {
       name: "contact-2",
       description: "Contact form with map placeholder and location info",
@@ -3405,7 +3585,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["contact","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "contact-3": {
       name: "contact-3",
@@ -3425,7 +3605,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["contact","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "contact-4": {
       name: "contact-4",
@@ -3445,7 +3625,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["contact","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "contact-5": {
       name: "contact-5",
@@ -3465,7 +3645,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["contact","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "contact-6": {
       name: "contact-6",
@@ -3485,7 +3665,67 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["contact","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
+    },
+    "contact-7": {
+      name: "contact-7",
+      description: "Travel agency contact form with destinations map",
+      type: "registry:block",
+      registryDependencies: ["button","input","textarea","block-header"],
+      files: [{
+        path: "registry/new-york-v4/blocks/contact/contact-7.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/contact/contact-7.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "contact-7"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["contact","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "contact-8": {
+      name: "contact-8",
+      description: "Travel consultation split layout with booking support",
+      type: "registry:block",
+      registryDependencies: ["button","input","textarea"],
+      files: [{
+        path: "registry/new-york-v4/blocks/contact/contact-8.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/contact/contact-8.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "contact-8"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["contact","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "contact-9": {
+      name: "contact-9",
+      description: "Minimal travel inquiry form with channel options",
+      type: "registry:block",
+      registryDependencies: ["button","block-header"],
+      files: [{
+        path: "registry/new-york-v4/blocks/contact/contact-9.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/contact/contact-9.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "contact-9"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["contact","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
     },
     "cta-1": {
       name: "cta-1",
@@ -3507,6 +3747,86 @@ export const Index: Record<string, Record<string, any>> = {
       tier: "free",
       readiness: "production",
     },
+    "cta-10": {
+      name: "cta-10",
+      description: "Travel CTA with centered card and scroll scale animation",
+      type: "registry:block",
+      registryDependencies: ["button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/cta/cta-10.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/cta/cta-10.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "cta-10"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["cta","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "cta-11": {
+      name: "cta-11",
+      description: "Minimal travel CTA with gradient background",
+      type: "registry:block",
+      registryDependencies: ["button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/cta/cta-11.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/cta/cta-11.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "cta-11"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["cta","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "cta-12": {
+      name: "cta-12",
+      description: "Travel CTA with sticky reveal footer banner",
+      type: "registry:block",
+      registryDependencies: ["button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/cta/cta-12.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/cta/cta-12.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "cta-12"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["cta","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "cta-13": {
+      name: "cta-13",
+      description: "Travel CTA with email subscription and aurora background",
+      type: "registry:block",
+      registryDependencies: ["button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/cta/cta-13.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/cta/cta-13.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "cta-13"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["cta","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
     "cta-2": {
       name: "cta-2",
       description: "Split layout CTA with image and gradient background",
@@ -3525,7 +3845,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["cta","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "cta-3": {
       name: "cta-3",
@@ -3545,7 +3865,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["cta","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "cta-4": {
       name: "cta-4",
@@ -3565,7 +3885,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["cta","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "cta-5": {
       name: "cta-5",
@@ -3585,7 +3905,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["cta","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "cta-6": {
       name: "cta-6",
@@ -3605,7 +3925,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["cta","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "cta-7": {
       name: "cta-7",
@@ -3625,7 +3945,47 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["cta","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
+    },
+    "cta-8": {
+      name: "cta-8",
+      description: "Travel CTA with full-width parallax background image",
+      type: "registry:block",
+      registryDependencies: ["button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/cta/cta-8.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/cta/cta-8.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "cta-8"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["cta","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "cta-9": {
+      name: "cta-9",
+      description: "Travel CTA with split layout and parallax image",
+      type: "registry:block",
+      registryDependencies: ["button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/cta/cta-9.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/cta/cta-9.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "cta-9"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["cta","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
     },
     "faq-1": {
       name: "faq-1",
@@ -3647,6 +4007,86 @@ export const Index: Record<string, Record<string, any>> = {
       tier: "free",
       readiness: "production",
     },
+    "faq-10": {
+      name: "faq-10",
+      description: "Searchable travel FAQ with real-time filtering and highlighting",
+      type: "registry:block",
+      registryDependencies: ["input"],
+      files: [{
+        path: "registry/new-york-v4/blocks/faq/faq-10.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/faq/faq-10.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "faq-10"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["faq","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "faq-11": {
+      name: "faq-11",
+      description: "Travel FAQ with side-by-side layout showing questions and answers",
+      type: "registry:block",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/blocks/faq/faq-11.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/faq/faq-11.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "faq-11"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["faq","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "faq-12": {
+      name: "faq-12",
+      description: "Travel FAQ in a grid layout with icons for each question category",
+      type: "registry:block",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/blocks/faq/faq-12.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/faq/faq-12.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "faq-12"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["faq","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "faq-13": {
+      name: "faq-13",
+      description: "Travel FAQ with accordion and contact support CTA section",
+      type: "registry:block",
+      registryDependencies: ["accordion","button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/faq/faq-13.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/faq/faq-13.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "faq-13"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["faq","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
     "faq-2": {
       name: "faq-2",
       description: "Two column FAQ with questions left, answers right",
@@ -3665,7 +4105,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["faq","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "faq-3": {
       name: "faq-3",
@@ -3685,7 +4125,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["faq","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "faq-4": {
       name: "faq-4",
@@ -3705,7 +4145,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["faq","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "faq-5": {
       name: "faq-5",
@@ -3725,7 +4165,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["faq","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "faq-6": {
       name: "faq-6",
@@ -3745,7 +4185,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["faq","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "faq-7": {
       name: "faq-7",
@@ -3765,7 +4205,47 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["faq","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
+    },
+    "faq-8": {
+      name: "faq-8",
+      description: "Travel agency FAQ with clean accordion and azure theme",
+      type: "registry:block",
+      registryDependencies: ["accordion"],
+      files: [{
+        path: "registry/new-york-v4/blocks/faq/faq-8.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/faq/faq-8.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "faq-8"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["faq","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "faq-9": {
+      name: "faq-9",
+      description: "Travel FAQ with category tabs for booking, visa, luggage, and payment",
+      type: "registry:block",
+      registryDependencies: ["tabs"],
+      files: [{
+        path: "registry/new-york-v4/blocks/faq/faq-9.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/faq/faq-9.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "faq-9"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["faq","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
     },
     "features-1": {
       name: "features-1",
@@ -3805,7 +4285,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["features","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "features-11": {
       name: "features-11",
@@ -3825,7 +4305,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["features","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "features-12": {
       name: "features-12",
@@ -3845,7 +4325,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["features","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "features-13": {
       name: "features-13",
@@ -3865,7 +4345,127 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["features","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
+    },
+    "features-14": {
+      name: "features-14",
+      description: "Travel agency 3-column grid features with icons",
+      type: "registry:block",
+      registryDependencies: ["block-header"],
+      files: [{
+        path: "registry/new-york-v4/blocks/features/features-14.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/features/features-14.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "features-14"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["features","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "features-15": {
+      name: "features-15",
+      description: "Travel agency alternating image/text feature sections",
+      type: "registry:block",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/blocks/features/features-15.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/features/features-15.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "features-15"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["features","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "features-16": {
+      name: "features-16",
+      description: "Travel agency bento grid features layout",
+      type: "registry:block",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/blocks/features/features-16.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/features/features-16.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "features-16"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["features","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "features-17": {
+      name: "features-17",
+      description: "Travel agency horizontal scrolling cards features",
+      type: "registry:block",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/blocks/features/features-17.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/features/features-17.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "features-17"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["features","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "features-18": {
+      name: "features-18",
+      description: "Travel agency features with statistics and numbers",
+      type: "registry:block",
+      registryDependencies: ["block-header"],
+      files: [{
+        path: "registry/new-york-v4/blocks/features/features-18.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/features/features-18.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "features-18"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["features","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "features-19": {
+      name: "features-19",
+      description: "Travel agency tabbed interface for service categories",
+      type: "registry:block",
+      registryDependencies: ["tabs","block-header"],
+      files: [{
+        path: "registry/new-york-v4/blocks/features/features-19.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/features/features-19.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "features-19"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["features","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
     },
     "features-2": {
       name: "features-2",
@@ -3965,7 +4565,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["features","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "features-7": {
       name: "features-7",
@@ -3985,7 +4585,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["features","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "features-8": {
       name: "features-8",
@@ -4005,7 +4605,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["features","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "features-9": {
       name: "features-9",
@@ -4025,7 +4625,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["features","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "footer-1": {
       name: "footer-1",
@@ -4065,7 +4665,107 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["footer","landing","application"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
+    },
+    "footer-11": {
+      name: "footer-11",
+      description: "Travel agency footer with newsletter, destinations, and multi-column navigation",
+      type: "registry:block",
+      registryDependencies: ["button","input"],
+      files: [{
+        path: "registry/new-york-v4/blocks/footer/footer-11.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/footer/footer-11.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "footer-11"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["footer","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "footer-12": {
+      name: "footer-12",
+      description: "Minimal centered travel footer with circular text animation and social links",
+      type: "registry:block",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/blocks/footer/footer-12.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/footer/footer-12.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "footer-12"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["footer","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "footer-13": {
+      name: "footer-13",
+      description: "Mega travel footer with destination showcase, trust badges, and comprehensive navigation",
+      type: "registry:block",
+      registryDependencies: ["button","input"],
+      files: [{
+        path: "registry/new-york-v4/blocks/footer/footer-13.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/footer/footer-13.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "footer-13"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["footer","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "footer-14": {
+      name: "footer-14",
+      description: "Travel footer with Aurora animation CTA section and modern navigation",
+      type: "registry:block",
+      registryDependencies: ["button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/footer/footer-14.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/footer/footer-14.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "footer-14"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["footer","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "footer-15": {
+      name: "footer-15",
+      description: "Travel footer with gradient background and text gradient opacity animation",
+      type: "registry:block",
+      registryDependencies: [],
+      files: [{
+        path: "registry/new-york-v4/blocks/footer/footer-15.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/footer/footer-15.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "footer-15"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["footer","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
     },
     "footer-2": {
       name: "footer-2",
@@ -4085,7 +4785,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["footer","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "footer-3": {
       name: "footer-3",
@@ -4105,7 +4805,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["footer","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "footer-4": {
       name: "footer-4",
@@ -4125,7 +4825,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["footer","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "footer-5": {
       name: "footer-5",
@@ -4145,7 +4845,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["footer","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "footer-6": {
       name: "footer-6",
@@ -4165,7 +4865,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["footer","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "footer-7": {
       name: "footer-7",
@@ -4185,7 +4885,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["footer","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "footer-8": {
       name: "footer-8",
@@ -4205,7 +4905,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["footer","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "footer-9": {
       name: "footer-9",
@@ -4225,7 +4925,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["footer","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "gallery-1": {
       name: "gallery-1",
@@ -4247,6 +4947,66 @@ export const Index: Record<string, Record<string, any>> = {
       tier: "free",
       readiness: "production",
     },
+    "gallery-10": {
+      name: "gallery-10",
+      description: "Travel destination cards with parallax stacking effect and trip details",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/gallery/gallery-10.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/gallery/gallery-10.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "gallery-10"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["gallery","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "gallery-11": {
+      name: "gallery-11",
+      description: "Travel full-screen zoom gallery with destination showcase",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/gallery/gallery-11.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/gallery/gallery-11.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "gallery-11"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["gallery","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "gallery-12": {
+      name: "gallery-12",
+      description: "Travel category tabs with filterable destination gallery and booking cards",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/gallery/gallery-12.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/gallery/gallery-12.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "gallery-12"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["gallery","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
     "gallery-2": {
       name: "gallery-2",
       description: "Masonry gallery with lightbox",
@@ -4265,7 +5025,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["gallery","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "gallery-3": {
       name: "gallery-3",
@@ -4285,7 +5045,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["gallery","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "gallery-4": {
       name: "gallery-4",
@@ -4305,7 +5065,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["gallery","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "gallery-5": {
       name: "gallery-5",
@@ -4325,7 +5085,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["gallery","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "gallery-6": {
       name: "gallery-6",
@@ -4345,7 +5105,67 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["gallery","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
+    },
+    "gallery-7": {
+      name: "gallery-7",
+      description: "Travel destination masonry grid with zoom parallax effect",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/gallery/gallery-7.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/gallery/gallery-7.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "gallery-7"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["gallery","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "gallery-8": {
+      name: "gallery-8",
+      description: "Travel horizontal scroll gallery with destination cards",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/gallery/gallery-8.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/gallery/gallery-8.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "gallery-8"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["gallery","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "gallery-9": {
+      name: "gallery-9",
+      description: "Travel Instagram-style photo grid with lightbox and social features",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/gallery/gallery-9.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/gallery/gallery-9.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "gallery-9"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["gallery","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
     },
     "header-1": {
       name: "header-1",
@@ -4385,7 +5205,127 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["header","landing","application"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
+    },
+    "header-11": {
+      name: "header-11",
+      description: "Travel agency header with centered logo and navigation",
+      type: "registry:block",
+      registryDependencies: ["button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/header/header-11.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/header/header-11.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "header-11"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["header","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "header-12": {
+      name: "header-12",
+      description: "Travel agency transparent header with sticky scroll behavior",
+      type: "registry:block",
+      registryDependencies: ["button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/header/header-12.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/header/header-12.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "header-12"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["header","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "header-13": {
+      name: "header-13",
+      description: "Travel agency header with mega menu dropdowns for destinations",
+      type: "registry:block",
+      registryDependencies: ["button","navigation-menu"],
+      files: [{
+        path: "registry/new-york-v4/blocks/header/header-13.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/header/header-13.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "header-13"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["header","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "header-14": {
+      name: "header-14",
+      description: "Travel agency header with integrated search bar",
+      type: "registry:block",
+      registryDependencies: ["button","input"],
+      files: [{
+        path: "registry/new-york-v4/blocks/header/header-14.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/header/header-14.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "header-14"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["header","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "header-15": {
+      name: "header-15",
+      description: "Travel agency header with featured destination badge",
+      type: "registry:block",
+      registryDependencies: ["button","badge"],
+      files: [{
+        path: "registry/new-york-v4/blocks/header/header-15.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/header/header-15.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "header-15"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["header","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "header-16": {
+      name: "header-16",
+      description: "Travel agency header with user account dropdown",
+      type: "registry:block",
+      registryDependencies: ["button","avatar","dropdown-menu"],
+      files: [{
+        path: "registry/new-york-v4/blocks/header/header-16.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/header/header-16.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "header-16"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["header","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
     },
     "header-2": {
       name: "header-2",
@@ -4405,7 +5345,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["header","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "header-3": {
       name: "header-3",
@@ -4425,7 +5365,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["header","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "header-4": {
       name: "header-4",
@@ -4445,7 +5385,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["header","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "header-5": {
       name: "header-5",
@@ -4465,7 +5405,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["header","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "header-6": {
       name: "header-6",
@@ -4485,7 +5425,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["header","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "header-7": {
       name: "header-7",
@@ -4505,7 +5445,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["header","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "header-8": {
       name: "header-8",
@@ -4525,7 +5465,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["header","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "header-9": {
       name: "header-9",
@@ -4545,7 +5485,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["header","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "hero-1": {
       name: "hero-1",
@@ -4685,7 +5625,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "hero-16": {
       name: "hero-16",
@@ -4705,7 +5645,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "hero-17": {
       name: "hero-17",
@@ -4725,7 +5665,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "hero-18": {
       name: "hero-18",
@@ -4745,7 +5685,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "hero-19": {
       name: "hero-19",
@@ -4765,7 +5705,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "hero-2": {
       name: "hero-2",
@@ -4785,7 +5725,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "hero-20": {
       name: "hero-20",
@@ -4805,7 +5745,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "hero-21": {
       name: "hero-21",
@@ -4825,7 +5765,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "hero-22": {
       name: "hero-22",
@@ -4845,7 +5785,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "hero-23": {
       name: "hero-23",
@@ -4865,7 +5805,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "hero-24": {
       name: "hero-24",
@@ -4885,7 +5825,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "hero-25": {
       name: "hero-25",
@@ -4905,7 +5845,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "hero-3": {
       name: "hero-3",
@@ -4925,7 +5865,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "hero-4": {
       name: "hero-4",
@@ -4945,7 +5885,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "hero-5": {
       name: "hero-5",
@@ -4965,7 +5905,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "hero-6": {
       name: "hero-6",
@@ -4985,7 +5925,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "hero-7": {
       name: "hero-7",
@@ -5005,7 +5945,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "hero-8": {
       name: "hero-8",
@@ -5025,7 +5965,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "hero-9": {
       name: "hero-9",
@@ -5045,7 +5985,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "logos-1": {
       name: "logos-1",
@@ -5067,6 +6007,66 @@ export const Index: Record<string, Record<string, any>> = {
       tier: "free",
       readiness: "production",
     },
+    "logos-10": {
+      name: "logos-10",
+      description: "Travel agency featured in press section",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/logos/logos-10.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/logos/logos-10.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "logos-10"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["logos","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "logos-11": {
+      name: "logos-11",
+      description: "Travel partners carousel with descriptions",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/logos/logos-11.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/logos/logos-11.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "logos-11"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["logos","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "logos-12": {
+      name: "logos-12",
+      description: "Travel partners two-row layout with categories",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/logos/logos-12.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/logos/logos-12.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "logos-12"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["logos","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
     "logos-2": {
       name: "logos-2",
       description: "Marquee logo cloud with infinite scroll animation",
@@ -5085,7 +6085,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["logos","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "logos-3": {
       name: "logos-3",
@@ -5105,7 +6105,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["logos","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "logos-4": {
       name: "logos-4",
@@ -5125,7 +6125,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["logos","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "logos-5": {
       name: "logos-5",
@@ -5145,7 +6145,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["logos","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "logos-6": {
       name: "logos-6",
@@ -5165,7 +6165,67 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["logos","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
+    },
+    "logos-7": {
+      name: "logos-7",
+      description: "Travel partners and trusted brands showcase with grayscale logos",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/logos/logos-7.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/logos/logos-7.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "logos-7"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["logos","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "logos-8": {
+      name: "logos-8",
+      description: "Travel partners animated marquee ticker",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/logos/logos-8.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/logos/logos-8.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "logos-8"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["logos","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "logos-9": {
+      name: "logos-9",
+      description: "Travel partners grid layout with hover effects",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/logos/logos-9.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/logos/logos-9.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "logos-9"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["logos","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
     },
     "maps-1": {
       name: "maps-1",
@@ -5185,7 +6245,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["maps"],
       meta: {"iframeHeight":"550px"},
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "maps-2": {
       name: "maps-2",
@@ -5205,7 +6265,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["maps","contact"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "maps-3": {
       name: "maps-3",
@@ -5225,7 +6285,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["maps"],
       meta: {"iframeHeight":"650px"},
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "maps-4": {
       name: "maps-4",
@@ -5245,7 +6305,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["maps","application"],
       meta: {"iframeHeight":"550px"},
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "maps-5": {
       name: "maps-5",
@@ -5265,7 +6325,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["maps"],
       meta: {"iframeHeight":"650px"},
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "newsletter-1": {
       name: "newsletter-1",
@@ -5287,6 +6347,66 @@ export const Index: Record<string, Record<string, any>> = {
       tier: "free",
       readiness: "production",
     },
+    "newsletter-10": {
+      name: "newsletter-10",
+      description: "Split layout travel newsletter with travel perks",
+      type: "registry:block",
+      registryDependencies: ["button","input"],
+      files: [{
+        path: "registry/new-york-v4/blocks/newsletter/newsletter-10.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/newsletter/newsletter-10.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "newsletter-10"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["newsletter","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "newsletter-11": {
+      name: "newsletter-11",
+      description: "Centered travel newsletter with benefits badges",
+      type: "registry:block",
+      registryDependencies: ["button","input","block-header"],
+      files: [{
+        path: "registry/new-york-v4/blocks/newsletter/newsletter-11.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/newsletter/newsletter-11.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "newsletter-11"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["newsletter","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "newsletter-12": {
+      name: "newsletter-12",
+      description: "Card-style travel newsletter with discount offer",
+      type: "registry:block",
+      registryDependencies: ["button","input","block-header"],
+      files: [{
+        path: "registry/new-york-v4/blocks/newsletter/newsletter-12.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/newsletter/newsletter-12.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "newsletter-12"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["newsletter","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
     "newsletter-2": {
       name: "newsletter-2",
       description: "Inline single horizontal row newsletter",
@@ -5305,7 +6425,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["newsletter","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "newsletter-3": {
       name: "newsletter-3",
@@ -5325,7 +6445,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["newsletter","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "newsletter-4": {
       name: "newsletter-4",
@@ -5345,7 +6465,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["newsletter","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "newsletter-5": {
       name: "newsletter-5",
@@ -5365,7 +6485,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["newsletter","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "newsletter-6": {
       name: "newsletter-6",
@@ -5385,7 +6505,67 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["newsletter","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
+    },
+    "newsletter-7": {
+      name: "newsletter-7",
+      description: "Minimal inline travel newsletter with destination updates",
+      type: "registry:block",
+      registryDependencies: ["button","input"],
+      files: [{
+        path: "registry/new-york-v4/blocks/newsletter/newsletter-7.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/newsletter/newsletter-7.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "newsletter-7"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["newsletter","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "newsletter-8": {
+      name: "newsletter-8",
+      description: "Full-width travel newsletter banner with dark background",
+      type: "registry:block",
+      registryDependencies: ["button","input"],
+      files: [{
+        path: "registry/new-york-v4/blocks/newsletter/newsletter-8.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/newsletter/newsletter-8.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "newsletter-8"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["newsletter","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "newsletter-9": {
+      name: "newsletter-9",
+      description: "Travel newsletter with destination image and subscription form",
+      type: "registry:block",
+      registryDependencies: ["button","input"],
+      files: [{
+        path: "registry/new-york-v4/blocks/newsletter/newsletter-9.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/newsletter/newsletter-9.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "newsletter-9"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["newsletter","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
     },
     "page-404-1": {
       name: "page-404-1",
@@ -5405,7 +6585,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["pages","error"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "page-blog-1": {
       name: "page-blog-1",
@@ -5425,7 +6605,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["pages","landing","blog"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "page-changelog-1": {
       name: "page-changelog-1",
@@ -5445,7 +6625,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["pages","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "page-error-1": {
       name: "page-error-1",
@@ -5465,7 +6645,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["pages","error"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "page-legal-1": {
       name: "page-legal-1",
@@ -5485,7 +6665,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["pages","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "page-pricing-1": {
       name: "page-pricing-1",
@@ -5505,7 +6685,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["pages","landing","pricing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "page-roadmap-1": {
       name: "page-roadmap-1",
@@ -5525,7 +6705,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["pages","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "page-tools-1": {
       name: "page-tools-1",
@@ -5545,7 +6725,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["pages","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "pricing-1": {
       name: "pricing-1",
@@ -5567,6 +6747,106 @@ export const Index: Record<string, Record<string, any>> = {
       tier: "free",
       readiness: "production",
     },
+    "pricing-10": {
+      name: "pricing-10",
+      description: "Horizontal travel package cards with destination highlights",
+      type: "registry:block",
+      registryDependencies: ["button","utils"],
+      files: [{
+        path: "registry/new-york-v4/blocks/pricing/pricing-10.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/pricing/pricing-10.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "pricing-10"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["pricing","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "pricing-11": {
+      name: "pricing-11",
+      description: "Travel tour comparison table with feature breakdown",
+      type: "registry:block",
+      registryDependencies: ["button","utils"],
+      files: [{
+        path: "registry/new-york-v4/blocks/pricing/pricing-11.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/pricing/pricing-11.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "pricing-11"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["pricing","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "pricing-12": {
+      name: "pricing-12",
+      description: "Group tour pricing with group size tiers and savings",
+      type: "registry:block",
+      registryDependencies: ["button","slider","utils"],
+      files: [{
+        path: "registry/new-york-v4/blocks/pricing/pricing-12.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/pricing/pricing-12.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "pricing-12"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["pricing","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "pricing-13": {
+      name: "pricing-13",
+      description: "Luxury travel tiers with standard vs enterprise comparison",
+      type: "registry:block",
+      registryDependencies: ["button","utils"],
+      files: [{
+        path: "registry/new-york-v4/blocks/pricing/pricing-13.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/pricing/pricing-13.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "pricing-13"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["pricing","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "pricing-14": {
+      name: "pricing-14",
+      description: "Destination-based travel packages with visual cards and seasonal pricing",
+      type: "registry:block",
+      registryDependencies: ["button","utils"],
+      files: [{
+        path: "registry/new-york-v4/blocks/pricing/pricing-14.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/pricing/pricing-14.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "pricing-14"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["pricing","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
     "pricing-2": {
       name: "pricing-2",
       description: "Fitness membership pricing with tiers, features, and popular badge",
@@ -5585,7 +6865,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["pricing","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "pricing-3": {
       name: "pricing-3",
@@ -5605,7 +6885,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["pricing","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "pricing-4": {
       name: "pricing-4",
@@ -5625,7 +6905,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["pricing","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "pricing-5": {
       name: "pricing-5",
@@ -5645,7 +6925,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["pricing","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "pricing-6": {
       name: "pricing-6",
@@ -5665,7 +6945,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["pricing","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "pricing-7": {
       name: "pricing-7",
@@ -5685,7 +6965,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["pricing","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "pricing-8": {
       name: "pricing-8",
@@ -5705,7 +6985,27 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["pricing","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
+    },
+    "pricing-9": {
+      name: "pricing-9",
+      description: "Travel package pricing with monthly/yearly toggle and 3-tier comparison",
+      type: "registry:block",
+      registryDependencies: ["button","switch","utils"],
+      files: [{
+        path: "registry/new-york-v4/blocks/pricing/pricing-9.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/pricing/pricing-9.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "pricing-9"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["pricing","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
     },
     "products-1": {
       name: "products-1",
@@ -5727,6 +7027,66 @@ export const Index: Record<string, Record<string, any>> = {
       tier: "free",
       readiness: "production",
     },
+    "products-10": {
+      name: "products-10",
+      description: "Tour packages grid with category filtering and slide-up animations",
+      type: "registry:block",
+      registryDependencies: ["button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/products/products-10.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/products/products-10.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "products-10"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["products","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "products-11": {
+      name: "products-11",
+      description: "Travel bundle packages with pricing tiers and scroll scale animations",
+      type: "registry:block",
+      registryDependencies: ["button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/products/products-11.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/products/products-11.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "products-11"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["products","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "products-12": {
+      name: "products-12",
+      description: "Adventure travel categories with expanding cards and scroll animation",
+      type: "registry:block",
+      registryDependencies: ["button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/products/products-12.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/products/products-12.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "products-12"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["products","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
     "products-2": {
       name: "products-2",
       description: "Product card grid with rating, price, add to cart",
@@ -5745,7 +7105,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["products","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "products-3": {
       name: "products-3",
@@ -5765,7 +7125,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["products","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "products-4": {
       name: "products-4",
@@ -5785,7 +7145,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["products","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "products-5": {
       name: "products-5",
@@ -5805,7 +7165,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["products","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "products-6": {
       name: "products-6",
@@ -5825,7 +7185,67 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["products","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
+    },
+    "products-7": {
+      name: "products-7",
+      description: "Travel destination cards grid with fade-in animations showcasing exotic locations",
+      type: "registry:block",
+      registryDependencies: ["button","badge"],
+      files: [{
+        path: "registry/new-york-v4/blocks/products/products-7.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/products/products-7.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "products-7"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["products","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "products-8": {
+      name: "products-8",
+      description: "Featured tour packages with zoom parallax effect and hero layout",
+      type: "registry:block",
+      registryDependencies: ["button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/products/products-8.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/products/products-8.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "products-8"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["products","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "products-9": {
+      name: "products-9",
+      description: "Travel deals stacking cards with parallax scroll effect for limited offers",
+      type: "registry:block",
+      registryDependencies: ["button"],
+      files: [{
+        path: "registry/new-york-v4/blocks/products/products-9.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/products/products-9.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "products-9"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["products","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
     },
     "search-1": {
       name: "search-1",
@@ -5845,7 +7265,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["search","pages"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "search-2": {
       name: "search-2",
@@ -5865,7 +7285,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["search","pages"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "search-3": {
       name: "search-3",
@@ -5885,7 +7305,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["search","pages"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "search-4": {
       name: "search-4",
@@ -5905,7 +7325,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["search","pages"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "search-5": {
       name: "search-5",
@@ -5925,7 +7345,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["search","pages"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "stats-1": {
       name: "stats-1",
@@ -5947,6 +7367,106 @@ export const Index: Record<string, Record<string, any>> = {
       tier: "free",
       readiness: "production",
     },
+    "stats-10": {
+      name: "stats-10",
+      description: "Travel statistics with animated counters and descriptions",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/stats/stats-10.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/stats/stats-10.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "stats-10"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["stats","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "stats-11": {
+      name: "stats-11",
+      description: "Travel statistics with horizontal progress bars",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/stats/stats-11.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/stats/stats-11.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "stats-11"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["stats","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "stats-12": {
+      name: "stats-12",
+      description: "Travel statistics with gradient cards and icons",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/stats/stats-12.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/stats/stats-12.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "stats-12"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["stats","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "stats-13": {
+      name: "stats-13",
+      description: "Travel statistics with full-width banner and large numbers",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/stats/stats-13.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/stats/stats-13.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "stats-13"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["stats","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "stats-14": {
+      name: "stats-14",
+      description: "Travel statistics with two-column layout and detailed descriptions",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/stats/stats-14.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/stats/stats-14.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "stats-14"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["stats","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
     "stats-2": {
       name: "stats-2",
       description: "Animated gym statistics with number counters and highlight section",
@@ -5965,7 +7485,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["stats","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "stats-3": {
       name: "stats-3",
@@ -5985,7 +7505,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["stats","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "stats-4": {
       name: "stats-4",
@@ -6005,7 +7525,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["stats","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "stats-5": {
       name: "stats-5",
@@ -6025,7 +7545,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["stats","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "stats-6": {
       name: "stats-6",
@@ -6045,7 +7565,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["stats","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "stats-7": {
       name: "stats-7",
@@ -6065,7 +7585,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["stats","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "stats-8": {
       name: "stats-8",
@@ -6085,7 +7605,27 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["stats","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
+    },
+    "stats-9": {
+      name: "stats-9",
+      description: "Travel statistics with icons and fade animation",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/stats/stats-9.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/stats/stats-9.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "stats-9"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["stats","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
     },
     "team-1": {
       name: "team-1",
@@ -6107,6 +7647,86 @@ export const Index: Record<string, Record<string, any>> = {
       tier: "free",
       readiness: "production",
     },
+    "team-10": {
+      name: "team-10",
+      description: "Travel agency featured leader with team grid",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/team/team-10.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/team/team-10.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "team-10"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["team","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "team-11": {
+      name: "team-11",
+      description: "Travel agency destination specialists with accordion bios",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/team/team-11.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/team/team-11.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "team-11"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["team","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "team-12": {
+      name: "team-12",
+      description: "Travel agency regional experts with world map style layout",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/team/team-12.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/team/team-12.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "team-12"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["team","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "team-13": {
+      name: "team-13",
+      description: "Travel agency storytellers and photographers magazine-style layout",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/team/team-13.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/team/team-13.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "team-13"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["team","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
     "team-2": {
       name: "team-2",
       description: "Coach profiles with specialties, certifications, and social links",
@@ -6125,7 +7745,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["team","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "team-3": {
       name: "team-3",
@@ -6145,7 +7765,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["team","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "team-4": {
       name: "team-4",
@@ -6165,7 +7785,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["team","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "team-5": {
       name: "team-5",
@@ -6185,7 +7805,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["team","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "team-6": {
       name: "team-6",
@@ -6205,7 +7825,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["team","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "team-7": {
       name: "team-7",
@@ -6225,7 +7845,47 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["team","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
+    },
+    "team-8": {
+      name: "team-8",
+      description: "Travel agency team grid with destination badges",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/team/team-8.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/team/team-8.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "team-8"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["team","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "team-9": {
+      name: "team-9",
+      description: "Travel agency tour guides carousel showcase",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/team/team-9.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/team/team-9.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "team-9"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["team","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
     },
     "testimonials-1": {
       name: "testimonials-1",
@@ -6247,6 +7907,106 @@ export const Index: Record<string, Record<string, any>> = {
       tier: "free",
       readiness: "production",
     },
+    "testimonials-10": {
+      name: "testimonials-10",
+      description: "Travel testimonials carousel with featured destination spotlight",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/testimonials/testimonials-10.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/testimonials/testimonials-10.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "testimonials-10"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["testimonials","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "testimonials-11": {
+      name: "testimonials-11",
+      description: "Travel testimonials masonry layout with trip photos",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/testimonials/testimonials-11.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/testimonials/testimonials-11.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "testimonials-11"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["testimonials","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "testimonials-12": {
+      name: "testimonials-12",
+      description: "Travel video testimonials with play buttons and traveler stories",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/testimonials/testimonials-12.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/testimonials/testimonials-12.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "testimonials-12"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["testimonials","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "testimonials-13": {
+      name: "testimonials-13",
+      description: "Featured single traveler spotlight with journey timeline",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/testimonials/testimonials-13.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/testimonials/testimonials-13.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "testimonials-13"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["testimonials","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
+    "testimonials-14": {
+      name: "testimonials-14",
+      description: "Travel testimonials marquee wall with infinite scrolling cards",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/testimonials/testimonials-14.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/testimonials/testimonials-14.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "testimonials-14"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["testimonials","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
+    },
     "testimonials-2": {
       name: "testimonials-2",
       description: "Member testimonials with transformation stats and star ratings",
@@ -6265,7 +8025,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["testimonials","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "testimonials-3": {
       name: "testimonials-3",
@@ -6285,7 +8045,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["testimonials","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "testimonials-4": {
       name: "testimonials-4",
@@ -6305,7 +8065,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["testimonials","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "testimonials-5": {
       name: "testimonials-5",
@@ -6325,7 +8085,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["testimonials","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "testimonials-6": {
       name: "testimonials-6",
@@ -6345,7 +8105,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["testimonials","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "testimonials-7": {
       name: "testimonials-7",
@@ -6365,7 +8125,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["testimonials","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
     },
     "testimonials-8": {
       name: "testimonials-8",
@@ -6385,7 +8145,27 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["testimonials","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "production",
+      readiness: "alpha",
+    },
+    "testimonials-9": {
+      name: "testimonials-9",
+      description: "Travel agency testimonials with destination cards grid",
+      type: "registry:block",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/blocks/testimonials/testimonials-9.tsx",
+        type: "registry:block",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/blocks/testimonials/testimonials-9.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "testimonials-9"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["testimonials","landing"],
+      meta: undefined,
+      tier: "free",
+      readiness: "alpha",
     },
     "utils": {
       name: "utils",

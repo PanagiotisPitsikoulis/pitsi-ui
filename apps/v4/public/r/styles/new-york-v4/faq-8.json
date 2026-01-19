@@ -1,0 +1,30 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "faq-8",
+  "type": "registry:block",
+  "description": "Travel agency FAQ with clean accordion and azure theme",
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/faq/faq-8.tsx",
+      "content": "\"use client\"\n\nimport { type FaqBlockProps } from \"@/lib/blocks/faq.types\"\nimport { cn } from \"@/lib/utils\"\nimport { ScrollFade } from \"@/registry/new-york-v4/animations/scroll-fade/scroll-fade\"\nimport { SlideUp } from \"@/registry/new-york-v4/animations/slide-up/slide-up\"\nimport { BlockHeader } from \"@/registry/new-york-v4/lib/block-header\"\nimport {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n  AccordionTrigger,\n} from \"@/registry/new-york-v4/ui/accordion\"\n\nconst faq8Defaults = {\n  badge: \"Travel FAQ\",\n  title: \"Questions About Your Journey\",\n  description:\n    \"Find answers to common questions about booking, destinations, and travel policies.\",\n  faqs: [\n    {\n      question: \"How do I book a trip?\",\n      answer:\n        \"Booking is simple! Browse our destinations, select your preferred dates and accommodation, and complete the secure checkout. You'll receive a confirmation email within minutes with all your travel details.\",\n    },\n    {\n      question: \"What's included in my travel package?\",\n      answer:\n        \"Our packages typically include flights, accommodation, airport transfers, and selected activities. Each package page details exactly what's included. You can also customize your trip by adding extras like travel insurance or premium excursions.\",\n    },\n    {\n      question: \"Can I modify my booking after confirmation?\",\n      answer:\n        \"Yes, most bookings can be modified up to 48 hours before departure. Changes may include date adjustments, accommodation upgrades, or adding travelers. Some modifications may incur a small fee depending on the change.\",\n    },\n    {\n      question: \"What documents do I need for international travel?\",\n      answer:\n        \"You'll need a valid passport with at least 6 months validity beyond your travel dates. Some destinations require visas, which we'll inform you about during booking. We also recommend having copies of your booking confirmation, travel insurance, and any required health documentation.\",\n    },\n    {\n      question: \"How does travel insurance work?\",\n      answer:\n        \"We partner with leading insurance providers to offer comprehensive coverage including trip cancellation, medical emergencies, lost luggage, and flight delays. You can add insurance during checkout or within 24 hours of booking.\",\n    },\n    {\n      question: \"What is your cancellation policy?\",\n      answer:\n        \"Free cancellation is available up to 30 days before departure for most packages. Cancellations within 30 days may incur a fee based on the booking type. We recommend travel insurance for maximum flexibility and peace of mind.\",\n    },\n  ],\n}\n\nexport function Faq8({ content = {}, classNames = {} }: FaqBlockProps) {\n  const {\n    badge = faq8Defaults.badge,\n    title = faq8Defaults.title,\n    description = faq8Defaults.description,\n    faqs = faq8Defaults.faqs,\n  } = content as typeof faq8Defaults\n\n  return (\n    <section className={cn(\"bg-background py-24\", classNames.root)}>\n      <div className={cn(\"container px-6\", classNames.container)}>\n        {/* Header */}\n        <SlideUp delay={0} distance={20}>\n          <BlockHeader\n            badge={badge}\n            title={title}\n            description={description}\n            spacing=\"default\"\n            classNames={classNames.header}\n          />\n        </SlideUp>\n\n        {/* FAQ accordion */}\n        <ScrollFade>\n          <div className=\"mx-auto max-w-2xl\">\n            <Accordion\n              type=\"single\"\n              collapsible\n              defaultValue=\"item-0\"\n              className={cn(\"w-full\", classNames.accordion)}\n            >\n              {faqs.map((faq, idx) => (\n                <AccordionItem\n                  key={idx}\n                  value={`item-${idx}`}\n                  className={cn(\"border-border\", classNames.item?.root)}\n                >\n                  <AccordionTrigger\n                    className={cn(\n                      \"text-foreground hover:text-primary text-left text-base font-medium\",\n                      classNames.item?.trigger\n                    )}\n                  >\n                    {faq.question}\n                  </AccordionTrigger>\n                  <AccordionContent\n                    className={cn(\n                      \"text-muted-foreground\",\n                      classNames.item?.content\n                    )}\n                  >\n                    {faq.answer}\n                  </AccordionContent>\n                </AccordionItem>\n              ))}\n            </Accordion>\n          </div>\n        </ScrollFade>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "faq",
+    "landing"
+  ],
+  "tier": "free",
+  "readiness": "alpha",
+  "blockConfig": {
+    "template": "service-travel",
+    "blockType": "faq",
+    "order": 11,
+    "palette": "azure",
+    "typography": "modern",
+    "tint": "tinted"
+  }
+}

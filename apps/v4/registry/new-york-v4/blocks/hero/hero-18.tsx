@@ -5,12 +5,14 @@ import Link from "next/link"
 
 import { type HeroBlockProps } from "@/lib/blocks/hero.types"
 import { cn } from "@/lib/utils"
+import CurvedLoop from "@/registry/new-york-v4/animations/curved-loop/curved-loop"
+import { ZoomParallax } from "@/registry/new-york-v4/animations/zoom-parallax/zoom-parallax"
 import { HeroText } from "@/registry/new-york-v4/lib/hero-text"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 import { HeroButton } from "../../ui/hero-button"
 
-// Hero 18 - Banner + Stats Bar (Travel theme)
+// Hero 18 - Zoom Parallax Banner with Curved Loop Text (Travel theme)
 const hero18Defaults = {
   badge: "Premium Travel",
   title: "Escape To\nParadise",
@@ -26,6 +28,7 @@ const hero18Defaults = {
     src: "/elements/landscape/sea/4.webp",
     alt: "Paradise destination",
   },
+  curvedText: "EXPLORE THE WORLD - ADVENTURE AWAITS - DISCOVER NEW HORIZONS - ",
   stats: [
     { value: "150+", label: "Destinations" },
     { value: "50k+", label: "Travelers" },
@@ -42,6 +45,7 @@ export function Hero18({ content = {}, classNames = {} }: HeroBlockProps) {
     primaryCta = hero18Defaults.primaryCta,
     secondaryCta = hero18Defaults.secondaryCta,
     image = hero18Defaults.image,
+    curvedText = hero18Defaults.curvedText,
     stats = hero18Defaults.stats,
   } = content as typeof hero18Defaults
 
@@ -53,8 +57,12 @@ export function Hero18({ content = {}, classNames = {} }: HeroBlockProps) {
       )}
     >
       <div className="container flex flex-1 flex-col px-4 py-6">
-        {/* Main Banner Area */}
-        <div className="relative flex flex-1 flex-col overflow-hidden rounded-3xl lg:flex-row">
+        {/* Main Banner Area with Zoom Parallax */}
+        <ZoomParallax
+          scaleRange={[0.95, 1]}
+          animateOpacity={false}
+          className="relative flex flex-1 flex-col overflow-hidden rounded-3xl lg:flex-row"
+        >
           {/* Image Side */}
           <div className="absolute inset-0">
             <Image
@@ -98,13 +106,26 @@ export function Hero18({ content = {}, classNames = {} }: HeroBlockProps) {
               )}
             </div>
           </div>
+        </ZoomParallax>
+
+        {/* Curved Loop Text Banner */}
+        <div className="bg-muted mt-4 overflow-hidden rounded-3xl">
+          <div className="h-32 md:h-40">
+            <CurvedLoop
+              marqueeText={curvedText}
+              speed={1.5}
+              curveAmount={80}
+              direction="left"
+              className="text-muted-foreground/50"
+            />
+          </div>
         </div>
 
         {/* Stats Bar - Pinned at bottom */}
         <div className="bg-muted mt-4 grid grid-cols-2 gap-4 rounded-3xl p-6 md:grid-cols-4">
           {stats.map((stat, i) => (
             <div key={i} className="text-center">
-              <div className="display text-2xl font-bold md:text-3xl">
+              <div className="text-brand text-2xl font-bold md:text-3xl">
                 {stat.value}
               </div>
               <div className="text-muted-foreground text-sm">{stat.label}</div>
@@ -115,3 +136,6 @@ export function Hero18({ content = {}, classNames = {} }: HeroBlockProps) {
     </section>
   )
 }
+
+// Backward compatibility export
+export { Hero18 as HeroTravelDynamic }

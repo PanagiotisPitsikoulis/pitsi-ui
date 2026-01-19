@@ -1,0 +1,27 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "logos-7",
+  "type": "registry:block",
+  "description": "Travel partners and trusted brands showcase with grayscale logos",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/logos/logos-7.tsx",
+      "content": "\"use client\"\n\nimport { cn } from \"@/lib/utils\"\n\ninterface LogosBlockProps {\n  content?: {\n    title?: string\n    logos?: Array<{ name: string }>\n  }\n  classNames?: {\n    root?: string\n    container?: string\n    title?: string\n    grid?: string\n  }\n}\n\nconst logos7Defaults = {\n  title: \"Trusted by leading travel brands worldwide\",\n  logos: [\n    { name: \"SkyWings Airlines\" },\n    { name: \"Grand Hotels\" },\n    { name: \"Wanderlust Tours\" },\n    { name: \"Ocean Cruise Lines\" },\n    { name: \"Alpine Resorts\" },\n    { name: \"Safari Expeditions\" },\n  ],\n}\n\nexport function Logos7({ content = {}, classNames = {} }: LogosBlockProps) {\n  const { title = logos7Defaults.title, logos = logos7Defaults.logos } = content\n\n  return (\n    <section className={cn(\"bg-background py-12 md:py-16\", classNames.root)}>\n      <div className={cn(\"container px-6\", classNames.container)}>\n        {title && (\n          <p\n            className={cn(\n              \"text-muted-foreground mb-10 text-center text-sm font-medium tracking-widest uppercase\",\n              classNames.title\n            )}\n          >\n            {title}\n          </p>\n        )}\n        <div\n          className={cn(\n            \"flex flex-wrap items-center justify-center gap-x-12 gap-y-6 md:gap-x-16\",\n            classNames.grid\n          )}\n        >\n          {logos.map((logo, i) => (\n            <div\n              key={i}\n              className=\"text-muted-foreground/40 hover:text-muted-foreground text-lg font-semibold tracking-wider grayscale transition-all duration-300 hover:grayscale-0 md:text-xl\"\n            >\n              {logo.name}\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "logos",
+    "landing"
+  ],
+  "tier": "free",
+  "readiness": "alpha",
+  "blockConfig": {
+    "template": "service-travel",
+    "blockType": "logos",
+    "order": 3,
+    "palette": "azure",
+    "typography": "modern",
+    "tint": "deep"
+  }
+}

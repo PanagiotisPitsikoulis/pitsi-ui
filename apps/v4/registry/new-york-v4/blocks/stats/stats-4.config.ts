@@ -6,7 +6,7 @@ export const registryConfig: RegistryItemConfig = {
   description: "Stats cards with icons and change indicators",
   categories: ["stats", "landing"],
   tier: "free",
-  readiness: "production",
+  readiness: "alpha",
   blockConfig: {
     template: "service-plants",
     blockType: "stats",

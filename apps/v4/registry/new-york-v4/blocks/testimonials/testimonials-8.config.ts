@@ -6,7 +6,7 @@ export const registryConfig: RegistryItemConfig = {
   description: "Developer testimonials grid for component library",
   categories: ["testimonials", "landing"],
   tier: "free",
-  readiness: "production",
+  readiness: "alpha",
   blockConfig: {
     template: "service-library",
     blockType: "testimonials",

@@ -1,8 +1,8 @@
 "use client"
 
 import { cn } from "@/lib/utils"
-import { TextGradientOpacity } from "@/registry/new-york-v4/animations/text-gradient-opacity/text-gradient-opacity"
 import { SlideUp } from "@/registry/new-york-v4/animations/slide-up/slide-up"
+import { TextGradientOpacity } from "@/registry/new-york-v4/animations/text-gradient-opacity/text-gradient-opacity"
 
 interface StatsBlockProps {
   content?: {
@@ -88,7 +88,7 @@ export function Stats3({ content = {}, classNames = {} }: StatsBlockProps) {
         <div className="mb-16">
           <TextGradientOpacity
             text={combinedStatsText}
-            className="text-center [&_p]:text-background [&_span]:text-background"
+            className="[&_p]:text-background [&_span]:text-background text-center"
             offset={["start 0.9", "start 0.4"]}
           />
         </div>

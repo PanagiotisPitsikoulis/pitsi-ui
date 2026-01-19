@@ -6,7 +6,7 @@ export const registryConfig: RegistryItemConfig = {
   description: "Social proof wall with tweet-style cards",
   categories: ["testimonials", "landing"],
   tier: "free",
-  readiness: "production",
+  readiness: "alpha",
   blockConfig: {
     template: "service-plants",
     blockType: "testimonials",

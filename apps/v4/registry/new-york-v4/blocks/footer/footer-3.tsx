@@ -76,20 +76,22 @@ export function Footer3({ content = {}, classNames = {} }: FooterBlockProps) {
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
             <Link
               href={logo?.href ?? "#"}
-              className={cn("text-2xl font-bold text-primary", classNames.logo)}
+              className={cn("text-primary text-2xl font-bold", classNames.logo)}
             >
               {logo?.text}
             </Link>
             <nav className="mt-6 flex flex-wrap items-center justify-center gap-6 lg:justify-start">
-              {navigation.map((item: { label: string; href: string }, i: number) => (
-                <Link
-                  key={i}
-                  href={item.href}
-                  className="text-muted-foreground hover:text-primary text-sm transition-colors"
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {navigation.map(
+                (item: { label: string; href: string }, i: number) => (
+                  <Link
+                    key={i}
+                    href={item.href}
+                    className="text-muted-foreground hover:text-primary text-sm transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                )
+              )}
             </nav>
           </div>
 

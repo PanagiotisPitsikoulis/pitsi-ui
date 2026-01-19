@@ -184,7 +184,7 @@ export function Testimonials4({
   return (
     <section
       className={cn(
-        "relative overflow-hidden bg-gradient-to-b from-sage-100 via-sage-50 to-amber-50 dark:from-sage-950 dark:via-sage-900/50 dark:to-amber-950/30",
+        "from-sage-100 via-sage-50 dark:from-sage-950 dark:via-sage-900/50 relative overflow-hidden bg-gradient-to-b to-amber-50 dark:to-amber-950/30",
         classNames.root
       )}
     >
@@ -232,11 +232,7 @@ export function Testimonials4({
 
           {/* Center DecayCard Video */}
           <div className="absolute top-1/2 left-1/2 z-20 -translate-x-1/2 -translate-y-1/2">
-            <DecayCard
-              width={280}
-              height={380}
-              image={centerVideo.thumbnail}
-            >
+            <DecayCard width={280} height={380} image={centerVideo.thumbnail}>
               <div className="absolute right-0 bottom-0 left-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 pt-12 md:p-6 md:pt-16">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/90 shadow-lg transition-transform hover:scale-110 md:h-16 md:w-16">

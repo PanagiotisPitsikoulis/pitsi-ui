@@ -45,31 +45,36 @@ const social = [
 // InfiniteMenu items for class showcase
 const menuItems = [
   {
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400&fit=crop",
     link: "#",
     title: "HIIT",
     description: "High intensity",
   },
   {
-    image: "https://images.unsplash.com/photo-1549576490-b0b4831ef60a?w=400&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1549576490-b0b4831ef60a?w=400&h=400&fit=crop",
     link: "#",
     title: "Boxing",
     description: "Combat training",
   },
   {
-    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=400&fit=crop",
     link: "#",
     title: "Strength",
     description: "Build muscle",
   },
   {
-    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=400&fit=crop",
     link: "#",
     title: "Yoga",
     description: "Mind & body",
   },
   {
-    image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&h=400&fit=crop",
     link: "#",
     title: "Spin",
     description: "Cardio blast",

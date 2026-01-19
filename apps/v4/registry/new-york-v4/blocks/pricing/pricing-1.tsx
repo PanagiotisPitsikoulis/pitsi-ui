@@ -130,97 +130,99 @@ export function Pricing1({ content = {}, classNames = {} }: PricingBlockProps) {
                       x: isLeft ? leftX : isRight ? rightX : 0,
                     }}
                   >
-                  {plan.highlighted && (
-                    <Image
-                      draggable={false}
-                      src={pricing1Defaults.decorationImage.src}
-                      alt={pricing1Defaults.decorationImage.alt}
-                      width={150}
-                      height={150}
-                      className="pointer-events-none absolute -top-10 left-1/2 z-30 -translate-x-1/2 select-none"
-                    />
-                  )}
-                  <div className={cn("text-center", planClassNames?.header)}>
-                    <h3
-                      className={cn(
-                        "mb-2 text-xl font-semibold",
-                        !plan.highlighted && "text-foreground",
-                        planClassNames?.name
-                      )}
-                    >
-                      {plan.name}
-                    </h3>
-                    <div className="flex items-baseline justify-center gap-1">
-                      <span
-                        className={cn(
-                          "text-5xl font-bold",
-                          !plan.highlighted && "text-foreground",
-                          planClassNames?.price
-                        )}
-                      >
-                        {plan.price}
-                      </span>
-                      {plan.period && (
-                        <span
-                          className={cn(
-                            plan.highlighted
-                              ? "text-primary-foreground/70"
-                              : "text-muted-foreground",
-                            planClassNames?.period
-                          )}
-                        >
-                          {plan.period}
-                        </span>
-                      )}
-                    </div>
-                    <p
-                      className={cn(
-                        "mt-2 text-sm",
-                        plan.highlighted
-                          ? "text-primary-foreground/70"
-                          : "text-muted-foreground",
-                        planClassNames?.description
-                      )}
-                    >
-                      {plan.description}
-                    </p>
-                  </div>
-                  <ul
-                    className={cn(
-                      "mt-8 mb-8 space-y-4",
-                      planClassNames?.features
+                    {plan.highlighted && (
+                      <Image
+                        draggable={false}
+                        src={pricing1Defaults.decorationImage.src}
+                        alt={pricing1Defaults.decorationImage.alt}
+                        width={150}
+                        height={150}
+                        className="pointer-events-none absolute -top-10 left-1/2 z-30 -translate-x-1/2 select-none"
+                      />
                     )}
-                  >
-                    {plan.features.map((feature, j) => (
-                      <li
-                        key={j}
+                    <div className={cn("text-center", planClassNames?.header)}>
+                      <h3
                         className={cn(
-                          "flex items-center gap-3",
-                          planClassNames?.featureItem
+                          "mb-2 text-xl font-semibold",
+                          !plan.highlighted && "text-foreground",
+                          planClassNames?.name
                         )}
                       >
-                        <svg
-                          className={cn(
-                            "h-5 w-5 flex-shrink-0",
-                            plan.highlighted
-                              ? "text-primary-foreground"
-                              : "text-primary"
-                          )}
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                        >
-                          <polyline points="20 6 9 17 4 12" />
-                        </svg>
+                        {plan.name}
+                      </h3>
+                      <div className="flex items-baseline justify-center gap-1">
                         <span
-                          className={cn(!plan.highlighted && "text-foreground")}
+                          className={cn(
+                            "text-5xl font-bold",
+                            !plan.highlighted && "text-foreground",
+                            planClassNames?.price
+                          )}
                         >
-                          {feature}
+                          {plan.price}
                         </span>
-                      </li>
-                    ))}
-                  </ul>
+                        {plan.period && (
+                          <span
+                            className={cn(
+                              plan.highlighted
+                                ? "text-primary-foreground/70"
+                                : "text-muted-foreground",
+                              planClassNames?.period
+                            )}
+                          >
+                            {plan.period}
+                          </span>
+                        )}
+                      </div>
+                      <p
+                        className={cn(
+                          "mt-2 text-sm",
+                          plan.highlighted
+                            ? "text-primary-foreground/70"
+                            : "text-muted-foreground",
+                          planClassNames?.description
+                        )}
+                      >
+                        {plan.description}
+                      </p>
+                    </div>
+                    <ul
+                      className={cn(
+                        "mt-8 mb-8 space-y-4",
+                        planClassNames?.features
+                      )}
+                    >
+                      {plan.features.map((feature, j) => (
+                        <li
+                          key={j}
+                          className={cn(
+                            "flex items-center gap-3",
+                            planClassNames?.featureItem
+                          )}
+                        >
+                          <svg
+                            className={cn(
+                              "h-5 w-5 flex-shrink-0",
+                              plan.highlighted
+                                ? "text-primary-foreground"
+                                : "text-primary"
+                            )}
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          <span
+                            className={cn(
+                              !plan.highlighted && "text-foreground"
+                            )}
+                          >
+                            {feature}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
                     {plan.cta && (
                       <Button
                         className={cn(

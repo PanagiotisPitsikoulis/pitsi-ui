@@ -195,12 +195,8 @@ export function getAllRegistryItems(options?: {
     })
   }
 
-  // Filter alpha items if env var set
-  if (process.env.HIDE_ALPHA_ITEMS === "true") {
-    return items.filter((item) => item.readiness !== "alpha")
-  }
-
-  return items
+  // Always filter alpha items
+  return items.filter((item) => item.readiness !== "alpha")
 }
 
 /**

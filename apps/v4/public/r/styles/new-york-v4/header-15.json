@@ -1,0 +1,36 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "header-15",
+  "type": "registry:block",
+  "description": "Travel agency header with featured destination badge",
+  "dependencies": [
+    "@hugeicons/react",
+    "@hugeicons/core-free-icons"
+  ],
+  "registryDependencies": [
+    "button",
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/header/header-15.tsx",
+      "content": "\"use client\"\n\nimport Link from \"next/link\"\n\nimport { DynamicIcon } from \"@/lib/blocks/dynamic-icon\"\nimport { type HeaderBlockProps } from \"@/lib/blocks/header.types\"\nimport { cn } from \"@/lib/utils\"\nimport { ScrollFade } from \"@/registry/new-york-v4/animations/scroll-fade/scroll-fade\"\nimport { Badge } from \"@/registry/new-york-v4/ui/badge\"\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\n\nconst header15Defaults = {\n  logo: {\n    text: \"Trailblaze\",\n    href: \"#\",\n  },\n  navigation: [\n    { label: \"Destinations\", href: \"#\" },\n    { label: \"Experiences\", href: \"#\" },\n    { label: \"Packages\", href: \"#\" },\n    { label: \"About\", href: \"#\" },\n    { label: \"Contact\", href: \"#\" },\n  ],\n  cta: { label: \"Start Planning\", href: \"#\" },\n}\n\nconst featuredDestination = {\n  name: \"Santorini, Greece\",\n  discount: \"25% OFF\",\n  href: \"#\",\n}\n\nexport function Header15({ content = {}, classNames = {} }: HeaderBlockProps) {\n  const {\n    logo = header15Defaults.logo,\n    navigation = header15Defaults.navigation,\n    cta = header15Defaults.cta,\n  } = content\n\n  return (\n    <header className={cn(\"sticky top-0 z-50\", classNames.root)}>\n      {/* Featured Destination Banner */}\n      <div className=\"bg-brand text-brand-foreground\">\n        <div\n          className={cn(\n            \"container flex h-10 items-center justify-center px-6\",\n            classNames.container\n          )}\n        >\n          <Link\n            href={featuredDestination.href}\n            className=\"group flex items-center gap-3 text-sm\"\n          >\n            <Badge\n              variant=\"secondary\"\n              className=\"bg-brand-foreground text-brand hover:bg-brand-foreground/90 font-semibold\"\n            >\n              <DynamicIcon name=\"Sparkles\" className=\"mr-1 h-3 w-3\" />\n              Featured\n            </Badge>\n            <span className=\"hidden sm:inline\">\n              Discover {featuredDestination.name}\n            </span>\n            <span className=\"sm:hidden\">{featuredDestination.name}</span>\n            <Badge className=\"bg-brand-foreground/20 text-brand-foreground hover:bg-brand-foreground/30 border-0\">\n              {featuredDestination.discount}\n            </Badge>\n            <DynamicIcon\n              name=\"ArrowRight\"\n              className=\"h-4 w-4 transition-transform group-hover:translate-x-1\"\n            />\n          </Link>\n        </div>\n      </div>\n\n      {/* Main Header */}\n      <div className=\"bg-background border-border border-b\">\n        <div\n          className={cn(\n            \"container flex h-16 items-center justify-between px-6\",\n            classNames.container\n          )}\n        >\n          {/* Logo */}\n          <ScrollFade scrollBased={false} delay={0} duration={0.6}>\n            <Link\n              href={logo?.href ?? \"#\"}\n              className={cn(\"flex items-center gap-2\", classNames.logo)}\n            >\n              <div className=\"from-brand to-brand/70 flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br shadow-md\">\n                <DynamicIcon\n                  name=\"Navigation\"\n                  className=\"text-brand-foreground h-5 w-5\"\n                />\n              </div>\n              <div className=\"flex flex-col\">\n                <span className=\"text-foreground text-lg leading-none font-bold\">\n                  {logo?.text}\n                </span>\n                <span className=\"text-muted-foreground text-[10px] tracking-widest uppercase\">\n                  Travel Agency\n                </span>\n              </div>\n            </Link>\n          </ScrollFade>\n\n          {/* Navigation */}\n          <nav\n            className={cn(\n              \"hidden items-center gap-6 lg:flex\",\n              classNames.nav?.root\n            )}\n          >\n            {navigation.map((item, i) => (\n              <ScrollFade\n                key={i}\n                scrollBased={false}\n                delay={0.1 + i * 0.05}\n                duration={0.5}\n              >\n                <Link\n                  href={item.href}\n                  className={cn(\n                    \"text-muted-foreground hover:text-brand relative text-sm font-medium transition-colors\",\n                    \"after:bg-brand after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 hover:after:w-full\",\n                    classNames.nav?.link\n                  )}\n                >\n                  {item.label}\n                </Link>\n              </ScrollFade>\n            ))}\n          </nav>\n\n          {/* Actions */}\n          <div className=\"flex items-center gap-3\">\n            {/* Quick Actions */}\n            <div className=\"hidden items-center gap-1 md:flex\">\n              <Button variant=\"ghost\" size=\"icon\" className=\"h-9 w-9\">\n                <DynamicIcon name=\"Search\" className=\"h-4 w-4\" />\n                <span className=\"sr-only\">Search</span>\n              </Button>\n              <Button variant=\"ghost\" size=\"icon\" className=\"h-9 w-9\">\n                <DynamicIcon name=\"Heart\" className=\"h-4 w-4\" />\n                <span className=\"sr-only\">Wishlist</span>\n              </Button>\n            </div>\n\n            {/* CTA */}\n            {cta && (\n              <ScrollFade scrollBased={false} delay={0.3} duration={0.5}>\n                <Button\n                  className={cn(\n                    \"bg-brand hover:bg-brand/90 shadow-md\",\n                    classNames.cta\n                  )}\n                  asChild\n                >\n                  <Link href={cta.href}>\n                    <DynamicIcon name=\"Calendar\" className=\"mr-2 h-4 w-4\" />\n                    {cta.label}\n                  </Link>\n                </Button>\n              </ScrollFade>\n            )}\n\n            {/* Mobile Menu */}\n            <Button variant=\"ghost\" size=\"icon\" className=\"h-9 w-9 lg:hidden\">\n              <DynamicIcon name=\"Menu\" className=\"h-5 w-5\" />\n              <span className=\"sr-only\">Menu</span>\n            </Button>\n          </div>\n        </div>\n      </div>\n    </header>\n  )\n}\n\nexport { Header15 as HeaderServiceTravel15 }\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "header",
+    "landing"
+  ],
+  "tier": "free",
+  "readiness": "alpha",
+  "blockConfig": {
+    "template": "service-travel",
+    "blockType": "header",
+    "order": 1,
+    "palette": "azure",
+    "typography": "modern",
+    "tint": "tinted",
+    "forceLight": true
+  }
+}

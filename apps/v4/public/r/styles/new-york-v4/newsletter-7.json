@@ -1,0 +1,31 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "newsletter-7",
+  "type": "registry:block",
+  "description": "Minimal inline travel newsletter with destination updates",
+  "registryDependencies": [
+    "button",
+    "input"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/newsletter/newsletter-7.tsx",
+      "content": "\"use client\"\n\nimport { DynamicIcon } from \"@/lib/blocks/dynamic-icon\"\nimport { cn } from \"@/lib/utils\"\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\nimport { Input } from \"@/registry/new-york-v4/ui/input\"\n\ninterface NewsletterBlockProps {\n  content?: {\n    title?: string\n    placeholder?: string\n    buttonLabel?: string\n  }\n  classNames?: {\n    root?: string\n    container?: string\n  }\n}\n\nconst newsletter7Defaults = {\n  title: \"Get exclusive travel deals in your inbox\",\n  placeholder: \"Enter your email\",\n  buttonLabel: \"Subscribe\",\n}\n\nexport function Newsletter7({\n  content = {},\n  classNames = {},\n}: NewsletterBlockProps) {\n  const {\n    title = newsletter7Defaults.title,\n    placeholder = newsletter7Defaults.placeholder,\n    buttonLabel = newsletter7Defaults.buttonLabel,\n  } = content\n\n  return (\n    <section className={cn(\"bg-muted\", classNames.root)}>\n      <div className={cn(\"container px-6 py-8\", classNames.container)}>\n        <div className=\"flex flex-col items-center justify-between gap-4 md:flex-row\">\n          <div className=\"flex items-center gap-3\">\n            <div className=\"bg-primary/10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full\">\n              <DynamicIcon name=\"Plane\" className=\"text-primary h-5 w-5\" />\n            </div>\n            <p className=\"text-foreground text-lg font-medium\">{title}</p>\n          </div>\n          <div className=\"flex w-full max-w-md gap-2\">\n            <Input\n              type=\"email\"\n              placeholder={placeholder}\n              className=\"bg-background h-11\"\n            />\n            <Button className=\"group h-11 shrink-0\">\n              {buttonLabel}\n              <DynamicIcon\n                name=\"ArrowRight\"\n                className=\"ml-2 h-4 w-4 transition-transform group-hover:translate-x-1\"\n              />\n            </Button>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "newsletter",
+    "landing"
+  ],
+  "tier": "free",
+  "readiness": "alpha",
+  "blockConfig": {
+    "template": "service-travel",
+    "blockType": "newsletter",
+    "order": 14,
+    "palette": "azure",
+    "typography": "modern",
+    "tint": "deep"
+  }
+}

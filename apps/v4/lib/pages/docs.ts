@@ -7,14 +7,9 @@ import { absoluteUrl } from "@/lib/utils"
 export type DocsItemType = "components" | "animations"
 
 export function generateDocsStaticParams() {
-  const hideAlpha = process.env.HIDE_ALPHA_ITEMS === "true"
   const allParams = source.generateParams()
 
-  if (!hideAlpha) {
-    return allParams
-  }
-
-  // Filter out alpha components and animations
+  // Always filter out alpha components and animations
   return allParams.filter((param) => {
     const slug = param.slug
     if (!slug || slug.length < 2) return true
@@ -194,7 +189,6 @@ export function generateDocsItemStaticParams(type: DocsItemType) {
     return []
   }
 
-  const hideAlpha = process.env.HIDE_ALPHA_ITEMS === "true"
   const paramKey = type === "components" ? "component" : "animation"
 
   return folder.children
@@ -205,7 +199,7 @@ export function generateDocsItemStaticParams(type: DocsItemType) {
       return { [paramKey]: itemName }
     })
     .filter((param) => {
-      if (!hideAlpha) return true
+      // Always hide alpha items
       const itemName = param[paramKey]
       const registryItem = getItemByName(itemName)
       return registryItem?.readiness !== "alpha"

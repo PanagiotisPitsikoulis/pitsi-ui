@@ -1,0 +1,27 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "logos-12",
+  "type": "registry:block",
+  "description": "Travel partners two-row layout with categories",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/logos/logos-12.tsx",
+      "content": "\"use client\"\n\nimport { Building2, MapPin, Plane, Ship } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { BlockHeader } from \"@/registry/new-york-v4/lib/block-header\"\n\ninterface LogosBlockProps {\n  content?: {\n    title?: string\n    description?: string\n    categories?: Array<{\n      name: string\n      icon: \"plane\" | \"building\" | \"ship\" | \"map\"\n      logos: Array<{ name: string }>\n    }>\n  }\n  classNames?: {\n    root?: string\n    container?: string\n    header?: { title?: string; description?: string }\n  }\n}\n\nconst logos12Defaults = {\n  title: \"Our Network of Partners\",\n  description:\n    \"Partnering with the best across every aspect of travel to ensure your journey is exceptional.\",\n  categories: [\n    {\n      name: \"Airlines\",\n      icon: \"plane\" as const,\n      logos: [\n        { name: \"SkyWings Airlines\" },\n        { name: \"Pacific Airways\" },\n        { name: \"Global Air\" },\n        { name: \"Azure Flights\" },\n      ],\n    },\n    {\n      name: \"Hotels & Resorts\",\n      icon: \"building\" as const,\n      logos: [\n        { name: \"Grand Hotels\" },\n        { name: \"Alpine Resorts\" },\n        { name: \"Coastal Retreats\" },\n        { name: \"Urban Stays\" },\n      ],\n    },\n    {\n      name: \"Cruise Lines\",\n      icon: \"ship\" as const,\n      logos: [\n        { name: \"Ocean Cruise Lines\" },\n        { name: \"River Voyages\" },\n        { name: \"Yacht Charters\" },\n        { name: \"Island Hopper\" },\n      ],\n    },\n    {\n      name: \"Tour Operators\",\n      icon: \"map\" as const,\n      logos: [\n        { name: \"Wanderlust Tours\" },\n        { name: \"Safari Expeditions\" },\n        { name: \"Cultural Journeys\" },\n        { name: \"Adventure Co\" },\n      ],\n    },\n  ],\n}\n\nconst iconMap = {\n  plane: Plane,\n  building: Building2,\n  ship: Ship,\n  map: MapPin,\n}\n\nexport function Logos12({ content = {}, classNames = {} }: LogosBlockProps) {\n  const {\n    title = logos12Defaults.title,\n    description = logos12Defaults.description,\n    categories = logos12Defaults.categories,\n  } = content\n\n  return (\n    <section className={cn(\"bg-muted\", classNames.root)}>\n      <div\n        className={cn(\"container px-6 py-16 md:py-24\", classNames.container)}\n      >\n        <BlockHeader\n          title={title}\n          description={description}\n          spacing=\"compact\"\n          classNames={classNames.header}\n        />\n\n        <div className=\"grid gap-8 md:grid-cols-2\">\n          {categories.map((category, i) => {\n            const IconComponent = iconMap[category.icon]\n            return (\n              <div\n                key={i}\n                className=\"bg-background border-border rounded-xl border p-6\"\n              >\n                <div className=\"mb-4 flex items-center gap-3\">\n                  <div className=\"bg-primary/10 flex h-10 w-10 items-center justify-center rounded-lg\">\n                    <IconComponent className=\"text-primary h-5 w-5\" />\n                  </div>\n                  <h3 className=\"text-foreground font-semibold\">\n                    {category.name}\n                  </h3>\n                </div>\n                <div className=\"grid grid-cols-2 gap-3\">\n                  {category.logos.map((logo, j) => (\n                    <div\n                      key={j}\n                      className=\"bg-muted hover:bg-muted/80 flex items-center justify-center rounded-lg px-4 py-3 transition-colors\"\n                    >\n                      <span className=\"text-muted-foreground hover:text-foreground text-center text-sm font-medium tracking-wide transition-colors\">\n                        {logo.name}\n                      </span>\n                    </div>\n                  ))}\n                </div>\n              </div>\n            )\n          })}\n        </div>\n\n        {/* Stats */}\n        <div className=\"border-border mt-12 grid grid-cols-2 gap-6 border-t pt-12 md:grid-cols-4\">\n          {[\n            { value: \"200+\", label: \"Partner Airlines\" },\n            { value: \"5,000+\", label: \"Hotel Partners\" },\n            { value: \"150+\", label: \"Countries Covered\" },\n            { value: \"1M+\", label: \"Travelers Served\" },\n          ].map((stat, i) => (\n            <div key={i} className=\"text-center\">\n              <p className=\"text-primary text-2xl font-bold md:text-3xl\">\n                {stat.value}\n              </p>\n              <p className=\"text-muted-foreground mt-1 text-sm\">{stat.label}</p>\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "logos",
+    "landing"
+  ],
+  "tier": "free",
+  "readiness": "alpha",
+  "blockConfig": {
+    "template": "service-travel",
+    "blockType": "logos",
+    "order": 3,
+    "palette": "azure",
+    "typography": "modern",
+    "tint": "deep"
+  }
+}

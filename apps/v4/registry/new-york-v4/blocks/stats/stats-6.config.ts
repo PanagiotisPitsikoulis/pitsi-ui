@@ -6,7 +6,7 @@ export const registryConfig: RegistryItemConfig = {
   description: "Before/after comparison stats",
   categories: ["stats", "landing"],
   tier: "free",
-  readiness: "production",
+  readiness: "alpha",
   blockConfig: {
     template: "service-plants",
     blockType: "stats",

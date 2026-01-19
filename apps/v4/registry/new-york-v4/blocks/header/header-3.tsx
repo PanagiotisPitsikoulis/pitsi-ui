@@ -46,7 +46,7 @@ export function Header3({ content = {}, classNames = {} }: HeaderBlockProps) {
         "fixed top-0 right-0 left-0 z-50 transition-all duration-300",
         isScrolled
           ? "bg-background/95 border-border h-16 border-b shadow-sm"
-          : "bg-transparent h-20",
+          : "h-20 bg-transparent",
         classNames.root
       )}
     >
@@ -80,7 +80,7 @@ export function Header3({ content = {}, classNames = {} }: HeaderBlockProps) {
         {/* Navigation */}
         <nav
           className={cn(
-            "hidden items-center md:flex transition-all duration-300",
+            "hidden items-center transition-all duration-300 md:flex",
             isScrolled ? "gap-5" : "gap-8",
             classNames.nav?.root
           )}

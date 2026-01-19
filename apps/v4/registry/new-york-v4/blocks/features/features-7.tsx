@@ -514,7 +514,12 @@ export function Features7({
             </div>
 
             {/* Schedule List */}
-            <div className={cn("space-y-3 max-h-[400px] overflow-y-auto pr-2", classNames.grid)}>
+            <div
+              className={cn(
+                "max-h-[400px] space-y-3 overflow-y-auto pr-2",
+                classNames.grid
+              )}
+            >
               {weekSchedule[selectedDay].classes.map((classItem) => (
                 <div
                   key={classItem.id}

@@ -8,7 +8,7 @@ export const registryConfig: RegistryItemConfig = {
   registryDependencies: ["button", "card", "utils"],
   categories: ["application"],
   tier: "free",
-  readiness: "beta",
+  readiness: "alpha",
   blockConfig: {
     template: "app-quiz",
     blockType: "view",

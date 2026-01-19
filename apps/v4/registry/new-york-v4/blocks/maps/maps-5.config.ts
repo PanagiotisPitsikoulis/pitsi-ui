@@ -14,7 +14,7 @@ export const registryConfig: RegistryItemConfig = {
   registryDependencies: ["map", "badge", "button"],
   categories: ["maps"],
   tier: "free",
-  readiness: "production",
+  readiness: "alpha",
   blockConfig: {
     template: "standalone",
     blockType: "maps",

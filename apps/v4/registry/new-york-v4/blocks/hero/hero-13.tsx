@@ -52,7 +52,7 @@ export function Hero13({ content = {}, classNames = {} }: HeroBlockProps) {
       )}
     >
       {/* Two-column layout */}
-      <div className="container relative z-10 grid flex-1 lg:grid-cols-2">
+      <div className="relative z-10 container grid flex-1 lg:grid-cols-2">
         {/* Left - Text Content */}
         <div className="flex flex-col justify-center px-4 py-12 lg:pr-12">
           <HeroText
@@ -116,12 +116,7 @@ export function Hero13({ content = {}, classNames = {} }: HeroBlockProps) {
 
       {/* Mobile Image */}
       <div className="relative h-64 lg:hidden">
-        <Image
-          src={image.src}
-          alt={image.alt}
-          fill
-          className="object-cover"
-        />
+        <Image src={image.src} alt={image.alt} fill className="object-cover" />
       </div>
     </section>
   )

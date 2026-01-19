@@ -2621,7 +2621,7 @@
         "auth"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-library",
         "blockType": "application",
@@ -2654,7 +2654,7 @@
         "docs"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-library",
         "blockType": "application",
@@ -2685,7 +2685,7 @@
         "blog"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-library",
         "blockType": "application",
@@ -2716,7 +2716,7 @@
         "blog"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-library",
         "blockType": "application",
@@ -2746,7 +2746,7 @@
         "docs"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-library",
         "blockType": "application",
@@ -2776,7 +2776,7 @@
         "dashboard"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-library",
         "blockType": "application",
@@ -2805,7 +2805,7 @@
         "docs"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-library",
         "blockType": "application",
@@ -2836,7 +2836,7 @@
         "application"
       ],
       "tier": "free",
-      "readiness": "beta",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "app-gym-tracker",
         "blockType": "view",
@@ -2868,7 +2868,7 @@
         "application"
       ],
       "tier": "free",
-      "readiness": "beta",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "app-gym-tracker",
         "blockType": "view",
@@ -2900,7 +2900,7 @@
         "application"
       ],
       "tier": "free",
-      "readiness": "beta",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "app-gym-tracker",
         "blockType": "view",
@@ -2933,7 +2933,7 @@
         "application"
       ],
       "tier": "free",
-      "readiness": "beta",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "app-gym-tracker",
         "blockType": "view",
@@ -2971,7 +2971,7 @@
         "application"
       ],
       "tier": "free",
-      "readiness": "beta",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "app-gym-tracker",
         "blockType": "view",
@@ -3006,7 +3006,7 @@
         "application"
       ],
       "tier": "free",
-      "readiness": "beta",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "app-gym-tracker",
         "blockType": "shell",
@@ -3038,7 +3038,7 @@
         "application"
       ],
       "tier": "free",
-      "readiness": "beta",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "app-gym-tracker",
         "blockType": "view",
@@ -3071,7 +3071,7 @@
         "application"
       ],
       "tier": "free",
-      "readiness": "beta",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "app-quiz",
         "blockType": "view",
@@ -3106,7 +3106,7 @@
         "application"
       ],
       "tier": "free",
-      "readiness": "beta",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "app-quiz",
         "blockType": "view",
@@ -3139,7 +3139,7 @@
         "application"
       ],
       "tier": "free",
-      "readiness": "beta",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "app-quiz",
         "blockType": "view",
@@ -3173,7 +3173,7 @@
         "application"
       ],
       "tier": "free",
-      "readiness": "beta",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "app-quiz",
         "blockType": "view",
@@ -3212,7 +3212,7 @@
         "application"
       ],
       "tier": "free",
-      "readiness": "beta",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "app-quiz",
         "blockType": "view",
@@ -3245,7 +3245,7 @@
         "application"
       ],
       "tier": "free",
-      "readiness": "beta",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "app-quiz",
         "blockType": "shell",
@@ -3281,7 +3281,7 @@
         "dashboard"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-library",
         "blockType": "application",
@@ -3316,7 +3316,7 @@
         "tools"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-library",
         "blockType": "application",
@@ -3345,7 +3345,7 @@
         "auth"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "standalone",
         "blockType": "auth",
@@ -3375,7 +3375,7 @@
         "auth"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "standalone",
         "blockType": "auth",
@@ -3404,7 +3404,7 @@
         "auth"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "standalone",
         "blockType": "auth",
@@ -3433,7 +3433,7 @@
         "auth"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "standalone",
         "blockType": "auth",
@@ -3462,7 +3462,7 @@
         "auth"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "standalone",
         "blockType": "auth",
@@ -3492,7 +3492,7 @@
         "auth"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "standalone",
         "blockType": "auth",
@@ -3528,6 +3528,81 @@
       }
     },
     {
+      "name": "blog-10",
+      "type": "registry:block",
+      "description": "Minimalist travel tips blog section with text-focused list layout and category filters",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/blog/blog-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "blog",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "blog",
+        "order": 12,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "blog-11",
+      "type": "registry:block",
+      "description": "Travel stories blog section with masonry-style grid layout and immersive imagery",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/blog/blog-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "blog",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "blog",
+        "order": 12,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "blog-12",
+      "type": "registry:block",
+      "description": "Travel resources blog section with list layout, sidebar newsletter, and resource categories",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/blog/blog-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "blog",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "blog",
+        "order": 12,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
       "name": "blog-2",
       "type": "registry:block",
       "description": "Featured post with 3-column grid and read time badges",
@@ -3545,7 +3620,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "blog",
@@ -3570,7 +3645,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "blog",
@@ -3598,7 +3673,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "blog",
@@ -3623,7 +3698,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "blog",
@@ -3652,13 +3727,88 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "blog",
         "order": 12,
         "palette": "sage",
         "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "blog-7",
+      "type": "registry:block",
+      "description": "Travel blog section with featured destination hero and card grid",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/blog/blog-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "blog",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "blog",
+        "order": 12,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "blog-8",
+      "type": "registry:block",
+      "description": "Travel blog section with horizontal scrolling carousel for packing tips and travel guides",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/blog/blog-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "blog",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "blog",
+        "order": 12,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "blog-9",
+      "type": "registry:block",
+      "description": "Travel blog section with magazine-style layout featuring large hero and destination guides sidebar",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/blog/blog-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "blog",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "blog",
+        "order": 12,
+        "palette": "azure",
+        "typography": "modern",
         "tint": "tinted"
       }
     },
@@ -3685,15 +3835,7 @@
         "pages"
       ],
       "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "blog-post",
-        "order": 1,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
+      "readiness": "alpha"
     },
     {
       "name": "blog-post-2",
@@ -3718,15 +3860,7 @@
         "pages"
       ],
       "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-travel",
-        "blockType": "blog-post",
-        "order": 1,
-        "palette": "azure",
-        "typography": "modern",
-        "tint": "tinted"
-      }
+      "readiness": "alpha"
     },
     {
       "name": "blog-post-3",
@@ -3751,15 +3885,7 @@
         "pages"
       ],
       "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-boat",
-        "blockType": "blog-post",
-        "order": 1,
-        "palette": "azure",
-        "typography": "classic",
-        "tint": "tinted"
-      }
+      "readiness": "alpha"
     },
     {
       "name": "blog-post-4",
@@ -3784,15 +3910,7 @@
         "pages"
       ],
       "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-fitness",
-        "blockType": "blog-post",
-        "order": 1,
-        "palette": "neon",
-        "typography": "futuristic",
-        "tint": "tinted"
-      }
+      "readiness": "alpha"
     },
     {
       "name": "blog-post-5",
@@ -3817,15 +3935,7 @@
         "pages"
       ],
       "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-library",
-        "blockType": "blog-post",
-        "order": 1,
-        "palette": "slate",
-        "typography": "modern",
-        "tint": "tinted"
-      }
+      "readiness": "alpha"
     },
     {
       "name": "contact-1",
@@ -3863,6 +3973,98 @@
       }
     },
     {
+      "name": "contact-10",
+      "type": "registry:block",
+      "description": "Travel agency office locations with global presence",
+      "registryDependencies": [
+        "button",
+        "block-header"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/contact/contact-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "contact",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "contact",
+        "order": 13,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "contact-11",
+      "type": "registry:block",
+      "description": "Travel inquiry form with trip type selection",
+      "registryDependencies": [
+        "button",
+        "input",
+        "textarea",
+        "block-header",
+        "select"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/contact/contact-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "contact",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "contact",
+        "order": 13,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "contact-12",
+      "type": "registry:block",
+      "description": "Travel emergency support and FAQ contact section",
+      "registryDependencies": [
+        "button",
+        "input",
+        "block-header",
+        "accordion"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/contact/contact-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "contact",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "contact",
+        "order": 13,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
       "name": "contact-2",
       "type": "registry:block",
       "description": "Contact form with map placeholder and location info",
@@ -3882,7 +4084,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "contact",
@@ -3910,7 +4112,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "contact",
@@ -3941,7 +4143,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "contact",
@@ -3971,7 +4173,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "contact",
@@ -3999,13 +4201,103 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "contact",
         "order": 13,
         "palette": "sage",
         "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "contact-7",
+      "type": "registry:block",
+      "description": "Travel agency contact form with destinations map",
+      "registryDependencies": [
+        "button",
+        "input",
+        "textarea",
+        "block-header"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/contact/contact-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "contact",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "contact",
+        "order": 13,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "contact-8",
+      "type": "registry:block",
+      "description": "Travel consultation split layout with booking support",
+      "registryDependencies": [
+        "button",
+        "input",
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/contact/contact-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "contact",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "contact",
+        "order": 13,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "contact-9",
+      "type": "registry:block",
+      "description": "Minimal travel inquiry form with channel options",
+      "registryDependencies": [
+        "button",
+        "block-header"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/contact/contact-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "contact",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "contact",
+        "order": 13,
+        "palette": "azure",
+        "typography": "modern",
         "tint": "tinted"
       }
     },
@@ -4038,6 +4330,118 @@
       }
     },
     {
+      "name": "cta-10",
+      "type": "registry:block",
+      "description": "Travel CTA with centered card and scroll scale animation",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/cta/cta-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "cta",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "cta",
+        "order": 15,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "cta-11",
+      "type": "registry:block",
+      "description": "Minimal travel CTA with gradient background",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/cta/cta-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "cta",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "cta",
+        "order": 15,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "cta-12",
+      "type": "registry:block",
+      "description": "Travel CTA with sticky reveal footer banner",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/cta/cta-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "cta",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "cta",
+        "order": 15,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "cta-13",
+      "type": "registry:block",
+      "description": "Travel CTA with email subscription and aurora background",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/cta/cta-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "cta",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "cta",
+        "order": 15,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
       "name": "cta-2",
       "type": "registry:block",
       "description": "Split layout CTA with image and gradient background",
@@ -4055,7 +4459,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "cta",
@@ -4083,7 +4487,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "cta",
@@ -4111,7 +4515,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "cta",
@@ -4139,7 +4543,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "cta",
@@ -4167,7 +4571,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "cta",
@@ -4196,7 +4600,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-library",
         "blockType": "cta",
@@ -4204,6 +4608,62 @@
         "palette": "slate",
         "typography": "modern",
         "tint": "base"
+      }
+    },
+    {
+      "name": "cta-8",
+      "type": "registry:block",
+      "description": "Travel CTA with full-width parallax background image",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/cta/cta-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "cta",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "cta",
+        "order": 15,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "cta-9",
+      "type": "registry:block",
+      "description": "Travel CTA with split layout and parallax image",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/cta/cta-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "cta",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "cta",
+        "order": 15,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
       }
     },
     {
@@ -4235,6 +4695,115 @@
       }
     },
     {
+      "name": "faq-10",
+      "type": "registry:block",
+      "description": "Searchable travel FAQ with real-time filtering and highlighting",
+      "registryDependencies": [
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/faq/faq-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "faq",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "faq",
+        "order": 11,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "faq-11",
+      "type": "registry:block",
+      "description": "Travel FAQ with side-by-side layout showing questions and answers",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/faq/faq-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "faq",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "faq",
+        "order": 11,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "faq-12",
+      "type": "registry:block",
+      "description": "Travel FAQ in a grid layout with icons for each question category",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/faq/faq-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "faq",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "faq",
+        "order": 11,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "faq-13",
+      "type": "registry:block",
+      "description": "Travel FAQ with accordion and contact support CTA section",
+      "registryDependencies": [
+        "accordion",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/faq/faq-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "faq",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "faq",
+        "order": 11,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
       "name": "faq-2",
       "type": "registry:block",
       "description": "Two column FAQ with questions left, answers right",
@@ -4249,7 +4818,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "faq",
@@ -4277,7 +4846,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "faq",
@@ -4302,7 +4871,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "faq",
@@ -4327,7 +4896,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "faq",
@@ -4355,7 +4924,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "faq",
@@ -4383,7 +4952,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-library",
         "blockType": "faq",
@@ -4391,6 +4960,62 @@
         "palette": "slate",
         "typography": "modern",
         "tint": "base"
+      }
+    },
+    {
+      "name": "faq-8",
+      "type": "registry:block",
+      "description": "Travel agency FAQ with clean accordion and azure theme",
+      "registryDependencies": [
+        "accordion"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/faq/faq-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "faq",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "faq",
+        "order": 11,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "faq-9",
+      "type": "registry:block",
+      "description": "Travel FAQ with category tabs for booking, visa, luggage, and payment",
+      "registryDependencies": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/faq/faq-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "faq",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "faq",
+        "order": 11,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
       }
     },
     {
@@ -4441,7 +5066,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-library",
         "blockType": "features",
@@ -4470,7 +5095,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-library",
         "blockType": "features",
@@ -4499,7 +5124,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-library",
         "blockType": "features",
@@ -4528,7 +5153,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-library",
         "blockType": "features",
@@ -4536,6 +5161,169 @@
         "palette": "slate",
         "typography": "modern",
         "tint": "base"
+      }
+    },
+    {
+      "name": "features-14",
+      "type": "registry:block",
+      "description": "Travel agency 3-column grid features with icons",
+      "registryDependencies": [
+        "block-header"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/features/features-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "features",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "features",
+        "order": 4,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "features-15",
+      "type": "registry:block",
+      "description": "Travel agency alternating image/text feature sections",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/features/features-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "features",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "features",
+        "order": 4,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "features-16",
+      "type": "registry:block",
+      "description": "Travel agency bento grid features layout",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/features/features-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "features",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "features",
+        "order": 4,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "features-17",
+      "type": "registry:block",
+      "description": "Travel agency horizontal scrolling cards features",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/features/features-17.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "features",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "features",
+        "order": 4,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "features-18",
+      "type": "registry:block",
+      "description": "Travel agency features with statistics and numbers",
+      "registryDependencies": [
+        "block-header"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/features/features-18.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "features",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "features",
+        "order": 4,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "features-19",
+      "type": "registry:block",
+      "description": "Travel agency tabbed interface for service categories",
+      "registryDependencies": [
+        "tabs",
+        "block-header"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/features/features-19.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "features",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "features",
+        "order": 4,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
       }
     },
     {
@@ -4668,7 +5456,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-fitness",
         "blockType": "features",
@@ -4697,7 +5485,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-fitness",
         "blockType": "features",
@@ -4725,7 +5513,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-fitness",
         "blockType": "features",
@@ -4754,7 +5542,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-library",
         "blockType": "features",
@@ -4817,7 +5605,7 @@
         "application"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-library",
         "blockType": "footer",
@@ -4825,6 +5613,165 @@
         "palette": "neutral",
         "typography": "modern",
         "tint": "base"
+      }
+    },
+    {
+      "name": "footer-11",
+      "type": "registry:block",
+      "description": "Travel agency footer with newsletter, destinations, and multi-column navigation",
+      "dependencies": [
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
+      ],
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/footer/footer-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "footer",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "footer",
+        "order": 20,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "footer-12",
+      "type": "registry:block",
+      "description": "Minimal centered travel footer with circular text animation and social links",
+      "dependencies": [
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/footer/footer-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "footer",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "footer",
+        "order": 20,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "footer-13",
+      "type": "registry:block",
+      "description": "Mega travel footer with destination showcase, trust badges, and comprehensive navigation",
+      "dependencies": [
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/footer/footer-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "footer",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "footer",
+        "order": 20,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "footer-14",
+      "type": "registry:block",
+      "description": "Travel footer with Aurora animation CTA section and modern navigation",
+      "dependencies": [
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/footer/footer-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "footer",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "footer",
+        "order": 20,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "footer-15",
+      "type": "registry:block",
+      "description": "Travel footer with gradient background and text gradient opacity animation",
+      "dependencies": [
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/footer/footer-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "footer",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "footer",
+        "order": 20,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
       }
     },
     {
@@ -4846,7 +5793,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-fitness",
         "blockType": "footer",
@@ -4871,7 +5818,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "footer",
@@ -4900,7 +5847,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "footer",
@@ -4929,7 +5876,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "footer",
@@ -4957,7 +5904,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "footer",
@@ -4986,7 +5933,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "footer",
@@ -5011,7 +5958,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "footer",
@@ -5040,7 +5987,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-library",
         "blockType": "footer",
@@ -5076,6 +6023,81 @@
       }
     },
     {
+      "name": "gallery-10",
+      "type": "registry:block",
+      "description": "Travel destination cards with parallax stacking effect and trip details",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/gallery/gallery-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "gallery",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "gallery",
+        "order": 8,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "gallery-11",
+      "type": "registry:block",
+      "description": "Travel full-screen zoom gallery with destination showcase",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/gallery/gallery-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "gallery",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "gallery",
+        "order": 8,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "gallery-12",
+      "type": "registry:block",
+      "description": "Travel category tabs with filterable destination gallery and booking cards",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/gallery/gallery-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "gallery",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "gallery",
+        "order": 8,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
       "name": "gallery-2",
       "type": "registry:block",
       "description": "Masonry gallery with lightbox",
@@ -5093,7 +6115,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "gallery",
@@ -5121,7 +6143,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "gallery",
@@ -5146,7 +6168,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "gallery",
@@ -5175,7 +6197,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "gallery",
@@ -5200,13 +6222,88 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "gallery",
         "order": 8,
         "palette": "sage",
         "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "gallery-7",
+      "type": "registry:block",
+      "description": "Travel destination masonry grid with zoom parallax effect",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/gallery/gallery-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "gallery",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "gallery",
+        "order": 8,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "gallery-8",
+      "type": "registry:block",
+      "description": "Travel horizontal scroll gallery with destination cards",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/gallery/gallery-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "gallery",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "gallery",
+        "order": 8,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "gallery-9",
+      "type": "registry:block",
+      "description": "Travel Instagram-style photo grid with lightbox and social features",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/gallery/gallery-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "gallery",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "gallery",
+        "order": 8,
+        "palette": "azure",
+        "typography": "modern",
         "tint": "tinted"
       }
     },
@@ -5263,7 +6360,7 @@
         "application"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-library",
         "blockType": "header",
@@ -5271,6 +6368,209 @@
         "palette": "neutral",
         "typography": "modern",
         "tint": "base"
+      }
+    },
+    {
+      "name": "header-11",
+      "type": "registry:block",
+      "description": "Travel agency header with centered logo and navigation",
+      "dependencies": [
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/header/header-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "header",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "header",
+        "order": 1,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted",
+        "forceLight": true
+      }
+    },
+    {
+      "name": "header-12",
+      "type": "registry:block",
+      "description": "Travel agency transparent header with sticky scroll behavior",
+      "dependencies": [
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/header/header-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "header",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "header",
+        "order": 1,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted",
+        "forceLight": true
+      }
+    },
+    {
+      "name": "header-13",
+      "type": "registry:block",
+      "description": "Travel agency header with mega menu dropdowns for destinations",
+      "dependencies": [
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
+      ],
+      "registryDependencies": [
+        "button",
+        "navigation-menu"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/header/header-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "header",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "header",
+        "order": 1,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted",
+        "forceLight": true
+      }
+    },
+    {
+      "name": "header-14",
+      "type": "registry:block",
+      "description": "Travel agency header with integrated search bar",
+      "dependencies": [
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
+      ],
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/header/header-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "header",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "header",
+        "order": 1,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted",
+        "forceLight": true
+      }
+    },
+    {
+      "name": "header-15",
+      "type": "registry:block",
+      "description": "Travel agency header with featured destination badge",
+      "dependencies": [
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
+      ],
+      "registryDependencies": [
+        "button",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/header/header-15.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "header",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "header",
+        "order": 1,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted",
+        "forceLight": true
+      }
+    },
+    {
+      "name": "header-16",
+      "type": "registry:block",
+      "description": "Travel agency header with user account dropdown",
+      "dependencies": [
+        "@hugeicons/react",
+        "@hugeicons/core-free-icons"
+      ],
+      "registryDependencies": [
+        "button",
+        "avatar",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/header/header-16.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "header",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "header",
+        "order": 1,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted",
+        "forceLight": true
       }
     },
     {
@@ -5291,7 +6591,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "header",
@@ -5320,7 +6620,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "header",
@@ -5349,7 +6649,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "header",
@@ -5378,7 +6678,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "header",
@@ -5409,7 +6709,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "header",
@@ -5438,7 +6738,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "header",
@@ -5467,7 +6767,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "header",
@@ -5496,7 +6796,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-fitness",
         "blockType": "header",
@@ -5704,7 +7004,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-travel",
         "blockType": "hero",
@@ -5733,7 +7033,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-travel",
         "blockType": "hero",
@@ -5762,7 +7062,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-travel",
         "blockType": "hero",
@@ -5791,7 +7091,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-travel",
         "blockType": "hero",
@@ -5820,7 +7120,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-travel",
         "blockType": "hero",
@@ -5853,7 +7153,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-travel",
         "blockType": "hero",
@@ -5883,7 +7183,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-boat",
         "blockType": "hero",
@@ -5912,7 +7212,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-boat",
         "blockType": "hero",
@@ -5941,7 +7241,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-boat",
         "blockType": "hero",
@@ -5970,7 +7270,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-boat",
         "blockType": "hero",
@@ -5999,7 +7299,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-boat",
         "blockType": "hero",
@@ -6028,7 +7328,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-library",
         "blockType": "hero",
@@ -6061,7 +7361,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-boat",
         "blockType": "hero",
@@ -6095,7 +7395,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-fitness",
         "blockType": "hero",
@@ -6128,7 +7428,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-fitness",
         "blockType": "hero",
@@ -6161,7 +7461,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-fitness",
         "blockType": "hero",
@@ -6190,7 +7490,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-fitness",
         "blockType": "hero",
@@ -6219,7 +7519,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-fitness",
         "blockType": "hero",
@@ -6248,7 +7548,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-fitness",
         "blockType": "hero",
@@ -6284,6 +7584,81 @@
       }
     },
     {
+      "name": "logos-10",
+      "type": "registry:block",
+      "description": "Travel agency featured in press section",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/logos/logos-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "logos",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "logos",
+        "order": 3,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "logos-11",
+      "type": "registry:block",
+      "description": "Travel partners carousel with descriptions",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/logos/logos-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "logos",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "logos",
+        "order": 3,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "logos-12",
+      "type": "registry:block",
+      "description": "Travel partners two-row layout with categories",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/logos/logos-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "logos",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "logos",
+        "order": 3,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "deep"
+      }
+    },
+    {
       "name": "logos-2",
       "type": "registry:block",
       "description": "Marquee logo cloud with infinite scroll animation",
@@ -6298,7 +7673,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "logos",
@@ -6323,7 +7698,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "logos",
@@ -6351,7 +7726,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "logos",
@@ -6376,7 +7751,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "logos",
@@ -6404,13 +7779,88 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "logos",
         "order": 3,
         "palette": "sage",
         "typography": "elegant",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "logos-7",
+      "type": "registry:block",
+      "description": "Travel partners and trusted brands showcase with grayscale logos",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/logos/logos-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "logos",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "logos",
+        "order": 3,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "logos-8",
+      "type": "registry:block",
+      "description": "Travel partners animated marquee ticker",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/logos/logos-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "logos",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "logos",
+        "order": 3,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "logos-9",
+      "type": "registry:block",
+      "description": "Travel partners grid layout with hover effects",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/logos/logos-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "logos",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "logos",
+        "order": 3,
+        "palette": "azure",
+        "typography": "modern",
         "tint": "deep"
       }
     },
@@ -6438,7 +7888,7 @@
         "maps"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "standalone",
         "blockType": "maps",
@@ -6472,7 +7922,7 @@
         "contact"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "standalone",
         "blockType": "maps",
@@ -6511,7 +7961,7 @@
         "maps"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "standalone",
         "blockType": "maps",
@@ -6549,7 +7999,7 @@
         "application"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "standalone",
         "blockType": "maps",
@@ -6587,7 +8037,7 @@
         "maps"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "standalone",
         "blockType": "maps",
@@ -6627,6 +8077,95 @@
       }
     },
     {
+      "name": "newsletter-10",
+      "type": "registry:block",
+      "description": "Split layout travel newsletter with travel perks",
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/newsletter/newsletter-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "newsletter",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "newsletter",
+        "order": 14,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "newsletter-11",
+      "type": "registry:block",
+      "description": "Centered travel newsletter with benefits badges",
+      "registryDependencies": [
+        "button",
+        "input",
+        "block-header"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/newsletter/newsletter-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "newsletter",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "newsletter",
+        "order": 14,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "newsletter-12",
+      "type": "registry:block",
+      "description": "Card-style travel newsletter with discount offer",
+      "registryDependencies": [
+        "button",
+        "input",
+        "block-header"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/newsletter/newsletter-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "newsletter",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "newsletter",
+        "order": 14,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "deep"
+      }
+    },
+    {
       "name": "newsletter-2",
       "type": "registry:block",
       "description": "Inline single horizontal row newsletter",
@@ -6645,7 +8184,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "newsletter",
@@ -6674,7 +8213,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "newsletter",
@@ -6703,7 +8242,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "newsletter",
@@ -6732,7 +8271,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "newsletter",
@@ -6761,13 +8300,100 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "newsletter",
         "order": 14,
         "palette": "sage",
         "typography": "elegant",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "newsletter-7",
+      "type": "registry:block",
+      "description": "Minimal inline travel newsletter with destination updates",
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/newsletter/newsletter-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "newsletter",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "newsletter",
+        "order": 14,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "newsletter-8",
+      "type": "registry:block",
+      "description": "Full-width travel newsletter banner with dark background",
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/newsletter/newsletter-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "newsletter",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "newsletter",
+        "order": 14,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "newsletter-9",
+      "type": "registry:block",
+      "description": "Travel newsletter with destination image and subscription form",
+      "registryDependencies": [
+        "button",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/newsletter/newsletter-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "newsletter",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "newsletter",
+        "order": 14,
+        "palette": "azure",
+        "typography": "modern",
         "tint": "deep"
       }
     },
@@ -6790,7 +8416,7 @@
         "error"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-library",
         "blockType": "pages",
@@ -6820,7 +8446,7 @@
         "blog"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-library",
         "blockType": "pages",
@@ -6849,7 +8475,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-library",
         "blockType": "pages",
@@ -6878,7 +8504,7 @@
         "error"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-library",
         "blockType": "pages",
@@ -6906,7 +8532,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-library",
         "blockType": "pages",
@@ -6936,7 +8562,7 @@
         "pricing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-library",
         "blockType": "pages",
@@ -6966,7 +8592,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-library",
         "blockType": "pages",
@@ -6996,7 +8622,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-library",
         "blockType": "pages",
@@ -7039,6 +8665,167 @@
       }
     },
     {
+      "name": "pricing-10",
+      "type": "registry:block",
+      "description": "Horizontal travel package cards with destination highlights",
+      "dependencies": [
+        "motion/react"
+      ],
+      "registryDependencies": [
+        "button",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/pricing/pricing-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "pricing",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "pricing",
+        "order": 6,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "pricing-11",
+      "type": "registry:block",
+      "description": "Travel tour comparison table with feature breakdown",
+      "dependencies": [
+        "motion/react"
+      ],
+      "registryDependencies": [
+        "button",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/pricing/pricing-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "pricing",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "pricing",
+        "order": 6,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "pricing-12",
+      "type": "registry:block",
+      "description": "Group tour pricing with group size tiers and savings",
+      "dependencies": [
+        "motion/react"
+      ],
+      "registryDependencies": [
+        "button",
+        "slider",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/pricing/pricing-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "pricing",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "pricing",
+        "order": 6,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "pricing-13",
+      "type": "registry:block",
+      "description": "Luxury travel tiers with standard vs enterprise comparison",
+      "dependencies": [
+        "motion/react"
+      ],
+      "registryDependencies": [
+        "button",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/pricing/pricing-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "pricing",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "pricing",
+        "order": 6,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "pricing-14",
+      "type": "registry:block",
+      "description": "Destination-based travel packages with visual cards and seasonal pricing",
+      "dependencies": [
+        "motion/react"
+      ],
+      "registryDependencies": [
+        "button",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/pricing/pricing-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "pricing",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "pricing",
+        "order": 6,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
       "name": "pricing-2",
       "type": "registry:block",
       "description": "Fitness membership pricing with tiers, features, and popular badge",
@@ -7057,7 +8844,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-fitness",
         "blockType": "pricing",
@@ -7085,7 +8872,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "pricing",
@@ -7114,7 +8901,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "pricing",
@@ -7142,7 +8929,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "pricing",
@@ -7171,7 +8958,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "pricing",
@@ -7199,7 +8986,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "pricing",
@@ -7231,7 +9018,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-library",
         "blockType": "pricing",
@@ -7239,6 +9026,39 @@
         "palette": "slate",
         "typography": "modern",
         "tint": "base"
+      }
+    },
+    {
+      "name": "pricing-9",
+      "type": "registry:block",
+      "description": "Travel package pricing with monthly/yearly toggle and 3-tier comparison",
+      "dependencies": [
+        "motion/react"
+      ],
+      "registryDependencies": [
+        "button",
+        "switch",
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/pricing/pricing-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "pricing",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "pricing",
+        "order": 6,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
       }
     },
     {
@@ -7270,6 +9090,90 @@
       }
     },
     {
+      "name": "products-10",
+      "type": "registry:block",
+      "description": "Tour packages grid with category filtering and slide-up animations",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/products/products-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "products",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "products",
+        "order": 5,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "products-11",
+      "type": "registry:block",
+      "description": "Travel bundle packages with pricing tiers and scroll scale animations",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/products/products-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "products",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "products",
+        "order": 5,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "products-12",
+      "type": "registry:block",
+      "description": "Adventure travel categories with expanding cards and scroll animation",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/products/products-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "products",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "products",
+        "order": 5,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
       "name": "products-2",
       "type": "registry:block",
       "description": "Product card grid with rating, price, add to cart",
@@ -7287,7 +9191,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "products",
@@ -7315,7 +9219,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "products",
@@ -7343,7 +9247,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "products",
@@ -7371,7 +9275,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "products",
@@ -7399,13 +9303,98 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "products",
         "order": 5,
         "palette": "sage",
         "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "products-7",
+      "type": "registry:block",
+      "description": "Travel destination cards grid with fade-in animations showcasing exotic locations",
+      "registryDependencies": [
+        "button",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/products/products-7.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "products",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "products",
+        "order": 5,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "products-8",
+      "type": "registry:block",
+      "description": "Featured tour packages with zoom parallax effect and hero layout",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/products/products-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "products",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "products",
+        "order": 5,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "products-9",
+      "type": "registry:block",
+      "description": "Travel deals stacking cards with parallax scroll effect for limited offers",
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/products/products-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "products",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "products",
+        "order": 5,
+        "palette": "azure",
+        "typography": "modern",
         "tint": "tinted"
       }
     },
@@ -7432,15 +9421,7 @@
         "pages"
       ],
       "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-plants",
-        "blockType": "search",
-        "order": 1,
-        "palette": "sage",
-        "typography": "elegant",
-        "tint": "tinted"
-      }
+      "readiness": "alpha"
     },
     {
       "name": "search-2",
@@ -7465,15 +9446,7 @@
         "pages"
       ],
       "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-travel",
-        "blockType": "search",
-        "order": 1,
-        "palette": "azure",
-        "typography": "modern",
-        "tint": "tinted"
-      }
+      "readiness": "alpha"
     },
     {
       "name": "search-3",
@@ -7498,15 +9471,7 @@
         "pages"
       ],
       "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-boat",
-        "blockType": "search",
-        "order": 1,
-        "palette": "azure",
-        "typography": "classic",
-        "tint": "tinted"
-      }
+      "readiness": "alpha"
     },
     {
       "name": "search-4",
@@ -7531,15 +9496,7 @@
         "pages"
       ],
       "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-fitness",
-        "blockType": "search",
-        "order": 1,
-        "palette": "neon",
-        "typography": "futuristic",
-        "tint": "tinted"
-      }
+      "readiness": "alpha"
     },
     {
       "name": "search-5",
@@ -7564,15 +9521,7 @@
         "pages"
       ],
       "tier": "free",
-      "readiness": "production",
-      "blockConfig": {
-        "template": "service-library",
-        "blockType": "search",
-        "order": 1,
-        "palette": "slate",
-        "typography": "modern",
-        "tint": "tinted"
-      }
+      "readiness": "alpha"
     },
     {
       "name": "stats-1",
@@ -7600,6 +9549,131 @@
       }
     },
     {
+      "name": "stats-10",
+      "type": "registry:block",
+      "description": "Travel statistics with animated counters and descriptions",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/stats/stats-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "stats",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "stats",
+        "order": 10,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "stats-11",
+      "type": "registry:block",
+      "description": "Travel statistics with horizontal progress bars",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/stats/stats-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "stats",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "stats",
+        "order": 10,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "stats-12",
+      "type": "registry:block",
+      "description": "Travel statistics with gradient cards and icons",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/stats/stats-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "stats",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "stats",
+        "order": 10,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "stats-13",
+      "type": "registry:block",
+      "description": "Travel statistics with full-width banner and large numbers",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/stats/stats-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "stats",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "stats",
+        "order": 10,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "stats-14",
+      "type": "registry:block",
+      "description": "Travel statistics with two-column layout and detailed descriptions",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/stats/stats-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "stats",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "stats",
+        "order": 10,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "deep"
+      }
+    },
+    {
       "name": "stats-2",
       "type": "registry:block",
       "description": "Animated gym statistics with number counters and highlight section",
@@ -7617,7 +9691,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-fitness",
         "blockType": "stats",
@@ -7642,7 +9716,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "stats",
@@ -7667,7 +9741,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "stats",
@@ -7692,7 +9766,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "stats",
@@ -7717,7 +9791,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "stats",
@@ -7742,7 +9816,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "stats",
@@ -7767,7 +9841,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-library",
         "blockType": "stats",
@@ -7775,6 +9849,31 @@
         "palette": "slate",
         "typography": "modern",
         "tint": "tinted"
+      }
+    },
+    {
+      "name": "stats-9",
+      "type": "registry:block",
+      "description": "Travel statistics with icons and fade animation",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/stats/stats-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "stats",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "stats",
+        "order": 10,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "deep"
       }
     },
     {
@@ -7803,6 +9902,106 @@
       }
     },
     {
+      "name": "team-10",
+      "type": "registry:block",
+      "description": "Travel agency featured leader with team grid",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/team/team-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "team",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "team",
+        "order": 9,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "team-11",
+      "type": "registry:block",
+      "description": "Travel agency destination specialists with accordion bios",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/team/team-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "team",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "team",
+        "order": 9,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "team-12",
+      "type": "registry:block",
+      "description": "Travel agency regional experts with world map style layout",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/team/team-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "team",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "team",
+        "order": 9,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "team-13",
+      "type": "registry:block",
+      "description": "Travel agency storytellers and photographers magazine-style layout",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/team/team-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "team",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "team",
+        "order": 9,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
       "name": "team-2",
       "type": "registry:block",
       "description": "Coach profiles with specialties, certifications, and social links",
@@ -7820,7 +10019,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-fitness",
         "blockType": "team",
@@ -7845,7 +10044,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "team",
@@ -7870,7 +10069,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "team",
@@ -7898,7 +10097,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "team",
@@ -7923,7 +10122,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "team",
@@ -7948,13 +10147,63 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "team",
         "order": 9,
         "palette": "sage",
         "typography": "elegant",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "team-8",
+      "type": "registry:block",
+      "description": "Travel agency team grid with destination badges",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/team/team-8.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "team",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "team",
+        "order": 9,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "tinted"
+      }
+    },
+    {
+      "name": "team-9",
+      "type": "registry:block",
+      "description": "Travel agency tour guides carousel showcase",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/team/team-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "team",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "team",
+        "order": 9,
+        "palette": "azure",
+        "typography": "modern",
         "tint": "tinted"
       }
     },
@@ -7987,6 +10236,131 @@
       }
     },
     {
+      "name": "testimonials-10",
+      "type": "registry:block",
+      "description": "Travel testimonials carousel with featured destination spotlight",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/testimonials/testimonials-10.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "testimonials",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "testimonials",
+        "order": 7,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "testimonials-11",
+      "type": "registry:block",
+      "description": "Travel testimonials masonry layout with trip photos",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/testimonials/testimonials-11.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "testimonials",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "testimonials",
+        "order": 7,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "testimonials-12",
+      "type": "registry:block",
+      "description": "Travel video testimonials with play buttons and traveler stories",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/testimonials/testimonials-12.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "testimonials",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "testimonials",
+        "order": 7,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "testimonials-13",
+      "type": "registry:block",
+      "description": "Featured single traveler spotlight with journey timeline",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/testimonials/testimonials-13.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "testimonials",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "testimonials",
+        "order": 7,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "deep"
+      }
+    },
+    {
+      "name": "testimonials-14",
+      "type": "registry:block",
+      "description": "Travel testimonials marquee wall with infinite scrolling cards",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/testimonials/testimonials-14.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "testimonials",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "testimonials",
+        "order": 7,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "deep"
+      }
+    },
+    {
       "name": "testimonials-2",
       "type": "registry:block",
       "description": "Member testimonials with transformation stats and star ratings",
@@ -8004,7 +10378,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-fitness",
         "blockType": "testimonials",
@@ -8032,7 +10406,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "testimonials",
@@ -8057,7 +10431,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "testimonials",
@@ -8082,7 +10456,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "testimonials",
@@ -8110,7 +10484,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "testimonials",
@@ -8135,7 +10509,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-plants",
         "blockType": "testimonials",
@@ -8160,7 +10534,7 @@
         "landing"
       ],
       "tier": "free",
-      "readiness": "production",
+      "readiness": "alpha",
       "blockConfig": {
         "template": "service-library",
         "blockType": "testimonials",
@@ -8168,6 +10542,31 @@
         "palette": "slate",
         "typography": "modern",
         "tint": "base"
+      }
+    },
+    {
+      "name": "testimonials-9",
+      "type": "registry:block",
+      "description": "Travel agency testimonials with destination cards grid",
+      "files": [
+        {
+          "path": "registry/new-york-v4/blocks/testimonials/testimonials-9.tsx",
+          "type": "registry:block"
+        }
+      ],
+      "categories": [
+        "testimonials",
+        "landing"
+      ],
+      "tier": "free",
+      "readiness": "alpha",
+      "blockConfig": {
+        "template": "service-travel",
+        "blockType": "testimonials",
+        "order": 7,
+        "palette": "azure",
+        "typography": "modern",
+        "tint": "deep"
       }
     },
     {

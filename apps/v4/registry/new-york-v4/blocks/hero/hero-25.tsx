@@ -114,7 +114,7 @@ export function Hero25({ content = {}, classNames = {} }: HeroBlockProps) {
               </FuzzyText>
             ) : (
               <h1
-                className="cursor-pointer font-heading text-[clamp(3rem,10vw,6rem)] font-bold tracking-tight"
+                className="font-heading cursor-pointer text-[clamp(3rem,10vw,6rem)] font-bold tracking-tight"
                 style={{ lineHeight: 1.1 }}
               >
                 {title}
@@ -172,7 +172,7 @@ export function Hero25({ content = {}, classNames = {} }: HeroBlockProps) {
           scrollBased={true}
           className="mx-auto mt-16 w-full max-w-2xl"
         >
-          <div className="bg-neutral-950 overflow-hidden rounded-xl border border-neutral-800 shadow-2xl">
+          <div className="overflow-hidden rounded-xl border border-neutral-800 bg-neutral-950 shadow-2xl">
             {/* Terminal header */}
             <div className="flex items-center gap-2 border-b border-neutral-800 bg-neutral-900 px-4 py-3">
               <div className="size-3 rounded-full bg-red-500/80" />

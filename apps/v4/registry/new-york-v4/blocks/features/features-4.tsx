@@ -5,7 +5,7 @@ import Image from "next/image"
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { type FeaturesBlockProps } from "@/lib/blocks/features.types"
 import { cn } from "@/lib/utils"
-import { useBlockContext } from "@/app/(app)/(content)/(blocks)/_components"
+import Stack from "@/registry/new-york-v4/animations/stack/stack"
 
 // Block-specific defaults
 const features4Defaults = {
@@ -52,23 +52,40 @@ const features4Defaults = {
     src: "/elements/subject/plants/item-3.webp",
     alt: "Featured plant",
   },
+  // Additional images for the stack
+  stackImages: [
+    "/elements/landscape/plants/1.webp",
+    "/elements/landscape/plants/2.webp",
+    "/elements/landscape/plants/3.webp",
+    "/elements/landscape/plants/4.webp",
+  ],
 }
 
 export function Features4({
   content = {},
   classNames = {},
 }: FeaturesBlockProps) {
-  const { containerBg } = useBlockContext()
-  const circleBg = containerBg === "page" ? "bg-muted" : "bg-background"
-
   // Merge content with defaults
   const {
     badge = features4Defaults.badge,
     title = features4Defaults.title,
     description = features4Defaults.description,
     features = features4Defaults.features,
-    image = features4Defaults.image,
   } = content
+
+  // Create stack cards from images (using local defaults)
+  const stackCards = features4Defaults.stackImages.map(
+    (src: string, idx: number) => (
+      <Image
+        key={idx}
+        draggable={false}
+        src={src}
+        alt={`Plant ${idx + 1}`}
+        fill
+        className="pointer-events-none object-cover select-none"
+      />
+    )
+  )
 
   return (
     <section className={classNames.root}>
@@ -85,27 +102,18 @@ export function Features4({
               classNames.image?.root
             )}
           >
-            <div className="relative aspect-square w-full">
-              {/* Background circle */}
-              <div
-                className={cn(
-                  `border-border absolute inset-x-[15%] top-[30%] bottom-[5%] rounded-full border ${circleBg}`,
-                  classNames.image?.wrapper
-                )}
+            <div className="relative aspect-square w-full max-w-md">
+              <Stack
+                cards={stackCards}
+                randomRotation={true}
+                sensitivity={150}
+                sendToBackOnClick={true}
+                autoplay={true}
+                autoplayDelay={4000}
+                pauseOnHover={true}
+                mobileClickOnly={true}
+                animationConfig={{ stiffness: 200, damping: 18 }}
               />
-              {/* Image */}
-              {image && (
-                <Image
-                  draggable={false}
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className={cn(
-                    "pointer-events-none z-10 -translate-y-[10%] scale-110 object-contain select-none",
-                    classNames.image?.img
-                  )}
-                />
-              )}
             </div>
           </div>
           <div

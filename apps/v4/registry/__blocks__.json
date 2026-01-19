@@ -145,6 +145,21 @@
     "categories": ["blog", "landing"]
   },
   {
+    "name": "blog-10",
+    "description": "Minimalist travel tips blog section with text-focused list layout and category filters",
+    "categories": ["blog", "landing"]
+  },
+  {
+    "name": "blog-11",
+    "description": "Travel stories blog section with masonry-style grid layout and immersive imagery",
+    "categories": ["blog", "landing"]
+  },
+  {
+    "name": "blog-12",
+    "description": "Travel resources blog section with list layout, sidebar newsletter, and resource categories",
+    "categories": ["blog", "landing"]
+  },
+  {
     "name": "blog-2",
     "description": "Featured post with 3-column grid and read time badges",
     "categories": ["blog", "landing"]
@@ -167,6 +182,21 @@
   {
     "name": "blog-6",
     "description": "Blog with sidebar (newsletter, categories, recent, tags)",
+    "categories": ["blog", "landing"]
+  },
+  {
+    "name": "blog-7",
+    "description": "Travel blog section with featured destination hero and card grid",
+    "categories": ["blog", "landing"]
+  },
+  {
+    "name": "blog-8",
+    "description": "Travel blog section with horizontal scrolling carousel for packing tips and travel guides",
+    "categories": ["blog", "landing"]
+  },
+  {
+    "name": "blog-9",
+    "description": "Travel blog section with magazine-style layout featuring large hero and destination guides sidebar",
     "categories": ["blog", "landing"]
   },
   {
@@ -200,6 +230,21 @@
     "categories": ["contact", "landing"]
   },
   {
+    "name": "contact-10",
+    "description": "Travel agency office locations with global presence",
+    "categories": ["contact", "landing"]
+  },
+  {
+    "name": "contact-11",
+    "description": "Travel inquiry form with trip type selection",
+    "categories": ["contact", "landing"]
+  },
+  {
+    "name": "contact-12",
+    "description": "Travel emergency support and FAQ contact section",
+    "categories": ["contact", "landing"]
+  },
+  {
     "name": "contact-2",
     "description": "Contact form with map placeholder and location info",
     "categories": ["contact", "landing"]
@@ -225,8 +270,43 @@
     "categories": ["contact", "landing"]
   },
   {
+    "name": "contact-7",
+    "description": "Travel agency contact form with destinations map",
+    "categories": ["contact", "landing"]
+  },
+  {
+    "name": "contact-8",
+    "description": "Travel consultation split layout with booking support",
+    "categories": ["contact", "landing"]
+  },
+  {
+    "name": "contact-9",
+    "description": "Minimal travel inquiry form with channel options",
+    "categories": ["contact", "landing"]
+  },
+  {
     "name": "cta-1",
     "description": "Plant shop call-to-action section",
+    "categories": ["cta", "landing"]
+  },
+  {
+    "name": "cta-10",
+    "description": "Travel CTA with centered card and scroll scale animation",
+    "categories": ["cta", "landing"]
+  },
+  {
+    "name": "cta-11",
+    "description": "Minimal travel CTA with gradient background",
+    "categories": ["cta", "landing"]
+  },
+  {
+    "name": "cta-12",
+    "description": "Travel CTA with sticky reveal footer banner",
+    "categories": ["cta", "landing"]
+  },
+  {
+    "name": "cta-13",
+    "description": "Travel CTA with email subscription and aurora background",
     "categories": ["cta", "landing"]
   },
   {
@@ -260,8 +340,38 @@
     "categories": ["cta", "landing"]
   },
   {
+    "name": "cta-8",
+    "description": "Travel CTA with full-width parallax background image",
+    "categories": ["cta", "landing"]
+  },
+  {
+    "name": "cta-9",
+    "description": "Travel CTA with split layout and parallax image",
+    "categories": ["cta", "landing"]
+  },
+  {
     "name": "faq-1",
     "description": "Plant shop FAQ section with accordion",
+    "categories": ["faq", "landing"]
+  },
+  {
+    "name": "faq-10",
+    "description": "Searchable travel FAQ with real-time filtering and highlighting",
+    "categories": ["faq", "landing"]
+  },
+  {
+    "name": "faq-11",
+    "description": "Travel FAQ with side-by-side layout showing questions and answers",
+    "categories": ["faq", "landing"]
+  },
+  {
+    "name": "faq-12",
+    "description": "Travel FAQ in a grid layout with icons for each question category",
+    "categories": ["faq", "landing"]
+  },
+  {
+    "name": "faq-13",
+    "description": "Travel FAQ with accordion and contact support CTA section",
     "categories": ["faq", "landing"]
   },
   {
@@ -295,6 +405,16 @@
     "categories": ["faq", "landing"]
   },
   {
+    "name": "faq-8",
+    "description": "Travel agency FAQ with clean accordion and azure theme",
+    "categories": ["faq", "landing"]
+  },
+  {
+    "name": "faq-9",
+    "description": "Travel FAQ with category tabs for booking, visa, luggage, and payment",
+    "categories": ["faq", "landing"]
+  },
+  {
     "name": "features-1",
     "description": "Plant shop features section with icons and center image",
     "categories": ["features", "landing"]
@@ -317,6 +437,36 @@
   {
     "name": "features-13",
     "description": "Accordion features showcasing blocks and patterns",
+    "categories": ["features", "landing"]
+  },
+  {
+    "name": "features-14",
+    "description": "Travel agency 3-column grid features with icons",
+    "categories": ["features", "landing"]
+  },
+  {
+    "name": "features-15",
+    "description": "Travel agency alternating image/text feature sections",
+    "categories": ["features", "landing"]
+  },
+  {
+    "name": "features-16",
+    "description": "Travel agency bento grid features layout",
+    "categories": ["features", "landing"]
+  },
+  {
+    "name": "features-17",
+    "description": "Travel agency horizontal scrolling cards features",
+    "categories": ["features", "landing"]
+  },
+  {
+    "name": "features-18",
+    "description": "Travel agency features with statistics and numbers",
+    "categories": ["features", "landing"]
+  },
+  {
+    "name": "features-19",
+    "description": "Travel agency tabbed interface for service categories",
     "categories": ["features", "landing"]
   },
   {
@@ -370,6 +520,31 @@
     "categories": ["footer", "landing", "application"]
   },
   {
+    "name": "footer-11",
+    "description": "Travel agency footer with newsletter, destinations, and multi-column navigation",
+    "categories": ["footer", "landing"]
+  },
+  {
+    "name": "footer-12",
+    "description": "Minimal centered travel footer with circular text animation and social links",
+    "categories": ["footer", "landing"]
+  },
+  {
+    "name": "footer-13",
+    "description": "Mega travel footer with destination showcase, trust badges, and comprehensive navigation",
+    "categories": ["footer", "landing"]
+  },
+  {
+    "name": "footer-14",
+    "description": "Travel footer with Aurora animation CTA section and modern navigation",
+    "categories": ["footer", "landing"]
+  },
+  {
+    "name": "footer-15",
+    "description": "Travel footer with gradient background and text gradient opacity animation",
+    "categories": ["footer", "landing"]
+  },
+  {
     "name": "footer-2",
     "description": "Fitness footer with newsletter, navigation columns, and social links",
     "categories": ["footer", "landing"]
@@ -415,6 +590,21 @@
     "categories": ["gallery", "landing"]
   },
   {
+    "name": "gallery-10",
+    "description": "Travel destination cards with parallax stacking effect and trip details",
+    "categories": ["gallery", "landing"]
+  },
+  {
+    "name": "gallery-11",
+    "description": "Travel full-screen zoom gallery with destination showcase",
+    "categories": ["gallery", "landing"]
+  },
+  {
+    "name": "gallery-12",
+    "description": "Travel category tabs with filterable destination gallery and booking cards",
+    "categories": ["gallery", "landing"]
+  },
+  {
     "name": "gallery-2",
     "description": "Masonry gallery with lightbox",
     "categories": ["gallery", "landing"]
@@ -440,6 +630,21 @@
     "categories": ["gallery", "landing"]
   },
   {
+    "name": "gallery-7",
+    "description": "Travel destination masonry grid with zoom parallax effect",
+    "categories": ["gallery", "landing"]
+  },
+  {
+    "name": "gallery-8",
+    "description": "Travel horizontal scroll gallery with destination cards",
+    "categories": ["gallery", "landing"]
+  },
+  {
+    "name": "gallery-9",
+    "description": "Travel Instagram-style photo grid with lightbox and social features",
+    "categories": ["gallery", "landing"]
+  },
+  {
     "name": "header-1",
     "description": "Plant shop header with navigation and CTA button",
     "categories": ["header", "landing"]
@@ -448,6 +653,36 @@
     "name": "header-10",
     "description": "Scroll-aware sticky header with transparent to solid background transition, logo, navigation, search, and user actions",
     "categories": ["header", "landing", "application"]
+  },
+  {
+    "name": "header-11",
+    "description": "Travel agency header with centered logo and navigation",
+    "categories": ["header", "landing"]
+  },
+  {
+    "name": "header-12",
+    "description": "Travel agency transparent header with sticky scroll behavior",
+    "categories": ["header", "landing"]
+  },
+  {
+    "name": "header-13",
+    "description": "Travel agency header with mega menu dropdowns for destinations",
+    "categories": ["header", "landing"]
+  },
+  {
+    "name": "header-14",
+    "description": "Travel agency header with integrated search bar",
+    "categories": ["header", "landing"]
+  },
+  {
+    "name": "header-15",
+    "description": "Travel agency header with featured destination badge",
+    "categories": ["header", "landing"]
+  },
+  {
+    "name": "header-16",
+    "description": "Travel agency header with user account dropdown",
+    "categories": ["header", "landing"]
   },
   {
     "name": "header-2",
@@ -620,6 +855,21 @@
     "categories": ["logos", "landing"]
   },
   {
+    "name": "logos-10",
+    "description": "Travel agency featured in press section",
+    "categories": ["logos", "landing"]
+  },
+  {
+    "name": "logos-11",
+    "description": "Travel partners carousel with descriptions",
+    "categories": ["logos", "landing"]
+  },
+  {
+    "name": "logos-12",
+    "description": "Travel partners two-row layout with categories",
+    "categories": ["logos", "landing"]
+  },
+  {
     "name": "logos-2",
     "description": "Marquee logo cloud with infinite scroll animation",
     "categories": ["logos", "landing"]
@@ -642,6 +892,21 @@
   {
     "name": "logos-6",
     "description": "Testimonial combo logos with short quotes",
+    "categories": ["logos", "landing"]
+  },
+  {
+    "name": "logos-7",
+    "description": "Travel partners and trusted brands showcase with grayscale logos",
+    "categories": ["logos", "landing"]
+  },
+  {
+    "name": "logos-8",
+    "description": "Travel partners animated marquee ticker",
+    "categories": ["logos", "landing"]
+  },
+  {
+    "name": "logos-9",
+    "description": "Travel partners grid layout with hover effects",
     "categories": ["logos", "landing"]
   },
   {
@@ -675,6 +940,21 @@
     "categories": ["newsletter", "landing"]
   },
   {
+    "name": "newsletter-10",
+    "description": "Split layout travel newsletter with travel perks",
+    "categories": ["newsletter", "landing"]
+  },
+  {
+    "name": "newsletter-11",
+    "description": "Centered travel newsletter with benefits badges",
+    "categories": ["newsletter", "landing"]
+  },
+  {
+    "name": "newsletter-12",
+    "description": "Card-style travel newsletter with discount offer",
+    "categories": ["newsletter", "landing"]
+  },
+  {
     "name": "newsletter-2",
     "description": "Inline single horizontal row newsletter",
     "categories": ["newsletter", "landing"]
@@ -697,6 +977,21 @@
   {
     "name": "newsletter-6",
     "description": "Dark themed newsletter with email icon",
+    "categories": ["newsletter", "landing"]
+  },
+  {
+    "name": "newsletter-7",
+    "description": "Minimal inline travel newsletter with destination updates",
+    "categories": ["newsletter", "landing"]
+  },
+  {
+    "name": "newsletter-8",
+    "description": "Full-width travel newsletter banner with dark background",
+    "categories": ["newsletter", "landing"]
+  },
+  {
+    "name": "newsletter-9",
+    "description": "Travel newsletter with destination image and subscription form",
     "categories": ["newsletter", "landing"]
   },
   {
@@ -745,6 +1040,31 @@
     "categories": ["pricing", "landing"]
   },
   {
+    "name": "pricing-10",
+    "description": "Horizontal travel package cards with destination highlights",
+    "categories": ["pricing", "landing"]
+  },
+  {
+    "name": "pricing-11",
+    "description": "Travel tour comparison table with feature breakdown",
+    "categories": ["pricing", "landing"]
+  },
+  {
+    "name": "pricing-12",
+    "description": "Group tour pricing with group size tiers and savings",
+    "categories": ["pricing", "landing"]
+  },
+  {
+    "name": "pricing-13",
+    "description": "Luxury travel tiers with standard vs enterprise comparison",
+    "categories": ["pricing", "landing"]
+  },
+  {
+    "name": "pricing-14",
+    "description": "Destination-based travel packages with visual cards and seasonal pricing",
+    "categories": ["pricing", "landing"]
+  },
+  {
     "name": "pricing-2",
     "description": "Fitness membership pricing with tiers, features, and popular badge",
     "categories": ["pricing", "landing"]
@@ -780,8 +1100,28 @@
     "categories": ["pricing", "landing"]
   },
   {
+    "name": "pricing-9",
+    "description": "Travel package pricing with monthly/yearly toggle and 3-tier comparison",
+    "categories": ["pricing", "landing"]
+  },
+  {
     "name": "products-1",
     "description": "Plant shop products grid showcasing best sellers",
+    "categories": ["products", "landing"]
+  },
+  {
+    "name": "products-10",
+    "description": "Tour packages grid with category filtering and slide-up animations",
+    "categories": ["products", "landing"]
+  },
+  {
+    "name": "products-11",
+    "description": "Travel bundle packages with pricing tiers and scroll scale animations",
+    "categories": ["products", "landing"]
+  },
+  {
+    "name": "products-12",
+    "description": "Adventure travel categories with expanding cards and scroll animation",
     "categories": ["products", "landing"]
   },
   {
@@ -807,6 +1147,21 @@
   {
     "name": "products-6",
     "description": "Product comparison layout with features",
+    "categories": ["products", "landing"]
+  },
+  {
+    "name": "products-7",
+    "description": "Travel destination cards grid with fade-in animations showcasing exotic locations",
+    "categories": ["products", "landing"]
+  },
+  {
+    "name": "products-8",
+    "description": "Featured tour packages with zoom parallax effect and hero layout",
+    "categories": ["products", "landing"]
+  },
+  {
+    "name": "products-9",
+    "description": "Travel deals stacking cards with parallax scroll effect for limited offers",
     "categories": ["products", "landing"]
   },
   {
@@ -837,6 +1192,31 @@
   {
     "name": "stats-1",
     "description": "Plant shop statistics section",
+    "categories": ["stats", "landing"]
+  },
+  {
+    "name": "stats-10",
+    "description": "Travel statistics with animated counters and descriptions",
+    "categories": ["stats", "landing"]
+  },
+  {
+    "name": "stats-11",
+    "description": "Travel statistics with horizontal progress bars",
+    "categories": ["stats", "landing"]
+  },
+  {
+    "name": "stats-12",
+    "description": "Travel statistics with gradient cards and icons",
+    "categories": ["stats", "landing"]
+  },
+  {
+    "name": "stats-13",
+    "description": "Travel statistics with full-width banner and large numbers",
+    "categories": ["stats", "landing"]
+  },
+  {
+    "name": "stats-14",
+    "description": "Travel statistics with two-column layout and detailed descriptions",
     "categories": ["stats", "landing"]
   },
   {
@@ -875,8 +1255,33 @@
     "categories": ["stats", "landing"]
   },
   {
+    "name": "stats-9",
+    "description": "Travel statistics with icons and fade animation",
+    "categories": ["stats", "landing"]
+  },
+  {
     "name": "team-1",
     "description": "Plant shop team section with stacked avatars",
+    "categories": ["team", "landing"]
+  },
+  {
+    "name": "team-10",
+    "description": "Travel agency featured leader with team grid",
+    "categories": ["team", "landing"]
+  },
+  {
+    "name": "team-11",
+    "description": "Travel agency destination specialists with accordion bios",
+    "categories": ["team", "landing"]
+  },
+  {
+    "name": "team-12",
+    "description": "Travel agency regional experts with world map style layout",
+    "categories": ["team", "landing"]
+  },
+  {
+    "name": "team-13",
+    "description": "Travel agency storytellers and photographers magazine-style layout",
     "categories": ["team", "landing"]
   },
   {
@@ -910,8 +1315,43 @@
     "categories": ["team", "landing"]
   },
   {
+    "name": "team-8",
+    "description": "Travel agency team grid with destination badges",
+    "categories": ["team", "landing"]
+  },
+  {
+    "name": "team-9",
+    "description": "Travel agency tour guides carousel showcase",
+    "categories": ["team", "landing"]
+  },
+  {
     "name": "testimonials-1",
     "description": "Plant shop testimonials with stacked cards effect",
+    "categories": ["testimonials", "landing"]
+  },
+  {
+    "name": "testimonials-10",
+    "description": "Travel testimonials carousel with featured destination spotlight",
+    "categories": ["testimonials", "landing"]
+  },
+  {
+    "name": "testimonials-11",
+    "description": "Travel testimonials masonry layout with trip photos",
+    "categories": ["testimonials", "landing"]
+  },
+  {
+    "name": "testimonials-12",
+    "description": "Travel video testimonials with play buttons and traveler stories",
+    "categories": ["testimonials", "landing"]
+  },
+  {
+    "name": "testimonials-13",
+    "description": "Featured single traveler spotlight with journey timeline",
+    "categories": ["testimonials", "landing"]
+  },
+  {
+    "name": "testimonials-14",
+    "description": "Travel testimonials marquee wall with infinite scrolling cards",
     "categories": ["testimonials", "landing"]
   },
   {
@@ -947,6 +1387,11 @@
   {
     "name": "testimonials-8",
     "description": "Developer testimonials grid for component library",
+    "categories": ["testimonials", "landing"]
+  },
+  {
+    "name": "testimonials-9",
+    "description": "Travel agency testimonials with destination cards grid",
     "categories": ["testimonials", "landing"]
   }
 ]

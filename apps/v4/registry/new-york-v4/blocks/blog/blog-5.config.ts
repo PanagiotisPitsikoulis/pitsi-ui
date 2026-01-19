@@ -6,7 +6,7 @@ export const registryConfig: RegistryItemConfig = {
   description: "Minimal clean blog cards, text-focused",
   categories: ["blog", "landing"],
   tier: "free",
-  readiness: "production",
+  readiness: "alpha",
   blockConfig: {
     template: "service-plants",
     blockType: "blog",

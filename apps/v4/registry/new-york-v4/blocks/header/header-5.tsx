@@ -114,7 +114,7 @@ export function Header5({ content = {}, classNames = {} }: HeaderBlockProps) {
                 scaleRange={[0.95, 1]}
                 rotateRange={[-5, 0]}
                 scrollBased={false}
-                className="container flex flex-1 flex-col justify-center px-6 h-auto"
+                className="container flex h-auto flex-1 flex-col justify-center px-6"
               >
                 <nav>
                   <ul className="space-y-4">

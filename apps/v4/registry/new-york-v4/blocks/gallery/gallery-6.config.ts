@@ -6,7 +6,7 @@ export const registryConfig: RegistryItemConfig = {
   description: "Before/after comparison slider gallery",
   categories: ["gallery", "landing"],
   tier: "free",
-  readiness: "production",
+  readiness: "alpha",
   blockConfig: {
     template: "service-plants",
     blockType: "gallery",

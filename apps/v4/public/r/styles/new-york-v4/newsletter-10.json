@@ -1,0 +1,31 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "newsletter-10",
+  "type": "registry:block",
+  "description": "Split layout travel newsletter with travel perks",
+  "registryDependencies": [
+    "button",
+    "input"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/newsletter/newsletter-10.tsx",
+      "content": "\"use client\"\n\nimport { DynamicIcon } from \"@/lib/blocks/dynamic-icon\"\nimport { cn } from \"@/lib/utils\"\nimport { SlideUp } from \"@/registry/new-york-v4/animations/slide-up/slide-up\"\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\nimport { Input } from \"@/registry/new-york-v4/ui/input\"\n\ninterface NewsletterBlockProps {\n  content?: {\n    badge?: string\n    title?: string\n    description?: string\n    placeholder?: string\n    buttonLabel?: string\n    perks?: Array<{ icon: string; title: string; description: string }>\n  }\n  classNames?: {\n    root?: string\n    container?: string\n    header?: { title?: string; description?: string }\n  }\n}\n\nconst newsletter10Defaults = {\n  badge: \"Travel Newsletter\",\n  title: \"Your Passport to Savings\",\n  description:\n    \"Subscribe and unlock access to exclusive travel deals, destination guides, and members-only perks.\",\n  placeholder: \"Enter your email\",\n  buttonLabel: \"Join Free\",\n  perks: [\n    {\n      icon: \"Tag\",\n      title: \"Exclusive Deals\",\n      description: \"Up to 40% off flights & hotels\",\n    },\n    {\n      icon: \"Map\",\n      title: \"Destination Guides\",\n      description: \"Curated travel itineraries\",\n    },\n    {\n      icon: \"Clock\",\n      title: \"Early Access\",\n      description: \"Book deals before anyone else\",\n    },\n  ],\n}\n\nexport function Newsletter10({\n  content = {},\n  classNames = {},\n}: NewsletterBlockProps) {\n  const {\n    badge = newsletter10Defaults.badge,\n    title = newsletter10Defaults.title,\n    description = newsletter10Defaults.description,\n    placeholder = newsletter10Defaults.placeholder,\n    buttonLabel = newsletter10Defaults.buttonLabel,\n    perks = newsletter10Defaults.perks,\n  } = content\n\n  return (\n    <section className={cn(\"bg-background\", classNames.root)}>\n      <div\n        className={cn(\"container px-6 py-16 md:py-24\", classNames.container)}\n      >\n        <div className=\"mx-auto grid max-w-5xl gap-12 lg:grid-cols-2 lg:items-center lg:gap-16\">\n          {/* Left: Content & Form */}\n          <SlideUp delay={0} distance={20}>\n            <div>\n              {badge && (\n                <span className=\"bg-primary/10 text-primary mb-4 inline-block rounded-full px-3 py-1 text-sm font-medium\">\n                  {badge}\n                </span>\n              )}\n              <h2 className=\"font-display text-foreground mb-4 text-3xl font-bold md:text-4xl\">\n                {title}\n              </h2>\n              <p className=\"text-muted-foreground mb-8 text-lg\">\n                {description}\n              </p>\n\n              <div className=\"flex flex-col gap-3 sm:flex-row\">\n                <Input\n                  type=\"email\"\n                  placeholder={placeholder}\n                  className=\"h-12 flex-1\"\n                />\n                <Button size=\"lg\" className=\"h-12 shrink-0\">\n                  {buttonLabel}\n                </Button>\n              </div>\n\n              <p className=\"text-muted-foreground mt-4 text-sm\">\n                Join 30,000+ travelers. No spam, ever.\n              </p>\n            </div>\n          </SlideUp>\n\n          {/* Right: Perks */}\n          <SlideUp delay={0.1} distance={20}>\n            <div className=\"bg-muted rounded-2xl p-6 md:p-8\">\n              <h3 className=\"text-foreground mb-6 text-lg font-semibold\">\n                What you'll get\n              </h3>\n              <div className=\"space-y-6\">\n                {perks.map((perk, i) => (\n                  <div key={i} className=\"flex gap-4\">\n                    <div className=\"bg-primary/10 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg\">\n                      <DynamicIcon\n                        name={perk.icon}\n                        className=\"text-primary h-5 w-5\"\n                      />\n                    </div>\n                    <div>\n                      <h4 className=\"text-foreground font-medium\">\n                        {perk.title}\n                      </h4>\n                      <p className=\"text-muted-foreground text-sm\">\n                        {perk.description}\n                      </p>\n                    </div>\n                  </div>\n                ))}\n              </div>\n            </div>\n          </SlideUp>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "newsletter",
+    "landing"
+  ],
+  "tier": "free",
+  "readiness": "alpha",
+  "blockConfig": {
+    "template": "service-travel",
+    "blockType": "newsletter",
+    "order": 14,
+    "palette": "azure",
+    "typography": "modern",
+    "tint": "deep"
+  }
+}

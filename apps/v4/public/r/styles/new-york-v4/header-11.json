@@ -1,0 +1,35 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "header-11",
+  "type": "registry:block",
+  "description": "Travel agency header with centered logo and navigation",
+  "dependencies": [
+    "@hugeicons/react",
+    "@hugeicons/core-free-icons"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/header/header-11.tsx",
+      "content": "\"use client\"\n\nimport Link from \"next/link\"\n\nimport { DynamicIcon } from \"@/lib/blocks/dynamic-icon\"\nimport { type HeaderBlockProps } from \"@/lib/blocks/header.types\"\nimport { cn } from \"@/lib/utils\"\nimport { ScrollFade } from \"@/registry/new-york-v4/animations/scroll-fade/scroll-fade\"\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\n\nconst header11Defaults = {\n  logo: {\n    text: \"Wanderlust\",\n    href: \"#\",\n  },\n  navigation: [\n    { label: \"Destinations\", href: \"#\" },\n    { label: \"Tours\", href: \"#\" },\n    { label: \"About\", href: \"#\" },\n    { label: \"Blog\", href: \"#\" },\n    { label: \"Contact\", href: \"#\" },\n  ],\n  cta: { label: \"Book Now\", href: \"#\" },\n}\n\nexport function Header11({ content = {}, classNames = {} }: HeaderBlockProps) {\n  const {\n    logo = header11Defaults.logo,\n    navigation = header11Defaults.navigation,\n    cta = header11Defaults.cta,\n  } = content\n\n  // Split navigation for centered logo layout\n  const leftNav = navigation.slice(0, Math.ceil(navigation.length / 2))\n  const rightNav = navigation.slice(Math.ceil(navigation.length / 2))\n\n  return (\n    <ScrollFade scrollBased={false} delay={0} duration={0.8}>\n      <header\n        className={cn(\n          \"bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 border-b backdrop-blur\",\n          classNames.root\n        )}\n      >\n        <div\n          className={cn(\n            \"container flex h-20 items-center justify-between px-6\",\n            classNames.container\n          )}\n        >\n          {/* Left Navigation */}\n          <nav\n            className={cn(\n              \"hidden flex-1 items-center justify-end gap-8 md:flex\",\n              classNames.nav?.root\n            )}\n          >\n            {leftNav.map((item, i) => (\n              <ScrollFade\n                key={i}\n                scrollBased={false}\n                delay={0.1 + i * 0.05}\n                duration={0.6}\n              >\n                <Link\n                  href={item.href}\n                  className={cn(\n                    \"text-muted-foreground hover:text-brand text-sm font-medium tracking-wide uppercase transition-colors\",\n                    classNames.nav?.link\n                  )}\n                >\n                  {item.label}\n                </Link>\n              </ScrollFade>\n            ))}\n          </nav>\n\n          {/* Centered Logo */}\n          <ScrollFade scrollBased={false} delay={0.2} duration={0.6}>\n            <Link\n              href={logo?.href ?? \"#\"}\n              className={cn(\n                \"mx-8 flex flex-col items-center gap-1\",\n                classNames.logo\n              )}\n            >\n              <DynamicIcon name=\"Compass\" className=\"text-brand h-8 w-8\" />\n              <span className=\"text-foreground text-xl font-bold tracking-wider uppercase\">\n                {logo?.text}\n              </span>\n            </Link>\n          </ScrollFade>\n\n          {/* Right Navigation */}\n          <nav\n            className={cn(\n              \"hidden flex-1 items-center justify-start gap-8 md:flex\",\n              classNames.nav?.root\n            )}\n          >\n            {rightNav.map((item, i) => (\n              <ScrollFade\n                key={i}\n                scrollBased={false}\n                delay={0.15 + i * 0.05}\n                duration={0.6}\n              >\n                <Link\n                  href={item.href}\n                  className={cn(\n                    \"text-muted-foreground hover:text-brand text-sm font-medium tracking-wide uppercase transition-colors\",\n                    classNames.nav?.link\n                  )}\n                >\n                  {item.label}\n                </Link>\n              </ScrollFade>\n            ))}\n          </nav>\n\n          {/* CTA Button */}\n          {cta && (\n            <ScrollFade\n              scrollBased={false}\n              delay={0.3}\n              duration={0.6}\n              className=\"md:hidden\"\n            >\n              <Button\n                size=\"sm\"\n                className={cn(\"bg-brand hover:bg-brand/90\", classNames.cta)}\n                asChild\n              >\n                <Link href={cta.href}>{cta.label}</Link>\n              </Button>\n            </ScrollFade>\n          )}\n        </div>\n      </header>\n    </ScrollFade>\n  )\n}\n\nexport { Header11 as HeaderServiceTravel11 }\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "header",
+    "landing"
+  ],
+  "tier": "free",
+  "readiness": "alpha",
+  "blockConfig": {
+    "template": "service-travel",
+    "blockType": "header",
+    "order": 1,
+    "palette": "azure",
+    "typography": "modern",
+    "tint": "tinted",
+    "forceLight": true
+  }
+}

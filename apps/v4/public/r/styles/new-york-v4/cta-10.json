@@ -1,0 +1,30 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "cta-10",
+  "type": "registry:block",
+  "description": "Travel CTA with centered card and scroll scale animation",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/cta/cta-10.tsx",
+      "content": "\"use client\"\n\nimport Link from \"next/link\"\n\nimport { type CtaBlockProps } from \"@/lib/blocks/cta.types\"\nimport { DynamicIcon } from \"@/lib/blocks/dynamic-icon\"\nimport { cn } from \"@/lib/utils\"\nimport { ScrollScale } from \"@/registry/new-york-v4/animations/scroll-scale/scroll-scale\"\nimport { BlockHeader } from \"@/registry/new-york-v4/lib/block-header\"\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\n\nconst cta10Defaults = {\n  icon: \"Compass\",\n  title: \"Ready to Explore?\",\n  description:\n    \"Join thousands of travelers who have discovered amazing destinations with us. Start planning your next adventure today.\",\n  primaryCta: { label: \"Browse Trips\", href: \"#\" },\n  secondaryCta: { label: \"Get Travel Tips\", href: \"#\" },\n}\n\nexport function Cta10({ content = {}, classNames = {} }: CtaBlockProps) {\n  const {\n    title = cta10Defaults.title,\n    description = cta10Defaults.description,\n    primaryCta = cta10Defaults.primaryCta,\n    secondaryCta = cta10Defaults.secondaryCta,\n  } = content\n\n  return (\n    <section className={cn(\"bg-background\", classNames.root)}>\n      <div\n        className={cn(\"container px-6 py-16 md:py-24\", classNames.container)}\n      >\n        <div className=\"mx-auto max-w-2xl\">\n          <ScrollScale startScale={0.85} endScale={1}>\n            <div\n              className={cn(\n                \"border-border bg-card rounded-3xl border p-8 text-center shadow-lg md:p-12\",\n                classNames.content\n              )}\n            >\n              {/* Icon */}\n              <div className=\"mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#0ea5e9]/10\">\n                <DynamicIcon\n                  name=\"Compass\"\n                  className=\"h-8 w-8 text-[#0284c7]\"\n                />\n              </div>\n\n              <BlockHeader\n                title={title}\n                description={description}\n                spacing=\"none\"\n                className=\"mb-8\"\n                classNames={{\n                  ...classNames.header,\n                  title: cn(\"text-2xl md:text-3xl\", classNames.header?.title),\n                  description: cn(\"max-w-md\", classNames.header?.description),\n                }}\n              />\n\n              {/* CTAs */}\n              <div className=\"flex flex-col items-center justify-center gap-4 sm:flex-row\">\n                {primaryCta && (\n                  <Button\n                    size=\"lg\"\n                    className=\"group w-full bg-[#0284c7] text-white hover:bg-[#0369a1] sm:w-auto\"\n                    asChild\n                  >\n                    <Link href={primaryCta.href}>\n                      {primaryCta.label}\n                      <DynamicIcon\n                        name=\"ArrowRight\"\n                        className=\"ml-2 h-4 w-4 transition-transform group-hover:translate-x-1\"\n                      />\n                    </Link>\n                  </Button>\n                )}\n                {secondaryCta && (\n                  <Button\n                    size=\"lg\"\n                    variant=\"outline\"\n                    className=\"w-full sm:w-auto\"\n                    asChild\n                  >\n                    <Link href={secondaryCta.href}>{secondaryCta.label}</Link>\n                  </Button>\n                )}\n              </div>\n\n              {/* Trust badges */}\n              <div className=\"text-muted-foreground mt-8 flex items-center justify-center gap-6 text-sm\">\n                <div className=\"flex items-center gap-2\">\n                  <svg\n                    className=\"h-4 w-4 text-[#0ea5e9]\"\n                    fill=\"none\"\n                    viewBox=\"0 0 24 24\"\n                    stroke=\"currentColor\"\n                  >\n                    <path\n                      strokeLinecap=\"round\"\n                      strokeLinejoin=\"round\"\n                      strokeWidth={2}\n                      d=\"M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z\"\n                    />\n                  </svg>\n                  Secure Booking\n                </div>\n                <div className=\"flex items-center gap-2\">\n                  <svg\n                    className=\"h-4 w-4 text-[#0ea5e9]\"\n                    fill=\"none\"\n                    viewBox=\"0 0 24 24\"\n                    stroke=\"currentColor\"\n                  >\n                    <path\n                      strokeLinecap=\"round\"\n                      strokeLinejoin=\"round\"\n                      strokeWidth={2}\n                      d=\"M5 13l4 4L19 7\"\n                    />\n                  </svg>\n                  Free Cancellation\n                </div>\n              </div>\n            </div>\n          </ScrollScale>\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "cta",
+    "landing"
+  ],
+  "tier": "free",
+  "readiness": "alpha",
+  "blockConfig": {
+    "template": "service-travel",
+    "blockType": "cta",
+    "order": 15,
+    "palette": "azure",
+    "typography": "modern",
+    "tint": "tinted"
+  }
+}

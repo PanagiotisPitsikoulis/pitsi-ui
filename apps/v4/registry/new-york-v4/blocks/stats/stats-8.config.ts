@@ -6,7 +6,7 @@ export const registryConfig: RegistryItemConfig = {
   description: "Component library stats section with large numbers",
   categories: ["stats", "landing"],
   tier: "free",
-  readiness: "production",
+  readiness: "alpha",
   blockConfig: {
     template: "service-library",
     blockType: "stats",

@@ -117,10 +117,7 @@ export function Team4({ content = {}, classNames = {} }: TeamBlockProps) {
         />
 
         {/* Leadership Section with CardsParallax */}
-        <CardsParallaxContainer
-          cardCount={leadership.length}
-          className="mb-16"
-        >
+        <CardsParallaxContainer cardCount={leadership.length} className="mb-16">
           <h3 className="text-foreground mb-8 text-center text-xl font-semibold">
             Leadership
           </h3>

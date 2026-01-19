@@ -113,7 +113,12 @@ export function Faq3({ content = {}, classNames = {} }: FaqBlockProps) {
             </FuzzyText>
           </div>
           {description && (
-            <p className={cn("text-muted-foreground", classNames.header?.description)}>
+            <p
+              className={cn(
+                "text-muted-foreground",
+                classNames.header?.description
+              )}
+            >
               {description}
             </p>
           )}

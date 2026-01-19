@@ -109,7 +109,9 @@ export function Stats2({ content = {}, classNames = {} }: StatsBlockProps) {
       .highlightText ?? stats2Defaults.highlightText
 
   return (
-    <section className={cn("relative bg-white py-24 lg:py-32", classNames.root)}>
+    <section
+      className={cn("relative bg-white py-24 lg:py-32", classNames.root)}
+    >
       {/* LetterGlitch background */}
       <div className="absolute inset-0 opacity-[0.03]">
         <LetterGlitch
@@ -121,7 +123,7 @@ export function Stats2({ content = {}, classNames = {} }: StatsBlockProps) {
           characters="FITNESS POWER STRENGTH ENERGY"
         />
       </div>
-      <div className={cn("container relative px-6", classNames.container)}>
+      <div className={cn("relative container px-6", classNames.container)}>
         {/* Header */}
         <BlockHeader
           badge={badge}

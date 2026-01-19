@@ -155,7 +155,10 @@ export function Footer1({ content = {}, classNames = {} }: FooterBlockProps) {
   return (
     <StickyRevealFooter height={900}>
       <footer
-        className={cn("border-border bg-background border-t h-full", classNames.root)}
+        className={cn(
+          "border-border bg-background h-full border-t",
+          classNames.root
+        )}
       >
         {/* Newsletter Section */}
         <div className="border-border border-b py-16">
@@ -197,7 +200,10 @@ export function Footer1({ content = {}, classNames = {} }: FooterBlockProps) {
                 {/* Brand Column */}
                 <div className="md:col-span-3 lg:col-span-2">
                   <div
-                    className={cn("mb-4 flex items-center gap-2", classNames.logo)}
+                    className={cn(
+                      "mb-4 flex items-center gap-2",
+                      classNames.logo
+                    )}
                   >
                     {logo?.image && (
                       <Image
@@ -285,7 +291,9 @@ export function Footer1({ content = {}, classNames = {} }: FooterBlockProps) {
                     </Link>
                   ))}
                 </div>
-                <div className={cn("flex items-center gap-4", classNames.social)}>
+                <div
+                  className={cn("flex items-center gap-4", classNames.social)}
+                >
                   {social?.map((item, i) => (
                     <Link
                       key={i}

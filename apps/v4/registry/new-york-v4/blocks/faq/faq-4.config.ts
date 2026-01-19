@@ -6,7 +6,7 @@ export const registryConfig: RegistryItemConfig = {
   description: "Card-style accordion FAQ with icons",
   categories: ["faq", "landing"],
   tier: "free",
-  readiness: "production",
+  readiness: "alpha",
   blockConfig: {
     template: "service-plants",
     blockType: "faq",

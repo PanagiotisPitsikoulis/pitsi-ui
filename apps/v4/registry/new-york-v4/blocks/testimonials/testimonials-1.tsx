@@ -207,10 +207,7 @@ function StackTestimonialCard({
           </p>
           {testimonial.role && (
             <p
-              className={cn(
-                "text-muted-foreground text-xs",
-                classNames?.role
-              )}
+              className={cn("text-muted-foreground text-xs", classNames?.role)}
             >
               {testimonial.role}
             </p>
@@ -277,7 +274,7 @@ export function Testimonials1({
               sensitivity={150}
             />
             {/* Overlay with avatars and count */}
-            <div className="pointer-events-none absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 rounded-3xl bg-card/60">
+            <div className="bg-card/60 pointer-events-none absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 rounded-3xl">
               <div className="flex -space-x-2">
                 {testimonials1Defaults.overlayAvatars.map((n) => (
                   <div

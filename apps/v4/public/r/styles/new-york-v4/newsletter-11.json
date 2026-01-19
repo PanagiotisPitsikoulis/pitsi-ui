@@ -1,0 +1,32 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "newsletter-11",
+  "type": "registry:block",
+  "description": "Centered travel newsletter with benefits badges",
+  "registryDependencies": [
+    "button",
+    "input",
+    "block-header"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/newsletter/newsletter-11.tsx",
+      "content": "\"use client\"\n\nimport { DynamicIcon } from \"@/lib/blocks/dynamic-icon\"\nimport { cn } from \"@/lib/utils\"\nimport { ScrollFade } from \"@/registry/new-york-v4/animations/scroll-fade/scroll-fade\"\nimport { BlockHeader } from \"@/registry/new-york-v4/lib/block-header\"\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\nimport { Input } from \"@/registry/new-york-v4/ui/input\"\n\ninterface NewsletterBlockProps {\n  content?: {\n    title?: string\n    description?: string\n    placeholder?: string\n    buttonLabel?: string\n  }\n  classNames?: {\n    root?: string\n    container?: string\n    header?: { title?: string; description?: string }\n  }\n}\n\nconst newsletter11Defaults = {\n  title: \"Join Our Travel Community\",\n  description:\n    \"Get weekly destination inspiration, travel tips, and exclusive deals delivered to your inbox.\",\n  placeholder: \"Enter your email\",\n  buttonLabel: \"Subscribe\",\n  benefits: [\n    { icon: \"Compass\", text: \"Weekly destination guides\" },\n    { icon: \"Percent\", text: \"Exclusive discounts\" },\n    { icon: \"ShieldCheck\", text: \"No spam, ever\" },\n  ],\n}\n\nexport function Newsletter11({\n  content = {},\n  classNames = {},\n}: NewsletterBlockProps) {\n  const {\n    title = newsletter11Defaults.title,\n    description = newsletter11Defaults.description,\n    placeholder = newsletter11Defaults.placeholder,\n    buttonLabel = newsletter11Defaults.buttonLabel,\n  } = content\n\n  return (\n    <section className={cn(\"bg-background\", classNames.root)}>\n      <div\n        className={cn(\"container px-6 py-16 md:py-24\", classNames.container)}\n      >\n        <ScrollFade delay={0}>\n          <div className=\"mx-auto max-w-2xl text-center\">\n            <BlockHeader\n              title={title}\n              description={description}\n              spacing=\"none\"\n              className=\"mb-8\"\n              classNames={classNames.header}\n            />\n\n            {/* Benefits */}\n            <div className=\"mb-8 flex flex-wrap items-center justify-center gap-6\">\n              {newsletter11Defaults.benefits.map((benefit, i) => (\n                <div key={i} className=\"flex items-center gap-2\">\n                  <DynamicIcon\n                    name={benefit.icon}\n                    className=\"text-primary h-5 w-5\"\n                  />\n                  <span className=\"text-foreground text-sm\">\n                    {benefit.text}\n                  </span>\n                </div>\n              ))}\n            </div>\n\n            {/* Form */}\n            <div className=\"flex flex-col gap-3 sm:flex-row sm:justify-center\">\n              <Input\n                type=\"email\"\n                placeholder={placeholder}\n                className=\"h-12 sm:w-80\"\n              />\n              <Button size=\"lg\" className=\"h-12\">\n                {buttonLabel}\n              </Button>\n            </div>\n\n            <p className=\"text-muted-foreground mt-4 text-xs\">\n              We respect your privacy. Unsubscribe at any time.\n            </p>\n          </div>\n        </ScrollFade>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "newsletter",
+    "landing"
+  ],
+  "tier": "free",
+  "readiness": "alpha",
+  "blockConfig": {
+    "template": "service-travel",
+    "blockType": "newsletter",
+    "order": 14,
+    "palette": "azure",
+    "typography": "modern",
+    "tint": "deep"
+  }
+}

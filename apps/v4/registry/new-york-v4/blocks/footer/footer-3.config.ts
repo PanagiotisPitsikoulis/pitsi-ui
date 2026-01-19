@@ -6,7 +6,7 @@ export const registryConfig: RegistryItemConfig = {
   description: "Minimal single row footer",
   categories: ["footer", "landing"],
   tier: "free",
-  readiness: "production",
+  readiness: "alpha",
   blockConfig: {
     template: "service-plants",
     blockType: "footer",

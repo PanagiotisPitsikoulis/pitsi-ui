@@ -136,14 +136,17 @@ export function Blog6({ content = {}, classNames = {} }: BlogBlockProps) {
             {/* Newsletter */}
             <SlideUp delay={0.1} distance={30}>
               <div className="border-border rounded-xl border p-6">
-                <h4 className="text-foreground mb-4 font-semibold">Newsletter</h4>
+                <h4 className="text-foreground mb-4 font-semibold">
+                  Newsletter
+                </h4>
                 <p className="text-muted-foreground mb-4 text-sm">
                   Get weekly updates delivered to your inbox.
                 </p>
                 <div className="space-y-3">
                   <Input type="email" placeholder="Your email" />
                   <Button className="w-full">
-                    <DynamicIcon name="Mail" className="mr-2 h-4 w-4" /> Subscribe
+                    <DynamicIcon name="Mail" className="mr-2 h-4 w-4" />{" "}
+                    Subscribe
                   </Button>
                 </div>
               </div>
@@ -152,7 +155,9 @@ export function Blog6({ content = {}, classNames = {} }: BlogBlockProps) {
             {/* Categories */}
             <SlideUp delay={0.2} distance={30}>
               <div className="border-border rounded-xl border p-6">
-                <h4 className="text-foreground mb-4 font-semibold">Categories</h4>
+                <h4 className="text-foreground mb-4 font-semibold">
+                  Categories
+                </h4>
                 <div className="flex flex-wrap gap-2">
                   {blog6Defaults.categories.map((cat, i) => (
                     <Link

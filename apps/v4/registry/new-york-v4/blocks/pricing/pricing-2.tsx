@@ -142,7 +142,7 @@ export function Pricing2({ content = {}, classNames = {} }: PricingBlockProps) {
                 )}
                 {/* Popular badge */}
                 {plan.highlighted && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
+                  <div className="absolute -top-4 left-1/2 z-10 -translate-x-1/2">
                     <span className="rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 px-4 py-1.5 text-xs font-bold tracking-wider text-white uppercase shadow-lg shadow-cyan-500/25">
                       Most Popular
                     </span>

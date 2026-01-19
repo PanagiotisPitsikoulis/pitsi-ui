@@ -5,6 +5,7 @@ import Image from "next/image"
 import { DynamicIcon } from "@/lib/blocks/dynamic-icon"
 import { type FeaturesBlockProps } from "@/lib/blocks/features.types"
 import { cn } from "@/lib/utils"
+import { ZoomParallax } from "@/registry/new-york-v4/animations/zoom-parallax/zoom-parallax"
 import { useBlockContext } from "@/app/(app)/(content)/(blocks)/_components"
 
 // Block-specific defaults
@@ -117,46 +118,51 @@ export function Features3({
             )}
             <div className="mt-14 grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
               {features.map((feature, idx) => (
-                <div
+                <ZoomParallax
                   key={idx}
-                  className={cn(
-                    "border-border bg-card flex items-start gap-3 rounded-3xl p-4 shadow-sm dark:border",
-                    classNames.feature?.root
-                  )}
+                  scaleRange={[0.9, 1]}
+                  animateOpacity={true}
                 >
                   <div
                     className={cn(
-                      "bg-brand/10 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg",
-                      classNames.feature?.iconWrapper
+                      "border-border bg-card flex items-start gap-3 rounded-3xl p-4 shadow-sm dark:border",
+                      classNames.feature?.root
                     )}
                   >
-                    <DynamicIcon
-                      name={feature.icon}
+                    <div
                       className={cn(
-                        "text-brand h-5 w-5",
-                        classNames.feature?.icon
-                      )}
-                    />
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <h3
-                      className={cn(
-                        "text-foreground text-base font-semibold",
-                        classNames.feature?.title
+                        "bg-brand/10 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg",
+                        classNames.feature?.iconWrapper
                       )}
                     >
-                      {feature.title}
-                    </h3>
-                    <p
-                      className={cn(
-                        "text-muted-foreground text-sm",
-                        classNames.feature?.description
-                      )}
-                    >
-                      {feature.description}
-                    </p>
+                      <DynamicIcon
+                        name={feature.icon}
+                        className={cn(
+                          "text-brand h-5 w-5",
+                          classNames.feature?.icon
+                        )}
+                      />
+                    </div>
+                    <div className="flex flex-col gap-1">
+                      <h3
+                        className={cn(
+                          "text-foreground text-base font-semibold",
+                          classNames.feature?.title
+                        )}
+                      >
+                        {feature.title}
+                      </h3>
+                      <p
+                        className={cn(
+                          "text-muted-foreground text-sm",
+                          classNames.feature?.description
+                        )}
+                      >
+                        {feature.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
+                </ZoomParallax>
               ))}
             </div>
           </div>
@@ -166,28 +172,30 @@ export function Features3({
               classNames.image?.root
             )}
           >
-            <div className="relative aspect-square w-full">
-              {/* Background circle */}
-              <div
-                className={cn(
-                  `border-border absolute inset-x-[15%] top-[30%] bottom-[5%] rounded-full border ${circleBg}`,
-                  classNames.image?.wrapper
-                )}
-              />
-              {/* Image */}
-              {image && (
-                <Image
-                  draggable={false}
-                  src={image.src}
-                  alt={image.alt}
-                  fill
+            <ZoomParallax scaleRange={[0.85, 1]} animateOpacity={false}>
+              <div className="relative aspect-square w-full">
+                {/* Background circle with zoom effect */}
+                <div
                   className={cn(
-                    "pointer-events-none z-10 -translate-y-[10%] scale-110 object-contain select-none",
-                    classNames.image?.img
+                    `border-border absolute inset-x-[15%] top-[30%] bottom-[5%] rounded-full border ${circleBg}`,
+                    classNames.image?.wrapper
                   )}
                 />
-              )}
-            </div>
+                {/* Image */}
+                {image && (
+                  <Image
+                    draggable={false}
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    className={cn(
+                      "pointer-events-none z-10 -translate-y-[10%] scale-110 object-contain select-none",
+                      classNames.image?.img
+                    )}
+                  />
+                )}
+              </div>
+            </ZoomParallax>
           </div>
         </div>
       </div>

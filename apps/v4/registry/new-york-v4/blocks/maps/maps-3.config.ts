@@ -13,7 +13,7 @@ export const registryConfig: RegistryItemConfig = {
   registryDependencies: ["map", "button", "input", "scroll-area"],
   categories: ["maps"],
   tier: "free",
-  readiness: "production",
+  readiness: "alpha",
   blockConfig: {
     template: "standalone",
     blockType: "maps",

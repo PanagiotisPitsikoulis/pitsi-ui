@@ -9,13 +9,5 @@ export const registryConfig: RegistryItemConfig = {
   registryDependencies: ["button", "badge", "input"],
   categories: ["search", "pages"],
   tier: "free",
-  readiness: "production",
-  blockConfig: {
-    template: "service-library",
-    blockType: "search",
-    order: 1,
-    palette: "slate",
-    typography: "modern",
-    tint: "tinted",
-  },
+  readiness: "alpha",
 }

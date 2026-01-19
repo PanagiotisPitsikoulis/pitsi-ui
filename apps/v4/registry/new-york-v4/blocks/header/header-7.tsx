@@ -80,7 +80,7 @@ export function Header7({ content = {}, classNames = {} }: HeaderBlockProps) {
           {/* Navigation with spacing animation */}
           <nav
             className={cn(
-              "hidden items-center md:flex transition-all duration-300",
+              "hidden items-center transition-all duration-300 md:flex",
               isScrolled ? "gap-4" : "gap-8",
               classNames.nav?.root
             )}

@@ -6,7 +6,7 @@ export const registryConfig: RegistryItemConfig = {
   description: "Two column FAQ with questions left, answers right",
   categories: ["faq", "landing"],
   tier: "free",
-  readiness: "production",
+  readiness: "alpha",
   blockConfig: {
     template: "service-plants",
     blockType: "faq",

@@ -113,7 +113,10 @@ export function Features9({
                 >
                   <DynamicIcon
                     name={feature.icon}
-                    className={cn("text-brand h-6 w-6", classNames.feature?.icon)}
+                    className={cn(
+                      "text-brand h-6 w-6",
+                      classNames.feature?.icon
+                    )}
                   />
                 </div>
                 <h3

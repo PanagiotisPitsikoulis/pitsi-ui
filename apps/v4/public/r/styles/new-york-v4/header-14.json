@@ -1,0 +1,36 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "header-14",
+  "type": "registry:block",
+  "description": "Travel agency header with integrated search bar",
+  "dependencies": [
+    "@hugeicons/react",
+    "@hugeicons/core-free-icons"
+  ],
+  "registryDependencies": [
+    "button",
+    "input"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/header/header-14.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\nimport Link from \"next/link\"\n\nimport { DynamicIcon } from \"@/lib/blocks/dynamic-icon\"\nimport { type HeaderBlockProps } from \"@/lib/blocks/header.types\"\nimport { cn } from \"@/lib/utils\"\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\nimport { Input } from \"@/registry/new-york-v4/ui/input\"\n\nconst header14Defaults = {\n  logo: {\n    text: \"Voyager\",\n    href: \"#\",\n  },\n  navigation: [\n    { label: \"Destinations\", href: \"#\" },\n    { label: \"Tours\", href: \"#\" },\n    { label: \"Deals\", href: \"#\" },\n    { label: \"About\", href: \"#\" },\n  ],\n  cta: { label: \"Book Now\", href: \"#\" },\n}\n\nexport function Header14({ content = {}, classNames = {} }: HeaderBlockProps) {\n  const {\n    logo = header14Defaults.logo,\n    navigation = header14Defaults.navigation,\n    cta = header14Defaults.cta,\n  } = content\n\n  const [searchQuery, setSearchQuery] = useState(\"\")\n  const [isSearchFocused, setIsSearchFocused] = useState(false)\n\n  return (\n    <header\n      className={cn(\n        \"bg-background border-border sticky top-0 z-50 border-b\",\n        classNames.root\n      )}\n    >\n      {/* Top Bar with Search */}\n      <div className=\"bg-muted/30 border-border border-b\">\n        <div\n          className={cn(\n            \"container flex h-12 items-center justify-between px-6\",\n            classNames.container\n          )}\n        >\n          {/* Contact Info */}\n          <div className=\"text-muted-foreground hidden items-center gap-6 text-sm md:flex\">\n            <div className=\"flex items-center gap-2\">\n              <DynamicIcon name=\"Phone\" className=\"h-4 w-4\" />\n              <span>1-800-TRAVEL</span>\n            </div>\n            <div className=\"flex items-center gap-2\">\n              <DynamicIcon name=\"Mail\" className=\"h-4 w-4\" />\n              <span>info@voyager.com</span>\n            </div>\n          </div>\n\n          {/* Search Bar */}\n          <div\n            className={cn(\n              \"relative flex-1 transition-all duration-300 md:ml-8 md:max-w-md\",\n              isSearchFocused && \"md:max-w-lg\"\n            )}\n          >\n            <DynamicIcon\n              name=\"Search\"\n              className={cn(\n                \"absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 transition-colors\",\n                isSearchFocused ? \"text-brand\" : \"text-muted-foreground\"\n              )}\n            />\n            <Input\n              type=\"search\"\n              placeholder=\"Search destinations, tours, packages...\"\n              value={searchQuery}\n              onChange={(e) => setSearchQuery(e.target.value)}\n              onFocus={() => setIsSearchFocused(true)}\n              onBlur={() => setIsSearchFocused(false)}\n              className={cn(\n                \"h-9 pr-4 pl-10 transition-all duration-300\",\n                isSearchFocused && \"ring-brand ring-2\"\n              )}\n            />\n          </div>\n\n          {/* Quick Links */}\n          <div className=\"hidden items-center gap-4 lg:flex\">\n            <Button variant=\"ghost\" size=\"sm\" className=\"h-8 gap-2\">\n              <DynamicIcon name=\"Heart\" className=\"h-4 w-4\" />\n              <span>Wishlist</span>\n            </Button>\n            <Button variant=\"ghost\" size=\"sm\" className=\"h-8 gap-2\">\n              <DynamicIcon name=\"User\" className=\"h-4 w-4\" />\n              <span>Account</span>\n            </Button>\n          </div>\n        </div>\n      </div>\n\n      {/* Main Navigation */}\n      <div\n        className={cn(\n          \"container flex h-16 items-center justify-between px-6\",\n          classNames.container\n        )}\n      >\n        {/* Logo */}\n        <Link\n          href={logo?.href ?? \"#\"}\n          className={cn(\"flex items-center gap-3\", classNames.logo)}\n        >\n          <div className=\"relative\">\n            <div className=\"bg-brand/10 absolute inset-0 animate-pulse rounded-full\" />\n            <div className=\"bg-brand relative flex h-10 w-10 items-center justify-center rounded-full\">\n              <DynamicIcon\n                name=\"Globe\"\n                className=\"text-brand-foreground h-6 w-6\"\n              />\n            </div>\n          </div>\n          <div className=\"flex flex-col\">\n            <span className=\"text-foreground text-lg leading-tight font-bold\">\n              {logo?.text}\n            </span>\n            <span className=\"text-muted-foreground text-xs\">\n              Travel & Adventures\n            </span>\n          </div>\n        </Link>\n\n        {/* Navigation */}\n        <nav\n          className={cn(\n            \"hidden items-center gap-1 md:flex\",\n            classNames.nav?.root\n          )}\n        >\n          {navigation.map((item, i) => (\n            <Link\n              key={i}\n              href={item.href}\n              className={cn(\n                \"text-muted-foreground hover:text-foreground hover:bg-muted rounded-md px-4 py-2 text-sm font-medium transition-colors\",\n                classNames.nav?.link\n              )}\n            >\n              {item.label}\n            </Link>\n          ))}\n        </nav>\n\n        {/* CTA */}\n        <div className=\"flex items-center gap-3\">\n          {cta && (\n            <Button\n              className={cn(\"bg-brand hover:bg-brand/90\", classNames.cta)}\n              asChild\n            >\n              <Link href={cta.href}>\n                <DynamicIcon name=\"Calendar\" className=\"mr-2 h-4 w-4\" />\n                {cta.label}\n              </Link>\n            </Button>\n          )}\n\n          {/* Mobile Menu Button */}\n          <Button variant=\"ghost\" size=\"icon\" className=\"md:hidden\">\n            <DynamicIcon name=\"Menu\" className=\"h-5 w-5\" />\n            <span className=\"sr-only\">Menu</span>\n          </Button>\n        </div>\n      </div>\n    </header>\n  )\n}\n\nexport { Header14 as HeaderServiceTravel14 }\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "header",
+    "landing"
+  ],
+  "tier": "free",
+  "readiness": "alpha",
+  "blockConfig": {
+    "template": "service-travel",
+    "blockType": "header",
+    "order": 1,
+    "palette": "azure",
+    "typography": "modern",
+    "tint": "tinted",
+    "forceLight": true
+  }
+}

@@ -1,16 +1,17 @@
 "use client"
 
-import Image from "next/image"
 import Link from "next/link"
 
 import { type HeroBlockProps } from "@/lib/blocks/hero.types"
 import { cn } from "@/lib/utils"
+import Balatro from "@/registry/new-york-v4/animations/balatro/balatro"
+import CircularText from "@/registry/new-york-v4/animations/circular-text/circular-text"
 import { HeroText } from "@/registry/new-york-v4/lib/hero-text"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
 import { HeroButton } from "../../ui/hero-button"
 
-// Hero 8 - Subject Spotlight (Large centered transparent subject behind glass card)
+// Hero 8 - Balatro Background + CircularText Accent
 const hero8Defaults = {
   badge: "Transform Your Body",
   title: "Strength\nRedefined",
@@ -22,46 +23,25 @@ const hero8Defaults = {
     href: "#",
     variant: "outline" as const,
   },
-  // Large hero subject (transparent background)
-  heroSubject: {
-    src: "/elements/subject/gym/8.webp",
-    alt: "Premium gym equipment",
+  balatroConfig: {
+    color1: "#39ff14",
+    color2: "#006BB4",
+    color3: "#0a0a0a",
+    spinSpeed: 4.0,
+    spinRotation: -1.5,
+    contrast: 3.0,
+    lighting: 0.5,
+    spinAmount: 0.3,
   },
-  // Accent subjects floating around
-  accentSubjects: [
-    {
-      src: "/elements/subject/gym/1.webp",
-      alt: "Dumbbell",
-      position: { top: "10%", left: "5%" },
-      size: 120,
-      rotation: -15,
-    },
-    {
-      src: "/elements/subject/gym/3.webp",
-      alt: "Weight",
-      position: { bottom: "15%", left: "8%" },
-      size: 100,
-      rotation: 10,
-    },
-    {
-      src: "/elements/subject/gym/2.webp",
-      alt: "Kettlebell",
-      position: { top: "20%", right: "5%" },
-      size: 90,
-      rotation: 20,
-    },
-    {
-      src: "/elements/subject/gym/4.webp",
-      alt: "Equipment",
-      position: { bottom: "20%", right: "10%" },
-      size: 110,
-      rotation: -10,
-    },
-  ],
+  circularTextConfig: {
+    text: " TRAIN HARD * GET FIT * STAY STRONG *",
+    spinDuration: 15,
+    onHover: "speedUp" as const,
+  },
   features: [
-    { icon: "💪", label: "Pro Equipment" },
-    { icon: "🎯", label: "Expert Coaching" },
-    { icon: "⚡", label: "Fast Results" },
+    { label: "Pro Equipment" },
+    { label: "Expert Coaching" },
+    { label: "Fast Results" },
   ],
 }
 
@@ -72,101 +52,121 @@ export function Hero8({ content = {}, classNames = {} }: HeroBlockProps) {
     description = hero8Defaults.description,
     primaryCta = hero8Defaults.primaryCta,
     secondaryCta = hero8Defaults.secondaryCta,
-    heroSubject = hero8Defaults.heroSubject,
-    accentSubjects = hero8Defaults.accentSubjects,
+    balatroConfig = hero8Defaults.balatroConfig,
+    circularTextConfig = hero8Defaults.circularTextConfig,
     features = hero8Defaults.features,
   } = content as typeof hero8Defaults
 
   return (
     <section
       className={cn(
-        "relative flex min-h-[calc(100svh-5rem)] flex-col overflow-hidden",
+        "bg-background relative flex min-h-[calc(100svh-5rem)] flex-col overflow-hidden",
         classNames.root
       )}
     >
-      {/* Radial Gradient Background */}
-      <div className="from-brand/10 pointer-events-none absolute inset-0 bg-radial-[ellipse_80%_60%_at_50%_40%] via-transparent to-transparent" />
-
-      {/* Large Hero Subject - Centered Behind */}
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-        <div className="relative h-[70%] w-[70%] opacity-30 lg:h-[80%] lg:w-[60%] lg:opacity-40">
-          <Image
-            src={heroSubject.src}
-            alt={heroSubject.alt}
-            fill
-            className="object-contain"
-            priority
-          />
-        </div>
-      </div>
-
-      {/* Floating Accent Subjects */}
-      <div className="pointer-events-none absolute inset-0 hidden lg:block">
-        {accentSubjects.map((subject, i) => (
-          <div
-            key={i}
-            className="absolute opacity-60 transition-transform duration-500"
-            style={{
-              ...subject.position,
-              width: subject.size,
-              height: subject.size,
-              transform: `rotate(${subject.rotation}deg)`,
-            }}
-          >
-            <Image
-              src={subject.src}
-              alt={subject.alt}
-              fill
-              className="object-contain drop-shadow-xl"
-            />
-          </div>
-        ))}
+      {/* Balatro Background */}
+      <div className="pointer-events-none absolute inset-0">
+        <Balatro
+          color1={balatroConfig.color1}
+          color2={balatroConfig.color2}
+          color3={balatroConfig.color3}
+          spinSpeed={balatroConfig.spinSpeed}
+          spinRotation={balatroConfig.spinRotation}
+          contrast={balatroConfig.contrast}
+          lighting={balatroConfig.lighting}
+          spinAmount={balatroConfig.spinAmount}
+          isRotate={true}
+          mouseInteraction={true}
+        />
+        {/* Dark overlay for text readability */}
+        <div className="from-background/80 via-background/50 absolute inset-0 bg-gradient-to-b to-transparent" />
       </div>
 
       {/* Content Container */}
       <div className="relative z-10 container flex flex-1 items-center justify-center px-4 py-12">
-        {/* Glassmorphism Card */}
-        <div className="bg-background/70 w-full max-w-2xl rounded-3xl p-8 text-center shadow-2xl backdrop-blur-xl md:p-12">
-          <HeroText
-            badge={badge}
-            title={title}
-            description={description}
-            size="large"
-            align="center"
-            classNames={classNames.header}
+        <div className="grid w-full gap-8 lg:grid-cols-5 lg:items-center lg:gap-12">
+          {/* Left: Circular Text (hidden on mobile) */}
+          <div className="hidden lg:col-span-1 lg:flex lg:items-center lg:justify-center">
+            <div className="text-brand">
+              <CircularText
+                text={circularTextConfig.text}
+                spinDuration={circularTextConfig.spinDuration}
+                onHover={circularTextConfig.onHover}
+                className="text-brand"
+              />
+            </div>
+          </div>
+
+          {/* Center: Main Content */}
+          <div className="text-center lg:col-span-3">
+            <HeroText
+              badge={badge}
+              title={title}
+              description={description}
+              size="large"
+              align="center"
+              classNames={classNames.header}
+            />
+
+            {/* Feature Pills */}
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              {features.map((feature, i) => (
+                <div
+                  key={i}
+                  className="bg-muted/80 border-brand/30 flex items-center gap-2 rounded-full border px-5 py-2.5 text-sm font-medium"
+                >
+                  <span className="bg-brand h-2 w-2 rounded-full" />
+                  <span>{feature.label}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Buttons */}
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+              {primaryCta && (
+                <Link
+                  href={primaryCta.href}
+                  className={classNames.cta?.primary}
+                >
+                  <HeroButton>{primaryCta.label}</HeroButton>
+                </Link>
+              )}
+              {secondaryCta && (
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className={cn("text-foreground", classNames.cta?.secondary)}
+                >
+                  <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
+                </Button>
+              )}
+            </div>
+          </div>
+
+          {/* Right: Circular Text (hidden on mobile) */}
+          <div className="hidden lg:col-span-1 lg:flex lg:items-center lg:justify-center">
+            <div className="text-brand">
+              <CircularText
+                text={circularTextConfig.text}
+                spinDuration={circularTextConfig.spinDuration + 5}
+                onHover="slowDown"
+                className="text-brand"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile: Circular Text at Bottom */}
+      <div className="relative z-10 flex justify-center pb-8 lg:hidden">
+        <div className="text-brand scale-75">
+          <CircularText
+            text={circularTextConfig.text}
+            spinDuration={circularTextConfig.spinDuration}
+            onHover={circularTextConfig.onHover}
+            className="text-brand"
           />
-
-          {/* Feature Pills */}
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            {features.map((feature, i) => (
-              <div
-                key={i}
-                className="bg-muted/50 flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium"
-              >
-                <span>{feature.icon}</span>
-                <span>{feature.label}</span>
-              </div>
-            ))}
-          </div>
-
-          {/* Buttons */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            {primaryCta && (
-              <Link href={primaryCta.href} className={classNames.cta?.primary}>
-                <HeroButton>{primaryCta.label}</HeroButton>
-              </Link>
-            )}
-            {secondaryCta && (
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className={cn("text-foreground", classNames.cta?.secondary)}
-              >
-                <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
-              </Button>
-            )}
-          </div>
         </div>
       </div>
     </section>

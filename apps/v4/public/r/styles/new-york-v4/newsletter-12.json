@@ -1,0 +1,32 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "newsletter-12",
+  "type": "registry:block",
+  "description": "Card-style travel newsletter with discount offer",
+  "registryDependencies": [
+    "button",
+    "input",
+    "block-header"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/newsletter/newsletter-12.tsx",
+      "content": "\"use client\"\n\nimport { useState } from \"react\"\n\nimport { DynamicIcon } from \"@/lib/blocks/dynamic-icon\"\nimport { cn } from \"@/lib/utils\"\nimport { SlideUp } from \"@/registry/new-york-v4/animations/slide-up/slide-up\"\nimport { BlockHeader } from \"@/registry/new-york-v4/lib/block-header\"\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\nimport { Input } from \"@/registry/new-york-v4/ui/input\"\n\ninterface NewsletterBlockProps {\n  content?: {\n    title?: string\n    description?: string\n    placeholder?: string\n    buttonLabel?: string\n  }\n  classNames?: {\n    root?: string\n    container?: string\n    header?: { title?: string; description?: string }\n  }\n}\n\nconst newsletter12Defaults = {\n  title: \"Get 15% Off Your First Trip\",\n  description:\n    \"Subscribe and receive an exclusive discount code for your next adventure.\",\n  placeholder: \"Your email\",\n  buttonLabel: \"Get My Discount\",\n}\n\nexport function Newsletter12({\n  content = {},\n  classNames = {},\n}: NewsletterBlockProps) {\n  const {\n    title = newsletter12Defaults.title,\n    description = newsletter12Defaults.description,\n    placeholder = newsletter12Defaults.placeholder,\n    buttonLabel = newsletter12Defaults.buttonLabel,\n  } = content\n\n  const [isVisible, setIsVisible] = useState(true)\n\n  if (!isVisible) return null\n\n  return (\n    <section className={cn(\"bg-background\", classNames.root)}>\n      <div\n        className={cn(\"container px-6 py-16 md:py-24\", classNames.container)}\n      >\n        <SlideUp delay={0} distance={20}>\n          <div className=\"mx-auto max-w-md\">\n            <div className=\"border-border bg-card relative overflow-hidden rounded-2xl border p-8 shadow-lg\">\n              {/* Close button */}\n              <Button\n                variant=\"ghost\"\n                size=\"icon\"\n                className=\"absolute top-2 right-2\"\n                onClick={() => setIsVisible(false)}\n              >\n                <DynamicIcon name=\"X\" className=\"h-4 w-4\" />\n              </Button>\n\n              {/* Decorative element */}\n              <div className=\"bg-primary/5 absolute -top-12 -right-12 h-32 w-32 rounded-full\" />\n              <div className=\"bg-primary/5 absolute -bottom-8 -left-8 h-24 w-24 rounded-full\" />\n\n              {/* Content */}\n              <div className=\"relative text-center\">\n                <div className=\"bg-primary/10 mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full\">\n                  <DynamicIcon name=\"Plane\" className=\"text-primary h-7 w-7\" />\n                </div>\n\n                <BlockHeader\n                  title={title}\n                  description={description}\n                  titleAs=\"h3\"\n                  spacing=\"none\"\n                  className=\"mb-6\"\n                  classNames={{\n                    ...classNames.header,\n                    title: cn(\"text-xl\", classNames.header?.title),\n                    description: cn(\"text-sm\", classNames.header?.description),\n                  }}\n                />\n\n                <div className=\"space-y-3\">\n                  <Input\n                    type=\"email\"\n                    placeholder={placeholder}\n                    className=\"h-11 text-center\"\n                  />\n                  <Button className=\"w-full\">{buttonLabel}</Button>\n                </div>\n\n                <p className=\"text-muted-foreground mt-4 text-xs\">\n                  No spam. Unsubscribe anytime.\n                </p>\n              </div>\n            </div>\n          </div>\n        </SlideUp>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "newsletter",
+    "landing"
+  ],
+  "tier": "free",
+  "readiness": "alpha",
+  "blockConfig": {
+    "template": "service-travel",
+    "blockType": "newsletter",
+    "order": 14,
+    "palette": "azure",
+    "typography": "modern",
+    "tint": "deep"
+  }
+}

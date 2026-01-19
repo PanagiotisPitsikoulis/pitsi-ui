@@ -108,7 +108,10 @@ export function Hero4({ content = {}, classNames = {} }: HeroBlockProps) {
             {/* Buttons */}
             <div className="mt-8 flex flex-wrap items-center gap-3">
               {primaryCta && (
-                <Link href={primaryCta.href} className={classNames.cta?.primary}>
+                <Link
+                  href={primaryCta.href}
+                  className={classNames.cta?.primary}
+                >
                   <HeroButton>{primaryCta.label}</HeroButton>
                 </Link>
               )}

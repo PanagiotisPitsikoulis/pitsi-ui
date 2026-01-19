@@ -6,7 +6,7 @@ export const registryConfig: RegistryItemConfig = {
   description: "Leadership section with smaller team grid",
   categories: ["team", "landing"],
   tier: "free",
-  readiness: "production",
+  readiness: "alpha",
   blockConfig: {
     template: "service-plants",
     blockType: "team",

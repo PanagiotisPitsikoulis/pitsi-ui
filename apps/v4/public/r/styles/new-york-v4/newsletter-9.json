@@ -1,0 +1,31 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "newsletter-9",
+  "type": "registry:block",
+  "description": "Travel newsletter with destination image and subscription form",
+  "registryDependencies": [
+    "button",
+    "input"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/newsletter/newsletter-9.tsx",
+      "content": "\"use client\"\n\nimport Image from \"next/image\"\n\nimport { cn } from \"@/lib/utils\"\nimport { ScrollFade } from \"@/registry/new-york-v4/animations/scroll-fade/scroll-fade\"\nimport { BlockHeader } from \"@/registry/new-york-v4/lib/block-header\"\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\nimport { Input } from \"@/registry/new-york-v4/ui/input\"\n\ninterface NewsletterBlockProps {\n  content?: {\n    title?: string\n    description?: string\n    image?: { src: string; alt: string }\n    placeholder?: string\n    buttonLabel?: string\n  }\n  classNames?: {\n    root?: string\n    container?: string\n    header?: { title?: string; description?: string }\n  }\n}\n\nconst newsletter9Defaults = {\n  title: \"Discover Your Next Destination\",\n  description:\n    \"Get curated travel guides, insider tips, and exclusive deals delivered straight to your inbox.\",\n  image: {\n    src: \"/elements/landscape/travel/1.webp\",\n    alt: \"Beautiful travel destination\",\n  },\n  placeholder: \"Enter your email address\",\n  buttonLabel: \"Start Exploring\",\n}\n\nexport function Newsletter9({\n  content = {},\n  classNames = {},\n}: NewsletterBlockProps) {\n  const {\n    title = newsletter9Defaults.title,\n    description = newsletter9Defaults.description,\n    image = newsletter9Defaults.image,\n    placeholder = newsletter9Defaults.placeholder,\n    buttonLabel = newsletter9Defaults.buttonLabel,\n  } = content\n\n  return (\n    <section className={cn(\"bg-muted\", classNames.root)}>\n      <div\n        className={cn(\"container px-6 py-16 md:py-24\", classNames.container)}\n      >\n        <ScrollFade delay={0}>\n          <div className=\"mx-auto grid max-w-5xl gap-12 lg:grid-cols-2 lg:items-center\">\n            {/* Image */}\n            <div className=\"relative aspect-[4/3] overflow-hidden rounded-2xl lg:order-2\">\n              <Image\n                src={image.src}\n                alt={image.alt}\n                fill\n                className=\"object-cover\"\n              />\n              <div className=\"from-foreground/40 absolute inset-0 bg-gradient-to-t to-transparent\" />\n              <div className=\"absolute right-4 bottom-4 left-4\">\n                <p className=\"text-background text-sm font-medium\">\n                  Featured Destination\n                </p>\n                <p className=\"text-background/80 text-xs\">\n                  Explore hidden gems around the world\n                </p>\n              </div>\n            </div>\n\n            {/* Content */}\n            <div className=\"lg:order-1\">\n              <BlockHeader\n                title={title}\n                description={description}\n                align=\"left\"\n                spacing=\"none\"\n                className=\"mb-8\"\n                classNames={classNames.header}\n              />\n\n              <div className=\"space-y-4\">\n                <Input\n                  type=\"email\"\n                  placeholder={placeholder}\n                  className=\"bg-background h-12\"\n                />\n                <Button size=\"lg\" className=\"w-full\">\n                  {buttonLabel}\n                </Button>\n              </div>\n\n              <p className=\"text-muted-foreground mt-4 text-sm\">\n                Join 25,000+ travelers. Unsubscribe anytime.\n              </p>\n            </div>\n          </div>\n        </ScrollFade>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "newsletter",
+    "landing"
+  ],
+  "tier": "free",
+  "readiness": "alpha",
+  "blockConfig": {
+    "template": "service-travel",
+    "blockType": "newsletter",
+    "order": 14,
+    "palette": "azure",
+    "typography": "modern",
+    "tint": "deep"
+  }
+}

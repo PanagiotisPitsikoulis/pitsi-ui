@@ -79,12 +79,12 @@ export function Header8({ content = {}, classNames = {} }: HeaderBlockProps) {
         >
           {/* Marquee Announcements */}
           <div className="flex-1 overflow-hidden md:mr-4">
-            <Marquee
-              pauseOnHover
-              className="[--duration:30s] [--gap:3rem]"
-            >
+            <Marquee pauseOnHover className="[--duration:30s] [--gap:3rem]">
               {topBar.announcements.map((announcement, i) => (
-                <div key={i} className="flex items-center gap-3 text-xs font-medium">
+                <div
+                  key={i}
+                  className="flex items-center gap-3 text-xs font-medium"
+                >
                   <DynamicIcon name="Sparkles" className="h-3 w-3" />
                   <span>{announcement}</span>
                 </div>
@@ -105,7 +105,7 @@ export function Header8({ content = {}, classNames = {} }: HeaderBlockProps) {
           </div>
 
           {/* Social Links */}
-          <div className="flex items-center gap-3 ml-4">
+          <div className="ml-4 flex items-center gap-3">
             {topBar.social.map((item, i) => (
               <Link
                 key={i}

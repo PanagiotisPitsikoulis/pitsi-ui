@@ -89,7 +89,10 @@ export function Hero22({ content = {}, classNames = {} }: HeroBlockProps) {
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
               {primaryCta && (
-                <Link href={primaryCta.href} className={classNames.cta?.primary}>
+                <Link
+                  href={primaryCta.href}
+                  className={classNames.cta?.primary}
+                >
                   <HeroButton>{primaryCta.label}</HeroButton>
                 </Link>
               )}
@@ -138,7 +141,9 @@ export function Hero22({ content = {}, classNames = {} }: HeroBlockProps) {
                 <div className="display text-2xl font-bold md:text-3xl">
                   {stat.value}
                 </div>
-                <div className="text-muted-foreground text-sm">{stat.label}</div>
+                <div className="text-muted-foreground text-sm">
+                  {stat.label}
+                </div>
               </ScrollScale>
             ))}
           </div>

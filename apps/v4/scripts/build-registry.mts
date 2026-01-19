@@ -369,6 +369,9 @@ async function buildBlocksMetadata(styles: Style[]) {
       // Skip "template" category - templates are no longer registry items
       if (categories.includes("template")) continue
 
+      // Skip alpha items - they should not appear in navigation
+      if (item.readiness === "alpha") continue
+
       // Use the first category as the main category
       const mainCategory = categories[0]
 
@@ -490,16 +493,28 @@ export interface RegistryTemplateMetadata {
 
 export const TEMPLATE_METADATA: RegistryTemplateMetadata[] = ${JSON.stringify(templateMetadata, null, 2)}
 
+/**
+ * Check if a template has production blocks
+ */
+function templateHasProductionBlocks(slug: string): boolean {
+  const template = COMPUTED_TEMPLATES[slug]
+  return template ? template.blocks.length > 0 : false
+}
+
 export function getAllTemplatesFromRegistry(): RegistryTemplateMetadata[] {
-  return TEMPLATE_METADATA
+  return TEMPLATE_METADATA.filter((t) => templateHasProductionBlocks(t.slug))
 }
 
 export function getServiceTemplatesFromRegistry(): RegistryTemplateMetadata[] {
-  return TEMPLATE_METADATA.filter((t) => t.type === "service")
+  return TEMPLATE_METADATA.filter(
+    (t) => t.type === "service" && templateHasProductionBlocks(t.slug)
+  )
 }
 
 export function getApplicationTemplatesFromRegistry(): RegistryTemplateMetadata[] {
-  return TEMPLATE_METADATA.filter((t) => t.type === "application")
+  return TEMPLATE_METADATA.filter(
+    (t) => t.type === "application" && templateHasProductionBlocks(t.slug)
+  )
 }
 
 /**

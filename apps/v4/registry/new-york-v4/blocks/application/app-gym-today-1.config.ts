@@ -9,7 +9,7 @@ export const registryConfig: RegistryItemConfig = {
   registryDependencies: ["button", "utils"],
   categories: ["application"],
   tier: "free",
-  readiness: "beta",
+  readiness: "alpha",
   blockConfig: {
     template: "app-gym-tracker",
     blockType: "view",

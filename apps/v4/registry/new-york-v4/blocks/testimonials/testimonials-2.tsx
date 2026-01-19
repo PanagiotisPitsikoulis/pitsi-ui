@@ -111,7 +111,9 @@ export function Testimonials2({
     testimonials2Defaults.testimonials
 
   return (
-    <section className={cn("relative bg-black py-24 lg:py-32", classNames.root)}>
+    <section
+      className={cn("relative bg-black py-24 lg:py-32", classNames.root)}
+    >
       {/* Flying Posters Background - Creates dynamic gym atmosphere */}
       <div className="pointer-events-none absolute inset-0 opacity-20">
         <FlyingPosters
@@ -126,7 +128,7 @@ export function Testimonials2({
       {/* Gradient overlay for readability */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/60 via-black/80 to-black/60" />
 
-      <div className={cn("container relative z-10 px-6", classNames.container)}>
+      <div className={cn("relative z-10 container px-6", classNames.container)}>
         {/* Animated Header with LetterGlitch */}
         <div className="mb-12 text-center lg:mb-16">
           {/* Badge */}

@@ -154,7 +154,9 @@ export function Gallery4({ content = {}, classNames = {} }: GalleryBlockProps) {
                   <span className="text-lg font-medium text-white">
                     {image.alt}
                   </span>
-                  <span className="text-sm text-white/70">{image.category}</span>
+                  <span className="text-sm text-white/70">
+                    {image.category}
+                  </span>
                 </div>
               </motion.div>
             ))}

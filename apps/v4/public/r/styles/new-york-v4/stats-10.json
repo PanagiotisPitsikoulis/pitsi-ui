@@ -1,0 +1,27 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "stats-10",
+  "type": "registry:block",
+  "description": "Travel statistics with animated counters and descriptions",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/stats/stats-10.tsx",
+      "content": "\"use client\"\n\nimport { useEffect, useRef, useState } from \"react\"\n\nimport { type StatsBlockProps } from \"@/lib/blocks/stats.types\"\nimport { cn } from \"@/lib/utils\"\nimport { BlockHeader } from \"@/registry/new-york-v4/lib/block-header\"\n\ninterface Stats10Item {\n  value: number\n  suffix: string\n  label: string\n  description: string\n}\n\nconst stats10Defaults = {\n  badge: \"Our Impact\",\n  title: \"Creating Unforgettable Journeys\",\n  stats: [\n    {\n      value: 150,\n      suffix: \"+\",\n      label: \"Countries Explored\",\n      description: \"Destinations across all continents\",\n    },\n    {\n      value: 50000,\n      suffix: \"+\",\n      label: \"Happy Travelers\",\n      description: \"Satisfied adventurers worldwide\",\n    },\n    {\n      value: 98,\n      suffix: \"%\",\n      label: \"Satisfaction Rate\",\n      description: \"Based on customer reviews\",\n    },\n    {\n      value: 15,\n      suffix: \"\",\n      label: \"Years of Excellence\",\n      description: \"Trusted travel expertise\",\n    },\n  ] as Stats10Item[],\n}\n\nfunction AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {\n  const [displayValue, setDisplayValue] = useState(0)\n  const [hasAnimated, setHasAnimated] = useState(false)\n  const ref = useRef<HTMLSpanElement>(null)\n\n  useEffect(() => {\n    const observer = new IntersectionObserver(\n      (entries) => {\n        if (entries[0].isIntersecting && !hasAnimated) {\n          setHasAnimated(true)\n          const duration = 2000\n          const steps = 60\n          const increment = value / steps\n          let current = 0\n\n          const timer = setInterval(() => {\n            current += increment\n            if (current >= value) {\n              setDisplayValue(value)\n              clearInterval(timer)\n            } else {\n              setDisplayValue(Math.floor(current))\n            }\n          }, duration / steps)\n        }\n      },\n      { threshold: 0.5 }\n    )\n\n    if (ref.current) {\n      observer.observe(ref.current)\n    }\n\n    return () => observer.disconnect()\n  }, [value, hasAnimated])\n\n  return (\n    <span ref={ref} className=\"tabular-nums\">\n      {displayValue.toLocaleString()}\n      {suffix}\n    </span>\n  )\n}\n\nexport function Stats10({ content = {}, classNames = {} }: StatsBlockProps) {\n  const { badge = stats10Defaults.badge, title = stats10Defaults.title } =\n    content\n\n  const stats =\n    (content as { stats?: Stats10Item[] }).stats ?? stats10Defaults.stats\n\n  return (\n    <section className={cn(\"bg-muted py-24\", classNames.root)}>\n      <div className={cn(\"container px-6\", classNames.container)}>\n        <BlockHeader\n          badge={badge}\n          title={title}\n          classNames={classNames.header}\n        />\n\n        <div\n          className={cn(\n            \"grid gap-8 md:grid-cols-2 lg:grid-cols-4\",\n            classNames.grid\n          )}\n        >\n          {stats.map((stat, idx) => (\n            <div\n              key={idx}\n              className={cn(\n                \"bg-background relative overflow-hidden rounded-2xl p-8 text-center shadow-sm transition-shadow hover:shadow-md\",\n                classNames.stat?.root\n              )}\n            >\n              <div className=\"bg-primary/5 absolute -top-8 -right-8 h-32 w-32 rounded-full\" />\n              <div className=\"bg-primary/5 absolute -bottom-4 -left-4 h-20 w-20 rounded-full\" />\n\n              <div className=\"relative\">\n                <div\n                  className={cn(\n                    \"text-primary text-5xl font-bold md:text-6xl\",\n                    classNames.stat?.value\n                  )}\n                >\n                  <AnimatedCounter value={stat.value} suffix={stat.suffix} />\n                </div>\n\n                <h3\n                  className={cn(\n                    \"text-foreground mt-4 text-lg font-semibold\",\n                    classNames.stat?.label\n                  )}\n                >\n                  {stat.label}\n                </h3>\n\n                <p\n                  className={cn(\n                    \"text-muted-foreground mt-2 text-sm\",\n                    classNames.stat?.description\n                  )}\n                >\n                  {stat.description}\n                </p>\n              </div>\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n\nexport default Stats10\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "stats",
+    "landing"
+  ],
+  "tier": "free",
+  "readiness": "alpha",
+  "blockConfig": {
+    "template": "service-travel",
+    "blockType": "stats",
+    "order": 10,
+    "palette": "azure",
+    "typography": "modern",
+    "tint": "deep"
+  }
+}

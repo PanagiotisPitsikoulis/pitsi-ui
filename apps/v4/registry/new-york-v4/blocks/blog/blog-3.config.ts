@@ -6,7 +6,7 @@ export const registryConfig: RegistryItemConfig = {
   description: "Blog list view with author avatars and dates",
   categories: ["blog", "landing"],
   tier: "free",
-  readiness: "production",
+  readiness: "alpha",
   blockConfig: {
     template: "service-plants",
     blockType: "blog",

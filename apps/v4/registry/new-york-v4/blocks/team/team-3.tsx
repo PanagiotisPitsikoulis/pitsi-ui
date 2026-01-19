@@ -106,11 +106,7 @@ export function Team3({ content = {}, classNames = {} }: TeamBlockProps) {
             >
               {/* Avatar with DecayCard hover effect */}
               <div className="relative aspect-square overflow-hidden">
-                <DecayCard
-                  width={300}
-                  height={300}
-                  image={member.avatar}
-                >
+                <DecayCard width={300} height={300} image={member.avatar}>
                   {null}
                 </DecayCard>
                 {/* Social overlay */}

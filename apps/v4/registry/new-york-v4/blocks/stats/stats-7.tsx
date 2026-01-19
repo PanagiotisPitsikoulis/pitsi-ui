@@ -161,7 +161,9 @@ export function Stats7({ content = {}, classNames = {} }: StatsBlockProps) {
             {highlights.map((stat, i) => (
               <SlideUp key={i} delay={0.1 + i * 0.1} distance={25}>
                 <div className="border-border rounded-xl border p-6 text-center">
-                  <p className="text-primary text-3xl font-bold">{stat.value}</p>
+                  <p className="text-primary text-3xl font-bold">
+                    {stat.value}
+                  </p>
                   <p className="text-muted-foreground mt-1 text-sm">
                     {stat.label}
                   </p>

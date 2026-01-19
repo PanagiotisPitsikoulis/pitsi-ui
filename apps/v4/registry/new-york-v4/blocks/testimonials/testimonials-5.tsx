@@ -82,7 +82,7 @@ export function Testimonials5({
   return (
     <section
       className={cn(
-        "relative overflow-hidden bg-gradient-to-b from-sage-100 via-sage-50 to-amber-50 dark:from-sage-950 dark:via-sage-900/50 dark:to-amber-950/30",
+        "from-sage-100 via-sage-50 dark:from-sage-950 dark:via-sage-900/50 relative overflow-hidden bg-gradient-to-b to-amber-50 dark:to-amber-950/30",
         classNames.root
       )}
     >

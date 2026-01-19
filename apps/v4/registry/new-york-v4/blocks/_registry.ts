@@ -22,7 +22,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "card", "input", "label", "separator"],
     categories: ["application", "auth"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-library",
       blockType: "application",
@@ -53,7 +53,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application", "docs"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-library",
       blockType: "application",
@@ -77,7 +77,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["badge", "button", "card", "input"],
     categories: ["application", "blog"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-library",
       blockType: "application",
@@ -101,7 +101,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["avatar", "badge", "button", "separator"],
     categories: ["application", "blog"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-library",
       blockType: "application",
@@ -125,7 +125,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["badge", "button", "tabs"],
     categories: ["application", "docs"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-library",
       blockType: "application",
@@ -149,7 +149,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["badge", "button", "card"],
     categories: ["application", "dashboard"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-library",
       blockType: "application",
@@ -173,7 +173,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "sheet"],
     categories: ["application", "docs"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-library",
       blockType: "application",
@@ -197,7 +197,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["utils"],
     categories: ["application"],
     tier: "free",
-    readiness: "beta",
+    readiness: "alpha",
     blockConfig: {
       template: "app-gym-tracker",
       blockType: "view",
@@ -221,7 +221,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "utils"],
     categories: ["application"],
     tier: "free",
-    readiness: "beta",
+    readiness: "alpha",
     blockConfig: {
       template: "app-gym-tracker",
       blockType: "view",
@@ -245,7 +245,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["input", "utils"],
     categories: ["application"],
     tier: "free",
-    readiness: "beta",
+    readiness: "alpha",
     blockConfig: {
       template: "app-gym-tracker",
       blockType: "view",
@@ -269,7 +269,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "input", "utils"],
     categories: ["application"],
     tier: "free",
-    readiness: "beta",
+    readiness: "alpha",
     blockConfig: {
       template: "app-gym-tracker",
       blockType: "view",
@@ -302,7 +302,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "free",
-    readiness: "beta",
+    readiness: "alpha",
     blockConfig: {
       template: "app-gym-tracker",
       blockType: "view",
@@ -326,7 +326,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["sidebar", "avatar", "button", "separator", "utils"],
     categories: ["application"],
     tier: "free",
-    readiness: "beta",
+    readiness: "alpha",
     blockConfig: {
       template: "app-gym-tracker",
       blockType: "shell",
@@ -351,7 +351,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "utils"],
     categories: ["application"],
     tier: "free",
-    readiness: "beta",
+    readiness: "alpha",
     blockConfig: {
       template: "app-gym-tracker",
       blockType: "view",
@@ -375,7 +375,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "card", "utils"],
     categories: ["application"],
     tier: "free",
-    readiness: "beta",
+    readiness: "alpha",
     blockConfig: {
       template: "app-quiz",
       blockType: "view",
@@ -399,7 +399,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["badge", "button", "card", "input", "utils"],
     categories: ["application"],
     tier: "free",
-    readiness: "beta",
+    readiness: "alpha",
     blockConfig: {
       template: "app-quiz",
       blockType: "view",
@@ -424,7 +424,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "card", "utils"],
     categories: ["application"],
     tier: "free",
-    readiness: "beta",
+    readiness: "alpha",
     blockConfig: {
       template: "app-quiz",
       blockType: "view",
@@ -448,7 +448,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["badge", "button", "card", "utils"],
     categories: ["application"],
     tier: "free",
-    readiness: "beta",
+    readiness: "alpha",
     blockConfig: {
       template: "app-quiz",
       blockType: "view",
@@ -482,7 +482,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application"],
     tier: "free",
-    readiness: "beta",
+    readiness: "alpha",
     blockConfig: {
       template: "app-quiz",
       blockType: "view",
@@ -506,7 +506,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["sidebar", "avatar", "utils"],
     categories: ["application"],
     tier: "free",
-    readiness: "beta",
+    readiness: "alpha",
     blockConfig: {
       template: "app-quiz",
       blockType: "shell",
@@ -540,7 +540,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application", "dashboard"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-library",
       blockType: "application",
@@ -573,7 +573,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application", "tools"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-library",
       blockType: "application",
@@ -596,7 +596,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "input", "label"],
     categories: ["auth"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "standalone",
       blockType: "auth",
@@ -620,7 +620,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "checkbox", "input", "label"],
     categories: ["auth"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "standalone",
       blockType: "auth",
@@ -643,7 +643,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "input", "label"],
     categories: ["auth"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "standalone",
       blockType: "auth",
@@ -666,7 +666,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "input", "label"],
     categories: ["auth"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "standalone",
       blockType: "auth",
@@ -689,7 +689,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "input", "utils"],
     categories: ["auth"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "standalone",
       blockType: "auth",
@@ -712,7 +712,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "input", "label", "utils"],
     categories: ["auth"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "standalone",
       blockType: "auth",
@@ -751,13 +751,82 @@ export const blocks: Registry["items"] = [
     ],
   },
   {
+    name: "blog-10",
+    type: "registry:block",
+    description:
+      "Minimalist travel tips blog section with text-focused list layout and category filters",
+    categories: ["blog", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "blog",
+      order: 12,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/blog/blog-10.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "blog-11",
+    type: "registry:block",
+    description:
+      "Travel stories blog section with masonry-style grid layout and immersive imagery",
+    categories: ["blog", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "blog",
+      order: 12,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/blog/blog-11.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "blog-12",
+    type: "registry:block",
+    description:
+      "Travel resources blog section with list layout, sidebar newsletter, and resource categories",
+    categories: ["blog", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "blog",
+      order: 12,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/blog/blog-12.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
     name: "blog-2",
     type: "registry:block",
     description: "Featured post with 3-column grid and read time badges",
     registryDependencies: ["button"],
     categories: ["blog", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "blog",
@@ -779,7 +848,7 @@ export const blocks: Registry["items"] = [
     description: "Blog list view with author avatars and dates",
     categories: ["blog", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "blog",
@@ -802,7 +871,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button"],
     categories: ["blog", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "blog",
@@ -824,7 +893,7 @@ export const blocks: Registry["items"] = [
     description: "Minimal clean blog cards, text-focused",
     categories: ["blog", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "blog",
@@ -847,7 +916,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "input"],
     categories: ["blog", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "blog",
@@ -864,6 +933,75 @@ export const blocks: Registry["items"] = [
     ],
   },
   {
+    name: "blog-7",
+    type: "registry:block",
+    description:
+      "Travel blog section with featured destination hero and card grid",
+    categories: ["blog", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "blog",
+      order: 12,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/blog/blog-7.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "blog-8",
+    type: "registry:block",
+    description:
+      "Travel blog section with horizontal scrolling carousel for packing tips and travel guides",
+    categories: ["blog", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "blog",
+      order: 12,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/blog/blog-8.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "blog-9",
+    type: "registry:block",
+    description:
+      "Travel blog section with magazine-style layout featuring large hero and destination guides sidebar",
+    categories: ["blog", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "blog",
+      order: 12,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/blog/blog-9.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
     name: "blog-post-1",
     type: "registry:block",
     description:
@@ -872,15 +1010,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "badge", "avatar"],
     categories: ["blog-post", "pages"],
     tier: "free",
-    readiness: "production",
-    blockConfig: {
-      template: "service-plants",
-      blockType: "blog-post",
-      order: 1,
-      palette: "sage",
-      typography: "elegant",
-      tint: "tinted",
-    },
+    readiness: "alpha",
     files: [
       {
         path: "blocks/blog-post/blog-post-1.tsx",
@@ -897,15 +1027,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "badge", "avatar"],
     categories: ["blog-post", "pages"],
     tier: "free",
-    readiness: "production",
-    blockConfig: {
-      template: "service-travel",
-      blockType: "blog-post",
-      order: 1,
-      palette: "azure",
-      typography: "modern",
-      tint: "tinted",
-    },
+    readiness: "alpha",
     files: [
       {
         path: "blocks/blog-post/blog-post-2.tsx",
@@ -922,15 +1044,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "badge", "avatar"],
     categories: ["blog-post", "pages"],
     tier: "free",
-    readiness: "production",
-    blockConfig: {
-      template: "service-boat",
-      blockType: "blog-post",
-      order: 1,
-      palette: "azure",
-      typography: "classic",
-      tint: "tinted",
-    },
+    readiness: "alpha",
     files: [
       {
         path: "blocks/blog-post/blog-post-3.tsx",
@@ -947,15 +1061,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "badge", "avatar"],
     categories: ["blog-post", "pages"],
     tier: "free",
-    readiness: "production",
-    blockConfig: {
-      template: "service-fitness",
-      blockType: "blog-post",
-      order: 1,
-      palette: "neon",
-      typography: "futuristic",
-      tint: "tinted",
-    },
+    readiness: "alpha",
     files: [
       {
         path: "blocks/blog-post/blog-post-4.tsx",
@@ -972,15 +1078,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "badge", "avatar"],
     categories: ["blog-post", "pages"],
     tier: "free",
-    readiness: "production",
-    blockConfig: {
-      template: "service-library",
-      blockType: "blog-post",
-      order: 1,
-      palette: "slate",
-      typography: "modern",
-      tint: "tinted",
-    },
+    readiness: "alpha",
     files: [
       {
         path: "blocks/blog-post/blog-post-5.tsx",
@@ -1013,13 +1111,88 @@ export const blocks: Registry["items"] = [
     ],
   },
   {
+    name: "contact-10",
+    type: "registry:block",
+    description: "Travel agency office locations with global presence",
+    registryDependencies: ["button", "block-header"],
+    categories: ["contact", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "contact",
+      order: 13,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/contact/contact-10.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "contact-11",
+    type: "registry:block",
+    description: "Travel inquiry form with trip type selection",
+    registryDependencies: [
+      "button",
+      "input",
+      "textarea",
+      "block-header",
+      "select",
+    ],
+    categories: ["contact", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "contact",
+      order: 13,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/contact/contact-11.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "contact-12",
+    type: "registry:block",
+    description: "Travel emergency support and FAQ contact section",
+    registryDependencies: ["button", "input", "block-header", "accordion"],
+    categories: ["contact", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "contact",
+      order: 13,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/contact/contact-12.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
     name: "contact-2",
     type: "registry:block",
     description: "Contact form with map placeholder and location info",
     registryDependencies: ["button", "input", "textarea"],
     categories: ["contact", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "contact",
@@ -1042,7 +1215,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button"],
     categories: ["contact", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "contact",
@@ -1065,7 +1238,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "input", "textarea", "select"],
     categories: ["contact", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "contact",
@@ -1088,7 +1261,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "input", "textarea"],
     categories: ["contact", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "contact",
@@ -1111,7 +1284,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button"],
     categories: ["contact", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "contact",
@@ -1123,6 +1296,75 @@ export const blocks: Registry["items"] = [
     files: [
       {
         path: "blocks/contact/contact-6.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "contact-7",
+    type: "registry:block",
+    description: "Travel agency contact form with destinations map",
+    registryDependencies: ["button", "input", "textarea", "block-header"],
+    categories: ["contact", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "contact",
+      order: 13,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/contact/contact-7.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "contact-8",
+    type: "registry:block",
+    description: "Travel consultation split layout with booking support",
+    registryDependencies: ["button", "input", "textarea"],
+    categories: ["contact", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "contact",
+      order: 13,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/contact/contact-8.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "contact-9",
+    type: "registry:block",
+    description: "Minimal travel inquiry form with channel options",
+    registryDependencies: ["button", "block-header"],
+    categories: ["contact", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "contact",
+      order: 13,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/contact/contact-9.tsx",
         type: "registry:block",
       },
     ],
@@ -1151,13 +1393,105 @@ export const blocks: Registry["items"] = [
     ],
   },
   {
+    name: "cta-10",
+    type: "registry:block",
+    description: "Travel CTA with centered card and scroll scale animation",
+    registryDependencies: ["button"],
+    categories: ["cta", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "cta",
+      order: 15,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/cta/cta-10.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "cta-11",
+    type: "registry:block",
+    description: "Minimal travel CTA with gradient background",
+    registryDependencies: ["button"],
+    categories: ["cta", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "cta",
+      order: 15,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/cta/cta-11.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "cta-12",
+    type: "registry:block",
+    description: "Travel CTA with sticky reveal footer banner",
+    registryDependencies: ["button"],
+    categories: ["cta", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "cta",
+      order: 15,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/cta/cta-12.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "cta-13",
+    type: "registry:block",
+    description: "Travel CTA with email subscription and aurora background",
+    registryDependencies: ["button"],
+    categories: ["cta", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "cta",
+      order: 15,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/cta/cta-13.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
     name: "cta-2",
     type: "registry:block",
     description: "Split layout CTA with image and gradient background",
     registryDependencies: ["button"],
     categories: ["cta", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "cta",
@@ -1180,7 +1514,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button"],
     categories: ["cta", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "cta",
@@ -1203,7 +1537,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button"],
     categories: ["cta", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "cta",
@@ -1226,7 +1560,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button"],
     categories: ["cta", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "cta",
@@ -1249,7 +1583,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button"],
     categories: ["cta", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "cta",
@@ -1272,7 +1606,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button"],
     categories: ["cta", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-library",
       blockType: "cta",
@@ -1284,6 +1618,52 @@ export const blocks: Registry["items"] = [
     files: [
       {
         path: "blocks/cta/cta-7.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "cta-8",
+    type: "registry:block",
+    description: "Travel CTA with full-width parallax background image",
+    registryDependencies: ["button"],
+    categories: ["cta", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "cta",
+      order: 15,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/cta/cta-8.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "cta-9",
+    type: "registry:block",
+    description: "Travel CTA with split layout and parallax image",
+    registryDependencies: ["button"],
+    categories: ["cta", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "cta",
+      order: 15,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/cta/cta-9.tsx",
         type: "registry:block",
       },
     ],
@@ -1312,12 +1692,107 @@ export const blocks: Registry["items"] = [
     ],
   },
   {
+    name: "faq-10",
+    type: "registry:block",
+    description:
+      "Searchable travel FAQ with real-time filtering and highlighting",
+    registryDependencies: ["input"],
+    categories: ["faq", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "faq",
+      order: 11,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/faq/faq-10.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "faq-11",
+    type: "registry:block",
+    description:
+      "Travel FAQ with side-by-side layout showing questions and answers",
+    registryDependencies: [],
+    categories: ["faq", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "faq",
+      order: 11,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/faq/faq-11.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "faq-12",
+    type: "registry:block",
+    description:
+      "Travel FAQ in a grid layout with icons for each question category",
+    registryDependencies: [],
+    categories: ["faq", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "faq",
+      order: 11,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/faq/faq-12.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "faq-13",
+    type: "registry:block",
+    description: "Travel FAQ with accordion and contact support CTA section",
+    registryDependencies: ["accordion", "button"],
+    categories: ["faq", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "faq",
+      order: 11,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/faq/faq-13.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
     name: "faq-2",
     type: "registry:block",
     description: "Two column FAQ with questions left, answers right",
     categories: ["faq", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "faq",
@@ -1340,7 +1815,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["input"],
     categories: ["faq", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "faq",
@@ -1362,7 +1837,7 @@ export const blocks: Registry["items"] = [
     description: "Card-style accordion FAQ with icons",
     categories: ["faq", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "faq",
@@ -1384,7 +1859,7 @@ export const blocks: Registry["items"] = [
     description: "Tabbed categories FAQ with badge counts",
     categories: ["faq", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "faq",
@@ -1407,7 +1882,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button"],
     categories: ["faq", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "faq",
@@ -1430,7 +1905,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["accordion"],
     categories: ["faq", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-library",
       blockType: "faq",
@@ -1442,6 +1917,53 @@ export const blocks: Registry["items"] = [
     files: [
       {
         path: "blocks/faq/faq-7.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "faq-8",
+    type: "registry:block",
+    description: "Travel agency FAQ with clean accordion and azure theme",
+    registryDependencies: ["accordion"],
+    categories: ["faq", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "faq",
+      order: 11,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/faq/faq-8.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "faq-9",
+    type: "registry:block",
+    description:
+      "Travel FAQ with category tabs for booking, visa, luggage, and payment",
+    registryDependencies: ["tabs"],
+    categories: ["faq", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "faq",
+      order: 11,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/faq/faq-9.tsx",
         type: "registry:block",
       },
     ],
@@ -1476,7 +1998,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["accordion", "button"],
     categories: ["features", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-library",
       blockType: "features",
@@ -1499,7 +2021,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["accordion", "button"],
     categories: ["features", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-library",
       blockType: "features",
@@ -1522,7 +2044,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["accordion", "button"],
     categories: ["features", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-library",
       blockType: "features",
@@ -1545,7 +2067,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["accordion", "button"],
     categories: ["features", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-library",
       blockType: "features",
@@ -1557,6 +2079,144 @@ export const blocks: Registry["items"] = [
     files: [
       {
         path: "blocks/features/features-13.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "features-14",
+    type: "registry:block",
+    description: "Travel agency 3-column grid features with icons",
+    registryDependencies: ["block-header"],
+    categories: ["features", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "features",
+      order: 4,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/features/features-14.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "features-15",
+    type: "registry:block",
+    description: "Travel agency alternating image/text feature sections",
+    registryDependencies: [],
+    categories: ["features", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "features",
+      order: 4,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/features/features-15.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "features-16",
+    type: "registry:block",
+    description: "Travel agency bento grid features layout",
+    registryDependencies: [],
+    categories: ["features", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "features",
+      order: 4,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/features/features-16.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "features-17",
+    type: "registry:block",
+    description: "Travel agency horizontal scrolling cards features",
+    registryDependencies: [],
+    categories: ["features", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "features",
+      order: 4,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/features/features-17.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "features-18",
+    type: "registry:block",
+    description: "Travel agency features with statistics and numbers",
+    registryDependencies: ["block-header"],
+    categories: ["features", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "features",
+      order: 4,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/features/features-18.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "features-19",
+    type: "registry:block",
+    description: "Travel agency tabbed interface for service categories",
+    registryDependencies: ["tabs", "block-header"],
+    categories: ["features", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "features",
+      order: 4,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/features/features-19.tsx",
         type: "registry:block",
       },
     ],
@@ -1661,7 +2321,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["utils"],
     categories: ["features", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-fitness",
       blockType: "features",
@@ -1685,7 +2345,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "utils"],
     categories: ["features", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-fitness",
       blockType: "features",
@@ -1708,7 +2368,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button"],
     categories: ["features", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-fitness",
       blockType: "features",
@@ -1731,7 +2391,7 @@ export const blocks: Registry["items"] = [
     dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
     categories: ["features", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-library",
       blockType: "features",
@@ -1779,7 +2439,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "dropdown-menu"],
     categories: ["footer", "landing", "application"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-library",
       blockType: "footer",
@@ -1796,6 +2456,135 @@ export const blocks: Registry["items"] = [
     ],
   },
   {
+    name: "footer-11",
+    type: "registry:block",
+    description:
+      "Travel agency footer with newsletter, destinations, and multi-column navigation",
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
+    registryDependencies: ["button", "input"],
+    categories: ["footer", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "footer",
+      order: 20,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/footer/footer-11.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "footer-12",
+    type: "registry:block",
+    description:
+      "Minimal centered travel footer with circular text animation and social links",
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
+    registryDependencies: [],
+    categories: ["footer", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "footer",
+      order: 20,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/footer/footer-12.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "footer-13",
+    type: "registry:block",
+    description:
+      "Mega travel footer with destination showcase, trust badges, and comprehensive navigation",
+    dependencies: [
+      "@hugeicons/react",
+      "@hugeicons/core-free-icons",
+      "lucide-react",
+    ],
+    registryDependencies: ["button", "input"],
+    categories: ["footer", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "footer",
+      order: 20,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/footer/footer-13.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "footer-14",
+    type: "registry:block",
+    description:
+      "Travel footer with Aurora animation CTA section and modern navigation",
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
+    registryDependencies: ["button"],
+    categories: ["footer", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "footer",
+      order: 20,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/footer/footer-14.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "footer-15",
+    type: "registry:block",
+    description:
+      "Travel footer with gradient background and text gradient opacity animation",
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
+    registryDependencies: [],
+    categories: ["footer", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "footer",
+      order: 20,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/footer/footer-15.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
     name: "footer-2",
     type: "registry:block",
     description:
@@ -1803,7 +2592,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "input"],
     categories: ["footer", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-fitness",
       blockType: "footer",
@@ -1825,7 +2614,7 @@ export const blocks: Registry["items"] = [
     description: "Minimal single row footer",
     categories: ["footer", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "footer",
@@ -1848,7 +2637,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "input"],
     categories: ["footer", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "footer",
@@ -1871,7 +2660,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "input"],
     categories: ["footer", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "footer",
@@ -1894,7 +2683,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["qr-code"],
     categories: ["footer", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "footer",
@@ -1917,7 +2706,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "input"],
     categories: ["footer", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "footer",
@@ -1939,7 +2728,7 @@ export const blocks: Registry["items"] = [
     description: "Social-focused footer with large icons and follower counts",
     categories: ["footer", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "footer",
@@ -1962,7 +2751,7 @@ export const blocks: Registry["items"] = [
     dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
     categories: ["footer", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-library",
       blockType: "footer",
@@ -2001,13 +2790,81 @@ export const blocks: Registry["items"] = [
     ],
   },
   {
+    name: "gallery-10",
+    type: "registry:block",
+    description:
+      "Travel destination cards with parallax stacking effect and trip details",
+    categories: ["gallery", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "gallery",
+      order: 8,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/gallery/gallery-10.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "gallery-11",
+    type: "registry:block",
+    description: "Travel full-screen zoom gallery with destination showcase",
+    categories: ["gallery", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "gallery",
+      order: 8,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/gallery/gallery-11.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "gallery-12",
+    type: "registry:block",
+    description:
+      "Travel category tabs with filterable destination gallery and booking cards",
+    categories: ["gallery", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "gallery",
+      order: 8,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/gallery/gallery-12.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
     name: "gallery-2",
     type: "registry:block",
     description: "Masonry gallery with lightbox",
     registryDependencies: ["dialog"],
     categories: ["gallery", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "gallery",
@@ -2030,7 +2887,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button"],
     categories: ["gallery", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "gallery",
@@ -2052,7 +2909,7 @@ export const blocks: Registry["items"] = [
     description: "Filterable gallery with category tabs",
     categories: ["gallery", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "gallery",
@@ -2075,7 +2932,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "dialog"],
     categories: ["gallery", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "gallery",
@@ -2097,7 +2954,7 @@ export const blocks: Registry["items"] = [
     description: "Before/after comparison slider gallery",
     categories: ["gallery", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "gallery",
@@ -2109,6 +2966,73 @@ export const blocks: Registry["items"] = [
     files: [
       {
         path: "blocks/gallery/gallery-6.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "gallery-7",
+    type: "registry:block",
+    description: "Travel destination masonry grid with zoom parallax effect",
+    categories: ["gallery", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "gallery",
+      order: 8,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/gallery/gallery-7.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "gallery-8",
+    type: "registry:block",
+    description: "Travel horizontal scroll gallery with destination cards",
+    categories: ["gallery", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "gallery",
+      order: 8,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/gallery/gallery-8.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "gallery-9",
+    type: "registry:block",
+    description:
+      "Travel Instagram-style photo grid with lightbox and social features",
+    categories: ["gallery", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "gallery",
+      order: 8,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/gallery/gallery-9.tsx",
         type: "registry:block",
       },
     ],
@@ -2146,7 +3070,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "popover"],
     categories: ["header", "landing", "application"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-library",
       blockType: "header",
@@ -2163,13 +3087,164 @@ export const blocks: Registry["items"] = [
     ],
   },
   {
+    name: "header-11",
+    type: "registry:block",
+    description: "Travel agency header with centered logo and navigation",
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
+    registryDependencies: ["button"],
+    categories: ["header", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "header",
+      order: 1,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+      forceLight: true,
+    },
+    files: [
+      {
+        path: "blocks/header/header-11.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "header-12",
+    type: "registry:block",
+    description: "Travel agency transparent header with sticky scroll behavior",
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
+    registryDependencies: ["button"],
+    categories: ["header", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "header",
+      order: 1,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+      forceLight: true,
+    },
+    files: [
+      {
+        path: "blocks/header/header-12.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "header-13",
+    type: "registry:block",
+    description:
+      "Travel agency header with mega menu dropdowns for destinations",
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
+    registryDependencies: ["button", "navigation-menu"],
+    categories: ["header", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "header",
+      order: 1,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+      forceLight: true,
+    },
+    files: [
+      {
+        path: "blocks/header/header-13.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "header-14",
+    type: "registry:block",
+    description: "Travel agency header with integrated search bar",
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
+    registryDependencies: ["button", "input"],
+    categories: ["header", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "header",
+      order: 1,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+      forceLight: true,
+    },
+    files: [
+      {
+        path: "blocks/header/header-14.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "header-15",
+    type: "registry:block",
+    description: "Travel agency header with featured destination badge",
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
+    registryDependencies: ["button", "badge"],
+    categories: ["header", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "header",
+      order: 1,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+      forceLight: true,
+    },
+    files: [
+      {
+        path: "blocks/header/header-15.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "header-16",
+    type: "registry:block",
+    description: "Travel agency header with user account dropdown",
+    dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
+    registryDependencies: ["button", "avatar", "dropdown-menu"],
+    categories: ["header", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "header",
+      order: 1,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+      forceLight: true,
+    },
+    files: [
+      {
+        path: "blocks/header/header-16.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
     name: "header-2",
     type: "registry:block",
     description: "Centered logo header with navigation split left/right",
     registryDependencies: ["button"],
     categories: ["header", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "header",
@@ -2193,7 +3268,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button"],
     categories: ["header", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "header",
@@ -2217,7 +3292,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button"],
     categories: ["header", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "header",
@@ -2241,7 +3316,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button"],
     categories: ["header", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "header",
@@ -2265,7 +3340,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "dialog", "input"],
     categories: ["header", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "header",
@@ -2289,7 +3364,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button"],
     categories: ["header", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "header",
@@ -2313,7 +3388,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button"],
     categories: ["header", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "header",
@@ -2338,7 +3413,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["hero-button"],
     categories: ["header", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-fitness",
       blockType: "header",
@@ -2504,7 +3579,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-travel",
       blockType: "hero",
@@ -2527,7 +3602,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-travel",
       blockType: "hero",
@@ -2551,7 +3626,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-travel",
       blockType: "hero",
@@ -2575,7 +3650,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-travel",
       blockType: "hero",
@@ -2598,7 +3673,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-travel",
       blockType: "hero",
@@ -2623,7 +3698,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button", "spacer"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-travel",
       blockType: "hero",
@@ -2647,7 +3722,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-boat",
       blockType: "hero",
@@ -2670,7 +3745,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-boat",
       blockType: "hero",
@@ -2693,7 +3768,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-boat",
       blockType: "hero",
@@ -2717,7 +3792,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-boat",
       blockType: "hero",
@@ -2740,7 +3815,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-boat",
       blockType: "hero",
@@ -2763,7 +3838,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-library",
       blockType: "hero",
@@ -2788,7 +3863,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button", "spacer"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-boat",
       blockType: "hero",
@@ -2814,7 +3889,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button", "spacer"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-fitness",
       blockType: "hero",
@@ -2839,7 +3914,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button", "spacer"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-fitness",
       blockType: "hero",
@@ -2864,7 +3939,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button", "spacer"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-fitness",
       blockType: "hero",
@@ -2888,7 +3963,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-fitness",
       blockType: "hero",
@@ -2912,7 +3987,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-fitness",
       blockType: "hero",
@@ -2936,7 +4011,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-fitness",
       blockType: "hero",
@@ -2975,12 +4050,78 @@ export const blocks: Registry["items"] = [
     ],
   },
   {
+    name: "logos-10",
+    type: "registry:block",
+    description: "Travel agency featured in press section",
+    categories: ["logos", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "logos",
+      order: 3,
+      palette: "azure",
+      typography: "modern",
+      tint: "deep",
+    },
+    files: [
+      {
+        path: "blocks/logos/logos-10.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "logos-11",
+    type: "registry:block",
+    description: "Travel partners carousel with descriptions",
+    categories: ["logos", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "logos",
+      order: 3,
+      palette: "azure",
+      typography: "modern",
+      tint: "deep",
+    },
+    files: [
+      {
+        path: "blocks/logos/logos-11.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "logos-12",
+    type: "registry:block",
+    description: "Travel partners two-row layout with categories",
+    categories: ["logos", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "logos",
+      order: 3,
+      palette: "azure",
+      typography: "modern",
+      tint: "deep",
+    },
+    files: [
+      {
+        path: "blocks/logos/logos-12.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
     name: "logos-2",
     type: "registry:block",
     description: "Marquee logo cloud with infinite scroll animation",
     categories: ["logos", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "logos",
@@ -3002,7 +4143,7 @@ export const blocks: Registry["items"] = [
     description: "Grid logos with labels and descriptions",
     categories: ["logos", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "logos",
@@ -3025,7 +4166,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button"],
     categories: ["logos", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "logos",
@@ -3047,7 +4188,7 @@ export const blocks: Registry["items"] = [
     description: "Logos with stats and industry breakdown",
     categories: ["logos", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "logos",
@@ -3070,7 +4211,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button"],
     categories: ["logos", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "logos",
@@ -3087,6 +4228,73 @@ export const blocks: Registry["items"] = [
     ],
   },
   {
+    name: "logos-7",
+    type: "registry:block",
+    description:
+      "Travel partners and trusted brands showcase with grayscale logos",
+    categories: ["logos", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "logos",
+      order: 3,
+      palette: "azure",
+      typography: "modern",
+      tint: "deep",
+    },
+    files: [
+      {
+        path: "blocks/logos/logos-7.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "logos-8",
+    type: "registry:block",
+    description: "Travel partners animated marquee ticker",
+    categories: ["logos", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "logos",
+      order: 3,
+      palette: "azure",
+      typography: "modern",
+      tint: "deep",
+    },
+    files: [
+      {
+        path: "blocks/logos/logos-8.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "logos-9",
+    type: "registry:block",
+    description: "Travel partners grid layout with hover effects",
+    categories: ["logos", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "logos",
+      order: 3,
+      palette: "azure",
+      typography: "modern",
+      tint: "deep",
+    },
+    files: [
+      {
+        path: "blocks/logos/logos-9.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
     name: "maps-1",
     type: "registry:block",
     description:
@@ -3095,7 +4303,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["map"],
     categories: ["maps"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "standalone",
       blockType: "maps",
@@ -3127,7 +4335,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["map"],
     categories: ["maps", "contact"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "standalone",
       blockType: "maps",
@@ -3157,7 +4365,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["map", "button", "input", "scroll-area"],
     categories: ["maps"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "standalone",
       blockType: "maps",
@@ -3190,7 +4398,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["map", "badge"],
     categories: ["maps", "application"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "standalone",
       blockType: "maps",
@@ -3223,7 +4431,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["map", "badge", "button"],
     categories: ["maps"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "standalone",
       blockType: "maps",
@@ -3266,13 +4474,82 @@ export const blocks: Registry["items"] = [
     ],
   },
   {
+    name: "newsletter-10",
+    type: "registry:block",
+    description: "Split layout travel newsletter with travel perks",
+    registryDependencies: ["button", "input"],
+    categories: ["newsletter", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "newsletter",
+      order: 14,
+      palette: "azure",
+      typography: "modern",
+      tint: "deep",
+    },
+    files: [
+      {
+        path: "blocks/newsletter/newsletter-10.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "newsletter-11",
+    type: "registry:block",
+    description: "Centered travel newsletter with benefits badges",
+    registryDependencies: ["button", "input", "block-header"],
+    categories: ["newsletter", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "newsletter",
+      order: 14,
+      palette: "azure",
+      typography: "modern",
+      tint: "deep",
+    },
+    files: [
+      {
+        path: "blocks/newsletter/newsletter-11.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "newsletter-12",
+    type: "registry:block",
+    description: "Card-style travel newsletter with discount offer",
+    registryDependencies: ["button", "input", "block-header"],
+    categories: ["newsletter", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "newsletter",
+      order: 14,
+      palette: "azure",
+      typography: "modern",
+      tint: "deep",
+    },
+    files: [
+      {
+        path: "blocks/newsletter/newsletter-12.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
     name: "newsletter-2",
     type: "registry:block",
     description: "Inline single horizontal row newsletter",
     registryDependencies: ["button", "input"],
     categories: ["newsletter", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "newsletter",
@@ -3295,7 +4572,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "input"],
     categories: ["newsletter", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "newsletter",
@@ -3318,7 +4595,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "input"],
     categories: ["newsletter", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "newsletter",
@@ -3341,7 +4618,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "input"],
     categories: ["newsletter", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "newsletter",
@@ -3364,7 +4641,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "input"],
     categories: ["newsletter", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "newsletter",
@@ -3381,6 +4658,76 @@ export const blocks: Registry["items"] = [
     ],
   },
   {
+    name: "newsletter-7",
+    type: "registry:block",
+    description: "Minimal inline travel newsletter with destination updates",
+    registryDependencies: ["button", "input"],
+    categories: ["newsletter", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "newsletter",
+      order: 14,
+      palette: "azure",
+      typography: "modern",
+      tint: "deep",
+    },
+    files: [
+      {
+        path: "blocks/newsletter/newsletter-7.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "newsletter-8",
+    type: "registry:block",
+    description: "Full-width travel newsletter banner with dark background",
+    registryDependencies: ["button", "input"],
+    categories: ["newsletter", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "newsletter",
+      order: 14,
+      palette: "azure",
+      typography: "modern",
+      tint: "deep",
+    },
+    files: [
+      {
+        path: "blocks/newsletter/newsletter-8.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "newsletter-9",
+    type: "registry:block",
+    description:
+      "Travel newsletter with destination image and subscription form",
+    registryDependencies: ["button", "input"],
+    categories: ["newsletter", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "newsletter",
+      order: 14,
+      palette: "azure",
+      typography: "modern",
+      tint: "deep",
+    },
+    files: [
+      {
+        path: "blocks/newsletter/newsletter-9.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
     name: "page-404-1",
     type: "registry:block",
     description:
@@ -3388,7 +4735,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "spacer"],
     categories: ["pages", "error"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-library",
       blockType: "pages",
@@ -3412,7 +4759,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["badge", "spacer"],
     categories: ["pages", "landing", "blog"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-library",
       blockType: "pages",
@@ -3436,7 +4783,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["badge", "spacer"],
     categories: ["pages", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-library",
       blockType: "pages",
@@ -3460,7 +4807,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "spacer"],
     categories: ["pages", "error"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-library",
       blockType: "pages",
@@ -3484,7 +4831,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["spacer"],
     categories: ["pages", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-library",
       blockType: "pages",
@@ -3508,7 +4855,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "spacer"],
     categories: ["pages", "landing", "pricing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-library",
       blockType: "pages",
@@ -3532,7 +4879,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["badge", "input", "spacer"],
     categories: ["pages", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-library",
       blockType: "pages",
@@ -3556,7 +4903,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button", "spacer"],
     categories: ["pages", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-library",
       blockType: "pages",
@@ -3597,6 +4944,127 @@ export const blocks: Registry["items"] = [
     ],
   },
   {
+    name: "pricing-10",
+    type: "registry:block",
+    description: "Horizontal travel package cards with destination highlights",
+    dependencies: ["motion/react"],
+    registryDependencies: ["button", "utils"],
+    categories: ["pricing", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "pricing",
+      order: 6,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/pricing/pricing-10.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "pricing-11",
+    type: "registry:block",
+    description: "Travel tour comparison table with feature breakdown",
+    dependencies: ["motion/react"],
+    registryDependencies: ["button", "utils"],
+    categories: ["pricing", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "pricing",
+      order: 6,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/pricing/pricing-11.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "pricing-12",
+    type: "registry:block",
+    description: "Group tour pricing with group size tiers and savings",
+    dependencies: ["motion/react"],
+    registryDependencies: ["button", "slider", "utils"],
+    categories: ["pricing", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "pricing",
+      order: 6,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/pricing/pricing-12.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "pricing-13",
+    type: "registry:block",
+    description: "Luxury travel tiers with standard vs enterprise comparison",
+    dependencies: ["motion/react"],
+    registryDependencies: ["button", "utils"],
+    categories: ["pricing", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "pricing",
+      order: 6,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/pricing/pricing-13.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "pricing-14",
+    type: "registry:block",
+    description:
+      "Destination-based travel packages with visual cards and seasonal pricing",
+    dependencies: ["motion/react"],
+    registryDependencies: ["button", "utils"],
+    categories: ["pricing", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "pricing",
+      order: 6,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/pricing/pricing-14.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
     name: "pricing-2",
     type: "registry:block",
     description:
@@ -3604,7 +5072,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "utils"],
     categories: ["pricing", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-fitness",
       blockType: "pricing",
@@ -3627,7 +5095,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button"],
     categories: ["pricing", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "pricing",
@@ -3650,7 +5118,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "switch"],
     categories: ["pricing", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "pricing",
@@ -3673,7 +5141,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button"],
     categories: ["pricing", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "pricing",
@@ -3696,7 +5164,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "slider"],
     categories: ["pricing", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "pricing",
@@ -3719,7 +5187,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button"],
     categories: ["pricing", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "pricing",
@@ -3743,7 +5211,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button"],
     categories: ["pricing", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-library",
       blockType: "pricing",
@@ -3755,6 +5223,31 @@ export const blocks: Registry["items"] = [
     files: [
       {
         path: "blocks/pricing/pricing-8.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "pricing-9",
+    type: "registry:block",
+    description:
+      "Travel package pricing with monthly/yearly toggle and 3-tier comparison",
+    dependencies: ["motion/react"],
+    registryDependencies: ["button", "switch", "utils"],
+    categories: ["pricing", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "pricing",
+      order: 6,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/pricing/pricing-9.tsx",
         type: "registry:block",
       },
     ],
@@ -3783,13 +5276,85 @@ export const blocks: Registry["items"] = [
     ],
   },
   {
+    name: "products-10",
+    type: "registry:block",
+    description:
+      "Tour packages grid with category filtering and slide-up animations",
+    registryDependencies: ["button"],
+    categories: ["products", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "products",
+      order: 5,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/products/products-10.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "products-11",
+    type: "registry:block",
+    description:
+      "Travel bundle packages with pricing tiers and scroll scale animations",
+    registryDependencies: ["button"],
+    categories: ["products", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "products",
+      order: 5,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/products/products-11.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "products-12",
+    type: "registry:block",
+    description:
+      "Adventure travel categories with expanding cards and scroll animation",
+    registryDependencies: ["button"],
+    categories: ["products", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "products",
+      order: 5,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/products/products-12.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
     name: "products-2",
     type: "registry:block",
     description: "Product card grid with rating, price, add to cart",
     registryDependencies: ["button"],
     categories: ["products", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "products",
@@ -3812,7 +5377,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button"],
     categories: ["products", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "products",
@@ -3835,7 +5400,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button"],
     categories: ["products", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "products",
@@ -3858,7 +5423,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button"],
     categories: ["products", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "products",
@@ -3881,7 +5446,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button"],
     categories: ["products", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "products",
@@ -3898,6 +5463,78 @@ export const blocks: Registry["items"] = [
     ],
   },
   {
+    name: "products-7",
+    type: "registry:block",
+    description:
+      "Travel destination cards grid with fade-in animations showcasing exotic locations",
+    registryDependencies: ["button", "badge"],
+    categories: ["products", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "products",
+      order: 5,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/products/products-7.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "products-8",
+    type: "registry:block",
+    description:
+      "Featured tour packages with zoom parallax effect and hero layout",
+    registryDependencies: ["button"],
+    categories: ["products", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "products",
+      order: 5,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/products/products-8.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "products-9",
+    type: "registry:block",
+    description:
+      "Travel deals stacking cards with parallax scroll effect for limited offers",
+    registryDependencies: ["button"],
+    categories: ["products", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "products",
+      order: 5,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/products/products-9.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
     name: "search-1",
     type: "registry:block",
     description:
@@ -3906,15 +5543,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "badge", "input"],
     categories: ["search", "pages"],
     tier: "free",
-    readiness: "production",
-    blockConfig: {
-      template: "service-plants",
-      blockType: "search",
-      order: 1,
-      palette: "sage",
-      typography: "elegant",
-      tint: "tinted",
-    },
+    readiness: "alpha",
     files: [
       {
         path: "blocks/search/search-1.tsx",
@@ -3931,15 +5560,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "badge", "input"],
     categories: ["search", "pages"],
     tier: "free",
-    readiness: "production",
-    blockConfig: {
-      template: "service-travel",
-      blockType: "search",
-      order: 1,
-      palette: "azure",
-      typography: "modern",
-      tint: "tinted",
-    },
+    readiness: "alpha",
     files: [
       {
         path: "blocks/search/search-2.tsx",
@@ -3956,15 +5577,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "badge", "input"],
     categories: ["search", "pages"],
     tier: "free",
-    readiness: "production",
-    blockConfig: {
-      template: "service-boat",
-      blockType: "search",
-      order: 1,
-      palette: "azure",
-      typography: "classic",
-      tint: "tinted",
-    },
+    readiness: "alpha",
     files: [
       {
         path: "blocks/search/search-3.tsx",
@@ -3981,15 +5594,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "badge", "input"],
     categories: ["search", "pages"],
     tier: "free",
-    readiness: "production",
-    blockConfig: {
-      template: "service-fitness",
-      blockType: "search",
-      order: 1,
-      palette: "neon",
-      typography: "futuristic",
-      tint: "tinted",
-    },
+    readiness: "alpha",
     files: [
       {
         path: "blocks/search/search-4.tsx",
@@ -4006,15 +5611,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "badge", "input"],
     categories: ["search", "pages"],
     tier: "free",
-    readiness: "production",
-    blockConfig: {
-      template: "service-library",
-      blockType: "search",
-      order: 1,
-      palette: "slate",
-      typography: "modern",
-      tint: "tinted",
-    },
+    readiness: "alpha",
     files: [
       {
         path: "blocks/search/search-5.tsx",
@@ -4045,6 +5642,117 @@ export const blocks: Registry["items"] = [
     ],
   },
   {
+    name: "stats-10",
+    type: "registry:block",
+    description: "Travel statistics with animated counters and descriptions",
+    categories: ["stats", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "stats",
+      order: 10,
+      palette: "azure",
+      typography: "modern",
+      tint: "deep",
+    },
+    files: [
+      {
+        path: "blocks/stats/stats-10.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "stats-11",
+    type: "registry:block",
+    description: "Travel statistics with horizontal progress bars",
+    categories: ["stats", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "stats",
+      order: 10,
+      palette: "azure",
+      typography: "modern",
+      tint: "deep",
+    },
+    files: [
+      {
+        path: "blocks/stats/stats-11.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "stats-12",
+    type: "registry:block",
+    description: "Travel statistics with gradient cards and icons",
+    categories: ["stats", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "stats",
+      order: 10,
+      palette: "azure",
+      typography: "modern",
+      tint: "deep",
+    },
+    files: [
+      {
+        path: "blocks/stats/stats-12.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "stats-13",
+    type: "registry:block",
+    description: "Travel statistics with full-width banner and large numbers",
+    categories: ["stats", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "stats",
+      order: 10,
+      palette: "azure",
+      typography: "modern",
+      tint: "deep",
+    },
+    files: [
+      {
+        path: "blocks/stats/stats-13.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "stats-14",
+    type: "registry:block",
+    description:
+      "Travel statistics with two-column layout and detailed descriptions",
+    categories: ["stats", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "stats",
+      order: 10,
+      palette: "azure",
+      typography: "modern",
+      tint: "deep",
+    },
+    files: [
+      {
+        path: "blocks/stats/stats-14.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
     name: "stats-2",
     type: "registry:block",
     description:
@@ -4052,7 +5760,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["utils"],
     categories: ["stats", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-fitness",
       blockType: "stats",
@@ -4074,7 +5782,7 @@ export const blocks: Registry["items"] = [
     description: "Large counter stats with dark background",
     categories: ["stats", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "stats",
@@ -4096,7 +5804,7 @@ export const blocks: Registry["items"] = [
     description: "Stats cards with icons and change indicators",
     categories: ["stats", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "stats",
@@ -4118,7 +5826,7 @@ export const blocks: Registry["items"] = [
     description: "Timeline milestone stats",
     categories: ["stats", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "stats",
@@ -4140,7 +5848,7 @@ export const blocks: Registry["items"] = [
     description: "Before/after comparison stats",
     categories: ["stats", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "stats",
@@ -4162,7 +5870,7 @@ export const blocks: Registry["items"] = [
     description: "Infographic style stats with bar chart",
     categories: ["stats", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "stats",
@@ -4184,7 +5892,7 @@ export const blocks: Registry["items"] = [
     description: "Component library stats section with large numbers",
     categories: ["stats", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-library",
       blockType: "stats",
@@ -4196,6 +5904,28 @@ export const blocks: Registry["items"] = [
     files: [
       {
         path: "blocks/stats/stats-8.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "stats-9",
+    type: "registry:block",
+    description: "Travel statistics with icons and fade animation",
+    categories: ["stats", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "stats",
+      order: 10,
+      palette: "azure",
+      typography: "modern",
+      tint: "deep",
+    },
+    files: [
+      {
+        path: "blocks/stats/stats-9.tsx",
         type: "registry:block",
       },
     ],
@@ -4223,6 +5953,95 @@ export const blocks: Registry["items"] = [
     ],
   },
   {
+    name: "team-10",
+    type: "registry:block",
+    description: "Travel agency featured leader with team grid",
+    categories: ["team", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "team",
+      order: 9,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/team/team-10.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "team-11",
+    type: "registry:block",
+    description: "Travel agency destination specialists with accordion bios",
+    categories: ["team", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "team",
+      order: 9,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/team/team-11.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "team-12",
+    type: "registry:block",
+    description: "Travel agency regional experts with world map style layout",
+    categories: ["team", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "team",
+      order: 9,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/team/team-12.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "team-13",
+    type: "registry:block",
+    description:
+      "Travel agency storytellers and photographers magazine-style layout",
+    categories: ["team", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "team",
+      order: 9,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/team/team-13.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
     name: "team-2",
     type: "registry:block",
     description:
@@ -4230,7 +6049,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["utils"],
     categories: ["team", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-fitness",
       blockType: "team",
@@ -4252,7 +6071,7 @@ export const blocks: Registry["items"] = [
     description: "Team cards with social links on hover",
     categories: ["team", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "team",
@@ -4274,7 +6093,7 @@ export const blocks: Registry["items"] = [
     description: "Leadership section with smaller team grid",
     categories: ["team", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "team",
@@ -4297,7 +6116,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button"],
     categories: ["team", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "team",
@@ -4319,7 +6138,7 @@ export const blocks: Registry["items"] = [
     description: "About page style team with story and values",
     categories: ["team", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "team",
@@ -4341,7 +6160,7 @@ export const blocks: Registry["items"] = [
     description: "Minimal list team by department",
     categories: ["team", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "team",
@@ -4353,6 +6172,50 @@ export const blocks: Registry["items"] = [
     files: [
       {
         path: "blocks/team/team-7.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "team-8",
+    type: "registry:block",
+    description: "Travel agency team grid with destination badges",
+    categories: ["team", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "team",
+      order: 9,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/team/team-8.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "team-9",
+    type: "registry:block",
+    description: "Travel agency tour guides carousel showcase",
+    categories: ["team", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "team",
+      order: 9,
+      palette: "azure",
+      typography: "modern",
+      tint: "tinted",
+    },
+    files: [
+      {
+        path: "blocks/team/team-9.tsx",
         type: "registry:block",
       },
     ],
@@ -4381,14 +6244,127 @@ export const blocks: Registry["items"] = [
     ],
   },
   {
+    name: "testimonials-10",
+    type: "registry:block",
+    description:
+      "Travel testimonials carousel with featured destination spotlight",
+    categories: ["testimonials", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "testimonials",
+      order: 7,
+      palette: "azure",
+      typography: "modern",
+      tint: "deep",
+    },
+    files: [
+      {
+        path: "blocks/testimonials/testimonials-10.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "testimonials-11",
+    type: "registry:block",
+    description: "Travel testimonials masonry layout with trip photos",
+    categories: ["testimonials", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "testimonials",
+      order: 7,
+      palette: "azure",
+      typography: "modern",
+      tint: "deep",
+    },
+    files: [
+      {
+        path: "blocks/testimonials/testimonials-11.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "testimonials-12",
+    type: "registry:block",
+    description:
+      "Travel video testimonials with play buttons and traveler stories",
+    categories: ["testimonials", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "testimonials",
+      order: 7,
+      palette: "azure",
+      typography: "modern",
+      tint: "deep",
+    },
+    files: [
+      {
+        path: "blocks/testimonials/testimonials-12.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "testimonials-13",
+    type: "registry:block",
+    description: "Featured single traveler spotlight with journey timeline",
+    categories: ["testimonials", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "testimonials",
+      order: 7,
+      palette: "azure",
+      typography: "modern",
+      tint: "deep",
+    },
+    files: [
+      {
+        path: "blocks/testimonials/testimonials-13.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "testimonials-14",
+    type: "registry:block",
+    description:
+      "Travel testimonials marquee wall with infinite scrolling cards",
+    categories: ["testimonials", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "testimonials",
+      order: 7,
+      palette: "azure",
+      typography: "modern",
+      tint: "deep",
+    },
+    files: [
+      {
+        path: "blocks/testimonials/testimonials-14.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
     name: "testimonials-2",
     type: "registry:block",
     description:
-      "Member testimonials with transformation stats, FlyingPosters background, and LetterGlitch header",
-    registryDependencies: ["utils", "flying-posters", "letter-glitch"],
+      "Member testimonials with transformation stats and star ratings",
+    registryDependencies: ["utils"],
     categories: ["testimonials", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-fitness",
       blockType: "testimonials",
@@ -4411,7 +6387,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button"],
     categories: ["testimonials", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "testimonials",
@@ -4433,7 +6409,7 @@ export const blocks: Registry["items"] = [
     description: "Video testimonial cards with play overlay",
     categories: ["testimonials", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "testimonials",
@@ -4455,7 +6431,7 @@ export const blocks: Registry["items"] = [
     description: "Rating-focused testimonials with aggregate score",
     categories: ["testimonials", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "testimonials",
@@ -4478,7 +6454,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button"],
     categories: ["testimonials", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "testimonials",
@@ -4500,7 +6476,7 @@ export const blocks: Registry["items"] = [
     description: "Social proof wall with tweet-style cards",
     categories: ["testimonials", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-plants",
       blockType: "testimonials",
@@ -4522,7 +6498,7 @@ export const blocks: Registry["items"] = [
     description: "Developer testimonials grid for component library",
     categories: ["testimonials", "landing"],
     tier: "free",
-    readiness: "production",
+    readiness: "alpha",
     blockConfig: {
       template: "service-library",
       blockType: "testimonials",
@@ -4534,6 +6510,28 @@ export const blocks: Registry["items"] = [
     files: [
       {
         path: "blocks/testimonials/testimonials-8.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "testimonials-9",
+    type: "registry:block",
+    description: "Travel agency testimonials with destination cards grid",
+    categories: ["testimonials", "landing"],
+    tier: "free",
+    readiness: "alpha",
+    blockConfig: {
+      template: "service-travel",
+      blockType: "testimonials",
+      order: 7,
+      palette: "azure",
+      typography: "modern",
+      tint: "deep",
+    },
+    files: [
+      {
+        path: "blocks/testimonials/testimonials-9.tsx",
         type: "registry:block",
       },
     ],

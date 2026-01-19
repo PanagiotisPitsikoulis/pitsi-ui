@@ -22,8 +22,10 @@ export interface BlockConfig {
   forceLight?: boolean
 }
 
-// Template slugs from computed templates
-export const TEMPLATE_SLUGS = Object.keys(COMPUTED_TEMPLATES)
+// Template slugs from computed templates (only those with production blocks)
+export const TEMPLATE_SLUGS = Object.keys(COMPUTED_TEMPLATES).filter(
+  (slug) => COMPUTED_TEMPLATES[slug].blocks.length > 0
+)
 export const ALL_TEMPLATE_SLUGS = TEMPLATE_SLUGS
 export type TemplateSlug = keyof typeof COMPUTED_TEMPLATES
 

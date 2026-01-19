@@ -1,0 +1,27 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "stats-13",
+  "type": "registry:block",
+  "description": "Travel statistics with full-width banner and large numbers",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/stats/stats-13.tsx",
+      "content": "\"use client\"\n\nimport { type StatsBlockProps } from \"@/lib/blocks/stats.types\"\nimport { cn } from \"@/lib/utils\"\nimport { ScrollScale } from \"@/registry/new-york-v4/animations/scroll-scale/scroll-scale\"\n\nconst stats13Defaults = {\n  headline: \"Adventure Awaits\",\n  subheadline:\n    \"Join thousands of travelers who have discovered the world with us\",\n  stats: [\n    { value: \"150+\", label: \"Destinations\" },\n    { value: \"50K+\", label: \"Happy Travelers\" },\n    { value: \"1200+\", label: \"Tours\" },\n    { value: \"15+\", label: \"Years\" },\n  ],\n}\n\nexport function Stats13({ content = {}, classNames = {} }: StatsBlockProps) {\n  const headline =\n    (content as { headline?: string }).headline ?? stats13Defaults.headline\n  const subheadline =\n    (content as { subheadline?: string }).subheadline ??\n    stats13Defaults.subheadline\n  const stats =\n    (content as { stats?: typeof stats13Defaults.stats }).stats ??\n    stats13Defaults.stats\n\n  return (\n    <section\n      className={cn(\n        \"bg-primary relative overflow-hidden py-20 md:py-28\",\n        classNames.root\n      )}\n    >\n      <div className=\"bg-primary-foreground/5 absolute inset-0\">\n        <div className=\"absolute top-0 left-1/4 h-96 w-96 rounded-full bg-white/10 blur-3xl\" />\n        <div className=\"absolute right-1/4 bottom-0 h-96 w-96 rounded-full bg-white/10 blur-3xl\" />\n      </div>\n\n      <div className={cn(\"relative container px-6\", classNames.container)}>\n        <ScrollScale startScale={0.9} endScale={1}>\n          <div className=\"mb-16 text-center\">\n            <h2 className=\"font-display text-primary-foreground text-4xl font-bold md:text-6xl lg:text-7xl\">\n              {headline}\n            </h2>\n            <p className=\"text-primary-foreground/70 mx-auto mt-4 max-w-2xl text-lg md:text-xl\">\n              {subheadline}\n            </p>\n          </div>\n        </ScrollScale>\n\n        <div\n          className={cn(\n            \"grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-12\",\n            classNames.grid\n          )}\n        >\n          {stats.map((stat, idx) => (\n            <ScrollScale\n              key={idx}\n              startScale={0.8}\n              endScale={1}\n              delay={idx * 0.1}\n            >\n              <div className={cn(\"text-center\", classNames.stat?.root)}>\n                <div\n                  className={cn(\n                    \"text-primary-foreground text-5xl font-bold md:text-7xl lg:text-8xl\",\n                    classNames.stat?.value\n                  )}\n                >\n                  {stat.value}\n                </div>\n                <div\n                  className={cn(\n                    \"text-primary-foreground/60 mt-2 text-sm font-medium tracking-wider uppercase md:text-base\",\n                    classNames.stat?.label\n                  )}\n                >\n                  {stat.label}\n                </div>\n              </div>\n            </ScrollScale>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n\nexport default Stats13\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "stats",
+    "landing"
+  ],
+  "tier": "free",
+  "readiness": "alpha",
+  "blockConfig": {
+    "template": "service-travel",
+    "blockType": "stats",
+    "order": 10,
+    "palette": "azure",
+    "typography": "modern",
+    "tint": "deep"
+  }
+}

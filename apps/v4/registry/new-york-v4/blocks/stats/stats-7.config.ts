@@ -6,7 +6,7 @@ export const registryConfig: RegistryItemConfig = {
   description: "Infographic style stats with bar chart",
   categories: ["stats", "landing"],
   tier: "free",
-  readiness: "production",
+  readiness: "alpha",
   blockConfig: {
     template: "service-plants",
     blockType: "stats",

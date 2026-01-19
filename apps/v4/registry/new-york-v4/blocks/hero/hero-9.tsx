@@ -159,3 +159,6 @@ export function Hero9({ content = {}, classNames = {} }: HeroBlockProps) {
     </section>
   )
 }
+
+// Re-export for backwards compatibility
+export { Hero9 as HeroFitnessPosters }

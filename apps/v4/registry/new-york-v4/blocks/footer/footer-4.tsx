@@ -93,7 +93,7 @@ export function Footer4({ content = {}, classNames = {} }: FooterBlockProps) {
         {/* Content */}
         <div
           className={cn(
-            "container relative z-10 px-6 py-20 md:py-28",
+            "relative z-10 container px-6 py-20 md:py-28",
             classNames.container
           )}
         >

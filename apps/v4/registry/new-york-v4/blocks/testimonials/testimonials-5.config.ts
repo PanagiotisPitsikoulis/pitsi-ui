@@ -6,7 +6,7 @@ export const registryConfig: RegistryItemConfig = {
   description: "Rating-focused testimonials with aggregate score",
   categories: ["testimonials", "landing"],
   tier: "free",
-  readiness: "production",
+  readiness: "alpha",
   blockConfig: {
     template: "service-plants",
     blockType: "testimonials",

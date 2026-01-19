@@ -9,7 +9,7 @@ export const registryConfig: RegistryItemConfig = {
   registryDependencies: ["map"],
   categories: ["maps"],
   tier: "free",
-  readiness: "production",
+  readiness: "alpha",
   blockConfig: {
     template: "standalone",
     blockType: "maps",

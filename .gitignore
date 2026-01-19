@@ -41,3 +41,6 @@ tsconfig.tsbuildinfo
 .fleet
 .vscode
 .vercel
+
+# personal
+._management/personal.md

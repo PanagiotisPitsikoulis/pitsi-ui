@@ -1,0 +1,30 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "cta-13",
+  "type": "registry:block",
+  "description": "Travel CTA with email subscription and aurora background",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/cta/cta-13.tsx",
+      "content": "\"use client\"\n\nimport Image from \"next/image\"\n\nimport { type CtaBlockProps } from \"@/lib/blocks/cta.types\"\nimport { cn } from \"@/lib/utils\"\nimport Aurora from \"@/registry/new-york-v4/animations/aurora/aurora\"\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\nimport { ImageOverlay } from \"@/app/(app)/(content)/(blocks)/_block_components\"\nimport { BlockThemeWrapper } from \"@/app/(app)/(content)/(blocks)/_components\"\n\n// Block-specific defaults for travel theme\nconst cta13Defaults = {\n  title: \"Start Your Travel Journey\",\n  description:\n    \"Subscribe to our newsletter and get exclusive deals on flights, hotels, and vacation packages.\",\n  image: {\n    src: \"/elements/landscape/sea/3.webp\",\n    alt: \"Beautiful travel destination\",\n  },\n  primaryCta: {\n    label: \"Subscribe\",\n    href: \"#\",\n  },\n  // Azure palette aurora colors\n  auroraColors: [\"#0ea5e9\", \"#0284c7\", \"#7dd3fc\"],\n}\n\nexport function Cta13({ content = {}, classNames = {} }: CtaBlockProps) {\n  const {\n    title = cta13Defaults.title,\n    description = cta13Defaults.description,\n    image = cta13Defaults.image,\n    primaryCta = cta13Defaults.primaryCta,\n  } = content as typeof cta13Defaults\n\n  const auroraColors = cta13Defaults.auroraColors\n\n  return (\n    <section className={classNames.root}>\n      <div className={cn(\"container px-6\", classNames.container)}>\n        <BlockThemeWrapper\n          palette=\"azure\"\n          tint=\"deep\"\n          forceDark\n          className={cn(\n            \"relative overflow-hidden rounded-3xl\",\n            classNames.content\n          )}\n        >\n          {/* Aurora background animation with azure palette */}\n          <div className=\"pointer-events-none absolute inset-0\">\n            <Aurora\n              colorStops={auroraColors}\n              amplitude={1.0}\n              blend={0.5}\n              speed={0.6}\n            />\n          </div>\n\n          {image && (\n            <>\n              <Image\n                draggable={false}\n                src={image.src}\n                alt={image.alt}\n                fill\n                className={cn(\n                  \"pointer-events-none object-cover opacity-40 select-none\",\n                  classNames.image?.img\n                )}\n              />\n              <ImageOverlay opacity={30} />\n            </>\n          )}\n          <div className=\"relative z-20 flex flex-col items-center px-8 py-16 md:py-24\">\n            <h2\n              className={cn(\n                \"font-display text-foreground mb-6 text-center text-3xl font-bold md:text-5xl\",\n                classNames.header?.title\n              )}\n            >\n              {title}\n            </h2>\n            <p\n              className={cn(\n                \"text-foreground/70 mb-10 max-w-xl text-center text-lg\",\n                classNames.header?.description\n              )}\n            >\n              {description}\n            </p>\n            <div\n              className={cn(\n                \"mx-auto flex w-full max-w-md flex-col gap-4 sm:flex-row\",\n                classNames.cta?.root\n              )}\n            >\n              <input\n                type=\"email\"\n                placeholder=\"Enter your email\"\n                className={cn(\n                  \"border-foreground/20 bg-foreground/10 text-foreground h-12 flex-1 rounded-full border px-6\",\n                  \"placeholder:text-foreground/50 focus:ring-foreground/30 focus:ring-1 focus:outline-none\"\n                )}\n              />\n              {primaryCta && (\n                <Button\n                  className={cn(\n                    \"bg-foreground text-background hover:bg-foreground/90 h-12 rounded-full px-8\",\n                    classNames.cta?.primary\n                  )}\n                >\n                  {primaryCta.label}\n                </Button>\n              )}\n            </div>\n          </div>\n        </BlockThemeWrapper>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "cta",
+    "landing"
+  ],
+  "tier": "free",
+  "readiness": "alpha",
+  "blockConfig": {
+    "template": "service-travel",
+    "blockType": "cta",
+    "order": 15,
+    "palette": "azure",
+    "typography": "modern",
+    "tint": "tinted"
+  }
+}

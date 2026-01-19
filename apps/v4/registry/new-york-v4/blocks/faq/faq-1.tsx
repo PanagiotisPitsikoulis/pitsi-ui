@@ -91,7 +91,7 @@ export function Faq1({ content = {}, classNames = {} }: FaqBlockProps) {
           borderRadius="1.5rem"
           className="mx-auto max-w-2xl"
         >
-          <div className="bg-card rounded-3xl border border-border p-6 shadow-sm">
+          <div className="bg-card border-border rounded-3xl border p-6 shadow-sm">
             <Accordion
               type="single"
               collapsible

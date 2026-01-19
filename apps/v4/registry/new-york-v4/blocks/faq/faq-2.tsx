@@ -112,7 +112,11 @@ export function Faq2({ content = {}, classNames = {} }: FaqBlockProps) {
           {/* Questions List */}
           <div className="space-y-6">
             {categories.map((category, catIndex) => (
-              <SlideUp key={category.name} delay={0.1 + catIndex * 0.1} distance={25}>
+              <SlideUp
+                key={category.name}
+                delay={0.1 + catIndex * 0.1}
+                distance={25}
+              >
                 <div>
                   <h3 className="text-muted-foreground mb-3 text-sm font-semibold uppercase">
                     {category.name}

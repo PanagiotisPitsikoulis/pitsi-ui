@@ -23,13 +23,5 @@
     "pages"
   ],
   "tier": "free",
-  "readiness": "production",
-  "blockConfig": {
-    "template": "service-library",
-    "blockType": "blog-post",
-    "order": 1,
-    "palette": "slate",
-    "typography": "modern",
-    "tint": "tinted"
-  }
+  "readiness": "alpha"
 }

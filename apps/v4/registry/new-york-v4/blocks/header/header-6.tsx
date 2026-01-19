@@ -32,7 +32,11 @@ const header6Defaults = {
 }
 
 const searchResults = [
-  { title: "Monstera Deliciosa", description: "Tropical statement plant", href: "#" },
+  {
+    title: "Monstera Deliciosa",
+    description: "Tropical statement plant",
+    href: "#",
+  },
   { title: "Snake Plant", description: "Low-light tolerant", href: "#" },
   { title: "Pothos", description: "Trailing vine plant", href: "#" },
   { title: "Plant Care Tips", description: "Complete guide", href: "#" },
@@ -171,7 +175,7 @@ export function Header6({ content = {}, classNames = {} }: HeaderBlockProps) {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.95 }}
               transition={{ duration: 0.3, delay: 0.1 }}
-              className="bg-background border-border relative z-10 w-full max-w-xl rounded-xl border p-6 shadow-2xl mx-4"
+              className="bg-background border-border relative z-10 mx-4 w-full max-w-xl rounded-xl border p-6 shadow-2xl"
             >
               {/* Close Button */}
               <Button

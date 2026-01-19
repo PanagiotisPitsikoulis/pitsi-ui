@@ -174,7 +174,7 @@ export function Testimonials7({
   return (
     <section
       className={cn(
-        "relative overflow-hidden bg-gradient-to-b from-sage-100 via-sage-50 to-amber-50 dark:from-sage-950 dark:via-sage-900/50 dark:to-amber-950/30",
+        "from-sage-100 via-sage-50 dark:from-sage-950 dark:via-sage-900/50 relative overflow-hidden bg-gradient-to-b to-amber-50 dark:to-amber-950/30",
         classNames.root
       )}
     >
@@ -222,12 +222,14 @@ export function Testimonials7({
         </Marquee>
 
         {/* Gradient overlays for fade effect */}
-        <div className="from-sage-100 pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r to-transparent dark:from-sage-950" />
-        <div className="to-sage-100 pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-transparent dark:to-sage-950" />
+        <div className="from-sage-100 dark:from-sage-950 pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r to-transparent" />
+        <div className="to-sage-100 dark:to-sage-950 pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-transparent" />
       </div>
 
       {/* CTA Section */}
-      <div className={cn("container px-6 pb-16 md:pb-24", classNames.container)}>
+      <div
+        className={cn("container px-6 pb-16 md:pb-24", classNames.container)}
+      >
         <div className="text-center">
           <Link
             href={ctaHref}

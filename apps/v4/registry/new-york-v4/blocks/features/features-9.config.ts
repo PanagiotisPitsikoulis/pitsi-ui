@@ -7,7 +7,7 @@ export const registryConfig: RegistryItemConfig = {
   dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
   categories: ["features", "landing"],
   tier: "free",
-  readiness: "production",
+  readiness: "alpha",
   blockConfig: {
     template: "service-library",
     blockType: "features",

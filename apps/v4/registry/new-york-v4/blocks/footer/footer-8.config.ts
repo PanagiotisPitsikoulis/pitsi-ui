@@ -6,7 +6,7 @@ export const registryConfig: RegistryItemConfig = {
   description: "Social-focused footer with large icons and follower counts",
   categories: ["footer", "landing"],
   tier: "free",
-  readiness: "production",
+  readiness: "alpha",
   blockConfig: {
     template: "service-plants",
     blockType: "footer",

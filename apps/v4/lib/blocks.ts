@@ -51,7 +51,7 @@ export function getBlockFilterOptions(): BlockFilterOptions {
     typographies: Array.from(typographies).sort(),
     templates: Array.from(templates).sort(),
     tiers: ["free", "pro"],
-    readinessOptions: ["production", "beta", "experimental"],
+    readinessOptions: ["production", "beta"],
   }
 }
 

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "logos-9",
+  "type": "registry:block",
+  "description": "Travel partners grid layout with hover effects",
+  "files": [
+    {
+      "path": "registry/new-york-v4/blocks/logos/logos-9.tsx",
+      "content": "\"use client\"\n\nimport Link from \"next/link\"\n\nimport { cn } from \"@/lib/utils\"\nimport { BlockHeader } from \"@/registry/new-york-v4/lib/block-header\"\n\ninterface LogosBlockProps {\n  content?: {\n    title?: string\n    description?: string\n    logos?: Array<{\n      name: string\n      category: string\n      href: string\n    }>\n  }\n  classNames?: {\n    root?: string\n    container?: string\n    header?: { title?: string; description?: string }\n  }\n}\n\nconst logos9Defaults = {\n  title: \"Our Travel Partners\",\n  description:\n    \"We collaborate with world-class travel brands to bring you unforgettable experiences.\",\n  logos: [\n    {\n      name: \"SkyWings Airlines\",\n      category: \"Airlines\",\n      href: \"#\",\n    },\n    {\n      name: \"Grand Hotels Group\",\n      category: \"Accommodation\",\n      href: \"#\",\n    },\n    {\n      name: \"Wanderlust Tours\",\n      category: \"Tour Operators\",\n      href: \"#\",\n    },\n    {\n      name: \"Ocean Cruise Lines\",\n      category: \"Cruises\",\n      href: \"#\",\n    },\n    {\n      name: \"Alpine Resorts\",\n      category: \"Resorts\",\n      href: \"#\",\n    },\n    {\n      name: \"Safari Expeditions\",\n      category: \"Adventures\",\n      href: \"#\",\n    },\n  ],\n}\n\nexport function Logos9({ content = {}, classNames = {} }: LogosBlockProps) {\n  const {\n    title = logos9Defaults.title,\n    description = logos9Defaults.description,\n    logos = logos9Defaults.logos,\n  } = content\n\n  return (\n    <section className={cn(\"bg-background\", classNames.root)}>\n      <div\n        className={cn(\"container px-6 py-16 md:py-24\", classNames.container)}\n      >\n        <BlockHeader\n          title={title}\n          description={description}\n          spacing=\"compact\"\n          classNames={classNames.header}\n        />\n\n        <div className=\"grid gap-4 sm:grid-cols-2 lg:grid-cols-3\">\n          {logos.map((logo, i) => (\n            <Link\n              key={i}\n              href={logo.href}\n              className=\"border-border bg-card group relative overflow-hidden rounded-xl border p-6 transition-all hover:shadow-lg\"\n            >\n              <div className=\"bg-primary/5 group-hover:bg-primary/10 absolute inset-0 transition-colors\" />\n              <div className=\"relative\">\n                <div className=\"bg-muted mb-4 flex h-16 items-center justify-center rounded-lg\">\n                  <span className=\"text-muted-foreground group-hover:text-primary text-lg font-semibold tracking-wider transition-colors\">\n                    {logo.name}\n                  </span>\n                </div>\n                <div className=\"flex items-center justify-between\">\n                  <span className=\"text-primary text-xs font-medium tracking-wider uppercase\">\n                    {logo.category}\n                  </span>\n                  <span className=\"text-muted-foreground group-hover:text-primary text-sm transition-colors\">\n                    Learn more &rarr;\n                  </span>\n                </div>\n              </div>\n            </Link>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}\n",
+      "type": "registry:block"
+    }
+  ],
+  "categories": [
+    "logos",
+    "landing"
+  ],
+  "tier": "free",
+  "readiness": "alpha",
+  "blockConfig": {
+    "template": "service-travel",
+    "blockType": "logos",
+    "order": 3,
+    "palette": "azure",
+    "typography": "modern",
+    "tint": "deep"
+  }
+}

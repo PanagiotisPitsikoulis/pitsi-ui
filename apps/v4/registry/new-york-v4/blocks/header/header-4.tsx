@@ -46,7 +46,11 @@ const header4Defaults = {
       label: "Care",
       href: "#",
       children: [
-        { label: "Watering Guide", href: "#", description: "Keep your plants hydrated" },
+        {
+          label: "Watering Guide",
+          href: "#",
+          description: "Keep your plants hydrated",
+        },
         {
           label: "Light Requirements",
           href: "#",
@@ -70,7 +74,11 @@ const header4Defaults = {
           href: "#",
           description: "Meet our plant experts",
         },
-        { label: "Sustainability", href: "#", description: "Our green promise" },
+        {
+          label: "Sustainability",
+          href: "#",
+          description: "Our green promise",
+        },
         { label: "Journal", href: "#", description: "Plant tips and stories" },
       ],
     },
@@ -151,7 +159,7 @@ export function Header4({ content = {}, classNames = {} }: HeaderBlockProps) {
                       >
                         <Link
                           href={child.href}
-                          className="hover:bg-muted group rounded-md p-3 transition-colors block"
+                          className="hover:bg-muted group block rounded-md p-3 transition-colors"
                         >
                           <div className="text-foreground group-hover:text-brand text-sm font-medium transition-colors">
                             {child.label}

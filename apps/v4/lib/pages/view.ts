@@ -68,7 +68,6 @@ export async function generateViewStaticParams() {
   try {
     const { Index } = await import("@/registry/__index__")
     const params: Array<{ style: string; name: string }> = []
-    const hideAlpha = process.env.HIDE_ALPHA_ITEMS === "true"
 
     for (const style of STYLES) {
       if (!Index[style.name]) {
@@ -79,8 +78,8 @@ export async function generateViewStaticParams() {
       for (const itemName in styleIndex) {
         const item = styleIndex[itemName]
 
-        // Skip alpha items if HIDE_ALPHA_ITEMS is true
-        if (hideAlpha && item.readiness === "alpha") {
+        // Always skip alpha items
+        if (item.readiness === "alpha") {
           continue
         }
 
