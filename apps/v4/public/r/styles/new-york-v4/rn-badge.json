@@ -1,0 +1,23 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "rn-badge",
+  "type": "registry:ui",
+  "description": "A badge component for React Native with color variants.",
+  "dependencies": [
+    "class-variance-authority",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/react-native/rn-badge.tsx",
+      "content": "import { cva, type VariantProps } from \"class-variance-authority\"\nimport { clsx } from \"clsx\"\nimport { forwardRef } from \"react\"\nimport { View, Text, type ViewProps } from \"react-native\"\nimport { twMerge } from \"tailwind-merge\"\n\nfunction cn(...inputs: (string | undefined | null | false)[]) {\n  return twMerge(clsx(inputs))\n}\n\nconst badgeVariants = cva(\n  \"flex-row items-center justify-center rounded-full px-2.5 py-0.5\",\n  {\n    variants: {\n      variant: {\n        default: \"bg-primary\",\n        secondary: \"bg-secondary\",\n        destructive: \"bg-destructive\",\n        outline: \"border border-border bg-transparent\",\n        success: \"bg-green-500\",\n        warning: \"bg-yellow-500\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n    },\n  }\n)\n\nconst badgeTextVariants = cva(\"text-xs font-semibold\", {\n  variants: {\n    variant: {\n      default: \"text-primary-foreground\",\n      secondary: \"text-secondary-foreground\",\n      destructive: \"text-destructive-foreground\",\n      outline: \"text-foreground\",\n      success: \"text-white\",\n      warning: \"text-white\",\n    },\n  },\n  defaultVariants: {\n    variant: \"default\",\n  },\n})\n\nexport interface BadgeProps\n  extends ViewProps,\n    VariantProps<typeof badgeVariants> {\n  children: React.ReactNode\n  className?: string\n  textClassName?: string\n}\n\nconst Badge = forwardRef<React.ComponentRef<typeof View>, BadgeProps>(\n  ({ className, textClassName, variant, children, ...props }, ref) => {\n    return (\n      <View\n        ref={ref}\n        className={cn(badgeVariants({ variant, className }))}\n        {...props}\n      >\n        {typeof children === \"string\" ? (\n          <Text className={cn(badgeTextVariants({ variant }), textClassName)}>\n            {children}\n          </Text>\n        ) : (\n          children\n        )}\n      </View>\n    )\n  }\n)\n\nBadge.displayName = \"Badge\"\n\nexport { Badge, badgeVariants, badgeTextVariants }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "react-native"
+  ],
+  "tier": "free",
+  "readiness": "beta"
+}

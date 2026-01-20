@@ -1,0 +1,23 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "rn-checkbox",
+  "type": "registry:ui",
+  "description": "A checkbox component for React Native with checked and indeterminate states.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge",
+    "lucide-react-native"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/react-native/rn-checkbox.tsx",
+      "content": "import { clsx } from \"clsx\"\nimport { Check, Minus } from \"lucide-react-native\"\nimport { forwardRef } from \"react\"\nimport { Pressable, type PressableProps } from \"react-native\"\nimport { twMerge } from \"tailwind-merge\"\n\nfunction cn(...inputs: (string | undefined | null | false)[]) {\n  return twMerge(clsx(inputs))\n}\n\nexport interface CheckboxProps extends Omit<PressableProps, \"children\"> {\n  checked?: boolean\n  indeterminate?: boolean\n  onCheckedChange?: (checked: boolean) => void\n  className?: string\n}\n\nconst Checkbox = forwardRef<React.ComponentRef<typeof Pressable>, CheckboxProps>(\n  (\n    { checked = false, indeterminate = false, onCheckedChange, className, ...props },\n    ref\n  ) => {\n    return (\n      <Pressable\n        ref={ref}\n        role=\"checkbox\"\n        accessibilityState={{ checked: indeterminate ? \"mixed\" : checked }}\n        onPress={() => onCheckedChange?.(!checked)}\n        className={cn(\n          \"h-5 w-5 items-center justify-center rounded border-2\",\n          checked || indeterminate\n            ? \"border-primary bg-primary\"\n            : \"border-input bg-background\",\n          className\n        )}\n        {...props}\n      >\n        {indeterminate ? (\n          <Minus size={14} color=\"white\" strokeWidth={3} />\n        ) : checked ? (\n          <Check size={14} color=\"white\" strokeWidth={3} />\n        ) : null}\n      </Pressable>\n    )\n  }\n)\n\nCheckbox.displayName = \"Checkbox\"\n\nexport { Checkbox }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "react-native"
+  ],
+  "tier": "free",
+  "readiness": "beta"
+}

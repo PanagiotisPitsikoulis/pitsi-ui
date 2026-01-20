@@ -1,0 +1,73 @@
+---
+title: Button
+description: A pressable button component for React Native with variants and sizes.
+component: true
+---
+
+## Installation
+
+```bash
+npx pitsi@latest add rn-button
+```
+
+## Usage
+
+```tsx
+import { Button } from "@/components/ui/button"
+```
+
+```tsx
+<Button variant="default">Press me</Button>
+```
+
+## Variants
+
+### Default
+
+```tsx
+<Button>Default Button</Button>
+```
+
+### Secondary
+
+```tsx
+<Button variant="secondary">Secondary</Button>
+```
+
+### Destructive
+
+```tsx
+<Button variant="destructive">Delete</Button>
+```
+
+### Outline
+
+```tsx
+<Button variant="outline">Outline</Button>
+```
+
+### Ghost
+
+```tsx
+<Button variant="ghost">Ghost</Button>
+```
+
+## Sizes
+
+```tsx
+<Button size="sm">Small</Button>
+<Button size="default">Default</Button>
+<Button size="lg">Large</Button>
+<Button size="icon">
+  <IconName />
+</Button>
+```
+
+## API Reference
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `variant` | `"default" \| "secondary" \| "destructive" \| "outline" \| "ghost"` | `"default"` |
+| `size` | `"default" \| "sm" \| "lg" \| "icon"` | `"default"` |
+| `className` | `string` | - |
+| `textClassName` | `string` | - |

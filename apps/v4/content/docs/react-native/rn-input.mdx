@@ -1,0 +1,58 @@
+---
+title: Input
+description: A styled TextInput component for React Native with focus states.
+component: true
+---
+
+## Installation
+
+```bash
+npx pitsi@latest add rn-input
+```
+
+## Usage
+
+```tsx
+import { Input } from "@/components/ui/input"
+```
+
+```tsx
+<Input placeholder="Enter text..." />
+```
+
+## With Label
+
+```tsx
+<Input label="Email" placeholder="you@example.com" />
+```
+
+## With Error
+
+```tsx
+<Input
+  label="Password"
+  error="Password must be at least 8 characters"
+  secureTextEntry
+/>
+```
+
+## Controlled Input
+
+```tsx
+const [value, setValue] = useState("")
+
+<Input
+  value={value}
+  onChangeText={setValue}
+  placeholder="Type here..."
+/>
+```
+
+## API Reference
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `label` | `string` | - |
+| `error` | `string` | - |
+| `className` | `string` | - |
+| ...TextInputProps | - | - |

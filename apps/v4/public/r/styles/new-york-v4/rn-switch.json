@@ -1,0 +1,22 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "rn-switch",
+  "type": "registry:ui",
+  "description": "A toggle switch component for React Native.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/react-native/rn-switch.tsx",
+      "content": "import { clsx } from \"clsx\"\nimport { forwardRef } from \"react\"\nimport { Switch as RNSwitch, type SwitchProps as RNSwitchProps, View } from \"react-native\"\nimport { twMerge } from \"tailwind-merge\"\n\nfunction cn(...inputs: (string | undefined | null | false)[]) {\n  return twMerge(clsx(inputs))\n}\n\nexport interface SwitchProps extends Omit<RNSwitchProps, \"trackColor\" | \"thumbColor\"> {\n  className?: string\n}\n\nconst Switch = forwardRef<React.ComponentRef<typeof RNSwitch>, SwitchProps>(\n  ({ className, value, ...props }, ref) => {\n    return (\n      <View className={cn(\"\", className)}>\n        <RNSwitch\n          ref={ref}\n          value={value}\n          trackColor={{\n            false: \"#e4e4e7\",\n            true: \"#6366f1\",\n          }}\n          thumbColor=\"#ffffff\"\n          ios_backgroundColor=\"#e4e4e7\"\n          {...props}\n        />\n      </View>\n    )\n  }\n)\n\nSwitch.displayName = \"Switch\"\n\nexport { Switch }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "react-native"
+  ],
+  "tier": "free",
+  "readiness": "beta"
+}

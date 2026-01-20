@@ -1,0 +1,23 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "rn-skeleton",
+  "type": "registry:ui",
+  "description": "A skeleton loading placeholder component for React Native with pulse animation.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge",
+    "react-native-reanimated"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/react-native/rn-skeleton.tsx",
+      "content": "import { clsx } from \"clsx\"\nimport { forwardRef, useEffect } from \"react\"\nimport { View, type ViewProps } from \"react-native\"\nimport Animated, {\n  useSharedValue,\n  useAnimatedStyle,\n  withRepeat,\n  withTiming,\n} from \"react-native-reanimated\"\nimport { twMerge } from \"tailwind-merge\"\n\nfunction cn(...inputs: (string | undefined | null | false)[]) {\n  return twMerge(clsx(inputs))\n}\n\nexport interface SkeletonProps extends ViewProps {\n  className?: string\n}\n\nconst Skeleton = forwardRef<React.ComponentRef<typeof View>, SkeletonProps>(\n  ({ className, ...props }, ref) => {\n    const opacity = useSharedValue(1)\n\n    useEffect(() => {\n      opacity.value = withRepeat(\n        withTiming(0.5, { duration: 1000 }),\n        -1,\n        true\n      )\n    }, [opacity])\n\n    const animatedStyle = useAnimatedStyle(() => ({\n      opacity: opacity.value,\n    }))\n\n    return (\n      <Animated.View\n        ref={ref}\n        style={animatedStyle}\n        className={cn(\"rounded-md bg-muted\", className)}\n        {...props}\n      />\n    )\n  }\n)\n\nSkeleton.displayName = \"Skeleton\"\n\nexport { Skeleton }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "react-native"
+  ],
+  "tier": "free",
+  "readiness": "beta"
+}

@@ -1,0 +1,47 @@
+---
+title: Switch
+description: A toggle switch component for React Native.
+component: true
+---
+
+## Installation
+
+```bash
+npx pitsi@latest add rn-switch
+```
+
+## Usage
+
+```tsx
+import { Switch } from "@/components/ui/switch"
+```
+
+```tsx
+const [enabled, setEnabled] = useState(false)
+
+<Switch value={enabled} onValueChange={setEnabled} />
+```
+
+## With Label
+
+```tsx
+<View className="flex-row items-center justify-between">
+  <Text>Enable notifications</Text>
+  <Switch value={enabled} onValueChange={setEnabled} />
+</View>
+```
+
+## Disabled
+
+```tsx
+<Switch value={true} disabled />
+```
+
+## API Reference
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `value` | `boolean` | `false` |
+| `onValueChange` | `(value: boolean) => void` | - |
+| `disabled` | `boolean` | `false` |
+| `className` | `string` | - |

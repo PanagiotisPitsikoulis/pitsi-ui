@@ -1,0 +1,22 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "rn-progress",
+  "type": "registry:ui",
+  "description": "A progress bar component for React Native.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/react-native/rn-progress.tsx",
+      "content": "import { clsx } from \"clsx\"\nimport { forwardRef } from \"react\"\nimport { View, type ViewProps } from \"react-native\"\nimport { twMerge } from \"tailwind-merge\"\n\nfunction cn(...inputs: (string | undefined | null | false)[]) {\n  return twMerge(clsx(inputs))\n}\n\nexport interface ProgressProps extends ViewProps {\n  value?: number\n  max?: number\n  className?: string\n  indicatorClassName?: string\n}\n\nconst Progress = forwardRef<React.ComponentRef<typeof View>, ProgressProps>(\n  ({ value = 0, max = 100, className, indicatorClassName, ...props }, ref) => {\n    const percentage = Math.min(Math.max((value / max) * 100, 0), 100)\n\n    return (\n      <View\n        ref={ref}\n        className={cn(\n          \"h-3 w-full overflow-hidden rounded-full bg-muted\",\n          className\n        )}\n        {...props}\n      >\n        <View\n          className={cn(\"h-full rounded-full bg-primary\", indicatorClassName)}\n          style={{ width: `${percentage}%` }}\n        />\n      </View>\n    )\n  }\n)\n\nProgress.displayName = \"Progress\"\n\nexport { Progress }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "react-native"
+  ],
+  "tier": "free",
+  "readiness": "beta"
+}

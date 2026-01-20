@@ -1,0 +1,48 @@
+---
+title: Separator
+description: A separator/divider component for React Native with horizontal and vertical orientations.
+component: true
+---
+
+## Installation
+
+```bash
+npx pitsi@latest add rn-separator
+```
+
+## Usage
+
+```tsx
+import { Separator } from "@/components/ui/separator"
+```
+
+```tsx
+<Separator />
+```
+
+## Horizontal (Default)
+
+```tsx
+<View>
+  <Text>Above</Text>
+  <Separator className="my-4" />
+  <Text>Below</Text>
+</View>
+```
+
+## Vertical
+
+```tsx
+<View className="flex-row items-center h-6">
+  <Text>Left</Text>
+  <Separator orientation="vertical" className="mx-4" />
+  <Text>Right</Text>
+</View>
+```
+
+## API Reference
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` |
+| `className` | `string` | - |

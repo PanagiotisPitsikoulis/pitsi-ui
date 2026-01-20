@@ -1,0 +1,39 @@
+{
+  "name": "@pitsi/quiz-core",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./types": {
+      "import": "./dist/types/index.js",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./hooks": {
+      "import": "./dist/hooks/index.js",
+      "types": "./dist/hooks/index.d.ts"
+    },
+    "./utils": {
+      "import": "./dist/utils/index.js",
+      "types": "./dist/utils/index.d.ts"
+    }
+  },
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "tsup": "^8.4.0",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0"
+  }
+}

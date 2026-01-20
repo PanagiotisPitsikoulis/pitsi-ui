@@ -1,0 +1,23 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "rn-button",
+  "type": "registry:ui",
+  "description": "A pressable button component for React Native with variants and sizes.",
+  "dependencies": [
+    "class-variance-authority",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/react-native/rn-button.tsx",
+      "content": "import { cva, type VariantProps } from \"class-variance-authority\"\nimport { clsx } from \"clsx\"\nimport { forwardRef } from \"react\"\nimport { Pressable, Text, type PressableProps } from \"react-native\"\nimport { twMerge } from \"tailwind-merge\"\n\nfunction cn(...inputs: (string | undefined | null | false)[]) {\n  return twMerge(clsx(inputs))\n}\n\nconst buttonVariants = cva(\n  \"flex flex-row items-center justify-center rounded-xl active:opacity-80\",\n  {\n    variants: {\n      variant: {\n        default: \"bg-primary\",\n        secondary: \"bg-secondary\",\n        destructive: \"bg-destructive\",\n        outline: \"border-2 border-border bg-transparent\",\n        ghost: \"bg-transparent\",\n      },\n      size: {\n        default: \"px-6 py-3\",\n        sm: \"px-4 py-2\",\n        lg: \"px-8 py-4\",\n        icon: \"h-10 w-10\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n      size: \"default\",\n    },\n  }\n)\n\nconst buttonTextVariants = cva(\"font-semibold\", {\n  variants: {\n    variant: {\n      default: \"text-primary-foreground\",\n      secondary: \"text-secondary-foreground\",\n      destructive: \"text-destructive-foreground\",\n      outline: \"text-foreground\",\n      ghost: \"text-foreground\",\n    },\n    size: {\n      default: \"text-base\",\n      sm: \"text-sm\",\n      lg: \"text-lg\",\n      icon: \"text-base\",\n    },\n  },\n  defaultVariants: {\n    variant: \"default\",\n    size: \"default\",\n  },\n})\n\nexport interface ButtonProps\n  extends PressableProps,\n    VariantProps<typeof buttonVariants> {\n  children: React.ReactNode\n  className?: string\n  textClassName?: string\n}\n\nconst Button = forwardRef<React.ComponentRef<typeof Pressable>, ButtonProps>(\n  ({ className, textClassName, variant, size, children, ...props }, ref) => {\n    return (\n      <Pressable\n        ref={ref}\n        className={cn(buttonVariants({ variant, size, className }))}\n        {...props}\n      >\n        {typeof children === \"string\" ? (\n          <Text\n            className={cn(buttonTextVariants({ variant, size }), textClassName)}\n          >\n            {children}\n          </Text>\n        ) : (\n          children\n        )}\n      </Pressable>\n    )\n  }\n)\n\nButton.displayName = \"Button\"\n\nexport { Button, buttonVariants, buttonTextVariants }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "react-native"
+  ],
+  "tier": "free",
+  "readiness": "beta"
+}

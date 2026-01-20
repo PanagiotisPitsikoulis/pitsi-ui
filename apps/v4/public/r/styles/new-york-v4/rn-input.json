@@ -1,0 +1,22 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "rn-input",
+  "type": "registry:ui",
+  "description": "A styled TextInput component for React Native with focus states.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/react-native/rn-input.tsx",
+      "content": "import { clsx } from \"clsx\"\nimport { forwardRef, useState } from \"react\"\nimport { TextInput, type TextInputProps, View, Text } from \"react-native\"\nimport { twMerge } from \"tailwind-merge\"\n\nfunction cn(...inputs: (string | undefined | null | false)[]) {\n  return twMerge(clsx(inputs))\n}\n\nexport interface InputProps extends TextInputProps {\n  className?: string\n  label?: string\n  error?: string\n}\n\nconst Input = forwardRef<React.ComponentRef<typeof TextInput>, InputProps>(\n  ({ className, label, error, onFocus, onBlur, ...props }, ref) => {\n    const [isFocused, setIsFocused] = useState(false)\n\n    return (\n      <View className=\"w-full\">\n        {label && (\n          <Text className=\"mb-1.5 text-sm font-medium text-foreground\">\n            {label}\n          </Text>\n        )}\n        <TextInput\n          ref={ref}\n          className={cn(\n            \"h-12 w-full rounded-xl border bg-background px-4 text-base text-foreground\",\n            isFocused ? \"border-primary\" : \"border-input\",\n            error && \"border-destructive\",\n            className\n          )}\n          placeholderTextColor=\"#71717a\"\n          onFocus={(e) => {\n            setIsFocused(true)\n            onFocus?.(e)\n          }}\n          onBlur={(e) => {\n            setIsFocused(false)\n            onBlur?.(e)\n          }}\n          {...props}\n        />\n        {error && (\n          <Text className=\"mt-1.5 text-sm text-destructive\">{error}</Text>\n        )}\n      </View>\n    )\n  }\n)\n\nInput.displayName = \"Input\"\n\nexport { Input }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "react-native"
+  ],
+  "tier": "free",
+  "readiness": "beta"
+}

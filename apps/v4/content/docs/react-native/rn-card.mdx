@@ -1,0 +1,58 @@
+---
+title: Card
+description: A card container component for React Native with header, content, and footer sections.
+component: true
+---
+
+## Installation
+
+```bash
+npx pitsi@latest add rn-card
+```
+
+## Usage
+
+```tsx
+import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/card"
+```
+
+```tsx
+<Card>
+  <CardHeader>
+    <Text className="text-lg font-semibold">Card Title</Text>
+  </CardHeader>
+  <CardContent>
+    <Text>Card content goes here.</Text>
+  </CardContent>
+  <CardFooter>
+    <Button>Action</Button>
+  </CardFooter>
+</Card>
+```
+
+## Components
+
+### Card
+
+The main container component.
+
+### CardHeader
+
+Container for the card title and description.
+
+### CardContent
+
+Container for the main card content.
+
+### CardFooter
+
+Container for card actions, typically buttons.
+
+## API Reference
+
+| Component | Props |
+| --- | --- |
+| `Card` | `ViewProps & { className?: string }` |
+| `CardHeader` | `ViewProps & { className?: string }` |
+| `CardContent` | `ViewProps & { className?: string }` |
+| `CardFooter` | `ViewProps & { className?: string }` |

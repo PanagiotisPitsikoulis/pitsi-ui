@@ -1,0 +1,22 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "rn-separator",
+  "type": "registry:ui",
+  "description": "A separator/divider component for React Native with horizontal and vertical orientations.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/react-native/rn-separator.tsx",
+      "content": "import { clsx } from \"clsx\"\nimport { forwardRef } from \"react\"\nimport { View, type ViewProps } from \"react-native\"\nimport { twMerge } from \"tailwind-merge\"\n\nfunction cn(...inputs: (string | undefined | null | false)[]) {\n  return twMerge(clsx(inputs))\n}\n\nexport interface SeparatorProps extends ViewProps {\n  orientation?: \"horizontal\" | \"vertical\"\n  className?: string\n}\n\nconst Separator = forwardRef<React.ComponentRef<typeof View>, SeparatorProps>(\n  ({ orientation = \"horizontal\", className, ...props }, ref) => {\n    return (\n      <View\n        ref={ref}\n        className={cn(\n          \"bg-border\",\n          orientation === \"horizontal\" ? \"h-px w-full\" : \"h-full w-px\",\n          className\n        )}\n        {...props}\n      />\n    )\n  }\n)\n\nSeparator.displayName = \"Separator\"\n\nexport { Separator }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "react-native"
+  ],
+  "tier": "free",
+  "readiness": "beta"
+}

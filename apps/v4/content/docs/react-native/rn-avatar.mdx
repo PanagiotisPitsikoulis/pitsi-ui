@@ -1,0 +1,55 @@
+---
+title: Avatar
+description: An avatar component for React Native with image and fallback support.
+component: true
+---
+
+## Installation
+
+```bash
+npx pitsi@latest add rn-avatar
+```
+
+## Usage
+
+```tsx
+import { Avatar } from "@/components/ui/avatar"
+```
+
+```tsx
+<Avatar source={{ uri: "https://example.com/avatar.jpg" }} />
+```
+
+## With Fallback
+
+```tsx
+<Avatar fallback="JD" />
+```
+
+## Sizes
+
+```tsx
+<Avatar size="sm" fallback="SM" />
+<Avatar size="md" fallback="MD" />
+<Avatar size="lg" fallback="LG" />
+<Avatar size="xl" fallback="XL" />
+```
+
+## With Image
+
+```tsx
+<Avatar
+  source={{ uri: "https://github.com/username.png" }}
+  fallback="UN"
+  size="lg"
+/>
+```
+
+## API Reference
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `source` | `ImageSourcePropType` | - |
+| `fallback` | `string` | - |
+| `size` | `"sm" \| "md" \| "lg" \| "xl"` | `"md"` |
+| `className` | `string` | - |

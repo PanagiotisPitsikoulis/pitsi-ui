@@ -1,0 +1,82 @@
+---
+title: Alert
+description: An alert component for React Native with variants for info, success, warning, and error.
+component: true
+---
+
+## Installation
+
+```bash
+npx pitsi@latest add rn-alert
+```
+
+## Usage
+
+```tsx
+import { Alert } from "@/components/ui/alert"
+```
+
+```tsx
+<Alert title="Heads up!">
+  You can add components to your app using the CLI.
+</Alert>
+```
+
+## Variants
+
+### Default
+
+```tsx
+<Alert title="Note">
+  This is a default alert message.
+</Alert>
+```
+
+### Info
+
+```tsx
+<Alert variant="info" title="Information">
+  Your session will expire in 5 minutes.
+</Alert>
+```
+
+### Success
+
+```tsx
+<Alert variant="success" title="Success!">
+  Your changes have been saved.
+</Alert>
+```
+
+### Warning
+
+```tsx
+<Alert variant="warning" title="Warning">
+  Your account is about to reach its limit.
+</Alert>
+```
+
+### Destructive
+
+```tsx
+<Alert variant="destructive" title="Error">
+  Something went wrong. Please try again.
+</Alert>
+```
+
+## Without Title
+
+```tsx
+<Alert variant="info">
+  Quick tip: You can use keyboard shortcuts to navigate.
+</Alert>
+```
+
+## API Reference
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `variant` | `"default" \| "info" \| "success" \| "warning" \| "destructive"` | `"default"` |
+| `title` | `string` | - |
+| `children` | `React.ReactNode` | - |
+| `className` | `string` | - |

@@ -1,0 +1,17 @@
+{
+  "title": "React Native",
+  "pages": [
+    "rn-button",
+    "rn-card",
+    "rn-typography",
+    "rn-input",
+    "rn-progress",
+    "rn-badge",
+    "rn-avatar",
+    "rn-checkbox",
+    "rn-switch",
+    "rn-separator",
+    "rn-skeleton",
+    "rn-alert"
+  ]
+}

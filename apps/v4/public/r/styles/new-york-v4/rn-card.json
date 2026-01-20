@@ -1,0 +1,22 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "rn-card",
+  "type": "registry:ui",
+  "description": "A card container component for React Native with header, content, and footer sections.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/react-native/rn-card.tsx",
+      "content": "import { clsx } from \"clsx\"\nimport { forwardRef } from \"react\"\nimport { View, type ViewProps } from \"react-native\"\nimport { twMerge } from \"tailwind-merge\"\n\nfunction cn(...inputs: (string | undefined | null | false)[]) {\n  return twMerge(clsx(inputs))\n}\n\nconst Card = forwardRef<React.ComponentRef<typeof View>, ViewProps>(\n  ({ className, ...props }, ref) => (\n    <View\n      ref={ref}\n      className={cn(\n        \"rounded-xl border border-border bg-card p-4 shadow-sm\",\n        className\n      )}\n      {...props}\n    />\n  )\n)\n\nCard.displayName = \"Card\"\n\nconst CardHeader = forwardRef<React.ComponentRef<typeof View>, ViewProps>(\n  ({ className, ...props }, ref) => (\n    <View ref={ref} className={cn(\"pb-3\", className)} {...props} />\n  )\n)\n\nCardHeader.displayName = \"CardHeader\"\n\nconst CardContent = forwardRef<React.ComponentRef<typeof View>, ViewProps>(\n  ({ className, ...props }, ref) => (\n    <View ref={ref} className={cn(\"\", className)} {...props} />\n  )\n)\n\nCardContent.displayName = \"CardContent\"\n\nconst CardFooter = forwardRef<React.ComponentRef<typeof View>, ViewProps>(\n  ({ className, ...props }, ref) => (\n    <View\n      ref={ref}\n      className={cn(\"flex-row items-center pt-3\", className)}\n      {...props}\n    />\n  )\n)\n\nCardFooter.displayName = \"CardFooter\"\n\nexport { Card, CardHeader, CardContent, CardFooter }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "react-native"
+  ],
+  "tier": "free",
+  "readiness": "beta"
+}

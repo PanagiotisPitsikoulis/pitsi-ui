@@ -1,0 +1,53 @@
+---
+title: Skeleton
+description: A skeleton loading placeholder component for React Native with pulse animation.
+component: true
+---
+
+## Installation
+
+```bash
+npx pitsi@latest add rn-skeleton
+```
+
+## Usage
+
+```tsx
+import { Skeleton } from "@/components/ui/skeleton"
+```
+
+```tsx
+<Skeleton className="h-12 w-12 rounded-full" />
+```
+
+## Card Skeleton
+
+```tsx
+<View className="gap-4">
+  <Skeleton className="h-48 w-full rounded-xl" />
+  <View className="gap-2">
+    <Skeleton className="h-4 w-3/4" />
+    <Skeleton className="h-4 w-1/2" />
+  </View>
+</View>
+```
+
+## List Item Skeleton
+
+```tsx
+<View className="flex-row items-center gap-4">
+  <Skeleton className="h-12 w-12 rounded-full" />
+  <View className="flex-1 gap-2">
+    <Skeleton className="h-4 w-1/2" />
+    <Skeleton className="h-3 w-3/4" />
+  </View>
+</View>
+```
+
+## API Reference
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `className` | `string` | - |
+
+Note: Requires `react-native-reanimated` for the pulse animation.

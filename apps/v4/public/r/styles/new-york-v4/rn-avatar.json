@@ -1,0 +1,22 @@
+{
+  "$schema": "https://pitsiui.com/schema/registry-item.json",
+  "name": "rn-avatar",
+  "type": "registry:ui",
+  "description": "An avatar component for React Native with image and fallback support.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/react-native/rn-avatar.tsx",
+      "content": "import { clsx } from \"clsx\"\nimport { forwardRef, useState } from \"react\"\nimport { View, Image, Text, type ViewProps, type ImageSourcePropType } from \"react-native\"\nimport { twMerge } from \"tailwind-merge\"\n\nfunction cn(...inputs: (string | undefined | null | false)[]) {\n  return twMerge(clsx(inputs))\n}\n\nexport interface AvatarProps extends ViewProps {\n  source?: ImageSourcePropType\n  fallback?: string\n  size?: \"sm\" | \"md\" | \"lg\" | \"xl\"\n  className?: string\n}\n\nconst sizeClasses = {\n  sm: \"h-8 w-8\",\n  md: \"h-10 w-10\",\n  lg: \"h-12 w-12\",\n  xl: \"h-16 w-16\",\n}\n\nconst textSizeClasses = {\n  sm: \"text-xs\",\n  md: \"text-sm\",\n  lg: \"text-base\",\n  xl: \"text-lg\",\n}\n\nconst Avatar = forwardRef<React.ComponentRef<typeof View>, AvatarProps>(\n  ({ source, fallback, size = \"md\", className, ...props }, ref) => {\n    const [imageError, setImageError] = useState(false)\n\n    const showFallback = !source || imageError\n\n    return (\n      <View\n        ref={ref}\n        className={cn(\n          \"items-center justify-center overflow-hidden rounded-full bg-muted\",\n          sizeClasses[size],\n          className\n        )}\n        {...props}\n      >\n        {showFallback ? (\n          <Text\n            className={cn(\n              \"font-semibold uppercase text-muted-foreground\",\n              textSizeClasses[size]\n            )}\n          >\n            {fallback?.slice(0, 2) || \"?\"}\n          </Text>\n        ) : (\n          <Image\n            source={source}\n            className=\"h-full w-full\"\n            onError={() => setImageError(true)}\n          />\n        )}\n      </View>\n    )\n  }\n)\n\nAvatar.displayName = \"Avatar\"\n\nexport { Avatar }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "react-native"
+  ],
+  "tier": "free",
+  "readiness": "beta"
+}

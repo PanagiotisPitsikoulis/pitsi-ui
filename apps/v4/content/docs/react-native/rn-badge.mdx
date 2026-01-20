@@ -1,0 +1,67 @@
+---
+title: Badge
+description: A badge component for React Native with color variants.
+component: true
+---
+
+## Installation
+
+```bash
+npx pitsi@latest add rn-badge
+```
+
+## Usage
+
+```tsx
+import { Badge } from "@/components/ui/badge"
+```
+
+```tsx
+<Badge>New</Badge>
+```
+
+## Variants
+
+### Default
+
+```tsx
+<Badge>Default</Badge>
+```
+
+### Secondary
+
+```tsx
+<Badge variant="secondary">Secondary</Badge>
+```
+
+### Destructive
+
+```tsx
+<Badge variant="destructive">Error</Badge>
+```
+
+### Outline
+
+```tsx
+<Badge variant="outline">Outline</Badge>
+```
+
+### Success
+
+```tsx
+<Badge variant="success">Success</Badge>
+```
+
+### Warning
+
+```tsx
+<Badge variant="warning">Warning</Badge>
+```
+
+## API Reference
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `variant` | `"default" \| "secondary" \| "destructive" \| "outline" \| "success" \| "warning"` | `"default"` |
+| `className` | `string` | - |
+| `textClassName` | `string` | - |

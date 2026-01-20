@@ -1,0 +1,46 @@
+---
+title: Progress
+description: A progress bar component for React Native.
+component: true
+---
+
+## Installation
+
+```bash
+npx pitsi@latest add rn-progress
+```
+
+## Usage
+
+```tsx
+import { Progress } from "@/components/ui/progress"
+```
+
+```tsx
+<Progress value={60} />
+```
+
+## Custom Max
+
+```tsx
+<Progress value={30} max={50} />
+```
+
+## Styling
+
+```tsx
+<Progress
+  value={75}
+  className="h-4"
+  indicatorClassName="bg-green-500"
+/>
+```
+
+## API Reference
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `value` | `number` | `0` |
+| `max` | `number` | `100` |
+| `className` | `string` | - |
+| `indicatorClassName` | `string` | - |
