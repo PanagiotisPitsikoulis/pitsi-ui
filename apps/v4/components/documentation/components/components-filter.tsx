@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { usePathname, useSearchParams } from "next/navigation"
 
-import { Bookmark, Box, Clock, Layers, LayoutGrid, Waves } from "@/lib/icons"
+import { Bookmark, Box, Clock, Layers, LayoutGrid, Smartphone, Waves } from "@/lib/icons"
 import { cn } from "@/lib/utils"
 import {
   Tooltip,
@@ -31,6 +31,12 @@ const NAV_LINKS = [
     label: "Animations",
     icon: Waves,
     href: "/docs/animations",
+  },
+  {
+    id: "react-native",
+    label: "React Native",
+    icon: Smartphone,
+    href: "/docs/react-native",
   },
 ]
 

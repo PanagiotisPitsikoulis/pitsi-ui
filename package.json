@@ -10,8 +10,13 @@
   },
   "workspaces": [
     "apps/v4",
+    "apps/portfolio",
+    "apps/quiz-web",
+    "apps/ai-app",
+    "apps/quiz-mobile",
     "packages/pitsi",
-    "packages/tests"
+    "packages/tests",
+    "packages/quiz-core"
   ],
   "scripts": {
     "run": "bun ./scripts/run.ts",
@@ -74,7 +79,16 @@
     "publish:beta": "bash scripts/publish.sh --beta",
     "publish:interactive": "bash scripts/publish.sh --interactive",
     "publish:tag": "bash scripts/publish.sh --interactive --tag",
-    "fix:urls": "bash scripts/fix-urls.sh"
+    "fix:urls": "bash scripts/fix-urls.sh",
+    "portfolio:dev": "bun run --filter portfolio dev",
+    "portfolio:build": "bun run --filter portfolio build",
+    "quiz-web:dev": "bun run --filter quiz-web dev",
+    "quiz-web:build": "bun run --filter quiz-web build",
+    "ai-app:dev": "bun run --filter ai-app dev",
+    "ai-app:build": "bun run --filter ai-app build",
+    "quiz-mobile:dev": "bun run --filter quiz-mobile start",
+    "quiz-core:dev": "bun run --filter @pitsi/quiz-core dev",
+    "quiz-core:build": "bun run --filter @pitsi/quiz-core build"
   },
   "packageManager": "bun@1.1.38",
   "dependencies": {

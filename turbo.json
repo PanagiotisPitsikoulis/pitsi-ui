@@ -4,7 +4,9 @@
     "NODE_ENV",
     "NEXT_PUBLIC_APP_URL",
     "DATABASE_URL",
-    "HIDE_ALPHA_ITEMS"
+    "HIDE_ALPHA_ITEMS",
+    "OPENAI_API_KEY",
+    "EXPO_PUBLIC_API_URL"
   ],
   "tasks": {
     "build": {
@@ -33,7 +35,8 @@
         "V0_URL",
         "V0_EDIT_SECRET",
         "DEPLOYMENT_PROTECTION_BYPASS",
-        "HIDE_ALPHA_ITEMS"
+        "HIDE_ALPHA_ITEMS",
+        "OPENAI_API_KEY"
       ],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
@@ -89,7 +92,8 @@
         "NEXT_PUBLIC_LOGO_DEV_TOKEN",
         "NEXT_SECRET_LOGO_DEV_TOKEN",
         "PLAYWRIGHT_MCP_EXTENSION_TOKEN",
-        "REGISTRY_URL"
+        "REGISTRY_URL",
+        "OPENAI_API_KEY"
       ]
     },
     "check": {

@@ -4,7 +4,7 @@ import { getItemByName } from "@/lib/registry"
 import { source } from "@/lib/source"
 import { absoluteUrl } from "@/lib/utils"
 
-export type DocsItemType = "components" | "animations"
+export type DocsItemType = "components" | "animations" | "react-native"
 
 export function generateDocsStaticParams() {
   const allParams = source.generateParams()
@@ -14,11 +14,12 @@ export function generateDocsStaticParams() {
     const slug = param.slug
     if (!slug || slug.length < 2) return true
 
-    // Check if this is a component or animation page
+    // Check if this is a component, animation, or react-native page
     const isComponentPage = slug[0] === "components"
     const isAnimationPage = slug[0] === "animations"
+    const isReactNativePage = slug[0] === "react-native"
 
-    if (!isComponentPage && !isAnimationPage) return true
+    if (!isComponentPage && !isAnimationPage && !isReactNativePage) return true
 
     // Get the item name from the slug
     const itemName = slug[1]
@@ -91,7 +92,12 @@ export async function generateDocsListMetadata(type: DocsItemType) {
     const page = source.getPage([type])
 
     if (!page) {
-      return { title: type === "components" ? "Components" : "Animations" }
+      const titles: Record<DocsItemType, string> = {
+        components: "Components",
+        animations: "Animations",
+        "react-native": "React Native",
+      }
+      return { title: titles[type] }
     }
 
     const { title, description } = page.data
@@ -124,7 +130,12 @@ export async function generateDocsListMetadata(type: DocsItemType) {
     }
   } catch (error) {
     console.warn(`Failed to generate docs list metadata for ${type}:`, error)
-    return { title: type === "components" ? "Components" : "Animations" }
+    const titles: Record<DocsItemType, string> = {
+      components: "Components",
+      animations: "Animations",
+      "react-native": "React Native",
+    }
+    return { title: titles[type] }
   }
 }
 
@@ -139,8 +150,13 @@ export async function generateDocsItemMetadata({
     const page = source.getPage([type, itemName])
 
     if (!page) {
+      const typeLabels: Record<DocsItemType, string> = {
+        components: "Component",
+        animations: "Animation",
+        "react-native": "React Native Component",
+      }
       return {
-        title: `${type === "components" ? "Component" : "Animation"} Not Found`,
+        title: `${typeLabels[type]} Not Found`,
       }
     }
 
@@ -176,8 +192,13 @@ export async function generateDocsItemMetadata({
       `Failed to generate docs item metadata for ${itemName}:`,
       error
     )
+    const typeLabels: Record<DocsItemType, string> = {
+      components: "Component",
+      animations: "Animation",
+      "react-native": "React Native Component",
+    }
     return {
-      title: `${type === "components" ? "Component" : "Animation"} Not Found`,
+      title: `${typeLabels[type]} Not Found`,
     }
   }
 }
@@ -189,7 +210,12 @@ export function generateDocsItemStaticParams(type: DocsItemType) {
     return []
   }
 
-  const paramKey = type === "components" ? "component" : "animation"
+  const paramKeys: Record<DocsItemType, string> = {
+    components: "component",
+    animations: "animation",
+    "react-native": "component",
+  }
+  const paramKey = paramKeys[type]
 
   return folder.children
     .filter((child) => child.type === "page")

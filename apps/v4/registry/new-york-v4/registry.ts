@@ -8,6 +8,7 @@ import { examples } from "./examples/_registry"
 import { hooks } from "./hooks/_registry"
 import { internal } from "./internal/_registry"
 import { lib } from "./lib/_registry"
+import { reactNative } from "./react-native/_registry"
 import { ui } from "./ui/_registry"
 
 const DEPRECATED_ITEMS = [
@@ -50,6 +51,7 @@ export const registry = {
       ...themes,
       ...examples,
       ...internal,
+      ...reactNative,
     ]
       .filter((item) => {
         return !DEPRECATED_ITEMS.includes(item.name)

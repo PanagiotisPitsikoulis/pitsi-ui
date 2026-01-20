@@ -1,20 +1,10 @@
 import { Suspense } from "react"
 import { Metadata } from "next"
 
-import { getRegistrySummaryCounts } from "@/lib/registry"
-
 import {
-  ContentExplained,
-  ContentSection,
-  CTASection,
-  DesignSection,
   DynamicPricingSection,
   HeroSection,
-  PowerBentoSection,
   PricingCardsSection,
-  PricingToast,
-  PurposeSection,
-  ReviewsSection,
   StripeBgGuides,
 } from "./_components"
 
@@ -48,35 +38,12 @@ export const metadata: Metadata = {
 
 export default async function IndexPage() {
   return (
-    <IndexPageInteral
-      pricingSection={
-        <Suspense fallback={<PricingCardsSection user={null} />}>
-          <DynamicPricingSection />
-        </Suspense>
-      }
-    />
-  )
-}
-
-async function IndexPageInteral({
-  pricingSection,
-}: {
-  pricingSection: React.ReactNode
-}) {
-  return (
     <div className="relative min-h-screen">
       <StripeBgGuides columnCount={6} animated={false} />
-      <Suspense fallback={null}>
-        <PricingToast />
-      </Suspense>
       <HeroSection />
-      <ContentExplained />
-      <PurposeSection />
-      <DesignSection />
-      <PowerBentoSection />
-      {pricingSection}
-      <CTASection />
-      <ReviewsSection />
+      <Suspense fallback={<PricingCardsSection user={null} />}>
+        <DynamicPricingSection />
+      </Suspense>
     </div>
   )
 }

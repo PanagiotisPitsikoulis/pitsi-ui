@@ -22,6 +22,10 @@ export const siteConfig = {
       label: "Animations",
     },
     {
+      href: "/docs/react-native",
+      label: "React Native",
+    },
+    {
       href: "/blocks",
       label: "Blocks",
     },

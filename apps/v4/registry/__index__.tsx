@@ -14647,5 +14647,245 @@ export const Index: Record<string, Record<string, any>> = {
       tier: undefined,
       readiness: "production",
     },
+    "rn-button": {
+      name: "rn-button",
+      description: "A pressable button component for React Native with variants and sizes.",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/react-native/rn-button.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/react-native/rn-button.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "rn-button"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["react-native"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "rn-card": {
+      name: "rn-card",
+      description: "A card container component for React Native with header, content, and footer sections.",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/react-native/rn-card.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/react-native/rn-card.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "rn-card"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["react-native"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "rn-typography": {
+      name: "rn-typography",
+      description: "Typography component for React Native with preset text variants.",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/react-native/rn-typography.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/react-native/rn-typography.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "rn-typography"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["react-native"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "rn-input": {
+      name: "rn-input",
+      description: "A styled TextInput component for React Native with focus states.",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/react-native/rn-input.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/react-native/rn-input.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "rn-input"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["react-native"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "rn-progress": {
+      name: "rn-progress",
+      description: "A progress bar component for React Native.",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/react-native/rn-progress.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/react-native/rn-progress.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "rn-progress"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["react-native"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "rn-badge": {
+      name: "rn-badge",
+      description: "A badge component for React Native with color variants.",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/react-native/rn-badge.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/react-native/rn-badge.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "rn-badge"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["react-native"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "rn-avatar": {
+      name: "rn-avatar",
+      description: "An avatar component for React Native with image and fallback support.",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/react-native/rn-avatar.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/react-native/rn-avatar.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "rn-avatar"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["react-native"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "rn-checkbox": {
+      name: "rn-checkbox",
+      description: "A checkbox component for React Native with checked and indeterminate states.",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/react-native/rn-checkbox.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/react-native/rn-checkbox.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "rn-checkbox"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["react-native"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "rn-switch": {
+      name: "rn-switch",
+      description: "A toggle switch component for React Native.",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/react-native/rn-switch.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/react-native/rn-switch.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "rn-switch"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["react-native"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "rn-separator": {
+      name: "rn-separator",
+      description: "A separator/divider component for React Native with horizontal and vertical orientations.",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/react-native/rn-separator.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/react-native/rn-separator.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "rn-separator"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["react-native"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "rn-skeleton": {
+      name: "rn-skeleton",
+      description: "A skeleton loading placeholder component for React Native with pulse animation.",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/react-native/rn-skeleton.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/react-native/rn-skeleton.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "rn-skeleton"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["react-native"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
+    "rn-alert": {
+      name: "rn-alert",
+      description: "An alert component for React Native with variants for info, success, warning, and error.",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/new-york-v4/react-native/rn-alert.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(async () => {
+        const mod = await import("@/registry/new-york-v4/react-native/rn-alert.tsx")
+        const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "rn-alert"
+        return { default: mod.default || mod[exportName] }
+      }),
+      categories: ["react-native"],
+      meta: undefined,
+      tier: "free",
+      readiness: "beta",
+    },
   },
 }

@@ -26,6 +26,10 @@ const TOP_LEVEL_SECTIONS = [
     href: "/docs/animations",
   },
   {
+    name: "React Native",
+    href: "/docs/react-native",
+  },
+  {
     name: "MCP Server",
     href: "/docs/mcp",
   },

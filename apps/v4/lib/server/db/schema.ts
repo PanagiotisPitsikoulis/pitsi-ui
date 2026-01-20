@@ -1,4 +1,12 @@
-import { boolean, pgTable, text, timestamp } from "drizzle-orm/pg-core"
+import {
+  boolean,
+  integer,
+  jsonb,
+  pgTable,
+  text,
+  timestamp,
+} from "drizzle-orm/pg-core"
+import { nanoid } from "nanoid"
 
 // Plan types
 export type PlanType = "free" | "pro" | "exclusive" | "team" | "enterprise"
@@ -91,4 +99,42 @@ export const teamMember = pgTable("team_member", {
     .notNull(),
   invitedAt: timestamp("invitedAt").notNull(),
   acceptedAt: timestamp("acceptedAt"),
+})
+
+// Service types
+export type ServiceType = "website" | "mobile_app"
+export type ServiceOrderStatus =
+  | "pending"
+  | "paid"
+  | "in_progress"
+  | "review"
+  | "completed"
+  | "cancelled"
+
+// Service Orders Table
+export const serviceOrder = pgTable("service_order", {
+  id: text("id")
+    .primaryKey()
+    .$defaultFn(() => nanoid()),
+  userId: text("userId")
+    .notNull()
+    .references(() => user.id),
+  serviceType: text("serviceType").$type<ServiceType>().notNull(),
+  tier: text("tier").notNull(),
+  status: text("status")
+    .$type<ServiceOrderStatus>()
+    .default("pending")
+    .notNull(),
+  amount: integer("amount").notNull(), // Amount in cents
+  stripePaymentIntentId: text("stripePaymentIntentId"),
+  stripeCheckoutSessionId: text("stripeCheckoutSessionId"),
+  projectDetails: jsonb("projectDetails").$type<{
+    projectName?: string
+    description?: string
+    requirements?: string[]
+    references?: string[]
+  }>(),
+  deliveryDate: timestamp("deliveryDate"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().notNull(),
 })

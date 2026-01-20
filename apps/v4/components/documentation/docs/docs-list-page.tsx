@@ -45,11 +45,17 @@ export async function DocsListPage({
     types: ["registry:ui"],
   })) as RegistryItem[]
 
-  // Filter items based on page type (animations vs components)
+  // Filter items based on page type (animations vs components vs react-native)
   const registryItems =
     type === "animations"
       ? allUIItems.filter((item) => item.categories?.includes("animations"))
-      : allUIItems.filter((item) => !item.categories?.includes("animations"))
+      : type === "react-native"
+        ? allUIItems.filter((item) => item.categories?.includes("react-native"))
+        : allUIItems.filter(
+            (item) =>
+              !item.categories?.includes("animations") &&
+              !item.categories?.includes("react-native")
+          )
 
   // Build maps for item metadata
   const componentMetadataMap = new Map<
@@ -202,7 +208,9 @@ export async function DocsListPage({
                 </p>
               )}
             </div>
-            {(type === "components" || type === "animations") && (
+            {(type === "components" ||
+              type === "animations" ||
+              type === "react-native") && (
               <div className="flex flex-col gap-2">
                 <ComponentsFilter />
                 {type === "components" && (
@@ -210,6 +218,9 @@ export async function DocsListPage({
                 )}
                 {type === "animations" && (
                   <AnimationsAdvancedFilter filterOptions={filterOptions} />
+                )}
+                {type === "react-native" && (
+                  <ComponentsAdvancedFilter filterOptions={filterOptions} />
                 )}
               </div>
             )}
@@ -221,7 +232,13 @@ export async function DocsListPage({
                 ComponentsList: (props: { category?: string }) => (
                   <ComponentsList
                     items={itemsData}
-                    type={type === "components" ? "component" : "animation"}
+                    type={
+                      type === "components"
+                        ? "component"
+                        : type === "react-native"
+                          ? "component"
+                          : "animation"
+                    }
                     {...props}
                   />
                 ),

@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation"
 
 import {
   Bell,
+  Box,
   CreditCard,
   Key,
   LayoutDashboard,
@@ -30,6 +31,11 @@ const DASHBOARD_NAV = [
     name: "Overview",
     href: "/dashboard",
     icon: LayoutDashboard,
+  },
+  {
+    name: "Services",
+    href: "/dashboard/services",
+    icon: Box,
   },
 ]
 
