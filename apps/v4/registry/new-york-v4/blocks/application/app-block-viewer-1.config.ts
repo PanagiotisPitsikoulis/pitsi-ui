@@ -15,7 +15,7 @@ export const registryConfig: RegistryItemConfig = {
   ],
   categories: ["application", "docs"],
   tier: "free",
-  readiness: "alpha",
+  readiness: "production",
   blockConfig: {
     template: "service-library",
     blockType: "application",

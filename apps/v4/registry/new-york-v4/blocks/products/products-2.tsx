@@ -126,6 +126,7 @@ export function Products2({
                   <Button
                     variant="secondary"
                     size="icon"
+                    aria-label="Quick view"
                     onClick={(e) => {
                       e.preventDefault()
                       setQuickViewProduct(product)
@@ -133,7 +134,11 @@ export function Products2({
                   >
                     <DynamicIcon name="Eye" className="h-4 w-4" />
                   </Button>
-                  <Button variant="secondary" size="icon">
+                  <Button
+                    variant="secondary"
+                    size="icon"
+                    aria-label="Add to wishlist"
+                  >
                     <DynamicIcon name="Heart" className="h-4 w-4" />
                   </Button>
                 </div>
@@ -187,8 +192,12 @@ export function Products2({
         {/* Quick View Modal with DecayCard */}
         {quickViewProduct && (
           <div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Quick view"
             className="bg-background/80 fixed inset-0 z-50 flex items-center justify-center p-4"
             onClick={() => setQuickViewProduct(null)}
+            onKeyDown={(e) => e.key === "Escape" && setQuickViewProduct(null)}
           >
             <div
               className="bg-background border-border relative flex max-h-[90vh] w-full max-w-4xl flex-col gap-8 overflow-auto rounded-3xl border p-8 md:flex-row"
@@ -199,6 +208,7 @@ export function Products2({
                 size="icon"
                 className="absolute top-4 right-4"
                 onClick={() => setQuickViewProduct(null)}
+                aria-label="Close quick view"
               >
                 <DynamicIcon name="X" className="h-5 w-5" />
               </Button>
@@ -260,7 +270,11 @@ export function Products2({
                     <DynamicIcon name="ShoppingCart" className="mr-2 h-4 w-4" />
                     Add to Cart
                   </Button>
-                  <Button variant="outline" size="icon">
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    aria-label="Add to wishlist"
+                  >
                     <DynamicIcon name="Heart" className="h-4 w-4" />
                   </Button>
                 </div>

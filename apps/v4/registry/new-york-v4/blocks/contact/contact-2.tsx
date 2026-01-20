@@ -68,12 +68,20 @@ export function Contact2({ content = {}, classNames = {} }: ContactBlockProps) {
             </h3>
             <form className="space-y-4">
               <div className="grid gap-4 sm:grid-cols-2">
-                <Input placeholder="First name" />
-                <Input placeholder="Last name" />
+                <Input placeholder="First name" aria-label="First name" />
+                <Input placeholder="Last name" aria-label="Last name" />
               </div>
-              <Input type="email" placeholder="Email address" />
-              <Input placeholder="Subject" />
-              <Textarea placeholder="Your message" rows={5} />
+              <Input
+                type="email"
+                placeholder="Email address"
+                aria-label="Email address"
+              />
+              <Input placeholder="Subject" aria-label="Subject" />
+              <Textarea
+                placeholder="Your message"
+                rows={5}
+                aria-label="Your message"
+              />
               <Button className="w-full">Send Message</Button>
             </form>
           </div>

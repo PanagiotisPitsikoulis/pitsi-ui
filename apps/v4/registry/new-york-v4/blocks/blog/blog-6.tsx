@@ -143,7 +143,11 @@ export function Blog6({ content = {}, classNames = {} }: BlogBlockProps) {
                   Get weekly updates delivered to your inbox.
                 </p>
                 <div className="space-y-3">
-                  <Input type="email" placeholder="Your email" />
+                  <Input
+                    type="email"
+                    placeholder="Your email"
+                    aria-label="Email address"
+                  />
                   <Button className="w-full">
                     <DynamicIcon name="Mail" className="mr-2 h-4 w-4" />{" "}
                     Subscribe

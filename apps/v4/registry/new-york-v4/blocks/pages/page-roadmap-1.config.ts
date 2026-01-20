@@ -8,7 +8,7 @@ export const registryConfig: RegistryItemConfig = {
   registryDependencies: ["badge", "input", "spacer"],
   categories: ["pages", "landing"],
   tier: "free",
-  readiness: "alpha",
+  readiness: "production",
   blockConfig: {
     template: "service-library",
     blockType: "pages",

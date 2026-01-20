@@ -19,7 +19,7 @@
     "landing"
   ],
   "tier": "free",
-  "readiness": "alpha",
+  "readiness": "production",
   "blockConfig": {
     "template": "service-library",
     "blockType": "features",

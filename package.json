@@ -10,7 +10,6 @@
   },
   "workspaces": [
     "apps/v4",
-    "apps/bob",
     "packages/pitsi",
     "packages/tests"
   ],
@@ -42,11 +41,6 @@
     "v4:images:webp": "bun run --bun --filter v4 images:webp",
     "create": "cd apps/v4 && bun scripts/create.mts",
     "purge": "cd apps/v4 && ./scripts/purge.sh",
-    "bob:dev": "bun run --filter bob dev",
-    "bob:build": "bun run --filter bob build",
-    "bob:typecheck": "bun run --bun --filter bob typecheck",
-    "bob:lint": "bun run --bun --filter bob lint",
-    "bob:lint:fix": "bun run --bun --filter bob lint:fix",
     "pitsi": "bun run --bun --filter pitsi start:dev",
     "pitsi:dev": "turbo --filter=pitsi dev",
     "pitsi:build": "bun run --bun --filter pitsi build",

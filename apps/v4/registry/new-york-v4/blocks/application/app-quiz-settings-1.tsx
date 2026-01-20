@@ -67,7 +67,7 @@ export function AppQuizSettings1() {
           <CardContent className="space-y-6">
             <div className="flex items-center gap-6">
               <Avatar className="size-20">
-                <AvatarImage src="/avatars/02.webp" />
+                <AvatarImage src="/avatars/02.webp" alt="User avatar" />
                 <AvatarFallback className="bg-muted text-xl">AC</AvatarFallback>
               </Avatar>
               <div className="space-y-2">

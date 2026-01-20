@@ -2605,7 +2605,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["application","auth"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "app-block-viewer-1": {
       name: "app-block-viewer-1",
@@ -2625,7 +2625,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["application","docs"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "app-blog-list-1": {
       name: "app-blog-list-1",
@@ -2645,7 +2645,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["application","blog"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "app-blog-post-1": {
       name: "app-blog-post-1",
@@ -2665,7 +2665,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["application","blog"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "app-component-preview-1": {
       name: "app-component-preview-1",
@@ -2685,7 +2685,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["application","docs"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "app-dashboard-1": {
       name: "app-dashboard-1",
@@ -2705,7 +2705,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["application","dashboard"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "app-docs-viewer-1": {
       name: "app-docs-viewer-1",
@@ -2725,7 +2725,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["application","docs"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "app-gym-gains-1": {
       name: "app-gym-gains-1",
@@ -3005,7 +3005,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["application","dashboard"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "app-tool-layout-1": {
       name: "app-tool-layout-1",
@@ -3025,7 +3025,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["application","tools"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "auth-1": {
       name: "auth-1",
@@ -3945,7 +3945,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["cta","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "cta-8": {
       name: "cta-8",
@@ -4205,7 +4205,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["faq","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "faq-8": {
       name: "faq-8",
@@ -4285,7 +4285,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["features","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "features-11": {
       name: "features-11",
@@ -4305,7 +4305,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["features","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "features-12": {
       name: "features-12",
@@ -4325,7 +4325,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["features","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "features-13": {
       name: "features-13",
@@ -4345,7 +4345,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["features","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "features-14": {
       name: "features-14",
@@ -4625,7 +4625,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["features","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "footer-1": {
       name: "footer-1",
@@ -4665,7 +4665,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["footer","landing","application"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "footer-11": {
       name: "footer-11",
@@ -4925,7 +4925,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["footer","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "gallery-1": {
       name: "gallery-1",
@@ -5205,7 +5205,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["header","landing","application"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "header-11": {
       name: "header-11",
@@ -5625,7 +5625,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "hero-16": {
       name: "hero-16",
@@ -5645,7 +5645,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "hero-17": {
       name: "hero-17",
@@ -5665,7 +5665,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "hero-18": {
       name: "hero-18",
@@ -5685,7 +5685,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "hero-19": {
       name: "hero-19",
@@ -5705,7 +5705,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "hero-2": {
       name: "hero-2",
@@ -5725,7 +5725,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "hero-20": {
       name: "hero-20",
@@ -5745,7 +5745,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "hero-21": {
       name: "hero-21",
@@ -5765,7 +5765,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "hero-22": {
       name: "hero-22",
@@ -5785,7 +5785,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "hero-23": {
       name: "hero-23",
@@ -5805,7 +5805,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "hero-24": {
       name: "hero-24",
@@ -5825,7 +5825,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "hero-25": {
       name: "hero-25",
@@ -5845,7 +5845,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "hero-3": {
       name: "hero-3",
@@ -5865,7 +5865,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "hero-4": {
       name: "hero-4",
@@ -5885,7 +5885,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "hero-5": {
       name: "hero-5",
@@ -5905,7 +5905,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "hero-6": {
       name: "hero-6",
@@ -5925,7 +5925,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "hero-7": {
       name: "hero-7",
@@ -5945,7 +5945,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "hero-8": {
       name: "hero-8",
@@ -5965,7 +5965,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "hero-9": {
       name: "hero-9",
@@ -5985,7 +5985,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["hero","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "logos-1": {
       name: "logos-1",
@@ -6585,7 +6585,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["pages","error"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "page-blog-1": {
       name: "page-blog-1",
@@ -6605,7 +6605,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["pages","landing","blog"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "page-changelog-1": {
       name: "page-changelog-1",
@@ -6625,7 +6625,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["pages","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "page-error-1": {
       name: "page-error-1",
@@ -6645,7 +6645,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["pages","error"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "page-legal-1": {
       name: "page-legal-1",
@@ -6665,7 +6665,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["pages","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "page-pricing-1": {
       name: "page-pricing-1",
@@ -6685,7 +6685,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["pages","landing","pricing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "page-roadmap-1": {
       name: "page-roadmap-1",
@@ -6705,7 +6705,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["pages","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "page-tools-1": {
       name: "page-tools-1",
@@ -6725,7 +6725,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["pages","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "pricing-1": {
       name: "pricing-1",
@@ -6985,7 +6985,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["pricing","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "pricing-9": {
       name: "pricing-9",
@@ -7605,7 +7605,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["stats","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "stats-9": {
       name: "stats-9",
@@ -8145,7 +8145,7 @@ export const Index: Record<string, Record<string, any>> = {
       categories: ["testimonials","landing"],
       meta: undefined,
       tier: "free",
-      readiness: "alpha",
+      readiness: "production",
     },
     "testimonials-9": {
       name: "testimonials-9",

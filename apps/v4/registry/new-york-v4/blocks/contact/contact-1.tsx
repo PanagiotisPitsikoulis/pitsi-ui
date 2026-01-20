@@ -130,7 +130,7 @@ export function Contact1({ content = {}, classNames = {} }: ContactBlockProps) {
                       rows={4}
                       className={cn(
                         "border-border text-foreground w-full resize-none border-b bg-transparent py-4 transition-colors",
-                        "placeholder:text-muted-foreground focus:border-brand-complementary focus:outline-none",
+                        "placeholder:text-muted-foreground focus:border-brand-complementary focus:ring-ring/50 focus:ring-[3px] focus:outline-none",
                         classNames.form?.textarea
                       )}
                     />
@@ -142,7 +142,7 @@ export function Contact1({ content = {}, classNames = {} }: ContactBlockProps) {
                       placeholder={field.placeholder}
                       className={cn(
                         "border-border text-foreground w-full border-b bg-transparent py-4 transition-colors",
-                        "placeholder:text-muted-foreground focus:border-brand-complementary focus:outline-none",
+                        "placeholder:text-muted-foreground focus:border-brand-complementary focus:ring-ring/50 focus:ring-[3px] focus:outline-none",
                         classNames.form?.input
                       )}
                     />

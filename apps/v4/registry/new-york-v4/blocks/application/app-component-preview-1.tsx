@@ -64,7 +64,13 @@ function CopyButton({ content }: { content: string }) {
   }
 
   return (
-    <Button variant="ghost" size="icon" className="size-8" onClick={handleCopy}>
+    <Button
+      variant="ghost"
+      size="icon"
+      className="size-8"
+      onClick={handleCopy}
+      aria-label={copied ? "Copied" : "Copy code"}
+    >
       {copied ? <Check className="size-4" /> : <Clipboard className="size-4" />}
     </Button>
   )

@@ -79,7 +79,7 @@ export function HeroSection() {
       <div className="relative container flex h-full w-full flex-col items-center justify-center px-6">
         {/*Typography*/}
         <Spacer size={"8xl"} sizeMobile={"6xl"} />
-        <h1 className="display text-center text-[2.5rem] leading-[0.9] tracking-tight sm:text-5xl md:text-8xl">
+        <h1 className="display text-center text-[2.5rem] leading-[0.9] tracking-tighter sm:text-5xl md:text-8xl">
           The Block Library
           <br />
           shadcn Deserves

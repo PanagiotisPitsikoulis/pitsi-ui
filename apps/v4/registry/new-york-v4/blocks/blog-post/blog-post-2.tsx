@@ -238,16 +238,36 @@ export function BlogPost2({
                 <span className="text-muted-foreground mr-2 text-sm">
                   Share:
                 </span>
-                <Button variant="outline" size="icon" className="rounded-lg">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="rounded-lg"
+                  aria-label="Share on Twitter"
+                >
                   <Twitter className="h-4 w-4" />
                 </Button>
-                <Button variant="outline" size="icon" className="rounded-lg">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="rounded-lg"
+                  aria-label="Share on Facebook"
+                >
                   <Facebook className="h-4 w-4" />
                 </Button>
-                <Button variant="outline" size="icon" className="rounded-lg">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="rounded-lg"
+                  aria-label="Share on LinkedIn"
+                >
                   <Linkedin className="h-4 w-4" />
                 </Button>
-                <Button variant="outline" size="icon" className="rounded-lg">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="rounded-lg"
+                  aria-label="Copy link"
+                >
                   <Share2 className="h-4 w-4" />
                 </Button>
               </div>

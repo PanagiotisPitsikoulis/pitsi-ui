@@ -43,4 +43,5 @@ tsconfig.tsbuildinfo
 .vercel
 
 # personal
-._management/personal.md
+._docs/personal.md
+docs/plans

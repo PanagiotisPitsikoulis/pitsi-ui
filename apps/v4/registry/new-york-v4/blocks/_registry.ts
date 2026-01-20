@@ -22,7 +22,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "card", "input", "label", "separator"],
     categories: ["application", "auth"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-library",
       blockType: "application",
@@ -53,7 +53,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application", "docs"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-library",
       blockType: "application",
@@ -77,7 +77,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["badge", "button", "card", "input"],
     categories: ["application", "blog"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-library",
       blockType: "application",
@@ -101,7 +101,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["avatar", "badge", "button", "separator"],
     categories: ["application", "blog"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-library",
       blockType: "application",
@@ -125,7 +125,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["badge", "button", "tabs"],
     categories: ["application", "docs"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-library",
       blockType: "application",
@@ -149,7 +149,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["badge", "button", "card"],
     categories: ["application", "dashboard"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-library",
       blockType: "application",
@@ -173,7 +173,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "sheet"],
     categories: ["application", "docs"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-library",
       blockType: "application",
@@ -540,7 +540,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application", "dashboard"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-library",
       blockType: "application",
@@ -573,7 +573,7 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["application", "tools"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-library",
       blockType: "application",
@@ -1606,7 +1606,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button"],
     categories: ["cta", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-library",
       blockType: "cta",
@@ -1905,7 +1905,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["accordion"],
     categories: ["faq", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-library",
       blockType: "faq",
@@ -1998,7 +1998,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["accordion", "button"],
     categories: ["features", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-library",
       blockType: "features",
@@ -2021,7 +2021,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["accordion", "button"],
     categories: ["features", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-library",
       blockType: "features",
@@ -2044,7 +2044,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["accordion", "button"],
     categories: ["features", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-library",
       blockType: "features",
@@ -2067,7 +2067,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["accordion", "button"],
     categories: ["features", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-library",
       blockType: "features",
@@ -2391,7 +2391,7 @@ export const blocks: Registry["items"] = [
     dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
     categories: ["features", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-library",
       blockType: "features",
@@ -2439,7 +2439,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "dropdown-menu"],
     categories: ["footer", "landing", "application"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-library",
       blockType: "footer",
@@ -2751,7 +2751,7 @@ export const blocks: Registry["items"] = [
     dependencies: ["@hugeicons/react", "@hugeicons/core-free-icons"],
     categories: ["footer", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-library",
       blockType: "footer",
@@ -3070,7 +3070,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "popover"],
     categories: ["header", "landing", "application"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-library",
       blockType: "header",
@@ -3579,7 +3579,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-travel",
       blockType: "hero",
@@ -3602,7 +3602,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-travel",
       blockType: "hero",
@@ -3626,7 +3626,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-travel",
       blockType: "hero",
@@ -3650,7 +3650,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-travel",
       blockType: "hero",
@@ -3673,7 +3673,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-travel",
       blockType: "hero",
@@ -3698,7 +3698,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button", "spacer"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-travel",
       blockType: "hero",
@@ -3722,7 +3722,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-boat",
       blockType: "hero",
@@ -3745,7 +3745,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-boat",
       blockType: "hero",
@@ -3768,7 +3768,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-boat",
       blockType: "hero",
@@ -3792,7 +3792,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-boat",
       blockType: "hero",
@@ -3815,7 +3815,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-boat",
       blockType: "hero",
@@ -3838,7 +3838,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-library",
       blockType: "hero",
@@ -3863,7 +3863,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button", "spacer"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-boat",
       blockType: "hero",
@@ -3889,7 +3889,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button", "spacer"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-fitness",
       blockType: "hero",
@@ -3914,7 +3914,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button", "spacer"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-fitness",
       blockType: "hero",
@@ -3939,7 +3939,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button", "spacer"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-fitness",
       blockType: "hero",
@@ -3963,7 +3963,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-fitness",
       blockType: "hero",
@@ -3987,7 +3987,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-fitness",
       blockType: "hero",
@@ -4011,7 +4011,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button"],
     categories: ["hero", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-fitness",
       blockType: "hero",
@@ -4735,7 +4735,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "spacer"],
     categories: ["pages", "error"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-library",
       blockType: "pages",
@@ -4759,7 +4759,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["badge", "spacer"],
     categories: ["pages", "landing", "blog"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-library",
       blockType: "pages",
@@ -4783,7 +4783,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["badge", "spacer"],
     categories: ["pages", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-library",
       blockType: "pages",
@@ -4807,7 +4807,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "spacer"],
     categories: ["pages", "error"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-library",
       blockType: "pages",
@@ -4831,7 +4831,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["spacer"],
     categories: ["pages", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-library",
       blockType: "pages",
@@ -4855,7 +4855,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "spacer"],
     categories: ["pages", "landing", "pricing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-library",
       blockType: "pages",
@@ -4879,7 +4879,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["badge", "input", "spacer"],
     categories: ["pages", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-library",
       blockType: "pages",
@@ -4903,7 +4903,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button", "hero-button", "spacer"],
     categories: ["pages", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-library",
       blockType: "pages",
@@ -5211,7 +5211,7 @@ export const blocks: Registry["items"] = [
     registryDependencies: ["button"],
     categories: ["pricing", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-library",
       blockType: "pricing",
@@ -5892,7 +5892,7 @@ export const blocks: Registry["items"] = [
     description: "Component library stats section with large numbers",
     categories: ["stats", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-library",
       blockType: "stats",
@@ -6498,7 +6498,7 @@ export const blocks: Registry["items"] = [
     description: "Developer testimonials grid for component library",
     categories: ["testimonials", "landing"],
     tier: "free",
-    readiness: "alpha",
+    readiness: "production",
     blockConfig: {
       template: "service-library",
       blockType: "testimonials",

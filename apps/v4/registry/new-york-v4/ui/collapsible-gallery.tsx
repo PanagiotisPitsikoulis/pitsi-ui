@@ -77,7 +77,7 @@ function CollapsibleGallery<T>({
         {/* Header */}
         <div className="mb-4 flex items-center justify-between">
           <h2 className="text-muted-foreground text-sm font-medium">{title}</h2>
-          <CollapsibleTrigger className="text-muted-foreground hover:text-foreground flex items-center gap-1 text-sm transition-colors focus-visible:outline-none">
+          <CollapsibleTrigger className="text-muted-foreground hover:text-foreground focus-visible:ring-ring/50 flex items-center gap-1 rounded text-sm transition-colors focus-visible:ring-[3px] focus-visible:outline-none">
             <span className="group-data-[state=open]/collapsible:hidden">
               {expandText}
             </span>

@@ -45,7 +45,11 @@ export default function ItemGroupExample() {
             <Item>
               <ItemMedia>
                 <Avatar>
-                  <AvatarImage src={person.avatar} className="grayscale" />
+                  <AvatarImage
+                    src={person.avatar}
+                    alt={person.username}
+                    className="grayscale"
+                  />
                   <AvatarFallback>{person.username.charAt(0)}</AvatarFallback>
                 </Avatar>
               </ItemMedia>
@@ -54,7 +58,12 @@ export default function ItemGroupExample() {
                 <ItemDescription>{person.email}</ItemDescription>
               </ItemContent>
               <ItemActions>
-                <Button variant="ghost" size="icon" className="rounded-full">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="rounded-full"
+                  aria-label="Add user"
+                >
                   <Plus />
                 </Button>
               </ItemActions>

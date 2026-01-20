@@ -1,7 +1,11 @@
 import { Suspense } from "react"
 import { Metadata } from "next"
 
+import { getRegistrySummaryCounts } from "@/lib/registry"
+
 import {
+  ContentExplained,
+  ContentSection,
   CTASection,
   DesignSection,
   DynamicPricingSection,
@@ -66,14 +70,13 @@ async function IndexPageInteral({
         <PricingToast />
       </Suspense>
       <HeroSection />
-      {/*<ContentSection registryCounts={registryCounts} />*/}
-      {/*<ContentExplained />*/}
-      {/*<PurposeSection />
+      <ContentExplained />
+      <PurposeSection />
       <DesignSection />
-      <PowerBentoSection />*/}
+      <PowerBentoSection />
       {pricingSection}
-      {/*<CTASection />
-      <ReviewsSection />*/}
+      <CTASection />
+      <ReviewsSection />
     </div>
   )
 }

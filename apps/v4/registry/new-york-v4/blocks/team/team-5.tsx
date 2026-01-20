@@ -140,13 +140,23 @@ export function Team5({ content = {}, classNames = {} }: TeamBlockProps) {
 
             {/* Navigation */}
             <div className="mt-8 flex items-center justify-center gap-4">
-              <Button variant="outline" size="icon" onClick={prevSlide}>
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={prevSlide}
+                aria-label="Previous member"
+              >
                 <DynamicIcon name="ChevronLeft" className="h-5 w-5" />
               </Button>
               <span className="text-muted-foreground text-sm">
                 {currentIndex + 1} / {members.length}
               </span>
-              <Button variant="outline" size="icon" onClick={nextSlide}>
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={nextSlide}
+                aria-label="Next member"
+              >
                 <DynamicIcon name="ChevronRight" className="h-5 w-5" />
               </Button>
             </div>

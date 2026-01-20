@@ -23,7 +23,7 @@
     "landing"
   ],
   "tier": "free",
-  "readiness": "alpha",
+  "readiness": "production",
   "blockConfig": {
     "template": "service-boat",
     "blockType": "hero",

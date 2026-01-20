@@ -17,9 +17,9 @@ import {
 } from "@/registry/new-york-v4/ui/segmented-control"
 
 const themes = [
-  ["light", Sun] as const,
-  ["dark", Moon] as const,
-  ["system", SlidersHorizontal] as const,
+  ["light", Sun, "Light theme"] as const,
+  ["dark", Moon, "Dark theme"] as const,
+  ["system", SlidersHorizontal, "System theme"] as const,
 ]
 
 export interface ThemeToggleProps extends HTMLAttributes<HTMLDivElement> {
@@ -77,13 +77,14 @@ export function ThemeToggle({
             className="border-border bg-background w-fit rounded-full border p-px shadow-xs"
             floatingBgClassName="rounded-full border border-border bg-background shadow-2xs dark:bg-secondary"
           >
-            {themes.map(([key, Icon]) => {
+            {themes.map(([key, Icon, label]) => {
               if (key === "system") return null
 
               return (
                 <SegmentedControlTrigger
                   key={key}
                   value={key}
+                  aria-label={label}
                   className="data-[state=inactive]:text-muted-foreground size-6 data-[state=inactive]:opacity-60"
                 >
                   <Icon className="size-3.5 shrink-0" />
@@ -110,10 +111,11 @@ export function ThemeToggle({
           className="border-border bg-background w-fit rounded-full border p-px shadow-xs"
           floatingBgClassName="rounded-full border border-border bg-background shadow-2xs dark:bg-secondary"
         >
-          {themes.map(([key, Icon]) => (
+          {themes.map(([key, Icon, label]) => (
             <SegmentedControlTrigger
               key={key}
               value={key}
+              aria-label={label}
               className="data-[state=inactive]:text-muted-foreground size-6 data-[state=inactive]:opacity-60"
             >
               <Icon className="size-4 shrink-0" />

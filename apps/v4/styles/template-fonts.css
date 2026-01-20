@@ -28,12 +28,14 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap');
 
 /* Utility classes for template fonts */
-.font-display {
-  font-family: var(--font-display);
-  font-weight: var(--font-display-weight, 700);
-}
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+    font-weight: var(--font-display-weight, 500);
+  }
 
-.font-body {
-  font-family: var(--font-body);
-  font-weight: var(--font-body-weight, 400);
+  .font-body {
+    font-family: var(--font-body);
+    font-weight: var(--font-body-weight, 400);
+  }
 }

@@ -72,7 +72,7 @@ const SegmentedControlTrigger = React.forwardRef<
         "flex items-center justify-center gap-1.5",
         "transition duration-300 ease-out",
         // focus
-        "focus:outline-none",
+        "focus-visible:ring-ring/50 focus-visible:ring-[3px]",
         // active
         "data-[state=active]:text-foreground",
         className

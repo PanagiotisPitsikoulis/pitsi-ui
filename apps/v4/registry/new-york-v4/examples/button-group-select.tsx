@@ -45,7 +45,7 @@ export default function ButtonGroupSelect() {
             ))}
           </SelectContent>
         </Select>
-        <Input placeholder="10.00" pattern="[0-9]*" />
+        <Input placeholder="10.00" pattern="[0-9]*" aria-label="Amount" />
       </ButtonGroup>
       <ButtonGroup>
         <Button aria-label="Send" size="icon" variant="outline">

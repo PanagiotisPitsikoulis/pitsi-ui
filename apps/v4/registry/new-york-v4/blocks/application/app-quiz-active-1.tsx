@@ -148,7 +148,12 @@ export function AppQuizActive1({ onComplete, onExit }: QuizActiveProps) {
               <Clock className="text-muted-foreground size-5" />
               {formatTime(timeLeft)}
             </div>
-            <Button variant="outline" size="icon" onClick={onExit}>
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={onExit}
+              aria-label="Exit quiz"
+            >
               <X className="size-4" />
             </Button>
           </div>
